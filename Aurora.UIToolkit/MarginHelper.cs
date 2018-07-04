@@ -283,7 +283,10 @@ namespace Aurora.UIToolkit
     }
 
     /// <summary>
-    /// Represents group which defines a shared margin value, identified via a name.
+    /// Represents a group which defines a shared margin value, identified via a name.
+    /// If used together with the <see cref="MarginHelper.MarginGroupProperty"/> and
+    /// <see cref="MarginHelper.ChildrenGroupProperty"/>, this allows to set the margin
+    /// of multiple controls to the value set in an instance of this class.
     /// </summary>
     public class MarginGroup
     {
