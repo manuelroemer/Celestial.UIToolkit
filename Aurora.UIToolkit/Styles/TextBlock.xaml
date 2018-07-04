@@ -1,0 +1,44 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="StandardTextBlock" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="{StaticResource StandardFontSize}" />
+        <Setter Property="FontWeight" Value="{StaticResource StandardFontWeight}" />
+        <Setter Property="FontStyle" Value="{StaticResource StandardFontStyle}" />
+        <Setter Property="FontStretch" Value="{StaticResource StandardFontStretch}" />
+        <Setter Property="Foreground" Value="{StaticResource StandardForegroundBrush}" />
+    </Style>
+    <Style TargetType="TextBlock" BasedOn="{StaticResource StandardTextBlock}" />
+
+    <Style x:Key="AltTextBlock" TargetType="TextBlock" BasedOn="{StaticResource StandardTextBlock}">
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+
+    <Style x:Key="HintTextBlock" TargetType="TextBlock" BasedOn="{StaticResource StandardTextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource HintForegroundBrush}" />
+    </Style>
+
+    <Style x:Key="SubtleTextBlock" TargetType="TextBlock" BasedOn="{StaticResource HintTextBlock}">
+        <Setter Property="FontStyle" Value="Italic" />
+    </Style>
+
+    <Style x:Key="TitleTextBlock" TargetType="TextBlock" BasedOn="{StaticResource StandardTextBlock}">
+        <Setter Property="FontSize" Value="{StaticResource TitleFontSize}" />
+        <Setter Property="FontWeight" Value="{StaticResource TitleFontWeight}" />
+        <Setter Property="FontStyle" Value="{StaticResource TitleFontStyle}" />
+        <Setter Property="FontStretch" Value="{StaticResource TitleFontStretch}" />
+    </Style>
+
+    <Style x:Key="SubTitleTextBlock" TargetType="TextBlock" BasedOn="{StaticResource StandardTextBlock}">
+        <Setter Property="FontSize" Value="{StaticResource SubTitleFontSize}" />
+        <Setter Property="FontWeight" Value="{StaticResource SubTitleFontWeight}" />
+        <Setter Property="FontStyle" Value="{StaticResource SubTitleFontStyle}" />
+        <Setter Property="FontStretch" Value="{StaticResource SubTitleFontStretch}" />
+    </Style>
+
+    <Style x:Key="TextBlockOverrideStyle" TargetType="TextBlock">
+        <!-- Default TextBlock Style override -> https://stackoverflow.com/a/5330534 -->
+        <Setter Property="Text" Value="{Binding}" />
+    </Style>
+    
+</ResourceDictionary>

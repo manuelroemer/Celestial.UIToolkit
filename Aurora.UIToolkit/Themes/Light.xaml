@@ -1,0 +1,78 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <Color x:Key="BaseHighestColor">#FFFFFF</Color>
+    <Color x:Key="BaseHigherColor"> #F9F9F9</Color>
+    <Color x:Key="BaseHighColor">   #E2E2E2</Color>
+    <Color x:Key="BaseMediumColor"> #D0D0D0</Color>
+    <Color x:Key="BaseLowColor">    #A5A5A5</Color>
+    <Color x:Key="BaseLowerColor">  #777777</Color>
+    <Color x:Key="BaseLowestColor"> #000000</Color>
+
+    <SolidColorBrush x:Key="BaseHighestBrush" Color="{StaticResource BaseHighestColor}" />
+    <SolidColorBrush x:Key="BaseHigherBrush" Color="{StaticResource BaseHigherColor}" />
+    <SolidColorBrush x:Key="BaseHighBrush" Color="{StaticResource BaseHighColor}" />
+    <SolidColorBrush x:Key="BaseMediumBrush" Color="{StaticResource BaseMediumColor}" />
+    <SolidColorBrush x:Key="BaseLowBrush" Color="{StaticResource BaseLowColor}" />
+    <SolidColorBrush x:Key="BaseLowerBrush" Color="{StaticResource BaseLowerColor}" />
+    <SolidColorBrush x:Key="BaseLowestBrush" Color="{StaticResource BaseLowestColor}" />
+
+
+
+    <Color x:Key="Accent1HigherColor">#FF3874</Color>
+    <Color x:Key="Accent1HighColor">  #F0346D</Color>
+    <Color x:Key="Accent1MediumColor">#E03166</Color>
+    <Color x:Key="Accent1LowColor">   #B52853</Color>
+    <Color x:Key="Accent1LowerColor"> #871E3E</Color>
+
+    <SolidColorBrush x:Key="Accent1HigherBrush" Color="{StaticResource Accent1HigherColor}" />
+    <SolidColorBrush x:Key="Accent1HighBrush" Color="{StaticResource Accent1HighColor}" />
+    <SolidColorBrush x:Key="Accent1MediumBrush" Color="{StaticResource Accent1MediumColor}" />
+    <SolidColorBrush x:Key="Accent1LowBrush" Color="{StaticResource Accent1LowColor}" />
+    <SolidColorBrush x:Key="Accent1LowerBrush" Color="{StaticResource Accent1LowerColor}" />
+
+
+
+    <Color x:Key="Accent2HigherColor">#13B7FF</Color>
+    <Color x:Key="Accent2HighColor">  #11A6E8</Color>
+    <Color x:Key="Accent2MediumColor">#0F98D4</Color>
+    <Color x:Key="Accent2LowColor">   #0C79A9</Color>
+    <Color x:Key="Accent2LowerColor"> #09587A</Color>
+
+    <SolidColorBrush x:Key="Accent2HigherBrush" Color="{StaticResource Accent2HigherColor}" />
+    <SolidColorBrush x:Key="Accent2HighBrush" Color="{StaticResource Accent2HighColor}" />
+    <SolidColorBrush x:Key="Accent2MediumBrush" Color="{StaticResource Accent2MediumColor}" />
+    <SolidColorBrush x:Key="Accent2LowBrush" Color="{StaticResource Accent2LowColor}" />
+    <SolidColorBrush x:Key="Accent2LowerBrush" Color="{StaticResource Accent2LowerColor}" />
+
+
+
+    <Duration x:Key="ColorAnimationDuration">0:0:0.1</Duration>
+
+
+
+    <FontFamily x:Key="StandardFontFamily">  Segoe UI</FontFamily>
+    <sys:Double x:Key="StandardFontSize">    13</sys:Double>
+    <FontWeight x:Key="StandardFontWeight">  Normal</FontWeight>
+    <FontStyle x:Key="StandardFontStyle">    Normal</FontStyle>
+    <FontStretch x:Key="StandardFontStretch">Normal</FontStretch>
+
+    <FontFamily x:Key="TitleFontFamily">  Segoe UI</FontFamily>
+    <sys:Double x:Key="TitleFontSize">    24</sys:Double>
+    <FontWeight x:Key="TitleFontWeight">  Normal</FontWeight>
+    <FontStyle x:Key="TitleFontStyle">    Normal</FontStyle>
+    <FontStretch x:Key="TitleFontStretch">Normal</FontStretch>
+    
+    <FontFamily x:Key="SubTitleFontFamily">  Segoe UI</FontFamily>
+    <sys:Double x:Key="SubTitleFontSize">    18</sys:Double>
+    <FontWeight x:Key="SubTitleFontWeight">  Normal</FontWeight>
+    <FontStyle x:Key="SubTitleFontStyle">    Normal</FontStyle>
+    <FontStretch x:Key="SubTitleFontStretch">Normal</FontStretch>
+
+    <SolidColorBrush x:Key="StandardForegroundBrush" Color="{StaticResource BaseLowestColor}" />
+    <SolidColorBrush x:Key="AccentForegroundBrush" Color="{StaticResource BaseHighestColor}" />
+    <SolidColorBrush x:Key="HintForegroundBrush" Color="{StaticResource BaseLowerColor}" />
+    <SolidColorBrush x:Key="DisabledForegroundBrush" Color="{StaticResource BaseLowColor}" />
+    
+</ResourceDictionary>

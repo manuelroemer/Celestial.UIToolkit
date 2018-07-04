@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="ControlGallery.Pages.Colors"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:aurora="clr-namespace:Aurora.UIToolkit;assembly=Aurora.UIToolkit">
+
+    <UserControl.Resources>
+        <Style x:Key="ColorBorder" TargetType="Border">
+            <Setter Property="Width" Value="200" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="#EEE" />
+            <Setter Property="Margin" Value="0,0,0,-1" />
+        </Style>
+
+        <Style TargetType="StackPanel">
+            <Setter Property="Margin" Value="10,0" />
+        </Style>
+    </UserControl.Resources>
+
+    <UniformGrid Columns="3"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center">
+        <StackPanel>
+            <TextBlock Style="{StaticResource TitleTextBlock}">Base Colors</TextBlock>
+            <Border Style="{StaticResource ColorBorder}"
+                    Background="{DynamicResource BaseHighestBrush}" />
+            <Border Style="{StaticResource ColorBorder}"
+                    Background="{DynamicResource BaseHigherBrush}" />
+            <Border Style="{StaticResource ColorBorder}"
+                    Background="{DynamicResource BaseHighBrush}" />
+            <Border Style="{StaticResource ColorBorder}"
+                    Background="{DynamicResource BaseMediumBrush}" />
+            <Border Style="{StaticResource ColorBorder}"
+                    Background="{DynamicResource BaseLowBrush}" />
+            <Border Style="{StaticResource ColorBorder}"
+                    Background="{DynamicResource BaseLowerBrush}" />
+            <Border Style="{StaticResource ColorBorder}"
+                    Background="{DynamicResource BaseLowestBrush}" />
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock Style="{StaticResource TitleTextBlock}">Accent1 Colors</TextBlock>
+            <Border Style="{StaticResource ColorBorder}"
+                    Background="{DynamicResource Accent1HigherBrush}" />
+            <Border Style="{StaticResource ColorBorder}"
+                    Background="{DynamicResource Accent1HighBrush}" />
+            <Border Style="{StaticResource ColorBorder}"
+                    Background="{DynamicResource Accent1MediumBrush}" />
+            <Border Style="{StaticResource ColorBorder}"
+                    Background="{DynamicResource Accent1LowBrush}" />
+            <Border Style="{StaticResource ColorBorder}"
+                    Background="{DynamicResource Accent1LowerBrush}" />
+        </StackPanel>
+
+        <StackPanel>
+            <TextBlock Style="{StaticResource TitleTextBlock}">Accent2 Colors</TextBlock>
+            <Border Style="{StaticResource ColorBorder}"
+                    Background="{DynamicResource Accent2HigherBrush}" />
+            <Border Style="{StaticResource ColorBorder}"
+                    Background="{DynamicResource Accent2HighBrush}" />
+            <Border Style="{StaticResource ColorBorder}"
+                    Background="{DynamicResource Accent2MediumBrush}" />
+            <Border Style="{StaticResource ColorBorder}"
+                    Background="{DynamicResource Accent2LowBrush}" />
+            <Border Style="{StaticResource ColorBorder}"
+                    Background="{DynamicResource Accent2LowerBrush}" />
+        </StackPanel>
+    </UniformGrid>
+    
+</UserControl>
