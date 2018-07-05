@@ -30,30 +30,19 @@
                     <BulletDecorator SnapsToDevicePixels="False">
                         <BulletDecorator.Bullet>
                             <Grid>
+                                <Grid.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="Width" Value="20" />
+                                        <Setter Property="Height" Value="20" />
+                                        <Setter Property="CornerRadius" Value="{Binding Path=(local:UIProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}" />
+                                        <Setter Property="BorderThickness" Value="{Binding BorderThickness, RelativeSource={RelativeSource TemplatedParent}}" />
+                                        <Setter Property="Background" Value="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" />
+                                        <Setter Property="SnapsToDevicePixels" Value="False" />
+                                    </Style>
+                                </Grid.Resources>
                                 <Border x:Name="Bd"
-                                        SnapsToDevicePixels="True"
-                                        Width="20"
-                                        Height="20"
-                                        BorderThickness="{TemplateBinding BorderThickness}"
                                         BorderBrush="{TemplateBinding BorderBrush}"
-                                        Background="{TemplateBinding Background}"
-                                        CornerRadius="{Binding Path=(local:UIProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}">
-                                    <Grid>
-                                        <Path x:Name="Checkmark"
-                                              Visibility="Collapsed"
-                                              HorizontalAlignment="Center"
-                                              VerticalAlignment="Center"
-                                              Width="14" 
-                                              Height="14"
-                                              Stroke="{StaticResource Accent2MediumBrush}"
-                                              StrokeThickness="2"
-                                              Data="M 1,7 L 7,13 L 13,2" />
-                                        <Border x:Name="IndeterminateMark"
-                                                Visibility="Collapsed"
-                                                Background="{StaticResource Accent2MediumBrush}"
-                                                Margin="2" />
-                                    </Grid>
-                                </Border>
+                                        CornerRadius="{Binding Path=(local:UIProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}" />
                                 <!-- Because the VisualStateManager has trouble animating the same properties
                                      for two different State-Groups (e.g. DefaultState/CheckState), 
                                      we shadow the default border with others.
@@ -61,20 +50,23 @@
                                      the code grows a lot larger. -->
                                 <Border x:Name="CheckedBorder"
                                         Visibility="Collapsed"
-                                        SnapsToDevicePixels="True"
-                                        Width="{Binding Width, ElementName=Bd}"
-                                        Height="{Binding Height, ElementName=Bd}"
-                                        CornerRadius="{Binding CornerRadius, ElementName=Bd}"
-                                        BorderThickness="{Binding BorderThickness, ElementName=Bd}"
                                         BorderBrush="{StaticResource Accent2MediumBrush}" />
                                 <Border x:Name="DisabledBorder"
                                         Visibility="Collapsed"
-                                        SnapsToDevicePixels="True"
-                                        Width="{Binding Width, ElementName=Bd}"
-                                        Height="{Binding Height, ElementName=Bd}"
-                                        CornerRadius="{Binding CornerRadius, ElementName=Bd}"
-                                        BorderThickness="{Binding BorderThickness, ElementName=Bd}"
                                         BorderBrush="{StaticResource BaseHighBrush}" />
+                                <Path x:Name="Checkmark"
+                                      Visibility="Collapsed"
+                                      HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"
+                                      Width="14" 
+                                      Height="14"
+                                      Stroke="{StaticResource Accent2MediumBrush}"
+                                      StrokeThickness="2"
+                                      Data="M 1,7 L 7,13 L 13,2" />
+                                <Rectangle x:Name="IndeterminateMark"
+                                           Visibility="Collapsed"
+                                           Fill="{StaticResource Accent2MediumBrush}"
+                                           Margin="3" />
                             </Grid>
                         </BulletDecorator.Bullet>
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
@@ -103,7 +95,7 @@
                                             <EasingColorKeyFrame KeyTime="0" Value="{StaticResource Accent2HighColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="IndeterminateMark"
-                                                                      Storyboard.TargetProperty="Background.Color">
+                                                                      Storyboard.TargetProperty="Fill.Color">
                                             <EasingColorKeyFrame KeyTime="0" Value="{StaticResource Accent2HighColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
@@ -123,7 +115,7 @@
                                             <EasingColorKeyFrame KeyTime="0" Value="{StaticResource Accent2LowColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="IndeterminateMark"
-                                                                      Storyboard.TargetProperty="Background.Color">
+                                                                      Storyboard.TargetProperty="Fill.Color">
                                             <EasingColorKeyFrame KeyTime="0" Value="{StaticResource Accent2LowColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
@@ -139,7 +131,7 @@
                                             <EasingColorKeyFrame KeyTime="0" Value="{StaticResource BaseHighColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="IndeterminateMark"
-                                                                      Storyboard.TargetProperty="Background.Color">
+                                                                      Storyboard.TargetProperty="Fill.Color">
                                             <EasingColorKeyFrame KeyTime="0" Value="{StaticResource BaseHighColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
