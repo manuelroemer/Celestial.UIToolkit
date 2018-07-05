@@ -6,6 +6,7 @@
         <ResourceDictionary Source="TextBlock.xaml" />
         <ResourceDictionary Source="Button.xaml" />
         <ResourceDictionary Source="CheckBox.xaml" />
+        <ResourceDictionary Source="RadioButton.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

@@ -10,13 +10,25 @@
     
     <UniformGrid Columns="3">
         <StackPanel aurora:MarginHelper.ChildrenGroup="CloseVertical">
-            <TextBlock>CheckBox</TextBlock>
+            <TextBlock Style="{StaticResource TitleTextBlock}"
+                       aurora:MarginHelper.MarginGroup="Title">CheckBox</TextBlock>
             <CheckBox>Default</CheckBox>
             <CheckBox IsChecked="True">Checked</CheckBox>
             <CheckBox IsChecked="{x:Null}">Indeterminate</CheckBox>
             <CheckBox IsEnabled="False">Disabled</CheckBox>
             <CheckBox IsEnabled="False" IsChecked="True">Disabled - Checked</CheckBox>
             <CheckBox IsEnabled="False" IsChecked="{x:Null}">Disabled - Indeterminate</CheckBox>
+        </StackPanel>
+
+        <StackPanel aurora:MarginHelper.ChildrenGroup="CloseVertical">
+            <TextBlock Style="{StaticResource TitleTextBlock}"
+                       aurora:MarginHelper.MarginGroup="Title">RadioButton</TextBlock>
+            <RadioButton>Default</RadioButton>
+            <RadioButton IsChecked="True">Checked</RadioButton>
+            <RadioButton IsChecked="{x:Null}">Indeterminate</RadioButton>
+            <RadioButton IsEnabled="False">Disabled</RadioButton>
+            <RadioButton IsEnabled="False" IsChecked="True">Disabled - Checked</RadioButton>
+            <RadioButton IsEnabled="False" IsChecked="{x:Null}">Disabled - Indeterminate</RadioButton>
         </StackPanel>
     </UniformGrid>
     
