@@ -137,9 +137,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Antares.UIToolkit\Antares.UIToolkit.csproj">
+    <ProjectReference Include="..\Celestial.UIToolkit\Celestial.UIToolkit.csproj">
       <Project>{9fcac9d8-2931-4a72-a626-3f1bd9ad2673}</Project>
-      <Name>Antares.UIToolkit</Name>
+      <Name>Celestial.UIToolkit</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows;
 
-namespace Antares.UIToolkit
+namespace Celestial.UIToolkit
 {
 
     /// <summary>

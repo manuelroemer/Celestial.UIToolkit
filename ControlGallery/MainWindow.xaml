@@ -4,17 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:pages="clr-namespace:ControlGallery.Pages"
-        xmlns:a="clr-namespace:Antares.UIToolkit;assembly=Antares.UIToolkit"
+        xmlns:c="clr-namespace:Celestial.UIToolkit;assembly=Celestial.UIToolkit"
         mc:Ignorable="d"
         Title="Aurora UI Toolkit - Control Gallery"
         Width="1000" Height="600">
 
-    <a:MarginHelper.MarginGroups>
-        <a:MarginGroup Name="Title" Margin="0,0,0,10" />
-        <a:MarginGroup Name="CloseHorizontal" Margin="0,0,5,0" />
-        <a:MarginGroup Name="CloseVertical" Margin="0,0,0,5" />
-        <a:MarginGroup Name="ControlGroup" Margin="10" />
-    </a:MarginHelper.MarginGroups>
+    <c:MarginHelper.MarginGroups>
+        <c:MarginGroup Name="Title" Margin="0,0,0,10" />
+        <c:MarginGroup Name="CloseHorizontal" Margin="0,0,5,0" />
+        <c:MarginGroup Name="CloseVertical" Margin="0,0,0,5" />
+        <c:MarginGroup Name="ControlGroup" Margin="10" />
+    </c:MarginHelper.MarginGroups>
     
     <TabControl>
         <TabItem Header="Colors">
