@@ -1,52 +1,52 @@
 ﻿<UserControl x:Class="ControlGallery.Pages.Buttons"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:aurora="clr-namespace:Aurora.UIToolkit;assembly=Aurora.UIToolkit">
+             xmlns:a="clr-namespace:Antares.UIToolkit;assembly=Antares.UIToolkit">
 
     <UniformGrid HorizontalAlignment="Center"
                  VerticalAlignment="Center"
-                 aurora:MarginHelper.ChildrenGroup="ControlGroup"
+                 a:MarginHelper.ChildrenGroup="ControlGroup"
                  Columns="3">
         
-        <StackPanel aurora:MarginHelper.ChildrenGroup="CloseVertical">
+        <StackPanel a:MarginHelper.ChildrenGroup="CloseVertical">
             <TextBlock Style="{StaticResource TitleTextBlock}"
-                       aurora:MarginHelper.MarginGroup="Title">Standard Button</TextBlock>
+                       a:MarginHelper.MarginGroup="Title">Standard Button</TextBlock>
             <Button>Standard</Button>
             <Button Style="{StaticResource Accent1Button}">Accent1</Button>
             <Button Style="{StaticResource Accent2Button}">Accent2</Button>
             <Button IsEnabled="False">Disabled</Button>
         </StackPanel>
 
-        <StackPanel aurora:MarginHelper.ChildrenGroup="CloseVertical">
+        <StackPanel a:MarginHelper.ChildrenGroup="CloseVertical">
             <TextBlock Style="{StaticResource TitleTextBlock}"
-                       aurora:MarginHelper.MarginGroup="Title">Ghost Button</TextBlock>
+                       a:MarginHelper.MarginGroup="Title">Ghost Button</TextBlock>
             <Button Style="{StaticResource GhostButton}">Standard</Button>
             <Button Style="{StaticResource Accent1GhostButton}">Accent1</Button>
             <Button Style="{StaticResource Accent2GhostButton}">Accent2</Button>
             <Button Style="{StaticResource GhostButton}" IsEnabled="False">Disabled</Button>
         </StackPanel>
         
-        <StackPanel aurora:MarginHelper.ChildrenGroup="CloseVertical">
+        <StackPanel a:MarginHelper.ChildrenGroup="CloseVertical">
             <TextBlock Style="{StaticResource TitleTextBlock}"
-                       aurora:MarginHelper.MarginGroup="Title">Minimal Button</TextBlock>
+                       a:MarginHelper.MarginGroup="Title">Minimal Button</TextBlock>
             <Button Style="{StaticResource MinimalButton}">Standard</Button>
             <Button Style="{StaticResource Accent1MinimalButton}">Accent1</Button>
             <Button Style="{StaticResource Accent2MinimalButton}">Accent2</Button>
             <Button Style="{StaticResource MinimalButton}" IsEnabled="False">Disabled</Button>
         </StackPanel>
         
-        <StackPanel aurora:MarginHelper.ChildrenGroup="CloseVertical">
+        <StackPanel a:MarginHelper.ChildrenGroup="CloseVertical">
             <TextBlock Style="{StaticResource TitleTextBlock}"
-                       aurora:MarginHelper.MarginGroup="Title">Hyperlink Button</TextBlock>
+                       a:MarginHelper.MarginGroup="Title">Hyperlink Button</TextBlock>
             <Button Style="{StaticResource HyperlinkButton}">Hyperlink</Button>
             <Button Style="{StaticResource HyperlinkButton}" IsEnabled="False">Hyperlink</Button>
         </StackPanel>
         
         <StackPanel>
             <TextBlock Style="{StaticResource TitleTextBlock}"
-                       aurora:MarginHelper.MarginGroup="Title">Square Button</TextBlock>
+                       a:MarginHelper.MarginGroup="Title">Square Button</TextBlock>
             <StackPanel Orientation="Horizontal"
-                        aurora:MarginHelper.ChildrenGroup="CloseHorizontal">
+                        a:MarginHelper.ChildrenGroup="CloseHorizontal">
                 <Button Style="{StaticResource SquareButton}">S</Button>
                 <Button Style="{StaticResource Accent1SquareButton}">1</Button>
                 <Button Style="{StaticResource Accent2SquareButton}">2</Button>
@@ -56,9 +56,9 @@
         
         <StackPanel>
             <TextBlock Style="{StaticResource TitleTextBlock}"
-                       aurora:MarginHelper.MarginGroup="Title">Circle Button</TextBlock>
+                       a:MarginHelper.MarginGroup="Title">Circle Button</TextBlock>
             <StackPanel Orientation="Horizontal"
-                        aurora:MarginHelper.ChildrenGroup="CloseHorizontal">
+                        a:MarginHelper.ChildrenGroup="CloseHorizontal">
                 <Button Style="{StaticResource CircleButton}">C</Button>
                 <Button Style="{StaticResource Accent1CircleButton}">1</Button>
                 <Button Style="{StaticResource Accent2CircleButton}">2</Button>

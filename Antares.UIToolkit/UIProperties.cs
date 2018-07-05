@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Media;
 
-namespace Aurora.UIToolkit
+namespace Antares.UIToolkit
 {
 
     /// <summary>

@@ -3,15 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:aurora="clr-namespace:Aurora.UIToolkit;assembly=Aurora.UIToolkit"
+             xmlns:a="clr-namespace:Antares.UIToolkit;assembly=Antares.UIToolkit"
              xmlns:local="clr-namespace:ControlGallery.Pages"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     
     <UniformGrid Columns="3">
-        <StackPanel aurora:MarginHelper.ChildrenGroup="CloseVertical">
+        <StackPanel a:MarginHelper.ChildrenGroup="CloseVertical">
             <TextBlock Style="{StaticResource TitleTextBlock}"
-                       aurora:MarginHelper.MarginGroup="Title">CheckBox</TextBlock>
+                       a:MarginHelper.MarginGroup="Title">CheckBox</TextBlock>
             <CheckBox>Default</CheckBox>
             <CheckBox IsChecked="True">Checked</CheckBox>
             <CheckBox IsChecked="{x:Null}">Indeterminate</CheckBox>
@@ -20,9 +20,9 @@
             <CheckBox IsEnabled="False" IsChecked="{x:Null}">Disabled - Indeterminate</CheckBox>
         </StackPanel>
 
-        <StackPanel aurora:MarginHelper.ChildrenGroup="CloseVertical">
+        <StackPanel a:MarginHelper.ChildrenGroup="CloseVertical">
             <TextBlock Style="{StaticResource TitleTextBlock}"
-                       aurora:MarginHelper.MarginGroup="Title">RadioButton</TextBlock>
+                       a:MarginHelper.MarginGroup="Title">RadioButton</TextBlock>
             <RadioButton>Default</RadioButton>
             <RadioButton IsChecked="True">Checked</RadioButton>
             <RadioButton IsChecked="{x:Null}">Indeterminate</RadioButton>

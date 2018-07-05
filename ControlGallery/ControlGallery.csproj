@@ -137,9 +137,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Aurora.UIToolkit\Aurora.UIToolkit.csproj">
+    <ProjectReference Include="..\Antares.UIToolkit\Antares.UIToolkit.csproj">
       <Project>{9fcac9d8-2931-4a72-a626-3f1bd9ad2673}</Project>
-      <Name>Aurora.UIToolkit</Name>
+      <Name>Antares.UIToolkit</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

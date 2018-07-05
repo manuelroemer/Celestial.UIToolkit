@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Aurora.UIToolkit
+namespace Antares.UIToolkit
 {
 
     // Taken from https://stackoverflow.com/a/42488470/10018492 and

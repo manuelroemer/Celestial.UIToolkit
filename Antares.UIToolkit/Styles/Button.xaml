@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
-                    xmlns:local="clr-namespace:Aurora.UIToolkit">
+                    xmlns:local="clr-namespace:Antares.UIToolkit">
 
     <Style x:Key="StandardButtonBase" TargetType="ButtonBase">
         <Setter Property="OverridesDefaultStyle" Value="True" />

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows;
 
-namespace Aurora.UIToolkit
+namespace Antares.UIToolkit
 {
 
     /// <summary>

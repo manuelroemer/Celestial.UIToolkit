@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aurora.UIToolkit", "Aurora.UIToolkit\Aurora.UIToolkit.csproj", "{9FCAC9D8-2931-4A72-A626-3F1BD9AD2673}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Antares.UIToolkit", "Antares.UIToolkit\Antares.UIToolkit.csproj", "{9FCAC9D8-2931-4A72-A626-3F1BD9AD2673}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlGallery", "ControlGallery\ControlGallery.csproj", "{2037FD7D-729C-43F7-B9B2-03D606F32CB0}"
 EndProject
