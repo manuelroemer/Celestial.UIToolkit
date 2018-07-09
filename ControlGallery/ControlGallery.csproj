@@ -89,6 +89,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Inputs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Text.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -104,6 +108,9 @@
     </Compile>
     <Compile Include="Pages\Colors.xaml.cs">
       <DependentUpon>Colors.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Inputs.xaml.cs">
+      <DependentUpon>Inputs.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Text.xaml.cs">
       <DependentUpon>Text.xaml</DependentUpon>

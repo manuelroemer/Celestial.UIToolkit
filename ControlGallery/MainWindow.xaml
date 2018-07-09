@@ -29,6 +29,9 @@
         <TabItem Header="Toggleables">
             <pages:Toggleables />
         </TabItem>
+        <TabItem Header="Inputs">
+            <pages:Inputs />
+        </TabItem>
     </TabControl>
     
 </Window>

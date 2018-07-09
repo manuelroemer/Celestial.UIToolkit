@@ -53,7 +53,7 @@
 
 
     <FontFamily x:Key="StandardFontFamily">  Segoe UI</FontFamily>
-    <sys:Double x:Key="StandardFontSize">    13</sys:Double>
+    <sys:Double x:Key="StandardFontSize">    14</sys:Double>
     <FontWeight x:Key="StandardFontWeight">  Normal</FontWeight>
     <FontStyle x:Key="StandardFontStyle">    Normal</FontStyle>
     <FontStretch x:Key="StandardFontStretch">Normal</FontStretch>

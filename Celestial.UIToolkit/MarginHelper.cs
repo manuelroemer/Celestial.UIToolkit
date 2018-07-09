@@ -128,7 +128,7 @@ namespace Celestial.UIToolkit
         /// is changed.
         /// When this happens, the object's margin property gets updated (if found).
         /// </summary>
-        /// <param name="obj">The <see cref="DependencyObject"/> whose <see cref="MarginGroupProperty"/> got changed.<param>
+        /// <param name="obj">The <see cref="DependencyObject"/> whose <see cref="MarginGroupProperty"/> got changed.</param>
         /// <param name="e">Event args about the changed property.</param>
         private static void MarginGroup_Changed(DependencyObject obj, DependencyPropertyChangedEventArgs e)
         {
@@ -268,8 +268,7 @@ namespace Celestial.UIToolkit
         {
             for (int i = 0; i < VisualTreeHelper.GetChildrenCount(parent); i++)
             {
-                var child = VisualTreeHelper.GetChild(parent, i) as FrameworkElement;
-                if (child != null)
+                if (VisualTreeHelper.GetChild(parent, i) is FrameworkElement child)
                 {
                     // If a child's margin is explicitly set, don't overwrite it.
                     if (child.ReadLocalValue(FrameworkElement.MarginProperty) == DependencyProperty.UnsetValue)
