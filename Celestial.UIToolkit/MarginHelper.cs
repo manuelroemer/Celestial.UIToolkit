@@ -162,10 +162,7 @@ namespace Celestial.UIToolkit
                 // This means that we cannot retrieve its children, which is required for this method.
                 // -> We need to wait until the element is initialized, before updating the children's margin values.
                 //    Do this by listening to the Initialized event.
-                WeakEventManager<FrameworkElement, EventArgs>.AddHandler(
-                        frameworkElement,
-                        nameof(FrameworkElement.Initialized),
-                        Element_Initialized);
+                frameworkElement.Initialized += Element_Initialized;
             }
             else
             {
@@ -175,10 +172,7 @@ namespace Celestial.UIToolkit
             // Event Handler which calls UpdateChildMargin() once the element is initialized.
             void Element_Initialized(object sender, EventArgs args)
             {
-                WeakEventManager<FrameworkElement, EventArgs>.RemoveHandler(
-                    frameworkElement,
-                    nameof(FrameworkElement.Initialized),
-                    Element_Initialized);
+                frameworkElement.Initialized -= Element_Initialized;
                 SetChildMargin();
             }
 
@@ -205,11 +199,7 @@ namespace Celestial.UIToolkit
             if (obj is FrameworkElement frameworkElement &&
                 !frameworkElement.IsInitialized)
             {
-                // Check ChildrenGroup_Changed for an explanation of the following.
-                WeakEventManager<FrameworkElement, EventArgs>.AddHandler(
-                        frameworkElement,
-                        nameof(FrameworkElement.Initialized),
-                        Element_Initialized);
+                frameworkElement.Initialized += Element_Initialized;
             }
             else
             {
@@ -218,10 +208,7 @@ namespace Celestial.UIToolkit
 
             void Element_Initialized(object sender, EventArgs args)
             {
-                WeakEventManager<FrameworkElement, EventArgs>.RemoveHandler(
-                    frameworkElement,
-                    nameof(FrameworkElement.Initialized),
-                    Element_Initialized);
+                frameworkElement.Initialized -= Element_Initialized;
                 UpdateChildMargins(obj, (Thickness)e.NewValue);
             }
         }
