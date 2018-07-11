@@ -108,8 +108,12 @@ namespace Celestial.UIToolkit
                     var dictRef = _dictionaries[i];
                     if (dictRef.TryGetTarget(out ResourceDictionary dict))
                     {
-                        Uri dictBaseUri = dict.GetBaseSourceUri();
-                        if (dict.Source == source)
+                        // A dict's source can be a relative URI, e.g. /Dict.xaml
+                        // source might be absolute, e.g. pack://***/Dict.xaml
+                        // In this case, don't only compare the Source, but also the whole Uri.
+                        bool canGetAbsoluteUri = dict.GetBaseSourceUri() != null;
+                        if (dict.Source == source ||
+                            (canGetAbsoluteUri && dict.GetAbsoluteSourceUri() == source))
                         {
                             resourceDictionary = dict;
                             return true;
