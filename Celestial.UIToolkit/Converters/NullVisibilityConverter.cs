@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using System.Windows;
+using System.Windows.Data;
 
 namespace Celestial.UIToolkit.Converters
 {
@@ -8,6 +9,7 @@ namespace Celestial.UIToolkit.Converters
     /// A value converter which converts any object to a <see cref="Visibility"/> value,
     /// depending on whether the object is <c>null</c> or not.
     /// </summary>
+    [ValueConversion(typeof(object), typeof(Visibility))]
     public class NullVisibilityConverter : ValueConverter<object, Visibility>
     {
 
@@ -46,6 +48,7 @@ namespace Celestial.UIToolkit.Converters
     /// An extension of the <see cref="NullVisibilityConverter"/>,
     /// which also includes a null-string check in the conversion.
     /// </summary>
+    [ValueConversion(typeof(object), typeof(Visibility))]
     public class StringVisibilityConverter : NullVisibilityConverter
     {
 
