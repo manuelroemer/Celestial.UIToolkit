@@ -16,7 +16,7 @@ namespace Celestial.UIToolkit
     public static class SharedResourceDictionaryManager
     {
 
-        private static object _lock = new object();
+        private static readonly object _lock = new object();
         private static IList<WeakReference<ResourceDictionary>> _dictionaries = 
             new List<WeakReference<ResourceDictionary>>();
 

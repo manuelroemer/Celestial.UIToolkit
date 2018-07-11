@@ -59,6 +59,10 @@
     <Compile Include="Converters\ValueConverter.cs" />
     <Compile Include="MarginHelper.cs" />
     <Compile Include="SharedResourceDictionary.cs" />
+    <Compile Include="Theming\ControlProperties.cs" />
+    <Compile Include="Theming\PressedProperties.cs" />
+    <Compile Include="Theming\DisabledProperties.cs" />
+    <Compile Include="Theming\MouseOverProperties.cs" />
     <Compile Include="UIProperties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -108,7 +112,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\Shared.xaml">
+    <Page Include="Styles\Theming.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

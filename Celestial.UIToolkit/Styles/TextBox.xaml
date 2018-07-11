@@ -1,9 +1,10 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:Celestial.UIToolkit">
+                    xmlns:local="clr-namespace:Celestial.UIToolkit"
+                    xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming">
 
     <ResourceDictionary.MergedDictionaries>
-        <local:SharedResourceDictionary Source="Shared.xaml" />
+        <local:SharedResourceDictionary Source="Theming.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="StandardTextBox" TargetType="TextBoxBase" BasedOn="{StaticResource ForegroundSupportingThemingBase}">
@@ -26,25 +27,25 @@
         <Setter Property="FontStyle" Value="{StaticResource StandardFontStyle}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="local:UIProperties.PressedBorderColor" Value="{StaticResource Accent2MediumColor}" />
+        <Setter Property="theming:PressedProperties.BorderColor" Value="{StaticResource Accent2MediumColor}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TextBoxBase">
                     <Grid>
                         <Grid.Resources>
                             <local:BindingProxy x:Key="MouseOverBorderColorProxy" 
-                                                Data="{Binding Path=(local:UIProperties.MouseOverBorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                Data="{Binding Path=(theming:MouseOverProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
                             <local:BindingProxy x:Key="DisabledBorderColorProxy"
-                                                Data="{Binding Path=(local:UIProperties.DisabledBorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                Data="{Binding Path=(theming:DisabledProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
                             <local:BindingProxy x:Key="FocusedBorderColorProxy"
-                                                Data="{Binding Path=(local:UIProperties.PressedBorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                Data="{Binding Path=(theming:PressedProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
                         
                             <local:BindingProxy x:Key="MouseOverBackgroundColorProxy" 
-                                                Data="{Binding Path=(local:UIProperties.MouseOverBackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                Data="{Binding Path=(theming:MouseOverProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
                             <local:BindingProxy x:Key="DisabledBackgroundColorProxy"
-                                                Data="{Binding Path=(local:UIProperties.DisabledBackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                Data="{Binding Path=(theming:DisabledProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
                             <local:BindingProxy x:Key="FocusedBackgroundColorProxy"
-                                                Data="{Binding Path=(local:UIProperties.PressedBackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                Data="{Binding Path=(theming:PressedProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
                         </Grid.Resources>
                         <Border x:Name="Bd"
                                 Background="{TemplateBinding Background}"
@@ -123,13 +124,13 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Foreground" Value="{Binding Path=(local:UIProperties.MouseOverForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                <Setter Property="Foreground" Value="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
             </Trigger>
             <Trigger Property="IsFocused" Value="True">
-                <Setter Property="Foreground" Value="{Binding Path=(local:UIProperties.PressedForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                <Setter Property="Foreground" Value="{Binding Path=(theming:PressedProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Foreground" Value="{Binding Path=(local:UIProperties.DisabledForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                <Setter Property="Foreground" Value="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
             </Trigger>
         </Style.Triggers>
     </Style>

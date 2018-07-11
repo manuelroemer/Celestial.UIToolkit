@@ -1,0 +1,36 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming">
+
+    <!--
+    This sets the animation values for a control's state for most controls.
+    The values are set in a way which should target most controls.
+    This means that the values are using the Accent2 values for highlighting different states.
+    If a control needs to use different values, they need to be set manually.
+    -->
+    <Style x:Key="DefaultThemingBase" TargetType="FrameworkElement">
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
+        
+        <Setter Property="theming:MouseOverProperties.BorderColor" Value="{StaticResource Accent2HighColor}" />
+        <Setter Property="theming:MouseOverProperties.BackgroundColor" Value="{StaticResource BaseHighestColor}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
+
+        <Setter Property="theming:PressedProperties.BorderColor" Value="{StaticResource Accent2LowColor}" />
+        <Setter Property="theming:PressedProperties.BackgroundColor" Value="{StaticResource BaseHighestColor}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
+
+        <Setter Property="theming:DisabledProperties.BorderColor" Value="{StaticResource BaseHighColor}" />
+        <Setter Property="theming:DisabledProperties.BackgroundColor" Value="Transparent" />
+        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
+    </Style>
+
+    <!--
+    This style is supposed to be used by controls which have a 'Foreground' property.
+    It binds the animation foreground values to the control's foreground property.
+    -->
+    <Style x:Key="ForegroundSupportingThemingBase" TargetType="FrameworkElement" BasedOn="{StaticResource DefaultThemingBase}">
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
+    </Style>
+    
+</ResourceDictionary>
