@@ -63,7 +63,6 @@
     <Compile Include="Theming\PressedProperties.cs" />
     <Compile Include="Theming\DisabledProperties.cs" />
     <Compile Include="Theming\MouseOverProperties.cs" />
-    <Compile Include="UIProperties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

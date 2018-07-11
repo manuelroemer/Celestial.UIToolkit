@@ -51,12 +51,12 @@
                                 Background="{TemplateBinding Background}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
-                                CornerRadius="{Binding Path=(local:UIProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}" />
+                                CornerRadius="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}" />
                         <Border x:Name="FocusedBorder"
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="{Binding Path=(local:UIProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
+                                CornerRadius="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
                                 Visibility="Collapsed" />
                         <ScrollViewer x:Name="PART_ContentHost"
                                       Padding="{TemplateBinding Padding}"

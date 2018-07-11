@@ -41,7 +41,7 @@
                     </ControlTemplate.Resources>
 
                     <Border x:Name="Bd"
-                            CornerRadius="{Binding Path=(local:UIProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
+                            CornerRadius="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             Background="{TemplateBinding Background}"
@@ -252,16 +252,16 @@
     -->
 
     <Style x:Key="CircleButtonBase" TargetType="ButtonBase" BasedOn="{StaticResource SquareButtonBase}">
-        <Setter Property="local:UIProperties.CornerRadius" Value="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" />
     </Style>
     <Style x:Key="CircleButton" TargetType="Button" BasedOn="{StaticResource CircleButtonBase}" />
 
     <Style x:Key="Accent1CircleButton" TargetType="Button" BasedOn="{StaticResource Accent1SquareButton}">
-        <Setter Property="local:UIProperties.CornerRadius" Value="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" />
     </Style>
     
     <Style x:Key="Accent2CircleButton" TargetType="Button" BasedOn="{StaticResource Accent2SquareButton}">
-        <Setter Property="local:UIProperties.CornerRadius" Value="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" />
     </Style>
     
 

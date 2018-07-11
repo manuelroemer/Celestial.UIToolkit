@@ -38,7 +38,7 @@
                                     <Style TargetType="Border">
                                         <Setter Property="Width" Value="20" />
                                         <Setter Property="Height" Value="20" />
-                                        <Setter Property="CornerRadius" Value="{Binding Path=(local:UIProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}" />
+                                        <Setter Property="CornerRadius" Value="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}" />
                                         <Setter Property="BorderThickness" Value="{Binding BorderThickness, RelativeSource={RelativeSource TemplatedParent}}" />
                                         <Setter Property="Background" Value="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" />
                                         <Setter Property="SnapsToDevicePixels" Value="False" />
@@ -46,7 +46,7 @@
                                 </Grid.Resources>
                                 <Border x:Name="Bd"
                                         BorderBrush="{TemplateBinding BorderBrush}"
-                                        CornerRadius="{Binding Path=(local:UIProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}" />
+                                        CornerRadius="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}" />
                                 <!-- Because the VisualStateManager has trouble animating the same properties
                                      for two different State-Groups (e.g. DefaultState/CheckState), 
                                      we shadow the default border with others.
