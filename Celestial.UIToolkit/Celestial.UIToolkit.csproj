@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="BindingProxy.cs" />
     <Compile Include="MarginHelper.cs" />
+    <Compile Include="SharedResourceDictionary.cs" />
     <Compile Include="UIProperties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -103,6 +104,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\RadioButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Shared.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

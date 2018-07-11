@@ -14,6 +14,7 @@ namespace Celestial.UIToolkit
     public static class SharedResourceDictionaryManager
     {
 
+        private static object _lock = new object();
         private static IList<WeakReference<ResourceDictionary>> _dictionaries = 
             new List<WeakReference<ResourceDictionary>>();
 
@@ -29,7 +30,7 @@ namespace Celestial.UIToolkit
         /// </returns>
         public static ResourceDictionary GetDictionary(string sourceUriString)
         {
-            return GetDictionary(new Uri(sourceUriString));
+            return GetDictionary(new Uri(sourceUriString, UriKind.RelativeOrAbsolute));
         }
 
         /// <summary>
@@ -52,32 +53,39 @@ namespace Celestial.UIToolkit
             else
             {
                 // Load the dictionary and then cache it.
-                var loadedDict = (ResourceDictionary)Application.LoadComponent(source);
+                var loadedDict = new ResourceDictionary() { Source = source };
                 CacheDictionary(loadedDict);
                 return loadedDict;
-            }
-        }
-        
-        /// <summary>
-        ///     Adds the specified <paramref name="dictionary"/> to the cache.
-        /// </summary>
-        /// <param name="dictionary">
-        ///     The <see cref="ResourceDictionary"/> instance to be cached.
-        /// </param>
-        private static void CacheDictionary(ResourceDictionary dictionary)
-        {
-            if (dictionary != null)
-            {
-                if (!ContainsDictionary(dictionary.Source)) // This check is prob. not necessary, but keep it
-                {                                           // in case some other methods are added in the future.
-                    _dictionaries.Add(new WeakReference<ResourceDictionary>(dictionary));
-                }
             }
         }
 
         /// <summary>
         ///     Tries to find a cached <see cref="ResourceDictionary"/>, based on the specified
+        ///     <paramref name="sourceUriString"/>.
+        ///     In comparison to the <see cref="GetDictionary(string)"/> method, this one doesn't
+        ///     try to load a new dictionary from the <paramref name="sourceUriString"/> if it fails to find a cached one.
+        /// </summary>
+        /// <param name="sourceUriString">
+        ///     The URI string of a <see cref="ResourceDictionary"/> to be retrieved.
+        /// </param>
+        /// <param name="resourceDictionary">
+        ///     A parameter which will hold a found <see cref="ResourceDictionary"/> instance,
+        ///     if one was cached.
+        /// </param>
+        /// <returns>
+        ///     true if a cached <see cref="ResourceDictionary"/> instance was found;
+        ///     false if not.
+        /// </returns>
+        public static bool TryGetDictionary(string sourceUriString, out ResourceDictionary resourceDictionary)
+        {
+            return TryGetDictionary(new Uri(sourceUriString, UriKind.RelativeOrAbsolute), out resourceDictionary);
+        }
+
+        /// <summary>
+        ///     Tries to find a cached <see cref="ResourceDictionary"/>, based on the specified
         ///     <paramref name="source"/>.
+        ///     In comparison to the <see cref="GetDictionary(Uri)"/> method, this one doesn't
+        ///     try to load a new dictionary from the <paramref name="source"/> if it fails to find a cached one.
         /// </summary>
         /// <param name="source">
         ///     The source <see cref="Uri"/> of a potentially cached dictionary.
@@ -90,28 +98,51 @@ namespace Celestial.UIToolkit
         ///     true if a cached <see cref="ResourceDictionary"/> instance was found;
         ///     false if not.
         /// </returns>
-        private static bool TryGetDictionary(Uri source, out ResourceDictionary resourceDictionary)
+        public static bool TryGetDictionary(Uri source, out ResourceDictionary resourceDictionary)
         {
-            for (int i = _dictionaries.Count - 1; i >= 0; i--)
+            lock (_lock)
             {
-                var dictRef = _dictionaries[i];
-                if (dictRef.TryGetTarget(out ResourceDictionary dict))
+                for (int i = _dictionaries.Count - 1; i >= 0; i--)
                 {
-                    if (dict.Source == source)
+                    var dictRef = _dictionaries[i];
+                    if (dictRef.TryGetTarget(out ResourceDictionary dict))
                     {
-                        resourceDictionary = dict;
-                        return true;
+                        if (dict.Source == source)
+                        {
+                            resourceDictionary = dict;
+                            return true;
+                        }
+                    }
+                    else
+                    {
+                        // Remove garbage-collected references, so that the collection stays small.
+                        _dictionaries.RemoveAt(i);
                     }
                 }
-                else
-                {
-                    // Remove garbage-collected references, so that the collection stays small.
-                    _dictionaries.RemoveAt(i);
+
+                resourceDictionary = null;
+                return false;
+            }
+        }
+
+        /// <summary>
+        ///     Adds the specified <paramref name="dictionary"/> to the cache.
+        /// </summary>
+        /// <param name="dictionary">
+        ///     The <see cref="ResourceDictionary"/> instance to be cached.
+        /// </param>
+        private static void CacheDictionary(ResourceDictionary dictionary)
+        {
+            if (dictionary != null)
+            {
+                if (!ContainsDictionary(dictionary.Source)) // This check is prob. not necessary, but keep it
+                {                                           // in case some other methods are added in the future.
+                    lock (_lock)
+                    {
+                        _dictionaries.Add(new WeakReference<ResourceDictionary>(dictionary));
+                    }
                 }
             }
-
-            resourceDictionary = null;
-            return false;
         }
 
         /// <summary>
