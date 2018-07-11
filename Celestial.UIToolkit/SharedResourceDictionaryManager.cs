@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows;
+using System.Windows.Markup;
 
 namespace Celestial.UIToolkit
 {
@@ -107,7 +108,9 @@ namespace Celestial.UIToolkit
                     var dictRef = _dictionaries[i];
                     if (dictRef.TryGetTarget(out ResourceDictionary dict))
                     {
-                        if (dict.Source == source)
+                        Uri dictBaseUri = dict.GetBaseUri();
+                        if (dict.Source == source ||
+                            (dictBaseUri != null && dict.GetAbsoluteSourceUri() == new Uri(dictBaseUri, source)))
                         {
                             resourceDictionary = dict;
                             return true;
@@ -159,6 +162,46 @@ namespace Celestial.UIToolkit
         private static bool ContainsDictionary(Uri source)
         {
             return TryGetDictionary(source, out var dict);
+        }
+
+    }
+
+    /// <summary>
+    /// Provides extension methods for the <see cref="ResourceDictionary"/> class
+    /// which are used by the <see cref="SharedResourceDictionaryManager"/>.
+    /// </summary>
+    public static class ResourceDictionaryExtensions
+    {
+
+        /// <summary>
+        /// Returns the base <see cref="Uri"/> of the specified <see cref="ResourceDictionary"/>.
+        /// </summary>
+        /// <param name="dict">The <see cref="ResourceDictionary"/> whose base <see cref="Uri"/> should be retrieved.</param>
+        /// <returns>The dictionaries base <see cref="Uri"/>.</returns>
+        public static Uri GetBaseUri(this ResourceDictionary dict)
+        {
+            if (dict == null) throw new ArgumentNullException(nameof(dict));
+            return ((IUriContext)dict).BaseUri;
+        }
+
+        /// <summary>
+        /// Returns an absolute <see cref="Uri"/>, based on the <paramref name="dict"/>'s
+        /// source.
+        /// </summary>
+        /// <param name="dict">The <see cref="ResourceDictionary"/>.</param>
+        /// <returns>An absolute <see cref="Uri"/>, pointing to the <paramref name="dict"/>'s source.</returns>
+        public static Uri GetAbsoluteSourceUri(this ResourceDictionary dict)
+        {
+            if (dict == null) throw new ArgumentNullException(nameof(dict));
+            if (dict.Source == null) throw new ArgumentException(
+                "The dictionaries Source property must not be null.", nameof(dict));
+            if (dict.Source.IsAbsoluteUri) return dict.Source;
+
+            Uri baseUri = dict.GetBaseUri();
+            if (baseUri == null) throw new ArgumentException(
+                "Cannot compose an absolute Uri, since no base Uri could be retrieved.");
+
+            return new Uri(baseUri, dict.Source);
         }
 
     }

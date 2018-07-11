@@ -20,12 +20,7 @@ namespace Celestial.UIToolkit
     {
 
         private static bool _isInDesignMode = DesignerProperties.GetIsInDesignMode(new DependencyObject());
-
-        /// <summary>
-        /// Gets this dictionary's base <see cref="Uri"/>.
-        /// </summary>
-        protected Uri BaseUri => ((IUriContext)this).BaseUri;
-
+        
         /// <summary>
         /// Initializes a new instance of the <see cref="SharedResourceDictionary"/> class.
         /// </summary>
@@ -44,6 +39,7 @@ namespace Celestial.UIToolkit
             get { return _source; }
             set
             {
+                _source = value;
                 if (_isInDesignMode)
                 {
                     try
@@ -53,32 +49,11 @@ namespace Celestial.UIToolkit
                 }
                 else
                 {
-                    _source = MakeAbsoluteUri(this.BaseUri, value);
-                    if (SharedResourceDictionaryManager.TryGetDictionary(_source, out var dict))
-                    {
-                        this.MergedDictionaries.Add(dict);
-                    }
-                    else
-                    {
-                        base.Source = value;
-                    }
+                    var absoluteSource = new Uri(this.GetBaseUri(), value);
+                    var dict = SharedResourceDictionaryManager.GetDictionary(absoluteSource);
+                    this.MergedDictionaries.Add(dict);
                 }
             }
-        }
-
-        /// <summary>
-        /// Returns an absolute <see cref="Uri"/>, based on the state of the
-        /// provided parameters.
-        /// </summary>
-        /// <param name="baseUri">A base <see cref="Uri"/> to be used.</param>
-        /// <param name="other">Another <see cref="Uri"/> to be used. Can be both relative and absolute.</param>
-        /// <returns>The created object.</returns>
-        protected static Uri MakeAbsoluteUri(Uri baseUri, Uri other)
-        {
-            if (other == null) throw new ArgumentNullException(nameof(other));
-            if (baseUri == null) throw new ArgumentNullException(nameof(baseUri));
-            if (other.IsAbsoluteUri) return other;
-            return new Uri(baseUri, other);
         }
 
     }
