@@ -6,7 +6,7 @@
         <local:SharedResourceDictionary Source="Shared.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardTextBox" TargetType="TextBoxBase" BasedOn="{StaticResource DefaultThemingBase}">
+    <Style x:Key="StandardTextBox" TargetType="TextBoxBase" BasedOn="{StaticResource ForegroundSupportingThemingBase}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="KeyboardNavigation.TabNavigation" Value="None" />

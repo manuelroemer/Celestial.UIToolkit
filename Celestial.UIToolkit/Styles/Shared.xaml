@@ -4,6 +4,9 @@
 
     <!--
     This sets the animation values for a control's state for most controls.
+    The values are set in a way which should target most controls.
+    This means that the values are using the Accent2 values for highlighting different states.
+    If a control needs to use different values, they need to be set manually.
     -->
     <Style x:Key="DefaultThemingBase" TargetType="FrameworkElement">
         <Setter Property="local:UIProperties.CornerRadius" Value="0" />
@@ -19,6 +22,15 @@
         <Setter Property="local:UIProperties.DisabledBorderColor" Value="{StaticResource BaseHighColor}" />
         <Setter Property="local:UIProperties.DisabledBackgroundColor" Value="Transparent" />
         <Setter Property="local:UIProperties.DisabledForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
+    </Style>
+
+    <!--
+    This style is supposed to be used by controls which have a 'Foreground' property.
+    It binds the animation foreground values to the control's foreground property.
+    -->
+    <Style x:Key="ForegroundSupportingThemingBase" TargetType="FrameworkElement" BasedOn="{StaticResource DefaultThemingBase}">
+        <Setter Property="local:UIProperties.MouseOverForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="local:UIProperties.PressedForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
     </Style>
     
 </ResourceDictionary>

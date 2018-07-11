@@ -7,6 +7,11 @@
         <Setter Property="FontStyle" Value="{StaticResource StandardFontStyle}" />
         <Setter Property="FontStretch" Value="{StaticResource StandardFontStretch}" />
         <Setter Property="Foreground" Value="{StaticResource StandardForegroundBrush}" />
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{StaticResource StandardForegroundBrush}" />
+            </Trigger>
+        </Style.Triggers>
     </Style>
     <Style TargetType="TextBlock" BasedOn="{StaticResource StandardTextBlock}" />
 

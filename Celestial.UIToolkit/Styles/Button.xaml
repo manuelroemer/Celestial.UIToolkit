@@ -3,7 +3,11 @@
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
                     xmlns:local="clr-namespace:Celestial.UIToolkit">
 
-    <Style x:Key="StandardButtonBase" TargetType="ButtonBase">
+    <ResourceDictionary.MergedDictionaries>
+        <local:SharedResourceDictionary Source="Shared.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
+    <Style x:Key="StandardButtonBase" TargetType="ButtonBase" BasedOn="{StaticResource ForegroundSupportingThemingBase}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="MinWidth" Value="120" />
@@ -20,16 +24,12 @@
         <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="Foreground" Value="{StaticResource StandardForegroundBrush}" />
         <Setter Property="Background" Value="{StaticResource BaseMediumBrush}" />
-        <Setter Property="local:UIProperties.CornerRadius" Value="0" />
         <Setter Property="local:UIProperties.MouseOverBackgroundColor" Value="{StaticResource BaseHighColor}" />
         <Setter Property="local:UIProperties.MouseOverBorderColor" Value="Transparent" />
-        <Setter Property="local:UIProperties.MouseOverForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
         <Setter Property="local:UIProperties.PressedBackgroundColor" Value="{StaticResource BaseLowColor}" />
         <Setter Property="local:UIProperties.PressedBorderColor" Value="Transparent" />
-        <Setter Property="local:UIProperties.PressedForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
         <Setter Property="local:UIProperties.DisabledBackgroundColor" Value="{StaticResource BaseHigherColor}" />
         <Setter Property="local:UIProperties.DisabledBorderColor" Value="Transparent" />
-        <Setter Property="local:UIProperties.DisabledForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -158,7 +158,7 @@
         <Setter Property="local:UIProperties.DisabledBackgroundColor" Value="Transparent" />
         <Setter Property="local:UIProperties.MouseOverBorderColor" Value="{StaticResource BaseHighColor}" />
         <Setter Property="local:UIProperties.PressedBorderColor" Value="{StaticResource BaseLowColor}" />
-        <Setter Property="local:UIProperties.DisabledBorderColor" Value="{StaticResource BaseHigherColor}" />
+        <Setter Property="local:UIProperties.DisabledBorderColor" Value="{StaticResource BaseHighColor}" />
     </Style>
     <Style x:Key="GhostButton" TargetType="Button" BasedOn="{StaticResource GhostButtonBase}" />
 

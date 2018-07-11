@@ -3,7 +3,11 @@
                     xmlns:local="clr-namespace:Celestial.UIToolkit"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
-    <Style x:Key="StandardCheckBox" TargetType="CheckBox">
+    <ResourceDictionary.MergedDictionaries>
+        <local:SharedResourceDictionary Source="Shared.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="StandardCheckBox" TargetType="CheckBox" BasedOn="{StaticResource ForegroundSupportingThemingBase}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
@@ -18,7 +22,6 @@
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Background" Value="{StaticResource BaseHighestBrush}" />
         <Setter Property="BorderBrush" Value="{StaticResource BaseLowerBrush}" />
-        <Setter Property="local:UIProperties.CornerRadius" Value="0" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="CheckBox">
@@ -173,8 +176,14 @@
             </Setter.Value>
         </Setter>
         <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{Binding Path=(local:UIProperties.MouseOverForegroundBrush), RelativeSource={RelativeSource Self}}" />
+            </Trigger>
+            <Trigger Property="IsFocused" Value="True">
+                <Setter Property="Foreground" Value="{Binding Path=(local:UIProperties.PressedForegroundBrush), RelativeSource={RelativeSource Self}}" />
+            </Trigger>
             <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Foreground" Value="{StaticResource DisabledForegroundBrush}" />
+                <Setter Property="Foreground" Value="{Binding Path=(local:UIProperties.DisabledForegroundBrush), RelativeSource={RelativeSource Self}}" />
             </Trigger>
         </Style.Triggers>
     </Style>
