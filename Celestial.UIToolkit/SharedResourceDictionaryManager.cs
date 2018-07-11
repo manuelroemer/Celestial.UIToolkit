@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using System.Windows.Markup;
 
@@ -22,6 +23,8 @@ namespace Celestial.UIToolkit
         /// <summary>
         ///     Returns <see cref="ResourceDictionary"/> instance which is either already cached,
         ///     or directly loaded and then cached by the manager.
+        ///     In essence, this method combines the <see cref="TryGetDictionary(string, out ResourceDictionary)"/>
+        ///     and <see cref="CacheDictionary(ResourceDictionary)"/> methods.
         /// </summary>
         /// <param name="sourceUriString">
         ///     The URI string of a <see cref="ResourceDictionary"/> to be retrieved.
@@ -37,6 +40,8 @@ namespace Celestial.UIToolkit
         /// <summary>
         ///     Returns <see cref="ResourceDictionary"/> instance which is either already cached,
         ///     or directly loaded and then cached by the manager.
+        ///     In essence, this method combines the <see cref="TryGetDictionary(Uri, out ResourceDictionary)"/>
+        ///     and <see cref="CacheDictionary(ResourceDictionary)"/> methods.
         /// </summary>
         /// <param name="source">
         ///     The source <see cref="Uri"/> of a <see cref="ResourceDictionary"/> to be retrieved.
@@ -141,8 +146,8 @@ namespace Celestial.UIToolkit
         {
             if (dictionary != null)
             {
-                if (!ContainsDictionary(dictionary.Source)) // This check is prob. not necessary, but keep it
-                {                                           // in case some other methods are added in the future.
+                if (!ContainsDictionary(dictionary.Source))
+                {
                     lock (_lock)
                     {
                         _dictionaries.Add(new WeakReference<ResourceDictionary>(dictionary));

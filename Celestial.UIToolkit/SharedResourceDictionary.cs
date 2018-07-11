@@ -38,19 +38,26 @@ namespace Celestial.UIToolkit
             get { return _source; }
             set
             {
-                _source = value;
                 if (_isInDesignMode)
                 {
                     try
                     {
                         base.Source = value;
+                        _source = base.Source;
                     } catch { } // Avoids wrong design-time error messages like "type not found"
                 }
                 else
                 {
-                    var absoluteSource = new Uri(this.GetBaseSourceUri(), value);
-                    var dict = SharedResourceDictionaryManager.GetDictionary(absoluteSource);
-                    this.MergedDictionaries.Add(dict);
+                    _source = value.IsAbsoluteUri ? value : new Uri(this.GetBaseSourceUri(), value);
+                    if (SharedResourceDictionaryManager.TryGetDictionary(_source, out var dict))
+                    {
+                        this.MergedDictionaries.Add(dict);
+                    }
+                    else
+                    {
+                        base.Source = value;
+                        SharedResourceDictionaryManager.CacheDictionary(this);
+                    }
                 }
             }
         }
