@@ -16,13 +16,10 @@ namespace Celestial.UIToolkit
     /// The loaded resource dictionary set by the <see cref="Source"/> property is then
     /// accessible via the <see cref="ResourceDictionary.MergedDictionaries"/> property.
     /// </summary>
-    [Browsable(false)]
-    [EditorBrowsable(EditorBrowsableState.Never)]
     public class SharedResourceDictionary : ResourceDictionary
     {
 
-        private static bool _isInDesignMode = (bool)DesignerProperties.IsInDesignModeProperty
-            .GetMetadata(typeof(DependencyObject)).DefaultValue;
+        private static bool _isInDesignMode = DesignerProperties.GetIsInDesignMode(new DependencyObject());
 
         /// <summary>
         /// Gets this dictionary's base <see cref="Uri"/>.
@@ -49,7 +46,10 @@ namespace Celestial.UIToolkit
             {
                 if (_isInDesignMode)
                 {
-                    base.Source = value;
+                    try
+                    {
+                        base.Source = value;
+                    } catch { } // Avoids wrong design-time error messages like "type not found"
                 }
                 else
                 {

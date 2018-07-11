@@ -55,6 +55,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BindingProxy.cs" />
+    <Compile Include="Converters\NullVisibilityConverter.cs" />
+    <Compile Include="Converters\ValueConverter.cs" />
     <Compile Include="MarginHelper.cs" />
     <Compile Include="SharedResourceDictionary.cs" />
     <Compile Include="UIProperties.cs" />
@@ -84,7 +86,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\" />
-    <Folder Include="Converters\" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Styles\Button.xaml">

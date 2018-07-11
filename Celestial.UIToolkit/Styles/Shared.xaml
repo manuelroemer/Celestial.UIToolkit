@@ -8,7 +8,7 @@
     <Style x:Key="DefaultThemingBase" TargetType="FrameworkElement">
         <Setter Property="local:UIProperties.CornerRadius" Value="0" />
         
-        <Setter Property="local:UIProperties.MouseOverBorderColor" Value="{StaticResource Accent2HighBrush}" />
+        <Setter Property="local:UIProperties.MouseOverBorderColor" Value="{StaticResource Accent2HighColor}" />
         <Setter Property="local:UIProperties.MouseOverBackgroundColor" Value="{StaticResource BaseHighestColor}" />
         <Setter Property="local:UIProperties.MouseOverForegroundBrush" Value="{Binding Color, Source={StaticResource StandardForegroundBrush}}" />
 

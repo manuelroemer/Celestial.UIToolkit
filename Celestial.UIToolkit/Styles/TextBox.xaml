@@ -2,7 +2,11 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:Celestial.UIToolkit">
 
-    <Style x:Key="StandardTextBox" TargetType="TextBoxBase">
+    <ResourceDictionary.MergedDictionaries>
+        <local:SharedResourceDictionary Source="Shared.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="StandardTextBox" TargetType="TextBoxBase" BasedOn="{StaticResource DefaultThemingBase}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="KeyboardNavigation.TabNavigation" Value="None" />
