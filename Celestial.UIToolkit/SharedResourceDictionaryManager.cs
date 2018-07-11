@@ -108,9 +108,8 @@ namespace Celestial.UIToolkit
                     var dictRef = _dictionaries[i];
                     if (dictRef.TryGetTarget(out ResourceDictionary dict))
                     {
-                        Uri dictBaseUri = dict.GetBaseUri();
-                        if (dict.Source == source ||
-                            (dictBaseUri != null && dict.GetAbsoluteSourceUri() == new Uri(dictBaseUri, source)))
+                        Uri dictBaseUri = dict.GetBaseSourceUri();
+                        if (dict.Source == source)
                         {
                             resourceDictionary = dict;
                             return true;
@@ -134,7 +133,7 @@ namespace Celestial.UIToolkit
         /// <param name="dictionary">
         ///     The <see cref="ResourceDictionary"/> instance to be cached.
         /// </param>
-        private static void CacheDictionary(ResourceDictionary dictionary)
+        public static void CacheDictionary(ResourceDictionary dictionary)
         {
             if (dictionary != null)
             {
@@ -178,7 +177,7 @@ namespace Celestial.UIToolkit
         /// </summary>
         /// <param name="dict">The <see cref="ResourceDictionary"/> whose base <see cref="Uri"/> should be retrieved.</param>
         /// <returns>The dictionaries base <see cref="Uri"/>.</returns>
-        public static Uri GetBaseUri(this ResourceDictionary dict)
+        public static Uri GetBaseSourceUri(this ResourceDictionary dict)
         {
             if (dict == null) throw new ArgumentNullException(nameof(dict));
             return ((IUriContext)dict).BaseUri;
@@ -197,7 +196,7 @@ namespace Celestial.UIToolkit
                 "The dictionaries Source property must not be null.", nameof(dict));
             if (dict.Source.IsAbsoluteUri) return dict.Source;
 
-            Uri baseUri = dict.GetBaseUri();
+            Uri baseUri = dict.GetBaseSourceUri();
             if (baseUri == null) throw new ArgumentException(
                 "Cannot compose an absolute Uri, since no base Uri could be retrieved.");
 

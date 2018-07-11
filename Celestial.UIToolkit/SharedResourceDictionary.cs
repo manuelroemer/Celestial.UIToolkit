@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows;
-using System.Windows.Markup;
 
 namespace Celestial.UIToolkit
 {
@@ -49,7 +48,7 @@ namespace Celestial.UIToolkit
                 }
                 else
                 {
-                    var absoluteSource = new Uri(this.GetBaseUri(), value);
+                    var absoluteSource = new Uri(this.GetBaseSourceUri(), value);
                     var dict = SharedResourceDictionaryManager.GetDictionary(absoluteSource);
                     this.MergedDictionaries.Add(dict);
                 }
