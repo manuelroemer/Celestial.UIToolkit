@@ -21,6 +21,14 @@
             <TextBox IsEnabled="False">Disabled</TextBox>
         </StackPanel>
 
+        <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
+            <TextBlock Style="{StaticResource TitleTextBlock}"
+                       c:MarginHelper.MarginGroup="Title">Subtle TextBox</TextBlock>
+            <TextBox Style="{StaticResource SubtleTextBox}">TextBox</TextBox>
+            <TextBox Style="{StaticResource SubtleTextBox}" IsReadOnly="True">ReadOnly</TextBox>
+            <TextBox Style="{StaticResource SubtleTextBox}" IsEnabled="False">Disabled</TextBox>
+        </StackPanel>
+
     </UniformGrid>
     
 </UserControl>

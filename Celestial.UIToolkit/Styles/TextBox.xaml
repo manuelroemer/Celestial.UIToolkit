@@ -36,12 +36,12 @@
                                                 Data="{Binding Path=(theming:MouseOverProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
                             <local:BindingProxy x:Key="MouseOverBackgroundColorProxy" 
                                                 Data="{Binding Path=(theming:MouseOverProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
-                            
+
                             <local:BindingProxy x:Key="FocusedBorderColorProxy"
                                                 Data="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
                             <local:BindingProxy x:Key="FocusedBackgroundColorProxy"
                                                 Data="{Binding Path=(theming:ActiveProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
-                            
+
                             <local:BindingProxy x:Key="DisabledBorderColorProxy"
                                                 Data="{Binding Path=(theming:DisabledProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
                             <local:BindingProxy x:Key="DisabledBackgroundColorProxy"
@@ -136,5 +136,22 @@
     </Style>
     <Style TargetType="TextBox" BasedOn="{StaticResource StandardTextBox}" />
     <Style TargetType="RichTextBox" BasedOn="{StaticResource StandardTextBox}" />
+
+
+
+    <!--
+    Subtle TextBox.
+    A TextBox which is more subtle than the default TextBox.
+    This effect is achieved by only showing the Border at the TextBox's bottom.
+    -->
+    <Style x:Key="SubtleTextBox" TargetType="TextBox" BasedOn="{StaticResource StandardTextBox}">
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
+        <Setter Property="BorderThickness" Value="0,0,0,1" />
+        <Setter Property="Padding" Value="-2,0" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="theming:MouseOverProperties.BackgroundColor" Value="Transparent" />
+        <Setter Property="theming:ActiveProperties.BackgroundColor" Value="Transparent" />
+        <Setter Property="theming:DisabledProperties.BackgroundColor" Value="Transparent" />
+    </Style>
 
 </ResourceDictionary>
