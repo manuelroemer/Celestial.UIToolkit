@@ -55,7 +55,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BindingProxy.cs" />
-    <Compile Include="Converters\NullVisibilityConverter.cs" />
+    <Compile Include="Converters\ColorToSolidColorBrushConverter.cs" />
+    <Compile Include="Converters\NullToVisibilityConverter.cs" />
     <Compile Include="Converters\ValueConverter.cs" />
     <Compile Include="MarginHelper.cs" />
     <Compile Include="SharedResourceDictionary.cs" />

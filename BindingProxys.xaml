@@ -1,0 +1,40 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:local="clr-namespace:Celestial.UIToolkit"
+                    xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming">
+    
+    <!--
+    For copy&paste:
+    A range of BindingProxy's which are used by controls.
+    -->
+    
+    <local:BindingProxy x:Key="ActiveBackgroundColorProxy"
+                        Data="{Binding Path=(theming:ActiveProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
+    <local:BindingProxy x:Key="ActiveBorderColorProxy"
+                        Data="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
+    <local:BindingProxy x:Key="ActiveForegroundBrushProxy"
+                        Data="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+    
+    <local:BindingProxy x:Key="MouseOverBackgroundColorProxy"
+                        Data="{Binding Path=(theming:MouseOverProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
+    <local:BindingProxy x:Key="MouseOverBorderColorProxy"
+                        Data="{Binding Path=(theming:MouseOverProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
+    <local:BindingProxy x:Key="MouseOverForegroundBrushProxy"
+                        Data="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                            
+    <local:BindingProxy x:Key="PressedBackgroundColorProxy"
+                        Data="{Binding Path=(theming:PressedProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
+    <local:BindingProxy x:Key="PressedBorderColorProxy"
+                        Data="{Binding Path=(theming:PressedProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
+    <local:BindingProxy x:Key="PressedForegroundBrushProxy"
+                        Data="{Binding Path=(theming:PressedProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                            
+    <local:BindingProxy x:Key="DisabledBackgroundColorProxy"
+                        Data="{Binding Path=(theming:DisabledProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
+    <local:BindingProxy x:Key="DisabledBorderColorProxy"
+                        Data="{Binding Path=(theming:DisabledProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
+    <local:BindingProxy x:Key="DisabledForegroundBrushProxy"
+                        Data="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                            
+</ResourceDictionary>

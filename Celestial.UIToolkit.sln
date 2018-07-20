@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Celestial.UIToolkit", "Cele
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlGallery", "ControlGallery\ControlGallery.csproj", "{2037FD7D-729C-43F7-B9B2-03D606F32CB0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc", "Misc", "{BF0CD30C-5038-40E3-B5ED-0C709CD51B6F}"
+	ProjectSection(SolutionItems) = preProject
+		BindingProxys.xaml = BindingProxys.xaml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
