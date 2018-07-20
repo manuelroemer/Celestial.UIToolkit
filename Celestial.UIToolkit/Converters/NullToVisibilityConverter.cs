@@ -10,7 +10,7 @@ namespace Celestial.UIToolkit.Converters
     /// depending on whether the object is <c>null</c> or not.
     /// </summary>
     [ValueConversion(typeof(object), typeof(Visibility))]
-    public class NullVisibilityConverter : ValueConverter<object, Visibility>
+    public class NullToVisibilityConverter : ValueConverter<object, Visibility>
     {
 
         /// <summary>
@@ -26,9 +26,9 @@ namespace Celestial.UIToolkit.Converters
         public Visibility NotNullVisibility { get; set; } = Visibility.Visible;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="NullVisibilityConverter"/> class.
+        /// Initializes a new instance of the <see cref="NullToVisibilityConverter"/> class.
         /// </summary>
-        public NullVisibilityConverter() { }
+        public NullToVisibilityConverter() { }
 
         /// <summary>
         /// Converts a value.
@@ -45,11 +45,11 @@ namespace Celestial.UIToolkit.Converters
     }
 
     /// <summary>
-    /// An extension of the <see cref="NullVisibilityConverter"/>,
+    /// An extension of the <see cref="NullToVisibilityConverter"/>,
     /// which also includes a null-string check in the conversion.
     /// </summary>
     [ValueConversion(typeof(object), typeof(Visibility))]
-    public class StringVisibilityConverter : NullVisibilityConverter
+    public class StringToVisibilityConverter : NullToVisibilityConverter
     {
 
         /// <summary>
@@ -59,9 +59,9 @@ namespace Celestial.UIToolkit.Converters
         public bool IncludeWhiteSpace { get; set; } = false;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="StringVisibilityConverter"/> class.
+        /// Initializes a new instance of the <see cref="StringToVisibilityConverter"/> class.
         /// </summary>
-        public StringVisibilityConverter() { }
+        public StringToVisibilityConverter() { }
 
         /// <summary>
         /// Converts a value.
