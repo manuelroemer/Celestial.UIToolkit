@@ -29,6 +29,20 @@
             <TextBox Style="{StaticResource SubtleTextBox}" IsEnabled="False">Disabled</TextBox>
         </StackPanel>
 
+        <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
+            <TextBlock Style="{StaticResource TitleTextBlock}"
+                       c:MarginHelper.MarginGroup="Title">PasswordBox</TextBlock>
+            <PasswordBox Password="ABC" />
+            <PasswordBox IsEnabled="False" Password="ABC" />
+        </StackPanel>
+
+        <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
+            <TextBlock Style="{StaticResource TitleTextBlock}"
+                       c:MarginHelper.MarginGroup="Title">Subtle PasswordBox</TextBlock>
+            <PasswordBox Style="{StaticResource SubtlePasswordBox}" Password="ABC" />
+            <PasswordBox Style="{StaticResource SubtlePasswordBox}" IsEnabled="False" Password="ABC" />
+        </StackPanel>
+
     </UniformGrid>
     
 </UserControl>

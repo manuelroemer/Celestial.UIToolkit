@@ -7,7 +7,9 @@
         <local:SharedResourceDictionary Source="Theming.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardTextBox" TargetType="TextBoxBase" BasedOn="{StaticResource ForegroundSupportingThemingBase}">
+    <!-- Use TargetType="Control", so that the PasswordBox can use the style too.
+         Slightly problematic, since this allows setting this style on any type of control. -->
+    <Style x:Key="StandardTextBox" TargetType="Control" BasedOn="{StaticResource ForegroundSupportingThemingBase}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="KeyboardNavigation.TabNavigation" Value="None" />
@@ -27,9 +29,10 @@
         <Setter Property="FontStyle" Value="{StaticResource StandardFontStyle}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="PasswordBox.PasswordChar" Value="&#x2022;" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="TextBoxBase">
+                <ControlTemplate TargetType="Control">
                     <Grid>
                         <Grid.Resources>
                             <local:BindingProxy x:Key="MouseOverBorderColorProxy" 
@@ -136,6 +139,7 @@
     </Style>
     <Style TargetType="TextBox" BasedOn="{StaticResource StandardTextBox}" />
     <Style TargetType="RichTextBox" BasedOn="{StaticResource StandardTextBox}" />
+    <Style TargetType="PasswordBox" BasedOn="{StaticResource StandardTextBox}" />
 
 
 
@@ -144,7 +148,7 @@
     A TextBox which is more subtle than the default TextBox.
     This effect is achieved by only showing the Border at the TextBox's bottom.
     -->
-    <Style x:Key="SubtleTextBox" TargetType="TextBox" BasedOn="{StaticResource StandardTextBox}">
+    <Style x:Key="SubtleTextBoxBase" TargetType="Control" BasedOn="{StaticResource StandardTextBox}">
         <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
         <Setter Property="BorderThickness" Value="0,0,0,1" />
         <Setter Property="Padding" Value="-2,0" />
@@ -153,5 +157,8 @@
         <Setter Property="theming:ActiveProperties.BackgroundColor" Value="Transparent" />
         <Setter Property="theming:DisabledProperties.BackgroundColor" Value="Transparent" />
     </Style>
+
+    <Style x:Key="SubtleTextBox" TargetType="TextBox" BasedOn="{StaticResource SubtleTextBoxBase}" />
+    <Style x:Key="SubtlePasswordBox" TargetType="PasswordBox" BasedOn="{StaticResource SubtleTextBoxBase}" />
 
 </ResourceDictionary>
