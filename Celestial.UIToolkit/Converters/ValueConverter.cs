@@ -79,7 +79,7 @@ namespace Celestial.UIToolkit.Converters
         public virtual TValue ConvertBack(TTarget value, object parameter, CultureInfo culture)
         {
             throw new NotSupportedException(
-                   "This converter cannot be used to convert a value back.");
+                "This converter cannot be used to convert a value back.");
         }
         
         /// <summary>
