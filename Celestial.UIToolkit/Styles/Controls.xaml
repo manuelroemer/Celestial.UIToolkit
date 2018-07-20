@@ -9,5 +9,6 @@
         <local:SharedResourceDictionary Source="CheckBox.xaml" />
         <local:SharedResourceDictionary Source="RadioButton.xaml" />
         <local:SharedResourceDictionary Source="TextBox.xaml" />
+        <local:SharedResourceDictionary Source="ToolTip.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

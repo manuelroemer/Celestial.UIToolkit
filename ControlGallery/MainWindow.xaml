@@ -32,6 +32,9 @@
         <TabItem Header="Inputs">
             <pages:Inputs />
         </TabItem>
+        <TabItem Header="Popups">
+            <pages:Popups />
+        </TabItem>
     </TabControl>
     
 </Window>

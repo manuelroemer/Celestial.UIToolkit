@@ -1,0 +1,42 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming">
+
+    <Style TargetType="ToolTip">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="HasDropShadow" Value="True" />
+        <Setter Property="Background" Value="{StaticResource BaseHighestBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource BaseLowBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
+        <Setter Property="Padding" Value="5" />
+        <Setter Property="FontFamily" Value="{StaticResource TinyFontFamily}" />
+        <Setter Property="FontSize" Value="{StaticResource TinyFontSize}" />
+        <Setter Property="FontWeight" Value="{StaticResource TinyFontWeight}" />
+        <Setter Property="FontStretch" Value="{StaticResource TinyFontStretch}" />
+        <Setter Property="FontStyle" Value="{StaticResource TinyFontStyle}" />
+        <Setter Property="Foreground" Value="{StaticResource HintForegroundBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToolTip">
+                    <ControlTemplate.Resources>
+                        <DataTemplate DataType="{x:Type sys:String}">
+                            <TextBlock Text="{Binding}" Style="{DynamicResource TextBlockOverrideStyle}" />
+                        </DataTemplate>
+                    </ControlTemplate.Resources>
+                    <Border x:Name="Bd"
+                            CornerRadius="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

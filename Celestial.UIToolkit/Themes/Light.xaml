@@ -70,6 +70,12 @@
     <FontStyle x:Key="SubTitleFontStyle">    Normal</FontStyle>
     <FontStretch x:Key="SubTitleFontStretch">Normal</FontStretch>
 
+    <FontFamily x:Key="TinyFontFamily">Segoe UI</FontFamily>
+    <sys:Double x:Key="TinyFontSize">12</sys:Double>
+    <FontWeight x:Key="TinyFontWeight">Normal</FontWeight>
+    <FontStyle x:Key="TinyFontStyle">Normal</FontStyle>
+    <FontStretch x:Key="TinyFontStretch">Normal</FontStretch>
+
     <SolidColorBrush x:Key="StandardForegroundBrush" Color="{StaticResource BaseLowestColor}" />
     <SolidColorBrush x:Key="AccentForegroundBrush" Color="{StaticResource BaseHighestColor}" />
     <SolidColorBrush x:Key="HintForegroundBrush" Color="{StaticResource BaseLowerColor}" />
