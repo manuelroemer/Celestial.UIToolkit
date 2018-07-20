@@ -19,8 +19,8 @@
         <Setter Property="Padding" Value="3,0" />
         <Setter Property="MinWidth" Value="120" />
         <Setter Property="MinHeight" Value="26" />
-        <Setter Property="Background" Value="{StaticResource BaseHighestBrush}" />
-        <Setter Property="BorderBrush" Value="{StaticResource BaseLowerBrush}" />
+        <Setter Property="Background" Value="{StaticResource StandardControlBackgroundBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource StandardControlBorderBrush}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="FontFamily" Value="{StaticResource StandardFontFamily}" />
         <Setter Property="FontSize" Value="{StaticResource StandardFontSize}" />

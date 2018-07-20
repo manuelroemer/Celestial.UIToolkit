@@ -15,8 +15,8 @@
         <c:MarginGroup Name="CloseVertical" Margin="0,0,0,5" />
         <c:MarginGroup Name="ControlGroup" Margin="10" />
     </c:MarginHelper.MarginGroups>
-    
-    <TabControl>
+
+    <TabControl Background="{StaticResource BaseHigherBrush}">
         <TabItem Header="Colors">
             <pages:Colors />
         </TabItem>

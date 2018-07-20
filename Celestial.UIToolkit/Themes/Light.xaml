@@ -3,11 +3,11 @@
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
     <Color x:Key="BaseHighestColor">#FFFFFF</Color>
-    <Color x:Key="BaseHigherColor"> #F9F9F9</Color>
+    <Color x:Key="BaseHigherColor"> #FAFAFA</Color>
     <Color x:Key="BaseHighColor">   #E2E2E2</Color>
-    <Color x:Key="BaseMediumColor"> #D0D0D0</Color>
+    <Color x:Key="BaseMediumColor"> #C3C3C3</Color>
     <Color x:Key="BaseLowColor">    #A5A5A5</Color>
-    <Color x:Key="BaseLowerColor">  #777777</Color>
+    <Color x:Key="BaseLowerColor">  #666666</Color>
     <Color x:Key="BaseLowestColor"> #000000</Color>
 
     <SolidColorBrush x:Key="BaseHighestBrush" Color="{StaticResource BaseHighestColor}" />
@@ -45,6 +45,11 @@
     <SolidColorBrush x:Key="Accent2MediumBrush" Color="{StaticResource Accent2MediumColor}" />
     <SolidColorBrush x:Key="Accent2LowBrush" Color="{StaticResource Accent2LowColor}" />
     <SolidColorBrush x:Key="Accent2LowerBrush" Color="{StaticResource Accent2LowerColor}" />
+
+    
+    
+    <SolidColorBrush x:Key="StandardControlBorderBrush" Color="{StaticResource BaseLowColor}" />
+    <SolidColorBrush x:Key="StandardControlBackgroundBrush" Color="{StaticResource BaseHighestColor}" />
 
 
 
