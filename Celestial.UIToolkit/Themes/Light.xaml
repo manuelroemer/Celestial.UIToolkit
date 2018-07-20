@@ -5,7 +5,7 @@
     <Color x:Key="BaseHighestColor">#FFFFFF</Color>
     <Color x:Key="BaseHigherColor"> #FAFAFA</Color>
     <Color x:Key="BaseHighColor">   #E2E2E2</Color>
-    <Color x:Key="BaseMediumColor"> #C3C3C3</Color>
+    <Color x:Key="BaseMediumColor"> #D0D0D0</Color>
     <Color x:Key="BaseLowColor">    #A5A5A5</Color>
     <Color x:Key="BaseLowerColor">  #666666</Color>
     <Color x:Key="BaseLowestColor"> #000000</Color>
