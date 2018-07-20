@@ -20,6 +20,28 @@
                 Hover over me to see a ToolTip!
             </TextBlock>
         </StackPanel>
+        
+        <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
+            <TextBlock Style="{StaticResource TitleTextBlock}"
+                       c:MarginHelper.MarginGroup="Title">ContextMenu</TextBlock>
+            <TextBlock Text="Right click me to see a ContextMenu!">
+                <TextBlock.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Item 1" />
+                        <MenuItem Header="Item 2" />
+                        <MenuItem Header="Item 3">
+                            <MenuItem Header="Item 3-1" />
+                            <MenuItem Header="Item 3-2" />
+                            <MenuItem Header="Item 3-3">
+                                <MenuItem Header="Item 3-3-1" />
+                                <MenuItem Header="Item 3-3-2" />
+                                <MenuItem Header="Item 3-3-3" />
+                            </MenuItem>
+                        </MenuItem>
+                    </ContextMenu>
+                </TextBlock.ContextMenu>
+            </TextBlock>
+        </StackPanel>
     </UniformGrid>
 
 </UserControl>

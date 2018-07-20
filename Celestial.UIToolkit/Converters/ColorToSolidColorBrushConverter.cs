@@ -5,7 +5,7 @@ namespace Celestial.UIToolkit.Converters
 {
 
     /// <summary>
-    /// A converter which converts <see cref="Color"/> objects to <see cref="SolidColorBrush"/> objects,
+    /// A converter which converts <see cref="Color"/> objects to <see cref="SolidColorBrush"/> objects
     /// and vice versa.
     /// </summary>
     public class ColorToSolidColorBrushConverter : ValueConverter<Color, SolidColorBrush>

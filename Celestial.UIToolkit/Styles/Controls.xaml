@@ -10,5 +10,6 @@
         <local:SharedResourceDictionary Source="RadioButton.xaml" />
         <local:SharedResourceDictionary Source="TextBox.xaml" />
         <local:SharedResourceDictionary Source="ToolTip.xaml" />
+        <local:SharedResourceDictionary Source="ContextMenu.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
