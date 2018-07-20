@@ -22,6 +22,7 @@
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Padding" Value="4,0,0,0" />
         <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Foreground" Value="{StaticResource StandardForegroundBrush}" />
         <Setter Property="Background" Value="{StaticResource BaseHighestBrush}" />
         <Setter Property="BorderBrush" Value="{StaticResource BaseLowerBrush}" />
         <Setter Property="Template">
@@ -34,34 +35,25 @@
                     </ControlTemplate.Resources>
                     <BulletDecorator SnapsToDevicePixels="False">
                         <BulletDecorator.Resources>
-
                             <local:BindingProxy x:Key="ActiveBackgroundColorProxy"
                                                 Data="{Binding Path=(theming:ActiveProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
                             <local:BindingProxy x:Key="ActiveBorderColorProxy"
                                                 Data="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
-                            <local:BindingProxy x:Key="ActiveForegroundBrushProxy"
-                                                Data="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-
+                            
                             <local:BindingProxy x:Key="MouseOverBackgroundColorProxy"
                                                 Data="{Binding Path=(theming:MouseOverProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
                             <local:BindingProxy x:Key="MouseOverBorderColorProxy"
                                                 Data="{Binding Path=(theming:MouseOverProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
-                            <local:BindingProxy x:Key="MouseOverForegroundBrushProxy"
-                                                Data="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-
+                            
                             <local:BindingProxy x:Key="PressedBackgroundColorProxy"
                                                 Data="{Binding Path=(theming:PressedProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
                             <local:BindingProxy x:Key="PressedBorderColorProxy"
                                                 Data="{Binding Path=(theming:PressedProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
-                            <local:BindingProxy x:Key="PressedForegroundBrushProxy"
-                                                Data="{Binding Path=(theming:PressedProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-
+                            
                             <local:BindingProxy x:Key="DisabledBackgroundColorProxy"
                                                 Data="{Binding Path=(theming:DisabledProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
                             <local:BindingProxy x:Key="DisabledBorderColorProxy"
                                                 Data="{Binding Path=(theming:DisabledProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
-                            <local:BindingProxy x:Key="DisabledForegroundBrushProxy"
-                                                Data="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                         </BulletDecorator.Resources>
                         <BulletDecorator.Bullet>
                             <Grid>
