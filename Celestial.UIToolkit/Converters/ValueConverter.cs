@@ -44,7 +44,7 @@ namespace Celestial.UIToolkit.Converters
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             this.EnforceType(value?.GetType(), typeof(TTarget));
-            this.EnforceType(typeof(TValue, targetType);
+            this.EnforceType(typeof(TValue, targetType));
             return this.ConvertBack((TTarget)value, parameter, culture);
         }
 
