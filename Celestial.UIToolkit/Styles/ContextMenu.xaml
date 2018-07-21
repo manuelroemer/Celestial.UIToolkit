@@ -4,7 +4,7 @@
 
     <!-- TODO: Improve this. Bare-bone right now, but relies on Menu to be finished. -->
     
-    <Style TargetType="ContextMenu">
+    <Style x:Key="StandardContextMenu" TargetType="ContextMenu">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Grid.IsSharedSizeScope" Value="True" />
@@ -36,5 +36,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
+    <Style TargetType="ContextMenu" BasedOn="{StaticResource StandardContextMenu}" />
+
 </ResourceDictionary>

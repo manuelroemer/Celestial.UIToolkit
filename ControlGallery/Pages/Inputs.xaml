@@ -11,7 +11,7 @@
     <UniformGrid HorizontalAlignment="Center"
                  VerticalAlignment="Center"
                  c:MarginHelper.ChildrenGroup="ControlGroup"
-                 Columns="3">
+                 Columns="2">
 
         <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
             <TextBlock Style="{StaticResource TitleTextBlock}"
@@ -27,6 +27,16 @@
             <TextBox Style="{StaticResource SubtleTextBox}">TextBox</TextBox>
             <TextBox Style="{StaticResource SubtleTextBox}" IsReadOnly="True">ReadOnly</TextBox>
             <TextBox Style="{StaticResource SubtleTextBox}" IsEnabled="False">Disabled</TextBox>
+        </StackPanel>
+
+        <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
+            <TextBlock Style="{StaticResource TitleTextBlock}"
+                       c:MarginHelper.MarginGroup="Title">ComboBox</TextBlock>
+            <ComboBox>
+                <ComboBoxItem>Item 1</ComboBoxItem>
+            </ComboBox>
+            <ComboBox IsReadOnly="True">ReadOnly</ComboBox>
+            <ComboBox IsEnabled="False">Disabled</ComboBox>
         </StackPanel>
 
         <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
