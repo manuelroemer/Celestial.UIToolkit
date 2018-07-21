@@ -2,7 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:Celestial.UIToolkit"
                     xmlns:converters="clr-namespace:Celestial.UIToolkit.Converters"
-                    xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming">
+                    xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
     <ResourceDictionary.MergedDictionaries>
         <local:SharedResourceDictionary Source="Theming.xaml" />
@@ -27,13 +28,13 @@
                             <Grid Background="Transparent">
                                 <Grid.Resources>
                                     <local:BindingProxy x:Key="ActiveBorderColorProxy"
-                                                Data="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                        Data="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
                                     <local:BindingProxy x:Key="MouseOverBorderColorProxy"
-                                                Data="{Binding Path=(theming:MouseOverProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                        Data="{Binding Path=(theming:MouseOverProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
                                     <local:BindingProxy x:Key="PressedBorderColorProxy"
-                                                Data="{Binding Path=(theming:PressedProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                        Data="{Binding Path=(theming:PressedProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
                                     <local:BindingProxy x:Key="DisabledBorderColorProxy"
-                                                Data="{Binding Path=(theming:DisabledProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                        Data="{Binding Path=(theming:DisabledProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
                                 </Grid.Resources>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition />
@@ -55,7 +56,7 @@
                                         <VisualState x:Name="MouseOver">
                                             <Storyboard>
                                                 <ColorAnimationUsingKeyFrames Storyboard.TargetName="Arrow"
-                                                                      Storyboard.TargetProperty="Stroke.Color">
+                                                                              Storyboard.TargetProperty="Stroke.Color">
                                                     <DiscreteColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource MouseOverBorderColorProxy}}" />
                                                 </ColorAnimationUsingKeyFrames>
                                             </Storyboard>
@@ -63,7 +64,7 @@
                                         <VisualState x:Name="Pressed">
                                             <Storyboard>
                                                 <ColorAnimationUsingKeyFrames Storyboard.TargetName="Arrow"
-                                                                      Storyboard.TargetProperty="Stroke.Color">
+                                                                              Storyboard.TargetProperty="Stroke.Color">
                                                     <DiscreteColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource PressedBorderColorProxy}}" />
                                                 </ColorAnimationUsingKeyFrames>
                                             </Storyboard>
@@ -71,7 +72,7 @@
                                         <VisualState x:Name="Disabled">
                                             <Storyboard>
                                                 <ColorAnimationUsingKeyFrames Storyboard.TargetName="Arrow"
-                                                                      Storyboard.TargetProperty="Stroke.Color">
+                                                                              Storyboard.TargetProperty="Stroke.Color">
                                                     <DiscreteColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource DisabledBorderColorProxy}}" />
                                                 </ColorAnimationUsingKeyFrames>
                                             </Storyboard>
@@ -91,8 +92,8 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="TextBox">
                             <Border x:Name="PART_ContentHost"
-                            Focusable="False"
-                            Padding="{TemplateBinding Padding}" />
+                                    Focusable="False"
+                                    Padding="{TemplateBinding Padding}" />
                         </ControlTemplate>
                     </Setter.Value>
                 </Setter>
@@ -177,11 +178,11 @@
                                      Style="{StaticResource ComboBoxTextBox}"
                                      HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                     Margin="0,0,26,0"
-                                     Padding="{TemplateBinding Padding}"
+                                     Margin="{TemplateBinding Padding}"
+                                     Padding="0,0,26,0"
                                      Visibility="Collapsed" />
                         </Grid>
-                        <Popup x:Name="Popup"
+                        <Popup x:Name="PART_Popup"
                                Placement="Bottom"
                                IsOpen="{TemplateBinding IsDropDownOpen}"
                                AllowsTransparency="True"
@@ -312,5 +313,112 @@
     <Style x:Key="MinimalComboBox" TargetType="ComboBox" BasedOn="{StaticResource SubtleComboBox}">
         <Setter Property="BorderThickness" Value="0" />
     </Style>
-    
+
+
+
+    <Style x:Key="StandardComboBoxItem" TargetType="ComboBoxItem" BasedOn="{StaticResource ForegroundSupportingThemingBase}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Background" Value="{StaticResource StandardControlBackgroundBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource StandardControlBorderBrush}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Padding" Value="15,6" />
+        <Setter Property="theming:MouseOverProperties.BackgroundColor" Value="{StaticResource BaseHighColor}" />
+        <Setter Property="theming:MouseOverProperties.BorderColor" Value="Transparent" />
+        <Setter Property="theming:ActiveProperties.BackgroundColor" Value="{StaticResource Accent2MediumColor}" />
+        <Setter Property="theming:ActiveProperties.BorderColor" Value="{StaticResource Accent2MediumColor}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ComboBoxItem">
+                    <ControlTemplate.Resources>
+                        <DataTemplate DataType="{x:Type sys:String}">
+                            <TextBlock Style="{DynamicResource TextBlockOverrideStyle}" />
+                        </DataTemplate>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Grid.Resources>
+                            <local:BindingProxy x:Key="ActiveBackgroundColorProxy"
+                                                Data="{Binding Path=(theming:ActiveProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                            <local:BindingProxy x:Key="ActiveBorderColorProxy"
+                                                Data="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                            
+                            <local:BindingProxy x:Key="MouseOverBackgroundColorProxy"
+                                                Data="{Binding Path=(theming:MouseOverProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                            <local:BindingProxy x:Key="MouseOverBorderColorProxy"
+                                                Data="{Binding Path=(theming:MouseOverProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                            
+                            <local:BindingProxy x:Key="DisabledBackgroundColorProxy"
+                                                Data="{Binding Path=(theming:DisabledProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                            <local:BindingProxy x:Key="DisabledBorderColorProxy"
+                                                Data="{Binding Path=(theming:DisabledProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Grid.Resources>
+                        <Border x:Name="Bd"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                            <Grid>
+                                <Border x:Name="SelectedMark"
+                                        Background="{Binding Path=(theming:ActiveProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}"
+                                        BorderBrush="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}"
+                                        BorderThickness="1"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Stretch"
+                                        Width="5" 
+                                        Visibility="Collapsed" />
+                                <ContentPresenter Margin="{TemplateBinding Padding}"
+                                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                            </Grid>
+                        </Border>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                                      Storyboard.TargetProperty="Background.Color">
+                                            <DiscreteColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource MouseOverBackgroundColorProxy}}" />
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                                      Storyboard.TargetProperty="Background.Color">
+                                            <DiscreteColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource DisabledBackgroundColorProxy}}" />
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="SelectionStates">
+                                <VisualState x:Name="Unselected" />
+                                <VisualState x:Name="Selected">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SelectedMark"
+                                                                       Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+            </Trigger>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Foreground" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style TargetType="ComboBoxItem" BasedOn="{StaticResource StandardComboBoxItem}" />
+
 </ResourceDictionary>

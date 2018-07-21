@@ -33,12 +33,12 @@
             <TextBlock Style="{StaticResource TitleTextBlock}"
                        c:MarginHelper.MarginGroup="Title">ComboBox</TextBlock>
             <ComboBox>
-                <ComboBoxItem>Item 1</ComboBoxItem>
+                <ComboBoxItem IsEnabled="False">Item 1</ComboBoxItem>
                 <ComboBoxItem>Item 2</ComboBoxItem>
                 <ComboBoxItem>Item 3</ComboBoxItem>
             </ComboBox>
             <ComboBox IsEditable="True">
-                <ComboBoxItem>Item 1</ComboBoxItem>
+                <ComboBoxItem IsEnabled="False">Item 1</ComboBoxItem>
                 <ComboBoxItem>Item 2</ComboBoxItem>
                 <ComboBoxItem>Item 3</ComboBoxItem>
             </ComboBox>
@@ -50,12 +50,12 @@
             <TextBlock Style="{StaticResource TitleTextBlock}"
                        c:MarginHelper.MarginGroup="Title">ComboBox</TextBlock>
             <ComboBox Style="{StaticResource SubtleComboBox}">
-                <ComboBoxItem>Item 1</ComboBoxItem>
+                <ComboBoxItem IsEnabled="False">Item 1</ComboBoxItem>
                 <ComboBoxItem>Item 2</ComboBoxItem>
                 <ComboBoxItem>Item 3</ComboBoxItem>
             </ComboBox>
             <ComboBox Style="{StaticResource SubtleComboBox}" IsEditable="True">
-                <ComboBoxItem>Item 1</ComboBoxItem>
+                <ComboBoxItem IsEnabled="False">Item 1</ComboBoxItem>
                 <ComboBoxItem>Item 2</ComboBoxItem>
                 <ComboBoxItem>Item 3</ComboBoxItem>
             </ComboBox>
@@ -67,12 +67,12 @@
             <TextBlock Style="{StaticResource TitleTextBlock}"
                        c:MarginHelper.MarginGroup="Title">ComboBox</TextBlock>
             <ComboBox Style="{StaticResource MinimalComboBox}">
-                <ComboBoxItem>Item 1</ComboBoxItem>
+                <ComboBoxItem IsEnabled="False">Item 1</ComboBoxItem>
                 <ComboBoxItem>Item 2</ComboBoxItem>
                 <ComboBoxItem>Item 3</ComboBoxItem>
             </ComboBox>
             <ComboBox Style="{StaticResource MinimalComboBox}" IsEditable="True">
-                <ComboBoxItem>Item 1</ComboBoxItem>
+                <ComboBoxItem IsEnabled="False">Item 1</ComboBoxItem>
                 <ComboBoxItem>Item 2</ComboBoxItem>
                 <ComboBoxItem>Item 3</ComboBoxItem>
             </ComboBox>
