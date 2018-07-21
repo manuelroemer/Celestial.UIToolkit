@@ -154,6 +154,10 @@
                                 Visibility="Collapsed" />
                         <ToggleButton x:Name="ToggleButton"
                                       Style="{StaticResource ComboBoxToggleButton}"
+                                      theming:MouseOverProperties.BorderColor="{TemplateBinding theming:MouseOverProperties.BorderColor}"
+                                      theming:PressedProperties.BorderColor="{TemplateBinding theming:PressedProperties.BorderColor}"
+                                      theming:ActiveProperties.BorderColor="{TemplateBinding theming:ActiveProperties.BorderColor}"
+                                      theming:DisabledProperties.BorderColor="{TemplateBinding theming:DisabledProperties.BorderColor}"
                                       HorizontalAlignment="Stretch"
                                       Focusable="False"
                                       ClickMode="Press"
@@ -270,7 +274,42 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+            </Trigger>
+            <Trigger Property="IsFocused" Value="True">
+                <Setter Property="Foreground" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+            </Trigger>
+        </Style.Triggers>
     </Style>
     <Style TargetType="ComboBox" BasedOn="{StaticResource StandardComboBox}" />
 
+
+
+    <!--
+    Subtle ComboBox.
+    A ComboBox which is more subtle than the default ComboBox.
+    This effect is achieved by only showing the Border at the ComboBox's bottom.
+    -->
+    <Style x:Key="SubtleComboBox" TargetType="ComboBox" BasedOn="{StaticResource StandardComboBox}">
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
+        <Setter Property="BorderThickness" Value="0,0,0,1" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="theming:MouseOverProperties.BackgroundColor" Value="Transparent" />
+        <Setter Property="theming:ActiveProperties.BackgroundColor" Value="Transparent" />
+        <Setter Property="theming:DisabledProperties.BackgroundColor" Value="Transparent" />
+    </Style>
+
+    <!--
+    Minimal ComboBox.
+    Basically the same as the SubtleComboBox, but with the difference, that it shows no border at all.
+    -->
+    <Style x:Key="MinimalComboBox" TargetType="ComboBox" BasedOn="{StaticResource SubtleComboBox}">
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+    
 </ResourceDictionary>

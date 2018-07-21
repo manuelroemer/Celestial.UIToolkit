@@ -48,6 +48,40 @@
 
         <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
             <TextBlock Style="{StaticResource TitleTextBlock}"
+                       c:MarginHelper.MarginGroup="Title">ComboBox</TextBlock>
+            <ComboBox Style="{StaticResource SubtleComboBox}">
+                <ComboBoxItem>Item 1</ComboBoxItem>
+                <ComboBoxItem>Item 2</ComboBoxItem>
+                <ComboBoxItem>Item 3</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Style="{StaticResource SubtleComboBox}" IsEditable="True">
+                <ComboBoxItem>Item 1</ComboBoxItem>
+                <ComboBoxItem>Item 2</ComboBoxItem>
+                <ComboBoxItem>Item 3</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Style="{StaticResource SubtleComboBox}" IsReadOnly="True">ReadOnly</ComboBox>
+            <ComboBox Style="{StaticResource SubtleComboBox}" IsEnabled="False">Disabled</ComboBox>
+        </StackPanel>
+
+        <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
+            <TextBlock Style="{StaticResource TitleTextBlock}"
+                       c:MarginHelper.MarginGroup="Title">ComboBox</TextBlock>
+            <ComboBox Style="{StaticResource MinimalComboBox}">
+                <ComboBoxItem>Item 1</ComboBoxItem>
+                <ComboBoxItem>Item 2</ComboBoxItem>
+                <ComboBoxItem>Item 3</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Style="{StaticResource MinimalComboBox}" IsEditable="True">
+                <ComboBoxItem>Item 1</ComboBoxItem>
+                <ComboBoxItem>Item 2</ComboBoxItem>
+                <ComboBoxItem>Item 3</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Style="{StaticResource MinimalComboBox}" IsReadOnly="True">ReadOnly</ComboBox>
+            <ComboBox Style="{StaticResource MinimalComboBox}" IsEnabled="False">Disabled</ComboBox>
+        </StackPanel>
+
+        <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
+            <TextBlock Style="{StaticResource TitleTextBlock}"
                        c:MarginHelper.MarginGroup="Title">PasswordBox</TextBlock>
             <PasswordBox Password="ABC" />
             <PasswordBox IsEnabled="False" Password="ABC" />
