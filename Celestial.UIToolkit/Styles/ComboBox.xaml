@@ -7,6 +7,7 @@
 
     <ResourceDictionary.MergedDictionaries>
         <local:SharedResourceDictionary Source="Theming.xaml" />
+        <local:SharedResourceDictionary Source="Popup.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="StandardComboBox" TargetType="ComboBox" BasedOn="{StaticResource DefaultThemingBase}">
@@ -192,12 +193,15 @@
                                AllowsTransparency="True"
                                Focusable="False"
                                PopupAnimation="Slide">
+                            <Popup.Effect>
+                                <DropShadowEffect />
+                            </Popup.Effect>
                             <Grid x:Name="DropDown"
                                   SnapsToDevicePixels="True"
                                   MinWidth="{TemplateBinding ActualWidth}"
                                   MinHeight="{TemplateBinding ActualHeight}">
                                 <Border x:Name="DropDownBorder"
-                                        BorderThickness="1" Background="White">
+                                        Style="{StaticResource StandardDropDownBorderDown}">
                                     <ScrollViewer SnapsToDevicePixels="True">
                                         <StackPanel IsItemsHost="True"
                                                     KeyboardNavigation.DirectionalNavigation="Contained" />
