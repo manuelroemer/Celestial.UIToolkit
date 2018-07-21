@@ -42,11 +42,16 @@
                                     <ColumnDefinition Width="26" />
                                 </Grid.ColumnDefinitions>
                                 <Path x:Name="Arrow"
-                              Grid.Column="1"
-                              HorizontalAlignment="Center"
-                              VerticalAlignment="Center"
-                              Stroke="{TemplateBinding BorderBrush}"
-                              Data="M 0,0 L 5,5 L 10,0" />
+                                      Grid.Column="1"
+                                      HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"
+                                      Stroke="{TemplateBinding BorderBrush}"
+                                      Data="M 0,0 L 5,5 L 10,0">
+                                    <Path.LayoutTransform>
+                                        <RotateTransform x:Name="ArrowRotateTransform" 
+                                                         Angle="0" CenterX="0.5" CenterY="0.5" />
+                                    </Path.LayoutTransform>
+                                </Path>
                                 <VisualStateManager.VisualStateGroups>
                                     <VisualStateGroup x:Name="CommonStates">
                                         <VisualStateGroup.Transitions>
@@ -79,8 +84,31 @@
                                             </Storyboard>
                                         </VisualState>
                                     </VisualStateGroup>
+                                    <VisualStateGroup x:Name="CheckStates">
+                                        <VisualState x:Name="Unchecked">
+                                            <Storyboard>
+                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ArrowRotateTransform"
+                                                                               Storyboard.TargetProperty="Angle">
+                                                    <LinearDoubleKeyFrame KeyTime="{StaticResource ControlPartialRotationKeyTime}" Value="0" />
+                                                </DoubleAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Checked">
+                                            <Storyboard>
+                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ArrowRotateTransform"
+                                                                               Storyboard.TargetProperty="Angle">
+                                                    <LinearDoubleKeyFrame KeyTime="{StaticResource ControlPartialRotationKeyTime}" Value="180" />
+                                                </DoubleAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>
                                 </VisualStateManager.VisualStateGroups>
                             </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter Property="BorderBrush" Value="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
                         </ControlTemplate>
                     </Setter.Value>
                 </Setter>

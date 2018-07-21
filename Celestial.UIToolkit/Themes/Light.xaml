@@ -54,6 +54,7 @@
 
 
     <Duration x:Key="ColorAnimationDuration">0:0:0.1</Duration>
+    <KeyTime x:Key="ControlPartialRotationKeyTime">0:0:0.15</KeyTime>
 
 
 
