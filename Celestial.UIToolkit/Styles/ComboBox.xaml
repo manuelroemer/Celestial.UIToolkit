@@ -298,6 +298,7 @@
     <Style x:Key="SubtleComboBox" TargetType="ComboBox" BasedOn="{StaticResource StandardComboBox}">
         <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
         <Setter Property="BorderThickness" Value="0,0,0,1" />
+        <Setter Property="Padding" Value="-2,0" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="theming:MouseOverProperties.BackgroundColor" Value="Transparent" />
         <Setter Property="theming:ActiveProperties.BackgroundColor" Value="Transparent" />
