@@ -33,7 +33,7 @@
     <Style x:Key="StandardComboBox" TargetType="ComboBox" BasedOn="{StaticResource DefaultThemingBase}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="IsEditable" Value="True" />
+        <Setter Property="IsEditable" Value="False" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
@@ -96,15 +96,15 @@
                                               IsHitTestVisible="False"
                                               SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                             <ToggleButton x:Name="ToggleButton"
+                                          Style="{StaticResource ComboBoxToggleButton}"
+                                          HorizontalAlignment="Right"
                                           Focusable="False"
                                           ClickMode="Press"
-                                          HorizontalAlignment="Right"
-                                          Style="{StaticResource ComboBoxToggleButton}"
                                           IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
                             <TextBox x:Name="PART_EditableTextBox"
+                                     Style="{StaticResource ComboBoxTextBox}"
                                      HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                     Style="{StaticResource ComboBoxTextBox}"
                                      Margin="0,0,26,0"
                                      Padding="{TemplateBinding Padding}"
                                      Visibility="Collapsed" />

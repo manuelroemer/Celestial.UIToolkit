@@ -3,68 +3,123 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:c="clr-namespace:Celestial.UIToolkit;assembly=Celestial.UIToolkit">
 
-    <UniformGrid HorizontalAlignment="Center"
-                 VerticalAlignment="Center"
-                 c:MarginHelper.ChildrenGroup="ControlGroup"
-                 Columns="3">
-        
-        <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
-            <TextBlock Style="{StaticResource TitleTextBlock}"
-                       c:MarginHelper.MarginGroup="Title">Standard Button</TextBlock>
-            <Button>Standard</Button>
-            <Button Style="{StaticResource Accent1Button}">Accent1</Button>
-            <Button Style="{StaticResource Accent2Button}">Accent2</Button>
-            <Button IsEnabled="False">Disabled</Button>
-        </StackPanel>
+    <ScrollViewer>
+        <UniformGrid HorizontalAlignment="Center"
+                     VerticalAlignment="Center"
+                     c:MarginHelper.ChildrenGroup="ControlGroup"
+                     Columns="3">
 
-        <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
-            <TextBlock Style="{StaticResource TitleTextBlock}"
-                       c:MarginHelper.MarginGroup="Title">Ghost Button</TextBlock>
-            <Button Style="{StaticResource GhostButton}">Standard</Button>
-            <Button Style="{StaticResource Accent1GhostButton}">Accent1</Button>
-            <Button Style="{StaticResource Accent2GhostButton}">Accent2</Button>
-            <Button Style="{StaticResource GhostButton}" IsEnabled="False">Disabled</Button>
-        </StackPanel>
-        
-        <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
-            <TextBlock Style="{StaticResource TitleTextBlock}"
-                       c:MarginHelper.MarginGroup="Title">Minimal Button</TextBlock>
-            <Button Style="{StaticResource MinimalButton}">Standard</Button>
-            <Button Style="{StaticResource Accent1MinimalButton}">Accent1</Button>
-            <Button Style="{StaticResource Accent2MinimalButton}">Accent2</Button>
-            <Button Style="{StaticResource MinimalButton}" IsEnabled="False">Disabled</Button>
-        </StackPanel>
-        
-        <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
-            <TextBlock Style="{StaticResource TitleTextBlock}"
-                       c:MarginHelper.MarginGroup="Title">Hyperlink Button</TextBlock>
-            <Button Style="{StaticResource HyperlinkButton}">Hyperlink</Button>
-            <Button Style="{StaticResource HyperlinkButton}" IsEnabled="False">Hyperlink</Button>
-        </StackPanel>
-        
-        <StackPanel>
-            <TextBlock Style="{StaticResource TitleTextBlock}"
-                       c:MarginHelper.MarginGroup="Title">Square Button</TextBlock>
-            <StackPanel Orientation="Horizontal"
-                        c:MarginHelper.ChildrenGroup="CloseHorizontal">
-                <Button Style="{StaticResource SquareButton}">S</Button>
-                <Button Style="{StaticResource Accent1SquareButton}">1</Button>
-                <Button Style="{StaticResource Accent2SquareButton}">2</Button>
-                <Button Style="{StaticResource SquareButton}" IsEnabled="False">D</Button>
+            <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
+                <TextBlock Style="{StaticResource TitleTextBlock}"
+                           c:MarginHelper.MarginGroup="Title">Standard Button</TextBlock>
+                <Button>Standard</Button>
+                <Button Style="{StaticResource Accent1Button}">Accent1</Button>
+                <Button Style="{StaticResource Accent2Button}">Accent2</Button>
+                <Button IsEnabled="False">Disabled</Button>
             </StackPanel>
-        </StackPanel>
-        
-        <StackPanel>
-            <TextBlock Style="{StaticResource TitleTextBlock}"
-                       c:MarginHelper.MarginGroup="Title">Circle Button</TextBlock>
-            <StackPanel Orientation="Horizontal"
-                        c:MarginHelper.ChildrenGroup="CloseHorizontal">
-                <Button Style="{StaticResource CircleButton}">C</Button>
-                <Button Style="{StaticResource Accent1CircleButton}">1</Button>
-                <Button Style="{StaticResource Accent2CircleButton}">2</Button>
-                <Button Style="{StaticResource CircleButton}" IsEnabled="False">D</Button>
+
+            <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
+                <TextBlock Style="{StaticResource TitleTextBlock}"
+                           c:MarginHelper.MarginGroup="Title">Ghost Button</TextBlock>
+                <Button Style="{StaticResource GhostButton}">Standard</Button>
+                <Button Style="{StaticResource Accent1GhostButton}">Accent1</Button>
+                <Button Style="{StaticResource Accent2GhostButton}">Accent2</Button>
+                <Button Style="{StaticResource GhostButton}" IsEnabled="False">Disabled</Button>
             </StackPanel>
-        </StackPanel>
-    </UniformGrid>
-    
+
+            <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
+                <TextBlock Style="{StaticResource TitleTextBlock}"
+                           c:MarginHelper.MarginGroup="Title">Minimal Button</TextBlock>
+                <Button Style="{StaticResource MinimalButton}">Standard</Button>
+                <Button Style="{StaticResource Accent1MinimalButton}">Accent1</Button>
+                <Button Style="{StaticResource Accent2MinimalButton}">Accent2</Button>
+                <Button Style="{StaticResource MinimalButton}" IsEnabled="False">Disabled</Button>
+            </StackPanel>
+
+            <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
+                <TextBlock Style="{StaticResource TitleTextBlock}"
+                           c:MarginHelper.MarginGroup="Title">Hyperlink Button</TextBlock>
+                <Button Style="{StaticResource HyperlinkButton}">Hyperlink</Button>
+                <Button Style="{StaticResource HyperlinkButton}" IsEnabled="False">Hyperlink</Button>
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock Style="{StaticResource TitleTextBlock}"
+                           c:MarginHelper.MarginGroup="Title">Square Button</TextBlock>
+                <StackPanel Orientation="Horizontal"
+                            c:MarginHelper.ChildrenGroup="CloseHorizontal">
+                    <Button Style="{StaticResource SquareButton}">S</Button>
+                    <Button Style="{StaticResource Accent1SquareButton}">1</Button>
+                    <Button Style="{StaticResource Accent2SquareButton}">2</Button>
+                    <Button Style="{StaticResource SquareButton}" IsEnabled="False">D</Button>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock Style="{StaticResource TitleTextBlock}"
+                           c:MarginHelper.MarginGroup="Title">Circle Button</TextBlock>
+                <StackPanel Orientation="Horizontal"
+                            c:MarginHelper.ChildrenGroup="CloseHorizontal">
+                    <Button Style="{StaticResource CircleButton}">C</Button>
+                    <Button Style="{StaticResource Accent1CircleButton}">1</Button>
+                    <Button Style="{StaticResource Accent2CircleButton}">2</Button>
+                    <Button Style="{StaticResource CircleButton}" IsEnabled="False">D</Button>
+                </StackPanel>
+            </StackPanel>
+
+
+
+            <!-- Toggle Buttons -->
+            <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
+                <TextBlock Style="{StaticResource TitleTextBlock}"
+                           c:MarginHelper.MarginGroup="Title">Standard Button</TextBlock>
+                <ToggleButton>Standard</ToggleButton>
+                <ToggleButton Style="{StaticResource Accent1Button}">Accent1</ToggleButton>
+                <ToggleButton Style="{StaticResource Accent2Button}">Accent2</ToggleButton>
+                <ToggleButton IsEnabled="False">Disabled</ToggleButton>
+            </StackPanel>
+
+            <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
+                <TextBlock Style="{StaticResource TitleTextBlock}"
+                           c:MarginHelper.MarginGroup="Title">Ghost Button</TextBlock>
+                <ToggleButton Style="{StaticResource GhostButton}">Standard</ToggleButton>
+                <ToggleButton Style="{StaticResource Accent1GhostButton}">Accent1</ToggleButton>
+                <ToggleButton Style="{StaticResource Accent2GhostButton}">Accent2</ToggleButton>
+                <ToggleButton Style="{StaticResource GhostButton}" IsEnabled="False">Disabled</ToggleButton>
+            </StackPanel>
+
+            <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
+                <TextBlock Style="{StaticResource TitleTextBlock}"
+                           c:MarginHelper.MarginGroup="Title">Minimal Button</TextBlock>
+                <ToggleButton Style="{StaticResource MinimalButton}">Standard</ToggleButton>
+                <ToggleButton Style="{StaticResource Accent1MinimalButton}">Accent1</ToggleButton>
+                <ToggleButton Style="{StaticResource Accent2MinimalButton}">Accent2</ToggleButton>
+                <ToggleButton Style="{StaticResource MinimalButton}" IsEnabled="False">Disabled</ToggleButton>
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock Style="{StaticResource TitleTextBlock}"
+                           c:MarginHelper.MarginGroup="Title">Square Button</TextBlock>
+                <StackPanel Orientation="Horizontal"
+                            c:MarginHelper.ChildrenGroup="CloseHorizontal">
+                    <ToggleButton Style="{StaticResource SquareButton}">S</ToggleButton>
+                    <ToggleButton Style="{StaticResource Accent1SquareButton}">1</ToggleButton>
+                    <ToggleButton Style="{StaticResource Accent2SquareButton}">2</ToggleButton>
+                    <ToggleButton Style="{StaticResource SquareButton}" IsEnabled="False">D</ToggleButton>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel>
+                <TextBlock Style="{StaticResource TitleTextBlock}"
+                           c:MarginHelper.MarginGroup="Title">Circle Button</TextBlock>
+                <StackPanel Orientation="Horizontal"
+                            c:MarginHelper.ChildrenGroup="CloseHorizontal">
+                    <ToggleButton Style="{StaticResource CircleButton}">C</ToggleButton>
+                    <ToggleButton Style="{StaticResource Accent1CircleButton}">1</ToggleButton>
+                    <ToggleButton Style="{StaticResource Accent2CircleButton}">2</ToggleButton>
+                    <ToggleButton Style="{StaticResource CircleButton}" IsEnabled="False">D</ToggleButton>
+                </StackPanel>
+            </StackPanel>
+        </UniformGrid>
+    </ScrollViewer>
 </UserControl>

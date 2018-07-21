@@ -2,7 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
                     xmlns:local="clr-namespace:Celestial.UIToolkit"
-                    xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming">
+                    xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
+                    xmlns:converters="clr-namespace:Celestial.UIToolkit.Converters">
 
     <ResourceDictionary.MergedDictionaries>
         <local:SharedResourceDictionary Source="Theming.xaml" />
@@ -25,6 +26,8 @@
         <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="Foreground" Value="{StaticResource StandardForegroundBrush}" />
         <Setter Property="Background" Value="{StaticResource BaseMediumBrush}" />
+        <Setter Property="theming:ActiveProperties.BackgroundColor" Value="{StaticResource BaseLowColor}" />
+        <Setter Property="theming:ActiveProperties.BorderColor" Value="Transparent" />
         <Setter Property="theming:MouseOverProperties.BackgroundColor" Value="{StaticResource BaseHighColor}" />
         <Setter Property="theming:MouseOverProperties.BorderColor" Value="Transparent" />
         <Setter Property="theming:PressedProperties.BackgroundColor" Value="{StaticResource BaseLowColor}" />
@@ -41,19 +44,16 @@
                         </DataTemplate>
                     </ControlTemplate.Resources>
 
-                    <Border x:Name="Bd"
-                            CornerRadius="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            Background="{TemplateBinding Background}"
-                            Padding="{TemplateBinding Padding}">
-                        <Border.Resources>
+                    <Grid>
+                        <Grid.Resources>
                             <!-- Important: We need to use/define these binding-proxys, because otherwise, 
                                  there would be absolutely no way to bind the animations to the attached properties. -->
                             <local:BindingProxy x:Key="MouseOverBackgroundColorProxy"
                                                 Data="{Binding Path=(theming:MouseOverProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
                             <local:BindingProxy x:Key="PressedBackgroundColorProxy"
                                                 Data="{Binding Path=(theming:PressedProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                            <local:BindingProxy x:Key="ActiveBackgroundColorProxy"
+                                                Data="{Binding Path=(theming:ActiveProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
                             <local:BindingProxy x:Key="DisabledBackgroundColorProxy"
                                                 Data="{Binding Path=(theming:DisabledProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
 
@@ -61,9 +61,24 @@
                                                 Data="{Binding Path=(theming:MouseOverProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
                             <local:BindingProxy x:Key="PressedBorderColorProxy"
                                                 Data="{Binding Path=(theming:PressedProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                            <local:BindingProxy x:Key="ActiveBorderColorProxy"
+                                                Data="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
                             <local:BindingProxy x:Key="DisabledBorderColorProxy"
                                                 Data="{Binding Path=(theming:DisabledProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
-                        </Border.Resources>
+                        </Grid.Resources>
+                        <Border x:Name="Bd"
+                                CornerRadius="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                Background="{TemplateBinding Background}"
+                                Padding="{TemplateBinding Padding}" />
+                        <Border x:Name="ActiveBorder"
+                                CornerRadius="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                BorderBrush="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}"
+                                Background="{Binding Path=(theming:ActiveProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}"
+                                Padding="{TemplateBinding Padding}"
+                                Visibility="Collapsed" />
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                           RecognizesAccessKey="True" />
@@ -111,8 +126,19 @@
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
+                            <VisualStateGroup x:Name="CheckStates">
+                                <VisualState x:Name="Unchecked" />
+                                <VisualState x:Name="Checked">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ActiveBorder"
+                                                                       Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
-                    </Border>
+                    </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -126,6 +152,9 @@
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="Foreground" Value="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
             </Trigger>
+            <DataTrigger Binding="{Binding IsChecked, RelativeSource={RelativeSource Self}, FallbackValue=False}" Value="True">
+                <Setter Property="Foreground" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush),RelativeSource={RelativeSource Self}}" />
+            </DataTrigger>
         </Style.Triggers>
     </Style>
     <Style TargetType="Button" BasedOn="{StaticResource StandardButtonBase}" />
@@ -134,6 +163,7 @@
     <Style x:Key="Accent1Button" TargetType="ButtonBase" BasedOn="{StaticResource StandardButtonBase}">
         <Setter Property="Foreground" Value="{StaticResource AccentForegroundBrush}" />
         <Setter Property="Background" Value="{StaticResource Accent1MediumBrush}" />
+        <Setter Property="theming:ActiveProperties.BackgroundColor" Value="{StaticResource Accent1LowColor}" />
         <Setter Property="theming:MouseOverProperties.BackgroundColor" Value="{StaticResource Accent1HighColor}" />
         <Setter Property="theming:PressedProperties.BackgroundColor" Value="{StaticResource Accent1LowColor}" />
     </Style>
@@ -141,6 +171,7 @@
     <Style x:Key="Accent2Button" TargetType="ButtonBase" BasedOn="{StaticResource StandardButtonBase}">
         <Setter Property="Foreground" Value="{StaticResource AccentForegroundBrush}" />
         <Setter Property="Background" Value="{StaticResource Accent2MediumBrush}" />
+        <Setter Property="theming:ActiveProperties.BackgroundColor" Value="{StaticResource Accent2LowColor}" />
         <Setter Property="theming:MouseOverProperties.BackgroundColor" Value="{StaticResource Accent2HighColor}" />
         <Setter Property="theming:PressedProperties.BackgroundColor" Value="{StaticResource Accent2LowColor}" />
     </Style>
@@ -156,11 +187,13 @@
         <Setter Property="BorderBrush" Value="{StaticResource BaseMediumBrush}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Background" Value="Transparent" />
+        <Setter Property="theming:ActiveProperties.BackgroundColor" Value="Transparent" />
+        <Setter Property="theming:ActiveProperties.BorderColor" Value="{StaticResource BaseLowColor}" />
         <Setter Property="theming:MouseOverProperties.BackgroundColor" Value="Transparent" />
-        <Setter Property="theming:PressedProperties.BackgroundColor" Value="Transparent" />
-        <Setter Property="theming:DisabledProperties.BackgroundColor" Value="Transparent" />
         <Setter Property="theming:MouseOverProperties.BorderColor" Value="{StaticResource BaseHighColor}" />
+        <Setter Property="theming:PressedProperties.BackgroundColor" Value="Transparent" />
         <Setter Property="theming:PressedProperties.BorderColor" Value="{StaticResource BaseLowColor}" />
+        <Setter Property="theming:DisabledProperties.BackgroundColor" Value="Transparent" />
         <Setter Property="theming:DisabledProperties.BorderColor" Value="{StaticResource BaseHighColor}" />
         <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
     </Style>
@@ -168,12 +201,14 @@
 
     <Style x:Key="Accent1GhostButton" TargetType="ButtonBase" BasedOn="{StaticResource GhostButton}">
         <Setter Property="BorderBrush" Value="{StaticResource Accent1MediumBrush}" />
+        <Setter Property="theming:ActiveProperties.BorderColor" Value="{StaticResource Accent1LowColor}" />
         <Setter Property="theming:MouseOverProperties.BorderColor" Value="{StaticResource Accent1HighColor}" />
         <Setter Property="theming:PressedProperties.BorderColor" Value="{StaticResource Accent1LowColor}" />
     </Style>
 
     <Style x:Key="Accent2GhostButton" TargetType="ButtonBase" BasedOn="{StaticResource GhostButton}">
         <Setter Property="BorderBrush" Value="{StaticResource Accent2MediumBrush}" />
+        <Setter Property="theming:ActiveProperties.BorderColor" Value="{StaticResource Accent2LowColor}" />
         <Setter Property="theming:MouseOverProperties.BorderColor" Value="{StaticResource Accent2HighColor}" />
         <Setter Property="theming:PressedProperties.BorderColor" Value="{StaticResource Accent2LowColor}" />
     </Style>
@@ -198,16 +233,20 @@
     <Style x:Key="MinimalButton" TargetType="ButtonBase" BasedOn="{StaticResource MinimalButtonBase}" />
 
     <Style x:Key="Accent1MinimalButton" TargetType="ButtonBase" BasedOn="{StaticResource MinimalButton}">
+        <Setter Property="theming:ActiveProperties.BackgroundColor" Value="{StaticResource Accent1LowColor}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource AccentForegroundBrush}" />
         <Setter Property="theming:MouseOverProperties.BackgroundColor" Value="{StaticResource Accent1HighColor}" />
-        <Setter Property="theming:PressedProperties.BackgroundColor" Value="{StaticResource Accent1LowColor}" />
         <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource AccentForegroundBrush}" />
+        <Setter Property="theming:PressedProperties.BackgroundColor" Value="{StaticResource Accent1LowColor}" />
         <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource AccentForegroundBrush}" />
     </Style>
 
     <Style x:Key="Accent2MinimalButton" TargetType="ButtonBase" BasedOn="{StaticResource MinimalButton}">
+        <Setter Property="theming:ActiveProperties.BackgroundColor" Value="{StaticResource Accent2LowColor}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource AccentForegroundBrush}" />
         <Setter Property="theming:MouseOverProperties.BackgroundColor" Value="{StaticResource Accent2HighColor}" />
-        <Setter Property="theming:PressedProperties.BackgroundColor" Value="{StaticResource Accent2LowColor}" />
         <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource AccentForegroundBrush}" />
+        <Setter Property="theming:PressedProperties.BackgroundColor" Value="{StaticResource Accent2LowColor}" />
         <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource AccentForegroundBrush}" />
     </Style>
 
@@ -238,6 +277,7 @@
     <Style x:Key="Accent1SquareButton" TargetType="ButtonBase" BasedOn="{StaticResource SquareButton}">
         <Setter Property="Foreground" Value="{StaticResource AccentForegroundBrush}" />
         <Setter Property="Background" Value="{StaticResource Accent1MediumBrush}" />
+        <Setter Property="theming:ActiveProperties.BackgroundColor" Value="{StaticResource Accent1LowColor}" />
         <Setter Property="theming:MouseOverProperties.BackgroundColor" Value="{StaticResource Accent1HighColor}" />
         <Setter Property="theming:PressedProperties.BackgroundColor" Value="{StaticResource Accent1LowColor}" />
     </Style>
@@ -245,6 +285,7 @@
     <Style x:Key="Accent2SquareButton" TargetType="ButtonBase" BasedOn="{StaticResource SquareButton}">
         <Setter Property="Foreground" Value="{StaticResource AccentForegroundBrush}" />
         <Setter Property="Background" Value="{StaticResource Accent2MediumBrush}" />
+        <Setter Property="theming:ActiveProperties.BackgroundColor" Value="{StaticResource Accent2LowColor}" />
         <Setter Property="theming:MouseOverProperties.BackgroundColor" Value="{StaticResource Accent2HighColor}" />
         <Setter Property="theming:PressedProperties.BackgroundColor" Value="{StaticResource Accent2LowColor}" />
     </Style>
@@ -259,7 +300,7 @@
     <Style x:Key="CircleButtonBase" TargetType="ButtonBase" BasedOn="{StaticResource SquareButtonBase}">
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" />
     </Style>
-    <Style x:Key="CircleButton" TargetType="Button" BasedOn="{StaticResource CircleButtonBase}" />
+    <Style x:Key="CircleButton" TargetType="ButtonBase" BasedOn="{StaticResource CircleButtonBase}" />
 
     <Style x:Key="Accent1CircleButton" TargetType="ButtonBase" BasedOn="{StaticResource Accent1SquareButton}">
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" />
@@ -276,7 +317,7 @@
     This is exactly what it sounds like.
     -->
 
-    <Style x:Key="HyperlinkButton" TargetType="ButtonBase">
+    <Style x:Key="HyperlinkButton" TargetType="Button">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource StandardButtonFocusVisual}" />
         <Setter Property="Foreground" Value="{StaticResource Accent2MediumBrush}" />
