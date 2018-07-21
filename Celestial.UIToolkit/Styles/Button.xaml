@@ -258,7 +258,7 @@
     It is supposed to be used in conjunction with symbols. 
     -->
 
-    <Style x:Key="SquareButtonBase" TargetType="ButtonBase" BasedOn="{StaticResource StandardButtonBase}">
+    <Style x:Key="SquareButton" TargetType="ButtonBase" BasedOn="{StaticResource StandardButtonBase}">
         <Setter Property="MinWidth" Value="30" />
         <Setter Property="MinHeight" Value="30" />
         <Setter Property="Width" Value="30" />
@@ -272,7 +272,6 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    <Style x:Key="SquareButton" TargetType="ButtonBase" BasedOn="{StaticResource SquareButtonBase}" />
 
     <Style x:Key="Accent1SquareButton" TargetType="ButtonBase" BasedOn="{StaticResource SquareButton}">
         <Setter Property="Foreground" Value="{StaticResource AccentForegroundBrush}" />
@@ -297,7 +296,7 @@
     A variation of the Square Button, which is, as expected, a circle.
     -->
 
-    <Style x:Key="CircleButtonBase" TargetType="ButtonBase" BasedOn="{StaticResource SquareButtonBase}">
+    <Style x:Key="CircleButtonBase" TargetType="ButtonBase" BasedOn="{StaticResource SquareButton}">
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" />
     </Style>
     <Style x:Key="CircleButton" TargetType="ButtonBase" BasedOn="{StaticResource CircleButtonBase}" />

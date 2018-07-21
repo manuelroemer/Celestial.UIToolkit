@@ -6,31 +6,99 @@
 
     <ResourceDictionary.MergedDictionaries>
         <local:SharedResourceDictionary Source="Theming.xaml" />
-        <local:SharedResourceDictionary Source="Button.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="ComboBoxToggleButton" TargetType="ToggleButton" BasedOn="{StaticResource StandardButtonBase}">
-        <Setter Property="Height" Value="26" />
-        <Setter Property="Width" Value="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" />
-        <Setter Property="MinWidth" Value="0" />
-        <Setter Property="MinHeight" Value="0" />
-        <Setter Property="ClickMode" Value="Press" />
-        <Setter Property="Focusable" Value="False" />
-    </Style>
+    <Style x:Key="StandardComboBox" TargetType="ComboBox" BasedOn="{StaticResource DefaultThemingBase}">
+        <Style.Resources>
+            <!-- This custom style is for the Down-Arrow in the ComboBox.
+                 It is fully animated, like a normal Button. -->
+            <Style x:Key="ComboBoxToggleButton" TargetType="ToggleButton" BasedOn="{StaticResource DefaultThemingBase}">
+                <Setter Property="MinWidth" Value="0" />
+                <Setter Property="MinHeight" Value="0" />
+                <Setter Property="ClickMode" Value="Press" />
+                <Setter Property="Focusable" Value="False" />
+                <Setter Property="BorderBrush" Value="{StaticResource StandardControlBorderBrush}" />
+                <Setter Property="theming:MouseOverProperties.BorderColor" Value="{StaticResource Accent2HighColor}" />
+                <Setter Property="theming:PressedProperties.BorderColor" Value="{StaticResource Accent2LowColor}" />
+                <Setter Property="theming:ActiveProperties.BorderColor" Value="{StaticResource Accent2MediumColor}" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ToggleButton">
+                            <Grid Background="Transparent">
+                                <Grid.Resources>
+                                    <local:BindingProxy x:Key="ActiveBorderColorProxy"
+                                                Data="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <local:BindingProxy x:Key="MouseOverBorderColorProxy"
+                                                Data="{Binding Path=(theming:MouseOverProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <local:BindingProxy x:Key="PressedBorderColorProxy"
+                                                Data="{Binding Path=(theming:PressedProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <local:BindingProxy x:Key="DisabledBorderColorProxy"
+                                                Data="{Binding Path=(theming:DisabledProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                                </Grid.Resources>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="26" />
+                                </Grid.ColumnDefinitions>
+                                <Path x:Name="Arrow"
+                              Grid.Column="1"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
+                              Stroke="{TemplateBinding BorderBrush}"
+                              Data="M 0,0 L 5,5 L 10,0" />
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualStateGroup.Transitions>
+                                            <VisualTransition GeneratedDuration="{StaticResource ColorAnimationDuration}" />
+                                            <VisualTransition To="Disabled" GeneratedDuration="0" />
+                                        </VisualStateGroup.Transitions>
+                                        <VisualState x:Name="Normal" />
+                                        <VisualState x:Name="MouseOver">
+                                            <Storyboard>
+                                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="Arrow"
+                                                                      Storyboard.TargetProperty="Stroke.Color">
+                                                    <DiscreteColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource MouseOverBorderColorProxy}}" />
+                                                </ColorAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed">
+                                            <Storyboard>
+                                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="Arrow"
+                                                                      Storyboard.TargetProperty="Stroke.Color">
+                                                    <DiscreteColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource PressedBorderColorProxy}}" />
+                                                </ColorAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Disabled">
+                                            <Storyboard>
+                                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="Arrow"
+                                                                      Storyboard.TargetProperty="Stroke.Color">
+                                                    <DiscreteColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource DisabledBorderColorProxy}}" />
+                                                </ColorAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
 
-    <Style x:Key="ComboBoxTextBox" TargetType="TextBox">
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="TextBox">
-                    <Border x:Name="PART_ContentHost"
+            <!-- Since the ComboBox renders its own border, we only need
+                 the "raw" input functionality of a TextBox. -->
+            <Style x:Key="ComboBoxTextBox" TargetType="TextBox">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="TextBox">
+                            <Border x:Name="PART_ContentHost"
                             Focusable="False"
                             Padding="{TemplateBinding Padding}" />
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-    
-    <Style x:Key="StandardComboBox" TargetType="ComboBox" BasedOn="{StaticResource DefaultThemingBase}">
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Style.Resources>
+        
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="IsEditable" Value="False" />
@@ -84,6 +152,12 @@
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 CornerRadius="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
                                 Visibility="Collapsed" />
+                        <ToggleButton x:Name="ToggleButton"
+                                      Style="{StaticResource ComboBoxToggleButton}"
+                                      HorizontalAlignment="Stretch"
+                                      Focusable="False"
+                                      ClickMode="Press"
+                                      IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
                         <Grid Margin="{TemplateBinding BorderThickness}">
                             <ContentPresenter x:Name="ContentSite"
                                               Content="{TemplateBinding SelectionBoxItem}"
@@ -95,12 +169,6 @@
                                               Margin="{TemplateBinding Padding}"
                                               IsHitTestVisible="False"
                                               SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
-                            <ToggleButton x:Name="ToggleButton"
-                                          Style="{StaticResource ComboBoxToggleButton}"
-                                          HorizontalAlignment="Right"
-                                          Focusable="False"
-                                          ClickMode="Press"
-                                          IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
                             <TextBox x:Name="PART_EditableTextBox"
                                      Style="{StaticResource ComboBoxTextBox}"
                                      HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
@@ -196,6 +264,7 @@
                             <Setter Property="IsTabStop" Value="False" />
                             <Setter TargetName="PART_EditableTextBox" Property="Visibility" Value="Visible" />
                             <Setter TargetName="ContentSite" Property="Visibility" Value="Hidden" />
+                            <Setter TargetName="ToggleButton" Property="HorizontalAlignment" Value="Right" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

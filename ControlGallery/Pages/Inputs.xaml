@@ -34,6 +34,13 @@
                        c:MarginHelper.MarginGroup="Title">ComboBox</TextBlock>
             <ComboBox>
                 <ComboBoxItem>Item 1</ComboBoxItem>
+                <ComboBoxItem>Item 2</ComboBoxItem>
+                <ComboBoxItem>Item 3</ComboBoxItem>
+            </ComboBox>
+            <ComboBox IsEditable="True">
+                <ComboBoxItem>Item 1</ComboBoxItem>
+                <ComboBoxItem>Item 2</ComboBoxItem>
+                <ComboBoxItem>Item 3</ComboBoxItem>
             </ComboBox>
             <ComboBox IsReadOnly="True">ReadOnly</ComboBox>
             <ComboBox IsEnabled="False">Disabled</ComboBox>
