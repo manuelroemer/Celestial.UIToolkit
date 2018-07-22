@@ -93,6 +93,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Misc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Popups.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -115,6 +119,9 @@
     </Compile>
     <Compile Include="Pages\Inputs.xaml.cs">
       <DependentUpon>Inputs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Misc.xaml.cs">
+      <DependentUpon>Misc.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Popups.xaml.cs">
       <DependentUpon>Popups.xaml</DependentUpon>

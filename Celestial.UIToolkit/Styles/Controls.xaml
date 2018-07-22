@@ -13,5 +13,6 @@
         <local:SharedResourceDictionary Source="ToolTip.xaml" />
         <local:SharedResourceDictionary Source="ContextMenu.xaml" />
         <local:SharedResourceDictionary Source="TabControl.xaml" />
+        <local:SharedResourceDictionary Source="Expander.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

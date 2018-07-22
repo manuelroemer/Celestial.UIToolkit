@@ -36,6 +36,9 @@
         <TabItem Header="Popups">
             <pages:Popups />
         </TabItem>
+        <TabItem Header="Misc">
+            <pages:Misc />
+        </TabItem>
     </TabControl>
     
 </Window>
