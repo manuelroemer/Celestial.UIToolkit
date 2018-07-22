@@ -89,7 +89,7 @@
                                             <Storyboard>
                                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ArrowRotateTransform"
                                                                                Storyboard.TargetProperty="Angle">
-                                                    <LinearDoubleKeyFrame KeyTime="{StaticResource ControlPartialRotationKeyTime}" Value="0" />
+                                                    <LinearDoubleKeyFrame KeyTime="{StaticResource InnerPartialAnimationKeyTime}" Value="0" />
                                                 </DoubleAnimationUsingKeyFrames>
                                             </Storyboard>
                                         </VisualState>
@@ -97,7 +97,7 @@
                                             <Storyboard>
                                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ArrowRotateTransform"
                                                                                Storyboard.TargetProperty="Angle">
-                                                    <LinearDoubleKeyFrame KeyTime="{StaticResource ControlPartialRotationKeyTime}" Value="180" />
+                                                    <LinearDoubleKeyFrame KeyTime="{StaticResource InnerPartialAnimationKeyTime}" Value="180" />
                                                 </DoubleAnimationUsingKeyFrames>
                                             </Storyboard>
                                         </VisualState>

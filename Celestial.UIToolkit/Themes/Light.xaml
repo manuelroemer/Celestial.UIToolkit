@@ -84,9 +84,22 @@
     
 
 
-    <Duration x:Key="ColorAnimationDuration">0:0:0.1</Duration>
-    <KeyTime x:Key="ControlPartialRotationKeyTime">0:0:0.15</KeyTime>
-
+    <Duration x:Key="ColorAnimationDuration">0:0:0.150</Duration>
+    <KeyTime x:Key="ColorAnimationKeyTime">0:0:0.150</KeyTime>
+    
+    <Duration x:Key="EnterAnimationDuration">0:0:0.300</Duration>
+    <KeyTime x:Key="EnterAnimationKeyTime">0:0:0.300</KeyTime>
+    
+    <Duration x:Key="ExitAnimationDuration">0:0:0.150</Duration>
+    <KeyTime x:Key="ExitAnimationKeyTime">0:0:0.150</KeyTime>
+    
+    <Duration x:Key="MoveAnimationDuration">0:0:0.500</Duration>
+    <KeyTime x:Key="MoveAnimationKeyTime">0:0:0.500</KeyTime>
+    
+    <!-- For inner parts of a control, that move quickly (e.g. rotations). -->
+    <Duration x:Key="InnerPartialAnimationDuration">0:0:0.150</Duration> 
+    <KeyTime x:Key="InnerPartialAnimationKeyTime">0:0:0.150</KeyTime>
+    
 
 
     <Thickness x:Key="MenuItemPadding">15,6</Thickness>

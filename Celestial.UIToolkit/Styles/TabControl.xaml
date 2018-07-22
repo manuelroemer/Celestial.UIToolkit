@@ -73,7 +73,7 @@
         <Setter Property="FontStyle" Value="{StaticResource TitleFontStyle}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
-        <Setter Property="Padding" Value="3,0" />
+        <Setter Property="Padding" Value="4,0" />
         <Setter Property="theming:TabControlProperties.SelectedMarkHeight" Value="3" />
         <Setter Property="theming:ActiveProperties.BackgroundColor" Value="{StaticResource Accent2MediumColor}" />
         <Setter Property="Template">
@@ -127,7 +127,7 @@
                                     <Storyboard>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="SelectedMarkScaleTransform"
                                                                        Storyboard.TargetProperty="ScaleX">
-                                            <SplineDoubleKeyFrame KeyTime="{StaticResource ControlPartialRotationKeyTime}" Value="0" />
+                                            <SplineDoubleKeyFrame KeyTime="{StaticResource ExitAnimationKeyTime}" Value="0" />
                                         </DoubleAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -135,12 +135,8 @@
                                     <Storyboard>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="SelectedMarkScaleTransform"
                                                                        Storyboard.TargetProperty="ScaleX">
-                                            <SplineDoubleKeyFrame KeyTime="{StaticResource ControlPartialRotationKeyTime}" Value="1" />
+                                            <SplineDoubleKeyFrame KeyTime="{StaticResource ExitAnimationKeyTime}" Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
-                                        <!--<ObjectAnimationUsingKeyFrames Storyboard.TargetName="SelectedMark"
-                                                                       Storyboard.TargetProperty="(UIElement.Visibility)">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
-                                        </ObjectAnimationUsingKeyFrames>-->
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
