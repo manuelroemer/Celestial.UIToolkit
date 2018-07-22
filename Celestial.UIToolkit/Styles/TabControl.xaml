@@ -109,13 +109,12 @@
                                     Height="{TemplateBinding theming:TabControlProperties.SelectedMarkHeight}"
                                     Margin="0,3,0,0"
                                     VerticalAlignment="Stretch"
-                                    HorizontalAlignment="Center"
-                                    Width="{TemplateBinding ActualWidth}"
+                                    RenderTransformOrigin="0.5,0.5"
                                     Background="{Binding Path=(theming:ActiveProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}">
-                                <Border.LayoutTransform>
+                                <Border.RenderTransform>
                                     <ScaleTransform x:Name="SelectedMarkScaleTransform" 
                                                     ScaleX="0" />
-                                </Border.LayoutTransform>
+                                </Border.RenderTransform>
                             </Border>
                         </Grid>
 
