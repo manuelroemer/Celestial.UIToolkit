@@ -8,6 +8,7 @@
     <ResourceDictionary.MergedDictionaries>
         <local:SharedResourceDictionary Source="Theming.xaml" />
         <local:SharedResourceDictionary Source="Popup.xaml" />
+        <local:SharedResourceDictionary Source="../Icons/Arrows.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="StandardComboBox" TargetType="ComboBox" BasedOn="{StaticResource DefaultThemingBase}">
@@ -42,11 +43,11 @@
                                     <ColumnDefinition Width="26" />
                                 </Grid.ColumnDefinitions>
                                 <Path x:Name="Arrow"
+                                      Data="{StaticResource HalfArrowDown}"
                                       Grid.Column="1"
                                       HorizontalAlignment="Center"
                                       VerticalAlignment="Center"
-                                      Stroke="{TemplateBinding BorderBrush}"
-                                      Data="M 0,0 L 5,5 L 10,0">
+                                      Stroke="{TemplateBinding BorderBrush}">
                                     <Path.LayoutTransform>
                                         <RotateTransform x:Name="ArrowRotateTransform" 
                                                          Angle="0" CenterX="0.5" CenterY="0.5" />
@@ -363,6 +364,7 @@
         <Setter Property="theming:MouseOverProperties.BorderColor" Value="Transparent" />
         <Setter Property="theming:ActiveProperties.BackgroundColor" Value="{StaticResource Accent2MediumColor}" />
         <Setter Property="theming:ActiveProperties.BorderColor" Value="{StaticResource Accent2MediumColor}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource Accent2MediumBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ComboBoxItem">

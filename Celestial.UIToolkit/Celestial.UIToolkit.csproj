@@ -94,6 +94,10 @@
     <Folder Include="Controls\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Icons\Arrows.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\Button.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
