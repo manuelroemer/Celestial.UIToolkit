@@ -63,7 +63,6 @@
                                         <Setter Property="Height" Value="20" />
                                         <Setter Property="CornerRadius" Value="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}" />
                                         <Setter Property="BorderThickness" Value="{Binding BorderThickness, RelativeSource={RelativeSource TemplatedParent}}" />
-                                        <Setter Property="SnapsToDevicePixels" Value="True" />
                                     </Style>
                                 </Grid.Resources>
                                 <Border x:Name="Bd"

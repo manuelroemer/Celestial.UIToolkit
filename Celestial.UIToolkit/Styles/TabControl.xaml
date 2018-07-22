@@ -79,7 +79,6 @@
         <Setter Property="theming:TabControlProperties.SelectedMarkHeight" Value="3" />
         <Setter Property="theming:ActiveProperties.BackgroundColor" Value="{StaticResource Accent2MediumColor}" />
         <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource Accent2HighBrush}" />
-        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource Accent2LowBrush}" />
         <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource Accent2MediumBrush}" />
         <Setter Property="Foreground" Value="{StaticResource StandardForegroundBrush}" />
         <Setter Property="Template">
