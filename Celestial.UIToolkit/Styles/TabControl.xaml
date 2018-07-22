@@ -19,7 +19,6 @@
         <Setter Property="FontStretch" Value="{StaticResource StandardFontStretch}" />
         <Setter Property="FontStyle" Value="{StaticResource StandardFontStyle}" />
         <Setter Property="Padding" Value="3,0" />
-        <Setter Property="TabStripPlacement" Value="Left" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TabControl">
@@ -89,7 +88,6 @@
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
-                            Padding="{TemplateBinding Padding}"
                             HorizontalAlignment="Stretch">
                         <Grid HorizontalAlignment="Stretch"
                               VerticalAlignment="Stretch"
@@ -104,14 +102,21 @@
                                               ContentTemplate="{TemplateBinding HeaderTemplate}"
                                               ContentTemplateSelector="{TemplateBinding HeaderTemplateSelector}"
                                               ContentStringFormat="{TemplateBinding HeaderStringFormat}"
+                                              Margin="{TemplateBinding Padding}"
                                               RecognizesAccessKey="True" />
                             <Border x:Name="SelectedMark"
                                     Grid.Row="1"
                                     Height="{TemplateBinding theming:TabControlProperties.SelectedMarkHeight}"
-                                    Margin="0,5,0,0"
+                                    Margin="0,3,0,0"
                                     VerticalAlignment="Stretch"
-                                    Visibility="Hidden"
-                                    Background="{Binding Path=(theming:ActiveProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}" />
+                                    HorizontalAlignment="Center"
+                                    Width="{TemplateBinding ActualWidth}"
+                                    Background="{Binding Path=(theming:ActiveProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}">
+                                <Border.LayoutTransform>
+                                    <ScaleTransform x:Name="SelectedMarkScaleTransform" 
+                                                    ScaleX="0" />
+                                </Border.LayoutTransform>
+                            </Border>
                         </Grid>
 
                         <VisualStateManager.VisualStateGroups>
@@ -119,13 +124,24 @@
                                 <VisualState x:Name="Normal" />
                             </VisualStateGroup>
                             <VisualStateGroup x:Name="SelectionStates">
-                                <VisualState x:Name="Unselected" />
+                                <VisualState x:Name="Unselected">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="SelectedMarkScaleTransform"
+                                                                       Storyboard.TargetProperty="ScaleX">
+                                            <SplineDoubleKeyFrame KeyTime="{StaticResource ControlPartialRotationKeyTime}" Value="0" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
                                 <VisualState x:Name="Selected">
                                     <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SelectedMark"
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="SelectedMarkScaleTransform"
+                                                                       Storyboard.TargetProperty="ScaleX">
+                                            <SplineDoubleKeyFrame KeyTime="{StaticResource ControlPartialRotationKeyTime}" Value="1" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <!--<ObjectAnimationUsingKeyFrames Storyboard.TargetName="SelectedMark"
                                                                        Storyboard.TargetProperty="(UIElement.Visibility)">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
-                                        </ObjectAnimationUsingKeyFrames>
+                                        </ObjectAnimationUsingKeyFrames>-->
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
