@@ -1,0 +1,145 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Celestial.UIToolkit"
+                    xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
+                    xmlns:converters="clr-namespace:Celestial.UIToolkit.Converters"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <ResourceDictionary.MergedDictionaries>
+        <local:SharedResourceDictionary Source="Theming.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="StandardTabControl" TargetType="TabControl" BasedOn="{StaticResource ForegroundSupportingThemingBase}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="{StaticResource StandardControlBorderBrush}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="FontFamily" Value="{StaticResource StandardFontFamily}" />
+        <Setter Property="FontSize" Value="{StaticResource StandardFontSize}" />
+        <Setter Property="FontWeight" Value="{StaticResource StandardFontWeight}" />
+        <Setter Property="FontStretch" Value="{StaticResource StandardFontStretch}" />
+        <Setter Property="FontStyle" Value="{StaticResource StandardFontStyle}" />
+        <Setter Property="Padding" Value="3,0" />
+        <Setter Property="TabStripPlacement" Value="Left" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabControl">
+                    <DockPanel x:Name="Root"
+                               KeyboardNavigation.TabNavigation="Local">
+                        <TabPanel x:Name="HeaderPanel"
+                                  DockPanel.Dock="Top"
+                                  Margin="{TemplateBinding Padding}"
+                                  Panel.ZIndex="1"
+                                  IsItemsHost="True"
+                                  KeyboardNavigation.TabIndex="1"
+                                  Background="Transparent" />
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter x:Name="PART_SelectedContentHost"
+                                              Grid.Row="1"
+                                              ContentSource="SelectedContent"
+                                              Margin="{TemplateBinding Padding}"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Border>
+                    </DockPanel>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="TabStripPlacement" Value="Bottom">
+                            <Setter TargetName="HeaderPanel" Property="DockPanel.Dock" Value="Bottom" />
+                        </Trigger>
+                        <Trigger Property="TabStripPlacement" Value="Left">
+                            <Setter TargetName="HeaderPanel" Property="DockPanel.Dock" Value="Left" />
+                        </Trigger>
+                        <Trigger Property="TabStripPlacement" Value="Right">
+                            <Setter TargetName="HeaderPanel" Property="DockPanel.Dock" Value="Right" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="TabControl" BasedOn="{StaticResource StandardTabControl}" />
+
+    <Style x:Key="StandardTabItem" TargetType="TabItem" BasedOn="{StaticResource ForegroundSupportingThemingBase}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="FontFamily" Value="{StaticResource TitleFontFamily}" />
+        <Setter Property="FontSize" Value="{StaticResource TitleFontSize}" />
+        <Setter Property="FontWeight" Value="{StaticResource TitleFontWeight}" />
+        <Setter Property="FontStretch" Value="{StaticResource TitleFontStretch}" />
+        <Setter Property="FontStyle" Value="{StaticResource TitleFontStyle}" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="Padding" Value="3,0" />
+        <Setter Property="theming:TabControlProperties.SelectedMarkHeight" Value="3" />
+        <Setter Property="theming:ActiveProperties.BackgroundColor" Value="{StaticResource Accent2MediumColor}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabItem">
+                    <ControlTemplate.Resources>
+                        <DataTemplate DataType="{x:Type sys:String}">
+                            <TextBlock Style="{DynamicResource TextBlockOverrideStyle}" />
+                        </DataTemplate>
+                    </ControlTemplate.Resources>
+                    <Border x:Name="Bd"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Padding="{TemplateBinding Padding}"
+                            HorizontalAlignment="Stretch">
+                        <Grid HorizontalAlignment="Stretch"
+                              VerticalAlignment="Stretch"
+                              UseLayoutRounding="True">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Content="{TemplateBinding Header}"
+                                              ContentTemplate="{TemplateBinding HeaderTemplate}"
+                                              ContentTemplateSelector="{TemplateBinding HeaderTemplateSelector}"
+                                              ContentStringFormat="{TemplateBinding HeaderStringFormat}"
+                                              RecognizesAccessKey="True" />
+                            <Border x:Name="SelectedMark"
+                                    Grid.Row="1"
+                                    Height="{TemplateBinding theming:TabControlProperties.SelectedMarkHeight}"
+                                    Margin="0,5,0,0"
+                                    VerticalAlignment="Stretch"
+                                    Visibility="Hidden"
+                                    Background="{Binding Path=(theming:ActiveProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}" />
+                        </Grid>
+
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="SelectionStates">
+                                <VisualState x:Name="Unselected" />
+                                <VisualState x:Name="Selected">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SelectedMark"
+                                                                       Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Panel.ZIndex" Value="100" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="TabItem" BasedOn="{StaticResource StandardTabItem}" />
+
+</ResourceDictionary>

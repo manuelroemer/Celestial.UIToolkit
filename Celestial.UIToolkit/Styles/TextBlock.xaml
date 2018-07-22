@@ -6,6 +6,7 @@
         <Setter Property="FontWeight" Value="{StaticResource StandardFontWeight}" />
         <Setter Property="FontStyle" Value="{StaticResource StandardFontStyle}" />
         <Setter Property="FontStretch" Value="{StaticResource StandardFontStretch}" />
+        <Setter Property="FontFamily" Value="{StaticResource StandardFontFamily}" />
         <Setter Property="Foreground" Value="{StaticResource StandardForegroundBrush}" />
         <Style.Triggers>
             <Trigger Property="IsEnabled" Value="False">
@@ -32,6 +33,7 @@
         <Setter Property="FontWeight" Value="{StaticResource TitleFontWeight}" />
         <Setter Property="FontStyle" Value="{StaticResource TitleFontStyle}" />
         <Setter Property="FontStretch" Value="{StaticResource TitleFontStretch}" />
+        <Setter Property="FontFamily" Value="{StaticResource TitleFontFamily}" />
     </Style>
 
     <Style x:Key="SubTitleTextBlock" TargetType="TextBlock" BasedOn="{StaticResource StandardTextBlock}">
@@ -39,6 +41,7 @@
         <Setter Property="FontWeight" Value="{StaticResource SubTitleFontWeight}" />
         <Setter Property="FontStyle" Value="{StaticResource SubTitleFontStyle}" />
         <Setter Property="FontStretch" Value="{StaticResource SubTitleFontStretch}" />
+        <Setter Property="FontFamily" Value="{StaticResource SubTitleFontFamily}" />
     </Style>
 
     <Style x:Key="TextBlockOverrideStyle" TargetType="TextBlock">

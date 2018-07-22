@@ -12,5 +12,6 @@
         <local:SharedResourceDictionary Source="ComboBox.xaml" />
         <local:SharedResourceDictionary Source="ToolTip.xaml" />
         <local:SharedResourceDictionary Source="ContextMenu.xaml" />
+        <local:SharedResourceDictionary Source="TabControl.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

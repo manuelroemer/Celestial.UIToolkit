@@ -59,7 +59,7 @@
     <FontStyle x:Key="StandardFontStyle">    Normal</FontStyle>
     <FontStretch x:Key="StandardFontStretch">Normal</FontStretch>
 
-    <FontFamily x:Key="TitleFontFamily">  Segoe UI</FontFamily>
+    <FontFamily x:Key="TitleFontFamily">  Segoe UI Light</FontFamily>
     <sys:Double x:Key="TitleFontSize">    24</sys:Double>
     <FontWeight x:Key="TitleFontWeight">  Normal</FontWeight>
     <FontStyle x:Key="TitleFontStyle">    Normal</FontStyle>
