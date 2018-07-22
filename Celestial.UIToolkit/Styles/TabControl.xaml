@@ -74,8 +74,14 @@
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
         <Setter Property="Padding" Value="4,0" />
+        <Setter Property="MinWidth" Value="10" />
+        <Setter Property="MinHeight" Value="10" />
         <Setter Property="theming:TabControlProperties.SelectedMarkHeight" Value="3" />
         <Setter Property="theming:ActiveProperties.BackgroundColor" Value="{StaticResource Accent2MediumColor}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource Accent2HighBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource Accent2LowBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource Accent2MediumBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource StandardForegroundBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TabItem">
@@ -150,6 +156,19 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Style.Triggers>
+            <!-- I would love to do this via animations, but that's not supported due to
+                 the Foreground being frozen, sadly.. -->
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Foreground" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+            </Trigger>
+        </Style.Triggers>
     </Style>
     <Style TargetType="TabItem" BasedOn="{StaticResource StandardTabItem}" />
 
