@@ -39,6 +39,9 @@
         <TabItem Header="Misc">
             <pages:Misc />
         </TabItem>
+        <TabItem Header="Icons">
+            <pages:Icons />
+        </TabItem>
     </TabControl>
     
 </Window>
