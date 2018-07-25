@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections;
 using System.Windows;
-using System.Windows.Data;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
@@ -14,6 +12,10 @@ namespace Celestial.UIToolkit.Controls
     public class PathIcon : IconElement
     {
 
+        /// <summary>
+        /// Do not use this field directly.
+        /// Access it via the <see cref="Path"/> property.
+        /// </summary>
         private Path _path;
 
         /// <summary>
@@ -25,7 +27,8 @@ namespace Celestial.UIToolkit.Controls
             typeof(IconElement),
             new FrameworkPropertyMetadata(
                 null,
-                FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsRender));
+                FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsRender,
+                PathPropertyChanged));
 
         /// <summary>
         /// Identifies the <see cref="StrokeThickness"/> dependency property.
@@ -36,7 +39,8 @@ namespace Celestial.UIToolkit.Controls
             typeof(PathIcon), 
             new FrameworkPropertyMetadata(
                 1d, 
-                FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsRender));
+                FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsRender,
+                PathPropertyChanged));
 
         /// <summary>
         /// Identifies the <see cref="Fill"/> dependency property.
@@ -75,6 +79,30 @@ namespace Celestial.UIToolkit.Controls
             get { return (Brush)GetValue(FillProperty); }
             set { SetValue(FillProperty, value); }
         }
+
+        /// <summary>
+        /// Gets a potentially newly created <see cref="Path"/> object
+        /// which is used by the <see cref="PathIcon"/> to render the icon.
+        /// </summary>
+        private Path Path
+        {
+            get
+            {
+                if (_path == null)
+                {
+                    // Mirror this class' properties into the path,
+                    // so that the render-size calculations performed by the path
+                    // will yield the right results.
+                    _path = new Path()
+                    {
+                        Stretch = Stretch.Uniform,
+                        Data = this.Data,
+                        StrokeThickness = this.StrokeThickness
+                    };
+                }
+                return _path;
+            }
+        }
         
         /// <summary>
         /// Initializes a new instance of the <see cref="PathIcon"/> class.
@@ -82,9 +110,32 @@ namespace Celestial.UIToolkit.Controls
         public PathIcon()
         {
         }
-        
+
+        /// <summary>
+        /// Measures the size required for the icon.
+        /// </summary>
+        /// <param name="availableSize">
+        /// The available size that this element can give to child elements.
+        /// </param>
+        /// <returns>
+        /// The size that this element determines it needs during layout, based on its calculations
+        /// of child element sizes.
+        /// </returns>
         protected override Size MeasureOverride(Size availableSize)
         {
+            if (this.Data == null || this.Data == Geometry.Empty) return new Size(0d, 0d);
+
+            // We let a Path do the work of measuring the geometry.
+            // We need to take care of one point though:
+            //
+            // If we gave the path the default availableSize, it would
+            // be drawn over the edges of the allowed rectangle (for whatever reason).
+            // As a result, we need to artifically shrink the available area,
+            // so that the path has the exact allowed bounds.
+            // The calculation is basically:
+            // 
+            // pathOverflow = dataRenderBounds - dataNormalBounds
+            // finalBounds  = availableSize - pathOverflow
             var normalBounds = this.Data.Bounds;
             var renderBounds = this.Data.GetRenderBounds(this.CreatePen()).Size;
             var diff = new Size(
@@ -95,38 +146,65 @@ namespace Celestial.UIToolkit.Controls
                 availableSize.Width - diff.Width,
                 availableSize.Height - diff.Height);
             
-            _path = new Path() { Stretch = Stretch.Uniform };
-            _path.Data = this.Data;
-            _path.StrokeThickness = this.StrokeThickness;
-
-            _path.Measure(availableSize);
-            return _path.DesiredSize;
+            this.Path.Measure(availableSize);
+            return this.Path.DesiredSize;
         }
 
+        /// <summary>
+        /// Positions the child elements of the <see cref="PathIcon"/>.
+        /// </summary>
+        /// <param name="finalSize">
+        /// The final area within the parent that this element should use to arrange itself
+        /// and its children.
+        /// </param>
+        /// <returns>The actual size used.</returns>
         protected override Size ArrangeOverride(Size finalSize)
         {
+            // Again, let the path do the work.
+            // Provide the correct size though - do not go over the max. allowed bounds.
             finalSize = new Size(
-                Math.Min(finalSize.Width, _path.DesiredSize.Width),
-                Math.Min(finalSize.Height, _path.DesiredSize.Height));
-            _path.Arrange(new Rect(finalSize));
+                Math.Min(finalSize.Width, this.Path.DesiredSize.Width),
+                Math.Min(finalSize.Height, this.Path.DesiredSize.Height));
+            this.Path.Arrange(new Rect(finalSize));
             return finalSize;
         }
         
+        /// <summary>
+        /// Renders the icon, based on the properties in this class.
+        /// </summary>
+        /// <param name="drawingContext">
+        /// A <see cref="DrawingContext"/> provided by the layout system
+        /// which is used to draw the icon.
+        /// </param>
         protected override void OnRender(DrawingContext drawingContext)
         {
-            drawingContext.DrawGeometry(this.Fill, this.CreatePen(), _path.RenderedGeometry);
+            drawingContext.DrawGeometry(this.Fill, this.CreatePen(), this.Path.RenderedGeometry);
         }
         
         /// <summary>
         /// Creates a new <see cref="Pen"/> which should be used for drawing
         /// the icon's path.
+        /// If not overridden, the pen's values are based on the properties in this class.
         /// </summary>
         /// <returns>The newly created <see cref="Pen"/>.</returns>
-        protected Pen CreatePen()
+        protected virtual Pen CreatePen()
         {
             return new Pen(this.Foreground, this.StrokeThickness);
         }
-        
+
+        /// <summary>
+        /// Called whenever a property which is mirrored into the internal <see cref="Path"/> object 
+        /// is changed.
+        /// This will force the creation of a new path to reflect the results.
+        /// /// </summary>
+        /// <param name="depObj">An instance of <see cref="PathIcon"/>.</param>
+        /// <param name="e">Event args.</param>
+        private static void PathPropertyChanged(DependencyObject depObj, DependencyPropertyChangedEventArgs e)
+        {
+            // This will force the creation of a new path object, when it is accessed.
+            ((PathIcon)depObj)._path = null;
+        }
+
     }
 
 }
