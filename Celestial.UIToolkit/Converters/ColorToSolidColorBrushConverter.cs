@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using System.Windows.Data;
 using System.Windows.Media;
 
 namespace Celestial.UIToolkit.Converters
@@ -8,6 +9,7 @@ namespace Celestial.UIToolkit.Converters
     /// A converter which converts <see cref="Color"/> objects to <see cref="SolidColorBrush"/> objects
     /// and vice versa.
     /// </summary>
+    [ValueConversion(typeof(Color), typeof(SolidColorBrush))]
     public class ColorToSolidColorBrushConverter : ValueConverter<Color, SolidColorBrush>
     {
 
