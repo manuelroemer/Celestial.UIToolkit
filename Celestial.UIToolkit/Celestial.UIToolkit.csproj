@@ -57,6 +57,7 @@
     <Compile Include="BindingProxy.cs" />
     <Compile Include="Controls\IconElement.cs" />
     <Compile Include="Controls\PathIcon.cs" />
+    <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\ColorToSolidColorBrushConverter.cs" />
     <Compile Include="Converters\MathOperationConverter.cs" />
     <Compile Include="Converters\NullToVisibilityConverter.cs" />
