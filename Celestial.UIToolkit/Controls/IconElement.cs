@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Media;
 
 namespace Celestial.UIToolkit.Controls
@@ -7,6 +6,8 @@ namespace Celestial.UIToolkit.Controls
 
     /// <summary>
     /// The base class for an icon UI element.
+    /// These elements are being used for instances, where icons are supposed to be displayed
+    /// in a single, distinct brush.
     /// </summary>
     public class IconElement : FrameworkElement
     {
@@ -23,7 +24,7 @@ namespace Celestial.UIToolkit.Controls
                 FrameworkPropertyMetadataOptions.AffectsRender));
 
         /// <summary>
-        /// Gets or sets a <see cref="Brush"/> which identifies the icon's foreground.
+        /// Gets or sets a <see cref="Brush"/> which identifies the icon's color.
         /// </summary>
         public Brush Foreground
         {
