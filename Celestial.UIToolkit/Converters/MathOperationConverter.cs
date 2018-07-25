@@ -78,7 +78,7 @@ namespace Celestial.UIToolkit.Converters
                 case MathOperator.Divide:
                     res = l / r;
                     break;
-                default: break;
+                default: throw new NotImplementedException("Unimplemented MathOperator.");
             }
 
             // Return the original type of the input.
