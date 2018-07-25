@@ -93,7 +93,7 @@ namespace Celestial.UIToolkit.Converters
             {
                 throw new InvalidOperationException(
                     $"Cannot perform a backwards value conversion, because the converter's " +
-                    $"{nameof(TrueVisibility)} and {(FalseVisibility)} properties have the same values. " +
+                    $"{nameof(TrueVisibility)} and {nameof(FalseVisibility)} properties have the same values. " +
                     $"Thus, the converter is unable to decide on a correct boolean value. " +
                     $"To fix this, make sure that the two properties have different values.");
             }
