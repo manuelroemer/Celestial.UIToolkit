@@ -10,72 +10,43 @@
     <UniformGrid HorizontalAlignment="Center"
                  VerticalAlignment="Center"
                  c:MarginHelper.ChildrenGroup="ControlGroup"
-                 Columns="1">
+                 Columns="2">
 
         <UniformGrid c:MarginHelper.ChildrenGroup="CloseVertical"
-                     Rows="2" Columns="2">
-            <Expander Header="Up" ExpandDirection="Up">
-                <StackPanel>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                </StackPanel>
-            </Expander>
-            <Expander Header="Down" ExpandDirection="Down">
-                <StackPanel>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                </StackPanel>
-            </Expander>
-            <Expander Header="Left" ExpandDirection="Left">
-                <StackPanel>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                </StackPanel>
-            </Expander>
-            <Expander Header="Right" ExpandDirection="Right">
-                <StackPanel>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                    <TextBlock>Hello from the Expander!</TextBlock>
-                </StackPanel>
-            </Expander>
+                     Columns="2">
+            <UniformGrid c:MarginHelper.ChildrenGroup="CloseVertical"
+                         Rows="2" Columns="2">
+                <Expander Header="Up" ExpandDirection="Up">
+                    <StackPanel>
+                        <TextBlock>Hello from the Expander!</TextBlock>
+                    </StackPanel>
+                </Expander>
+                <Expander Header="Down" ExpandDirection="Down">
+                    <StackPanel>
+                        <TextBlock>Hello from the Expander!</TextBlock>
+                    </StackPanel>
+                </Expander>
+                <Expander Header="Left" ExpandDirection="Left">
+                    <StackPanel>
+                        <TextBlock>Hello from the Expander!</TextBlock>
+                    </StackPanel>
+                </Expander>
+                <Expander Header="Right" ExpandDirection="Right">
+                    <StackPanel>
+                        <TextBlock>Hello from the Expander!</TextBlock>
+                    </StackPanel>
+                </Expander>
+            </UniformGrid>
         </UniformGrid>
         
+        <StackPanel>
+            <GroupBox Header="GroupBox Title">
+                <TextBlock>
+                    GroupBox Content. <LineBreak />
+                    Hello World!
+                </TextBlock>
+            </GroupBox>
+        </StackPanel>
     </UniformGrid>
 
 </UserControl>

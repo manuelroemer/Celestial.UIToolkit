@@ -14,5 +14,6 @@
         <local:SharedResourceDictionary Source="ContextMenu.xaml" />
         <local:SharedResourceDictionary Source="TabControl.xaml" />
         <local:SharedResourceDictionary Source="Expander.xaml" />
+        <local:SharedResourceDictionary Source="GroupBox.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
