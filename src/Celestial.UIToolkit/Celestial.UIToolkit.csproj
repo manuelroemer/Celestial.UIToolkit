@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BindingProxy.cs" />
+    <Compile Include="Controls\IconButton.cs" />
     <Compile Include="Controls\IconElement.cs" />
     <Compile Include="Controls\PathIcon.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
