@@ -17,15 +17,23 @@
     <Style TargetType="TextBlock" BasedOn="{StaticResource StandardTextBlock}" />
 
     <Style x:Key="AltTextBlock" TargetType="TextBlock" BasedOn="{StaticResource StandardTextBlock}">
-        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="FontWeight" Value="{StaticResource AltFontWeight}" />
+        <Setter Property="FontStyle" Value="{StaticResource AltFontStyle}" />
+        <Setter Property="FontStretch" Value="{StaticResource AltFontStretch}" />
     </Style>
 
     <Style x:Key="HintTextBlock" TargetType="TextBlock" BasedOn="{StaticResource StandardTextBlock}">
         <Setter Property="Foreground" Value="{StaticResource HintForegroundBrush}" />
+        <Setter Property="FontWeight" Value="{StaticResource HintFontWeight}" />
+        <Setter Property="FontStyle" Value="{StaticResource HintFontStyle}" />
+        <Setter Property="FontStretch" Value="{StaticResource HintFontStretch}" />
     </Style>
 
-    <Style x:Key="SubtleTextBlock" TargetType="TextBlock" BasedOn="{StaticResource HintTextBlock}">
-        <Setter Property="FontStyle" Value="Italic" />
+    <Style x:Key="SubtleTextBlock" TargetType="TextBlock" BasedOn="{StaticResource StandardTextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource SubtleForegroundBrush}" />
+        <Setter Property="FontWeight" Value="{StaticResource SubtleFontWeight}" />
+        <Setter Property="FontStyle" Value="{StaticResource SubtleFontStyle}" />
+        <Setter Property="FontStretch" Value="{StaticResource SubtleFontStretch}" />
     </Style>
 
     <Style x:Key="TitleTextBlock" TargetType="TextBlock" BasedOn="{StaticResource StandardTextBlock}">

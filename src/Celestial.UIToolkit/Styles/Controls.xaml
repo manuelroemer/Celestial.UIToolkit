@@ -5,6 +5,7 @@
     <ResourceDictionary.MergedDictionaries>
         <local:SharedResourceDictionary Source="FocusVisuals.xaml" />
         <local:SharedResourceDictionary Source="TextBlock.xaml" />
+        <local:SharedResourceDictionary Source="Label.xaml" />
         <local:SharedResourceDictionary Source="Button.xaml" />
         <local:SharedResourceDictionary Source="CheckBox.xaml" />
         <local:SharedResourceDictionary Source="RadioButton.xaml" />

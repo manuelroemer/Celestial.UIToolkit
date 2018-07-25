@@ -12,6 +12,7 @@
          is a bold TextBlock. -->
     <Style x:Key="StandardGroupBox" TargetType="GroupBox" BasedOn="{StaticResource ForegroundSupportingThemingBase}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FontFamily" Value="{StaticResource StandardFontFamily}" />
         <Setter Property="FontSize" Value="{StaticResource StandardFontSize}" />
         <Setter Property="FontWeight" Value="Bold" />
@@ -45,6 +46,8 @@
                             <ContentPresenter x:Name="ContentSite"
                                               Grid.Row="1"
                                               Margin="{TemplateBinding Padding}"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                               RecognizesAccessKey="True" />
                         </Grid>
                     </Border>
