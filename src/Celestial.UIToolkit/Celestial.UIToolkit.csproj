@@ -67,6 +67,7 @@
     <Compile Include="SharedResourceDictionary.cs" />
     <Compile Include="Theming\ControlProperties.cs" />
     <Compile Include="Theming\ActiveProperties.cs" />
+    <Compile Include="Theming\FocusedProperties.cs" />
     <Compile Include="Theming\PressedProperties.cs" />
     <Compile Include="Theming\DisabledProperties.cs" />
     <Compile Include="Theming\MouseOverProperties.cs" />
@@ -85,6 +86,7 @@
     </Compile>
     <Compile Include="SharedResourceDictionaryManager.cs" />
     <Compile Include="Theming\TabControlProperties.cs" />
+    <Compile Include="Theming\ValidationProperties.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -117,7 +119,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\Controls.xaml">
+    <Page Include="Styles\Bundle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

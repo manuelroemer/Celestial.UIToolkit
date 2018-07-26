@@ -7,19 +7,18 @@ namespace Celestial.UIToolkit.Theming
     /// <summary>
     /// Provides attached dependency properties which can be used by styles
     /// within different control states.
-    /// This class provides properties for when a control is active in some way.
-    /// A prime example for an active control is the ComboBox, which is considered
-    /// active when it is opened.
+    /// This class provides properties for when a control participates in the validation system
+    /// and is supposed to display a validation error.
     /// </summary>
-    public static class ActiveProperties
-    { 
+    public static class ValidationProperties
+    {
 
         /// <summary>
         /// Identifies the BackgroundColor attached dependency property.
         /// </summary>
         public static readonly DependencyProperty BackgroundColorProperty = DependencyProperty.RegisterAttached(
             "BackgroundColor", typeof(Color), typeof(ActiveProperties), new PropertyMetadata(Colors.Transparent));
-        
+
         /// <summary>
         /// Identifies the BorderColor attached dependency property.
         /// </summary>
@@ -66,7 +65,7 @@ namespace Celestial.UIToolkit.Theming
         {
             obj.SetValue(BackgroundColorProperty, value);
         }
-        
+
         /// <summary>
         /// Gets the value of the <see cref="BorderColorProperty"/> attached dependency property
         /// for a given <see cref="DependencyObject"/>.
