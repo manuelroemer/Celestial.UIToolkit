@@ -4,7 +4,7 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming">
 
     <ResourceDictionary.MergedDictionaries>
-        <local:SharedResourceDictionary Source="Theming.xaml" />
+        <local:SharedResourceDictionary Source="../Shared/Theming.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <!-- Use TargetType="Control", so that the PasswordBox can use the style too.

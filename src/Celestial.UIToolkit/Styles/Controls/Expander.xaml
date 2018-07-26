@@ -5,8 +5,8 @@
                     xmlns:converters="clr-namespace:Celestial.UIToolkit.Converters">
 
     <ResourceDictionary.MergedDictionaries>
-        <local:SharedResourceDictionary Source="Theming.xaml" />
-        <local:SharedResourceDictionary Source="../Icons/Arrows.xaml" />
+        <local:SharedResourceDictionary Source="../Shared/Theming.xaml" />
+        <local:SharedResourceDictionary Source="../../Icons/Arrows.xaml" />
     </ResourceDictionary.MergedDictionaries>
     
     <Style x:Key="StandardExpander" TargetType="Expander" BasedOn="{StaticResource DefaultThemingBase}">

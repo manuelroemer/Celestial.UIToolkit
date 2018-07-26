@@ -6,7 +6,7 @@
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
     <ResourceDictionary.MergedDictionaries>
-        <local:SharedResourceDictionary Source="Theming.xaml" />
+        <local:SharedResourceDictionary Source="../Shared/Theming.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="StandardTabControl" TargetType="TabControl" BasedOn="{StaticResource ForegroundSupportingThemingBase}">

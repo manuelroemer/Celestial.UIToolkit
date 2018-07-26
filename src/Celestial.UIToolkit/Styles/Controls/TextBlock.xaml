@@ -4,7 +4,7 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming">
 
     <ResourceDictionary.MergedDictionaries>
-        <local:SharedResourceDictionary Source="Theming.xaml" />
+        <local:SharedResourceDictionary Source="../Shared/Theming.xaml" />
     </ResourceDictionary.MergedDictionaries>
     
     <Style x:Key="StandardTextBlock" TargetType="TextBlock" BasedOn="{StaticResource TextElementThemingBase}">

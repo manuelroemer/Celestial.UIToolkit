@@ -1,15 +1,15 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
                     xmlns:local="clr-namespace:Celestial.UIToolkit"
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
-                    xmlns:converters="clr-namespace:Celestial.UIToolkit.Converters"
-                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                    xmlns:converters="clr-namespace:Celestial.UIToolkit.Converters">
 
     <ResourceDictionary.MergedDictionaries>
-        <local:SharedResourceDictionary Source="Theming.xaml" />
+        <local:SharedResourceDictionary Source="../Shared/Theming.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardCheckBox" TargetType="CheckBox" BasedOn="{StaticResource ForegroundSupportingThemingBase}">
+    <Style x:Key="StandardRadioButton" TargetType="RadioButton" BasedOn="{StaticResource ForegroundSupportingThemingBase}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
@@ -27,29 +27,29 @@
         <Setter Property="BorderBrush" Value="{StaticResource StandardControlBorderBrush}" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="CheckBox">
+                <ControlTemplate TargetType="RadioButton">
                     <ControlTemplate.Resources>
                         <DataTemplate DataType="{x:Type sys:String}">
                             <TextBlock Style="{DynamicResource TextBlockOverrideStyle}" />
                         </DataTemplate>
                     </ControlTemplate.Resources>
-                    <BulletDecorator SnapsToDevicePixels="False">
+                    <BulletDecorator>
                         <BulletDecorator.Resources>
                             <local:BindingProxy x:Key="ActiveBackgroundColorProxy"
                                                 Data="{Binding Path=(theming:ActiveProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
                             <local:BindingProxy x:Key="ActiveBorderColorProxy"
                                                 Data="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
-                            
+
                             <local:BindingProxy x:Key="MouseOverBackgroundColorProxy"
                                                 Data="{Binding Path=(theming:MouseOverProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
                             <local:BindingProxy x:Key="MouseOverBorderColorProxy"
                                                 Data="{Binding Path=(theming:MouseOverProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
-                            
+
                             <local:BindingProxy x:Key="PressedBackgroundColorProxy"
                                                 Data="{Binding Path=(theming:PressedProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
                             <local:BindingProxy x:Key="PressedBorderColorProxy"
                                                 Data="{Binding Path=(theming:PressedProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
-                            
+
                             <local:BindingProxy x:Key="DisabledBackgroundColorProxy"
                                                 Data="{Binding Path=(theming:DisabledProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
                             <local:BindingProxy x:Key="DisabledBorderColorProxy"
@@ -61,19 +61,15 @@
                                     <Style TargetType="Border">
                                         <Setter Property="Width" Value="20" />
                                         <Setter Property="Height" Value="20" />
-                                        <Setter Property="CornerRadius" Value="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}" />
+                                        <Setter Property="CornerRadius" Value="10" />
                                         <Setter Property="BorderThickness" Value="{Binding BorderThickness, RelativeSource={RelativeSource TemplatedParent}}" />
+                                        <Setter Property="Background" Value="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" />
+                                        <Setter Property="SnapsToDevicePixels" Value="True" />
                                     </Style>
                                 </Grid.Resources>
                                 <Border x:Name="Bd"
                                         BorderBrush="{TemplateBinding BorderBrush}"
-                                        Background="{TemplateBinding Background}"
-                                        CornerRadius="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}" />
-                                <!-- Because the VisualStateManager has trouble animating the same properties
-                                     for two different State-Groups (e.g. DefaultState/CheckState), 
-                                     we shadow the default border with others.
-                                     This way, we can animate each State-Group separately, even though
-                                     the code grows a lot larger. -->
+                                        Background="{TemplateBinding Background}" />
                                 <Border x:Name="CheckedBorder"
                                         BorderBrush="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}"
                                         Background="{Binding Path=(theming:ActiveProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}"
@@ -82,19 +78,20 @@
                                         BorderBrush="{Binding Path=(theming:DisabledProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}"
                                         Background="{Binding Path=(theming:DisabledProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}"
                                         Visibility="Collapsed" />
-                                <Path x:Name="Checkmark"
-                                      Visibility="Collapsed"
-                                      HorizontalAlignment="Center"
-                                      VerticalAlignment="Center"
-                                      Width="14" 
-                                      Height="14"
-                                      Stroke="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}"
-                                      StrokeThickness="2"
-                                      Data="M 1,7 L 7,13 L 13,2" />
+                                <Ellipse x:Name="Checkmark"
+                                         Visibility="Collapsed"
+                                         Fill="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}"
+                                         Width="12"
+                                         Height="12"
+                                         HorizontalAlignment="Center"
+                                         VerticalAlignment="Center" />
                                 <Rectangle x:Name="IndeterminateMark"
                                            Visibility="Collapsed"
                                            Fill="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}"
-                                           Margin="3" />
+                                           Width="12"
+                                           Height="2"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center" />
                             </Grid>
                         </BulletDecorator.Bullet>
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
@@ -120,14 +117,14 @@
                                             <EasingColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource MouseOverBorderColorProxy}}" />
                                         </ColorAnimationUsingKeyFrames>
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="Checkmark"
-                                                                      Storyboard.TargetProperty="Stroke.Color">
+                                                                      Storyboard.TargetProperty="Fill.Color">
                                             <EasingColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource MouseOverBorderColorProxy}}" />
                                         </ColorAnimationUsingKeyFrames>
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="IndeterminateMark"
                                                                       Storyboard.TargetProperty="Fill.Color">
                                             <EasingColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource MouseOverBorderColorProxy}}" />
                                         </ColorAnimationUsingKeyFrames>
-                                        
+
                                         <!-- Background animations -->
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                       Storyboard.TargetProperty="Background.Color">
@@ -151,14 +148,14 @@
                                             <EasingColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource PressedBorderColorProxy}}" />
                                         </ColorAnimationUsingKeyFrames>
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="Checkmark"
-                                                                      Storyboard.TargetProperty="Stroke.Color">
+                                                                      Storyboard.TargetProperty="Fill.Color">
                                             <EasingColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource PressedBorderColorProxy}}" />
                                         </ColorAnimationUsingKeyFrames>
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="IndeterminateMark"
                                                                       Storyboard.TargetProperty="Fill.Color">
                                             <EasingColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource PressedBorderColorProxy}}" />
                                         </ColorAnimationUsingKeyFrames>
-                                        
+
                                         <!-- Background animations -->
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                       Storyboard.TargetProperty="Background.Color">
@@ -177,7 +174,7 @@
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
                                         </ObjectAnimationUsingKeyFrames>
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="Checkmark"
-                                                                      Storyboard.TargetProperty="Stroke.Color">
+                                                                      Storyboard.TargetProperty="Fill.Color">
                                             <EasingColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource DisabledBorderColorProxy}}" />
                                         </ColorAnimationUsingKeyFrames>
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="IndeterminateMark"
@@ -187,7 +184,7 @@
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
-                            
+
                             <!-- This could probably be done with triggers too (shorter?).
                                  MSDN does it like this though, so if we embrace the VSM, this is prob. cleaner. -->
                             <VisualStateGroup x:Name="CheckStates">
@@ -237,6 +234,6 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    <Style TargetType="CheckBox" BasedOn="{StaticResource StandardCheckBox}" />
+    <Style TargetType="RadioButton" BasedOn="{StaticResource StandardRadioButton}" />
 
 </ResourceDictionary>

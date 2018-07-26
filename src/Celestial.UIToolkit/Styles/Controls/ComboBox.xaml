@@ -6,9 +6,9 @@
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
     <ResourceDictionary.MergedDictionaries>
-        <local:SharedResourceDictionary Source="Theming.xaml" />
+        <local:SharedResourceDictionary Source="../Shared/Theming.xaml" />
+        <local:SharedResourceDictionary Source="../../Icons/Arrows.xaml" />
         <local:SharedResourceDictionary Source="Popup.xaml" />
-        <local:SharedResourceDictionary Source="../Icons/Arrows.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="StandardComboBox" TargetType="ComboBox" BasedOn="{StaticResource DefaultThemingBase}">
