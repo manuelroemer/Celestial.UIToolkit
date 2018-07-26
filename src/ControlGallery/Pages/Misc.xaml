@@ -47,6 +47,13 @@
                 </TextBlock>
             </GroupBox>
         </StackPanel>
+
+        <GroupBox Header="Thumb">
+            <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
+                <Thumb Width="20" Height="20" />
+                <Thumb Width="20" Height="20" IsEnabled="False" />
+            </StackPanel>
+        </GroupBox>
     </UniformGrid>
 
 </UserControl>
