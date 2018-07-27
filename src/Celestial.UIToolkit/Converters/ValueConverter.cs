@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Linq;
 using System.Windows.Data;
 
 namespace Celestial.UIToolkit.Converters
@@ -90,8 +91,10 @@ namespace Celestial.UIToolkit.Converters
         /// <param name="expected">The expected type.</param>
         private void EnforceType(Type t, Type expected)
         {
-            if (t == null || expected == null) return;
-            if (t != expected && !t.IsSubclassOf(expected))
+            if (t == null || expected == null || t.IsInterface) return;
+            if (t != expected && 
+                !t.IsSubclassOf(expected) && 
+                !t.GetInterfaces().Any(i => i == expected))
             {
                 throw new NotSupportedException(
                     $"The converter expected the type {expected.FullName}, but got the type {t.FullName}. " +

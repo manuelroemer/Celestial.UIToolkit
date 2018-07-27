@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:c="clr-namespace:Celestial.UIToolkit;assembly=Celestial.UIToolkit"
+             xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls;assembly=Celestial.UIToolkit"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
@@ -48,11 +49,11 @@
             </GroupBox>
         </StackPanel>
 
-        <GroupBox Header="Thumb">
-            <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
-                <Thumb Width="20" Height="20" />
-                <Thumb Width="20" Height="20" IsEnabled="False" />
-            </StackPanel>
+        <GroupBox Header="Ripple">
+            <controls:RippleAnimationOverlay Background="Red"
+                                             Width="100" Height="100">
+                <Border Background="LightGray" />
+            </controls:RippleAnimationOverlay>
         </GroupBox>
     </UniformGrid>
 
