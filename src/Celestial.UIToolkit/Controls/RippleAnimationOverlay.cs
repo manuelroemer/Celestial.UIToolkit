@@ -27,36 +27,46 @@ namespace Celestial.UIToolkit.Controls
         internal const string CommonStatesVisualStateGroup = "CommonStates";
         internal const string NormalVisualStateName = "Normal";
         internal const string PressedVisualStateName = "Pressed";
+        
+        private static readonly DependencyPropertyKey AnimationOriginXPropertyKey = DependencyProperty.RegisterReadOnly(
+            nameof(AnimationOriginX), typeof(double), typeof(RippleAnimationOverlay), new PropertyMetadata(0d));
+
+        private static readonly DependencyPropertyKey AnimationOriginYPropertyKey = DependencyProperty.RegisterReadOnly(
+            nameof(AnimationOriginY), typeof(double), typeof(RippleAnimationOverlay), new PropertyMetadata(0d));
+
+        private static readonly DependencyPropertyKey AnimationPositionXPropertyKey = DependencyProperty.RegisterReadOnly(
+            nameof(AnimationPositionX), typeof(double), typeof(RippleAnimationOverlay), new PropertyMetadata(0d));
+
+        private static readonly DependencyPropertyKey AnimationPositionYPropertyKey = DependencyProperty.RegisterReadOnly(
+            nameof(AnimationPositionY), typeof(double), typeof(RippleAnimationOverlay), new PropertyMetadata(0d));
+
+        private static readonly DependencyPropertyKey AnimationDiameterPropertyKey = DependencyProperty.RegisterReadOnly(
+            nameof(AnimationDiameter), typeof(double), typeof(RippleAnimationOverlay), new PropertyMetadata(0d));
 
         /// <summary>
         /// Identifies the <see cref="AnimationOriginX"/> dependency property.
         /// </summary>
-        public static readonly DependencyProperty AnimationOriginXProperty = DependencyProperty.Register(
-            nameof(AnimationOriginX), typeof(double), typeof(RippleAnimationOverlay), new PropertyMetadata(0d));
+        public static readonly DependencyProperty AnimationOriginXProperty = AnimationOriginXPropertyKey.DependencyProperty;
 
         /// <summary>
         /// Identifies the <see cref="AnimationOriginY"/> dependency property.
         /// </summary>
-        public static readonly DependencyProperty AnimationOriginYProperty = DependencyProperty.Register(
-            nameof(AnimationOriginY), typeof(double), typeof(RippleAnimationOverlay), new PropertyMetadata(0d));
+        public static readonly DependencyProperty AnimationOriginYProperty = AnimationOriginYPropertyKey.DependencyProperty;
 
         /// <summary>
         /// Identifies the <see cref="AnimationPositionX"/> dependency property.
         /// </summary>
-        public static readonly DependencyProperty AnimationPositionXProperty = DependencyProperty.Register(
-            nameof(AnimationPositionX), typeof(double), typeof(RippleAnimationOverlay), new PropertyMetadata(0d));
-        
+        public static readonly DependencyProperty AnimationPositionXProperty = AnimationPositionXPropertyKey.DependencyProperty;
+
         /// <summary>
         /// Identifies the <see cref="AnimationPositionY"/> dependency property.
         /// </summary>
-        public static readonly DependencyProperty AnimationPositionYProperty = DependencyProperty.Register(
-            nameof(AnimationPositionY), typeof(double), typeof(RippleAnimationOverlay), new PropertyMetadata(0d));
-        
+        public static readonly DependencyProperty AnimationPositionYProperty = AnimationPositionYPropertyKey.DependencyProperty;
+
         /// <summary>
         /// Identifies the <see cref="AnimationDiameter"/> dependency property.
         /// </summary>
-        public static readonly DependencyProperty AnimationDiameterProperty = DependencyProperty.Register(
-            nameof(AnimationDiameter), typeof(double), typeof(RippleAnimationOverlay), new PropertyMetadata(0d));
+        public static readonly DependencyProperty AnimationDiameterProperty = AnimationDiameterPropertyKey.DependencyProperty;
 
         /// <summary>
         /// Gets the x-coordinate of the animation's origin point.
@@ -64,7 +74,7 @@ namespace Celestial.UIToolkit.Controls
         public double AnimationOriginX
         {
             get { return (double)GetValue(AnimationOriginXProperty); }
-            protected set { SetValue(AnimationOriginXProperty, value); }
+            protected set { SetValue(AnimationOriginXPropertyKey, value); }
         }
 
         /// <summary>
@@ -73,7 +83,7 @@ namespace Celestial.UIToolkit.Controls
         public double AnimationOriginY
         {
             get { return (double)GetValue(AnimationOriginYProperty); }
-            protected set { SetValue(AnimationOriginYProperty, value); }
+            protected set { SetValue(AnimationOriginYPropertyKey, value); }
         }
 
         /// <summary>
@@ -85,7 +95,7 @@ namespace Celestial.UIToolkit.Controls
         public double AnimationPositionX
         {
             get { return (double)GetValue(AnimationPositionXProperty); }
-            protected set { SetValue(AnimationPositionXProperty, value); }
+            protected set { SetValue(AnimationPositionXPropertyKey, value); }
         }
 
         /// <summary>
@@ -97,7 +107,7 @@ namespace Celestial.UIToolkit.Controls
         public double AnimationPositionY
         {
             get { return (double)GetValue(AnimationPositionYProperty); }
-            protected set { SetValue(AnimationPositionYProperty, value); }
+            protected set { SetValue(AnimationPositionYPropertyKey, value); }
         }
 
         /// <summary>
@@ -106,9 +116,12 @@ namespace Celestial.UIToolkit.Controls
         public double AnimationDiameter
         {
             get { return (double)GetValue(AnimationDiameterProperty); }
-            protected set { SetValue(AnimationDiameterProperty, value); }
+            protected set { SetValue(AnimationDiameterPropertyKey, value); }
         }
         
+        /// <summary>
+        /// Overrides the element's default style.
+        /// </summary>
         static RippleAnimationOverlay()
         {
             DefaultStyleKeyProperty.OverrideMetadata(
