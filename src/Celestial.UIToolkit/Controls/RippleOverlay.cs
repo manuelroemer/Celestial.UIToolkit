@@ -167,13 +167,13 @@ namespace Celestial.UIToolkit.Controls
             get { return (RippleOrigin)GetValue(RippleOriginProperty); }
             set { SetValue(RippleOriginProperty, value); }
         }
-        
+
         /// <summary>
         /// Gets or sets a value indicating whether the ripple animation is active.
-        /// By setting this value to true, the animation is started.
-        /// As long as this property istrue, the animation will stay in its
+        /// By setting this value to <c>true</c>, the animation is started.
+        /// As long as this property is <c>true</c>, the animation will stay in its
         /// 'Expanding' state.
-        /// If it gets set to false, the animation will be allowed to enter the 'Fading'
+        /// If it gets set to <c>false</c>, the animation will be allowed to enter the 'Fading'
         /// state.
         /// </summary>
         public bool IsActive
