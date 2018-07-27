@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
 using static System.Math;
 
 namespace Celestial.UIToolkit.Controls
@@ -22,7 +15,7 @@ namespace Celestial.UIToolkit.Controls
     [TemplateVisualState(GroupName = AnimationStatesVisualStateGroup, Name = NormalVisualStateName)]
     [TemplateVisualState(GroupName = AnimationStatesVisualStateGroup, Name = ExpandingVisualStateName)]
     [TemplateVisualState(GroupName = AnimationStatesVisualStateGroup, Name = FadingVisualStateName)]
-    public class RippleAnimationOverlay : ContentControl
+    public class RippleOverlay : ContentControl
     {
         
         internal const string AnimationStatesVisualStateGroup = "AnimationStates";
@@ -33,19 +26,19 @@ namespace Celestial.UIToolkit.Controls
         private bool _isMousePressed = false;
 
         private static readonly DependencyPropertyKey AnimationOriginXPropertyKey = DependencyProperty.RegisterReadOnly(
-            nameof(AnimationOriginX), typeof(double), typeof(RippleAnimationOverlay), new PropertyMetadata(0d));
+            nameof(AnimationOriginX), typeof(double), typeof(RippleOverlay), new PropertyMetadata(0d));
 
         private static readonly DependencyPropertyKey AnimationOriginYPropertyKey = DependencyProperty.RegisterReadOnly(
-            nameof(AnimationOriginY), typeof(double), typeof(RippleAnimationOverlay), new PropertyMetadata(0d));
+            nameof(AnimationOriginY), typeof(double), typeof(RippleOverlay), new PropertyMetadata(0d));
 
         private static readonly DependencyPropertyKey AnimationPositionXPropertyKey = DependencyProperty.RegisterReadOnly(
-            nameof(AnimationPositionX), typeof(double), typeof(RippleAnimationOverlay), new PropertyMetadata(0d));
+            nameof(AnimationPositionX), typeof(double), typeof(RippleOverlay), new PropertyMetadata(0d));
 
         private static readonly DependencyPropertyKey AnimationPositionYPropertyKey = DependencyProperty.RegisterReadOnly(
-            nameof(AnimationPositionY), typeof(double), typeof(RippleAnimationOverlay), new PropertyMetadata(0d));
+            nameof(AnimationPositionY), typeof(double), typeof(RippleOverlay), new PropertyMetadata(0d));
 
         private static readonly DependencyPropertyKey AnimationDiameterPropertyKey = DependencyProperty.RegisterReadOnly(
-            nameof(AnimationDiameter), typeof(double), typeof(RippleAnimationOverlay), new PropertyMetadata(0d));
+            nameof(AnimationDiameter), typeof(double), typeof(RippleOverlay), new PropertyMetadata(0d));
 
         /// <summary>
         /// Identifies the <see cref="AnimationOriginX"/> dependency property.
@@ -76,13 +69,19 @@ namespace Celestial.UIToolkit.Controls
         /// Identifies the <see cref="ActualAnimationScale"/> dependency property.
         /// </summary>
         public static readonly DependencyProperty ActualAnimationScaleProperty = DependencyProperty.Register(
-            nameof(ActualAnimationScale), typeof(double), typeof(RippleAnimationOverlay), new FrameworkPropertyMetadata(0d, FrameworkPropertyMetadataOptions.AffectsRender, AnimationScaleChanged));
+            nameof(ActualAnimationScale), typeof(double), typeof(RippleOverlay), new FrameworkPropertyMetadata(0d, FrameworkPropertyMetadataOptions.AffectsRender, AnimationScaleChanged));
 
         /// <summary>
         /// Identifies the <see cref="AnimationScale"/> dependency property.
         /// </summary>
         public static readonly DependencyProperty AnimationScaleProperty = DependencyProperty.Register(
-            nameof(AnimationScale), typeof(double), typeof(RippleAnimationOverlay), new PropertyMetadata(1d));
+            nameof(AnimationScale), typeof(double), typeof(RippleOverlay), new PropertyMetadata(1d));
+
+        /// <summary>
+        /// Identifies the <see cref="RippleOrigin"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty RippleOriginProperty = DependencyProperty.Register(
+            nameof(RippleOrigin), typeof(RippleOrigin), typeof(RippleOverlay), new PropertyMetadata(RippleOrigin.ClickLocation));
 
         /// <summary>
         /// Gets the x-coordinate of the animation's origin point.
@@ -156,19 +155,29 @@ namespace Celestial.UIToolkit.Controls
         }
         
         /// <summary>
-        /// Overrides the element's default style.
+        /// Gets or sets the <see cref="Celestial.UIToolkit.Controls.RippleOrigin"/> which
+        /// is being used by this <see cref="RippleOverlay"/>.
         /// </summary>
-        static RippleAnimationOverlay()
+        public RippleOrigin RippleOrigin
         {
-            DefaultStyleKeyProperty.OverrideMetadata(
-                typeof(RippleAnimationOverlay),
-                new FrameworkPropertyMetadata(typeof(RippleAnimationOverlay)));
+            get { return (RippleOrigin)GetValue(RippleOriginProperty); }
+            set { SetValue(RippleOriginProperty, value); }
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RippleAnimationOverlay"/> class.
+        /// Overrides the element's default style.
         /// </summary>
-        public RippleAnimationOverlay()
+        static RippleOverlay()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(
+                typeof(RippleOverlay),
+                new FrameworkPropertyMetadata(typeof(RippleOverlay)));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RippleOverlay"/> class.
+        /// </summary>
+        public RippleOverlay()
         {
         }
 
@@ -180,22 +189,7 @@ namespace Celestial.UIToolkit.Controls
             base.OnApplyTemplate();
             VisualStateManager.GoToState(this, NormalVisualStateName, true);
         }
-
-        /// <summary>
-        /// Called whenever the element's render size changes.
-        /// This updates the <see cref="AnimationDiameter"/> property.
-        /// </summary>
-        /// <param name="sizeInfo">Information about the new render size.</param>
-        protected override void OnRenderSizeChanged(SizeChangedInfo sizeInfo)
-        {
-            // The max. required radius is the diagonal of this element.
-            double width = sizeInfo.NewSize.Width;
-            double height = sizeInfo.NewSize.Height;
-            this.AnimationDiameter = Sqrt(Pow(width, 2) + Pow(Height, 2)) * 2;
-
-            base.OnRenderSizeChanged(sizeInfo);
-        }
-
+        
         /// <summary>
         /// Called when the user clicks on this element (with the left mouse button).
         /// This sets the animation origin properties and starts the animation effect.
@@ -203,17 +197,25 @@ namespace Celestial.UIToolkit.Controls
         /// <param name="e">Event args about the click.</param>
         protected override void OnPreviewMouseLeftButtonDown(MouseButtonEventArgs e)
         {
-            // The animation starts from a specific point (the mouse press location).
-            var rippleOrigin = e.GetPosition(this);
-            this.AnimationOriginX = rippleOrigin.X;
-            this.AnimationOriginY = rippleOrigin.Y;
-            this.AnimationPositionX = this.AnimationOriginX - this.AnimationDiameter / 2;
-            this.AnimationPositionY = this.AnimationOriginY - this.AnimationDiameter / 2;
             _isMousePressed = true;
-
+            if (this.RippleOrigin == RippleOrigin.ClickLocation)
+            {
+                this.UpdateAnimationProperties(e.GetPosition(this));
+            }
+            else if (this.RippleOrigin == RippleOrigin.Center)
+            {
+                this.UpdateAnimationProperties(this.GetCenter());
+            }
+            else
+            {
+                throw new NotImplementedException("Unknown RippleOrigin enumeration value.");
+            }
+            
             // Always start expanding the animation when the element is pressed.
             VisualStateManager.GoToState(this, NormalVisualStateName, false);
             VisualStateManager.GoToState(this, ExpandingVisualStateName, true);
+
+            this.CaptureMouse();
 
             base.OnPreviewMouseLeftButtonDown(e);
         }
@@ -225,6 +227,8 @@ namespace Celestial.UIToolkit.Controls
         /// <param name="e">Event args about the mouse data.</param>
         protected override void OnPreviewMouseLeftButtonUp(MouseButtonEventArgs e)
         {
+            this.ReleaseMouseCapture();
+
             _isMousePressed = false;
             this.TryEnterFading();
             base.OnPreviewMouseLeftButtonUp(e);
@@ -237,7 +241,7 @@ namespace Celestial.UIToolkit.Controls
         /// <param name="e">Event data about the new value.</param>
         private static void AnimationScaleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            ((RippleAnimationOverlay)d).TryEnterFading();
+            ((RippleOverlay)d).TryEnterFading();
         }
         
         /// <summary>
@@ -255,11 +259,60 @@ namespace Celestial.UIToolkit.Controls
         /// </summary>
         private void TryEnterFading()
         {
-            if (this.ActualAnimationScale == 1d && !_isMousePressed)
+            if (this.ActualAnimationScale >= this.AnimationScale && !_isMousePressed)
             {
                 VisualStateManager.GoToState(this, FadingVisualStateName, true);
             }
         }
+
+        /// <summary>
+        /// Updates the several properties which define the animation's
+        /// location and size, depending on the specified <paramref name="rippleOrigin"/>
+        /// point.
+        /// </summary>
+        /// <param name="rippleOrigin">The point from which the ripple animation originates.</param>
+        private void UpdateAnimationProperties(Point rippleOrigin)
+        {
+            this.AnimationOriginX = rippleOrigin.X;
+            this.AnimationOriginY = rippleOrigin.Y;
+
+            this.AnimationDiameter = Sqrt(  // This will make the ripple touch the out-most edge
+                Pow(Max(rippleOrigin.X, this.ActualWidth - rippleOrigin.X), 2) +
+                Pow(Max(rippleOrigin.Y, this.ActualHeight - rippleOrigin.Y), 2)) * 2;
+            this.AnimationPositionX = this.AnimationOriginX - this.AnimationDiameter / 2;
+            this.AnimationPositionY = this.AnimationOriginY - this.AnimationDiameter / 2;
+        }
+
+        /// <summary>
+        /// Returns a pointer which represents the center of the element.
+        /// </summary>
+        /// <returns>The center <see cref="Point"/>.</returns>
+        private Point GetCenter()
+        {
+            return new Point(
+                this.ActualWidth / 2,
+                this.ActualHeight / 2);
+        }
+
+    }
+
+    /// <summary>
+    /// Defines the available origin point types for a ripple animation.
+    /// </summary>
+    public enum RippleOrigin
+    {
+
+        /// <summary>
+        /// The location where the user clicked the <see cref="RippleOverlay"/>.
+        /// If it got triggered via an input which does not produce valid
+        /// coordinates, <see cref="RippleOrigin.Center"/> will be used.
+        /// </summary>
+        ClickLocation,
+
+        /// <summary>
+        /// The animation starts from the center of the <see cref="RippleOverlay"/>.
+        /// </summary>
+        Center
 
     }
 

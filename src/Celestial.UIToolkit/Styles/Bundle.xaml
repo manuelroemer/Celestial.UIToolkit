@@ -20,6 +20,8 @@
         <local:SharedResourceDictionary Source="Controls/TabControl.xaml" />
         <local:SharedResourceDictionary Source="Controls/Expander.xaml" />
         <local:SharedResourceDictionary Source="Controls/GroupBox.xaml" />
+
+        <local:SharedResourceDictionary Source="Controls/RippleOverlay.xaml" />
     </ResourceDictionary.MergedDictionaries>
     
 </ResourceDictionary>

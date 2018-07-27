@@ -1,77 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls"
-                    xmlns:converters="clr-namespace:Celestial.UIToolkit.Converters"
-                    xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming">
+                    xmlns:local="clr-namespace:Celestial.UIToolkit">
 
-    <Style TargetType="controls:RippleAnimationOverlay">
-        <Setter Property="Background" Value="Red" />
-        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-        <Setter Property="VerticalContentAlignment" Value="Stretch" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="controls:RippleAnimationOverlay">
-                    <Grid>
-                        <Grid.Resources>
-                            <Storyboard x:Key="NormalStoryboard">
-                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
-                                                               Storyboard.TargetProperty="ActualAnimationScale">
-                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="0" />
-                                </DoubleAnimationUsingKeyFrames>
-                            </Storyboard>
-                            <Storyboard x:Key="ExpandingStoryboard">
-                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
-                                                               Storyboard.TargetProperty="ActualAnimationScale">
-                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="0" />
-                                    <LinearDoubleKeyFrame KeyTime="0:0:1" Value="{Binding AnimationScale, RelativeSource={RelativeSource TemplatedParent}}" />
-                                </DoubleAnimationUsingKeyFrames>
-                            </Storyboard>
-                            <Storyboard x:Key="FadingStoryboard">
-                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
-                                                               Storyboard.TargetProperty="ActualAnimationScale">
-                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding AnimationScale, RelativeSource={RelativeSource TemplatedParent}}" />
-                                </DoubleAnimationUsingKeyFrames>
-                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorder"
-                                                               Storyboard.TargetProperty="Opacity">
-                                    <LinearDoubleKeyFrame KeyTime="0:0:1" Value="0" />
-                                </DoubleAnimationUsingKeyFrames>
-                            </Storyboard>
-                        </Grid.Resources>
-                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                          Margin="{TemplateBinding Padding}"
-                                          RecognizesAccessKey="True" />
-                        <Canvas Background="Yellow" ClipToBounds="True">
-                            <Border x:Name="RippleBorder"
-                                    Canvas.Left="{TemplateBinding AnimationPositionX}"
-                                    Canvas.Top="{TemplateBinding AnimationPositionY}"
-                                    Background="{TemplateBinding Background}"
-                                    BorderBrush="{TemplateBinding BorderBrush}"
-                                    BorderThickness="{TemplateBinding BorderThickness}"
-                                    CornerRadius="{Binding ActualWidth, ElementName=RippleBorder}"
-                                    Width="{TemplateBinding AnimationDiameter}"
-                                    Height="{TemplateBinding AnimationDiameter}"
-                                    RenderTransformOrigin="0.5,0.5">
-                                <Border.RenderTransform>
-                                    <TransformGroup>
-                                        <ScaleTransform x:Name="PART_RippleElementScaleTransform"
-                                                        ScaleX="{Binding ActualAnimationScale, RelativeSource={RelativeSource TemplatedParent}}"
-                                                        ScaleY="{Binding ActualAnimationScale, RelativeSource={RelativeSource TemplatedParent}}" />
-                                    </TransformGroup>
-                                </Border.RenderTransform>
-                            </Border>
-                        </Canvas>
-                        <VisualStateManager.VisualStateGroups>
-                            <VisualStateGroup x:Name="AnimationStates">
-                                <VisualState x:Name="Normal" Storyboard="{StaticResource NormalStoryboard}" />
-                                <VisualState x:Name="Expanding" Storyboard="{StaticResource ExpandingStoryboard}" />
-                                <VisualState x:Name="Fading" Storyboard="{StaticResource FadingStoryboard}" />
-                            </VisualStateGroup>
-                        </VisualStateManager.VisualStateGroups>
-                    </Grid>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
+    <ResourceDictionary.MergedDictionaries>
+        <local:SharedResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Controls/RippleOverlay.xaml" />
+    </ResourceDictionary.MergedDictionaries>
     
 </ResourceDictionary>

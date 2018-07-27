@@ -48,7 +48,8 @@ namespace Celestial.UIToolkit
                 }
                 else
                 {
-                    _source = value.IsAbsoluteUri ? value : new Uri(this.GetBaseSourceUri(), value);
+                    var baseUri = this.GetBaseSourceUri();
+                    _source = value.IsAbsoluteUri ? value : new Uri(baseUri, value);
                     if (SharedResourceDictionaryManager.TryGetDictionary(_source, out var dict))
                     {
                         this.MergedDictionaries.Add(dict);

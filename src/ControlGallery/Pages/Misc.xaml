@@ -50,10 +50,13 @@
         </StackPanel>
 
         <GroupBox Header="Ripple">
-            <controls:RippleAnimationOverlay Background="Red"
-                                             Width="100" Height="100">
-                <Border Background="LightGray" />
-            </controls:RippleAnimationOverlay>
+            <controls:RippleOverlay Background="{StaticResource BaseLowBrush}">
+                <Border Width="200"
+                        Height="200"
+                        Background="Transparent"
+                        BorderBrush="{StaticResource BaseLowestBrush}"
+                        BorderThickness="1" />
+            </controls:RippleOverlay>
         </GroupBox>
     </UniformGrid>
 
