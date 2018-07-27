@@ -8,6 +8,7 @@
     </ResourceDictionary.MergedDictionaries>
     
     <Style x:Key="StandardTextBlock" TargetType="TextBlock" BasedOn="{StaticResource TextElementThemingBase}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="FontSize" Value="{StaticResource StandardFontSize}" />
         <Setter Property="FontWeight" Value="{StaticResource StandardFontWeight}" />
         <Setter Property="FontStyle" Value="{StaticResource StandardFontStyle}" />

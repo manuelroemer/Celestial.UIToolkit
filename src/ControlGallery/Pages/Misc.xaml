@@ -50,8 +50,10 @@
         </StackPanel>
 
         <GroupBox Header="Ripple">
-            <controls:RippleOverlay Background="{StaticResource BaseLowBrush}">
-                <Border Width="200"
+            <controls:RippleOverlay Background="{StaticResource Accent2MediumBrush}"
+                                    IsActive="{Binding IsPressed, ElementName=Btn}">
+                <Button x:Name="Btn"
+                        Width="200"
                         Height="200"
                         Background="Transparent"
                         BorderBrush="{StaticResource BaseLowestBrush}"

@@ -167,6 +167,7 @@
 
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="FontFamily" Value="{StaticResource StandardFontFamily}" />
         <Setter Property="FontSize" Value="{StaticResource StandardFontSize}" />
         <Setter Property="FontWeight" Value="{StaticResource StandardFontWeight}" />

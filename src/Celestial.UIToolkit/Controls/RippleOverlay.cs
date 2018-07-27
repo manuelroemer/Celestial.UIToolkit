@@ -22,9 +22,7 @@ namespace Celestial.UIToolkit.Controls
         internal const string NormalVisualStateName = "Normal";
         internal const string ExpandingVisualStateName = "Expanding";
         internal const string FadingVisualStateName = "Fading";
-
-        private bool _isMousePressed = false;
-
+        
         private static readonly DependencyPropertyKey AnimationOriginXPropertyKey = DependencyProperty.RegisterReadOnly(
             nameof(AnimationOriginX), typeof(double), typeof(RippleOverlay), new PropertyMetadata(0d));
 
@@ -39,7 +37,7 @@ namespace Celestial.UIToolkit.Controls
 
         private static readonly DependencyPropertyKey AnimationDiameterPropertyKey = DependencyProperty.RegisterReadOnly(
             nameof(AnimationDiameter), typeof(double), typeof(RippleOverlay), new PropertyMetadata(0d));
-
+        
         /// <summary>
         /// Identifies the <see cref="AnimationOriginX"/> dependency property.
         /// </summary>
@@ -82,6 +80,12 @@ namespace Celestial.UIToolkit.Controls
         /// </summary>
         public static readonly DependencyProperty RippleOriginProperty = DependencyProperty.Register(
             nameof(RippleOrigin), typeof(RippleOrigin), typeof(RippleOverlay), new PropertyMetadata(RippleOrigin.ClickLocation));
+
+        /// <summary>
+        /// Identifies the <see cref="IsActive"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty IsActiveProperty = DependencyProperty.Register(
+            nameof(IsActive), typeof(bool), typeof(RippleOverlay), new PropertyMetadata(false, IsActiveChanged));
 
         /// <summary>
         /// Gets the x-coordinate of the animation's origin point.
@@ -163,7 +167,21 @@ namespace Celestial.UIToolkit.Controls
             get { return (RippleOrigin)GetValue(RippleOriginProperty); }
             set { SetValue(RippleOriginProperty, value); }
         }
-
+        
+        /// <summary>
+        /// Gets or sets a value indicating whether the ripple animation is active.
+        /// By setting this value to true, the animation is started.
+        /// As long as this property istrue, the animation will stay in its
+        /// 'Expanding' state.
+        /// If it gets set to false, the animation will be allowed to enter the 'Fading'
+        /// state.
+        /// </summary>
+        public bool IsActive
+        {
+            get { return (bool)GetValue(IsActiveProperty); }
+            set { SetValue(IsActiveProperty, value); }
+        }
+        
         /// <summary>
         /// Overrides the element's default style.
         /// </summary>
@@ -182,6 +200,31 @@ namespace Celestial.UIToolkit.Controls
         }
 
         /// <summary>
+        /// Forces the (re-)start of the ripple animation,
+        /// originating from the control's center.
+        /// Calling this method will ignore the value of the
+        /// <see cref="RippleOrigin"/> property.
+        /// </summary>
+        public void StartRippleAnimation()
+        {
+            this.StartRippleAnimation(this.GetCenter());
+        }
+
+        /// <summary>
+        /// Forces the (re-)start of the ripple animation,
+        /// originating from the specified <paramref name="rippleOrigin"/> point.
+        /// Calling this method will ignore the value of the <see cref="RippleOrigin"/>
+        /// property.
+        /// </summary>
+        /// <param name="rippleOrigin">The point from which the ripple animation originates.</param>
+        public void StartRippleAnimation(Point rippleOrigin)
+        {
+            this.UpdateAnimationProperties(rippleOrigin);
+            VisualStateManager.GoToState(this, NormalVisualStateName, false);
+            VisualStateManager.GoToState(this, ExpandingVisualStateName, true);
+        }
+
+        /// <summary>
         /// Loads template parts for the animation control.
         /// </summary>
         public override void OnApplyTemplate()
@@ -191,50 +234,6 @@ namespace Celestial.UIToolkit.Controls
         }
         
         /// <summary>
-        /// Called when the user clicks on this element (with the left mouse button).
-        /// This sets the animation origin properties and starts the animation effect.
-        /// </summary>
-        /// <param name="e">Event args about the click.</param>
-        protected override void OnPreviewMouseLeftButtonDown(MouseButtonEventArgs e)
-        {
-            _isMousePressed = true;
-            if (this.RippleOrigin == RippleOrigin.ClickLocation)
-            {
-                this.UpdateAnimationProperties(e.GetPosition(this));
-            }
-            else if (this.RippleOrigin == RippleOrigin.Center)
-            {
-                this.UpdateAnimationProperties(this.GetCenter());
-            }
-            else
-            {
-                throw new NotImplementedException("Unknown RippleOrigin enumeration value.");
-            }
-            
-            // Always start expanding the animation when the element is pressed.
-            VisualStateManager.GoToState(this, NormalVisualStateName, false);
-            VisualStateManager.GoToState(this, ExpandingVisualStateName, true);
-
-            this.CaptureMouse();
-
-            base.OnPreviewMouseLeftButtonDown(e);
-        }
-
-        /// <summary>
-        /// Called when the user lifts the left mouse button again.
-        /// This stops the animation, if it has finished.
-        /// </summary>
-        /// <param name="e">Event args about the mouse data.</param>
-        protected override void OnPreviewMouseLeftButtonUp(MouseButtonEventArgs e)
-        {
-            this.ReleaseMouseCapture();
-
-            _isMousePressed = false;
-            this.TryEnterFading();
-            base.OnPreviewMouseLeftButtonUp(e);
-        }
-
-        /// <summary>
         /// Called when the <see cref="ActualAnimationScaleProperty"/>'s value is changed.
         /// </summary>
         /// <param name="d">The <see cref="DependencyObject"/> whose local value got changed.</param>
@@ -243,7 +242,55 @@ namespace Celestial.UIToolkit.Controls
         {
             ((RippleOverlay)d).TryEnterFading();
         }
-        
+
+        /// <summary>
+        /// Called when the <see cref="IsActive"/> property is changed.
+        /// If it changes to <c>true</c>, this handler will start the ripple animation,
+        /// based on the <see cref="RippleOrigin"/> property and the current
+        /// mouse position.
+        /// </summary>
+        /// <param name="d">This <see cref="RippleOverlay"/> instance.</param>
+        /// <param name="e">Event args.</param>
+        private static void IsActiveChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var self = (RippleOverlay)d;
+            bool isActive = (bool)e.NewValue;
+
+            if (isActive)
+            {
+                if (self.RippleOrigin == RippleOrigin.ClickLocation)
+                {
+                    // Even if RippleOrigin is set to use the cursor, we can only do so,
+                    // if the mouse is actually over this element.
+                    // If not, still show the animation from the center.
+                    // (This can, for instance, happen if the animation gets triggered via the keyboard).
+                    if (self.IsMouseOver)
+                    {
+                        var clickCoordinates = Mouse.GetPosition(self);
+                        self.StartRippleAnimation(clickCoordinates);
+                    }
+                    else
+                    {
+                        self.StartRippleAnimation();
+                    }
+                }
+                else if (self.RippleOrigin == RippleOrigin.Center)
+                {
+                    self.StartRippleAnimation();
+                }
+                else
+                {
+                    throw new InvalidOperationException("Unknown RippleOrigin enumeration value.");
+                }
+            }
+            else
+            {
+                // If IsActive gets set to false,
+                // allow the disappearing of the animation.
+                self.TryEnterFading();
+            }
+        }
+
         /// <summary>
         /// Called when either of the following events happens:
         /// <list type="bullet">
@@ -259,7 +306,7 @@ namespace Celestial.UIToolkit.Controls
         /// </summary>
         private void TryEnterFading()
         {
-            if (this.ActualAnimationScale >= this.AnimationScale && !_isMousePressed)
+            if (this.ActualAnimationScale >= this.AnimationScale && !this.IsActive /* !_isMousePressed */)
             {
                 VisualStateManager.GoToState(this, FadingVisualStateName, true);
             }
@@ -276,7 +323,7 @@ namespace Celestial.UIToolkit.Controls
             this.AnimationOriginX = rippleOrigin.X;
             this.AnimationOriginY = rippleOrigin.Y;
 
-            this.AnimationDiameter = Sqrt(  // This will make the ripple touch the out-most edge
+            this.AnimationDiameter = Sqrt(  // This will make the ripple touch the outer-most edge
                 Pow(Max(rippleOrigin.X, this.ActualWidth - rippleOrigin.X), 2) +
                 Pow(Max(rippleOrigin.Y, this.ActualHeight - rippleOrigin.Y), 2)) * 2;
             this.AnimationPositionX = this.AnimationOriginX - this.AnimationDiameter / 2;

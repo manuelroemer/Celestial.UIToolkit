@@ -3,9 +3,11 @@
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
     <Style TargetType="controls:RippleOverlay">
-        <Setter Property="Background" Value="Red" />
+        <Setter Property="Background" Value="Transparent" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="ClipToBounds" Value="True" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:RippleOverlay">
@@ -43,7 +45,7 @@
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                           Margin="{TemplateBinding Padding}"
                                           RecognizesAccessKey="True" />
-                        <Canvas ClipToBounds="True" IsHitTestVisible="False">
+                        <Canvas ClipToBounds="{TemplateBinding ClipToBounds}" IsHitTestVisible="False">
                             <Border x:Name="RippleBorder"
                                     Canvas.Left="{TemplateBinding AnimationPositionX}"
                                     Canvas.Top="{TemplateBinding AnimationPositionY}"
