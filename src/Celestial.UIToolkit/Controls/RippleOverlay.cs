@@ -306,7 +306,7 @@ namespace Celestial.UIToolkit.Controls
         /// </summary>
         private void TryEnterFading()
         {
-            if (this.ActualAnimationScale >= this.AnimationScale && !this.IsActive /* !_isMousePressed */)
+            if (this.ActualAnimationScale >= this.AnimationScale && !this.IsActive)
             {
                 VisualStateManager.GoToState(this, FadingVisualStateName, true);
             }
