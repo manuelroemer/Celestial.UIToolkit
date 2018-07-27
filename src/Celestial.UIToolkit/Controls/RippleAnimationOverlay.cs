@@ -19,15 +19,19 @@ namespace Celestial.UIToolkit.Controls
     /// whenever the user clicks on it.
     /// The effect is based on the ripple effect by the Material Design language.
     /// </summary>
-    [TemplateVisualState(GroupName = CommonStatesVisualStateGroup, Name = NormalVisualStateName)]
-    [TemplateVisualState(GroupName = CommonStatesVisualStateGroup, Name = PressedVisualStateName)]
+    [TemplateVisualState(GroupName = AnimationStatesVisualStateGroup, Name = NormalVisualStateName)]
+    [TemplateVisualState(GroupName = AnimationStatesVisualStateGroup, Name = ExpandingVisualStateName)]
+    [TemplateVisualState(GroupName = AnimationStatesVisualStateGroup, Name = FadingVisualStateName)]
     public class RippleAnimationOverlay : ContentControl
     {
         
-        internal const string CommonStatesVisualStateGroup = "CommonStates";
+        internal const string AnimationStatesVisualStateGroup = "AnimationStates";
         internal const string NormalVisualStateName = "Normal";
-        internal const string PressedVisualStateName = "Pressed";
-        
+        internal const string ExpandingVisualStateName = "Expanding";
+        internal const string FadingVisualStateName = "Fading";
+
+        private bool _isMousePressed = false;
+
         private static readonly DependencyPropertyKey AnimationOriginXPropertyKey = DependencyProperty.RegisterReadOnly(
             nameof(AnimationOriginX), typeof(double), typeof(RippleAnimationOverlay), new PropertyMetadata(0d));
 
@@ -67,6 +71,18 @@ namespace Celestial.UIToolkit.Controls
         /// Identifies the <see cref="AnimationDiameter"/> dependency property.
         /// </summary>
         public static readonly DependencyProperty AnimationDiameterProperty = AnimationDiameterPropertyKey.DependencyProperty;
+
+        /// <summary>
+        /// Identifies the <see cref="ActualAnimationScale"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty ActualAnimationScaleProperty = DependencyProperty.Register(
+            nameof(ActualAnimationScale), typeof(double), typeof(RippleAnimationOverlay), new FrameworkPropertyMetadata(0d, FrameworkPropertyMetadataOptions.AffectsRender, AnimationScaleChanged));
+
+        /// <summary>
+        /// Identifies the <see cref="AnimationScale"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty AnimationScaleProperty = DependencyProperty.Register(
+            nameof(AnimationScale), typeof(double), typeof(RippleAnimationOverlay), new PropertyMetadata(1d));
 
         /// <summary>
         /// Gets the x-coordinate of the animation's origin point.
@@ -117,6 +133,26 @@ namespace Celestial.UIToolkit.Controls
         {
             get { return (double)GetValue(AnimationDiameterProperty); }
             protected set { SetValue(AnimationDiameterPropertyKey, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the target scale of the ripple animation
+        /// (the scale which it will have, when it is fully expanded).
+        /// </summary>
+        public double AnimationScale
+        {
+            get { return (double)GetValue(AnimationScaleProperty); }
+            set { SetValue(AnimationScaleProperty, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the current scale of the animation.
+        /// This value is only supposed to be used by animations.
+        /// </summary>
+        public double ActualAnimationScale
+        {
+            get { return (double)GetValue(ActualAnimationScaleProperty); }
+            set { SetValue(ActualAnimationScaleProperty, value); }
         }
         
         /// <summary>
@@ -173,11 +209,15 @@ namespace Celestial.UIToolkit.Controls
             this.AnimationOriginY = rippleOrigin.Y;
             this.AnimationPositionX = this.AnimationOriginX - this.AnimationDiameter / 2;
             this.AnimationPositionY = this.AnimationOriginY - this.AnimationDiameter / 2;
+            _isMousePressed = true;
 
-            VisualStateManager.GoToState(this, PressedVisualStateName, true);
+            // Always start expanding the animation when the element is pressed.
+            VisualStateManager.GoToState(this, NormalVisualStateName, false);
+            VisualStateManager.GoToState(this, ExpandingVisualStateName, true);
+
             base.OnPreviewMouseLeftButtonDown(e);
         }
-        
+
         /// <summary>
         /// Called when the user lifts the left mouse button again.
         /// This stops the animation, if it has finished.
@@ -185,10 +225,42 @@ namespace Celestial.UIToolkit.Controls
         /// <param name="e">Event args about the mouse data.</param>
         protected override void OnPreviewMouseLeftButtonUp(MouseButtonEventArgs e)
         {
-            VisualStateManager.GoToState(this, NormalVisualStateName, true);
+            _isMousePressed = false;
+            this.TryEnterFading();
             base.OnPreviewMouseLeftButtonUp(e);
         }
+
+        /// <summary>
+        /// Called when the <see cref="ActualAnimationScaleProperty"/>'s value is changed.
+        /// </summary>
+        /// <param name="d">The <see cref="DependencyObject"/> whose local value got changed.</param>
+        /// <param name="e">Event data about the new value.</param>
+        private static void AnimationScaleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ((RippleAnimationOverlay)d).TryEnterFading();
+        }
         
+        /// <summary>
+        /// Called when either of the following events happens:
+        /// <list type="bullet">
+        ///     <item>
+        ///         <description>The user stops pressing the element.</description>
+        ///     </item>
+        ///     <item>
+        ///         <description>The <see cref="ActualAnimationScale"/> reaches the max. value.</description>
+        ///     </item>
+        /// </list>
+        /// When both of these events have happened, it means that the animation can enter
+        /// the 'Fading' state, meaning that it will disappear.
+        /// </summary>
+        private void TryEnterFading()
+        {
+            if (this.ActualAnimationScale == 1d && !_isMousePressed)
+            {
+                VisualStateManager.GoToState(this, FadingVisualStateName, true);
+            }
+        }
+
     }
 
 }
