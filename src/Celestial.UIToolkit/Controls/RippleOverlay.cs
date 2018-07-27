@@ -79,7 +79,7 @@ namespace Celestial.UIToolkit.Controls
         /// Identifies the <see cref="RippleOrigin"/> dependency property.
         /// </summary>
         public static readonly DependencyProperty RippleOriginProperty = DependencyProperty.Register(
-            nameof(RippleOrigin), typeof(RippleOrigin), typeof(RippleOverlay), new PropertyMetadata(RippleOrigin.ClickLocation));
+            nameof(RippleOrigin), typeof(RippleOrigin), typeof(RippleOverlay), new PropertyMetadata(RippleOrigin.MouseLocation));
 
         /// <summary>
         /// Identifies the <see cref="IsActive"/> dependency property.
@@ -258,7 +258,7 @@ namespace Celestial.UIToolkit.Controls
 
             if (isActive)
             {
-                if (self.RippleOrigin == RippleOrigin.ClickLocation)
+                if (self.RippleOrigin == RippleOrigin.MouseLocation)
                 {
                     // Even if RippleOrigin is set to use the cursor, we can only do so,
                     // if the mouse is actually over this element.
@@ -350,11 +350,9 @@ namespace Celestial.UIToolkit.Controls
     {
 
         /// <summary>
-        /// The location where the user clicked the <see cref="RippleOverlay"/>.
-        /// If it got triggered via an input which does not produce valid
-        /// coordinates, <see cref="RippleOrigin.Center"/> will be used.
+        /// The location of the mouse pointer, when the animation is started.
         /// </summary>
-        ClickLocation,
+        MouseLocation,
 
         /// <summary>
         /// The animation starts from the center of the <see cref="RippleOverlay"/>.
