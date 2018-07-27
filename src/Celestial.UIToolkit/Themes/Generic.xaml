@@ -11,9 +11,6 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:RippleAnimationOverlay">
-                    <ControlTemplate.Resources>
-                        <converters:MathOperationConverter x:Key="DivisionConverter" Operator="Divide" />
-                    </ControlTemplate.Resources>
                     <Grid>
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
@@ -41,25 +38,36 @@
                         </Canvas>
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
-                                <VisualState x:Name="Normal" />
-                                <VisualState x:Name="Pressed">
+                                <VisualState x:Name="Normal">
                                     <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RippleBorder"
+                                                                       Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorderScaleTransform"
+                                                                       Storyboard.TargetProperty="ScaleX">
+                                            <LinearDoubleKeyFrame KeyTime="0" Value="0" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorderScaleTransform"
+                                                                       Storyboard.TargetProperty="ScaleY">
+                                            <LinearDoubleKeyFrame KeyTime="0" Value="0" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard x:Name="PART_RippleAnimationTimeline">
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RippleBorder"
                                                                        Storyboard.TargetProperty="(UIElement.Visibility)">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
                                         </ObjectAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorderScaleTransform"
                                                                        Storyboard.TargetProperty="ScaleX">
-                                            <LinearDoubleKeyFrame KeyTime="0:0:0.25" Value="1" />
+                                            <LinearDoubleKeyFrame KeyTime="0:0:1" Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorderScaleTransform"
                                                                        Storyboard.TargetProperty="ScaleY">
-                                            <LinearDoubleKeyFrame KeyTime="0:0:0.25" Value="1" />
+                                            <LinearDoubleKeyFrame KeyTime="0:0:1" Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RippleBorder"
-                                                                       Storyboard.TargetProperty="(UIElement.Visibility)">
-                                            <DiscreteObjectKeyFrame KeyTime="0:0:0.25" Value="{x:Static Visibility.Collapsed}" />
-                                        </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>

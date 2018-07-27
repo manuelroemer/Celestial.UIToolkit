@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,6 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using static System.Math;
 
 namespace Celestial.UIToolkit.Controls
@@ -14,14 +16,17 @@ namespace Celestial.UIToolkit.Controls
 
     [TemplateVisualState(GroupName = CommonStatesVisualStateGroup, Name = NormalVisualStateName)]
     [TemplateVisualState(GroupName = CommonStatesVisualStateGroup, Name = PressedVisualStateName)]
+    [TemplatePart(Name = RippleAnimationTimelineTemplatePart, Type = typeof(Timeline))]
     public class RippleAnimationOverlay : ContentControl
     {
 
+        internal const string RippleAnimationTimelineTemplatePart = "PART_RippleAnimationTimeline";
         internal const string CommonStatesVisualStateGroup = "CommonStates";
-
         internal const string NormalVisualStateName = "Normal";
         internal const string PressedVisualStateName = "Pressed";
         
+        private Storyboard _animationTimeline;
+
         /// <summary>
         /// Identifies the <see cref="AnimationOriginX"/> dependency property.
         /// </summary>
@@ -113,11 +118,16 @@ namespace Celestial.UIToolkit.Controls
         public RippleAnimationOverlay()
         {
         }
-        
+
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
-            //VisualStateManager.GoToState(this, NormalVisualStateName, true);
+
+            _animationTimeline = this.GetTemplateChild(RippleAnimationTimelineTemplatePart) as Storyboard;
+            if (_animationTimeline != null)
+            {
+                _animationTimeline.Completed += this.AnimationTimeline_Completed;
+            }
         }
 
         protected override void OnPreviewMouseLeftButtonDown(MouseButtonEventArgs e)
@@ -129,6 +139,7 @@ namespace Celestial.UIToolkit.Controls
             this.AnimationPositionX = this.AnimationOriginX - this.AnimationDiameter / 2;
             this.AnimationPositionY = this.AnimationOriginY - this.AnimationDiameter / 2;
 
+            VisualStateManager.GoToState(this, NormalVisualStateName, true);
             VisualStateManager.GoToState(this, PressedVisualStateName, true);
 
             base.OnPreviewMouseLeftButtonDown(e);
@@ -136,7 +147,12 @@ namespace Celestial.UIToolkit.Controls
 
         protected override void OnPreviewMouseLeftButtonUp(MouseButtonEventArgs e)
         {
-            VisualStateManager.GoToState(this, NormalVisualStateName, true);
+            // If we don't have access to the animation object itself,
+            // stop the animation when the mouse is no longer down.
+            if (_animationTimeline == null)
+            {
+                VisualStateManager.GoToState(this, NormalVisualStateName, true);
+            }
             base.OnPreviewMouseLeftButtonUp(e);
         }
 
@@ -150,6 +166,11 @@ namespace Celestial.UIToolkit.Controls
             base.OnRenderSizeChanged(sizeInfo);
         }
         
+        private void AnimationTimeline_Completed(object sender, EventArgs e)
+        {
+            VisualStateManager.GoToState(this, NormalVisualStateName, true);
+        }
+
     }
 
 }
