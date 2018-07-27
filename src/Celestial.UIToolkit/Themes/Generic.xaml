@@ -38,41 +38,51 @@
                         </Canvas>
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
-                                <VisualState x:Name="Normal">
-                                    <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RippleBorder"
-                                                                       Storyboard.TargetProperty="(UIElement.Visibility)">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
-                                        </ObjectAnimationUsingKeyFrames>
-                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorderScaleTransform"
-                                                                       Storyboard.TargetProperty="ScaleX">
-                                            <LinearDoubleKeyFrame KeyTime="0" Value="0" />
-                                        </DoubleAnimationUsingKeyFrames>
-                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorderScaleTransform"
-                                                                       Storyboard.TargetProperty="ScaleY">
-                                            <LinearDoubleKeyFrame KeyTime="0" Value="0" />
-                                        </DoubleAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </VisualState>
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition From="Normal" To="Pressed">
+                                        <Storyboard x:Name="PART_RippleAnimationStoryboard">
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorderScaleTransform"
+                                                                           Storyboard.TargetProperty="ScaleX">
+                                                <LinearDoubleKeyFrame KeyTime="0:0:3" Value="1" />
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorderScaleTransform"
+                                                                           Storyboard.TargetProperty="ScaleY">
+                                                <LinearDoubleKeyFrame KeyTime="0:0:3" Value="1" />
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualTransition>
+                                    <VisualTransition From="Pressed" To="Normal">
+                                        <Storyboard>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorderScaleTransform"
+                                                                           Storyboard.TargetProperty="ScaleX">
+                                                <DiscreteDoubleKeyFrame KeyTime="0" Value="0" />
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorderScaleTransform"
+                                                                           Storyboard.TargetProperty="ScaleY">
+                                                <DiscreteDoubleKeyFrame KeyTime="0" Value="0" />
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualTransition>
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="Normal" />
                                 <VisualState x:Name="Pressed">
-                                    <Storyboard x:Name="PART_RippleAnimationTimeline">
+                                    <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RippleBorder"
                                                                        Storyboard.TargetProperty="(UIElement.Visibility)">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
                                         </ObjectAnimationUsingKeyFrames>
-                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorderScaleTransform"
-                                                                       Storyboard.TargetProperty="ScaleX">
-                                            <LinearDoubleKeyFrame KeyTime="0:0:1" Value="1" />
-                                        </DoubleAnimationUsingKeyFrames>
-                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorderScaleTransform"
-                                                                       Storyboard.TargetProperty="ScaleY">
-                                            <LinearDoubleKeyFrame KeyTime="0:0:1" Value="1" />
-                                        </DoubleAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                     </Grid>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="MouseLeftButtonDown">
+                            <EventTrigger.EnterActions>
+                                
+                            </EventTrigger.EnterActions>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

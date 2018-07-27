@@ -14,18 +14,19 @@ using static System.Math;
 namespace Celestial.UIToolkit.Controls
 {
 
+    /// <summary>
+    /// A content control which provides a ripple animation effect to the underlying content,
+    /// whenever the user clicks on it.
+    /// The effect is based on the ripple effect by the Material Design language.
+    /// </summary>
     [TemplateVisualState(GroupName = CommonStatesVisualStateGroup, Name = NormalVisualStateName)]
     [TemplateVisualState(GroupName = CommonStatesVisualStateGroup, Name = PressedVisualStateName)]
-    [TemplatePart(Name = RippleAnimationTimelineTemplatePart, Type = typeof(Timeline))]
     public class RippleAnimationOverlay : ContentControl
     {
-
-        internal const string RippleAnimationTimelineTemplatePart = "PART_RippleAnimationTimeline";
+        
         internal const string CommonStatesVisualStateGroup = "CommonStates";
         internal const string NormalVisualStateName = "Normal";
         internal const string PressedVisualStateName = "Pressed";
-        
-        private Storyboard _animationTimeline;
 
         /// <summary>
         /// Identifies the <see cref="AnimationOriginX"/> dependency property.
@@ -115,47 +116,27 @@ namespace Celestial.UIToolkit.Controls
                 new FrameworkPropertyMetadata(typeof(RippleAnimationOverlay)));
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RippleAnimationOverlay"/> class.
+        /// </summary>
         public RippleAnimationOverlay()
         {
         }
 
+        /// <summary>
+        /// Loads template parts for the animation control.
+        /// </summary>
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
-
-            _animationTimeline = this.GetTemplateChild(RippleAnimationTimelineTemplatePart) as Storyboard;
-            if (_animationTimeline != null)
-            {
-                _animationTimeline.Completed += this.AnimationTimeline_Completed;
-            }
-        }
-
-        protected override void OnPreviewMouseLeftButtonDown(MouseButtonEventArgs e)
-        {
-            // The animation starts from a specific point (the mouse press location).
-            var rippleOrigin = e.GetPosition(this);
-            this.AnimationOriginX = rippleOrigin.X;
-            this.AnimationOriginY = rippleOrigin.Y;
-            this.AnimationPositionX = this.AnimationOriginX - this.AnimationDiameter / 2;
-            this.AnimationPositionY = this.AnimationOriginY - this.AnimationDiameter / 2;
-
             VisualStateManager.GoToState(this, NormalVisualStateName, true);
-            VisualStateManager.GoToState(this, PressedVisualStateName, true);
-
-            base.OnPreviewMouseLeftButtonDown(e);
         }
 
-        protected override void OnPreviewMouseLeftButtonUp(MouseButtonEventArgs e)
-        {
-            // If we don't have access to the animation object itself,
-            // stop the animation when the mouse is no longer down.
-            if (_animationTimeline == null)
-            {
-                VisualStateManager.GoToState(this, NormalVisualStateName, true);
-            }
-            base.OnPreviewMouseLeftButtonUp(e);
-        }
-
+        /// <summary>
+        /// Called whenever the element's render size changes.
+        /// This updates the <see cref="AnimationDiameter"/> property.
+        /// </summary>
+        /// <param name="sizeInfo">Information about the new render size.</param>
         protected override void OnRenderSizeChanged(SizeChangedInfo sizeInfo)
         {
             // The max. required radius is the diagonal of this element.
@@ -165,12 +146,36 @@ namespace Celestial.UIToolkit.Controls
 
             base.OnRenderSizeChanged(sizeInfo);
         }
+
+        /// <summary>
+        /// Called when the user clicks on this element (with the left mouse button).
+        /// This sets the animation origin properties and starts the animation effect.
+        /// </summary>
+        /// <param name="e">Event args about the click.</param>
+        protected override void OnPreviewMouseLeftButtonDown(MouseButtonEventArgs e)
+        {
+            // The animation starts from a specific point (the mouse press location).
+            var rippleOrigin = e.GetPosition(this);
+            this.AnimationOriginX = rippleOrigin.X;
+            this.AnimationOriginY = rippleOrigin.Y;
+            this.AnimationPositionX = this.AnimationOriginX - this.AnimationDiameter / 2;
+            this.AnimationPositionY = this.AnimationOriginY - this.AnimationDiameter / 2;
+
+            VisualStateManager.GoToState(this, PressedVisualStateName, true);
+            base.OnPreviewMouseLeftButtonDown(e);
+        }
         
-        private void AnimationTimeline_Completed(object sender, EventArgs e)
+        /// <summary>
+        /// Called when the user lifts the left mouse button again.
+        /// This stops the animation, if it has finished.
+        /// </summary>
+        /// <param name="e">Event args about the mouse data.</param>
+        protected override void OnPreviewMouseLeftButtonUp(MouseButtonEventArgs e)
         {
             VisualStateManager.GoToState(this, NormalVisualStateName, true);
+            base.OnPreviewMouseLeftButtonUp(e);
         }
-
+        
     }
 
 }
