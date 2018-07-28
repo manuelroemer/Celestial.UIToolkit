@@ -3,10 +3,6 @@
                     xmlns:local="clr-namespace:Celestial.UIToolkit"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
-    <ResourceDictionary.MergedDictionaries>
-        <local:SharedResourceDictionary Source="../Shared/Values.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-    
     <Style TargetType="controls:RippleOverlay">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />

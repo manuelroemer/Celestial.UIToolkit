@@ -6,8 +6,11 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Themes/Light.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Accents/Default.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Theming/Themes/Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Theming/Accents/Default.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Theming/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Theming/GlobalValues.xaml" />
+                
                 <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Bundle.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Icons/Arrows.xaml" />
             </ResourceDictionary.MergedDictionaries>

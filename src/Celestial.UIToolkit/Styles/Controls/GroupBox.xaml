@@ -6,7 +6,6 @@
 
     <ResourceDictionary.MergedDictionaries>
         <local:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <local:SharedResourceDictionary Source="../Shared/Values.xaml" />
     </ResourceDictionary.MergedDictionaries>
     
     <!-- A GroupBox is, by default, a ContentControl whose Header

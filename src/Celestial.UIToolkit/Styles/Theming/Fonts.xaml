@@ -2,22 +2,6 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
-    <Color x:Key="BaseHighestColor">#FFFFFF</Color>
-    <Color x:Key="BaseHigherColor"> #FAFAFA</Color>
-    <Color x:Key="BaseHighColor">   #E2E2E2</Color>
-    <Color x:Key="BaseMediumColor"> #D0D0D0</Color>
-    <Color x:Key="BaseLowColor">    #A5A5A5</Color>
-    <Color x:Key="BaseLowerColor">  #666666</Color>
-    <Color x:Key="BaseLowestColor"> #000000</Color>
-
-    <SolidColorBrush x:Key="BaseHighestBrush" Color="{StaticResource BaseHighestColor}" />
-    <SolidColorBrush x:Key="BaseHigherBrush" Color="{StaticResource BaseHigherColor}" />
-    <SolidColorBrush x:Key="BaseHighBrush" Color="{StaticResource BaseHighColor}" />
-    <SolidColorBrush x:Key="BaseMediumBrush" Color="{StaticResource BaseMediumColor}" />
-    <SolidColorBrush x:Key="BaseLowBrush" Color="{StaticResource BaseLowColor}" />
-    <SolidColorBrush x:Key="BaseLowerBrush" Color="{StaticResource BaseLowerColor}" />
-    <SolidColorBrush x:Key="BaseLowestBrush" Color="{StaticResource BaseLowestColor}" />
-
     <FontFamily x:Key="StandardFontFamily">Segoe UI</FontFamily>
     <sys:Double x:Key="StandardFontSize">14</sys:Double>
     <FontWeight x:Key="StandardFontWeight">Normal</FontWeight>

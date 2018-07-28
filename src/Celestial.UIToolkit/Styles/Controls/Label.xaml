@@ -5,7 +5,6 @@
 
     <ResourceDictionary.MergedDictionaries>
         <local:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <local:SharedResourceDictionary Source="../Shared/Values.xaml" />
     </ResourceDictionary.MergedDictionaries>
     
     <Style x:Key="StandardLabel" TargetType="Label" BasedOn="{StaticResource TextElementThemingBase}">
