@@ -24,5 +24,6 @@ namespace ControlGallery.Pages
         {
             InitializeComponent();
         }
+        
     }
 }

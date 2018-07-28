@@ -7,6 +7,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Themes/Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Accents/Default.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Bundle.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Icons/Arrows.xaml" />
             </ResourceDictionary.MergedDictionaries>
