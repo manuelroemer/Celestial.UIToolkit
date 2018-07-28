@@ -1,0 +1,26 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Thickness x:Key="MenuItemPadding">16,8</Thickness>
+
+
+    
+    <!--
+    KeyTimes and durations for animations.
+    -->
+    <Duration x:Key="ColorAnimationDuration">0:0:0.150</Duration>
+    <KeyTime x:Key="ColorAnimationKeyTime">0:0:0.150</KeyTime>
+
+    <Duration x:Key="EnterAnimationDuration">0:0:0.300</Duration>
+    <KeyTime x:Key="EnterAnimationKeyTime">0:0:0.300</KeyTime>
+
+    <Duration x:Key="ExitAnimationDuration">0:0:0.150</Duration>
+    <KeyTime x:Key="ExitAnimationKeyTime">0:0:0.150</KeyTime>
+
+    <Duration x:Key="MoveAnimationDuration">0:0:0.500</Duration>
+    <KeyTime x:Key="MoveAnimationKeyTime">0:0:0.500</KeyTime>
+
+    <Duration x:Key="InnerPartialAnimationDuration">0:0:0.150</Duration>
+    <KeyTime x:Key="InnerPartialAnimationKeyTime">0:0:0.150</KeyTime>
+
+</ResourceDictionary>

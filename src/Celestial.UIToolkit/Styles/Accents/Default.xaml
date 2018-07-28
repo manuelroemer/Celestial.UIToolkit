@@ -1,4 +1,49 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--
+    The first accent is intended to be a bright, flashy color.
+    It basically identifies the application's brand and captures the user's attention.
+    It is rarely used by controls (by default).
+    -->
+    <Color x:Key="Accent1HigherColor">#FF3874</Color>
+    <Color x:Key="Accent1HighColor">#F0346D</Color>
+    <Color x:Key="Accent1MediumColor">#E03166</Color>
+    <Color x:Key="Accent1LowColor">#B52853</Color>
+    <Color x:Key="Accent1LowerColor">#871E3E</Color>
+
+    <SolidColorBrush x:Key="Accent1HigherBrush" Color="{StaticResource Accent1HigherColor}" />
+    <SolidColorBrush x:Key="Accent1HighBrush" Color="{StaticResource Accent1HighColor}" />
+    <SolidColorBrush x:Key="Accent1MediumBrush" Color="{StaticResource Accent1MediumColor}" />
+    <SolidColorBrush x:Key="Accent1LowBrush" Color="{StaticResource Accent1LowColor}" />
+    <SolidColorBrush x:Key="Accent1LowerBrush" Color="{StaticResource Accent1LowerColor}" />
+
+
+
+    <!--
+    The second accent is commonly used by controls.
+    In comparison to the first one, it is visible across the application.
+    -->
+    <Color x:Key="Accent2HigherColor">#13B7FF</Color>
+    <Color x:Key="Accent2HighColor">#11A6E8</Color>
+    <Color x:Key="Accent2MediumColor">#0F98D4</Color>
+    <Color x:Key="Accent2LowColor">#0C79A9</Color>
+    <Color x:Key="Accent2LowerColor">#09587A</Color>
+
+    <SolidColorBrush x:Key="Accent2HigherBrush" Color="{StaticResource Accent2HigherColor}" />
+    <SolidColorBrush x:Key="Accent2HighBrush" Color="{StaticResource Accent2HighColor}" />
+    <SolidColorBrush x:Key="Accent2MediumBrush" Color="{StaticResource Accent2MediumColor}" />
+    <SolidColorBrush x:Key="Accent2LowBrush" Color="{StaticResource Accent2LowColor}" />
+    <SolidColorBrush x:Key="Accent2LowerBrush" Color="{StaticResource Accent2LowerColor}" />
+
     
+    
+    <!--
+    These resources define the colors to be used by controls in their different states.
+    -->
+    
+    <!-- Colors used by controls in their "Default" state. -->
+    <SolidColorBrush x:Key="StandardControlBorderBrush" Color="{StaticResource BaseLowColor}" />
+    <SolidColorBrush x:Key="StandardControlBackgroundBrush" Color="{StaticResource BaseHighestColor}" />
+
 </ResourceDictionary>

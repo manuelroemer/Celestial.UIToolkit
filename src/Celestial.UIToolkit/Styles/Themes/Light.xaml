@@ -18,57 +18,22 @@
     <SolidColorBrush x:Key="BaseLowerBrush" Color="{StaticResource BaseLowerColor}" />
     <SolidColorBrush x:Key="BaseLowestBrush" Color="{StaticResource BaseLowestColor}" />
 
-
-
-    <Color x:Key="Accent1HigherColor">#FF3874</Color>
-    <Color x:Key="Accent1HighColor">  #F0346D</Color>
-    <Color x:Key="Accent1MediumColor">#E03166</Color>
-    <Color x:Key="Accent1LowColor">   #B52853</Color>
-    <Color x:Key="Accent1LowerColor"> #871E3E</Color>
-
-    <SolidColorBrush x:Key="Accent1HigherBrush" Color="{StaticResource Accent1HigherColor}" />
-    <SolidColorBrush x:Key="Accent1HighBrush" Color="{StaticResource Accent1HighColor}" />
-    <SolidColorBrush x:Key="Accent1MediumBrush" Color="{StaticResource Accent1MediumColor}" />
-    <SolidColorBrush x:Key="Accent1LowBrush" Color="{StaticResource Accent1LowColor}" />
-    <SolidColorBrush x:Key="Accent1LowerBrush" Color="{StaticResource Accent1LowerColor}" />
-
-
-
-    <Color x:Key="Accent2HigherColor">#13B7FF</Color>
-    <Color x:Key="Accent2HighColor">  #11A6E8</Color>
-    <Color x:Key="Accent2MediumColor">#0F98D4</Color>
-    <Color x:Key="Accent2LowColor">   #0C79A9</Color>
-    <Color x:Key="Accent2LowerColor"> #09587A</Color>
-
-    <SolidColorBrush x:Key="Accent2HigherBrush" Color="{StaticResource Accent2HigherColor}" />
-    <SolidColorBrush x:Key="Accent2HighBrush" Color="{StaticResource Accent2HighColor}" />
-    <SolidColorBrush x:Key="Accent2MediumBrush" Color="{StaticResource Accent2MediumColor}" />
-    <SolidColorBrush x:Key="Accent2LowBrush" Color="{StaticResource Accent2LowColor}" />
-    <SolidColorBrush x:Key="Accent2LowerBrush" Color="{StaticResource Accent2LowerColor}" />
-
-    
-    
-    <SolidColorBrush x:Key="StandardControlBorderBrush" Color="{StaticResource BaseLowColor}" />
-    <SolidColorBrush x:Key="StandardControlBackgroundBrush" Color="{StaticResource BaseHighestColor}" />
-
-
-
-    <FontFamily x:Key="StandardFontFamily">  Segoe UI</FontFamily>
-    <sys:Double x:Key="StandardFontSize">    14</sys:Double>
-    <FontWeight x:Key="StandardFontWeight">  Normal</FontWeight>
-    <FontStyle x:Key="StandardFontStyle">    Normal</FontStyle>
+    <FontFamily x:Key="StandardFontFamily">Segoe UI</FontFamily>
+    <sys:Double x:Key="StandardFontSize">14</sys:Double>
+    <FontWeight x:Key="StandardFontWeight">Normal</FontWeight>
+    <FontStyle x:Key="StandardFontStyle">Normal</FontStyle>
     <FontStretch x:Key="StandardFontStretch">Normal</FontStretch>
 
-    <FontFamily x:Key="TitleFontFamily">  Segoe UI Light</FontFamily>
-    <sys:Double x:Key="TitleFontSize">    24</sys:Double>
-    <FontWeight x:Key="TitleFontWeight">  Normal</FontWeight>
-    <FontStyle x:Key="TitleFontStyle">    Normal</FontStyle>
+    <FontFamily x:Key="TitleFontFamily">Segoe UI Light</FontFamily>
+    <sys:Double x:Key="TitleFontSize">24</sys:Double>
+    <FontWeight x:Key="TitleFontWeight">Normal</FontWeight>
+    <FontStyle x:Key="TitleFontStyle">Normal</FontStyle>
     <FontStretch x:Key="TitleFontStretch">Normal</FontStretch>
-    
-    <FontFamily x:Key="SubTitleFontFamily">  Segoe UI</FontFamily>
-    <sys:Double x:Key="SubTitleFontSize">    18</sys:Double>
-    <FontWeight x:Key="SubTitleFontWeight">  Normal</FontWeight>
-    <FontStyle x:Key="SubTitleFontStyle">    Normal</FontStyle>
+
+    <FontFamily x:Key="SubTitleFontFamily">Segoe UI</FontFamily>
+    <sys:Double x:Key="SubTitleFontSize">18</sys:Double>
+    <FontWeight x:Key="SubTitleFontWeight">Normal</FontWeight>
+    <FontStyle x:Key="SubTitleFontStyle">Normal</FontStyle>
     <FontStretch x:Key="SubTitleFontStretch">Normal</FontStretch>
 
     <FontFamily x:Key="TinyFontFamily">Segoe UI</FontFamily>
@@ -77,44 +42,22 @@
     <FontStyle x:Key="TinyFontStyle">Normal</FontStyle>
     <FontStretch x:Key="TinyFontStretch">Normal</FontStretch>
 
-    <FontWeight x:Key="AltFontWeight">  Bold</FontWeight>
-    <FontStyle x:Key="AltFontStyle">    Normal</FontStyle>
+    <FontWeight x:Key="AltFontWeight">Bold</FontWeight>
+    <FontStyle x:Key="AltFontStyle">Normal</FontStyle>
     <FontStretch x:Key="AltFontStretch">Normal</FontStretch>
-    
-    <FontWeight x:Key="SubtleFontWeight">  Normal</FontWeight>
-    <FontStyle x:Key="SubtleFontStyle">    Italic</FontStyle>
+
+    <FontWeight x:Key="SubtleFontWeight">Normal</FontWeight>
+    <FontStyle x:Key="SubtleFontStyle">Italic</FontStyle>
     <FontStretch x:Key="SubtleFontStretch">Normal</FontStretch>
-    
-    <FontWeight x:Key="HintFontWeight">  Normal</FontWeight>
-    <FontStyle x:Key="HintFontStyle">    Normal</FontStyle>
+
+    <FontWeight x:Key="HintFontWeight">Normal</FontWeight>
+    <FontStyle x:Key="HintFontStyle">Normal</FontStyle>
     <FontStretch x:Key="HintFontStretch">Normal</FontStretch>
-    
+
     <SolidColorBrush x:Key="StandardForegroundBrush" Color="{StaticResource BaseLowestColor}" />
     <SolidColorBrush x:Key="AccentForegroundBrush" Color="{StaticResource BaseHighestColor}" />
     <SolidColorBrush x:Key="SubtleForegroundBrush" Color="{StaticResource BaseLowerColor}" />
     <SolidColorBrush x:Key="HintForegroundBrush" Color="{StaticResource BaseLowerColor}" />
     <SolidColorBrush x:Key="DisabledForegroundBrush" Color="{StaticResource BaseHighColor}" />
-    
 
-
-    <Duration x:Key="ColorAnimationDuration">0:0:0.150</Duration>
-    <KeyTime x:Key="ColorAnimationKeyTime">0:0:0.150</KeyTime>
-    
-    <Duration x:Key="EnterAnimationDuration">0:0:0.300</Duration>
-    <KeyTime x:Key="EnterAnimationKeyTime">0:0:0.300</KeyTime>
-    
-    <Duration x:Key="ExitAnimationDuration">0:0:0.150</Duration>
-    <KeyTime x:Key="ExitAnimationKeyTime">0:0:0.150</KeyTime>
-    
-    <Duration x:Key="MoveAnimationDuration">0:0:0.500</Duration>
-    <KeyTime x:Key="MoveAnimationKeyTime">0:0:0.500</KeyTime>
-    
-    <!-- For inner parts of a control, that move quickly (e.g. rotations). -->
-    <Duration x:Key="InnerPartialAnimationDuration">0:0:0.150</Duration> 
-    <KeyTime x:Key="InnerPartialAnimationKeyTime">0:0:0.150</KeyTime>
-    
-
-
-    <Thickness x:Key="MenuItemPadding">15,6</Thickness>
-    
 </ResourceDictionary>

@@ -8,6 +8,7 @@
     <ResourceDictionary.MergedDictionaries>
         <local:SharedResourceDictionary Source="../Shared/Theming.xaml" />
         <local:SharedResourceDictionary Source="../../Icons/Arrows.xaml" />
+        <local:SharedResourceDictionary Source="../Shared/Values.xaml" />
         <local:SharedResourceDictionary Source="Popup.xaml" />
     </ResourceDictionary.MergedDictionaries>
 

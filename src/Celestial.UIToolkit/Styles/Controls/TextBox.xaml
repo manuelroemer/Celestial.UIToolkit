@@ -5,6 +5,7 @@
 
     <ResourceDictionary.MergedDictionaries>
         <local:SharedResourceDictionary Source="../Shared/Theming.xaml" />
+        <local:SharedResourceDictionary Source="../Shared/Values.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <!-- Use TargetType="Control", so that the PasswordBox can use the style too.
