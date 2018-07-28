@@ -18,4 +18,9 @@
     <SolidColorBrush x:Key="BaseLowerBrush" Color="{StaticResource BaseLowerColor}" />
     <SolidColorBrush x:Key="BaseLowestBrush" Color="{StaticResource BaseLowestColor}" />
 
+    <SolidColorBrush x:Key="StandardForegroundBrush" Color="{StaticResource BaseLowestColor}" />
+    <SolidColorBrush x:Key="SubtleForegroundBrush" Color="{StaticResource BaseLowerColor}" />
+    <SolidColorBrush x:Key="HintForegroundBrush" Color="{StaticResource BaseLowerColor}" />
+    <SolidColorBrush x:Key="DisabledForegroundBrush" Color="{StaticResource BaseHighColor}" />
+
 </ResourceDictionary>

@@ -38,10 +38,4 @@
     <FontStyle x:Key="HintFontStyle">Normal</FontStyle>
     <FontStretch x:Key="HintFontStretch">Normal</FontStretch>
 
-    <SolidColorBrush x:Key="StandardForegroundBrush" Color="{StaticResource BaseLowestColor}" />
-    <SolidColorBrush x:Key="AccentForegroundBrush" Color="{StaticResource BaseHighestColor}" />
-    <SolidColorBrush x:Key="SubtleForegroundBrush" Color="{StaticResource BaseLowerColor}" />
-    <SolidColorBrush x:Key="HintForegroundBrush" Color="{StaticResource BaseLowerColor}" />
-    <SolidColorBrush x:Key="DisabledForegroundBrush" Color="{StaticResource BaseHighColor}" />
-
 </ResourceDictionary>

@@ -162,7 +162,7 @@
     <Style TargetType="ToggleButton" BasedOn="{StaticResource StandardButtonBase}" />
 
     <Style x:Key="Accent1Button" TargetType="ButtonBase" BasedOn="{StaticResource StandardButtonBase}">
-        <Setter Property="Foreground" Value="{StaticResource AccentForegroundBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource OnAccent1ForegroundBrush}" />
         <Setter Property="Background" Value="{StaticResource Accent1MediumBrush}" />
         <Setter Property="theming:ActiveProperties.BackgroundColor" Value="{StaticResource Accent1LowColor}" />
         <Setter Property="theming:MouseOverProperties.BackgroundColor" Value="{StaticResource Accent1HighColor}" />
@@ -170,7 +170,7 @@
     </Style>
 
     <Style x:Key="Accent2Button" TargetType="ButtonBase" BasedOn="{StaticResource StandardButtonBase}">
-        <Setter Property="Foreground" Value="{StaticResource AccentForegroundBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource OnAccent2ForegroundBrush}" />
         <Setter Property="Background" Value="{StaticResource Accent2MediumBrush}" />
         <Setter Property="theming:ActiveProperties.BackgroundColor" Value="{StaticResource Accent2LowColor}" />
         <Setter Property="theming:MouseOverProperties.BackgroundColor" Value="{StaticResource Accent2HighColor}" />
@@ -235,20 +235,20 @@
 
     <Style x:Key="Accent1MinimalButton" TargetType="ButtonBase" BasedOn="{StaticResource MinimalButton}">
         <Setter Property="theming:ActiveProperties.BackgroundColor" Value="{StaticResource Accent1LowColor}" />
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource AccentForegroundBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnAccent1ForegroundBrush}" />
         <Setter Property="theming:MouseOverProperties.BackgroundColor" Value="{StaticResource Accent1HighColor}" />
-        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource AccentForegroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource OnAccent1ForegroundBrush}" />
         <Setter Property="theming:PressedProperties.BackgroundColor" Value="{StaticResource Accent1LowColor}" />
-        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource AccentForegroundBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource OnAccent1ForegroundBrush}" />
     </Style>
 
     <Style x:Key="Accent2MinimalButton" TargetType="ButtonBase" BasedOn="{StaticResource MinimalButton}">
         <Setter Property="theming:ActiveProperties.BackgroundColor" Value="{StaticResource Accent2LowColor}" />
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource AccentForegroundBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnAccent2ForegroundBrush}" />
         <Setter Property="theming:MouseOverProperties.BackgroundColor" Value="{StaticResource Accent2HighColor}" />
-        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource AccentForegroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource OnAccent2ForegroundBrush}" />
         <Setter Property="theming:PressedProperties.BackgroundColor" Value="{StaticResource Accent2LowColor}" />
-        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource AccentForegroundBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource OnAccent2ForegroundBrush}" />
     </Style>
 
 
@@ -275,7 +275,7 @@
     </Style>
 
     <Style x:Key="Accent1SquareButton" TargetType="ButtonBase" BasedOn="{StaticResource SquareButton}">
-        <Setter Property="Foreground" Value="{StaticResource AccentForegroundBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource OnAccent1ForegroundBrush}" />
         <Setter Property="Background" Value="{StaticResource Accent1MediumBrush}" />
         <Setter Property="theming:ActiveProperties.BackgroundColor" Value="{StaticResource Accent1LowColor}" />
         <Setter Property="theming:MouseOverProperties.BackgroundColor" Value="{StaticResource Accent1HighColor}" />
@@ -283,7 +283,7 @@
     </Style>
 
     <Style x:Key="Accent2SquareButton" TargetType="ButtonBase" BasedOn="{StaticResource SquareButton}">
-        <Setter Property="Foreground" Value="{StaticResource AccentForegroundBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource OnAccent2ForegroundBrush}" />
         <Setter Property="Background" Value="{StaticResource Accent2MediumBrush}" />
         <Setter Property="theming:ActiveProperties.BackgroundColor" Value="{StaticResource Accent2LowColor}" />
         <Setter Property="theming:MouseOverProperties.BackgroundColor" Value="{StaticResource Accent2HighColor}" />

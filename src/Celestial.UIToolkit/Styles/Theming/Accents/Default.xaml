@@ -11,13 +11,14 @@
     <Color x:Key="Accent1MediumColor">#E03166</Color>
     <Color x:Key="Accent1LowColor">#B52853</Color>
     <Color x:Key="Accent1LowerColor">#871E3E</Color>
+    <Color x:Key="OnAccent1ForegroundColor">#FFFFFF</Color>
 
     <SolidColorBrush x:Key="Accent1HigherBrush" Color="{StaticResource Accent1HigherColor}" />
     <SolidColorBrush x:Key="Accent1HighBrush" Color="{StaticResource Accent1HighColor}" />
     <SolidColorBrush x:Key="Accent1MediumBrush" Color="{StaticResource Accent1MediumColor}" />
     <SolidColorBrush x:Key="Accent1LowBrush" Color="{StaticResource Accent1LowColor}" />
     <SolidColorBrush x:Key="Accent1LowerBrush" Color="{StaticResource Accent1LowerColor}" />
-
+    <SolidColorBrush x:Key="OnAccent1ForegroundBrush" Color="{StaticResource OnAccent1ForegroundColor}" />
 
 
     <!--
@@ -29,12 +30,14 @@
     <Color x:Key="Accent2MediumColor">#0F98D4</Color>
     <Color x:Key="Accent2LowColor">#0C79A9</Color>
     <Color x:Key="Accent2LowerColor">#09587A</Color>
+    <Color x:Key="OnAccent2ForegroundColor">#FFFFFF</Color>
 
     <SolidColorBrush x:Key="Accent2HigherBrush" Color="{StaticResource Accent2HigherColor}" />
     <SolidColorBrush x:Key="Accent2HighBrush" Color="{StaticResource Accent2HighColor}" />
     <SolidColorBrush x:Key="Accent2MediumBrush" Color="{StaticResource Accent2MediumColor}" />
     <SolidColorBrush x:Key="Accent2LowBrush" Color="{StaticResource Accent2LowColor}" />
     <SolidColorBrush x:Key="Accent2LowerBrush" Color="{StaticResource Accent2LowerColor}" />
+    <SolidColorBrush x:Key="OnAccent2ForegroundBrush" Color="{StaticResource OnAccent2ForegroundColor}" />
 
     
     
