@@ -359,7 +359,7 @@
         <Setter Property="Background" Value="{StaticResource StandardControlBackgroundBrush}" />
         <Setter Property="BorderBrush" Value="{StaticResource StandardControlBorderBrush}" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="Padding" Value="{theming:GridUnit 4}" />
+        <Setter Property="Padding" Value="{theming:GridUnit 4 2}" />
         <Setter Property="theming:MouseOverProperties.BackgroundColor" Value="{StaticResource BaseHighColor}" />
         <Setter Property="theming:MouseOverProperties.BorderColor" Value="Transparent" />
         <Setter Property="theming:ActiveProperties.BackgroundColor" Value="{StaticResource Accent2MediumColor}" />

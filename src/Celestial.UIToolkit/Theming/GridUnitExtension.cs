@@ -1,16 +1,39 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Markup;
 
 namespace Celestial.UIToolkit.Theming
 {
 
-    [MarkupExtensionReturnType(typeof(double))]
+    /// <summary>
+    /// A <see cref="MarkupExtension"/> which is being used by the toolkit to align
+    /// visual elements in a grid-like fashion.
+    /// The idea is that each control uses margins, paddings, sizes, etc. which can be fit
+    /// into grid cells. Thus, when positioned correctly, all controls will have a unified appearance.
+    /// 
+    /// This extension provides unified values, multiplied with the bounds of a single grid cell.
+    /// See the example for details.
+    /// </summary>
+    /// <example>
+    /// 1gu = 1 grid unit(s) -> Multiplier = 1
+    /// 2gu = 2 grid unit(s) -> Multiplier = 2
+    /// 
+    /// Thus, for a <see cref="GridCellSize"/> of 4:
+    /// 
+    /// 1gu = 4 * 1 = 4
+    /// 2gu = 4 * 2 = 8
+    /// 3gu = 4 * 3 = 12
+    /// ...
+    /// 
+    /// 
+    /// In XAML, the extension can be used like this:
+    /// Width="{n:GridUnit 1.0}"
+    /// Margin="{n:GridUnit 3}"
+    /// Margin="{n:GridUnit '3,0'}"
+    /// Margin="{n:GridUnit '3,0,2,0'}"
+    /// </example>
+    [ContentProperty(nameof(MultiplierString))]
     public class GridUnitExtension : MarkupExtension
     {
 
@@ -25,23 +48,18 @@ namespace Celestial.UIToolkit.Theming
 
         /// <summary>
         /// Gets or sets the value with which the <see cref="GridCellSize"/>
-        /// will be multiplied.
+        /// will be multiplied, as string.
+        /// Depending on the target property type, different formats will be allowed.
+        /// 
+        /// For numeric targets (<see cref="double"/>, <see cref="int"/>, ...), 
+        /// a numeric string is valid, e.g. <c>"0"</c>, <c>"1.3"</c>, ...
+        /// 
+        /// For 4-way targets like <see cref="Thickness"/>, the above is allowed, in addition to the following example formats:
+        /// <c>"1 2"</c>, <c>"4.4 1 2 0"</c>, ...
         /// </summary>
-        /// <example>
-        /// Assume the following convention:
-        /// 1gu = 1 grid unit(s) -> Multiplier = 1
-        /// 2gu = 2 grid unit(s) -> Multiplier = 2
-        /// 
-        /// Thus, for a <see cref="GridCellSize"/> of 4:
-        /// 
-        /// 1gu = 4 * 1 = 4
-        /// 2gu = 4 * 2 = 8
-        /// 3gu = 4 * 3 = 12
-        /// ...
-        /// </example>
-        [ConstructorArgument("multiplier")]
-        public double Multiplier { get; set; }
-
+        [ConstructorArgument("multiplierString")]
+        public string MultiplierString { get; set; }
+        
         /// <summary>
         /// Gets or sets a type to which the unit will be converted,
         /// if possible.
@@ -52,27 +70,30 @@ namespace Celestial.UIToolkit.Theming
         /// Gets or sets a value indicating whether the
         /// calculation of the final value should include a conversion
         /// to device independent pixel.
+        /// This is <c>false</c>, by default, as most conversion targets (like <see cref="Thickness"/>)
+        /// do the calculation by themselves.
         /// </summary>
-        public bool? DipAware { get; set; }
+        public bool DipAware { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GridUnitExtension"/> class,
-        /// with a default <see cref="Multiplier"/> of 1.
+        /// with a default <see cref="MultiplierString"/> of 1.
         /// </summary>
         public GridUnitExtension()
-            : this(1d) { }
+            : this("1.0") { }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GridUnitExtension"/> class
-        /// with the specified <see cref="Multiplier"/>.
+        /// with the specified <see cref="MultiplierString"/>.
         /// </summary>
-        /// <param name="multiplier">
+        /// <param name="multiplierString">
         /// The value with which the <see cref="GridCellSize"/>
         /// will be multiplied.
         /// </param>
-        public GridUnitExtension(double multiplier)
+        public GridUnitExtension(string multiplierString)
         {
-            this.Multiplier = multiplier;
+            this.MultiplierString = multiplierString;
+            this.DipAware = false;
         }
 
         static GridUnitExtension()
@@ -84,7 +105,7 @@ namespace Celestial.UIToolkit.Theming
         }
 
         /// <summary>
-        /// Multiplies the <see cref="Multiplier"/> with the <see cref="GridCellSize"/>,
+        /// Multiplies the <see cref="MultiplierString"/> with the <see cref="GridCellSize"/>,
         /// converts it to device independent pixels and finally returns that result.
         /// </summary>
         /// <param name="serviceProvider">
@@ -97,68 +118,65 @@ namespace Celestial.UIToolkit.Theming
         {
             if (serviceProvider is IProvideValueTarget target)
             {
+                // The target type can be explicitly set, or hidden in various property info types.
+                // Either way, find/use the correct one.
                 Type targetType = this.TargetType ??
                                   (target.TargetObject is Setter setter ? setter.Property?.PropertyType : null) ??
                                   (target.TargetProperty as PropertyInfo)?.PropertyType ??
                                   (target.TargetProperty as DependencyProperty)?.PropertyType ??
                                   typeof(double);
                 
-                // We know the type of the target-property.
-                // We can now convert the value of the multiplication to supported types.
                 if (targetType == typeof(double))
                 {
-                    return this.CalculateResult(false);
+                    return this.CalculateDouble();
                 }
                 else if (typeof(IConvertible).IsAssignableFrom(targetType))
                 {
-                    // IConvertible basically covers all primitive data-types.
-                    return Convert.ChangeType(this.CalculateResult(true), targetType);
+                    return Convert.ChangeType(this.CalculateDouble(), targetType);
                 }
                 else if (targetType == typeof(Thickness))
                 {
-                    return new Thickness(this.CalculateResult(false));
-                }
-                else if (targetType == typeof(Size))
-                {
-                    double value = this.CalculateResult(false);
-                    return new Size(value, value);
-                }
-                else if (targetType == typeof(Point))
-                {
-                    double value = this.CalculateResult(false);
-                    return new Point(value, value);
+                    return this.CalculateThickness();
                 }
                 else if (targetType == typeof(CornerRadius))
                 {
-                    double value = this.CalculateResult(false);
-                    return new CornerRadius(value);
+                    return this.CalculateCornerRadius();
                 }
             }
 
             // If we get here, we cannot assume anything about the target property.
             // Assume double in that case, as it will be the result of the multiplication.
-            return this.CalculateResult(true);
-        }
-
-        /// <summary>
-        /// Performs the grid unit calculation and returns the result.
-        /// </summary>
-        /// <param name="includeDipMultiplier">
-        /// A value indicating whether the device's independent pixel modifier will
-        /// be included in the calculation.
-        /// Inside this method, this parameter can be ignored, if <see cref="DipAware"/>
-        /// is set by the user.
-        /// </param>
-        /// <returns>The <see cref="double"/> result of the calculation.</returns>
-        private double CalculateResult(bool includeDipMultiplier)
-        {
-            // The DipAware property serves as an overwrite for the parameter.
-            // If not specified (null), the inclusion of the multiplier will be decided
-            // depending on the target type.
-            includeDipMultiplier = this.DipAware ?? includeDipMultiplier;
-            return (includeDipMultiplier ? _dipMultiplier : 1d) * Multiplier * GridCellSize;
+            return this.CalculateDouble();
         }
         
+        private double GetFinalMultiplier() =>
+            (this.DipAware ? _dipMultiplier : 1) * GridCellSize;
+        
+        private double CalculateDouble() => 
+            this.GetFinalMultiplier() * Convert.ToDouble(MultiplierString);
+
+        private Thickness CalculateThickness()
+        {
+            var thickness = (Thickness)new ThicknessConverter().ConvertFromString(this.MultiplierString);
+            double multiplier = this.GetFinalMultiplier();
+            return new Thickness(
+                thickness.Left * multiplier,
+                thickness.Top * multiplier,
+                thickness.Right * multiplier,
+                thickness.Bottom * multiplier);
+        }
+
+        private CornerRadius CalculateCornerRadius()
+        {
+            var cornerRadius = (CornerRadius)new CornerRadiusConverter().ConvertFromString(this.MultiplierString);
+            double multiplier = this.GetFinalMultiplier();
+            return new CornerRadius(
+                cornerRadius.TopLeft * multiplier,
+                cornerRadius.TopRight * multiplier,
+                cornerRadius.BottomRight * multiplier,
+                cornerRadius.BottomLeft * multiplier);
+        }
+
     }
 
 }

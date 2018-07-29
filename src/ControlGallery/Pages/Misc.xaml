@@ -63,11 +63,11 @@
             </controls:RippleOverlay>
         </GroupBox>
 
-        <GroupBox Header="GridUnit Test" Background="Yellow">
-            <Rectangle Fill="Red" 
-                       Width="{theming:GridUnit 10}"
-                       Height="{theming:GridUnit 10}">
-            </Rectangle>
+        <GroupBox Header="GridUnit Test" Background="Yellow"
+                  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+            <Border Background="Red"
+                    Margin="{theming:GridUnit '3,0'}">
+            </Border>
         </GroupBox>
     </UniformGrid>
 
