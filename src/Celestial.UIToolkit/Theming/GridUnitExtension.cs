@@ -37,6 +37,8 @@ namespace Celestial.UIToolkit.Theming
     public class GridUnitExtension : MarkupExtension
     {
 
+        private static readonly ThicknessConverter _thicknessConverter;
+        private static readonly CornerRadiusConverter _cornerRadiusConverter;
         private static readonly double _dipMultiplier;
         private double? _gridCellSize;
 
@@ -116,6 +118,9 @@ namespace Celestial.UIToolkit.Theming
             // This is the converter which is also used in XAML, so if we convert "1.0",
             // we will get the "real" size of one pixel on the current device.
             _dipMultiplier = (double)new LengthConverter().ConvertFromString("1.0");
+
+            _thicknessConverter = new ThicknessConverter();
+            _cornerRadiusConverter = new CornerRadiusConverter();
         }
 
         /// <summary>
@@ -176,7 +181,7 @@ namespace Celestial.UIToolkit.Theming
 
         private Thickness CalculateThickness()
         {
-            var thickness = (Thickness)new ThicknessConverter().ConvertFromString(this.MultiplierString);
+            var thickness = (Thickness)_thicknessConverter.ConvertFromString(this.MultiplierString);
             double multiplier = this.GetFinalLengthMultiplier();
             return new Thickness(
                 thickness.Left * multiplier,
@@ -187,7 +192,7 @@ namespace Celestial.UIToolkit.Theming
 
         private CornerRadius CalculateCornerRadius()
         {
-            var cornerRadius = (CornerRadius)new CornerRadiusConverter().ConvertFromString(this.MultiplierString);
+            var cornerRadius = (CornerRadius)_cornerRadiusConverter.ConvertFromString(this.MultiplierString);
             double multiplier = this.GetFinalLengthMultiplier();
             return new CornerRadius(
                 cornerRadius.TopLeft * multiplier,
