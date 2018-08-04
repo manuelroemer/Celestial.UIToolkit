@@ -6,8 +6,8 @@
     <!--
     KeyTimes and durations for animations.
     -->
-    <Duration x:Key="ColorAnimationDuration">0:0:0.150</Duration>
-    <KeyTime x:Key="ColorAnimationKeyTime">0:0:0.150</KeyTime>
+    <Duration x:Key="ColorAnimationDuration">0:0:0.200</Duration>
+    <KeyTime x:Key="ColorAnimationKeyTime">0:0:0.200</KeyTime>
 
     <Duration x:Key="EnterAnimationDuration">0:0:0.300</Duration>
     <KeyTime x:Key="EnterAnimationKeyTime">0:0:0.300</KeyTime>
@@ -23,136 +23,10 @@
 
 
 
-    <!-- 
-    The following list of raw values might seem intimidating, but it actually makes sense:
-    Each control will, at some point, require some kind of absolute measurement (absolute width,
-    margins, paddings, ...).
-    To ensure that these values are consistent across the whole library, a Grid-system is used.
-    Each cell has a fixed width and height (called a 'Grid Unit' - GU. Here, 1GU = 4px).
-    By using these resources for properties like margin, all of the controls will be aligned
-    consistently.
+    <CornerRadius x:Key="StandardCornerRadius">0</CornerRadius>
+
+
     
-    The resource-keys follow a simple multiplicative convention:
-    1gu = 4px
-    2gu = 8px
-    3gu = 12px
-    ...
-    
-    If you want to change these values, do yourself a favor and auto generate these.
-    (You can use CSI in VisualStudio with the following:)
-    
-    for (int i = 1; i <= 100; i++) {
-      WriteLine($"<sys:Double x:Key=\"{i}gu\">{i * 4}</sys:Double>");
-      if (i % 10 == 0) WriteLine();
-    }
-    -->
-    <sys:Double x:Key="1gu">4</sys:Double>
-    <sys:Double x:Key="2gu">8</sys:Double>
-    <sys:Double x:Key="3gu">12</sys:Double>
-    <sys:Double x:Key="4gu">16</sys:Double>
-    <sys:Double x:Key="5gu">20</sys:Double>
-    <sys:Double x:Key="6gu">24</sys:Double>
-    <sys:Double x:Key="7gu">28</sys:Double>
-    <sys:Double x:Key="8gu">32</sys:Double>
-    <sys:Double x:Key="9gu">36</sys:Double>
-    
-    <sys:Double x:Key="10gu">40</sys:Double>
-    <sys:Double x:Key="11gu">44</sys:Double>
-    <sys:Double x:Key="12gu">48</sys:Double>
-    <sys:Double x:Key="13gu">52</sys:Double>
-    <sys:Double x:Key="14gu">56</sys:Double>
-    <sys:Double x:Key="15gu">60</sys:Double>
-    <sys:Double x:Key="16gu">64</sys:Double>
-    <sys:Double x:Key="17gu">68</sys:Double>
-    <sys:Double x:Key="18gu">72</sys:Double>
-    <sys:Double x:Key="19gu">76</sys:Double>
-    
-    <sys:Double x:Key="20gu">80</sys:Double>
-    <sys:Double x:Key="21gu">84</sys:Double>
-    <sys:Double x:Key="22gu">88</sys:Double>
-    <sys:Double x:Key="23gu">92</sys:Double>
-    <sys:Double x:Key="24gu">96</sys:Double>
-    <sys:Double x:Key="25gu">100</sys:Double>
-    <sys:Double x:Key="26gu">104</sys:Double>
-    <sys:Double x:Key="27gu">108</sys:Double>
-    <sys:Double x:Key="28gu">112</sys:Double>
-    <sys:Double x:Key="29gu">116</sys:Double>
-    
-    <sys:Double x:Key="30gu">120</sys:Double>
-    <sys:Double x:Key="31gu">124</sys:Double>
-    <sys:Double x:Key="32gu">128</sys:Double>
-    <sys:Double x:Key="33gu">132</sys:Double>
-    <sys:Double x:Key="34gu">136</sys:Double>
-    <sys:Double x:Key="35gu">140</sys:Double>
-    <sys:Double x:Key="36gu">144</sys:Double>
-    <sys:Double x:Key="37gu">148</sys:Double>
-    <sys:Double x:Key="38gu">152</sys:Double>
-    <sys:Double x:Key="39gu">156</sys:Double>
-    
-    <sys:Double x:Key="40gu">160</sys:Double>
-    <sys:Double x:Key="41gu">164</sys:Double>
-    <sys:Double x:Key="42gu">168</sys:Double>
-    <sys:Double x:Key="43gu">172</sys:Double>
-    <sys:Double x:Key="44gu">176</sys:Double>
-    <sys:Double x:Key="45gu">180</sys:Double>
-    <sys:Double x:Key="46gu">184</sys:Double>
-    <sys:Double x:Key="47gu">188</sys:Double>
-    <sys:Double x:Key="48gu">192</sys:Double>
-    <sys:Double x:Key="49gu">196</sys:Double>
-    
-    <sys:Double x:Key="50gu">200</sys:Double>
-    <sys:Double x:Key="51gu">204</sys:Double>
-    <sys:Double x:Key="52gu">208</sys:Double>
-    <sys:Double x:Key="53gu">212</sys:Double>
-    <sys:Double x:Key="54gu">216</sys:Double>
-    <sys:Double x:Key="55gu">220</sys:Double>
-    <sys:Double x:Key="56gu">224</sys:Double>
-    <sys:Double x:Key="57gu">228</sys:Double>
-    <sys:Double x:Key="58gu">232</sys:Double>
-    <sys:Double x:Key="59gu">236</sys:Double>
-    
-    <sys:Double x:Key="60gu">240</sys:Double>
-    <sys:Double x:Key="61gu">244</sys:Double>
-    <sys:Double x:Key="62gu">248</sys:Double>
-    <sys:Double x:Key="63gu">252</sys:Double>
-    <sys:Double x:Key="64gu">256</sys:Double>
-    <sys:Double x:Key="65gu">260</sys:Double>
-    <sys:Double x:Key="66gu">264</sys:Double>
-    <sys:Double x:Key="67gu">268</sys:Double>
-    <sys:Double x:Key="68gu">272</sys:Double>
-    <sys:Double x:Key="69gu">276</sys:Double>
-    <sys:Double x:Key="70gu">280</sys:Double>
-    <sys:Double x:Key="71gu">284</sys:Double>
-    <sys:Double x:Key="72gu">288</sys:Double>
-    <sys:Double x:Key="73gu">292</sys:Double>
-    <sys:Double x:Key="74gu">296</sys:Double>
-    <sys:Double x:Key="75gu">300</sys:Double>
-    <sys:Double x:Key="76gu">304</sys:Double>
-    <sys:Double x:Key="77gu">308</sys:Double>
-    <sys:Double x:Key="78gu">312</sys:Double>
-    <sys:Double x:Key="79gu">316</sys:Double>
-    
-    <sys:Double x:Key="80gu">320</sys:Double>
-    <sys:Double x:Key="81gu">324</sys:Double>
-    <sys:Double x:Key="82gu">328</sys:Double>
-    <sys:Double x:Key="83gu">332</sys:Double>
-    <sys:Double x:Key="84gu">336</sys:Double>
-    <sys:Double x:Key="85gu">340</sys:Double>
-    <sys:Double x:Key="86gu">344</sys:Double>
-    <sys:Double x:Key="87gu">348</sys:Double>
-    <sys:Double x:Key="88gu">352</sys:Double>
-    <sys:Double x:Key="89gu">356</sys:Double>
-    
-    <sys:Double x:Key="90gu">360</sys:Double>
-    <sys:Double x:Key="91gu">364</sys:Double>
-    <sys:Double x:Key="92gu">368</sys:Double>
-    <sys:Double x:Key="93gu">372</sys:Double>
-    <sys:Double x:Key="94gu">376</sys:Double>
-    <sys:Double x:Key="95gu">380</sys:Double>
-    <sys:Double x:Key="96gu">384</sys:Double>
-    <sys:Double x:Key="97gu">388</sys:Double>
-    <sys:Double x:Key="98gu">392</sys:Double>
-    <sys:Double x:Key="99gu">396</sys:Double>
-    <sys:Double x:Key="100gu">400</sys:Double>
+    <Thickness x:Key="StandardBorderThickness">2</Thickness>
 
 </ResourceDictionary>

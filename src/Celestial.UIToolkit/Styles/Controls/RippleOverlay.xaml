@@ -24,7 +24,7 @@
                                 <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
                                                                Storyboard.TargetProperty="ActualAnimationScale">
                                     <DiscreteDoubleKeyFrame KeyTime="0" Value="0" />
-                                    <LinearDoubleKeyFrame KeyTime="{StaticResource EnterAnimationKeyTime}" Value="{Binding AnimationScale, RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <LinearDoubleKeyFrame KeyTime="{StaticResource ColorAnimationKeyTime}" Value="{Binding AnimationScale, RelativeSource={RelativeSource TemplatedParent}}" />
                                 </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
                             <Storyboard x:Key="FadingStoryboard">
@@ -34,11 +34,11 @@
                                 </DoubleAnimationUsingKeyFrames>
                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorder"
                                                                Storyboard.TargetProperty="Opacity">
-                                    <LinearDoubleKeyFrame KeyTime="{StaticResource EnterAnimationKeyTime}" Value="0" />
+                                    <LinearDoubleKeyFrame KeyTime="{StaticResource ColorAnimationKeyTime}" Value="0" />
                                 </DoubleAnimationUsingKeyFrames>
                                 <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
                                                                Storyboard.TargetProperty="ActualAnimationScale">
-                                    <DiscreteDoubleKeyFrame KeyTime="{StaticResource EnterAnimationKeyTime}" Value="0" />
+                                    <DiscreteDoubleKeyFrame KeyTime="{StaticResource ColorAnimationKeyTime}" Value="0" />
                                 </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
                         </Grid.Resources>
@@ -59,8 +59,8 @@
                                     RenderTransformOrigin="0.5,0.5">
                                 <Border.RenderTransform>
                                     <TransformGroup>
-                                        <ScaleTransform ScaleX="{Binding ActualAnimationScale, RelativeSource={RelativeSource TemplatedParent}}"
-                                                        ScaleY="{Binding ActualAnimationScale, RelativeSource={RelativeSource TemplatedParent}}" />
+                                        <ScaleTransform ScaleX="{Binding ActualAnimationScale, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                                                        ScaleY="{Binding ActualAnimationScale, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" />
                                     </TransformGroup>
                                 </Border.RenderTransform>
                             </Border>

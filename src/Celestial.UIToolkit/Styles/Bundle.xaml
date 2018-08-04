@@ -8,6 +8,9 @@
     
     <ResourceDictionary.MergedDictionaries>
         <local:SharedResourceDictionary Source="Shared/FocusVisuals.xaml" />
+        
+        <local:SharedResourceDictionary Source="Controls/RippleOverlay.xaml" />
+        
         <local:SharedResourceDictionary Source="Controls/TextBlock.xaml" />
         <local:SharedResourceDictionary Source="Controls/Label.xaml" />
         <local:SharedResourceDictionary Source="Controls/Button.xaml" />
@@ -20,8 +23,6 @@
         <local:SharedResourceDictionary Source="Controls/TabControl.xaml" />
         <local:SharedResourceDictionary Source="Controls/Expander.xaml" />
         <local:SharedResourceDictionary Source="Controls/GroupBox.xaml" />
-
-        <local:SharedResourceDictionary Source="Controls/RippleOverlay.xaml" />
     </ResourceDictionary.MergedDictionaries>
     
 </ResourceDictionary>

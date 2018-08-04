@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Celestial.UIToolkit.Extensions;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -62,6 +63,12 @@ namespace Celestial.UIToolkit.Controls
         /// Identifies the <see cref="AnimationDiameter"/> dependency property.
         /// </summary>
         public static readonly DependencyProperty AnimationDiameterProperty = AnimationDiameterPropertyKey.DependencyProperty;
+        
+        /// <summary>
+        /// Identifies the <see cref="AnimationScale"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty AnimationScaleProperty = DependencyProperty.Register(
+            nameof(AnimationScale), typeof(double), typeof(RippleOverlay), new PropertyMetadata(1d));
 
         /// <summary>
         /// Identifies the <see cref="ActualAnimationScale"/> dependency property.
@@ -70,16 +77,16 @@ namespace Celestial.UIToolkit.Controls
             nameof(ActualAnimationScale), typeof(double), typeof(RippleOverlay), new FrameworkPropertyMetadata(0d, FrameworkPropertyMetadataOptions.AffectsRender, AnimationScale_Changed));
 
         /// <summary>
-        /// Identifies the <see cref="AnimationScale"/> dependency property.
-        /// </summary>
-        public static readonly DependencyProperty AnimationScaleProperty = DependencyProperty.Register(
-            nameof(AnimationScale), typeof(double), typeof(RippleOverlay), new PropertyMetadata(1d));
-
-        /// <summary>
         /// Identifies the <see cref="RippleOrigin"/> dependency property.
         /// </summary>
         public static readonly DependencyProperty RippleOriginProperty = DependencyProperty.Register(
             nameof(RippleOrigin), typeof(RippleOrigin), typeof(RippleOverlay), new PropertyMetadata(RippleOrigin.MouseLocation));
+
+        /// <summary>
+        /// Identifies the <see cref="AllowFading"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty IsFadingProperty = DependencyProperty.Register(
+            nameof(AllowFading), typeof(bool), typeof(RippleOverlay), new PropertyMetadata(true));
 
         /// <summary>
         /// Identifies the <see cref="IsActive"/> dependency property.
@@ -169,6 +176,18 @@ namespace Celestial.UIToolkit.Controls
         }
 
         /// <summary>
+        /// Gets or sets a value indicating whether the animation will enter the
+        /// Fading visual state when it finishes.
+        /// If this is <c>false</c>, the animated component will stay in place,
+        /// when the animation is done.
+        /// </summary>
+        public bool AllowFading
+        {
+            get { return (bool)GetValue(IsFadingProperty); }
+            set { SetValue(IsFadingProperty, value); }
+        }
+
+        /// <summary>
         /// Gets or sets a value indicating whether the ripple animation is active.
         /// By setting this value to <c>true</c>, the animation is started.
         /// As long as this property is <c>true</c>, the animation will stay in its
@@ -213,9 +232,9 @@ namespace Celestial.UIToolkit.Controls
                 // if the mouse is actually over this element.
                 // If not, still show the animation from the center.
                 // (This can, for instance, happen if the animation gets triggered via the keyboard).
-                if (this.IsMouseOver)
+                var clickCoordinates = Mouse.GetPosition(this);
+                if (this.IsPointInControlBounds(clickCoordinates))
                 {
-                    var clickCoordinates = Mouse.GetPosition(this);
                     this.StartAnimationFromPoint(clickCoordinates);
                 }
                 else
@@ -296,7 +315,9 @@ namespace Celestial.UIToolkit.Controls
         
         private void TryEnterFadingVisualState()
         {
-            if (this.ActualAnimationScale >= this.AnimationScale && !this.IsActive)
+            if (this.AllowFading && 
+                this.ActualAnimationScale >= this.AnimationScale 
+                && !this.IsActive)
             {
                 VisualStateManager.GoToState(this, FadingVisualStateName, true);
             }
@@ -312,13 +333,6 @@ namespace Celestial.UIToolkit.Controls
                 Pow(Max(rippleOrigin.Y, this.ActualHeight - rippleOrigin.Y), 2)) * 2;
             this.AnimationPositionX = this.AnimationOriginX - this.AnimationDiameter / 2;
             this.AnimationPositionY = this.AnimationOriginY - this.AnimationDiameter / 2;
-        }
-
-        private Point GetCenterPoint()
-        {
-            return new Point(
-                this.ActualWidth / 2,
-                this.ActualHeight / 2);
         }
 
     }
