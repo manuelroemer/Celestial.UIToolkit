@@ -48,23 +48,13 @@
 
                     <Grid>
                         <Grid.Resources>
-                            <!-- Important: We need to use/define these binding-proxys, because otherwise, 
-                                 there would be absolutely no way to bind the animations to the attached properties. -->
                             <local:BindingProxy x:Key="MouseOverBackgroundColorProxy"
                                                 Data="{Binding Path=(theming:MouseOverProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
-                            <local:BindingProxy x:Key="PressedBackgroundColorProxy"
-                                                Data="{Binding Path=(theming:PressedProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
-                            <local:BindingProxy x:Key="ActiveBackgroundColorProxy"
-                                                Data="{Binding Path=(theming:ActiveProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
                             <local:BindingProxy x:Key="DisabledBackgroundColorProxy"
                                                 Data="{Binding Path=(theming:DisabledProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
 
                             <local:BindingProxy x:Key="MouseOverBorderColorProxy"
                                                 Data="{Binding Path=(theming:MouseOverProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
-                            <local:BindingProxy x:Key="PressedBorderColorProxy"
-                                                Data="{Binding Path=(theming:PressedProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
-                            <local:BindingProxy x:Key="ActiveBorderColorProxy"
-                                                Data="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
                             <local:BindingProxy x:Key="DisabledBorderColorProxy"
                                                 Data="{Binding Path=(theming:DisabledProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
 
@@ -75,12 +65,16 @@
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 Background="{TemplateBinding Background}"
-                                Padding="{TemplateBinding Padding}">
-                            <controls:RippleOverlay IsActive="{TemplateBinding IsPressed}"
-                                                    AllowFading="{Binding IsChecked,RelativeSource={RelativeSource TemplatedParent}, FallbackValue=True, Converter={x:Static converters:InvertBooleanConverter.Default}}"
-                                                    BorderBrush="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ColorToSolidColorBrushConverter}}"
-                                                    Background="{Binding Path=(theming:ActiveProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ColorToSolidColorBrushConverter}}" />
-                        </Border>
+                                Padding="{TemplateBinding Padding}" />
+                        <controls:RippleOverlay x:Name="Ripple"
+                                                IsActive="{TemplateBinding IsPressed}"
+                                                AllowFading="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, FallbackValue=True, Converter={x:Static converters:InvertBooleanConverter.Default}}"
+                                                BorderBrush="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ColorToSolidColorBrushConverter}}"
+                                                Background="{Binding Path=(theming:ActiveProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ColorToSolidColorBrushConverter}}">
+                            <controls:RippleOverlay.OpacityMask>
+                                <VisualBrush Visual="{Binding ElementName=Bd}" />
+                            </controls:RippleOverlay.OpacityMask>
+                        </controls:RippleOverlay>
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                           RecognizesAccessKey="True" />
@@ -172,7 +166,7 @@
 
     <Style x:Key="GhostButtonBase" TargetType="ButtonBase" BasedOn="{StaticResource StandardButtonBase}">
         <Setter Property="BorderBrush" Value="{StaticResource BaseMediumBrush}" />
-        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderThickness" Value="{StaticResource StandardBorderThickness}" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="theming:ActiveProperties.BackgroundColor" Value="Transparent" />
         <Setter Property="theming:ActiveProperties.BorderColor" Value="{StaticResource BaseLowColor}" />
@@ -246,10 +240,10 @@
     -->
 
     <Style x:Key="SquareButton" TargetType="ButtonBase" BasedOn="{StaticResource StandardButtonBase}">
-        <Setter Property="MinWidth" Value="30" />
-        <Setter Property="MinHeight" Value="30" />
-        <Setter Property="Width" Value="30" />
-        <Setter Property="Height" Value="30" />
+        <Setter Property="MinWidth" Value="{theming:GridUnit 8}" />
+        <Setter Property="MinHeight" Value="{theming:GridUnit 8}" />
+        <Setter Property="Width" Value="{theming:GridUnit 8}" />
+        <Setter Property="Height" Value="{theming:GridUnit 8}" />
         <Setter Property="theming:DisabledProperties.BackgroundColor" Value="Transparent" />
         <Setter Property="theming:DisabledProperties.BorderColor" Value="{StaticResource BaseHighColor}" />
         <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
