@@ -40,11 +40,11 @@ namespace Celestial.UIToolkit.Theming
         private static readonly double _dipMultiplier;
 
         /// <summary>
-        /// Gets or sets the value of a single grid unit.
+        /// Gets or sets the default value of a single grid unit.
         /// This value equals the width and height of a single cell
         /// in the fictional grid.
         /// </summary>
-        public static double GridCellSize { get; set; } = 4d;
+        public static double DefaultGridCellSize { get; set; } = 4d;
 
         /// <summary>
         /// Gets or sets the value with which the <see cref="GridCellSize"/>
@@ -76,6 +76,15 @@ namespace Celestial.UIToolkit.Theming
         public bool DipAware { get; set; }
 
         /// <summary>
+        /// Gets the value of a single grid unit.
+        /// This value equals the width and height of a single cell
+        /// in the fictional grid.
+        /// By default, this returns the value of the static <see cref="DefaultGridCellSize"/> property.
+        /// By setting this property, you can override this default value for specific cases.
+        /// </summary>
+        public double GridCellSize { get; set; }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="GridUnitExtension"/> class,
         /// with a default <see cref="MultiplierString"/> of 1.
         /// </summary>
@@ -94,6 +103,7 @@ namespace Celestial.UIToolkit.Theming
         {
             this.MultiplierString = multiplierString;
             this.DipAware = false;
+            this.GridCellSize = DefaultGridCellSize;
         }
 
         static GridUnitExtension()
@@ -116,49 +126,54 @@ namespace Celestial.UIToolkit.Theming
         /// </returns>
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
-            if (serviceProvider is IProvideValueTarget target)
-            {
-                // The target type can be explicitly set, or hidden in various property info types.
-                // Either way, find/use the correct one.
-                Type targetType = this.TargetType ??
-                                  (target.TargetObject is Setter setter ? setter.Property?.PropertyType : null) ??
-                                  (target.TargetProperty as PropertyInfo)?.PropertyType ??
-                                  (target.TargetProperty as DependencyProperty)?.PropertyType ??
-                                  typeof(double);
-                
-                if (targetType == typeof(double))
-                {
-                    return this.CalculateDouble();
-                }
-                else if (typeof(IConvertible).IsAssignableFrom(targetType))
-                {
-                    return Convert.ChangeType(this.CalculateDouble(), targetType);
-                }
-                else if (targetType == typeof(Thickness))
-                {
-                    return this.CalculateThickness();
-                }
-                else if (targetType == typeof(CornerRadius))
-                {
-                    return this.CalculateCornerRadius();
-                }
-            }
+            Type targetType = this.DetermineConversionTargetType(
+                (IProvideValueTarget)serviceProvider);
 
-            // If we get here, we cannot assume anything about the target property.
-            // Assume double in that case, as it will be the result of the multiplication.
-            return this.CalculateDouble();
+            if (targetType == typeof(double))
+            {
+                return this.CalculateDouble();
+            }
+            else if (typeof(IConvertible).IsAssignableFrom(targetType))
+            {
+                return Convert.ChangeType(this.CalculateDouble(), targetType);
+            }
+            else if (targetType == typeof(Thickness))
+            {
+                return this.CalculateThickness();
+            }
+            else if (targetType == typeof(CornerRadius))
+            {
+                return this.CalculateCornerRadius();
+            }
+            else
+            {
+                throw new NotSupportedException(
+                    $"The {nameof(GridUnitExtension)} does not support the " +
+                    $"conversion type '{targetType.FullName}'.");
+            }
         }
         
-        private double GetFinalMultiplier() =>
+        private Type DetermineConversionTargetType(IProvideValueTarget target)
+        {
+            if (this.TargetType != null) return this.TargetType;
+            if (target == null) return typeof(double);
+            
+            return (target.TargetObject is Setter setter ? setter.Property?.PropertyType : null) ??
+                   (target.TargetProperty as PropertyInfo)?.PropertyType ??
+                   (target.TargetProperty as DependencyProperty)?.PropertyType ??
+                   typeof(double);
+        }
+
+        private double GetFinalLengthMultiplier() =>
             (this.DipAware ? _dipMultiplier : 1) * GridCellSize;
         
         private double CalculateDouble() => 
-            this.GetFinalMultiplier() * Convert.ToDouble(MultiplierString);
+            this.GetFinalLengthMultiplier() * Convert.ToDouble(MultiplierString);
 
         private Thickness CalculateThickness()
         {
             var thickness = (Thickness)new ThicknessConverter().ConvertFromString(this.MultiplierString);
-            double multiplier = this.GetFinalMultiplier();
+            double multiplier = this.GetFinalLengthMultiplier();
             return new Thickness(
                 thickness.Left * multiplier,
                 thickness.Top * multiplier,
@@ -169,7 +184,7 @@ namespace Celestial.UIToolkit.Theming
         private CornerRadius CalculateCornerRadius()
         {
             var cornerRadius = (CornerRadius)new CornerRadiusConverter().ConvertFromString(this.MultiplierString);
-            double multiplier = this.GetFinalMultiplier();
+            double multiplier = this.GetFinalLengthMultiplier();
             return new CornerRadius(
                 cornerRadius.TopLeft * multiplier,
                 cornerRadius.TopRight * multiplier,
