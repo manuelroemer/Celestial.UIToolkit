@@ -16,7 +16,7 @@ namespace Celestial.UIToolkit.Extensions
         /// <returns>
         /// A <see cref="Point"/> instance, pointing to the element's center.
         /// </returns>
-        public static Point GetCenterPoint(this FrameworkElement frameworkElement)
+        public static Point GetCenter(this FrameworkElement frameworkElement)
         {
             return new Point(
                 frameworkElement.ActualWidth / 2,

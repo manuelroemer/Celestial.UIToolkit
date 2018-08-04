@@ -273,7 +273,7 @@ namespace Celestial.UIToolkit.Controls
         /// </summary>
         public void StartAnimationFromCenter()
         {
-            this.StartAnimationFromPoint(this.GetCenterPoint());
+            this.StartAnimationFromPoint(this.GetCenter());
         }
 
         /// <summary>
