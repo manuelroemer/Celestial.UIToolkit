@@ -29,6 +29,18 @@ namespace Celestial.UIToolkit.Converters
             return !value;
         }
 
+        /// <summary>
+        /// Inverts and returns the specified <paramref name="value"/>.
+        /// </summary>
+        /// <param name="value">The <see cref="Boolean"/> value to be inverted.</param>
+        /// <param name="parameter">Not used.</param>
+        /// <param name="culture">Not used.</param>
+        /// <returns>The inverted <see cref="Boolean"/> value.</returns>
+        public override bool ConvertBack(bool value, object parameter, CultureInfo culture)
+        {
+            return !value;
+        }
+
     }
 
 }
