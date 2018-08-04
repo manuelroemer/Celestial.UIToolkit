@@ -38,6 +38,7 @@ namespace Celestial.UIToolkit.Theming
     {
 
         private static readonly double _dipMultiplier;
+        private double? _gridCellSize;
 
         /// <summary>
         /// Gets or sets the default value of a single grid unit.
@@ -82,7 +83,11 @@ namespace Celestial.UIToolkit.Theming
         /// By default, this returns the value of the static <see cref="DefaultGridCellSize"/> property.
         /// By setting this property, you can override this default value for specific cases.
         /// </summary>
-        public double GridCellSize { get; set; }
+        public double GridCellSize
+        {
+            get { return _gridCellSize ?? DefaultGridCellSize; }
+            set { _gridCellSize = value; }
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GridUnitExtension"/> class,
@@ -103,7 +108,6 @@ namespace Celestial.UIToolkit.Theming
         {
             this.MultiplierString = multiplierString;
             this.DipAware = false;
-            this.GridCellSize = DefaultGridCellSize;
         }
 
         static GridUnitExtension()
