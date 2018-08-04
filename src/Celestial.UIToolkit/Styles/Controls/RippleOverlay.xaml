@@ -57,10 +57,8 @@
                                     Height="{TemplateBinding AnimationDiameter}"
                                     RenderTransformOrigin="0.5,0.5">
                                 <Border.RenderTransform>
-                                    <TransformGroup>
-                                        <ScaleTransform ScaleX="{Binding ActualAnimationScale, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
-                                                        ScaleY="{Binding ActualAnimationScale, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" />
-                                    </TransformGroup>
+                                    <ScaleTransform ScaleX="{Binding ActualAnimationScale, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                                                    ScaleY="{Binding ActualAnimationScale, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" />
                                 </Border.RenderTransform>
                             </Border>
                         </Canvas>

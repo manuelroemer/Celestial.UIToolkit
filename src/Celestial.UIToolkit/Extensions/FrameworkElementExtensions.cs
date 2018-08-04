@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 
 namespace Celestial.UIToolkit.Extensions
 {
@@ -18,6 +19,7 @@ namespace Celestial.UIToolkit.Extensions
         /// </returns>
         public static Point GetCenter(this FrameworkElement frameworkElement)
         {
+            if (frameworkElement == null) throw new ArgumentNullException(nameof(frameworkElement));
             return new Point(
                 frameworkElement.ActualWidth / 2,
                 frameworkElement.ActualHeight / 2);
@@ -39,6 +41,7 @@ namespace Celestial.UIToolkit.Extensions
         /// </returns>
         public static bool IsPointInControlBounds(this FrameworkElement frameworkElement, Point point)
         {
+            if (frameworkElement == null) throw new ArgumentNullException(nameof(frameworkElement));
             return point.X >= 0d &&
                    point.Y >= 0d &&
                    point.X <= frameworkElement.ActualWidth &&
