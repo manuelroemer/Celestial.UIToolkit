@@ -49,6 +49,14 @@
                             </Storyboard>
 
                             <Storyboard x:Key="ExpandedStoryboard">
+                                <BooleanAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                                Storyboard.TargetProperty="IsAnimationFading">
+                                    <DiscreteBooleanKeyFrame KeyTime="0" Value="False" />
+                                </BooleanAnimationUsingKeyFrames>
+                                <BooleanAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                                Storyboard.TargetProperty="IsAnimationExpanding">
+                                    <DiscreteBooleanKeyFrame KeyTime="0" Value="False" />
+                                </BooleanAnimationUsingKeyFrames>
                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorderScaleTransform"
                                                                Storyboard.TargetProperty="ScaleX">
                                     <DiscreteDoubleKeyFrame KeyTime="0" Value="1" />

@@ -346,9 +346,19 @@ namespace Celestial.UIToolkit.Controls
             var self = (RippleOverlay)d;
             bool allowFading = (bool)e.NewValue;
 
+            // If the anim is currently fading away and fading gets forbidden during this animation,
+            // revert back to the Expanded state and act like the fading process didn't start.
+            // This is very situational and might have to be put behind a Flag (enum, bool, ...).
+            // Right now, it's implemented like this to address the following issue:
+            // https://github.com/manuelroemer/Celestial.UIToolkit/issues/14
             if (self.IsFading && !allowFading)
             {
                 self.EnterExpandedVisualState();
+            }
+            
+            if (self.IsExpanded && allowFading)
+            {
+                self.TryEnterFadingVisualState();
             }
         }
 
