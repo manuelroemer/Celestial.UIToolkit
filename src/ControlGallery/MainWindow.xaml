@@ -6,7 +6,7 @@
         xmlns:pages="clr-namespace:ControlGallery.Pages"
         xmlns:c="clr-namespace:Celestial.UIToolkit;assembly=Celestial.UIToolkit"
         mc:Ignorable="d"
-        Background="{StaticResource BaseHigherBrush}"
+        Background="{StaticResource BaseHighestBrush}"
         Title="Aurora UI Toolkit - Control Gallery"
         Width="1000" Height="600">
 

@@ -72,6 +72,7 @@
     <Compile Include="Theming\ActiveProperties.cs" />
     <Compile Include="Theming\FocusedProperties.cs" />
     <Compile Include="Theming\GridUnitExtension.cs" />
+    <Compile Include="Theming\MultiStyleExtension.cs" />
     <Compile Include="Theming\PressedProperties.cs" />
     <Compile Include="Theming\DisabledProperties.cs" />
     <Compile Include="Theming\MouseOverProperties.cs" />

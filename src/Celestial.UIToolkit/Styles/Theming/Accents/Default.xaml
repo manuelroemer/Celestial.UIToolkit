@@ -6,18 +6,14 @@
     It basically identifies the application's brand and captures the user's attention.
     It is rarely used by controls (by default).
     -->
-    <Color x:Key="Accent1HigherColor">#FF3874</Color>
-    <Color x:Key="Accent1HighColor">#F0346D</Color>
-    <Color x:Key="Accent1MediumColor">#E03166</Color>
-    <Color x:Key="Accent1LowColor">#B52853</Color>
-    <Color x:Key="Accent1LowerColor">#871E3E</Color>
+    <Color x:Key="Accent1HighColor">#E41471</Color>
+    <Color x:Key="Accent1MediumColor">#C51162</Color>
+    <Color x:Key="Accent1LowColor">#AB0F55</Color>
     <Color x:Key="OnAccent1ForegroundColor">#FFFFFF</Color>
 
-    <SolidColorBrush x:Key="Accent1HigherBrush" Color="{StaticResource Accent1HigherColor}" />
     <SolidColorBrush x:Key="Accent1HighBrush" Color="{StaticResource Accent1HighColor}" />
     <SolidColorBrush x:Key="Accent1MediumBrush" Color="{StaticResource Accent1MediumColor}" />
     <SolidColorBrush x:Key="Accent1LowBrush" Color="{StaticResource Accent1LowColor}" />
-    <SolidColorBrush x:Key="Accent1LowerBrush" Color="{StaticResource Accent1LowerColor}" />
     <SolidColorBrush x:Key="OnAccent1ForegroundBrush" Color="{StaticResource OnAccent1ForegroundColor}" />
 
 
@@ -25,22 +21,33 @@
     The second accent is commonly used by controls.
     In comparison to the first one, it is visible across the application.
     -->
-    <Color x:Key="Accent2HigherColor">#13B7FF</Color>
-    <Color x:Key="Accent2HighColor">#11A6E8</Color>
-    <Color x:Key="Accent2MediumColor">#0F98D4</Color>
-    <Color x:Key="Accent2LowColor">#0C79A9</Color>
-    <Color x:Key="Accent2LowerColor">#09587A</Color>
+    <Color x:Key="Accent2HighColor">#23B1FB</Color>
+    <Color x:Key="Accent2MediumColor">#1F9BDC</Color>
+    <Color x:Key="Accent2LowColor">#1B89C2</Color>
     <Color x:Key="OnAccent2ForegroundColor">#FFFFFF</Color>
 
-    <SolidColorBrush x:Key="Accent2HigherBrush" Color="{StaticResource Accent2HigherColor}" />
     <SolidColorBrush x:Key="Accent2HighBrush" Color="{StaticResource Accent2HighColor}" />
     <SolidColorBrush x:Key="Accent2MediumBrush" Color="{StaticResource Accent2MediumColor}" />
     <SolidColorBrush x:Key="Accent2LowBrush" Color="{StaticResource Accent2LowColor}" />
-    <SolidColorBrush x:Key="Accent2LowerBrush" Color="{StaticResource Accent2LowerColor}" />
     <SolidColorBrush x:Key="OnAccent2ForegroundBrush" Color="{StaticResource OnAccent2ForegroundColor}" />
 
-    
-    
+
+
+    <!--
+    The Error colors are used for error states (e.g. during validation).
+    -->
+    <Color x:Key="ErrorHighColor">#E40010</Color>
+    <Color x:Key="ErrorMediumColor">#C5000E</Color>
+    <Color x:Key="ErrorLowColor">#AB000C</Color>
+    <Color x:Key="OnErrorForegroundColor">#FFFFFF</Color>
+
+    <SolidColorBrush x:Key="ErrorHighBrush" Color="{StaticResource ErrorHighColor}" />
+    <SolidColorBrush x:Key="ErrorMediumBrush" Color="{StaticResource ErrorMediumColor}" />
+    <SolidColorBrush x:Key="ErrorLowBrush" Color="{StaticResource ErrorLowColor}" />
+    <SolidColorBrush x:Key="OnErrorForegroundBrush" Color="{StaticResource OnErrorForegroundColor}" />
+
+
+
     <!--
     These resources define the colors to be used by controls in their different states.
     -->

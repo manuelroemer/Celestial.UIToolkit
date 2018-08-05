@@ -9,9 +9,9 @@
         <local:SharedResourceDictionary Source="../../Icons/Arrows.xaml" />
     </ResourceDictionary.MergedDictionaries>
     
-    <Style x:Key="StandardExpander" TargetType="Expander" BasedOn="{StaticResource DefaultThemingBase}">
+    <Style x:Key="StandardExpander" TargetType="Expander" BasedOn="{StaticResource Accent2BorderThemingBase}">
         <Style.Resources>
-            <Style x:Key="ExpanderToggleButton" TargetType="ToggleButton" BasedOn="{StaticResource DefaultThemingBase}">
+            <Style x:Key="ExpanderToggleButton" TargetType="ToggleButton" BasedOn="{StaticResource Accent2BorderThemingBase}">
                 <Setter Property="OverridesDefaultStyle" Value="True" />
                 <Setter Property="SnapsToDevicePixels" Value="True" />
                 <Setter Property="Padding" Value="0" />

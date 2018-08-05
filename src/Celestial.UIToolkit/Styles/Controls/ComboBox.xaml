@@ -11,11 +11,11 @@
         <local:SharedResourceDictionary Source="Popup.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardComboBox" TargetType="ComboBox" BasedOn="{StaticResource DefaultThemingBase}">
+    <Style x:Key="StandardComboBox" TargetType="ComboBox" BasedOn="{StaticResource Accent2BorderThemingBase}">
         <Style.Resources>
             <!-- This custom style is for the Down-Arrow in the ComboBox.
                  It is fully animated, like a normal Button. -->
-            <Style x:Key="ComboBoxToggleButton" TargetType="ToggleButton" BasedOn="{StaticResource DefaultThemingBase}">
+            <Style x:Key="ComboBoxToggleButton" TargetType="ToggleButton" BasedOn="{StaticResource Accent2BorderThemingBase}">
                 <Setter Property="MinWidth" Value="0" />
                 <Setter Property="MinHeight" Value="0" />
                 <Setter Property="ClickMode" Value="Press" />
@@ -353,7 +353,7 @@
 
 
 
-    <Style x:Key="StandardComboBoxItem" TargetType="ComboBoxItem" BasedOn="{StaticResource ForegroundSupportingThemingBase}">
+    <Style x:Key="StandardComboBoxItem" TargetType="ComboBoxItem" BasedOn="{StaticResource Accent2BorderWithForegroundThemingBase}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Background" Value="{StaticResource StandardControlBackgroundBrush}" />

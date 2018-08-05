@@ -3,12 +3,69 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming">
 
     <!--
-    This sets the animation values for a control's state for most controls.
-    The values are set in a way which should target most controls.
-    This means that the values are using the Accent2 values for highlighting different states.
-    If a control needs to use different values, they need to be set manually.
+    This file contains base-styles for nearly any type of control.
+    These styles set all of the *Properties in the Theming namespace.
     -->
-    <Style x:Key="DefaultThemingBase" TargetType="FrameworkElement">
+
+
+    <!--
+    - Background: Transparent
+    - Border:     -
+    - Foreground: -
+    -->
+    <Style x:Key="TransparentBackgroundThemingBase" TargetType="FrameworkElement">
+        <Setter Property="theming:MouseOverProperties.BackgroundColor" Value="Transparent" />
+        <Setter Property="theming:PressedProperties.BackgroundColor" Value="Transparent" />
+        <Setter Property="theming:DisabledProperties.BackgroundColor" Value="Transparent" />
+        <Setter Property="theming:ValidationProperties.BackgroundColor" Value="Transparent" />
+    </Style>
+    
+    <!--
+    - Background: BaseHighest
+    - Border:     -
+    - Foreground: -
+    -->
+    <Style x:Key="BaseHighestBackgroundThemingBase" TargetType="Border">
+        <Setter Property="theming:MouseOverProperties.BackgroundColor" Value="{StaticResource BaseHighestColor}" />
+        <Setter Property="theming:PressedProperties.BackgroundColor" Value="{StaticResource BaseHighestColor}" />
+        <Setter Property="theming:DisabledProperties.BackgroundColor" Value="{StaticResource BaseHighestColor}" />
+        <Setter Property="theming:ValidationProperties.BackgroundColor" Value="{StaticResource BaseHighestColor}" />
+    </Style>
+    
+    <!--
+    - Background: -
+    - Border:     Transparent
+    - Foreground: -
+    -->
+    <Style x:Key="TransparentBorderThemingBase" TargetType="FrameworkElement">
+        <Setter Property="theming:MouseOverProperties.BorderColor" Value="Transparent" />
+        <Setter Property="theming:PressedProperties.BorderColor" Value="Transparent" />
+        <Setter Property="theming:DisabledProperties.BorderColor" Value="{StaticResource BaseHighColor}" />
+        <Setter Property="theming:ValidationProperties.BorderColor" Value="{StaticResource ErrorMediumColor}" />
+    </Style>
+
+    <!--
+    - Background: -
+    - Border:     Accent2
+    - Foreground: -
+    -->
+    <Style x:Key="Accent2Border" TargetType="FrameworkElement">
+        <Setter Property="theming:MouseOverProperties.BorderColor" Value="{StaticResource Accent2HighColor}" />
+        <Setter Property="theming:PressedProperties.BorderColor" Value="{StaticResource Accent2LowColor}" />
+        <Setter Property="theming:DisabledProperties.BorderColor" Value="{StaticResource BaseHighColor}" />
+        <Setter Property="theming:ValidationProperties.BorderColor" Value="{StaticResource ErrorMediumColor}" />
+    </Style>
+
+    <Style x:Key="Merge" TargetType="FrameworkElement" BasedOn="{theming:MultiStyle 'Accent2Border BaseHighestBackgroundThemingBase'}">
+        
+    </Style>
+    
+    <!--
+    - Background: Transparent
+    - Border:     Accent2
+    - Foreground: Standard
+    -->
+    <Style x:Key="Accent2BorderThemingBase" TargetType="FrameworkElement">
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
         
         <Setter Property="theming:MouseOverProperties.BorderColor" Value="{StaticResource Accent2HighColor}" />
@@ -26,32 +83,36 @@
         <Setter Property="theming:DisabledProperties.BorderColor" Value="{StaticResource BaseHighColor}" />
         <Setter Property="theming:DisabledProperties.BackgroundColor" Value="Transparent" />
         <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
+
+        <Setter Property="theming:ValidationProperties.BackgroundColor" Value="{StaticResource ErrorMediumColor}" />
+        <Setter Property="theming:ValidationProperties.BorderColor" Value="{StaticResource ErrorMediumColor}" />
+        <Setter Property="theming:ValidationProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
     </Style>
 
     <!--
-    This style is supposed to be used by controls which have a 'Foreground' property.
-    It binds the animation foreground values to the control's foreground property.
+    - Background: Transparent
+    - Border:     Accent2
+    - Foreground: Bound to Self
     -->
-    <Style x:Key="ForegroundSupportingThemingBase" TargetType="FrameworkElement" BasedOn="{StaticResource DefaultThemingBase}">
+    <Style x:Key="Accent2BorderWithForegroundThemingBase" TargetType="FrameworkElement" BasedOn="{StaticResource Accent2BorderThemingBase}">
         <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
         <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
         <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="theming:ValidationProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
     </Style>
 
     <!--
-    This style is specific to elements which identify themselves through Text.
-    => TextBlock, Label, or similar.
-    The only theming values which change are the Foreground properties.
+    For controls like Label, TextBlock, ...
+    Only the Foreground is set here.
+    - Background: Transparent
+    - Border:     Transparent
+    - Foreground: Bound to Self
     -->
-    <Style x:Key="TextElementThemingBase" TargetType="FrameworkElement" BasedOn="{StaticResource ForegroundSupportingThemingBase}">
-        <Setter Property="theming:MouseOverProperties.BackgroundColor" Value="Transparent" />
-        <Setter Property="theming:MouseOverProperties.BorderColor" Value="Transparent" />
-        <Setter Property="theming:PressedProperties.BackgroundColor" Value="Transparent" />
-        <Setter Property="theming:PressedProperties.BorderColor" Value="Transparent" />
-        <Setter Property="theming:ActiveProperties.BackgroundColor" Value="Transparent" />
-        <Setter Property="theming:ActiveProperties.BorderColor" Value="Transparent" />
-        <Setter Property="theming:DisabledProperties.BackgroundColor" Value="Transparent" />
-        <Setter Property="theming:DisabledProperties.BorderColor" Value="Transparent" />
+    <Style x:Key="TextElementThemingBase" TargetType="FrameworkElement">
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="theming:ValidationProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
     </Style>
     
 </ResourceDictionary>

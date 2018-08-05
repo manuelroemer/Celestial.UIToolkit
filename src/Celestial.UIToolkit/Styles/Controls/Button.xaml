@@ -11,7 +11,7 @@
         <local:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardButtonBase" TargetType="ButtonBase" BasedOn="{StaticResource ForegroundSupportingThemingBase}">
+    <Style x:Key="StandardButtonBase" TargetType="ButtonBase" BasedOn="{StaticResource Accent2BorderWithForegroundThemingBase}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="MinWidth" Value="{theming:GridUnit 15}" />

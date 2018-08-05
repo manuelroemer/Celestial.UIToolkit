@@ -10,7 +10,7 @@
     
     <!-- A GroupBox is, by default, a ContentControl whose Header
          is a bold TextBlock. -->
-    <Style x:Key="StandardGroupBox" TargetType="GroupBox" BasedOn="{StaticResource ForegroundSupportingThemingBase}">
+    <Style x:Key="StandardGroupBox" TargetType="GroupBox" BasedOn="{StaticResource Accent2BorderWithForegroundThemingBase}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />

@@ -9,7 +9,7 @@
 
     <!-- Use TargetType="Control", so that the PasswordBox can use the style too.
          Slightly problematic, since this allows setting this style on any type of control. -->
-    <Style x:Key="StandardTextBox" TargetType="Control" BasedOn="{StaticResource ForegroundSupportingThemingBase}">
+    <Style x:Key="StandardTextBox" TargetType="Control" BasedOn="{StaticResource Accent2BorderWithForegroundThemingBase}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="KeyboardNavigation.TabNavigation" Value="None" />

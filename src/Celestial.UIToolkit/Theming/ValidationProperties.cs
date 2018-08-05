@@ -17,19 +17,19 @@ namespace Celestial.UIToolkit.Theming
         /// Identifies the BackgroundColor attached dependency property.
         /// </summary>
         public static readonly DependencyProperty BackgroundColorProperty = DependencyProperty.RegisterAttached(
-            "BackgroundColor", typeof(Color), typeof(ActiveProperties), new PropertyMetadata(Colors.Transparent));
+            "BackgroundColor", typeof(Color), typeof(ValidationProperties), new PropertyMetadata(Colors.Transparent));
 
         /// <summary>
         /// Identifies the BorderColor attached dependency property.
         /// </summary>
         public static readonly DependencyProperty BorderColorProperty = DependencyProperty.RegisterAttached(
-            "BorderColor", typeof(Color), typeof(ActiveProperties), new PropertyMetadata(Colors.Transparent));
+            "BorderColor", typeof(Color), typeof(ValidationProperties), new PropertyMetadata(Colors.Transparent));
 
         /// <summary>
         /// Identifies the ForegroundBrush attached dependency property.
         /// </summary>
         public static readonly DependencyProperty ForegroundBrushProperty = DependencyProperty.RegisterAttached(
-            "ForegroundBrush", typeof(Brush), typeof(ActiveProperties), new PropertyMetadata(Brushes.Transparent));
+            "ForegroundBrush", typeof(Brush), typeof(ValidationProperties), new PropertyMetadata(Brushes.Transparent));
 
         /// <summary>
         /// Gets the value of the <see cref="BackgroundColorProperty"/> attached dependency property

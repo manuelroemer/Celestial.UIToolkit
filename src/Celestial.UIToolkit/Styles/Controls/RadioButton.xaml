@@ -9,7 +9,7 @@
         <local:SharedResourceDictionary Source="../Shared/Theming.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardRadioButton" TargetType="RadioButton" BasedOn="{StaticResource ForegroundSupportingThemingBase}">
+    <Style x:Key="StandardRadioButton" TargetType="RadioButton" BasedOn="{StaticResource Accent2BorderWithForegroundThemingBase}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
