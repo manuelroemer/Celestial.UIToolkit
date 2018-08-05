@@ -1,6 +1,5 @@
 ﻿using Celestial.UIToolkit.Extensions;
 using System;
-using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -243,7 +242,7 @@ namespace Celestial.UIToolkit.Controls
         /// Gets or sets a value indicating whether the ripple animation is active.
         /// By setting this value to <c>true</c>, the animation is started.
         /// As long as this property is <c>true</c>, the animation will stay in its
-        /// 'Expanding' state.
+        /// 'Expanded' state.
         /// If it gets set to <c>false</c>, the animation will be allowed to enter the 'Fading'
         /// state.
         /// </summary>
