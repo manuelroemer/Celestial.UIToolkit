@@ -297,6 +297,85 @@ namespace Celestial.UIToolkit.Controls
         {
         }
         
+        /// <summary>
+        /// Loads template parts for the animation control.
+        /// </summary>
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            this.EnterNormalVisualState();
+        }
+
+        /// <summary>
+        /// Forces the (re-)start of the ripple animation,
+        /// originating either from the control's center, or the current location of the
+        /// user's mouse pointer. The decision will depend on the <see cref="RippleOrigin"/>
+        /// property and some further conditions.
+        /// </summary>
+        public void StartAnimation()
+        {
+            if (this.RippleOrigin == RippleOrigin.MouseLocation)
+            {
+                // Even if RippleOrigin is set to use the cursor, we can only do so,
+                // if the mouse is actually over this element.
+                // If not, still show the animation from the center.
+                // (This can, for instance, happen if the animation gets triggered via the keyboard).
+                var clickCoordinates = Mouse.GetPosition(this);
+                if (this.IsPointInControlBounds(clickCoordinates))
+                {
+                    this.StartAnimationFromPoint(clickCoordinates);
+                }
+                else
+                {
+                    this.StartAnimationFromCenter();
+                }
+            }
+            else if (this.RippleOrigin == RippleOrigin.Center)
+            {
+                this.StartAnimationFromCenter();
+            }
+            else
+            {
+                throw new InvalidOperationException($"Unknown {nameof(Controls.RippleOrigin)} enumeration value.");
+            }
+        }
+
+        /// <summary>
+        /// Forces the (re-)start of the ripple animation,
+        /// originating from the control's center.
+        /// Calling this method will ignore the value of the
+        /// <see cref="RippleOrigin"/> property.
+        /// </summary>
+        public void StartAnimationFromCenter()
+        {
+            this.StartAnimationFromPoint(this.GetCenter());
+        }
+
+        /// <summary>
+        /// Forces the (re-)start of the ripple animation,
+        /// originating from the specified <paramref name="rippleOrigin"/> point.
+        /// Calling this method will ignore the value of the <see cref="RippleOrigin"/>
+        /// property.
+        /// </summary>
+        /// <param name="rippleOrigin">The point from which the ripple animation originates.</param>
+        public void StartAnimationFromPoint(Point rippleOrigin)
+        {
+            this.UpdateAnimationProperties(rippleOrigin);
+            this.EnterExpandingVisualState();
+        }
+
+        private void UpdateAnimationProperties(Point rippleOrigin)
+        {
+            this.AnimationOriginX = rippleOrigin.X;
+            this.AnimationOriginY = rippleOrigin.Y;
+
+            this.AnimationDiameter = Sqrt(  // This will make the ripple touch the outer-most edge
+                Pow(Max(rippleOrigin.X, this.ActualWidth - rippleOrigin.X), 2) +
+                Pow(Max(rippleOrigin.Y, this.ActualHeight - rippleOrigin.Y), 2)) * 2;
+            this.AnimationPositionX = this.AnimationOriginX - this.AnimationDiameter / 2;
+            this.AnimationPositionY = this.AnimationOriginY - this.AnimationDiameter / 2;
+        }
+
         private static void IsActiveTrigger_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var self = (RippleOverlay)d;
@@ -359,85 +438,6 @@ namespace Celestial.UIToolkit.Controls
             {
                 self.TryEnterFadingVisualState();
             }
-        }
-
-        /// <summary>
-        /// Forces the (re-)start of the ripple animation,
-        /// originating either from the control's center, or the current location of the
-        /// user's mouse pointer. The decision will depend on the <see cref="RippleOrigin"/>
-        /// property and some further conditions.
-        /// </summary>
-        public void StartAnimation()
-        {
-            if (this.RippleOrigin == RippleOrigin.MouseLocation)
-            {
-                // Even if RippleOrigin is set to use the cursor, we can only do so,
-                // if the mouse is actually over this element.
-                // If not, still show the animation from the center.
-                // (This can, for instance, happen if the animation gets triggered via the keyboard).
-                var clickCoordinates = Mouse.GetPosition(this);
-                if (this.IsPointInControlBounds(clickCoordinates))
-                {
-                    this.StartAnimationFromPoint(clickCoordinates);
-                }
-                else
-                {
-                    this.StartAnimationFromCenter();
-                }
-            }
-            else if (this.RippleOrigin == RippleOrigin.Center)
-            {
-                this.StartAnimationFromCenter();
-            }
-            else
-            {
-                throw new InvalidOperationException($"Unknown {nameof(Controls.RippleOrigin)} enumeration value.");
-            }
-        }
-
-        /// <summary>
-        /// Forces the (re-)start of the ripple animation,
-        /// originating from the specified <paramref name="rippleOrigin"/> point.
-        /// Calling this method will ignore the value of the <see cref="RippleOrigin"/>
-        /// property.
-        /// </summary>
-        /// <param name="rippleOrigin">The point from which the ripple animation originates.</param>
-        public void StartAnimationFromPoint(Point rippleOrigin)
-        {
-            this.UpdateAnimationProperties(rippleOrigin);
-            this.EnterExpandingVisualState();
-        }
-
-        /// <summary>
-        /// Forces the (re-)start of the ripple animation,
-        /// originating from the control's center.
-        /// Calling this method will ignore the value of the
-        /// <see cref="RippleOrigin"/> property.
-        /// </summary>
-        public void StartAnimationFromCenter()
-        {
-            this.StartAnimationFromPoint(this.GetCenter());
-        }
-
-        /// <summary>
-        /// Loads template parts for the animation control.
-        /// </summary>
-        public override void OnApplyTemplate()
-        {
-            base.OnApplyTemplate();
-            this.EnterNormalVisualState();
-        }
-
-        private void UpdateAnimationProperties(Point rippleOrigin)
-        {
-            this.AnimationOriginX = rippleOrigin.X;
-            this.AnimationOriginY = rippleOrigin.Y;
-
-            this.AnimationDiameter = Sqrt(  // This will make the ripple touch the outer-most edge
-                Pow(Max(rippleOrigin.X, this.ActualWidth - rippleOrigin.X), 2) +
-                Pow(Max(rippleOrigin.Y, this.ActualHeight - rippleOrigin.Y), 2)) * 2;
-            this.AnimationPositionX = this.AnimationOriginX - this.AnimationDiameter / 2;
-            this.AnimationPositionY = this.AnimationOriginY - this.AnimationDiameter / 2;
         }
 
         private void EnterNormalVisualState()
