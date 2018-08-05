@@ -97,7 +97,7 @@ namespace Celestial.UIToolkit.Controls
         /// Identifies the <see cref="AllowFading"/> dependency property.
         /// </summary>
         public static readonly DependencyProperty AllowFadingProperty = DependencyProperty.Register(
-            nameof(AllowFading), typeof(bool), typeof(RippleOverlay), new PropertyMetadata(true));
+            nameof(AllowFading), typeof(bool), typeof(RippleOverlay), new PropertyMetadata(true, AllowFading_Changed));
 
         /// <summary>
         /// Identifies the <see cref="IsActiveTrigger"/> dependency property.
@@ -315,6 +315,17 @@ namespace Celestial.UIToolkit.Controls
                 // Got a signal that the animation stopped fading.
                 // -> The control is in its normal state again.
                 self.EnterNormalVisualState();
+            }
+        }
+
+        private static void AllowFading_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var self = (RippleOverlay)d;
+            bool allowFading = (bool)e.NewValue;
+
+            if (self.IsFading && !allowFading)
+            {
+                // TODO: Enter the fully expanded visual state.
             }
         }
 
