@@ -10,11 +10,13 @@
     <Color x:Key="Accent1MediumColor">#C51162</Color>
     <Color x:Key="Accent1LowColor">#AB0F55</Color>
     <Color x:Key="OnAccent1ForegroundColor">#FFFFFF</Color>
+    <Color x:Key="OnAccent1DisabledForegroundColor">#FFFFFF</Color>
 
     <SolidColorBrush x:Key="Accent1HighBrush" Color="{StaticResource Accent1HighColor}" />
     <SolidColorBrush x:Key="Accent1MediumBrush" Color="{StaticResource Accent1MediumColor}" />
     <SolidColorBrush x:Key="Accent1LowBrush" Color="{StaticResource Accent1LowColor}" />
     <SolidColorBrush x:Key="OnAccent1ForegroundBrush" Color="{StaticResource OnAccent1ForegroundColor}" />
+    <SolidColorBrush x:Key="OnAccent1DisabledForegroundBrush" Color="{StaticResource OnAccent1DisabledForegroundColor}" />
 
 
     <!--
@@ -25,11 +27,13 @@
     <Color x:Key="Accent2MediumColor">#1F9BDC</Color>
     <Color x:Key="Accent2LowColor">#1B89C2</Color>
     <Color x:Key="OnAccent2ForegroundColor">#FFFFFF</Color>
+    <Color x:Key="OnAccent2DisabledForegroundColor">#FFFFFF</Color>
 
     <SolidColorBrush x:Key="Accent2HighBrush" Color="{StaticResource Accent2HighColor}" />
     <SolidColorBrush x:Key="Accent2MediumBrush" Color="{StaticResource Accent2MediumColor}" />
     <SolidColorBrush x:Key="Accent2LowBrush" Color="{StaticResource Accent2LowColor}" />
     <SolidColorBrush x:Key="OnAccent2ForegroundBrush" Color="{StaticResource OnAccent2ForegroundColor}" />
+    <SolidColorBrush x:Key="OnAccent2DisabledForegroundBrush" Color="{StaticResource OnAccent2DisabledForegroundColor}" />
 
 
 
@@ -40,11 +44,13 @@
     <Color x:Key="ErrorMediumColor">#C5000E</Color>
     <Color x:Key="ErrorLowColor">#AB000C</Color>
     <Color x:Key="OnErrorForegroundColor">#FFFFFF</Color>
+    <Color x:Key="OnErrorDisabledForegroundColor">#FFFFFF</Color>
 
     <SolidColorBrush x:Key="ErrorHighBrush" Color="{StaticResource ErrorHighColor}" />
     <SolidColorBrush x:Key="ErrorMediumBrush" Color="{StaticResource ErrorMediumColor}" />
     <SolidColorBrush x:Key="ErrorLowBrush" Color="{StaticResource ErrorLowColor}" />
     <SolidColorBrush x:Key="OnErrorForegroundBrush" Color="{StaticResource OnErrorForegroundColor}" />
+    <SolidColorBrush x:Key="OnErrorDisabledForegroundBrush" Color="{StaticResource OnErrorForegroundColor}" />
 
 
 

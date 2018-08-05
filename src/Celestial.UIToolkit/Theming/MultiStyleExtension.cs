@@ -12,6 +12,7 @@ namespace Celestial.UIToolkit.Theming
     /// A custom markup extension which merges multiple styles
     /// into one single style.
     /// </summary>
+    [ContentProperty(nameof(StyleKeys))]
     public class MultiStyleExtension : MarkupExtension
     {
 
@@ -67,7 +68,7 @@ namespace Celestial.UIToolkit.Theming
         /// </param>
         public MultiStyleExtension(string styleKeys)
         {
-            this.StyleKeys = styleKeys ?? "";
+            this.StyleKeys = styleKeys;
         }
 
         private void ParseStyleKeyParts()

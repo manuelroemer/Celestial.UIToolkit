@@ -91,7 +91,6 @@
     </Compile>
     <Compile Include="SharedResourceDictionaryManager.cs" />
     <Compile Include="Theming\TabControlProperties.cs" />
-    <Compile Include="Theming\ValidationProperties.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
