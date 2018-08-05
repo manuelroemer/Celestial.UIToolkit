@@ -26,6 +26,12 @@
                                     <LinearDoubleKeyFrame KeyTime="{StaticResource ColorAnimationKeyTime}" Value="{Binding AnimationScale, RelativeSource={RelativeSource TemplatedParent}}" />
                                 </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
+                            <Storyboard x:Key="ExpandedStoryboard">
+                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                               Storyboard.TargetProperty="ActualAnimationScale">
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding AnimationScale, RelativeSource={RelativeSource TemplatedParent}}" />
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
                             <Storyboard x:Key="FadingStoryboard">
                                 <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
                                                                Storyboard.TargetProperty="ActualAnimationScale">

@@ -53,6 +53,7 @@
     <Compile Include="Converters\ColorToSolidColorBrushConverterTests.cs" />
     <Compile Include="Converters\StringToVisibilityConverterTests.cs" />
     <Compile Include="Converters\MathOperationConverterTests.cs" />
+    <Compile Include="Converters\InvertBooleanConverterTests.cs" />
     <Compile Include="Converters\ValueConverterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

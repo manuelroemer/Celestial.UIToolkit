@@ -1,5 +1,6 @@
 ﻿using Celestial.UIToolkit.Extensions;
 using System;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -38,7 +39,13 @@ namespace Celestial.UIToolkit.Controls
 
         private static readonly DependencyPropertyKey AnimationDiameterPropertyKey = DependencyProperty.RegisterReadOnly(
             nameof(AnimationDiameter), typeof(double), typeof(RippleOverlay), new PropertyMetadata(0d));
-        
+
+        private static readonly DependencyPropertyKey IsExpandingPropertyKey = DependencyProperty.RegisterReadOnly(
+            nameof(IsExpanding), typeof(bool), typeof(RippleOverlay), new PropertyMetadata(false));
+
+        private static readonly DependencyPropertyKey IsFadingPropertyKey = DependencyProperty.RegisterReadOnly(
+            nameof(IsFading), typeof(bool), typeof(RippleOverlay), new PropertyMetadata(false));
+
         /// <summary>
         /// Identifies the <see cref="AnimationOriginX"/> dependency property.
         /// </summary>
@@ -63,7 +70,17 @@ namespace Celestial.UIToolkit.Controls
         /// Identifies the <see cref="AnimationDiameter"/> dependency property.
         /// </summary>
         public static readonly DependencyProperty AnimationDiameterProperty = AnimationDiameterPropertyKey.DependencyProperty;
-        
+
+        /// <summary>
+        /// Identifies the <see cref="IsExpanding"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty IsExpandingProperty = IsExpandingPropertyKey.DependencyProperty;
+
+        /// <summary>
+        /// Identifies the <see cref="IsFading"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty IsFadingProperty = IsFadingPropertyKey.DependencyProperty;
+
         /// <summary>
         /// Identifies the <see cref="AnimationScale"/> dependency property.
         /// </summary>
@@ -85,7 +102,7 @@ namespace Celestial.UIToolkit.Controls
         /// <summary>
         /// Identifies the <see cref="AllowFading"/> dependency property.
         /// </summary>
-        public static readonly DependencyProperty IsFadingProperty = DependencyProperty.Register(
+        public static readonly DependencyProperty AllowFadingProperty = DependencyProperty.Register(
             nameof(AllowFading), typeof(bool), typeof(RippleOverlay), new PropertyMetadata(true));
 
         /// <summary>
@@ -100,7 +117,7 @@ namespace Celestial.UIToolkit.Controls
         public double AnimationOriginX
         {
             get { return (double)GetValue(AnimationOriginXProperty); }
-            protected set { SetValue(AnimationOriginXPropertyKey, value); }
+            private set { SetValue(AnimationOriginXPropertyKey, value); }
         }
 
         /// <summary>
@@ -109,7 +126,7 @@ namespace Celestial.UIToolkit.Controls
         public double AnimationOriginY
         {
             get { return (double)GetValue(AnimationOriginYProperty); }
-            protected set { SetValue(AnimationOriginYPropertyKey, value); }
+            private set { SetValue(AnimationOriginYPropertyKey, value); }
         }
 
         /// <summary>
@@ -121,7 +138,7 @@ namespace Celestial.UIToolkit.Controls
         public double AnimationPositionX
         {
             get { return (double)GetValue(AnimationPositionXProperty); }
-            protected set { SetValue(AnimationPositionXPropertyKey, value); }
+            private set { SetValue(AnimationPositionXPropertyKey, value); }
         }
 
         /// <summary>
@@ -133,16 +150,34 @@ namespace Celestial.UIToolkit.Controls
         public double AnimationPositionY
         {
             get { return (double)GetValue(AnimationPositionYProperty); }
-            protected set { SetValue(AnimationPositionYPropertyKey, value); }
+            private set { SetValue(AnimationPositionYPropertyKey, value); }
         }
 
         /// <summary>
-        /// Gets the diameter of the animated circle.
+        /// Gets the diameter of the animated component.
         /// </summary>
         public double AnimationDiameter
         {
             get { return (double)GetValue(AnimationDiameterProperty); }
-            protected set { SetValue(AnimationDiameterPropertyKey, value); }
+            private set { SetValue(AnimationDiameterPropertyKey, value); }
+        }
+
+        /// <summary>
+        /// Gets a value indicating whether the animation is in the expanding-state right now.
+        /// </summary>
+        public bool IsExpanding
+        {
+            get { return (bool)GetValue(IsExpandingProperty); }
+            private set { SetValue(IsExpandingPropertyKey, value); }
+        }
+
+        /// <summary>
+        /// Gets a value indicating whether the animation is in the fading-state right now.
+        /// </summary>
+        public bool IsFading
+        {
+            get { return (bool)GetValue(IsFadingProperty); }
+            private set { SetValue(IsFadingPropertyKey, value); }
         }
 
         /// <summary>
@@ -183,8 +218,8 @@ namespace Celestial.UIToolkit.Controls
         /// </summary>
         public bool AllowFading
         {
-            get { return (bool)GetValue(IsFadingProperty); }
-            set { SetValue(IsFadingProperty, value); }
+            get { return (bool)GetValue(AllowFadingProperty); }
+            set { SetValue(AllowFadingProperty, value); }
         }
 
         /// <summary>
@@ -282,7 +317,7 @@ namespace Celestial.UIToolkit.Controls
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
-            VisualStateManager.GoToState(this, NormalVisualStateName, true);
+            this.EnterNormalVisualState();
         }
 
         private static void AnimationScale_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -307,22 +342,6 @@ namespace Celestial.UIToolkit.Controls
             }
         }
 
-        private void EnterActiveVisualState()
-        {
-            VisualStateManager.GoToState(this, NormalVisualStateName, false);
-            VisualStateManager.GoToState(this, ExpandingVisualStateName, true);
-        }
-        
-        private void TryEnterFadingVisualState()
-        {
-            if (this.AllowFading && 
-                this.ActualAnimationScale >= this.AnimationScale 
-                && !this.IsActive)
-            {
-                VisualStateManager.GoToState(this, FadingVisualStateName, true);
-            }
-        }
-
         private void UpdateAnimationProperties(Point rippleOrigin)
         {
             this.AnimationOriginX = rippleOrigin.X;
@@ -333,6 +352,51 @@ namespace Celestial.UIToolkit.Controls
                 Pow(Max(rippleOrigin.Y, this.ActualHeight - rippleOrigin.Y), 2)) * 2;
             this.AnimationPositionX = this.AnimationOriginX - this.AnimationDiameter / 2;
             this.AnimationPositionY = this.AnimationOriginY - this.AnimationDiameter / 2;
+        }
+
+        private void EnterNormalVisualState()
+        {
+            this.IsExpanding = false;
+            this.IsFading = false;
+            VisualStateManager.GoToState(this, NormalVisualStateName, true);
+            this.PrintDebugStates();
+        }
+
+        private void EnterActiveVisualState()
+        {
+            this.IsExpanding = true;
+            this.IsFading = false;
+            VisualStateManager.GoToState(this, NormalVisualStateName, false); // Required to reset potentially running animations.
+            VisualStateManager.GoToState(this, ExpandingVisualStateName, true);
+            this.PrintDebugStates();
+        }
+
+        private void EnterFadingVisualState()
+        {
+            this.IsExpanding = false;
+            this.IsFading = true;
+            VisualStateManager.GoToState(this, FadingVisualStateName, true);
+            this.PrintDebugStates();
+        }
+        
+        private void TryEnterFadingVisualState()
+        {
+            // The animation should only be allowed to fade if the following conditions are met:
+            // - AllowFading is true
+            // - It has reached the maximum size
+            // - It is not being forced to stay expanded (e.g. if a button is long-pressed).
+            if (this.AllowFading && 
+                this.ActualAnimationScale >= this.AnimationScale 
+                && !this.IsActive)
+            {
+                this.EnterFadingVisualState();
+            }
+        }
+        
+        [Conditional("DEBUG")]
+        private void PrintDebugStates()
+        {
+            Debug.WriteLine($"IsActive: {IsActive}; IsExpanding: {IsExpanding}; IsFading: {IsFading}");
         }
 
     }
