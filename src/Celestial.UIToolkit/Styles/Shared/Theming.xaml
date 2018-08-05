@@ -9,7 +9,7 @@
     If a control needs to use different values, they need to be set manually.
     -->
     <Style x:Key="DefaultThemingBase" TargetType="FrameworkElement">
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
         
         <Setter Property="theming:MouseOverProperties.BorderColor" Value="{StaticResource Accent2HighColor}" />
         <Setter Property="theming:MouseOverProperties.BackgroundColor" Value="{StaticResource BaseHighestColor}" />

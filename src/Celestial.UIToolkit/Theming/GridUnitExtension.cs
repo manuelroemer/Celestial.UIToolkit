@@ -39,6 +39,8 @@ namespace Celestial.UIToolkit.Theming
 
         private static readonly ThicknessConverter _thicknessConverter;
         private static readonly CornerRadiusConverter _cornerRadiusConverter;
+        private static readonly SizeConverter _sizeConverter;
+        private static readonly PointConverter _pointConverter;
         private static readonly double _dipMultiplier;
         private double? _gridCellSize;
 
@@ -121,6 +123,8 @@ namespace Celestial.UIToolkit.Theming
 
             _thicknessConverter = new ThicknessConverter();
             _cornerRadiusConverter = new CornerRadiusConverter();
+            _sizeConverter = new SizeConverter();
+            _pointConverter = new PointConverter();
         }
 
         /// <summary>
@@ -154,6 +158,14 @@ namespace Celestial.UIToolkit.Theming
             {
                 return this.CalculateCornerRadius();
             }
+            else if (targetType == typeof(Size))
+            {
+                return this.CalculateSize();
+            }
+            else if (targetType == typeof(Point))
+            {
+                return this.CalculatePoint();
+            }
             else
             {
                 throw new NotSupportedException(
@@ -161,7 +173,7 @@ namespace Celestial.UIToolkit.Theming
                     $"conversion type '{targetType.FullName}'.");
             }
         }
-        
+
         private Type DetermineConversionTargetType(IProvideValueTarget target)
         {
             if (this.TargetType != null) return this.TargetType;
@@ -174,7 +186,7 @@ namespace Celestial.UIToolkit.Theming
         }
 
         private double GetFinalLengthMultiplier() =>
-            (this.DipAware ? _dipMultiplier : 1) * GridCellSize;
+            (this.DipAware ? _dipMultiplier : 1) * this.GridCellSize;
         
         private double CalculateDouble() => 
             this.GetFinalLengthMultiplier() * Convert.ToDouble(MultiplierString);
@@ -199,6 +211,20 @@ namespace Celestial.UIToolkit.Theming
                 cornerRadius.TopRight * multiplier,
                 cornerRadius.BottomRight * multiplier,
                 cornerRadius.BottomLeft * multiplier);
+        }
+
+        private object CalculateSize()
+        {
+            var size = (Size)_sizeConverter.ConvertFromString(this.MultiplierString);
+            double multiplier = this.GetFinalLengthMultiplier();
+            return new Size(size.Width * multiplier, size.Height * multiplier);
+        }
+
+        private object CalculatePoint()
+        {
+            var point = (Point)_pointConverter.ConvertFromString(this.MultiplierString);
+            double multiplier = this.GetFinalLengthMultiplier();
+            return new Point(point.X * multiplier, point.Y * multiplier);
         }
 
     }

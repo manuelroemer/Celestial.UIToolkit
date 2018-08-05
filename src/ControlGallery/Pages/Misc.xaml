@@ -69,6 +69,16 @@
                     Margin="{theming:GridUnit '3,0'}">
             </Border>
         </GroupBox>
+        
+        <GroupBox Header="Icon Button">
+            <StackPanel>
+                <controls:IconButton>
+                    <controls:IconButton.Icon>
+                        <controls:PathIcon Data="{StaticResource HalfArrowDown}" />
+                    </controls:IconButton.Icon>
+                </controls:IconButton>
+            </StackPanel>
+        </GroupBox>
     </UniformGrid>
 
 </UserControl>

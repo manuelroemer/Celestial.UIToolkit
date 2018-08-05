@@ -14,7 +14,7 @@
     <Style x:Key="StandardButtonBase" TargetType="ButtonBase" BasedOn="{StaticResource ForegroundSupportingThemingBase}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="MinWidth" Value="{theming:GridUnit 30}" />
+        <Setter Property="MinWidth" Value="{theming:GridUnit 15}" />
         <Setter Property="MinHeight" Value="{theming:GridUnit 8}" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />

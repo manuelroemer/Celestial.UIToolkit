@@ -3,7 +3,7 @@ using System.Windows.Controls;
 
 namespace Celestial.UIToolkit.Controls
 {
-#if false // Temporarily exclude this, as it is irrelevant right now
+
     /// <summary>
     /// Represents a button control which, in addition to its content,
     /// displays an <see cref="IconElement"/>.
@@ -35,5 +35,5 @@ namespace Celestial.UIToolkit.Controls
         }
 
     }
-#endif
+
 }

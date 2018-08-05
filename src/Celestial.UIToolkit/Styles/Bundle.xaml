@@ -9,6 +9,7 @@
     <ResourceDictionary.MergedDictionaries>
         <local:SharedResourceDictionary Source="Shared/FocusVisuals.xaml" />
         
+        <local:SharedResourceDictionary Source="Controls/IconButton.xaml" />
         <local:SharedResourceDictionary Source="Controls/RippleOverlay.xaml" />
         
         <local:SharedResourceDictionary Source="Controls/TextBlock.xaml" />
