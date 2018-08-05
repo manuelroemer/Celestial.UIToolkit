@@ -52,7 +52,7 @@
 
         <GroupBox Header="Ripple">
             <controls:RippleOverlay Background="{StaticResource Accent2MediumBrush}"
-                                    IsActive="{Binding IsPressed, ElementName=Btn}"
+                                    IsActiveTrigger="{Binding IsPressed, ElementName=Btn}"
                                     ClipToBounds="False">
                 <Button x:Name="Btn"
                         Width="200"

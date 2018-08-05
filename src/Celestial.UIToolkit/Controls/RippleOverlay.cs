@@ -86,13 +86,7 @@ namespace Celestial.UIToolkit.Controls
         /// </summary>
         public static readonly DependencyProperty AnimationScaleProperty = DependencyProperty.Register(
             nameof(AnimationScale), typeof(double), typeof(RippleOverlay), new PropertyMetadata(1d));
-
-        /// <summary>
-        /// Identifies the <see cref="ActualAnimationScale"/> dependency property.
-        /// </summary>
-        public static readonly DependencyProperty ActualAnimationScaleProperty = DependencyProperty.Register(
-            nameof(ActualAnimationScale), typeof(double), typeof(RippleOverlay), new FrameworkPropertyMetadata(0d, FrameworkPropertyMetadataOptions.AffectsRender, AnimationScale_Changed));
-
+        
         /// <summary>
         /// Identifies the <see cref="RippleOrigin"/> dependency property.
         /// </summary>
@@ -106,10 +100,22 @@ namespace Celestial.UIToolkit.Controls
             nameof(AllowFading), typeof(bool), typeof(RippleOverlay), new PropertyMetadata(true));
 
         /// <summary>
-        /// Identifies the <see cref="IsActive"/> dependency property.
+        /// Identifies the <see cref="IsActiveTrigger"/> dependency property.
         /// </summary>
-        public static readonly DependencyProperty IsActiveProperty = DependencyProperty.Register(
-            nameof(IsActive), typeof(bool), typeof(RippleOverlay), new PropertyMetadata(false, IsActive_Changed));
+        public static readonly DependencyProperty IsActiveTriggerProperty = DependencyProperty.Register(
+            nameof(IsActiveTrigger), typeof(bool), typeof(RippleOverlay), new PropertyMetadata(false, IsActiveTrigger_Changed));
+
+        /// <summary>
+        /// Identifies the <see cref="IsAnimationExpanding"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty IsAnimationExpandingProperty = DependencyProperty.Register(
+            nameof(IsAnimationExpanding), typeof(bool), typeof(RippleOverlay), new PropertyMetadata(false, IsAnimationExpanding_Changed));
+
+        /// <summary>
+        /// Identifies the <see cref="IsAnimationFading"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty IsAnimationFadingProperty = DependencyProperty.Register(
+            nameof(IsAnimationFading), typeof(bool), typeof(RippleOverlay), new PropertyMetadata(false, IsAnimationFading_Changed));
 
         /// <summary>
         /// Gets the x-coordinate of the animation's origin point.
@@ -163,7 +169,7 @@ namespace Celestial.UIToolkit.Controls
         }
 
         /// <summary>
-        /// Gets a value indicating whether the animation is in the expanding-state right now.
+        /// Gets a value indicating whether the animation is in the 'Expanding' state right now.
         /// </summary>
         public bool IsExpanding
         {
@@ -172,7 +178,7 @@ namespace Celestial.UIToolkit.Controls
         }
 
         /// <summary>
-        /// Gets a value indicating whether the animation is in the fading-state right now.
+        /// Gets a value indicating whether the animation is in the 'Fading' state right now.
         /// </summary>
         public bool IsFading
         {
@@ -189,16 +195,6 @@ namespace Celestial.UIToolkit.Controls
             get { return (double)GetValue(AnimationScaleProperty); }
             set { SetValue(AnimationScaleProperty, value); }
         }
-
-        /// <summary>
-        /// Gets or sets the current scale of the animation.
-        /// This value is only supposed to be used by animations.
-        /// </summary>
-        public double ActualAnimationScale
-        {
-            get { return (double)GetValue(ActualAnimationScaleProperty); }
-            set { SetValue(ActualAnimationScaleProperty, value); }
-        }
         
         /// <summary>
         /// Gets or sets the <see cref="Celestial.UIToolkit.Controls.RippleOrigin"/> which
@@ -212,7 +208,7 @@ namespace Celestial.UIToolkit.Controls
 
         /// <summary>
         /// Gets or sets a value indicating whether the animation will enter the
-        /// Fading visual state when it finishes.
+        /// 'Fading' state when it finishes.
         /// If this is <c>false</c>, the animated component will stay in place,
         /// when the animation is done.
         /// </summary>
@@ -230,12 +226,40 @@ namespace Celestial.UIToolkit.Controls
         /// If it gets set to <c>false</c>, the animation will be allowed to enter the 'Fading'
         /// state.
         /// </summary>
-        public bool IsActive
+        public bool IsActiveTrigger
         {
-            get { return (bool)GetValue(IsActiveProperty); }
-            set { SetValue(IsActiveProperty, value); }
+            get { return (bool)GetValue(IsActiveTriggerProperty); }
+            set { SetValue(IsActiveTriggerProperty, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the animation which controls the expansion of the ripple
+        /// is running at the moment.
+        /// This property is introduced so that a ControlTemplate can notify this class, when
+        /// an animation finishes. Afterwards, this class can switch the control's visual states.
+        /// DO NOT use this property directly, except when defining a custom template in XAML.
+        /// Instead, use the <see cref="IsExpanding"/> property, as it represents the current visual state of the control.
+        /// </summary>
+        public bool IsAnimationExpanding
+        {
+            get { return (bool)GetValue(IsAnimationExpandingProperty); }
+            set { SetValue(IsAnimationExpandingProperty, value); }
         }
         
+        /// <summary>
+        /// Gets or sets a value indicating whether the animation which controls the fading of the ripple
+        /// is running at the moment.
+        /// This property is introduced so that a ControlTemplate can notify this class, when
+        /// an animation finishes. Afterwards, this class can switch the control's visual states.
+        /// DO NOT use this property directly, except when defining a custom template in XAML.
+        /// Instead, use the <see cref="IsFading"/> property, as it represents the current visual state of the control.
+        /// </summary>
+        public bool IsAnimationFading
+        {
+            get { return (bool)GetValue(IsAnimationFadingProperty); }
+            set { SetValue(IsAnimationFadingProperty, value); }
+        }
+
         /// <summary>
         /// Overrides the element's default style.
         /// </summary>
@@ -251,6 +275,47 @@ namespace Celestial.UIToolkit.Controls
         /// </summary>
         public RippleOverlay()
         {
+        }
+        
+        private static void IsActiveTrigger_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var self = (RippleOverlay)d;
+            bool isActiveTriggered = (bool)e.NewValue;
+
+            if (isActiveTriggered)
+            {
+                self.StartAnimation();
+            }
+            else
+            {
+                self.TryEnterFadingVisualState();
+            }
+        }
+
+        private static void IsAnimationExpanding_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var self = (RippleOverlay)d;
+            bool isExpanding = (bool)e.NewValue;
+
+            if (!isExpanding)
+            {
+                // Got a signal that the animation stopped expanding.
+                // -> The next step is fading away.
+                self.TryEnterFadingVisualState();
+            }
+        }
+
+        private static void IsAnimationFading_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var self = (RippleOverlay)d;
+            bool isFading = (bool)e.NewValue;
+
+            if (!isFading)
+            {
+                // Got a signal that the animation stopped fading.
+                // -> The control is in its normal state again.
+                self.EnterNormalVisualState();
+            }
         }
 
         /// <summary>
@@ -297,7 +362,7 @@ namespace Celestial.UIToolkit.Controls
         public void StartAnimationFromPoint(Point rippleOrigin)
         {
             this.UpdateAnimationProperties(rippleOrigin);
-            this.EnterActiveVisualState();
+            this.EnterExpandingVisualState();
         }
 
         /// <summary>
@@ -320,28 +385,6 @@ namespace Celestial.UIToolkit.Controls
             this.EnterNormalVisualState();
         }
 
-        private static void AnimationScale_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            ((RippleOverlay)d).TryEnterFadingVisualState();
-        }
-        
-        private static void IsActive_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var self = (RippleOverlay)d;
-            bool isActive = (bool)e.NewValue;
-
-            if (isActive)
-            {
-                self.StartAnimation();
-            }
-            else
-            {
-                // If IsActive gets set to false,
-                // allow the disappearing of the animation.
-                self.TryEnterFadingVisualState();
-            }
-        }
-
         private void UpdateAnimationProperties(Point rippleOrigin)
         {
             this.AnimationOriginX = rippleOrigin.X;
@@ -359,16 +402,14 @@ namespace Celestial.UIToolkit.Controls
             this.IsExpanding = false;
             this.IsFading = false;
             VisualStateManager.GoToState(this, NormalVisualStateName, true);
-            this.PrintDebugStates();
         }
 
-        private void EnterActiveVisualState()
+        private void EnterExpandingVisualState()
         {
             this.IsExpanding = true;
             this.IsFading = false;
             VisualStateManager.GoToState(this, NormalVisualStateName, false); // Required to reset potentially running animations.
             VisualStateManager.GoToState(this, ExpandingVisualStateName, true);
-            this.PrintDebugStates();
         }
 
         private void EnterFadingVisualState()
@@ -376,7 +417,6 @@ namespace Celestial.UIToolkit.Controls
             this.IsExpanding = false;
             this.IsFading = true;
             VisualStateManager.GoToState(this, FadingVisualStateName, true);
-            this.PrintDebugStates();
         }
         
         private void TryEnterFadingVisualState()
@@ -386,19 +426,13 @@ namespace Celestial.UIToolkit.Controls
             // - It has reached the maximum size
             // - It is not being forced to stay expanded (e.g. if a button is long-pressed).
             if (this.AllowFading && 
-                this.ActualAnimationScale >= this.AnimationScale 
-                && !this.IsActive)
+                !this.IsAnimationExpanding &&
+                !this.IsActiveTrigger)
             {
                 this.EnterFadingVisualState();
             }
         }
         
-        [Conditional("DEBUG")]
-        private void PrintDebugStates()
-        {
-            Debug.WriteLine($"IsActive: {IsActive}; IsExpanding: {IsExpanding}; IsFading: {IsFading}");
-        }
-
     }
 
     /// <summary>

@@ -14,37 +14,58 @@
                     <Grid>
                         <Grid.Resources>
                             <Storyboard x:Key="NormalStoryboard">
-                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
-                                                               Storyboard.TargetProperty="ActualAnimationScale">
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorderScaleTransform"
+                                                               Storyboard.TargetProperty="ScaleX">
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="0" />
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorderScaleTransform"
+                                                               Storyboard.TargetProperty="ScaleY">
                                     <DiscreteDoubleKeyFrame KeyTime="0" Value="0" />
                                 </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
                             <Storyboard x:Key="ExpandingStoryboard">
-                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
-                                                               Storyboard.TargetProperty="ActualAnimationScale">
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorderScaleTransform"
+                                                               Storyboard.TargetProperty="ScaleX">
                                     <DiscreteDoubleKeyFrame KeyTime="0" Value="0" />
                                     <LinearDoubleKeyFrame KeyTime="{StaticResource ColorAnimationKeyTime}" Value="{Binding AnimationScale, RelativeSource={RelativeSource TemplatedParent}}" />
                                 </DoubleAnimationUsingKeyFrames>
-                            </Storyboard>
-                            <Storyboard x:Key="ExpandedStoryboard">
-                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
-                                                               Storyboard.TargetProperty="ActualAnimationScale">
-                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding AnimationScale, RelativeSource={RelativeSource TemplatedParent}}" />
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorderScaleTransform"
+                                                               Storyboard.TargetProperty="ScaleY">
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="0" />
+                                    <LinearDoubleKeyFrame KeyTime="{StaticResource ColorAnimationKeyTime}" Value="{Binding AnimationScale, RelativeSource={RelativeSource TemplatedParent}}" />
                                 </DoubleAnimationUsingKeyFrames>
+                                <BooleanAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                                Storyboard.TargetProperty="IsAnimationExpanding">
+                                    <DiscreteBooleanKeyFrame KeyTime="0" Value="True" />
+                                    <DiscreteBooleanKeyFrame KeyTime="{StaticResource ColorAnimationKeyTime}" Value="False" />
+                                </BooleanAnimationUsingKeyFrames>
                             </Storyboard>
                             <Storyboard x:Key="FadingStoryboard">
-                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
-                                                               Storyboard.TargetProperty="ActualAnimationScale">
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorderScaleTransform"
+                                                               Storyboard.TargetProperty="ScaleX">
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding AnimationScale, RelativeSource={RelativeSource TemplatedParent}}" />
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorderScaleTransform"
+                                                               Storyboard.TargetProperty="ScaleY">
                                     <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding AnimationScale, RelativeSource={RelativeSource TemplatedParent}}" />
                                 </DoubleAnimationUsingKeyFrames>
                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorder"
                                                                Storyboard.TargetProperty="Opacity">
                                     <LinearDoubleKeyFrame KeyTime="{StaticResource ColorAnimationKeyTime}" Value="0" />
                                 </DoubleAnimationUsingKeyFrames>
-                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
-                                                               Storyboard.TargetProperty="ActualAnimationScale">
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorderScaleTransform"
+                                                               Storyboard.TargetProperty="ScaleX">
                                     <DiscreteDoubleKeyFrame KeyTime="{StaticResource ColorAnimationKeyTime}" Value="0" />
                                 </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorderScaleTransform"
+                                                               Storyboard.TargetProperty="ScaleY">
+                                    <DiscreteDoubleKeyFrame KeyTime="{StaticResource ColorAnimationKeyTime}" Value="0" />
+                                </DoubleAnimationUsingKeyFrames>
+                                <BooleanAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                                Storyboard.TargetProperty="IsAnimationFading">
+                                    <DiscreteBooleanKeyFrame KeyTime="0" Value="True" />
+                                    <DiscreteBooleanKeyFrame KeyTime="{StaticResource ColorAnimationKeyTime}" Value="False" />
+                                </BooleanAnimationUsingKeyFrames>
                             </Storyboard>
                         </Grid.Resources>
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
@@ -63,8 +84,9 @@
                                     Height="{TemplateBinding AnimationDiameter}"
                                     RenderTransformOrigin="0.5,0.5">
                                 <Border.RenderTransform>
-                                    <ScaleTransform ScaleX="{Binding ActualAnimationScale, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
-                                                    ScaleY="{Binding ActualAnimationScale, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" />
+                                    <ScaleTransform x:Name="RippleBorderScaleTransform"
+                                                    ScaleX="0"
+                                                    ScaleY="0" />
                                 </Border.RenderTransform>
                             </Border>
                         </Canvas>
