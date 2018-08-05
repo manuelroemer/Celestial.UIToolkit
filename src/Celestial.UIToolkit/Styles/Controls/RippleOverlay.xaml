@@ -23,7 +23,19 @@
                                     <DiscreteDoubleKeyFrame KeyTime="0" Value="0" />
                                 </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
+
                             <Storyboard x:Key="ExpandingStoryboard">
+                                <BooleanAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                                Storyboard.TargetProperty="IsAnimationExpanding">
+                                    <DiscreteBooleanKeyFrame KeyTime="0" Value="True" />
+                                    <DiscreteBooleanKeyFrame KeyTime="{StaticResource ColorAnimationKeyTime}" Value="False" />
+                                </BooleanAnimationUsingKeyFrames>
+                                <BooleanAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                                Storyboard.TargetProperty="IsAnimationFading">
+                                    <!-- Important: Reset IsAnimationFading, since we can interrupt the Fading state.
+                                                    This would result in IsAnimExpanding and IsAnimFading both being true. -->
+                                    <DiscreteBooleanKeyFrame KeyTime="0" Value="False" />
+                                </BooleanAnimationUsingKeyFrames>
                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorderScaleTransform"
                                                                Storyboard.TargetProperty="ScaleX">
                                     <DiscreteDoubleKeyFrame KeyTime="0" Value="0" />
@@ -34,13 +46,26 @@
                                     <DiscreteDoubleKeyFrame KeyTime="0" Value="0" />
                                     <LinearDoubleKeyFrame KeyTime="{StaticResource ColorAnimationKeyTime}" Value="{Binding AnimationScale, RelativeSource={RelativeSource TemplatedParent}}" />
                                 </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+
+                            <Storyboard x:Key="ExpandedStoryboard">
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorderScaleTransform"
+                                                               Storyboard.TargetProperty="ScaleX">
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="1" />
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorderScaleTransform"
+                                                               Storyboard.TargetProperty="ScaleY">
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="1" />
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+
+                            <Storyboard x:Key="FadingStoryboard">
+                                <!-- Change IsAnimationFading property to notify the backing class when the fading animation is done. -->
                                 <BooleanAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
-                                                                Storyboard.TargetProperty="IsAnimationExpanding">
+                                                                Storyboard.TargetProperty="IsAnimationFading">
                                     <DiscreteBooleanKeyFrame KeyTime="0" Value="True" />
                                     <DiscreteBooleanKeyFrame KeyTime="{StaticResource ColorAnimationKeyTime}" Value="False" />
                                 </BooleanAnimationUsingKeyFrames>
-                            </Storyboard>
-                            <Storyboard x:Key="FadingStoryboard">
                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorderScaleTransform"
                                                                Storyboard.TargetProperty="ScaleX">
                                     <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding AnimationScale, RelativeSource={RelativeSource TemplatedParent}}" />
@@ -53,19 +78,6 @@
                                                                Storyboard.TargetProperty="Opacity">
                                     <LinearDoubleKeyFrame KeyTime="{StaticResource ColorAnimationKeyTime}" Value="0" />
                                 </DoubleAnimationUsingKeyFrames>
-                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorderScaleTransform"
-                                                               Storyboard.TargetProperty="ScaleX">
-                                    <DiscreteDoubleKeyFrame KeyTime="{StaticResource ColorAnimationKeyTime}" Value="0" />
-                                </DoubleAnimationUsingKeyFrames>
-                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorderScaleTransform"
-                                                               Storyboard.TargetProperty="ScaleY">
-                                    <DiscreteDoubleKeyFrame KeyTime="{StaticResource ColorAnimationKeyTime}" Value="0" />
-                                </DoubleAnimationUsingKeyFrames>
-                                <BooleanAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
-                                                                Storyboard.TargetProperty="IsAnimationFading">
-                                    <DiscreteBooleanKeyFrame KeyTime="0" Value="True" />
-                                    <DiscreteBooleanKeyFrame KeyTime="{StaticResource ColorAnimationKeyTime}" Value="False" />
-                                </BooleanAnimationUsingKeyFrames>
                             </Storyboard>
                         </Grid.Resources>
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
@@ -94,6 +106,7 @@
                             <VisualStateGroup x:Name="AnimationStates">
                                 <VisualState x:Name="Normal" Storyboard="{StaticResource NormalStoryboard}" />
                                 <VisualState x:Name="Expanding" Storyboard="{StaticResource ExpandingStoryboard}" />
+                                <VisualState x:Name="Expanded" Storyboard="{StaticResource ExpandedStoryboard}" />
                                 <VisualState x:Name="Fading" Storyboard="{StaticResource FadingStoryboard}" />
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>

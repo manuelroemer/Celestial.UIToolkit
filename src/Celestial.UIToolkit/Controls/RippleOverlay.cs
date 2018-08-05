@@ -16,6 +16,7 @@ namespace Celestial.UIToolkit.Controls
     /// </summary>
     [TemplateVisualState(GroupName = AnimationStatesVisualStateGroup, Name = NormalVisualStateName)]
     [TemplateVisualState(GroupName = AnimationStatesVisualStateGroup, Name = ExpandingVisualStateName)]
+    [TemplateVisualState(GroupName = AnimationStatesVisualStateGroup, Name = ExpandedVisualStateName)]
     [TemplateVisualState(GroupName = AnimationStatesVisualStateGroup, Name = FadingVisualStateName)]
     public class RippleOverlay : ContentControl
     {
@@ -23,6 +24,7 @@ namespace Celestial.UIToolkit.Controls
         internal const string AnimationStatesVisualStateGroup = "AnimationStates";
         internal const string NormalVisualStateName = "Normal";
         internal const string ExpandingVisualStateName = "Expanding";
+        internal const string ExpandedVisualStateName = "Expanded";
         internal const string FadingVisualStateName = "Fading";
         
         private static readonly DependencyPropertyKey AnimationOriginXPropertyKey = DependencyProperty.RegisterReadOnly(
@@ -42,6 +44,9 @@ namespace Celestial.UIToolkit.Controls
 
         private static readonly DependencyPropertyKey IsExpandingPropertyKey = DependencyProperty.RegisterReadOnly(
             nameof(IsExpanding), typeof(bool), typeof(RippleOverlay), new PropertyMetadata(false));
+
+        private static readonly DependencyPropertyKey IsExpandedPropertyKey = DependencyProperty.RegisterReadOnly(
+            nameof(IsExpanded), typeof(bool), typeof(RippleOverlay), new PropertyMetadata(false));
 
         private static readonly DependencyPropertyKey IsFadingPropertyKey = DependencyProperty.RegisterReadOnly(
             nameof(IsFading), typeof(bool), typeof(RippleOverlay), new PropertyMetadata(false));
@@ -75,6 +80,11 @@ namespace Celestial.UIToolkit.Controls
         /// Identifies the <see cref="IsExpanding"/> dependency property.
         /// </summary>
         public static readonly DependencyProperty IsExpandingProperty = IsExpandingPropertyKey.DependencyProperty;
+
+        /// <summary>
+        /// Identifies the <see cref="IsExpanded"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty IsExpandedProperty = IsExpandedPropertyKey.DependencyProperty;
 
         /// <summary>
         /// Identifies the <see cref="IsFading"/> dependency property.
@@ -175,6 +185,17 @@ namespace Celestial.UIToolkit.Controls
         {
             get { return (bool)GetValue(IsExpandingProperty); }
             private set { SetValue(IsExpandingPropertyKey, value); }
+        }
+
+        /// <summary>
+        /// Gets a value indicating whether the animation is in the 'Expanded' state right now.
+        /// This is the transition period between the 'Expanding' and 'Fading' state, when the animated
+        /// component has its full size and does not grow larger anymore.
+        /// </summary>
+        public bool IsExpanded
+        {
+            get { return (bool)GetValue(IsExpandedProperty); }
+            private set { SetValue(IsExpandedPropertyKey, value); }
         }
 
         /// <summary>
@@ -300,7 +321,9 @@ namespace Celestial.UIToolkit.Controls
             if (!isExpanding)
             {
                 // Got a signal that the animation stopped expanding.
-                // -> The next step is fading away.
+                // -> It is fully expanded now and might start fading, if
+                //    the IsActiveTrigger allows it.
+                self.EnterExpandedVisualState();
                 self.TryEnterFadingVisualState();
             }
         }
@@ -310,7 +333,7 @@ namespace Celestial.UIToolkit.Controls
             var self = (RippleOverlay)d;
             bool isFading = (bool)e.NewValue;
 
-            if (!isFading)
+            if (!isFading && !self.IsAnimationExpanding)
             {
                 // Got a signal that the animation stopped fading.
                 // -> The control is in its normal state again.
@@ -325,7 +348,7 @@ namespace Celestial.UIToolkit.Controls
 
             if (self.IsFading && !allowFading)
             {
-                // TODO: Enter the fully expanded visual state.
+                self.EnterExpandedVisualState();
             }
         }
 
@@ -411,6 +434,7 @@ namespace Celestial.UIToolkit.Controls
         private void EnterNormalVisualState()
         {
             this.IsExpanding = false;
+            this.IsExpanded = false;
             this.IsFading = false;
             VisualStateManager.GoToState(this, NormalVisualStateName, true);
         }
@@ -418,14 +442,24 @@ namespace Celestial.UIToolkit.Controls
         private void EnterExpandingVisualState()
         {
             this.IsExpanding = true;
+            this.IsExpanded = false;
             this.IsFading = false;
             VisualStateManager.GoToState(this, NormalVisualStateName, false); // Required to reset potentially running animations.
             VisualStateManager.GoToState(this, ExpandingVisualStateName, true);
         }
 
+        private void EnterExpandedVisualState()
+        {
+            this.IsExpanding = false;
+            this.IsExpanded = true;
+            this.IsFading = false;
+            VisualStateManager.GoToState(this, ExpandedVisualStateName, true);
+        }
+
         private void EnterFadingVisualState()
         {
             this.IsExpanding = false;
+            this.IsExpanded = false;
             this.IsFading = true;
             VisualStateManager.GoToState(this, FadingVisualStateName, true);
         }
@@ -437,7 +471,7 @@ namespace Celestial.UIToolkit.Controls
             // - It has reached the maximum size
             // - It is not being forced to stay expanded (e.g. if a button is long-pressed).
             if (this.AllowFading && 
-                !this.IsAnimationExpanding &&
+                this.IsExpanded &&
                 !this.IsActiveTrigger)
             {
                 this.EnterFadingVisualState();
