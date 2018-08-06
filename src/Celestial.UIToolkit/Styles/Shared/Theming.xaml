@@ -148,7 +148,7 @@
     - Border:     -
     - Foreground: Accent1
     -->
-    <Style x:Key="Accent1Foreground" TargetType="FrameworkElement">
+    <Style x:Key="OnAccent1Foreground" TargetType="FrameworkElement">
         <Setter Property="Control.Foreground" Value="{StaticResource OnAccent1ForegroundBrush}" />
         <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource OnAccent1ForegroundBrush}" />
         <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource OnAccent1ForegroundBrush}" />
@@ -161,7 +161,7 @@
     - Border:     -
     - Foreground: Accent2
     -->
-    <Style x:Key="Accent2Foreground" TargetType="FrameworkElement">
+    <Style x:Key="OnAccent2Foreground" TargetType="FrameworkElement">
         <Setter Property="Control.Foreground" Value="{StaticResource OnAccent2ForegroundBrush}" />
         <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource OnAccent2ForegroundBrush}" />
         <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource OnAccent2ForegroundBrush}" />
