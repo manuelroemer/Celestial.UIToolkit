@@ -53,16 +53,20 @@
                                           RecognizesAccessKey="True" />
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition GeneratedDuration="{StaticResource ColorAnimationDuration}" />
+                                    <VisualTransition To="Disabled" GeneratedDuration="0" />
+                                </VisualStateGroup.Transitions>
                                 <VisualState x:Name="Normal" />
                                 <VisualState x:Name="MouseOver">
                                     <Storyboard>
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                       Storyboard.TargetProperty="Background.Color">
-                                            <EasingColorKeyFrame KeyTime="{StaticResource ColorAnimationKeyTime}" Value="{Binding Data, Source={StaticResource MouseOverBackgroundColorProxy}}" />
+                                            <EasingColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource MouseOverBackgroundColorProxy}}" />
                                         </ColorAnimationUsingKeyFrames>
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                       Storyboard.TargetProperty="BorderBrush.Color">
-                                            <EasingColorKeyFrame KeyTime="{StaticResource ColorAnimationKeyTime}" Value="{Binding Data, Source={StaticResource MouseOverBorderColorProxy}}" />
+                                            <EasingColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource MouseOverBorderColorProxy}}" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>

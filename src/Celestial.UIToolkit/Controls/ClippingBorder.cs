@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using Celestial.UIToolkit.Extensions;
+using static System.Math;
 
 namespace Celestial.UIToolkit.Controls
 {
@@ -19,7 +21,7 @@ namespace Celestial.UIToolkit.Controls
     public class ClippingBorder : Border
     {
 
-        private object _oldChildClip;
+        private Geometry _oldChildClip;
 
         /// <summary>
         /// Gets or sets the single child of the clipping border.
@@ -40,13 +42,13 @@ namespace Celestial.UIToolkit.Controls
         {
             if (this.Child != null)
             {
-                this.Child.SetValue(ClipProperty, _oldChildClip);
+                this.Child.Clip = _oldChildClip;
             }
         }
 
         private void SetOldChildClip()
         {
-            _oldChildClip = this.Child?.ReadLocalValue(ClipProperty);
+            _oldChildClip = this.Child?.Clip;
         }
 
         /// <summary>
@@ -72,22 +74,57 @@ namespace Celestial.UIToolkit.Controls
         {
             return new RectangleGeometry()
             {
-                RadiusX = this.DetermineClipRadiusX(),
-                RadiusY = this.DetermineClipRadiusY(),
+                RadiusX = this.CalculateClipRadiusX(),
+                RadiusY = this.CalculateClipRadiusY(),
                 Rect = new Rect(this.Child.RenderSize)
             };
         }
 
-        private double DetermineClipRadiusX()
-        {
-            return this.CornerRadius.TopLeft;
-        }
+        /// <summary>
+        /// Used to determine the <see cref="RectangleGeometry.RadiusX"/> property
+        /// of the clip that is being applied to the underlying child.
+        /// By overriding this method, you can specify your own CornerRadius to
+        /// RadiusX handling.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="double"/> representing the x-axis radius of the resulting
+        /// clip geometry.
+        /// </returns>
+        protected virtual double CalculateClipRadiusX() =>
+            this.CalculateUniversalRadius();
 
-        private double DetermineClipRadiusY()
-        {
-            return this.CornerRadius.TopLeft;
-        }
+        /// <summary>
+        /// Used to determine the <see cref="RectangleGeometry.RadiusY"/> property
+        /// of the clip that is being applied to the underlying child.
+        /// By overriding this method, you can specify your own CornerRadius to
+        /// RadiusY handling.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="double"/> representing the y-axis radius of the resulting
+        /// clip geometry.
+        /// </returns>
+        protected virtual double CalculateClipRadiusY() =>
+            this.CalculateUniversalRadius();
 
+        private double CalculateUniversalRadius()
+        {
+            if (this.CornerRadius.HasUnifiedValues())
+            {
+                return this.CornerRadius.TopLeft;
+            } 
+            else
+            {
+                // This is where it gets hard:
+                // The CornerRadius has different values. How to
+                // translate them into the Rect's radii?
+                // For now, take the largest of the 4 radius values.
+                // This should be improved, but at the time of writing this,
+                // there was no need for it.
+                return Max(Max(this.CornerRadius.TopLeft, this.CornerRadius.TopRight),
+                           Max(this.CornerRadius.BottomLeft, this.CornerRadius.BottomRight));
+            }
+        }
+        
     }
 
 }
