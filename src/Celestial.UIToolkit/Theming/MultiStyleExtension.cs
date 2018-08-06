@@ -23,10 +23,6 @@ namespace Celestial.UIToolkit.Theming
     /// -  Use the extension on small styles with few setters/triggers.
     /// -  Avoid using it on styles which are based on other styles,
     ///    as these base styles will have to be merged aswell.
-    /// -  Merge the lighter styles into the heavier ones.
-    ///    Do this by placing the heaviest style at the beginning of the
-    ///    <see cref="StyleKeys"/> string, e.g.:
-    ///    "HeaviestStyle LighterStyle LightestStyle"
     /// </remarks>
     [ContentProperty(nameof(StyleKeys))]
     public class MultiStyleExtension : MarkupExtension
