@@ -146,7 +146,7 @@
     <!--
     - Background: -
     - Border:     -
-    - Foreground: Accent1
+    - Foreground: OnAccent1
     -->
     <Style x:Key="OnAccent1Foreground" TargetType="FrameworkElement">
         <Setter Property="Control.Foreground" Value="{StaticResource OnAccent1ForegroundBrush}" />
@@ -159,7 +159,7 @@
     <!--
     - Background: -
     - Border:     -
-    - Foreground: Accent2
+    - Foreground: OnAccent2
     -->
     <Style x:Key="OnAccent2Foreground" TargetType="FrameworkElement">
         <Setter Property="Control.Foreground" Value="{StaticResource OnAccent2ForegroundBrush}" />
