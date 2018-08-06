@@ -42,6 +42,8 @@ namespace Celestial.UIToolkit.Theming
         private static readonly SizeConverter _sizeConverter;
         private static readonly PointConverter _pointConverter;
         private static readonly double _dipMultiplier;
+        private string _multiplierString;
+        private string _formattedMultiplierString;
         private double? _gridCellSize;
 
         /// <summary>
@@ -63,7 +65,15 @@ namespace Celestial.UIToolkit.Theming
         /// <c>"1 2"</c>, <c>"4.4 1 2 0"</c>, ...
         /// </summary>
         [ConstructorArgument("multiplierString")]
-        public string MultiplierString { get; set; }
+        public string MultiplierString
+        {
+            get { return _multiplierString; }
+            set
+            {
+                _multiplierString = value;
+                this.FormatMultiplierString();
+            }
+        }
         
         /// <summary>
         /// Gets or sets a type to which the unit will be converted,
@@ -125,6 +135,12 @@ namespace Celestial.UIToolkit.Theming
             _cornerRadiusConverter = new CornerRadiusConverter();
             _sizeConverter = new SizeConverter();
             _pointConverter = new PointConverter();
+        }
+
+        private void FormatMultiplierString()
+        {
+            _formattedMultiplierString = _multiplierString?.Replace(',', ' ')
+                                                            ?.Replace(';', ' ');
         }
 
         /// <summary>
@@ -193,7 +209,7 @@ namespace Celestial.UIToolkit.Theming
 
         private Thickness CalculateThickness()
         {
-            var thickness = (Thickness)_thicknessConverter.ConvertFromString(this.MultiplierString);
+            var thickness = (Thickness)_thicknessConverter.ConvertFromString(_formattedMultiplierString);
             double multiplier = this.GetFinalLengthMultiplier();
             return new Thickness(
                 thickness.Left * multiplier,
@@ -204,7 +220,7 @@ namespace Celestial.UIToolkit.Theming
 
         private CornerRadius CalculateCornerRadius()
         {
-            var cornerRadius = (CornerRadius)_cornerRadiusConverter.ConvertFromString(this.MultiplierString);
+            var cornerRadius = (CornerRadius)_cornerRadiusConverter.ConvertFromString(_formattedMultiplierString);
             double multiplier = this.GetFinalLengthMultiplier();
             return new CornerRadius(
                 cornerRadius.TopLeft * multiplier,
@@ -215,14 +231,14 @@ namespace Celestial.UIToolkit.Theming
 
         private object CalculateSize()
         {
-            var size = (Size)_sizeConverter.ConvertFromString(this.MultiplierString);
+            var size = (Size)_sizeConverter.ConvertFromString(_formattedMultiplierString);
             double multiplier = this.GetFinalLengthMultiplier();
             return new Size(size.Width * multiplier, size.Height * multiplier);
         }
 
         private object CalculatePoint()
         {
-            var point = (Point)_pointConverter.ConvertFromString(this.MultiplierString);
+            var point = (Point)_pointConverter.ConvertFromString(_formattedMultiplierString);
             double multiplier = this.GetFinalLengthMultiplier();
             return new Point(point.X * multiplier, point.Y * multiplier);
         }

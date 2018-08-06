@@ -90,7 +90,8 @@
                             </Storyboard>
                         </Grid.Resources>
                         
-                        <controls:ClippingBorder CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}">
+                        <controls:ClippingBorder CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}"
+                                                 ClipToBounds="{TemplateBinding ClipToBounds}">
                             <Grid>
                                 <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}"

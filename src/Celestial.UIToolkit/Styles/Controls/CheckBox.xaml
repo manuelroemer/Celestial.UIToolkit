@@ -3,36 +3,25 @@
                     xmlns:local="clr-namespace:Celestial.UIToolkit"
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:converters="clr-namespace:Celestial.UIToolkit.Converters"
+                    xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
     <ResourceDictionary.MergedDictionaries>
         <local:SharedResourceDictionary Source="../Shared/Theming.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardCheckBox" TargetType="CheckBox" BasedOn="{StaticResource Accent2BorderWithForegroundThemingBase}">
+    <Style x:Key="StandardCheckBox" TargetType="CheckBox" BasedOn="{theming:MultiStyle 'Accent2Border BaseHighestBackground StandardForeground StandardFontProperties'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
-        <Setter Property="FontFamily" Value="{StaticResource StandardFontFamily}" />
-        <Setter Property="FontSize" Value="{StaticResource StandardFontSize}" />
-        <Setter Property="FontWeight" Value="{StaticResource StandardFontWeight}" />
-        <Setter Property="FontStretch" Value="{StaticResource StandardFontStretch}" />
-        <Setter Property="FontStyle" Value="{StaticResource StandardFontStyle}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="Padding" Value="4,0,0,0" />
-        <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="Foreground" Value="{StaticResource StandardForegroundBrush}" />
-        <Setter Property="Background" Value="{StaticResource StandardControlBackgroundBrush}" />
+        <Setter Property="Padding" Value="{theming:GridUnit '1,0,0,0'}" />
+        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
         <Setter Property="BorderBrush" Value="{StaticResource StandardControlBorderBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="CheckBox">
-                    <ControlTemplate.Resources>
-                        <DataTemplate DataType="{x:Type sys:String}">
-                            <TextBlock Style="{DynamicResource TextBlockOverrideStyle}" />
-                        </DataTemplate>
-                    </ControlTemplate.Resources>
                     <BulletDecorator SnapsToDevicePixels="False">
                         <BulletDecorator.Resources>
                             <local:BindingProxy x:Key="ActiveBackgroundColorProxy"
@@ -59,8 +48,8 @@
                             <Grid>
                                 <Grid.Resources>
                                     <Style TargetType="Border">
-                                        <Setter Property="Width" Value="20" />
-                                        <Setter Property="Height" Value="20" />
+                                        <Setter Property="Width" Value="{theming:GridUnit 5}" />
+                                        <Setter Property="Height" Value="{theming:GridUnit 5}" />
                                         <Setter Property="CornerRadius" Value="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}" />
                                         <Setter Property="BorderThickness" Value="{Binding BorderThickness, RelativeSource={RelativeSource TemplatedParent}}" />
                                     </Style>
@@ -82,6 +71,14 @@
                                         BorderBrush="{Binding Path=(theming:DisabledProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}"
                                         Background="{Binding Path=(theming:DisabledProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}"
                                         Visibility="Collapsed" />
+                                <controls:RippleOverlay HorizontalAlignment="Center"
+                                                        VerticalAlignment="Center"
+                                                        IsActiveTrigger="{TemplateBinding IsPressed}"
+                                                        Width="{theming:GridUnit 7}"
+                                                        Height="{theming:GridUnit 7}"
+                                                        Background="{StaticResource BaseHighBrush}"
+                                                        RippleOrigin="Center"
+                                                        ClipToBounds="False" />
                                 <Path x:Name="Checkmark"
                                       Visibility="Collapsed"
                                       HorizontalAlignment="Center"

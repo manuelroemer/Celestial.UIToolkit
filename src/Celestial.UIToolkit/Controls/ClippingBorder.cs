@@ -52,7 +52,8 @@ namespace Celestial.UIToolkit.Controls
         /// <param name="dc"> The <see cref="DrawingContext"/> that defines the object to be drawn.</param>
         protected override void OnRender(DrawingContext dc)
         {
-            this.ApplyCornerRadiusClipToChild();
+            if (this.ClipToBounds)
+                this.ApplyCornerRadiusClipToChild();
             base.OnRender(dc);
         }
 
