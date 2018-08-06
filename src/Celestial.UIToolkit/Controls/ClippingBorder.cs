@@ -88,7 +88,7 @@ namespace Celestial.UIToolkit.Controls
             private GeometryHelper(CornerRadius cornerRadius, Rect bounds)
             {
                 // The CornerRadius must never be larger than the size. Otherwise, the geometry will
-                // look totally off, since (for instance) an arc is drawn the next line segment's destination.
+                // look totally off, since (for instance) an arc is drawn further than the next line segment's destination.
                 // To avoid this, shrink a too-large CornerRadius to the exact size of the bounds rect.
                 _cornerRadius = CornerRadiusHelper.ShrinkToSize(cornerRadius, bounds.Size);
                 _boundsRect = bounds;
