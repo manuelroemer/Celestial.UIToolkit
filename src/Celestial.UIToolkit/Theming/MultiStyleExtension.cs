@@ -1,6 +1,4 @@
-﻿using Celestial.UIToolkit.Extensions;
-using System;
-using System.Diagnostics;
+﻿using System;
 using System.Windows;
 using System.Windows.Markup;
 

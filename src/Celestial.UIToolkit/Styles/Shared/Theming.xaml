@@ -4,7 +4,8 @@
 
     <!--
     This file contains base-styles for nearly any type of control.
-    These styles set all of the *Properties in the Theming namespace.
+    This includes attached properties from the Theming namespace and
+    frequently used properties like "Foreground", "Background", ...
     -->
 
 
