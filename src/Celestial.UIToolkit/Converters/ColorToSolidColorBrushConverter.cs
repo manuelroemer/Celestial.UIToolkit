@@ -19,6 +19,14 @@ namespace Celestial.UIToolkit.Converters
         public static ColorToSolidColorBrushConverter Default { get; } = new ColorToSolidColorBrushConverter();
 
         /// <summary>
+        /// Gets a default converter which converts <see cref="SolidColorBrush"/> objects to
+        /// <see cref="Color"/> objects (i.e. the opposite direction of the 
+        /// <see cref="ColorToSolidColorBrushConverter"/>).
+        /// </summary>
+        public static IValueConverter DefaultBrushToColorConverter { get; }
+            = new InvertingConverter(new ColorToSolidColorBrushConverter());
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ColorToSolidColorBrushConverter"/> class.
         /// </summary>
         public ColorToSolidColorBrushConverter() { }

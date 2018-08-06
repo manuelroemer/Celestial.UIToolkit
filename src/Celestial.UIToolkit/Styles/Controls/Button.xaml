@@ -21,23 +21,44 @@
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource BaseHighestBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="Red" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ButtonBase">
                     <Grid>
                         <Grid.Resources>
-                            <local:BindingProxy x:Key="MouseOverBackgroundColorProxy"
-                                                Data="{Binding Path=(theming:MouseOverProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
-                            <local:BindingProxy x:Key="DisabledBackgroundColorProxy"
-                                                Data="{Binding Path=(theming:DisabledProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
-
-                            <local:BindingProxy x:Key="MouseOverBorderColorProxy"
-                                                Data="{Binding Path=(theming:MouseOverProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
-                            <local:BindingProxy x:Key="DisabledBorderColorProxy"
-                                                Data="{Binding Path=(theming:DisabledProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
-
-                            <converters:ColorToSolidColorBrushConverter x:Key="ColorToSolidColorBrushConverter" />
+                            <Storyboard x:Key="MouseOverStoryboard">
+                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                              Storyboard.TargetProperty="Background.Color">
+                                    <EasingColorKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                                </ColorAnimationUsingKeyFrames>
+                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                              Storyboard.TargetProperty="BorderBrush.Color">
+                                    <EasingColorKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                                </ColorAnimationUsingKeyFrames>
+                            </Storyboard>
+                            <Storyboard x:Key="PressedStoryboard">
+                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                              Storyboard.TargetProperty="Background.Color">
+                                    <DiscreteColorKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                                </ColorAnimationUsingKeyFrames>
+                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                              Storyboard.TargetProperty="BorderBrush.Color">
+                                    <DiscreteColorKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                                </ColorAnimationUsingKeyFrames>
+                            </Storyboard>
+                            <Storyboard x:Key="DisabledStoryboard">
+                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                              Storyboard.TargetProperty="Background.Color">
+                                    <EasingColorKeyFrame KeyTime="0" Value="{Binding Path=(theming:DisabledProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                                </ColorAnimationUsingKeyFrames>
+                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                              Storyboard.TargetProperty="BorderBrush.Color">
+                                    <EasingColorKeyFrame KeyTime="0" Value="{Binding Path=(theming:DisabledProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                                </ColorAnimationUsingKeyFrames>
+                            </Storyboard>
                         </Grid.Resources>
+                        
                         <Border x:Name="Bd"
                                 CornerRadius="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
@@ -47,8 +68,8 @@
                         <controls:RippleOverlay x:Name="Ripple"
                                                 IsActiveTrigger="{TemplateBinding IsPressed}"
                                                 AllowFading="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, FallbackValue=True, Converter={x:Static converters:InvertBooleanConverter.Default}}"
-                                                BorderBrush="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ColorToSolidColorBrushConverter}}"
-                                                Background="{Binding Path=(theming:ActiveProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ColorToSolidColorBrushConverter}}">
+                                                BorderBrush="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}"
+                                                Background="{Binding Path=(theming:ActiveProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}">
                             <controls:RippleOverlay.OpacityMask>
                                 <VisualBrush Visual="{Binding ElementName=Bd}" />
                             </controls:RippleOverlay.OpacityMask>
@@ -56,45 +77,17 @@
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                           RecognizesAccessKey="True" />
+                        
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition GeneratedDuration="{StaticResource ColorAnimationDuration}" />
+                                    <VisualTransition To="Disabled" GeneratedDuration="0" />
+                                </VisualStateGroup.Transitions>
                                 <VisualState x:Name="Normal" />
-                                <VisualState x:Name="MouseOver">
-                                    <Storyboard>
-                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                                      Storyboard.TargetProperty="Background.Color">
-                                            <EasingColorKeyFrame KeyTime="{StaticResource ColorAnimationKeyTime}" Value="{Binding Data, Source={StaticResource MouseOverBackgroundColorProxy}}" />
-                                        </ColorAnimationUsingKeyFrames>
-                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                                      Storyboard.TargetProperty="BorderBrush.Color">
-                                            <EasingColorKeyFrame KeyTime="{StaticResource ColorAnimationKeyTime}" Value="{Binding Data, Source={StaticResource MouseOverBorderColorProxy}}" />
-                                        </ColorAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </VisualState>
-                                <VisualState x:Name="Pressed">
-                                    <Storyboard>
-                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                                      Storyboard.TargetProperty="Background.Color">
-                                            <EasingColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource MouseOverBackgroundColorProxy}}" />
-                                        </ColorAnimationUsingKeyFrames>
-                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                                      Storyboard.TargetProperty="BorderBrush.Color">
-                                            <EasingColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource MouseOverBorderColorProxy}}" />
-                                        </ColorAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </VisualState>
-                                <VisualState x:Name="Disabled">
-                                    <Storyboard>
-                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                                      Storyboard.TargetProperty="Background.Color">
-                                            <EasingColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource DisabledBackgroundColorProxy}}" />
-                                        </ColorAnimationUsingKeyFrames>
-                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                                      Storyboard.TargetProperty="BorderBrush.Color">
-                                            <EasingColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource DisabledBorderColorProxy}}" />
-                                        </ColorAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </VisualState>
+                                <VisualState x:Name="MouseOver" Storyboard="{StaticResource MouseOverStoryboard}" />
+                                <VisualState x:Name="Pressed" Storyboard="{StaticResource PressedStoryboard}" />
+                                <VisualState x:Name="Disabled" Storyboard="{StaticResource DisabledStoryboard}" />
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                     </Grid>
