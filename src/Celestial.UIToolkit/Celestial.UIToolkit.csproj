@@ -66,7 +66,6 @@
     <Compile Include="Converters\MathOperationConverter.cs" />
     <Compile Include="Converters\NullToVisibilityConverter.cs" />
     <Compile Include="Converters\ValueConverter.cs" />
-    <Compile Include="Extensions\CornerRadiusExtensions.cs" />
     <Compile Include="Extensions\FrameworkElementExtensions.cs" />
     <Compile Include="MarginHelper.cs" />
     <Compile Include="SharedResourceDictionary.cs" />
