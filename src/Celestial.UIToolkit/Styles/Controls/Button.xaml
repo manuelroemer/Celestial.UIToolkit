@@ -43,6 +43,7 @@
                                 Background="{TemplateBinding Background}"
                                 Padding="{TemplateBinding Padding}" />
                         <controls:RippleOverlay x:Name="Ripple"
+                                                theming:ControlProperties.CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}"
                                                 IsActiveTrigger="{TemplateBinding IsPressed}"
                                                 AllowFading="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, FallbackValue=True, Converter={x:Static converters:InvertBooleanConverter.Default}}"
                                                 BorderBrush="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}"
