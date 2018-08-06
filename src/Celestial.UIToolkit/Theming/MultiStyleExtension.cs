@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Celestial.UIToolkit.Extensions;
+using System;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Markup;
 
@@ -12,6 +14,20 @@ namespace Celestial.UIToolkit.Theming
     /// A custom markup extension which merges multiple styles
     /// into one single style.
     /// </summary>
+    /// <remarks>
+    /// Be aware that this markup extension is very resource intensive.
+    /// When merging two styles, every single property will have to be copied,
+    /// each and every time when this extension is being used.
+    /// 
+    /// Take care of the following points:
+    /// -  Use the extension on small styles with few setters/triggers.
+    /// -  Avoid using it on styles which are based on other styles,
+    ///    as these base styles will have to be merged aswell.
+    /// -  Merge the lighter styles into the heavier ones.
+    ///    Do this by placing the heaviest style at the beginning of the
+    ///    <see cref="StyleKeys"/> string, e.g.:
+    ///    "HeaviestStyle LighterStyle LightestStyle"
+    /// </remarks>
     [ContentProperty(nameof(StyleKeys))]
     public class MultiStyleExtension : MarkupExtension
     {
@@ -147,7 +163,7 @@ namespace Celestial.UIToolkit.Theming
         {
             if (target == null) throw new ArgumentNullException(nameof(target));
             if (src == null) throw new ArgumentNullException(nameof(src));
-
+            
             SetMergedTargetType(target, src);
             MergeBaseStyles(target, src);
             MergeSetters(target, src);

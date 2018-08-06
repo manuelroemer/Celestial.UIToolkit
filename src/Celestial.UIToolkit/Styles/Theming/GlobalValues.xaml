@@ -27,6 +27,7 @@
 
 
     
-    <Thickness x:Key="StandardBorderThickness">2</Thickness>
+    <Thickness x:Key="SlimBorderThickness">1</Thickness>
+    <Thickness x:Key="WideBorderThickness">2</Thickness>
 
 </ResourceDictionary>
