@@ -11,6 +11,7 @@
         
         <local:SharedResourceDictionary Source="Controls/IconButton.xaml" />
         <local:SharedResourceDictionary Source="Controls/RippleOverlay.xaml" />
+        <local:SharedResourceDictionary Source="Controls/ShadowDecorator.xaml" />
         
         <local:SharedResourceDictionary Source="Controls/TextBlock.xaml" />
         <local:SharedResourceDictionary Source="Controls/Label.xaml" />

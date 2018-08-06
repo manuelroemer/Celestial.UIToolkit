@@ -23,4 +23,9 @@
     <SolidColorBrush x:Key="HintForegroundBrush" Color="{StaticResource BaseLowerColor}" />
     <SolidColorBrush x:Key="DisabledForegroundBrush" Color="{StaticResource BaseHighColor}" />
 
+
+
+    <Color x:Key="StandardDropShadowColor">#3A40441A</Color>
+    <sys:Double x:Key="StandardDropShadowOpacity">0.5</sys:Double>
+    
 </ResourceDictionary>

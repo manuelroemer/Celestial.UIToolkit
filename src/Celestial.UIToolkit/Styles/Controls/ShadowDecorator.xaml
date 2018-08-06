@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
+
+    <Style x:Key="StandardShadowDecorator" TargetType="controls:ShadowDecorator">
+        <Setter Property="ShadowColor" Value="{StaticResource StandardDropShadowColor}" />
+        <Setter Property="ShadowOpacity" Value="{StaticResource StandardDropShadowOpacity}" />
+    </Style>
+    <Style TargetType="controls:ShadowDecorator" BasedOn="{StaticResource StandardShadowDecorator}" />
+
+</ResourceDictionary>

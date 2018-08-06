@@ -23,6 +23,7 @@
                     <Setter Property="BorderThickness" Value="1" />
                     <Setter Property="BorderBrush" Value="DimGray" />
                     <Setter Property="Background" Value="White" />
+                    <Setter Property="CornerRadius" Value="100" />
                 </Style>
             </StackPanel.Resources>
 
