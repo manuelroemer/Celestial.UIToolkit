@@ -18,14 +18,14 @@
                 <Button IsEnabled="False">Disabled</Button>
             </StackPanel>
 
-            <!--<StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
+            <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
                 <TextBlock Style="{StaticResource TitleTextBlock}"
-                           c:MarginHelper.MarginGroup="Title">Ghost Button</TextBlock>
-                <Button Style="{StaticResource GhostButton}">Standard</Button>
-                <Button Style="{StaticResource Accent1GhostButton}">Accent1</Button>
-                <Button Style="{StaticResource Accent2GhostButton}">Accent2</Button>
-                <Button Style="{StaticResource GhostButton}" IsEnabled="False">Disabled</Button>
-            </StackPanel>-->
+                           c:MarginHelper.MarginGroup="Title">Outlined Button</TextBlock>
+                <Button Style="{StaticResource OutlinedButton}">Standard</Button>
+                <Button Style="{StaticResource Accent1OutlinedButton}">Accent1</Button>
+                <Button Style="{StaticResource Accent2OutlinedButton}">Accent2</Button>
+                <Button Style="{StaticResource OutlinedButton}" IsEnabled="False">Disabled</Button>
+            </StackPanel>
 
             <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
                 <TextBlock Style="{StaticResource TitleTextBlock}"
@@ -79,14 +79,14 @@
                 <ToggleButton IsEnabled="False">Disabled</ToggleButton>
             </StackPanel>
 
-            <!--<StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
+            <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
                 <TextBlock Style="{StaticResource TitleTextBlock}"
-                           c:MarginHelper.MarginGroup="Title">Ghost Button</TextBlock>
-                <ToggleButton Style="{StaticResource GhostButton}">Standard</ToggleButton>
-                <ToggleButton Style="{StaticResource Accent1GhostButton}">Accent1</ToggleButton>
-                <ToggleButton Style="{StaticResource Accent2GhostButton}">Accent2</ToggleButton>
-                <ToggleButton Style="{StaticResource GhostButton}" IsEnabled="False">Disabled</ToggleButton>
-            </StackPanel>-->
+                           c:MarginHelper.MarginGroup="Title">Outlined Button</TextBlock>
+                <ToggleButton Style="{StaticResource OutlinedButton}">Standard</ToggleButton>
+                <ToggleButton Style="{StaticResource Accent1OutlinedButton}">Accent1</ToggleButton>
+                <ToggleButton Style="{StaticResource Accent2OutlinedButton}">Accent2</ToggleButton>
+                <ToggleButton Style="{StaticResource OutlinedButton}" IsEnabled="False">Disabled</ToggleButton>
+            </StackPanel>
 
             <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
                 <TextBlock Style="{StaticResource TitleTextBlock}"

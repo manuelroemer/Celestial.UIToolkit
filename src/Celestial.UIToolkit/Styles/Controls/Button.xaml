@@ -46,8 +46,8 @@
                                                 theming:ControlProperties.CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}"
                                                 IsActiveTrigger="{TemplateBinding IsPressed}"
                                                 AllowFading="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, FallbackValue=True, Converter={x:Static converters:InvertBooleanConverter.Default}}"
-                                                BorderBrush="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}"
-                                                Background="{Binding Path=(theming:ActiveProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}" />
+                                                BorderBrush="{Binding Path=(theming:PressedProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}"
+                                                Background="{Binding Path=(theming:PressedProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}" />
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                           RecognizesAccessKey="True" />
@@ -130,16 +130,16 @@
     
     
     <!--
-    Minimal Button.
-    This is a type of button, which only displays its content when not being interacted with.
-    To indicate that this button can be interacted with, its FontWeight is bold, in comparison
-    to the other buttons.
+    Flat Button.
+    This type of button only shows text in its default state.
+    When hovered/clicked, it will behave normally though.
     -->
 
     <Style x:Key="FlatButton" TargetType="ButtonBase" BasedOn="{StaticResource StandardButtonBase}">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="theming:MouseOverProperties.BackgroundColor" Value="{StaticResource BaseHighColor}" />
+        <Setter Property="theming:PressedProperties.BackgroundColor" Value="{StaticResource BaseMediumColor}" />
         <Setter Property="theming:ActiveProperties.BackgroundColor" Value="{StaticResource BaseMediumColor}" />
         <Setter Property="theming:DisabledProperties.BackgroundColor" Value="Transparent" />
         <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
@@ -160,7 +160,31 @@
     </Style>
 
 
-       
+    
+    <!--
+    Outlined button.
+    An otherwise normal button with a border and transparent background in its default state.
+    -->
+
+    <Style x:Key="OutlinedButton" TargetType="ButtonBase" BasedOn="{StaticResource StandardButtonBase}">
+        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <Style x:Key="Accent1OutlinedButton" TargetType="ButtonBase" BasedOn="{StaticResource Accent1Button}">
+        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{StaticResource StandardForegroundBrush}" />
+    </Style>
+    
+    <Style x:Key="Accent2OutlinedButton" TargetType="ButtonBase" BasedOn="{StaticResource Accent2Button}">
+        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{StaticResource StandardForegroundBrush}" />
+    </Style>
+    
+    
+    
     <!--
     Square Button.
     This is a type of button which always resembles a square.
