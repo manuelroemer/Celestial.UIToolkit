@@ -39,7 +39,7 @@ namespace Celestial.UIToolkit.Controls
     public class ShadowDecorator : Decorator
     {
 
-        private DropShadowEffect _dropShadowEffect;
+        private Lazy<DropShadowEffect> _dropShadowLazy = new Lazy<DropShadowEffect>(() => new DropShadowEffect());
 
         /// <summary>
         /// Identifies the <see cref="ShadowColor"/> dependency property.
@@ -151,11 +151,6 @@ namespace Celestial.UIToolkit.Controls
             set { SetValue(ShadowDirectionProperty, value); }
         }
         
-        public ShadowDecorator()
-        {
-            _dropShadowEffect = new DropShadowEffect();
-        }
-
         private static void ShadowProperty_Changed(DependencyObject d, DependencyPropertyChangedEventArgs baseValue)
         {
             var self = (ShadowDecorator)d;
@@ -171,18 +166,18 @@ namespace Celestial.UIToolkit.Controls
             else
             {
                 this.UpdateDropShadow();
-                this.Effect = _dropShadowEffect;
+                this.Effect = _dropShadowLazy.Value;
             }
         }
         
         private void UpdateDropShadow()
         {
             var valueCalculator = this.CreateShadowEffectValueCalculator();
-            _dropShadowEffect.ShadowDepth = valueCalculator.CalculateShadowDepth();
-            _dropShadowEffect.Direction = valueCalculator.CalculateDirection();
-            _dropShadowEffect.BlurRadius = valueCalculator.CalculateBlurRadius();
-            _dropShadowEffect.Color = this.ShadowColor;
-            _dropShadowEffect.Opacity = this.ShadowOpacity;
+            _dropShadowLazy.Value.ShadowDepth = valueCalculator.CalculateShadowDepth();
+            _dropShadowLazy.Value.Direction = valueCalculator.CalculateDirection();
+            _dropShadowLazy.Value.BlurRadius = valueCalculator.CalculateBlurRadius();
+            _dropShadowLazy.Value.Color = this.ShadowColor;
+            _dropShadowLazy.Value.Opacity = this.ShadowOpacity;
         }
 
         private DropShadowValueCalculator CreateShadowEffectValueCalculator()

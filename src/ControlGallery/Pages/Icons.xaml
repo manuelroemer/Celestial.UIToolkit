@@ -38,9 +38,28 @@
             <controls:ShadowDecorator Elevation="4" ShadowType="Directional" ShadowDirection="Top">
                 <Border />
             </controls:ShadowDecorator>
-            <controls:ShadowDecorator x:Name="E5" Elevation="5" ShadowType="Directional" ShadowDirection="Top">
+            <controls:ShadowDecorator x:Name="E5" Elevation="5" ShadowType="Directional">
                 <Border />
             </controls:ShadowDecorator>
+
+            <Button>
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Button.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="E5"
+                                             Storyboard.TargetProperty="Elevation"
+                                             From="0"
+                                             To="10"
+                                             Duration="0:0:0.200">
+
+                                </DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+                
+            </Button>
         </StackPanel>
         
         <Border Grid.Row="1"
