@@ -49,6 +49,32 @@
     </Style>
 
     <!--
+    - Background: Normal: StandardControl; Accent1 for special states.
+    - Border:     -
+    - Foreground: -
+    -->
+    <Style x:Key="ControlAccent1Background" TargetType="FrameworkElement">
+        <Setter Property="Control.Background" Value="{StaticResource StandardControlBackgroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.BackgroundColor" Value="{StaticResource Accent1HighColor}" />
+        <Setter Property="theming:PressedProperties.BackgroundColor" Value="{StaticResource Accent1LowColor}" />
+        <Setter Property="theming:DisabledProperties.BackgroundColor" Value="{StaticResource BaseHighColor}" />
+        <Setter Property="theming:ActiveProperties.BackgroundColor" Value="{StaticResource Accent1LowColor}" />
+    </Style>
+    
+    <!--
+    - Background: Normal: StandardControl; Accent2 for special states.
+    - Border:     -
+    - Foreground: -
+    -->
+    <Style x:Key="ControlAccent2Background" TargetType="FrameworkElement">
+        <Setter Property="Control.Background" Value="{StaticResource StandardControlBackgroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.BackgroundColor" Value="{StaticResource Accent2HighColor}" />
+        <Setter Property="theming:PressedProperties.BackgroundColor" Value="{StaticResource Accent2LowColor}" />
+        <Setter Property="theming:DisabledProperties.BackgroundColor" Value="{StaticResource BaseHighColor}" />
+        <Setter Property="theming:ActiveProperties.BackgroundColor" Value="{StaticResource Accent2LowColor}" />
+    </Style>
+    
+    <!--
     - Background: Accent1
     - Border:     -
     - Foreground: -
@@ -100,6 +126,32 @@
         <Setter Property="theming:PressedProperties.BorderColor" Value="{StaticResource BaseLowColor}" />
         <Setter Property="theming:DisabledProperties.BorderColor" Value="{StaticResource BaseHighColor}" />
         <Setter Property="theming:ActiveProperties.BorderColor" Value="{StaticResource BaseLowColor}" />
+    </Style>
+
+    <!--
+    - Background: -
+    - Border:     Normal: StandardControl; Accent1 for special states.
+    - Foreground: -
+    -->
+    <Style x:Key="ControlAccent1Border" TargetType="FrameworkElement">
+        <Setter Property="Control.BorderBrush" Value="{StaticResource StandardControlBorderBrush}" />
+        <Setter Property="theming:MouseOverProperties.BorderColor" Value="{StaticResource Accent1HighColor}" />
+        <Setter Property="theming:PressedProperties.BorderColor" Value="{StaticResource Accent1LowColor}" />
+        <Setter Property="theming:DisabledProperties.BorderColor" Value="{StaticResource BaseHighColor}" />
+        <Setter Property="theming:ActiveProperties.BorderColor" Value="{StaticResource Accent1LowColor}" />
+    </Style>
+
+    <!--
+    - Background: -
+    - Border:     Normal: StandardControl; Accent2 for special states.
+    - Foreground: -
+    -->
+    <Style x:Key="ControlAccent2Border" TargetType="FrameworkElement">
+        <Setter Property="Control.BorderBrush" Value="{StaticResource StandardControlBorderBrush}" />
+        <Setter Property="theming:MouseOverProperties.BorderColor" Value="{StaticResource Accent2HighColor}" />
+        <Setter Property="theming:PressedProperties.BorderColor" Value="{StaticResource Accent2LowColor}" />
+        <Setter Property="theming:DisabledProperties.BorderColor" Value="{StaticResource BaseHighColor}" />
+        <Setter Property="theming:ActiveProperties.BorderColor" Value="{StaticResource Accent2LowColor}" />
     </Style>
 
     <!--

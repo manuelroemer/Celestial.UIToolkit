@@ -360,8 +360,11 @@ namespace Celestial.UIToolkit.Controls
         /// <param name="rippleOrigin">The point from which the ripple animation originates.</param>
         public void StartAnimationFromPoint(Point rippleOrigin)
         {
-            this.UpdateAnimationProperties(rippleOrigin);
-            this.EnterExpandingVisualState();
+            if (this.IsEnabled)
+            {
+                this.UpdateAnimationProperties(rippleOrigin);
+                this.EnterExpandingVisualState();
+            }
         }
 
         private void UpdateAnimationProperties(Point rippleOrigin)
