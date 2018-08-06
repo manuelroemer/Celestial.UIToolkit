@@ -8,6 +8,7 @@
     <ResourceDictionary.MergedDictionaries>
         <local:SharedResourceDictionary Source="../Shared/Theming.xaml" />
         <local:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
+        <local:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="StandardCheckBox" TargetType="CheckBox" BasedOn="{theming:MultiStyle 'StandardBorder BaseHighestBackground StandardForeground StandardFontProperties'}">
@@ -66,16 +67,8 @@
                                         <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
                                     </Style>
                                 </Grid.Resources>
-                                <controls:RippleOverlay Background="{StaticResource BaseHighBrush}"
-                                                        IsActiveTrigger="{Binding IsPressed, RelativeSource={RelativeSource TemplatedParent}}" 
-                                                        IsEnabled="{TemplateBinding theming:RippleProperties.ShowRippleAnimation}"
-                                                        RippleOrigin="Center"
-                                                        ClipToBounds="False"
-                                                        RenderTransformOrigin="0.5,0.5">
-                                    <controls:RippleOverlay.RenderTransform>
-                                        <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
-                                    </controls:RippleOverlay.RenderTransform>
-                                </controls:RippleOverlay>
+                                <controls:RippleOverlay IsActiveTrigger="{Binding IsPressed, RelativeSource={RelativeSource TemplatedParent}}" 
+                                                        Style="{StaticResource SmallBackgroundRippleAnimation}" />
                                 <Border x:Name="CheckedBorder"
                                         BorderBrush="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}"
                                         Background="{Binding Path=(theming:ActiveProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}"
