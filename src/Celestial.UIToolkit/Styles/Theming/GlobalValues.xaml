@@ -18,11 +18,20 @@
     <Duration x:Key="MoveAnimationDuration">0:0:0.500</Duration>
     <KeyTime x:Key="MoveAnimationKeyTime">0:0:0.500</KeyTime>
 
+    <Duration x:Key="FastEnterAnimationDuration">0:0:0.100</Duration>
+    <KeyTime x:Key="FastEnterAnimationKeyTime">0:0:0.100</KeyTime>
+
+    <Duration x:Key="FastExitAnimationDuration">0:0:0.050</Duration>
+    <KeyTime x:Key="FastExitAnimationKeyTime">0:0:0.050</KeyTime>
+
+    <Duration x:Key="FastMoveAnimationDuration">0:0:0.250</Duration>
+    <KeyTime x:Key="FastMoveAnimationKeyTime">0:0:0.250</KeyTime>
+    
     <Duration x:Key="InnerPartialAnimationDuration">0:0:0.150</Duration>
     <KeyTime x:Key="InnerPartialAnimationKeyTime">0:0:0.150</KeyTime>
 
-
-
+    
+    
     <CornerRadius x:Key="StandardCornerRadius">0</CornerRadius>
 
 
