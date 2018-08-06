@@ -47,7 +47,8 @@
                                                 IsActiveTrigger="{TemplateBinding IsPressed}"
                                                 AllowFading="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, FallbackValue=True, Converter={x:Static converters:InvertBooleanConverter.Default}}"
                                                 BorderBrush="{Binding Path=(theming:PressedProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}"
-                                                Background="{Binding Path=(theming:PressedProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}" />
+                                                Background="{Binding Path=(theming:PressedProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}"
+                                                IsEnabled="{TemplateBinding theming:RippleProperties.ShowRippleAnimation}"/>
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                           RecognizesAccessKey="True" />
