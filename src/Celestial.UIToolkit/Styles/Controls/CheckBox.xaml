@@ -54,31 +54,14 @@
                                         <Setter Property="BorderThickness" Value="{Binding BorderThickness, RelativeSource={RelativeSource TemplatedParent}}" />
                                     </Style>
                                 </Grid.Resources>
-                                <Border x:Name="Bd"
-                                        BorderBrush="{TemplateBinding BorderBrush}"
-                                        Background="{TemplateBinding Background}"
-                                        CornerRadius="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}" />
-                                <!-- Because the VisualStateManager has trouble animating the same properties
-                                     for two different State-Groups (e.g. DefaultState/CheckState), 
-                                     we shadow the default border with others.
-                                     This way, we can animate each State-Group separately, even though
-                                     the code grows a lot larger. -->
                                 <Border x:Name="CheckedBorder"
                                         BorderBrush="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}"
                                         Background="{Binding Path=(theming:ActiveProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}"
                                         Visibility="Collapsed" />
-                                <Border x:Name="DisabledBorder"
-                                        BorderBrush="{Binding Path=(theming:DisabledProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}"
-                                        Background="{Binding Path=(theming:DisabledProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}"
-                                        Visibility="Collapsed" />
-                                <controls:RippleOverlay HorizontalAlignment="Center"
-                                                        VerticalAlignment="Center"
-                                                        IsActiveTrigger="{TemplateBinding IsPressed}"
-                                                        Width="{theming:GridUnit 7}"
-                                                        Height="{theming:GridUnit 7}"
-                                                        Background="{StaticResource BaseHighBrush}"
-                                                        RippleOrigin="Center"
-                                                        ClipToBounds="False" />
+                                <Border x:Name="Bd"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        Background="{TemplateBinding Background}"
+                                        CornerRadius="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}" />
                                 <Path x:Name="Checkmark"
                                       Visibility="Collapsed"
                                       HorizontalAlignment="Center"
@@ -91,13 +74,14 @@
                                 <Rectangle x:Name="IndeterminateMark"
                                            Visibility="Collapsed"
                                            Fill="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}"
-                                           Margin="3" />
+                                           Margin="{theming:GridUnit 1}" />
                             </Grid>
                         </BulletDecorator.Bullet>
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                           RecognizesAccessKey="True"
                                           Margin="{TemplateBinding Padding}" />
+                        
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualStateGroup.Transitions>
@@ -107,7 +91,6 @@
                                 <VisualState x:Name="Normal" />
                                 <VisualState x:Name="MouseOver">
                                     <Storyboard>
-                                        <!-- Border animations -->
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                       Storyboard.TargetProperty="BorderBrush.Color">
                                             <EasingColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource MouseOverBorderColorProxy}}" />
@@ -124,7 +107,7 @@
                                                                       Storyboard.TargetProperty="Fill.Color">
                                             <EasingColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource MouseOverBorderColorProxy}}" />
                                         </ColorAnimationUsingKeyFrames>
-                                        
+
                                         <!-- Background animations -->
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                       Storyboard.TargetProperty="Background.Color">
@@ -155,7 +138,7 @@
                                                                       Storyboard.TargetProperty="Fill.Color">
                                             <EasingColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource PressedBorderColorProxy}}" />
                                         </ColorAnimationUsingKeyFrames>
-                                        
+
                                         <!-- Background animations -->
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                       Storyboard.TargetProperty="Background.Color">
@@ -169,10 +152,22 @@
                                 </VisualState>
                                 <VisualState x:Name="Disabled">
                                     <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="DisabledBorder"
-                                                                       Storyboard.TargetProperty="(UIElement.Visibility)">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
-                                        </ObjectAnimationUsingKeyFrames>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                                      Storyboard.TargetProperty="Background.Color">
+                                            <EasingColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource DisabledBackgroundColorProxy}}" />
+                                        </ColorAnimationUsingKeyFrames>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                                      Storyboard.TargetProperty="BorderBrush.Color">
+                                            <EasingColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource DisabledBorderColorProxy}}" />
+                                        </ColorAnimationUsingKeyFrames>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="CheckedBorder"
+                                                                      Storyboard.TargetProperty="Background.Color">
+                                            <EasingColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource DisabledBackgroundColorProxy}}" />
+                                        </ColorAnimationUsingKeyFrames>
+                                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="CheckedBorder"
+                                                                      Storyboard.TargetProperty="BorderBrush.Color">
+                                            <EasingColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource DisabledBorderColorProxy}}" />
+                                        </ColorAnimationUsingKeyFrames>
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="Checkmark"
                                                                       Storyboard.TargetProperty="Stroke.Color">
                                             <EasingColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource DisabledBorderColorProxy}}" />
@@ -184,15 +179,16 @@
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
-                            
-                            <!-- This could probably be done with triggers too (shorter?).
-                                 MSDN does it like this though, so if we embrace the VSM, this is prob. cleaner. -->
                             <VisualStateGroup x:Name="CheckStates">
                                 <VisualState x:Name="Checked">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Checkmark"
                                                                        Storyboard.TargetProperty="(UIElement.Visibility)">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                                       Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="CheckedBorder"
                                                                        Storyboard.TargetProperty="(UIElement.Visibility)">
@@ -206,6 +202,10 @@
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="IndeterminateMark"
                                                                        Storyboard.TargetProperty="(UIElement.Visibility)">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                                       Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="CheckedBorder"
                                                                        Storyboard.TargetProperty="(UIElement.Visibility)">
