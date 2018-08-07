@@ -31,6 +31,12 @@ namespace Celestial.UIToolkit.Theming
             "ForegroundBrush", typeof(Brush), typeof(ActiveProperties), new PropertyMetadata(Brushes.Transparent));
 
         /// <summary>
+        /// Identifies the ShadowElevation attached dependency property.
+        /// </summary>
+        public static readonly DependencyProperty ShadowElevationProperty = DependencyProperty.RegisterAttached(
+            "ShadowElevation", typeof(double), typeof(FocusedProperties), new PropertyMetadata(0d));
+
+        /// <summary>
         /// Gets the value of the <see cref="BackgroundColorProperty"/> attached dependency property
         /// for a given <see cref="DependencyObject"/>.
         /// </summary>
@@ -133,6 +139,41 @@ namespace Celestial.UIToolkit.Theming
         public static void SetForegroundBrush(DependencyObject obj, Brush value)
         {
             obj.SetValue(ForegroundBrushProperty, value);
+        }
+
+        /// <summary>
+        /// Gets the value of the <see cref="ShadowElevationProperty"/> attached dependency property
+        /// for a given <see cref="DependencyObject"/>.
+        /// </summary>
+        /// <param name="obj">
+        /// The <see cref="DependencyObject"/> for which the local value of the
+        /// <see cref="ShadowElevationProperty"/> attached dependency property
+        /// should be retrieved.
+        /// </param>
+        /// <returns>
+        /// The local value of the <see cref="ShadowElevationProperty"/> attached dependency property,
+        /// which is of type <see cref="double"/>.
+        /// </returns>
+        public static double GetShadowElevation(DependencyObject obj)
+        {
+            return (double)obj.GetValue(ShadowElevationProperty);
+        }
+
+        /// <summary>
+        /// Sets the value of the <see cref="ShadowElevationProperty"/> attached dependency property
+        /// for a given <see cref="DependencyObject"/>.
+        /// </summary>
+        /// <param name="obj">
+        /// The <see cref="DependencyObject"/> for which the local value of the
+        /// <see cref="ShadowElevationProperty"/> attached dependency property
+        /// should be set.
+        /// </param>
+        /// <param name="value">
+        /// The new value for the dependency property.
+        /// </param>
+        public static void SetShadowElevation(DependencyObject obj, double value)
+        {
+            obj.SetValue(ShadowElevationProperty, value);
         }
 
     }

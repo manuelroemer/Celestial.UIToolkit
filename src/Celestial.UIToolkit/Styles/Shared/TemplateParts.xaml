@@ -20,4 +20,14 @@
         </Setter>
     </Style>
 
+
+
+    <Style x:Key="ThemableShadowDecorator" TargetType="controls:ShadowDecorator">
+        <Setter Property="ShadowColor" Value="{Binding Path=(theming:ShadowProperties.ShadowColor), RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="ShadowOpacity" Value="{Binding Path=(theming:ShadowProperties.ShadowOpacity), RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="ShadowType" Value="{Binding Path=(theming:ShadowProperties.ShadowType), RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="ShadowDirection" Value="{Binding Path=(theming:ShadowProperties.ShadowDirection), RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="Elevation" Value="{Binding Path=(theming:ShadowProperties.Elevation), RelativeSource={RelativeSource TemplatedParent}}" />
+    </Style>
+
 </ResourceDictionary>

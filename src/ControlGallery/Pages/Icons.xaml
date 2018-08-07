@@ -23,11 +23,10 @@
                     <Setter Property="BorderThickness" Value="1" />
                     <Setter Property="BorderBrush" Value="DimGray" />
                     <Setter Property="Background" Value="White" />
-                    <Setter Property="CornerRadius" Value="100" />
                 </Style>
             </StackPanel.Resources>
 
-            <controls:ShadowDecorator Elevation="1" ShadowType="Directional" ShadowDirection="Top">
+            <controls:ShadowDecorator Elevation="1" ShadowType="Ambient" ShadowDirection="Top">
                 <Border />
             </controls:ShadowDecorator>
             <controls:ShadowDecorator Elevation="2" ShadowType="Directional" ShadowDirection="Top">
@@ -39,7 +38,13 @@
             <controls:ShadowDecorator Elevation="4" ShadowType="Directional" ShadowDirection="Top">
                 <Border />
             </controls:ShadowDecorator>
-            <controls:ShadowDecorator x:Name="E5" Elevation="5" ShadowType="Directional">
+            <controls:ShadowDecorator x:Name="E5" Elevation="3" ShadowType="Ambient">
+                <Border />
+            </controls:ShadowDecorator>
+            <controls:ShadowDecorator Elevation="20" ShadowType="Directional">
+                <Border />
+            </controls:ShadowDecorator>
+            <controls:ShadowDecorator Elevation="20" ShadowType="Ambient">
                 <Border />
             </controls:ShadowDecorator>
 
@@ -59,8 +64,8 @@
                         </BeginStoryboard>
                     </EventTrigger>
                 </Button.Triggers>
-                
             </Button>
+
         </StackPanel>
         
         <Border Grid.Row="1"

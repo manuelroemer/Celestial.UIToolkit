@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming">
+                    xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
+                    xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
     <!--
     This file contains base-styles for nearly any type of control.
@@ -256,6 +257,44 @@
         <Setter Property="FontWeight" Value="{StaticResource AltFontWeight}" />
         <Setter Property="FontStretch" Value="{StaticResource AltFontStretch}" />
         <Setter Property="FontStyle" Value="{StaticResource AltFontStyle}" />
+    </Style>
+
+
+
+    <!--
+    - ShadowType:               Ambient
+    - Elevation:                0
+    - Reacts to element states: No
+    -->
+    <Style x:Key="Elevated0AmbientShadow" TargetType="FrameworkElement">
+        <Setter Property="theming:ShadowProperties.ShadowColor" Value="{StaticResource StandardDropShadowColor}" />
+        <Setter Property="theming:ShadowProperties.ShadowOpacity" Value="{StaticResource StandardDropShadowOpacity}" />
+        <Setter Property="theming:ShadowProperties.ShadowType" Value="{x:Static controls:ShadowType.Ambient}" />
+        <Setter Property="theming:ShadowProperties.ShadowDirection" Value="Bottom" />
+        <Setter Property="theming:ShadowProperties.Elevation" Value="0" />
+        <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="0" />
+        <Setter Property="theming:PressedProperties.ShadowElevation" Value="0" />
+        <Setter Property="theming:ActiveProperties.ShadowElevation" Value="0" />
+        <Setter Property="theming:DisabledProperties.ShadowElevation" Value="0" />
+    </Style>
+    <Style x:Key="NoShadow" TargetType="FrameworkElement" BasedOn="{StaticResource Elevated0AmbientShadow}" />
+
+    <Style x:Key="Elevated0AmbientShadowInteractive" TargetType="FrameworkElement" BasedOn="{StaticResource Elevated0AmbientShadow}">
+        <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="1" />
+        <Setter Property="theming:PressedProperties.ShadowElevation" Value="1" />
+    </Style>
+
+    <Style x:Key="Elevated1AmbientShadow" TargetType="FrameworkElement" BasedOn="{StaticResource Elevated0AmbientShadow}">
+        <Setter Property="theming:ShadowProperties.Elevation" Value="1" />
+        <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="1" />
+        <Setter Property="theming:PressedProperties.ShadowElevation" Value="1" />
+        <Setter Property="theming:ActiveProperties.ShadowElevation" Value="1" />
+        <Setter Property="theming:DisabledProperties.ShadowElevation" Value="1" />
+    </Style>
+
+    <Style x:Key="Elevated1AmbientShadowInteractive" TargetType="FrameworkElement" BasedOn="{StaticResource Elevated1AmbientShadow}">
+        <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="2" />
+        <Setter Property="theming:PressedProperties.ShadowElevation" Value="2" />
     </Style>
     
     
