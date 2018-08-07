@@ -17,6 +17,22 @@
         <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
         <Setter Property="Padding" Value="{theming:GridUnit 4}" />
+        <Setter Property="TitleTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <TextBlock Style="{DynamicResource TitleTextBlock}"
+                               Text="{Binding}" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="SubTitleTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <TextBlock Style="{DynamicResource SubTitleTextBlock}"
+                               Text="{Binding}" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:Card">
@@ -29,7 +45,6 @@
                                                  CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}">
                             <Grid>
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
                                     <RowDefinition Height="Auto" />
                                     <RowDefinition Height="Auto" />
                                     <RowDefinition Height="Auto" />
@@ -46,9 +61,37 @@
                                         <ColumnDefinition />
                                     </Grid.ColumnDefinitions>
 
-                                    <TextBlock Text="{TemplateBinding Title}"
-                                               Style="{DynamicResource TitleTextBlock}" />
+                                    <ContentPresenter Grid.RowSpan="2"
+                                                      ContentSource="Thumbnail"
+                                                      ContentStringFormat="{TemplateBinding ThumbnailStringFormat}"
+                                                      ContentTemplate="{TemplateBinding ThumbnailTemplate}"
+                                                      ContentTemplateSelector="{TemplateBinding ThumbnailTemplateSelector}" />
+                                    <ContentPresenter Grid.Row="0" Grid.Column="1"
+                                                      ContentSource="Title"
+                                                      ContentStringFormat="{TemplateBinding TitleStringFormat}"
+                                                      ContentTemplate="{TemplateBinding TitleTemplate}"
+                                                      ContentTemplateSelector="{TemplateBinding TitleTemplateSelector}" />
+                                    <ContentPresenter Grid.Row="1" Grid.Column="1"
+                                                      ContentSource="SubTitle"
+                                                      ContentStringFormat="{TemplateBinding SubTitleStringFormat}"
+                                                      ContentTemplate="{TemplateBinding SubTitleTemplate}"
+                                                      ContentTemplateSelector="{TemplateBinding SubTitleTemplateSelector}" />
                                 </Grid>
+                                
+                                <!-- Media Content. -->
+                                <ContentPresenter Grid.Row="1"
+                                                  ContentSource="MediaContent"
+                                                  ContentStringFormat="{TemplateBinding MediaContentStringFormat}"
+                                                  ContentTemplate="{TemplateBinding MediaContentTemplate}"
+                                                  ContentTemplateSelector="{TemplateBinding MediaContentTemplateSelector}"
+                                                  Margin="{theming:GridUnit '-4'}" />
+                                
+                                <!-- Normal Content. -->
+                                <ContentPresenter Grid.Row="2"
+                                                  ContentSource="Content"
+                                                  ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                                                  ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                  ContentTemplateSelector="{TemplateBinding MediaContentTemplateSelector}" />
                             </Grid>
                         </controls:ClippingBorder>
                     </controls:ShadowDecorator>

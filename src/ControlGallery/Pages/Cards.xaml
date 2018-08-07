@@ -16,7 +16,11 @@
                      c:MarginHelper.ChildrenGroup="ControlGroup"
                      Columns="3">
 
-            <controls:Card>
+            <controls:Card Title="Card Title"
+                           SubTitle="Sub Title">
+                <controls:Card.Thumbnail>
+                    <Ellipse Width="40" Height="40" Fill="LightGray" />
+                </controls:Card.Thumbnail>
                 <TextBlock Text="Hello from the CardBorder!" />
             </controls:Card>
         </UniformGrid>
