@@ -40,10 +40,13 @@
             <Setter.Value>
                 <ControlTemplate TargetType="controls:Card">
                     <ControlTemplate.Resources>
-                        <converters:GroupConverter x:Key="MediaContentPaddingConverter">
-                            <converters:ThicknessSidePickerConverter Top="0" Bottom="0" />
-                            <converters:NegateValueConverter />
-                        </converters:GroupConverter>
+                        <converters:ThicknessSidePickerConverter x:Key="PickTopBottomConverter"
+                                                                 Left="0" Right="0" />
+                        <converters:ThicknessSidePickerConverter x:Key="PickTopConverter"
+                                                                 Left="0" Right="0" Bottom="0" />
+                        <converters:ThicknessSidePickerConverter x:Key="PickBottomConverter"
+                                                                 Left="0" Right="0" Top="0" />
+
                         <converters:BooleanToVisibilityConverter x:Key="FalseCollapsedVisibilityConverter" />
                     </ControlTemplate.Resources>
 
@@ -58,12 +61,13 @@
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto" />
                                     <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition />
                                 </Grid.RowDefinitions>
 
                                 <!-- Header Content. -->
-                                <Grid Grid.Row="0"
-                                      Margin="{theming:GridUnit '0,0,0,4'}">
+                                <Grid x:Name="HeaderGrid"
+                                      Grid.Row="0"
+                                      Margin="{theming:GridUnit '0,0,0,2'}">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto" />
                                         <RowDefinition Height="Auto" />
@@ -81,8 +85,8 @@
                                                       ContentTemplateSelector="{TemplateBinding ThumbnailTemplateSelector}"
                                                       MaxHeight="{theming:GridUnit 10}"
                                                       MaxWidth="{theming:GridUnit 10}"
-                                                      Margin="{theming:GridUnit '0,0,4,0'}"
-                                                      Visibility="{Binding HasThumbnail, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource FalseCollapsedVisibilityConverter}}" />
+                                                      Visibility="{Binding HasThumbnail, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource FalseCollapsedVisibilityConverter}}" 
+                                                      Margin="{theming:GridUnit '0,0,4,0'}"/>
                                     <ContentPresenter x:Name="TitleContentSite"
                                                       Grid.Row="0" 
                                                       Grid.Column="1"
@@ -102,15 +106,23 @@
                                 </Grid>
 
                                 <!-- Media Content. -->
-                                <ContentPresenter x:Name="MediaContentSite"
-                                                  Grid.Row="1"
-                                                  ContentSource="MediaContent"
-                                                  ContentStringFormat="{TemplateBinding MediaContentStringFormat}"
-                                                  ContentTemplate="{TemplateBinding MediaContentTemplate}"
-                                                  ContentTemplateSelector="{TemplateBinding MediaContentTemplateSelector}"
-                                                  Margin="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource MediaContentPaddingConverter}}"
-                                                  Visibility="{Binding HasMediaContent, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource FalseCollapsedVisibilityConverter}}" />
-
+                                <Border x:Name="MediaContentSpacer"
+                                        Grid.Row="1"
+                                        Margin="{theming:GridUnit '0,2,0,2'}"
+                                        Visibility="{Binding HasMediaContent, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource FalseCollapsedVisibilityConverter}}" >
+                                    <Border x:Name="MediaBorder"
+                                            Margin="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:NegateValueConverter.Default}}">
+                                        <ContentPresenter x:Name="MediaContentSite"
+                                                      Grid.Row="1"
+                                                      ContentSource="MediaContent"
+                                                      ContentStringFormat="{TemplateBinding MediaContentStringFormat}"
+                                                      ContentTemplate="{TemplateBinding MediaContentTemplate}"
+                                                      ContentTemplateSelector="{TemplateBinding MediaContentTemplateSelector}"
+                                                      Margin="{Binding Padding,RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource PickTopBottomConverter}}"/>
+                                    </Border>
+                                </Border>
+                                
+                                
                                 <!-- Normal Content. -->
                                 <ContentPresenter x:Name="ContentSite"
                                                   Grid.Row="2"
@@ -118,11 +130,70 @@
                                                   ContentStringFormat="{TemplateBinding ContentStringFormat}"
                                                   ContentTemplate="{TemplateBinding ContentTemplate}"
                                                   ContentTemplateSelector="{TemplateBinding MediaContentTemplateSelector}"
-                                                  Margin="{theming:GridUnit '0,4,0,0'}"
-                                                  Visibility="{Binding HasContent, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource FalseCollapsedVisibilityConverter}}" />
+                                                  Visibility="{Binding HasContent, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource FalseCollapsedVisibilityConverter}}" 
+                                                  Margin="{theming:GridUnit '0,2,0,0'}"/>
                             </Grid>
                         </controls:ClippingBorder>
                     </controls:ShadowDecorator>
+                    <ControlTemplate.Triggers>
+                        <!-- No Header visible.
+                             Remove Header Grid Bottom Margin.
+                             Make MediaContent move to card's top edge. -->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="HasTitle" Value="False" />
+                                <Condition Property="HasSubTitle" Value="False" />
+                                <Condition Property="HasThumbnail" Value="False" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="HeaderGrid" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="MediaContentSite" Property="Margin" Value="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource PickBottomConverter}}" />
+                            <Setter TargetName="MediaContentSpacer" Property="Margin" Value="{theming:GridUnit '0,0,0,2', TargetType=Thickness}" />
+                        </MultiTrigger>
+
+                        <!-- No Content visible.
+                             Make MediaContent move to card's bottom edge. -->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="HasContent" Value="False" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="MediaContentSite" Property="Margin" Value="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource PickTopConverter}}" />
+                            <Setter TargetName="MediaContentSpacer" Property="Margin" Value="{theming:GridUnit '0,2,0,0', TargetType=Thickness}" />
+                        </MultiTrigger>
+
+                        <!-- Only Content visible. Remove its top margin. -->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="HasTitle" Value="False" />
+                                <Condition Property="HasSubTitle" Value="False" />
+                                <Condition Property="HasThumbnail" Value="False" />
+                                <Condition Property="HasMediaContent" Value="False" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="ContentSite" Property="Margin" Value="0" />
+                        </MultiTrigger>
+                        
+                        <!-- Only Header visible. Remove its bottom margin. -->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="HasContent" Value="False" />
+                                <Condition Property="HasMediaContent" Value="False" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="HeaderGrid" Property="Margin" Value="0" />
+                        </MultiTrigger>
+
+                        <!-- Only MediaContent visible. Remove all of it's margin restrictions,
+                             so that it touches the edges. -->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="HasTitle" Value="False" />
+                                <Condition Property="HasSubTitle" Value="False" />
+                                <Condition Property="HasThumbnail" Value="False" />
+                                <Condition Property="HasContent" Value="False" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="MediaContentSpacer" Property="Margin" Value="0" />
+                            <Setter TargetName="MediaContentSite" Property="Margin" Value="0" />
+                        </MultiTrigger>
+
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

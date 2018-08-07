@@ -189,6 +189,11 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Assets\Images\Landscape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\CardThumbnailImage.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
