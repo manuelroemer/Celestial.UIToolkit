@@ -262,29 +262,57 @@
 
 
     <!--
-    - ShadowType:               Ambient
-    - Elevation:                0
-    - Reacts to element states: No
+    Ambient Shadow, without any elevation values.
     -->
-    <Style x:Key="Elevated0AmbientShadow" TargetType="FrameworkElement">
+    <Style x:Key="AmbientShadow" TargetType="FrameworkElement">
         <Setter Property="theming:ShadowProperties.ShadowColor" Value="{StaticResource StandardDropShadowColor}" />
         <Setter Property="theming:ShadowProperties.ShadowOpacity" Value="{StaticResource StandardDropShadowOpacity}" />
         <Setter Property="theming:ShadowProperties.ShadowType" Value="{x:Static controls:ShadowType.Ambient}" />
         <Setter Property="theming:ShadowProperties.ShadowDirection" Value="Bottom" />
+    </Style>
+
+    <!--
+    Directional shadows, without any elevation values.
+    -->
+    <Style x:Key="TopShadow" TargetType="FrameworkElement" BasedOn="{StaticResource AmbientShadow}">
+        <Setter Property="theming:ShadowProperties.ShadowType" Value="{x:Static controls:ShadowType.Directional}" />
+        <Setter Property="theming:ShadowProperties.ShadowDirection" Value="Top" />
+    </Style>
+
+    <Style x:Key="BottomShadow" TargetType="FrameworkElement" BasedOn="{StaticResource TopShadow}">
+        <Setter Property="theming:ShadowProperties.ShadowDirection" Value="Bottom" />
+    </Style>
+
+    <Style x:Key="LeftShadow" TargetType="FrameworkElement" BasedOn="{StaticResource TopShadow}">
+        <Setter Property="theming:ShadowProperties.ShadowDirection" Value="Left" />
+    </Style>
+
+    <Style x:Key="RightShadow" TargetType="FrameworkElement" BasedOn="{StaticResource TopShadow}">
+        <Setter Property="theming:ShadowProperties.ShadowDirection" Value="Right" />
+    </Style>
+    
+    <!--
+    Elevation levels.
+    The 'Interactive' suffix represents a set of values which reacts to user input,
+    e.g. MouseOver, Pressed, ...
+    If this suffix is not present, the shadow is resting at one elevation level.
+    -->
+    <Style x:Key="Elevated0Shadow" TargetType="FrameworkElement">
         <Setter Property="theming:ShadowProperties.Elevation" Value="0" />
         <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="0" />
         <Setter Property="theming:PressedProperties.ShadowElevation" Value="0" />
         <Setter Property="theming:ActiveProperties.ShadowElevation" Value="0" />
         <Setter Property="theming:DisabledProperties.ShadowElevation" Value="0" />
     </Style>
-    <Style x:Key="NoShadow" TargetType="FrameworkElement" BasedOn="{StaticResource Elevated0AmbientShadow}" />
+    <Style x:Key="NoShadow" TargetType="FrameworkElement" BasedOn="{StaticResource Elevated0Shadow}" />
 
-    <Style x:Key="Elevated0AmbientShadowInteractive" TargetType="FrameworkElement" BasedOn="{StaticResource Elevated0AmbientShadow}">
+    <Style x:Key="Elevated0ShadowInteractive" TargetType="FrameworkElement" BasedOn="{StaticResource Elevated0Shadow}">
         <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="1" />
         <Setter Property="theming:PressedProperties.ShadowElevation" Value="1" />
     </Style>
 
-    <Style x:Key="Elevated1AmbientShadow" TargetType="FrameworkElement" BasedOn="{StaticResource Elevated0AmbientShadow}">
+    
+    <Style x:Key="Elevated1Shadow" TargetType="FrameworkElement" BasedOn="{StaticResource Elevated0Shadow}">
         <Setter Property="theming:ShadowProperties.Elevation" Value="1" />
         <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="1" />
         <Setter Property="theming:PressedProperties.ShadowElevation" Value="1" />
@@ -292,7 +320,7 @@
         <Setter Property="theming:DisabledProperties.ShadowElevation" Value="1" />
     </Style>
 
-    <Style x:Key="Elevated1AmbientShadowInteractive" TargetType="FrameworkElement" BasedOn="{StaticResource Elevated1AmbientShadow}">
+    <Style x:Key="Elevated1ShadowInteractive" TargetType="FrameworkElement" BasedOn="{StaticResource Elevated1Shadow}">
         <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="2" />
         <Setter Property="theming:PressedProperties.ShadowElevation" Value="2" />
     </Style>

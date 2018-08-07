@@ -12,7 +12,7 @@
         <local:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardButtonBase" TargetType="ButtonBase" BasedOn="{theming:MultiStyle 'StandardBackground StandardBorder StandardForeground AltFontProperties NoShadow'}">
+    <Style x:Key="StandardButton" TargetType="ButtonBase" BasedOn="{theming:MultiStyle 'StandardBackground StandardBorder StandardForeground AltFontProperties BottomShadow NoShadow'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
@@ -133,27 +133,35 @@
             </DataTrigger>
         </Style.Triggers>
     </Style>
-    <Style TargetType="Button" BasedOn="{StaticResource StandardButtonBase}" />
-    <Style TargetType="ToggleButton" BasedOn="{StaticResource StandardButtonBase}" />
-    <Style TargetType="RepeatButton" BasedOn="{StaticResource StandardButtonBase}" />
+    <Style TargetType="Button" BasedOn="{StaticResource StandardButton}" />
+    <Style TargetType="ToggleButton" BasedOn="{StaticResource StandardButton}" />
+    <Style TargetType="RepeatButton" BasedOn="{StaticResource StandardButton}" />
 
     <Style x:Key="Accent1Button" 
            TargetType="ButtonBase" 
-           BasedOn="{theming:MultiStyle 'StandardButtonBase Accent1Background Accent1Border OnAccent1Foreground'}" />
-
+           BasedOn="{theming:MultiStyle 'StandardButton Accent1Background Accent1Border OnAccent1Foreground'}" />
     <Style x:Key="Accent2Button" 
            TargetType="ButtonBase" 
-           BasedOn="{theming:MultiStyle 'StandardButtonBase Accent2Background Accent2Border OnAccent2Foreground'}" />
+           BasedOn="{theming:MultiStyle 'StandardButton Accent2Background Accent2Border OnAccent2Foreground'}" />
 
-    
-    
+    <Style x:Key="ElevatedStandardButton" 
+           TargetType="ButtonBase" 
+           BasedOn="{theming:MultiStyle 'StandardButton Elevated0ShadowInteractive'}" />
+    <Style x:Key="ElevatedAccent1Button" 
+           TargetType="ButtonBase" 
+           BasedOn="{theming:MultiStyle 'Accent1Button Elevated0ShadowInteractive'}" />
+    <Style x:Key="ElevatedAccent2Button" 
+           TargetType="ButtonBase" 
+           BasedOn="{theming:MultiStyle 'Accent2Button Elevated0ShadowInteractive'}" />
+
+
     <!--
     Flat Button.
     This type of button only shows text in its default state.
     When hovered/clicked, it will behave normally though.
     -->
 
-    <Style x:Key="FlatButton" TargetType="ButtonBase" BasedOn="{StaticResource StandardButtonBase}">
+    <Style x:Key="FlatButton" TargetType="ButtonBase" BasedOn="{StaticResource StandardButton}">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="theming:MouseOverProperties.BackgroundColor" Value="{StaticResource BaseHighColor}" />
@@ -177,14 +185,26 @@
         <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource Accent2MediumBrush}" />
     </Style>
 
-
+    <Style x:Key="ElevatedFlatButton"
+           TargetType="ButtonBase"
+           BasedOn="{theming:MultiStyle 'FlatButton Elevated0ShadowInteractive'}" />
     
+    <Style x:Key="ElevatedAccent1FlatButton"
+           TargetType="ButtonBase"
+           BasedOn="{theming:MultiStyle 'Accent1FlatButton Elevated0ShadowInteractive'}" />
+    
+    <Style x:Key="ElevatedAccent2FlatButton"
+           TargetType="ButtonBase"
+           BasedOn="{theming:MultiStyle 'Accent2FlatButton Elevated0ShadowInteractive'}" />
+
+
+
     <!--
     Outlined button.
     An otherwise normal button with a border and transparent background in its default state.
     -->
 
-    <Style x:Key="OutlinedButton" TargetType="ButtonBase" BasedOn="{StaticResource StandardButtonBase}">
+    <Style x:Key="OutlinedButton" TargetType="ButtonBase" BasedOn="{StaticResource StandardButton}">
         <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
         <Setter Property="Background" Value="Transparent" />
     </Style>
@@ -200,16 +220,28 @@
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Foreground" Value="{StaticResource StandardForegroundBrush}" />
     </Style>
-    
-    
-    
+
+    <Style x:Key="ElevatedOutlinedButton"
+           TargetType="ButtonBase"
+           BasedOn="{theming:MultiStyle 'OutlinedButton Elevated0ShadowInteractive'}" />
+
+    <Style x:Key="ElevatedAccent1OutlinedButton"
+           TargetType="ButtonBase"
+           BasedOn="{theming:MultiStyle 'Accent1OutlinedButton Elevated0ShadowInteractive'}" />
+
+    <Style x:Key="ElevatedAccent2OutlinedButton"
+           TargetType="ButtonBase"
+           BasedOn="{theming:MultiStyle 'Accent2OutlinedButton Elevated0ShadowInteractive'}" />
+
+
+
     <!--
     Square Button.
     This is a type of button which always resembles a square.
     It is supposed to be used in conjunction with symbols. 
     -->
 
-    <Style x:Key="SquareButton" TargetType="ButtonBase" BasedOn="{StaticResource StandardButtonBase}">
+    <Style x:Key="SquareButton" TargetType="ButtonBase" BasedOn="{StaticResource StandardButton}">
         <Setter Property="MinWidth" Value="{theming:GridUnit 8}" />
         <Setter Property="MinHeight" Value="{theming:GridUnit 8}" />
         <Setter Property="Width" Value="{theming:GridUnit 8}" />
@@ -232,6 +264,18 @@
            TargetType="ButtonBase"
            BasedOn="{theming:MultiStyle 'SquareButton Accent2Border Accent2Background OnAccent2Foreground'}" />
 
+    <Style x:Key="ElevatedSquareButton"
+           TargetType="ButtonBase"
+           BasedOn="{theming:MultiStyle 'SquareButton Elevated0ShadowInteractive'}" />
+
+    <Style x:Key="ElevatedAccent1SquareButton"
+           TargetType="ButtonBase"
+           BasedOn="{theming:MultiStyle 'Accent1SquareButton Elevated0ShadowInteractive'}" />
+
+    <Style x:Key="ElevatedAccent2SquareButton"
+           TargetType="ButtonBase"
+           BasedOn="{theming:MultiStyle 'Accent2SquareButton Elevated0ShadowInteractive'}" />
+
 
 
     <!--
@@ -251,6 +295,18 @@
     <Style x:Key="Accent2CircleButton" TargetType="ButtonBase" BasedOn="{StaticResource Accent2SquareButton}">
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" />
     </Style>
+
+    <Style x:Key="ElevatedCircleButton"
+           TargetType="ButtonBase"
+           BasedOn="{theming:MultiStyle 'CircleButton Elevated0ShadowInteractive'}" />
+
+    <Style x:Key="ElevatedAccent1CircleButton"
+           TargetType="ButtonBase"
+           BasedOn="{theming:MultiStyle 'Accent1CircleButton Elevated0ShadowInteractive'}" />
+
+    <Style x:Key="ElevatedAccent2CircleButton"
+           TargetType="ButtonBase"
+           BasedOn="{theming:MultiStyle 'Accent2CircleButton Elevated0ShadowInteractive'}" />
 
 
 

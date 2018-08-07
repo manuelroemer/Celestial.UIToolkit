@@ -13,6 +13,7 @@
                 <TextBlock Style="{StaticResource TitleTextBlock}"
                            c:MarginHelper.MarginGroup="Title">Standard Button</TextBlock>
                 <Button>Standard</Button>
+                <Button Style="{StaticResource ElevatedStandardButton}">Elevated</Button>
                 <Button Style="{StaticResource Accent1Button}">Accent1</Button>
                 <Button Style="{StaticResource Accent2Button}">Accent2</Button>
                 <Button IsEnabled="False">Disabled</Button>
@@ -22,6 +23,7 @@
                 <TextBlock Style="{StaticResource TitleTextBlock}"
                            c:MarginHelper.MarginGroup="Title">Outlined Button</TextBlock>
                 <Button Style="{StaticResource OutlinedButton}">Standard</Button>
+                <Button Style="{StaticResource ElevatedOutlinedButton}">Elevated</Button>
                 <Button Style="{StaticResource Accent1OutlinedButton}">Accent1</Button>
                 <Button Style="{StaticResource Accent2OutlinedButton}">Accent2</Button>
                 <Button Style="{StaticResource OutlinedButton}" IsEnabled="False">Disabled</Button>
@@ -31,6 +33,7 @@
                 <TextBlock Style="{StaticResource TitleTextBlock}"
                            c:MarginHelper.MarginGroup="Title">Flat Button</TextBlock>
                 <Button Style="{StaticResource FlatButton}">Standard</Button>
+                <Button Style="{StaticResource ElevatedFlatButton}">Elevated</Button>
                 <Button Style="{StaticResource Accent1FlatButton}">Accent1</Button>
                 <Button Style="{StaticResource Accent2FlatButton}">Accent2</Button>
                 <Button Style="{StaticResource FlatButton}" IsEnabled="False">Disabled</Button>
@@ -49,6 +52,7 @@
                 <StackPanel Orientation="Horizontal"
                             c:MarginHelper.ChildrenGroup="CloseHorizontal">
                     <Button Style="{StaticResource SquareButton}">S</Button>
+                    <Button Style="{StaticResource ElevatedSquareButton}">E</Button>
                     <Button Style="{StaticResource Accent1SquareButton}">1</Button>
                     <Button Style="{StaticResource Accent2SquareButton}">2</Button>
                     <Button Style="{StaticResource SquareButton}" IsEnabled="False">D</Button>
@@ -61,6 +65,7 @@
                 <StackPanel Orientation="Horizontal"
                             c:MarginHelper.ChildrenGroup="CloseHorizontal">
                     <Button Style="{StaticResource CircleButton}">C</Button>
+                    <Button Style="{StaticResource ElevatedCircleButton}">E</Button>
                     <Button Style="{StaticResource Accent1CircleButton}">1</Button>
                     <Button Style="{StaticResource Accent2CircleButton}">2</Button>
                     <Button Style="{StaticResource CircleButton}" IsEnabled="False">D</Button>
@@ -74,6 +79,7 @@
                 <TextBlock Style="{StaticResource TitleTextBlock}"
                            c:MarginHelper.MarginGroup="Title">Standard Button</TextBlock>
                 <ToggleButton>Standard</ToggleButton>
+                <ToggleButton Style="{StaticResource ElevatedStandardButton}">Elevated</ToggleButton>
                 <ToggleButton Style="{StaticResource Accent1Button}">Accent1</ToggleButton>
                 <ToggleButton Style="{StaticResource Accent2Button}">Accent2</ToggleButton>
                 <ToggleButton IsEnabled="False">Disabled</ToggleButton>
@@ -83,6 +89,7 @@
                 <TextBlock Style="{StaticResource TitleTextBlock}"
                            c:MarginHelper.MarginGroup="Title">Outlined Button</TextBlock>
                 <ToggleButton Style="{StaticResource OutlinedButton}">Standard</ToggleButton>
+                <ToggleButton Style="{StaticResource ElevatedOutlinedButton}">Elevated</ToggleButton>
                 <ToggleButton Style="{StaticResource Accent1OutlinedButton}">Accent1</ToggleButton>
                 <ToggleButton Style="{StaticResource Accent2OutlinedButton}">Accent2</ToggleButton>
                 <ToggleButton Style="{StaticResource OutlinedButton}" IsEnabled="False">Disabled</ToggleButton>
@@ -92,6 +99,7 @@
                 <TextBlock Style="{StaticResource TitleTextBlock}"
                            c:MarginHelper.MarginGroup="Title">Minimal Button</TextBlock>
                 <ToggleButton Style="{StaticResource FlatButton}">Standard</ToggleButton>
+                <ToggleButton Style="{StaticResource ElevatedFlatButton}">Elevated</ToggleButton>
                 <ToggleButton Style="{StaticResource Accent1FlatButton}">Accent1</ToggleButton>
                 <ToggleButton Style="{StaticResource Accent2FlatButton}">Accent2</ToggleButton>
                 <ToggleButton Style="{StaticResource FlatButton}" IsEnabled="False">Disabled</ToggleButton>
@@ -103,6 +111,7 @@
                 <StackPanel Orientation="Horizontal"
                             c:MarginHelper.ChildrenGroup="CloseHorizontal">
                     <ToggleButton Style="{StaticResource SquareButton}">S</ToggleButton>
+                    <ToggleButton Style="{StaticResource ElevatedSquareButton}">E</ToggleButton>
                     <ToggleButton Style="{StaticResource Accent1SquareButton}">1</ToggleButton>
                     <ToggleButton Style="{StaticResource Accent2SquareButton}">2</ToggleButton>
                     <ToggleButton Style="{StaticResource SquareButton}" IsEnabled="False">D</ToggleButton>
@@ -115,6 +124,7 @@
                 <StackPanel Orientation="Horizontal"
                             c:MarginHelper.ChildrenGroup="CloseHorizontal">
                     <ToggleButton Style="{StaticResource CircleButton}">C</ToggleButton>
+                    <ToggleButton Style="{StaticResource ElevatedCircleButton}">E</ToggleButton>
                     <ToggleButton Style="{StaticResource Accent1CircleButton}">1</ToggleButton>
                     <ToggleButton Style="{StaticResource Accent2CircleButton}">2</ToggleButton>
                     <ToggleButton Style="{StaticResource CircleButton}" IsEnabled="False">D</ToggleButton>
