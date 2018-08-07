@@ -40,12 +40,10 @@
             <Setter.Value>
                 <ControlTemplate TargetType="controls:Card">
                     <ControlTemplate.Resources>
-                        <converters:ThicknessSidePickerConverter x:Key="PickTopBottomConverter"
-                                                                 Left="0" Right="0" />
-                        <converters:ThicknessSidePickerConverter x:Key="PickTopConverter"
-                                                                 Left="0" Right="0" Bottom="0" />
-                        <converters:ThicknessSidePickerConverter x:Key="PickBottomConverter"
-                                                                 Left="0" Right="0" Top="0" />
+                        <converters:GroupConverter x:Key="MediaContentMarginConverter">
+                            <converters:ThicknessSidePickerConverter Top="0" Bottom="0" />
+                            <converters:NegateValueConverter />
+                        </converters:GroupConverter>
 
                         <converters:BooleanToVisibilityConverter x:Key="FalseCollapsedVisibilityConverter" />
                     </ControlTemplate.Resources>
@@ -109,17 +107,14 @@
                                 <Border x:Name="MediaContentSpacer"
                                         Grid.Row="1"
                                         Margin="{theming:GridUnit '0,2,0,2'}"
-                                        Visibility="{Binding HasMediaContent, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource FalseCollapsedVisibilityConverter}}" >
-                                    <Border x:Name="MediaBorder"
-                                            Margin="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:NegateValueConverter.Default}}">
-                                        <ContentPresenter x:Name="MediaContentSite"
+                                        Visibility="{Binding HasMediaContent, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource FalseCollapsedVisibilityConverter}}">
+                                    <ContentPresenter x:Name="MediaContentSite"
                                                       Grid.Row="1"
                                                       ContentSource="MediaContent"
                                                       ContentStringFormat="{TemplateBinding MediaContentStringFormat}"
                                                       ContentTemplate="{TemplateBinding MediaContentTemplate}"
                                                       ContentTemplateSelector="{TemplateBinding MediaContentTemplateSelector}"
-                                                      Margin="{Binding Padding,RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource PickTopBottomConverter}}"/>
-                                    </Border>
+                                                      Margin="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource MediaContentMarginConverter}}" />
                                 </Border>
                                 
                                 
@@ -136,9 +131,7 @@
                         </controls:ClippingBorder>
                     </controls:ShadowDecorator>
                     <ControlTemplate.Triggers>
-                        <!-- No Header visible.
-                             Remove Header Grid Bottom Margin.
-                             Make MediaContent move to card's top edge. -->
+                        <!-- Collapse the header container if none of the three elements is shown. -->
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="HasTitle" Value="False" />
@@ -146,21 +139,9 @@
                                 <Condition Property="HasThumbnail" Value="False" />
                             </MultiTrigger.Conditions>
                             <Setter TargetName="HeaderGrid" Property="Visibility" Value="Collapsed" />
-                            <Setter TargetName="MediaContentSite" Property="Margin" Value="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource PickBottomConverter}}" />
-                            <Setter TargetName="MediaContentSpacer" Property="Margin" Value="{theming:GridUnit '0,0,0,2', TargetType=Thickness}" />
                         </MultiTrigger>
-
-                        <!-- No Content visible.
-                             Make MediaContent move to card's bottom edge. -->
-                        <MultiTrigger>
-                            <MultiTrigger.Conditions>
-                                <Condition Property="HasContent" Value="False" />
-                            </MultiTrigger.Conditions>
-                            <Setter TargetName="MediaContentSite" Property="Margin" Value="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource PickTopConverter}}" />
-                            <Setter TargetName="MediaContentSpacer" Property="Margin" Value="{theming:GridUnit '0,2,0,0', TargetType=Thickness}" />
-                        </MultiTrigger>
-
-                        <!-- Only Content visible. Remove its top margin. -->
+                        
+                         <!-- Only Content visible. Remove its top margin. --> 
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="HasTitle" Value="False" />
@@ -171,7 +152,7 @@
                             <Setter TargetName="ContentSite" Property="Margin" Value="0" />
                         </MultiTrigger>
                         
-                        <!-- Only Header visible. Remove its bottom margin. -->
+                         <!-- Only Header visible. Remove its bottom margin. --> 
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="HasContent" Value="False" />
@@ -180,8 +161,7 @@
                             <Setter TargetName="HeaderGrid" Property="Margin" Value="0" />
                         </MultiTrigger>
 
-                        <!-- Only MediaContent visible. Remove all of it's margin restrictions,
-                             so that it touches the edges. -->
+                         <!--Only MediaContent visible. Remove its top/bottom margin.--> 
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="HasTitle" Value="False" />
@@ -190,7 +170,6 @@
                                 <Condition Property="HasContent" Value="False" />
                             </MultiTrigger.Conditions>
                             <Setter TargetName="MediaContentSpacer" Property="Margin" Value="0" />
-                            <Setter TargetName="MediaContentSite" Property="Margin" Value="0" />
                         </MultiTrigger>
 
                     </ControlTemplate.Triggers>
