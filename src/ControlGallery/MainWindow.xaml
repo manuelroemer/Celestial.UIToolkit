@@ -33,6 +33,9 @@
         <TabItem Header="Inputs">
             <pages:Inputs />
         </TabItem>
+        <TabItem Header="Cards">
+            <pages:Cards />
+        </TabItem>
         <TabItem Header="Popups">
             <pages:Popups />
         </TabItem>

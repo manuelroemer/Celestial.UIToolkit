@@ -52,14 +52,4 @@
     <SolidColorBrush x:Key="OnErrorForegroundBrush" Color="{StaticResource OnErrorForegroundColor}" />
     <SolidColorBrush x:Key="OnErrorDisabledForegroundBrush" Color="{StaticResource OnErrorForegroundColor}" />
 
-
-
-    <!--
-    These resources define the colors to be used by controls in their different states.
-    -->
-    
-    <!-- Colors used by controls in their "Default" state. -->
-    <SolidColorBrush x:Key="StandardControlBorderBrush" Color="{StaticResource BaseLowColor}" />
-    <SolidColorBrush x:Key="StandardControlBackgroundBrush" Color="{StaticResource BaseHighestColor}" />
-
 </ResourceDictionary>

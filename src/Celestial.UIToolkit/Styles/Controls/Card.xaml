@@ -1,0 +1,61 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Celestial.UIToolkit"
+                    xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
+                    xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
+
+    <ResourceDictionary.MergedDictionaries>
+        <local:SharedResourceDictionary Source="../Shared/Theming.xaml" />
+        <local:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
+        <local:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="StandardCard" TargetType="controls:Card" BasedOn="{theming:MultiStyle 'ContentControlBorder ContentControlBackground BottomShadow Elevated1Shadow'}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
+        <Setter Property="Padding" Value="{theming:GridUnit 4}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="controls:Card">
+                    <controls:ShadowDecorator Style="{StaticResource ThemeableShadowDecorator}">
+                        <controls:ClippingBorder x:Name="Bd"
+                                                 Background="{TemplateBinding Background}"
+                                                 BorderBrush="{TemplateBinding BorderBrush}"
+                                                 BorderThickness="{TemplateBinding BorderThickness}"
+                                                 Padding="{TemplateBinding Padding}"
+                                                 CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <!-- Header Content. -->
+                                <Grid Grid.Row="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Text="{TemplateBinding Title}"
+                                               Style="{DynamicResource TitleTextBlock}" />
+                                </Grid>
+                            </Grid>
+                        </controls:ClippingBorder>
+                    </controls:ShadowDecorator>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="controls:Card" BasedOn="{StaticResource StandardCard}" />
+
+</ResourceDictionary>

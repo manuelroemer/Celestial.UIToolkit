@@ -26,6 +26,6 @@
 
 
     <Color x:Key="StandardDropShadowColor">#3A40441A</Color>
-    <sys:Double x:Key="StandardDropShadowOpacity">0.5</sys:Double>
+    <sys:Double x:Key="StandardDropShadowOpacity">0.3</sys:Double>
     
 </ResourceDictionary>

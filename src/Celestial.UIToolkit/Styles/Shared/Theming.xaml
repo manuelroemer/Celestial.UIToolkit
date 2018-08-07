@@ -50,6 +50,19 @@
     </Style>
 
     <!--
+    - Background: ContentControl-Brushes
+    - Border:     -
+    - Foreground: -
+    -->
+    <Style x:Key="ContentControlBackground" TargetType="FrameworkElement">
+        <Setter Property="Control.Background" Value="{StaticResource ContentControlBackgroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.BackgroundColor" Value="{Binding Color, Source={StaticResource ContentControlBackgroundBrush}}" />
+        <Setter Property="theming:PressedProperties.BackgroundColor" Value="{Binding Color, Source={StaticResource ContentControlBackgroundBrush}}" />
+        <Setter Property="theming:DisabledProperties.BackgroundColor" Value="{Binding Color, Source={StaticResource ContentControlBackgroundBrush}}" />
+        <Setter Property="theming:ActiveProperties.BackgroundColor" Value="{Binding Color, Source={StaticResource ContentControlBackgroundBrush}}" />
+    </Style>
+
+    <!--
     - Background: Normal: StandardControl; Accent1 for special states.
     - Border:     -
     - Foreground: -
@@ -127,6 +140,19 @@
         <Setter Property="theming:PressedProperties.BorderColor" Value="{StaticResource BaseLowColor}" />
         <Setter Property="theming:DisabledProperties.BorderColor" Value="{StaticResource BaseHighColor}" />
         <Setter Property="theming:ActiveProperties.BorderColor" Value="{StaticResource BaseLowColor}" />
+    </Style>
+
+    <!--
+    - Border: ContentControl-Brushes
+    - Border:     -
+    - Foreground: -
+    -->
+    <Style x:Key="ContentControlBorder" TargetType="FrameworkElement">
+        <Setter Property="Control.BorderBrush" Value="{StaticResource ContentControlBorderBrush}" />
+        <Setter Property="theming:MouseOverProperties.BorderColor" Value="{Binding Color, Source={StaticResource ContentControlBorderBrush}}" />
+        <Setter Property="theming:PressedProperties.BorderColor" Value="{Binding Color, Source={StaticResource ContentControlBorderBrush}}" />
+        <Setter Property="theming:DisabledProperties.BorderColor" Value="{Binding Color, Source={StaticResource ContentControlBorderBrush}}" />
+        <Setter Property="theming:ActiveProperties.BorderColor" Value="{Binding Color, Source={StaticResource ContentControlBorderBrush}}" />
     </Style>
 
     <!--
@@ -323,6 +349,34 @@
     <Style x:Key="Elevated1ShadowInteractive" TargetType="FrameworkElement" BasedOn="{StaticResource Elevated1Shadow}">
         <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="2" />
         <Setter Property="theming:PressedProperties.ShadowElevation" Value="2" />
+    </Style>
+    
+    
+    <Style x:Key="Elevated2Shadow" TargetType="FrameworkElement" BasedOn="{StaticResource Elevated0Shadow}">
+        <Setter Property="theming:ShadowProperties.Elevation" Value="2" />
+        <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="2" />
+        <Setter Property="theming:PressedProperties.ShadowElevation" Value="2" />
+        <Setter Property="theming:ActiveProperties.ShadowElevation" Value="2" />
+        <Setter Property="theming:DisabledProperties.ShadowElevation" Value="2" />
+    </Style>
+
+    <Style x:Key="Elevated2ShadowInteractive" TargetType="FrameworkElement" BasedOn="{StaticResource Elevated2Shadow}">
+        <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="3" />
+        <Setter Property="theming:PressedProperties.ShadowElevation" Value="3" />
+    </Style>
+    
+    
+    <Style x:Key="Elevated3Shadow" TargetType="FrameworkElement" BasedOn="{StaticResource Elevated0Shadow}">
+        <Setter Property="theming:ShadowProperties.Elevation" Value="3" />
+        <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="3" />
+        <Setter Property="theming:PressedProperties.ShadowElevation" Value="3" />
+        <Setter Property="theming:ActiveProperties.ShadowElevation" Value="3" />
+        <Setter Property="theming:DisabledProperties.ShadowElevation" Value="3" />
+    </Style>
+
+    <Style x:Key="Elevated3ShadowInteractive" TargetType="FrameworkElement" BasedOn="{StaticResource Elevated2Shadow}">
+        <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="4" />
+        <Setter Property="theming:PressedProperties.ShadowElevation" Value="4" />
     </Style>
     
     

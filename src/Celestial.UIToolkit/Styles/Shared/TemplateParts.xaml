@@ -2,12 +2,10 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
-
-    <!--
-    A ripple animation which is being played in the background of a control.
-    Example: CheckBox, RadioButton
-    -->
-    <Style x:Key="SmallBackgroundRippleAnimation" TargetType="controls:RippleOverlay">
+  
+    <!-- A ripple animation which is being played in the background of a control.
+         Example: CheckBox, RadioButton -->
+    <Style x:Key="SmallBackgroundRippleAnimation" x:Shared="False"  TargetType="controls:RippleOverlay">
         <Setter Property="Background" Value="{StaticResource BaseHighBrush}" />
         <Setter Property="IsEnabled" Value="{Binding Path=(theming:RippleProperties.ShowRippleAnimation), RelativeSource={RelativeSource TemplatedParent}}" />
         <Setter Property="RippleOrigin" Value="Center" />
@@ -22,7 +20,9 @@
 
 
 
-    <Style x:Key="ThemableShadowDecorator" TargetType="controls:ShadowDecorator">
+    <!-- A shadow decorator which binds all of its properties to the theming:ShadowProperties class
+         which are set for the TemplatedParent. -->
+    <Style x:Key="ThemeableShadowDecorator" x:Shared="False"  TargetType="controls:ShadowDecorator">
         <Setter Property="ShadowColor" Value="{Binding Path=(theming:ShadowProperties.ShadowColor), RelativeSource={RelativeSource TemplatedParent}}" />
         <Setter Property="ShadowOpacity" Value="{Binding Path=(theming:ShadowProperties.ShadowOpacity), RelativeSource={RelativeSource TemplatedParent}}" />
         <Setter Property="ShadowType" Value="{Binding Path=(theming:ShadowProperties.ShadowType), RelativeSource={RelativeSource TemplatedParent}}" />

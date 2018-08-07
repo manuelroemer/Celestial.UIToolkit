@@ -84,7 +84,7 @@
                             </Storyboard>
                         </Grid.Resources>
                         <controls:ShadowDecorator x:Name="Shadow"
-                                                  Style="{StaticResource ThemableShadowDecorator}">
+                                                  Style="{StaticResource ThemeableShadowDecorator}">
                             <Border x:Name="Bd"
                                     CornerRadius="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
                                     BorderThickness="{TemplateBinding BorderThickness}"

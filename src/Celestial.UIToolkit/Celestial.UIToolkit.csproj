@@ -54,6 +54,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BindingProxy.cs" />
+    <Compile Include="Controls\Card.cs" />
+    <Compile Include="Controls\Card.GeneratedProperties.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Card.GeneratedProperties.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ClippingBorder.cs" />
     <Compile Include="Controls\IconButton.cs" />
     <Compile Include="Controls\IconElement.cs" />
@@ -107,6 +113,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Icons\Arrows.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Controls\Card.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -211,6 +221,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Controls\Card.GeneratedProperties.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Card.GeneratedProperties.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

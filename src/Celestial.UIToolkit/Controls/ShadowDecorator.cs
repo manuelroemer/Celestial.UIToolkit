@@ -209,7 +209,7 @@ namespace Celestial.UIToolkit.Controls
             {
                 // This value is chosen through observation and testing.
                 // It looks the most real, when comparing different elevation levels.
-                const int elevationLevelMultiplier = 5;
+                const int elevationLevelMultiplier = 3;
                 return this.Elevation * elevationLevelMultiplier;
             }
         }

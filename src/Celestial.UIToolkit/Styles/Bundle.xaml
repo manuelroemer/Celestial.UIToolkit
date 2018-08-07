@@ -18,6 +18,7 @@
         <local:SharedResourceDictionary Source="Controls/Button.xaml" />
         <local:SharedResourceDictionary Source="Controls/CheckBox.xaml" />
         <local:SharedResourceDictionary Source="Controls/RadioButton.xaml" />
+        <local:SharedResourceDictionary Source="Controls/Card.xaml" />
         <local:SharedResourceDictionary Source="Controls/TextBox.xaml" />
         <local:SharedResourceDictionary Source="Controls/ComboBox.xaml" />
         <local:SharedResourceDictionary Source="Controls/ToolTip.xaml" />

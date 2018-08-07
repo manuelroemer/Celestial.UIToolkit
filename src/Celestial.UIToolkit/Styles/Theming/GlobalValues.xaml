@@ -30,13 +30,30 @@
     <Duration x:Key="InnerPartialAnimationDuration">0:0:0.150</Duration>
     <KeyTime x:Key="InnerPartialAnimationKeyTime">0:0:0.150</KeyTime>
 
-    
-    
+
+
     <CornerRadius x:Key="StandardCornerRadius">0</CornerRadius>
 
 
-    
+
     <Thickness x:Key="SlimBorderThickness">1</Thickness>
     <Thickness x:Key="WideBorderThickness">2</Thickness>
+
+    
+    
+    <!--
+    Brushes used by generic controls.
+    e.g. CheckBox.
+    -->
+    <SolidColorBrush x:Key="StandardControlBorderBrush" Color="{StaticResource BaseLowColor}" />
+    <SolidColorBrush x:Key="StandardControlBackgroundBrush" Color="{StaticResource BaseHighestColor}" />
+    
+    <!-- 
+    Special brushes for controls which host content, e.g. Cards.
+    Since these elements tend to grow larger, they might need to be styled differently
+    than the common, small control.
+    -->
+    <SolidColorBrush x:Key="ContentControlBorderBrush" Color="{StaticResource BaseHighColor}" />
+    <SolidColorBrush x:Key="ContentControlBackgroundBrush" Color="{StaticResource BaseHighestColor}" />
 
 </ResourceDictionary>
