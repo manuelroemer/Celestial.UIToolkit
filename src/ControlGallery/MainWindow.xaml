@@ -36,6 +36,9 @@
         <TabItem Header="Cards">
             <pages:Cards />
         </TabItem>
+        <TabItem Header="Expanders">
+            <pages:Expanders />
+        </TabItem>
         <TabItem Header="Popups">
             <pages:Popups />
         </TabItem>

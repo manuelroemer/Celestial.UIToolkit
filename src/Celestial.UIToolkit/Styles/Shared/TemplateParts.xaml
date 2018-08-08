@@ -30,4 +30,24 @@
         <Setter Property="Elevation" Value="{Binding Path=(theming:ShadowProperties.Elevation), RelativeSource={RelativeSource TemplatedParent}}" />
     </Style>
 
+
+    <!-- A button which only displays the content. -->
+    <Style x:Key="InvisibleButton" TargetType="ButtonBase">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ButtonBase">
+                    <Grid Background="Transparent">
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          Margin="{TemplateBinding Padding}"
+                                          RecognizesAccessKey="True" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
 </ResourceDictionary>

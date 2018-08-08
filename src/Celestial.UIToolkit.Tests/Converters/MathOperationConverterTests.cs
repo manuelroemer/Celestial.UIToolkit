@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Globalization;
+using System.Linq;
+using System.Windows.Data;
 using Celestial.UIToolkit.Converters;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -67,6 +69,34 @@ namespace Celestial.UIToolkit.Tests.Converters
 
             Assert.ThrowsException<NotSupportedException>(() =>
                 converter.Convert(10, new object(), CultureInfo.CurrentCulture));
+        }
+
+        [TestMethod]
+        public void SupportsMultiValueConversion()
+        {
+            IMultiValueConverter converter = new MathOperationConverter(MathOperator.Add);
+            object[] values = { 1, 2, 3, 4, 5, 6 };
+            int sum = values.Sum(val => (int)val);
+
+            Assert.AreEqual(
+                sum,
+                converter.Convert(values, typeof(int), null, null));
+        }
+
+        [TestMethod]
+        public void MultiValueConversionThrowsForEmptyValues()
+        {
+            IMultiValueConverter converter = new MathOperationConverter();
+            Assert.ThrowsException<ArgumentException>(() =>
+                converter.Convert(new object[] { }, typeof(object), null, null));
+        }
+
+        [TestMethod]
+        public void MultiValueConversionThrowsForNonIConvertible()
+        {
+            IMultiValueConverter converter = new MathOperationConverter();
+            Assert.ThrowsException<NotSupportedException>(() =>
+                converter.Convert(new object[] { new object() }, typeof(object), null, null));
         }
 
     }

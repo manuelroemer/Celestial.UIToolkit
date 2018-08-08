@@ -12,10 +12,22 @@
     <Grid>
 
         <controls:Card HorizontalAlignment="Center" VerticalAlignment="Center">
-            <controls:Card.MediaContent>
-                <!-- Or only the media content? -->
-                <Image Source="../Assets/Images/Landscape.png" Width="300" Height="100" Stretch="Fill" />
-            </controls:Card.MediaContent>
+            <Grid x:Name="Container" Background="LightGray">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.1*" />
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="ContentSite" ClipToBounds="False">
+                        <TextBlock.Inlines>
+                            Hello World!
+                            <LineBreak />
+                            Hello World!
+                            <LineBreak />
+                            Hello World!
+                            <LineBreak />
+                            Hello World!
+                        </TextBlock.Inlines>
+                    </TextBlock>
+            </Grid>
         </controls:Card>
 
     </Grid>

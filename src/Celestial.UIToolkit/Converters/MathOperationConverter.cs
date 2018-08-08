@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Linq;
 using System.Windows;
 using System.Windows.Data;
 
@@ -11,7 +12,7 @@ namespace Celestial.UIToolkit.Converters
     /// between two values.
     /// </summary>
     [ValueConversion(typeof(IConvertible), typeof(IConvertible))]
-    public class MathOperationConverter : ValueConverter<IConvertible, IConvertible>
+    public class MathOperationConverter : ValueConverter<IConvertible, IConvertible>, IMultiValueConverter
     {
 
         /// <summary>
@@ -86,6 +87,52 @@ namespace Celestial.UIToolkit.Converters
             return (IConvertible)System.Convert.ChangeType(res, value.GetType());
         }
 
+        /// <summary>
+        /// Performs the mathematical operation on all of the provided values.
+        /// In comparison to the single <see cref="IValueConverter"/>'s Convert method,
+        /// this one doesn't use the <paramref name="parameter"/>,
+        /// since all numbers are provided by the <paramref name="values"/> parameter.
+        /// </summary>
+        /// <param name="values">The values which are being added/subtracted/multiplied/divided.</param>
+        /// <param name="targetType">The target type of the conversion.</param>
+        /// <param name="parameter">Not used.</param>
+        /// <param name="culture">Not used.</param>
+        /// <returns>The result of the mathematical operation.</returns>
+        public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (values == null || values.Length == 0)
+            {
+                throw new ArgumentException(
+                    "When using multi conversion, the converter requires at least one value.");
+            }
+            this.Convert(values[0], targetType, null, null); // This does a type-check for IConvertible
+                                                             // without actually changing anything.
+
+            object currentValue = values[0];
+            foreach (var value in values.Skip(1))
+            {
+                currentValue = this.Convert(currentValue, targetType, value, culture);
+            }
+
+            return currentValue;
+        }
+
+        /// <summary>
+        /// Throws <see cref="NotSupportedException"/>.
+        /// </summary>
+        /// <param name="value">Not supported.</param>
+        /// <param name="targetTypes">Not supported.</param>
+        /// <param name="parameter">Not supported.</param>
+        /// <param name="culture">Not supported.</param>
+        /// <returns>Not supported.</returns>
+        /// <exception cref="NotSupportedException" />
+        public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
+        {
+            // Will throw an exception.
+            base.ConvertBack(value, targetTypes.FirstOrDefault(), parameter, culture);
+            return null;
+        }
+
         // This converter won't, by default, provide a ConvertBack method.
         // That's because we cannot guarantee a correct conversion in all cases.
         // For instance for the following values:
@@ -96,7 +143,7 @@ namespace Celestial.UIToolkit.Converters
         // which would be wrong.
         // If necessary, a user will have to extend the class by himself
         // (and customize it to his needs).
-        
+
     }
 
     /// <summary>
