@@ -48,7 +48,16 @@
                         <converters:BooleanToVisibilityConverter x:Key="FalseCollapsedVisibilityConverter" />
                     </ControlTemplate.Resources>
 
-                    <controls:ShadowDecorator Style="{StaticResource ThemeableShadowDecorator}">
+                    <Grid>
+                        <controls:ShadowDecorator Style="{StaticResource ThemeableShadowDecorator}">
+                            <!-- Dummy border. We can't put the ShadowDecorator around the actual border,
+                                 since that would apply the effect to every single child. -->
+                            <Border Background="{TemplateBinding Background}"
+                                                 BorderBrush="{TemplateBinding BorderBrush}"
+                                                 BorderThickness="{TemplateBinding BorderThickness}"
+                                                 Padding="{TemplateBinding Padding}"
+                                                 CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}" />
+                        </controls:ShadowDecorator>
                         <controls:ClippingBorder x:Name="Bd"
                                                  Background="{TemplateBinding Background}"
                                                  BorderBrush="{TemplateBinding BorderBrush}"
@@ -64,8 +73,8 @@
 
                                 <!-- Header Content. -->
                                 <Grid x:Name="HeaderGrid"
-                                      Grid.Row="0"
-                                      Margin="{theming:GridUnit '0,0,0,2'}">
+                                        Grid.Row="0"
+                                        Margin="{theming:GridUnit '0,0,0,2'}">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto" />
                                         <RowDefinition Height="Auto" />
@@ -76,31 +85,31 @@
                                     </Grid.ColumnDefinitions>
 
                                     <ContentPresenter x:Name="ThumbnailContentSite"
-                                                      Grid.RowSpan="2"
-                                                      ContentSource="Thumbnail"
-                                                      ContentStringFormat="{TemplateBinding ThumbnailStringFormat}"
-                                                      ContentTemplate="{TemplateBinding ThumbnailTemplate}"
-                                                      ContentTemplateSelector="{TemplateBinding ThumbnailTemplateSelector}"
-                                                      MaxHeight="{theming:GridUnit 10}"
-                                                      MaxWidth="{theming:GridUnit 10}"
-                                                      Visibility="{Binding HasThumbnail, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource FalseCollapsedVisibilityConverter}}" 
-                                                      Margin="{theming:GridUnit '0,0,4,0'}"/>
+                                                        Grid.RowSpan="2"
+                                                        ContentSource="Thumbnail"
+                                                        ContentStringFormat="{TemplateBinding ThumbnailStringFormat}"
+                                                        ContentTemplate="{TemplateBinding ThumbnailTemplate}"
+                                                        ContentTemplateSelector="{TemplateBinding ThumbnailTemplateSelector}"
+                                                        MaxHeight="{theming:GridUnit 10}"
+                                                        MaxWidth="{theming:GridUnit 10}"
+                                                        Visibility="{Binding HasThumbnail, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource FalseCollapsedVisibilityConverter}}" 
+                                                        Margin="{theming:GridUnit '0,0,4,0'}"/>
                                     <ContentPresenter x:Name="TitleContentSite"
-                                                      Grid.Row="0" 
-                                                      Grid.Column="1"
-                                                      ContentSource="Title"
-                                                      ContentStringFormat="{TemplateBinding TitleStringFormat}"
-                                                      ContentTemplate="{TemplateBinding TitleTemplate}"
-                                                      ContentTemplateSelector="{TemplateBinding TitleTemplateSelector}" 
-                                                      Visibility="{Binding HasTitle, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource FalseCollapsedVisibilityConverter}}" />
+                                                        Grid.Row="0" 
+                                                        Grid.Column="1"
+                                                        ContentSource="Title"
+                                                        ContentStringFormat="{TemplateBinding TitleStringFormat}"
+                                                        ContentTemplate="{TemplateBinding TitleTemplate}"
+                                                        ContentTemplateSelector="{TemplateBinding TitleTemplateSelector}" 
+                                                        Visibility="{Binding HasTitle, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource FalseCollapsedVisibilityConverter}}" />
                                     <ContentPresenter x:Name="SubTitleContentSite"
-                                                      Grid.Row="1" 
-                                                      Grid.Column="1"
-                                                      ContentSource="SubTitle"
-                                                      ContentStringFormat="{TemplateBinding SubTitleStringFormat}"
-                                                      ContentTemplate="{TemplateBinding SubTitleTemplate}"
-                                                      ContentTemplateSelector="{TemplateBinding SubTitleTemplateSelector}" 
-                                                      Visibility="{Binding HasSubTitle, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource FalseCollapsedVisibilityConverter}}" />
+                                                        Grid.Row="1" 
+                                                        Grid.Column="1"
+                                                        ContentSource="SubTitle"
+                                                        ContentStringFormat="{TemplateBinding SubTitleStringFormat}"
+                                                        ContentTemplate="{TemplateBinding SubTitleTemplate}"
+                                                        ContentTemplateSelector="{TemplateBinding SubTitleTemplateSelector}" 
+                                                        Visibility="{Binding HasSubTitle, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource FalseCollapsedVisibilityConverter}}" />
                                 </Grid>
 
                                 <!-- Media Content. -->
@@ -109,27 +118,27 @@
                                         Margin="{theming:GridUnit '0,2,0,2'}"
                                         Visibility="{Binding HasMediaContent, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource FalseCollapsedVisibilityConverter}}">
                                     <ContentPresenter x:Name="MediaContentSite"
-                                                      Grid.Row="1"
-                                                      ContentSource="MediaContent"
-                                                      ContentStringFormat="{TemplateBinding MediaContentStringFormat}"
-                                                      ContentTemplate="{TemplateBinding MediaContentTemplate}"
-                                                      ContentTemplateSelector="{TemplateBinding MediaContentTemplateSelector}"
-                                                      Margin="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource MediaContentMarginConverter}}" />
+                                                        Grid.Row="1"
+                                                        ContentSource="MediaContent"
+                                                        ContentStringFormat="{TemplateBinding MediaContentStringFormat}"
+                                                        ContentTemplate="{TemplateBinding MediaContentTemplate}"
+                                                        ContentTemplateSelector="{TemplateBinding MediaContentTemplateSelector}"
+                                                        Margin="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource MediaContentMarginConverter}}" />
                                 </Border>
                                 
                                 
                                 <!-- Normal Content. -->
                                 <ContentPresenter x:Name="ContentSite"
-                                                  Grid.Row="2"
-                                                  ContentSource="Content"
-                                                  ContentStringFormat="{TemplateBinding ContentStringFormat}"
-                                                  ContentTemplate="{TemplateBinding ContentTemplate}"
-                                                  ContentTemplateSelector="{TemplateBinding MediaContentTemplateSelector}"
-                                                  Visibility="{Binding HasContent, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource FalseCollapsedVisibilityConverter}}" 
-                                                  Margin="{theming:GridUnit '0,2,0,0'}"/>
+                                                    Grid.Row="2"
+                                                    ContentSource="Content"
+                                                    ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                                                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                    ContentTemplateSelector="{TemplateBinding MediaContentTemplateSelector}"
+                                                    Visibility="{Binding HasContent, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource FalseCollapsedVisibilityConverter}}" 
+                                                    Margin="{theming:GridUnit '0,2,0,0'}"/>
                             </Grid>
                         </controls:ClippingBorder>
-                    </controls:ShadowDecorator>
+                    </Grid>
                     <ControlTemplate.Triggers>
                         <!-- Collapse the header container if none of the three elements is shown. -->
                         <MultiTrigger>
