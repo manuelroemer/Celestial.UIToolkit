@@ -67,7 +67,7 @@
                                     <LinearDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:PressedProperties.ShadowElevation), RelativeSource={RelativeSource TemplatedParent}}" />
                                 </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
-                            
+
                             <Storyboard x:Key="DisabledStoryboard">
                                 <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                       Storyboard.TargetProperty="Background.Color">
@@ -115,6 +115,20 @@
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                     </Grid>
+                    <ControlTemplate.Triggers>
+                        <MultiDataTrigger>
+                            <!-- This Trigger will start the RippleAnimation (and keep it expanded)
+                                 when a ToggleButton's IsChecked property gets changed via non-click input (e.g. binding).
+                                 Without this, the animation would not run and thus, no IsChecked effect would be visible. -->
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsChecked, RelativeSource={RelativeSource Self}}" Value="True" />
+                                <Condition Binding="{Binding IsPressed, RelativeSource={RelativeSource Self}}" Value="False" />
+                                <Condition Binding="{Binding IsAnimationExpanding, ElementName=Ripple}" Value="False" />
+                                <Condition Binding="{Binding IsExpanded, ElementName=Ripple}" Value="False" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter TargetName="Ripple" Property="IsActiveTrigger" Value="True" />
+                        </MultiDataTrigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
