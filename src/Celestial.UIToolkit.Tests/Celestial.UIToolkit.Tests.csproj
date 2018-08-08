@@ -45,15 +45,20 @@
       <HintPath>..\packages\MSTest.TestFramework.1.2.1\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Converters\BooleanToVisibilityConverterTests.cs" />
     <Compile Include="Converters\ColorToSolidColorBrushConverterTests.cs" />
+    <Compile Include="Converters\IntToStringConverter.cs" />
     <Compile Include="Converters\StringToVisibilityConverterTests.cs" />
     <Compile Include="Converters\MathOperationConverterTests.cs" />
-    <Compile Include="Converters\InvertBooleanConverterTests.cs" />
+    <Compile Include="Converters\InvertingConverterTests.cs" />
+    <Compile Include="Converters\NegateValueConverterTests.cs" />
+    <Compile Include="Converters\ThicknessSidePickerConverterTests.cs" />
     <Compile Include="Converters\ValueConverterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

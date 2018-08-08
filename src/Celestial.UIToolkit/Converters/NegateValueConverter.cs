@@ -45,10 +45,6 @@ namespace Celestial.UIToolkit.Converters
             {
                 return this.NegateCornerRadius((CornerRadius)value);
             }
-            else if (valueType == typeof(Size))
-            {
-                return this.NegateSize((Size)value);
-            }
             else if (valueType == typeof(Point))
             {
                 return this.NegatePoint((Point)value);
@@ -78,7 +74,7 @@ namespace Celestial.UIToolkit.Converters
         {
             decimal d = System.Convert.ToDecimal(convertible);
             decimal result = d * -1;
-            return (IConvertible)System.Convert.ChangeType(d, convertible.GetType());
+            return (IConvertible)System.Convert.ChangeType(result, convertible.GetType());
         }
 
         private Thickness NegateThickness(Thickness thickness)
@@ -97,13 +93,6 @@ namespace Celestial.UIToolkit.Converters
                 cornerRadius.TopRight * -1,
                 cornerRadius.BottomRight * -1,
                 cornerRadius.BottomLeft * -1);
-        }
-
-        private Size NegateSize(Size size)
-        {
-            return new Size(
-                size.Width * -1,
-                size.Height * -1);
         }
 
         private Point NegatePoint(Point point)
