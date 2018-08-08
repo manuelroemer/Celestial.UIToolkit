@@ -99,6 +99,28 @@
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
+                            
+                            <VisualStateGroup x:Name="ExpandDirectionStates">
+                                <VisualState x:Name="ExpandDown" />
+                                <VisualState x:Name="ExpandUp">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HeaderContainer"
+                                                                       Storyboard.TargetProperty="(DockPanel.Dock)">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Dock.Bottom}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ExpandDirectionRotateTransform"
+                                                                       Storyboard.TargetProperty="Angle">
+                                            <DiscreteDoubleKeyFrame KeyTime="0" Value="180" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="ExpandLeft">
+
+                                </VisualState>
+                                <VisualState x:Name="ExpandRight">
+
+                                </VisualState>
+                            </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                     </DockPanel>
                 </ControlTemplate>
