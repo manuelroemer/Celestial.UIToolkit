@@ -61,6 +61,12 @@
                             </ToggleButton>
                         </Grid>
                         <StackPanel x:Name="ContentContainer">
+                            <StackPanel.Width>
+                                <MultiBinding Converter="{StaticResource MultiplyConverter}">
+                                    <Binding Path="Opacity" ElementName="ContentSite" />
+                                    <Binding Path="ActualWidth" ElementName="ContentSite" />
+                                </MultiBinding>
+                            </StackPanel.Width>
                             <StackPanel.Height>
                                 <MultiBinding Converter="{StaticResource MultiplyConverter}">
                                     <Binding Path="Opacity" ElementName="ContentSite" />
@@ -115,14 +121,50 @@
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="ExpandLeft">
-
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HeaderContainer"
+                                                                       Storyboard.TargetProperty="(DockPanel.Dock)">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Dock.Left}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ExpandDirectionRotateTransform"
+                                                                       Storyboard.TargetProperty="Angle">
+                                            <DiscreteDoubleKeyFrame KeyTime="0" Value="90" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="ExpandRight">
-
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HeaderContainer"
+                                                                       Storyboard.TargetProperty="(DockPanel.Dock)">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Dock.Right}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ExpandDirectionRotateTransform"
+                                                                       Storyboard.TargetProperty="Angle">
+                                            <DiscreteDoubleKeyFrame KeyTime="0" Value="270" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                     </DockPanel>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="ExpandDirection" Value="Down">
+                            <Setter TargetName="ContentContainer" Property="Width" Value="Auto" />
+                        </Trigger>
+                        <Trigger Property="ExpandDirection" Value="Up">
+                            <Setter TargetName="ContentContainer" Property="Width" Value="Auto" />
+                        </Trigger>
+                        <Trigger Property="ExpandDirection" Value="Left">
+                            <Setter TargetName="ContentContainer" Property="Height" Value="Auto" />
+                            <Setter TargetName="ContentContainer" Property="Orientation" Value="Horizontal" />
+                            <Setter TargetName="ContentContainer" Property="HorizontalAlignment" Value="Left" />
+                        </Trigger>
+                        <Trigger Property="ExpandDirection" Value="Right">
+                            <Setter TargetName="ContentContainer" Property="Height" Value="Auto" />
+                            <Setter TargetName="ContentContainer" Property="Orientation" Value="Horizontal" />
+                            <Setter TargetName="ContentContainer" Property="HorizontalAlignment" Value="Right" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
