@@ -83,12 +83,12 @@ namespace Celestial.UIToolkit.Theming
 
         /// <summary>
         /// Gets or sets a value indicating whether the
-        /// calculation of the final value should include a conversion
-        /// to device independent pixel.
-        /// This is <c>false</c>, by default, as most conversion targets (like <see cref="Thickness"/>)
+        /// calculation of the final value should include a multiplication
+        /// with the device independent pixel multiplier.
+        /// This is <c>false</c>, by default, since most conversion targets (like <see cref="Thickness"/>)
         /// do the calculation by themselves.
         /// </summary>
-        public bool DipAware { get; set; }
+        public bool MultiplyWithDip { get; set; }
 
         /// <summary>
         /// Gets the value of a single grid unit.
@@ -121,7 +121,7 @@ namespace Celestial.UIToolkit.Theming
         public GridUnitExtension(string multiplierString)
         {
             this.MultiplierString = multiplierString;
-            this.DipAware = false;
+            this.MultiplyWithDip = false;
         }
 
         static GridUnitExtension()
@@ -202,7 +202,7 @@ namespace Celestial.UIToolkit.Theming
         }
 
         private double GetFinalLengthMultiplier() =>
-            (this.DipAware ? _dipMultiplier : 1) * this.GridCellSize;
+            (this.MultiplyWithDip ? _dipMultiplier : 1) * this.GridCellSize;
         
         private double CalculateDouble() => 
             this.GetFinalLengthMultiplier() * Convert.ToDouble(MultiplierString);
