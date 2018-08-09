@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:anim="clr-namespace:Celestial.UIToolkit.Media.Animations;assembly=Celestial.UIToolkit"
              xmlns:c="clr-namespace:Celestial.UIToolkit;assembly=Celestial.UIToolkit"
              xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls;assembly=Celestial.UIToolkit"
              xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming;assembly=Celestial.UIToolkit"
@@ -12,22 +13,33 @@
     <Grid>
 
         <controls:Card HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Grid x:Name="Container" Background="LightGray">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="0.1*" />
-                </Grid.RowDefinitions>
-                <TextBlock x:Name="ContentSite" ClipToBounds="False">
-                        <TextBlock.Inlines>
-                            Hello World!
-                            <LineBreak />
-                            Hello World!
-                            <LineBreak />
-                            Hello World!
-                            <LineBreak />
-                            Hello World!
-                        </TextBlock.Inlines>
-                    </TextBlock>
-            </Grid>
+            <Button>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Border x:Name="Bd"
+                                    Background="LightGray">
+                                <ContentPresenter />
+                            </Border>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <anim:SolidColorBrushAnimation Storyboard.TargetName="Bd"
+                                                                           Storyboard.TargetProperty="Background">
+                                                <anim:SolidColorBrushAnimation.To>
+                                                    <SolidColorBrush Color="Green" Opacity="0.5" />
+                                                </anim:SolidColorBrushAnimation.To>
+                                            </anim:SolidColorBrushAnimation>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
         </controls:Card>
 
     </Grid>
