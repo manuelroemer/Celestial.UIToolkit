@@ -78,6 +78,8 @@
     <Compile Include="Converters\ValueConverter.cs" />
     <Compile Include="Extensions\FrameworkElementExtensions.cs" />
     <Compile Include="MarginHelper.cs" />
+    <Compile Include="Media\Animations\AnimationBase.cs" />
+    <Compile Include="Media\Animations\BrushAnimation.cs" />
     <Compile Include="SharedResourceDictionary.cs" />
     <Compile Include="Theming\ControlProperties.cs" />
     <Compile Include="Theming\ActiveProperties.cs" />
@@ -233,5 +235,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
