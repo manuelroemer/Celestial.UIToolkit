@@ -11,6 +11,10 @@ namespace Celestial.UIToolkit.Converters
     /// A converter which performs the most basic mathematical operations
     /// between two values.
     /// </summary>
+    /// <remarks>
+    /// Note that this converter will produce wrong values, or might loose precision
+    /// for very high numbers.
+    /// </remarks>
     [ValueConversion(typeof(IConvertible), typeof(IConvertible))]
     public class MathOperationConverter : ValueConverter<IConvertible, IConvertible>, IMultiValueConverter
     {

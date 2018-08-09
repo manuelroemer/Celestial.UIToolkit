@@ -11,6 +11,10 @@ namespace Celestial.UIToolkit.Converters
     /// which negates the input variable, if possible.
     /// This works on numbers and a few WPF types like <see cref="Thickness"/>.
     /// </summary>
+    /// <remarks>
+    /// Note that this converter will produce wrong values, or might loose precision
+    /// for very high numbers.
+    /// </remarks>
     [ValueConversion(typeof(object), typeof(object))]
     public class NegateValueConverter : IValueConverter
     {
@@ -72,8 +76,8 @@ namespace Celestial.UIToolkit.Converters
 
         private IConvertible NegateConvertible(IConvertible convertible)
         {
-            decimal d = System.Convert.ToDecimal(convertible);
-            decimal result = d * -1;
+            double d = System.Convert.ToDouble(convertible);
+            double result = d * -1;
             return (IConvertible)System.Convert.ChangeType(result, convertible.GetType());
         }
 
