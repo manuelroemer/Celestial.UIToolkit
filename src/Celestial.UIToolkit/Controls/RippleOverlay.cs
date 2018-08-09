@@ -288,6 +288,9 @@ namespace Celestial.UIToolkit.Controls
             DefaultStyleKeyProperty.OverrideMetadata(
                 typeof(RippleOverlay),
                 new FrameworkPropertyMetadata(typeof(RippleOverlay)));
+            IsTabStopProperty.OverrideMetadata(
+                typeof(RippleOverlay),
+                new FrameworkPropertyMetadata(false));
         }
 
         /// <summary>

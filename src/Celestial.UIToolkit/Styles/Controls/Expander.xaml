@@ -7,6 +7,7 @@
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
     <ResourceDictionary.MergedDictionaries>
+        <local:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
         <local:SharedResourceDictionary Source="../Shared/Theming.xaml" />
         <local:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
         <local:SharedResourceDictionary Source="../../Icons/Arrows.xaml" />
@@ -17,6 +18,7 @@
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Padding" Value="0" />
+        <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
         <Setter Property="HeaderTemplate">
             <Setter.Value>
                 <DataTemplate>
@@ -35,11 +37,13 @@
                         <DockPanel x:Name="HeaderContainer"
                                    DockPanel.Dock="Top"
                                    HorizontalAlignment="Stretch"
-                                   VerticalAlignment="Stretch">
+                                   VerticalAlignment="Stretch"
+                                   Margin="{theming:GridUnit '0,1'}">
                             <ToggleButton x:Name="VisibleToggleButton"
                                           DockPanel.Dock="Right"
                                           IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
-                                          Style="{DynamicResource CircleButton}">
+                                          Style="{DynamicResource InvisibleRippleButton}"
+                                          Padding="{theming:GridUnit '3,1'}">
                                 <Border RenderTransformOrigin="0.5,0.5">
                                     <Border.RenderTransform>
                                         <RotateTransform x:Name="IsExpandedRotateTransform" Angle="180" />
@@ -48,13 +52,16 @@
                                         <Border.RenderTransform>
                                             <RotateTransform x:Name="ExpandDirectionRotateTransform" Angle="0" />
                                         </Border.RenderTransform>
-                                        <controls:PathIcon Data="{StaticResource HalfArrowDown}" />
+                                        <controls:PathIcon Data="{StaticResource HalfArrowDown}"
+                                                           Width="{theming:GridUnit 5}"
+                                                           Height="{theming:GridUnit 5}" />
                                     </Border>
                                 </Border>
                             </ToggleButton>
-                            <ToggleButton Focusable="False"
-                                          IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
-                                          Style="{StaticResource InvisibleButton}">
+                            <ToggleButton IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                                          Style="{StaticResource InvisibleButton}"
+                                          Focusable="False"
+                                          IsTabStop="False">
                                 <ContentPresenter x:Name="HeaderContentSite"
                                                   ContentSource="Header"
                                                   ContentStringFormat="{TemplateBinding HeaderStringFormat}"
@@ -89,6 +96,10 @@
                             <VisualStateGroup x:Name="ExpansionStates">
                                 <VisualState x:Name="Expanded">
                                     <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentContainer"
+                                                                       Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                                        </ObjectAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ContentSite"
                                                                        Storyboard.TargetProperty="Opacity">
                                             <SplineDoubleKeyFrame KeyTime="{StaticResource EnterAnimationKeyTime}" Value="1" />
@@ -109,6 +120,10 @@
                                                                        Storyboard.TargetProperty="Angle">
                                             <LinearDoubleKeyFrame KeyTime="{StaticResource ExitAnimationKeyTime}" Value="0" />
                                         </DoubleAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentContainer"
+                                                                       Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="{StaticResource ExitAnimationKeyTime}" Value="{x:Static Visibility.Collapsed}" />
+                                        </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
@@ -139,7 +154,7 @@
                                         </DoubleAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="HeaderContentSiteRotateTransform"
                                                                        Storyboard.TargetProperty="Angle">
-                                            <DiscreteDoubleKeyFrame KeyTime="0" Value="-90" />
+                                            <DiscreteDoubleKeyFrame KeyTime="0" Value="270" />
                                         </DoubleAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -175,6 +190,9 @@
                             <Setter TargetName="ContentContainer" Property="HorizontalAlignment" Value="Left" />
                             <Setter TargetName="VisibleToggleButton" Property="DockPanel.Dock" Value="Top" />
                             <Setter TargetName="VisibleToggleButton" Property="HorizontalAlignment" Value="Center" />
+                            <Setter TargetName="HeaderContentSite" Property="VerticalAlignment" Value="Top" />
+                            <Setter TargetName="VisibleToggleButton" Property="Padding" Value="{theming:GridUnit '1,3', TargetType=Thickness}" />
+                            <Setter TargetName="HeaderContainer" Property="Margin" Value="{theming:GridUnit '1,0', TargetType=Thickness}" />
                         </Trigger>
                         <Trigger Property="ExpandDirection" Value="Right">
                             <Setter TargetName="ContentContainer" Property="Height" Value="Auto" />
@@ -182,6 +200,8 @@
                             <Setter TargetName="ContentContainer" Property="HorizontalAlignment" Value="Right" />
                             <Setter TargetName="VisibleToggleButton" Property="DockPanel.Dock" Value="Top" />
                             <Setter TargetName="VisibleToggleButton" Property="HorizontalAlignment" Value="Center" />
+                            <Setter TargetName="VisibleToggleButton" Property="Padding" Value="{theming:GridUnit '1,3', TargetType=Thickness}" />
+                            <Setter TargetName="HeaderContainer" Property="Margin" Value="{theming:GridUnit '1,0', TargetType=Thickness}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
