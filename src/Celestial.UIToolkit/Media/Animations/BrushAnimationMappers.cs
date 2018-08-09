@@ -36,13 +36,14 @@ namespace Celestial.UIToolkit.Media.Animations
 
         public BrushAnimationMapper(BrushAnimationBase brushAnimation, Func<TAnimation> animationFactory)
         {
-            _brushAnimation = brushAnimation ??
-                              throw new ArgumentNullException(nameof(brushAnimation));
-            _animation = animationFactory() ??
-                                throw new ArgumentException("The animation factory must not return null.",
-                                                            nameof(animationFactory));
+            if (brushAnimation == null) throw new ArgumentNullException(nameof(brushAnimation));
+            if (animationFactory == null) throw new ArgumentNullException(nameof(animationFactory));
+
+            _brushAnimation = brushAnimation;
+            _animation = animationFactory() ?? throw new ArgumentException(
+                "The animation factory must not return null.", nameof(animationFactory));
         }
-        
+
         public TAnimated GetCurrentValue(TAnimated origin, TAnimated destination, AnimationClock animationClock)
         {
             this.UpdateAnimationProperties();
@@ -52,24 +53,28 @@ namespace Celestial.UIToolkit.Media.Animations
 
         private void UpdateAnimationProperties()
         {
+            // Only map the values, if:
+            //   a) it hasn't been done yet.
+            //   b) the values might have changed since the last time.
+            //      (i.e. brush anim wasn't frozen the last time).
             if (_copiedFrozenValues) return;
             _copiedFrozenValues = _brushAnimation.IsFrozen;
 
-            this.CopyBrushAnimationValues(
+            this.MapBrushAnimationValues(
                 _brushAnimation, _animation);
         }
 
-        protected abstract void CopyBrushAnimationValues(
-            BrushAnimationBase brushAnimation, TAnimation other);
+        protected abstract void MapBrushAnimationValues(
+            BrushAnimationBase brushAnimation, TAnimation targetAnimation);
 
     }
     
-    internal sealed class BrushColorAnimationMapper : BrushAnimationMapper<ColorAnimation, Color>
+    internal sealed class BrushAnimationToColorAnimationMapper : BrushAnimationMapper<ColorAnimation, Color>
     {
-        public BrushColorAnimationMapper(BrushAnimationBase brushAnimation) 
+        public BrushAnimationToColorAnimationMapper(BrushAnimationBase brushAnimation) 
             : base(brushAnimation, () => new ColorAnimation()) { }
 
-        protected override void CopyBrushAnimationValues(BrushAnimationBase brushAnim, ColorAnimation colorAnim)
+        protected override void MapBrushAnimationValues(BrushAnimationBase brushAnim, ColorAnimation colorAnim)
         {
             colorAnim.EasingFunction = brushAnim.EasingFunction;
             colorAnim.IsAdditive = brushAnim.IsAdditive;
@@ -78,12 +83,12 @@ namespace Celestial.UIToolkit.Media.Animations
         }
     }
 
-    internal sealed class BrushDoubleAnimationMapper : BrushAnimationMapper<DoubleAnimation, double>
+    internal sealed class BrushAnimationToDoubleAnimationMapper : BrushAnimationMapper<DoubleAnimation, double>
     {
-        public BrushDoubleAnimationMapper(BrushAnimationBase brushAnimation) 
+        public BrushAnimationToDoubleAnimationMapper(BrushAnimationBase brushAnimation) 
             : base(brushAnimation, () => new DoubleAnimation()) { }
 
-        protected override void CopyBrushAnimationValues(BrushAnimationBase brushAnim, DoubleAnimation doubleAnim)
+        protected override void MapBrushAnimationValues(BrushAnimationBase brushAnim, DoubleAnimation doubleAnim)
         {
             doubleAnim.EasingFunction = brushAnim.EasingFunction;
             doubleAnim.IsAdditive = brushAnim.IsAdditive;

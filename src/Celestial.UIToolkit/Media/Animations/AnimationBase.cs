@@ -7,12 +7,6 @@ namespace Celestial.UIToolkit.Media.Animations
     /// <summary>
     ///     Defines a base class for a custom <see cref="AnimationTimeline"/>,
     ///     following the pattern in the .NET Framework (see remarks).
-    ///     
-    ///     When using this class as a base for your custom animation,
-    ///     create an abstract <c>TAnimationBase</c> class, deriving from this class.
-    ///     
-    ///     In addition, create a <c>TAnimation</c> class deriving from the TAnimationBase,
-    ///     which then provides the actual logic, while also overriding the leftover types.
     /// </summary>
     /// <typeparam name="T">
     ///     The type which is being animated by the animation.

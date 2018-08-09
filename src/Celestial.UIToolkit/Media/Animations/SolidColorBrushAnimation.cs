@@ -16,18 +16,17 @@ namespace Celestial.UIToolkit.Media.Animations
     public class SolidColorBrushAnimation : BrushAnimationBase
     {
         
-        private SolidColorBrush _currentBrush;
-        private BrushColorAnimationMapper _colorAnimationMapper;
-        private BrushDoubleAnimationMapper _doubleAnimationMapper;
+        private SolidColorBrush _animatedBrush;
+        private Lazy<BrushAnimationToColorAnimationMapper> _colorAnimMapperLazy;
         
         /// <summary>
         /// Initializes a new instance of the <see cref="SolidColorBrushAnimation"/>.
         /// </summary>
         public SolidColorBrushAnimation()
         {
-            _currentBrush = new SolidColorBrush();
-            _colorAnimationMapper = new BrushColorAnimationMapper(this);
-            _doubleAnimationMapper = new BrushDoubleAnimationMapper(this);
+            _animatedBrush = new SolidColorBrush();
+            _colorAnimMapperLazy = new Lazy<BrushAnimationToColorAnimationMapper>(
+                () => new BrushAnimationToColorAnimationMapper(this));
         }
 
         /// <summary>
@@ -81,25 +80,39 @@ namespace Celestial.UIToolkit.Media.Animations
         private Brush CalculateCurrentBrush(
             SolidColorBrush origin, SolidColorBrush destination, AnimationClock animationClock)
         {
-            this.CalculateCurrentColor(origin, destination, animationClock);
-            this.CalculateCurrentOpacity(origin, destination, animationClock);
-            return _currentBrush;
+            _animatedBrush.Color = this.GetCurrentColorValue(origin, destination, animationClock);
+            _animatedBrush.Opacity = this.GetCurrentOpacityValue(origin, destination, animationClock);
+            return _animatedBrush;
         }
 
-        private void CalculateCurrentColor(
+        /// <summary>
+        ///     Gets the current <see cref="SolidColorBrush.Color"/> animation value
+        ///     for the specified parameters.
+        /// </summary>
+        /// <param name="origin">
+        ///     The <see cref="SolidColorBrush"/> which serves as the animation's origin.
+        /// </param>
+        /// <param name="destination">
+        ///     The <see cref="SolidColorBrush"/> which serves as the animation's destination.
+        /// </param>
+        /// <param name="animationClock">
+        ///     The <see cref="AnimationClock"/> to be used by the animation to generate its output value.
+        /// </param>
+        /// <returns>
+        ///     The current <see cref="Color"/> of the brush.
+        /// </returns>
+        /// <exception cref="ArgumentNullException" />
+        protected virtual Color GetCurrentColorValue(
             SolidColorBrush origin, SolidColorBrush destination, AnimationClock animationClock)
         {
-            _currentBrush.Color = _colorAnimationMapper.GetCurrentValue(
+            if (origin == null) throw new ArgumentNullException(nameof(origin));
+            if (destination == null) throw new ArgumentNullException(nameof(destination));
+            if (animationClock == null) throw new ArgumentNullException(nameof(animationClock));
+
+            return _colorAnimMapperLazy.Value.GetCurrentValue(
                 origin.Color, destination.Color, animationClock);
         }
-
-        private void CalculateCurrentOpacity(
-            SolidColorBrush origin, SolidColorBrush destination, AnimationClock animationClock)
-        {
-            _currentBrush.Opacity = _doubleAnimationMapper.GetCurrentValue(
-                origin.Opacity, destination.Opacity, animationClock);
-        }
-
+        
     }
 
 }
