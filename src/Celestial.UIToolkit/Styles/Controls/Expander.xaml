@@ -59,7 +59,12 @@
                                                   ContentSource="Header"
                                                   ContentStringFormat="{TemplateBinding HeaderStringFormat}"
                                                   ContentTemplate="{TemplateBinding HeaderTemplate}"
-                                                  ContentTemplateSelector="{TemplateBinding HeaderTemplateSelector}"/>
+                                                  ContentTemplateSelector="{TemplateBinding HeaderTemplateSelector}"
+                                                  RenderTransformOrigin="0.5,0.5">
+                                    <ContentPresenter.LayoutTransform>
+                                        <RotateTransform x:Name="HeaderContentSiteRotateTransform" Angle="0" />
+                                    </ContentPresenter.LayoutTransform>
+                                </ContentPresenter>
                             </ToggleButton>
                         </DockPanel>
                         <StackPanel x:Name="ContentContainer">
@@ -132,6 +137,10 @@
                                                                        Storyboard.TargetProperty="Angle">
                                             <DiscreteDoubleKeyFrame KeyTime="0" Value="90" />
                                         </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="HeaderContentSiteRotateTransform"
+                                                                       Storyboard.TargetProperty="Angle">
+                                            <DiscreteDoubleKeyFrame KeyTime="0" Value="-90" />
+                                        </DoubleAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="ExpandRight">
@@ -143,6 +152,10 @@
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ExpandDirectionRotateTransform"
                                                                        Storyboard.TargetProperty="Angle">
                                             <DiscreteDoubleKeyFrame KeyTime="0" Value="270" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="HeaderContentSiteRotateTransform"
+                                                                       Storyboard.TargetProperty="Angle">
+                                            <DiscreteDoubleKeyFrame KeyTime="0" Value="90" />
                                         </DoubleAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
