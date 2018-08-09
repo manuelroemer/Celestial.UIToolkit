@@ -32,20 +32,13 @@
                         <converters:MathOperationConverter x:Key="MultiplyConverter" Operator="Multiply" />
                     </ControlTemplate.Resources>
                     <DockPanel>
-                        <Grid x:Name="HeaderContainer"
-                              DockPanel.Dock="Top">
-                            <ToggleButton Focusable="False"
+                        <DockPanel x:Name="HeaderContainer"
+                                   DockPanel.Dock="Top"
+                                   HorizontalAlignment="Stretch"
+                                   VerticalAlignment="Stretch">
+                            <ToggleButton x:Name="VisibleToggleButton"
+                                          DockPanel.Dock="Right"
                                           IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
-                                          Style="{StaticResource InvisibleButton}">
-                                <ContentPresenter x:Name="HeaderContentSite"
-                                                  ContentSource="Header"
-                                                  ContentStringFormat="{TemplateBinding HeaderStringFormat}"
-                                                  ContentTemplate="{TemplateBinding HeaderTemplate}"
-                                                  ContentTemplateSelector="{TemplateBinding HeaderTemplateSelector}"
-                                                  HorizontalAlignment="Left"
-                                                  VerticalAlignment="Center" />
-                            </ToggleButton>
-                            <ToggleButton IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
                                           Style="{DynamicResource CircleButton}">
                                 <Border RenderTransformOrigin="0.5,0.5">
                                     <Border.RenderTransform>
@@ -59,7 +52,16 @@
                                     </Border>
                                 </Border>
                             </ToggleButton>
-                        </Grid>
+                            <ToggleButton Focusable="False"
+                                          IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                                          Style="{StaticResource InvisibleButton}">
+                                <ContentPresenter x:Name="HeaderContentSite"
+                                                  ContentSource="Header"
+                                                  ContentStringFormat="{TemplateBinding HeaderStringFormat}"
+                                                  ContentTemplate="{TemplateBinding HeaderTemplate}"
+                                                  ContentTemplateSelector="{TemplateBinding HeaderTemplateSelector}"/>
+                            </ToggleButton>
+                        </DockPanel>
                         <StackPanel x:Name="ContentContainer">
                             <StackPanel.Width>
                                 <MultiBinding Converter="{StaticResource MultiplyConverter}">
@@ -158,11 +160,15 @@
                             <Setter TargetName="ContentContainer" Property="Height" Value="Auto" />
                             <Setter TargetName="ContentContainer" Property="Orientation" Value="Horizontal" />
                             <Setter TargetName="ContentContainer" Property="HorizontalAlignment" Value="Left" />
+                            <Setter TargetName="VisibleToggleButton" Property="DockPanel.Dock" Value="Top" />
+                            <Setter TargetName="VisibleToggleButton" Property="HorizontalAlignment" Value="Center" />
                         </Trigger>
                         <Trigger Property="ExpandDirection" Value="Right">
                             <Setter TargetName="ContentContainer" Property="Height" Value="Auto" />
                             <Setter TargetName="ContentContainer" Property="Orientation" Value="Horizontal" />
                             <Setter TargetName="ContentContainer" Property="HorizontalAlignment" Value="Right" />
+                            <Setter TargetName="VisibleToggleButton" Property="DockPanel.Dock" Value="Top" />
+                            <Setter TargetName="VisibleToggleButton" Property="HorizontalAlignment" Value="Center" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
