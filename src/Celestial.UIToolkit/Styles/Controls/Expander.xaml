@@ -38,7 +38,7 @@
                                    DockPanel.Dock="Top"
                                    HorizontalAlignment="Stretch"
                                    VerticalAlignment="Stretch"
-                                   Margin="{theming:GridUnit '0,1'}">
+                                   Margin="{theming:GridUnit '0,0,0,1'}">
                             <ToggleButton x:Name="VisibleToggleButton"
                                           DockPanel.Dock="Right"
                                           IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
@@ -192,7 +192,7 @@
                             <Setter TargetName="VisibleToggleButton" Property="HorizontalAlignment" Value="Center" />
                             <Setter TargetName="HeaderContentSite" Property="VerticalAlignment" Value="Top" />
                             <Setter TargetName="VisibleToggleButton" Property="Padding" Value="{theming:GridUnit '1,3', TargetType=Thickness}" />
-                            <Setter TargetName="HeaderContainer" Property="Margin" Value="{theming:GridUnit '1,0', TargetType=Thickness}" />
+                            <Setter TargetName="HeaderContainer" Property="Margin" Value="{theming:GridUnit '0,0,1,0', TargetType=Thickness}" />
                         </Trigger>
                         <Trigger Property="ExpandDirection" Value="Right">
                             <Setter TargetName="ContentContainer" Property="Height" Value="Auto" />
@@ -201,7 +201,7 @@
                             <Setter TargetName="VisibleToggleButton" Property="DockPanel.Dock" Value="Top" />
                             <Setter TargetName="VisibleToggleButton" Property="HorizontalAlignment" Value="Center" />
                             <Setter TargetName="VisibleToggleButton" Property="Padding" Value="{theming:GridUnit '1,3', TargetType=Thickness}" />
-                            <Setter TargetName="HeaderContainer" Property="Margin" Value="{theming:GridUnit '1,0', TargetType=Thickness}" />
+                            <Setter TargetName="HeaderContainer" Property="Margin" Value="{theming:GridUnit '1,0,0,0', TargetType=Thickness}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
