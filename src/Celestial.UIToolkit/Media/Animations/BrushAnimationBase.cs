@@ -13,6 +13,7 @@ namespace Celestial.UIToolkit.Media.Animations
     {
 
         private Lazy<BrushAnimationToDoubleAnimationMapper> _doubleAnimWrapperLazy;
+        private Lazy<BrushAnimationToColorAnimationMapper> _colorAnimWrapperLazy;
         
         /// <summary>
         /// Identifies the <see cref="From"/> dependency property.
@@ -78,6 +79,8 @@ namespace Celestial.UIToolkit.Media.Animations
         {
             _doubleAnimWrapperLazy = new Lazy<BrushAnimationToDoubleAnimationMapper>(
                 () => new BrushAnimationToDoubleAnimationMapper(this));
+            _colorAnimWrapperLazy = new Lazy<BrushAnimationToColorAnimationMapper>(
+                () => new BrushAnimationToColorAnimationMapper(this));
         }
 
         /// <summary>
@@ -113,6 +116,7 @@ namespace Celestial.UIToolkit.Media.Animations
         {
             this.ValidateThatBrushesAreNotNull(origin, destination);
             this.ValidateThatBrushesHaveSameType(origin, destination);
+            this.ValidateThatBrushesHaveSameTransform(origin, destination);
         }
 
         private void ValidateThatBrushesAreNotNull(Brush origin, Brush destination)
@@ -131,33 +135,65 @@ namespace Celestial.UIToolkit.Media.Animations
                     $"The brush animation requires all brushes to be of the same type.");
         }
 
+        private void ValidateThatBrushesHaveSameTransform(Brush origin, Brush destination)
+        {
+            if (origin.Transform != destination.Transform ||
+                origin.RelativeTransform != destination.RelativeTransform)
+            {
+                throw new InvalidOperationException(
+                    $"The {nameof(Brush.Transform)} and {nameof(Brush.RelativeTransform)} properties of the " +
+                    $"brushes must have the same values.");
+            }
+        }
+
         /// <summary>
-        ///     Gets the current <see cref="Brush.Opacity"/> animation value
-        ///     for the specified parameters.
+        ///     Returns the current animation state for a <see cref="double"/>, using the
+        ///     animation properties set in this class.
         /// </summary>
         /// <param name="origin">
-        ///     The <see cref="Brush"/> which serves as the animation's origin.
+        ///     The origin <see cref="double"/> value.
         /// </param>
         /// <param name="destination">
-        ///     The <see cref="Brush"/> which serves as the animation's destination.
+        ///     The destination <see cref="double"/> value.
         /// </param>
         /// <param name="animationClock">
         ///     The <see cref="AnimationClock"/> to be used by the animation to generate its output value.
         /// </param>
         /// <returns>
-        ///     A double representing the current value for the brush's opacity.
+        ///     A <see cref="double"/> representing the current value regarding the animation's state.
         /// </returns>
         /// <exception cref="ArgumentNullException" />
-        protected virtual double GetCurrentOpacityValue(Brush origin, Brush destination, AnimationClock animationClock)
+        protected virtual double GetCurrentDoubleValue(double origin, double destination, AnimationClock animationClock)
         {
-            if (origin == null) throw new ArgumentNullException(nameof(origin));
-            if (destination == null) throw new ArgumentNullException(nameof(destination));
             if (animationClock == null) throw new ArgumentNullException(nameof(animationClock));
 
             return _doubleAnimWrapperLazy.Value.GetCurrentValue(
-                origin.Opacity,
-                destination.Opacity,
-                animationClock);
+                origin, destination, animationClock);
+        }
+
+        /// <summary>
+        ///     Returns the current animation state for a <see cref="Color"/>, using the
+        ///     animation properties set in this class.
+        /// </summary>
+        /// <param name="origin">
+        ///     The origin <see cref="Color"/> value.
+        /// </param>
+        /// <param name="destination">
+        ///     The destination <see cref="Color"/> value.
+        /// </param>
+        /// <param name="animationClock">
+        ///     The <see cref="AnimationClock"/> to be used by the animation to generate its output value.
+        /// </param>
+        /// <returns>
+        ///     A <see cref="Color"/> representing the current value regarding the animation's state.
+        /// </returns>
+        /// <exception cref="ArgumentNullException" />
+        protected virtual Color GetCurrentColorValue(Color origin, Color destination, AnimationClock animationClock)
+        {
+            if (animationClock == null) throw new ArgumentNullException(nameof(animationClock));
+
+            return _colorAnimWrapperLazy.Value.GetCurrentValue(
+                origin, destination, animationClock);
         }
 
     }
