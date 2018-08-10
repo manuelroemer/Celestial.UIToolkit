@@ -5,11 +5,11 @@ using System.Windows.Media.Animation;
 
 namespace Celestial.UIToolkit.Media.Animations
 {
-
+    
     /// <summary>
     /// A base class for any animation that animates a <see cref="Brush"/>.
     /// </summary>
-    public abstract class BrushAnimationBase : AnimationBase<Brush>
+    public abstract class BrushAnimation : AnimationBase<Brush>
     {
 
         private Lazy<BrushAnimationToDoubleAnimationMapper> _doubleAnimWrapperLazy;
@@ -19,19 +19,19 @@ namespace Celestial.UIToolkit.Media.Animations
         /// Identifies the <see cref="From"/> dependency property.
         /// </summary>
         public static readonly DependencyProperty FromProperty = DependencyProperty.Register(
-            nameof(From), typeof(Brush), typeof(BrushAnimationBase), new PropertyMetadata(null));
+            nameof(From), typeof(Brush), typeof(BrushAnimation), new PropertyMetadata(null));
 
         /// <summary>
         /// Identifies the <see cref="To"/> dependency property.
         /// </summary>
         public static readonly DependencyProperty ToProperty = DependencyProperty.Register(
-            nameof(To), typeof(Brush), typeof(BrushAnimationBase), new PropertyMetadata(null));
+            nameof(To), typeof(Brush), typeof(BrushAnimation), new PropertyMetadata(null));
 
         /// <summary>
         /// Identifies the <see cref="EasingFunction"/> dependency property.
         /// </summary>
         public static readonly DependencyProperty EasingFunctionProperty = DependencyProperty.Register(
-            nameof(EasingFunction), typeof(IEasingFunction), typeof(BrushAnimationBase), new PropertyMetadata(null));
+            nameof(EasingFunction), typeof(IEasingFunction), typeof(BrushAnimation), new PropertyMetadata(null));
         
         /// <summary>
         /// Gets or sets a <see cref="Brush"/> which serves as the animation's
@@ -73,9 +73,14 @@ namespace Celestial.UIToolkit.Media.Animations
         public bool IsCumulative { get; set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BrushAnimationBase"/> class.
+        /// Gets the type of brush which is being animated by this animation.
         /// </summary>
-        public BrushAnimationBase()
+        protected abstract Type AnimationBrushType { get; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BrushAnimation"/> class.
+        /// </summary>
+        public BrushAnimation()
         {
             _doubleAnimWrapperLazy = new Lazy<BrushAnimationToDoubleAnimationMapper>(
                 () => new BrushAnimationToDoubleAnimationMapper(this));
@@ -84,39 +89,43 @@ namespace Celestial.UIToolkit.Media.Animations
         }
 
         /// <summary>
-        ///     Returns the current value of the animation.
+        /// Calculates the brush which represents the current value of the animation.
         /// </summary>
         /// <param name="defaultOriginValue">
-        ///     The origin value provided to the animation if the animation does not have its
-        ///     own start value. If this animation is the first in a composition chain it will
-        ///     be the base value of the property being animated; otherwise it will be the value
-        ///     returned by the previous animation in the chain.
+        /// The suggested origin brush, used if <see cref="From"/> is <c>null</c>.
         /// </param>
         /// <param name="defaultDestinationValue">
-        ///     The destination value provided to the animation if the animation does not have
-        ///     its own destination value.
+        /// The suggested origin brush, used if <see cref="To"/> is <c>null</c>.
         /// </param>
         /// <param name="animationClock">
-        ///     The <see cref="AnimationClock"/> which can generate the <see cref="Clock.CurrentTime"/>
-        ///     or <see cref="Clock.CurrentProgress"/> value to be used by the
-        ///     animation to generate its output value.
+        /// The <see cref="AnimationClock"/> to be used by the animation to generate its output value.
         /// </param>
-        /// <returns>The value this animation believes should be the current value for the property.</returns>
-        /// <exception cref="InvalidOperationException" />
-        public override object GetCurrentValue(object defaultOriginValue, object defaultDestinationValue, AnimationClock animationClock)
+        /// <returns>The brush which this animation believes to be the current one.</returns>
+        protected override Brush GetCurrentValueCore(Brush defaultOriginValue, Brush defaultDestinationValue, AnimationClock animationClock)
         {
-            Brush origin = this.From ?? defaultOriginValue as Brush;
-            Brush destination = this.To ?? defaultDestinationValue as Brush;
-            this.ValidateTimelineValues(origin, destination);
+            Brush origin = this.From ?? defaultOriginValue;
+            Brush destination = this.To ?? defaultDestinationValue;
+            this.ValidateTimelineBrushes(origin, destination);
 
-            return base.GetCurrentValue(defaultOriginValue, defaultDestinationValue, animationClock);
+            return this.GetCurrentBrush(origin, destination, animationClock);
         }
 
-        private void ValidateTimelineValues(Brush origin, Brush destination)
+        /// <summary>
+        /// Performs basic validation on the <paramref name="origin"/> and <paramref name="destination"/>
+        /// brushes.
+        /// </summary>
+        /// <param name="origin">
+        /// The brush which serves as the animation's origin.
+        /// </param>
+        /// <param name="destination">
+        /// The brush which serves as the animation's destination.
+        /// </param>
+        protected virtual void ValidateTimelineBrushes(Brush origin, Brush destination)
         {
             this.ValidateThatBrushesAreNotNull(origin, destination);
-            this.ValidateThatBrushesHaveSameType(origin, destination);
+            this.ValidateThatBrushesHaveExpected(origin, destination);
             this.ValidateThatBrushesHaveSameTransform(origin, destination);
+            this.ValidateTimelineBrushesCore(origin, destination);
         }
 
         private void ValidateThatBrushesAreNotNull(Brush origin, Brush destination)
@@ -128,11 +137,14 @@ namespace Celestial.UIToolkit.Media.Animations
                     $"and that both of them are of type {nameof(Brush)}.");
         }
 
-        private void ValidateThatBrushesHaveSameType(Brush origin, Brush destination)
+        private void ValidateThatBrushesHaveExpected(Brush origin, Brush destination)
         {
-            if (origin.GetType() != destination.GetType())
+            if (origin.GetType() != this.AnimationBrushType ||
+                destination.GetType() != this.AnimationBrushType)
+            {
                 throw new InvalidOperationException(
-                    $"The brush animation requires all brushes to be of the same type.");
+                    $"The animation can only animate values of type {this.AnimationBrushType.FullName}.");
+            }
         }
 
         private void ValidateThatBrushesHaveSameTransform(Brush origin, Brush destination)
@@ -147,23 +159,35 @@ namespace Celestial.UIToolkit.Media.Animations
         }
 
         /// <summary>
-        ///     Returns the current animation state for a <see cref="double"/>, using the
-        ///     animation properties set in this class.
+        /// If overridden, can be used to perform additional validation on the
+        /// specified brushes, before the animation's <see cref="GetCurrentBrush(Brush, Brush, AnimationClock)"/>
+        /// method is called.
         /// </summary>
         /// <param name="origin">
-        ///     The origin <see cref="double"/> value.
+        /// The brush which serves as the animation's origin.
         /// </param>
         /// <param name="destination">
-        ///     The destination <see cref="double"/> value.
+        /// The brush which serves as the animation's destination.
+        /// </param>
+        protected virtual void ValidateTimelineBrushesCore(Brush origin, Brush destination) { }
+
+        /// <summary>
+        /// Calculates the brush which represents the current value of the animation.
+        /// When implementing this method, don't override <see cref="GetCurrentValueCore(Brush, Brush, AnimationClock)"/>.
+        /// </summary>
+        /// <param name="origin">
+        /// The brush which serves as the animation's origin.
+        /// </param>
+        /// <param name="destination">
+        /// The brush which serves as the animation's destination.
         /// </param>
         /// <param name="animationClock">
         ///     The <see cref="AnimationClock"/> to be used by the animation to generate its output value.
         /// </param>
-        /// <returns>
-        ///     A <see cref="double"/> representing the current value regarding the animation's state.
-        /// </returns>
-        /// <exception cref="ArgumentNullException" />
-        protected virtual double GetCurrentDoubleValue(double origin, double destination, AnimationClock animationClock)
+        /// <returns>The brush which this animation believes to be the current one.</returns>
+        protected abstract Brush GetCurrentBrush(Brush origin, Brush destination, AnimationClock animationClock);
+
+        internal virtual double GetCurrentDouble(double origin, double destination, AnimationClock animationClock)
         {
             if (animationClock == null) throw new ArgumentNullException(nameof(animationClock));
 
@@ -171,24 +195,7 @@ namespace Celestial.UIToolkit.Media.Animations
                 origin, destination, animationClock);
         }
 
-        /// <summary>
-        ///     Returns the current animation state for a <see cref="Color"/>, using the
-        ///     animation properties set in this class.
-        /// </summary>
-        /// <param name="origin">
-        ///     The origin <see cref="Color"/> value.
-        /// </param>
-        /// <param name="destination">
-        ///     The destination <see cref="Color"/> value.
-        /// </param>
-        /// <param name="animationClock">
-        ///     The <see cref="AnimationClock"/> to be used by the animation to generate its output value.
-        /// </param>
-        /// <returns>
-        ///     A <see cref="Color"/> representing the current value regarding the animation's state.
-        /// </returns>
-        /// <exception cref="ArgumentNullException" />
-        protected virtual Color GetCurrentColorValue(Color origin, Color destination, AnimationClock animationClock)
+        internal virtual Color GetCurrentColor(Color origin, Color destination, AnimationClock animationClock)
         {
             if (animationClock == null) throw new ArgumentNullException(nameof(animationClock));
 

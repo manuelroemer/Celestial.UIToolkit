@@ -9,9 +9,11 @@ using System.Windows.Media.Animation;
 namespace Celestial.UIToolkit.Media.Animations
 {
 
-    public abstract class GradientBrushAnimation : BrushAnimationBase
+    public abstract class GradientBrushAnimation : BrushAnimation
     {
 
+        private GradientStopCollection _currentGradientStops;
+        
         public override object GetCurrentValue(object defaultOriginValue, object defaultDestinationValue, AnimationClock animationClock)
         {
             Brush origin = this.From ?? defaultOriginValue as Brush;
@@ -81,13 +83,44 @@ namespace Celestial.UIToolkit.Media.Animations
                     $"The animation requires the two {nameof(GradientBrush)} objects to have " +
                     $"the same {propertyName} values.");
         }
+        
+        internal virtual GradientStopCollection GetCurrentGradientStops(
+            GradientStopCollection origin, GradientStopCollection destination, AnimationClock animationClock)
+        {
+            this.InitializeGradientStopCollection(origin.Count);
 
-        //
-        // TODO:
-        // Animate GradientStops base method
-        // 
-        // (also maybe create a virtual ValidateTimelineValues() method in the base.)
-        //
+            for (int i = 0; i < origin.Count; i++)
+            {
+                var currentStop = _currentGradientStops[i];
+                var originStop = origin[i];
+                var destinationStop = destination[i];
+                this.CalculateCurrentGradientStopValues(currentStop, originStop, destinationStop, animationClock);
+            }
+            return _currentGradientStops;
+        }
+
+        private void InitializeGradientStopCollection(int count)
+        {
+            if (_currentGradientStops == null || _currentGradientStops.Count != count)
+            {
+                _currentGradientStops = new GradientStopCollection(count);
+                for (int i = 0; i < count; i++)
+                {
+                    _currentGradientStops.Add(new GradientStop());
+                }
+            }
+        }
+
+        private GradientStop CalculateCurrentGradientStopValues(
+            GradientStop current, GradientStop origin, GradientStop destination, AnimationClock animationClock)
+        {
+            current.Color = this.GetCurrentColor(
+                origin.Color, destination.Color, animationClock);
+            current.Offset = this.GetCurrentDouble(
+                origin.Offset, destination.Offset, animationClock);
+
+            return current;
+        }
 
     }
     
