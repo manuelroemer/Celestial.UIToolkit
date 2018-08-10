@@ -82,6 +82,7 @@
     <Compile Include="Media\Animations\BrushAnimationBase.cs" />
     <Compile Include="Media\Animations\BrushAnimationMappers.cs" />
     <Compile Include="Media\Animations\CompositeColorAnimation.cs" />
+    <Compile Include="Media\Animations\GradientBrushAnimation.cs" />
     <Compile Include="Media\Animations\SolidColorBrushAnimation.cs" />
     <Compile Include="SharedResourceDictionary.cs" />
     <Compile Include="Theming\ControlProperties.cs" />
