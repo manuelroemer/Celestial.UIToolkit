@@ -84,6 +84,7 @@
     <Compile Include="Media\Animations\CompositeBrushAnimation.cs" />
     <Compile Include="Media\Animations\GradientBrushAnimation.cs" />
     <Compile Include="Media\Animations\LinearGradientBrushAnimation.cs" />
+    <Compile Include="Media\Animations\RadialGradientBrushAnimation.cs" />
     <Compile Include="Media\Animations\SolidColorBrushAnimation.cs" />
     <Compile Include="SharedResourceDictionary.cs" />
     <Compile Include="Theming\ControlProperties.cs" />
