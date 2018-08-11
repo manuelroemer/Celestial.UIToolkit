@@ -17,8 +17,14 @@
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Grid>
-                            <Border x:Name="Bd"
-                                    Background="LightGray">
+                            <Border x:Name="Bd">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                        <GradientStop Offset="0.0" Color="Red" />
+                                        <GradientStop Offset="0.2" Color="Orange" />
+                                        <GradientStop Offset="1.0" Color="DarkRed" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
                                 <ContentPresenter />
                             </Border>
                             <VisualStateManager.VisualStateGroups>
@@ -26,12 +32,16 @@
                                     <VisualState x:Name="Normal" />
                                     <VisualState x:Name="MouseOver">
                                         <Storyboard>
-                                            <anim:SolidColorBrushAnimation Storyboard.TargetName="Bd"
-                                                                           Storyboard.TargetProperty="Background">
-                                                <anim:SolidColorBrushAnimation.To>
-                                                    <SolidColorBrush Color="Green" Opacity="0.5" />
-                                                </anim:SolidColorBrushAnimation.To>
-                                            </anim:SolidColorBrushAnimation>
+                                            <anim:LinearGradientBrushAnimation Storyboard.TargetName="Bd"
+                                                                               Storyboard.TargetProperty="Background">
+                                                <anim:LinearGradientBrushAnimation.To>
+                                                    <LinearGradientBrush Opacity="0.5" StartPoint="1,1" EndPoint="0,0">
+                                                        <GradientStop Offset="0.0" Color="Red" />
+                                                        <GradientStop Offset="0.2" Color="Orange" />
+                                                        <GradientStop Offset="1.0" Color="DarkRed" />
+                                                    </LinearGradientBrush>
+                                                </anim:LinearGradientBrushAnimation.To>
+                                            </anim:LinearGradientBrushAnimation>
                                         </Storyboard>
                                     </VisualState>
                                 </VisualStateGroup>

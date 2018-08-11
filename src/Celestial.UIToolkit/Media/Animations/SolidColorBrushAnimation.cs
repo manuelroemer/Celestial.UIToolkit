@@ -16,7 +16,7 @@ namespace Celestial.UIToolkit.Media.Animations
         private BrushAnimationHelper _animationHelper;
         
         /// <summary>
-        /// Initializes a new instance of the <see cref="SolidColorBrushAnimation"/>.
+        /// Initializes a new instance of the <see cref="SolidColorBrushAnimation"/> class.
         /// </summary>
         public SolidColorBrushAnimation()
         {
@@ -24,7 +24,7 @@ namespace Celestial.UIToolkit.Media.Animations
         }
 
         /// <summary>
-        /// Returns a new instance of the <see cref="SolidColorBrushAnimation"/>.
+        /// Returns a new instance of the <see cref="SolidColorBrushAnimation"/> class.
         /// </summary>
         /// <returns>A new <see cref="SolidColorBrushAnimation"/> instance.</returns>
         protected override Freezable CreateInstanceCore() => new SolidColorBrushAnimation();
@@ -69,8 +69,8 @@ namespace Celestial.UIToolkit.Media.Animations
             var solidDestination = (SolidColorBrush)destination;
 
             this.InitializeAnimatedBrush();
-            this.SetCurrentColor(animationClock, solidOrigin, solidDestination);
-            this.SetCurrentOpacity(animationClock, solidOrigin, solidDestination);
+            this.SetCurrentColor(solidOrigin, solidDestination, animationClock);
+            this.SetCurrentOpacity(solidOrigin, solidDestination, animationClock);
 
             return _animatedBrush;
         }
@@ -83,16 +83,16 @@ namespace Celestial.UIToolkit.Media.Animations
             }
         }
 
-        private void SetCurrentColor(AnimationClock animationClock, SolidColorBrush solidOrigin, SolidColorBrush solidDestination)
+        private void SetCurrentColor(SolidColorBrush origin, SolidColorBrush destination, AnimationClock animationClock)
         {
             _animatedBrush.Color = _animationHelper.GetCurrentColor(
-                solidOrigin.Color, solidDestination.Color, animationClock);
+                origin.Color, destination.Color, animationClock);
         }
 
-        private void SetCurrentOpacity(AnimationClock animationClock, SolidColorBrush solidOrigin, SolidColorBrush solidDestination)
+        private void SetCurrentOpacity(SolidColorBrush origin, SolidColorBrush destination, AnimationClock animationClock)
         {
             _animatedBrush.Opacity = _animationHelper.GetCurrentDouble(
-                solidOrigin.Opacity, solidDestination.Opacity, animationClock);
+                origin.Opacity, destination.Opacity, animationClock);
         }
 
     }
