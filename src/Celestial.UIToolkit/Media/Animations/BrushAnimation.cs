@@ -162,7 +162,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// The brush which serves as the animation's destination.
         /// </param>
         /// <param name="animationClock">
-        ///     The <see cref="AnimationClock"/> to be used by the animation to generate its output value.
+        /// The <see cref="AnimationClock"/> to be used by the animation to generate its output value.
         /// </param>
         /// <returns>The brush which this animation believes to be the current one.</returns>
         protected abstract Brush GetCurrentBrush(Brush origin, Brush destination, AnimationClock animationClock);
