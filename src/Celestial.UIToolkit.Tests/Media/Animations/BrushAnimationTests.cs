@@ -10,7 +10,7 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
 {
 
     [TestClass]
-    public class BrushAnimationBaseTests
+    public class BrushAnimationTests
     {
         
         [TestMethod]

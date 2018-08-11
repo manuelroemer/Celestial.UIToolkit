@@ -19,7 +19,6 @@ namespace Celestial.UIToolkit.Media.Animations
         /// </summary>
         public SolidColorBrushAnimation()
         {
-            _animatedBrush = new SolidColorBrush();
         }
 
         /// <summary>
@@ -49,16 +48,38 @@ namespace Celestial.UIToolkit.Media.Animations
             }
         }
 
+        /// <summary>
+        /// Calculates the <see cref="SolidColorBrush"/> which represents the current value of the animation.
+        /// </summary>
+        /// <param name="origin">
+        /// The brush which serves as the animation's origin.
+        /// </param>
+        /// <param name="destination">
+        /// The brush which serves as the animation's destination.
+        /// </param>
+        /// <param name="animationClock">
+        ///     The <see cref="AnimationClock"/> to be used by the animation to generate its output value.
+        /// </param>
+        /// <returns>The <see cref="SolidColorBrush"/> which this animation believes to be the current one.</returns>
         protected override Brush GetCurrentBrush(Brush origin, Brush destination, AnimationClock animationClock)
         {
             var solidOrigin = (SolidColorBrush)origin;
             var solidDestination = (SolidColorBrush)destination;
-            
+
+            this.InitializeAnimatedBrush();
             _animatedBrush.Color = this.GetCurrentColor(
                 solidOrigin.Color, solidDestination.Color, animationClock);
             _animatedBrush.Opacity = this.GetCurrentDouble(
                 solidOrigin.Opacity, solidDestination.Opacity, animationClock);
             return _animatedBrush;
+        }
+
+        private void InitializeAnimatedBrush()
+        {
+            if (_animatedBrush == null || _animatedBrush.IsFrozen)
+            {
+                _animatedBrush = new SolidColorBrush();
+            }
         }
         
     }
