@@ -1,32 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 
 namespace Celestial.UIToolkit.Media.Animations
 {
 
+    /// <summary>
+    /// A base class for an animation which animates a <see cref="GradientBrush"/>.
+    /// </summary>
     public abstract class GradientBrushAnimation : BrushAnimation
     {
 
         private GradientStopCollection _currentGradientStops;
         
-        public override object GetCurrentValue(object defaultOriginValue, object defaultDestinationValue, AnimationClock animationClock)
+        /// <summary>
+        /// Performs some common validation on the specified brushes,
+        /// shared by all gradient brush animations.
+        /// </summary>
+        /// <param name="origin">The animation's origin brush.</param>
+        /// <param name="destination">The animation's destination brush.</param>
+        protected override void ValidateTimelineBrushesCore(Brush origin, Brush destination)
         {
-            Brush origin = this.From ?? defaultOriginValue as Brush;
-            Brush destination = this.To ?? defaultDestinationValue as Brush;
-
-            // If one of the brushes is null, let the base class throw an exception.
-            if (origin == null || destination == null)
-                return base.GetCurrentValue(defaultOriginValue, defaultDestinationValue, animationClock);
+            var gradientOrigin = origin as GradientBrush;
+            var gradientDestination = destination as GradientBrush;
 
             this.ValidateThatBrushesAreGradient(origin, destination);
-            this.ValidateGradientBrushes((GradientBrush)origin, (GradientBrush)destination);
-
-            return base.GetCurrentValue(defaultOriginValue, defaultDestinationValue, animationClock);
+            this.ValidateColorInterpolationModeEquality(gradientOrigin, gradientDestination);
+            this.ValidateBrushMappingModeEquality(gradientOrigin, gradientDestination);
+            this.ValidateSpreadMethodEquality(gradientOrigin, gradientDestination);
+            this.ValidateGradientStops(gradientOrigin, gradientDestination);
         }
 
         private void ValidateThatBrushesAreGradient(Brush origin, Brush destination)
@@ -39,14 +41,6 @@ namespace Celestial.UIToolkit.Media.Animations
             }
         }
 
-        private void ValidateGradientBrushes(GradientBrush origin, GradientBrush destination)
-        {
-            this.ValidateColorInterpolationModeEquality(origin, destination);
-            this.ValidateBrushMappingModeEquality(origin, destination);
-            this.ValidateSpreadMethodEquality(origin, destination);
-            this.ValidateGradientStops(origin, destination);
-        }
-        
         private void ValidateColorInterpolationModeEquality(GradientBrush origin, GradientBrush destination)
         {
             if (origin.ColorInterpolationMode != destination.ColorInterpolationMode)
@@ -84,44 +78,6 @@ namespace Celestial.UIToolkit.Media.Animations
                     $"the same {propertyName} values.");
         }
         
-        internal virtual GradientStopCollection GetCurrentGradientStops(
-            GradientStopCollection origin, GradientStopCollection destination, AnimationClock animationClock)
-        {
-            this.InitializeGradientStopCollection(origin.Count);
-
-            for (int i = 0; i < origin.Count; i++)
-            {
-                var currentStop = _currentGradientStops[i];
-                var originStop = origin[i];
-                var destinationStop = destination[i];
-                this.CalculateCurrentGradientStopValues(currentStop, originStop, destinationStop, animationClock);
-            }
-            return _currentGradientStops;
-        }
-
-        private void InitializeGradientStopCollection(int count)
-        {
-            if (_currentGradientStops == null || _currentGradientStops.Count != count)
-            {
-                _currentGradientStops = new GradientStopCollection(count);
-                for (int i = 0; i < count; i++)
-                {
-                    _currentGradientStops.Add(new GradientStop());
-                }
-            }
-        }
-
-        private GradientStop CalculateCurrentGradientStopValues(
-            GradientStop current, GradientStop origin, GradientStop destination, AnimationClock animationClock)
-        {
-            current.Color = this.GetCurrentColor(
-                origin.Color, destination.Color, animationClock);
-            current.Offset = this.GetCurrentDouble(
-                origin.Offset, destination.Offset, animationClock);
-
-            return current;
-        }
-
     }
     
 }

@@ -11,9 +11,6 @@ namespace Celestial.UIToolkit.Media.Animations
     /// </summary>
     public abstract class BrushAnimation : AnimationBase<Brush>
     {
-
-        private Lazy<BrushAnimationToDoubleAnimationMapper> _doubleAnimWrapperLazy;
-        private Lazy<BrushAnimationToColorAnimationMapper> _colorAnimWrapperLazy;
         
         /// <summary>
         /// Identifies the <see cref="From"/> dependency property.
@@ -72,17 +69,6 @@ namespace Celestial.UIToolkit.Media.Animations
         /// </summary>
         public bool IsCumulative { get; set; }
         
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BrushAnimation"/> class.
-        /// </summary>
-        public BrushAnimation()
-        {
-            _doubleAnimWrapperLazy = new Lazy<BrushAnimationToDoubleAnimationMapper>(
-                () => new BrushAnimationToDoubleAnimationMapper(this));
-            _colorAnimWrapperLazy = new Lazy<BrushAnimationToColorAnimationMapper>(
-                () => new BrushAnimationToColorAnimationMapper(this));
-        }
-
         /// <summary>
         /// Calculates the brush which represents the current value of the animation.
         /// </summary>
@@ -180,23 +166,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// </param>
         /// <returns>The brush which this animation believes to be the current one.</returns>
         protected abstract Brush GetCurrentBrush(Brush origin, Brush destination, AnimationClock animationClock);
-
-        internal virtual double GetCurrentDouble(double origin, double destination, AnimationClock animationClock)
-        {
-            if (animationClock == null) throw new ArgumentNullException(nameof(animationClock));
-
-            return _doubleAnimWrapperLazy.Value.GetCurrentValue(
-                origin, destination, animationClock);
-        }
-
-        internal virtual Color GetCurrentColor(Color origin, Color destination, AnimationClock animationClock)
-        {
-            if (animationClock == null) throw new ArgumentNullException(nameof(animationClock));
-
-            return _colorAnimWrapperLazy.Value.GetCurrentValue(
-                origin, destination, animationClock);
-        }
-
+        
     }
     
 }

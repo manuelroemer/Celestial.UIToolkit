@@ -79,10 +79,11 @@
     <Compile Include="Extensions\FrameworkElementExtensions.cs" />
     <Compile Include="MarginHelper.cs" />
     <Compile Include="Media\Animations\AnimationBase.cs" />
+    <Compile Include="Media\Animations\BrushAnimationHelper.cs" />
     <Compile Include="Media\Animations\BrushAnimation.cs" />
-    <Compile Include="Media\Animations\BrushAnimationMappers.cs" />
-    <Compile Include="Media\Animations\CompositeColorAnimation.cs" />
+    <Compile Include="Media\Animations\CompositeBrushAnimation.cs" />
     <Compile Include="Media\Animations\GradientBrushAnimation.cs" />
+    <Compile Include="Media\Animations\LinearGradientBrushAnimation.cs" />
     <Compile Include="Media\Animations\SolidColorBrushAnimation.cs" />
     <Compile Include="SharedResourceDictionary.cs" />
     <Compile Include="Theming\ControlProperties.cs" />

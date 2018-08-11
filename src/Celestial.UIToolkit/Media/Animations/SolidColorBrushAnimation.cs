@@ -13,12 +13,14 @@ namespace Celestial.UIToolkit.Media.Animations
     {
         
         private SolidColorBrush _animatedBrush;
+        private BrushAnimationHelper _animationHelper;
         
         /// <summary>
         /// Initializes a new instance of the <see cref="SolidColorBrushAnimation"/>.
         /// </summary>
         public SolidColorBrushAnimation()
         {
+            _animationHelper = new BrushAnimationHelper(this);
         }
 
         /// <summary>
@@ -67,10 +69,9 @@ namespace Celestial.UIToolkit.Media.Animations
             var solidDestination = (SolidColorBrush)destination;
 
             this.InitializeAnimatedBrush();
-            _animatedBrush.Color = this.GetCurrentColor(
-                solidOrigin.Color, solidDestination.Color, animationClock);
-            _animatedBrush.Opacity = this.GetCurrentDouble(
-                solidOrigin.Opacity, solidDestination.Opacity, animationClock);
+            this.SetCurrentColor(animationClock, solidOrigin, solidDestination);
+            this.SetCurrentOpacity(animationClock, solidOrigin, solidDestination);
+
             return _animatedBrush;
         }
 
@@ -81,7 +82,19 @@ namespace Celestial.UIToolkit.Media.Animations
                 _animatedBrush = new SolidColorBrush();
             }
         }
-        
+
+        private void SetCurrentColor(AnimationClock animationClock, SolidColorBrush solidOrigin, SolidColorBrush solidDestination)
+        {
+            _animatedBrush.Color = _animationHelper.GetCurrentColor(
+                solidOrigin.Color, solidDestination.Color, animationClock);
+        }
+
+        private void SetCurrentOpacity(AnimationClock animationClock, SolidColorBrush solidOrigin, SolidColorBrush solidDestination)
+        {
+            _animatedBrush.Opacity = _animationHelper.GetCurrentDouble(
+                solidOrigin.Opacity, solidDestination.Opacity, animationClock);
+        }
+
     }
 
 }
