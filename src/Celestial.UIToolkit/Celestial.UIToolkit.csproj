@@ -76,6 +76,7 @@
     <Compile Include="Converters\NullToVisibilityConverter.cs" />
     <Compile Include="Converters\ThicknessSidePickerConverter.cs" />
     <Compile Include="Converters\ValueConverter.cs" />
+    <Compile Include="ExtendedFreezable.cs" />
     <Compile Include="Extensions\FrameworkElementExtensions.cs" />
     <Compile Include="MarginHelper.cs" />
     <Compile Include="Media\Animations\AnimationBase.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Media\Animations\CompositeBrushAnimation.cs" />
     <Compile Include="Media\Animations\GradientBrushAnimation.cs" />
     <Compile Include="Media\Animations\KeyFrameBase.cs" />
+    <Compile Include="Media\Animations\KeyFrameCollectionBase.cs" />
     <Compile Include="Media\Animations\LinearGradientBrushAnimation.cs" />
     <Compile Include="Media\Animations\RadialGradientBrushAnimation.cs" />
     <Compile Include="Media\Animations\SolidColorBrushAnimation.cs" />
