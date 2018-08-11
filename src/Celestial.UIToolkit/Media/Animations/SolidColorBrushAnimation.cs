@@ -13,13 +13,7 @@ namespace Celestial.UIToolkit.Media.Animations
     {
         
         private SolidColorBrush _animatedBrush;
-
-        /// <summary>
-        /// Gets the type of brush which is being animated by the animation,
-        /// which is <see cref="SolidColorBrush"/>.
-        /// </summary>
-        protected override Type AnimationBrushType => typeof(SolidColorBrush);
-
+        
         /// <summary>
         /// Initializes a new instance of the <see cref="SolidColorBrushAnimation"/>.
         /// </summary>
@@ -33,7 +27,28 @@ namespace Celestial.UIToolkit.Media.Animations
         /// </summary>
         /// <returns>A new <see cref="SolidColorBrushAnimation"/> instance.</returns>
         protected override Freezable CreateInstanceCore() => new SolidColorBrushAnimation();
-        
+
+        /// <summary>
+        /// Used to validate that the specified brushes can be animated by
+        /// the <see cref="SolidColorBrushAnimation"/>.
+        /// </summary>
+        /// <param name="origin">The origin brush.</param>
+        /// <param name="destination">The destination brush.</param>
+        protected override void ValidateTimelineBrushesCore(Brush origin, Brush destination)
+        {
+            ValidateThatBrushesAreSolid(origin, destination);
+        }
+
+        private void ValidateThatBrushesAreSolid(Brush origin, Brush destination)
+        {
+            if (origin.GetType() != typeof(SolidColorBrush) ||
+                destination.GetType() != typeof(SolidColorBrush))
+            {
+                throw new InvalidOperationException(
+                    $"The animation can only animate brushes of type {nameof(SolidColorBrush)}.");
+            }
+        }
+
         protected override Brush GetCurrentBrush(Brush origin, Brush destination, AnimationClock animationClock)
         {
             var solidOrigin = (SolidColorBrush)origin;

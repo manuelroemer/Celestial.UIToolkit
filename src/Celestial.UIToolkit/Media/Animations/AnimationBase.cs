@@ -48,9 +48,9 @@ namespace Celestial.UIToolkit.Media.Animations
             object defaultDestinationValue,
             AnimationClock animationClock)
         {
-            if (!(defaultOriginValue is T))
+            if (!(defaultOriginValue is T) && !(defaultOriginValue is null))
                 this.ThrowForInvalidAnimationValue(nameof(defaultOriginValue));
-            if (!(defaultDestinationValue is T))
+            if (!(defaultDestinationValue is T) && !(defaultDestinationValue is null))
                 this.ThrowForInvalidAnimationValue(nameof(defaultDestinationValue));
 
             return this.GetCurrentValueCore(

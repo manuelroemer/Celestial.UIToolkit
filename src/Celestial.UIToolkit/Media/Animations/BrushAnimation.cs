@@ -71,12 +71,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// Gets or sets a value that specifies whether the animation's value accumulates when it repeats.
         /// </summary>
         public bool IsCumulative { get; set; }
-
-        /// <summary>
-        /// Gets the type of brush which is being animated by this animation.
-        /// </summary>
-        protected abstract Type AnimationBrushType { get; }
-
+        
         /// <summary>
         /// Initializes a new instance of the <see cref="BrushAnimation"/> class.
         /// </summary>
@@ -123,7 +118,7 @@ namespace Celestial.UIToolkit.Media.Animations
         protected virtual void ValidateTimelineBrushes(Brush origin, Brush destination)
         {
             this.ValidateThatBrushesAreNotNull(origin, destination);
-            this.ValidateThatBrushesHaveExpected(origin, destination);
+            this.ValidateThatBrushesHaveSameType(origin, destination);
             this.ValidateThatBrushesHaveSameTransform(origin, destination);
             this.ValidateTimelineBrushesCore(origin, destination);
         }
@@ -137,13 +132,12 @@ namespace Celestial.UIToolkit.Media.Animations
                     $"and that both of them are of type {nameof(Brush)}.");
         }
 
-        private void ValidateThatBrushesHaveExpected(Brush origin, Brush destination)
+        private void ValidateThatBrushesHaveSameType(Brush origin, Brush destination)
         {
-            if (origin.GetType() != this.AnimationBrushType ||
-                destination.GetType() != this.AnimationBrushType)
+            if (origin.GetType() != destination.GetType())
             {
                 throw new InvalidOperationException(
-                    $"The animation can only animate values of type {this.AnimationBrushType.FullName}.");
+                    $"The animation can only animate two brushes of the same type.");
             }
         }
 

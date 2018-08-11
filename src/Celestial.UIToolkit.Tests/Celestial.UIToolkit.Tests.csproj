@@ -60,6 +60,7 @@
     <Compile Include="Converters\NegateValueConverterTests.cs" />
     <Compile Include="Converters\ThicknessSidePickerConverterTests.cs" />
     <Compile Include="Converters\ValueConverterTests.cs" />
+    <Compile Include="Media\Animations\BrushAnimationBaseTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
