@@ -52,9 +52,9 @@ namespace Celestial.UIToolkit.Media.Animations
             if (animationClock == null) throw new ArgumentNullException(nameof(animationClock));
             
             if (!(defaultOriginValue is T) && !(defaultOriginValue is null))
-                this.ThrowForInvalidAnimationValue(nameof(defaultOriginValue));
+                this.ThrowForInvalidAnimationValueType(nameof(defaultOriginValue));
             if (!(defaultDestinationValue is T) && !(defaultDestinationValue is null))
-                this.ThrowForInvalidAnimationValue(nameof(defaultDestinationValue));
+                this.ThrowForInvalidAnimationValueType(nameof(defaultDestinationValue));
 
             return this.GetCurrentValueCore(
                 (T)defaultOriginValue, (T)defaultDestinationValue, animationClock);
@@ -83,12 +83,11 @@ namespace Celestial.UIToolkit.Media.Animations
             T defaultDestinationValue,
             AnimationClock animationClock);
         
-        private void ThrowForInvalidAnimationValue(string paramName)
+        private void ThrowForInvalidAnimationValueType(string paramName)
         {
-            throw new ArgumentException(
+            throw new InvalidOperationException(
                 $"The animation does not support the type of the provided {paramName}. " +
-                $"It expected a parameter of type {typeof(T).FullName}.",
-                paramName);
+                $"It expected a parameter of type {typeof(T).FullName}.");
         }
 
     }

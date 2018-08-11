@@ -71,7 +71,11 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <summary>
         /// Gets or sets a value that specifies whether the animation's value accumulates when it repeats.
         /// </summary>
-        public bool IsCumulative { get; set; }
+        public bool IsCumulative
+        {
+            get { return (bool)GetValue(IsCumulativeProperty); }
+            set { SetValue(IsCumulativeProperty, value); }
+        }
         
         /// <summary>
         /// Calculates the brush which represents the current value of the animation.
