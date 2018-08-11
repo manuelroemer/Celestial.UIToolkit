@@ -81,6 +81,7 @@
     <Compile Include="Media\Animations\AnimationBase.cs" />
     <Compile Include="Media\Animations\BrushAnimationHelper.cs" />
     <Compile Include="Media\Animations\BrushAnimation.cs" />
+    <Compile Include="Media\Animations\AnimationUsingKeyFramesBase.cs" />
     <Compile Include="Media\Animations\CompositeBrushAnimation.cs" />
     <Compile Include="Media\Animations\GradientBrushAnimation.cs" />
     <Compile Include="Media\Animations\LinearGradientBrushAnimation.cs" />
