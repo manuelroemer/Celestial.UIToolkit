@@ -57,12 +57,16 @@ namespace Celestial.UIToolkit.Media.Animations
             get { return (IEasingFunction)GetValue(EasingFunctionProperty); }
             set { SetValue(EasingFunctionProperty, value); }
         }
-
+        
         /// <summary>
         /// Gets or sets a value that indicates whether the target property's current value 
         /// should be added to this animation's starting value.
         /// </summary>
-        public bool IsAdditive { get; set; }
+        public bool IsAdditive
+        {
+            get { return (bool)GetValue(IsAdditiveProperty); }
+            set { SetValue(IsAdditiveProperty, value); }
+        }
 
         /// <summary>
         /// Gets or sets a value that specifies whether the animation's value accumulates when it repeats.
@@ -82,7 +86,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// The <see cref="AnimationClock"/> to be used by the animation to generate its output value.
         /// </param>
         /// <returns>The brush which this animation believes to be the current one.</returns>
-        protected override Brush GetCurrentValueCore(Brush defaultOriginValue, Brush defaultDestinationValue, AnimationClock animationClock)
+        protected override sealed Brush GetCurrentValueCore(Brush defaultOriginValue, Brush defaultDestinationValue, AnimationClock animationClock)
         {
             Brush origin = this.From ?? defaultOriginValue;
             Brush destination = this.To ?? defaultDestinationValue;
@@ -101,7 +105,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <param name="destination">
         /// The brush which serves as the animation's destination.
         /// </param>
-        protected virtual void ValidateTimelineBrushes(Brush origin, Brush destination)
+        protected void ValidateTimelineBrushes(Brush origin, Brush destination)
         {
             this.ValidateThatBrushesAreNotNull(origin, destination);
             this.ValidateThatBrushesHaveSameType(origin, destination);

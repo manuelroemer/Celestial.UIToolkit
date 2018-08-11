@@ -33,7 +33,7 @@
                                     <VisualState x:Name="MouseOver">
                                         <Storyboard>
                                             <anim:CompositeBrushAnimation Storyboard.TargetName="Bd"
-                                                                               Storyboard.TargetProperty="Background">
+                                                                               Storyboard.TargetProperty="Background" IsAdditive="True">
                                                 <anim:CompositeBrushAnimation.To>
                                                     <LinearGradientBrush Opacity="0.5" StartPoint="0,0">
                                                         <GradientStop Offset="0.0" Color="Blue" />

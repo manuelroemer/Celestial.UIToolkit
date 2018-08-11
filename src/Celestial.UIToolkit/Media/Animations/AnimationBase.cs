@@ -43,11 +43,14 @@ namespace Celestial.UIToolkit.Media.Animations
         ///     animation to generate its output value.
         /// </param>
         /// <returns>The value this animation believes should be the current value for the property.</returns>
-        public override object GetCurrentValue(
+        public override sealed object GetCurrentValue(
             object defaultOriginValue,
             object defaultDestinationValue,
             AnimationClock animationClock)
         {
+            this.ReadPreamble();
+            if (animationClock == null) throw new ArgumentNullException(nameof(animationClock));
+            
             if (!(defaultOriginValue is T) && !(defaultOriginValue is null))
                 this.ThrowForInvalidAnimationValue(nameof(defaultOriginValue));
             if (!(defaultDestinationValue is T) && !(defaultDestinationValue is null))
