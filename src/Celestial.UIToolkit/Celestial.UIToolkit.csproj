@@ -77,6 +77,8 @@
     <Compile Include="Converters\ThicknessSidePickerConverter.cs" />
     <Compile Include="Converters\ValueConverter.cs" />
     <Compile Include="ExtendedFreezable.cs" />
+    <Compile Include="Extensions\ArrayExtensions.cs" />
+    <Compile Include="Extensions\ArraySegmentExtensions.cs" />
     <Compile Include="Extensions\FrameworkElementExtensions.cs" />
     <Compile Include="FreezableCollection.cs" />
     <Compile Include="MarginHelper.cs" />
