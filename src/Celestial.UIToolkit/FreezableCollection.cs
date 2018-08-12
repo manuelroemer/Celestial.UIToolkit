@@ -107,7 +107,7 @@ namespace Celestial.UIToolkit
         }
 
         /// <summary>
-        /// Makes the instance a frozen clone of the specified System.Windows.Freezable using
+        /// Makes the instance a frozen clone of the specified <see cref="Freezable"/> using
         /// base (non-animated) property values.
         /// </summary>
         /// <param name="sourceFreezable">The object to copy.</param>
