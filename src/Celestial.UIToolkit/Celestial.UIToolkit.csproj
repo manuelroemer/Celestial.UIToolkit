@@ -86,6 +86,7 @@
     <Compile Include="Media\Animations\AnimationBase.cs" />
     <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\IInterpolatedKeyFrame.cs" />
     <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\ISegmentLengthProvider.cs" />
+    <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\ResolvedKeyFrameCollectionExtensions.cs" />
     <Compile Include="Media\Animations\BrushAnimationHelper.cs" />
     <Compile Include="Media\Animations\BrushAnimation.cs" />
     <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\AnimationUsingKeyFramesBase.cs" />

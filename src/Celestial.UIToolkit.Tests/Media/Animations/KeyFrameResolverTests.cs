@@ -40,7 +40,7 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
             // The final frames must all have their original KeyTime - TimeSpan.
             this.AssertSharedKeyFrameRules(resolvedFrames);
             Assert.IsTrue(resolvedFrames.All(frame => 
-                frame.ResolvedKeyTime == frame.KeyTime));
+                frame.ResolvedKeyTime == frame.OriginalKeyTime));
         }
 
         [TestMethod]
@@ -57,7 +57,7 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
             this.AssertSharedKeyFrameRules(resolvedFrames);
             foreach (var frame in resolvedFrames)
             {
-                double expectedMSecs = _totalDuration.TotalMilliseconds * frame.KeyTime.Percent;
+                double expectedMSecs = _totalDuration.TotalMilliseconds * frame.OriginalKeyTime.Percent;
                 Assert.AreEqual(expectedMSecs, frame.ResolvedKeyTime.TotalMilliseconds);
             }
         }
@@ -127,7 +127,7 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
             //       should not replace an automatic unit test.
         }
 
-        private ResolvedKeyFrame[] GetResolvedKeyFrames(params KeyTime[] keyTimes)
+        private IReadOnlyList<ResolvedKeyFrame> GetResolvedKeyFrames(params KeyTime[] keyTimes)
         {
             var collection = this.BuildDoubleKeyFrameCollection(keyTimes);
             return KeyFrameResolver.ResolveKeyFrames(collection, _totalDuration, new DoubleSegmentProvider());
@@ -171,7 +171,7 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
         {
             // Grab each uniform segment and check if the increments are valid.
             var segments = frames.ToArray().GetGroupSegments(frame => 
-                frame.KeyTime.Type == KeyTimeType.Uniform);
+                frame.OriginalKeyTime.Type == KeyTimeType.Uniform);
 
             foreach (var segment in segments)
             {

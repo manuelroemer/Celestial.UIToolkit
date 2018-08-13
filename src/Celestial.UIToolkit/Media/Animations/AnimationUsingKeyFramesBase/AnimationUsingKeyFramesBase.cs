@@ -238,11 +238,11 @@ namespace Celestial.UIToolkit.Media.Animations
         {
             if (_areKeyFramesResolved) return;
             _resolvedKeyFrames = KeyFrameResolver.ResolveKeyFrames(
-                _keyFrames, this.GetDuration(), this);
+                _keyFrames, this.GetAnimationsActualDuration(), this);
             _areKeyFramesResolved = true;
         }
 
-        private TimeSpan GetDuration()
+        private TimeSpan GetAnimationsActualDuration()
         {
             if (this.Duration != Duration.Automatic &&
                 this.Duration != Duration.Forever &&
@@ -279,7 +279,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <returns>The animation's natural duration.</returns>
         protected override sealed Duration GetNaturalDurationCore(Clock clock)
         {
-            return new Duration(this.GetDuration());
+            return new Duration(this.GetAnimationsActualDuration());
         }
 
         protected override T GetCurrentValueCore(T defaultOriginValue, T defaultDestinationValue, AnimationClock animationClock)
@@ -288,9 +288,9 @@ namespace Celestial.UIToolkit.Media.Animations
             if (_resolvedKeyFrames == null || _resolvedKeyFrames.Count == 0)
                 return defaultDestinationValue;
 
-            var currentTime = animationClock.CurrentTime.GetValueOrDefault();
-            var currentFrameIndex = this.FindCurrentKeyFrameIndex(currentTime);
-            var currentFrame = _resolvedKeyFrames[currentFrameIndex];
+            TimeSpan currentTime = animationClock.CurrentTime.GetValueOrDefault();
+            int currentFrameIndex = _resolvedKeyFrames.FindCurrentKeyFrameIndex(currentTime);
+            ResolvedKeyFrame currentFrame = _resolvedKeyFrames[currentFrameIndex];
 
             T currentValue;
             if (currentFrame == _resolvedKeyFrames.Last() && currentFrame.IsTimeAfter(currentTime))
@@ -343,32 +343,6 @@ namespace Celestial.UIToolkit.Media.Animations
             return currentValue;
         }
         
-        private int FindCurrentKeyFrameIndex(TimeSpan currentTime)
-        {
-            if (_resolvedKeyFrames == null || _resolvedKeyFrames.Count == 0)
-            {
-                throw new InvalidOperationException(
-                    "The animation's resolved key frames did not contain any frames. " +
-                    "Unable to find a correct one for the specified time.");
-            }
-
-            // Find the first frame whose time is >= currentTime, but
-            // choose the last frame of a set which have the same time.
-            for (int i = 0; i < _resolvedKeyFrames.Count; i++)
-            {
-                ResolvedKeyFrame currentFrame = _resolvedKeyFrames[i];
-                ResolvedKeyFrame nextFrame = _resolvedKeyFrames.ElementAfterOrDefault(i);
-                bool nextFrameEqualsCurrent = nextFrame != null &&
-                                              nextFrame.ResolvedKeyTime == currentFrame.ResolvedKeyTime;
-
-                if (currentFrame.IsTimeBeforeOrInside(currentTime) && !nextFrameEqualsCurrent)
-                {
-                    return i;
-                }
-            }
-            return _resolvedKeyFrames.Count - 1;
-        }
-
         /// <summary>
         /// Returns an object of type <typeparamref name="T"/> which represents
         /// a zero-value.

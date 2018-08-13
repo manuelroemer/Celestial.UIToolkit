@@ -48,6 +48,7 @@ namespace Celestial.UIToolkit.Media.Animations
             }
         }
 
+        [DebuggerStepThrough]
         public static IReadOnlyList<ResolvedKeyFrame> ResolveKeyFrames(
             IList keyFrames, TimeSpan duration, ISegmentLengthProvider segmentLengthProvider)
         {
@@ -67,7 +68,7 @@ namespace Celestial.UIToolkit.Media.Animations
         {
             for (int i = 0; i < _frameCount; i++)
             {
-                KeyTime currentKeyTime = _keyFrames[i].KeyTime;
+                KeyTime currentKeyTime = _keyFrames[i].OriginalKeyTime;
 
                 if (currentKeyTime.Type == KeyTimeType.TimeSpan)
                     this.ResolveTimeSpanFrame(i);
@@ -78,13 +79,13 @@ namespace Celestial.UIToolkit.Media.Animations
 
         private void ResolveTimeSpanFrame(int index)
         {
-            TimeSpan finalKeyTime = _keyFrames[index].KeyTime.TimeSpan;
+            TimeSpan finalKeyTime = _keyFrames[index].OriginalKeyTime.TimeSpan;
             _keyFrames[index].Resolve(finalKeyTime);
         }
 
         private void ResolvePercentFrame(int index)
         {
-            double percent = _keyFrames[index].KeyTime.Percent;
+            double percent = _keyFrames[index].OriginalKeyTime.Percent;
             double finalDurationInMSecs = _duration.TotalMilliseconds * percent;
             TimeSpan finalKeyTime = TimeSpan.FromMilliseconds(finalDurationInMSecs);
             _keyFrames[index].Resolve(finalKeyTime);
@@ -104,7 +105,7 @@ namespace Celestial.UIToolkit.Media.Animations
         private void ResolveFirstKeyFrame()
         {
             ResolvedKeyFrame firstFrame = _keyFrames.First();
-            if (firstFrame.KeyTime.Type == KeyTimeType.Paced && _frameCount > 1)
+            if (firstFrame.OriginalKeyTime.Type == KeyTimeType.Paced && _frameCount > 1)
             {
                 firstFrame.Resolve(TimeSpan.Zero);
             }
@@ -165,8 +166,8 @@ namespace Celestial.UIToolkit.Media.Animations
                 // Only uniform and paced segments are not resolved.
                 // According to MSDN, treat Paced key frames as Uniform.
                 // !IsResolved only targets the last element in the array (which got resolved earlier).
-                return (keyFrame.KeyTime.Type == KeyTimeType.Uniform ||
-                        keyFrame.KeyTime.Type == KeyTimeType.Paced) &&
+                return (keyFrame.OriginalKeyTime.Type == KeyTimeType.Uniform ||
+                        keyFrame.OriginalKeyTime.Type == KeyTimeType.Paced) &&
                        !keyFrame.IsResolved;
             });
         }
@@ -215,7 +216,7 @@ namespace Celestial.UIToolkit.Media.Animations
             // Exclude the arrays head and tail, because these values were already set.
             // This also allows accessing the index before the segments Offset.
             return _keyFrames.GetGroupSegments(keyFrame =>
-                keyFrame.KeyTime.Type == KeyTimeType.Paced &&
+                keyFrame.OriginalKeyTime.Type == KeyTimeType.Paced &&
                 _keyFrames.First() != keyFrame &&
                 _keyFrames.Last() != keyFrame);
         }
