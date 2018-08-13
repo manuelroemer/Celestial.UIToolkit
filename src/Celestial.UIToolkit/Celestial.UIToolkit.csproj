@@ -85,6 +85,7 @@
     <Compile Include="FreezableCollection.cs" />
     <Compile Include="MarginHelper.cs" />
     <Compile Include="Media\Animations\AnimationBase\AnimationBase.cs" />
+    <Compile Include="Media\Animations\AnimationBase\EasingFromToByAnimationBase.cs" />
     <Compile Include="Media\Animations\AnimationBase\FromToByAnimationBase.cs" />
     <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\IInterpolateKeyFrame.cs" />
     <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\ISegmentLengthProvider.cs" />

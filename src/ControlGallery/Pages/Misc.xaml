@@ -10,8 +10,46 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
-    <Grid>
+    <StackPanel>
+        <StackPanel Margin="20" >
+            
+            <Rectangle Name="r1" Width="100" Height="20" Margin="12,0,0,5" Fill="#AA3333FF" HorizontalAlignment="Left" />
 
+            <Rectangle Name="r2" Width="100" Height="20" Margin="12,0,0,5" Fill="#AA3333FF" HorizontalAlignment="Left" />
+
+
+            <!-- Create a button to restart the animations. -->
+            <Button Margin="0,30,0,0" HorizontalAlignment="Left">
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Button.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation 
+                                    Storyboard.TargetName="r1" 
+                                    Storyboard.TargetProperty="Width" 
+                                    RepeatBehavior="4x"
+                                    AutoReverse="True"
+                                    IsAdditive="True"
+                                    IsCumulative="True"
+                                    Duration="0:0:3" 
+                                    By="-200" />
+
+                                <anim:DoubleAnimation 
+                                    Storyboard.TargetName="r2" 
+                                    Storyboard.TargetProperty="Width" 
+                                    RepeatBehavior="4x"
+                                    AutoReverse="True"
+                                    IsAdditive="True"
+                                    IsCumulative="True"
+                                    Duration="0:0:3"
+                                    By="-200" />
+
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+        </StackPanel>
         <!--<controls:Card HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button>
                 <Button.Template>
@@ -33,7 +71,7 @@
                                     <VisualState x:Name="MouseOver">
                                         <Storyboard>
                                             <anim:CompositeBrushAnimation Storyboard.TargetName="Bd"
-                                                                               Storyboard.TargetProperty="Background" IsAdditive="True">
+                                                                               Storyboard.TargetProperty="Background" IsCumulative="True">
                                                 <anim:CompositeBrushAnimation.To>
                                                     <LinearGradientBrush Opacity="0.5" StartPoint="0,0">
                                                         <GradientStop Offset="0.0" Color="Blue" />
@@ -52,6 +90,6 @@
             </Button>
         </controls:Card>-->
 
-    </Grid>
+    </StackPanel>
 
 </UserControl>

@@ -22,7 +22,14 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <summary>
         ///     Gets the target type of the animation..
         /// </summary>
-        public override Type TargetPropertyType => typeof(T);
+        public override Type TargetPropertyType
+        {
+            get
+            {
+                this.ReadPreamble();
+                return typeof(T);
+            }
+        }
 
         /// <summary>
         ///     Returns the current value of the animation.
