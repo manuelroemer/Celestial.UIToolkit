@@ -9,7 +9,7 @@ namespace Celestial.UIToolkit.Media.Animations
     /// <summary>
     /// An animation which animates <see cref="SolidColorBrush"/> objects.
     /// </summary>
-    public class SolidColorBrushAnimation : BrushAnimation
+    public class SolidColorBrushAnimation : OldBrushAnimation
     {
         
         private SolidColorBrush _animatedBrush;

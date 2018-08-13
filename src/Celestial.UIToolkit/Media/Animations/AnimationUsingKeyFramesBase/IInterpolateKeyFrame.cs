@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows.Media.Animation;
+﻿using System.Windows.Media.Animation;
 
 namespace Celestial.UIToolkit.Media.Animations
 {
@@ -22,7 +21,6 @@ namespace Celestial.UIToolkit.Media.Animations
         /// that has elapsed for this key frame.
         /// </param>
         /// <returns>The output value of this key frame given the specified base value and progress.</returns>
-        /// <exception cref="ArgumentOutOfRangeException" />
         T InterpolateValue(T baseValue, double keyFrameProgress);
 
     }

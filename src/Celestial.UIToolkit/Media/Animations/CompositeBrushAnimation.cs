@@ -14,22 +14,22 @@ namespace Celestial.UIToolkit.Media.Animations
     ///     objects.
     /// </summary>
     /// <remarks>
-    ///     This animation is internally choosing one of the <see cref="BrushAnimation"/>
+    ///     This animation is internally choosing one of the <see cref="OldBrushAnimation"/>
     ///     derivations.
     ///     Their limitations apply to this class aswell, meaning that the animated brushes
     ///     have to be of the same type, need to have certain shared properties, ...
     /// </remarks>
-    public class CompositeBrushAnimation : BrushAnimation
+    public class CompositeBrushAnimation : OldBrushAnimation
     {
 
-        private static IDictionary<Type, Func<BrushAnimation>> _supportedAnimationTypesMap;
-        private BrushAnimation _currentBrushAnimation;
+        private static IDictionary<Type, Func<OldBrushAnimation>> _supportedAnimationTypesMap;
+        private OldBrushAnimation _currentBrushAnimation;
 
         static CompositeBrushAnimation()
         {
             // Map the supported brush types to factory functions, for a painless creation
             // of the "sub-animations".
-            _supportedAnimationTypesMap = new Dictionary<Type, Func<BrushAnimation>>()
+            _supportedAnimationTypesMap = new Dictionary<Type, Func<OldBrushAnimation>>()
             {
                 [typeof(SolidColorBrush)]     = () => new SolidColorBrushAnimation(),
                 [typeof(LinearGradientBrush)] = () => new LinearGradientBrushAnimation(),
@@ -67,7 +67,7 @@ namespace Celestial.UIToolkit.Media.Animations
 
         /// <summary>
         /// Calculates the brush which represents the current value of the animation,
-        /// by delegating the call down to the appropriate kind of <see cref="BrushAnimation"/>
+        /// by delegating the call down to the appropriate kind of <see cref="OldBrushAnimation"/>
         /// and returning the result.
         /// </summary>
         /// <param name="origin">

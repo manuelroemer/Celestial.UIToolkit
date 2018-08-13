@@ -9,26 +9,26 @@ namespace Celestial.UIToolkit.Media.Animations
     /// <summary>
     /// A base class for any animation that animates a <see cref="Brush"/>.
     /// </summary>
-    public abstract class BrushAnimation : AnimationBase<Brush>
+    public abstract class OldBrushAnimation : AnimationBase<Brush>
     {
         
         /// <summary>
         /// Identifies the <see cref="From"/> dependency property.
         /// </summary>
         public static readonly DependencyProperty FromProperty = DependencyProperty.Register(
-            nameof(From), typeof(Brush), typeof(BrushAnimation), new PropertyMetadata(null));
+            nameof(From), typeof(Brush), typeof(OldBrushAnimation), new PropertyMetadata(null));
 
         /// <summary>
         /// Identifies the <see cref="To"/> dependency property.
         /// </summary>
         public static readonly DependencyProperty ToProperty = DependencyProperty.Register(
-            nameof(To), typeof(Brush), typeof(BrushAnimation), new PropertyMetadata(null));
+            nameof(To), typeof(Brush), typeof(OldBrushAnimation), new PropertyMetadata(null));
 
         /// <summary>
         /// Identifies the <see cref="EasingFunction"/> dependency property.
         /// </summary>
         public static readonly DependencyProperty EasingFunctionProperty = DependencyProperty.Register(
-            nameof(EasingFunction), typeof(IEasingFunction), typeof(BrushAnimation), new PropertyMetadata(null));
+            nameof(EasingFunction), typeof(IEasingFunction), typeof(OldBrushAnimation), new PropertyMetadata(null));
         
         /// <summary>
         /// Gets or sets a <see cref="Brush"/> which serves as the animation's

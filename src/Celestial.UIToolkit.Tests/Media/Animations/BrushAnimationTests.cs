@@ -100,7 +100,7 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
                 animation.GetCurrentValue(null, Brushes.Green, animation.CreateClock()));
         }
 
-        private sealed class TestableBrushAnimation : BrushAnimation
+        private sealed class TestableBrushAnimation : OldBrushAnimation
         {
 
             /// <summary>

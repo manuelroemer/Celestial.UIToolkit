@@ -13,11 +13,11 @@ namespace Celestial.UIToolkit.Media.Animations
     internal class BrushAnimationHelper
     {
 
-        private BrushAnimation _brushAnimation;
+        private OldBrushAnimation _brushAnimation;
         private Lazy<BrushAnimationToDoubleAnimationMapper> _doubleAnimationMapperLazy;
         private Lazy<BrushAnimationToColorAnimationMapper> _colorAnimationMapperLazy;
 
-        public BrushAnimationHelper(BrushAnimation brushAnimation)
+        public BrushAnimationHelper(OldBrushAnimation brushAnimation)
         {
             _brushAnimation = brushAnimation ?? throw new ArgumentNullException(nameof(brushAnimation));
             _doubleAnimationMapperLazy = new Lazy<BrushAnimationToDoubleAnimationMapper>(() =>
@@ -122,10 +122,10 @@ namespace Celestial.UIToolkit.Media.Animations
     {
 
         private bool _copiedFrozenValues;
-        private BrushAnimation _brushAnimation;
+        private OldBrushAnimation _brushAnimation;
         private TAnimation _animation;
 
-        public BrushAnimationMapper(BrushAnimation brushAnimation, Func<TAnimation> animationFactory)
+        public BrushAnimationMapper(OldBrushAnimation brushAnimation, Func<TAnimation> animationFactory)
         {
             if (brushAnimation == null) throw new ArgumentNullException(nameof(brushAnimation));
             if (animationFactory == null) throw new ArgumentNullException(nameof(animationFactory));
@@ -156,16 +156,16 @@ namespace Celestial.UIToolkit.Media.Animations
         }
 
         protected abstract void MapBrushAnimationValues(
-            BrushAnimation brushAnimation, TAnimation targetAnimation);
+            OldBrushAnimation brushAnimation, TAnimation targetAnimation);
 
     }
 
     internal sealed class BrushAnimationToColorAnimationMapper : BrushAnimationMapper<ColorAnimation, Color>
     {
-        public BrushAnimationToColorAnimationMapper(BrushAnimation brushAnimation)
+        public BrushAnimationToColorAnimationMapper(OldBrushAnimation brushAnimation)
             : base(brushAnimation, () => new ColorAnimation()) { }
 
-        protected override void MapBrushAnimationValues(BrushAnimation brushAnim, ColorAnimation colorAnim)
+        protected override void MapBrushAnimationValues(OldBrushAnimation brushAnim, ColorAnimation colorAnim)
         {
             colorAnim.EasingFunction = brushAnim.EasingFunction;
             colorAnim.IsAdditive = brushAnim.IsAdditive;
@@ -176,10 +176,10 @@ namespace Celestial.UIToolkit.Media.Animations
 
     internal sealed class BrushAnimationToDoubleAnimationMapper : BrushAnimationMapper<DoubleAnimation, double>
     {
-        public BrushAnimationToDoubleAnimationMapper(BrushAnimation brushAnimation)
+        public BrushAnimationToDoubleAnimationMapper(OldBrushAnimation brushAnimation)
             : base(brushAnimation, () => new DoubleAnimation()) { }
 
-        protected override void MapBrushAnimationValues(BrushAnimation brushAnim, DoubleAnimation doubleAnim)
+        protected override void MapBrushAnimationValues(OldBrushAnimation brushAnim, DoubleAnimation doubleAnim)
         {
             doubleAnim.EasingFunction = brushAnim.EasingFunction;
             doubleAnim.IsAdditive = brushAnim.IsAdditive;

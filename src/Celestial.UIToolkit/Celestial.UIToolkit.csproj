@@ -91,7 +91,7 @@
     <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\ISegmentLengthProvider.cs" />
     <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\ResolvedKeyFrameCollectionExtensions.cs" />
     <Compile Include="Media\Animations\BrushAnimationHelper.cs" />
-    <Compile Include="Media\Animations\BrushAnimation.cs" />
+    <Compile Include="Media\Animations\OldBrushAnimation.cs" />
     <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\AnimationUsingKeyFramesBase.cs" />
     <Compile Include="Media\Animations\CompositeBrushAnimation.cs" />
     <Compile Include="Media\Animations\DoubleAnimation.cs" />

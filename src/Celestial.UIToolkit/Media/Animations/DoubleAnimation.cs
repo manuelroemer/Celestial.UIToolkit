@@ -9,6 +9,8 @@ using System.Windows.Media.Animation;
 namespace Celestial.UIToolkit.Media.Animations
 {
 
+#if DEBUG
+
     public class DoubleAnimation : EasingFromToByAnimationBase<double>
     {
         protected override Freezable CreateInstanceCore()
@@ -36,5 +38,7 @@ namespace Celestial.UIToolkit.Media.Animations
             return a - b;
         }
     }
+
+#endif
 
 }
