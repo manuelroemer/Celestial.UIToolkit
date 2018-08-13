@@ -96,7 +96,7 @@ namespace Celestial.UIToolkit.Media.Animations
                 $"The animation does not support the type of the provided {paramName}. " +
                 $"It expected a parameter of type {typeof(T).FullName}.");
         }
-
+        
     }
     
 }

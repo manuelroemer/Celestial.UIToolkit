@@ -114,6 +114,7 @@ namespace Celestial.UIToolkit.Media.Animations
         {
             this.SetConstantAnimationValues();
             this.SetDynamicAnimationValues(defaultOriginValue, defaultDestinationValue, animationClock);
+            this.ValidateAnimationValues(_actualFrom, _actualTo);
 
             double progress = animationClock.CurrentProgress.Value;
             T interpolatedValue;
@@ -221,7 +222,17 @@ namespace Celestial.UIToolkit.Media.Animations
             _actualFrom = from;
             _actualTo = to;
         }
- 
+
+        /// <summary>
+        /// A method which is called inside the <see cref="GetCurrentValueCore(T, T, AnimationClock)"/> method,
+        /// before the actual animation is done.
+        /// If overridden, it can be used to perform additional validation on the values to be animated and,
+        /// if required, throw exceptions, if the values are not as required.
+        /// </summary>
+        /// <param name="from">The final origin value which will be used in the following animation step.</param>
+        /// <param name="to">The final destination value which will be used in the following animation step.</param>
+        protected virtual void ValidateAnimationValues(T from, T to) { }
+
         /// <summary>
         /// Adds the two specified values and returns the result.
         /// </summary>

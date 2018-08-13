@@ -9,16 +9,14 @@ using System.Windows.Media.Animation;
 namespace Celestial.UIToolkit.Media.Animations
 {
 
-    public class DoubleAnimation : FromToByAnimationBase<double>
+    public class DoubleAnimation : EasingFromToByAnimationBase<double>
     {
-        public IEasingFunction EasingFunction { get; set; }
-
         protected override Freezable CreateInstanceCore()
         {
             return new DoubleAnimation();
         }
 
-        protected override double InterpolateValue(double from, double to, double progress)
+        protected override double InterpolateValueCore(double from, double to, double progress)
         {
             return from + (to - from) * progress;
         }

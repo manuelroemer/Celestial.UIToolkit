@@ -32,7 +32,11 @@
                                     IsAdditive="True"
                                     IsCumulative="True"
                                     Duration="0:0:3" 
-                                    By="-200" />
+                                    By="200">
+                                    <DoubleAnimation.EasingFunction>
+                                        <QuadraticEase />
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
 
                                 <anim:DoubleAnimation 
                                     Storyboard.TargetName="r2" 
@@ -42,7 +46,11 @@
                                     IsAdditive="True"
                                     IsCumulative="True"
                                     Duration="0:0:3"
-                                    By="-200" />
+                                    By="200">
+                                    <anim:DoubleAnimation.EasingFunction>
+                                        <QuadraticEase />
+                                    </anim:DoubleAnimation.EasingFunction>
+                                </anim:DoubleAnimation>
 
                             </Storyboard>
                         </BeginStoryboard>
