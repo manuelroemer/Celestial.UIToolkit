@@ -110,7 +110,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// The <see cref="AnimationClock"/> to be used by the animation to generate its output value.
         /// </param>
         /// <returns>The value which this animation believes to be the current one.</returns>
-        protected override sealed T GetCurrentValueCore(T defaultOriginValue, T defaultDestinationValue, AnimationClock animationClock)
+        protected override T GetCurrentValueCore(T defaultOriginValue, T defaultDestinationValue, AnimationClock animationClock)
         {
             this.SetConstantAnimationValues();
             this.SetDynamicAnimationValues(defaultOriginValue, defaultDestinationValue, animationClock);
@@ -123,8 +123,6 @@ namespace Celestial.UIToolkit.Media.Animations
                 interpolatedValue = this.AddValues(interpolatedValue, _cumulativeModifier);
             if (_useAdditiveModifier)
                 interpolatedValue = this.AddValues(interpolatedValue, _additiveModifier);
-
-            if (_useCumulativeModifier && _useAdditiveModifier) Debug.Print("Both!");
 
             return interpolatedValue;
         }
