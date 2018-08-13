@@ -5,6 +5,8 @@ using System.Windows.Media.Animation;
 using Celestial.UIToolkit.Media.Animations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Celestial.UIToolkit.Extensions;
+using DoubleKeyFrameCollection = System.Windows.Media.Animation.DoubleKeyFrameCollection;
+using LinearDoubleKeyFrame = System.Windows.Media.Animation.LinearDoubleKeyFrame;
 using System.Windows;
 
 namespace Celestial.UIToolkit.Tests.Media.Animations

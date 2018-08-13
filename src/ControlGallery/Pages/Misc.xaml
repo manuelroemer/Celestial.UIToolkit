@@ -17,30 +17,30 @@
             <!-- The five rectangles below are each animated across the screen with key frames for 10 seconds.
     Each rectangle is animated using KeyTime properties of a different value type. -->
             <TextBlock Canvas.Top="10" Canvas.Left="10">
-      Animated with KeyTimes using TimeSpan Values. Goes to 100 in the first 3 seconds, 100 to 300 in the next
-      second, and 300 to 500 in the last 6 seconds.
+                Animated with KeyTimes using TimeSpan Values. Goes to 100 in the first 3 seconds, 100 to 300 in the next
+                second, and 300 to 500 in the last 6 seconds.
             </TextBlock>
             <Rectangle Name="KeyFrameRectangleUsingTimeSpan" Canvas.Top="30" Canvas.Left="10" Height="50"
-    Width="50" Stroke="Black" StrokeThickness="5"/>
+                        Width="50" Stroke="Black" StrokeThickness="5"/>
 
             <TextBlock Canvas.Top="90" Canvas.Left="10">Using Percentage Values. Identical behavior to rectangle above.</TextBlock>
             <Rectangle Name="KeyFrameRectangleUsingPercentage" Canvas.Top="110" Canvas.Left="10" Height="50"
-    Width="50" Stroke="Black" StrokeThickness="5"/>
+                        Width="50" Stroke="Black" StrokeThickness="5"/>
 
             <TextBlock Canvas.Top="170" Canvas.Left="10">Using Uniform Values. Rectangle moves between key frames at uniform rate.</TextBlock>
             <Rectangle Name="KeyFrameRectangleUsingUniform" Canvas.Top="190" Canvas.Left="10" Height="50"
-    Width="50" Stroke="Black" StrokeThickness="5"/>
+                        Width="50" Stroke="Black" StrokeThickness="5"/>
 
             <TextBlock Canvas.Top="250" Canvas.Left="10">
-      Using Paced Values. Rectangle moves between key frames at uniform rate except for first key frame
-      because using a Paced value on the first KeyFrame in a collection of frames gives a time of zero.
+                        Using Paced Values. Rectangle moves between key frames at uniform rate except for first key frame
+                        because using a Paced value on the first KeyFrame in a collection of frames gives a time of zero.
             </TextBlock>
             <Rectangle Name="KeyFrameRectangleUsingPaced" Canvas.Top="270" Canvas.Left="10" Height="50"
-    Width="50" Stroke="Black" StrokeThickness="5"/>
+                        Width="50" Stroke="Black" StrokeThickness="5"/>
 
             <TextBlock Canvas.Top="330" Canvas.Left="10">Using mixed values. TimeSpan for first Key Frame, percentage for second, and Paced for third.</TextBlock>
             <Rectangle Name="KeyFrameRectangleUsingMix" Canvas.Top="350" Canvas.Left="10" Height="50"
-    Width="50" Stroke="Black" StrokeThickness="5"/>
+                        Width="50" Stroke="Black" StrokeThickness="5"/>
 
             <!-- Create a button to restart the animations. -->
             <Button Canvas.Top="410" Canvas.Left="10">
@@ -52,24 +52,21 @@
 
                                 <!-- This animation goes from 10 to 100 in the first 3 seconds, 100 to 300 in the next
               second, and 300 to 500 in the last 6 seconds. Timing is controlled using TimeSpan values. -->
-                                <DoubleAnimationUsingKeyFrames 
-                Storyboard.TargetName="KeyFrameRectangleUsingTimeSpan" Storyboard.TargetProperty="(Canvas.Left)"
-                Duration="0:0:10">
-                                    <DoubleAnimationUsingKeyFrames.KeyFrames>
-
-                                        <!-- KeyTime properties are expressed as TimeSpan values which are in the form of
+                                <anim:DoubleAnimationUsingKeyFrames
+                                    Storyboard.TargetName="KeyFrameRectangleUsingTimeSpan" Storyboard.TargetProperty="(Canvas.Left)"
+                                    Duration="0:0:10">
+                                    <!-- KeyTime properties are expressed as TimeSpan values which are in the form of
                   "hours:minutes:seconds". -->
-                                        <LinearDoubleKeyFrame Value="100" KeyTime="0:0:3" />
-                                        <LinearDoubleKeyFrame Value="300" KeyTime="0:0:4" />
-                                        <LinearDoubleKeyFrame Value="500" KeyTime="0:0:10" />
-                                    </DoubleAnimationUsingKeyFrames.KeyFrames>
-                                </DoubleAnimationUsingKeyFrames>
+                                    <anim:LinearDoubleKeyFrame Value="100" KeyTime="30%" />
+                                    <anim:LinearDoubleKeyFrame Value="300" KeyTime="0:0:4" />
+                                    <anim:LinearDoubleKeyFrame Value="500" KeyTime="Paced" />
+                                </anim:DoubleAnimationUsingKeyFrames>
 
                                 <!-- This animation goes from 10 to 100 in the first 3 seconds, 100 to 300 in the next
               second, and 300 to 500 in the last 6 seconds. Timing is controlled using percentages. -->
                                 <DoubleAnimationUsingKeyFrames 
-                Storyboard.TargetName="KeyFrameRectangleUsingPercentage" Storyboard.TargetProperty="(Canvas.Left)"
-                Duration="0:0:10">
+                                    Storyboard.TargetName="KeyFrameRectangleUsingPercentage" Storyboard.TargetProperty="(Canvas.Left)"
+                                    Duration="0:0:10">
                                     <DoubleAnimationUsingKeyFrames.KeyFrames>
 
                                         <!-- KeyTime properties are expressed as Percentages. -->
@@ -81,8 +78,8 @@
 
                                 <!-- This animation moves at a constant rate. Timing is controlled with Uniform values. -->
                                 <DoubleAnimationUsingKeyFrames 
-                Storyboard.TargetName="KeyFrameRectangleUsingUniform" Storyboard.TargetProperty="(Canvas.Left)"
-                Duration="0:0:10">
+                                    Storyboard.TargetName="KeyFrameRectangleUsingUniform" Storyboard.TargetProperty="(Canvas.Left)"
+                                    Duration="0:0:10">
                                     <DoubleAnimationUsingKeyFrames.KeyFrames>
 
                                         <!-- KeyTime properties are expressed with values of Uniform. Uniform values are typically 
@@ -96,8 +93,8 @@
 
                                 <!--  This animation moves at a constant rate. Timing is controlled with Paced values. -->
                                 <DoubleAnimationUsingKeyFrames 
-                Storyboard.TargetName="KeyFrameRectangleUsingPaced" Storyboard.TargetProperty="(Canvas.Left)"
-                Duration="0:0:10">
+                                    Storyboard.TargetName="KeyFrameRectangleUsingPaced" Storyboard.TargetProperty="(Canvas.Left)"
+                                    Duration="0:0:10">
                                     <DoubleAnimationUsingKeyFrames.KeyFrames>
 
                                         <!-- KeyTime properties are expressed with values of Paced. Paced values are typically 
@@ -105,14 +102,14 @@
                   values only for demonstration. -->
                                         <LinearDoubleKeyFrame Value="100" KeyTime="Paced" />
                                         <LinearDoubleKeyFrame Value="300" KeyTime="Paced" />
-                                        <LinearDoubleKeyFrame Value="90000" KeyTime="Paced" />
+                                        <LinearDoubleKeyFrame Value="500" KeyTime="Paced" />
                                     </DoubleAnimationUsingKeyFrames.KeyFrames>
                                 </DoubleAnimationUsingKeyFrames>
 
                                 <!--  Timing is a mix of different types of values. -->
                                 <DoubleAnimationUsingKeyFrames 
-                Storyboard.TargetName="KeyFrameRectangleUsingMix" Storyboard.TargetProperty="(Canvas.Left)"
-                Duration="0:0:10">
+                                    Storyboard.TargetName="KeyFrameRectangleUsingMix" Storyboard.TargetProperty="(Canvas.Left)"
+                                    Duration="0:0:10">
                                     <DoubleAnimationUsingKeyFrames.KeyFrames>
 
                                         <!-- KeyTime properties are expressed using percentage, TimeSpan, and Paced. -->

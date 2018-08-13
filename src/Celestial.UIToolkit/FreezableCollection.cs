@@ -245,7 +245,7 @@ namespace Celestial.UIToolkit
         public void Insert(int index, T item)
         {
             if (item == null) throw new ArgumentNullException(nameof(item));
-            if (index < 0 || index > _items.Count - 1)
+            if (index < 0 || index > _items.Count)
                 throw new ArgumentOutOfRangeException(nameof(index));
 
             this.EnterWriteScope(() =>
@@ -265,7 +265,7 @@ namespace Celestial.UIToolkit
         {
             return this.EnterReadScope(() =>
             {
-                int index = this.Count - 1;
+                int index = this.Count;
                 this.Insert(index, item);
                 return index;
             });
