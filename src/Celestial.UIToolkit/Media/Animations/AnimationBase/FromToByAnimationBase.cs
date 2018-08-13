@@ -1,6 +1,5 @@
 ﻿using Celestial.UIToolkit.Extensions;
 using System;
-using System.Diagnostics;
 using System.Windows;
 using System.Windows.Media.Animation;
 
@@ -159,32 +158,32 @@ namespace Celestial.UIToolkit.Media.Animations
 
         private void SetDynamicAnimationValues(T defaultOrigin, T defaultDestination, AnimationClock animationClock)
         {
-            this.SetCurrentFromAndTo(defaultOrigin, defaultDestination);
+            this.SetActualFromAndTo(defaultOrigin, defaultDestination);
             this.SetCurrentAdditiveModifier(defaultOrigin);
             this.SetCurrentCumulativeModifier(animationClock);
         }
 
-        private void SetCurrentFromAndTo(T defaultOrigin, T defaultDestination)
+        private void SetActualFromAndTo(T defaultOrigin, T defaultDestination)
         {
             switch (_animationType)
             {
                 case AnimationType.Automatic:
-                    this.SetActualFromAndTo(defaultOrigin, defaultDestination);
+                    this.SetActualFromAndToVariables(defaultOrigin, defaultDestination);
                     break;
                 case AnimationType.From:
-                    this.SetActualFromAndTo(this.From, defaultDestination);
+                    this.SetActualFromAndToVariables(this.From, defaultDestination);
                     break;
                 case AnimationType.To:
-                    this.SetActualFromAndTo(defaultOrigin, this.To);
+                    this.SetActualFromAndToVariables(defaultOrigin, this.To);
                     break;
                 case AnimationType.By:
-                    this.SetActualFromAndTo(defaultOrigin, this.AddValues(defaultOrigin, this.By));
+                    this.SetActualFromAndToVariables(defaultOrigin, this.AddValues(defaultOrigin, this.By));
                     break;
                 case AnimationType.FromTo:
-                    this.SetActualFromAndTo(this.From, this.To);
+                    this.SetActualFromAndToVariables(this.From, this.To);
                     break;
                 case AnimationType.FromBy:
-                    this.SetActualFromAndTo(this.From, this.AddValues(this.From, this.By));
+                    this.SetActualFromAndToVariables(this.From, this.AddValues(this.From, this.By));
                     break;
                 default:
                     throw new NotImplementedException("Unknown animation type.");
@@ -217,7 +216,7 @@ namespace Celestial.UIToolkit.Media.Animations
             }
         }
 
-        private void SetActualFromAndTo(T from, T to)
+        private void SetActualFromAndToVariables(T from, T to)
         {
             _actualFrom = from;
             _actualTo = to;
