@@ -179,7 +179,7 @@ namespace Celestial.UIToolkit.Media.Animations
             foreach (var pacedSegment in pacedSegments)
             {
                 var startIndex = pacedSegment.Offset;
-                var startTime = _keyFrames[startIndex - 1].ResolvedKeyTime;
+                var startTime = _keyFrames.ElementBefore(startIndex).ResolvedKeyTime;
                 var segmentLengths = new List<double>(pacedSegment.Count + 1);
                 var totalSegmentLength = 0d;
                 var from = _keyFrames[startIndex - 1].Value;

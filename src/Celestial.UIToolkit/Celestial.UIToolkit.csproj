@@ -91,7 +91,6 @@
     <Compile Include="Media\Animations\BrushAnimation.cs" />
     <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\AnimationUsingKeyFramesBase.cs" />
     <Compile Include="Media\Animations\CompositeBrushAnimation.cs" />
-    <Compile Include="Media\Animations\DoubleAnimationUsingKeyFrames.cs" />
     <Compile Include="Media\Animations\GradientBrushAnimation.cs" />
     <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\KeyFrameBase.cs" />
     <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\KeyFrameResolver.cs" />

@@ -305,17 +305,17 @@ namespace Celestial.UIToolkit.Media.Animations
             if (_resolvedKeyFrames == null || _resolvedKeyFrames.Count == 0)
                 return defaultDestinationValue;
 
-            TimeSpan currentTime = animationClock.CurrentTime.GetValueOrDefault();
-            int currentFrameIndex = _resolvedKeyFrames.FindCurrentKeyFrameIndex(currentTime);
+            TimeSpan currentClockTime = animationClock.CurrentTime.GetValueOrDefault();
+            int currentFrameIndex = _resolvedKeyFrames.FindCurrentKeyFrameIndex(currentClockTime);
             var currentFrame = _resolvedKeyFrames[currentFrameIndex];
 
             T currentValue;
-            if (currentFrame == _resolvedKeyFrames.Last() && currentFrame.IsTimeAfter(currentTime))
+            if (currentFrame == _resolvedKeyFrames.Last() && currentFrame.IsTimeAfter(currentClockTime))
             {
                 // We are past the last frame.
                 currentValue = (T)currentFrame.Value;
             }
-            else if (currentFrame.ResolvedKeyTime == currentTime)
+            else if (currentFrame.ResolvedKeyTime == currentClockTime)
             {
                 // We are exactly on a frame.
                 currentValue = (T)currentFrame.Value;
@@ -323,21 +323,18 @@ namespace Celestial.UIToolkit.Media.Animations
             else if (currentFrame == _resolvedKeyFrames.First())
             {
                 var baseValue = this.IsAdditive ? this.GetZeroValue() : defaultOriginValue;
-                double progress = currentFrame.GetProgress(currentTime);
+                double progress = currentFrame.GetProgress(currentClockTime);
                 currentValue = currentFrame.OriginalKeyFrame.InterpolateValue(baseValue, progress);
             }
             else
             {
-                // Between two frames
-                var previousFrame = _resolvedKeyFrames[currentFrameIndex - 1];
-                T baseValue = (T)previousFrame.Value;
+                // Between two frames.
+                var previousFrame = _resolvedKeyFrames.ElementBefore(currentFrameIndex);
+                var currentTimeDiff = currentClockTime - previousFrame.ResolvedKeyTime;
+                var frameTimeDiff = currentFrame.ResolvedKeyTime - previousFrame.ResolvedKeyTime;
+                double progress = currentTimeDiff.TotalMilliseconds / frameTimeDiff.TotalMilliseconds;
 
-                var timeDiff = currentTime - previousFrame.ResolvedKeyTime;
-                var fullDuration = currentFrame.ResolvedKeyTime - previousFrame.ResolvedKeyTime;
-                double progress = timeDiff.TotalMilliseconds / fullDuration.TotalMilliseconds;
-
-                var origKeyFrame = currentFrame.OriginalKeyFrame;
-                currentValue = origKeyFrame.InterpolateValue(baseValue, progress);
+                currentValue = currentFrame.OriginalKeyFrame.InterpolateValue((T)previousFrame.Value, progress);
             }
 
             if (this.IsCumulative)
