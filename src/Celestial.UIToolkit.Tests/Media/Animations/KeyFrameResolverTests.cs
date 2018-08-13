@@ -1,13 +1,12 @@
-﻿using System;
+﻿using Celestial.UIToolkit.Extensions;
+using Celestial.UIToolkit.Media.Animations;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Media.Animation;
-using Celestial.UIToolkit.Media.Animations;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Celestial.UIToolkit.Extensions;
 using DoubleKeyFrameCollection = System.Windows.Media.Animation.DoubleKeyFrameCollection;
 using LinearDoubleKeyFrame = System.Windows.Media.Animation.LinearDoubleKeyFrame;
-using System.Windows;
 
 namespace Celestial.UIToolkit.Tests.Media.Animations
 {
@@ -127,10 +126,10 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
             //       should not replace an automatic unit test.
         }
 
-        private IReadOnlyList<ResolvedKeyFrame> GetResolvedKeyFrames(params KeyTime[] keyTimes)
+        private IReadOnlyList<ResolvedKeyFrame<DoubleKeyFrame>> GetResolvedKeyFrames(params KeyTime[] keyTimes)
         {
             var collection = this.BuildDoubleKeyFrameCollection(keyTimes);
-            return KeyFrameResolver.ResolveKeyFrames(collection, _totalDuration, new DoubleSegmentProvider());
+            return KeyFrameResolver<DoubleKeyFrame>.ResolveKeyFrames(collection, _totalDuration, new DoubleSegmentProvider());
         }
 
         private DoubleKeyFrameCollection BuildDoubleKeyFrameCollection(
@@ -144,20 +143,20 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
             return collection;
         }
 
-        private void AssertSharedKeyFrameRules(IEnumerable<ResolvedKeyFrame> frames)
+        private void AssertSharedKeyFrameRules(IEnumerable<ResolvedKeyFrame<DoubleKeyFrame>> frames)
         {
             this.AssertThatEachFrameIsResolved(frames);
             this.AssertThatFramesAreInOrder(frames);
         }
 
-        private void AssertThatEachFrameIsResolved(IEnumerable<ResolvedKeyFrame> frames)
+        private void AssertThatEachFrameIsResolved(IEnumerable<ResolvedKeyFrame<DoubleKeyFrame>> frames)
         {
             Assert.IsTrue(frames.All(frame => frame.IsResolved));
         }
 
-        private void AssertThatFramesAreInOrder(IEnumerable<ResolvedKeyFrame> frames)
+        private void AssertThatFramesAreInOrder(IEnumerable<ResolvedKeyFrame<DoubleKeyFrame>> frames)
         {
-            ResolvedKeyFrame previousFrame = null;
+            ResolvedKeyFrame<DoubleKeyFrame> previousFrame = null;
             foreach (var frame in frames)
             {
                 if (previousFrame != null)
@@ -167,7 +166,7 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
             }
         }
 
-        private void ValidateUniformKeyFrames(IEnumerable<ResolvedKeyFrame> frames)
+        private void ValidateUniformKeyFrames(IEnumerable<ResolvedKeyFrame<DoubleKeyFrame>> frames)
         {
             // Grab each uniform segment and check if the increments are valid.
             var segments = frames.ToArray().GetGroupSegments(frame => 

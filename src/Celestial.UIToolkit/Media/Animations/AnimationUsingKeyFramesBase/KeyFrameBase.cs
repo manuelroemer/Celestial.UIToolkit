@@ -10,7 +10,7 @@ namespace Celestial.UIToolkit.Media.Animations
     /// a key frame animation.
     /// </summary>
     /// <typeparam name="T">The type of this key frame's <see cref="Value"/> property.</typeparam>
-    public abstract class KeyFrameBase<T> : Freezable, IInterpolatedKeyFrame
+    public abstract class KeyFrameBase<T> : Freezable, IInterpolateKeyFrame<T>
     {
         
         /// <summary>
@@ -81,12 +81,7 @@ namespace Celestial.UIToolkit.Media.Animations
             this.Value = value;
             this.KeyTime = keyTime;
         }
-
-        object IInterpolatedKeyFrame.InterpolateValue(object baseValue, double keyFrameProgress)
-        {
-            return this.InterpolateValue((T)baseValue, keyFrameProgress);
-        }
-
+        
         /// <summary>
         /// Returns the interpolated value of this key frame at the provided progress increment.
         /// </summary>

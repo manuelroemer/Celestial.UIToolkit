@@ -6,18 +6,19 @@ namespace Celestial.UIToolkit.Media.Animations
 {
 
     /// <summary>
-    /// Used by the <see cref="KeyFrameResolver"/> to store the resolve result
+    /// Used by the <see cref="KeyFrameResolver{TKeyFrame}"/> to store the resolve result
     /// for a single key frame.
     /// </summary>
     [DebuggerDisplay("ResolvedKeyTime: {ResolvedKeyTime}, IsResolved: {IsResolved}")]
     [DebuggerStepThrough]
-    internal sealed class ResolvedKeyFrame : IKeyFrame, IComparable, IComparable<ResolvedKeyFrame>
+    internal sealed class ResolvedKeyFrame<TKeyFrame> : IKeyFrame, IComparable, IComparable<ResolvedKeyFrame<TKeyFrame>>
+        where TKeyFrame : IKeyFrame
     {
 
         /// <summary>
         /// Gets the original key frame.
         /// </summary>
-        public IKeyFrame OriginalKeyFrame { get; }
+        public TKeyFrame OriginalKeyFrame { get; }
 
         KeyTime IKeyFrame.KeyTime
         {
@@ -49,7 +50,7 @@ namespace Celestial.UIToolkit.Media.Animations
 
         /// <summary>
         /// Gets a time which is the resulting time of a resolvement
-        /// by the <see cref="KeyFrameResolver"/>.
+        /// by the <see cref="KeyFrameResolver{TKeyFrame}"/>.
         /// If this frame has not been resolved, this returns <see cref="TimeSpan.Zero"/>.
         /// </summary>
         public TimeSpan ResolvedKeyTime { get; private set; }
@@ -59,7 +60,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// </summary>
         public bool IsResolved { get; private set; }
 
-        public ResolvedKeyFrame(IKeyFrame originalKeyFrame)
+        public ResolvedKeyFrame(TKeyFrame originalKeyFrame)
         {
             this.OriginalKeyFrame = originalKeyFrame;
         }
@@ -76,12 +77,12 @@ namespace Celestial.UIToolkit.Media.Animations
 
         public int CompareTo(object obj)
         {
-            if (!(obj is ResolvedKeyFrame otherFrame))
-                throw new ArgumentException($"{nameof(obj)} must be another {nameof(ResolvedKeyFrame)}.");
+            if (!(obj is ResolvedKeyFrame<TKeyFrame> otherFrame))
+                throw new ArgumentException($"{nameof(obj)} must be another {nameof(ResolvedKeyFrame<TKeyFrame>)}.");
             return this.CompareTo(otherFrame);
         }
 
-        public int CompareTo(ResolvedKeyFrame otherFrame)
+        public int CompareTo(ResolvedKeyFrame<TKeyFrame> otherFrame)
         {
             return this.ResolvedKeyTime.CompareTo(otherFrame.ResolvedKeyTime);
         }

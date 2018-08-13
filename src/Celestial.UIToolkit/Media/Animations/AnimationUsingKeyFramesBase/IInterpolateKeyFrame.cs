@@ -9,7 +9,8 @@ namespace Celestial.UIToolkit.Media.Animations
     /// which defines a key frame which has the ability to interpolate
     /// its value, depending on a progress factor.
     /// </summary>
-    public interface IInterpolatedKeyFrame : IKeyFrame
+    /// <typeparam name="T">The type of the key frame's <see cref="IKeyFrame.Value"/> property.</typeparam>
+    public interface IInterpolateKeyFrame<T> : IKeyFrame
     {
 
         /// <summary>
@@ -22,7 +23,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// </param>
         /// <returns>The output value of this key frame given the specified base value and progress.</returns>
         /// <exception cref="ArgumentOutOfRangeException" />
-        object InterpolateValue(object baseValue, double keyFrameProgress);
+        T InterpolateValue(T baseValue, double keyFrameProgress);
 
     }
 

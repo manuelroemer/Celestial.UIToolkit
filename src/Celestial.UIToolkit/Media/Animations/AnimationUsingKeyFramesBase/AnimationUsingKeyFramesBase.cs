@@ -20,12 +20,12 @@ namespace Celestial.UIToolkit.Media.Animations
     [ContentProperty(nameof(KeyFrames))]
     public abstract class AnimationUsingKeyFramesBase<T, TKeyFrame, TKeyFrameCollection>
         : AnimationBase<T>, IAddChild, IKeyFrameAnimation, ISegmentLengthProvider
-        where TKeyFrame : IInterpolatedKeyFrame
+        where TKeyFrame : IInterpolateKeyFrame<T>
         where TKeyFrameCollection : Freezable, IList, IList<TKeyFrame>, new()
     {
 
         private TKeyFrameCollection _keyFrames;
-        private IReadOnlyList<ResolvedKeyFrame> _resolvedKeyFrames;
+        private IReadOnlyList<ResolvedKeyFrame<TKeyFrame>> _resolvedKeyFrames;
         private bool _areKeyFramesResolved;
 
         /// <summary>
@@ -237,7 +237,7 @@ namespace Celestial.UIToolkit.Media.Animations
         private void ResolveKeyTimes()
         {
             if (_areKeyFramesResolved) return;
-            _resolvedKeyFrames = KeyFrameResolver.ResolveKeyFrames(
+            _resolvedKeyFrames = KeyFrameResolver<TKeyFrame>.ResolveKeyFrames(
                 _keyFrames, this.GetAnimationsActualDuration(), this);
             _areKeyFramesResolved = true;
         }
@@ -282,7 +282,24 @@ namespace Celestial.UIToolkit.Media.Animations
             return new Duration(this.GetAnimationsActualDuration());
         }
 
-        protected override T GetCurrentValueCore(T defaultOriginValue, T defaultDestinationValue, AnimationClock animationClock)
+        /// <summary>
+        ///     Calculates a value that represents the current value of the property being animated, 
+        ///     based on the provided <see cref="KeyFrames"/>.
+        /// </summary>
+        /// <param name="defaultOriginValue">
+        ///      The suggested origin value, used if the animation 
+        ///      does not have its own explicitly set start value.
+        /// </param>
+        /// <param name="defaultDestinationValue">
+        ///     The suggested destination value. Not used by the animation.
+        /// </param>
+        /// <param name="animationClock">
+        ///     The <see cref="AnimationClock"/> which can generate the <see cref="Clock.CurrentTime"/>
+        ///     or <see cref="Clock.CurrentProgress"/> value to be used by the
+        ///     animation to generate its output value.
+        /// </param>
+        /// <returns>The value this animation believes should be the current value for the property.</returns>
+        protected override sealed T GetCurrentValueCore(T defaultOriginValue, T defaultDestinationValue, AnimationClock animationClock)
         {
             this.ResolveKeyTimes();
             if (_resolvedKeyFrames == null || _resolvedKeyFrames.Count == 0)
@@ -290,7 +307,7 @@ namespace Celestial.UIToolkit.Media.Animations
 
             TimeSpan currentTime = animationClock.CurrentTime.GetValueOrDefault();
             int currentFrameIndex = _resolvedKeyFrames.FindCurrentKeyFrameIndex(currentTime);
-            ResolvedKeyFrame currentFrame = _resolvedKeyFrames[currentFrameIndex];
+            var currentFrame = _resolvedKeyFrames[currentFrameIndex];
 
             T currentValue;
             if (currentFrame == _resolvedKeyFrames.Last() && currentFrame.IsTimeAfter(currentTime))
@@ -307,9 +324,7 @@ namespace Celestial.UIToolkit.Media.Animations
             {
                 var baseValue = this.IsAdditive ? this.GetZeroValue() : defaultOriginValue;
                 double progress = currentFrame.GetProgress(currentTime);
-
-                var origKeyFrame = (IInterpolatedKeyFrame)currentFrame.OriginalKeyFrame;
-                currentValue = (T)origKeyFrame.InterpolateValue(baseValue, progress);
+                currentValue = currentFrame.OriginalKeyFrame.InterpolateValue(baseValue, progress);
             }
             else
             {
@@ -319,11 +334,10 @@ namespace Celestial.UIToolkit.Media.Animations
 
                 var timeDiff = currentTime - previousFrame.ResolvedKeyTime;
                 var fullDuration = currentFrame.ResolvedKeyTime - previousFrame.ResolvedKeyTime;
-
                 double progress = timeDiff.TotalMilliseconds / fullDuration.TotalMilliseconds;
 
-                var origKeyFrame = (IInterpolatedKeyFrame)currentFrame.OriginalKeyFrame;
-                currentValue = (T)origKeyFrame.InterpolateValue(baseValue, progress);
+                var origKeyFrame = currentFrame.OriginalKeyFrame;
+                currentValue = origKeyFrame.InterpolateValue(baseValue, progress);
             }
 
             if (this.IsCumulative)
@@ -331,7 +345,7 @@ namespace Celestial.UIToolkit.Media.Animations
                 double factor = animationClock.CurrentIteration.GetValueOrDefault() - 1;
                 if (factor > 0d)
                 {
-                    T scaledValue = this.ScaleValues((T)currentFrame.Value, factor);
+                    T scaledValue = this.ScaleValue((T)currentFrame.Value, factor);
                     currentValue = this.AddValues(currentValue, scaledValue);
                 }
             }
@@ -368,7 +382,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <returns>
         /// The result of the scaling.
         /// </returns>
-        protected abstract T ScaleValues(T value, double factor);
+        protected abstract T ScaleValue(T value, double factor);
 
         /// <summary>
         /// Calculates the distance between the two specified objects.

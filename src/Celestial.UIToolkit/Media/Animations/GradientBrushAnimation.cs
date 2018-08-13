@@ -10,8 +10,6 @@ namespace Celestial.UIToolkit.Media.Animations
     /// </summary>
     public abstract class GradientBrushAnimation : BrushAnimation
     {
-
-        private GradientStopCollection _currentGradientStops;
         
         /// <summary>
         /// Performs some common validation on the specified brushes,

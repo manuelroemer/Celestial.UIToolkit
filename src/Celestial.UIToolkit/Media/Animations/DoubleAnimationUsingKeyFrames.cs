@@ -38,7 +38,7 @@ namespace Celestial.UIToolkit.Media.Animations
             return 0d;
         }
 
-        protected override double ScaleValues(double value, double factor)
+        protected override double ScaleValue(double value, double factor)
         {
             return value * factor;
         }

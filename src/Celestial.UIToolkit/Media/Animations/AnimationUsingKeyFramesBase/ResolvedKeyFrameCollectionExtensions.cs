@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Animation;
 
 namespace Celestial.UIToolkit.Media.Animations
 {
@@ -16,15 +17,16 @@ namespace Celestial.UIToolkit.Media.Animations
         /// which is supposed to be used for an animation at the specified time.
         /// </summary>
         /// <param name="resolvedKeyFrames">
-        /// A sequence of <see cref="ResolvedKeyFrame"/> instances.
+        /// A sequence of <see cref="ResolvedKeyFrame{TKeyFrame}"/> instances.
         /// </param>
         /// <param name="currentTime">The animation's current time.</param>
         /// <returns>
         /// The index in the <paramref name="resolvedKeyFrames"/> sequence, which
         /// points to the key frame which is supposed to be played.
         /// </returns>
-        public static int FindCurrentKeyFrameIndex(
-            this IEnumerable<ResolvedKeyFrame> resolvedKeyFrames, TimeSpan currentTime)
+        public static int FindCurrentKeyFrameIndex<TKeyFrame>(
+            this IEnumerable<ResolvedKeyFrame<TKeyFrame>> resolvedKeyFrames, TimeSpan currentTime)
+            where TKeyFrame : IKeyFrame
         {
             if (resolvedKeyFrames == null) throw new ArgumentNullException(nameof(resolvedKeyFrames));
             if (resolvedKeyFrames.Count() == 0)
