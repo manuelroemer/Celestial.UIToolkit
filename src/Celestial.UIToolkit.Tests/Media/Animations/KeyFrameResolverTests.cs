@@ -5,8 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Media.Animation;
-using DoubleKeyFrameCollection = System.Windows.Media.Animation.DoubleKeyFrameCollection;
-using LinearDoubleKeyFrame = System.Windows.Media.Animation.LinearDoubleKeyFrame;
 
 namespace Celestial.UIToolkit.Tests.Media.Animations
 {

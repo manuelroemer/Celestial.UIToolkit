@@ -79,11 +79,13 @@
     <Compile Include="ExtendedFreezable.cs" />
     <Compile Include="Extensions\ArrayExtensions.cs" />
     <Compile Include="Extensions\ArraySegmentExtensions.cs" />
+    <Compile Include="Extensions\DependencyPropertyExtensions.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\FrameworkElementExtensions.cs" />
     <Compile Include="FreezableCollection.cs" />
     <Compile Include="MarginHelper.cs" />
-    <Compile Include="Media\Animations\AnimationBase.cs" />
+    <Compile Include="Media\Animations\AnimationBase\AnimationBase.cs" />
+    <Compile Include="Media\Animations\AnimationBase\FromToByAnimationBase.cs" />
     <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\IInterpolateKeyFrame.cs" />
     <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\ISegmentLengthProvider.cs" />
     <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\ResolvedKeyFrameCollectionExtensions.cs" />
@@ -91,6 +93,7 @@
     <Compile Include="Media\Animations\BrushAnimation.cs" />
     <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\AnimationUsingKeyFramesBase.cs" />
     <Compile Include="Media\Animations\CompositeBrushAnimation.cs" />
+    <Compile Include="Media\Animations\DoubleAnimation.cs" />
     <Compile Include="Media\Animations\GradientBrushAnimation.cs" />
     <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\KeyFrameBase.cs" />
     <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\KeyFrameResolver.cs" />
