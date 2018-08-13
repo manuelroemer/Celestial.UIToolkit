@@ -4,13 +4,13 @@ using System.Windows.Media.Animation;
 
 namespace Celestial.UIToolkit.Media.Animations
 {
-
+    
     /// <summary>
     /// An abstract base class for a key frame that participates in
     /// a key frame animation.
     /// </summary>
     /// <typeparam name="T">The type of this key frame's <see cref="Value"/> property.</typeparam>
-    public abstract class KeyFrameBase<T> : Freezable, IKeyFrame
+    public abstract class KeyFrameBase<T> : Freezable, IInterpolatedKeyFrame
     {
         
         /// <summary>
@@ -82,6 +82,11 @@ namespace Celestial.UIToolkit.Media.Animations
             this.KeyTime = keyTime;
         }
 
+        object IInterpolatedKeyFrame.InterpolateValue(object baseValue, double keyFrameProgress)
+        {
+            return this.InterpolateValue((T)baseValue, keyFrameProgress);
+        }
+
         /// <summary>
         /// Returns the interpolated value of this key frame at the provided progress increment.
         /// </summary>
@@ -95,7 +100,7 @@ namespace Celestial.UIToolkit.Media.Animations
         public T InterpolateValue(T baseValue, double keyFrameProgress)
         {
             if (keyFrameProgress < 0d || keyFrameProgress > 1d)
-                throw new ArgumentNullException(nameof(keyFrameProgress));
+                throw new ArgumentOutOfRangeException(nameof(keyFrameProgress));
             return this.InterpolateValueCore(baseValue, keyFrameProgress);
         }
 

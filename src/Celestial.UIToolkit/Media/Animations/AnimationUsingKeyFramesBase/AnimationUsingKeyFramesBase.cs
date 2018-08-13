@@ -3,13 +3,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Markup;
-using System.Windows.Media;
 using System.Windows.Media.Animation;
 
 namespace Celestial.UIToolkit.Media.Animations
@@ -19,15 +15,17 @@ namespace Celestial.UIToolkit.Media.Animations
     /// A base class for an animation using key frames.
     /// </summary>
     /// <typeparam name="T">The type of animated object.</typeparam>
+    /// <typeparam name="TKeyFrame">The type of key frame which is being used by this animation.</typeparam>
     /// <typeparam name="TKeyFrameCollection">The type of collection which holds the animation's key frames.</typeparam>
     [ContentProperty(nameof(KeyFrames))]
-    public abstract class AnimationUsingKeyFramesBase<T, TKeyFrameCollection>
+    public abstract class AnimationUsingKeyFramesBase<T, TKeyFrame, TKeyFrameCollection>
         : AnimationBase<T>, IAddChild, IKeyFrameAnimation, ISegmentLengthProvider
-        where TKeyFrameCollection : Freezable, IList, IList<KeyFrameBase<T>>, new()
+        where TKeyFrame : IInterpolatedKeyFrame
+        where TKeyFrameCollection : Freezable, IList, IList<TKeyFrame>, new()
     {
 
         private TKeyFrameCollection _keyFrames;
-        private ResolvedKeyFrame[] _resolvedKeyFrames;
+        private IReadOnlyList<ResolvedKeyFrame> _resolvedKeyFrames;
         private bool _areKeyFramesResolved;
 
         /// <summary>
@@ -125,7 +123,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <param name="sourceFreezable">The object to clone.</param>
         protected override void CloneCore(Freezable sourceFreezable)
         {
-            var source = (AnimationUsingKeyFramesBase<T, TKeyFrameCollection>)sourceFreezable;
+            var source = (AnimationUsingKeyFramesBase<T, TKeyFrame, TKeyFrameCollection>)sourceFreezable;
             base.CloneCore(sourceFreezable);
             this.CloneMembers(source, false);
         }
@@ -137,7 +135,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <param name="sourceFreezable">The object to be cloned.</param>
         protected override void CloneCurrentValueCore(Freezable sourceFreezable)
         {
-            var source = (AnimationUsingKeyFramesBase<T, TKeyFrameCollection>)sourceFreezable;
+            var source = (AnimationUsingKeyFramesBase<T, TKeyFrame, TKeyFrameCollection>)sourceFreezable;
             base.CloneCore(sourceFreezable);
             this.CloneMembers(source, true);
         }
@@ -149,7 +147,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <param name="sourceFreezable">The object to copy.</param>
         protected override void GetAsFrozenCore(Freezable sourceFreezable)
         {
-            var source = (AnimationUsingKeyFramesBase<T, TKeyFrameCollection>)sourceFreezable;
+            var source = (AnimationUsingKeyFramesBase<T, TKeyFrame, TKeyFrameCollection>)sourceFreezable;
             base.CloneCore(sourceFreezable);
             this.CloneMembers(source, false);
         }
@@ -161,13 +159,13 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <param name="sourceFreezable">The object to copy.</param>
         protected override void GetCurrentValueAsFrozenCore(Freezable sourceFreezable)
         {
-            var source = (AnimationUsingKeyFramesBase<T, TKeyFrameCollection>)sourceFreezable;
+            var source = (AnimationUsingKeyFramesBase<T, TKeyFrame, TKeyFrameCollection>)sourceFreezable;
             base.CloneCore(sourceFreezable);
             this.CloneMembers(source, true);
         }
 
         private void CloneMembers(
-            AnimationUsingKeyFramesBase<T, TKeyFrameCollection> source,
+            AnimationUsingKeyFramesBase<T, TKeyFrame, TKeyFrameCollection> source,
             bool cloneCurrentValue)
         {
             _areKeyFramesResolved = source._areKeyFramesResolved;
@@ -236,6 +234,42 @@ namespace Celestial.UIToolkit.Media.Animations
                 $"The {this.GetType().FullName} doesn't support adding textual children.");
         }
 
+        private void ResolveKeyTimes()
+        {
+            if (_areKeyFramesResolved) return;
+            _resolvedKeyFrames = KeyFrameResolver.ResolveKeyFrames(
+                _keyFrames, this.GetDuration(), this);
+            _areKeyFramesResolved = true;
+        }
+
+        private TimeSpan GetDuration()
+        {
+            if (this.Duration != Duration.Automatic &&
+                this.Duration != Duration.Forever &&
+                this.Duration.HasTimeSpan)
+            {
+                return this.Duration.TimeSpan;
+            }
+            else
+            {
+                return this.GetDurationBasedOnKeyFrames();
+            }
+        }
+
+        private TimeSpan GetDurationBasedOnKeyFrames()
+        {
+            TimeSpan duration = TimeSpan.Zero;
+            foreach (IKeyFrame frame in _keyFrames)
+            {
+                if (frame.KeyTime.Type == KeyTimeType.TimeSpan &&
+                    frame.KeyTime.TimeSpan > duration)
+                {
+                    duration = frame.KeyTime.TimeSpan;
+                }
+            }
+            return duration == TimeSpan.Zero ? TimeSpan.FromSeconds(1) : duration;
+        }
+
         /// <summary>
         /// Returns the length of a single iteration of this <see cref="AnimationTimeline"/>.
         /// </summary>
@@ -251,7 +285,7 @@ namespace Celestial.UIToolkit.Media.Animations
         protected override T GetCurrentValueCore(T defaultOriginValue, T defaultDestinationValue, AnimationClock animationClock)
         {
             this.ResolveKeyTimes();
-            if (_resolvedKeyFrames == null || _resolvedKeyFrames.Length == 0)
+            if (_resolvedKeyFrames == null || _resolvedKeyFrames.Count == 0)
                 return defaultDestinationValue;
 
             var currentTime = animationClock.CurrentTime.GetValueOrDefault();
@@ -274,8 +308,8 @@ namespace Celestial.UIToolkit.Media.Animations
                 var baseValue = this.IsAdditive ? this.GetZeroValue() : defaultOriginValue;
                 double progress = currentFrame.GetProgress(currentTime);
 
-                KeyFrameBase<T> origKeyFrame = (KeyFrameBase<T>)currentFrame.OriginalKeyFrame;
-                currentValue = origKeyFrame.InterpolateValue(baseValue, progress);
+                var origKeyFrame = (IInterpolatedKeyFrame)currentFrame.OriginalKeyFrame;
+                currentValue = (T)origKeyFrame.InterpolateValue(baseValue, progress);
             }
             else
             {
@@ -288,8 +322,8 @@ namespace Celestial.UIToolkit.Media.Animations
 
                 double progress = timeDiff.TotalMilliseconds / fullDuration.TotalMilliseconds;
 
-                KeyFrameBase<T> origKeyFrame = (KeyFrameBase<T>)currentFrame.OriginalKeyFrame;
-                currentValue = origKeyFrame.InterpolateValue(baseValue, progress);
+                var origKeyFrame = (IInterpolatedKeyFrame)currentFrame.OriginalKeyFrame;
+                currentValue = (T)origKeyFrame.InterpolateValue(baseValue, progress);
             }
 
             if (this.IsCumulative)
@@ -301,7 +335,6 @@ namespace Celestial.UIToolkit.Media.Animations
                     currentValue = this.AddValues(currentValue, scaledValue);
                 }
             }
-
             if (this.IsAdditive)
             {
                 this.AddValues(defaultOriginValue, currentValue);
@@ -312,7 +345,7 @@ namespace Celestial.UIToolkit.Media.Animations
         
         private int FindCurrentKeyFrameIndex(TimeSpan currentTime)
         {
-            if (_resolvedKeyFrames == null || _resolvedKeyFrames.Length == 0)
+            if (_resolvedKeyFrames == null || _resolvedKeyFrames.Count == 0)
             {
                 throw new InvalidOperationException(
                     "The animation's resolved key frames did not contain any frames. " +
@@ -321,10 +354,10 @@ namespace Celestial.UIToolkit.Media.Animations
 
             // Find the first frame whose time is >= currentTime, but
             // choose the last frame of a set which have the same time.
-            for (int i = 0; i < _resolvedKeyFrames.Length; i++)
+            for (int i = 0; i < _resolvedKeyFrames.Count; i++)
             {
-                var currentFrame = _resolvedKeyFrames[i];
-                var nextFrame = i < _resolvedKeyFrames.Length - 1 ? _resolvedKeyFrames[i + 1] : null;
+                ResolvedKeyFrame currentFrame = _resolvedKeyFrames[i];
+                ResolvedKeyFrame nextFrame = _resolvedKeyFrames.ElementAfterOrDefault(i);
                 bool nextFrameEqualsCurrent = nextFrame != null &&
                                               nextFrame.ResolvedKeyTime == currentFrame.ResolvedKeyTime;
 
@@ -333,7 +366,7 @@ namespace Celestial.UIToolkit.Media.Animations
                     return i;
                 }
             }
-            return _resolvedKeyFrames.Length - 1;
+            return _resolvedKeyFrames.Count - 1;
         }
 
         /// <summary>
@@ -372,19 +405,8 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <returns>
         /// The distance between the two elements, as double.
         /// </returns>
-        /// <exception cref="ArgumentException">
-        /// Thrown if <paramref name="from"/> or <paramref name="to"/> are not of type
-        /// <typeparamref name="T"/>.
-        /// </exception>
         public double GetSegmentLength(object from, object to)
         {
-            if (from.GetType() != typeof(T) ||
-                to.GetType() != typeof(T))
-            {
-                throw new ArgumentException(
-                    $"The parameters {nameof(from)} and {nameof(to)} must both be of " +
-                    $"type {typeof(T).FullName}.");
-            }
             return this.GetSegmentLengthCore((T)from, (T)to);
         }
 
@@ -397,327 +419,6 @@ namespace Celestial.UIToolkit.Media.Animations
         /// The distance between the two elements, as double.
         /// </returns>
         protected abstract double GetSegmentLengthCore(T from, T to);
-
-        private void ResolveKeyTimes()
-        {
-            if (_areKeyFramesResolved) return;
-            _resolvedKeyFrames = KeyFrameResolver.ResolveKeyFrames(
-                _keyFrames, this.GetDuration(), this);
-            _areKeyFramesResolved = true;
-        }
-
-        private TimeSpan GetDuration()
-        {
-            if (this.Duration != Duration.Automatic &&
-                this.Duration != Duration.Forever &&
-                this.Duration.HasTimeSpan)
-            {
-                return this.Duration.TimeSpan;
-            }
-            else
-            {
-                return this.GetDurationBasedOnKeyFrames();
-            }
-        }
-
-        private TimeSpan GetDurationBasedOnKeyFrames()
-        {
-            TimeSpan duration = TimeSpan.Zero;
-            foreach (IKeyFrame frame in _keyFrames)
-            {
-                if (frame.KeyTime.Type == KeyTimeType.TimeSpan &&
-                    frame.KeyTime.TimeSpan > duration)
-                {
-                    duration = frame.KeyTime.TimeSpan;
-                }
-            }
-
-            return duration == TimeSpan.Zero ? TimeSpan.FromSeconds(1)
-                                             : duration;
-        }
-        
-    }
-
-    /// <summary>
-    /// Used by the <see cref="KeyFrameResolver"/> to calculate
-    /// the distance between two elements for a paced animation.
-    /// </summary>
-    internal interface ISegmentLengthProvider
-    {
-        double GetSegmentLength(object from, object to);
-    }
-
-    // This class is following the KeyFrameAnimation algorithm defined here:
-    // https://docs.microsoft.com/en-us/dotnet/framework/wpf/graphics-multimedia/key-frame-animations-overview#combining-key-times-out-of-order-key-frames
-    //
-    // When talking time-complexity, this version is doing worse than the official .NET
-    // implementation.
-    // I am willingly trading a few CPU cycles for a much clearer code-base.
-    internal sealed class KeyFrameResolver
-    {
-
-        // Using an IList instead of IList<T>, to provide backward-compatibility for
-        // WPF's *KeyFrameCollection classes, which don't implement the generic interface.
-        private int _frameCount;
-        private ResolvedKeyFrame[] _keyFrames;
-        private TimeSpan _duration;
-        private ISegmentLengthProvider _segmentLengthProvider;
-
-        [DebuggerStepThrough]
-        private KeyFrameResolver(IList keyFrames, TimeSpan duration, ISegmentLengthProvider segmentLengthProvider)
-        {
-            _frameCount = keyFrames?.Count ?? 0;
-            _keyFrames = new ResolvedKeyFrame[_frameCount];
-            _duration = duration;
-            _segmentLengthProvider = segmentLengthProvider ?? throw new ArgumentNullException(nameof(segmentLengthProvider));
-
-            for (int i = 0; i < _frameCount; i++)
-            {
-                IKeyFrame currentFrame = (IKeyFrame)keyFrames[i];
-                _keyFrames[i] = new ResolvedKeyFrame(currentFrame);
-            }
-        }
-
-        public static ResolvedKeyFrame[] ResolveKeyFrames(
-            IList keyFrames, TimeSpan duration, ISegmentLengthProvider segmentLengthProvider)
-        {
-            if (keyFrames == null || keyFrames.Count == 0) return null;
-
-            var resolver = new KeyFrameResolver(keyFrames, duration, segmentLengthProvider);
-            resolver.ResolveTimeSpanAndPercentKeyFrames();
-            resolver.ResolveLastKeyFrame();
-            resolver.ResolveFirstKeyFrame();
-            resolver.ResolveUniformKeyFrames();
-            resolver.ResolvePacedKeyFrames();
-            resolver.SortKeyFrames();
-            return resolver._keyFrames;
-        }
-
-        private void ResolveTimeSpanAndPercentKeyFrames()
-        {
-            for (int i = 0; i < _frameCount; i++)
-            {
-                KeyTime currentKeyTime = _keyFrames[i].KeyTime;
-
-                if (currentKeyTime.Type == KeyTimeType.TimeSpan)
-                    this.ResolveTimeSpanFrame(i);
-                else if (currentKeyTime.Type == KeyTimeType.Percent)
-                    this.ResolvePercentFrame(i);
-            }
-        }
-
-        private void ResolveTimeSpanFrame(int index)
-        {
-            TimeSpan finalKeyTime = _keyFrames[index].KeyTime.TimeSpan;
-            _keyFrames[index].Resolve(finalKeyTime);
-        }
-
-        private void ResolvePercentFrame(int index)
-        {
-            double percent = _keyFrames[index].KeyTime.Percent;
-            double finalDurationInMSecs = _duration.TotalMilliseconds * percent;
-            TimeSpan finalKeyTime = TimeSpan.FromMilliseconds(finalDurationInMSecs);
-            _keyFrames[index].Resolve(finalKeyTime);
-        }
-
-        private void ResolveLastKeyFrame()
-        {
-            ResolvedKeyFrame lastFrame = _keyFrames[_keyFrames.Length - 1];
-
-            // We will only inside this condition, if the frame's KeyTime is Uniform or Paced.
-            if (!lastFrame.IsResolved)
-            {
-                lastFrame.Resolve(_duration);
-            }
-        }
-
-        private void ResolveFirstKeyFrame()
-        {
-            ResolvedKeyFrame firstFrame = _keyFrames[0];
-            if (firstFrame.KeyTime.Type == KeyTimeType.Paced && _frameCount > 1)
-            {
-                firstFrame.Resolve(TimeSpan.Zero);
-            }
-            // If this is the only frame (_frameCount <= 1), it was already resolved by ResolveLastKeyFrame().
-            // Nothing left to do here.
-        }
-
-        private void ResolveUniformKeyFrames()
-        {
-            foreach (var segment in this.GetUniformSegments())
-            {
-                var startTime = this.GetUniformSegmentStartTime(segment);
-                var endTime = this.GetUniformSegmentEndTime(segment);
-                var timeDiff = endTime - startTime;
-                var timeIncrement = TimeSpan.FromTicks(timeDiff.Ticks / (segment.Count + 1));
-
-                TimeSpan currentTime = startTime + timeIncrement;
-                foreach (var keyFrame in segment)
-                {
-                    keyFrame.Resolve(currentTime);
-                    currentTime += timeIncrement;
-                }
-            }
-        }
-
-        private TimeSpan GetUniformSegmentStartTime(ArraySegment<ResolvedKeyFrame> segment)
-        {
-            // Usually the KeyTime of the previous frame.
-            // If there is none, it's 0:0:0.
-            if (segment.IncludesFirstArrayItem())
-            {
-                return TimeSpan.Zero;
-            }
-            else
-            {
-                return _keyFrames[segment.Offset - 1].ResolvedKeyTime;
-            }
-        }
-
-        private TimeSpan GetUniformSegmentEndTime(ArraySegment<ResolvedKeyFrame> segment)
-        {
-            // Usually the KeyTime of the frame after the segment.
-            // If there is none (i.e. the segment's last element is the end), use the global end time.
-            if (segment.IncludesLastArrayItem())
-            {
-                return _duration;
-            }
-            else
-            {
-                return _keyFrames[segment.Offset + segment.Count].ResolvedKeyTime;
-            }
-        }
-        
-        private IEnumerable<ArraySegment<ResolvedKeyFrame>> GetUniformSegments()
-        {
-            return _keyFrames.GetGroupSegments(keyFrame =>
-            {
-                // Only uniform and paced segments are not resolved.
-                // According to MSDN, treat Paced key frames as Uniform.
-                // !IsResolved only targets the last element in the array (which got resolved earlier).
-                return (keyFrame.KeyTime.Type == KeyTimeType.Uniform ||
-                        keyFrame.KeyTime.Type == KeyTimeType.Paced) &&
-                       !keyFrame.IsResolved;
-            });
-        }
-
-        private void ResolvePacedKeyFrames()
-        {
-            var pacedSegments = this.GetRelevantPacedSegments();
-
-            foreach (var pacedSegment in pacedSegments)
-            {
-                var startIndex = pacedSegment.Offset;
-                var startTime = _keyFrames[startIndex - 1].ResolvedKeyTime;
-                var segmentLengths = new List<double>(pacedSegment.Count + 1);
-                var totalSegmentLength = 0d;
-                var from = _keyFrames[startIndex - 1].Value;
-
-                // Calculate the segment lengths for the whole segment. Also include
-                // the element after the segment.
-                for (int i = pacedSegment.Offset; i < pacedSegment.Offset + pacedSegment.Count; i++)
-                {
-                    var to = _keyFrames[i].Value;
-                    totalSegmentLength += _segmentLengthProvider.GetSegmentLength(from, to);
-                    segmentLengths.Add(totalSegmentLength);
-                    from = to;
-                }
-
-                int frameAfterSegmentIndex = pacedSegment.Offset + pacedSegment.Count;
-                var frameAfterSegment = _keyFrames[frameAfterSegmentIndex];
-                TimeSpan totalSegmentDuration = frameAfterSegment.ResolvedKeyTime - startTime;
-                totalSegmentLength += _segmentLengthProvider.GetSegmentLength(from, frameAfterSegment.Value);
-
-                for (int i = pacedSegment.Offset; i < pacedSegment.Offset + pacedSegment.Count; i++)
-                {
-                    var currentFrame = _keyFrames[i];
-                    var currentSegmentLength = segmentLengths[i - pacedSegment.Offset];
-
-                    currentFrame.Resolve(
-                        startTime + TimeSpan.FromMilliseconds(
-                            currentSegmentLength / totalSegmentLength * totalSegmentDuration.TotalMilliseconds));
-                }
-            }
-        }
-
-        private IEnumerable<ArraySegment<ResolvedKeyFrame>> GetRelevantPacedSegments()
-        {
-            // Exclude the arrays head and tail, because these values were already set.
-            // This also allows accessing the index before the segments Offset.
-            return _keyFrames.GetGroupSegments(keyFrame =>
-                keyFrame.KeyTime.Type == KeyTimeType.Paced &&
-                _keyFrames.First() != keyFrame &&
-                _keyFrames.Last()  != keyFrame);
-        }
-
-        private void SortKeyFrames()
-        {
-            Array.Sort(_keyFrames);
-        }
-
-    }
-
-    [DebuggerDisplay("ResolvedKeyTime: {ResolvedKeyTime}, IsResolved: {IsResolved}")]
-    [DebuggerStepThrough]
-    internal sealed class ResolvedKeyFrame 
-        : IKeyFrame, IComparable, IComparable<ResolvedKeyFrame>
-    {
-
-        public IKeyFrame OriginalKeyFrame { get; }
-
-        public KeyTime KeyTime
-        {
-            get => this.OriginalKeyFrame.KeyTime;
-            set => this.OriginalKeyFrame.KeyTime = value;
-        }
-
-        public object Value
-        {
-            get => this.OriginalKeyFrame.Value;
-            set => this.OriginalKeyFrame.Value = value;
-        }
-
-        public TimeSpan ResolvedKeyTime { get; private set; }
-        
-        public bool IsResolved { get; private set; }
-
-        public ResolvedKeyFrame(IKeyFrame originalKeyFrame)
-        {
-            this.OriginalKeyFrame = originalKeyFrame;
-        }
-
-        public void Resolve(TimeSpan resolvedKeyTime)
-        {
-            this.ResolvedKeyTime = resolvedKeyTime;
-            this.IsResolved = true;
-        }
-        
-        public int CompareTo(object obj)
-        {
-            if (!(obj is ResolvedKeyFrame otherFrame))
-                throw new ArgumentException($"{nameof(obj)} must be another {nameof(ResolvedKeyFrame)}.");
-            return this.CompareTo(otherFrame);
-        }
-
-        public int CompareTo(ResolvedKeyFrame otherFrame)
-        {
-            return this.ResolvedKeyTime.CompareTo(otherFrame.ResolvedKeyTime);
-        }
-
-        public bool IsTimeAfter(TimeSpan time)
-        {
-            return time > this.ResolvedKeyTime;
-        }
-
-        public bool IsTimeBeforeOrInside(TimeSpan time)
-        {
-            return time <= this.ResolvedKeyTime;
-        }
-        
-        public double GetProgress(TimeSpan time)
-        {
-            return time.TotalMilliseconds / this.ResolvedKeyTime.TotalMilliseconds;
-        }
 
     }
 

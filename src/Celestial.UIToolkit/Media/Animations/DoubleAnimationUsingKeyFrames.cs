@@ -12,7 +12,11 @@ namespace Celestial.UIToolkit.Media.Animations
         }
     }
 
-    public class DoubleAnimationUsingKeyFrames : AnimationUsingKeyFramesBase<double, DoubleKeyFrameCollection>
+    /// <summary>
+    /// 
+    /// </summary>
+    public class DoubleAnimationUsingKeyFrames : 
+        AnimationUsingKeyFramesBase<double, KeyFrameBase<double>, DoubleKeyFrameCollection>
     {
         protected override double AddValues(double a, double b)
         {
