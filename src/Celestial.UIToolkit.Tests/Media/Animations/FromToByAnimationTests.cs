@@ -129,29 +129,9 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
             AnimationClock clock)
         {
             var animResult = (double)animation.GetCurrentValue(DefaultOrigin, DefaultDestination, clock);
-            Assert.AreEqual(
-                Math.Round(expectedValue, 2), 
-                Math.Round(animResult, 2));
-            // Round the results, because otherwise, the assert can fail for irrelevant differences
-            // due to floating point number nature. (e.g. 160.9999999997 != 161)
+            Assert.AreEqual(expectedValue, animResult, 0.01);
         }
 
-    }
-    
-    // Using double values for a test animation, since they are very easy to understand/implement.
-    public class DoubleFromToByAnimation : FromToByAnimationBase<double>
-    {
-        
-        protected override Freezable CreateInstanceCore() => new DoubleFromToByAnimation();
-
-        protected override double AddValues(double a, double b) => a + b;
-
-        protected override double InterpolateValue(double from, double to, double progress) =>
-            from + (to - from) * progress;
-
-        protected override double ScaleValue(double value, double factor) => value * factor;
-
-        protected override double SubtractValues(double a, double b) => a - b;
     }
     
 }
