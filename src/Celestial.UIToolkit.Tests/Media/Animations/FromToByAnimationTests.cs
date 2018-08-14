@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Media.Animation;
 using Celestial.UIToolkit.Media.Animations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using static Celestial.UIToolkit.Tests.Media.Animations.AnimationClocks;
 
 namespace Celestial.UIToolkit.Tests.Media.Animations
 {
@@ -38,30 +39,63 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
         }
 
         [TestMethod]
-        public void FromAnimationHasExpectedValues()
+        public void FromAnimationReturnsExpectedValues()
         {
-            this.TestSetAnimationStageResults(_fromAnimation, From, DefaultDestination);
+            this.TestAnimationResultRange(_fromAnimation, From, DefaultDestination);
         }
 
-        private void TestSetAnimationStageResults(
+        [TestMethod]
+        public void ToAnimationReturnsExpectedValues()
+        {
+            this.TestAnimationResultRange(_toAnimation, DefaultOrigin, To);
+        }
+
+        [TestMethod]
+        public void ByAnimationReturnsExpectedValues()
+        {
+            this.TestAnimationResultRange(_byAnimation, DefaultOrigin, DefaultOrigin + By);
+        }
+
+        [TestMethod]
+        public void FromToAnimationReturnsExpectedValues()
+        {
+            this.TestAnimationResultRange(_fromToAnimation, From, To);
+        }
+
+        [TestMethod]
+        public void FromByAnimationReturnsExpectedValues()
+        {
+            this.TestAnimationResultRange(_fromByAnimation, From, From + By);
+        }
+
+        private void TestAnimationResultRange(
             DoubleFromToByAnimation animation,
             double expectedStartValue,
             double expectedEndValue)
         {
-            var clock = new TestableAnimationClock(animation);
-            var c2 = animation.CreateClock(true);
-            c2.Controller.SeekAlignedToLastTick(TimeSpan.FromSeconds(5), TimeSeekOrigin.BeginTime);
-            clock.Controller.Begin();
-            double startEndDiff = expectedStartValue - expectedEndValue;
-            
-            Assert.AreEqual(
-                expectedStartValue,
-                animation.GetCurrentValue(DefaultOrigin, DefaultDestination, clock));
+            // Calls the GetCurrentValue() for the complete range of progress values.
+            const double progressIncrement = 0.01;
+            double startEndDiff = expectedEndValue - expectedStartValue;
 
-            clock.Controller.Seek(Duration, TimeSeekOrigin.BeginTime);
+            for (double progress = 0; progress <= 1.0; progress += progressIncrement)
+            {
+                double currentExpectedValue = expectedStartValue + startEndDiff * progress;
+                var animationClock = GetClockWithProgress(animation, progress);
+                TestAnimationResult(animation, currentExpectedValue, animationClock);
+            }
+        }
+
+        private void TestAnimationResult(
+            DoubleFromToByAnimation animation,
+            double expectedValue,
+            AnimationClock clock)
+        {
+            var animResult = (double)animation.GetCurrentValue(DefaultOrigin, DefaultDestination, clock);
             Assert.AreEqual(
-                expectedEndValue,
-                animation.GetCurrentValue(DefaultOrigin, DefaultDestination, clock));
+                Math.Round(expectedValue, 2), 
+                Math.Round(animResult, 2));
+            // Round the results, because otherwise, the assert can fail for irrelevant differences
+            // due to the floating number nature. (e.g. 160.9999999997 != 161)
         }
 
     }
@@ -81,12 +115,5 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
 
         protected override double SubtractValues(double a, double b) => a - b;
     }
-
-    public class TestableAnimationClock : AnimationClock
-    {
-        protected internal TestableAnimationClock(AnimationTimeline animation) : base(animation)
-        {
-        }
-    }
-
+    
 }

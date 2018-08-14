@@ -61,6 +61,7 @@
     <Compile Include="Converters\ThicknessSidePickerConverterTests.cs" />
     <Compile Include="Converters\ValueConverterTests.cs" />
     <Compile Include="Extensions\GetGroupSegmentsTests.cs" />
+    <Compile Include="Media\Animations\AnimationClocks.cs" />
     <Compile Include="Media\Animations\KeyFrameResolverTests.cs" />
     <Compile Include="Media\Animations\FromToByAnimationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
