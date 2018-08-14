@@ -250,4 +250,52 @@ namespace Celestial.UIToolkit.Media.Animations
 
     }
 
+
+    internal sealed class AnimatedRadialGradientBrushHelper
+        : AnimatedGradientBrushHelper<AnimatedRadialGradientBrushHelper, RadialGradientBrush>
+    {
+
+        private static AnimatedDoubleHelper _doubleHelper;
+        private static AnimatedPointHelper _pointHelper;
+
+        public override RadialGradientBrush GetZeroValue() => new RadialGradientBrush();
+
+        protected override void AddValuesToResult(RadialGradientBrush result, RadialGradientBrush a, RadialGradientBrush b)
+        {
+            base.AddValuesToResult(result, a, b);
+            result.RadiusX = _doubleHelper.AddValues(a.RadiusX, b.RadiusX);
+            result.RadiusY = _doubleHelper.AddValues(a.RadiusY, b.RadiusY);
+            result.Center = _pointHelper.AddValues(a.Center, b.Center);
+            result.GradientOrigin = _pointHelper.AddValues(a.GradientOrigin, b.GradientOrigin);
+        }
+
+        protected override void SubtractValuesFromResult(RadialGradientBrush result, RadialGradientBrush a, RadialGradientBrush b)
+        {
+            base.SubtractValuesFromResult(result, a, b);
+            result.RadiusX = _doubleHelper.SubtractValues(a.RadiusX, b.RadiusX);
+            result.RadiusY = _doubleHelper.SubtractValues(a.RadiusY, b.RadiusY);
+            result.Center = _pointHelper.SubtractValues(a.Center, b.Center);
+            result.GradientOrigin = _pointHelper.SubtractValues(a.GradientOrigin, b.GradientOrigin);
+        }
+
+        protected override void ScaleResult(RadialGradientBrush result, double factor)
+        {
+            base.ScaleResult(result, factor);
+            result.RadiusX = _doubleHelper.ScaleValue(result.RadiusX, factor);
+            result.RadiusY = _doubleHelper.ScaleValue(result.RadiusY, factor);
+            result.Center = _pointHelper.ScaleValue(result.Center, factor);
+            result.GradientOrigin = _pointHelper.ScaleValue(result.GradientOrigin, factor);
+        }
+
+        protected override void InterpolateResult(RadialGradientBrush result, RadialGradientBrush from, RadialGradientBrush to, double progress)
+        {
+            base.InterpolateResult(result, from, to, progress);
+            result.RadiusX = _doubleHelper.InterpolateValue(from.RadiusX, to.RadiusX, progress);
+            result.RadiusY = _doubleHelper.InterpolateValue(from.RadiusY, to.RadiusY, progress);
+            result.Center = _pointHelper.InterpolateValue(from.Center, to.Center, progress);
+            result.GradientOrigin = _pointHelper.InterpolateValue(from.GradientOrigin, to.GradientOrigin, progress);
+        }
+
+    }
+
 }
