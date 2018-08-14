@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Media.Animation;
 using Celestial.UIToolkit.Media.Animations;
@@ -13,8 +14,8 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
     {
 
         internal readonly TimeSpan Duration = TimeSpan.FromSeconds(10);
-        internal const double DefaultOrigin = 0;
-        internal const double DefaultDestination = 100;
+        internal const double DefaultOrigin = 250;
+        internal const double DefaultDestination = 1000;
         internal const double From = 200;
         internal const double To = 300;
         internal const double By = 400;
@@ -25,47 +26,69 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
                                         _byAnimation,
                                         _fromToAnimation,
                                         _fromByAnimation;
+        private DoubleFromToByAnimation[] _allAnimations;
 
         [TestInitialize]
         public void Initialize()
         {
             // These are all variations, in which values can be set.
-            _automaticAnimation = new DoubleFromToByAnimation() { Duration = Duration };
-            _fromAnimation      = new DoubleFromToByAnimation() { Duration = Duration, From = From };
-            _toAnimation        = new DoubleFromToByAnimation() { Duration = Duration, To = To };
-            _byAnimation        = new DoubleFromToByAnimation() { Duration = Duration, By = By };
-            _fromToAnimation    = new DoubleFromToByAnimation() { Duration = Duration, From = From, To = To};
-            _fromByAnimation    = new DoubleFromToByAnimation() { Duration = Duration, From = From, By = By};
+            // IsAdditive must not influence the first 4 animations, which is why we can already set it to true here,
+            // as the results should not be different than if it was false.
+            _automaticAnimation = new DoubleFromToByAnimation() { Duration = Duration,              IsAdditive = true };
+            _fromAnimation      = new DoubleFromToByAnimation() { Duration = Duration, From = From, IsAdditive = true };
+            _toAnimation        = new DoubleFromToByAnimation() { Duration = Duration, To = To,     IsAdditive = true };
+            _byAnimation        = new DoubleFromToByAnimation() { Duration = Duration, By = By,     IsAdditive = true};
+
+            _fromToAnimation    = new DoubleFromToByAnimation() { Duration = Duration, From = From, To = To };
+            _fromByAnimation    = new DoubleFromToByAnimation() { Duration = Duration, From = From, By = By };
+
+            _allAnimations = new DoubleFromToByAnimation[]
+            {
+                _automaticAnimation,
+                _fromAnimation,
+                _toAnimation,
+                _byAnimation,
+                _fromToAnimation,
+                _fromByAnimation
+            };
         }
 
         [TestMethod]
-        public void FromAnimationReturnsExpectedValues()
+        public void AnimationsReturnExpectedValues()
         {
+            this.TestAnimationResultRange(_automaticAnimation, DefaultOrigin, DefaultDestination);
             this.TestAnimationResultRange(_fromAnimation, From, DefaultDestination);
-        }
-
-        [TestMethod]
-        public void ToAnimationReturnsExpectedValues()
-        {
             this.TestAnimationResultRange(_toAnimation, DefaultOrigin, To);
-        }
-
-        [TestMethod]
-        public void ByAnimationReturnsExpectedValues()
-        {
             this.TestAnimationResultRange(_byAnimation, DefaultOrigin, DefaultOrigin + By);
-        }
-
-        [TestMethod]
-        public void FromToAnimationReturnsExpectedValues()
-        {
             this.TestAnimationResultRange(_fromToAnimation, From, To);
+            this.TestAnimationResultRange(_fromByAnimation, From, From + By);
+        }
+        
+        [TestMethod]
+        public void IsAdditiveInfluencesDualValueAnimations()
+        {
+            // FromTo/FromBy are the only animations which should produce different values for IsAdditive.
+            // -> Do a separate test case with correct expected values here.
+            _fromToAnimation.IsAdditive = true;
+            _fromByAnimation.IsAdditive = true;
+
+            this.TestAnimationResultRange(_fromToAnimation, DefaultOrigin + From, DefaultOrigin + To);
+            this.TestAnimationResultRange(_fromByAnimation, DefaultOrigin + From, DefaultOrigin + From + By);
+
+            _fromByAnimation.IsAdditive = false;
+            _fromByAnimation.IsAdditive = false;
         }
 
         [TestMethod]
-        public void FromByAnimationReturnsExpectedValues()
+        public void AnimationValuesAccumulate()
         {
-            this.TestAnimationResultRange(_fromByAnimation, From, From + By);
+            // The IsCumulative method can only be tested, if the AnimationClock.CurrentIteration
+            // property can be set.
+            // I cannot figure any way/hack out right now, so I will not add a test for this.
+            // If anyone knows of a way to set an AnimationClock's CurrentIteration property,
+            // please tell me/create a valid test case here.
+            Trace.WriteLine(
+                nameof(AnimationValuesAccumulate) + " is not implemented due to .NET Framework restrictions.");
         }
 
         private void TestAnimationResultRange(
@@ -95,7 +118,7 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
                 Math.Round(expectedValue, 2), 
                 Math.Round(animResult, 2));
             // Round the results, because otherwise, the assert can fail for irrelevant differences
-            // due to the floating number nature. (e.g. 160.9999999997 != 161)
+            // due to floating point number nature. (e.g. 160.9999999997 != 161)
         }
 
     }
