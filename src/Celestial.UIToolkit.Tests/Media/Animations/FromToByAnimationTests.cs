@@ -48,7 +48,9 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
             double expectedStartValue,
             double expectedEndValue)
         {
-            var clock = (AnimationClock)animation.CreateClock(true);
+            var clock = new TestableAnimationClock(animation);
+            var c2 = animation.CreateClock(true);
+            c2.Controller.SeekAlignedToLastTick(TimeSpan.FromSeconds(5), TimeSeekOrigin.BeginTime);
             clock.Controller.Begin();
             double startEndDiff = expectedStartValue - expectedEndValue;
             
@@ -63,29 +65,7 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
         }
 
     }
-
-    internal class MockedAnimationClock : Clock
-    {
-
-        public TimeSpan CurrentTime { get; set; }
-
-        public MockedAnimationClock(AnimationTimeline animation)
-            : base(animation) { }
-
-        public MockedAnimationClock(AnimationTimeline animation, TimeSpan currentTime)
-            : base(animation)
-        {
-            this.CurrentTime = currentTime;
-        }
-
-        protected override TimeSpan GetCurrentTimeCore()
-        {
-            return this.CurrentTime;
-        }
-        
-    }
-
-
+    
     // Using double values for a test animation, since they are very easy to understand/implement.
     public class DoubleFromToByAnimation : FromToByAnimationBase<double>
     {
@@ -100,6 +80,13 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
         protected override double ScaleValue(double value, double factor) => value * factor;
 
         protected override double SubtractValues(double a, double b) => a - b;
+    }
+
+    public class TestableAnimationClock : AnimationClock
+    {
+        protected internal TestableAnimationClock(AnimationTimeline animation) : base(animation)
+        {
+        }
     }
 
 }

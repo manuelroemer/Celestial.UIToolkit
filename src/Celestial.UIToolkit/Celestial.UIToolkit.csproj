@@ -84,7 +84,6 @@
     <Compile Include="Extensions\FrameworkElementExtensions.cs" />
     <Compile Include="FreezableCollection.cs" />
     <Compile Include="MarginHelper.cs" />
-    <Compile Include="Media\Animations\AnimationBase\IAnimationClock.cs" />
     <Compile Include="Media\Animations\TypeHelpers\AnimatedColorHelper.cs" />
     <Compile Include="Media\Animations\TypeHelpers\AnimatedDoubleHelper.cs" />
     <Compile Include="Media\Animations\AnimationBase\AnimationBase.cs" />

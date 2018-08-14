@@ -24,10 +24,5 @@ namespace ControlGallery.Pages
         {
             InitializeComponent();
         }
-
-        private void IconButton_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Hello world!");
-        }
     }
 }

@@ -77,10 +77,10 @@ namespace Celestial.UIToolkit.Media.Animations
         /// The brush which serves as the animation's destination.
         /// </param>
         /// <param name="animationClock">
-        /// The <see cref="IAnimationClock"/> to be used by the animation to generate its output value.
+        /// The <see cref="AnimationClock"/> to be used by the animation to generate its output value.
         /// </param>
         /// <returns>The brush which this animation believes to be the current one.</returns>
-        protected override Brush GetCurrentBrush(Brush origin, Brush destination, IAnimationClock animationClock)
+        protected override Brush GetCurrentBrush(Brush origin, Brush destination, AnimationClock animationClock)
         {
             this.SetCurrentBrushAnimation(origin);
             this.MapValuesToUnderlyingBrushAnimation(); // This should probably improved - 

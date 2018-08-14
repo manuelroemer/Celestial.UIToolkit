@@ -294,12 +294,12 @@ namespace Celestial.UIToolkit.Media.Animations
         ///     The suggested destination value. Not used by the animation.
         /// </param>
         /// <param name="animationClock">
-        ///     An <see cref="IAnimationClock"/> which can generate the <see cref="IClock.CurrentTime"/>
-        ///     or <see cref="IClock.CurrentProgress"/> value to be used by the
+        ///     An <see cref="AnimationClock"/> which can generate the <see cref="Clock.CurrentTime"/>
+        ///     or <see cref="Clock.CurrentProgress"/> value to be used by the
         ///     animation to generate its output value.
         /// </param>
         /// <returns>The value this animation believes should be the current value for the property.</returns>
-        protected override sealed T GetCurrentValueCore(T defaultOriginValue, T defaultDestinationValue, IAnimationClock animationClock)
+        protected override sealed T GetCurrentValueCore(T defaultOriginValue, T defaultDestinationValue, AnimationClock animationClock)
         {
             this.ResolveKeyTimes();
             if (_resolvedKeyFrames == null || _resolvedKeyFrames.Count == 0)
