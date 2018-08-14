@@ -48,7 +48,7 @@ namespace Celestial.UIToolkit.Extensions
                 }
                 else
                 {
-                    // Did a segment end? / Are we at the end?
+                    // Did a segment end?
                     if (currentSegmentStartIndex != NoSegment)
                     {
                         int segmentLength = i - currentSegmentStartIndex;
