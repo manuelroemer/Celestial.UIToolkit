@@ -46,12 +46,17 @@ namespace Celestial.UIToolkit.Media.Animations
         
         private AnimatedDoubleHelper _doubleHelper = AnimatedDoubleHelper.Instance;
         
+        public abstract Brush GetZeroValue();
+
         // For the animations to work, the brushes (each object really) must be cloned,
         // since working on reference types would yield incorrect results.
         // -> These methods clone the brushes, but delegate the actual value
         //    modification to the methods below.
         public Brush AddValues(Brush a, Brush b)
         {
+            if (a == null) throw new ArgumentNullException(nameof(a));
+            if (b == null) throw new ArgumentNullException(nameof(b));
+
             Brush result = a.Clone();
             this.AddValuesToResult((TBrush)result, (TBrush)a, (TBrush)b);
             return result;
@@ -59,6 +64,9 @@ namespace Celestial.UIToolkit.Media.Animations
 
         public Brush SubtractValues(Brush a, Brush b)
         {
+            if (a == null) throw new ArgumentNullException(nameof(a));
+            if (b == null) throw new ArgumentNullException(nameof(b));
+
             Brush result = a.Clone();
             this.SubtractValuesFromResult((TBrush)result, (TBrush)a, (TBrush)b);
             return result;
@@ -66,6 +74,8 @@ namespace Celestial.UIToolkit.Media.Animations
 
         public Brush ScaleValue(Brush value, double factor)
         {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+
             Brush result = value.Clone();
             this.ScaleResult((TBrush)result, factor);
             return result;
@@ -73,25 +83,24 @@ namespace Celestial.UIToolkit.Media.Animations
 
         public Brush InterpolateValue(Brush from, Brush to, double progress)
         {
+            if (from == null) throw new ArgumentNullException(nameof(from));
+            if (to == null) throw new ArgumentNullException(nameof(to));
+
             Brush result = from.Clone();
             this.InterpolateResult((TBrush)result, (TBrush)from, (TBrush)to, progress);
             return result;
         }
-
-        public abstract Brush GetZeroValue();
-
-        // These methods do the actual modification of the result brush.
-        // Since each brush has an Opacity, we can already animate that.
+        
         protected virtual void AddValuesToResult(TBrush result, TBrush a, TBrush b)
         {
             result.Opacity = _doubleHelper.AddValues(a.Opacity, b.Opacity);
         }
-
+        
         protected virtual void SubtractValuesFromResult(TBrush result, TBrush a, TBrush b)
         {
             result.Opacity = _doubleHelper.SubtractValues(a.Opacity, b.Opacity);
         }
-
+        
         protected virtual void ScaleResult(TBrush result, double factor)
         {
             result.Opacity = _doubleHelper.ScaleValue(result.Opacity, factor);
@@ -104,8 +113,8 @@ namespace Celestial.UIToolkit.Media.Animations
         
     }
 
-    internal abstract class AnimatedGradientBrushHelper<TDeriving, TBrush> :
-        AnimatedBrushHelper<TDeriving, TBrush>
+    internal abstract class AnimatedGradientBrushHelper<TDeriving, TBrush> 
+        : AnimatedBrushHelper<TDeriving, TBrush>
         where TBrush : GradientBrush
     {
 

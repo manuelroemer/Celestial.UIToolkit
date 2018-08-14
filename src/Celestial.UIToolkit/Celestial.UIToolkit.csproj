@@ -86,6 +86,7 @@
     <Compile Include="FreezableCollection.cs" />
     <Compile Include="MarginHelper.cs" />
     <Compile Include="Media\Animations\BrushAnimation\BrushAnimationUsingKeyFrames.cs" />
+    <Compile Include="Media\Animations\BrushAnimation\BrushAnimationValidator.cs" />
     <Compile Include="Media\Animations\BrushAnimation\BrushKeyFrameCollection.cs" />
     <Compile Include="Media\Animations\BrushAnimation\DiscreteBrushKeyFrame.cs" />
     <Compile Include="Media\Animations\BrushAnimation\EasingBrushKeyFrame.cs" />

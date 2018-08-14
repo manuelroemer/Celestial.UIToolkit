@@ -49,6 +49,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// </returns>
         protected override sealed Brush AddValues(Brush a, Brush b)
         {
+            BrushAnimationValidator.ValidateBrushes(a, b);
             return AnimatedBrushHelpers.SupportedTypeHelpers[a.GetType()]
                                        .AddValues(a, b);
         }

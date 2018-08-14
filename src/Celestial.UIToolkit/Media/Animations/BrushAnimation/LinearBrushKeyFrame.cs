@@ -30,6 +30,7 @@ namespace Celestial.UIToolkit.Media.Animations
         {
             if (keyFrameProgress <= 0) return baseValue;
             if (keyFrameProgress >= 1) return this.Value;
+            BrushAnimationValidator.ValidateBrushes(baseValue, this.Value);
             return AnimatedBrushHelpers.SupportedTypeHelpers[baseValue.GetType()]
                                        .InterpolateValue(baseValue, this.Value, keyFrameProgress);
         }

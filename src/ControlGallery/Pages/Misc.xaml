@@ -17,25 +17,19 @@
                                                Duration="0:0:15"
                                                IsCumulative="True"
                                                RepeatBehavior="Forever">
-                <anim:DiscreteBrushKeyFrame KeyTime="0" Value="Green" />
+                <anim:DiscreteBrushKeyFrame KeyTime="0">
+                    <LinearGradientBrush>
+                        <GradientStop Offset="0" Color="Red" />
+                        <GradientStop Offset="1" Color="Green" />
+                    </LinearGradientBrush>
+                </anim:DiscreteBrushKeyFrame>
 
-                <anim:LinearBrushKeyFrame KeyTime="0:0:3" Value="White" />
-
-                <anim:EasingBrushKeyFrame KeyTime="0:0:7" Value="DarkRed" />
-
-                <anim:DiscreteBrushKeyFrame KeyTime="0:0:7" Value="White" />
-
-                <anim:EasingBrushKeyFrame KeyTime="0:0:11" Value="DarkRed">
-                    <anim:EasingBrushKeyFrame.EasingFunction>
-                        <QuarticEase />
-                    </anim:EasingBrushKeyFrame.EasingFunction>
+                <anim:EasingBrushKeyFrame KeyTime="Uniform">
+                    <LinearGradientBrush>
+                        <GradientStop Offset="0" Color="Green" />
+                        <GradientStop Offset="1" Color="Red" />
+                    </LinearGradientBrush>
                 </anim:EasingBrushKeyFrame>
-
-                <anim:SplineBrushKeyFrame KeyTime="Paced" Value="DarkBlue">
-                    <anim:SplineBrushKeyFrame.KeySpline>
-                        <KeySpline ControlPoint1="0.25,0.25" ControlPoint2="1,1" />
-                    </anim:SplineBrushKeyFrame.KeySpline>
-                </anim:SplineBrushKeyFrame>
             </anim:BrushAnimationUsingKeyFrames>
         </Storyboard>
 
