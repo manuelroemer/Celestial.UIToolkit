@@ -11,66 +11,12 @@
              d:DesignHeight="450" d:DesignWidth="800">
 
     <StackPanel>
-        <StackPanel Margin="20" >
-            
-            <Rectangle Name="r1" Width="100" Height="20" Margin="12,0,0,5" Fill="#AA3333FF" HorizontalAlignment="Left" />
-
-            <Rectangle Name="r2" Width="100" Height="20" Margin="12,0,0,5" Fill="#AA3333FF" HorizontalAlignment="Left" />
-
-
-            <!-- Create a button to restart the animations. -->
-            <Button Margin="0,30,0,0" HorizontalAlignment="Left">
-                <Button.Triggers>
-                    <EventTrigger RoutedEvent="Button.Loaded">
-                        <BeginStoryboard>
-                            <Storyboard>
-                                <DoubleAnimation 
-                                    Storyboard.TargetName="r1" 
-                                    Storyboard.TargetProperty="Width" 
-                                    RepeatBehavior="4x"
-                                    AutoReverse="True"
-                                    IsAdditive="True"
-                                    IsCumulative="True"
-                                    Duration="0:0:3" 
-                                    By="200">
-                                    <DoubleAnimation.EasingFunction>
-                                        <QuadraticEase />
-                                    </DoubleAnimation.EasingFunction>
-                                </DoubleAnimation>
-
-                                <anim:DoubleAnimation 
-                                    Storyboard.TargetName="r2" 
-                                    Storyboard.TargetProperty="Width" 
-                                    RepeatBehavior="4x"
-                                    AutoReverse="True"
-                                    IsAdditive="True"
-                                    IsCumulative="True"
-                                    Duration="0:0:3"
-                                    By="200">
-                                    <anim:DoubleAnimation.EasingFunction>
-                                        <QuadraticEase />
-                                    </anim:DoubleAnimation.EasingFunction>
-                                </anim:DoubleAnimation>
-
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </EventTrigger>
-                </Button.Triggers>
-            </Button>
-        </StackPanel>
-        <!--<controls:Card HorizontalAlignment="Center" VerticalAlignment="Center">
+        <controls:Card HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button>
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Grid>
-                            <Border x:Name="Bd">
-                                <Border.Background>
-                                    <LinearGradientBrush>
-                                        <GradientStop Offset="0.0" Color="Red" />
-                                        <GradientStop Offset="0.2" Color="Orange" />
-                                        <GradientStop Offset="1.0" Color="DarkRed" />
-                                    </LinearGradientBrush>
-                                </Border.Background>
+                            <Border x:Name="Bd" Background="Green">
                                 <ContentPresenter />
                             </Border>
                             <VisualStateManager.VisualStateGroups>
@@ -78,16 +24,12 @@
                                     <VisualState x:Name="Normal" />
                                     <VisualState x:Name="MouseOver">
                                         <Storyboard>
-                                            <anim:CompositeBrushAnimation Storyboard.TargetName="Bd"
-                                                                               Storyboard.TargetProperty="Background" IsCumulative="True">
-                                                <anim:CompositeBrushAnimation.To>
-                                                    <LinearGradientBrush Opacity="0.5" StartPoint="0,0">
-                                                        <GradientStop Offset="0.0" Color="Blue" />
-                                                        <GradientStop Offset="0.2" Color="LightBlue" />
-                                                        <GradientStop Offset="1.0" Color="DarkBlue" />
-                                                    </LinearGradientBrush>
-                                                </anim:CompositeBrushAnimation.To>
-                                            </anim:CompositeBrushAnimation>
+                                            <anim:BrushAnimation Storyboard.TargetName="Bd"
+                                                                 Storyboard.TargetProperty="Background"
+                                                                 To="DarkRed" 
+                                                                 Duration="0:0:2">
+                                                
+                                            </anim:BrushAnimation>
                                         </Storyboard>
                                     </VisualState>
                                 </VisualStateGroup>
@@ -96,7 +38,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-        </controls:Card>-->
+        </controls:Card>
 
     </StackPanel>
 

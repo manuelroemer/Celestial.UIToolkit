@@ -1,11 +1,13 @@
-﻿namespace Celestial.UIToolkit.Media.Animations
+﻿using Celestial.UIToolkit.Common;
+
+namespace Celestial.UIToolkit.Media.Animations
 {
 
-    internal sealed class AnimatedDoubleHelper : IAnimatedTypeHelper<double>
+    internal sealed class AnimatedDoubleHelper : Singleton<AnimatedDoubleHelper>, IAnimatedTypeHelper<double>
     {
 
-        public static AnimatedDoubleHelper Default { get; } = new AnimatedDoubleHelper();
-
+        private AnimatedDoubleHelper() { }
+        
         public double GetZeroValue() => 0d;
 
         public double AddValues(double a, double b) => a + b;

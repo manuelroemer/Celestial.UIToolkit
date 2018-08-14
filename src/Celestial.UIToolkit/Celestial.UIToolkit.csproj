@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BindingProxy.cs" />
+    <Compile Include="Common\Singleton.cs" />
     <Compile Include="Controls\Card.cs" />
     <Compile Include="Controls\Card.GeneratedProperties.cs">
       <AutoGen>True</AutoGen>
@@ -84,6 +85,7 @@
     <Compile Include="Extensions\FrameworkElementExtensions.cs" />
     <Compile Include="FreezableCollection.cs" />
     <Compile Include="MarginHelper.cs" />
+    <Compile Include="Media\Animations\TypeHelpers\AnimatedBrushHelper.cs" />
     <Compile Include="Media\Animations\TypeHelpers\AnimatedColorHelper.cs" />
     <Compile Include="Media\Animations\TypeHelpers\AnimatedDoubleHelper.cs" />
     <Compile Include="Media\Animations\AnimationBase\AnimationBase.cs" />
@@ -93,6 +95,7 @@
     <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\ISegmentLengthProvider.cs" />
     <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\ResolvedKeyFrameCollectionExtensions.cs" />
     <Compile Include="Media\Animations\BrushAnimation.cs" />
+    <Compile Include="Media\Animations\TypeHelpers\AnimatedPointHelper.cs" />
     <Compile Include="Media\Animations\TypeHelpers\IAnimatedTypeHelper.cs" />
     <Compile Include="Media\Animations\OldBrushAnimationHelper.cs" />
     <Compile Include="Media\Animations\OldBrushAnimation.cs" />

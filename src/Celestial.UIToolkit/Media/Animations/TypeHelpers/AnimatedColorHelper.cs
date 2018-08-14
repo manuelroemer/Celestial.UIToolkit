@@ -1,12 +1,13 @@
-﻿using System.Windows.Media;
+﻿using Celestial.UIToolkit.Common;
+using System.Windows.Media;
 
 namespace Celestial.UIToolkit.Media.Animations
 {
 
-    internal class AnimatedColorHelper : IAnimatedTypeHelper<Color>
+    internal class AnimatedColorHelper : Singleton<AnimatedColorHelper>, IAnimatedTypeHelper<Color>
     {
 
-        public static AnimatedColorHelper Default { get; } = new AnimatedColorHelper();
+        private AnimatedColorHelper() { }
 
         public Color GetZeroValue()
         {

@@ -9,18 +9,21 @@ using System.Windows.Media;
 namespace Celestial.UIToolkit.Media.Animations
 {
 
-    public abstract class BrushAnimation<T> : EasingFromToByAnimationBase<T>
-        where T : Brush
+    public class BrushAnimation : EasingFromToByAnimationBase<Brush>
     {
-        
-        protected override void ValidateAnimationValues(T from, T to)
+
+        public BrushAnimation() { }
+
+        protected override Freezable CreateInstanceCore() => new BrushAnimation();
+
+        protected override void ValidateAnimationValues(Brush from, Brush to)
         {
             this.ValidateThatBrushesAreNotNull(from, to);
             this.ValidateThatBrushesHaveSameType(from, to);
             this.ValidateThatBrushesHaveSameTransform(from, to);
         }
 
-        private void ValidateThatBrushesAreNotNull(T from, T to)
+        private void ValidateThatBrushesAreNotNull(Brush from, Brush to)
         {
             if (from == null || to == null)
             {
@@ -29,7 +32,7 @@ namespace Celestial.UIToolkit.Media.Animations
             }
         }
 
-        private void ValidateThatBrushesHaveSameType(T from, T to)
+        private void ValidateThatBrushesHaveSameType(Brush from, Brush to)
         {
             if (from.GetType() != to.GetType())
             {
@@ -40,7 +43,7 @@ namespace Celestial.UIToolkit.Media.Animations
             }
         }
 
-        private void ValidateThatBrushesHaveSameTransform(T from, T to)
+        private void ValidateThatBrushesHaveSameTransform(Brush from, Brush to)
         {
             if (from.Transform != to.Transform ||
                 from.RelativeTransform != to.RelativeTransform)
@@ -50,7 +53,27 @@ namespace Celestial.UIToolkit.Media.Animations
                     $"brushes must have the same values.");
             }
         }
+        
+        protected override Brush AddValues(Brush a, Brush b)
+        {
+            return AnimatedSolidColorBrushHelper.Instance.AddValues((SolidColorBrush)a, (SolidColorBrush)b);
+        }
 
+        protected override Brush SubtractValues(Brush a, Brush b)
+        {
+            return AnimatedSolidColorBrushHelper.Instance.SubtractValues((SolidColorBrush)a, (SolidColorBrush)b);
+        }
+
+        protected override Brush ScaleValue(Brush value, double factor)
+        {
+            return AnimatedSolidColorBrushHelper.Instance.ScaleValue((SolidColorBrush)value, factor);
+        }
+
+        protected override Brush InterpolateValueCore(Brush from, Brush to, double progress)
+        {
+            return AnimatedSolidColorBrushHelper.Instance.InterpolateValue((SolidColorBrush)from, (SolidColorBrush)to, progress);
+        }
+        
     }
 
 }
