@@ -169,8 +169,11 @@ namespace Celestial.UIToolkit.Media.Animations
             bool cloneCurrentValue)
         {
             _areKeyFramesResolved = source._areKeyFramesResolved;
-            _keyFrames = cloneCurrentValue ? (TKeyFrameCollection)source._keyFrames.CloneCurrentValue() :
-                                             (TKeyFrameCollection)source._keyFrames.Clone();
+            if (source._keyFrames != null)
+            {
+                _keyFrames = cloneCurrentValue ? (TKeyFrameCollection)source._keyFrames.CloneCurrentValue() :
+                                                 (TKeyFrameCollection)source._keyFrames.Clone();
+            }
             this.OnFreezablePropertyChanged(null, _keyFrames);
 
             // We can't simply use Array.Clone() or sth. similar, since ResolvedKeyFrame is a non-freezable class.
@@ -259,7 +262,7 @@ namespace Celestial.UIToolkit.Media.Animations
         private TimeSpan GetDurationBasedOnKeyFrames()
         {
             TimeSpan duration = TimeSpan.Zero;
-            foreach (IKeyFrame frame in _keyFrames)
+            foreach (IKeyFrame frame in this.KeyFrames)
             {
                 if (frame.KeyTime.Type == KeyTimeType.TimeSpan &&
                     frame.KeyTime.TimeSpan > duration)
@@ -350,7 +353,7 @@ namespace Celestial.UIToolkit.Media.Animations
             {
                 currentValue = this.AddValues(defaultOriginValue, currentValue);
             }
-
+            
             return currentValue;
         }
         

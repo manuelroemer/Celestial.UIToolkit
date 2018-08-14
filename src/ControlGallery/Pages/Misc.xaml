@@ -63,7 +63,7 @@
         </Storyboard>
     </UserControl.Resources>
     
-    <StackPanel>
+    <!--<StackPanel>
         <controls:Card HorizontalAlignment="Center" VerticalAlignment="Center">
             <UniformGrid Columns="2">
                 <StackPanel>
@@ -99,6 +99,6 @@
             </UniformGrid>
         </controls:Card>
 
-    </StackPanel>
+    </StackPanel>-->
 
 </UserControl>
