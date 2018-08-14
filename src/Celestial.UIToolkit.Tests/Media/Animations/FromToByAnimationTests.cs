@@ -24,14 +24,17 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
                                         _fromAnimation,
                                         _toAnimation,
                                         _byAnimation,
+                                        _toByAnimation,
                                         _fromToAnimation,
-                                        _fromByAnimation;
+                                        _fromByAnimation,
+                                        _fromToByAnimation;
         private DoubleFromToByAnimation[] _allAnimations;
 
         [TestInitialize]
         public void Initialize()
         {
             // These are all variations, in which values can be set.
+
             // IsAdditive must not influence the first 4 animations, which is why we can already set it to true here,
             // as the results should not be different than if it was false.
             _automaticAnimation = new DoubleFromToByAnimation() { Duration = Duration,              IsAdditive = true };
@@ -39,6 +42,11 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
             _toAnimation        = new DoubleFromToByAnimation() { Duration = Duration, To = To,     IsAdditive = true };
             _byAnimation        = new DoubleFromToByAnimation() { Duration = Duration, By = By,     IsAdditive = true};
 
+            // These animations have an invalid set of properties. If both To and By are set,
+            // By should be ignored.
+            _toByAnimation     = new DoubleFromToByAnimation() { Duration = Duration,              To = To, By = By, IsAdditive = true };
+            _fromToByAnimation = new DoubleFromToByAnimation() { Duration = Duration, From = From, To = To, By = By };
+            
             _fromToAnimation    = new DoubleFromToByAnimation() { Duration = Duration, From = From, To = To };
             _fromByAnimation    = new DoubleFromToByAnimation() { Duration = Duration, From = From, By = By };
 
@@ -60,8 +68,12 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
             this.TestAnimationResultRange(_fromAnimation, From, DefaultDestination);
             this.TestAnimationResultRange(_toAnimation, DefaultOrigin, To);
             this.TestAnimationResultRange(_byAnimation, DefaultOrigin, DefaultOrigin + By);
+
             this.TestAnimationResultRange(_fromToAnimation, From, To);
             this.TestAnimationResultRange(_fromByAnimation, From, From + By);
+
+            this.TestAnimationResultRange(_toByAnimation, DefaultOrigin, To);
+            this.TestAnimationResultRange(_fromToByAnimation, From, To);
         }
         
         [TestMethod]
@@ -71,12 +83,15 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
             // -> Do a separate test case with correct expected values here.
             _fromToAnimation.IsAdditive = true;
             _fromByAnimation.IsAdditive = true;
+            _fromToByAnimation.IsAdditive = true;
 
             this.TestAnimationResultRange(_fromToAnimation, DefaultOrigin + From, DefaultOrigin + To);
             this.TestAnimationResultRange(_fromByAnimation, DefaultOrigin + From, DefaultOrigin + From + By);
+            this.TestAnimationResultRange(_fromToByAnimation, DefaultOrigin + From, DefaultOrigin + To);
 
             _fromByAnimation.IsAdditive = false;
             _fromByAnimation.IsAdditive = false;
+            _fromToByAnimation.IsAdditive = false;
         }
 
         [TestMethod]
