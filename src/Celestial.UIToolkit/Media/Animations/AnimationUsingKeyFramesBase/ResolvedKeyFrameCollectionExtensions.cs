@@ -37,16 +37,16 @@ namespace Celestial.UIToolkit.Media.Animations
             int frameCount = resolvedKeyFrames.Count();
 
             // Find the first frame whose time is >= currentTime, but
-            // choose the last frame of a set which have the same time.
+            // choose the last frame of a set of frames whose resolved time == currentTime.
             for (int i = 0; i < frameCount; i++)
             {
                 var currentFrame = resolvedKeyFrames.ElementAt(i);
                 var nextFrame = resolvedKeyFrames.ElementAfterOrDefault(i);
                 bool isFrameAfterCurrentTime = currentFrame.ResolvedKeyTime >= currentTime;
-                bool nextFrameEqualsCurrent = nextFrame != null &&
-                                              nextFrame.ResolvedKeyTime == currentFrame.ResolvedKeyTime;
+                bool nextFrameEqualsCurrentTime = nextFrame != null &&
+                                                  nextFrame.ResolvedKeyTime == currentTime;
 
-                if (isFrameAfterCurrentTime && !nextFrameEqualsCurrent)
+                if (isFrameAfterCurrentTime && !nextFrameEqualsCurrentTime)
                     return i;
             }
             return frameCount - 1;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Markup;
 using System.Windows.Media.Animation;
 
 namespace Celestial.UIToolkit.Media.Animations
@@ -10,6 +11,7 @@ namespace Celestial.UIToolkit.Media.Animations
     /// a key frame animation.
     /// </summary>
     /// <typeparam name="T">The type of this key frame's <see cref="Value"/> property.</typeparam>
+    [ContentProperty(nameof(Value))]
     public abstract class KeyFrameBase<T> : Freezable, IInterpolateKeyFrame<T>
     {
         
@@ -45,13 +47,8 @@ namespace Celestial.UIToolkit.Media.Animations
         
         object IKeyFrame.Value
         {
-            get { return this.Value; }
-            set
-            {
-                if (value != null && value.GetType() != typeof(T))
-                    throw new ArgumentException($"The {this.GetType().Name} only supports values of type {typeof(T).FullName}.");
-                this.Value = (T)value;
-            }
+            get => this.Value;
+            set => this.Value = (T)value;
         }
 
         /// <summary>
@@ -210,6 +207,35 @@ namespace Celestial.UIToolkit.Media.Animations
         protected EasingKeyFrameBase(T value, KeyTime keyTime)
             : base(value, keyTime) { }
 
+        /// <summary>
+        /// Applies the <see cref="EasingFunction"/> to the <paramref name="keyFrameProgress"/> and then
+        /// calculates the value of a key frame at the resulting progress increment.
+        /// </summary>
+        /// <param name="baseValue">The value to animate from; typically the value of the previous key frame.</param>
+        /// <param name="keyFrameProgress">
+        /// A value between 0.0 and 1.0, inclusive, that specifies the percentage of time
+        /// that has elapsed for this key frame.
+        /// </param>
+        /// <returns>The output value of this key frame given the specified base value and progress.</returns>
+        protected override T InterpolateValueCore(T baseValue, double keyFrameProgress)
+        {
+            if (this.EasingFunction != null)
+                keyFrameProgress = this.EasingFunction.Ease(keyFrameProgress);
+            return this.InterpolateValueAfterEase(baseValue, keyFrameProgress);
+        }
+
+        /// <summary>
+        /// Calculates the value of a key frame at the progress increment provided.
+        /// </summary>
+        /// <param name="baseValue">The value to animate from; typically the value of the previous key frame.</param>
+        /// <param name="easedProgress">
+        /// A value between 0.0 and 1.0, inclusive, that specifies the percentage of time
+        /// that has elapsed for this key frame.
+        /// This value has already been eased by the <see cref="EasingFunction"/>.
+        /// </param>
+        /// <returns>The output value of this key frame given the specified base value and progress.</returns>
+        protected abstract T InterpolateValueAfterEase(T baseValue, double easedProgress);
+
     }
 
     /// <summary>
@@ -257,6 +283,35 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <param name="keyTime">A <see cref="KeyTime"/> value which is associated with this key frame.</param>
         protected SplineKeyFrameBase(T value, KeyTime keyTime)
             : base(value, keyTime) { }
+
+        /// <summary>
+        /// Calculates the value of a key frame at the resulting progress increment,
+        /// by changing the <paramref name="keyFrameProgress"/> with the <see cref="KeySpline"/>.
+        /// </summary>
+        /// <param name="baseValue">The value to animate from; typically the value of the previous key frame.</param>
+        /// <param name="keyFrameProgress">
+        /// A value between 0.0 and 1.0, inclusive, that specifies the percentage of time
+        /// that has elapsed for this key frame.
+        /// </param>
+        /// <returns>The output value of this key frame given the specified base value and progress.</returns>
+        protected override T InterpolateValueCore(T baseValue, double keyFrameProgress)
+        {
+            if (this.KeySpline != null)
+                keyFrameProgress = this.KeySpline.GetSplineProgress(keyFrameProgress);
+            return this.InterpolateValueWithSplineProgress(baseValue, keyFrameProgress);
+        }
+
+        /// <summary>
+        /// Calculates the value of a key frame at the progress increment provided.
+        /// </summary>
+        /// <param name="baseValue">The value to animate from; typically the value of the previous key frame.</param>
+        /// <param name="splineProgress">
+        /// A value between 0.0 and 1.0, inclusive, that specifies the percentage of time
+        /// that has elapsed for this key frame.
+        /// The <see cref="KeySpline"/> has already been applied to this progress.
+        /// </param>
+        /// <returns>The output value of this key frame given the specified base value and progress.</returns>
+        protected abstract T InterpolateValueWithSplineProgress(T baseValue, double splineProgress);
 
     }
 

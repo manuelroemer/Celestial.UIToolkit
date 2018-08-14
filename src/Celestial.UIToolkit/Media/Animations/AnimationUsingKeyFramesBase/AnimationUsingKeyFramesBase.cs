@@ -342,13 +342,13 @@ namespace Celestial.UIToolkit.Media.Animations
                 double factor = animationClock.CurrentIteration.GetValueOrDefault() - 1;
                 if (factor > 0d)
                 {
-                    T scaledValue = this.ScaleValue((T)currentFrame.Value, factor);
+                    T scaledValue = this.ScaleValue((T)_resolvedKeyFrames.Last().Value, factor);
                     currentValue = this.AddValues(currentValue, scaledValue);
                 }
             }
             if (this.IsAdditive)
             {
-                this.AddValues(defaultOriginValue, currentValue);
+                currentValue = this.AddValues(defaultOriginValue, currentValue);
             }
 
             return currentValue;

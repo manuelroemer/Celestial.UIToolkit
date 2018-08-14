@@ -10,47 +10,89 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
+    <UserControl.Resources>
+        <Storyboard x:Key="Bd1Storyboard">
+            <anim:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd1"
+                                               Storyboard.TargetProperty="Background"
+                                               Duration="0:0:15"
+                                               IsAdditive="False"
+                                               IsCumulative="True"
+                                               RepeatBehavior="Forever">
+                <anim:DiscreteBrushKeyFrame KeyTime="0" Value="Green" />
+
+                <anim:LinearBrushKeyFrame KeyTime="0:0:3" Value="White" />
+
+                <anim:EasingBrushKeyFrame KeyTime="0:0:5" Value="DarkRed" />
+
+                <anim:DiscreteBrushKeyFrame KeyTime="0:0:5" Value="White" />
+
+                <anim:EasingBrushKeyFrame KeyTime="0:0:8" Value="DarkBlue">
+                    <anim:EasingBrushKeyFrame.EasingFunction>
+                        <QuarticEase />
+                    </anim:EasingBrushKeyFrame.EasingFunction>
+                </anim:EasingBrushKeyFrame>
+            </anim:BrushAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Key="Bd2Storyboard">
+            <ColorAnimationUsingKeyFrames x:Name="Bd2Anim"
+                                          Storyboard.TargetName="Bd2"
+                                          Storyboard.TargetProperty="Background.Color"
+                                          Duration="0:0:15"
+                                          IsAdditive="False"
+                                          IsCumulative="True"
+                                          RepeatBehavior="Forever">
+                <DiscreteColorKeyFrame KeyTime="0" Value="Green" />
+
+                <LinearColorKeyFrame KeyTime="0:0:3" Value="White" />
+
+                <EasingColorKeyFrame KeyTime="0:0:5" Value="DarkRed" />
+                
+                <DiscreteColorKeyFrame KeyTime="0:0:5" Value="White" />
+
+                <EasingColorKeyFrame KeyTime="0:0:8" Value="DarkBlue">
+                    <EasingColorKeyFrame.EasingFunction>
+                        <QuarticEase />
+                    </EasingColorKeyFrame.EasingFunction>
+                </EasingColorKeyFrame>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+    
     <StackPanel>
         <controls:Card HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button>
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Grid>
-                            <Border x:Name="Bd">
-                                <Border.Background>
-                                    <RadialGradientBrush Center="0,0" GradientOrigin="1,1">
-                                        <GradientStop Offset="0" Color="Blue" />
-                                        <GradientStop Offset="0.6" Color="LightBlue" />
-                                        <GradientStop Offset="1" Color="DarkBlue" />
-                                    </RadialGradientBrush>
-                                </Border.Background>
-                                <ContentPresenter />
-                            </Border>
-                            <VisualStateManager.VisualStateGroups>
-                                <VisualStateGroup x:Name="CommonStates">
-                                    <VisualState x:Name="Normal" />
-                                    <VisualState x:Name="MouseOver">
-                                        <Storyboard>
-                                            <anim:BrushAnimation Storyboard.TargetName="Bd"
-                                                                 Storyboard.TargetProperty="Background"
-                                                                 Duration="0:0:2">
-                                                <anim:BrushAnimation.By>
-                                                    <RadialGradientBrush Center="1,1" GradientOrigin="0,0">
-                                                        <GradientStop Offset="0" Color="Red" />
-                                                        <GradientStop Offset="0.6" Color="PaleVioletRed" />
-                                                        <GradientStop Offset="0.8" Color="DarkRed" />
-                                                        <GradientStop Offset="1" Color="Green" />
-                                                    </RadialGradientBrush>
-                                                </anim:BrushAnimation.By>
-                                            </anim:BrushAnimation>
-                                        </Storyboard>
-                                    </VisualState>
-                                </VisualStateGroup>
-                            </VisualStateManager.VisualStateGroups>
-                        </Grid>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
+            <UniformGrid Columns="2">
+                <StackPanel>
+                    <Border x:Name="Bd1" 
+                            Width="100"
+                            Height="100"
+                            Margin="10"
+                            BorderBrush="Black"
+                            BorderThickness="5"
+                            Background="Red">
+                        <Border.Triggers>
+                            <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                                <BeginStoryboard Storyboard="{StaticResource Bd1Storyboard}" />
+                            </EventTrigger>
+                        </Border.Triggers>
+                    </Border>
+                </StackPanel>
+                <StackPanel>
+                    <Border x:Name="Bd2" 
+                            Width="100"
+                            Height="100"
+                            Margin="10"
+                            BorderBrush="Black"
+                            BorderThickness="5"
+                            Background="Red">
+                        <Border.Triggers>
+                            <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                                <BeginStoryboard Storyboard="{StaticResource Bd2Storyboard}" />
+                            </EventTrigger>
+                        </Border.Triggers>
+                    </Border>
+                </StackPanel>
+            </UniformGrid>
         </controls:Card>
 
     </StackPanel>

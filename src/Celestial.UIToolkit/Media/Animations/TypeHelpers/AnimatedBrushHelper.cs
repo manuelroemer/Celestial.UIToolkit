@@ -1,9 +1,31 @@
 ﻿using Celestial.UIToolkit.Common;
+using System;
+using System.Collections.Generic;
 using System.Windows.Media;
 using static System.Math;
 
 namespace Celestial.UIToolkit.Media.Animations
 {
+
+    /// <summary>
+    /// Provides access to the brush helpers which are available.
+    /// </summary>
+    internal static class AnimatedBrushHelpers
+    {
+
+        /// <summary>
+        /// A dictionary which maps <see cref="Brush"/> types to their corresponding
+        /// animation helpers.
+        /// </summary>
+        public static Dictionary<Type, IAnimatedTypeHelper<Brush>> SupportedTypeHelpers
+            = new Dictionary<Type, IAnimatedTypeHelper<Brush>>()
+        {
+            [typeof(SolidColorBrush)]     = AnimatedSolidColorBrushHelper.Instance,
+            [typeof(LinearGradientBrush)] = AnimatedLinearGradientBrushHelper.Instance,
+            [typeof(RadialGradientBrush)] = AnimatedRadialGradientBrushHelper.Instance
+        };
+        
+    }
 
     /// <summary>
     /// A base class for an animation helper that animates a brush.
@@ -21,9 +43,9 @@ namespace Celestial.UIToolkit.Media.Animations
         : Singleton<TDeriving>, IAnimatedTypeHelper<Brush>
         where TBrush : Brush
     {
-
+        
         private AnimatedDoubleHelper _doubleHelper = AnimatedDoubleHelper.Instance;
-
+        
         // For the animations to work, the brushes (each object really) must be cloned,
         // since working on reference types would yield incorrect results.
         // -> These methods clone the brushes, but delegate the actual value

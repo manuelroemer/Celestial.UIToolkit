@@ -34,13 +34,7 @@ namespace Celestial.UIToolkit.Media.Animations
 
         // Defines both the supported brush types and the corresponding TypeHelper
         // instances which are used for modifying brushes.
-        private static Dictionary<Type, IAnimatedTypeHelper<Brush>> _supportedTypeHelperMap
-            = new Dictionary<Type, IAnimatedTypeHelper<Brush>>()
-        {
-            [typeof(SolidColorBrush)]     = AnimatedSolidColorBrushHelper.Instance,
-            [typeof(LinearGradientBrush)] = AnimatedLinearGradientBrushHelper.Instance,
-            [typeof(RadialGradientBrush)] = AnimatedRadialGradientBrushHelper.Instance
-        };
+        
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BrushAnimation"/> class.
@@ -93,12 +87,12 @@ namespace Celestial.UIToolkit.Media.Animations
 
         private void ValidateThatBrushesHaveSupportedType(Brush from, Brush to)
         {
-            if (!_supportedTypeHelperMap.ContainsKey(from.GetType()) ||
-                !_supportedTypeHelperMap.ContainsKey(to.GetType()))
+            if (!AnimatedBrushHelpers.SupportedTypeHelpers.ContainsKey(from.GetType()) ||
+                !AnimatedBrushHelpers.SupportedTypeHelpers.ContainsKey(to.GetType()))
             {
                 throw new InvalidOperationException(
                     $"The animation can only animate brushes of the following types: " +
-                    $"{string.Join(", ", _supportedTypeHelperMap.Keys.Select(type => type.Name))}. " +
+                    $"{string.Join(", ", AnimatedBrushHelpers.SupportedTypeHelpers.Keys.Select(type => type.Name))}. " +
                     $"Ensure that all target properties of this animation have been set to brushes of " +
                     $"the specified types.");
             }
@@ -173,8 +167,8 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <returns>The result of the addition.</returns>
         protected override sealed Brush AddValues(Brush a, Brush b)
         {
-            return this.GetAnimatedTypeHelper(a.GetType())
-                       .AddValues(a, b);
+            return AnimatedBrushHelpers.SupportedTypeHelpers[a.GetType()]
+                                       .AddValues(a, b);
         }
 
         /// <summary>
@@ -186,8 +180,8 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <returns>The result of the subtraction.</returns>
         protected override sealed Brush SubtractValues(Brush a, Brush b)
         {
-            return this.GetAnimatedTypeHelper(a.GetType())
-                       .SubtractValues(a, b);
+            return AnimatedBrushHelpers.SupportedTypeHelpers[a.GetType()]
+                                       .SubtractValues(a, b);
         }
 
         /// <summary>
@@ -199,8 +193,8 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <returns>The result of the scaling.</returns>
         protected override sealed Brush ScaleValue(Brush value, double factor)
         {
-            return this.GetAnimatedTypeHelper(value.GetType())
-                       .ScaleValue(value, factor);
+            return AnimatedBrushHelpers.SupportedTypeHelpers[value.GetType()]
+                                       .ScaleValue(value, factor);
         }
 
         /// <summary>
@@ -216,21 +210,8 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <returns>The output value of the interpolation, given the specified values.</returns>
         protected override sealed Brush InterpolateValueCore(Brush from, Brush to, double progress)
         {
-            return this.GetAnimatedTypeHelper(from.GetType())
-                       .InterpolateValue(from, to, progress);
-        }
-
-        private IAnimatedTypeHelper<Brush> GetAnimatedTypeHelper(Type brushType)
-        {
-            if (_supportedTypeHelperMap.TryGetValue(brushType, out var helper))
-            {
-                return helper;
-            }
-            else
-            {
-                throw new InvalidOperationException(
-                    $"Could not map the type {brushType.FullName} to an animation helper.");
-            }
+            return AnimatedBrushHelpers.SupportedTypeHelpers[from.GetType()]
+                                       .InterpolateValue(from, to, progress);
         }
         
     }
