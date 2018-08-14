@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Media;
@@ -31,11 +30,7 @@ namespace Celestial.UIToolkit.Media.Animations
     /// </remarks>
     public class BrushAnimation : EasingFromToByAnimationBase<Brush>
     {
-
-        // Defines both the supported brush types and the corresponding TypeHelper
-        // instances which are used for modifying brushes.
         
-
         /// <summary>
         /// Initializes a new instance of the <see cref="BrushAnimation"/> class.
         /// </summary>

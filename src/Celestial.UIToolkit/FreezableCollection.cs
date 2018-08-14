@@ -34,6 +34,16 @@ namespace Celestial.UIToolkit
             _items = new List<T>(capacity);
         }
         
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FreezableCollection{T}"/> class
+        /// and copies the elements in the <paramref name="collection"/> into it.
+        /// </summary>
+        /// <param name="collection">A collection of elements to be copied into this collection.</param>
+        public FreezableCollection(IEnumerable<T> collection)
+        {
+            _items = new List<T>(collection);
+        }
+
         #region Freezable
 
         /// <summary>

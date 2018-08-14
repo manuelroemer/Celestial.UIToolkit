@@ -15,22 +15,27 @@
             <anim:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd1"
                                                Storyboard.TargetProperty="Background"
                                                Duration="0:0:15"
-                                               IsAdditive="False"
                                                IsCumulative="True"
                                                RepeatBehavior="Forever">
                 <anim:DiscreteBrushKeyFrame KeyTime="0" Value="Green" />
 
                 <anim:LinearBrushKeyFrame KeyTime="0:0:3" Value="White" />
 
-                <anim:EasingBrushKeyFrame KeyTime="0:0:5" Value="DarkRed" />
+                <anim:EasingBrushKeyFrame KeyTime="0:0:7" Value="DarkRed" />
 
-                <anim:DiscreteBrushKeyFrame KeyTime="0:0:5" Value="White" />
+                <anim:DiscreteBrushKeyFrame KeyTime="0:0:7" Value="White" />
 
-                <anim:EasingBrushKeyFrame KeyTime="0:0:8" Value="DarkBlue">
+                <anim:EasingBrushKeyFrame KeyTime="0:0:11" Value="DarkRed">
                     <anim:EasingBrushKeyFrame.EasingFunction>
                         <QuarticEase />
                     </anim:EasingBrushKeyFrame.EasingFunction>
                 </anim:EasingBrushKeyFrame>
+
+                <anim:SplineBrushKeyFrame KeyTime="Paced" Value="DarkBlue">
+                    <anim:SplineBrushKeyFrame.KeySpline>
+                        <KeySpline ControlPoint1="0.25,0.25" ControlPoint2="1,1" />
+                    </anim:SplineBrushKeyFrame.KeySpline>
+                </anim:SplineBrushKeyFrame>
             </anim:BrushAnimationUsingKeyFrames>
         </Storyboard>
 
@@ -39,22 +44,27 @@
                                           Storyboard.TargetName="Bd2"
                                           Storyboard.TargetProperty="Background.Color"
                                           Duration="0:0:15"
-                                          IsAdditive="False"
                                           IsCumulative="True"
                                           RepeatBehavior="Forever">
                 <DiscreteColorKeyFrame KeyTime="0" Value="Green" />
 
                 <LinearColorKeyFrame KeyTime="0:0:3" Value="White" />
 
-                <EasingColorKeyFrame KeyTime="0:0:5" Value="DarkRed" />
+                <EasingColorKeyFrame KeyTime="0:0:7" Value="DarkRed" />
                 
-                <DiscreteColorKeyFrame KeyTime="0:0:5" Value="White" />
+                <DiscreteColorKeyFrame KeyTime="0:0:7" Value="White" />
 
-                <EasingColorKeyFrame KeyTime="0:0:8" Value="DarkBlue">
+                <EasingColorKeyFrame KeyTime="0:0:11" Value="DarkRed">
                     <EasingColorKeyFrame.EasingFunction>
                         <QuarticEase />
                     </EasingColorKeyFrame.EasingFunction>
                 </EasingColorKeyFrame>
+
+                <SplineColorKeyFrame KeyTime="Paced" Value="DarkBlue">
+                    <SplineColorKeyFrame.KeySpline>
+                        <KeySpline ControlPoint1="0.25,0.25" ControlPoint2="1,1" />
+                    </SplineColorKeyFrame.KeySpline>
+                </SplineColorKeyFrame>
             </ColorAnimationUsingKeyFrames>
         </Storyboard>
     </UserControl.Resources>

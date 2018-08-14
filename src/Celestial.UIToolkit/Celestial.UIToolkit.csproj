@@ -85,12 +85,12 @@
     <Compile Include="Extensions\FrameworkElementExtensions.cs" />
     <Compile Include="FreezableCollection.cs" />
     <Compile Include="MarginHelper.cs" />
-    <Compile Include="Media\Animations\BrushAnimationUsingKeyFrames.cs" />
-    <Compile Include="Media\Animations\BrushKeyFrameCollection.cs" />
-    <Compile Include="Media\Animations\DiscreteBrushKeyFrame.cs" />
-    <Compile Include="Media\Animations\EasingBrushKeyFrame.cs" />
-    <Compile Include="Media\Animations\LinearBrushKeyFrame.cs" />
-    <Compile Include="Media\Animations\SplineBrushKeyFrame.cs" />
+    <Compile Include="Media\Animations\BrushAnimation\BrushAnimationUsingKeyFrames.cs" />
+    <Compile Include="Media\Animations\BrushAnimation\BrushKeyFrameCollection.cs" />
+    <Compile Include="Media\Animations\BrushAnimation\DiscreteBrushKeyFrame.cs" />
+    <Compile Include="Media\Animations\BrushAnimation\EasingBrushKeyFrame.cs" />
+    <Compile Include="Media\Animations\BrushAnimation\LinearBrushKeyFrame.cs" />
+    <Compile Include="Media\Animations\BrushAnimation\SplineBrushKeyFrame.cs" />
     <Compile Include="Media\Animations\TypeHelpers\AnimatedBrushHelper.cs" />
     <Compile Include="Media\Animations\TypeHelpers\AnimatedColorHelper.cs" />
     <Compile Include="Media\Animations\TypeHelpers\AnimatedDoubleHelper.cs" />
@@ -100,7 +100,7 @@
     <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\IInterpolateKeyFrame.cs" />
     <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\ISegmentLengthProvider.cs" />
     <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\ResolvedKeyFrameCollectionExtensions.cs" />
-    <Compile Include="Media\Animations\BrushAnimation.cs" />
+    <Compile Include="Media\Animations\BrushAnimation\BrushAnimation.cs" />
     <Compile Include="Media\Animations\TypeHelpers\AnimatedPointHelper.cs" />
     <Compile Include="Media\Animations\TypeHelpers\IAnimatedTypeHelper.cs" />
     <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\AnimationUsingKeyFramesBase.cs" />
