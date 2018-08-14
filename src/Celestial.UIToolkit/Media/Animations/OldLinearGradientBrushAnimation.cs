@@ -9,28 +9,28 @@ namespace Celestial.UIToolkit.Media.Animations
     /// <summary>
     /// An animation which animates <see cref="LinearGradientBrush"/> objects.
     /// </summary>
-    public class LinearGradientBrushAnimation : GradientBrushAnimation
+    public class OldLinearGradientBrushAnimation : OldGradientBrushAnimation
     {
 
         private LinearGradientBrush _animatedBrush;
         private GradientBrushAnimationHelper _animationHelper;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="LinearGradientBrushAnimation"/> class.
+        /// Initializes a new instance of the <see cref="OldLinearGradientBrushAnimation"/> class.
         /// </summary>
-        public LinearGradientBrushAnimation()
+        public OldLinearGradientBrushAnimation()
         {
             _animationHelper = new GradientBrushAnimationHelper(this);
         }
 
         /// <summary>
-        /// Returns a new instance of the <see cref="LinearGradientBrushAnimation"/> class.
+        /// Returns a new instance of the <see cref="OldLinearGradientBrushAnimation"/> class.
         /// </summary>
-        /// <returns>A new <see cref="LinearGradientBrushAnimation"/> instance.</returns>
-        protected override Freezable CreateInstanceCore() => new LinearGradientBrushAnimation();
+        /// <returns>A new <see cref="OldLinearGradientBrushAnimation"/> instance.</returns>
+        protected override Freezable CreateInstanceCore() => new OldLinearGradientBrushAnimation();
 
         /// <summary>
-        /// In addition to the validation performed by the <see cref="GradientBrushAnimation"/>,
+        /// In addition to the validation performed by the <see cref="OldGradientBrushAnimation"/>,
         /// this method also ensures that the animated brushes are <see cref="LinearGradientBrush"/>
         /// instances.
         /// </summary>

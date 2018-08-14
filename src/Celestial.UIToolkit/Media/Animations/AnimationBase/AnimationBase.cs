@@ -20,7 +20,7 @@ namespace Celestial.UIToolkit.Media.Animations
     {
 
         /// <summary>
-        ///     Gets the target type of the animation..
+        /// Gets the target type of the animation..
         /// </summary>
         public override Type TargetPropertyType
         {

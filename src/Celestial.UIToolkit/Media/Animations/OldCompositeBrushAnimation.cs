@@ -19,32 +19,32 @@ namespace Celestial.UIToolkit.Media.Animations
     ///     Their limitations apply to this class aswell, meaning that the animated brushes
     ///     have to be of the same type, need to have certain shared properties, ...
     /// </remarks>
-    public class CompositeBrushAnimation : OldBrushAnimation
+    public class OldCompositeBrushAnimation : OldBrushAnimation
     {
 
         private static IDictionary<Type, Func<OldBrushAnimation>> _supportedAnimationTypesMap;
         private OldBrushAnimation _currentBrushAnimation;
 
-        static CompositeBrushAnimation()
+        static OldCompositeBrushAnimation()
         {
             // Map the supported brush types to factory functions, for a painless creation
             // of the "sub-animations".
             _supportedAnimationTypesMap = new Dictionary<Type, Func<OldBrushAnimation>>()
             {
-                [typeof(SolidColorBrush)]     = () => new SolidColorBrushAnimation(),
-                [typeof(LinearGradientBrush)] = () => new LinearGradientBrushAnimation(),
-                [typeof(RadialGradientBrush)] = () => new RadialGradientBrushAnimation()
+                [typeof(SolidColorBrush)]     = () => new OldSolidColorBrushAnimation(),
+                [typeof(LinearGradientBrush)] = () => new OldLinearGradientBrushAnimation(),
+                [typeof(RadialGradientBrush)] = () => new OldRadialGradientBrushAnimation()
             };
         }
 
         /// <summary>
-        /// Returns a new instance of the <see cref="CompositeBrushAnimation"/> class.
+        /// Returns a new instance of the <see cref="OldCompositeBrushAnimation"/> class.
         /// </summary>
-        /// <returns>A new <see cref="CompositeBrushAnimation"/> instance.</returns>
-        protected override Freezable CreateInstanceCore() => new CompositeBrushAnimation();
+        /// <returns>A new <see cref="OldCompositeBrushAnimation"/> instance.</returns>
+        protected override Freezable CreateInstanceCore() => new OldCompositeBrushAnimation();
 
         /// <summary>
-        /// Ensures that the specified brush types are supported by the <see cref="CompositeBrushAnimation"/>.
+        /// Ensures that the specified brush types are supported by the <see cref="OldCompositeBrushAnimation"/>.
         /// </summary>
         /// <param name="origin">The animation's origin brush.</param>
         /// <param name="destination">The animation's destination brush.</param>
@@ -59,7 +59,7 @@ namespace Celestial.UIToolkit.Media.Animations
             if (!_supportedAnimationTypesMap.Keys.Contains(brush.GetType()))
             {
                 throw new InvalidOperationException(
-                    $"The {nameof(CompositeBrushAnimation)} doesn't support brushes of type {brush.GetType().FullName}. " +
+                    $"The {nameof(OldCompositeBrushAnimation)} doesn't support brushes of type {brush.GetType().FullName}. " +
                     $"The supported types are: " +
                     $"{string.Join(", ", _supportedAnimationTypesMap.Keys.Select(type => type.Name))}");
             }

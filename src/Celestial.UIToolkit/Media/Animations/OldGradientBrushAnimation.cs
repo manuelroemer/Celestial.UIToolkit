@@ -8,7 +8,7 @@ namespace Celestial.UIToolkit.Media.Animations
     /// <summary>
     /// A base class for an animation which animates a <see cref="GradientBrush"/>.
     /// </summary>
-    public abstract class GradientBrushAnimation : OldBrushAnimation
+    public abstract class OldGradientBrushAnimation : OldBrushAnimation
     {
         
         /// <summary>

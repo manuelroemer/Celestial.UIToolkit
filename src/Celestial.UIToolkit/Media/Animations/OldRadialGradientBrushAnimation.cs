@@ -9,28 +9,28 @@ namespace Celestial.UIToolkit.Media.Animations
     /// <summary>
     /// An animation which animates <see cref="RadialGradientBrush"/> objects.
     /// </summary>
-    public class RadialGradientBrushAnimation : GradientBrushAnimation
+    public class OldRadialGradientBrushAnimation : OldGradientBrushAnimation
     {
 
         private RadialGradientBrush _animatedBrush;
         private GradientBrushAnimationHelper _animationHelper;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RadialGradientBrushAnimation"/> class.
+        /// Initializes a new instance of the <see cref="OldRadialGradientBrushAnimation"/> class.
         /// </summary>
-        public RadialGradientBrushAnimation()
+        public OldRadialGradientBrushAnimation()
         {
             _animationHelper = new GradientBrushAnimationHelper(this);
         }
 
         /// <summary>
-        /// Returns a new instance of the <see cref="RadialGradientBrushAnimation"/> class.
+        /// Returns a new instance of the <see cref="OldRadialGradientBrushAnimation"/> class.
         /// </summary>
-        /// <returns>A new <see cref="RadialGradientBrushAnimation"/> instance.</returns>
-        protected override Freezable CreateInstanceCore() => new RadialGradientBrushAnimation();
+        /// <returns>A new <see cref="OldRadialGradientBrushAnimation"/> instance.</returns>
+        protected override Freezable CreateInstanceCore() => new OldRadialGradientBrushAnimation();
 
         /// <summary>
-        /// In addition to the validation performed by the <see cref="GradientBrushAnimation"/>,
+        /// In addition to the validation performed by the <see cref="OldGradientBrushAnimation"/>,
         /// this method also ensures that the animated brushes are <see cref="RadialGradientBrush"/>
         /// instances.
         /// </summary>

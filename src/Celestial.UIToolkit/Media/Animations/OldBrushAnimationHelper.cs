@@ -10,14 +10,14 @@ namespace Celestial.UIToolkit.Media.Animations
     /// A helper class which is internally being used to
     /// animate properties of brushes.
     /// </summary>
-    internal class BrushAnimationHelper
+    internal class OldBrushAnimationHelper
     {
 
         private OldBrushAnimation _brushAnimation;
         private Lazy<BrushAnimationToDoubleAnimationMapper> _doubleAnimationMapperLazy;
         private Lazy<BrushAnimationToColorAnimationMapper> _colorAnimationMapperLazy;
 
-        public BrushAnimationHelper(OldBrushAnimation brushAnimation)
+        public OldBrushAnimationHelper(OldBrushAnimation brushAnimation)
         {
             _brushAnimation = brushAnimation ?? throw new ArgumentNullException(nameof(brushAnimation));
             _doubleAnimationMapperLazy = new Lazy<BrushAnimationToDoubleAnimationMapper>(() =>
@@ -46,18 +46,18 @@ namespace Celestial.UIToolkit.Media.Animations
     }
 
     /// <summary>
-    /// A helper class which is designed for the <see cref="GradientBrushAnimation"/> classes.
+    /// A helper class which is designed for the <see cref="OldGradientBrushAnimation"/> classes.
     /// In addition to the default helper functions, it provides a caching mechanism and helper functions
     /// for the gradient stops to be animated.
     /// </summary>
-    internal class GradientBrushAnimationHelper : BrushAnimationHelper
+    internal class GradientBrushAnimationHelper : OldBrushAnimationHelper
     {
 
         // The main task of this class is to manage a single cached gradient stop collection,
         // so that no new one needs to be created in each animation frame.
         private GradientStopCollection _currentGradientStops;
 
-        public GradientBrushAnimationHelper(GradientBrushAnimation brushAnimation)
+        public GradientBrushAnimationHelper(OldGradientBrushAnimation brushAnimation)
             : base(brushAnimation) { }
 
         private void InitializeGradientStops(int count)

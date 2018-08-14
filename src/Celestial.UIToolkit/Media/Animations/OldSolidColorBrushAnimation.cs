@@ -9,29 +9,29 @@ namespace Celestial.UIToolkit.Media.Animations
     /// <summary>
     /// An animation which animates <see cref="SolidColorBrush"/> objects.
     /// </summary>
-    public class SolidColorBrushAnimation : OldBrushAnimation
+    public class OldSolidColorBrushAnimation : OldBrushAnimation
     {
         
         private SolidColorBrush _animatedBrush;
-        private BrushAnimationHelper _animationHelper;
+        private OldBrushAnimationHelper _animationHelper;
         
         /// <summary>
-        /// Initializes a new instance of the <see cref="SolidColorBrushAnimation"/> class.
+        /// Initializes a new instance of the <see cref="OldSolidColorBrushAnimation"/> class.
         /// </summary>
-        public SolidColorBrushAnimation()
+        public OldSolidColorBrushAnimation()
         {
-            _animationHelper = new BrushAnimationHelper(this);
+            _animationHelper = new OldBrushAnimationHelper(this);
         }
 
         /// <summary>
-        /// Returns a new instance of the <see cref="SolidColorBrushAnimation"/> class.
+        /// Returns a new instance of the <see cref="OldSolidColorBrushAnimation"/> class.
         /// </summary>
-        /// <returns>A new <see cref="SolidColorBrushAnimation"/> instance.</returns>
-        protected override Freezable CreateInstanceCore() => new SolidColorBrushAnimation();
+        /// <returns>A new <see cref="OldSolidColorBrushAnimation"/> instance.</returns>
+        protected override Freezable CreateInstanceCore() => new OldSolidColorBrushAnimation();
 
         /// <summary>
         /// Used to validate that the specified brushes can be animated by
-        /// the <see cref="SolidColorBrushAnimation"/>.
+        /// the <see cref="OldSolidColorBrushAnimation"/>.
         /// </summary>
         /// <param name="origin">The origin brush.</param>
         /// <param name="destination">The destination brush.</param>
