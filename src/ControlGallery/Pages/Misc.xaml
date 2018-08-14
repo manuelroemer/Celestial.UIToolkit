@@ -16,7 +16,14 @@
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Grid>
-                            <Border x:Name="Bd" Background="Green">
+                            <Border x:Name="Bd">
+                                <Border.Background>
+                                    <RadialGradientBrush Center="0,0" GradientOrigin="1,1">
+                                        <GradientStop Offset="0" Color="Blue" />
+                                        <GradientStop Offset="0.6" Color="LightBlue" />
+                                        <GradientStop Offset="1" Color="DarkBlue" />
+                                    </RadialGradientBrush>
+                                </Border.Background>
                                 <ContentPresenter />
                             </Border>
                             <VisualStateManager.VisualStateGroups>
@@ -26,9 +33,15 @@
                                         <Storyboard>
                                             <anim:BrushAnimation Storyboard.TargetName="Bd"
                                                                  Storyboard.TargetProperty="Background"
-                                                                 To="DarkRed" 
                                                                  Duration="0:0:2">
-                                                
+                                                <anim:BrushAnimation.By>
+                                                    <RadialGradientBrush Center="1,1" GradientOrigin="0,0">
+                                                        <GradientStop Offset="0" Color="Red" />
+                                                        <GradientStop Offset="0.6" Color="PaleVioletRed" />
+                                                        <GradientStop Offset="0.8" Color="DarkRed" />
+                                                        <GradientStop Offset="1" Color="Green" />
+                                                    </RadialGradientBrush>
+                                                </anim:BrushAnimation.By>
                                             </anim:BrushAnimation>
                                         </Storyboard>
                                     </VisualState>

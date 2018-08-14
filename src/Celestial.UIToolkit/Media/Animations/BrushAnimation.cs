@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 
@@ -11,6 +8,16 @@ namespace Celestial.UIToolkit.Media.Animations
 
     public class BrushAnimation : EasingFromToByAnimationBase<Brush>
     {
+
+        // Defines both the supported brush types and the corresponding TypeHelper
+        // instances which are used for modifying brushes.
+        private static Dictionary<Type, IAnimatedTypeHelper<Brush>> _supportedTypeHelperMap
+            = new Dictionary<Type, IAnimatedTypeHelper<Brush>>()
+        {
+            [typeof(SolidColorBrush)]     = AnimatedSolidColorBrushHelper.Instance,
+            [typeof(LinearGradientBrush)] = AnimatedLinearGradientBrushHelper.Instance,
+            [typeof(RadialGradientBrush)] = AnimatedRadialGradientBrushHelper.Instance
+        };
 
         public BrushAnimation() { }
 
@@ -56,22 +63,39 @@ namespace Celestial.UIToolkit.Media.Animations
         
         protected override Brush AddValues(Brush a, Brush b)
         {
-            return AnimatedSolidColorBrushHelper.Instance.AddValues((SolidColorBrush)a, (SolidColorBrush)b);
+            return this.GetAnimatedTypeHelper(a.GetType())
+                       .AddValues(a, b);
         }
 
         protected override Brush SubtractValues(Brush a, Brush b)
         {
-            return AnimatedSolidColorBrushHelper.Instance.SubtractValues((SolidColorBrush)a, (SolidColorBrush)b);
+            return this.GetAnimatedTypeHelper(a.GetType())
+                       .SubtractValues(a, b);
         }
 
         protected override Brush ScaleValue(Brush value, double factor)
         {
-            return AnimatedSolidColorBrushHelper.Instance.ScaleValue((SolidColorBrush)value, factor);
+            return this.GetAnimatedTypeHelper(value.GetType())
+                       .ScaleValue(value, factor);
         }
 
         protected override Brush InterpolateValueCore(Brush from, Brush to, double progress)
         {
-            return AnimatedSolidColorBrushHelper.Instance.InterpolateValue((SolidColorBrush)from, (SolidColorBrush)to, progress);
+            return this.GetAnimatedTypeHelper(from.GetType())
+                       .InterpolateValue(from, to, progress);
+        }
+
+        private IAnimatedTypeHelper<Brush> GetAnimatedTypeHelper(Type brushType)
+        {
+            if (_supportedTypeHelperMap.TryGetValue(brushType, out var helper))
+            {
+                return helper;
+            }
+            else
+            {
+                throw new InvalidOperationException(
+                    $"Could not map the type {brushType.FullName} to an animation helper.");
+            }
         }
         
     }

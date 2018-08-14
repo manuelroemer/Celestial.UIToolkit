@@ -1,9 +1,4 @@
 ﻿using Celestial.UIToolkit.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Media;
 using static System.Math;
 
@@ -23,7 +18,7 @@ namespace Celestial.UIToolkit.Media.Animations
     /// The type of <see cref="Brush"/> which the deriving class is animating.
     /// </typeparam>
     internal abstract class AnimatedBrushHelper<TDeriving, TBrush> 
-        : Singleton<TDeriving>, IAnimatedTypeHelper<TBrush>
+        : Singleton<TDeriving>, IAnimatedTypeHelper<Brush>
         where TBrush : Brush
     {
 
@@ -33,69 +28,58 @@ namespace Celestial.UIToolkit.Media.Animations
         // since working on reference types would yield incorrect results.
         // -> These methods clone the brushes, but delegate the actual value
         //    modification to the methods below.
-        public TBrush AddValues(TBrush a, TBrush b)
+        public Brush AddValues(Brush a, Brush b)
         {
-            TBrush result = (TBrush)a.Clone();
-            this.AddValuesToResult(result, a, b);
+            Brush result = a.Clone();
+            this.AddValuesToResult((TBrush)result, (TBrush)a, (TBrush)b);
             return result;
         }
 
-        public TBrush SubtractValues(TBrush a, TBrush b)
+        public Brush SubtractValues(Brush a, Brush b)
         {
-            TBrush result = (TBrush)a.Clone();
-            this.SubtractValuesFromResult(result, a, b);
+            Brush result = a.Clone();
+            this.SubtractValuesFromResult((TBrush)result, (TBrush)a, (TBrush)b);
             return result;
         }
 
-        public TBrush ScaleValue(TBrush value, double factor)
+        public Brush ScaleValue(Brush value, double factor)
         {
-            TBrush result = (TBrush)value.Clone();
-            this.ScaleResult(result, factor);
+            Brush result = value.Clone();
+            this.ScaleResult((TBrush)result, factor);
             return result;
         }
 
-        public TBrush InterpolateValue(TBrush from, TBrush to, double progress)
+        public Brush InterpolateValue(Brush from, Brush to, double progress)
         {
-            TBrush result = (TBrush)from.Clone();
-            this.InterpolateResult(result, from, to, progress);
+            Brush result = from.Clone();
+            this.InterpolateResult((TBrush)result, (TBrush)from, (TBrush)to, progress);
             return result;
         }
 
-        public abstract TBrush GetZeroValue();
+        public abstract Brush GetZeroValue();
 
         // These methods do the actual modification of the result brush.
         // Since each brush has an Opacity, we can already animate that.
         protected virtual void AddValuesToResult(TBrush result, TBrush a, TBrush b)
         {
-            result.Opacity = ClamOpacity(
-                _doubleHelper.AddValues(a.Opacity, b.Opacity));
+            result.Opacity = _doubleHelper.AddValues(a.Opacity, b.Opacity);
         }
 
         protected virtual void SubtractValuesFromResult(TBrush result, TBrush a, TBrush b)
         {
-            result.Opacity = ClamOpacity(
-                _doubleHelper.SubtractValues(a.Opacity, b.Opacity));
+            result.Opacity = _doubleHelper.SubtractValues(a.Opacity, b.Opacity);
         }
 
         protected virtual void ScaleResult(TBrush result, double factor)
         {
-            result.Opacity = ClamOpacity(
-                _doubleHelper.ScaleValue(result.Opacity, factor));
+            result.Opacity = _doubleHelper.ScaleValue(result.Opacity, factor);
         }
 
         protected virtual void InterpolateResult(TBrush result, TBrush from, TBrush to, double progress)
         {
-            result.Opacity = ClamOpacity(
-                AnimatedDoubleHelper.Instance.InterpolateValue(
-                    from.Opacity, to.Opacity, progress));
+            result.Opacity = _doubleHelper.InterpolateValue(from.Opacity, to.Opacity, progress);
         }
-
-        private static double ClamOpacity(double opacity)
-        {
-            // A brush's opacity must be between 0 and 1.
-            return Max(Min(opacity, 1d), 0d);
-        }
-
+        
     }
 
     internal abstract class AnimatedGradientBrushHelper<TDeriving, TBrush> :
@@ -181,7 +165,7 @@ namespace Celestial.UIToolkit.Media.Animations
 
         public AnimatedSolidColorBrushHelper() { }
 
-        public override SolidColorBrush GetZeroValue()
+        public override Brush GetZeroValue()
         {
             return new SolidColorBrush();
         }
@@ -216,9 +200,9 @@ namespace Celestial.UIToolkit.Media.Animations
         : AnimatedGradientBrushHelper<AnimatedLinearGradientBrushHelper, LinearGradientBrush>
     {
 
-        private static AnimatedPointHelper _pointHelper;
+        private static AnimatedPointHelper _pointHelper = AnimatedPointHelper.Instance;
 
-        public override LinearGradientBrush GetZeroValue() => new LinearGradientBrush();
+        public override Brush GetZeroValue() => new LinearGradientBrush();
 
         protected override void AddValuesToResult(LinearGradientBrush result, LinearGradientBrush a, LinearGradientBrush b)
         {
@@ -249,16 +233,15 @@ namespace Celestial.UIToolkit.Media.Animations
         }
 
     }
-
-
+    
     internal sealed class AnimatedRadialGradientBrushHelper
         : AnimatedGradientBrushHelper<AnimatedRadialGradientBrushHelper, RadialGradientBrush>
     {
 
-        private static AnimatedDoubleHelper _doubleHelper;
-        private static AnimatedPointHelper _pointHelper;
+        private static AnimatedDoubleHelper _doubleHelper = AnimatedDoubleHelper.Instance;
+        private static AnimatedPointHelper _pointHelper = AnimatedPointHelper.Instance;
 
-        public override RadialGradientBrush GetZeroValue() => new RadialGradientBrush();
+        public override Brush GetZeroValue() => new RadialGradientBrush();
 
         protected override void AddValuesToResult(RadialGradientBrush result, RadialGradientBrush a, RadialGradientBrush b)
         {
