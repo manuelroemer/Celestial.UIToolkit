@@ -87,10 +87,10 @@ namespace Celestial.UIToolkit.Media.Animations
         /// The suggested origin brush, used if <see cref="To"/> is <c>null</c>.
         /// </param>
         /// <param name="animationClock">
-        /// The <see cref="AnimationClock"/> to be used by the animation to generate its output value.
+        /// The <see cref="IAnimationClock"/> to be used by the animation to generate its output value.
         /// </param>
         /// <returns>The brush which this animation believes to be the current one.</returns>
-        protected override sealed Brush GetCurrentValueCore(Brush defaultOriginValue, Brush defaultDestinationValue, AnimationClock animationClock)
+        protected override sealed Brush GetCurrentValueCore(Brush defaultOriginValue, Brush defaultDestinationValue, IAnimationClock animationClock)
         {
             Brush origin = this.From ?? defaultOriginValue;
             Brush destination = this.To ?? defaultDestinationValue;
@@ -148,7 +148,7 @@ namespace Celestial.UIToolkit.Media.Animations
 
         /// <summary>
         /// If overridden, can be used to perform additional validation on the
-        /// specified brushes, before the animation's <see cref="GetCurrentBrush(Brush, Brush, AnimationClock)"/>
+        /// specified brushes, before the animation's <see cref="GetCurrentBrush(Brush, Brush, IAnimationClock)"/>
         /// method is called.
         /// </summary>
         /// <param name="origin">
@@ -161,7 +161,7 @@ namespace Celestial.UIToolkit.Media.Animations
 
         /// <summary>
         /// Calculates the brush which represents the current value of the animation.
-        /// When implementing this method, don't override <see cref="GetCurrentValueCore(Brush, Brush, AnimationClock)"/>.
+        /// When implementing this method, don't override <see cref="GetCurrentValueCore(Brush, Brush, IAnimationClock)"/>.
         /// </summary>
         /// <param name="origin">
         /// The brush which serves as the animation's origin.
@@ -173,7 +173,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// The <see cref="AnimationClock"/> to be used by the animation to generate its output value.
         /// </param>
         /// <returns>The brush which this animation believes to be the current one.</returns>
-        protected abstract Brush GetCurrentBrush(Brush origin, Brush destination, AnimationClock animationClock);
+        protected abstract Brush GetCurrentBrush(Brush origin, Brush destination, IAnimationClock animationClock);
         
     }
     

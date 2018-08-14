@@ -62,10 +62,10 @@ namespace Celestial.UIToolkit.Media.Animations
         /// The brush which serves as the animation's destination.
         /// </param>
         /// <param name="animationClock">
-        ///     The <see cref="AnimationClock"/> to be used by the animation to generate its output value.
+        ///     The <see cref="IAnimationClock"/> to be used by the animation to generate its output value.
         /// </param>
         /// <returns>The <see cref="LinearGradientBrush"/> which this animation believes to be the current one.</returns>
-        protected override Brush GetCurrentBrush(Brush origin, Brush destination, AnimationClock animationClock)
+        protected override Brush GetCurrentBrush(Brush origin, Brush destination, IAnimationClock animationClock)
         {
             var linearOrigin = (LinearGradientBrush)origin;
             var linearDestination = (LinearGradientBrush)destination;
@@ -88,28 +88,28 @@ namespace Celestial.UIToolkit.Media.Animations
         }
 
         private void SetCurrentOpacity(
-            LinearGradientBrush origin, LinearGradientBrush destination, AnimationClock animationClock)
+            LinearGradientBrush origin, LinearGradientBrush destination, IAnimationClock animationClock)
         {
             _animatedBrush.Opacity = _animationHelper.GetCurrentDouble(
                 origin.Opacity, destination.Opacity, animationClock);
         }
 
         private void SetCurrentGradientStops(
-            LinearGradientBrush origin, LinearGradientBrush destination, AnimationClock animationClock)
+            LinearGradientBrush origin, LinearGradientBrush destination, IAnimationClock animationClock)
         {
             _animatedBrush.GradientStops = _animationHelper.GetCurrentGradientStops(
                 origin.GradientStops, destination.GradientStops, animationClock);
         }
 
         private void SetCurrentStartPoint(
-            LinearGradientBrush origin, LinearGradientBrush destination, AnimationClock animationClock)
+            LinearGradientBrush origin, LinearGradientBrush destination, IAnimationClock animationClock)
         {
             _animatedBrush.StartPoint = _animationHelper.GetCurrentPoint(
                 origin.StartPoint, destination.StartPoint, animationClock);
         }
 
         private void SetCurrentEndPoint(
-            LinearGradientBrush origin, LinearGradientBrush destination, AnimationClock animationClock)
+            LinearGradientBrush origin, LinearGradientBrush destination, IAnimationClock animationClock)
         {
             _animatedBrush.EndPoint = _animationHelper.GetCurrentPoint(
                 origin.EndPoint, destination.EndPoint, animationClock);

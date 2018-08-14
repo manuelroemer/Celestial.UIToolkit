@@ -300,7 +300,7 @@ namespace Celestial.UIToolkit.Media.Animations
     internal class ClockControllerAdapter : IClockController
     {
 
-        protected ClockAdapter UnderlyingClockAdapter { get; }
+        protected internal ClockAdapter UnderlyingClockAdapter { get; }
 
         protected ClockController UnderlyingClockController
         {
@@ -347,7 +347,7 @@ namespace Celestial.UIToolkit.Media.Animations
     internal class AnimationClockAdapter : ClockAdapter, IAnimationClock
     {
 
-        protected new AnimationClock UnderlyingClock => (AnimationClock)base.UnderlyingClock;
+        protected internal new AnimationClock UnderlyingClock => (AnimationClock)base.UnderlyingClock;
 
         public AnimationClockAdapter(AnimationClock animationClock)
             : base(animationClock) { }

@@ -106,10 +106,10 @@ namespace Celestial.UIToolkit.Media.Animations
         /// The suggested origin value, used if <see cref="To"/> is not set.
         /// </param>
         /// <param name="animationClock">
-        /// The <see cref="AnimationClock"/> to be used by the animation to generate its output value.
+        /// The <see cref="IAnimationClock"/> to be used by the animation to generate its output value.
         /// </param>
         /// <returns>The value which this animation believes to be the current one.</returns>
-        protected override T GetCurrentValueCore(T defaultOriginValue, T defaultDestinationValue, AnimationClock animationClock)
+        protected override T GetCurrentValueCore(T defaultOriginValue, T defaultDestinationValue, IAnimationClock animationClock)
         {
             this.SetConstantAnimationValues();
             this.SetDynamicAnimationValues(defaultOriginValue, defaultDestinationValue, animationClock);
@@ -156,7 +156,7 @@ namespace Celestial.UIToolkit.Media.Animations
                 _animationType = AnimationType.Automatic;
         }
 
-        private void SetDynamicAnimationValues(T defaultOrigin, T defaultDestination, AnimationClock animationClock)
+        private void SetDynamicAnimationValues(T defaultOrigin, T defaultDestination, IAnimationClock animationClock)
         {
             this.SetActualFromAndTo(defaultOrigin, defaultDestination);
             this.SetCurrentAdditiveModifier(defaultOrigin);
@@ -202,7 +202,7 @@ namespace Celestial.UIToolkit.Media.Animations
             }
         }
 
-        private void SetCurrentCumulativeModifier(AnimationClock animationClock)
+        private void SetCurrentCumulativeModifier(IAnimationClock animationClock)
         {
             if (this.IsCumulative)
             {

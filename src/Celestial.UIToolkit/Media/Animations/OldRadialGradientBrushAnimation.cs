@@ -62,10 +62,10 @@ namespace Celestial.UIToolkit.Media.Animations
         /// The brush which serves as the animation's destination.
         /// </param>
         /// <param name="animationClock">
-        ///     The <see cref="AnimationClock"/> to be used by the animation to generate its output value.
+        ///     The <see cref="IAnimationClock"/> to be used by the animation to generate its output value.
         /// </param>
         /// <returns>The <see cref="RadialGradientBrush"/> which this animation believes to be the current one.</returns>
-        protected override Brush GetCurrentBrush(Brush origin, Brush destination, AnimationClock animationClock)
+        protected override Brush GetCurrentBrush(Brush origin, Brush destination, IAnimationClock animationClock)
         {
             var radialOrigin = (RadialGradientBrush)origin;
             var radialDestination = (RadialGradientBrush)destination;
@@ -90,42 +90,42 @@ namespace Celestial.UIToolkit.Media.Animations
         }
 
         private void SetCurrentOpacity(
-            RadialGradientBrush origin, RadialGradientBrush destination, AnimationClock animationClock)
+            RadialGradientBrush origin, RadialGradientBrush destination, IAnimationClock animationClock)
         {
             _animatedBrush.Opacity = _animationHelper.GetCurrentDouble(
                 origin.Opacity, destination.Opacity, animationClock);
         }
 
         private void SetCurrentGradientStops(
-            RadialGradientBrush origin, RadialGradientBrush destination, AnimationClock animationClock)
+            RadialGradientBrush origin, RadialGradientBrush destination, IAnimationClock animationClock)
         {
             _animatedBrush.GradientStops = _animationHelper.GetCurrentGradientStops(
                 origin.GradientStops, destination.GradientStops, animationClock);
         }
         
         private void SetCurrentCenter(
-            RadialGradientBrush origin, RadialGradientBrush destination, AnimationClock animationClock)
+            RadialGradientBrush origin, RadialGradientBrush destination, IAnimationClock animationClock)
         {
             _animatedBrush.Center = _animationHelper.GetCurrentPoint(
                 origin.Center, destination.Center, animationClock);
         }
 
         private void SetCurrentRadiusX(
-            RadialGradientBrush origin, RadialGradientBrush destination, AnimationClock animationClock)
+            RadialGradientBrush origin, RadialGradientBrush destination, IAnimationClock animationClock)
         {
             _animatedBrush.RadiusX = _animationHelper.GetCurrentDouble(
                 origin.RadiusX, destination.RadiusY, animationClock);
         }
 
         private void SetCurrentRadiusY(
-            RadialGradientBrush origin, RadialGradientBrush destination, AnimationClock animationClock)
+            RadialGradientBrush origin, RadialGradientBrush destination, IAnimationClock animationClock)
         {
             _animatedBrush.RadiusY = _animationHelper.GetCurrentDouble(
                 origin.RadiusY, destination.RadiusY, animationClock);
         }
         
         private void SetCurrentGradientOrigin(
-            RadialGradientBrush origin, RadialGradientBrush destination, AnimationClock animationClock)
+            RadialGradientBrush origin, RadialGradientBrush destination, IAnimationClock animationClock)
         {
             _animatedBrush.GradientOrigin = _animationHelper.GetCurrentPoint(
                 origin.GradientOrigin, destination.GradientOrigin, animationClock);

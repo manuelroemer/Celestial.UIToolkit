@@ -26,17 +26,17 @@ namespace Celestial.UIToolkit.Media.Animations
                 new BrushAnimationToColorAnimationMapper(_brushAnimation));
         }
 
-        public double GetCurrentDouble(double origin, double destination, AnimationClock animationClock)
+        public double GetCurrentDouble(double origin, double destination, IAnimationClock animationClock)
         {
             return _doubleAnimationMapperLazy.Value.GetCurrentValue(origin, destination, animationClock);
         }
 
-        public Color GetCurrentColor(Color origin, Color destination, AnimationClock animationClock)
+        public Color GetCurrentColor(Color origin, Color destination, IAnimationClock animationClock)
         {
             return _colorAnimationMapperLazy.Value.GetCurrentValue(origin, destination, animationClock);
         }
 
-        public Point GetCurrentPoint(Point origin, Point destination, AnimationClock animationClock)
+        public Point GetCurrentPoint(Point origin, Point destination, IAnimationClock animationClock)
         {
             double x = this.GetCurrentDouble(origin.X, destination.X, animationClock);
             double y = this.GetCurrentDouble(origin.Y, destination.Y, animationClock);
@@ -73,7 +73,7 @@ namespace Celestial.UIToolkit.Media.Animations
         }
 
         public GradientStopCollection GetCurrentGradientStops(
-            GradientStopCollection origin, GradientStopCollection destination, AnimationClock animationClock)
+            GradientStopCollection origin, GradientStopCollection destination, IAnimationClock animationClock)
         {
             if (origin == null) throw new ArgumentNullException(nameof(origin));
             if (destination == null) throw new ArgumentNullException(nameof(destination));
@@ -93,7 +93,7 @@ namespace Celestial.UIToolkit.Media.Animations
         }
 
         private void UpdateGradientStopAtIndex(
-            int index, GradientStop origin, GradientStop destination, AnimationClock animationClock)
+            int index, GradientStop origin, GradientStop destination, IAnimationClock animationClock)
         {
             GradientStop current = _currentGradientStops[index];
             current.Color = this.GetCurrentColor(origin.Color, destination.Color, animationClock);
@@ -135,11 +135,11 @@ namespace Celestial.UIToolkit.Media.Animations
                 "The animation factory must not return null.", nameof(animationFactory));
         }
 
-        public TAnimated GetCurrentValue(TAnimated origin, TAnimated destination, AnimationClock animationClock)
+        public TAnimated GetCurrentValue(TAnimated origin, TAnimated destination, IAnimationClock animationClock)
         {
             this.UpdateAnimationProperties();
             return (TAnimated)_animation.GetCurrentValue(
-                origin, destination, animationClock);
+                origin, destination, ((AnimationClockAdapter)animationClock).UnderlyingClock);
         }
 
         private void UpdateAnimationProperties()
