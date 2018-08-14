@@ -54,12 +54,12 @@ namespace Celestial.UIToolkit.Media.Animations
 
         private static void ValidateThatBrushesHaveSupportedType(Brush origin, Brush destination)
         {
-            if (!AnimatedBrushHelpers.SupportedTypeHelpers.ContainsKey(origin.GetType()) ||
-                !AnimatedBrushHelpers.SupportedTypeHelpers.ContainsKey(destination.GetType()))
+            if (!SupportedAnimationBrushes.IsSupported(origin) ||
+                !SupportedAnimationBrushes.IsSupported(destination))
             {
                 throw new InvalidOperationException(
                     $"The animation can only animate brushes of the following types: " +
-                    $"{string.Join(", ", AnimatedBrushHelpers.SupportedTypeHelpers.Keys.Select(type => type.Name))}. " +
+                    $"{string.Join(", ", SupportedAnimationBrushes.SupportedTypes.Select(type => type.Name))}. " +
                     $"Ensure that all target properties of this animation have been set to brushes of " +
                     $"the specified types.");
             }

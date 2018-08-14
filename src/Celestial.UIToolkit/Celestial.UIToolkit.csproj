@@ -92,9 +92,10 @@
     <Compile Include="Media\Animations\BrushAnimation\EasingBrushKeyFrame.cs" />
     <Compile Include="Media\Animations\BrushAnimation\LinearBrushKeyFrame.cs" />
     <Compile Include="Media\Animations\BrushAnimation\SplineBrushKeyFrame.cs" />
-    <Compile Include="Media\Animations\TypeHelpers\AnimatedBrushHelper.cs" />
-    <Compile Include="Media\Animations\TypeHelpers\AnimatedColorHelper.cs" />
-    <Compile Include="Media\Animations\TypeHelpers\AnimatedDoubleHelper.cs" />
+    <Compile Include="Media\Animations\BrushAnimation\SupportedAnimationBrushes.cs" />
+    <Compile Include="Media\Animations\AnimationHelper\BrushAnimationHelper.cs" />
+    <Compile Include="Media\Animations\AnimationHelper\ColorAnimationHelper.cs" />
+    <Compile Include="Media\Animations\AnimationHelper\DoubleAnimationHelper.cs" />
     <Compile Include="Media\Animations\AnimationBase\AnimationBase.cs" />
     <Compile Include="Media\Animations\AnimationBase\EasingFromToByAnimationBase.cs" />
     <Compile Include="Media\Animations\AnimationBase\FromToByAnimationBase.cs" />
@@ -102,8 +103,8 @@
     <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\ISegmentLengthProvider.cs" />
     <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\ResolvedKeyFrameCollectionExtensions.cs" />
     <Compile Include="Media\Animations\BrushAnimation\BrushAnimation.cs" />
-    <Compile Include="Media\Animations\TypeHelpers\AnimatedPointHelper.cs" />
-    <Compile Include="Media\Animations\TypeHelpers\IAnimatedTypeHelper.cs" />
+    <Compile Include="Media\Animations\AnimationHelper\PointAnimationHelper.cs" />
+    <Compile Include="Media\Animations\AnimationHelper\IAnimationHelper.cs" />
     <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\AnimationUsingKeyFramesBase.cs" />
     <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\KeyFrameBase.cs" />
     <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\KeyFrameResolver.cs" />

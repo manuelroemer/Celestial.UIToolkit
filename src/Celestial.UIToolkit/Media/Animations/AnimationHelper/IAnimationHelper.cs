@@ -8,7 +8,7 @@
     /// <typeparam name="T">
     /// The type of the animated object.
     /// </typeparam>
-    internal interface IAnimatedTypeHelper<T>
+    internal interface IAnimationHelper<T>
     {
 
         /// <summary>

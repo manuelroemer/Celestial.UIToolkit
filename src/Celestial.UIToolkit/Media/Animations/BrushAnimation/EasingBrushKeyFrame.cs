@@ -32,8 +32,8 @@ namespace Celestial.UIToolkit.Media.Animations
             if (easedProgress <= 0) return baseValue;
             if (easedProgress >= 1) return this.Value;
             BrushAnimationValidator.ValidateBrushes(baseValue, this.Value);
-            return AnimatedBrushHelpers.SupportedTypeHelpers[baseValue.GetType()]
-                                       .InterpolateValue(baseValue, this.Value, easedProgress);
+            return SupportedAnimationBrushes.GetAnimationHelper(baseValue)
+                                            .InterpolateValue(baseValue, this.Value, easedProgress);
         }
 
     }

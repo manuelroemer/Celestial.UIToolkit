@@ -6,27 +6,7 @@ using static System.Math;
 
 namespace Celestial.UIToolkit.Media.Animations
 {
-
-    /// <summary>
-    /// Provides access to the brush helpers which are available.
-    /// </summary>
-    internal static class AnimatedBrushHelpers
-    {
-
-        /// <summary>
-        /// A dictionary which maps <see cref="Brush"/> types to their corresponding
-        /// animation helpers.
-        /// </summary>
-        public static Dictionary<Type, IAnimatedTypeHelper<Brush>> SupportedTypeHelpers
-            = new Dictionary<Type, IAnimatedTypeHelper<Brush>>()
-        {
-            [typeof(SolidColorBrush)]     = AnimatedSolidColorBrushHelper.Instance,
-            [typeof(LinearGradientBrush)] = AnimatedLinearGradientBrushHelper.Instance,
-            [typeof(RadialGradientBrush)] = AnimatedRadialGradientBrushHelper.Instance
-        };
-        
-    }
-
+    
     /// <summary>
     /// A base class for an animation helper that animates a brush.
     /// This class already animates the brush's <see cref="Brush.Opacity"/>
@@ -39,12 +19,12 @@ namespace Celestial.UIToolkit.Media.Animations
     /// <typeparam name="TBrush">
     /// The type of <see cref="Brush"/> which the deriving class is animating.
     /// </typeparam>
-    internal abstract class AnimatedBrushHelper<TDeriving, TBrush> 
-        : Singleton<TDeriving>, IAnimatedTypeHelper<Brush>
+    internal abstract class BrushAnimationHelper<TDeriving, TBrush> 
+        : Singleton<TDeriving>, IAnimationHelper<Brush>
         where TBrush : Brush
     {
         
-        private AnimatedDoubleHelper _doubleHelper = AnimatedDoubleHelper.Instance;
+        private DoubleAnimationHelper _doubleHelper = DoubleAnimationHelper.Instance;
         
         public abstract Brush GetZeroValue();
 
@@ -113,13 +93,13 @@ namespace Celestial.UIToolkit.Media.Animations
         
     }
 
-    internal abstract class AnimatedGradientBrushHelper<TDeriving, TBrush> 
-        : AnimatedBrushHelper<TDeriving, TBrush>
+    internal abstract class GradientBrushAnimationHelper<TDeriving, TBrush> 
+        : BrushAnimationHelper<TDeriving, TBrush>
         where TBrush : GradientBrush
     {
 
-        private AnimatedDoubleHelper _doubleHelper = AnimatedDoubleHelper.Instance;
-        private AnimatedColorHelper _colorHelper = AnimatedColorHelper.Instance;
+        private DoubleAnimationHelper _doubleHelper = DoubleAnimationHelper.Instance;
+        private ColorAnimationHelper _colorHelper = ColorAnimationHelper.Instance;
 
         protected override void AddValuesToResult(TBrush result, TBrush a, TBrush b)
         {
@@ -188,13 +168,13 @@ namespace Celestial.UIToolkit.Media.Animations
         
     }
 
-    internal sealed class AnimatedSolidColorBrushHelper 
-        : AnimatedBrushHelper<AnimatedSolidColorBrushHelper, SolidColorBrush>
+    internal sealed class SolidColorBrushAnimationHelper 
+        : BrushAnimationHelper<SolidColorBrushAnimationHelper, SolidColorBrush>
     {
 
-        private static AnimatedColorHelper _colorHelper = AnimatedColorHelper.Instance;
+        private static ColorAnimationHelper _colorHelper = ColorAnimationHelper.Instance;
 
-        public AnimatedSolidColorBrushHelper() { }
+        public SolidColorBrushAnimationHelper() { }
 
         public override Brush GetZeroValue()
         {
@@ -227,11 +207,11 @@ namespace Celestial.UIToolkit.Media.Animations
 
     }
 
-    internal sealed class AnimatedLinearGradientBrushHelper
-        : AnimatedGradientBrushHelper<AnimatedLinearGradientBrushHelper, LinearGradientBrush>
+    internal sealed class LinearGradientBrushAnimationHelper
+        : GradientBrushAnimationHelper<LinearGradientBrushAnimationHelper, LinearGradientBrush>
     {
 
-        private static AnimatedPointHelper _pointHelper = AnimatedPointHelper.Instance;
+        private static PointAnimationHelper _pointHelper = PointAnimationHelper.Instance;
 
         public override Brush GetZeroValue() => new LinearGradientBrush();
 
@@ -265,12 +245,12 @@ namespace Celestial.UIToolkit.Media.Animations
 
     }
     
-    internal sealed class AnimatedRadialGradientBrushHelper
-        : AnimatedGradientBrushHelper<AnimatedRadialGradientBrushHelper, RadialGradientBrush>
+    internal sealed class RadialGradientBrushAnimationHelper
+        : GradientBrushAnimationHelper<RadialGradientBrushAnimationHelper, RadialGradientBrush>
     {
 
-        private static AnimatedDoubleHelper _doubleHelper = AnimatedDoubleHelper.Instance;
-        private static AnimatedPointHelper _pointHelper = AnimatedPointHelper.Instance;
+        private static DoubleAnimationHelper _doubleHelper = DoubleAnimationHelper.Instance;
+        private static PointAnimationHelper _pointHelper = PointAnimationHelper.Instance;
 
         public override Brush GetZeroValue() => new RadialGradientBrush();
 

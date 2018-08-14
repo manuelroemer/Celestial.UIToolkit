@@ -4,10 +4,10 @@ using System.Windows.Media;
 namespace Celestial.UIToolkit.Media.Animations
 {
 
-    internal class AnimatedColorHelper : Singleton<AnimatedColorHelper>, IAnimatedTypeHelper<Color>
+    internal class ColorAnimationHelper : Singleton<ColorAnimationHelper>, IAnimationHelper<Color>
     {
 
-        private AnimatedColorHelper() { }
+        private ColorAnimationHelper() { }
 
         public Color GetZeroValue()
         {
