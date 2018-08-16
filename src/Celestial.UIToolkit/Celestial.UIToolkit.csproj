@@ -78,12 +78,14 @@
     <Compile Include="Converters\ThicknessSidePickerConverter.cs" />
     <Compile Include="Converters\ValueConverter.cs" />
     <Compile Include="ExtendedFreezable.cs" />
+    <Compile Include="ExtendedVisualStateManager.cs" />
     <Compile Include="Extensions\ArrayExtensions.cs" />
     <Compile Include="Extensions\ArraySegmentExtensions.cs" />
     <Compile Include="Extensions\DependencyPropertyExtensions.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\FrameworkElementExtensions.cs" />
     <Compile Include="FreezableCollection.cs" />
+    <Compile Include="FWVisualStateManager.cs" />
     <Compile Include="MarginHelper.cs" />
     <Compile Include="Media\Animations\BrushAnimation\BrushAnimationUsingKeyFrames.cs" />
     <Compile Include="Media\Animations\BrushAnimation\BrushAnimationValidator.cs" />
@@ -109,6 +111,7 @@
     <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\KeyFrameBase.cs" />
     <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\KeyFrameResolver.cs" />
     <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\ResolvedKeyFrame.cs" />
+    <Compile Include="Media\Animations\VisualStateSupport\AnimationVisualStateSwitcher.cs" />
     <Compile Include="SharedResourceDictionary.cs" />
     <Compile Include="Theming\ControlProperties.cs" />
     <Compile Include="Theming\ActiveProperties.cs" />

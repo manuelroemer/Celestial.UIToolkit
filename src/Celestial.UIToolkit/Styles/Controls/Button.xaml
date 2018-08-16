@@ -27,7 +27,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ButtonBase">
-                    <Grid>
+                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static local:ExtendedVisualStateManager.Default}">
                         <Grid.Resources>
                             <local:BindingProxy x:Key="MouseOverBackgroundColorProxy"
                                                 Data="{Binding Path=(theming:MouseOverProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
@@ -108,6 +108,9 @@
                                 <VisualStateGroup.Transitions>
                                     <VisualTransition GeneratedDuration="{StaticResource ColorAnimationDuration}" />
                                     <VisualTransition To="Disabled" GeneratedDuration="0" />
+                                    <VisualTransition From="Normal" />
+                                    <VisualTransition To="Pressed" />
+                                    <VisualTransition From="MouseOver" To="Pressed"/>
                                 </VisualStateGroup.Transitions>
                                 <VisualState x:Name="Normal" />
                                 <VisualState x:Name="MouseOver" Storyboard="{StaticResource MouseOverStoryboard}" />
