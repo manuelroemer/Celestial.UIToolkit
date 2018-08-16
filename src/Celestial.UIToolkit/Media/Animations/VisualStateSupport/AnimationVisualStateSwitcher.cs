@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 using System.Windows.Media.Animation;
 
 namespace Celestial.UIToolkit.Media.Animations
@@ -25,19 +26,88 @@ namespace Celestial.UIToolkit.Media.Animations
     {
 
         private VisualTransition _currentTransition;
-        private Storyboard _transitionStoryboard;
+        private Storyboard _dynamicTransitionStoryboard;
 
         protected override bool GoToStateCore()
         {
+            if (this.Group.GetCurrentState() == this.ToState)
+                return true;
+
             _currentTransition = this.GetCurrentVisualTransition();
-            _transitionStoryboard = this.CreateTransitionStoryboard();
+            _dynamicTransitionStoryboard = this.CreateDynamicTransitionStoryboard();
             
-            return false;
+            if (_currentTransition == null || _currentTransition.HasZeroDuration())
+            {
+                // Without a transition, the animation ToState animation is supposed to start immediately.
+                // That's also the case, if the transition's duration is 0 (because it won't take any time to complete).
+                this.Group.StartNewThenStopOldStoryboards(
+                    this.StateGroupsRoot, _currentTransition?.Storyboard, this.ToState.Storyboard);
+            }
+            else
+            {
+                // We have a transition animation which has a duration > 0.
+                // -> Run the transition storyboard before the ToState storyboard.
+                _currentTransition.SetDynamicStoryboardCompleted(false);
+                _dynamicTransitionStoryboard.Completed += this._transitionStoryboard_Completed;
+                
+                if (_currentTransition.Storyboard != null &&
+                    _currentTransition.GetExplicitStoryboardCompleted())
+                {
+                    _currentTransition.SetExplicitStoryboardCompleted(false);
+                    _currentTransition.Storyboard.Completed += _currentTransitionStoryboard_Completed;
+                }
+
+                this.Group.StartNewThenStopOldStoryboards(this.StateGroupsRoot, _currentTransition.Storyboard, _dynamicTransitionStoryboard);
+            }
+
+            this.Group.SetCurrentState(this.ToState);
+            return true;
+        }
+
+        private void _transitionStoryboard_Completed(object sender, EventArgs e)
+        {
+            _dynamicTransitionStoryboard.Completed -= _transitionStoryboard_Completed;
+            _currentTransition.SetDynamicStoryboardCompleted(true);
+
+            if (_currentTransition.Storyboard != null || _currentTransition.GetExplicitStoryboardCompleted())
+            {
+                if (this.ShouldRunStateStoryboard())
+                {
+                    this.Group.StartNewThenStopOldStoryboards(this.StateGroupsRoot, this.ToState.Storyboard);
+                }
+            }
+        }
+
+        private void _currentTransitionStoryboard_Completed(object sender, EventArgs e)
+        {
+            _currentTransition.Storyboard.Completed -= _currentTransitionStoryboard_Completed;
+            _currentTransition.SetExplicitStoryboardCompleted(true);
+
+            if (_currentTransition.GetDynamicStoryboardCompleted() &&
+                this.ShouldRunStateStoryboard())
+            {
+                this.Group.StartNewThenStopOldStoryboards(this.StateGroupsRoot, this.ToState.Storyboard);
+            }
+        }
+
+        private bool ShouldRunStateStoryboard()
+        {
+            // Ensure that the controls are loaded/in a tree, so that the storyboards can find them.
+            // IsLoaded never gets set to false when unloading, so make use of the Parent property.
+            // (Should possibly be updated with better unloaded-detection).
+            var rootParent = VisualTreeHelper.GetParent(this.StateGroupsRoot);
+            var controlParent = VisualTreeHelper.GetParent(this.Control);
+            return rootParent != null &&
+                   this.StateGroupsRoot.IsLoaded &&
+                   controlParent != null &&
+                   this.Control.IsLoaded;
         }
 
         private VisualTransition GetCurrentVisualTransition()
         {
+            if (!this.UseTransitions) return null;
             VisualTransition result = null;
+
             foreach (VisualTransition transition in this.Group.Transitions)
             {                
                 // We want to find the transition which matches the current states the best.
@@ -81,30 +151,27 @@ namespace Celestial.UIToolkit.Media.Animations
             }
         }
 
-        private Storyboard CreateTransitionStoryboard()
+        private Storyboard CreateDynamicTransitionStoryboard()
         {
             Storyboard storyboard = new Storyboard();
             storyboard.Duration = _currentTransition?.GeneratedDuration ?? 
                                   new Duration(TimeSpan.Zero);
 
-            ISet<Timeline> groupTimelines = this.FlattenTimelines(null); // TODO: group.CurrentStoryboards replacement
+            ISet<Timeline> currentGroupTimelines = this.FlattenTimelines(this.Group.GetCurrentStoryboards().ToArray());
             ISet<Timeline> transitionTimelines = this.FlattenTimelines(_currentTransition?.Storyboard);
             ISet<Timeline> toStateTimelines = this.FlattenTimelines(this.ToState.Storyboard);
-            
-            foreach (var transitionTimeline in transitionTimelines)
-            {
-                groupTimelines.Remove(transitionTimeline);
-                toStateTimelines.Remove(transitionTimeline);
-            }
 
+            currentGroupTimelines.ExceptWith(transitionTimelines);
+            toStateTimelines.ExceptWith(transitionTimelines);
+            
             foreach (var timeline in toStateTimelines)
             {
                 var toAnimation = this.GenerateToAnimation(timeline);
                 AddTimelineToCurrentStoryboard(toAnimation);
-                groupTimelines.Remove(timeline);
+                currentGroupTimelines.Remove(timeline);
             }
 
-            foreach (var timeline in groupTimelines)
+            foreach (var timeline in currentGroupTimelines)
             {
                 var fromAnimation = this.GenerateFromAnimation(timeline);
                 AddTimelineToCurrentStoryboard(fromAnimation);
@@ -123,16 +190,28 @@ namespace Celestial.UIToolkit.Media.Animations
 
         private Timeline GenerateToAnimation(Timeline timeline)
         {
-            // TODO
-            return null;
-        }
+            Timeline generatedTimeline = null;
+            if (timeline is IVisualTransitionAware visualTransitionAware)
+            {
+                generatedTimeline = visualTransitionAware.CreateToTransitionTimeline();
+            }
 
+            StoryboardHelper.CopyTargetProperties(this.StateGroupsRoot, timeline, generatedTimeline);
+            return generatedTimeline;
+        }
+        
         private Timeline GenerateFromAnimation(Timeline timeline)
         {
-            // TODO
-            return null;
-        }
+            Timeline generatedTimeline = null;
+            if (timeline is IVisualTransitionAware visualTransitionAware)
+            {
+                generatedTimeline = visualTransitionAware.CreateFromTransitionTimeline();
+            }
 
+            StoryboardHelper.CopyTargetProperties(this.StateGroupsRoot, timeline, generatedTimeline);
+            return generatedTimeline;
+        }
+        
         private ISet<Timeline> FlattenTimelines(params Storyboard[] storyboards)
         {
             // A storyboard can have other storyboards as children.
@@ -158,30 +237,10 @@ namespace Celestial.UIToolkit.Media.Animations
                     }
                     else
                     {
-                        results.AddOrReplace(timeline);
+                        results.Remove(timeline);
+                        results.Add(timeline);
                     }
                 }
-            }
-        }
-
-        /// <summary>
-        /// An equality comparer for <see cref="Timeline"/> objects
-        /// which compares them based on attached storyboard properties
-        /// which define a timeline's target.
-        /// </summary>
-        private sealed class StoryboardTargetTimelineEqualityComparer 
-            : Singleton<StoryboardTargetTimelineEqualityComparer>, IEqualityComparer<Timeline>
-        {
-            private StoryboardTargetTimelineEqualityComparer() { }
-
-            public bool Equals(Timeline a, Timeline b)
-            {
-                throw new NotImplementedException();
-            }
-
-            public int GetHashCode(Timeline timelines)
-            {
-                throw new NotImplementedException();
             }
         }
 

@@ -98,6 +98,30 @@ namespace Celestial.UIToolkit.Extensions
         }
 
         /// <summary>
+        /// Adds the specified sequence to the <paramref name="collection"/>.
+        /// </summary>
+        /// <typeparam name="T">The type of elements in the collection.</typeparam>
+        /// <param name="collection">The collection.</param>
+        /// <param name="items">The items to be added to the collection.</param>
+        public static void AddRange<T>(this ICollection<T> collection, IEnumerable<T> items)
+        {
+            if (collection == null) throw new ArgumentNullException(nameof(collection));
+            if (items == null) throw new ArgumentNullException(nameof(items));
+
+            if (collection is List<T> list)
+            {
+                list.AddRange(items);
+            }
+            else
+            {
+                foreach (var item in items)
+                {
+                    collection.Add(item);
+                }
+            }
+        }
+
+        /// <summary>
         /// Removes all elements from the list (in place, the input list will be changed) 
         /// which satisfy the given <paramref name="predicate"/>.
         /// </summary>
@@ -117,22 +141,7 @@ namespace Celestial.UIToolkit.Extensions
             }
             return list;
         }
-
-        /// <summary>
-        /// Adds an element to the specified <paramref name="set"/>.
-        /// If an element equal to the current exists in the set,
-        /// it will be replaced with the new one.
-        /// </summary>
-        /// <typeparam name="T">The type of elements in the set.</typeparam>
-        /// <param name="set">The set.</param>
-        /// <param name="element">The element to be added to the set.</param>
-        public static void AddOrReplace<T>(this ISet<T> set, T element)
-        {
-            if (set == null) throw new ArgumentNullException(nameof(set));
-            set.Remove(element);
-            set.Add(element);
-        }
-
+        
     }
 
 }

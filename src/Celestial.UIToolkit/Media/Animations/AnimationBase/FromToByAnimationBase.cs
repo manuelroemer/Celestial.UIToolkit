@@ -12,7 +12,7 @@ namespace Celestial.UIToolkit.Media.Animations
     /// <typeparam name="T">
     /// The type which is being animated by the animation.
     /// </typeparam>
-    public abstract class FromToByAnimationBase<T> : AnimationBase<T>
+    public abstract class FromToByAnimationBase<T> : AnimationBase<T>, IVisualTransitionAware
     {
 
         private bool _areConstantAnimationValuesSet = false;
@@ -270,6 +270,43 @@ namespace Celestial.UIToolkit.Media.Animations
         /// </param>
         /// <returns>The output value of the interpolation, given the specified values.</returns>
         protected abstract T InterpolateValue(T from, T to, double progress);
+        
+        /// <summary>
+        /// Called when the <see cref="ExtendedVisualStateManager"/> transitions away from
+        /// the element.
+        /// The timeline which gets returned by this method is then used as a transitioning
+        /// animation.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="Timeline"/> which displays a visual transition away from this element.
+        /// </returns>
+        public virtual Timeline CreateFromTransitionTimeline()
+        {
+            // We want to animate FROM this animation to something else.
+            // Use the fact that this animation supports automatic/dynamic values.
+            this.ReadPreamble();
+            return (FromToByAnimationBase<T>)this.CreateInstance();
+        }
+
+        /// <summary>
+        /// Called when the <see cref="ExtendedVisualStateManager"/> transitions to the element.
+        /// The timeline which gets returned by this method is then used as a transitioning animation.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="Timeline"/> which displays a visual transition to this element.
+        /// </returns>
+        public virtual Timeline CreateToTransitionTimeline()
+        {
+            // We want to create an animation which transitions TO our current animation.
+            // -> Another animation of the same type is able to do that, with 'To' set to the correct value.
+            this.ReadPreamble();
+            var animation = (FromToByAnimationBase<T>)this.CreateInstance();
+            if (this.IsDependencyPropertySet(FromProperty))
+                animation.To = this.From;
+            else
+                animation.To = this.To;
+            return animation;
+        }
 
         private enum AnimationType : byte
         {

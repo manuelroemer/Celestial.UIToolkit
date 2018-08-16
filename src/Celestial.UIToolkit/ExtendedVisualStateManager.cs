@@ -15,37 +15,20 @@ namespace Celestial.UIToolkit
     /// <seealso cref="VisualStateSwitchers"/>
     public class ExtendedVisualStateManager : VisualStateManager
     {
-        
+
         /// <summary>
         /// Gets a default instance of the <see cref="ExtendedVisualStateManager"/>
         /// which is used by the UI Toolkit.
         /// If you implement a custom <see cref="VisualStateSwitcher"/> and want it to be known
         /// to the toolkit's default styles, register them in this instance.
         /// </summary>
-        public static ExtendedVisualStateManager Default { get; }
-
-        /// <summary>
-        /// Gets a collection of <see cref="VisualStateSwitcher"/> objects
-        /// which can be used to switch an element's state.
-        /// When transitioning to an element's state, the <see cref="ExtendedVisualStateManager"/>
-        /// will go through this collection and see if any of the registered elements is able
-        /// to do a transition.
-        /// If not, the default transition logic by the <see cref="VisualStateManager"/> will be used.
-        /// </summary>
-        public virtual IList<VisualStateSwitcher> VisualStateSwitchers { get; }
-        
-        static ExtendedVisualStateManager()
-        {
-            Default = new ExtendedVisualStateManager();
-            Default.VisualStateSwitchers.Add(new AnimationVisualStateSwitcher());
-        }
+        public static ExtendedVisualStateManager Default { get; } = new ExtendedVisualStateManager();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ExtendedVisualStateManager"/>.
         /// </summary>
         public ExtendedVisualStateManager()
         {
-            this.VisualStateSwitchers = new List<VisualStateSwitcher>(2);
         }
 
         /// <summary>
@@ -78,21 +61,11 @@ namespace Celestial.UIToolkit
             // We allow one switcher to do the transition.
             // If none exists, we will let the default VSM do the work.
             bool couldTransitionToState = false;
-            if (this.VisualStateSwitchers != null)
-            {
-                foreach (var stateSwitcher in VisualStateSwitchers)
-                {
-                    if (stateSwitcher != null)
-                    {
-                        bool successfulTransition = stateSwitcher.GoToState(
-                            control, stateGroupsRoot, stateName, group, state, useTransitions);
-                        couldTransitionToState |= successfulTransition;
-                    }
-                }
-            }
-            
-            couldTransitionToState |= base.GoToStateCore(
+            couldTransitionToState |= new AnimationVisualStateSwitcher().GoToState(
                 control, stateGroupsRoot, stateName, group, state, useTransitions);
+        
+            if (!couldTransitionToState)
+                couldTransitionToState = base.GoToStateCore(control, stateGroupsRoot, stateName, group, state, useTransitions);
 
             return couldTransitionToState;
         }
@@ -105,6 +78,8 @@ namespace Celestial.UIToolkit
     /// </summary>
     public abstract class VisualStateSwitcher
     {
+
+        private bool _wasUsed = false;
 
         /// <summary>
         /// Gets the control to transition between states.
@@ -170,8 +145,15 @@ namespace Celestial.UIToolkit
             VisualState state, 
             bool useTransitions)
         {
+            if (_wasUsed)
+            {
+                throw new InvalidOperationException(
+                    $"A {nameof(VisualStateSwitcher)} can only be used once.");
+            }
+            _wasUsed = true;
+
             if (state == null)
-                state = VSMExtensions.GetStateByName(group, stateName);
+                state = group.GetStateByName(stateName);
 
             this.Control = control ?? throw new ArgumentNullException(nameof(control));
             this.StateGroupsRoot = stateGroupsRoot ?? throw new ArgumentNullException(nameof(stateGroupsRoot));
@@ -196,54 +178,6 @@ namespace Celestial.UIToolkit
         /// </returns>
         protected abstract bool GoToStateCore();
         
-    }
-
-    /// <summary>
-    /// Provides extension methods for a set of members which fall into the 
-    /// <see cref="VisualStateManager"/> category.
-    /// </summary>
-    public static class VisualStateMemberExtensions
-    {
-
-        /// <summary>
-        /// Returns the first state in the <see cref="VisualStateGroup.States"/>
-        /// which has the specified <paramref name="stateName"/>,
-        /// or <c>null</c>, if no state with the specified name could be found.
-        /// </summary>
-        /// <param name="group">The group in which a <see cref="VisualState"/> should be retrieved.</param>
-        /// <param name="stateName">The name of a state to be retrieved.</param>
-        /// <returns>
-        /// The first <see cref="VisualState"/> with the specified <paramref name="stateName"/>
-        /// or <c>null</c>, if no such state was found.
-        /// </returns>
-        public static VisualState GetStateByName(this VisualStateGroup group, string stateName)
-        {
-            if (group == null) throw new ArgumentNullException(nameof(group));
-            if (stateName == null) return null;
-
-            foreach (VisualState state in group.States)
-            {
-                if (state.Name == stateName) return state;
-            }
-            return null;
-        }
-
-        /// <summary>
-        /// Returns a value indicating whether the specified <paramref name="transition"/>
-        /// can be treated as a default transition inside a collection.
-        /// This is the case, if its <see cref="VisualTransition.From"/> and
-        /// <see cref="VisualTransition.To"/> properties are <c>null</c>.
-        /// </summary>
-        /// <param name="transition">The transition to be checked.</param>
-        /// <returns>
-        /// <c>true</c> if the transition can be treated as default; false if not.
-        /// </returns>
-        public static bool IsDefault(this VisualTransition transition)
-        {
-            if (transition == null) throw new ArgumentNullException(nameof(transition));
-            return transition.From == null && transition.To == null;
-        }
-
     }
 
 }
