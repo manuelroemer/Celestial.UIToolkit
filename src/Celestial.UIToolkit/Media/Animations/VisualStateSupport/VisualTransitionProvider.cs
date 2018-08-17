@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Linq;
 
 namespace Celestial.UIToolkit.Media.Animations
 {
-    
+
     /// <summary>
     /// Defines an element which can generate a visual transition for a specific type
     /// of <see cref="Timeline"/>.
@@ -87,6 +84,8 @@ namespace Celestial.UIToolkit.Media.Animations
             // We will create them ourselves, so that we don't have to rely on the original one
             // at all.
             _transitionProviders.Add(new ColorAnimationTransitionProvider());
+            _transitionProviders.Add(new DoubleAnimationTransitionProvider());
+            _transitionProviders.Add(new PointAnimationTransitionProvider());
         }
 
         /// <summary>
@@ -198,6 +197,74 @@ namespace Celestial.UIToolkit.Media.Animations
             return new ColorAnimation()
             {
                 To = targetColor,
+                EasingFunction = easingFunction
+            };
+        }
+    }
+
+    internal sealed class DoubleAnimationTransitionProvider : IVisualTransitionProvider
+    {
+        public bool SupportsTimeline(Timeline timeline) =>
+            timeline is DoubleAnimation || timeline is DoubleAnimationUsingKeyFrames;
+
+        public Timeline CreateFromTransitionTimeline(Timeline fromTimeline, IEasingFunction easingFunction)
+        {
+            return new DoubleAnimation()
+            {
+                EasingFunction = easingFunction
+            };
+        }
+
+        public Timeline CreateToTransitionTimeline(Timeline toTimeline, IEasingFunction easingFunction)
+        {
+            double targetValue = 0d;
+            if (toTimeline is DoubleAnimation doubleAnim)
+            {
+                targetValue = doubleAnim.From ?? doubleAnim.To ?? 0d;
+            }
+            else if (toTimeline is DoubleAnimationUsingKeyFrames doubleKeyFrameAnim)
+            {
+                if (doubleKeyFrameAnim.KeyFrames != null && doubleKeyFrameAnim.KeyFrames.Count > 0)
+                    targetValue = doubleKeyFrameAnim.KeyFrames[0].Value;
+            }
+
+            return new DoubleAnimation()
+            {
+                To = targetValue,
+                EasingFunction = easingFunction
+            };
+        }
+    }
+
+    internal sealed class PointAnimationTransitionProvider : IVisualTransitionProvider
+    {
+        public bool SupportsTimeline(Timeline timeline) =>
+            timeline is PointAnimation || timeline is PointAnimationUsingKeyFrames;
+
+        public Timeline CreateFromTransitionTimeline(Timeline fromTimeline, IEasingFunction easingFunction)
+        {
+            return new PointAnimation()
+            {
+                EasingFunction = easingFunction
+            };
+        }
+
+        public Timeline CreateToTransitionTimeline(Timeline toTimeline, IEasingFunction easingFunction)
+        {
+            Point targetPoint = new Point(0d, 0d);
+            if (toTimeline is PointAnimation pointAnim)
+            {
+                targetPoint = pointAnim.From ?? pointAnim.To ?? new Point(0d, 0d);
+            }
+            else if (toTimeline is PointAnimationUsingKeyFrames pointKeyFrameAnim)
+            {
+                if (pointKeyFrameAnim.KeyFrames != null && pointKeyFrameAnim.KeyFrames.Count > 0)
+                    targetPoint = pointKeyFrameAnim.KeyFrames[0].Value;
+            }
+
+            return new PointAnimation()
+            {
+                To = targetPoint,
                 EasingFunction = easingFunction
             };
         }
