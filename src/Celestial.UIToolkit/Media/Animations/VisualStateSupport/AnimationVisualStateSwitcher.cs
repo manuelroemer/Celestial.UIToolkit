@@ -195,7 +195,7 @@ namespace Celestial.UIToolkit.Media.Animations
             Timeline generatedTimeline = null;
             if (timeline is IVisualTransitionAware visualTransitionAware)
             {
-                generatedTimeline = visualTransitionAware.CreateToTransitionTimeline();
+                generatedTimeline = visualTransitionAware.CreateToTransitionTimeline(easingFunction);
             }
 
             StoryboardHelper.CopyTargetProperties(this.StateGroupsRoot, timeline, generatedTimeline);
@@ -207,7 +207,7 @@ namespace Celestial.UIToolkit.Media.Animations
             Timeline generatedTimeline = null;
             if (timeline is IVisualTransitionAware visualTransitionAware)
             {
-                generatedTimeline = visualTransitionAware.CreateFromTransitionTimeline();
+                generatedTimeline = visualTransitionAware.CreateFromTransitionTimeline(easingFunction);
             }
 
             StoryboardHelper.CopyTargetProperties(this.StateGroupsRoot, timeline, generatedTimeline);
