@@ -115,6 +115,7 @@
     <Compile Include="Media\Animations\VisualStateSupport\StoryboardTargetTimelineEqualityComparer.cs" />
     <Compile Include="Media\Animations\VisualStateSupport\VisualStateGroupExtensions.cs" />
     <Compile Include="Media\Animations\VisualStateSupport\VisualTransitionExtensions.cs" />
+    <Compile Include="Media\Animations\VisualStateSupport\VisualTransitionProvider.cs" />
     <Compile Include="SharedResourceDictionary.cs" />
     <Compile Include="Theming\ControlProperties.cs" />
     <Compile Include="Theming\ActiveProperties.cs" />

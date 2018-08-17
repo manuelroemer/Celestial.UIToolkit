@@ -192,10 +192,21 @@ namespace Celestial.UIToolkit.Media.Animations
 
         private Timeline GenerateToAnimation(Timeline timeline, IEasingFunction easingFunction)
         {
+            // A timeline can provide a transition on its own
+            // (the FromToByAnimationBase<T> is, for example, capable of doing that).
+            // If it can't do that, try to find a transition provider who can do it.
+            // If that doesn't work either, we don't support a transition for the timeline.
             Timeline generatedTimeline = null;
             if (timeline is IVisualTransitionAware visualTransitionAware)
             {
                 generatedTimeline = visualTransitionAware.CreateToTransitionTimeline(easingFunction);
+            }
+            else
+            {
+                if (VisualTransitionProvider.TryGetProviderForTimeline(timeline, out var provider))
+                {
+                    generatedTimeline = provider.CreateToTransitionTimeline(timeline, easingFunction);
+                }
             }
 
             StoryboardHelper.CopyTargetProperties(this.StateGroupsRoot, timeline, generatedTimeline);
@@ -209,6 +220,13 @@ namespace Celestial.UIToolkit.Media.Animations
             {
                 generatedTimeline = visualTransitionAware.CreateFromTransitionTimeline(easingFunction);
             }
+            else
+            {
+                if (VisualTransitionProvider.TryGetProviderForTimeline(timeline, out var provider))
+                {
+                    generatedTimeline = provider.CreateFromTransitionTimeline(timeline, easingFunction);
+                }
+            }
 
             StoryboardHelper.CopyTargetProperties(this.StateGroupsRoot, timeline, generatedTimeline);
             return generatedTimeline;
@@ -217,7 +235,7 @@ namespace Celestial.UIToolkit.Media.Animations
         private ISet<Timeline> FlattenTimelines(params Storyboard[] storyboards)
         {
             // A storyboard can have other storyboards as children.
-            // The goal of this method is to extract a single list of all timelines from the storyboard(s).
+            // The goal of this method is to extract a single set of all timelines from the storyboard(s).
             var result = new HashSet<Timeline>(StoryboardTargetTimelineEqualityComparer.Instance);
             if (storyboards != null)
             {
@@ -237,8 +255,11 @@ namespace Celestial.UIToolkit.Media.Animations
                     {
                         FlattenSingleStoryboard(childStoryboard, results);
                     }
-                    else
+                    else if (timeline != null)
                     {
+                        // If a storyboard has the same target,
+                        // replace the old one with the new one,
+                        // so that the last one is the one to be run.
                         results.Remove(timeline);
                         results.Add(timeline);
                     }
