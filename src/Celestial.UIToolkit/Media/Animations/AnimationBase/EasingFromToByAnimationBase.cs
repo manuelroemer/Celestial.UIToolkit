@@ -63,6 +63,44 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <returns>The output value of the interpolation, given the specified values.</returns>
         protected abstract T InterpolateValueCore(T from, T to, double progress);
 
+        /// <summary>
+        /// Called when the <see cref="ExtendedVisualStateManager"/> transitions away from
+        /// the element.
+        /// The timeline which gets returned by this method is then used as a transitioning
+        /// animation.
+        /// </summary>
+        /// <param name="easingFunction">
+        /// An easing function to be applied to the resulting timeline.
+        /// Can be null.
+        /// </param>
+        /// <returns>
+        /// A <see cref="Timeline"/> which displays a visual transition away from this element.
+        /// </returns>
+        public override Timeline CreateFromTransitionTimeline(IEasingFunction easingFunction)
+        {
+            var animation = (EasingFromToByAnimationBase<T>)base.CreateFromTransitionTimeline(easingFunction);
+            animation.EasingFunction = easingFunction;
+            return animation;
+        }
+
+        /// <summary>
+        /// Called when the <see cref="ExtendedVisualStateManager"/> transitions to the element.
+        /// The timeline which gets returned by this method is then used as a transitioning animation.
+        /// </summary>
+        /// <param name="easingFunction">
+        /// An easing function to be applied to the resulting timeline.
+        /// Can be null.
+        /// </param>
+        /// <returns>
+        /// A <see cref="Timeline"/> which displays a visual transition to this element.
+        /// </returns>
+        public override Timeline CreateToTransitionTimeline(IEasingFunction easingFunction)
+        {
+            var animation = (EasingFromToByAnimationBase<T>)base.CreateToTransitionTimeline(easingFunction);
+            animation.EasingFunction = easingFunction;
+            return animation;
+        }
+
     }
 
 }

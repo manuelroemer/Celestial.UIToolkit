@@ -270,17 +270,21 @@ namespace Celestial.UIToolkit.Media.Animations
         /// </param>
         /// <returns>The output value of the interpolation, given the specified values.</returns>
         protected abstract T InterpolateValue(T from, T to, double progress);
-        
+
         /// <summary>
         /// Called when the <see cref="ExtendedVisualStateManager"/> transitions away from
         /// the element.
         /// The timeline which gets returned by this method is then used as a transitioning
         /// animation.
         /// </summary>
+        /// <param name="easingFunction">
+        /// An easing function to be applied to the resulting timeline.
+        /// Can be null.
+        /// </param>
         /// <returns>
         /// A <see cref="Timeline"/> which displays a visual transition away from this element.
         /// </returns>
-        public virtual Timeline CreateFromTransitionTimeline()
+        public virtual Timeline CreateFromTransitionTimeline(IEasingFunction easingFunction)
         {
             // We want to animate FROM this animation to something else.
             // Use the fact that this animation supports automatic/dynamic values.
@@ -292,10 +296,14 @@ namespace Celestial.UIToolkit.Media.Animations
         /// Called when the <see cref="ExtendedVisualStateManager"/> transitions to the element.
         /// The timeline which gets returned by this method is then used as a transitioning animation.
         /// </summary>
+        /// <param name="easingFunction">
+        /// An easing function to be applied to the resulting timeline.
+        /// Can be null.
+        /// </param>
         /// <returns>
         /// A <see cref="Timeline"/> which displays a visual transition to this element.
         /// </returns>
-        public virtual Timeline CreateToTransitionTimeline()
+        public virtual Timeline CreateToTransitionTimeline(IEasingFunction easingFunction)
         {
             // We want to create an animation which transitions TO our current animation.
             // -> Another animation of the same type is able to do that, with 'To' set to the correct value.

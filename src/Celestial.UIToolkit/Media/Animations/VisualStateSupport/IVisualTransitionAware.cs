@@ -18,19 +18,27 @@ namespace Celestial.UIToolkit.Media.Animations
         /// The timeline which gets returned by this method is then used as a transitioning
         /// animation.
         /// </summary>
+        /// <param name="easingFunction">
+        /// An easing function to be applied to the resulting timeline.
+        /// Can be null.
+        /// </param>
         /// <returns>
         /// A <see cref="Timeline"/> which displays a visual transition away from this element.
         /// </returns>
-        Timeline CreateFromTransitionTimeline();
+        Timeline CreateFromTransitionTimeline(IEasingFunction easingFunction);
 
         /// <summary>
         /// Called when the <see cref="ExtendedVisualStateManager"/> transitions to the element.
         /// The timeline which gets returned by this method is then used as a transitioning animation.
         /// </summary>
+        /// <param name="easingFunction">
+        /// An easing function to be applied to the resulting timeline.
+        /// Can be null.
+        /// </param>
         /// <returns>
         /// A <see cref="Timeline"/> which displays a visual transition to this element.
         /// </returns>
-        Timeline CreateToTransitionTimeline();
+        Timeline CreateToTransitionTimeline(IEasingFunction easingFunction);
 
     }
 

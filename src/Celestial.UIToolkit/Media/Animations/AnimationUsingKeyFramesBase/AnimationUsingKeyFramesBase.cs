@@ -417,7 +417,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <returns>
         /// A <see cref="Timeline"/> which displays a visual transition away from this element.
         /// </returns>
-        public virtual Timeline CreateFromTransitionTimeline()
+        public virtual Timeline CreateFromTransitionTimeline(IEasingFunction easingFunction)
         {
             // We want to animate FROM this animation to something else.
             // Use the fact that this animation supports automatic/dynamic values.
@@ -431,7 +431,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <returns>
         /// A <see cref="Timeline"/> which displays a visual transition to this element.
         /// </returns>
-        public virtual Timeline CreateToTransitionTimeline()
+        public virtual Timeline CreateToTransitionTimeline(IEasingFunction easingFunction)
         {
             // We want to create an animation which transitions TO our current animation.
             // -> Another animation of the same type is able to do that, with 'To' set to the correct value.

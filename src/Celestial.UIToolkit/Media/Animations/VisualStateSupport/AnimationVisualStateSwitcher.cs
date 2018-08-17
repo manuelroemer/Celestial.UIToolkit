@@ -153,9 +153,11 @@ namespace Celestial.UIToolkit.Media.Animations
 
         private Storyboard CreateDynamicTransitionStoryboard()
         {
-            Storyboard storyboard = new Storyboard();
-            storyboard.Duration = _currentTransition?.GeneratedDuration ?? 
-                                  new Duration(TimeSpan.Zero);
+            Storyboard storyboard = new Storyboard()
+            {
+                Duration = _currentTransition?.GeneratedDuration ?? new Duration(TimeSpan.Zero)
+            };
+            var easingFunction = _currentTransition?.GeneratedEasingFunction;
 
             ISet<Timeline> currentGroupTimelines = this.FlattenTimelines(this.Group.GetCurrentStoryboards().ToArray());
             ISet<Timeline> transitionTimelines = this.FlattenTimelines(_currentTransition?.Storyboard);
@@ -166,14 +168,14 @@ namespace Celestial.UIToolkit.Media.Animations
             
             foreach (var timeline in toStateTimelines)
             {
-                var toAnimation = this.GenerateToAnimation(timeline);
+                var toAnimation = this.GenerateToAnimation(timeline, easingFunction);
                 AddTimelineToCurrentStoryboard(toAnimation);
                 currentGroupTimelines.Remove(timeline);
             }
 
             foreach (var timeline in currentGroupTimelines)
             {
-                var fromAnimation = this.GenerateFromAnimation(timeline);
+                var fromAnimation = this.GenerateFromAnimation(timeline, easingFunction);
                 AddTimelineToCurrentStoryboard(fromAnimation);
             }
             return storyboard;
@@ -188,7 +190,7 @@ namespace Celestial.UIToolkit.Media.Animations
             }
         }
 
-        private Timeline GenerateToAnimation(Timeline timeline)
+        private Timeline GenerateToAnimation(Timeline timeline, IEasingFunction easingFunction)
         {
             Timeline generatedTimeline = null;
             if (timeline is IVisualTransitionAware visualTransitionAware)
@@ -200,7 +202,7 @@ namespace Celestial.UIToolkit.Media.Animations
             return generatedTimeline;
         }
         
-        private Timeline GenerateFromAnimation(Timeline timeline)
+        private Timeline GenerateFromAnimation(Timeline timeline, IEasingFunction easingFunction)
         {
             Timeline generatedTimeline = null;
             if (timeline is IVisualTransitionAware visualTransitionAware)
