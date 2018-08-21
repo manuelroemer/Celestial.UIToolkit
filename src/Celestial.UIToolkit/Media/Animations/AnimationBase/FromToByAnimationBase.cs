@@ -12,7 +12,7 @@ namespace Celestial.UIToolkit.Media.Animations
     /// <typeparam name="T">
     /// The type which is being animated by the animation.
     /// </typeparam>
-    public abstract class FromToByAnimationBase<T> : AnimationBase<T>, IVisualTransitionAware
+    public abstract class FromToByAnimationBase<T> : AnimationBase<T>, IVisualTransitionProvider
     {
 
         private bool _areConstantAnimationValuesSet = false;
@@ -272,11 +272,32 @@ namespace Celestial.UIToolkit.Media.Animations
         protected abstract T InterpolateValue(T from, T to, double progress);
 
         /// <summary>
+        /// Returns a value indicating whether this provider can generate
+        /// a visual transition for the specified type of timeline,
+        /// which is the case if it has the same type as this animation.
+        /// </summary>
+        /// <param name="timeline">
+        /// The <see cref="Timeline"/> for which a visual transition is supposed to
+        /// be generated.
+        /// </param>
+        /// <returns>
+        /// <c>true</c> if the provider can create a visual transition for the <paramref name="timeline"/>;
+        /// <c>false</c> if not.
+        /// </returns>
+        public virtual bool SupportsTimeline(Timeline timeline)
+            => timeline is FromToByAnimationBase<T>;
+
+        /// <summary>
         /// Called when the <see cref="ExtendedVisualStateManager"/> transitions away from
         /// the element.
         /// The timeline which gets returned by this method is then used as a transitioning
         /// animation.
         /// </summary>
+        /// <param name="fromTimeline">
+        /// The animation for which a visual transition timeline should be generated.
+        /// The VisualStateManager wants to transition away from this timeline.
+        /// By default, this can only be an animation of the same type as this class.
+        /// </param>
         /// <param name="easingFunction">
         /// An easing function to be applied to the resulting timeline.
         /// Can be null.
@@ -284,7 +305,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <returns>
         /// A <see cref="Timeline"/> which displays a visual transition away from this element.
         /// </returns>
-        public virtual Timeline CreateFromTransitionTimeline(IEasingFunction easingFunction)
+        public virtual Timeline CreateFromTransitionTimeline(Timeline fromTimeline, IEasingFunction easingFunction)
         {
             // We want to animate FROM this animation to something else.
             // Use the fact that this animation supports automatic/dynamic values.
@@ -296,6 +317,11 @@ namespace Celestial.UIToolkit.Media.Animations
         /// Called when the <see cref="ExtendedVisualStateManager"/> transitions to the element.
         /// The timeline which gets returned by this method is then used as a transitioning animation.
         /// </summary>
+        /// <param name="toTimeline">
+        /// The animation, for which a visual transition timeline should be generated.
+        /// The VisualStateManager wants to transition to this timeline.
+        /// By default, this can only be an animation of the same type as this class.
+        /// </param>
         /// <param name="easingFunction">
         /// An easing function to be applied to the resulting timeline.
         /// Can be null.
@@ -303,7 +329,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <returns>
         /// A <see cref="Timeline"/> which displays a visual transition to this element.
         /// </returns>
-        public virtual Timeline CreateToTransitionTimeline(IEasingFunction easingFunction)
+        public virtual Timeline CreateToTransitionTimeline(Timeline toTimeline, IEasingFunction easingFunction)
         {
             // We want to create an animation which transitions TO our current animation.
             // -> Another animation of the same type is able to do that, with 'To' set to the correct value.

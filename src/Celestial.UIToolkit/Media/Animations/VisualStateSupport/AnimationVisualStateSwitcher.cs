@@ -202,16 +202,9 @@ namespace Celestial.UIToolkit.Media.Animations
             // If it can't do that, try to find a transition provider who can do it.
             // If that doesn't work either, we don't support a transition for the timeline.
             Timeline generatedTimeline = null;
-            if (timeline is IVisualTransitionAware visualTransitionAware)
+            if (VisualTransitionProvider.TryGetProviderForTimeline(timeline, out var provider))
             {
-                generatedTimeline = visualTransitionAware.CreateToTransitionTimeline(easingFunction);
-            }
-            else
-            {
-                if (VisualTransitionProvider.TryGetProviderForTimeline(timeline, out var provider))
-                {
-                    generatedTimeline = provider.CreateToTransitionTimeline(timeline, easingFunction);
-                }
+                generatedTimeline = provider.CreateToTransitionTimeline(timeline, easingFunction);
             }
 
             StoryboardHelper.CopyTargetProperties(this.StateGroupsRoot, timeline, generatedTimeline);
@@ -221,16 +214,9 @@ namespace Celestial.UIToolkit.Media.Animations
         private Timeline GenerateFromAnimation(Timeline timeline, IEasingFunction easingFunction)
         {
             Timeline generatedTimeline = null;
-            if (timeline is IVisualTransitionAware visualTransitionAware)
+            if (VisualTransitionProvider.TryGetProviderForTimeline(timeline, out var provider))
             {
-                generatedTimeline = visualTransitionAware.CreateFromTransitionTimeline(easingFunction);
-            }
-            else
-            {
-                if (VisualTransitionProvider.TryGetProviderForTimeline(timeline, out var provider))
-                {
-                    generatedTimeline = provider.CreateFromTransitionTimeline(timeline, easingFunction);
-                }
+                generatedTimeline = provider.CreateFromTransitionTimeline(timeline, easingFunction);
             }
 
             StoryboardHelper.CopyTargetProperties(this.StateGroupsRoot, timeline, generatedTimeline);

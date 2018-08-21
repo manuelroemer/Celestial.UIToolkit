@@ -19,7 +19,7 @@ namespace Celestial.UIToolkit.Media.Animations
     /// <typeparam name="TKeyFrameCollection">The type of collection which holds the animation's key frames.</typeparam>
     [ContentProperty(nameof(KeyFrames))]
     public abstract class AnimationUsingKeyFramesBase<T, TKeyFrame, TKeyFrameCollection>
-        : AnimationBase<T>, IAddChild, IKeyFrameAnimation, ISegmentLengthProvider, IVisualTransitionAware
+        : AnimationBase<T>, IAddChild, IKeyFrameAnimation, ISegmentLengthProvider
         where TKeyFrame : IInterpolateKeyFrame<T>
         where TKeyFrameCollection : Freezable, IList, IList<TKeyFrame>, new()
     {
@@ -407,50 +407,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// The distance between the two elements, as double.
         /// </returns>
         protected abstract double GetSegmentLengthCore(T from, T to);
-
-        /// <summary>
-        /// Called when the <see cref="ExtendedVisualStateManager"/> transitions away from
-        /// the element.
-        /// The timeline which gets returned by this method is then used as a transitioning
-        /// animation.
-        /// </summary>
-        /// <returns>
-        /// A <see cref="Timeline"/> which displays a visual transition away from this element.
-        /// </returns>
-        public virtual Timeline CreateFromTransitionTimeline(IEasingFunction easingFunction)
-        {
-            // We want to animate FROM this animation to something else.
-            // Use the fact that this animation supports automatic/dynamic values.
-            return (AnimationUsingKeyFramesBase<T, TKeyFrame, TKeyFrameCollection>)this.CreateInstance();
-        }
-
-        /// <summary>
-        /// Called when the <see cref="ExtendedVisualStateManager"/> transitions to the element.
-        /// The timeline which gets returned by this method is then used as a transitioning animation.
-        /// </summary>
-        /// <returns>
-        /// A <see cref="Timeline"/> which displays a visual transition to this element.
-        /// </returns>
-        public virtual Timeline CreateToTransitionTimeline(IEasingFunction easingFunction)
-        {
-            // We want to create an animation which transitions TO our current animation.
-            // -> Another animation of the same type is able to do that, with 'To' set to the correct value.
-            this.ReadPreamble();
-            var animation = (AnimationUsingKeyFramesBase<T, TKeyFrame, TKeyFrameCollection>)this.CreateInstance();
-
-            //if (_keyFrames != null && ((ICollection)_keyFrames).Count > 0)
-            //{
-            //    var easingKeyFrame = this.CreateEasingKeyFrame(null /*TODO*/);
-            //    easingKeyFrame.Value = _keyFrames.First().Value;
-            //}
-
-            animation = null;
-
-            return animation;
-        }
-
-        protected virtual IKeyFrame CreateEasingKeyFrame(IEasingFunction function) { throw new NotImplementedException(); }
-
+        
     }
 
 }

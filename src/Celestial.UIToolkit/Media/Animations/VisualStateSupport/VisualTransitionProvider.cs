@@ -149,10 +149,28 @@ namespace Celestial.UIToolkit.Media.Animations
         public static bool TryGetProviderForTimeline(Timeline timeline, out IVisualTransitionProvider result)
         {
             if (timeline == null) throw new ArgumentNullException(nameof(timeline));
+
+            // Allow timelines to implement the interface themselves.
+            // This allows them to generate the transitions on their own, without an external class.
+            // This is, for example, used by the FromToByAnimationBase, which provides
+            // custom transitions for each animation that derives from it.
+            if (timeline is IVisualTransitionProvider selfAwareTimelineProvider &&
+                selfAwareTimelineProvider.SupportsTimeline(timeline))
+            {
+                result = selfAwareTimelineProvider;
+                return true;
+            }
+
+            // If the timeline doesn't self provide the values, check for a registered provider.
+            return TryFindRegisteredProviderForTimeline(timeline, out result);
+        }
+
+        private static bool TryFindRegisteredProviderForTimeline(
+            Timeline timeline, out IVisualTransitionProvider result)
+        {
             result = null;
 
-            // Go from behind, so that the more recently added providers
-            // can overwrite old ones.
+            // Go through the list from behind to allow overwriting of the standard providers.
             for (int i = _transitionProviders.Count - 1; i >= 0; i--)
             {
                 IVisualTransitionProvider currentProvider = _transitionProviders[i];

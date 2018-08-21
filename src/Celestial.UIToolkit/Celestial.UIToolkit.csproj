@@ -110,7 +110,6 @@
     <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\KeyFrameResolver.cs" />
     <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\ResolvedKeyFrame.cs" />
     <Compile Include="Media\Animations\VisualStateSupport\AnimationVisualStateSwitcher.cs" />
-    <Compile Include="Media\Animations\VisualStateSupport\IVisualTransitionAware.cs" />
     <Compile Include="Media\Animations\VisualStateSupport\StoryboardHelper.cs" />
     <Compile Include="Media\Animations\VisualStateSupport\StoryboardTargetTimelineEqualityComparer.cs" />
     <Compile Include="Media\Animations\VisualStateSupport\VisualStateGroupExtensions.cs" />

@@ -69,6 +69,11 @@ namespace Celestial.UIToolkit.Media.Animations
         /// The timeline which gets returned by this method is then used as a transitioning
         /// animation.
         /// </summary>
+        /// <param name="fromTimeline">
+        /// The animation for which a visual transition timeline should be generated.
+        /// The VisualStateManager wants to transition away from this timeline.
+        /// By default, this can only be an animation of the same type as this class.
+        /// </param>
         /// <param name="easingFunction">
         /// An easing function to be applied to the resulting timeline.
         /// Can be null.
@@ -76,9 +81,10 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <returns>
         /// A <see cref="Timeline"/> which displays a visual transition away from this element.
         /// </returns>
-        public override Timeline CreateFromTransitionTimeline(IEasingFunction easingFunction)
+        public override Timeline CreateFromTransitionTimeline(Timeline fromTimeline, IEasingFunction easingFunction)
         {
-            var animation = (EasingFromToByAnimationBase<T>)base.CreateFromTransitionTimeline(easingFunction);
+            var animation = (EasingFromToByAnimationBase<T>)base.CreateFromTransitionTimeline(
+                fromTimeline, easingFunction);
             animation.EasingFunction = easingFunction;
             return animation;
         }
@@ -87,6 +93,11 @@ namespace Celestial.UIToolkit.Media.Animations
         /// Called when the <see cref="ExtendedVisualStateManager"/> transitions to the element.
         /// The timeline which gets returned by this method is then used as a transitioning animation.
         /// </summary>
+        /// <param name="toTimeline">
+        /// The animation, for which a visual transition timeline should be generated.
+        /// The VisualStateManager wants to transition to this timeline.
+        /// By default, this can only be an animation of the same type as this class.
+        /// </param>
         /// <param name="easingFunction">
         /// An easing function to be applied to the resulting timeline.
         /// Can be null.
@@ -94,9 +105,9 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <returns>
         /// A <see cref="Timeline"/> which displays a visual transition to this element.
         /// </returns>
-        public override Timeline CreateToTransitionTimeline(IEasingFunction easingFunction)
+        public override Timeline CreateToTransitionTimeline(Timeline toTimeline, IEasingFunction easingFunction)
         {
-            var animation = (EasingFromToByAnimationBase<T>)base.CreateToTransitionTimeline(easingFunction);
+            var animation = (EasingFromToByAnimationBase<T>)base.CreateToTransitionTimeline(toTimeline, easingFunction);
             animation.EasingFunction = easingFunction;
             return animation;
         }
