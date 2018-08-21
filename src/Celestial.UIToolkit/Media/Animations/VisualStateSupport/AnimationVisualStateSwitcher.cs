@@ -57,7 +57,10 @@ namespace Celestial.UIToolkit.Media.Animations
                     _currentTransition.Storyboard.Completed += _currentTransitionStoryboard_Completed;
                 }
 
-                this.Group.StartNewThenStopOldStoryboards(this.StateGroupsRoot, _currentTransition.Storyboard, _dynamicTransitionStoryboard);
+                this.Group.StartNewThenStopOldStoryboards(
+                    this.StateGroupsRoot, 
+                    _currentTransition.Storyboard,
+                    _dynamicTransitionStoryboard);
             }
 
             this.Group.SetCurrentState(this.ToState);
@@ -67,7 +70,6 @@ namespace Celestial.UIToolkit.Media.Animations
         private void _transitionStoryboard_Completed(object sender, EventArgs e)
         {
             _dynamicTransitionStoryboard.Completed -= _transitionStoryboard_Completed;
-            _currentTransition.SetDynamicStoryboardCompleted(true);
 
             if (_currentTransition.Storyboard != null || _currentTransition.GetExplicitStoryboardCompleted())
             {
@@ -76,31 +78,34 @@ namespace Celestial.UIToolkit.Media.Animations
                     this.Group.StartNewThenStopOldStoryboards(this.StateGroupsRoot, this.ToState.Storyboard);
                 }
             }
+            _currentTransition.SetDynamicStoryboardCompleted(true);
         }
 
         private void _currentTransitionStoryboard_Completed(object sender, EventArgs e)
         {
             _currentTransition.Storyboard.Completed -= _currentTransitionStoryboard_Completed;
-            _currentTransition.SetExplicitStoryboardCompleted(true);
 
             if (_currentTransition.GetDynamicStoryboardCompleted() &&
                 this.ShouldRunStateStoryboard())
             {
                 this.Group.StartNewThenStopOldStoryboards(this.StateGroupsRoot, this.ToState.Storyboard);
             }
+
+            _currentTransition.SetExplicitStoryboardCompleted(true);
         }
 
         private bool ShouldRunStateStoryboard()
         {
             // Ensure that the controls are loaded/in a tree, so that the storyboards can find them.
-            // IsLoaded never gets set to false when unloading, so make use of the Parent property.
+            // IsLoaded never gets set to false when unloading, so make use of the element's parent.
             // (Should possibly be updated with better unloaded-detection).
             var rootParent = VisualTreeHelper.GetParent(this.StateGroupsRoot);
             var controlParent = VisualTreeHelper.GetParent(this.Control);
             return rootParent != null &&
                    this.StateGroupsRoot.IsLoaded &&
                    controlParent != null &&
-                   this.Control.IsLoaded;
+                   this.Control.IsLoaded &&
+                   this.ToState == this.Group.GetCurrentState();
         }
 
         private VisualTransition GetCurrentVisualTransition()

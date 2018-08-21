@@ -52,6 +52,9 @@
                                                                Storyboard.TargetProperty="Elevation">
                                     <LinearDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.ShadowElevation), RelativeSource={RelativeSource TemplatedParent}}" />
                                 </DoubleAnimationUsingKeyFrames>
+                                <anim:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                     Storyboard.TargetProperty="Foreground"
+                                                     To="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                             </Storyboard>
 
                             <Storyboard x:Key="PressedStoryboard">

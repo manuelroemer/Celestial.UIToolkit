@@ -97,7 +97,7 @@ namespace Celestial.UIToolkit.Media.Animations
             {
                 if (currentStoryboard != null)
                 {
-                    currentStoryboard.Stop();
+                    //currentStoryboard.Stop();
                 }
             }
             currentStoryboards.Clear();

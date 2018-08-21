@@ -83,9 +83,9 @@ namespace Celestial.UIToolkit.Media.Animations
             // These animations are supported by the default WPF VisualStateManager.
             // We will create them ourselves, so that we don't have to rely on the original one
             // at all.
-            _transitionProviders.Add(new ColorAnimationTransitionProvider());
-            _transitionProviders.Add(new DoubleAnimationTransitionProvider());
             _transitionProviders.Add(new PointAnimationTransitionProvider());
+            _transitionProviders.Add(new DoubleAnimationTransitionProvider());
+            _transitionProviders.Add(new ColorAnimationTransitionProvider());
         }
 
         /// <summary>

@@ -21,7 +21,7 @@ namespace Celestial.UIToolkit
             new List<WeakReference<ResourceDictionary>>();
 
         /// <summary>
-        ///     Returns <see cref="ResourceDictionary"/> instance which is either already cached,
+        ///     Returns an <see cref="ResourceDictionary"/> instance which is either already cached,
         ///     or directly loaded and then cached by the manager.
         ///     In essence, this method combines the <see cref="TryGetDictionary(string, out ResourceDictionary)"/>
         ///     and <see cref="CacheDictionary(ResourceDictionary)"/> methods.

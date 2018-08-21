@@ -12,7 +12,6 @@ namespace Celestial.UIToolkit
     /// transitioning logic into several independent <see cref="VisualStateSwitcher"/> elements.
     /// </summary>
     /// <seealso cref="VisualStateSwitcher"/>
-    /// <seealso cref="VisualStateSwitchers"/>
     public class ExtendedVisualStateManager : VisualStateManager
     {
 
