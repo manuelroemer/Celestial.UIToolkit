@@ -80,6 +80,7 @@
     <Compile Include="Xaml\DependencyProperties.cs" />
     <Compile Include="Xaml\GridUnitExtensionTests.cs" />
     <Compile Include="Xaml\MockedServiceProvider.cs" />
+    <Compile Include="Xaml\MultiStyleExtensionTests.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
