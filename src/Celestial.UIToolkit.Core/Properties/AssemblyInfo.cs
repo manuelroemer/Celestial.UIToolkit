@@ -1,7 +1,10 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Markup;
+
+[assembly: InternalsVisibleTo("Celestial.UIToolkit.Core.Tests")]
 
 [assembly: AssemblyTitle("Celestial.UIToolkit.Core")]
 [assembly: AssemblyDescription("")]

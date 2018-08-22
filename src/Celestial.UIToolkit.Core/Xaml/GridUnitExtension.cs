@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Markup;
@@ -104,32 +105,54 @@ namespace Celestial.UIToolkit.Xaml
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GridUnitExtension"/> class,
-        /// with a default <see cref="MultiplierString"/> of 1.
+        /// Initializes a new instance of the <see cref="GridUnitExtension"/> class.
         /// </summary>
         public GridUnitExtension()
-            : this("1.0") { }
+            : this(null, null) { }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GridUnitExtension"/> class
-        /// with the specified <see cref="MultiplierString"/>.
+        /// with the specified <paramref name="multiplierString"/>.
         /// </summary>
         /// <param name="multiplierString">
         /// The value with which the <see cref="GridCellSize"/>
         /// will be multiplied.
         /// </param>
         public GridUnitExtension(string multiplierString)
+            : this(multiplierString, null) { }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GridUnitExtension"/> class
+        /// with the specified <paramref name="targetType"/>.
+        /// </summary>
+        /// <param name="targetType">
+        /// A type to which the unit will be converted, if possible.
+        /// </param>        
+        public GridUnitExtension(Type targetType)
+            : this(null, targetType) { }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GridUnitExtension"/> class
+        /// with the specified <paramref name="multiplierString"/> and 
+        /// <paramref name="targetType"/>.
+        /// </summary>
+        /// <param name="multiplierString">
+        /// The value with which the <see cref="GridCellSize"/>
+        /// will be multiplied.
+        /// </param>
+        /// <param name="targetType">
+        /// A type to which the unit will be converted, if possible.
+        /// </param>
+        public GridUnitExtension(string multiplierString, Type targetType)
         {
+            TargetType = targetType;
             MultiplierString = multiplierString;
             MultiplyWithDip = false;
         }
 
         static GridUnitExtension()
         {
-            // Abuse the LengthConverter to get the value of 1dip (device independent pixel).
-            // This is the converter which is also used in XAML, so if we convert "1.0",
-            // we will get the "real" size of one pixel on the current device.
-            _dipMultiplier = (double)new LengthConverter().ConvertFromString("1.0");
+            _dipMultiplier = DipHelper.GetDipMultiplier();
 
             _thicknessConverter = new ThicknessConverter();
             _cornerRadiusConverter = new CornerRadiusConverter();
@@ -149,15 +172,25 @@ namespace Celestial.UIToolkit.Xaml
         /// </summary>
         /// <param name="serviceProvider">
         /// An <see cref="IServiceProvider"/> to be used.
+        /// Can be null.
         /// </param>
         /// <returns>
         /// The <see cref="double"/> which is the result of the grid unit multiplication.
         /// </returns>
+        /// <exception cref="NotSupportedException" />
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
-            Type targetType = DetermineConversionTargetType(
-                (IProvideValueTarget)serviceProvider);
+            if (string.IsNullOrEmpty(_multiplierString))
+                throw new InvalidOperationException(
+                    $"The {MultiplierString} was null or empty. The {nameof(GridUnitExtension)} " +
+                    $"is unable to convert such a string.");
 
+            Type targetType = DetermineConversionTargetType((IProvideValueTarget)serviceProvider);
+            return CalculateValue(targetType);
+        }
+
+        private object CalculateValue(Type targetType)
+        {
             if (targetType == typeof(double))
             {
                 return CalculateDouble();
@@ -186,7 +219,7 @@ namespace Celestial.UIToolkit.Xaml
             {
                 throw new NotSupportedException(
                     $"The {nameof(GridUnitExtension)} does not support the " +
-                    $"conversion type '{targetType.FullName}'.");
+                    $"type '{targetType.FullName}'.");
             }
         }
 
@@ -205,7 +238,8 @@ namespace Celestial.UIToolkit.Xaml
             (MultiplyWithDip ? _dipMultiplier : 1) * GridCellSize;
         
         private double CalculateDouble() => 
-            GetFinalLengthMultiplier() * Convert.ToDouble(MultiplierString);
+            GetFinalLengthMultiplier() * 
+            Convert.ToDouble(MultiplierString, CultureInfo.InvariantCulture);
 
         private Thickness CalculateThickness()
         {
@@ -241,6 +275,19 @@ namespace Celestial.UIToolkit.Xaml
             var point = (Point)_pointConverter.ConvertFromString(_formattedMultiplierString);
             double multiplier = GetFinalLengthMultiplier();
             return new Point(point.X * multiplier, point.Y * multiplier);
+        }
+
+    }
+
+    internal static class DipHelper
+    {
+
+        public static double GetDipMultiplier()
+        {
+            // Abuse the LengthConverter to get the value of 1dip (device independent pixel).
+            // This is the converter which is also used in XAML, so if we convert "1.0",
+            // we will get the "real" size of one pixel on the current device.
+            return (double)new LengthConverter().ConvertFromString("1.0");
         }
 
     }
