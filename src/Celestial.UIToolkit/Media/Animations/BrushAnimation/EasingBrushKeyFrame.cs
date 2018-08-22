@@ -30,10 +30,10 @@ namespace Celestial.UIToolkit.Media.Animations
         protected override Brush InterpolateValueAfterEase(Brush baseValue, double easedProgress)
         {
             if (easedProgress <= 0) return baseValue;
-            if (easedProgress >= 1) return this.Value;
-            BrushAnimationValidator.ValidateBrushes(baseValue, this.Value);
+            if (easedProgress >= 1) return Value;
+            BrushAnimationValidator.ValidateBrushes(baseValue, Value);
             return SupportedAnimationBrushes.GetAnimationHelper(baseValue)
-                                            .InterpolateValue(baseValue, this.Value, easedProgress);
+                                            .InterpolateValue(baseValue, Value, easedProgress);
         }
 
     }

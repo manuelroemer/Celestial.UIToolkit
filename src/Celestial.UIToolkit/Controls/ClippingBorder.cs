@@ -25,24 +25,24 @@ namespace Celestial.UIToolkit.Controls
             get { return base.Child; }
             set
             {
-                if (this.Child == value) return;
-                this.RestoreCurrentChildClip();
+                if (Child == value) return;
+                RestoreCurrentChildClip();
                 base.Child = value;
-                this.SetOldChildClip();
+                SetOldChildClip();
             }
         }
 
         private void RestoreCurrentChildClip()
         {
-            if (this.Child != null)
+            if (Child != null)
             {
-                this.Child.Clip = _oldChildClip;
+                Child.Clip = _oldChildClip;
             }
         }
 
         private void SetOldChildClip()
         {
-            _oldChildClip = this.Child?.Clip;
+            _oldChildClip = Child?.Clip;
         }
 
         /// <summary>
@@ -52,23 +52,23 @@ namespace Celestial.UIToolkit.Controls
         /// <param name="dc"> The <see cref="DrawingContext"/> that defines the object to be drawn.</param>
         protected override void OnRender(DrawingContext dc)
         {
-            if (this.ClipToBounds)
-                this.ApplyCornerRadiusClipToChild();
+            if (ClipToBounds)
+                ApplyCornerRadiusClipToChild();
             base.OnRender(dc);
         }
 
         private void ApplyCornerRadiusClipToChild()
         {
-            if (this.Child != null)
+            if (Child != null)
             {
-                this.Child.Clip = this.CreateClipGeometry();
+                Child.Clip = CreateClipGeometry();
             }
         }
 
         private Geometry CreateClipGeometry()
         {
             return GeometryHelper.CreateRectGeometryWithCornerRadius(
-                this.CornerRadius, new Rect(this.Child.RenderSize));
+                CornerRadius, new Rect(Child.RenderSize));
         }
         
 
@@ -103,15 +103,15 @@ namespace Celestial.UIToolkit.Controls
 
             private Geometry CreateGeometry()
             {
-                this.InitializeGeometry();
-                this.DrawTopLeftCorner();
-                this.DrawTopLine();
-                this.DrawTopRightCorner();
-                this.DrawRightLine();
-                this.DrawBottomRightCorner();
-                this.DrawBottomLine();
-                this.DrawBottomLeftCorner();
-                this.DrawLeftLine();
+                InitializeGeometry();
+                DrawTopLeftCorner();
+                DrawTopLine();
+                DrawTopRightCorner();
+                DrawRightLine();
+                DrawBottomRightCorner();
+                DrawBottomLine();
+                DrawBottomLeftCorner();
+                DrawLeftLine();
 
                 _context.Close();
                 return _geometry;
@@ -133,7 +133,7 @@ namespace Celestial.UIToolkit.Controls
 
             private void DrawTopLeftCorner()
             {
-                this.DrawArc(new Point(
+                DrawArc(new Point(
                     _boundsRect.TopLeft.X + _cornerRadius.TopLeft, 
                     _boundsRect.TopLeft.Y),
                     new Size(
@@ -143,14 +143,14 @@ namespace Celestial.UIToolkit.Controls
 
             private void DrawTopLine()
             {
-                this.DrawLine(new Point(
+                DrawLine(new Point(
                     _boundsRect.TopRight.X - _cornerRadius.TopRight, 
                     _boundsRect.TopRight.Y));
             }
 
             private void DrawTopRightCorner()
             {
-                this.DrawArc(new Point(
+                DrawArc(new Point(
                     _boundsRect.TopRight.X,  
                     _boundsRect.TopRight.Y + _cornerRadius.TopRight),
                     new Size(
@@ -160,14 +160,14 @@ namespace Celestial.UIToolkit.Controls
 
             private void DrawRightLine()
             {
-                this.DrawLine(new Point(
+                DrawLine(new Point(
                     _boundsRect.BottomRight.X, 
                     _boundsRect.BottomRight.Y - _cornerRadius.BottomRight));
             }
 
             private void DrawBottomRightCorner()
             {
-                this.DrawArc(new Point(
+                DrawArc(new Point(
                     _boundsRect.BottomRight.X - _cornerRadius.BottomRight,
                     _boundsRect.BottomRight.Y),
                     new Size(
@@ -177,14 +177,14 @@ namespace Celestial.UIToolkit.Controls
             
             private void DrawBottomLine()
             {
-                this.DrawLine(new Point(
+                DrawLine(new Point(
                     _boundsRect.BottomLeft.X + _cornerRadius.BottomLeft,
                     _boundsRect.BottomLeft.Y));
             }
 
             private void DrawBottomLeftCorner()
             {
-                this.DrawArc(new Point(
+                DrawArc(new Point(
                     _boundsRect.BottomLeft.X,
                     _boundsRect.BottomLeft.Y - _cornerRadius.BottomLeft),
                     new Size(
@@ -193,7 +193,7 @@ namespace Celestial.UIToolkit.Controls
 
             private void DrawLeftLine()
             {
-                this.DrawLine(new Point(
+                DrawLine(new Point(
                     _boundsRect.TopLeft.X,
                     _boundsRect.TopLeft.Y + _cornerRadius.TopLeft));
             }

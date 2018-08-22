@@ -22,7 +22,7 @@ namespace Celestial.UIToolkit
         /// </param>
         protected void EnterReadScope(Action scopeAction)
         {
-            this.ReadPreamble();
+            ReadPreamble();
             scopeAction?.Invoke();
         }
 
@@ -42,7 +42,7 @@ namespace Celestial.UIToolkit
         protected T EnterReadScope<T>(Func<T> scopeFunction)
         {
             if (scopeFunction == null) throw new ArgumentNullException(nameof(scopeFunction));
-            this.ReadPreamble();
+            ReadPreamble();
             return scopeFunction();
         }
 
@@ -57,7 +57,7 @@ namespace Celestial.UIToolkit
         /// </param>
         protected void EnterWriteScope(Action scopeAction)
         {
-            this.EnterWriteScope(scopeAction, false);
+            EnterWriteScope(scopeAction, false);
         }
 
         /// <summary>
@@ -76,10 +76,10 @@ namespace Celestial.UIToolkit
         /// </param>
         protected void EnterWriteScope(Action scopeAction, bool suppressWritePostscript)
         {
-            this.WritePreamble();
+            WritePreamble();
             scopeAction?.Invoke();
             if (!suppressWritePostscript)
-                this.WritePostscript();
+                WritePostscript();
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Celestial.UIToolkit
         /// <exception cref="ArgumentNullException" />
         protected T EnterWriteScope<T>(Func<T> scopeFunction)
         {
-            return this.EnterWriteScope(scopeFunction, false);
+            return EnterWriteScope(scopeFunction, false);
         }
 
         /// <summary>
@@ -122,10 +122,10 @@ namespace Celestial.UIToolkit
         protected T EnterWriteScope<T>(Func<T> scopeFunction, bool suppressWritePostscript)
         {
             if (scopeFunction == null) throw new ArgumentNullException(nameof(scopeFunction));
-            this.WritePreamble();
+            WritePreamble();
             var result = scopeFunction();
             if (!suppressWritePostscript)
-                this.WritePostscript();
+                WritePostscript();
             return result;
         }
 

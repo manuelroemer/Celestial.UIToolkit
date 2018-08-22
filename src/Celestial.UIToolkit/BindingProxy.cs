@@ -41,7 +41,7 @@ namespace Celestial.UIToolkit
         /// <returns>A <see cref="string"/> representing the proxy's data.</returns>
         public override string ToString()
         {
-            return "Data=\"" + (this.Data?.ToString() ?? "null") + "\"";
+            return "Data=\"" + (Data?.ToString() ?? "null") + "\"";
         }
 
     }

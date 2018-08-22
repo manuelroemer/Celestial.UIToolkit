@@ -42,11 +42,11 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <returns>The output value of the interpolation, given the specified values.</returns>
         protected override sealed T InterpolateValue(T from, T to, double progress)
         {
-            if (this.EasingFunction != null)
+            if (EasingFunction != null)
             {
-                progress = this.EasingFunction.Ease(progress);
+                progress = EasingFunction.Ease(progress);
             }
-            return this.InterpolateValueCore(from, to, progress);
+            return InterpolateValueCore(from, to, progress);
         }
 
         /// <summary>

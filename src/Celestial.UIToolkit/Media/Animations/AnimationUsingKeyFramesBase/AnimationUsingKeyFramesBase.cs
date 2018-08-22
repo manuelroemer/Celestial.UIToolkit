@@ -35,16 +35,16 @@ namespace Celestial.UIToolkit.Media.Animations
         {
             get
             {
-                this.ReadPreamble();
+                ReadPreamble();
                 if (_keyFrames == null)
                 {
-                    if (this.IsFrozen)
+                    if (IsFrozen)
                     {
                         _keyFrames = new TKeyFrameCollection();
                     }
                     else
                     {
-                        this.KeyFrames = new TKeyFrameCollection();
+                        KeyFrames = new TKeyFrameCollection();
                     }
                 }
                 return _keyFrames;
@@ -53,18 +53,18 @@ namespace Celestial.UIToolkit.Media.Animations
             {
                 if (value == null) throw new ArgumentNullException(nameof(value));
                 if (ReferenceEquals(value, _keyFrames)) return;
-                this.WritePreamble();
+                WritePreamble();
 
-                this.OnFreezablePropertyChanged(_keyFrames, value);
+                OnFreezablePropertyChanged(_keyFrames, value);
                 _keyFrames = value;
-                this.WritePostscript();
+                WritePostscript();
             }
         }
 
         IList IKeyFrameAnimation.KeyFrames
         {
-            get => this.KeyFrames;
-            set => this.KeyFrames = (TKeyFrameCollection)value;
+            get => KeyFrames;
+            set => KeyFrames = (TKeyFrameCollection)value;
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Celestial.UIToolkit.Media.Animations
             freezing &= Freeze(_keyFrames, isChecking);
 
             if (freezing)
-                this.ResolveKeyTimes();
+                ResolveKeyTimes();
             return freezing;
         }
 
@@ -125,7 +125,7 @@ namespace Celestial.UIToolkit.Media.Animations
         {
             var source = (AnimationUsingKeyFramesBase<T, TKeyFrame, TKeyFrameCollection>)sourceFreezable;
             base.CloneCore(sourceFreezable);
-            this.CloneMembers(source, false);
+            CloneMembers(source, false);
         }
 
         /// <summary>
@@ -137,7 +137,7 @@ namespace Celestial.UIToolkit.Media.Animations
         {
             var source = (AnimationUsingKeyFramesBase<T, TKeyFrame, TKeyFrameCollection>)sourceFreezable;
             base.CloneCore(sourceFreezable);
-            this.CloneMembers(source, true);
+            CloneMembers(source, true);
         }
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace Celestial.UIToolkit.Media.Animations
         {
             var source = (AnimationUsingKeyFramesBase<T, TKeyFrame, TKeyFrameCollection>)sourceFreezable;
             base.CloneCore(sourceFreezable);
-            this.CloneMembers(source, false);
+            CloneMembers(source, false);
         }
 
         /// <summary>
@@ -161,7 +161,7 @@ namespace Celestial.UIToolkit.Media.Animations
         {
             var source = (AnimationUsingKeyFramesBase<T, TKeyFrame, TKeyFrameCollection>)sourceFreezable;
             base.CloneCore(sourceFreezable);
-            this.CloneMembers(source, true);
+            CloneMembers(source, true);
         }
 
         private void CloneMembers(
@@ -174,11 +174,11 @@ namespace Celestial.UIToolkit.Media.Animations
                 _keyFrames = cloneCurrentValue ? (TKeyFrameCollection)source._keyFrames.CloneCurrentValue() :
                                                  (TKeyFrameCollection)source._keyFrames.Clone();
             }
-            this.OnFreezablePropertyChanged(null, _keyFrames);
+            OnFreezablePropertyChanged(null, _keyFrames);
 
             // We can't simply use Array.Clone() or sth. similar, since ResolvedKeyFrame is a non-freezable class.
             // This forces us to resolve the whole array again when cloning.
-            this.ResolveKeyTimes();
+            ResolveKeyTimes();
         }
 
         /// <summary>
@@ -201,13 +201,13 @@ namespace Celestial.UIToolkit.Media.Animations
         /// </returns>
         public bool ShouldSerializeKeyFrames()
         {
-            this.ReadPreamble();
+            ReadPreamble();
             return _keyFrames != null && ((IList)_keyFrames).Count > 0;
         }
 
-        void IAddChild.AddChild(object child) => this.AddChild(child);
+        void IAddChild.AddChild(object child) => AddChild(child);
 
-        void IAddChild.AddText(string text) => this.AddText(text);
+        void IAddChild.AddText(string text) => AddText(text);
 
         /// <summary>
         /// Adds a child to the key frame animation.
@@ -234,35 +234,35 @@ namespace Celestial.UIToolkit.Media.Animations
         protected virtual void AddText(string text)
         {
             throw new InvalidOperationException(
-                $"The {this.GetType().FullName} doesn't support adding textual children.");
+                $"The {GetType().FullName} doesn't support adding textual children.");
         }
 
         private void ResolveKeyTimes()
         {
             if (_areKeyFramesResolved) return;
             _resolvedKeyFrames = KeyFrameResolver<TKeyFrame>.ResolveKeyFrames(
-                _keyFrames, this.GetAnimationsActualDuration(), this);
+                _keyFrames, GetAnimationsActualDuration(), this);
             _areKeyFramesResolved = true;
         }
 
         private TimeSpan GetAnimationsActualDuration()
         {
-            if (this.Duration != Duration.Automatic &&
-                this.Duration != Duration.Forever &&
-                this.Duration.HasTimeSpan)
+            if (Duration != Duration.Automatic &&
+                Duration != Duration.Forever &&
+                Duration.HasTimeSpan)
             {
-                return this.Duration.TimeSpan;
+                return Duration.TimeSpan;
             }
             else
             {
-                return this.GetDurationBasedOnKeyFrames();
+                return GetDurationBasedOnKeyFrames();
             }
         }
 
         private TimeSpan GetDurationBasedOnKeyFrames()
         {
             TimeSpan duration = TimeSpan.Zero;
-            foreach (IKeyFrame frame in this.KeyFrames)
+            foreach (IKeyFrame frame in KeyFrames)
             {
                 if (frame.KeyTime.Type == KeyTimeType.TimeSpan &&
                     frame.KeyTime.TimeSpan > duration)
@@ -282,7 +282,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <returns>The animation's natural duration.</returns>
         protected override sealed Duration GetNaturalDurationCore(Clock clock)
         {
-            return new Duration(this.GetAnimationsActualDuration());
+            return new Duration(GetAnimationsActualDuration());
         }
 
         /// <summary>
@@ -304,7 +304,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <returns>The value this animation believes should be the current value for the property.</returns>
         protected override sealed T GetCurrentValueCore(T defaultOriginValue, T defaultDestinationValue, AnimationClock animationClock)
         {
-            this.ResolveKeyTimes();
+            ResolveKeyTimes();
             if (_resolvedKeyFrames == null || _resolvedKeyFrames.Count == 0)
                 return defaultDestinationValue;
 
@@ -325,7 +325,7 @@ namespace Celestial.UIToolkit.Media.Animations
             }
             else if (currentFrame == _resolvedKeyFrames.First())
             {
-                var baseValue = this.IsAdditive ? this.GetZeroValue() : defaultOriginValue;
+                var baseValue = IsAdditive ? GetZeroValue() : defaultOriginValue;
                 double progress = currentFrame.GetProgress(currentClockTime);
                 currentValue = currentFrame.OriginalKeyFrame.InterpolateValue(baseValue, progress);
             }
@@ -340,18 +340,18 @@ namespace Celestial.UIToolkit.Media.Animations
                 currentValue = currentFrame.OriginalKeyFrame.InterpolateValue((T)previousFrame.Value, progress);
             }
 
-            if (this.IsCumulative)
+            if (IsCumulative)
             {
                 double factor = animationClock.CurrentIteration.GetValueOrDefault() - 1;
                 if (factor > 0d)
                 {
-                    T scaledValue = this.ScaleValue((T)_resolvedKeyFrames.Last().Value, factor);
-                    currentValue = this.AddValues(currentValue, scaledValue);
+                    T scaledValue = ScaleValue((T)_resolvedKeyFrames.Last().Value, factor);
+                    currentValue = AddValues(currentValue, scaledValue);
                 }
             }
-            if (this.IsAdditive)
+            if (IsAdditive)
             {
-                currentValue = this.AddValues(defaultOriginValue, currentValue);
+                currentValue = AddValues(defaultOriginValue, currentValue);
             }
             
             return currentValue;
@@ -395,7 +395,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// </returns>
         public double GetSegmentLength(object from, object to)
         {
-            return this.GetSegmentLengthCore((T)from, (T)to);
+            return GetSegmentLengthCore((T)from, (T)to);
         }
 
         /// <summary>

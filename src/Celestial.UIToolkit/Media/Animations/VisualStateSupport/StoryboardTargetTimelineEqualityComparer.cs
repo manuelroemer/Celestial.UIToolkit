@@ -9,7 +9,7 @@ namespace Celestial.UIToolkit.Media.Animations
 
     /// <summary>
     /// An equality comparer for <see cref="Timeline"/> objects
-    /// which compares them based on attached storyboard properties
+    /// which compares them based on attached <see cref="Storyboard"/> properties
     /// which define a timeline's target.
     /// </summary>
     internal sealed class StoryboardTargetTimelineEqualityComparer
@@ -23,9 +23,9 @@ namespace Celestial.UIToolkit.Media.Animations
             var sbA = new StoryboardTargetProperties(a);
             var sbB = new StoryboardTargetProperties(b);
 
-            return this.AreTargetsAndTargetNamesEqual(sbA, sbB) &&
-                   this.ArePropertyPathsEqual(sbA, sbB) &&
-                   this.ArePropertyPathParametersEqual(sbA, sbB);
+            return AreTargetsAndTargetNamesEqual(sbA, sbB) &&
+                   ArePropertyPathsEqual(sbA, sbB) &&
+                   ArePropertyPathParametersEqual(sbA, sbB);
         }
 
         private bool AreTargetsAndTargetNamesEqual(
@@ -81,9 +81,9 @@ namespace Celestial.UIToolkit.Media.Animations
 
             public StoryboardTargetProperties(Timeline timeline)
             {
-                this.Target = Storyboard.GetTarget(timeline);
-                this.TargetName = Storyboard.GetTargetName(timeline);
-                this.TargetProperty = Storyboard.GetTargetProperty(timeline);
+                Target = Storyboard.GetTarget(timeline);
+                TargetName = Storyboard.GetTargetName(timeline);
+                TargetProperty = Storyboard.GetTargetProperty(timeline);
             }
         }
 

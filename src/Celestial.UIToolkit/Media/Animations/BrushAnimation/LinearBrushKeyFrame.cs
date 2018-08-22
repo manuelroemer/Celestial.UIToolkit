@@ -29,10 +29,10 @@ namespace Celestial.UIToolkit.Media.Animations
         protected override Brush InterpolateValueCore(Brush baseValue, double keyFrameProgress)
         {
             if (keyFrameProgress <= 0) return baseValue;
-            if (keyFrameProgress >= 1) return this.Value;
-            BrushAnimationValidator.ValidateBrushes(baseValue, this.Value);
+            if (keyFrameProgress >= 1) return Value;
+            BrushAnimationValidator.ValidateBrushes(baseValue, Value);
             return SupportedAnimationBrushes.GetAnimationHelper(baseValue)
-                                            .InterpolateValue(baseValue, this.Value, keyFrameProgress);
+                                            .InterpolateValue(baseValue, Value, keyFrameProgress);
         }
 
     }

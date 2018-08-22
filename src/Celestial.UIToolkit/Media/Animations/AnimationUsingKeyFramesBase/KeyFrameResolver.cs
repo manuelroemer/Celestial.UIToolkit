@@ -71,9 +71,9 @@ namespace Celestial.UIToolkit.Media.Animations
                 KeyTime currentKeyTime = _keyFrames[i].OriginalKeyTime;
 
                 if (currentKeyTime.Type == KeyTimeType.TimeSpan)
-                    this.ResolveTimeSpanFrame(i);
+                    ResolveTimeSpanFrame(i);
                 else if (currentKeyTime.Type == KeyTimeType.Percent)
-                    this.ResolvePercentFrame(i);
+                    ResolvePercentFrame(i);
             }
         }
 
@@ -115,10 +115,10 @@ namespace Celestial.UIToolkit.Media.Animations
 
         private void ResolveUniformKeyFrames()
         {
-            foreach (var segment in this.GetUniformSegments())
+            foreach (var segment in GetUniformSegments())
             {
-                var startTime = this.GetUniformSegmentStartTime(segment);
-                var endTime = this.GetUniformSegmentEndTime(segment);
+                var startTime = GetUniformSegmentStartTime(segment);
+                var endTime = GetUniformSegmentEndTime(segment);
                 var timeDiff = endTime - startTime;
                 var timeIncrement = TimeSpan.FromTicks(timeDiff.Ticks / (segment.Count + 1));
 
@@ -174,7 +174,7 @@ namespace Celestial.UIToolkit.Media.Animations
 
         private void ResolvePacedKeyFrames()
         {
-            var pacedSegments = this.GetRelevantPacedSegments();
+            var pacedSegments = GetRelevantPacedSegments();
 
             foreach (var pacedSegment in pacedSegments)
             {

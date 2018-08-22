@@ -39,7 +39,7 @@ namespace Celestial.UIToolkit.Converters
         /// </param>
         public MathOperationConverter(MathOperator op)
         {
-            this.Operator = op;
+            Operator = op;
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Celestial.UIToolkit.Converters
             double r = System.Convert.ToDouble(paramConvertible);
             double res = l;
 
-            switch (this.Operator)
+            switch (Operator)
             {
                 case MathOperator.Add:
                     res = l + r;
@@ -109,13 +109,13 @@ namespace Celestial.UIToolkit.Converters
                 throw new ArgumentException(
                     "When using multi conversion, the converter requires at least one value.");
             }
-            this.Convert(values[0], targetType, null, null); // This does a type-check for IConvertible
+            Convert(values[0], targetType, null, null); // This does a type-check for IConvertible
                                                              // without actually changing anything.
 
             object currentValue = values[0];
             foreach (var value in values.Skip(1))
             {
-                currentValue = this.Convert(currentValue, targetType, value, culture);
+                currentValue = Convert(currentValue, targetType, value, culture);
             }
 
             return currentValue;

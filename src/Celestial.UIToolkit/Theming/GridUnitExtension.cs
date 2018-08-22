@@ -71,7 +71,7 @@ namespace Celestial.UIToolkit.Theming
             set
             {
                 _multiplierString = value;
-                this.FormatMultiplierString();
+                FormatMultiplierString();
             }
         }
         
@@ -120,8 +120,8 @@ namespace Celestial.UIToolkit.Theming
         /// </param>
         public GridUnitExtension(string multiplierString)
         {
-            this.MultiplierString = multiplierString;
-            this.MultiplyWithDip = false;
+            MultiplierString = multiplierString;
+            MultiplyWithDip = false;
         }
 
         static GridUnitExtension()
@@ -155,32 +155,32 @@ namespace Celestial.UIToolkit.Theming
         /// </returns>
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
-            Type targetType = this.DetermineConversionTargetType(
+            Type targetType = DetermineConversionTargetType(
                 (IProvideValueTarget)serviceProvider);
 
             if (targetType == typeof(double))
             {
-                return this.CalculateDouble();
+                return CalculateDouble();
             }
             else if (typeof(IConvertible).IsAssignableFrom(targetType))
             {
-                return Convert.ChangeType(this.CalculateDouble(), targetType);
+                return Convert.ChangeType(CalculateDouble(), targetType);
             }
             else if (targetType == typeof(Thickness))
             {
-                return this.CalculateThickness();
+                return CalculateThickness();
             }
             else if (targetType == typeof(CornerRadius))
             {
-                return this.CalculateCornerRadius();
+                return CalculateCornerRadius();
             }
             else if (targetType == typeof(Size))
             {
-                return this.CalculateSize();
+                return CalculateSize();
             }
             else if (targetType == typeof(Point))
             {
-                return this.CalculatePoint();
+                return CalculatePoint();
             }
             else
             {
@@ -192,7 +192,7 @@ namespace Celestial.UIToolkit.Theming
 
         private Type DetermineConversionTargetType(IProvideValueTarget target)
         {
-            if (this.TargetType != null) return this.TargetType;
+            if (TargetType != null) return TargetType;
             if (target == null) return typeof(double);
             
             return (target.TargetObject is Setter setter ? setter.Property?.PropertyType : null) ??
@@ -202,15 +202,15 @@ namespace Celestial.UIToolkit.Theming
         }
 
         private double GetFinalLengthMultiplier() =>
-            (this.MultiplyWithDip ? _dipMultiplier : 1) * this.GridCellSize;
+            (MultiplyWithDip ? _dipMultiplier : 1) * GridCellSize;
         
         private double CalculateDouble() => 
-            this.GetFinalLengthMultiplier() * Convert.ToDouble(MultiplierString);
+            GetFinalLengthMultiplier() * Convert.ToDouble(MultiplierString);
 
         private Thickness CalculateThickness()
         {
             var thickness = (Thickness)_thicknessConverter.ConvertFromString(_formattedMultiplierString);
-            double multiplier = this.GetFinalLengthMultiplier();
+            double multiplier = GetFinalLengthMultiplier();
             return new Thickness(
                 thickness.Left * multiplier,
                 thickness.Top * multiplier,
@@ -221,7 +221,7 @@ namespace Celestial.UIToolkit.Theming
         private CornerRadius CalculateCornerRadius()
         {
             var cornerRadius = (CornerRadius)_cornerRadiusConverter.ConvertFromString(_formattedMultiplierString);
-            double multiplier = this.GetFinalLengthMultiplier();
+            double multiplier = GetFinalLengthMultiplier();
             return new CornerRadius(
                 cornerRadius.TopLeft * multiplier,
                 cornerRadius.TopRight * multiplier,
@@ -232,14 +232,14 @@ namespace Celestial.UIToolkit.Theming
         private object CalculateSize()
         {
             var size = (Size)_sizeConverter.ConvertFromString(_formattedMultiplierString);
-            double multiplier = this.GetFinalLengthMultiplier();
+            double multiplier = GetFinalLengthMultiplier();
             return new Size(size.Width * multiplier, size.Height * multiplier);
         }
 
         private object CalculatePoint()
         {
             var point = (Point)_pointConverter.ConvertFromString(_formattedMultiplierString);
-            double multiplier = this.GetFinalLengthMultiplier();
+            double multiplier = GetFinalLengthMultiplier();
             return new Point(point.X * multiplier, point.Y * multiplier);
         }
 

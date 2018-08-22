@@ -306,7 +306,7 @@ namespace Celestial.UIToolkit.Controls
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
-            this.EnterNormalVisualState();
+            EnterNormalVisualState();
         }
 
         /// <summary>
@@ -317,7 +317,7 @@ namespace Celestial.UIToolkit.Controls
         /// </summary>
         public void StartAnimation()
         {
-            if (this.RippleOrigin == RippleOrigin.MouseLocation)
+            if (RippleOrigin == RippleOrigin.MouseLocation)
             {
                 // Even if RippleOrigin is set to use the cursor, we can only do so,
                 // if the mouse is actually over this element.
@@ -326,16 +326,16 @@ namespace Celestial.UIToolkit.Controls
                 var clickCoordinates = Mouse.GetPosition(this);
                 if (this.IsPointInControlBounds(clickCoordinates))
                 {
-                    this.StartAnimationFromPoint(clickCoordinates);
+                    StartAnimationFromPoint(clickCoordinates);
                 }
                 else
                 {
-                    this.StartAnimationFromCenter();
+                    StartAnimationFromCenter();
                 }
             }
-            else if (this.RippleOrigin == RippleOrigin.Center)
+            else if (RippleOrigin == RippleOrigin.Center)
             {
-                this.StartAnimationFromCenter();
+                StartAnimationFromCenter();
             }
             else
             {
@@ -351,7 +351,7 @@ namespace Celestial.UIToolkit.Controls
         /// </summary>
         public void StartAnimationFromCenter()
         {
-            this.StartAnimationFromPoint(this.GetCenter());
+            StartAnimationFromPoint(this.GetCenter());
         }
 
         /// <summary>
@@ -363,23 +363,23 @@ namespace Celestial.UIToolkit.Controls
         /// <param name="rippleOrigin">The point from which the ripple animation originates.</param>
         public void StartAnimationFromPoint(Point rippleOrigin)
         {
-            if (this.IsEnabled)
+            if (IsEnabled)
             {
-                this.UpdateAnimationProperties(rippleOrigin);
-                this.EnterExpandingVisualState();
+                UpdateAnimationProperties(rippleOrigin);
+                EnterExpandingVisualState();
             }
         }
 
         private void UpdateAnimationProperties(Point rippleOrigin)
         {
-            this.AnimationOriginX = rippleOrigin.X;
-            this.AnimationOriginY = rippleOrigin.Y;
+            AnimationOriginX = rippleOrigin.X;
+            AnimationOriginY = rippleOrigin.Y;
 
-            this.AnimationDiameter = Sqrt(  // This will make the ripple touch the outer-most edge
-                Pow(Max(rippleOrigin.X, this.ActualWidth - rippleOrigin.X), 2) +
-                Pow(Max(rippleOrigin.Y, this.ActualHeight - rippleOrigin.Y), 2)) * 2;
-            this.AnimationPositionX = this.AnimationOriginX - this.AnimationDiameter / 2;
-            this.AnimationPositionY = this.AnimationOriginY - this.AnimationDiameter / 2;
+            AnimationDiameter = Sqrt(  // This will make the ripple touch the outer-most edge
+                Pow(Max(rippleOrigin.X, ActualWidth - rippleOrigin.X), 2) +
+                Pow(Max(rippleOrigin.Y, ActualHeight - rippleOrigin.Y), 2)) * 2;
+            AnimationPositionX = AnimationOriginX - AnimationDiameter / 2;
+            AnimationPositionY = AnimationOriginY - AnimationDiameter / 2;
         }
 
         private static void IsActiveTrigger_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -448,34 +448,34 @@ namespace Celestial.UIToolkit.Controls
 
         private void EnterNormalVisualState()
         {
-            this.IsExpanding = false;
-            this.IsExpanded = false;
-            this.IsFading = false;
+            IsExpanding = false;
+            IsExpanded = false;
+            IsFading = false;
             VisualStateManager.GoToState(this, NormalVisualStateName, true);
         }
 
         private void EnterExpandingVisualState()
         {
-            this.IsExpanding = true;
-            this.IsExpanded = false;
-            this.IsFading = false;
+            IsExpanding = true;
+            IsExpanded = false;
+            IsFading = false;
             VisualStateManager.GoToState(this, NormalVisualStateName, false); // Required to reset potentially running animations.
             VisualStateManager.GoToState(this, ExpandingVisualStateName, true);
         }
 
         private void EnterExpandedVisualState()
         {
-            this.IsExpanding = false;
-            this.IsExpanded = true;
-            this.IsFading = false;
+            IsExpanding = false;
+            IsExpanded = true;
+            IsFading = false;
             VisualStateManager.GoToState(this, ExpandedVisualStateName, true);
         }
 
         private void EnterFadingVisualState()
         {
-            this.IsExpanding = false;
-            this.IsExpanded = false;
-            this.IsFading = true;
+            IsExpanding = false;
+            IsExpanded = false;
+            IsFading = true;
             VisualStateManager.GoToState(this, FadingVisualStateName, true);
         }
         
@@ -485,11 +485,11 @@ namespace Celestial.UIToolkit.Controls
             // - AllowFading is true
             // - It has reached the maximum size
             // - It is not being forced to stay expanded (e.g. if a button is long-pressed).
-            if (this.AllowFading && 
-                this.IsExpanded &&
-                !this.IsActiveTrigger)
+            if (AllowFading && 
+                IsExpanded &&
+                !IsActiveTrigger)
             {
-                this.EnterFadingVisualState();
+                EnterFadingVisualState();
             }
         }
         

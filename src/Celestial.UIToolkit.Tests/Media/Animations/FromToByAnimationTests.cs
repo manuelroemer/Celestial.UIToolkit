@@ -64,16 +64,16 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
         [TestMethod]
         public void AnimationsReturnExpectedValues()
         {
-            this.TestAnimationResultRange(_automaticAnimation, DefaultOrigin, DefaultDestination);
-            this.TestAnimationResultRange(_fromAnimation, From, DefaultDestination);
-            this.TestAnimationResultRange(_toAnimation, DefaultOrigin, To);
-            this.TestAnimationResultRange(_byAnimation, DefaultOrigin, DefaultOrigin + By);
+            TestAnimationResultRange(_automaticAnimation, DefaultOrigin, DefaultDestination);
+            TestAnimationResultRange(_fromAnimation, From, DefaultDestination);
+            TestAnimationResultRange(_toAnimation, DefaultOrigin, To);
+            TestAnimationResultRange(_byAnimation, DefaultOrigin, DefaultOrigin + By);
 
-            this.TestAnimationResultRange(_fromToAnimation, From, To);
-            this.TestAnimationResultRange(_fromByAnimation, From, From + By);
+            TestAnimationResultRange(_fromToAnimation, From, To);
+            TestAnimationResultRange(_fromByAnimation, From, From + By);
 
-            this.TestAnimationResultRange(_toByAnimation, DefaultOrigin, To);
-            this.TestAnimationResultRange(_fromToByAnimation, From, To);
+            TestAnimationResultRange(_toByAnimation, DefaultOrigin, To);
+            TestAnimationResultRange(_fromToByAnimation, From, To);
         }
         
         [TestMethod]
@@ -85,9 +85,9 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
             _fromByAnimation.IsAdditive = true;
             _fromToByAnimation.IsAdditive = true;
 
-            this.TestAnimationResultRange(_fromToAnimation, DefaultOrigin + From, DefaultOrigin + To);
-            this.TestAnimationResultRange(_fromByAnimation, DefaultOrigin + From, DefaultOrigin + From + By);
-            this.TestAnimationResultRange(_fromToByAnimation, DefaultOrigin + From, DefaultOrigin + To);
+            TestAnimationResultRange(_fromToAnimation, DefaultOrigin + From, DefaultOrigin + To);
+            TestAnimationResultRange(_fromByAnimation, DefaultOrigin + From, DefaultOrigin + From + By);
+            TestAnimationResultRange(_fromToByAnimation, DefaultOrigin + From, DefaultOrigin + To);
 
             _fromByAnimation.IsAdditive = false;
             _fromByAnimation.IsAdditive = false;

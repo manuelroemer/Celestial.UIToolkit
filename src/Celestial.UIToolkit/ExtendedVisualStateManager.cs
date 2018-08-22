@@ -104,7 +104,7 @@ namespace Celestial.UIToolkit
         /// <summary>
         /// Gets the <see cref="VisualState"/> from which the class is transitioning.
         /// </summary>
-        public VisualState FromState => this.Group.CurrentState;
+        public VisualState FromState => Group.CurrentState;
 
         /// <summary>
         /// Gets the <see cref="VisualState"/> to which the class should transition to.
@@ -154,17 +154,17 @@ namespace Celestial.UIToolkit
             if (state == null)
                 state = group.GetStateByName(stateName);
 
-            this.Control = control ?? throw new ArgumentNullException(nameof(control));
-            this.StateGroupsRoot = stateGroupsRoot ?? throw new ArgumentNullException(nameof(stateGroupsRoot));
-            this.StateName = stateName ?? throw new ArgumentNullException(nameof(stateName));
-            this.Group = group ?? throw new ArgumentNullException(nameof(group));
-            this.ToState = state ?? throw new ArgumentNullException(nameof(state));
-            this.UseTransitions = useTransitions;
+            Control = control ?? throw new ArgumentNullException(nameof(control));
+            StateGroupsRoot = stateGroupsRoot ?? throw new ArgumentNullException(nameof(stateGroupsRoot));
+            StateName = stateName ?? throw new ArgumentNullException(nameof(stateName));
+            Group = group ?? throw new ArgumentNullException(nameof(group));
+            ToState = state ?? throw new ArgumentNullException(nameof(state));
+            UseTransitions = useTransitions;
 
             // No need to do anything if we aren't between two states.
-            if (this.FromState == this.ToState) return false;
+            if (FromState == ToState) return false;
 
-            return this.GoToStateCore();
+            return GoToStateCore();
         }
         
         /// <summary>

@@ -44,7 +44,7 @@ namespace Celestial.UIToolkit.Converters
         /// </param>
         public InvertingConverter(IValueConverter underlyingConverter)
         {
-            this.UnderlyingConverter = underlyingConverter;
+            UnderlyingConverter = underlyingConverter;
         }
 
         /// <summary>
@@ -59,8 +59,8 @@ namespace Celestial.UIToolkit.Converters
         /// <returns>The converted result.</returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            this.AssertUnderlyingConverterNotNull();
-            return this.UnderlyingConverter.ConvertBack(value, targetType, parameter, culture);
+            AssertUnderlyingConverterNotNull();
+            return UnderlyingConverter.ConvertBack(value, targetType, parameter, culture);
         }
 
         /// <summary>
@@ -75,13 +75,13 @@ namespace Celestial.UIToolkit.Converters
         /// <returns>The converted result.</returns>
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            this.AssertUnderlyingConverterNotNull();
-            return this.UnderlyingConverter.Convert(value, targetType, parameter, culture);
+            AssertUnderlyingConverterNotNull();
+            return UnderlyingConverter.Convert(value, targetType, parameter, culture);
         }
 
         private void AssertUnderlyingConverterNotNull()
         {
-            if (this.UnderlyingConverter == null)
+            if (UnderlyingConverter == null)
                 throw new InvalidOperationException(
                     $"The {nameof(InvertingConverter)} cannot function without another converter. " +
                     $"Set this converter via the {nameof(UnderlyingConverter)} property.");

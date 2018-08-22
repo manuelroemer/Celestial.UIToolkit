@@ -26,7 +26,7 @@ namespace Celestial.UIToolkit.Media.Animations
         {
             get
             {
-                this.ReadPreamble();
+                ReadPreamble();
                 return typeof(T);
             }
         }
@@ -53,15 +53,15 @@ namespace Celestial.UIToolkit.Media.Animations
         public override object GetCurrentValue(
             object defaultOriginValue, object defaultDestinationValue, AnimationClock animationClock)
         {
-            this.ReadPreamble();
+            ReadPreamble();
             if (animationClock == null) throw new ArgumentNullException(nameof(animationClock));
 
             if (!(defaultOriginValue is T) && !(defaultOriginValue is null))
-                this.ThrowForInvalidAnimationValueType(nameof(defaultOriginValue));
+                ThrowForInvalidAnimationValueType(nameof(defaultOriginValue));
             if (!(defaultDestinationValue is T) && !(defaultDestinationValue is null))
-                this.ThrowForInvalidAnimationValueType(nameof(defaultDestinationValue));
+                ThrowForInvalidAnimationValueType(nameof(defaultDestinationValue));
 
-            return this.GetCurrentValueCore(
+            return GetCurrentValueCore(
                 (T)defaultOriginValue, (T)defaultDestinationValue, animationClock);
         }
 

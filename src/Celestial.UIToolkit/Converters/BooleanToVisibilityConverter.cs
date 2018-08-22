@@ -60,8 +60,8 @@ namespace Celestial.UIToolkit.Converters
         /// </param>
         public BooleanToVisibilityConverter(Visibility trueVisibility, Visibility falseVisibility)
         {
-            this.TrueVisibility = trueVisibility;
-            this.FalseVisibility = falseVisibility;
+            TrueVisibility = trueVisibility;
+            FalseVisibility = falseVisibility;
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Celestial.UIToolkit.Converters
         /// <returns>A <see cref="Visibility"/> object depending on the <paramref name="value"/>.</returns>
         public override Visibility Convert(bool value, object parameter, CultureInfo culture)
         {
-            return value ? this.TrueVisibility : this.FalseVisibility;
+            return value ? TrueVisibility : FalseVisibility;
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace Celestial.UIToolkit.Converters
         /// </exception>
         public override bool ConvertBack(Visibility value, object parameter, CultureInfo culture)
         {
-            if (this.TrueVisibility == this.FalseVisibility)
+            if (TrueVisibility == FalseVisibility)
             {
                 throw new InvalidOperationException(
                     $"Cannot perform a backwards value conversion, because the converter's " +
@@ -98,9 +98,9 @@ namespace Celestial.UIToolkit.Converters
                     $"To fix this, make sure that the two properties have different values.");
             }
 
-            if (value == this.TrueVisibility)
+            if (value == TrueVisibility)
                 return true;
-            else if (value == this.FalseVisibility)
+            else if (value == FalseVisibility)
                 return false;
             else
                 throw new InvalidOperationException(

@@ -111,18 +111,18 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <returns>The value which this animation believes to be the current one.</returns>
         protected override T GetCurrentValueCore(T defaultOriginValue, T defaultDestinationValue, AnimationClock animationClock)
         {
-            this.SetConstantAnimationValues();
-            this.SetDynamicAnimationValues(defaultOriginValue, defaultDestinationValue, animationClock);
-            this.ValidateAnimationValues(_actualFrom, _actualTo);
+            SetConstantAnimationValues();
+            SetDynamicAnimationValues(defaultOriginValue, defaultDestinationValue, animationClock);
+            ValidateAnimationValues(_actualFrom, _actualTo);
 
             double progress = animationClock.CurrentProgress.Value;
             T interpolatedValue;
 
-            interpolatedValue = this.InterpolateValue(_actualFrom, _actualTo, progress);
+            interpolatedValue = InterpolateValue(_actualFrom, _actualTo, progress);
             if (_useCumulativeModifier)
-                interpolatedValue = this.AddValues(interpolatedValue, _cumulativeModifier);
+                interpolatedValue = AddValues(interpolatedValue, _cumulativeModifier);
             if (_useAdditiveModifier)
-                interpolatedValue = this.AddValues(interpolatedValue, _additiveModifier);
+                interpolatedValue = AddValues(interpolatedValue, _additiveModifier);
 
             return interpolatedValue;
         }
@@ -132,7 +132,7 @@ namespace Celestial.UIToolkit.Media.Animations
             // Constant values are not dependent on the current animation state.
             // Only change them when necessary.
             if (_areConstantAnimationValuesSet) return;
-            this.SetCurrentAnimationType();
+            SetCurrentAnimationType();
             _areConstantAnimationValuesSet = true;
         }
 
@@ -158,9 +158,9 @@ namespace Celestial.UIToolkit.Media.Animations
 
         private void SetDynamicAnimationValues(T defaultOrigin, T defaultDestination, AnimationClock animationClock)
         {
-            this.SetActualFromAndTo(defaultOrigin, defaultDestination);
-            this.SetCurrentAdditiveModifier(defaultOrigin);
-            this.SetCurrentCumulativeModifier(animationClock);
+            SetActualFromAndTo(defaultOrigin, defaultDestination);
+            SetCurrentAdditiveModifier(defaultOrigin);
+            SetCurrentCumulativeModifier(animationClock);
         }
 
         private void SetActualFromAndTo(T defaultOrigin, T defaultDestination)
@@ -168,22 +168,22 @@ namespace Celestial.UIToolkit.Media.Animations
             switch (_animationType)
             {
                 case AnimationType.Automatic:
-                    this.SetActualFromAndToVariables(defaultOrigin, defaultDestination);
+                    SetActualFromAndToVariables(defaultOrigin, defaultDestination);
                     break;
                 case AnimationType.From:
-                    this.SetActualFromAndToVariables(this.From, defaultDestination);
+                    SetActualFromAndToVariables(From, defaultDestination);
                     break;
                 case AnimationType.To:
-                    this.SetActualFromAndToVariables(defaultOrigin, this.To);
+                    SetActualFromAndToVariables(defaultOrigin, To);
                     break;
                 case AnimationType.By:
-                    this.SetActualFromAndToVariables(defaultOrigin, this.AddValues(defaultOrigin, this.By));
+                    SetActualFromAndToVariables(defaultOrigin, AddValues(defaultOrigin, By));
                     break;
                 case AnimationType.FromTo:
-                    this.SetActualFromAndToVariables(this.From, this.To);
+                    SetActualFromAndToVariables(From, To);
                     break;
                 case AnimationType.FromBy:
-                    this.SetActualFromAndToVariables(this.From, this.AddValues(this.From, this.By));
+                    SetActualFromAndToVariables(From, AddValues(From, By));
                     break;
                 default:
                     throw new NotImplementedException("Unknown animation type.");
@@ -194,7 +194,7 @@ namespace Celestial.UIToolkit.Media.Animations
         {
             if ((_animationType == AnimationType.FromTo || _animationType == AnimationType.FromBy))
             {
-                if (this.IsAdditive)
+                if (IsAdditive)
                 {
                     _additiveModifier = defaultOrigin;
                     _useAdditiveModifier = true;
@@ -204,13 +204,13 @@ namespace Celestial.UIToolkit.Media.Animations
 
         private void SetCurrentCumulativeModifier(AnimationClock animationClock)
         {
-            if (this.IsCumulative)
+            if (IsCumulative)
             {
                 double factor = animationClock.CurrentIteration.GetValueOrDefault() - 1;
                 if (factor > 0d)
                 {
-                    T toFromDistance = this.SubtractValues(_actualTo, _actualFrom);
-                    _cumulativeModifier = this.ScaleValue(toFromDistance, factor);
+                    T toFromDistance = SubtractValues(_actualTo, _actualFrom);
+                    _cumulativeModifier = ScaleValue(toFromDistance, factor);
                     _useCumulativeModifier = true;
                 }
             }
@@ -309,8 +309,8 @@ namespace Celestial.UIToolkit.Media.Animations
         {
             // We want to animate FROM this animation to something else.
             // Use the fact that this animation supports automatic/dynamic values.
-            this.ReadPreamble();
-            return (FromToByAnimationBase<T>)this.CreateInstance();
+            ReadPreamble();
+            return (FromToByAnimationBase<T>)CreateInstance();
         }
 
         /// <summary>
@@ -333,12 +333,12 @@ namespace Celestial.UIToolkit.Media.Animations
         {
             // We want to create an animation which transitions TO our current animation.
             // -> Another animation of the same type is able to do that, with 'To' set to the correct value.
-            this.ReadPreamble();
-            var animation = (FromToByAnimationBase<T>)this.CreateInstance();
+            ReadPreamble();
+            var animation = (FromToByAnimationBase<T>)CreateInstance();
             if (this.IsDependencyPropertySet(FromProperty))
-                animation.To = this.From;
+                animation.To = From;
             else
-                animation.To = this.To;
+                animation.To = To;
             return animation;
         }
 

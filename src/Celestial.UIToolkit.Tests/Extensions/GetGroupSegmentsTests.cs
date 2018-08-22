@@ -13,10 +13,10 @@ namespace Celestial.UIToolkit.Tests.Extensions
         [TestMethod]
         public void ReturnsCorrectNumberOfSegments()
         {
-            this.TestSegmentCount(
+            TestSegmentCount(
                 new int[] { 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1 },
                 4);
-            this.TestSegmentCount(
+            TestSegmentCount(
                 new int[] { 0, 0, 0, 0, 0, 0, 0 },
                 0);
         }
@@ -40,10 +40,10 @@ namespace Celestial.UIToolkit.Tests.Extensions
             var number2 = new int[] { 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1 };
 
             foreach (var segment in numbers.GetGroupSegments(num => num == 1))
-                this.VerifySegmentIntegrity(numbers, segment);
+                VerifySegmentIntegrity(numbers, segment);
 
             foreach (var segment in number2.GetGroupSegments(num => num == 1))
-                this.VerifySegmentIntegrity(number2, segment);
+                VerifySegmentIntegrity(number2, segment);
         }
         
         private void VerifySegmentIntegrity(int[] numbers, ArraySegment<int> segment)

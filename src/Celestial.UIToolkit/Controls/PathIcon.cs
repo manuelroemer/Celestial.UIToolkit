@@ -96,8 +96,8 @@ namespace Celestial.UIToolkit.Controls
                     _path = new Path()
                     {
                         Stretch = Stretch.Uniform,
-                        Data = this.Data,
-                        StrokeThickness = this.StrokeThickness
+                        Data = Data,
+                        StrokeThickness = StrokeThickness
                     };
                 }
                 return _path;
@@ -123,7 +123,7 @@ namespace Celestial.UIToolkit.Controls
         /// </returns>
         protected override Size MeasureOverride(Size availableSize)
         {
-            if (this.Data == null || this.Data == Geometry.Empty) return new Size(0d, 0d);
+            if (Data == null || Data == Geometry.Empty) return new Size(0d, 0d);
 
             // We let a Path do the work of measuring the geometry.
             // We need to take care of one point though:
@@ -136,8 +136,8 @@ namespace Celestial.UIToolkit.Controls
             // 
             // pathOverflow = dataRenderBounds - dataNormalBounds
             // finalBounds  = availableSize - pathOverflow
-            var normalBounds = this.Data.Bounds;
-            var renderBounds = this.Data.GetRenderBounds(this.CreatePen()).Size;
+            var normalBounds = Data.Bounds;
+            var renderBounds = Data.GetRenderBounds(CreatePen()).Size;
             var diff = new Size(
                 Math.Max(renderBounds.Width - normalBounds.Width, 0d),
                 Math.Max(renderBounds.Height - normalBounds.Height, 0d));
@@ -146,8 +146,8 @@ namespace Celestial.UIToolkit.Controls
                 availableSize.Width - diff.Width,
                 availableSize.Height - diff.Height);
             
-            this.Path.Measure(availableSize);
-            return this.Path.DesiredSize;
+            Path.Measure(availableSize);
+            return Path.DesiredSize;
         }
 
         /// <summary>
@@ -163,9 +163,9 @@ namespace Celestial.UIToolkit.Controls
             // Again, let the path do the work.
             // Provide the correct size though - do not go over the max. allowed bounds.
             finalSize = new Size(
-                Math.Min(finalSize.Width, this.Path.DesiredSize.Width),
-                Math.Min(finalSize.Height, this.Path.DesiredSize.Height));
-            this.Path.Arrange(new Rect(finalSize));
+                Math.Min(finalSize.Width, Path.DesiredSize.Width),
+                Math.Min(finalSize.Height, Path.DesiredSize.Height));
+            Path.Arrange(new Rect(finalSize));
             return finalSize;
         }
         
@@ -178,7 +178,7 @@ namespace Celestial.UIToolkit.Controls
         /// </param>
         protected override void OnRender(DrawingContext drawingContext)
         {
-            drawingContext.DrawGeometry(this.Fill, this.CreatePen(), this.Path.RenderedGeometry);
+            drawingContext.DrawGeometry(Fill, CreatePen(), Path.RenderedGeometry);
         }
         
         /// <summary>
@@ -189,7 +189,7 @@ namespace Celestial.UIToolkit.Controls
         /// <returns>The newly created <see cref="Pen"/>.</returns>
         protected virtual Pen CreatePen()
         {
-            return new Pen(this.Foreground, this.StrokeThickness);
+            return new Pen(Foreground, StrokeThickness);
         }
 
         /// <summary>

@@ -58,10 +58,10 @@ namespace Celestial.UIToolkit.Converters
         public override Thickness Convert(Thickness value, object parameter, CultureInfo culture)
         {
             return new Thickness(
-                this.Left ?? value.Left,
-                this.Top ?? value.Top,
-                this.Right ?? value.Right,
-                this.Bottom ?? value.Bottom);
+                Left ?? value.Left,
+                Top ?? value.Top,
+                Right ?? value.Right,
+                Bottom ?? value.Bottom);
         }
 
     }

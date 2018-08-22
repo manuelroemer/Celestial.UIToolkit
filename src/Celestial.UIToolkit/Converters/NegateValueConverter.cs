@@ -39,19 +39,19 @@ namespace Celestial.UIToolkit.Converters
             
             if (typeof(IConvertible).IsAssignableFrom(valueType))
             {
-                return this.NegateConvertible((IConvertible)value);
+                return NegateConvertible((IConvertible)value);
             }
             else if (valueType == typeof(Thickness))
             {
-                return this.NegateThickness((Thickness)value);
+                return NegateThickness((Thickness)value);
             }
             else if (valueType == typeof(CornerRadius))
             {
-                return this.NegateCornerRadius((CornerRadius)value);
+                return NegateCornerRadius((CornerRadius)value);
             }
             else if (valueType == typeof(Point))
             {
-                return this.NegatePoint((Point)value);
+                return NegatePoint((Point)value);
             }
             else
             {
@@ -71,7 +71,7 @@ namespace Celestial.UIToolkit.Converters
         /// <returns>The negated value.</returns>
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return this.Convert(value, targetType, parameter, culture);
+            return Convert(value, targetType, parameter, culture);
         }
 
         private IConvertible NegateConvertible(IConvertible convertible)

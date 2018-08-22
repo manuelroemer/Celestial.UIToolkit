@@ -47,8 +47,8 @@ namespace Celestial.UIToolkit.Media.Animations
         
         object IKeyFrame.Value
         {
-            get => this.Value;
-            set => this.Value = (T)value;
+            get => Value;
+            set => Value = (T)value;
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <param name="value">The value which is associated with this key frame.</param>
         protected KeyFrameBase(T value)
         {
-            this.Value = value;
+            Value = value;
         }
 
         /// <summary>
@@ -75,8 +75,8 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <param name="keyTime">A <see cref="KeyTime"/> value which is associated with this key frame.</param>
         protected KeyFrameBase(T value, KeyTime keyTime)
         {
-            this.Value = value;
-            this.KeyTime = keyTime;
+            Value = value;
+            KeyTime = keyTime;
         }
         
         /// <summary>
@@ -93,7 +93,7 @@ namespace Celestial.UIToolkit.Media.Animations
         {
             if (keyFrameProgress < 0d || keyFrameProgress > 1d)
                 throw new ArgumentOutOfRangeException(nameof(keyFrameProgress));
-            return this.InterpolateValueCore(baseValue, keyFrameProgress);
+            return InterpolateValueCore(baseValue, keyFrameProgress);
         }
 
         /// <summary>
@@ -156,7 +156,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// </returns>
         protected override T InterpolateValueCore(T baseValue, double keyFrameProgress)
         {
-            return keyFrameProgress == 1d ? this.Value : baseValue;
+            return keyFrameProgress == 1d ? Value : baseValue;
         }
 
     }
@@ -219,9 +219,9 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <returns>The output value of this key frame given the specified base value and progress.</returns>
         protected override T InterpolateValueCore(T baseValue, double keyFrameProgress)
         {
-            if (this.EasingFunction != null)
-                keyFrameProgress = this.EasingFunction.Ease(keyFrameProgress);
-            return this.InterpolateValueAfterEase(baseValue, keyFrameProgress);
+            if (EasingFunction != null)
+                keyFrameProgress = EasingFunction.Ease(keyFrameProgress);
+            return InterpolateValueAfterEase(baseValue, keyFrameProgress);
         }
 
         /// <summary>
@@ -296,9 +296,9 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <returns>The output value of this key frame given the specified base value and progress.</returns>
         protected override T InterpolateValueCore(T baseValue, double keyFrameProgress)
         {
-            if (this.KeySpline != null)
-                keyFrameProgress = this.KeySpline.GetSplineProgress(keyFrameProgress);
-            return this.InterpolateValueWithSplineProgress(baseValue, keyFrameProgress);
+            if (KeySpline != null)
+                keyFrameProgress = KeySpline.GetSplineProgress(keyFrameProgress);
+            return InterpolateValueWithSplineProgress(baseValue, keyFrameProgress);
         }
 
         /// <summary>

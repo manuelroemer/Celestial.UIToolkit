@@ -303,8 +303,8 @@ namespace Celestial.UIToolkit
         /// <param name="margin">The actual margin.</param>
         public MarginGroup(string name, Thickness margin)
         {
-            this.Name = name;
-            this.Margin = margin;
+            Name = name;
+            Margin = margin;
         }
         
         /// <summary>
@@ -313,7 +313,7 @@ namespace Celestial.UIToolkit
         /// <returns>A <see cref="string"/> representing this margin group.</returns>
         public override string ToString()
         {
-            return $"{Name}: {this.Margin}";
+            return $"{Name}: {Margin}";
         }
 
     }

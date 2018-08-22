@@ -57,7 +57,7 @@ namespace Celestial.UIToolkit.Theming
             set
             {
                 _styleKeys = value ?? "";
-                this.ParseStyleKeyParts();
+                ParseStyleKeyParts();
             }
         }
 
@@ -78,13 +78,13 @@ namespace Celestial.UIToolkit.Theming
         /// </param>
         public MultiStyleExtension(string styleKeys)
         {
-            this.StyleKeys = styleKeys;
+            StyleKeys = styleKeys;
         }
 
         private void ParseStyleKeyParts()
         {
             const char separator = ',';
-            string splittable = this.StyleKeys.Replace(' ', separator)
+            string splittable = StyleKeys.Replace(' ', separator)
                                               .Replace(';', separator);
             _styleKeyParts = splittable.Split(
                 new char[] { separator },
@@ -103,8 +103,8 @@ namespace Celestial.UIToolkit.Theming
         /// </returns>
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
-            this.ThrowIfNoStyleKeyPartsExist();
-            return this.CreateMergedStyle(serviceProvider);
+            ThrowIfNoStyleKeyPartsExist();
+            return CreateMergedStyle(serviceProvider);
         }
         
         private void ThrowIfNoStyleKeyPartsExist()
@@ -122,7 +122,7 @@ namespace Celestial.UIToolkit.Theming
             var finalStyle = new Style();
             foreach (var styleKey in _styleKeyParts)
             {
-                var styleToBeMerged = this.RetrieveStyleFromResources(styleKey, serviceProvider);
+                var styleToBeMerged = RetrieveStyleFromResources(styleKey, serviceProvider);
                 finalStyle.MergeWith(styleToBeMerged);
             }
             return finalStyle;

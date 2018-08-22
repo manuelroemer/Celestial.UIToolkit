@@ -22,8 +22,8 @@ namespace Celestial.UIToolkit.Media.Animations
 
         KeyTime IKeyFrame.KeyTime
         {
-            get => this.OriginalKeyFrame.KeyTime;
-            set => this.OriginalKeyFrame.KeyTime = value;
+            get => OriginalKeyFrame.KeyTime;
+            set => OriginalKeyFrame.KeyTime = value;
         }
 
         /// <summary>
@@ -33,8 +33,8 @@ namespace Celestial.UIToolkit.Media.Animations
         /// </summary>
         public KeyTime OriginalKeyTime
         {
-            get => this.OriginalKeyFrame.KeyTime;
-            set => this.OriginalKeyFrame.KeyTime = value;
+            get => OriginalKeyFrame.KeyTime;
+            set => OriginalKeyFrame.KeyTime = value;
         }
 
         /// <summary>
@@ -44,8 +44,8 @@ namespace Celestial.UIToolkit.Media.Animations
         /// </summary>
         public object Value
         {
-            get => this.OriginalKeyFrame.Value;
-            set => this.OriginalKeyFrame.Value = value;
+            get => OriginalKeyFrame.Value;
+            set => OriginalKeyFrame.Value = value;
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace Celestial.UIToolkit.Media.Animations
 
         public ResolvedKeyFrame(TKeyFrame originalKeyFrame)
         {
-            this.OriginalKeyFrame = originalKeyFrame;
+            OriginalKeyFrame = originalKeyFrame;
         }
 
         /// <summary>
@@ -71,35 +71,35 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <param name="resolvedKeyTime">The frame's resolved time.</param>
         public void Resolve(TimeSpan resolvedKeyTime)
         {
-            this.ResolvedKeyTime = resolvedKeyTime;
-            this.IsResolved = true;
+            ResolvedKeyTime = resolvedKeyTime;
+            IsResolved = true;
         }
 
         public int CompareTo(object obj)
         {
             if (!(obj is ResolvedKeyFrame<TKeyFrame> otherFrame))
                 throw new ArgumentException($"{nameof(obj)} must be another {nameof(ResolvedKeyFrame<TKeyFrame>)}.");
-            return this.CompareTo(otherFrame);
+            return CompareTo(otherFrame);
         }
 
         public int CompareTo(ResolvedKeyFrame<TKeyFrame> otherFrame)
         {
-            return this.ResolvedKeyTime.CompareTo(otherFrame.ResolvedKeyTime);
+            return ResolvedKeyTime.CompareTo(otherFrame.ResolvedKeyTime);
         }
 
         public bool IsTimeAfter(TimeSpan time)
         {
-            return time > this.ResolvedKeyTime;
+            return time > ResolvedKeyTime;
         }
 
         public bool IsTimeBeforeOrInside(TimeSpan time)
         {
-            return time <= this.ResolvedKeyTime;
+            return time <= ResolvedKeyTime;
         }
 
         public double GetProgress(TimeSpan time)
         {
-            return time.TotalMilliseconds / this.ResolvedKeyTime.TotalMilliseconds;
+            return time.TotalMilliseconds / ResolvedKeyTime.TotalMilliseconds;
         }
 
     }

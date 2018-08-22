@@ -38,7 +38,7 @@ namespace Celestial.UIToolkit.Media.Animations
             if (b == null) throw new ArgumentNullException(nameof(b));
 
             Brush result = a.Clone();
-            this.AddValuesToResult((TBrush)result, (TBrush)a, (TBrush)b);
+            AddValuesToResult((TBrush)result, (TBrush)a, (TBrush)b);
             return result;
         }
 
@@ -48,7 +48,7 @@ namespace Celestial.UIToolkit.Media.Animations
             if (b == null) throw new ArgumentNullException(nameof(b));
 
             Brush result = a.Clone();
-            this.SubtractValuesFromResult((TBrush)result, (TBrush)a, (TBrush)b);
+            SubtractValuesFromResult((TBrush)result, (TBrush)a, (TBrush)b);
             return result;
         }
 
@@ -57,7 +57,7 @@ namespace Celestial.UIToolkit.Media.Animations
             if (value == null) throw new ArgumentNullException(nameof(value));
 
             Brush result = value.Clone();
-            this.ScaleResult((TBrush)result, factor);
+            ScaleResult((TBrush)result, factor);
             return result;
         }
 
@@ -67,7 +67,7 @@ namespace Celestial.UIToolkit.Media.Animations
             if (to == null) throw new ArgumentNullException(nameof(to));
 
             Brush result = from.Clone();
-            this.InterpolateResult((TBrush)result, (TBrush)from, (TBrush)to, progress);
+            InterpolateResult((TBrush)result, (TBrush)from, (TBrush)to, progress);
             return result;
         }
         
@@ -104,25 +104,25 @@ namespace Celestial.UIToolkit.Media.Animations
         protected override void AddValuesToResult(TBrush result, TBrush a, TBrush b)
         {
             base.AddValuesToResult(result, a, b);
-            this.AddGradientStops(result.GradientStops, a.GradientStops, b.GradientStops);
+            AddGradientStops(result.GradientStops, a.GradientStops, b.GradientStops);
         }
 
         protected override void SubtractValuesFromResult(TBrush result, TBrush a, TBrush b)
         {
             base.SubtractValuesFromResult(result, a, b);
-            this.SubtractGradientStops(result.GradientStops, a.GradientStops, b.GradientStops);
+            SubtractGradientStops(result.GradientStops, a.GradientStops, b.GradientStops);
         }
 
         protected override void ScaleResult(TBrush result, double factor)
         {
             base.ScaleResult(result, factor);
-            this.ScaleGradientStops(result.GradientStops, factor);
+            ScaleGradientStops(result.GradientStops, factor);
         }
 
         protected override void InterpolateResult(TBrush result, TBrush from, TBrush to, double progress)
         {
             base.InterpolateResult(result, from, to, progress);
-            this.InterpolateGradientStops(result.GradientStops, from.GradientStops, to.GradientStops, progress);
+            InterpolateGradientStops(result.GradientStops, from.GradientStops, to.GradientStops, progress);
         }
 
         private void AddGradientStops(GradientStopCollection result, GradientStopCollection a, GradientStopCollection b)

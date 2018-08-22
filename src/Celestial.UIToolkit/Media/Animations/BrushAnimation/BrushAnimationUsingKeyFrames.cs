@@ -27,11 +27,11 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <returns>A new <see cref="Brush"/> which serves as a zero-value.</returns>
         protected override sealed Brush GetZeroValue()
         {
-            if (this.KeyFrames.Count == 0)
+            if (KeyFrames.Count == 0)
                 throw new InvalidOperationException(
                     "Creating a zero-brush requires at least one registered key frame.");
 
-            var firstFrame = this.KeyFrames.First();
+            var firstFrame = KeyFrames.First();
             var brushType = firstFrame.Value.GetType();
             return SupportedAnimationBrushes.GetAnimationHelper(brushType)
                                             .GetZeroValue();

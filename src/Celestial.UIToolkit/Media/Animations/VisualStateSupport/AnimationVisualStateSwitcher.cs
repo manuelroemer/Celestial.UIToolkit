@@ -1,10 +1,6 @@
-﻿using Celestial.UIToolkit.Common;
-using Celestial.UIToolkit.Extensions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
@@ -30,65 +26,67 @@ namespace Celestial.UIToolkit.Media.Animations
 
         protected override bool GoToStateCore()
         {
-            if (this.Group.GetCurrentState() == this.ToState)
+            if (Group.GetCurrentState() == ToState)
                 return true;
 
-            _currentTransition = this.GetCurrentVisualTransition();
-            _dynamicTransitionStoryboard = this.CreateDynamicTransitionStoryboard();
+            _currentTransition = GetCurrentVisualTransition();
+            _dynamicTransitionStoryboard = CreateDynamicTransitionStoryboard();
             
             if (_currentTransition == null || _currentTransition.HasZeroDuration())
             {
-                // Without a transition, the animation ToState animation is supposed to start immediately.
-                // That's also the case, if the transition's duration is 0 (because it won't take any time to complete).
-                this.Group.StartNewThenStopOldStoryboards(
-                    this.StateGroupsRoot, _currentTransition?.Storyboard, this.ToState.Storyboard);
+                // Without a transition, the animation ToState animation is supposed to start 
+                // immediately.
+                // That's also the case, if the transition's duration is 0 (because it won't take 
+                // any time to complete).
+                Group.StartNewThenStopOldStoryboards(
+                    StateGroupsRoot, _currentTransition?.Storyboard, ToState.Storyboard);
             }
             else
             {
                 // We have a transition animation which has a duration > 0.
                 // -> Run the transition storyboard before the ToState storyboard.
                 _currentTransition.SetDynamicStoryboardCompleted(false);
-                _dynamicTransitionStoryboard.Completed += this._transitionStoryboard_Completed;
+                _dynamicTransitionStoryboard.Completed += DynamicTransitionStoryboard_Completed;
                 
                 if (_currentTransition.Storyboard != null &&
                     _currentTransition.GetExplicitStoryboardCompleted())
                 {
                     _currentTransition.SetExplicitStoryboardCompleted(false);
-                    _currentTransition.Storyboard.Completed += _currentTransitionStoryboard_Completed;
+                    _currentTransition.Storyboard.Completed += CurrentTransitionStoryboard_Completed;
                 }
 
-                this.Group.StartNewThenStopOldStoryboards(
-                    this.StateGroupsRoot, 
+                Group.StartNewThenStopOldStoryboards(
+                    StateGroupsRoot, 
                     _currentTransition.Storyboard,
                     _dynamicTransitionStoryboard);
             }
 
-            this.Group.SetCurrentState(this.ToState);
+            Group.SetCurrentState(ToState);
             return true;
         }
 
-        private void _transitionStoryboard_Completed(object sender, EventArgs e)
+        private void DynamicTransitionStoryboard_Completed(object sender, EventArgs e)
         {
-            _dynamicTransitionStoryboard.Completed -= _transitionStoryboard_Completed;
+            _dynamicTransitionStoryboard.Completed -= DynamicTransitionStoryboard_Completed;
 
             if (_currentTransition.Storyboard != null || _currentTransition.GetExplicitStoryboardCompleted())
             {
-                if (this.ShouldRunStateStoryboard())
+                if (ShouldRunStateStoryboard())
                 {
-                    this.Group.StartNewThenStopOldStoryboards(this.StateGroupsRoot, this.ToState.Storyboard);
+                    Group.StartNewThenStopOldStoryboards(StateGroupsRoot, ToState.Storyboard);
                 }
             }
             _currentTransition.SetDynamicStoryboardCompleted(true);
         }
 
-        private void _currentTransitionStoryboard_Completed(object sender, EventArgs e)
+        private void CurrentTransitionStoryboard_Completed(object sender, EventArgs e)
         {
-            _currentTransition.Storyboard.Completed -= _currentTransitionStoryboard_Completed;
+            _currentTransition.Storyboard.Completed -= CurrentTransitionStoryboard_Completed;
 
             if (_currentTransition.GetDynamicStoryboardCompleted() &&
-                this.ShouldRunStateStoryboard())
+                ShouldRunStateStoryboard())
             {
-                this.Group.StartNewThenStopOldStoryboards(this.StateGroupsRoot, this.ToState.Storyboard);
+                Group.StartNewThenStopOldStoryboards(StateGroupsRoot, ToState.Storyboard);
             }
 
             _currentTransition.SetExplicitStoryboardCompleted(true);
@@ -99,27 +97,27 @@ namespace Celestial.UIToolkit.Media.Animations
             // Ensure that the controls are loaded/in a tree, so that the storyboards can find them.
             // IsLoaded never gets set to false when unloading, so make use of the element's parent.
             // (Should possibly be updated with better unloaded-detection).
-            var rootParent = VisualTreeHelper.GetParent(this.StateGroupsRoot);
-            var controlParent = VisualTreeHelper.GetParent(this.Control);
+            var rootParent = VisualTreeHelper.GetParent(StateGroupsRoot);
+            var controlParent = VisualTreeHelper.GetParent(Control);
             return rootParent != null &&
-                   this.StateGroupsRoot.IsLoaded &&
+                   StateGroupsRoot.IsLoaded &&
                    controlParent != null &&
-                   this.Control.IsLoaded &&
-                   this.ToState == this.Group.GetCurrentState();
+                   Control.IsLoaded &&
+                   ToState == Group.GetCurrentState();
         }
 
         private VisualTransition GetCurrentVisualTransition()
         {
-            if (!this.UseTransitions) return null;
+            if (!UseTransitions) return null;
             VisualTransition result = null;
 
-            foreach (VisualTransition transition in this.Group.Transitions)
+            foreach (VisualTransition transition in Group.Transitions)
             {                
                 // We want to find the transition which matches the current states the best.
                 // -> If there is a transition whose From/To properties match both states, use it.
                 //    If not, use a transition which matches only one state.
                 //    If none of that is found, use a transition without any From/To values (a default one).
-                if (this.IsTransitionBetterMatch(result, transition))
+                if (IsTransitionBetterMatch(result, transition))
                 {
                     result = transition;
                 }
@@ -140,14 +138,14 @@ namespace Celestial.UIToolkit.Media.Animations
                             NoMatch = -1;
 
                 if (transition == null) return NoMatch;
-                VisualState transitionFromState = this.Group.GetStateByName(transition.From);
-                VisualState transitionToState = this.Group.GetStateByName(transition.To);
+                VisualState transitionFromState = Group.GetStateByName(transition.From);
+                VisualState transitionToState = Group.GetStateByName(transition.To);
 
-                if (this.FromState == transitionFromState && this.ToState == transitionToState)
+                if (FromState == transitionFromState && ToState == transitionToState)
                     return PerfectMatch;
-                else if (this.ToState == transitionToState && transitionFromState == null)
+                else if (ToState == transitionToState && transitionFromState == null)
                     return ToMatch;
-                else if (this.FromState == transitionFromState && transitionToState == null)
+                else if (FromState == transitionFromState && transitionToState == null)
                     return FromMatch;
                 else if (transition.IsDefault())
                     return DefaultTransitionMatch;
@@ -158,32 +156,37 @@ namespace Celestial.UIToolkit.Media.Animations
 
         private Storyboard CreateDynamicTransitionStoryboard()
         {
-            Storyboard storyboard = new Storyboard()
-            {
-                Duration = _currentTransition?.GeneratedDuration ?? new Duration(TimeSpan.Zero)
-            };
+            var storyboard = new Storyboard();
             var easingFunction = _currentTransition?.GeneratedEasingFunction;
+            storyboard.Duration = _currentTransition?.GeneratedDuration ??
+                                  new Duration(TimeSpan.Zero);
 
-            ISet<Timeline> currentGroupTimelines = this.FlattenTimelines(this.Group.GetCurrentStoryboards().ToArray());
-            ISet<Timeline> transitionTimelines = this.FlattenTimelines(_currentTransition?.Storyboard);
-            ISet<Timeline> toStateTimelines = this.FlattenTimelines(this.ToState.Storyboard);
+            FillDynamicTransitionStoryboard(storyboard, easingFunction);
+            return storyboard;
+        }
+
+        private void FillDynamicTransitionStoryboard(Storyboard storyboard, IEasingFunction easingFunction)
+        {
+            ISet<Timeline> currentGroupTimelines = FlattenTimelines(Group.GetCurrentStoryboards().ToArray());
+            ISet<Timeline> transitionTimelines = FlattenTimelines(_currentTransition?.Storyboard);
+            ISet<Timeline> toStateTimelines = FlattenTimelines(ToState.Storyboard);
 
             currentGroupTimelines.ExceptWith(transitionTimelines);
             toStateTimelines.ExceptWith(transitionTimelines);
-            
-            foreach (var timeline in toStateTimelines)
+
+            IList<Timeline> toTransitions = CreateToTransitions(toStateTimelines, easingFunction);
+            IList<Timeline> fromTransitions = CreateFromTransitions(currentGroupTimelines, easingFunction);
+
+            foreach (var toTransition in toTransitions)
             {
-                var toAnimation = this.GenerateToAnimation(timeline, easingFunction);
-                AddTimelineToCurrentStoryboard(toAnimation);
-                currentGroupTimelines.Remove(timeline);
+                AddTimelineToCurrentStoryboard(toTransition);
+                currentGroupTimelines.Remove(toTransition);
             }
 
-            foreach (var timeline in currentGroupTimelines)
+            foreach (var fromTransition in fromTransitions)
             {
-                var fromAnimation = this.GenerateFromAnimation(timeline, easingFunction);
-                AddTimelineToCurrentStoryboard(fromAnimation);
+                AddTimelineToCurrentStoryboard(fromTransition);
             }
-            return storyboard;
 
             void AddTimelineToCurrentStoryboard(Timeline timeline)
             {
@@ -195,32 +198,42 @@ namespace Celestial.UIToolkit.Media.Animations
             }
         }
 
-        private Timeline GenerateToAnimation(Timeline timeline, IEasingFunction easingFunction)
+        private IList<Timeline> CreateToTransitions(
+            ICollection<Timeline> toStateTimelines, IEasingFunction easingFunction)
         {
-            // A timeline can provide a transition on its own
-            // (the FromToByAnimationBase<T> is, for example, capable of doing that).
-            // If it can't do that, try to find a transition provider who can do it.
-            // If that doesn't work either, we don't support a transition for the timeline.
-            Timeline generatedTimeline = null;
-            if (VisualTransitionProvider.TryGetProviderForTimeline(timeline, out var provider))
+            var toTransitions = new List<Timeline>(toStateTimelines.Count);
+            foreach (var timeline in toStateTimelines)
             {
-                generatedTimeline = provider.CreateToTransitionTimeline(timeline, easingFunction);
+                var toAnimation = CreateToAnimation(timeline, easingFunction);
+                StoryboardHelper.CopyTargetProperties(StateGroupsRoot, timeline, toAnimation);
+                toTransitions.Add(toAnimation);
             }
+            return toTransitions;
+        }
 
-            StoryboardHelper.CopyTargetProperties(this.StateGroupsRoot, timeline, generatedTimeline);
-            return generatedTimeline;
+        private IList<Timeline> CreateFromTransitions(
+            ICollection<Timeline> fromStateTimelines, IEasingFunction easingFunction)
+        {
+            var fromTransitions = new List<Timeline>(fromStateTimelines.Count);
+            foreach (var timeline in fromStateTimelines)
+            {
+                var fromAnimation = CreateFromAnimation(timeline, easingFunction);
+                StoryboardHelper.CopyTargetProperties(StateGroupsRoot, timeline, fromAnimation);
+                fromTransitions.Add(fromAnimation);
+            }
+            return fromTransitions;
+        }
+
+        private Timeline CreateToAnimation(Timeline timeline, IEasingFunction easingFunction)
+        {
+            VisualTransitionProvider.TryGetProviderForTimeline(timeline, out var provider);
+            return provider?.CreateToTransitionTimeline(timeline, easingFunction);
         }
         
-        private Timeline GenerateFromAnimation(Timeline timeline, IEasingFunction easingFunction)
+        private Timeline CreateFromAnimation(Timeline timeline, IEasingFunction easingFunction)
         {
-            Timeline generatedTimeline = null;
-            if (VisualTransitionProvider.TryGetProviderForTimeline(timeline, out var provider))
-            {
-                generatedTimeline = provider.CreateFromTransitionTimeline(timeline, easingFunction);
-            }
-
-            StoryboardHelper.CopyTargetProperties(this.StateGroupsRoot, timeline, generatedTimeline);
-            return generatedTimeline;
+            VisualTransitionProvider.TryGetProviderForTimeline(timeline, out var provider);
+            return provider?.CreateFromTransitionTimeline(timeline, easingFunction);
         }
         
         private ISet<Timeline> FlattenTimelines(params Storyboard[] storyboards)
@@ -248,9 +261,8 @@ namespace Celestial.UIToolkit.Media.Animations
                     }
                     else if (timeline != null)
                     {
-                        // If a storyboard has the same target,
-                        // replace the old one with the new one,
-                        // so that the last one is the one to be run.
+                        // If a storyboard has the same target, replace the old one with the new 
+                        // one, so that the last storyboard in a list will be run.
                         results.Remove(timeline);
                         results.Add(timeline);
                     }

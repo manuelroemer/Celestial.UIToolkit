@@ -159,33 +159,33 @@ namespace Celestial.UIToolkit.Controls
         
         private void UpdateDecoratorEffect()
         {
-            if (this.Elevation == 0)
+            if (Elevation == 0)
             {
-                this.Effect = null;
+                Effect = null;
             }
             else
             {
-                this.UpdateDropShadow();
-                this.Effect = _dropShadowLazy.Value;
+                UpdateDropShadow();
+                Effect = _dropShadowLazy.Value;
             }
         }
         
         private void UpdateDropShadow()
         {
-            var valueCalculator = this.CreateShadowEffectValueCalculator();
+            var valueCalculator = CreateShadowEffectValueCalculator();
             _dropShadowLazy.Value.ShadowDepth = valueCalculator.CalculateShadowDepth();
             _dropShadowLazy.Value.Direction = valueCalculator.CalculateDirection();
             _dropShadowLazy.Value.BlurRadius = valueCalculator.CalculateBlurRadius();
-            _dropShadowLazy.Value.Color = this.ShadowColor;
-            _dropShadowLazy.Value.Opacity = this.ShadowOpacity;
+            _dropShadowLazy.Value.Color = ShadowColor;
+            _dropShadowLazy.Value.Opacity = ShadowOpacity;
         }
 
         private DropShadowValueCalculator CreateShadowEffectValueCalculator()
         {
-            if (this.ShadowType == ShadowType.Ambient)
-                return new AmbientDropShadowValueCalculator(this.Elevation, this.ShadowDirection);
-            else if (this.ShadowType == ShadowType.Directional)
-                return new DirectionalDropShadowValueCalculator(this.Elevation, this.ShadowDirection);
+            if (ShadowType == ShadowType.Ambient)
+                return new AmbientDropShadowValueCalculator(Elevation, ShadowDirection);
+            else if (ShadowType == ShadowType.Directional)
+                return new DirectionalDropShadowValueCalculator(Elevation, ShadowDirection);
             else
                 throw new NotImplementedException("Unknown ShadowType.");
         }
@@ -197,8 +197,8 @@ namespace Celestial.UIToolkit.Controls
 
             public DropShadowValueCalculator(double elevation, Dock shadowDirection)
             {
-                this.Elevation = elevation;
-                this.ShadowDirection = shadowDirection;
+                Elevation = elevation;
+                ShadowDirection = shadowDirection;
             }
 
             public abstract double CalculateShadowDepth();
@@ -210,7 +210,7 @@ namespace Celestial.UIToolkit.Controls
                 // This value is chosen through observation and testing.
                 // It looks the most real, when comparing different elevation levels.
                 const int elevationLevelMultiplier = 3;
-                return this.Elevation * elevationLevelMultiplier;
+                return Elevation * elevationLevelMultiplier;
             }
         }
 
@@ -242,14 +242,14 @@ namespace Celestial.UIToolkit.Controls
             public override double CalculateShadowDepth()
             {
                 // ShadowDepth <-> Elevation can be treated on a 1-1 basis.
-                return this.Elevation;
+                return Elevation;
             }
 
             public override double CalculateDirection()
             {
                 // The direction angle is mapped counter-clockwise,
                 // starting from the right.
-                switch (this.ShadowDirection)
+                switch (ShadowDirection)
                 {
                     case Dock.Right:
                         return 0;

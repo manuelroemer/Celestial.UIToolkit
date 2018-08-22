@@ -39,7 +39,7 @@ namespace Celestial.UIToolkit.Converters
         /// <returns>A <see cref="Visibility"/> object depending on the <paramref name="value"/>.</returns>
         public override Visibility Convert(object value, object parameter, CultureInfo culture)
         {
-            return value == null ? this.NullVisibility : this.NotNullVisibility;
+            return value == null ? NullVisibility : NotNullVisibility;
         }
         
     }
@@ -74,15 +74,15 @@ namespace Celestial.UIToolkit.Converters
         {
             if (value is string s)
             {
-                if (this.IncludeWhiteSpace)
+                if (IncludeWhiteSpace)
                 {
-                    if (string.IsNullOrWhiteSpace(s)) return this.NullVisibility;
+                    if (string.IsNullOrWhiteSpace(s)) return NullVisibility;
                 }
                 else
                 {
-                    if (string.IsNullOrEmpty(s)) return this.NullVisibility;
+                    if (string.IsNullOrEmpty(s)) return NullVisibility;
                 }
-                return this.NotNullVisibility;
+                return NotNullVisibility;
             }
             
             return base.Convert(value, parameter, culture);

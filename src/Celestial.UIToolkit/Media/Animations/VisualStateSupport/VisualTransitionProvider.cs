@@ -71,7 +71,7 @@ namespace Celestial.UIToolkit.Media.Animations
     
     /// <summary>
     /// A class which provides the <see cref="ExtendedVisualStateManager"/>
-    /// with transitions timelines between states.
+    /// with transition timelines between states.
     /// </summary>
     public static class VisualTransitionProvider
     {
@@ -152,7 +152,7 @@ namespace Celestial.UIToolkit.Media.Animations
 
             // Allow timelines to implement the interface themselves.
             // This allows them to generate the transitions on their own, without an external class.
-            // This is, for example, used by the FromToByAnimationBase, which provides
+            // This is, for example, used by the FromToByAnimationBase, which automatically provides
             // custom transitions for each animation that derives from it.
             if (timeline is IVisualTransitionProvider selfAwareTimelineProvider &&
                 selfAwareTimelineProvider.SupportsTimeline(timeline))
@@ -168,8 +168,6 @@ namespace Celestial.UIToolkit.Media.Animations
         private static bool TryFindRegisteredProviderForTimeline(
             Timeline timeline, out IVisualTransitionProvider result)
         {
-            result = null;
-
             // Go through the list from behind to allow overwriting of the standard providers.
             for (int i = _transitionProviders.Count - 1; i >= 0; i--)
             {
@@ -181,6 +179,7 @@ namespace Celestial.UIToolkit.Media.Animations
                 }
             }
 
+            result = null;
             return false;
         }
 
