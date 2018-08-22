@@ -140,7 +140,7 @@ namespace Celestial.UIToolkit.Xaml
         private void FormatMultiplierString()
         {
             _formattedMultiplierString = _multiplierString?.Replace(',', ' ')
-                                                            ?.Replace(';', ' ');
+                                                          ?.Replace(';', ' ');
         }
 
         /// <summary>

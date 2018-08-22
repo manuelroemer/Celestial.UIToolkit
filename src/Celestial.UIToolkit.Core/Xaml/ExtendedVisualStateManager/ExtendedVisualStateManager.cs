@@ -48,7 +48,7 @@ namespace Celestial.UIToolkit.Xaml
             // Users of this class can add custom switchers for custom logic to the list aswell.
             VisualStateSwitchers = new List<VisualStateSwitcher>()
             {
-                new AnimationVisualStateSwitcher()
+                //new AnimationVisualStateSwitcher()
             };
         }
 
@@ -97,7 +97,10 @@ namespace Celestial.UIToolkit.Xaml
                     couldTransitionToState |= stateSwitcher.GoToState(
                         control, stateGroupsRoot, stateName, group, state, useTransitions);
                 }
-            }        
+            }
+
+            couldTransitionToState |= new AnimationVisualStateSwitcher().GoToState(
+                control, stateGroupsRoot, stateName, group, state, useTransitions);
             return couldTransitionToState;
         }
 

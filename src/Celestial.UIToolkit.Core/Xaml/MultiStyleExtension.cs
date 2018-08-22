@@ -85,7 +85,7 @@ namespace Celestial.UIToolkit.Xaml
         {
             const char separator = ',';
             string splittable = StyleKeys.Replace(' ', separator)
-                                              .Replace(';', separator);
+                                         .Replace(';', separator);
             _styleKeyParts = splittable.Split(
                 new char[] { separator },
                 StringSplitOptions.RemoveEmptyEntries);

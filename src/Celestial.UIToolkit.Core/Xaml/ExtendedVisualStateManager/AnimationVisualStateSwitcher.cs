@@ -30,14 +30,12 @@ namespace Celestial.UIToolkit.Xaml
         /// Transitions to another state by generating dynamic transitioning animations.
         /// </summary>
         /// <returns>
-        /// Returns <c>true</c>, if the method could transition to another state.
-        /// If the current <see cref="VisualStateGroup"/> has the same state as the target state,
-        /// nothing will happen and this method returns <c>false</c>.
+        /// Always returns <c>true</c>.
         /// </returns>
         protected override bool GoToStateCore()
         {
-            if (Group.GetCurrentState() == ToState) return false;
-
+            if (Group.GetCurrentState() == ToState) return true;
+            
             VisualTransition currentTransition = GetCurrentVisualTransition();
             Storyboard dynamicTransitionStoryboard = CreateDynamicTransitionStoryboard(currentTransition);
             
@@ -94,13 +92,13 @@ namespace Celestial.UIToolkit.Xaml
                 currentTransition.SetExplicitStoryboardCompleted(false);
                 currentTransition.Storyboard.Completed += currentStoryboardCompletedHandler;
             }
-
+            
             Group.StartNewThenStopOldStoryboards(
                 StateGroupsRoot,
                 currentTransition.Storyboard,
                 dynamicTransitionStoryboard);
         }
-
+        
         private void OnDynamicTransitionStoryboardCompleted(
             Storyboard dynamicTransitionStoryboard, VisualTransition currentTransition)
         {
@@ -134,8 +132,10 @@ namespace Celestial.UIToolkit.Xaml
             var controlParent = VisualTreeHelper.GetParent(Control);
             return rootParent != null &&
                    StateGroupsRoot.IsLoaded &&
+                   StateGroupsRoot.IsVisible &&
                    controlParent != null &&
                    Control.IsLoaded &&
+                   Control.IsVisible &&
                    ToState == Group.GetCurrentState();
         }
 
@@ -205,8 +205,12 @@ namespace Celestial.UIToolkit.Xaml
             ISet<Timeline> transitionTimelines = FlattenTimelines(currentTransition?.Storyboard);
             ISet<Timeline> toStateTimelines = FlattenTimelines(ToState.Storyboard);
 
+            // If the transition already covers an animation, there is no need for that animation.
+            // Also, if there is already a "To" animation, we must never use a "From" animation
+            // aswell, as the two animations would fight over the same property.
             currentGroupTimelines.ExceptWith(transitionTimelines);
             toStateTimelines.ExceptWith(transitionTimelines);
+            currentGroupTimelines.ExceptWith(toStateTimelines);
 
             IList<Timeline> toTransitions = CreateToTransitions(toStateTimelines, easingFunction);
             IList<Timeline> fromTransitions = CreateFromTransitions(currentGroupTimelines, easingFunction);

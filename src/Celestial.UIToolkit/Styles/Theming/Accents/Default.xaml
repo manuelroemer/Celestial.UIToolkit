@@ -6,9 +6,9 @@
     It basically identifies the application's brand and captures the user's attention.
     It is rarely used by controls (by default).
     -->
-    <Color x:Key="Accent1HighColor">#E41471</Color>
-    <Color x:Key="Accent1MediumColor">#C51162</Color>
-    <Color x:Key="Accent1LowColor">#AB0F55</Color>
+    <Color x:Key="Accent1HighColor">#FF1A5F</Color>
+    <Color x:Key="Accent1MediumColor">#DE1753</Color>
+    <Color x:Key="Accent1LowColor">#7F0D2F</Color>
     <Color x:Key="OnAccent1ForegroundColor">#FFFFFF</Color>
     <Color x:Key="OnAccent1DisabledForegroundColor">#E2E2E2</Color>
 

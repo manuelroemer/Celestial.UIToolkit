@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Linq;
 using System.Windows;
 using System.Windows.Media.Animation;
 
@@ -79,8 +81,8 @@ namespace Celestial.UIToolkit.Xaml
         {
             if (group == null) throw new ArgumentNullException(nameof(group));
 
-            group.StartStoryboards(element, newStoryboards);
-            group.StopCurrentStoryboards();
+            StopCurrentStoryboards(group, element);
+            StartStoryboards(element, newStoryboards);
             foreach (var newStoryboard in newStoryboards)
             {
                 if (newStoryboard != null)
@@ -88,8 +90,7 @@ namespace Celestial.UIToolkit.Xaml
             }
         }
 
-        private static void StartStoryboards(
-            this VisualStateGroup group, FrameworkElement element, params Storyboard[] storyboards)
+        private static void StartStoryboards(FrameworkElement element, params Storyboard[] storyboards)
         {
             if (storyboards == null || storyboards.Length == 0) return;
             foreach (var storyboard in storyboards)
@@ -101,16 +102,16 @@ namespace Celestial.UIToolkit.Xaml
             }
         }
 
-        private static void StopCurrentStoryboards(this VisualStateGroup group)
+        private static void StopCurrentStoryboards(VisualStateGroup group, FrameworkElement element)
         {
-            // We could be calling Storyboard.Stop() on each storyboard.
-            // Don't do this though!
-            // If Stop() was called, the Completed event would never fire.
-            // That would result in memory leaks in the AnimationVisualStateSwitcher,
-            // since EventHandlers won't be un-registered.
-            // Since a new storyboard is started by the callee, the current storyboard
-            // will be "overwritten" anyways.
             var currentStoryboards = group.GetCurrentStoryboards();
+            foreach (var sb in currentStoryboards)
+            {
+                if (sb != null)
+                {
+                    sb.Remove(element);
+                }
+            }
             currentStoryboards.Clear();
         }
 
