@@ -51,6 +51,7 @@
                                 </DoubleAnimationUsingKeyFrames>
                                 <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
                                                   Storyboard.TargetProperty="Foreground"
+                                                  Duration="0"
                                                   To="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                             </Storyboard>
 
@@ -69,6 +70,7 @@
                                 </DoubleAnimationUsingKeyFrames>
                                 <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
                                                   Storyboard.TargetProperty="Foreground"
+                                                  Duration="0"
                                                   To="{Binding Path=(theming:PressedProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                             </Storyboard>
 
@@ -87,6 +89,7 @@
                                 </DoubleAnimationUsingKeyFrames>
                                 <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
                                                   Storyboard.TargetProperty="Foreground"
+                                                  Duration="0"
                                                   To="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                             </Storyboard>
                         </Grid.Resources>
