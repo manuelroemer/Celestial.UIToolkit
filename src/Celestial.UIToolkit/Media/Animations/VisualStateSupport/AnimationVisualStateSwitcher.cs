@@ -20,76 +20,96 @@ namespace Celestial.UIToolkit.Media.Animations
     /// </remarks>
     public class AnimationVisualStateSwitcher : VisualStateSwitcher
     {
-
-        private VisualTransition _currentTransition;
-        private Storyboard _dynamicTransitionStoryboard;
-
+        
         protected override bool GoToStateCore()
         {
             if (Group.GetCurrentState() == ToState)
                 return true;
 
-            _currentTransition = GetCurrentVisualTransition();
-            _dynamicTransitionStoryboard = CreateDynamicTransitionStoryboard();
+            var currentTransition = GetCurrentVisualTransition();
+            var dynamicTransitionStoryboard = CreateDynamicTransitionStoryboard(currentTransition);
             
-            if (_currentTransition == null || _currentTransition.HasZeroDuration())
+            if (currentTransition == null || currentTransition.HasZeroDuration())
             {
-                // Without a transition, the animation ToState animation is supposed to start 
-                // immediately.
-                // That's also the case, if the transition's duration is 0 (because it won't take 
-                // any time to complete).
-                Group.StartNewThenStopOldStoryboards(
-                    StateGroupsRoot, _currentTransition?.Storyboard, ToState.Storyboard);
+                PlayToStateAnimations(currentTransition);
             }
             else
             {
-                // We have a transition animation which has a duration > 0.
-                // -> Run the transition storyboard before the ToState storyboard.
-                _currentTransition.SetDynamicStoryboardCompleted(false);
-                _dynamicTransitionStoryboard.Completed += DynamicTransitionStoryboard_Completed;
-                
-                if (_currentTransition.Storyboard != null &&
-                    _currentTransition.GetExplicitStoryboardCompleted())
-                {
-                    _currentTransition.SetExplicitStoryboardCompleted(false);
-                    _currentTransition.Storyboard.Completed += CurrentTransitionStoryboard_Completed;
-                }
-
-                Group.StartNewThenStopOldStoryboards(
-                    StateGroupsRoot, 
-                    _currentTransition.Storyboard,
-                    _dynamicTransitionStoryboard);
+                PlayTransitionAnimations(currentTransition, dynamicTransitionStoryboard);
             }
 
             Group.SetCurrentState(ToState);
             return true;
         }
 
-        private void DynamicTransitionStoryboard_Completed(object sender, EventArgs e)
+        private void PlayToStateAnimations(VisualTransition currentTransition)
         {
-            _dynamicTransitionStoryboard.Completed -= DynamicTransitionStoryboard_Completed;
+            // Without a transition, the animations defined in the ToState are supposed to start 
+            // immediately.
+            Group.StartNewThenStopOldStoryboards(
+                StateGroupsRoot, currentTransition?.Storyboard, ToState.Storyboard);
+        }
 
-            if (_currentTransition.Storyboard != null || _currentTransition.GetExplicitStoryboardCompleted())
+        private void PlayTransitionAnimations(
+            VisualTransition currentTransition, Storyboard dynamicTransitionStoryboard)
+        {
+            // Create these local event handlers, so that we can pass the local variables
+            // to the actual handler functions, while also being able to de-register the event
+            // handlers again, to not create memory leaks.
+            EventHandler dynamicStoryboardCompletedHandler = null;
+            EventHandler currentStoryboardCompletedHandler = null;
+            dynamicStoryboardCompletedHandler = (sender, e) =>
+            {
+                dynamicTransitionStoryboard.Completed -= dynamicStoryboardCompletedHandler;
+                OnDynamicTransitionStoryboardCompleted(dynamicTransitionStoryboard, currentTransition);
+            };
+            currentStoryboardCompletedHandler = (sender, e) =>
+            {
+                currentTransition.Storyboard.Completed -= currentStoryboardCompletedHandler;
+                OnCurrentTransitionStoryboardCompleted(currentTransition);
+            };
+
+            // Play the dynamically created storyboard everytime.
+            currentTransition.SetDynamicStoryboardCompleted(false);
+            dynamicTransitionStoryboard.Completed += dynamicStoryboardCompletedHandler;
+
+            // If a storyboard has been defined INSIDE the VisualTransition 
+            // (-> explicit storyboard), play that aswell.
+            if (currentTransition.Storyboard != null &&
+                currentTransition.GetExplicitStoryboardCompleted())
+            {
+                currentTransition.SetExplicitStoryboardCompleted(false);
+                currentTransition.Storyboard.Completed += currentStoryboardCompletedHandler;
+            }
+
+            Group.StartNewThenStopOldStoryboards(
+                StateGroupsRoot,
+                currentTransition.Storyboard,
+                dynamicTransitionStoryboard);
+        }
+
+        private void OnDynamicTransitionStoryboardCompleted(
+            Storyboard dynamicTransitionStoryboard, VisualTransition currentTransition)
+        {
+            if (currentTransition.Storyboard != null || 
+                currentTransition.GetExplicitStoryboardCompleted())
             {
                 if (ShouldRunStateStoryboard())
                 {
                     Group.StartNewThenStopOldStoryboards(StateGroupsRoot, ToState.Storyboard);
                 }
             }
-            _currentTransition.SetDynamicStoryboardCompleted(true);
+            currentTransition.SetDynamicStoryboardCompleted(true);
         }
 
-        private void CurrentTransitionStoryboard_Completed(object sender, EventArgs e)
+        private void OnCurrentTransitionStoryboardCompleted(VisualTransition currentTransition)
         {
-            _currentTransition.Storyboard.Completed -= CurrentTransitionStoryboard_Completed;
-
-            if (_currentTransition.GetDynamicStoryboardCompleted() &&
+            if (currentTransition.GetDynamicStoryboardCompleted() &&
                 ShouldRunStateStoryboard())
             {
                 Group.StartNewThenStopOldStoryboards(StateGroupsRoot, ToState.Storyboard);
             }
-
-            _currentTransition.SetExplicitStoryboardCompleted(true);
+            currentTransition.SetExplicitStoryboardCompleted(true);
         }
 
         private bool ShouldRunStateStoryboard()
@@ -154,21 +174,22 @@ namespace Celestial.UIToolkit.Media.Animations
             }
         }
 
-        private Storyboard CreateDynamicTransitionStoryboard()
+        private Storyboard CreateDynamicTransitionStoryboard(VisualTransition currentTransition)
         {
             var storyboard = new Storyboard();
-            var easingFunction = _currentTransition?.GeneratedEasingFunction;
-            storyboard.Duration = _currentTransition?.GeneratedDuration ??
+            var easingFunction = currentTransition?.GeneratedEasingFunction;
+            storyboard.Duration = currentTransition?.GeneratedDuration ??
                                   new Duration(TimeSpan.Zero);
 
-            FillDynamicTransitionStoryboard(storyboard, easingFunction);
+            FillDynamicTransitionStoryboard(storyboard, currentTransition, easingFunction);
             return storyboard;
         }
 
-        private void FillDynamicTransitionStoryboard(Storyboard storyboard, IEasingFunction easingFunction)
+        private void FillDynamicTransitionStoryboard(
+            Storyboard storyboard, VisualTransition currentTransition, IEasingFunction easingFunction)
         {
             ISet<Timeline> currentGroupTimelines = FlattenTimelines(Group.GetCurrentStoryboards().ToArray());
-            ISet<Timeline> transitionTimelines = FlattenTimelines(_currentTransition?.Storyboard);
+            ISet<Timeline> transitionTimelines = FlattenTimelines(currentTransition?.Storyboard);
             ISet<Timeline> toStateTimelines = FlattenTimelines(ToState.Storyboard);
 
             currentGroupTimelines.ExceptWith(transitionTimelines);
