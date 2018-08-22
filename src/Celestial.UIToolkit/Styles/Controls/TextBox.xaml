@@ -1,10 +1,10 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:Celestial.UIToolkit"
+                    xmlns:c="http://celestial-ui.com"
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming">
 
     <ResourceDictionary.MergedDictionaries>
-        <local:SharedResourceDictionary Source="../Shared/Theming.xaml" />
+        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <!-- Use TargetType="Control", so that the PasswordBox can use the style too.
@@ -36,19 +36,19 @@
                 <ControlTemplate TargetType="Control">
                     <Grid>
                         <Grid.Resources>
-                            <local:BindingProxy x:Key="MouseOverBorderColorProxy" 
+                            <c:BindingProxy x:Key="MouseOverBorderColorProxy" 
                                                 Data="{Binding Path=(theming:MouseOverProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
-                            <local:BindingProxy x:Key="MouseOverBackgroundColorProxy" 
+                            <c:BindingProxy x:Key="MouseOverBackgroundColorProxy" 
                                                 Data="{Binding Path=(theming:MouseOverProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
 
-                            <local:BindingProxy x:Key="FocusedBorderColorProxy"
+                            <c:BindingProxy x:Key="FocusedBorderColorProxy"
                                                 Data="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
-                            <local:BindingProxy x:Key="FocusedBackgroundColorProxy"
+                            <c:BindingProxy x:Key="FocusedBackgroundColorProxy"
                                                 Data="{Binding Path=(theming:ActiveProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
 
-                            <local:BindingProxy x:Key="DisabledBorderColorProxy"
+                            <c:BindingProxy x:Key="DisabledBorderColorProxy"
                                                 Data="{Binding Path=(theming:DisabledProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
-                            <local:BindingProxy x:Key="DisabledBackgroundColorProxy"
+                            <c:BindingProxy x:Key="DisabledBackgroundColorProxy"
                                                 Data="{Binding Path=(theming:DisabledProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
                         </Grid.Resources>
                         <Border x:Name="Bd"

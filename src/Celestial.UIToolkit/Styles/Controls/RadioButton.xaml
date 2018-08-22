@@ -1,23 +1,22 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:c="http://celestial-ui.com"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls"
-                    xmlns:local="clr-namespace:Celestial.UIToolkit"
-                    xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
-                    xmlns:converters="clr-namespace:Celestial.UIToolkit.Converters">
+                    xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming">
 
     <ResourceDictionary.MergedDictionaries>
-        <local:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <local:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
-        <local:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
+        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
+        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
+        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardRadioButton" TargetType="RadioButton" BasedOn="{theming:MultiStyle 'StandardBorder BaseHighestBackground StandardForeground StandardFontProperties'}">
+    <Style x:Key="StandardRadioButton" TargetType="RadioButton" BasedOn="{c:MultiStyle 'StandardBorder BaseHighestBackground StandardForeground StandardFontProperties'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="Padding" Value="{theming:GridUnit '1,0,0,0'}" />
+        <Setter Property="Padding" Value="{c:GridUnit '1,0,0,0'}" />
         <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" />
         <Setter Property="Template">
@@ -25,24 +24,24 @@
                 <ControlTemplate TargetType="RadioButton">
                     <BulletDecorator SnapsToDevicePixels="False">
                         <BulletDecorator.Resources>
-                            <local:BindingProxy x:Key="ActiveBackgroundColorProxy"
+                            <c:BindingProxy x:Key="ActiveBackgroundColorProxy"
                                                 Data="{Binding Path=(theming:ActiveProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
-                            <local:BindingProxy x:Key="ActiveBorderColorProxy"
+                            <c:BindingProxy x:Key="ActiveBorderColorProxy"
                                                 Data="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
 
-                            <local:BindingProxy x:Key="MouseOverBackgroundColorProxy"
+                            <c:BindingProxy x:Key="MouseOverBackgroundColorProxy"
                                                 Data="{Binding Path=(theming:MouseOverProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
-                            <local:BindingProxy x:Key="MouseOverBorderColorProxy"
+                            <c:BindingProxy x:Key="MouseOverBorderColorProxy"
                                                 Data="{Binding Path=(theming:MouseOverProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
 
-                            <local:BindingProxy x:Key="PressedBackgroundColorProxy"
+                            <c:BindingProxy x:Key="PressedBackgroundColorProxy"
                                                 Data="{Binding Path=(theming:PressedProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
-                            <local:BindingProxy x:Key="PressedBorderColorProxy"
+                            <c:BindingProxy x:Key="PressedBorderColorProxy"
                                                 Data="{Binding Path=(theming:PressedProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
 
-                            <local:BindingProxy x:Key="DisabledBackgroundColorProxy"
+                            <c:BindingProxy x:Key="DisabledBackgroundColorProxy"
                                                 Data="{Binding Path=(theming:DisabledProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
-                            <local:BindingProxy x:Key="DisabledBorderColorProxy"
+                            <c:BindingProxy x:Key="DisabledBorderColorProxy"
                                                 Data="{Binding Path=(theming:DisabledProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
 
                             <EllipseGeometry x:Key="CheckedGeometry" Center="6,6" RadiusX="6" RadiusY="6" />
@@ -52,8 +51,8 @@
                             <Grid>
                                 <Grid.Resources>
                                     <Style TargetType="Border">
-                                        <Setter Property="Width" Value="{theming:GridUnit 5}" />
-                                        <Setter Property="Height" Value="{theming:GridUnit 5}" />
+                                        <Setter Property="Width" Value="{c:GridUnit 5}" />
+                                        <Setter Property="Height" Value="{c:GridUnit 5}" />
                                         <Setter Property="CornerRadius" Value="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}" />
                                         <Setter Property="BorderThickness" Value="{Binding BorderThickness, RelativeSource={RelativeSource TemplatedParent}}" />
                                     </Style>
@@ -61,8 +60,8 @@
                                     <Style TargetType="Path">
                                         <Setter Property="HorizontalAlignment" Value="Center" />
                                         <Setter Property="VerticalAlignment" Value="Center" />
-                                        <Setter Property="Width" Value="{theming:GridUnit 3}" />
-                                        <Setter Property="Height" Value="{theming:GridUnit 3}" />
+                                        <Setter Property="Width" Value="{c:GridUnit 3}" />
+                                        <Setter Property="Height" Value="{c:GridUnit 3}" />
                                         <Setter Property="StrokeThickness" Value="2" />
                                         <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
                                     </Style>
@@ -70,8 +69,8 @@
                                 <controls:RippleOverlay IsActiveTrigger="{Binding IsPressed, RelativeSource={RelativeSource TemplatedParent}}" 
                                                         Style="{StaticResource SmallBackgroundRippleAnimation}" />
                                 <Border x:Name="CheckedBorder"
-                                        BorderBrush="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}"
-                                        Background="{Binding Path=(theming:ActiveProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}"
+                                        BorderBrush="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static c:ColorToSolidColorBrushConverter.Default}}"
+                                        Background="{Binding Path=(theming:ActiveProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static c:ColorToSolidColorBrushConverter.Default}}"
                                         Visibility="Collapsed" />
                                 <Border x:Name="Bd"
                                         BorderBrush="{TemplateBinding BorderBrush}"
@@ -79,7 +78,7 @@
                                         CornerRadius="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}" />
                                 <Path x:Name="Checkmark"
                                       Data="{StaticResource CheckedGeometry}"
-                                      Fill="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}">
+                                      Fill="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static c:ColorToSolidColorBrushConverter.Default}}">
                                     <Path.RenderTransform>
                                         <ScaleTransform x:Name="CheckmarkScaleTransform"
                                                         ScaleX="0"
@@ -87,7 +86,7 @@
                                     </Path.RenderTransform>
                                 </Path>
                                 <Path x:Name="IndeterminateCheckmark"
-                                      Stroke="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}"
+                                      Stroke="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static c:ColorToSolidColorBrushConverter.Default}}"
                                       Data="{StaticResource IndeterminateGeometry}">
                                     <Path.RenderTransform>
                                         <ScaleTransform x:Name="IndeterminateCheckmarkScaleTransform"
@@ -244,10 +243,10 @@
 
     <Style x:Key="Accent1RadioButton" 
            TargetType="RadioButton" 
-           BasedOn="{theming:MultiStyle 'StandardRadioButton ControlAccent1Border'}" />
+           BasedOn="{c:MultiStyle 'StandardRadioButton ControlAccent1Border'}" />
     <Style x:Key="Accent2RadioButton" 
            TargetType="RadioButton" 
-           BasedOn="{theming:MultiStyle 'StandardRadioButton ControlAccent2Border'}" />
+           BasedOn="{c:MultiStyle 'StandardRadioButton ControlAccent2Border'}" />
 
     <Style TargetType="RadioButton" BasedOn="{StaticResource Accent2RadioButton}" />
 

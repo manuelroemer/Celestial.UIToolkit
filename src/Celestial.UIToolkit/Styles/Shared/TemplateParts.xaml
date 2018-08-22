@@ -1,13 +1,14 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:c="http://celestial-ui.com"
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
   
     <!-- A ripple animation which is being played in the background of a control.
          Example: CheckBox, RadioButton -->
     <Style x:Key="SmallBackgroundRippleAnimation" x:Shared="False"  TargetType="controls:RippleOverlay">
-        <Setter Property="Width" Value="{theming:GridUnit 5}" />
-        <Setter Property="Height" Value="{theming:GridUnit 5}" />
+        <Setter Property="Width" Value="{c:GridUnit 5}" />
+        <Setter Property="Height" Value="{c:GridUnit 5}" />
         <Setter Property="Background" Value="{StaticResource BaseHighBrush}" />
         <Setter Property="IsEnabled" Value="{Binding Path=(theming:RippleProperties.ShowRippleAnimation), RelativeSource={RelativeSource TemplatedParent}}" />
         <Setter Property="RippleOrigin" Value="Center" />
@@ -34,7 +35,7 @@
 
 
     <!-- A button which only displays the content. -->
-    <Style x:Key="InvisibleButton" TargetType="ButtonBase" BasedOn="{theming:MultiStyle 'TransparentBorder TransparentBackground'}">
+    <Style x:Key="InvisibleButton" TargetType="ButtonBase" BasedOn="{c:MultiStyle 'TransparentBorder TransparentBackground'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />

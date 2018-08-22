@@ -1,5 +1,5 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:local="clr-namespace:Celestial.UIToolkit">
+                    xmlns:c="http://celestial-ui.com">
 
     <!--
     This ResourceDictionary bundles all available styles in one single place.
@@ -7,25 +7,25 @@
     -->
     
     <ResourceDictionary.MergedDictionaries>
-        <local:SharedResourceDictionary Source="Shared/FocusVisuals.xaml" />
+        <c:SharedResourceDictionary Source="Shared/FocusVisuals.xaml" />
         
-        <local:SharedResourceDictionary Source="Controls/IconButton.xaml" />
-        <local:SharedResourceDictionary Source="Controls/RippleOverlay.xaml" />
-        <local:SharedResourceDictionary Source="Controls/ShadowDecorator.xaml" />
+        <c:SharedResourceDictionary Source="Controls/IconButton.xaml" />
+        <c:SharedResourceDictionary Source="Controls/RippleOverlay.xaml" />
+        <c:SharedResourceDictionary Source="Controls/ShadowDecorator.xaml" />
         
-        <local:SharedResourceDictionary Source="Controls/TextBlock.xaml" />
-        <local:SharedResourceDictionary Source="Controls/Label.xaml" />
-        <local:SharedResourceDictionary Source="Controls/Button.xaml" />
-        <local:SharedResourceDictionary Source="Controls/CheckBox.xaml" />
-        <local:SharedResourceDictionary Source="Controls/RadioButton.xaml" />
-        <local:SharedResourceDictionary Source="Controls/Card.xaml" />
-        <local:SharedResourceDictionary Source="Controls/TextBox.xaml" />
-        <local:SharedResourceDictionary Source="Controls/ComboBox.xaml" />
-        <local:SharedResourceDictionary Source="Controls/ToolTip.xaml" />
-        <local:SharedResourceDictionary Source="Controls/ContextMenu.xaml" />
-        <local:SharedResourceDictionary Source="Controls/TabControl.xaml" />
-        <local:SharedResourceDictionary Source="Controls/Expander.xaml" />
-        <local:SharedResourceDictionary Source="Controls/GroupBox.xaml" />
+        <c:SharedResourceDictionary Source="Controls/TextBlock.xaml" />
+        <c:SharedResourceDictionary Source="Controls/Label.xaml" />
+        <c:SharedResourceDictionary Source="Controls/Button.xaml" />
+        <c:SharedResourceDictionary Source="Controls/CheckBox.xaml" />
+        <c:SharedResourceDictionary Source="Controls/RadioButton.xaml" />
+        <c:SharedResourceDictionary Source="Controls/Card.xaml" />
+        <c:SharedResourceDictionary Source="Controls/TextBox.xaml" />
+        <c:SharedResourceDictionary Source="Controls/ComboBox.xaml" />
+        <c:SharedResourceDictionary Source="Controls/ToolTip.xaml" />
+        <c:SharedResourceDictionary Source="Controls/ContextMenu.xaml" />
+        <c:SharedResourceDictionary Source="Controls/TabControl.xaml" />
+        <c:SharedResourceDictionary Source="Controls/Expander.xaml" />
+        <c:SharedResourceDictionary Source="Controls/GroupBox.xaml" />
     </ResourceDictionary.MergedDictionaries>
     
 </ResourceDictionary>

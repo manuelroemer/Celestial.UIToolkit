@@ -1,7 +1,5 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
-                    xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <!--
     KeyTimes and durations for animations.

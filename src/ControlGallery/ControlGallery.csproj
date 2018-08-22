@@ -179,6 +179,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Celestial.UIToolkit.Core\Celestial.UIToolkit.Core.csproj">
+      <Project>{a6432c42-1c26-4eff-bed4-96aeb1eb2894}</Project>
+      <Name>Celestial.UIToolkit.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Celestial.UIToolkit\Celestial.UIToolkit.csproj">
       <Project>{9fcac9d8-2931-4a72-a626-3f1bd9ad2673}</Project>
       <Name>Celestial.UIToolkit</Name>

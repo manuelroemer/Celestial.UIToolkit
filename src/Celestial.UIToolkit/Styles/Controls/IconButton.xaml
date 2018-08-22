@@ -1,8 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:c="http://celestial-ui.com"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls"
-                    xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
-                    xmlns:converters="clr-namespace:Celestial.UIToolkit.Converters">
+                    xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming">
 
     <Style TargetType="controls:IconButton">
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
@@ -16,11 +16,11 @@
             <Setter.Value>
                 <ControlTemplate TargetType="controls:IconButton">
                     <ControlTemplate.Resources>
-                        <converters:InvertingConverter x:Key="SolidColorBrushToColorConverter">
-                            <converters:InvertingConverter.UnderlyingConverter>
-                                <converters:ColorToSolidColorBrushConverter />
-                            </converters:InvertingConverter.UnderlyingConverter>
-                        </converters:InvertingConverter>
+                        <c:InvertingConverter x:Key="SolidColorBrushToColorConverter">
+                            <c:InvertingConverter.UnderlyingConverter>
+                                <c:ColorToSolidColorBrushConverter />
+                            </c:InvertingConverter.UnderlyingConverter>
+                        </c:InvertingConverter>
                     </ControlTemplate.Resources>
                     <Grid Background="{TemplateBinding Background}">
                         <Grid.Resources>

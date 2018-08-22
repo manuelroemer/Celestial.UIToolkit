@@ -8,10 +8,11 @@
     <OutputType>library</OutputType>
     <RootNamespace>Celestial.UIToolkit</RootNamespace>
     <AssemblyName>Celestial.UIToolkit</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -53,8 +54,6 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BindingProxy.cs" />
-    <Compile Include="Common\Singleton.cs" />
     <Compile Include="Controls\Card.cs" />
     <Compile Include="Controls\Card.GeneratedProperties.cs">
       <AutoGen>True</AutoGen>
@@ -67,60 +66,9 @@
     <Compile Include="Controls\PathIcon.cs" />
     <Compile Include="Controls\RippleOverlay.cs" />
     <Compile Include="Controls\ShadowDecorator.cs" />
-    <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
-    <Compile Include="Converters\ColorToSolidColorBrushConverter.cs" />
-    <Compile Include="Converters\GroupConverter.cs" />
-    <Compile Include="Converters\InvertBooleanConverter.cs" />
-    <Compile Include="Converters\InvertingConverter.cs" />
-    <Compile Include="Converters\MathOperationConverter.cs" />
-    <Compile Include="Converters\NegateValueConverter.cs" />
-    <Compile Include="Converters\NullToVisibilityConverter.cs" />
-    <Compile Include="Converters\ThicknessSidePickerConverter.cs" />
-    <Compile Include="Converters\ValueConverter.cs" />
-    <Compile Include="ExtendedFreezable.cs" />
-    <Compile Include="ExtendedVisualStateManager.cs" />
-    <Compile Include="Extensions\ArrayExtensions.cs" />
-    <Compile Include="Extensions\ArraySegmentExtensions.cs" />
-    <Compile Include="Extensions\DependencyPropertyExtensions.cs" />
-    <Compile Include="Extensions\EnumerableExtensions.cs" />
-    <Compile Include="Extensions\FrameworkElementExtensions.cs" />
-    <Compile Include="MarginHelper.cs" />
-    <Compile Include="Media\Animations\BrushAnimation\BrushAnimationUsingKeyFrames.cs" />
-    <Compile Include="Media\Animations\BrushAnimation\BrushAnimationValidator.cs" />
-    <Compile Include="Media\Animations\BrushAnimation\BrushKeyFrameCollection.cs" />
-    <Compile Include="Media\Animations\BrushAnimation\DiscreteBrushKeyFrame.cs" />
-    <Compile Include="Media\Animations\BrushAnimation\EasingBrushKeyFrame.cs" />
-    <Compile Include="Media\Animations\BrushAnimation\LinearBrushKeyFrame.cs" />
-    <Compile Include="Media\Animations\BrushAnimation\SplineBrushKeyFrame.cs" />
-    <Compile Include="Media\Animations\BrushAnimation\SupportedAnimationBrushes.cs" />
-    <Compile Include="Media\Animations\AnimationHelper\BrushAnimationHelper.cs" />
-    <Compile Include="Media\Animations\AnimationHelper\ColorAnimationHelper.cs" />
-    <Compile Include="Media\Animations\AnimationHelper\DoubleAnimationHelper.cs" />
-    <Compile Include="Media\Animations\AnimationBase\AnimationBase.cs" />
-    <Compile Include="Media\Animations\AnimationBase\EasingFromToByAnimationBase.cs" />
-    <Compile Include="Media\Animations\AnimationBase\FromToByAnimationBase.cs" />
-    <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\IInterpolateKeyFrame.cs" />
-    <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\ISegmentLengthProvider.cs" />
-    <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\ResolvedKeyFrameCollectionExtensions.cs" />
-    <Compile Include="Media\Animations\BrushAnimation\BrushAnimation.cs" />
-    <Compile Include="Media\Animations\AnimationHelper\PointAnimationHelper.cs" />
-    <Compile Include="Media\Animations\AnimationHelper\IAnimationHelper.cs" />
-    <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\AnimationUsingKeyFramesBase.cs" />
-    <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\KeyFrameBase.cs" />
-    <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\KeyFrameResolver.cs" />
-    <Compile Include="Media\Animations\AnimationUsingKeyFramesBase\ResolvedKeyFrame.cs" />
-    <Compile Include="Media\Animations\VisualStateSupport\AnimationVisualStateSwitcher.cs" />
-    <Compile Include="Media\Animations\VisualStateSupport\StoryboardHelper.cs" />
-    <Compile Include="Media\Animations\VisualStateSupport\StoryboardTargetTimelineEqualityComparer.cs" />
-    <Compile Include="Media\Animations\VisualStateSupport\VisualStateGroupExtensions.cs" />
-    <Compile Include="Media\Animations\VisualStateSupport\VisualTransitionExtensions.cs" />
-    <Compile Include="Media\Animations\VisualStateSupport\VisualTransitionProvider.cs" />
-    <Compile Include="SharedResourceDictionary.cs" />
     <Compile Include="Theming\ControlProperties.cs" />
     <Compile Include="Theming\ActiveProperties.cs" />
     <Compile Include="Theming\FocusedProperties.cs" />
-    <Compile Include="Theming\GridUnitExtension.cs" />
-    <Compile Include="Theming\MultiStyleExtension.cs" />
     <Compile Include="Theming\PressedProperties.cs" />
     <Compile Include="Theming\DisabledProperties.cs" />
     <Compile Include="Theming\MouseOverProperties.cs" />
@@ -137,7 +85,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="SharedResourceDictionaryManager.cs" />
     <Compile Include="Theming\RippleProperties.cs" />
     <Compile Include="Theming\ShadowProperties.cs" />
     <Compile Include="Theming\TabControlProperties.cs" />
@@ -270,6 +217,11 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Celestial.UIToolkit.Core\Celestial.UIToolkit.Core.csproj">
+      <Project>{a6432c42-1c26-4eff-bed4-96aeb1eb2894}</Project>
+      <Name>Celestial.UIToolkit.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

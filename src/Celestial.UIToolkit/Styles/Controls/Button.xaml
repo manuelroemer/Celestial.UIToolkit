@@ -1,24 +1,21 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
-                    xmlns:anim="clr-namespace:Celestial.UIToolkit.Media.Animations"
-                    xmlns:local="clr-namespace:Celestial.UIToolkit"
+                    xmlns:c="http://celestial-ui.com"
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
-                    xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls"
-                    xmlns:converters="clr-namespace:Celestial.UIToolkit.Converters">
+                    xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
     <ResourceDictionary.MergedDictionaries>
-        <local:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <local:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
-        <local:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
+        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
+        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
+        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardButton" TargetType="ButtonBase" BasedOn="{theming:MultiStyle 'StandardBackground StandardBorder StandardForeground AltFontProperties BottomShadow NoShadow'}">
+    <Style x:Key="StandardButton" TargetType="ButtonBase" BasedOn="{c:MultiStyle 'StandardBackground StandardBorder StandardForeground AltFontProperties BottomShadow NoShadow'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
-        <Setter Property="MinWidth" Value="{theming:GridUnit 15}" />
-        <Setter Property="MinHeight" Value="{theming:GridUnit 8}" />
+        <Setter Property="MinWidth" Value="{c:GridUnit 15}" />
+        <Setter Property="MinHeight" Value="{c:GridUnit 8}" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="BorderThickness" Value="0" />
@@ -27,18 +24,18 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ButtonBase">
-                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static local:ExtendedVisualStateManager.Default}">
+                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
                         <Grid.Resources>
-                            <local:BindingProxy x:Key="MouseOverBackgroundColorProxy"
-                                                Data="{Binding Path=(theming:MouseOverProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
-                            <local:BindingProxy x:Key="DisabledBackgroundColorProxy"
-                                                Data="{Binding Path=(theming:DisabledProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                            <c:BindingProxy x:Key="MouseOverBackgroundColorProxy"
+                                            Data="{Binding Path=(theming:MouseOverProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                            <c:BindingProxy x:Key="DisabledBackgroundColorProxy"
+                                            Data="{Binding Path=(theming:DisabledProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
 
-                            <local:BindingProxy x:Key="MouseOverBorderColorProxy"
-                                                Data="{Binding Path=(theming:MouseOverProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
-                            <local:BindingProxy x:Key="DisabledBorderColorProxy"
-                                                Data="{Binding Path=(theming:DisabledProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
-
+                            <c:BindingProxy x:Key="MouseOverBorderColorProxy"
+                                            Data="{Binding Path=(theming:MouseOverProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                            <c:BindingProxy x:Key="DisabledBorderColorProxy"
+                                            Data="{Binding Path=(theming:DisabledProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                            
                             <Storyboard x:Key="MouseOverStoryboard">
                                 <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                               Storyboard.TargetProperty="Background.Color">
@@ -52,9 +49,6 @@
                                                                Storyboard.TargetProperty="Elevation">
                                     <LinearDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.ShadowElevation), RelativeSource={RelativeSource TemplatedParent}}" />
                                 </DoubleAnimationUsingKeyFrames>
-                                <anim:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
-                                                     Storyboard.TargetProperty="Foreground"
-                                                     To="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                             </Storyboard>
 
                             <Storyboard x:Key="PressedStoryboard">
@@ -99,9 +93,9 @@
                         <controls:RippleOverlay x:Name="Ripple"
                                                 theming:ControlProperties.CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}"
                                                 IsActiveTrigger="{TemplateBinding IsPressed}"
-                                                AllowFading="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, FallbackValue=True, Converter={x:Static converters:InvertBooleanConverter.Default}}"
-                                                BorderBrush="{Binding Path=(theming:PressedProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}"
-                                                Background="{Binding Path=(theming:PressedProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:ColorToSolidColorBrushConverter.Default}}"
+                                                AllowFading="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, FallbackValue=True, Converter={x:Static c:InvertBooleanConverter.Default}}"
+                                                BorderBrush="{Binding Path=(theming:PressedProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static c:ColorToSolidColorBrushConverter.Default}}"
+                                                Background="{Binding Path=(theming:PressedProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static c:ColorToSolidColorBrushConverter.Default}}"
                                                 IsEnabled="{TemplateBinding theming:RippleProperties.ShowRippleAnimation}"/>
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
@@ -157,20 +151,20 @@
 
     <Style x:Key="Accent1Button" 
            TargetType="ButtonBase" 
-           BasedOn="{theming:MultiStyle 'StandardButton Accent1Background Accent1Border OnAccent1Foreground'}" />
+           BasedOn="{c:MultiStyle 'StandardButton Accent1Background Accent1Border OnAccent1Foreground'}" />
     <Style x:Key="Accent2Button" 
            TargetType="ButtonBase" 
-           BasedOn="{theming:MultiStyle 'StandardButton Accent2Background Accent2Border OnAccent2Foreground'}" />
+           BasedOn="{c:MultiStyle 'StandardButton Accent2Background Accent2Border OnAccent2Foreground'}" />
 
     <Style x:Key="ElevatedStandardButton" 
            TargetType="ButtonBase" 
-           BasedOn="{theming:MultiStyle 'StandardButton Elevated0ShadowInteractive'}" />
+           BasedOn="{c:MultiStyle 'StandardButton Elevated0ShadowInteractive'}" />
     <Style x:Key="ElevatedAccent1Button" 
            TargetType="ButtonBase" 
-           BasedOn="{theming:MultiStyle 'Accent1Button Elevated0ShadowInteractive'}" />
+           BasedOn="{c:MultiStyle 'Accent1Button Elevated0ShadowInteractive'}" />
     <Style x:Key="ElevatedAccent2Button" 
            TargetType="ButtonBase" 
-           BasedOn="{theming:MultiStyle 'Accent2Button Elevated0ShadowInteractive'}" />
+           BasedOn="{c:MultiStyle 'Accent2Button Elevated0ShadowInteractive'}" />
 
 
     <!--
@@ -205,15 +199,15 @@
 
     <Style x:Key="ElevatedFlatButton"
            TargetType="ButtonBase"
-           BasedOn="{theming:MultiStyle 'FlatButton Elevated0ShadowInteractive'}" />
+           BasedOn="{c:MultiStyle 'FlatButton Elevated0ShadowInteractive'}" />
     
     <Style x:Key="ElevatedAccent1FlatButton"
            TargetType="ButtonBase"
-           BasedOn="{theming:MultiStyle 'Accent1FlatButton Elevated0ShadowInteractive'}" />
+           BasedOn="{c:MultiStyle 'Accent1FlatButton Elevated0ShadowInteractive'}" />
     
     <Style x:Key="ElevatedAccent2FlatButton"
            TargetType="ButtonBase"
-           BasedOn="{theming:MultiStyle 'Accent2FlatButton Elevated0ShadowInteractive'}" />
+           BasedOn="{c:MultiStyle 'Accent2FlatButton Elevated0ShadowInteractive'}" />
 
 
 
@@ -241,15 +235,15 @@
 
     <Style x:Key="ElevatedOutlinedButton"
            TargetType="ButtonBase"
-           BasedOn="{theming:MultiStyle 'OutlinedButton Elevated0ShadowInteractive'}" />
+           BasedOn="{c:MultiStyle 'OutlinedButton Elevated0ShadowInteractive'}" />
 
     <Style x:Key="ElevatedAccent1OutlinedButton"
            TargetType="ButtonBase"
-           BasedOn="{theming:MultiStyle 'Accent1OutlinedButton Elevated0ShadowInteractive'}" />
+           BasedOn="{c:MultiStyle 'Accent1OutlinedButton Elevated0ShadowInteractive'}" />
 
     <Style x:Key="ElevatedAccent2OutlinedButton"
            TargetType="ButtonBase"
-           BasedOn="{theming:MultiStyle 'Accent2OutlinedButton Elevated0ShadowInteractive'}" />
+           BasedOn="{c:MultiStyle 'Accent2OutlinedButton Elevated0ShadowInteractive'}" />
 
 
 
@@ -260,10 +254,10 @@
     -->
 
     <Style x:Key="SquareButton" TargetType="ButtonBase" BasedOn="{StaticResource StandardButton}">
-        <Setter Property="MinWidth" Value="{theming:GridUnit 8}" />
-        <Setter Property="MinHeight" Value="{theming:GridUnit 8}" />
-        <Setter Property="Width" Value="{theming:GridUnit 8}" />
-        <Setter Property="Height" Value="{theming:GridUnit 8}" />
+        <Setter Property="MinWidth" Value="{c:GridUnit 8}" />
+        <Setter Property="MinHeight" Value="{c:GridUnit 8}" />
+        <Setter Property="Width" Value="{c:GridUnit 8}" />
+        <Setter Property="Height" Value="{c:GridUnit 8}" />
         <Setter Property="theming:DisabledProperties.BackgroundColor" Value="Transparent" />
         <Setter Property="theming:DisabledProperties.BorderColor" Value="{StaticResource BaseHighColor}" />
         <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
@@ -276,23 +270,23 @@
 
     <Style x:Key="Accent1SquareButton" 
            TargetType="ButtonBase" 
-           BasedOn="{theming:MultiStyle 'SquareButton Accent1Border Accent1Background OnAccent1Foreground'}" />
+           BasedOn="{c:MultiStyle 'SquareButton Accent1Border Accent1Background OnAccent1Foreground'}" />
 
     <Style x:Key="Accent2SquareButton" 
            TargetType="ButtonBase"
-           BasedOn="{theming:MultiStyle 'SquareButton Accent2Border Accent2Background OnAccent2Foreground'}" />
+           BasedOn="{c:MultiStyle 'SquareButton Accent2Border Accent2Background OnAccent2Foreground'}" />
 
     <Style x:Key="ElevatedSquareButton"
            TargetType="ButtonBase"
-           BasedOn="{theming:MultiStyle 'SquareButton Elevated0ShadowInteractive'}" />
+           BasedOn="{c:MultiStyle 'SquareButton Elevated0ShadowInteractive'}" />
 
     <Style x:Key="ElevatedAccent1SquareButton"
            TargetType="ButtonBase"
-           BasedOn="{theming:MultiStyle 'Accent1SquareButton Elevated0ShadowInteractive'}" />
+           BasedOn="{c:MultiStyle 'Accent1SquareButton Elevated0ShadowInteractive'}" />
 
     <Style x:Key="ElevatedAccent2SquareButton"
            TargetType="ButtonBase"
-           BasedOn="{theming:MultiStyle 'Accent2SquareButton Elevated0ShadowInteractive'}" />
+           BasedOn="{c:MultiStyle 'Accent2SquareButton Elevated0ShadowInteractive'}" />
 
 
 
@@ -316,15 +310,15 @@
 
     <Style x:Key="ElevatedCircleButton"
            TargetType="ButtonBase"
-           BasedOn="{theming:MultiStyle 'CircleButton Elevated0ShadowInteractive'}" />
+           BasedOn="{c:MultiStyle 'CircleButton Elevated0ShadowInteractive'}" />
 
     <Style x:Key="ElevatedAccent1CircleButton"
            TargetType="ButtonBase"
-           BasedOn="{theming:MultiStyle 'Accent1CircleButton Elevated0ShadowInteractive'}" />
+           BasedOn="{c:MultiStyle 'Accent1CircleButton Elevated0ShadowInteractive'}" />
 
     <Style x:Key="ElevatedAccent2CircleButton"
            TargetType="ButtonBase"
-           BasedOn="{theming:MultiStyle 'Accent2CircleButton Elevated0ShadowInteractive'}" />
+           BasedOn="{c:MultiStyle 'Accent2CircleButton Elevated0ShadowInteractive'}" />
 
 
 

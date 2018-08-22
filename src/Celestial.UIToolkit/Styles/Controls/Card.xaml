@@ -1,23 +1,22 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:Celestial.UIToolkit"
+                    xmlns:c="http://celestial-ui.com"
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
-                    xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls"
-                    xmlns:converters="clr-namespace:Celestial.UIToolkit.Converters">
+                    xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
     <ResourceDictionary.MergedDictionaries>
-        <local:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <local:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
-        <local:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
+        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
+        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
+        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardCard" TargetType="controls:Card" BasedOn="{theming:MultiStyle 'ContentControlBorder ContentControlBackground BottomShadow Elevated1Shadow'}">
+    <Style x:Key="StandardCard" TargetType="controls:Card" BasedOn="{c:MultiStyle 'ContentControlBorder ContentControlBackground BottomShadow Elevated1Shadow'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
-        <Setter Property="Padding" Value="{theming:GridUnit 4}" />
+        <Setter Property="Padding" Value="{c:GridUnit 4}" />
         <Setter Property="TitleTemplate">
             <Setter.Value>
                 <DataTemplate>
@@ -40,12 +39,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="controls:Card">
                     <ControlTemplate.Resources>
-                        <converters:GroupConverter x:Key="MediaContentMarginConverter">
-                            <converters:ThicknessSidePickerConverter Top="0" Bottom="0" />
-                            <converters:NegateValueConverter />
-                        </converters:GroupConverter>
+                        <c:GroupConverter x:Key="MediaContentMarginConverter">
+                            <c:ThicknessSidePickerConverter Top="0" Bottom="0" />
+                            <c:NegateValueConverter />
+                        </c:GroupConverter>
 
-                        <converters:BooleanToVisibilityConverter x:Key="FalseCollapsedVisibilityConverter" />
+                        <c:BooleanToVisibilityConverter x:Key="FalseCollapsedVisibilityConverter" />
                     </ControlTemplate.Resources>
 
                     <Grid>
@@ -74,7 +73,7 @@
                                 <!-- Header Content. -->
                                 <Grid x:Name="HeaderGrid"
                                         Grid.Row="0"
-                                        Margin="{theming:GridUnit '0,0,0,2'}">
+                                        Margin="{c:GridUnit '0,0,0,2'}">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto" />
                                         <RowDefinition Height="Auto" />
@@ -90,10 +89,10 @@
                                                         ContentStringFormat="{TemplateBinding ThumbnailStringFormat}"
                                                         ContentTemplate="{TemplateBinding ThumbnailTemplate}"
                                                         ContentTemplateSelector="{TemplateBinding ThumbnailTemplateSelector}"
-                                                        MaxHeight="{theming:GridUnit 10}"
-                                                        MaxWidth="{theming:GridUnit 10}"
+                                                        MaxHeight="{c:GridUnit 10}"
+                                                        MaxWidth="{c:GridUnit 10}"
                                                         Visibility="{Binding HasThumbnail, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource FalseCollapsedVisibilityConverter}}" 
-                                                        Margin="{theming:GridUnit '0,0,4,0'}"/>
+                                                        Margin="{c:GridUnit '0,0,4,0'}"/>
                                     <ContentPresenter x:Name="TitleContentSite"
                                                         Grid.Row="0" 
                                                         Grid.Column="1"
@@ -115,7 +114,7 @@
                                 <!-- Media Content. -->
                                 <Border x:Name="MediaContentSpacer"
                                         Grid.Row="1"
-                                        Margin="{theming:GridUnit '0,2,0,2'}"
+                                        Margin="{c:GridUnit '0,2,0,2'}"
                                         Visibility="{Binding HasMediaContent, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource FalseCollapsedVisibilityConverter}}">
                                     <ContentPresenter x:Name="MediaContentSite"
                                                         Grid.Row="1"
@@ -135,7 +134,7 @@
                                                     ContentTemplate="{TemplateBinding ContentTemplate}"
                                                     ContentTemplateSelector="{TemplateBinding MediaContentTemplateSelector}"
                                                     Visibility="{Binding HasContent, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource FalseCollapsedVisibilityConverter}}" 
-                                                    Margin="{theming:GridUnit '0,2,0,0'}"/>
+                                                    Margin="{c:GridUnit '0,2,0,0'}"/>
                             </Grid>
                         </controls:ClippingBorder>
                     </Grid>
