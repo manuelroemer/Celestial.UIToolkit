@@ -10,27 +10,39 @@ namespace Celestial.UIToolkit.Media.Animations
 
     /// <summary>
     /// A <see cref="VisualStateSwitcher"/> for the <see cref="ExtendedVisualStateManager"/>
-    /// which supports transitioning between custom animations defined in the
-    /// <see cref="Celestial.UIToolkit.Media.Animations"/> namespace.
+    /// which transitions between two states by generating dynamic transitioning animations.
     /// </summary>
     /// <remarks>
-    /// The default <see cref="VisualStateManager"/> does not support custom animations.
-    /// As a result, this class provides support for the custom animations which are
-    /// provided by the toolkit.
+    /// This class mimics the behavior of the default WPF <see cref="VisualStateManager"/> and 
+    /// extends the transitioning functionality to custom animations.
+    /// 
+    /// If you want to create a custom transition for a specific animation, create an
+    /// <see cref="IVisualTransitionProvider"/> for the animation and register it in the
+    /// <see cref="VisualTransitionProvider"/> class.
+    /// Afterwards, the custom transition will be used by this class.
     /// </remarks>
     public class AnimationVisualStateSwitcher : VisualStateSwitcher
     {
-        
+
+        /// <summary>
+        /// Transitions to another state by generating dynamic transitioning animations.
+        /// </summary>
+        /// <returns>
+        /// Returns <c>true</c>, if the method could transition to another state.
+        /// If the current <see cref="VisualStateGroup"/> has the same state as the target state,
+        /// nothing will happen and this method returns <c>false</c>.
+        /// </returns>
         protected override bool GoToStateCore()
         {
-            if (Group.GetCurrentState() == ToState)
-                return true;
+            if (Group.GetCurrentState() == ToState) return false;
 
-            var currentTransition = GetCurrentVisualTransition();
-            var dynamicTransitionStoryboard = CreateDynamicTransitionStoryboard(currentTransition);
+            VisualTransition currentTransition = GetCurrentVisualTransition();
+            Storyboard dynamicTransitionStoryboard = CreateDynamicTransitionStoryboard(currentTransition);
             
             if (currentTransition == null || currentTransition.HasZeroDuration())
             {
+                // Without a transition (or a transition which has no duration), the animations 
+                // defined in the ToState are supposed to start immediately.
                 PlayToStateAnimations(currentTransition);
             }
             else
@@ -44,8 +56,7 @@ namespace Celestial.UIToolkit.Media.Animations
 
         private void PlayToStateAnimations(VisualTransition currentTransition)
         {
-            // Without a transition, the animations defined in the ToState are supposed to start 
-            // immediately.
+            // Immediately start playing the ToState animations.
             Group.StartNewThenStopOldStoryboards(
                 StateGroupsRoot, currentTransition?.Storyboard, ToState.Storyboard);
         }
@@ -69,7 +80,7 @@ namespace Celestial.UIToolkit.Media.Animations
                 OnCurrentTransitionStoryboardCompleted(currentTransition);
             };
 
-            // Play the dynamically created storyboard everytime.
+            // Play the dynamically created storyboard every single time.
             currentTransition.SetDynamicStoryboardCompleted(false);
             dynamicTransitionStoryboard.Completed += dynamicStoryboardCompletedHandler;
 

@@ -77,9 +77,7 @@ namespace Celestial.UIToolkit
     /// </summary>
     public abstract class VisualStateSwitcher
     {
-
-        private bool _wasUsed = false;
-
+        
         /// <summary>
         /// Gets the control to transition between states.
         /// </summary>
@@ -144,13 +142,6 @@ namespace Celestial.UIToolkit
             VisualState state, 
             bool useTransitions)
         {
-            if (_wasUsed)
-            {
-                throw new InvalidOperationException(
-                    $"A {nameof(VisualStateSwitcher)} can only be used once.");
-            }
-            _wasUsed = true;
-
             if (state == null)
                 state = group.GetStateByName(stateName);
 
