@@ -133,12 +133,7 @@ namespace Celestial.UIToolkit.Xaml
         /// Gets the <see cref="VisualStateGroup"/> that the <see cref="ToState"/> belongs to.
         /// </summary>
         public VisualStateGroup Group { get; private set; }
-
-        /// <summary>
-        /// Gets the <see cref="VisualState"/> from which the class is transitioning.
-        /// </summary>
-        public VisualState FromState => Group.CurrentState;
-
+        
         /// <summary>
         /// Gets the <see cref="VisualState"/> to which the class should transition to.
         /// </summary>
@@ -190,7 +185,7 @@ namespace Celestial.UIToolkit.Xaml
             UseTransitions = useTransitions;
 
             // No need to do anything if we aren't between two states.
-            if (FromState == ToState) return false;
+            if (Group.CurrentState == ToState) return false;
 
             return GoToStateCore();
         }

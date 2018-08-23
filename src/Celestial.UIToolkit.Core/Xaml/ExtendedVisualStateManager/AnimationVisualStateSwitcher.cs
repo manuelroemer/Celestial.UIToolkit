@@ -171,14 +171,15 @@ namespace Celestial.UIToolkit.Xaml
                             NoMatch = -1;
 
                 if (transition == null) return NoMatch;
+                VisualState groupFromState = Group.GetCurrentState() ?? Group.CurrentState;
                 VisualState transitionFromState = Group.GetStateByName(transition.From);
                 VisualState transitionToState = Group.GetStateByName(transition.To);
 
-                if (FromState == transitionFromState && ToState == transitionToState)
+                if (groupFromState == transitionFromState && ToState == transitionToState)
                     return PerfectMatch;
                 else if (ToState == transitionToState && transitionFromState == null)
                     return ToMatch;
-                else if (FromState == transitionFromState && transitionToState == null)
+                else if (groupFromState == transitionFromState && transitionToState == null)
                     return FromMatch;
                 else if (transition.IsDefault())
                     return DefaultTransitionMatch;
