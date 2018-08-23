@@ -64,6 +64,9 @@
     <Compile Include="Controls\ClippingBorder.cs" />
     <Compile Include="Controls\IconButton.cs" />
     <Compile Include="Controls\IconElement.cs" />
+    <Compile Include="Controls\NavigationView\NavigationView.cs" />
+    <Compile Include="Controls\NavigationView\NavigationViewDisplayMode.cs" />
+    <Compile Include="Controls\NavigationView\NavigationViewDisplayModeChangedEventArgs.cs" />
     <Compile Include="Controls\PathIcon.cs" />
     <Compile Include="Controls\RippleOverlay.cs" />
     <Compile Include="Controls\ShadowDecorator.cs" />
@@ -94,6 +97,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <Compile Include="Controls\NavigationView\NavigationView.DisplayMode.cs" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
