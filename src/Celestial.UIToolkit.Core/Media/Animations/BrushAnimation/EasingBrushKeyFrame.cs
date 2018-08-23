@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 
 namespace Celestial.UIToolkit.Media.Animations
 {
@@ -24,7 +25,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <param name="easedProgress">
         /// A value between 0.0 and 1.0, inclusive, that specifies the percentage of time
         /// that has elapsed for this key frame.
-        /// This value has already been eased by the <see cref="EasingFunction"/>.
+        /// This value has already been eased by the <see cref="IEasingFunction"/>.
         /// </param>
         /// <returns>The output value of this key frame given the specified base value and progress.</returns>
         protected override Brush InterpolateValueAfterEase(Brush baseValue, double easedProgress)

@@ -1,0 +1,77 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+<#
+    // These are the states that are generated.
+    // Each state will be turned into its own class, e.g. MouseOverProperties.
+    var visualStates = new string[] {
+        "MouseOver",
+        "Pressed",
+        "Active",
+        "Disabled"
+    };
+    
+    // These are the properties which are generated per class/state.
+    var properties = new[] {
+        new { Name = "BorderBrush",     Type = "Brush", DefaultValue = "Brushes.Transparent" },
+        new { Name = "BackgroundBrush", Type = "Brush", DefaultValue = "Brushes.Transparent" },
+        new { Name = "ForegroundBrush", Type = "Brush", DefaultValue = "Brushes.Transparent" }
+    };
+
+#>
+using System.Windows;
+using System.Windows.Media;
+
+// This file is auto-generated.
+// Any changes made to this file will be lost.
+// When making changes, be sure to modify the corresponding .tt file.
+
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+
+namespace Celestial.UIToolkit.Theming
+{
+<#
+foreach (var visualState in visualStates) {
+    var ClassName = $"{visualState}Properties";
+#>
+
+    public static class <#=ClassName#>
+    {
+<#
+    foreach (var property in properties) {
+        var PropertyName = property.Name;
+        var DependencyPropertyName = $"{PropertyName}Property";
+        var PropertyType = property.Type;
+        var DefaultValue = property.DefaultValue;
+#>
+
+        public static readonly DependencyProperty <#=DependencyPropertyName#> =
+            DependencyProperty.RegisterAttached(
+                "<#=PropertyName#>",
+                typeof(<#=PropertyType#>),
+                typeof(<#=ClassName#>),
+                new PropertyMetadata(<#=DefaultValue#>));
+
+        public static <#=PropertyType#> Get<#=PropertyName#>(DependencyObject obj)
+        {
+            return (<#=PropertyType#>)obj.GetValue(<#=DependencyPropertyName#>);
+        }
+
+        public static void Set<#=PropertyName#>(DependencyObject obj, <#=PropertyType#> value)
+        {
+            obj.SetValue(<#=DependencyPropertyName#>, value);
+        }
+<#
+    }
+#>
+
+    }
+<#
+}
+#>
+}
+
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member

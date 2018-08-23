@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using Celestial.UIToolkit.Xaml;
+using System.Windows;
 using System.Windows.Media.Animation;
 
 namespace Celestial.UIToolkit.Media.Animations
