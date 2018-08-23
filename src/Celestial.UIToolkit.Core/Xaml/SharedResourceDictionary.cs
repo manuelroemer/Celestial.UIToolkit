@@ -27,9 +27,21 @@ namespace Celestial.UIToolkit.Xaml
         /// </summary>
         public SharedResourceDictionary() { }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SharedResourceDictionary"/> class
+        /// with the specified <paramref name="source"/>.
+        /// </summary>
+        /// <param name="source">
+        /// The dictionary's source <see cref="Uri"/>.
+        /// </param>
+        public SharedResourceDictionary(Uri source)
+        {
+            Source = source ?? throw new ArgumentNullException(nameof(source));
+        }
+
         private Uri _source;
         /// <summary>
-        /// Gets or sets the dictionaries source <see cref="Uri"/>.
+        /// Gets or sets the dictionary's source <see cref="Uri"/>.
         /// When set, the <see cref="SharedResourceDictionary"/> tries to load
         /// the dictionary by using the <see cref="SharedResourceDictionaryManager.GetDictionary(Uri)"/>
         /// method and adds the result to the <see cref="ResourceDictionary.MergedDictionaries"/>
@@ -40,31 +52,65 @@ namespace Celestial.UIToolkit.Xaml
             get { return _source; }
             set
             {
+                if (value == null) throw new ArgumentNullException(nameof(value));
                 if (_isInDesignMode)
                 {
-                    try
-                    {
-                        base.Source = value;
-                        _source = base.Source;
-                    } catch { } // Avoids wrong design-time error messages like "type not found"
+                    LoadDesignMode(value);
                 }
                 else
                 {
-                    var baseUri = this.GetBaseSourceUri();
-                    _source = value.IsAbsoluteUri ? value : new Uri(baseUri, value);
-                    if (SharedResourceDictionaryManager.TryGetDictionary(_source, out var dict))
-                    {
-                        MergedDictionaries.Add(dict);
-                    }
-                    else
-                    {
-                        base.Source = value;
-                        SharedResourceDictionaryManager.CacheDictionary(this);
-                    }
+                    LoadDefault(value);
                 }
             }
         }
 
+        private void LoadDesignMode(Uri value)
+        {
+            // Always load a dictionary normally if in design-mode.
+            try
+            {
+                base.Source = value;
+                _source = base.Source;
+            }
+            catch { } // Avoids wrong design-time error messages like "type not found"
+        }
+
+        private void LoadDefault(Uri value)
+        {
+            SetFinalSourceUri(value);
+
+            if (SharedResourceDictionaryManager.TryGetDictionary(_source, out var dict))
+            {
+                MergedDictionaries.Add(dict);
+            }
+            else
+            {
+                base.Source = value;
+                SharedResourceDictionaryManager.CacheDictionary(this);
+            }
+        }
+
+        private void SetFinalSourceUri(Uri value)
+        {
+            // Depending on whether the new source is a relative URI or not, we might need
+            // to construct the final absolute URI based on the dictionary's own base URI.
+            if (value.IsAbsoluteUri)
+            {
+                _source = value;
+            }
+            else
+            {
+                // The source URI is relative. This requires this dict. to have a valid base URI.
+                var baseUri = this.GetBaseSourceUri();
+                if (baseUri == null)
+                {
+                    throw new InvalidOperationException(
+                        $"Cannot load a relative source URI if the " +
+                        $"{nameof(SharedResourceDictionary)}'s base URI is null.");
+                }
+                _source = new Uri(baseUri, value);
+            }
+        }
     }
 
     /// <summary>
@@ -73,7 +119,7 @@ namespace Celestial.UIToolkit.Xaml
     /// it allows a single resource dictionary to be referenced multiple times,
     /// instead of being reloaded each time it is included in another dictionary.
     /// </summary>
-    public static class SharedResourceDictionaryManager
+    internal static class SharedResourceDictionaryManager
     {
 
         private static readonly object _lock = new object();

@@ -1,0 +1,32 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:res="clr-namespace:Celestial.UIToolkit.Tests.Resources">
+    
+    <!--
+    This dictionary exists for tests which rely on loading data from a resource dictionary.
+    For example:
+    - SharedResourceDictionary
+    - MultiStyleExtension
+    
+    The resources in here are just "random" ones - they only exist, so that there is something
+    to load.
+    -->
+
+    <Style TargetType="Button">
+        <Setter Property="Foreground" Value="Red" />
+    </Style>
+
+    <Style x:Key="{x:Static res:SampleDictionaryKeys.CheckBoxStyleKey}" TargetType="CheckBox">
+        <Setter Property="Background" Value="Blue" />
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background" Value="Red" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Point x:Key="{x:Static res:SampleDictionaryKeys.PointResourceKey}">1.0,2.0</Point>
+    <Thickness x:Key="{x:Static res:SampleDictionaryKeys.ThicknessResourceKey}">1,2,3,4</Thickness>
+    <CornerRadius x:Key="{x:Static res:SampleDictionaryKeys.CornerRadiusResourceKey}">1,2,3,4</CornerRadius>
+    
+</ResourceDictionary>

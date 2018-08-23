@@ -97,6 +97,7 @@ namespace Celestial.UIToolkit.Xaml
         /// </summary>
         /// <param name="serviceProvider">
         /// A service provider to be used by the markup extension.
+        /// Can be null.
         /// </param>
         /// <returns>
         /// A <see cref="Style"/> which is the result of the merge operation.
