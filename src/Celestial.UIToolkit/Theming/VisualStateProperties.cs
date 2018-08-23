@@ -64,6 +64,23 @@ namespace Celestial.UIToolkit.Theming
             obj.SetValue(ForegroundBrushProperty, value);
         }
 
+        public static readonly DependencyProperty ShadowElevationProperty =
+            DependencyProperty.RegisterAttached(
+                "ShadowElevation",
+                typeof(double),
+                typeof(MouseOverProperties),
+                new PropertyMetadata(0d));
+
+        public static double GetShadowElevation(DependencyObject obj)
+        {
+            return (double)obj.GetValue(ShadowElevationProperty);
+        }
+
+        public static void SetShadowElevation(DependencyObject obj, double value)
+        {
+            obj.SetValue(ShadowElevationProperty, value);
+        }
+
     }
 
     public static class PressedProperties
@@ -118,6 +135,23 @@ namespace Celestial.UIToolkit.Theming
         public static void SetForegroundBrush(DependencyObject obj, Brush value)
         {
             obj.SetValue(ForegroundBrushProperty, value);
+        }
+
+        public static readonly DependencyProperty ShadowElevationProperty =
+            DependencyProperty.RegisterAttached(
+                "ShadowElevation",
+                typeof(double),
+                typeof(PressedProperties),
+                new PropertyMetadata(0d));
+
+        public static double GetShadowElevation(DependencyObject obj)
+        {
+            return (double)obj.GetValue(ShadowElevationProperty);
+        }
+
+        public static void SetShadowElevation(DependencyObject obj, double value)
+        {
+            obj.SetValue(ShadowElevationProperty, value);
         }
 
     }
@@ -176,6 +210,23 @@ namespace Celestial.UIToolkit.Theming
             obj.SetValue(ForegroundBrushProperty, value);
         }
 
+        public static readonly DependencyProperty ShadowElevationProperty =
+            DependencyProperty.RegisterAttached(
+                "ShadowElevation",
+                typeof(double),
+                typeof(ActiveProperties),
+                new PropertyMetadata(0d));
+
+        public static double GetShadowElevation(DependencyObject obj)
+        {
+            return (double)obj.GetValue(ShadowElevationProperty);
+        }
+
+        public static void SetShadowElevation(DependencyObject obj, double value)
+        {
+            obj.SetValue(ShadowElevationProperty, value);
+        }
+
     }
 
     public static class DisabledProperties
@@ -230,6 +281,23 @@ namespace Celestial.UIToolkit.Theming
         public static void SetForegroundBrush(DependencyObject obj, Brush value)
         {
             obj.SetValue(ForegroundBrushProperty, value);
+        }
+
+        public static readonly DependencyProperty ShadowElevationProperty =
+            DependencyProperty.RegisterAttached(
+                "ShadowElevation",
+                typeof(double),
+                typeof(DisabledProperties),
+                new PropertyMetadata(0d));
+
+        public static double GetShadowElevation(DependencyObject obj)
+        {
+            return (double)obj.GetValue(ShadowElevationProperty);
+        }
+
+        public static void SetShadowElevation(DependencyObject obj, double value)
+        {
+            obj.SetValue(ShadowElevationProperty, value);
         }
 
     }

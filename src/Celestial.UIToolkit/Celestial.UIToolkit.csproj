@@ -68,11 +68,6 @@
     <Compile Include="Controls\RippleOverlay.cs" />
     <Compile Include="Controls\ShadowDecorator.cs" />
     <Compile Include="Theming\ControlProperties.cs" />
-    <Compile Include="Theming\ActiveProperties.cs" />
-    <Compile Include="Theming\FocusedProperties.cs" />
-    <Compile Include="Theming\PressedProperties.cs" />
-    <Compile Include="Theming\DisabledProperties.cs" />
-    <Compile Include="Theming\MouseOverProperties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

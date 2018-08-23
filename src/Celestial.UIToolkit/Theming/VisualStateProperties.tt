@@ -18,7 +18,8 @@
     var properties = new[] {
         new { Name = "BorderBrush",     Type = "Brush", DefaultValue = "Brushes.Transparent" },
         new { Name = "BackgroundBrush", Type = "Brush", DefaultValue = "Brushes.Transparent" },
-        new { Name = "ForegroundBrush", Type = "Brush", DefaultValue = "Brushes.Transparent" }
+        new { Name = "ForegroundBrush", Type = "Brush", DefaultValue = "Brushes.Transparent" },
+		new { Name = "ShadowElevation", Type = "double", DefaultValue = "0d"}
     };
 
 #>
