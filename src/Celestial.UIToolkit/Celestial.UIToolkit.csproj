@@ -55,8 +55,8 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\Card.cs" />
-    <Compile Include="Controls\Card.GeneratedProperties.cs">
+    <Compile Include="Controls\Card\Card.cs" />
+    <Compile Include="Controls\Card\Card.GeneratedProperties.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Card.GeneratedProperties.tt</DependentUpon>
@@ -214,7 +214,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Controls\Card.GeneratedProperties.tt">
+    <Content Include="Controls\Card\Card.GeneratedProperties.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Card.GeneratedProperties.cs</LastGenOutput>
     </Content>
