@@ -11,7 +11,10 @@ namespace Celestial.UIToolkit.Controls
     public partial class NavigationView
     {
 
-		/// <summary>
+        internal const double DefaultCompactModeThresholdWidth = 641;
+        internal const double DefaultExpandedModeThresholdWidth = 1008;
+
+        /// <summary>
         /// Occurs when the <see cref="DisplayMode"/> property changes.
         /// </summary>
         public event EventHandler<NavigationViewDisplayModeChangedEventArgs> DisplayModeChanged;
@@ -32,6 +35,26 @@ namespace Celestial.UIToolkit.Controls
             DisplayModePropertyKey.DependencyProperty;
 
         /// <summary>
+        /// Identifies the <see cref="CompactModeThresholdWidth"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty CompactModeThresholdWidthProperty =
+            DependencyProperty.Register(
+                nameof(CompactModeThresholdWidth),
+                typeof(double),
+                typeof(NavigationView),
+                new PropertyMetadata(DefaultCompactModeThresholdWidth));
+
+        /// <summary>
+        /// Identifies the <see cref="ExpandedThresholdWidth"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty ExpandedThresholdWidthProperty =
+            DependencyProperty.Register(
+                nameof(ExpandedThresholdWidth),
+                typeof(double),
+                typeof(NavigationView),
+                new PropertyMetadata(DefaultExpandedModeThresholdWidth));
+
+        /// <summary>
         /// Gets the current display mode of the <see cref="NavigationView"/>.
         /// </summary>
         public NavigationViewDisplayMode DisplayMode
@@ -40,8 +63,30 @@ namespace Celestial.UIToolkit.Controls
             internal set { SetValue(DisplayModePropertyKey, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the minimum width at which the <see cref="DisplayMode"/> property of the
+        /// <see cref="NavigationView"/> gets set to 
+        /// <see cref="NavigationViewDisplayMode.Compact"/>.
+        /// </summary>
+        public double CompactModeThresholdWidth
+        {
+            get { return (double)GetValue(CompactModeThresholdWidthProperty); }
+            set { SetValue(CompactModeThresholdWidthProperty, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the minimum width at which the <see cref="DisplayMode"/> property of the
+        /// <see cref="NavigationView"/> gets set to 
+        /// <see cref="NavigationViewDisplayMode.Expanded"/>.
+        /// </summary>
+        public double ExpandedThresholdWidth
+        {
+            get { return (double)GetValue(ExpandedThresholdWidthProperty); }
+            set { SetValue(ExpandedThresholdWidthProperty, value); }
+        }
+
         private static void DisplayModeProperty_Changed(
-			DependencyObject d, DependencyPropertyChangedEventArgs e)
+            DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var self = (NavigationView)d;
             var eventData = new NavigationViewDisplayModeChangedEventArgs(
@@ -50,7 +95,7 @@ namespace Celestial.UIToolkit.Controls
             self.RaiseDisplayModeChanged(eventData);
         }
 
-		internal void RaiseDisplayModeChanged(NavigationViewDisplayModeChangedEventArgs e)
+        internal void RaiseDisplayModeChanged(NavigationViewDisplayModeChangedEventArgs e)
         {
             OnDisplayModeChanged(e);
             DisplayModeChanged?.Invoke(this, e);
