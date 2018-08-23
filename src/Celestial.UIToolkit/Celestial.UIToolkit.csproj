@@ -65,6 +65,7 @@
     <Compile Include="Controls\IconButton.cs" />
     <Compile Include="Controls\IconElement.cs" />
     <Compile Include="Controls\NavigationView\NavigationView.cs" />
+    <Compile Include="Controls\NavigationView\NavigationView.Pane.cs" />
     <Compile Include="Controls\NavigationView\NavigationViewDisplayMode.cs" />
     <Compile Include="Controls\NavigationView\NavigationViewDisplayModeChangedEventArgs.cs" />
     <Compile Include="Controls\PathIcon.cs" />
@@ -113,6 +114,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\Controls\IconButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Controls\NavigationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
