@@ -1,0 +1,66 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:c="http://celestial-ui.com"
+                    xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
+
+    <ResourceDictionary.MergedDictionaries>
+        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
+        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
+        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
+    <Style TargetType="controls:NavigationView">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="controls:NavigationView">
+                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
+                        <Grid.Resources>
+                            <Storyboard x:Key="CompactDisplayModeStoryboard">
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Pane"
+                                                                       Storyboard.TargetProperty="Width">
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding CompactPaneLength, RelativeSource={RelativeSource TemplatedParent}}" />
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+
+                            <Storyboard x:Key="ExpandedDisplayModeStoryboard">
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Pane"
+                                                               Storyboard.TargetProperty="Width">
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding OpenPaneLength, RelativeSource={RelativeSource TemplatedParent}}" />
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </Grid.Resources>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Border x:Name="Pane"
+                                Width="0"
+                                Background="{StaticResource BaseHighBrush}" />
+                        <ContentPresenter Grid.Column="1" />
+
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="DisplayModes">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition From="Minimal"
+                                                      GeneratedDuration="{StaticResource FastEnterAnimationDuration}" />
+                                    <VisualTransition From="Compact" 
+                                                      To="Expanded" 
+                                                      GeneratedDuration="{StaticResource FastEnterAnimationDuration}" />
+                                    <VisualTransition From="Compact"
+                                                      To="Minimal"
+                                                      GeneratedDuration="{StaticResource FastExitAnimationDuration}" />
+                                    <VisualTransition From="Expanded"
+                                                      GeneratedDuration="{StaticResource FastExitAnimationDuration}" />
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="Minimal" />
+                                <VisualState x:Name="Compact" Storyboard="{StaticResource CompactDisplayModeStoryboard}" />
+                                <VisualState x:Name="Expanded" Storyboard="{StaticResource ExpandedDisplayModeStoryboard}" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>

@@ -12,6 +12,7 @@
         <c:SharedResourceDictionary Source="Controls/IconButton.xaml" />
         <c:SharedResourceDictionary Source="Controls/RippleOverlay.xaml" />
         <c:SharedResourceDictionary Source="Controls/ShadowDecorator.xaml" />
+        <c:SharedResourceDictionary Source="Controls/NavigationView.xaml" />
         
         <c:SharedResourceDictionary Source="Controls/TextBlock.xaml" />
         <c:SharedResourceDictionary Source="Controls/Label.xaml" />

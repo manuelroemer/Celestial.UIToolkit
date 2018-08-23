@@ -9,6 +9,11 @@ using System.Windows.Controls;
 namespace Celestial.UIToolkit.Controls
 {
 
+    //
+    // This file contains the bootstrapping logic for the NavigationView.
+    // This does, for instance, include registering event handlers.
+    //
+
     /// <summary>
     ///     A control which provides a central navigation structure to an application by providing
     ///     a pane for navigation commands and a central place for the content which is the current
@@ -27,6 +32,20 @@ namespace Celestial.UIToolkit.Controls
         {
             DefaultStyleKeyProperty.OverrideMetadata(
                 typeof(NavigationView), new FrameworkPropertyMetadata(typeof(NavigationView)));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NavigationView"/> class.
+        /// </summary>
+        public NavigationView()
+        {
+            SizeChanged += NavigationView_SizeChanged;
+        }
+
+        private void NavigationView_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            // A size change might update the DisplayMode, depending on the thresholds.
+            UpdateDisplayMode();
         }
 
     }
