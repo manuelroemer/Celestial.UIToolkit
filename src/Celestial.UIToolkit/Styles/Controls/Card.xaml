@@ -117,24 +117,24 @@
                                         Margin="{c:GridUnit '0,2,0,2'}"
                                         Visibility="{Binding HasMediaContent, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource FalseCollapsedVisibilityConverter}}">
                                     <ContentPresenter x:Name="MediaContentSite"
-                                                        Grid.Row="1"
-                                                        ContentSource="MediaContent"
-                                                        ContentStringFormat="{TemplateBinding MediaContentStringFormat}"
-                                                        ContentTemplate="{TemplateBinding MediaContentTemplate}"
-                                                        ContentTemplateSelector="{TemplateBinding MediaContentTemplateSelector}"
-                                                        Margin="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource MediaContentMarginConverter}}" />
+                                                      Grid.Row="1"
+                                                      ContentSource="MediaContent"
+                                                      ContentStringFormat="{TemplateBinding MediaContentStringFormat}"
+                                                      ContentTemplate="{TemplateBinding MediaContentTemplate}"
+                                                      ContentTemplateSelector="{TemplateBinding MediaContentTemplateSelector}"
+                                                      Margin="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource MediaContentMarginConverter}}" />
                                 </Border>
                                 
                                 
                                 <!-- Normal Content. -->
                                 <ContentPresenter x:Name="ContentSite"
-                                                    Grid.Row="2"
-                                                    ContentSource="Content"
-                                                    ContentStringFormat="{TemplateBinding ContentStringFormat}"
-                                                    ContentTemplate="{TemplateBinding ContentTemplate}"
-                                                    ContentTemplateSelector="{TemplateBinding MediaContentTemplateSelector}"
-                                                    Visibility="{Binding HasContent, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource FalseCollapsedVisibilityConverter}}" 
-                                                    Margin="{c:GridUnit '0,2,0,0'}"/>
+                                                  Grid.Row="2"
+                                                  ContentSource="Content"
+                                                  ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                                                  ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                  ContentTemplateSelector="{TemplateBinding MediaContentTemplateSelector}"
+                                                  Visibility="{Binding HasContent, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource FalseCollapsedVisibilityConverter}}" 
+                                                  Margin="{c:GridUnit '0,2,0,0'}"/>
                             </Grid>
                         </controls:ClippingBorder>
                     </Grid>

@@ -20,7 +20,7 @@
             <CheckBox IsEnabled="False" IsChecked="{x:Null}">Disabled - Indeterminate</CheckBox>
         </StackPanel>
 
-        <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
+        <!--<StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
             <TextBlock Style="{StaticResource TitleTextBlock}"
                        c:MarginHelper.MarginGroup="Title">RadioButton</TextBlock>
             <RadioButton>Default</RadioButton>
@@ -29,7 +29,7 @@
             <RadioButton IsEnabled="False">Disabled</RadioButton>
             <RadioButton IsEnabled="False" IsChecked="True">Disabled - Checked</RadioButton>
             <RadioButton IsEnabled="False" IsChecked="{x:Null}">Disabled - Indeterminate</RadioButton>
-        </StackPanel>
+        </StackPanel>-->
     </UniformGrid>
     
 </UserControl>

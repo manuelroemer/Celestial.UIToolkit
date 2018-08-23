@@ -25,24 +25,24 @@
                     <BulletDecorator SnapsToDevicePixels="False">
                         <BulletDecorator.Resources>
                             <c:BindingProxy x:Key="ActiveBackgroundBrushProxy"
-                                                Data="{Binding Path=\(theming:ActiveProperties.BackgroundBrush\), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                Data="{Binding Path=(theming:ActiveProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                             <c:BindingProxy x:Key="ActiveBorderBrushProxy"
-                                                Data="{Binding Path=\(theming:ActiveProperties.BorderBrush\), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                Data="{Binding Path=(theming:ActiveProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
 
                             <c:BindingProxy x:Key="MouseOverBackgroundBrushProxy"
-                                                Data="{Binding Path=\(theming:MouseOverProperties.BackgroundBrush\), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                Data="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                             <c:BindingProxy x:Key="MouseOverBorderBrushProxy"
-                                                Data="{Binding Path=\(theming:MouseOverProperties.BorderBrush\), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                Data="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
 
                             <c:BindingProxy x:Key="PressedBackgroundBrushProxy"
-                                                Data="{Binding Path=\(theming:PressedProperties.BackgroundBrush\), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                Data="{Binding Path=(theming:PressedProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                             <c:BindingProxy x:Key="PressedBorderBrushProxy"
-                                                Data="{Binding Path=\(theming:PressedProperties.BorderBrush\), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                Data="{Binding Path=(theming:PressedProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
 
                             <c:BindingProxy x:Key="DisabledBackgroundBrushProxy"
-                                                Data="{Binding Path=\(theming:DisabledProperties.BackgroundBrush\), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                Data="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                             <c:BindingProxy x:Key="DisabledBorderBrushProxy"
-                                                Data="{Binding Path=\(theming:DisabledProperties.BorderBrush\), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                Data="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
 
                             <EllipseGeometry x:Key="CheckedGeometry" Center="6,6" RadiusX="6" RadiusY="6" />
                             <LineGeometry x:Key="IndeterminateGeometry" StartPoint="0,7" EndPoint="12,7" />
@@ -69,8 +69,8 @@
                                 <controls:RippleOverlay IsActiveTrigger="{Binding IsPressed, RelativeSource={RelativeSource TemplatedParent}}" 
                                                         Style="{StaticResource SmallBackgroundRippleAnimation}" />
                                 <Border x:Name="CheckedBorder"
-                                        BorderBrush="{Binding Path=\(theming:ActiveProperties.BorderBrush\), RelativeSource={RelativeSource TemplatedParent}}"
-                                        Background="{Binding Path=\(theming:ActiveProperties.BackgroundBrush\), RelativeSource={RelativeSource TemplatedParent}}"
+                                        BorderBrush="{Binding Path=(theming:ActiveProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}"
+                                        Background="{Binding Path=(theming:ActiveProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}"
                                         Visibility="Collapsed" />
                                 <Border x:Name="Bd"
                                         BorderBrush="{TemplateBinding BorderBrush}"
@@ -78,7 +78,7 @@
                                         CornerRadius="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}" />
                                 <Path x:Name="Checkmark"
                                       Data="{StaticResource CheckedGeometry}"
-                                      Fill="{Binding Path=\(theming:ActiveProperties.BorderBrush\), RelativeSource={RelativeSource TemplatedParent}}">
+                                      Fill="{Binding Path=(theming:ActiveProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}">
                                     <Path.RenderTransform>
                                         <ScaleTransform x:Name="CheckmarkScaleTransform"
                                                         ScaleX="0"
@@ -86,7 +86,7 @@
                                     </Path.RenderTransform>
                                 </Path>
                                 <Path x:Name="IndeterminateCheckmark"
-                                      Stroke="{Binding Path=\(theming:ActiveProperties.BorderBrush\), RelativeSource={RelativeSource TemplatedParent}}"
+                                      Stroke="{Binding Path=(theming:ActiveProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}"
                                       Data="{StaticResource IndeterminateGeometry}">
                                     <Path.RenderTransform>
                                         <ScaleTransform x:Name="IndeterminateCheckmarkScaleTransform"

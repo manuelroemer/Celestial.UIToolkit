@@ -144,8 +144,8 @@
     </Style>
 
     <!--
-    - Border: ContentControl-Brushes
-    - Border:     -
+    - Background: -
+    - Border:     ContentControl-Brushes
     - Foreground: -
     -->
     <Style x:Key="ContentControlBorder" TargetType="FrameworkElement">
