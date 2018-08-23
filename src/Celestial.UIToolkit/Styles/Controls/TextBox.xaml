@@ -36,20 +36,20 @@
                 <ControlTemplate TargetType="Control">
                     <Grid>
                         <Grid.Resources>
-                            <c:BindingProxy x:Key="MouseOverBorderColorProxy" 
-                                                Data="{Binding Path=(theming:MouseOverProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
-                            <c:BindingProxy x:Key="MouseOverBackgroundColorProxy" 
-                                                Data="{Binding Path=(theming:MouseOverProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                            <c:BindingProxy x:Key="MouseOverBorderBrushProxy" 
+                                                Data="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                            <c:BindingProxy x:Key="MouseOverBackgroundBrushProxy" 
+                                                Data="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
 
-                            <c:BindingProxy x:Key="FocusedBorderColorProxy"
-                                                Data="{Binding Path=(theming:ActiveProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
-                            <c:BindingProxy x:Key="FocusedBackgroundColorProxy"
-                                                Data="{Binding Path=(theming:ActiveProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                            <c:BindingProxy x:Key="FocusedBorderBrushProxy"
+                                                Data="{Binding Path=(theming:ActiveProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                            <c:BindingProxy x:Key="FocusedBackgroundBrushProxy"
+                                                Data="{Binding Path=(theming:ActiveProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
 
-                            <c:BindingProxy x:Key="DisabledBorderColorProxy"
-                                                Data="{Binding Path=(theming:DisabledProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
-                            <c:BindingProxy x:Key="DisabledBackgroundColorProxy"
-                                                Data="{Binding Path=(theming:DisabledProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
+                            <c:BindingProxy x:Key="DisabledBorderBrushProxy"
+                                                Data="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                            <c:BindingProxy x:Key="DisabledBackgroundBrushProxy"
+                                                Data="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                         </Grid.Resources>
                         <Border x:Name="Bd"
                                 Background="{TemplateBinding Background}"
@@ -78,11 +78,11 @@
                                     <Storyboard>
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                       Storyboard.TargetProperty="BorderBrush.Color">
-                                            <DiscreteColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource MouseOverBorderColorProxy}}" />
+                                            <DiscreteColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource MouseOverBorderBrushProxy}}" />
                                         </ColorAnimationUsingKeyFrames>
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                       Storyboard.TargetProperty="Background.Color">
-                                            <DiscreteColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource MouseOverBackgroundColorProxy}}" />
+                                            <DiscreteColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource MouseOverBackgroundBrushProxy}}" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -90,11 +90,11 @@
                                     <Storyboard>
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                       Storyboard.TargetProperty="BorderBrush.Color">
-                                            <DiscreteColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource DisabledBorderColorProxy}}" />
+                                            <DiscreteColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource DisabledBorderBrushProxy}}" />
                                         </ColorAnimationUsingKeyFrames>
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                       Storyboard.TargetProperty="Background.Color">
-                                            <DiscreteColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource DisabledBackgroundColorProxy}}" />
+                                            <DiscreteColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource DisabledBackgroundBrushProxy}}" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -112,11 +112,11 @@
                                         </ObjectAnimationUsingKeyFrames>
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="FocusedBorder"
                                                                       Storyboard.TargetProperty="BorderBrush.Color">
-                                            <DiscreteColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource FocusedBorderColorProxy}}" />
+                                            <DiscreteColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource FocusedBorderBrushProxy}}" />
                                         </ColorAnimationUsingKeyFrames>
                                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="FocusedBorder"
                                                                       Storyboard.TargetProperty="Background.Color">
-                                            <DiscreteColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource FocusedBackgroundColorProxy}}" />
+                                            <DiscreteColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource FocusedBackgroundBrushProxy}}" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -154,9 +154,9 @@
         <Setter Property="BorderThickness" Value="0,0,0,1" />
         <Setter Property="Padding" Value="-2,0" />
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="theming:MouseOverProperties.BackgroundColor" Value="Transparent" />
-        <Setter Property="theming:ActiveProperties.BackgroundColor" Value="Transparent" />
-        <Setter Property="theming:DisabledProperties.BackgroundColor" Value="Transparent" />
+        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="Transparent" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="Transparent" />
+        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
     </Style>
 
     <Style x:Key="SubtleTextBox" TargetType="TextBox" BasedOn="{StaticResource SubtleTextBoxBase}" />

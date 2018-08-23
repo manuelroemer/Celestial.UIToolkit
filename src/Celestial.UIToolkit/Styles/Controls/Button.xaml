@@ -16,6 +16,7 @@
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
         <Setter Property="MinWidth" Value="{c:GridUnit 15}" />
         <Setter Property="MinHeight" Value="{c:GridUnit 8}" />
+        <Setter Property="Padding" Value="{c:GridUnit '2,0'}" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="BorderThickness" Value="0" />
@@ -26,71 +27,69 @@
                 <ControlTemplate TargetType="ButtonBase">
                     <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
                         <Grid.Resources>
-                            <c:BindingProxy x:Key="MouseOverBackgroundColorProxy"
-                                            Data="{Binding Path=(theming:MouseOverProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
-                            <c:BindingProxy x:Key="DisabledBackgroundColorProxy"
-                                            Data="{Binding Path=(theming:DisabledProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}}" />
-
-                            <c:BindingProxy x:Key="MouseOverBorderColorProxy"
-                                            Data="{Binding Path=(theming:MouseOverProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
-                            <c:BindingProxy x:Key="DisabledBorderColorProxy"
-                                            Data="{Binding Path=(theming:DisabledProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}}" />
-                            
                             <Storyboard x:Key="MouseOverStoryboard">
-                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                              Storyboard.TargetProperty="Background.Color">
-                                    <EasingColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource MouseOverBackgroundColorProxy}}" />
-                                </ColorAnimationUsingKeyFrames>
-                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                              Storyboard.TargetProperty="BorderBrush.Color">
-                                    <EasingColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource MouseOverBorderColorProxy}}" />
-                                </ColorAnimationUsingKeyFrames>
-                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Shadow"
-                                                               Storyboard.TargetProperty="Elevation">
-                                    <LinearDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.ShadowElevation), RelativeSource={RelativeSource TemplatedParent}}" />
-                                </DoubleAnimationUsingKeyFrames>
+                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                                Storyboard.TargetProperty="Background">
+                                    <c:DiscreteBrushKeyFrame KeyTime="0"
+                                                             Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                </c:BrushAnimationUsingKeyFrames>
+                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                                Storyboard.TargetProperty="BorderBrush">
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" 
+                                                             Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                </c:BrushAnimationUsingKeyFrames>
                                 <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
                                                   Storyboard.TargetProperty="Foreground"
                                                   Duration="0"
                                                   To="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Shadow"
+                                                               Storyboard.TargetProperty="Elevation">
+                                    <LinearDoubleKeyFrame KeyTime="0" 
+                                                          Value="{Binding Path=(theming:MouseOverProperties.ShadowElevation), RelativeSource={RelativeSource TemplatedParent}}" />
+                                </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
 
                             <Storyboard x:Key="PressedStoryboard">
-                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                              Storyboard.TargetProperty="Background.Color">
-                                    <EasingColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource MouseOverBackgroundColorProxy}}" />
-                                </ColorAnimationUsingKeyFrames>
-                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                              Storyboard.TargetProperty="BorderBrush.Color">
-                                    <EasingColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource MouseOverBorderColorProxy}}" />
-                                </ColorAnimationUsingKeyFrames>
-                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Shadow"
-                                                               Storyboard.TargetProperty="Elevation">
-                                    <LinearDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:PressedProperties.ShadowElevation), RelativeSource={RelativeSource TemplatedParent}}" />
-                                </DoubleAnimationUsingKeyFrames>
+                                <!-- When pressed, still display the MouseOver Border/Background, as the ripple will
+                                     show the Pressed-Brushes. -->
+                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                                Storyboard.TargetProperty="Background">
+                                    <c:DiscreteBrushKeyFrame KeyTime="0"
+                                                             Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                </c:BrushAnimationUsingKeyFrames>
+                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                                Storyboard.TargetProperty="BorderBrush">
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" 
+                                                             Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                </c:BrushAnimationUsingKeyFrames>
                                 <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
                                                   Storyboard.TargetProperty="Foreground"
                                                   Duration="0"
                                                   To="{Binding Path=(theming:PressedProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Shadow"
+                                                               Storyboard.TargetProperty="Elevation">
+                                    <LinearDoubleKeyFrame KeyTime="0" 
+                                                          Value="{Binding Path=(theming:PressedProperties.ShadowElevation), RelativeSource={RelativeSource TemplatedParent}}" />
+                                </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
 
                             <Storyboard x:Key="DisabledStoryboard">
-                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                              Storyboard.TargetProperty="Background.Color">
-                                    <EasingColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource DisabledBackgroundColorProxy}}" />
-                                </ColorAnimationUsingKeyFrames>
-                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                              Storyboard.TargetProperty="BorderBrush.Color">
-                                    <EasingColorKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource DisabledBorderColorProxy}}" />
-                                </ColorAnimationUsingKeyFrames>
-                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Shadow"
-                                                               Storyboard.TargetProperty="Elevation">
-                                    <LinearDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:DisabledProperties.ShadowElevation), RelativeSource={RelativeSource TemplatedParent}}" />
-                                </DoubleAnimationUsingKeyFrames>
+                                <c:BrushAnimation Storyboard.TargetName="Bd"
+                                                  Storyboard.TargetProperty="Background"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                <c:BrushAnimation Storyboard.TargetName="Bd"
+                                                  Storyboard.TargetProperty="BorderBrush"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                                 <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
                                                   Storyboard.TargetProperty="Foreground"
                                                   Duration="0"
                                                   To="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                <DoubleAnimation Storyboard.TargetName="Shadow"
+                                                 Storyboard.TargetProperty="Elevation"
+                                                 Duration="0"
+                                                 To="{Binding Path=(theming:DisabledProperties.ShadowElevation), RelativeSource={RelativeSource TemplatedParent}}" />
                             </Storyboard>
                         </Grid.Resources>
                         <controls:ShadowDecorator x:Name="Shadow"
@@ -104,11 +103,11 @@
                         </controls:ShadowDecorator>
                         <controls:RippleOverlay x:Name="Ripple"
                                                 theming:ControlProperties.CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}"
+                                                BorderBrush="{TemplateBinding theming:PressedProperties.BorderBrush}"
+                                                Background="{TemplateBinding theming:PressedProperties.BackgroundBrush}"
                                                 IsActiveTrigger="{TemplateBinding IsPressed}"
                                                 AllowFading="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, FallbackValue=True, Converter={x:Static c:InvertBooleanConverter.Default}}"
-                                                BorderBrush="{Binding Path=(theming:PressedProperties.BorderColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static c:ColorToSolidColorBrushConverter.Default}}"
-                                                Background="{Binding Path=(theming:PressedProperties.BackgroundColor), RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static c:ColorToSolidColorBrushConverter.Default}}"
-                                                IsEnabled="{TemplateBinding theming:RippleProperties.ShowRippleAnimation}"/>
+                                                IsEnabled="{TemplateBinding theming:RippleProperties.ShowRippleAnimation}" />
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                           RecognizesAccessKey="True" />
@@ -179,10 +178,10 @@
     <Style x:Key="FlatButton" TargetType="ButtonBase" BasedOn="{StaticResource StandardButton}">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="theming:MouseOverProperties.BackgroundColor" Value="{StaticResource BaseHighColor}" />
-        <Setter Property="theming:PressedProperties.BackgroundColor" Value="{StaticResource BaseMediumColor}" />
-        <Setter Property="theming:ActiveProperties.BackgroundColor" Value="{StaticResource BaseMediumColor}" />
-        <Setter Property="theming:DisabledProperties.BackgroundColor" Value="Transparent" />
+        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource BaseHighBrush}" />
+        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource BaseMediumBrush}" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource BaseMediumBrush}" />
+        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
         <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
     </Style>
 
@@ -261,8 +260,9 @@
         <Setter Property="MinHeight" Value="{c:GridUnit 8}" />
         <Setter Property="Width" Value="{c:GridUnit 8}" />
         <Setter Property="Height" Value="{c:GridUnit 8}" />
-        <Setter Property="theming:DisabledProperties.BackgroundColor" Value="Transparent" />
-        <Setter Property="theming:DisabledProperties.BorderColor" Value="{StaticResource BaseHighColor}" />
+        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
+        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
+        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource BaseHighBrush}" />
         <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
         <Style.Triggers>
             <Trigger Property="IsEnabled" Value="False">

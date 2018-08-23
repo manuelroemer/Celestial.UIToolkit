@@ -68,11 +68,6 @@
     <Compile Include="Controls\RippleOverlay.cs" />
     <Compile Include="Controls\ShadowDecorator.cs" />
     <Compile Include="Theming\ControlProperties.cs" />
-    <Compile Include="Theming\ActiveProperties.cs" />
-    <Compile Include="Theming\FocusedProperties.cs" />
-    <Compile Include="Theming\PressedProperties.cs" />
-    <Compile Include="Theming\DisabledProperties.cs" />
-    <Compile Include="Theming\MouseOverProperties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -89,6 +84,11 @@
     <Compile Include="Theming\RippleProperties.cs" />
     <Compile Include="Theming\ShadowProperties.cs" />
     <Compile Include="Theming\TabControlProperties.cs" />
+    <Compile Include="Theming\VisualStateProperties.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VisualStateProperties.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -213,6 +213,10 @@
     <Content Include="Controls\Card.GeneratedProperties.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Card.GeneratedProperties.cs</LastGenOutput>
+    </Content>
+    <Content Include="Theming\VisualStateProperties.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>VisualStateProperties.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

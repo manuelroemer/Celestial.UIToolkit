@@ -25,25 +25,22 @@
                     <Grid Background="{TemplateBinding Background}">
                         <Grid.Resources>
                             <Storyboard x:Key="MouseOverStoryboard">
-                                <ColorAnimationUsingKeyFrames Storyboard.Target="{Binding Icon, RelativeSource={RelativeSource TemplatedParent}}"
-                                                              Storyboard.TargetProperty="Foreground.Color">
-                                    <EasingColorKeyFrame KeyTime="0" 
-                                                         Value="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource SolidColorBrushToColorConverter}}" />
-                                </ColorAnimationUsingKeyFrames>
+                                <c:BrushAnimationUsingKeyFrames Storyboard.Target="{Binding Icon, RelativeSource={RelativeSource TemplatedParent}}"
+                                                                Storyboard.TargetProperty="Foreground">
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                </c:BrushAnimationUsingKeyFrames>
                             </Storyboard>
                             <Storyboard x:Key="PressedStoryboard">
-                                <ColorAnimationUsingKeyFrames Storyboard.Target="{Binding Icon, RelativeSource={RelativeSource TemplatedParent}}"
-                                                              Storyboard.TargetProperty="Foreground.Color">
-                                    <EasingColorKeyFrame KeyTime="0" 
-                                                         Value="{Binding Path=(theming:PressedProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource SolidColorBrushToColorConverter}}" />
-                                </ColorAnimationUsingKeyFrames>
+                                <c:BrushAnimationUsingKeyFrames Storyboard.Target="{Binding Icon, RelativeSource={RelativeSource TemplatedParent}}"
+                                                                Storyboard.TargetProperty="Foreground">
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:PressedProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                </c:BrushAnimationUsingKeyFrames>
                             </Storyboard>
                             <Storyboard x:Key="DisabledStoryboard">
-                                <ColorAnimationUsingKeyFrames Storyboard.Target="{Binding Icon, RelativeSource={RelativeSource TemplatedParent}}"
-                                                              Storyboard.TargetProperty="Foreground.Color">
-                                    <EasingColorKeyFrame KeyTime="0" 
-                                                         Value="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource SolidColorBrushToColorConverter}}" />
-                                </ColorAnimationUsingKeyFrames>
+                                <c:BrushAnimation Storyboard.Target="{Binding Icon, RelativeSource={RelativeSource TemplatedParent}}"
+                                                  Storyboard.TargetProperty="Foreground"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                             </Storyboard>
                         </Grid.Resources>
                         <ContentPresenter ContentSource="Icon"

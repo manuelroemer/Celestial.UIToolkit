@@ -12,7 +12,7 @@
 
     <!-- A drop-down border whose opening flow is from the bottom to the top. -->
     <Style x:Key="StandardDropDownBorderUp" TargetType="Border" BasedOn="{StaticResource StandardDropDownBorder}">
-        <Setter Property="BorderBrush" Value="1,1,1,0" />
+        <Setter Property="BorderThickness" Value="1,1,1,0" />
     </Style>
     
     <!-- A drop-down border whose opening flow is from the top to the bottom. -->
