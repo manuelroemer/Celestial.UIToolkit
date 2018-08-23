@@ -52,6 +52,10 @@
                                     <c:DiscreteBrushKeyFrame KeyTime="0" 
                                                              Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                                 </c:BrushAnimationUsingKeyFrames>
+                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                  Storyboard.TargetProperty="Foreground"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                             </Storyboard>
 
                             <Storyboard x:Key="PressedStoryboard">
@@ -80,6 +84,10 @@
                                     <c:DiscreteBrushKeyFrame KeyTime="0" 
                                                              Value="{Binding Path=(theming:PressedProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                                 </c:BrushAnimationUsingKeyFrames>
+                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                  Storyboard.TargetProperty="Foreground"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:PressedProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                             </Storyboard>
 
                             <Storyboard x:Key="DisabledStoryboard">
@@ -108,6 +116,10 @@
                                     <c:DiscreteBrushKeyFrame KeyTime="0" 
                                                              Value="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                                 </c:BrushAnimationUsingKeyFrames>
+                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                  Storyboard.TargetProperty="Foreground"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                             </Storyboard>
                         </Grid.Resources>
                         <BulletDecorator SnapsToDevicePixels="False">
@@ -191,27 +203,27 @@
                                 <VisualState x:Name="Checked">
                                     <Storyboard>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="CheckmarkScaleTransform"
-                                                                           Storyboard.TargetProperty="ScaleX">
+                                                                       Storyboard.TargetProperty="ScaleX">
                                             <SplineDoubleKeyFrame KeyTime="{StaticResource FastEnterAnimationKeyTime}" Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="CheckmarkScaleTransform"
-                                                                           Storyboard.TargetProperty="ScaleY">
+                                                                       Storyboard.TargetProperty="ScaleY">
                                             <SplineDoubleKeyFrame KeyTime="{StaticResource FastEnterAnimationKeyTime}" Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="FillingBorderScaleTransform"
-                                                                           Storyboard.TargetProperty="ScaleX">
+                                                                       Storyboard.TargetProperty="ScaleX">
                                             <SplineDoubleKeyFrame KeyTime="{StaticResource FastEnterAnimationKeyTime}" Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="FillingBorderScaleTransform"
-                                                                           Storyboard.TargetProperty="ScaleY">
+                                                                       Storyboard.TargetProperty="ScaleY">
                                             <SplineDoubleKeyFrame KeyTime="{StaticResource FastEnterAnimationKeyTime}" Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                                       Storyboard.TargetProperty="(UIElement.Visibility)">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="CheckedBorder"
-                                                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                                       Storyboard.TargetProperty="(UIElement.Visibility)">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
@@ -219,11 +231,11 @@
                                 <VisualState x:Name="Unchecked">
                                     <Storyboard>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="FillingBorderScaleTransform"
-                                                                           Storyboard.TargetProperty="ScaleX">
+                                                                       Storyboard.TargetProperty="ScaleX">
                                             <SplineDoubleKeyFrame KeyTime="{StaticResource FastExitAnimationKeyTime}" Value="0" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="FillingBorderScaleTransform"
-                                                                           Storyboard.TargetProperty="ScaleY">
+                                                                       Storyboard.TargetProperty="ScaleY">
                                             <SplineDoubleKeyFrame KeyTime="{StaticResource FastExitAnimationKeyTime}" Value="0" />
                                         </DoubleAnimationUsingKeyFrames>
                                     </Storyboard>
@@ -231,27 +243,27 @@
                                 <VisualState x:Name="Indeterminate">
                                     <Storyboard>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="IndeterminateCheckmarkScaleTransform"
-                                                                           Storyboard.TargetProperty="ScaleX">
+                                                                       Storyboard.TargetProperty="ScaleX">
                                             <SplineDoubleKeyFrame KeyTime="{StaticResource FastEnterAnimationKeyTime}" Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="IndeterminateCheckmarkScaleTransform"
-                                                                           Storyboard.TargetProperty="ScaleY">
+                                                                       Storyboard.TargetProperty="ScaleY">
                                             <SplineDoubleKeyFrame KeyTime="{StaticResource FastEnterAnimationKeyTime}" Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="FillingBorderScaleTransform"
-                                                                           Storyboard.TargetProperty="ScaleX">
+                                                                       Storyboard.TargetProperty="ScaleX">
                                             <SplineDoubleKeyFrame KeyTime="{StaticResource FastEnterAnimationKeyTime}" Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="FillingBorderScaleTransform"
-                                                                           Storyboard.TargetProperty="ScaleY">
+                                                                       Storyboard.TargetProperty="ScaleY">
                                             <SplineDoubleKeyFrame KeyTime="{StaticResource FastEnterAnimationKeyTime}" Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                                       Storyboard.TargetProperty="(UIElement.Visibility)">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="CheckedBorder"
-                                                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                                       Storyboard.TargetProperty="(UIElement.Visibility)">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
@@ -263,17 +275,8 @@
             </Setter.Value>
         </Setter>
         <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Foreground" Value="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
-            </Trigger>
-            <Trigger Property="IsPressed" Value="True">
-                <Setter Property="Foreground" Value="{Binding Path=(theming:PressedProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
-            </Trigger>
-            <Trigger Property="IsFocused" Value="True">
+            <Trigger Property="IsChecked" Value="True">
                 <Setter Property="Foreground" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
-            </Trigger>
-            <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Foreground" Value="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
             </Trigger>
         </Style.Triggers>
     </Style>
