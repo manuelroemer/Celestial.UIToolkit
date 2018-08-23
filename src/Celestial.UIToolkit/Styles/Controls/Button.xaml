@@ -30,7 +30,7 @@
                             <Storyboard x:Key="MouseOverStoryboard">
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                 Storyboard.TargetProperty="Background">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0"Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                                 </c:BrushAnimationUsingKeyFrames>
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                 Storyboard.TargetProperty="BorderBrush">
