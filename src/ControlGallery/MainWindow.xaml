@@ -17,7 +17,19 @@
         <c:MarginGroup Name="ControlGroup" Margin="10" />
     </c:MarginHelper.MarginGroups>
 
-    <TabControl>
+    <c:NavigationView x:Name="NavView">
+        <StackPanel>
+            <CheckBox IsChecked="{Binding IsPaneOpen,ElementName=NavView, Mode=TwoWay}">IsPaneOpen</CheckBox>
+            <Slider Value="{Binding CompactModeThresholdWidth, ElementName=NavView, Mode=TwoWay}" 
+                    Minimum="0"
+                    Maximum="2000" />
+            <Slider Value="{Binding ExpandedModeThresholdWidth, ElementName=NavView, Mode=TwoWay}"
+                    Minimum="0"
+                    Maximum="2000" />
+        </StackPanel>
+    </c:NavigationView>
+    
+    <!--<TabControl>
         <TabItem Header="Colors">
             <pages:Colors />
         </TabItem>
@@ -48,6 +60,6 @@
         <TabItem Header="Icons">
             <pages:Icons />
         </TabItem>
-    </TabControl>
+    </TabControl>-->
     
 </Window>
