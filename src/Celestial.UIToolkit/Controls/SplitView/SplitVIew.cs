@@ -24,6 +24,11 @@ namespace Celestial.UIToolkit.Controls
         /// </summary>
         public SplitView()
         {
+            Loaded += (sender, e) =>
+            {
+                VisualStateManager.GoToState(this, Closed, false);
+                EnterCurrentDisplayModeVisualState(false);
+            };
         }
 
         private static void DisplayModeProperty_Changed(

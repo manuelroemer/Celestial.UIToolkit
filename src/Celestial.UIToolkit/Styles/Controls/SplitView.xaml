@@ -112,16 +112,16 @@
                             <Border x:Name="PaneSpacer"
                                     Width="0" />
 
-                            <controls:ClippingBorder x:Name="PaneContainer"
-                                                     Grid.ColumnSpan="2"
-                                                     Background="{TemplateBinding PaneBackground}"
-                                                     HorizontalAlignment="Left"
-                                                     Width="{Binding OpenPaneLength, RelativeSource={RelativeSource TemplatedParent}}">
+                            <Border x:Name="PaneContainer"
+                                    Grid.ColumnSpan="2"
+                                    Background="{TemplateBinding PaneBackground}"
+                                    HorizontalAlignment="Left"
+                                    Width="{Binding OpenPaneLength, RelativeSource={RelativeSource TemplatedParent}}">
                                 <ContentPresenter ContentSource="Pane"
                                                   ContentTemplate="{TemplateBinding PaneTemplate}"
                                                   ContentTemplateSelector="{TemplateBinding PaneTemplateSelector}"
                                                   ContentStringFormat="{TemplateBinding PaneStringFormat}" />
-                            </controls:ClippingBorder>
+                            </Border>
                         </Grid>
 
                         <VisualStateManager.VisualStateGroups>
