@@ -52,20 +52,48 @@ namespace Celestial.UIToolkit.Xaml
             VisualState state, 
             bool useTransitions)
         {
-            if (control == null || 
-                stateGroupsRoot == null || 
-                stateName == null || 
-                group == null || 
-                state == null)
+            if (control == null || stateGroupsRoot == null || stateName == null || group == null || state == null)
                 return false;
-            
+            if (!ShouldTransitionToState(state))
+                return false;
+
+            return TransitionToState(control, stateGroupsRoot, stateName, group, state, useTransitions);
+        }
+
+        private bool ShouldTransitionToState(VisualState state)
+        {
+            // The ExtendedVisualState (and any state implementing the IActivatableVisualState)
+            // can decide that they don't want to be applied.
+            // In this case, don't do anything.
+            if (state is IActivatableVisualState activatableVisualState &&
+                !activatableVisualState.IsActive)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private static bool TransitionToState(
+            FrameworkElement control, 
+            FrameworkElement stateGroupsRoot, 
+            string stateName, 
+            VisualStateGroup group, 
+            VisualState state, 
+            bool useTransitions)
+        {
+            // No need to transition, if we are already at the target state.
+            if ((group.GetCurrentState() ?? group.CurrentState) == state) return true;
+
             // We offload the actual transitioning logic into multiple different StateSwitchers,
             // so that this class doesn't become cluttered.
             // Simply call them in order and check if one of them managed to transition to a new state.
             bool couldTransitionToState = false;
             couldTransitionToState |= new AnimationVisualStateSwitcher().GoToState(
                 control, stateGroupsRoot, stateName, group, state, useTransitions);
+            couldTransitionToState |= new SetterVisualStateSwitcher().GoToState(
+                control, stateGroupsRoot, stateName, group, state, useTransitions);
 
+            group.SetCurrentState(state);
             return couldTransitionToState;
         }
 
@@ -103,6 +131,11 @@ namespace Celestial.UIToolkit.Xaml
         /// Gets the <see cref="VisualState"/> to which the class should transition to.
         /// </summary>
         public VisualState ToState { get; private set; }
+
+        /// <summary>
+        /// Gets the <see cref="VisualState"/> from which the class is transitioning.
+        /// </summary>
+        public VisualState FromState => Group.CurrentState ?? Group.GetCurrentState();
 
         /// <summary>
         /// Gets a value indicating whether to use <see cref="VisualTransition"/> objects to transition
@@ -148,10 +181,7 @@ namespace Celestial.UIToolkit.Xaml
             Group = group ?? throw new ArgumentNullException(nameof(group));
             ToState = state ?? throw new ArgumentNullException(nameof(state));
             UseTransitions = useTransitions;
-
-            // No need to do anything if we aren't between two states.
-            if (Group.CurrentState == ToState) return false;
-
+            
             return GoToStateCore();
         }
 

@@ -23,7 +23,7 @@ namespace Celestial.UIToolkit.Xaml
     /// <see cref="VisualTransitionProvider"/> class.
     /// Afterwards, the custom transition will be used by this class.
     /// </remarks>
-    internal class AnimationVisualStateSwitcher : VisualStateSwitcher
+    internal sealed class AnimationVisualStateSwitcher : VisualStateSwitcher
     {
 
         /// <summary>
@@ -34,8 +34,6 @@ namespace Celestial.UIToolkit.Xaml
         /// </returns>
         protected override bool GoToStateCore()
         {
-            if (Group.GetCurrentState() == ToState) return true;
-            
             VisualTransition currentTransition = GetCurrentVisualTransition();
             Storyboard dynamicTransitionStoryboard = CreateDynamicTransitionStoryboard(currentTransition);
             
@@ -50,7 +48,6 @@ namespace Celestial.UIToolkit.Xaml
                 PlayTransitionAnimations(currentTransition, dynamicTransitionStoryboard);
             }
 
-            Group.SetCurrentState(ToState);
             return true;
         }
 
@@ -171,15 +168,14 @@ namespace Celestial.UIToolkit.Xaml
                             NoMatch = -1;
 
                 if (transition == null) return NoMatch;
-                VisualState groupFromState = Group.GetCurrentState() ?? Group.CurrentState;
                 VisualState transitionFromState = Group.GetStateByName(transition.From);
                 VisualState transitionToState = Group.GetStateByName(transition.To);
 
-                if (groupFromState == transitionFromState && ToState == transitionToState)
+                if (FromState == transitionFromState && ToState == transitionToState)
                     return PerfectMatch;
                 else if (ToState == transitionToState && transitionFromState == null)
                     return ToMatch;
-                else if (groupFromState == transitionFromState && transitionToState == null)
+                else if (FromState == transitionFromState && transitionToState == null)
                     return FromMatch;
                 else if (transition.IsDefault())
                     return DefaultTransitionMatch;

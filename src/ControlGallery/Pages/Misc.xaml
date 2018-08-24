@@ -8,94 +8,37 @@
              d:DesignHeight="450" d:DesignWidth="800">
 
     <UserControl.Resources>
-        <Storyboard x:Key="Bd1Storyboard">
-            <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd1"
-                                            Storyboard.TargetProperty="Background"
-                                            Duration="0:0:15"
-                                            IsCumulative="True"
-                                            RepeatBehavior="Forever">
-                <c:DiscreteBrushKeyFrame KeyTime="0">
-                    <LinearGradientBrush>
-                        <GradientStop Offset="0" Color="Red" />
-                        <GradientStop Offset="1" Color="Green" />
-                    </LinearGradientBrush>
-                </c:DiscreteBrushKeyFrame>
-
-                <c:EasingBrushKeyFrame KeyTime="Uniform">
-                    <LinearGradientBrush>
-                        <GradientStop Offset="0" Color="Green" />
-                        <GradientStop Offset="1" Color="Red" />
-                    </LinearGradientBrush>
-                </c:EasingBrushKeyFrame>
-            </c:BrushAnimationUsingKeyFrames>
-        </Storyboard>
-
-        <Storyboard x:Key="Bd2Storyboard">
-            <ColorAnimationUsingKeyFrames x:Name="Bd2Anim"
-                                          Storyboard.TargetName="Bd2"
-                                          Storyboard.TargetProperty="Background.Color"
-                                          Duration="0:0:15"
-                                          IsCumulative="True"
-                                          RepeatBehavior="Forever">
-                <DiscreteColorKeyFrame KeyTime="0" Value="Green" />
-
-                <LinearColorKeyFrame KeyTime="0:0:3" Value="White" />
-
-                <EasingColorKeyFrame KeyTime="0:0:7" Value="DarkRed" />
-                
-                <DiscreteColorKeyFrame KeyTime="0:0:7" Value="White" />
-
-                <EasingColorKeyFrame KeyTime="0:0:11" Value="DarkRed">
-                    <EasingColorKeyFrame.EasingFunction>
-                        <QuarticEase />
-                    </EasingColorKeyFrame.EasingFunction>
-                </EasingColorKeyFrame>
-
-                <SplineColorKeyFrame KeyTime="Paced" Value="DarkBlue">
-                    <SplineColorKeyFrame.KeySpline>
-                        <KeySpline ControlPoint1="0.25,0.25" ControlPoint2="1,1" />
-                    </SplineColorKeyFrame.KeySpline>
-                </SplineColorKeyFrame>
-            </ColorAnimationUsingKeyFrames>
-        </Storyboard>
+        <Style x:Key="TestBtn" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
+                            <Border x:Name="Bd"
+                                    Background="LightGray"
+                                    BorderThickness="3"
+                                    BorderBrush="Black"
+                                    Width="100"
+                                    Height="100"/>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <c:ExtendedVisualState x:Name="Normal" />
+                                    <c:ExtendedVisualState x:Name="MouseOver">
+                                        <c:ExtendedVisualState.Setters>
+                                            <Setter TargetName="Bd" Property="Background" Value="Green"/>
+                                            <Setter TargetName="Bd" Property="BorderBrush" Value="Orange" />
+                                        </c:ExtendedVisualState.Setters>
+                                    </c:ExtendedVisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </UserControl.Resources>
-    
-    <!--<StackPanel>
-        <controls:Card HorizontalAlignment="Center" VerticalAlignment="Center">
-            <UniformGrid Columns="2">
-                <StackPanel>
-                    <Border x:Name="Bd1" 
-                            Width="100"
-                            Height="100"
-                            Margin="10"
-                            BorderBrush="Black"
-                            BorderThickness="5"
-                            Background="Red">
-                        <Border.Triggers>
-                            <EventTrigger RoutedEvent="FrameworkElement.Loaded">
-                                <BeginStoryboard Storyboard="{StaticResource Bd1Storyboard}" />
-                            </EventTrigger>
-                        </Border.Triggers>
-                    </Border>
-                </StackPanel>
-                <StackPanel>
-                    <Border x:Name="Bd2" 
-                            Width="100"
-                            Height="100"
-                            Margin="10"
-                            BorderBrush="Black"
-                            BorderThickness="5"
-                            Background="Red">
-                        <Border.Triggers>
-                            <EventTrigger RoutedEvent="FrameworkElement.Loaded">
-                                <BeginStoryboard Storyboard="{StaticResource Bd2Storyboard}" />
-                            </EventTrigger>
-                        </Border.Triggers>
-                    </Border>
-                </StackPanel>
-            </UniformGrid>
-        </controls:Card>
 
-    </StackPanel>-->
+    <Grid>
+        <Button Style="{StaticResource TestBtn}" />
+    </Grid>
 
 </UserControl>

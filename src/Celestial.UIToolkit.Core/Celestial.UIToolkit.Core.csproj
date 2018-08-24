@@ -65,12 +65,14 @@
     <Compile Include="Converters\NullToVisibilityConverter.cs" />
     <Compile Include="Converters\ThicknessSidePickerConverter.cs" />
     <Compile Include="Converters\ValueConverter.cs" />
+    <Compile Include="Xaml\ExtendedVisualStateManager\ExtendedVisualState.cs" />
     <Compile Include="Xaml\ExtendedVisualStateManager\ExtendedVisualStateManager.cs" />
     <Compile Include="Extensions\ArrayExtensions.cs" />
     <Compile Include="Extensions\ArraySegmentExtensions.cs" />
     <Compile Include="Extensions\DependencyPropertyExtensions.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\FrameworkElementExtensions.cs" />
+    <Compile Include="Xaml\ExtendedVisualStateManager\SetterVisualStateSwitcher.cs" />
     <Compile Include="Xaml\GridUnitExtension.cs" />
     <Compile Include="Xaml\MarginHelper.cs" />
     <Compile Include="Media\Animations\AnimationBase\AnimationBase.cs" />
