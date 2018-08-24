@@ -8,7 +8,7 @@ namespace Celestial.UIToolkit.Controls
 
     public partial class SplitView
     {
-
+        
         /// <summary>
         /// Identifies the <see cref="PanePlacement"/> dependency property.
         /// </summary>
@@ -41,7 +41,7 @@ namespace Celestial.UIToolkit.Controls
                 nameof(IsPaneOpen),
                 typeof(bool),
                 typeof(SplitView),
-                new PropertyMetadata(
+                new FrameworkPropertyMetadata(
                     true,
                     IsPaneOpen_Changed));
 

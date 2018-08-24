@@ -19,6 +19,7 @@
             <Slider Value="{Binding ExpandedModeThresholdWidth, ElementName=NavView, Mode=TwoWay}"
                     Minimum="0"
                     Maximum="2000" />
+
         </StackPanel>
     </c:NavigationView>
     

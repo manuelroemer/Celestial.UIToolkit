@@ -24,13 +24,6 @@ namespace Celestial.UIToolkit.Controls
         /// </summary>
         public SplitView()
         {
-            Loaded += SplitView_Loaded;
-        }
-
-        private void SplitView_Loaded(object sender, RoutedEventArgs e)
-        {
-            // Set initial visual states, but without showing any animations.
-            EnterCurrentDisplayModeVisualState(false);
         }
 
         private static void DisplayModeProperty_Changed(

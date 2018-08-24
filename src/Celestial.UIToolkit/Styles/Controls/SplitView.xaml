@@ -8,6 +8,8 @@
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
         <Setter Property="PaneBackground" Value="{StaticResource BaseHighBrush}" />
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="IsTabStop" Value="False" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:SplitView">
@@ -108,24 +110,25 @@
                             <!-- The PaneSpacer is simply there to take up the space in certain modes, since the
                                  PaneContainer spans both Grid Columns and thus doesn't change the 'Auto' grid length. -->
                             <Border x:Name="PaneSpacer"
-                                    Width="{TemplateBinding CompactPaneLength}" />
+                                    Width="0" />
 
-                            <Border x:Name="PaneContainer"
-                                    Grid.ColumnSpan="2"
-                                    Background="{TemplateBinding PaneBackground}"
-                                    HorizontalAlignment="Left"
-                                    Width="{TemplateBinding OpenPaneLength}">
+                            <controls:ClippingBorder x:Name="PaneContainer"
+                                                     Grid.ColumnSpan="2"
+                                                     Background="{TemplateBinding PaneBackground}"
+                                                     HorizontalAlignment="Left"
+                                                     Width="{Binding OpenPaneLength, RelativeSource={RelativeSource TemplatedParent}}">
                                 <ContentPresenter ContentSource="Pane"
                                                   ContentTemplate="{TemplateBinding PaneTemplate}"
                                                   ContentTemplateSelector="{TemplateBinding PaneTemplateSelector}"
                                                   ContentStringFormat="{TemplateBinding PaneStringFormat}" />
-                            </Border>
+                            </controls:ClippingBorder>
                         </Grid>
 
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="DisplayModeStates">
                                 <VisualStateGroup.Transitions>
                                     <VisualTransition GeneratedDuration="{StaticResource FastEnterAnimationDuration}" />
+                                    <VisualTransition From="Default" GeneratedDuration="0" />
                                 </VisualStateGroup.Transitions>
 
                                 <c:ExtendedVisualState x:Name="Closed" Storyboard="{StaticResource ClosedStoryboard}" />

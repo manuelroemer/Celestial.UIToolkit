@@ -1,7 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:c="http://celestial-ui.com"
-                    xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
+                    xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls"
+                    xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming">
 
     <ResourceDictionary.MergedDictionaries>
         <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
@@ -10,6 +11,12 @@
     </ResourceDictionary.MergedDictionaries>
     
     <Style TargetType="controls:NavigationView">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:NavigationView">
@@ -19,11 +26,32 @@
                         </Grid.Resources>
 
                         <Grid>
-                            
+                            <controls:SplitView x:Name="SplitView"
+                                                Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                theming:ControlProperties.CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}"
+                                                DisplayMode="Inline"
+                                                CompactPaneLength="{TemplateBinding CompactPaneLength}"
+                                                OpenPaneLength="{TemplateBinding OpenPaneLength}"
+                                                IsPaneOpen="{Binding IsPaneOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}, UpdateSourceTrigger=PropertyChanged}">
+                                <controls:SplitView.Pane>
+                                    <Grid x:Name="PaneGrid">
+                                        <Button>Test</Button>
+                                    </Grid>
+                                </controls:SplitView.Pane>
+
+                                <Grid x:Name="ContentGrid">
+                                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                </Grid>
+                            </controls:SplitView>
                         </Grid>
 
                         <VisualStateManager.VisualStateGroups>
-                            
+                            <VisualStateGroup x:Name="DisplayModeStates">
+                                <c:ExtendedVisualState x:Name="Minimal" />
+                            </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                     </Grid>
                 </ControlTemplate>

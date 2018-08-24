@@ -59,7 +59,7 @@ namespace Celestial.UIToolkit.Controls
             if (IsPaneOpen)
                 EnterOpenState();
             else
-                 EnterClosedState();
+                EnterClosedState();
             
             void EnterOpenState()
             {
