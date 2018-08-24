@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace Celestial.UIToolkit.Controls
 {
-    
+
     [TemplateVisualState(Name = ClosedVisualState,                  GroupName = DisplayModeStatesVisualStateGroup)]
     [TemplateVisualState(Name = ClosedCompactLeftVisualState,       GroupName = DisplayModeStatesVisualStateGroup)]
     [TemplateVisualState(Name = ClosedCompactRightVisualState,      GroupName = DisplayModeStatesVisualStateGroup)]
@@ -22,7 +18,9 @@ namespace Celestial.UIToolkit.Controls
     public partial class SplitView
     {
 
-        // These first few strings are here to simplify our lives later on.
+        // This here looks rough, but by defining the individual visual state parts,
+        // we can later dynamically build the current state via methods,
+        // instead of checking every single possible combination.
         private const string Open = "Open";
         private const string Closed = "Closed";
         private const string Left = "Left";

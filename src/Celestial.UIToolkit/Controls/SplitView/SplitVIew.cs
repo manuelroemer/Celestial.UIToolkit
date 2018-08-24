@@ -1,14 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 
 namespace Celestial.UIToolkit.Controls
 {
 
+    /// <summary>
+    /// Represents a container with two areas.
+    /// One area is a pane which typically displays navigation elements or popup-content.
+    /// The other area displays the main content which typically relates to the elements in the
+    /// pane.
+    /// </summary>
     public partial class SplitView : ContentControl
     {
 
@@ -18,6 +19,9 @@ namespace Celestial.UIToolkit.Controls
                 typeof(SplitView), new FrameworkPropertyMetadata(typeof(SplitView)));
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SplitView"/> class.
+        /// </summary>
         public SplitView()
         {
             Loaded += SplitView_Loaded;
@@ -25,19 +29,22 @@ namespace Celestial.UIToolkit.Controls
 
         private void SplitView_Loaded(object sender, RoutedEventArgs e)
         {
+            // Set initial visual states, but without showing any animations.
             EnterCurrentDisplayModeVisualState(false);
         }
 
         private static void DisplayModeProperty_Changed(
             DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            // Called whenever a property is changed, that updates the DisplayModes visual states.
+            // Called whenever a property which updates the DisplayModes visual states changes.
             var self = (SplitView)d;
             self.EnterCurrentDisplayModeVisualState();
         }
 
         private static void IsPaneOpen_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
+            // When the pane is opened/closed, call the corresponding events and change the
+            // visual state.
             var self = (SplitView)d;
             self.UpdateCurrentPaneToggleState();
         }

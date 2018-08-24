@@ -111,6 +111,7 @@
                                     Background="{TemplateBinding PaneBackground}"
                                     HorizontalAlignment="Left"
                                     Width="{TemplateBinding OpenPaneLength}">
+                                <TextBlock>Hello World!</TextBlock>
                             </Border>
                         </Grid>
 
