@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -76,65 +75,6 @@ namespace Celestial.UIToolkit.Controls
                 typeof(SplitView),
                 new PropertyMetadata(Brushes.Transparent));
 
-        /// <summary>
-        /// Gets or sets the position at which the pane is placed inside the
-        /// <see cref="SplitView"/>.
-        /// </summary>
-        public SplitViewPanePlacement PanePlacement
-        {
-            get { return (SplitViewPanePlacement)GetValue(PanePlacementProperty); }
-            set { SetValue(PanePlacementProperty, value); }
-        }
-
-        /// <summary>
-        /// Gets or sets the current display mode of the <see cref="SplitView"/>,
-        /// defining how the pane and content are layed out.
-        /// </summary>
-        public SplitViewDisplayMode DisplayMode
-        {
-            get { return (SplitViewDisplayMode)GetValue(DisplayModeProperty); }
-            set { SetValue(DisplayModeProperty, value); }
-        }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the pane is currently opened.
-        /// </summary>
-        public bool IsPaneOpen
-        {
-            get { return (bool)GetValue(IsPaneOpenProperty); }
-            set { SetValue(IsPaneOpenProperty, value); }
-        }
-
-        /// <summary>
-        /// Gets or sets the length of the pane when it is closed and when it's 
-        /// <see cref="DisplayMode"/> is set to <see cref="SplitViewDisplayMode.CompactOverlay"/>
-        /// or <see cref="SplitViewDisplayMode.CompactInline"/>.
-        /// </summary>
-        public double CompactPaneLength
-        {
-            get { return (double)GetValue(CompactPaneLengthProperty); }
-            set { SetValue(CompactPaneLengthProperty, value); }
-        }
-
-        /// <summary>
-        /// Gets or sets the length of the pane when it is opened.
-        /// </summary>
-        public double OpenPaneLength
-        {
-            get { return (double)GetValue(OpenPaneLengthProperty); }
-            set { SetValue(OpenPaneLengthProperty, value); }
-        }
-
-        /// <summary>
-        /// Gets or sets the background brush of the pane.
-        /// </summary>
-        public Brush PaneBackground
-        {
-            get { return (Brush)GetValue(PaneBackgroundProperty); }
-            set { SetValue(PaneBackgroundProperty, value); }
-        }
-
-
         private static readonly DependencyPropertyKey HasPanePropertyKey =
             DependencyProperty.RegisterReadOnly(
                 nameof(HasPane),
@@ -195,6 +135,64 @@ namespace Celestial.UIToolkit.Controls
                 new PropertyMetadata(
                     null,
                     PaneStringFormat_Changed));
+
+        /// <summary>
+        /// Gets or sets the position at which the pane is placed inside the
+        /// <see cref="SplitView"/>.
+        /// </summary>
+        public SplitViewPanePlacement PanePlacement
+        {
+            get { return (SplitViewPanePlacement)GetValue(PanePlacementProperty); }
+            set { SetValue(PanePlacementProperty, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the current display mode of the <see cref="SplitView"/>,
+        /// defining how the pane and content are layed out.
+        /// </summary>
+        public SplitViewDisplayMode DisplayMode
+        {
+            get { return (SplitViewDisplayMode)GetValue(DisplayModeProperty); }
+            set { SetValue(DisplayModeProperty, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the pane is currently opened.
+        /// </summary>
+        public bool IsPaneOpen
+        {
+            get { return (bool)GetValue(IsPaneOpenProperty); }
+            set { SetValue(IsPaneOpenProperty, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the length of the pane when it is closed and when it's 
+        /// <see cref="DisplayMode"/> is set to <see cref="SplitViewDisplayMode.CompactOverlay"/>
+        /// or <see cref="SplitViewDisplayMode.CompactInline"/>.
+        /// </summary>
+        public double CompactPaneLength
+        {
+            get { return (double)GetValue(CompactPaneLengthProperty); }
+            set { SetValue(CompactPaneLengthProperty, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the length of the pane when it is opened.
+        /// </summary>
+        public double OpenPaneLength
+        {
+            get { return (double)GetValue(OpenPaneLengthProperty); }
+            set { SetValue(OpenPaneLengthProperty, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the background brush of the pane.
+        /// </summary>
+        public Brush PaneBackground
+        {
+            get { return (Brush)GetValue(PaneBackgroundProperty); }
+            set { SetValue(PaneBackgroundProperty, value); }
+        }
 
         /// <summary>
         /// Gets a value indicating whether the <see cref="Pane"/> property of this
@@ -267,14 +265,16 @@ namespace Celestial.UIToolkit.Controls
             self.OnPaneTemplateChanged((DataTemplate)e.OldValue, (DataTemplate)e.NewValue);
         }
 
-        private static void PaneTemplateSelector_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        private static void PaneTemplateSelector_Changed(
+            DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var self = (SplitView)d;
             self.OnPaneTemplateSelectorChanged(
                 (DataTemplateSelector)e.OldValue, (DataTemplateSelector)e.NewValue);
         }
 
-        private static void PaneStringFormat_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        private static void PaneStringFormat_Changed(
+            DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var self = (SplitView)d;
             self.OnPaneStringFormatChanged((string)e.OldValue, (string)e.NewValue);
