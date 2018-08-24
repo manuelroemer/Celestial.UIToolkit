@@ -24,34 +24,7 @@ namespace Celestial.UIToolkit.Xaml
         /// </summary>
         public static ExtendedVisualStateManager Default { get; } = 
             new ExtendedVisualStateManager();
-
-        /// <summary>
-        /// Gets a list of <see cref="VisualStateSwitcher"/> instances which are used by the
-        /// <see cref="ExtendedVisualStateManager"/> to transition an element between its visual
-        /// states.
-        /// If you want to implement your own <see cref="VisualStateSwitcher"/> for custom
-        /// transitioning logic, add it to this list to make the 
-        /// <see cref="ExtendedVisualStateManager"/> use it.
-        /// </summary>
-        public static IList<VisualStateSwitcher> VisualStateSwitchers { get; private set; }
-
-        static ExtendedVisualStateManager()
-        {
-            // The extended version of the VSM covers all of the default VSM's features.
-            // To not clutter this class, we delegate the actual transitioning logic
-            // to VisualStateSwitcher objects.
-            // This has the additional benefit of not having to pass around the gigantic list
-            // of parameters (-> see GoToStateCore) all the time, since we can just use properties
-            // in the VisualStateSwitcher class.
-            //
-            // The switchers which are registered here are the ones supported by default.
-            // Users of this class can add custom switchers for custom logic to the list aswell.
-            VisualStateSwitchers = new List<VisualStateSwitcher>()
-            {
-                //new AnimationVisualStateSwitcher()
-            };
-        }
-
+        
         /// <summary>
         /// Transitions a control between states by letting each registered
         /// <see cref="VisualStateSwitcher"/> transition to the new state.
@@ -86,21 +59,13 @@ namespace Celestial.UIToolkit.Xaml
                 state == null)
                 return false;
             
-            // Allow each registered state switcher to transition to the new state.
-            // If any of them could sucessfully transition to the new state, that's considered
-            // a success.
+            // We offload the actual transitioning logic into multiple different StateSwitchers,
+            // so that this class doesn't become cluttered.
+            // Simply call them in order and check if one of them managed to transition to a new state.
             bool couldTransitionToState = false;
-            foreach (var stateSwitcher in VisualStateSwitchers)
-            {
-                if (stateSwitcher != null)
-                {
-                    couldTransitionToState |= stateSwitcher.GoToState(
-                        control, stateGroupsRoot, stateName, group, state, useTransitions);
-                }
-            }
-
             couldTransitionToState |= new AnimationVisualStateSwitcher().GoToState(
                 control, stateGroupsRoot, stateName, group, state, useTransitions);
+
             return couldTransitionToState;
         }
 
@@ -110,7 +75,7 @@ namespace Celestial.UIToolkit.Xaml
     /// A class which is used by the <see cref="ExtendedVisualStateManager"/> to
     /// transition an element between two states.
     /// </summary>
-    public abstract class VisualStateSwitcher
+    internal abstract class VisualStateSwitcher
     {
         
         /// <summary>

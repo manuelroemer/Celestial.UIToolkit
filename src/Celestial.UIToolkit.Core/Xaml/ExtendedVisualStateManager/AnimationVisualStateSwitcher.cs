@@ -23,7 +23,7 @@ namespace Celestial.UIToolkit.Xaml
     /// <see cref="VisualTransitionProvider"/> class.
     /// Afterwards, the custom transition will be used by this class.
     /// </remarks>
-    public class AnimationVisualStateSwitcher : VisualStateSwitcher
+    internal class AnimationVisualStateSwitcher : VisualStateSwitcher
     {
 
         /// <summary>
