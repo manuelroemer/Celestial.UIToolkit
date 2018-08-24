@@ -5,6 +5,8 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming">
 
     <Style TargetType="controls:SplitView">
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
         <Setter Property="PaneBackground" Value="{StaticResource BaseHighBrush}" />
         <Setter Property="Template">
             <Setter.Value>
@@ -13,9 +15,20 @@
                         <Grid.Resources>
 
                             <Storyboard x:Key="ClosePaneStoryboard">
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PaneSpacer"
+                                                               Storyboard.TargetProperty="Width">
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="0" />
+                                </DoubleAnimationUsingKeyFrames>
                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PaneContainer"
                                                                Storyboard.TargetProperty="Width">
                                     <DiscreteDoubleKeyFrame KeyTime="0" Value="0" />
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+
+                            <Storyboard x:Key="InlineDisplayModeStoryboard">
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PaneSpacer"
+                                                               Storyboard.TargetProperty="Width">
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding OpenPaneLength, RelativeSource={RelativeSource TemplatedParent}}" />
                                 </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
                         </Grid.Resources>
@@ -26,12 +39,6 @@
                                 <ColumnDefinition />
                             </Grid.ColumnDefinitions>
 
-                            <Border x:Name="PaneContainer"
-                                    Background="{TemplateBinding PaneBackground}"
-                                    Width="{TemplateBinding OpenPaneLength}">
-
-                            </Border>
-
                             <Border x:Name="ContentContainer"
                                     Grid.Column="1"
                                     Background="{TemplateBinding Background}"
@@ -40,6 +47,18 @@
                                     CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}">
                                 <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                            </Border>
+                            
+                            <!-- The PaneSpacer is simply there to take up the space in certain modes, since the
+                                 PaneContainer spans both Grid Columns and thus doesn't change the 'Auto' grid length. -->
+                            <Border x:Name="PaneSpacer"
+                                    Width="0" />
+
+                            <Border x:Name="PaneContainer"
+                                    Grid.ColumnSpan="2"
+                                    HorizontalAlignment="Left"
+                                    Width="{TemplateBinding OpenPaneLength}"
+                                    Background="{TemplateBinding PaneBackground}">
                             </Border>
                         </Grid>
 
@@ -50,6 +69,17 @@
                                 </VisualStateGroup.Transitions>
                                 <VisualState x:Name="Open" />
                                 <VisualState x:Name="Closed" Storyboard="{StaticResource ClosePaneStoryboard}" />
+                            </VisualStateGroup>
+
+                            <VisualStateGroup x:Name="DisplayModes">
+                                <VisualState x:Name="Overlay" />
+                                <VisualState x:Name="Inline" Storyboard="{StaticResource InlineDisplayModeStoryboard}" />
+                                <VisualState x:Name="CompactOverlay">
+                                    
+                                </VisualState>
+                                <VisualState x:Name="CompactInline">
+                                    
+                                </VisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                     </Grid>

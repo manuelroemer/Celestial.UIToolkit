@@ -10,6 +10,15 @@
         Title="Aurora UI Toolkit - Control Gallery"
         Width="1000" Height="600">
 
+    <Window.Resources>
+        <ObjectDataProvider x:Key="SplitViewDisplayModeDataProvider" MethodName="GetValues"
+                            ObjectType="{x:Type c:SplitViewDisplayMode}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="c:SplitViewDisplayMode"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Window.Resources>
+
     <c:MarginHelper.MarginGroups>
         <c:MarginGroup Name="Title" Margin="0,0,0,10" />
         <c:MarginGroup Name="CloseHorizontal" Margin="0,0,5,0" />
@@ -18,11 +27,17 @@
     </c:MarginHelper.MarginGroups>
 
     <c:SplitView x:Name="SplitView">
-        <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit 4}">
-            <TextBlock>Hello World!</TextBlock>
-            <CheckBox IsChecked="{Binding IsPaneOpen, ElementName=SplitView, Mode=TwoWay}">
-                IsPaneOpen
-            </CheckBox>
+        <StackPanel>
+            <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit 4}">
+                <TextBlock>Hello World!</TextBlock>
+                <CheckBox IsChecked="{Binding IsPaneOpen, ElementName=SplitView, Mode=TwoWay}">
+                    IsPaneOpen
+                </CheckBox>
+                <ComboBox SelectedItem="{Binding DisplayMode, ElementName=SplitView, Mode=TwoWay}"
+                          ItemsSource="{Binding Source={StaticResource SplitViewDisplayModeDataProvider}}"
+                          Style="{x:Null}"/>
+            </StackPanel>
+            <Border Width="200" Height="200" Background="DimGray" />
         </StackPanel>
     </c:SplitView>
     
