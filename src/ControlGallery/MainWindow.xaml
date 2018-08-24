@@ -47,7 +47,14 @@
                           ItemsSource="{Binding Source={StaticResource SplitViewPanePlacementDataProvider}}"
                           Style="{x:Null}"/>
             </StackPanel>
-            <Border Width="200" Height="200" Background="DimGray" />
+
+            <Label>OpenPaneLength:</Label>
+            <Slider Minimum="0" Maximum="500"
+                    Value="{Binding OpenPaneLength, ElementName=SplitView, Mode=TwoWay}" />
+            
+            <Label>CompactPaneLength:</Label>
+            <Slider Minimum="0" Maximum="500"
+                    Value="{Binding CompactPaneLength, ElementName=SplitView, Mode=TwoWay}" />
         </StackPanel>
     </c:SplitView>
     
