@@ -13,19 +13,18 @@
                 <ControlTemplate TargetType="controls:SplitView">
                     <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
                         <Grid.Resources>
-
-                            <Storyboard x:Key="ClosePaneStoryboard">
-                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PaneSpacer"
-                                                               Storyboard.TargetProperty="Width">
-                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="0" />
-                                </DoubleAnimationUsingKeyFrames>
+                            <Storyboard x:Key="OpenOverlayStoryboard">
                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PaneContainer"
                                                                Storyboard.TargetProperty="Width">
-                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="0" />
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding OpenPaneLength, RelativeSource={RelativeSource TemplatedParent}}" />
                                 </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
 
-                            <Storyboard x:Key="InlineDisplayModeStoryboard">
+                            <Storyboard x:Key="OpenInlineStoryboard">
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PaneContainer"
+                                                               Storyboard.TargetProperty="Width">
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding OpenPaneLength, RelativeSource={RelativeSource TemplatedParent}}" />
+                                </DoubleAnimationUsingKeyFrames>
                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PaneSpacer"
                                                                Storyboard.TargetProperty="Width">
                                     <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding OpenPaneLength, RelativeSource={RelativeSource TemplatedParent}}" />
@@ -35,8 +34,8 @@
 
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition />
+                                <ColumnDefinition x:Name="GridCol1" Width="Auto" />
+                                <ColumnDefinition x:Name="GridCol2" />
                             </Grid.ColumnDefinitions>
 
                             <Border x:Name="ContentContainer"
@@ -56,33 +55,38 @@
 
                             <Border x:Name="PaneContainer"
                                     Grid.ColumnSpan="2"
+                                    Background="{TemplateBinding PaneBackground}"
                                     HorizontalAlignment="Left"
-                                    Width="{TemplateBinding OpenPaneLength}"
-                                    Background="{TemplateBinding PaneBackground}">
+                                    Width="0">
                             </Border>
                         </Grid>
 
                         <VisualStateManager.VisualStateGroups>
-                            <VisualStateGroup x:Name="PaneToggleStates">
+                            <VisualStateGroup x:Name="DisplayModeStates">
                                 <VisualStateGroup.Transitions>
                                     <VisualTransition GeneratedDuration="{StaticResource FastEnterAnimationDuration}" />
                                 </VisualStateGroup.Transitions>
-                                <VisualState x:Name="Open" />
-                                <VisualState x:Name="Closed" Storyboard="{StaticResource ClosePaneStoryboard}" />
-                            </VisualStateGroup>
 
-                            <VisualStateGroup x:Name="DisplayModes">
-                                <VisualState x:Name="Overlay" />
-                                <VisualState x:Name="Inline" Storyboard="{StaticResource InlineDisplayModeStoryboard}" />
-                                <VisualState x:Name="CompactOverlay">
-                                    
-                                </VisualState>
-                                <VisualState x:Name="CompactInline">
-                                    
-                                </VisualState>
+                                <c:ExtendedVisualState x:Name="Closed" />
+                                <c:ExtendedVisualState x:Name="OpenOverlayLeft" Storyboard="{StaticResource OpenOverlayStoryboard}" />
+                                <c:ExtendedVisualState x:Name="OpenOverlayRight" Storyboard="{StaticResource OpenOverlayStoryboard}" />
+                                <c:ExtendedVisualState x:Name="OpenInlineLeft" Storyboard="{StaticResource OpenInlineStoryboard}" />
+                                <c:ExtendedVisualState x:Name="OpenInlineRight" Storyboard="{StaticResource OpenInlineStoryboard}" />
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                     </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <!-- When the Pane is displayed on the right, simply switch out the two grid colums.
+                             Also move the pane right, since it is floating over the whole control. -->
+                        <Trigger Property="PanePlacement" Value="Right">
+                            <Setter TargetName="PaneContainer" Property="HorizontalAlignment" Value="Right" />
+                            <Setter TargetName="PaneSpacer" Property="Grid.Column" Value="1" />
+                            <Setter TargetName="ContentContainer" Property="Grid.Column" Value="0" />
+                            <Setter TargetName="GridCol1" Property="Width" Value="*" />
+                            <Setter TargetName="GridCol2" Property="Width" Value="Auto" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

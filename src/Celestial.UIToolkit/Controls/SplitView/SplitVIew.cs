@@ -20,14 +20,20 @@ namespace Celestial.UIToolkit.Controls
 
         public SplitView()
         {
-            
+            Loaded += SplitView_Loaded;
         }
 
-        public override void OnApplyTemplate()
+        private void SplitView_Loaded(object sender, RoutedEventArgs e)
         {
-            base.OnApplyTemplate();
-            EnterCurrentPaneToggleVisualState(false);
             EnterCurrentDisplayModeVisualState(false);
+        }
+
+        private static void DisplayModeProperty_Changed(
+            DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            // Called whenever a property is changed, that updates the DisplayModes visual states.
+            var self = (SplitView)d;
+            self.EnterCurrentDisplayModeVisualState();
         }
 
         private static void IsPaneOpen_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -48,21 +54,15 @@ namespace Celestial.UIToolkit.Controls
         private void OpenPane()
         {
             RaisePaneOpening();
-            EnterCurrentPaneToggleVisualState();
+            EnterCurrentDisplayModeVisualState();
             RaisePaneOpened();
         }
 
         private void ClosePane()
         {
             RaisePaneClosing();
-            EnterCurrentPaneToggleVisualState();
+            EnterCurrentDisplayModeVisualState();
             RaisePaneClosed();
-        }
-
-        private static void DisplayMode_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var self = (SplitView)d;
-            self.EnterCurrentDisplayModeVisualState();
         }
         
     }

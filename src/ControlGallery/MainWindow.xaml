@@ -17,6 +17,13 @@
                 <x:Type TypeName="c:SplitViewDisplayMode"/>
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
+
+        <ObjectDataProvider x:Key="SplitViewPanePlacementDataProvider" MethodName="GetValues"
+                            ObjectType="{x:Type c:SplitViewPanePlacement}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="c:SplitViewPanePlacement"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
     </Window.Resources>
 
     <c:MarginHelper.MarginGroups>
@@ -26,7 +33,7 @@
         <c:MarginGroup Name="ControlGroup" Margin="10" />
     </c:MarginHelper.MarginGroups>
 
-    <c:SplitView x:Name="SplitView">
+    <c:SplitView x:Name="SplitView" PanePlacement="Right">
         <StackPanel>
             <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit 4}">
                 <TextBlock>Hello World!</TextBlock>
@@ -35,6 +42,9 @@
                 </CheckBox>
                 <ComboBox SelectedItem="{Binding DisplayMode, ElementName=SplitView, Mode=TwoWay}"
                           ItemsSource="{Binding Source={StaticResource SplitViewDisplayModeDataProvider}}"
+                          Style="{x:Null}"/>
+                <ComboBox SelectedItem="{Binding PanePlacement, ElementName=SplitView, Mode=TwoWay}"
+                          ItemsSource="{Binding Source={StaticResource SplitViewPanePlacementDataProvider}}"
                           Style="{x:Null}"/>
             </StackPanel>
             <Border Width="200" Height="200" Background="DimGray" />

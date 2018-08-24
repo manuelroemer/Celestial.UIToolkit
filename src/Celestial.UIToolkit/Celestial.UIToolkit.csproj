@@ -75,6 +75,7 @@
     <Compile Include="Controls\SplitView\SplitView.Events.cs" />
     <Compile Include="Controls\SplitView\SplitView.Properties.cs" />
     <Compile Include="Controls\SplitView\SplitViewDisplayMode.cs" />
+    <Compile Include="Controls\SplitView\SplitViewPanePlacement.cs" />
     <Compile Include="Theming\ControlProperties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

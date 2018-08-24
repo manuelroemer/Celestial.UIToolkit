@@ -7,42 +7,49 @@ using System.Windows;
 
 namespace Celestial.UIToolkit.Controls
 {
-
-    [TemplateVisualState(Name = PaneOpenVisualState, GroupName = PaneToggleStatesVisualStateGroup)]
-    [TemplateVisualState(Name = PaneClosedVisualState, GroupName = PaneToggleStatesVisualStateGroup)]
-    [TemplateVisualState(Name = OverlayVisualState, GroupName = DisplayModesVisualStateGroup)]
-    [TemplateVisualState(Name = InlineVisualState, GroupName = DisplayModesVisualStateGroup)]
-    [TemplateVisualState(Name = CompactOverlayVisualState, GroupName = DisplayModesVisualStateGroup)]
-    [TemplateVisualState(Name = CompactInlineVisualState, GroupName = DisplayModesVisualStateGroup)]
+    
+    [TemplateVisualState(Name = ClosedVisualState,                  GroupName = DisplayModeStatesVisualStateGroup)]
+    [TemplateVisualState(Name = ClosedCompactLeftVisualState,       GroupName = DisplayModeStatesVisualStateGroup)]
+    [TemplateVisualState(Name = ClosedCompactRightVisualState,      GroupName = DisplayModeStatesVisualStateGroup)]
+    [TemplateVisualState(Name = OpenOverlayLeftVisualState,         GroupName = DisplayModeStatesVisualStateGroup)]
+    [TemplateVisualState(Name = OpenOverlayRightVisualState,        GroupName = DisplayModeStatesVisualStateGroup)]
+    [TemplateVisualState(Name = OpenInlineLeftVisualState,          GroupName = DisplayModeStatesVisualStateGroup)]
+    [TemplateVisualState(Name = OpenInlineRightVisualState,         GroupName = DisplayModeStatesVisualStateGroup)]
+    [TemplateVisualState(Name = OpenCompactOverlayLeftVisualState,  GroupName = DisplayModeStatesVisualStateGroup)]
+    [TemplateVisualState(Name = OpenCompactOverlayRightVisualState, GroupName = DisplayModeStatesVisualStateGroup)]
+    [TemplateVisualState(Name = OpenCompactInlineLeftVisualState,   GroupName = DisplayModeStatesVisualStateGroup)]
+    [TemplateVisualState(Name = OpenCompactInlineRightVisualState,  GroupName = DisplayModeStatesVisualStateGroup)]
     public partial class SplitView
     {
 
-        internal const string PaneToggleStatesVisualStateGroup = "PaneToggleStates";
-        internal const string PaneOpenVisualState = "Open";
-        internal const string PaneClosedVisualState = "Closed";
+        // These first few strings are here to simplify our lives later on.
+        private const string Open = "Open";
+        private const string Closed = "Closed";
+        private const string Left = "Left";
+        private const string Right = "Right";
+        private const string Compact = "Compact";
+        private const string Overlay = "Overlay";
+        private const string Inline = "Inline";
+        private const string CompactOverlay = Compact + Overlay;
+        private const string CompactInline = Compact + Inline;
+        
+        internal const string DisplayModeStatesVisualStateGroup = "DisplayModeStates";
 
-        internal const string DisplayModesVisualStateGroup = "DisplayModes";
-        internal const string OverlayVisualState = "Overlay";
-        internal const string InlineVisualState = "Inline";
-        internal const string CompactOverlayVisualState = "CompactOverlay";
-        internal const string CompactInlineVisualState = "CompactInline";
+        internal const string ClosedVisualState = Closed;
+        internal const string ClosedCompactLeftVisualState =  Closed + Compact + Left;
+        internal const string ClosedCompactRightVisualState = Closed + Compact + Right;
 
-        private void EnterCurrentPaneToggleVisualState()
-        {
-            EnterCurrentPaneToggleVisualState(true);
-        }
+        internal const string OpenOverlayLeftVisualState =  Open + Overlay + Left;
+        internal const string OpenOverlayRightVisualState = Open + Overlay + Right;
 
-        private void EnterCurrentPaneToggleVisualState(bool useTransitions)
-        {
-            if (IsPaneOpen)
-            {
-                VisualStateManager.GoToState(this, PaneOpenVisualState, useTransitions);
-            }
-            else
-            {
-                VisualStateManager.GoToState(this, PaneClosedVisualState, useTransitions);
-            }
-        }
+        internal const string OpenInlineLeftVisualState =  Open + Inline + Left;
+        internal const string OpenInlineRightVisualState = Open + Inline + Right;
+
+        internal const string OpenCompactOverlayLeftVisualState =  Open + CompactOverlay + Left;
+        internal const string OpenCompactOverlayRightVisualState = Open + CompactOverlay + Right;
+
+        internal const string OpenCompactInlineLeftVisualState =  Open + CompactInline + Left;
+        internal const string OpenCompactInlineRightVisualState = Open + CompactInline + Right;
 
         private void EnterCurrentDisplayModeVisualState()
         {
@@ -51,23 +58,57 @@ namespace Celestial.UIToolkit.Controls
 
         private void EnterCurrentDisplayModeVisualState(bool useTransitions)
         {
+            if (IsPaneOpen)
+                EnterOpenState();
+            else
+                 EnterClosedState();
+            
+            void EnterOpenState()
+            {
+                string stateName = Open + GetDisplayModeVisualStateString() + GetLeftRightSuffix();
+                VisualStateManager.GoToState(this, stateName, useTransitions);
+            }
+
+            void EnterClosedState()
+            {
+                if (DisplayMode == SplitViewDisplayMode.CompactOverlay ||
+                    DisplayMode == SplitViewDisplayMode.CompactInline)
+                {
+                    string stateName = Closed + Compact + GetLeftRightSuffix();
+                    VisualStateManager.GoToState(this, stateName, useTransitions);
+                }
+                else
+                {
+                    VisualStateManager.GoToState(this, ClosedVisualState, useTransitions);
+                }
+            }
+        }
+
+        private string GetDisplayModeVisualStateString()
+        {
             switch (DisplayMode)
             {
                 case SplitViewDisplayMode.Overlay:
-                    VisualStateManager.GoToState(this, OverlayVisualState, useTransitions);
-                    break;
+                    return Overlay;
                 case SplitViewDisplayMode.Inline:
-                    VisualStateManager.GoToState(this, InlineVisualState, useTransitions);
-                    break;
+                    return Inline;
                 case SplitViewDisplayMode.CompactOverlay:
-                    VisualStateManager.GoToState(this, CompactOverlayVisualState, useTransitions);
-                    break;
+                    return CompactOverlay;
                 case SplitViewDisplayMode.CompactInline:
-                    VisualStateManager.GoToState(this, CompactInlineVisualState, useTransitions);
-                    break;
+                    return CompactInline;
                 default:
                     throw new NotImplementedException();
             }
+        }
+
+        private string GetLeftRightSuffix()
+        {
+            if (PanePlacement == SplitViewPanePlacement.Left)
+                return Left;
+            else if (PanePlacement == SplitViewPanePlacement.Right)
+                return Right;
+            else
+                throw new NotImplementedException();
         }
 
     }

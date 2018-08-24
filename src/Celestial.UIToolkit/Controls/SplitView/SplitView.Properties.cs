@@ -7,7 +7,19 @@ namespace Celestial.UIToolkit.Controls
 
     public partial class SplitView
     {
-        
+
+        /// <summary>
+        /// Identifies the <see cref="PanePlacement"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty PanePlacementProperty =
+            DependencyProperty.Register(
+                nameof(PanePlacement),
+                typeof(SplitViewPanePlacement),
+                typeof(SplitView),
+                new PropertyMetadata(
+                    SplitViewPanePlacement.Left,
+                    DisplayModeProperty_Changed));
+
         /// <summary>
         /// Identifies the <see cref="DisplayMode"/> dependency property.
         /// </summary>
@@ -18,7 +30,7 @@ namespace Celestial.UIToolkit.Controls
                 typeof(SplitView),
                 new PropertyMetadata(
                     SplitViewDisplayMode.Overlay,
-                    DisplayMode_Changed));
+                    DisplayModeProperty_Changed));
 
         /// <summary>
         /// Identifies the <see cref="IsPaneOpen"/> dependency property.
@@ -61,6 +73,16 @@ namespace Celestial.UIToolkit.Controls
                 typeof(Brush),
                 typeof(SplitView),
                 new PropertyMetadata(Brushes.Transparent));
+
+        /// <summary>
+        /// Gets or sets the position at which the pane is placed inside the
+        /// <see cref="SplitView"/>.
+        /// </summary>
+        public SplitViewPanePlacement PanePlacement
+        {
+            get { return (SplitViewPanePlacement)GetValue(PanePlacementProperty); }
+            set { SetValue(PanePlacementProperty, value); }
+        }
 
         /// <summary>
         /// Gets or sets the current display mode of the <see cref="SplitView"/>,
