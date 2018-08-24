@@ -16,27 +16,60 @@
                     <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
                         <Grid.Resources>
                             <Storyboard x:Key="CompactDisplayModeStoryboard">
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PaneSpacer"
+                                                               Storyboard.TargetProperty="Width">
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding CompactPaneLength, RelativeSource={RelativeSource TemplatedParent}}" />
+                                </DoubleAnimationUsingKeyFrames>
                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Pane"
-                                                                       Storyboard.TargetProperty="Width">
+                                                               Storyboard.TargetProperty="Width">
                                     <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding CompactPaneLength, RelativeSource={RelativeSource TemplatedParent}}" />
                                 </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
 
                             <Storyboard x:Key="ExpandedDisplayModeStoryboard">
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PaneSpacer"
+                                                               Storyboard.TargetProperty="Width">
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding OpenPaneLength, RelativeSource={RelativeSource TemplatedParent}}" />
+                                </DoubleAnimationUsingKeyFrames>
                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Pane"
                                                                Storyboard.TargetProperty="Width">
                                     <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding OpenPaneLength, RelativeSource={RelativeSource TemplatedParent}}" />
                                 </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
+
+                            <Storyboard x:Key="OpenPaneStoryboard">
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Pane"
+                                                               Storyboard.TargetProperty="Width">
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding OpenPaneLength, RelativeSource={RelativeSource TemplatedParent}}" />
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+
+                            <Storyboard x:Key="ClosedPaneStoryboard">
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Pane"
+                                                               Storyboard.TargetProperty="Width">
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding CompactPaneLength, RelativeSource={RelativeSource TemplatedParent}}" />
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
                         </Grid.Resources>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition />
-                        </Grid.ColumnDefinitions>
-                        <Border x:Name="Pane"
-                                Width="0"
-                                Background="{StaticResource BaseHighBrush}" />
-                        <ContentPresenter Grid.Column="1" />
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            
+                            <!-- The PaneSpacer is used to move the Content to the right, depending on the display mode. -->
+                            <Border x:Name="PaneSpacer"
+                                    Width="0" />
+                            
+                            <!-- The Pane itself is aligned to the left, but can hover over the content, if required. -->
+                            <Border x:Name="Pane"
+                                    Grid.ColumnSpan="2"
+                                    HorizontalAlignment="Left"
+                                    Width="0"
+                                    Background="{StaticResource BaseHighBrush}" />
+                            <ContentPresenter Grid.Column="1" />
+                        </Grid>
 
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="DisplayModes">
@@ -55,6 +88,11 @@
                                 <VisualState x:Name="Minimal" />
                                 <VisualState x:Name="Compact" Storyboard="{StaticResource CompactDisplayModeStoryboard}" />
                                 <VisualState x:Name="Expanded" Storyboard="{StaticResource ExpandedDisplayModeStoryboard}" />
+                            </VisualStateGroup>
+
+                            <VisualStateGroup x:Name="PaneToggleStates">
+                                <VisualState x:Name="Closed" Storyboard="{StaticResource ClosedPaneStoryboard}" />
+                                <VisualState x:Name="Open" Storyboard="{StaticResource OpenPaneStoryboard}"/>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                     </Grid>
