@@ -16,7 +16,9 @@ namespace Celestial.UIToolkit.Controls
                 nameof(DisplayMode),
                 typeof(SplitViewDisplayMode),
                 typeof(SplitView),
-                new PropertyMetadata(SplitViewDisplayMode.Overlay));
+                new PropertyMetadata(
+                    SplitViewDisplayMode.Overlay,
+                    DisplayMode_Changed));
 
         /// <summary>
         /// Identifies the <see cref="IsPaneOpen"/> dependency property.

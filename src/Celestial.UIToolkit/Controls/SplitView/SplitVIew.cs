@@ -27,6 +27,7 @@ namespace Celestial.UIToolkit.Controls
         {
             base.OnApplyTemplate();
             EnterCurrentPaneToggleVisualState(false);
+            EnterCurrentDisplayModeVisualState(false);
         }
 
         private static void IsPaneOpen_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -58,6 +59,12 @@ namespace Celestial.UIToolkit.Controls
             RaisePaneClosed();
         }
 
+        private static void DisplayMode_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var self = (SplitView)d;
+            self.EnterCurrentDisplayModeVisualState();
+        }
+        
     }
 
 }
