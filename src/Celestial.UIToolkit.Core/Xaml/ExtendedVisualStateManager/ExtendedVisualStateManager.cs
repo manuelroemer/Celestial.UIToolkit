@@ -54,22 +54,17 @@ namespace Celestial.UIToolkit.Xaml
         {
             if (control == null || stateGroupsRoot == null || stateName == null || group == null || state == null)
                 return false;
-            if (!ShouldTransitionToState(state))
-                return false;
+            if (!ShouldTransitionToState(group, state))
+                return true;
 
             return TransitionToState(control, stateGroupsRoot, stateName, group, state, useTransitions);
         }
 
-        private bool ShouldTransitionToState(VisualState state)
+        private bool ShouldTransitionToState(VisualStateGroup group, VisualState state)
         {
-            // The ExtendedVisualState (and any state implementing the IActivatableVisualState)
-            // can decide that they don't want to be applied.
-            // In this case, don't do anything.
-            if (state is IActivatableVisualState activatableVisualState &&
-                !activatableVisualState.IsActive)
-            {
+            // No need to transition, if we are already at the target state.
+            if ((group.GetCurrentState() ?? group.CurrentState) == state)
                 return false;
-            }
             return true;
         }
 
@@ -81,9 +76,6 @@ namespace Celestial.UIToolkit.Xaml
             VisualState state, 
             bool useTransitions)
         {
-            // No need to transition, if we are already at the target state.
-            if ((group.GetCurrentState() ?? group.CurrentState) == state) return true;
-
             // We offload the actual transitioning logic into multiple different StateSwitchers,
             // so that this class doesn't become cluttered.
             // Simply call them in order and check if one of them managed to transition to a new state.
