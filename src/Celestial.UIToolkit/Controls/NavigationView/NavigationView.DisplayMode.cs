@@ -77,26 +77,6 @@ namespace Celestial.UIToolkit.Controls
                     ThresholdWidth_Changed));
 
         /// <summary>
-        /// Identifies the <see cref="OpenPaneLength"/> dependency property.
-        /// </summary>
-        public static readonly DependencyProperty OpenPaneLengthProperty =
-            DependencyProperty.Register(
-                nameof(OpenPaneLength),
-                typeof(double),
-                typeof(NavigationView),
-                new PropertyMetadata(DefaultOpenPaneLength));
-
-        /// <summary>
-        /// Identifies the <see cref="CompactPaneLength"/> dependency property.
-        /// </summary>
-        public static readonly DependencyProperty CompactPaneLengthProperty =
-            DependencyProperty.Register(
-                nameof(CompactPaneLength),
-                typeof(double),
-                typeof(NavigationView),
-                new PropertyMetadata(DefaultCompactPaneLength));
-
-        /// <summary>
         /// Gets the current display mode of the <see cref="NavigationView"/>.
         /// </summary>
         public NavigationViewDisplayMode DisplayMode
@@ -127,25 +107,6 @@ namespace Celestial.UIToolkit.Controls
             set { SetValue(ExpandedModeThresholdWidthProperty, value); }
         }
 
-        /// <summary>
-        /// Gets or sets the length of the pane when it is fully expanded.
-        /// </summary>
-        public double OpenPaneLength
-        {
-            get { return (double)GetValue(OpenPaneLengthProperty); }
-            set { SetValue(OpenPaneLengthProperty, value); }
-        }
-
-        /// <summary>
-        /// Gets or sets the length of the pane when the <see cref="NavigationView"/> is in its
-        /// <see cref="NavigationViewDisplayMode.Compact"/> display mode.
-        /// </summary>
-        public double CompactPaneLength
-        {
-            get { return (double)GetValue(CompactPaneLengthProperty); }
-            set { SetValue(CompactPaneLengthProperty, value); }
-        }
-
         private static void DisplayModeProperty_Changed(
             DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
@@ -158,23 +119,6 @@ namespace Celestial.UIToolkit.Controls
             self.RaiseDisplayModeChanged(eventData);
         }
         
-        private void EnterCurrentDisplayModeVisualState()
-        {
-            switch (DisplayMode)
-            {
-                case NavigationViewDisplayMode.Minimal:
-                    VisualStateManager.GoToState(this, MinimumVisualStateName, true);
-                    break;
-                case NavigationViewDisplayMode.Compact:
-                    VisualStateManager.GoToState(this, CompactVisualStateName, true);
-                    break;
-                case NavigationViewDisplayMode.Expanded:
-                    VisualStateManager.GoToState(this, ExpandedVisualStateName, true);
-                    break;
-                default: throw new NotImplementedException();
-            }
-        }
-
         internal void RaiseDisplayModeChanged(NavigationViewDisplayModeChangedEventArgs e)
         {
             OnDisplayModeChanged(e);

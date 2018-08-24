@@ -10,59 +10,7 @@
         Title="Aurora UI Toolkit - Control Gallery"
         Width="1000" Height="600">
 
-    <Window.Resources>
-        <ObjectDataProvider x:Key="SplitViewDisplayModeDataProvider" MethodName="GetValues"
-                            ObjectType="{x:Type c:SplitViewDisplayMode}">
-            <ObjectDataProvider.MethodParameters>
-                <x:Type TypeName="c:SplitViewDisplayMode"/>
-            </ObjectDataProvider.MethodParameters>
-        </ObjectDataProvider>
-
-        <ObjectDataProvider x:Key="SplitViewPanePlacementDataProvider" MethodName="GetValues"
-                            ObjectType="{x:Type c:SplitViewPanePlacement}">
-            <ObjectDataProvider.MethodParameters>
-                <x:Type TypeName="c:SplitViewPanePlacement"/>
-            </ObjectDataProvider.MethodParameters>
-        </ObjectDataProvider>
-    </Window.Resources>
-
-    <c:MarginHelper.MarginGroups>
-        <c:MarginGroup Name="Title" Margin="0,0,0,10" />
-        <c:MarginGroup Name="CloseHorizontal" Margin="0,0,5,0" />
-        <c:MarginGroup Name="CloseVertical" Margin="0,0,0,5" />
-        <c:MarginGroup Name="ControlGroup" Margin="10" />
-    </c:MarginHelper.MarginGroups>
-
-    <c:SplitView x:Name="SplitView" PanePlacement="Right">
-        <StackPanel>
-            <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit 4}">
-                <TextBlock>Hello World!</TextBlock>
-                <CheckBox IsChecked="{Binding IsPaneOpen, ElementName=SplitView, Mode=TwoWay}">
-                    IsPaneOpen
-                </CheckBox>
-                <ComboBox SelectedItem="{Binding DisplayMode, ElementName=SplitView, Mode=TwoWay}"
-                          ItemsSource="{Binding Source={StaticResource SplitViewDisplayModeDataProvider}}"
-                          Style="{x:Null}"/>
-                <ComboBox SelectedItem="{Binding PanePlacement, ElementName=SplitView, Mode=TwoWay}"
-                          ItemsSource="{Binding Source={StaticResource SplitViewPanePlacementDataProvider}}"
-                          Style="{x:Null}"/>
-            </StackPanel>
-
-            <Label>OpenPaneLength:</Label>
-            <Slider Minimum="0" Maximum="500"
-                    Value="{Binding OpenPaneLength, ElementName=SplitView, Mode=TwoWay}" />
-            
-            <Label>CompactPaneLength:</Label>
-            <Slider Minimum="0" Maximum="500"
-                    Value="{Binding CompactPaneLength, ElementName=SplitView, Mode=TwoWay}" />
-        </StackPanel>
-
-        <c:SplitView.Pane>
-            <TextBlock>Hello from the Pane!</TextBlock>
-        </c:SplitView.Pane>
-    </c:SplitView>
-    
-    <!--<c:NavigationView x:Name="NavView">
+    <c:NavigationView x:Name="NavView">
         <StackPanel>
             <CheckBox IsChecked="{Binding IsPaneOpen,ElementName=NavView, Mode=TwoWay}">IsPaneOpen</CheckBox>
             <Slider Value="{Binding CompactModeThresholdWidth, ElementName=NavView, Mode=TwoWay}" 
@@ -72,7 +20,7 @@
                     Minimum="0"
                     Maximum="2000" />
         </StackPanel>
-    </c:NavigationView>-->
+    </c:NavigationView>
     
     <!--<TabControl>
         <TabItem Header="Colors">
