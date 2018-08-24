@@ -151,21 +151,13 @@ namespace Celestial.UIToolkit.Controls
         {
             var self = (NavigationView)d;
 
-            self.EnterNewDisplayMode();
+            self.EnterCurrentDisplayModeVisualState();
             var eventData = new NavigationViewDisplayModeChangedEventArgs(
                 (NavigationViewDisplayMode)e.OldValue,
                 (NavigationViewDisplayMode)e.NewValue);
             self.RaiseDisplayModeChanged(eventData);
         }
-
-        private void EnterNewDisplayMode()
-        {
-            // Called when DisplayMode got changed.
-            // When this happens, we need to update a few properties, aswell as the current
-            // VisualState.
-            EnterCurrentDisplayModeVisualState();
-        }
-
+        
         private void EnterCurrentDisplayModeVisualState()
         {
             switch (DisplayMode)
@@ -210,11 +202,11 @@ namespace Celestial.UIToolkit.Controls
         {
             // Ensure that Expanded takes precedence over Compact, so that the view gets expanded
             // if CompactThreshold > ExpandedThreshold.
-            if (ActualWidth > ExpandedModeThresholdWidth)
+            if (ActualWidth >= ExpandedModeThresholdWidth)
             {
                 DisplayMode = NavigationViewDisplayMode.Expanded;
             }
-            else if (ActualWidth > CompactModeThresholdWidth)
+            else if (ActualWidth >= CompactModeThresholdWidth)
             {
                 DisplayMode = NavigationViewDisplayMode.Compact;
             }
