@@ -71,6 +71,10 @@
     <Compile Include="Controls\PathIcon.cs" />
     <Compile Include="Controls\RippleOverlay.cs" />
     <Compile Include="Controls\ShadowDecorator.cs" />
+    <Compile Include="Controls\SplitView\SplitView.cs" />
+    <Compile Include="Controls\SplitView\SplitView.Events.cs" />
+    <Compile Include="Controls\SplitView\SplitView.Properties.cs" />
+    <Compile Include="Controls\SplitView\SplitViewDisplayMode.cs" />
     <Compile Include="Theming\ControlProperties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -105,6 +109,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\SplitView\SplitView.VisualStates.cs">
+      <Generator>MSBuild:Compile</Generator>
+    </Compile>
     <Page Include="Icons\Arrows.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -122,6 +129,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\Controls\ShadowDecorator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Controls\SplitView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
