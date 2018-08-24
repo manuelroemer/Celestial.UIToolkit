@@ -56,6 +56,10 @@
             <Slider Minimum="0" Maximum="500"
                     Value="{Binding CompactPaneLength, ElementName=SplitView, Mode=TwoWay}" />
         </StackPanel>
+
+        <c:SplitView.Pane>
+            <TextBlock>Hello from the Pane!</TextBlock>
+        </c:SplitView.Pane>
     </c:SplitView>
     
     <!--<c:NavigationView x:Name="NavView">

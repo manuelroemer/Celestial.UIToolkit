@@ -49,6 +49,10 @@
                                                                Storyboard.TargetProperty="Width">
                                     <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding OpenPaneLength, RelativeSource={RelativeSource TemplatedParent}}" />
                                 </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PaneSpacer"
+                                                               Storyboard.TargetProperty="Width">
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="0" />
+                                </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
 
                             <Storyboard x:Key="OpenInlineStoryboard">
@@ -111,7 +115,10 @@
                                     Background="{TemplateBinding PaneBackground}"
                                     HorizontalAlignment="Left"
                                     Width="{TemplateBinding OpenPaneLength}">
-                                <TextBlock>Hello World!</TextBlock>
+                                <ContentPresenter ContentSource="Pane"
+                                                  ContentTemplate="{TemplateBinding PaneTemplate}"
+                                                  ContentTemplateSelector="{TemplateBinding PaneTemplateSelector}"
+                                                  ContentStringFormat="{TemplateBinding PaneStringFormat}" />
                             </Border>
                         </Grid>
 

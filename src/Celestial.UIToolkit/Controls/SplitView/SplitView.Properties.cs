@@ -325,7 +325,7 @@ namespace Celestial.UIToolkit.Controls
         protected virtual void OnPaneStringFormatChanged(
             string oldStringFormat, string newStringFormat)
         { }
-
+        
     }
 
 }
