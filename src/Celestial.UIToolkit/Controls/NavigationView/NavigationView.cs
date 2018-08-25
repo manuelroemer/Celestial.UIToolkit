@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 
 namespace Celestial.UIToolkit.Controls
 {
@@ -25,9 +26,17 @@ namespace Celestial.UIToolkit.Controls
     ///     While feature-parity is not guaranteed, having a closer look at the official 
     ///     documentation by Microsoft will be a good idea.
     /// </remarks>
+    [TemplatePart(Name = BackButtonTemplatePart, Type = typeof(ButtonBase))]
+    [TemplatePart(Name = ToggleButtonTemplatePart, Type = typeof(ButtonBase))]
     public partial class NavigationView : HeaderedContentControl
     {
 
+        internal const string BackButtonTemplatePart = "PART_BackButton";
+        internal const string ToggleButtonTemplatePart = "PART_ToggleButton";
+
+        private ButtonBase _backButton;
+        private ButtonBase _toggleButton;
+        
         static NavigationView()
         {
             DefaultStyleKeyProperty.OverrideMetadata(
@@ -46,6 +55,42 @@ namespace Celestial.UIToolkit.Controls
         {
             // A size change might update the DisplayMode, depending on the thresholds.
             UpdateAdaptiveProperties();
+        }
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            _backButton = GetTemplateChild(BackButtonTemplatePart) as ButtonBase;
+            _toggleButton = GetTemplateChild(ToggleButtonTemplatePart) as ButtonBase;
+
+            InitializeBackButton();
+            InitializeToggleButton();
+        }
+
+        private void InitializeBackButton()
+        {
+            if (_backButton != null)
+            {
+                _backButton.Click += BackButton_Click;
+            }
+        }
+
+        private void InitializeToggleButton()
+        {
+            if (_toggleButton != null)
+            {
+                _toggleButton.Click += ToggleButton_Click;
+            }
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            // TODO
+        }
+
+        private void ToggleButton_Click(object sender, RoutedEventArgs e)
+        {
+            IsPaneOpen = !IsPaneOpen;
         }
 
         private static void ThresholdWidth_Changed(
