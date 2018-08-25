@@ -10,7 +10,8 @@
         Title="Aurora UI Toolkit - Control Gallery"
         Width="1000" Height="600">
 
-    <c:NavigationView x:Name="NavView">
+    <c:NavigationView x:Name="NavView"
+                      PaneHeader="Pane Title">
         <StackPanel>
             <CheckBox IsChecked="{Binding IsPaneOpen,ElementName=NavView, Mode=TwoWay}">IsPaneOpen</CheckBox>
             <Slider Value="{Binding CompactModeThresholdWidth, ElementName=NavView, Mode=TwoWay}" 

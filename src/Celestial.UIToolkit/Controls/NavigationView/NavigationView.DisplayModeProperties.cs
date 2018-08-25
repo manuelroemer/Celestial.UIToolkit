@@ -15,17 +15,9 @@ namespace Celestial.UIToolkit.Controls
     // - Pane properties for specific display modes
     // - Methods dealing with the display modes.
     //
-
-    [TemplateVisualState(Name = MinimumVisualStateName,  GroupName = DisplayModeVisualStateGroup)]
-    [TemplateVisualState(Name = CompactVisualStateName,  GroupName = DisplayModeVisualStateGroup)]
-    [TemplateVisualState(Name = ExpandedVisualStateName, GroupName = DisplayModeVisualStateGroup)]
+    
     public partial class NavigationView
     {
-
-        internal const string DisplayModeVisualStateGroup = "DisplayModes";
-        internal const string MinimumVisualStateName = "Minimal";
-        internal const string CompactVisualStateName = "Compact";
-        internal const string ExpandedVisualStateName = "Expanded";
 
         internal const double DefaultCompactModeThresholdWidth = 641;
         internal const double DefaultExpandedModeThresholdWidth = 1008;
@@ -118,8 +110,8 @@ namespace Celestial.UIToolkit.Controls
                 (NavigationViewDisplayMode)e.NewValue);
             self.RaiseDisplayModeChanged(eventData);
         }
-        
-        internal void RaiseDisplayModeChanged(NavigationViewDisplayModeChangedEventArgs e)
+
+        private void RaiseDisplayModeChanged(NavigationViewDisplayModeChangedEventArgs e)
         {
             OnDisplayModeChanged(e);
             DisplayModeChanged?.Invoke(this, e);
@@ -130,35 +122,6 @@ namespace Celestial.UIToolkit.Controls
         /// </summary>
         /// <param name="e">Event data for the changed event.</param>
         protected virtual void OnDisplayModeChanged(NavigationViewDisplayModeChangedEventArgs e) { }
-
-        private static void ThresholdWidth_Changed(
-            DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var self = (NavigationView)d;
-            self.UpdateDisplayMode();
-        }
-
-        /// <summary>
-        /// Updates the <see cref="DisplayMode"/> property based on the current
-        /// actual size and the threshold properties.
-        /// </summary>
-        private void UpdateDisplayMode()
-        {
-            // Ensure that Expanded takes precedence over Compact, so that the view gets expanded
-            // if CompactThreshold > ExpandedThreshold.
-            if (ActualWidth >= ExpandedModeThresholdWidth)
-            {
-                DisplayMode = NavigationViewDisplayMode.Expanded;
-            }
-            else if (ActualWidth >= CompactModeThresholdWidth)
-            {
-                DisplayMode = NavigationViewDisplayMode.Compact;
-            }
-            else
-            {
-                DisplayMode = NavigationViewDisplayMode.Minimal;
-            }
-        }
 
     }
 

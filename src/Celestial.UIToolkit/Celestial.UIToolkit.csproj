@@ -66,6 +66,8 @@
     <Compile Include="Controls\IconElement.cs" />
     <Compile Include="Controls\NavigationView\NavigationView.cs" />
     <Compile Include="Controls\NavigationView\NavigationView.PaneButtonProperties.cs" />
+    <Compile Include="Controls\NavigationView\NavigationView.PaneFooterProperties.cs" />
+    <Compile Include="Controls\NavigationView\NavigationView.PaneHeaderProperties.cs" />
     <Compile Include="Controls\NavigationView\NavigationView.PaneProperties.cs" />
     <Compile Include="Controls\NavigationView\NavigationView.VisualStates.cs" />
     <Compile Include="Controls\NavigationView\NavigationViewDisplayMode.cs" />
@@ -105,7 +107,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Controls\NavigationView\NavigationView.DisplayMode.cs" />
+    <Compile Include="Controls\NavigationView\NavigationView.DisplayModeProperties.cs" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

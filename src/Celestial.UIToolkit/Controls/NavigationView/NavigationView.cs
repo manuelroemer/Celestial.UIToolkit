@@ -45,7 +45,39 @@ namespace Celestial.UIToolkit.Controls
         private void NavigationView_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             // A size change might update the DisplayMode, depending on the thresholds.
-            UpdateDisplayMode();
+            UpdateAdaptiveProperties();
+        }
+
+        private static void ThresholdWidth_Changed(
+            DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var self = (NavigationView)d;
+            self.UpdateAdaptiveProperties();
+        }
+
+        /// <summary>
+        /// Updates the <see cref="DisplayMode"/> and <see cref="IsPaneOpen"/> properties
+        /// based on the control's actual size and the threshold properties.
+        /// </summary>
+        private void UpdateAdaptiveProperties()
+        {
+            // Ensure that Expanded takes precedence over Compact, so that the view gets expanded
+            // if CompactThreshold > ExpandedThreshold.
+            if (ActualWidth >= ExpandedModeThresholdWidth)
+            {
+                DisplayMode = NavigationViewDisplayMode.Expanded;
+                IsPaneOpen = true;
+            }
+            else if (ActualWidth >= CompactModeThresholdWidth)
+            {
+                DisplayMode = NavigationViewDisplayMode.Compact;
+                IsPaneOpen = false;
+            }
+            else
+            {
+                DisplayMode = NavigationViewDisplayMode.Minimal;
+                IsPaneOpen = false;
+            }
         }
 
     }

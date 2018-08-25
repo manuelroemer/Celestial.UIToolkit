@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System.Diagnostics;
+using System.Windows;
+using System.Windows.Markup;
 
 namespace Celestial.UIToolkit.Xaml
 {
@@ -11,6 +13,7 @@ namespace Celestial.UIToolkit.Xaml
     /// A class which is used to allow bindings in places where they wouldn't normally be possible,
     /// by creating a proxy between the two parties.
     /// </summary>
+    [DebuggerDisplay(nameof(Data) + ": {" + nameof(Data) + "}")]
     public class BindingProxy : Freezable
     {
 
@@ -18,7 +21,7 @@ namespace Celestial.UIToolkit.Xaml
         /// Identifies the <see cref="Data"/> dependency property. 
         /// </summary>
         public static readonly DependencyProperty DataProperty = DependencyProperty.Register(
-            "Data", typeof(object), typeof(BindingProxy));
+            nameof(Data), typeof(object), typeof(BindingProxy), new PropertyMetadata(null));
 
         /// <summary>
         /// Gets or sets the data which this object is proxying.
@@ -27,6 +30,21 @@ namespace Celestial.UIToolkit.Xaml
         {
             get => GetValue(DataProperty); 
             set => SetValue(DataProperty, value); 
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BindingProxy"/> class.
+        /// </summary>
+        public BindingProxy() { }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BindingProxy"/> class with the
+        /// specified <paramref name="data"/>.
+        /// </summary>
+        /// <param name="data">The data which this object is proxying.</param>
+        public BindingProxy(object data)
+        {
+            Data = data;
         }
 
         /// <summary>
@@ -41,7 +59,7 @@ namespace Celestial.UIToolkit.Xaml
         /// <returns>A <see cref="string"/> representing the proxy's data.</returns>
         public override string ToString()
         {
-            return "Data=\"" + (Data?.ToString() ?? "null") + "\"";
+            return Data?.ToString() ?? "";
         }
 
     }
