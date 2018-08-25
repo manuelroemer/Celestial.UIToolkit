@@ -11,16 +11,17 @@
         Width="1000" Height="600">
 
     <c:NavigationView x:Name="NavView"
-                      PaneHeader="Pane Title">
+                      PaneHeader="Pane Title"
+                      Header="Header!">
         <StackPanel>
-            <CheckBox IsChecked="{Binding IsPaneOpen,ElementName=NavView, Mode=TwoWay}">IsPaneOpen</CheckBox>
+            <CheckBox IsChecked="{Binding IsPaneOpen, ElementName=NavView, Mode=TwoWay}">IsPaneOpen</CheckBox>
+            <CheckBox IsChecked="{Binding IsHeaderVisible, ElementName=NavView, Mode=TwoWay}">IsHeaderVisible</CheckBox>
             <Slider Value="{Binding CompactModeThresholdWidth, ElementName=NavView, Mode=TwoWay}" 
                     Minimum="0"
                     Maximum="2000" />
             <Slider Value="{Binding ExpandedModeThresholdWidth, ElementName=NavView, Mode=TwoWay}"
                     Minimum="0"
                     Maximum="2000" />
-
         </StackPanel>
     </c:NavigationView>
     

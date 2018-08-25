@@ -65,6 +65,7 @@
     <Compile Include="Controls\IconButton.cs" />
     <Compile Include="Controls\IconElement.cs" />
     <Compile Include="Controls\NavigationView\NavigationView.cs" />
+    <Compile Include="Controls\NavigationView\NavigationView.HeaderProperties.cs" />
     <Compile Include="Controls\NavigationView\NavigationView.PaneButtonProperties.cs" />
     <Compile Include="Controls\NavigationView\NavigationView.PaneFooterProperties.cs" />
     <Compile Include="Controls\NavigationView\NavigationView.PaneHeaderProperties.cs" />
