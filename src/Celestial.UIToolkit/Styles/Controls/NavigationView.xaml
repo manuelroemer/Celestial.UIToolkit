@@ -17,12 +17,14 @@
         <Setter Property="VerticalAlignment" Value="Stretch" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="CompactPaneLength" Value="{c:GridUnit 12}" />
+        <Setter Property="OpenPaneLength" Value="{c:GridUnit 100}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:NavigationView">
                     <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
                         <Grid.Resources>
-                            
+                            <c:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
                         </Grid.Resources>
 
                         <Grid>
@@ -37,7 +39,19 @@
                                                 IsPaneOpen="{Binding IsPaneOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}, UpdateSourceTrigger=PropertyChanged}">
                                 <controls:SplitView.Pane>
                                     <Grid x:Name="PaneGrid">
-                                        <Button>Test</Button>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition />
+                                        </Grid.RowDefinitions>
+                                        <Button x:Name="BackButton"
+                                                Style="{DynamicResource SquareButton}"
+                                                IsEnabled="{TemplateBinding IsBackButtonEnabled}"
+                                                Visibility="{Binding IsBackButtonVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                                HorizontalAlignment="Left"
+                                                Width="{c:GridUnit 12}"
+                                                Height="{c:GridUnit 12}">
+                                            &lt;
+                                        </Button>
                                     </Grid>
                                 </controls:SplitView.Pane>
 
@@ -51,9 +65,16 @@
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="DisplayModeStates">
                                 <c:ExtendedVisualState x:Name="Minimal" />
+                                <c:ExtendedVisualState x:Name="Compact" />
+                                <c:ExtendedVisualState x:Name="Expanded" />
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                     </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="DisplayMode" Value="Compact">
+                            <Setter TargetName="SplitView" Property="DisplayMode" Value="CompactInline" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

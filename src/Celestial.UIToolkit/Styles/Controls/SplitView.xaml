@@ -15,7 +15,14 @@
                 <ControlTemplate TargetType="controls:SplitView">
                     <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
                         <Grid.Resources>
-                            
+                            <!-- For some reason, the Animations won't bind to the OpenPaneLength and CompactPaneLength when the control
+                                 is loaded (meaning that the values will be 0).
+                                 That results in the pane being displayed incorrectly (hidden) when the control is loaded, even if
+                                 IsPaneOpen = True.
+                                 Don't ask me why, but it works as intended if BindingProxys are used. -->
+                            <c:BindingProxy x:Key="OpenPaneLengthProxy" Data="{Binding OpenPaneLength, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <c:BindingProxy x:Key="CompactPaneLengthProxy" Data="{Binding CompactPaneLength, RelativeSource={RelativeSource TemplatedParent}}" />
+
                             <Storyboard x:Key="ClosedStoryboard">
                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PaneContainer"
                                                                Storyboard.TargetProperty="Width">
@@ -38,18 +45,18 @@
                             <Storyboard x:Key="ClosedCompactStoryboard">
                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PaneContainer"
                                                                Storyboard.TargetProperty="Width">
-                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding CompactPaneLength, RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource CompactPaneLengthProxy}}" />
                                 </DoubleAnimationUsingKeyFrames>
                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PaneSpacer"
                                                                Storyboard.TargetProperty="Width">
-                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding CompactPaneLength, RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource CompactPaneLengthProxy}}" />
                                 </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
                             
                             <Storyboard x:Key="OpenOverlayStoryboard">
                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PaneContainer"
                                                                Storyboard.TargetProperty="Width">
-                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding OpenPaneLength, RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource OpenPaneLengthProxy}}" />
                                 </DoubleAnimationUsingKeyFrames>
                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PaneSpacer"
                                                                Storyboard.TargetProperty="Width">
@@ -60,33 +67,33 @@
                             <Storyboard x:Key="OpenInlineStoryboard">
                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PaneContainer"
                                                                Storyboard.TargetProperty="Width">
-                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding OpenPaneLength, RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource OpenPaneLengthProxy}}" />
                                 </DoubleAnimationUsingKeyFrames>
                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PaneSpacer"
                                                                Storyboard.TargetProperty="Width">
-                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding OpenPaneLength, RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource OpenPaneLengthProxy}}" />
                                 </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
 
                             <Storyboard x:Key="OpenCompactOverlayStoryboard">
                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PaneContainer"
                                                                Storyboard.TargetProperty="Width">
-                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding OpenPaneLength, RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource OpenPaneLengthProxy}}" />
                                 </DoubleAnimationUsingKeyFrames>
                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PaneSpacer"
                                                                Storyboard.TargetProperty="Width">
-                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding CompactPaneLength, RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource CompactPaneLengthProxy}}" />
                                 </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
                             
                             <Storyboard x:Key="OpenCompactInlineStoryboard">
                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PaneContainer"
                                                                Storyboard.TargetProperty="Width">
-                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding OpenPaneLength, RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource OpenPaneLengthProxy}}" />
                                 </DoubleAnimationUsingKeyFrames>
                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PaneSpacer"
                                                                Storyboard.TargetProperty="Width">
-                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding OpenPaneLength, RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource OpenPaneLengthProxy}}" />
                                 </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
                         </Grid.Resources>
@@ -110,7 +117,7 @@
                             <!-- The PaneSpacer is simply there to take up the space in certain modes, since the
                                  PaneContainer spans both Grid Columns and thus doesn't change the 'Auto' grid length. -->
                             <Border x:Name="PaneSpacer"
-                                    Width="0" />
+                                    Width="{Binding OpenPaneLength, RelativeSource={RelativeSource TemplatedParent}, NotifyOnSourceUpdated=True}" />
 
                             <Border x:Name="PaneContainer"
                                     Grid.ColumnSpan="2"
@@ -128,9 +135,9 @@
                             <VisualStateGroup x:Name="DisplayModeStates">
                                 <VisualStateGroup.Transitions>
                                     <VisualTransition GeneratedDuration="{StaticResource FastEnterAnimationDuration}" />
-                                    <VisualTransition From="Default" GeneratedDuration="0" />
                                 </VisualStateGroup.Transitions>
 
+                                <c:ExtendedVisualState x:Name="Default" />
                                 <c:ExtendedVisualState x:Name="Closed" Storyboard="{StaticResource ClosedStoryboard}" />
                                 <c:ExtendedVisualState x:Name="ClosedCompactLeft" Storyboard="{StaticResource ClosedCompactStoryboard}" />
                                 <c:ExtendedVisualState x:Name="ClosedCompactRight" Storyboard="{StaticResource ClosedCompactStoryboard}" />

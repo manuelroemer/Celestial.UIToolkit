@@ -4,6 +4,7 @@ using System.Windows;
 namespace Celestial.UIToolkit.Controls
 {
 
+    [TemplateVisualState(Name = DefaultVisualState,                 GroupName = DisplayModeStatesVisualStateGroup)]
     [TemplateVisualState(Name = ClosedVisualState,                  GroupName = DisplayModeStatesVisualStateGroup)]
     [TemplateVisualState(Name = ClosedCompactLeftVisualState,       GroupName = DisplayModeStatesVisualStateGroup)]
     [TemplateVisualState(Name = ClosedCompactRightVisualState,      GroupName = DisplayModeStatesVisualStateGroup)]
@@ -33,6 +34,7 @@ namespace Celestial.UIToolkit.Controls
         
         internal const string DisplayModeStatesVisualStateGroup = "DisplayModeStates";
 
+        internal const string DefaultVisualState = "Default";
         internal const string ClosedVisualState = Closed;
         internal const string ClosedCompactLeftVisualState =  Closed + Compact + Left;
         internal const string ClosedCompactRightVisualState = Closed + Compact + Right;
@@ -49,6 +51,11 @@ namespace Celestial.UIToolkit.Controls
         internal const string OpenCompactInlineLeftVisualState =  Open + CompactInline + Left;
         internal const string OpenCompactInlineRightVisualState = Open + CompactInline + Right;
 
+        private void EnterDefaultDisplayModeVisualState()
+        {
+            VisualStateManager.GoToState(this, DefaultVisualState, false);
+        }
+
         private void EnterCurrentDisplayModeVisualState()
         {
             EnterCurrentDisplayModeVisualState(true);
@@ -56,33 +63,37 @@ namespace Celestial.UIToolkit.Controls
 
         private void EnterCurrentDisplayModeVisualState(bool useTransitions)
         {
-            if (IsPaneOpen)
-                EnterOpenState();
-            else
-                EnterClosedState();
-            
-            void EnterOpenState()
-            {
-                string stateName = Open + GetDisplayModeVisualStateString() + GetLeftRightSuffix();
-                VisualStateManager.GoToState(this, stateName, useTransitions);
-            }
+            string stateName = GetCurrentDisplayModeVisualStateName();
+            VisualStateManager.GoToState(this, stateName, useTransitions);
+        }
 
-            void EnterClosedState()
+        private string GetCurrentDisplayModeVisualStateName()
+        {
+            if (IsPaneOpen)
+                return GetCurrentOpenDisplayModeVisualStateName();
+            else
+                return GetCurrentClosedDisplayModeVisualStateName();
+        }
+
+        private string GetCurrentOpenDisplayModeVisualStateName()
+        {
+            return Open + GetCurrentDisplayModeMiddleString() + GetLeftRightSuffix();
+        }
+
+        private string GetCurrentClosedDisplayModeVisualStateName()
+        {
+            if (DisplayMode == SplitViewDisplayMode.CompactOverlay ||
+                DisplayMode == SplitViewDisplayMode.CompactInline)
             {
-                if (DisplayMode == SplitViewDisplayMode.CompactOverlay ||
-                    DisplayMode == SplitViewDisplayMode.CompactInline)
-                {
-                    string stateName = Closed + Compact + GetLeftRightSuffix();
-                    VisualStateManager.GoToState(this, stateName, useTransitions);
-                }
-                else
-                {
-                    VisualStateManager.GoToState(this, ClosedVisualState, useTransitions);
-                }
+                return Closed + Compact + GetLeftRightSuffix();
+            }
+            else
+            {
+                return ClosedVisualState;
             }
         }
 
-        private string GetDisplayModeVisualStateString()
+        private string GetCurrentDisplayModeMiddleString()
         {
             switch (DisplayMode)
             {

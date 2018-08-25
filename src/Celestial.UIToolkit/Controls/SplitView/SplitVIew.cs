@@ -26,7 +26,10 @@ namespace Celestial.UIToolkit.Controls
         {
             Loaded += (sender, e) =>
             {
-                VisualStateManager.GoToState(this, Closed, false);
+                // When loading, ensure that we are running the appropriate VS, so that
+                // the pane is layed out correctly.
+                // Use "Default" to reset anything which was previously set via property changes.
+                EnterDefaultDisplayModeVisualState();
                 EnterCurrentDisplayModeVisualState(false);
             };
         }
