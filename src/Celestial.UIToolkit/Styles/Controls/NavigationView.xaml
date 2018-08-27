@@ -55,12 +55,12 @@
                                                 OpenPaneLength="{TemplateBinding OpenPaneLength}"
                                                 IsPaneOpen="{Binding IsPaneOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}, UpdateSourceTrigger=PropertyChanged}">
                                 <controls:SplitView.Pane>
-                                    <Grid x:Name="PaneGrid">
+                                    <Grid x:Name="PART_PaneContentGrid">
                                         <Grid.RowDefinitions>
                                             <RowDefinition x:Name="BackButtonRow"   Height="Auto" />
                                             <RowDefinition x:Name="ToggleButtonRow" Height="Auto" />
                                             <RowDefinition />
-                                            
+                                            <RowDefinition x:Name="FooterRow" Height="Auto" />
                                         </Grid.RowDefinitions>
                                         
                                         <Button x:Name="PART_BackButton"
@@ -108,6 +108,13 @@
                                                               ContentStringFormat="{TemplateBinding PaneHeaderStringFormat}"
                                                               Visibility="{Binding HasPaneTitle, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                         </Grid>
+
+                                        <ContentPresenter x:Name="PaneFooterContentSite" 
+                                                          Grid.Row="3"
+                                                          ContentSource="PaneFooter"
+                                                          ContentTemplate="{TemplateBinding PaneFooterTemplate}"
+                                                          ContentTemplateSelector="{TemplateBinding PaneFooterTemplateSelector}"
+                                                          ContentStringFormat="{TemplateBinding PaneFooterStringFormat}" />
                                     </Grid>
                                 </controls:SplitView.Pane>
 
@@ -138,7 +145,7 @@
                                                           ContentTemplate="{TemplateBinding HeaderTemplate}"
                                                           ContentTemplateSelector="{TemplateBinding HeaderTemplateSelector}"
                                                           ContentStringFormat="{TemplateBinding HeaderStringFormat}"
-                                                          Visibility="{Binding IsHeaderVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                                                          Visibility="{Binding AlwaysShowHeader, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                     </Grid>
                                     <ContentPresenter x:Name="ContentSite"
                                                       Grid.Row="1"

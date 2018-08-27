@@ -8,23 +8,25 @@ namespace Celestial.UIToolkit.Controls
     {
         
         /// <summary>
-        /// Identifies the <see cref="IsHeaderVisible"/> dependency property.
+        /// Identifies the <see cref="AlwaysShowHeader"/> dependency property.
         /// </summary>
-        public static readonly DependencyProperty IsHeaderVisibleProperty =
+        public static readonly DependencyProperty AlwaysShowHeaderProperty =
             DependencyProperty.Register(
-                nameof(IsHeaderVisible),
+                nameof(AlwaysShowHeader),
                 typeof(bool),
                 typeof(NavigationView),
                 new PropertyMetadata(true));
 
         /// <summary>
         /// Gets or sets a value indicating whether the <see cref="HeaderedContentControl.Header"/>
-        /// content of this <see cref="NavigationView"/> is currently visible.
+        /// content of this <see cref="NavigationView"/> is always visible.
+        /// If false, the header is only shown, when the <see cref="NavigationView"/> is in the
+        /// <see cref="NavigationViewDisplayMode.Minimal"/> display mode.
         /// </summary>
-        public bool IsHeaderVisible
+        public bool AlwaysShowHeader
         {
-            get { return (bool)GetValue(IsHeaderVisibleProperty); }
-            set { SetValue(IsHeaderVisibleProperty, value); }
+            get { return (bool)GetValue(AlwaysShowHeaderProperty); }
+            set { SetValue(AlwaysShowHeaderProperty, value); }
         }
         
     }

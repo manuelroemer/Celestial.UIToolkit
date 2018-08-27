@@ -15,7 +15,7 @@
                       Header="Header!">
         <StackPanel>
             <CheckBox IsChecked="{Binding IsPaneOpen, ElementName=NavView, Mode=TwoWay}">IsPaneOpen</CheckBox>
-            <CheckBox IsChecked="{Binding IsHeaderVisible, ElementName=NavView, Mode=TwoWay}">IsHeaderVisible</CheckBox>
+            <CheckBox IsChecked="{Binding AlwaysShowHeader, ElementName=NavView, Mode=TwoWay}">AlwaysShowHeader</CheckBox>
             <Slider Value="{Binding CompactModeThresholdWidth, ElementName=NavView, Mode=TwoWay}" 
                     Minimum="0"
                     Maximum="2000" />
@@ -23,6 +23,10 @@
                     Minimum="0"
                     Maximum="2000" />
         </StackPanel>
+
+        <c:NavigationView.PaneFooter>
+            <CheckBox>Hello from the Footer!</CheckBox>
+        </c:NavigationView.PaneFooter>
     </c:NavigationView>
     
     <!--<TabControl>

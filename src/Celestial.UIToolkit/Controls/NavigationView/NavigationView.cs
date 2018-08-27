@@ -57,6 +57,10 @@ namespace Celestial.UIToolkit.Controls
             UpdateAdaptiveProperties();
         }
 
+        /// <summary>
+        /// Attaches the back- and toggle-button of the <see cref="NavigationView"/> to
+        /// event handlers, to that their inputs are registered and handled.
+        /// </summary>
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
