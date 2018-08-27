@@ -24,6 +24,16 @@
     <Style x:Key="NavigationViewToggleButton" TargetType="Button" BasedOn="{StaticResource NavigationViewPaneButton}">
         
     </Style>
+
+    <Style x:Key="NavigationViewMenuItemsListView" TargetType="ListView">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListView">
+                    <ItemsPresenter />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
     
     <Style TargetType="controls:NavigationView">
         <Setter Property="Focusable" Value="False" />
@@ -59,8 +69,8 @@
                                         <Grid.RowDefinitions>
                                             <RowDefinition x:Name="BackButtonRow"   Height="Auto" />
                                             <RowDefinition x:Name="ToggleButtonRow" Height="Auto" />
-                                            <RowDefinition />
-                                            <RowDefinition x:Name="FooterRow" Height="Auto" />
+                                            <RowDefinition x:Name="MenuItemsRow"    Height="*" />
+                                            <RowDefinition x:Name="FooterRow"       Height="Auto" />
                                         </Grid.RowDefinitions>
                                         
                                         <Button x:Name="PART_BackButton"
@@ -110,6 +120,10 @@
                                                               ContentStringFormat="{TemplateBinding PaneHeaderStringFormat}"
                                                               Visibility="{Binding HasPaneTitle, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                         </Grid>
+
+                                        <ListView Grid.Row="2"
+                                                  Style="{StaticResource NavigationViewMenuItemsListView}"
+                                                  SelectionMode="Single" />
 
                                         <ContentPresenter x:Name="PaneFooterContentSite" 
                                                           Grid.Row="3"

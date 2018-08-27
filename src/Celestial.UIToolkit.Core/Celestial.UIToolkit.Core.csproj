@@ -53,6 +53,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ItemsSourceCollection.cs" />
     <Compile Include="Xaml\BindingProxy.cs" />
     <Compile Include="Common\Singleton.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />

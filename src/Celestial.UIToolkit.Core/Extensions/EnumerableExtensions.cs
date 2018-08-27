@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -95,6 +96,31 @@ namespace Celestial.UIToolkit.Extensions
         {
             if (enumerable == null) throw new ArgumentNullException(nameof(enumerable));
             return enumerable.ElementAtOrDefault(index - 1);
+        }
+
+        /// <summary>
+        /// Returns the index of the specified <paramref name="value"/> in the sequence.
+        /// </summary>
+        /// <typeparam name="T">The type of elements in the sequence.</typeparam>
+        /// <param name="enumerable">The enumerable.</param>
+        /// <param name="value">The value to be found.</param>
+        /// <returns>
+        /// The index of the found element; -1 if nothing was found.
+        /// </returns>
+        public static int IndexOf<T>(this IEnumerable<T> enumerable, T value)
+        {
+            if (enumerable == null) throw new ArgumentNullException(nameof(enumerable));
+            if (enumerable is IList list)
+                return list.IndexOf(value);
+
+            IEnumerator enumerator = enumerable.GetEnumerator();
+            int index = 0;
+            while (enumerator.MoveNext())
+            {
+                if (object.Equals(value, enumerator.Current))
+                    return index;
+            }
+            return -1;
         }
 
         /// <summary>

@@ -66,6 +66,7 @@
     <Compile Include="Controls\IconElement.cs" />
     <Compile Include="Controls\NavigationView\NavigationView.cs" />
     <Compile Include="Controls\NavigationView\NavigationView.Header.cs" />
+    <Compile Include="Controls\NavigationView\NavigationView.MenuItems.cs" />
     <Compile Include="Controls\NavigationView\NavigationView.PaneButtons.cs" />
     <Compile Include="Controls\NavigationView\NavigationView.PaneFooter.cs" />
     <Compile Include="Controls\NavigationView\NavigationView.PaneHeader.cs" />

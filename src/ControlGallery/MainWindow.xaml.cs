@@ -11,6 +11,10 @@ namespace ControlGallery
             InitializeComponent();
         }
 
+        private void NavView_BackRequested(object sender, System.EventArgs e)
+        {
+            MessageBox.Show("Back requested!");
+        }
     }
 
 }

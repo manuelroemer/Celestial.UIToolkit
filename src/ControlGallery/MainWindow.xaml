@@ -12,7 +12,8 @@
 
     <c:NavigationView x:Name="NavView"
                       PaneHeader="Pane Title"
-                      Header="Header!">
+                      Header="Header!"
+                      BackRequested="NavView_BackRequested">
         <StackPanel>
             <CheckBox IsChecked="{Binding IsPaneOpen, ElementName=NavView, Mode=TwoWay}">IsPaneOpen</CheckBox>
             <CheckBox IsChecked="{Binding AlwaysShowHeader, ElementName=NavView, Mode=TwoWay}">AlwaysShowHeader</CheckBox>
@@ -23,7 +24,6 @@
                     Minimum="0"
                     Maximum="2000" />
         </StackPanel>
-
         <c:NavigationView.PaneFooter>
             <CheckBox>Hello from the Footer!</CheckBox>
         </c:NavigationView.PaneFooter>
