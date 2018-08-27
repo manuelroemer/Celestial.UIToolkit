@@ -156,6 +156,118 @@ namespace Celestial.UIToolkit.Tests
             Assert.Single(collection);
         }
 
+        [Fact]
+        public void IndexOfWorksWithDefaultCollection()
+        {
+            var collection = new ItemsSourceCollection()
+            { 1, 2, 3, 4, 5 };
+
+            for (int i = 0; i < collection.Count; i++)
+            {
+                int currentItem = (int)collection[i];
+                Assert.Equal(i, collection.IndexOf(currentItem));
+            }
+            Assert.Equal(-1, collection.IndexOf(-1));
+        }
+
+        [Fact]
+        public void IndexOfWorksWithItemsSource()
+        {
+            var collection = new ItemsSourceCollection();
+            var itemsSource = CreateIntItemsSource(5);
+
+            collection.ItemsSource = itemsSource;
+            for (int i = 0; i < collection.Count; i++)
+            {
+                int currentItem = (int)collection[i];
+                Assert.Equal(i, collection.IndexOf(currentItem));
+            }
+            Assert.Equal(-1, collection.IndexOf(-1));
+        }
+
+        [Fact]
+        public void IndexOfWorksWithNonEnumerableItemsSource()
+        {
+            var collection = new ItemsSourceCollection();
+            var itemsSource = CreateNonEnumerableItemsSource();
+
+            collection.ItemsSource = itemsSource;
+            Assert.Equal(0, collection.IndexOf(itemsSource));
+            Assert.Equal(-1, collection.IndexOf(new object()));
+        }
+
+        [Fact]
+        public void ContainsWorksWithDefaultCollection()
+        {
+            var collection = new ItemsSourceCollection()
+            { 1, 2, 3, 4, 5 };
+
+            for (int i = 0; i < collection.Count; i++)
+            {
+                int currentItem = (int)collection[i];
+                Assert.True(collection.Contains(currentItem));
+            }
+            Assert.False(collection.Contains(-1));
+        }
+
+        [Fact]
+        public void ContainsWorksWithItemsSource()
+        {
+            var collection = new ItemsSourceCollection();
+            var itemsSource = CreateIntItemsSource(5);
+
+            collection.ItemsSource = itemsSource;
+            for (int i = 0; i < collection.Count; i++)
+            {
+                int currentItem = (int)collection[i];
+                Assert.True(collection.Contains(currentItem));
+            }
+            Assert.False(collection.Contains(-1));
+        }
+
+        [Fact]
+        public void ContainsWorksWithNonEnumerableItemsSource()
+        {
+            var collection = new ItemsSourceCollection();
+            var itemsSource = CreateNonEnumerableItemsSource();
+
+            collection.ItemsSource = itemsSource;
+            Assert.True(collection.Contains(itemsSource));
+            Assert.False(collection.Contains(new object()));
+        }
+
+        [Fact]
+        public void CopyToWorksWithDefaultCollection()
+        {
+            var collection = new ItemsSourceCollection()
+            { 1, 2, 3, 4, 5 };
+            int[] dest = new int[collection.Count + 1];
+
+            collection.CopyTo(dest, 1);
+            Assert.Equal(0, dest[0]);
+            Assert.True(collection.Cast<int>().SequenceEqual(dest.Skip(1)));
+        }
+
+        [Fact]
+        public void CopyToWorksWithItemsSource()
+        {
+            var collection = new ItemsSourceCollection();
+            var itemsSource = CreateIntItemsSource(5);
+
+            collection.ItemsSource = itemsSource;
+
+        }
+
+        [Fact]
+        public void CopyToWorksWithNonEnumerableItemsSource()
+        {
+            var collection = new ItemsSourceCollection();
+            var itemsSource = CreateNonEnumerableItemsSource();
+
+            collection.ItemsSource = itemsSource;
+
+        }
+
         /// <summary>
         /// Creates an items source with the specified number of items in it.
         /// </summary>
@@ -173,7 +285,7 @@ namespace Celestial.UIToolkit.Tests
         private object CreateNonEnumerableItemsSource()
         {
             // any object is acceptable. just give it a name for convenience.
-            return new { Name = "Non Enumerable Items Source" };
+            return new { Name = "Non Enumerable ItemsSource" };
         }
 
     }

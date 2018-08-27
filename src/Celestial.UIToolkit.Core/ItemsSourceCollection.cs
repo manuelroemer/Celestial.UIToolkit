@@ -229,7 +229,7 @@ namespace Celestial.UIToolkit
                 }
                 else
                 {
-                    return 0;
+                    return ItemsSource == value ? 0 : -1;
                 }
             }
             else
@@ -410,26 +410,16 @@ namespace Celestial.UIToolkit
             {
                 throw new InvalidOperationException(
                     $"Switching to an {nameof(ItemsSource)} failed, because the " +
-                    $"items collection wasn't empty.");
+                    $"collection is not empty.");
             }
         }
-
-        private void ThrowIfItemsSourceIsNotEnumerable()
-        {
-            if (_enumerableItemsSource == null)
-            {
-                throw new InvalidOperationException(
-                    $"The current operation is not supported, since the currently active " +
-                    $"{nameof(ItemsSource)} is not of type {nameof(IEnumerable)}.");
-            }
-        }
-
+        
         private void ThrowIfInnerCollectionIsNotWriteable()
         {
             if (IsUsingItemsSource)
             {
                 throw new InvalidOperationException(
-                    $"Cannot modify the collection directly, while an active " +
+                    $"Cannot modify the collection while an active " +
                     $"{nameof(ItemsSource)} is provided. " +
                     $"To manipulate the elements in this collection, use the value of the " +
                     $"{nameof(ItemsSource)} property.");

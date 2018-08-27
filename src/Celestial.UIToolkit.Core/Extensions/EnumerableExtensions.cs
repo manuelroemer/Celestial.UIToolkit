@@ -119,6 +119,7 @@ namespace Celestial.UIToolkit.Extensions
             {
                 if (object.Equals(value, enumerator.Current))
                     return index;
+                index++;
             }
             return -1;
         }
