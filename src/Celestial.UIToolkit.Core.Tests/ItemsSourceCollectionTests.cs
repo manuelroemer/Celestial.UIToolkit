@@ -253,9 +253,13 @@ namespace Celestial.UIToolkit.Tests
         {
             var collection = new ItemsSourceCollection();
             var itemsSource = CreateIntItemsSource(5);
+            int[] dest = new int[itemsSource.Length + 1];
 
             collection.ItemsSource = itemsSource;
+            collection.CopyTo(dest, 1);
 
+            Assert.Equal(0, dest[0]);
+            Assert.True(collection.Cast<int>().SequenceEqual(dest.Skip(1)));
         }
 
         [Fact]
@@ -263,9 +267,14 @@ namespace Celestial.UIToolkit.Tests
         {
             var collection = new ItemsSourceCollection();
             var itemsSource = CreateNonEnumerableItemsSource();
+            var dest = new object[3];
 
             collection.ItemsSource = itemsSource;
+            collection.CopyTo(dest, 1);
 
+            Assert.Equal(itemsSource, dest[1]);
+            Assert.Null(dest[0]);
+            Assert.Null(dest[2]);
         }
 
         /// <summary>
