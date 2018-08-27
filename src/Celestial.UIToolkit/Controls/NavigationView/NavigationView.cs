@@ -102,7 +102,10 @@ namespace Celestial.UIToolkit.Controls
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            // TODO
+            if (IsBackButtonEnabled)
+            {
+                RaiseBackRequested();
+            }
         }
 
         private void ToggleButton_Click(object sender, RoutedEventArgs e)

@@ -1,15 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 
 namespace Celestial.UIToolkit.Controls
 {
 
     public partial class NavigationView
     {
+
+        /// <summary>
+        /// Occurs when the back button of the <see cref="NavigationView"/> is pressed.
+        /// </summary>
+        public event EventHandler BackRequested;
 
         /// <summary>
         /// Identifies the <see cref="IsToggleButtonEnabled"/> dependency property.
@@ -70,6 +72,26 @@ namespace Celestial.UIToolkit.Controls
                 typeof(Style),
                 typeof(NavigationView),
                 new PropertyMetadata(null));
+        
+        /// <summary>
+        /// Identifies the <see cref="BackButtonCommand"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty BackButtonCommandProperty =
+            DependencyProperty.Register(
+                nameof(BackButtonCommand),
+                typeof(ICommand),
+                typeof(NavigationView),
+                new PropertyMetadata(null));
+
+        /// <summary>
+        /// Identifies the <see cref="BackButtonCommandParameter"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty BackButtonCommandParameterProperty =
+            DependencyProperty.Register(
+                nameof(BackButtonCommandParameter),
+                typeof(object),
+                typeof(NavigationView),
+                new PropertyMetadata(null));
 
         /// <summary>
         /// Gets or sets a value indicating whether the pane's toggle button is enabled or
@@ -127,7 +149,42 @@ namespace Celestial.UIToolkit.Controls
             get { return (Style)GetValue(PaneBackButtonStyleProperty); }
             set { SetValue(PaneBackButtonStyleProperty, value); }
         }
-        
+
+        /// <summary>
+        /// Gets or sets a command which is bound to the back button of the
+        /// <see cref="NavigationView"/> and thus gets executed, whenever the back button is
+        /// pressed.
+        /// </summary>
+        public ICommand BackButtonCommand
+        {
+            get { return (ICommand)GetValue(BackButtonCommandProperty); }
+            set { SetValue(BackButtonCommandProperty, value); }
+        }
+
+        /// <summary>
+        /// Gets a command parameter accompanying the <see cref="BackButtonCommand"/>.
+        /// </summary>
+        public object BackButtonCommandParameter
+        {
+            get { return (object)GetValue(BackButtonCommandParameterProperty); }
+            set { SetValue(BackButtonCommandParameterProperty, value); }
+        }
+
+        /// <summary>
+        /// Raises the <see cref="BackRequested"/> event and
+        /// calls the <see cref="OnBackRequested"/> method afterwards.
+        /// </summary>
+        protected void RaiseBackRequested()
+        {
+            OnBackRequested();
+            BackRequested?.Invoke(this, EventArgs.Empty);
+        }
+
+        /// <summary>
+        /// Called before the <see cref="BackRequested"/> event occurs.
+        /// </summary>
+        protected virtual void OnBackRequested() { }
+
     }
 
 }

@@ -65,11 +65,11 @@
     <Compile Include="Controls\IconButton.cs" />
     <Compile Include="Controls\IconElement.cs" />
     <Compile Include="Controls\NavigationView\NavigationView.cs" />
-    <Compile Include="Controls\NavigationView\NavigationView.HeaderProperties.cs" />
-    <Compile Include="Controls\NavigationView\NavigationView.PaneButtonProperties.cs" />
-    <Compile Include="Controls\NavigationView\NavigationView.PaneFooterProperties.cs" />
-    <Compile Include="Controls\NavigationView\NavigationView.PaneHeaderProperties.cs" />
-    <Compile Include="Controls\NavigationView\NavigationView.PaneProperties.cs" />
+    <Compile Include="Controls\NavigationView\NavigationView.Header.cs" />
+    <Compile Include="Controls\NavigationView\NavigationView.PaneButtons.cs" />
+    <Compile Include="Controls\NavigationView\NavigationView.PaneFooter.cs" />
+    <Compile Include="Controls\NavigationView\NavigationView.PaneHeader.cs" />
+    <Compile Include="Controls\NavigationView\NavigationView.Pane.cs" />
     <Compile Include="Controls\NavigationView\NavigationView.VisualStates.cs" />
     <Compile Include="Controls\NavigationView\NavigationViewDisplayMode.cs" />
     <Compile Include="Controls\NavigationView\NavigationViewDisplayModeChangedEventArgs.cs" />
@@ -108,7 +108,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Controls\NavigationView\NavigationView.DisplayModeProperties.cs" />
+    <Compile Include="Controls\NavigationView\NavigationView.DisplayMode.cs" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

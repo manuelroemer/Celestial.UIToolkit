@@ -69,7 +69,9 @@
                                                 Visibility="{Binding IsBackButtonVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}"
                                                 HorizontalAlignment="Left"
                                                 Width="{TemplateBinding CompactPaneLength}"
-                                                Height="{TemplateBinding CompactPaneLength}">
+                                                Height="{TemplateBinding CompactPaneLength}"
+                                                Command="{TemplateBinding BackButtonCommand}"
+                                                CommandParameter="{TemplateBinding BackButtonCommandParameter}">
                                             &lt;
                                         </Button>
 
