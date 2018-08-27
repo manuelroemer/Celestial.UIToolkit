@@ -20,20 +20,20 @@ namespace Celestial.UIToolkit
         private List<object> _innerCollection;
 
         /// <summary>
-        /// Gets a value indicating whether the collection and its contents is currently
+        /// Gets a value indicating whether the collection is currently
         /// based on an items source provided by the <see cref="ItemsSource"/> property.
         /// </summary>
         public bool IsUsingItemsSource => ItemsSource != null;
 
         /// <summary>
-        /// Returns a value indicating whether the <see cref="ItemsSource"/> implements
+        /// Gets a value indicating whether the <see cref="ItemsSource"/> implements
         /// the <see cref="IEnumerable"/> interface.
         /// </summary>
         /// <remarks>
         /// Note that the non-generic <see cref="IEnumerable"/> interface is tested by this
         /// property.
         /// </remarks>
-        protected bool HasEnumerableItemsSource => HasEnumerableItemsSource;
+        protected bool HasEnumerableItemsSource => _enumerableItemsSource != null;
 
         /// <summary>
         /// Gets or sets an object from which this collection retrieves its items.
@@ -479,12 +479,16 @@ namespace Celestial.UIToolkit
 
             // This enumerator can basically do nothing but provide the element with which it
             // has been initialized.
+            private bool _hasBeenMoved;
+            private object _item;
 
-            public object Current { get; }
+            public object Current { get; private set; }
 
             public SingleItemEnumerator(object item)
             {
-                Current = item;
+                _hasBeenMoved = false;
+                _item = item;
+                Current = null;
             }
 
             public void Dispose()
@@ -493,11 +497,17 @@ namespace Celestial.UIToolkit
 
             public bool MoveNext()
             {
-                return false;
+                if (_hasBeenMoved) return false;
+
+                _hasBeenMoved = true;
+                Current = _item;
+                return true;
             }
 
             public void Reset()
             {
+                _hasBeenMoved = false;
+                Current = null;
             }
 
             public override string ToString()

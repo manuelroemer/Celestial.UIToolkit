@@ -82,6 +82,80 @@ namespace Celestial.UIToolkit.Tests
             collection.ItemsSource = itemsSource;
         }
 
+        [Fact]
+        public void IndexAccessorWorksWithDefaultCollection()
+        {
+            var collection = new ItemsSourceCollection();
+            int itemToAdd = 1;
+
+            collection.Add(0); // Placeholder, so that the index exists.
+            collection[0] = itemToAdd;
+
+            Assert.Equal(itemToAdd, collection[0]);
+        }
+
+        [Fact]
+        public void IndexAccessorWorksWithItemsSource()
+        {
+            var collection = new ItemsSourceCollection();
+            var itemsSource = CreateIntItemsSource(1);
+
+            collection.ItemsSource = itemsSource;
+            var firstValue = collection[0];
+            var ex = Record.Exception(() => collection[0] = 1); // Prop. should be read-only with an ItemsSource.
+
+            Assert.Equal(firstValue, itemsSource.First());
+            Assert.NotNull(ex);
+            Assert.IsType<InvalidOperationException>(ex);
+        }
+
+        [Fact]
+        public void IndexAccessorWorksWithNonEnumerableItemsSource()
+        {
+            var collection = new ItemsSourceCollection();
+            var itemsSource = CreateNonEnumerableItemsSource();
+
+            collection.ItemsSource = itemsSource;
+            var retrievedValue = collection[0];
+            var outOfRangeEx = Record.Exception(() => collection[1]);
+            var readOnlyEx = Record.Exception(() => collection[0] = "Unsettable");
+
+            Assert.Same(itemsSource, retrievedValue);
+            Assert.NotNull(outOfRangeEx);
+            Assert.IsType<IndexOutOfRangeException>(outOfRangeEx);
+            Assert.NotNull(readOnlyEx);
+            Assert.IsType<InvalidOperationException>(readOnlyEx);
+        }
+
+        [Fact]
+        public void CountWorksWithDefaultCollection()
+        {
+            var collection = new ItemsSourceCollection()
+            { 1, 2, 3, 4, 5 };
+
+            Assert.Equal(5, collection.Count);
+        }
+
+        [Fact]
+        public void CountWorksWithItemsSource()
+        {
+            var collection = new ItemsSourceCollection();
+            var itemsSource = CreateIntItemsSource(5);
+
+            collection.ItemsSource = itemsSource;
+            Assert.Equal(itemsSource.Length, collection.Count);
+        }
+
+        [Fact]
+        public void CountWorksWithNonEnumerableItemsSource()
+        {
+            var collection = new ItemsSourceCollection();
+            var itemsSource = CreateNonEnumerableItemsSource();
+
+            collection.ItemsSource = itemsSource;
+            Assert.Single(collection);
+        }
+
         /// <summary>
         /// Creates an items source with the specified number of items in it.
         /// </summary>
