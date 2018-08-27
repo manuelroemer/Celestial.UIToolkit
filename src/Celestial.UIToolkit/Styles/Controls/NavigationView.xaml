@@ -55,7 +55,7 @@
                                                 OpenPaneLength="{TemplateBinding OpenPaneLength}"
                                                 IsPaneOpen="{Binding IsPaneOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}, UpdateSourceTrigger=PropertyChanged}">
                                 <controls:SplitView.Pane>
-                                    <Grid x:Name="PART_PaneContentGrid">
+                                    <Grid x:Name="PART_PaneContentContainer">
                                         <Grid.RowDefinitions>
                                             <RowDefinition x:Name="BackButtonRow"   Height="Auto" />
                                             <RowDefinition x:Name="ToggleButtonRow" Height="Auto" />

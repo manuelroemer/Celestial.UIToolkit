@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
+using System.Windows.Input;
+using System.Windows.Media;
 
 namespace Celestial.UIToolkit.Controls
 {
@@ -28,14 +30,17 @@ namespace Celestial.UIToolkit.Controls
     /// </remarks>
     [TemplatePart(Name = BackButtonTemplatePart, Type = typeof(ButtonBase))]
     [TemplatePart(Name = ToggleButtonTemplatePart, Type = typeof(ButtonBase))]
+    [TemplatePart(Name = PaneContentContainerPart, Type = typeof(UIElement))]
     public partial class NavigationView : HeaderedContentControl
     {
 
         internal const string BackButtonTemplatePart = "PART_BackButton";
         internal const string ToggleButtonTemplatePart = "PART_ToggleButton";
+        internal const string PaneContentContainerPart = "PART_PaneContentContainer";
 
         private ButtonBase _backButton;
         private ButtonBase _toggleButton;
+        private UIElement _paneContentContainer;
         
         static NavigationView()
         {
@@ -49,12 +54,19 @@ namespace Celestial.UIToolkit.Controls
         public NavigationView()
         {
             SizeChanged += NavigationView_SizeChanged;
+            PreviewMouseLeftButtonDown += NavigationView_MouseDown;
+            PreviewMouseRightButtonDown += NavigationView_MouseDown;
         }
 
         private void NavigationView_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             // A size change might update the DisplayMode, depending on the thresholds.
             UpdateAdaptiveProperties();
+        }
+
+        private void NavigationView_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            // TODO: Collapse NavigationView, if outside Pane.
         }
 
         /// <summary>
@@ -66,6 +78,7 @@ namespace Celestial.UIToolkit.Controls
             base.OnApplyTemplate();
             _backButton = GetTemplateChild(BackButtonTemplatePart) as ButtonBase;
             _toggleButton = GetTemplateChild(ToggleButtonTemplatePart) as ButtonBase;
+            _paneContentContainer = GetTemplateChild(PaneContentContainerPart) as UIElement;
 
             InitializeBackButton();
             InitializeToggleButton();
