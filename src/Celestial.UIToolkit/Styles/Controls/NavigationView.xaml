@@ -18,12 +18,14 @@
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Height" Value="{c:GridUnit 9}" />
+        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="Red" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:NavigationViewItem">
                     <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
                           Background="Transparent">
                         <Grid.Resources>
+                            
                             <Storyboard x:Key="MouseOverStoryboard">
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                 Storyboard.TargetProperty="Background">
@@ -38,7 +40,7 @@
                                                   Duration="0"
                                                   To="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                             </Storyboard>
-                            
+
                             <Storyboard x:Key="DisabledStoryboard">
                                 <c:BrushAnimation Storyboard.TargetName="Bd"
                                                   Storyboard.TargetProperty="Background"
@@ -53,6 +55,17 @@
                                                   Duration="0"
                                                   To="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                             </Storyboard>
+
+                            <Storyboard x:Key="SelectedStoryboard">
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                               Storyboard.TargetProperty="Visibility">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SelectionBorder"
+                                                               Storyboard.TargetProperty="Visibility">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
                             
                             <DataTemplate DataType="{x:Type sys:String}">
                                 <TextBlock Style="{StaticResource TextBlockOverrideStyle}" Text="{Binding}" />
@@ -64,6 +77,12 @@
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 Padding="{TemplateBinding Padding}" />
+                        <Border x:Name="SelectionBorder"
+                                Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
+                                BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Padding="{TemplateBinding Padding}"
+                                Visibility="Collapsed" />
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" />
@@ -100,7 +119,7 @@
                             </VisualStateGroup>
                             <VisualStateGroup x:Name="SelectionStates">
                                 <VisualState x:Name="Unselected" />
-                                <VisualState x:Name="Selected" />
+                                <VisualState x:Name="Selected" Storyboard="{StaticResource SelectedStoryboard}" />
                                 <VisualState x:Name="SelectedUnfocused" />
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
