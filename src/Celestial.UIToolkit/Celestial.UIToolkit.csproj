@@ -64,6 +64,7 @@
     <Compile Include="Controls\ClippingBorder.cs" />
     <Compile Include="Controls\IconButton.cs" />
     <Compile Include="Controls\IconElement.cs" />
+    <Compile Include="Controls\NavigationView\Items\NavigationViewItem.cs" />
     <Compile Include="Controls\NavigationView\NavigationView.cs" />
     <Compile Include="Controls\NavigationView\NavigationView.Header.cs" />
     <Compile Include="Controls\NavigationView\NavigationView.MenuItems.cs" />
@@ -255,5 +256,6 @@
       <Name>Celestial.UIToolkit.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
