@@ -20,6 +20,8 @@
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
+        <Setter Property="theming:PressedProperties.BorderBrush" Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
         <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource BaseHighestBrush}" />
         <Setter Property="theming:ShadowProperties.ShadowType" Value="{x:Static controls:ShadowType.Directional}" />
         <Setter Property="Template">
@@ -47,15 +49,13 @@
                             </Storyboard>
 
                             <Storyboard x:Key="PressedStoryboard">
-                                <!-- When pressed, still display the MouseOver Border/Background, as the ripple will
-                                     show the Pressed-Brushes. -->
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                 Storyboard.TargetProperty="Background">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:PressedProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                                 </c:BrushAnimationUsingKeyFrames>
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                 Storyboard.TargetProperty="BorderBrush">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:PressedProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                                 </c:BrushAnimationUsingKeyFrames>
                                 <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
                                                   Storyboard.TargetProperty="Foreground"
@@ -97,8 +97,8 @@
                         </controls:ShadowDecorator>
                         <controls:RippleOverlay x:Name="Ripple"
                                                 theming:ControlProperties.CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}"
-                                                BorderBrush="{TemplateBinding theming:PressedProperties.BorderBrush}"
-                                                Background="{TemplateBinding theming:PressedProperties.BackgroundBrush}"
+                                                Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
+                                                BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}"
                                                 IsActiveTrigger="{TemplateBinding IsPressed}"
                                                 AllowFading="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, FallbackValue=True, Converter={x:Static c:InvertBooleanConverter.Default}}"
                                                 IsEnabled="{TemplateBinding theming:RippleProperties.ShowRippleAnimation}" />
