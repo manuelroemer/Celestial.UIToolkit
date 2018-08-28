@@ -62,9 +62,4 @@
         <Setter Property="FontFamily" Value="{StaticResource SubTitleFontFamily}" />
     </Style>
 
-    <Style x:Key="TextBlockOverrideStyle" TargetType="TextBlock" BasedOn="{StaticResource TextElementThemingBase}">
-        <!-- Default TextBlock Style override -> https://stackoverflow.com/a/5330534 -->
-        <Setter Property="Text" Value="{Binding}" />
-    </Style>
-    
 </ResourceDictionary>

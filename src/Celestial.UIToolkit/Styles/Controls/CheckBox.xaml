@@ -1,5 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
                     xmlns:c="http://celestial-ui.com"
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
@@ -107,6 +108,10 @@
                                                   Duration="0"
                                                   To="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                             </Storyboard>
+                            
+                            <DataTemplate DataType="{x:Type sys:String}">
+                                <TextBlock Style="{StaticResource TextBlockOverrideStyle}" Text="{Binding}" />
+                            </DataTemplate>
                         </Grid.Resources>
                         <BulletDecorator SnapsToDevicePixels="False">
                             <BulletDecorator.Bullet>
