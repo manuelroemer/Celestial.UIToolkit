@@ -183,6 +183,7 @@ namespace Celestial.UIToolkit
 
         private void ChangeItemsSource(object oldItemsSource, object newItemsSource)
         {
+            if (!IsUsingItemsSource && newItemsSource == null) return;
             ThrowIfItemsSourceIsNotChangeable();
             _itemsSource = newItemsSource;
 
@@ -231,17 +232,15 @@ namespace Celestial.UIToolkit
             // We do have to check if the ItemsSource is Enumerable though.
             if (newItemsSource != null)
             {
-                if (HasEnumerableItemsSource)
+                // Iterate over the source/call the event for every single item,
+                // because WPF doesn't support a "batch"-operations.
+                // For instance, the ListView will throw NotSupportedEx for a
+                // CollectionChanged-event which modifies multiple elements at once.
+                int currentIndex = 0;
+                foreach (var item in this)
                 {
                     RaiseCollectionChanged(new NotifyCollectionChangedEventArgs(
-                        NotifyCollectionChangedAction.Add,
-                        _enumerableItemsSource.ToList(), 0));
-                }
-                else
-                {
-                    RaiseCollectionChanged(new NotifyCollectionChangedEventArgs(
-                        NotifyCollectionChangedAction.Add,
-                        newItemsSource, 0));
+                        NotifyCollectionChangedAction.Add, item, currentIndex++));
                 }
             }
 

@@ -25,11 +25,25 @@
         
     </Style>
 
+    <Style x:Key="NavigationViewMenuItemContainerStyle" TargetType="ListViewItem">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListViewItem">
+                    <ContentPresenter />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
     <Style x:Key="NavigationViewMenuItemsListView" TargetType="ListView">
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ListView">
-                    <ItemsPresenter />
+                    <ScrollViewer>
+                        <ItemsPresenter />
+                    </ScrollViewer>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -46,10 +60,12 @@
         <Setter Property="OpenPaneLength" Value="{c:GridUnit 80}" />
         <Setter Property="PaneBackButtonStyle" Value="{StaticResource NavigationViewBackButton}" />
         <Setter Property="PaneToggleButtonStyle" Value="{StaticResource NavigationViewToggleButton}" />
+        <Setter Property="MenuItemContainerStyle" Value="{StaticResource NavigationViewMenuItemContainerStyle}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:NavigationView">
-                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
+                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
+                          Background="Transparent">
                         <Grid.Resources>
                             <c:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
                         </Grid.Resources>
@@ -123,7 +139,14 @@
 
                                         <ListView Grid.Row="2"
                                                   Style="{StaticResource NavigationViewMenuItemsListView}"
-                                                  SelectionMode="Single" />
+                                                  Margin="{c:GridUnit '0,2'}"
+                                                  SelectionMode="Single"
+                                                  ItemsSource="{Binding MenuItems, RelativeSource={RelativeSource TemplatedParent}}"
+                                                  SelectedItem="{Binding SelectedMenuItem, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                                                  ItemTemplate="{TemplateBinding MenuItemTemplate}"
+                                                  ItemTemplateSelector="{TemplateBinding MenuItemTemplateSelector}"
+                                                  ItemContainerStyle="{TemplateBinding MenuItemContainerStyle}"
+                                                  ItemContainerStyleSelector="{TemplateBinding MenuItemContainerStyleSelector}" />
 
                                         <ContentPresenter x:Name="PaneFooterContentSite" 
                                                           Grid.Row="3"

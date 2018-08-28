@@ -14,6 +14,18 @@
                       PaneHeader="Pane Title"
                       Header="Header!"
                       BackRequested="NavView_BackRequested">
+        <c:NavigationView.PaneFooter>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Hello from the Footer!</TextBlock>
+        </c:NavigationView.PaneFooter>
+        <c:NavigationView.MenuItems>
+            <Button>Item 1</Button>
+            <Button>Item 2</Button>
+            <Button>Item 3</Button>
+            <Button>Item 4</Button>
+            <Button>Item 5</Button>
+            <Button>Item 6</Button>
+        </c:NavigationView.MenuItems>
+        
         <StackPanel>
             <CheckBox IsChecked="{Binding IsPaneOpen, ElementName=NavView, Mode=TwoWay}">IsPaneOpen</CheckBox>
             <CheckBox IsChecked="{Binding AlwaysShowHeader, ElementName=NavView, Mode=TwoWay}">AlwaysShowHeader</CheckBox>
@@ -23,10 +35,19 @@
             <Slider Value="{Binding ExpandedModeThresholdWidth, ElementName=NavView, Mode=TwoWay}"
                     Minimum="0"
                     Maximum="2000" />
+            <Button Click="ChangeMenuItemButton_Click">
+                Change MenuItems
+            </Button>
+            <Button Click="ClearMenuItemsButton_Click">
+                Clear MenuItems
+            </Button>
+            <Button Click="ChangeMenuItemsSource_Click">
+                Change To ItemsSource
+            </Button>
+            <Button Click="ClearMenuItemsSource_Click">
+                Clear ItemsSource
+            </Button>
         </StackPanel>
-        <c:NavigationView.PaneFooter>
-            <CheckBox>Hello from the Footer!</CheckBox>
-        </c:NavigationView.PaneFooter>
     </c:NavigationView>
     
     <!--<TabControl>

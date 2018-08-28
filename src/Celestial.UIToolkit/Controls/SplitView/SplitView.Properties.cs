@@ -210,7 +210,6 @@ namespace Celestial.UIToolkit.Controls
         /// <see cref="SplitView"/>.
         /// </summary>
         [Bindable(true), Category("Content")]
-        [Localizability(LocalizationCategory.Label)]
         public object Pane
         {
             get { return (object)GetValue(PaneProperty); }
