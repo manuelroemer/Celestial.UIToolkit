@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace Celestial.UIToolkit.Tests
@@ -72,6 +72,120 @@ namespace Celestial.UIToolkit.Tests
                 Assert.NotNull(ex);
                 Assert.IsType<InvalidOperationException>(ex);
             }
+        }
+
+        [Fact]
+        public void DefaultCollectionModificationRaisesChangeEvents()
+        {
+            var collection = new ItemsSourceCollection();
+
+            // We want to test that the following methods raise the 
+            // PropertyChanged/CollectionChanged events.
+            TestChangeEventsForAction(() => collection.Add(1));
+            TestChangeEventsForAction(() =>
+            {
+                collection.Add(0);
+                collection.Remove(0);
+            });
+            TestChangeEventsForAction(() =>
+            {
+                collection.Add(0);
+                collection.RemoveAt(0);
+            });
+            TestChangeEventsForAction(() => collection.Clear());
+
+            // Checks if the *Changed events are raised when executing changeAction().
+            void TestChangeEventsForAction(Action changeAction)
+            {
+                Assert.PropertyChanged(
+                    collection,
+                    nameof(ItemsSourceCollection.Count),
+                    changeAction);
+                Assert.PropertyChanged(
+                    collection,
+                    "Items[]",
+                    changeAction);
+                AssertCollectionChanged(
+                    collection,
+                    changeAction);
+            }
+        }
+
+        [Fact]
+        public void ItemsSourceCanRaiseCollectionChanged()
+        {
+            var collection = new ItemsSourceCollection();
+            var itemsSource = CreateObservableIntItemsSource(5);
+
+            collection.ItemsSource = itemsSource;
+            AssertCollectionChanged(
+                collection,
+                () => itemsSource.Add(1));
+        }
+
+        [Fact]
+        public void SwitchingToEnumerableItemsSourceRaisesChangeEvents()
+        {
+            var collection = new ItemsSourceCollection();
+            var itemsSource = CreateIntItemsSource(5);
+
+            AssertCollectionChanged(
+                collection,
+                () => collection.ItemsSource = itemsSource);
+            AssertPropertiesChanged(
+                collection,
+                () => collection.ItemsSource = itemsSource,
+                nameof(ItemsSourceCollection.ItemsSource),
+                nameof(ItemsSourceCollection.IsUsingItemsSource),
+                nameof(ItemsSourceCollection.IsReadOnly),
+                nameof(ItemsSourceCollection.IsFixedSize),
+                nameof(ItemsSourceCollection.SyncRoot));
+        }
+
+        [Fact]
+        public void SwitchingToNonEnumerableItemsSourceRaisesChangeEvents()
+        {
+            var collection = new ItemsSourceCollection();
+            var itemsSource = CreateNonEnumerableItemsSource();
+
+            AssertCollectionChanged(
+                collection,
+                () => collection.ItemsSource = itemsSource);
+            AssertPropertiesChanged(
+                collection,
+                () => collection.ItemsSource = itemsSource,
+                nameof(ItemsSourceCollection.ItemsSource),
+                nameof(ItemsSourceCollection.IsUsingItemsSource),
+                nameof(ItemsSourceCollection.IsReadOnly),
+                nameof(ItemsSourceCollection.IsFixedSize),
+                nameof(ItemsSourceCollection.SyncRoot));
+        }
+
+        private void AssertPropertiesChanged(
+            INotifyPropertyChanged obj,
+            Action raiseEvent, 
+            params string[] propertyNames)
+        {
+            foreach (var propertyName in propertyNames)
+            {
+                Assert.PropertyChanged(obj, propertyName, raiseEvent);
+            }
+        }
+
+        private void AssertCollectionChanged(
+            INotifyCollectionChanged obj,
+            Action raiseEvent)
+        {
+            bool wasRaised = false;
+            NotifyCollectionChangedEventHandler handler = (sender, e) =>
+            {
+                wasRaised = true;
+            };
+
+            obj.CollectionChanged += handler;
+            raiseEvent();
+            obj.CollectionChanged -= handler;
+            Assert.True(wasRaised);
         }
 
         #region Collection[index]
@@ -372,6 +486,12 @@ namespace Celestial.UIToolkit.Tests
                 itemsSource[i] = i;
             }
             return itemsSource;
+        }
+
+        private ObservableCollection<int> CreateObservableIntItemsSource(int itemCount)
+        {
+            return new ObservableCollection<int>(
+                CreateIntItemsSource(itemCount));
         }
 
         private object CreateNonEnumerableItemsSource()

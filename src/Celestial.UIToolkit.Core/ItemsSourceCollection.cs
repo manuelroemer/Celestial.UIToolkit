@@ -2,7 +2,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace Celestial.UIToolkit
 {
@@ -12,13 +16,28 @@ namespace Celestial.UIToolkit
     /// If not, it behaves like a normal collection to which any item can be added.
     /// </summary>
     /// <seealso cref="ItemsSource"/>
-    public class ItemsSourceCollection : IList, IList<object>
+    public class ItemsSourceCollection 
+        : IList, IList<object>, INotifyCollectionChanged, INotifyPropertyChanged
     {
-        
+
+        private const string IndexAccessorPropertyName = "Items[]";
+
         private object _itemsSource;
         private IEnumerable<object> _enumerableItemsSource;
-        private List<object> _innerCollection;
+        private ObservableCollection<object> _innerCollection;
 
+        /// <summary>
+        /// Occurs when either the internal collection or the <see cref="ItemsSource"/> changes.
+        /// The <see cref="ItemsSource"/> must implement <see cref="INotifyCollectionChanged"/>
+        /// for this event to work.
+        /// </summary>
+        public event NotifyCollectionChangedEventHandler CollectionChanged;
+        
+        /// <summary>
+        /// Occurs when a property value changes.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+        
         /// <summary>
         /// Gets a value indicating whether the collection is currently
         /// based on an items source provided by the <see cref="ItemsSource"/> property.
@@ -47,18 +66,12 @@ namespace Celestial.UIToolkit
             get { return _itemsSource; }
             set
             {
-                ThrowIfItemsSourceIsNotChangeable();
-                _itemsSource = value;
-
-                // ItemsSource can be any object, but if we can convert it to an enumerable, 
-                // we have a whole lot of additional methods that we can use.
-                if (_itemsSource != null && _itemsSource is IEnumerable enumerable)
-                {
-                    _enumerableItemsSource = enumerable.Cast<object>();
-                }
+                object oldItemsSource = _itemsSource;
+                object newItemsSource = value;
+                ChangeItemsSource(oldItemsSource, newItemsSource);
             }
         }
-        
+
         /// <summary>
         /// Gets the element at the specified index, or
         /// sets the item at the specified index within the current collection, if
@@ -164,8 +177,143 @@ namespace Celestial.UIToolkit
         /// </summary>
         public ItemsSourceCollection()
         {
-            _innerCollection = new List<object>();
+            _innerCollection = new ObservableCollection<object>();
+            _innerCollection.CollectionChanged += Collection_Changed;
         }
+
+        private void ChangeItemsSource(object oldItemsSource, object newItemsSource)
+        {
+            ThrowIfItemsSourceIsNotChangeable();
+            _itemsSource = newItemsSource;
+
+            UnhookOldItemsSource(oldItemsSource);
+            HookNewItemsSource(newItemsSource);
+            RaiseItemsSourceChangedEvents(oldItemsSource, newItemsSource);
+        }
+
+        private void UnhookOldItemsSource(object oldItemsSource)
+        {
+            // Remove old event handlers to avoid memory leaks.
+            if (oldItemsSource is INotifyCollectionChanged oldNotifyCollectionChanged)
+            {
+                oldNotifyCollectionChanged.CollectionChanged -= Collection_Changed;
+            }
+        }
+
+        private void HookNewItemsSource(object newItemsSource)
+        {
+            // ItemsSource can be any object, but if we can convert it to an enumerable, 
+            // we have a whole lot of additional methods that we can use.
+            if (newItemsSource is IEnumerable enumerable)
+            {
+                _enumerableItemsSource = enumerable.Cast<object>();
+            }
+
+            // In any case, try to hook up a CollectionChanged event.
+            if (newItemsSource is INotifyCollectionChanged newNotifyCollectionChanged)
+            {
+                newNotifyCollectionChanged.CollectionChanged += Collection_Changed;
+            }
+        }
+
+        private void RaiseItemsSourceChangedEvents(object oldItemsSource, object newItemsSource)
+        {
+            // When an ItemsSource gets removed, we also need to notify the collection about that.
+            if (oldItemsSource != null)
+            {
+                RaiseCollectionChanged(new NotifyCollectionChangedEventArgs(
+                    NotifyCollectionChangedAction.Reset));
+                RaisePropertyChanged(nameof(Count));
+                RaisePropertyChanged(IndexAccessorPropertyName);
+            }
+
+            // If we have a new ItemsSource, the collection also changed.
+            // We do have to check if the ItemsSource is Enumerable though.
+            if (newItemsSource != null)
+            {
+                if (HasEnumerableItemsSource)
+                {
+                    RaiseCollectionChanged(new NotifyCollectionChangedEventArgs(
+                        NotifyCollectionChangedAction.Add,
+                        _enumerableItemsSource.ToList(), 0));
+                }
+                else
+                {
+                    RaiseCollectionChanged(new NotifyCollectionChangedEventArgs(
+                        NotifyCollectionChangedAction.Add,
+                        newItemsSource, 0));
+                }
+            }
+
+            RaisePropertyChanged(nameof(ItemsSource));
+            RaisePropertyChanged(nameof(IsUsingItemsSource));
+            RaisePropertyChanged(nameof(IsReadOnly));
+            RaisePropertyChanged(nameof(IsFixedSize));
+            RaisePropertyChanged(nameof(HasEnumerableItemsSource));
+            RaisePropertyChanged(nameof(SyncRoot));
+        }
+
+        private void Collection_Changed(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            // We rely on the InnerCollection and the ItemsSource implementing
+            // INotifyCollectionChanged themselves. Thanks to that, we can simply forward
+            // the event.
+            RaiseCollectionChanged(e);
+        }
+
+        /// <summary>
+        /// Raises the <see cref="CollectionChanged"/> event and
+        /// calls the <see cref="OnCollectionChanged"/> method afterwards.
+        /// In addition, the <see cref="PropertyChanged"/> event is raised for the
+        /// <see cref="Count"/> and index-accessor properties.
+        /// </summary>
+        /// <param name="e">Event data for the event.</param>
+        protected void RaiseCollectionChanged(NotifyCollectionChangedEventArgs e)
+        {
+            OnCollectionChanged(e);
+            CollectionChanged?.Invoke(this, e);
+
+            // Whenever the collection is changed, these properties automatically change aswell.
+            RaisePropertyChanged(nameof(Count));
+            RaisePropertyChanged(IndexAccessorPropertyName);
+        }
+
+        /// <summary>
+        /// Called before the <see cref="CollectionChanged"/> event occurs.
+        /// </summary>
+        /// <param name="e">Event data for the event.</param>
+        protected virtual void OnCollectionChanged(NotifyCollectionChangedEventArgs e) { }
+
+        /// <summary>
+        /// Raises the <see cref="PropertyChanged"/> event and
+        /// calls the <see cref="OnPropertyChanged"/> method afterwards.
+        /// </summary>
+        /// <param name="propertyName">The name of the changed property.</param>
+        protected void RaisePropertyChanged([CallerMemberName]string propertyName = "")
+        {
+            if (string.IsNullOrEmpty(propertyName))
+                return;
+            RaisePropertyChanged(new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Raises the <see cref="PropertyChanged"/> event and
+        /// calls the <see cref="OnPropertyChanged"/> method afterwards.
+        /// </summary>
+        /// <param name="e">Event data for the event.</param>
+        protected void RaisePropertyChanged(PropertyChangedEventArgs e)
+        {
+            OnPropertyChanged(e);
+            PropertyChanged?.Invoke(this, e);
+        }
+
+        /// <summary>
+        /// Called before the <see cref="PropertyChanged"/> event occurs.
+        /// </summary>
+        /// <param name="e">Event data for the event.</param>
+        protected virtual void OnPropertyChanged(PropertyChangedEventArgs e) { }
+
+        #region Collection Members
 
         /// <summary>
         /// Gets the element at the specified index.
@@ -293,7 +441,12 @@ namespace Celestial.UIToolkit
             }
             else
             {
-                ((ICollection)_innerCollection).CopyTo(array, index);
+                // For some reason, the ObservableCollection's CopyTo() throws during the tests.
+                // It complains that an int[] can't be copied into an int[], which is obviously
+                // wrong. (That's probably because it's an ObservableCollection<object>, which
+                // can't easily be infered to IEnumerable<int>).
+                // By using ToArray(), we get a functional CopyTo().
+                _innerCollection.ToArray().CopyTo(array, index);
             }
         }
 
@@ -338,8 +491,9 @@ namespace Celestial.UIToolkit
         /// </exception>
         public int Add(object value)
         {
-            ThrowIfInnerCollectionIsNotWriteable();
-            return ((IList)_innerCollection).Add(value);
+            int index = Count;
+            Insert(index, value);
+            return index;
         }
 
         /// <summary>
@@ -386,7 +540,16 @@ namespace Celestial.UIToolkit
         public bool Remove(object value)
         {
             ThrowIfInnerCollectionIsNotWriteable();
-            return _innerCollection.Remove(value);
+            int index = IndexOf(value);
+            if (index >= 0)
+            {
+                RemoveAt(index);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         /// <summary>
@@ -425,6 +588,8 @@ namespace Celestial.UIToolkit
                     $"{nameof(ItemsSource)} property.");
             }
         }
+
+        #endregion
 
         #region IList<object> members
 
