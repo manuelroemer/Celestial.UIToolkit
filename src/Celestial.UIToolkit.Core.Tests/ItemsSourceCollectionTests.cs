@@ -11,7 +11,7 @@ namespace Celestial.UIToolkit.Tests
 
     public class ItemsSourceCollectionTests
     {
-
+        
         [Fact]
         public void IsUsingItemsSourceGetsSet()
         {
@@ -73,6 +73,8 @@ namespace Celestial.UIToolkit.Tests
                 Assert.IsType<InvalidOperationException>(ex);
             }
         }
+
+        #region Changed Events
 
         [Fact]
         public void DefaultCollectionModificationRaisesChangeEvents()
@@ -187,6 +189,8 @@ namespace Celestial.UIToolkit.Tests
             obj.CollectionChanged -= handler;
             Assert.True(wasRaised);
         }
+
+        #endregion
 
         #region Collection[index]
 
