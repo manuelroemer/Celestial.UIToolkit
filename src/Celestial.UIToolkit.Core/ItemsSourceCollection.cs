@@ -467,18 +467,32 @@ namespace Celestial.UIToolkit
         private struct SingleItemEnumerator : IEnumerator<object>
         {
 
+            private const int StartIndex = -1;
+            private const int OnCurrentItemIndex = 0;
+            private const int EndIndex = 1;
+
             // This enumerator can basically do nothing but provide the element with which it
             // has been initialized.
-            private bool _hasBeenMoved;
+            private int _currentIndex;
             private object _item;
 
-            public object Current { get; private set; }
+            public object Current
+            {
+                get
+                {
+                    if (_currentIndex == OnCurrentItemIndex)
+                        return _item;
+                    else
+                        throw new InvalidOperationException(
+                            $"The enumeration either hasn't started yet, or it has already been " +
+                            $"finished.");
+                }
+            }
 
             public SingleItemEnumerator(object item)
             {
-                _hasBeenMoved = false;
+                _currentIndex = StartIndex;
                 _item = item;
-                Current = null;
             }
 
             public void Dispose()
@@ -487,17 +501,32 @@ namespace Celestial.UIToolkit
 
             public bool MoveNext()
             {
-                if (_hasBeenMoved) return false;
-
-                _hasBeenMoved = true;
-                Current = _item;
-                return true;
+                if (_currentIndex == StartIndex)
+                {
+                    _currentIndex++;
+                    return true;
+                }
+                else if (_currentIndex == OnCurrentItemIndex)
+                {
+                    _currentIndex++;
+                    return false;
+                }
+                else if (_currentIndex == EndIndex)
+                {
+                    return false;
+                }
+                else
+                {
+                    throw new NotImplementedException(
+                        $"Not implemented. The internal index of the " +
+                        $"{nameof(SingleItemEnumerator)} has the wrong number. " +
+                        $"If you see this, then you have definitly encountered a bug.");
+                }
             }
 
             public void Reset()
             {
-                _hasBeenMoved = false;
-                Current = null;
+                _currentIndex = StartIndex;
             }
 
             public override string ToString()

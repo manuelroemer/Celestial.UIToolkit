@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -73,14 +74,7 @@ namespace Celestial.UIToolkit.Tests
             }
         }
 
-        [Fact]
-        public void CanUseNonEnumerableItemsSource()
-        {
-            var itemsSource = CreateNonEnumerableItemsSource();
-            var collection = new ItemsSourceCollection();
-
-            collection.ItemsSource = itemsSource;
-        }
+        #region Collection[index]
 
         [Fact]
         public void IndexAccessorWorksWithDefaultCollection()
@@ -127,6 +121,10 @@ namespace Celestial.UIToolkit.Tests
             Assert.IsType<InvalidOperationException>(readOnlyEx);
         }
 
+        #endregion
+
+        #region Count
+
         [Fact]
         public void CountWorksWithDefaultCollection()
         {
@@ -153,8 +151,14 @@ namespace Celestial.UIToolkit.Tests
             var itemsSource = CreateNonEnumerableItemsSource();
 
             collection.ItemsSource = itemsSource;
+
+            var count = collection.Count();
             Assert.Single(collection);
         }
+
+        #endregion
+
+        #region IndexOf
 
         [Fact]
         public void IndexOfWorksWithDefaultCollection()
@@ -196,6 +200,10 @@ namespace Celestial.UIToolkit.Tests
             Assert.Equal(-1, collection.IndexOf(new object()));
         }
 
+        #endregion
+
+        #region Contains
+
         [Fact]
         public void ContainsWorksWithDefaultCollection()
         {
@@ -235,6 +243,10 @@ namespace Celestial.UIToolkit.Tests
             Assert.True(collection.Contains(itemsSource));
             Assert.False(collection.Contains(new object()));
         }
+
+        #endregion
+
+        #region CopyTo
 
         [Fact]
         public void CopyToWorksWithDefaultCollection()
@@ -276,6 +288,77 @@ namespace Celestial.UIToolkit.Tests
             Assert.Null(dest[0]);
             Assert.Null(dest[2]);
         }
+
+        #endregion
+
+        #region GetEnumerator
+
+        [Fact]
+        public void GetEnumeratorWorksWithDefaultCollection()
+        {
+            var collection = new ItemsSourceCollection();
+            var items = new int[] { 1, 2, 3, 4, 5 };
+            IEnumerator collectionEnumerator;
+            IEnumerator itemsEnumerator;
+
+            foreach (var item in items)
+                collection.Add(item);
+            collectionEnumerator = collection.GetEnumerator();
+            itemsEnumerator = items.GetEnumerator();
+
+            TestEnumeratorEquality(collectionEnumerator, itemsEnumerator);
+        }
+
+        [Fact]
+        public void GetEnumeratorWorksWithItemsSource()
+        {
+            var collection = new ItemsSourceCollection();
+            var itemsSource = CreateIntItemsSource(5);
+            IEnumerator collectionEnumerator;
+            IEnumerator itemsEnumerator;
+
+            collection.ItemsSource = itemsSource;
+            collectionEnumerator = collection.GetEnumerator();
+            itemsEnumerator = itemsSource.GetEnumerator();
+
+            TestEnumeratorEquality(collectionEnumerator, itemsEnumerator);
+        }
+
+        [Fact]
+        public void GetEnumeratorWorksWithNonEnumerableItemsSource()
+        {
+            var collection = new ItemsSourceCollection();
+            var itemsSource = CreateNonEnumerableItemsSource();
+            IEnumerator enumerator;
+
+            collection.ItemsSource = itemsSource;
+            enumerator = collection.GetEnumerator();
+
+            var enumerationNotStartedEx = Record.Exception(() => enumerator.Current);
+            Assert.IsType<InvalidOperationException>(enumerationNotStartedEx);
+
+            Assert.True(enumerator.MoveNext());
+            Assert.Same(itemsSource, enumerator.Current);
+
+            Assert.False(enumerator.MoveNext());
+            var enumerationStoppedEx = Record.Exception(() => enumerator.Current);
+            Assert.IsType<InvalidOperationException>(enumerationStoppedEx);
+        }
+
+        private void TestEnumeratorEquality(IEnumerator enumerator1, IEnumerator enumerator2)
+        {
+            bool couldEnum1MoveNext = enumerator1.MoveNext();
+            bool couldEnum2MoveNext = enumerator2.MoveNext();
+            Assert.Equal(couldEnum1MoveNext, couldEnum2MoveNext);
+
+            if (couldEnum1MoveNext)
+            {
+                Assert.Equal(enumerator1.Current, enumerator2.Current);
+                TestEnumeratorEquality(enumerator1, enumerator2);
+            }
+        }
+
+        #endregion
 
         /// <summary>
         /// Creates an items source with the specified number of items in it.
