@@ -46,8 +46,8 @@
     <!--
     Disabled colors define how a disabled control looks.
     -->
-    <Color x:Key="DisabledLowColor">#CCCCCC</Color>
-    <Color x:Key="DisabledHighColor">#7A7A7A</Color>
+    <Color x:Key="DisabledLowColor">#33000000</Color>
+    <Color x:Key="DisabledHighColor">#44000000</Color>
     
     
 

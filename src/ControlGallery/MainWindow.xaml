@@ -104,31 +104,35 @@
                 </c:NavigationViewItem.Icon>
             </c:NavigationViewItem>
         </c:NavigationView.MenuItems>
-        
-        <StackPanel>
-            <CheckBox IsChecked="{Binding IsPaneOpen, ElementName=NavView, Mode=TwoWay}">IsPaneOpen</CheckBox>
-            <CheckBox IsChecked="{Binding AlwaysShowHeader, ElementName=NavView, Mode=TwoWay}">AlwaysShowHeader</CheckBox>
-            <Slider Value="{Binding CompactModeThresholdWidth, ElementName=NavView, Mode=TwoWay}" 
-                    Minimum="0"
-                    Maximum="2000" />
-            <Slider Value="{Binding ExpandedModeThresholdWidth, ElementName=NavView, Mode=TwoWay}"
-                    Minimum="0"
-                    Maximum="2000" />
-            <Button Click="ChangeMenuItemButton_Click">
-                Change MenuItems
-            </Button>
-            <Button Click="ClearMenuItemsButton_Click">
-                Clear MenuItems
-            </Button>
-            <Button Click="ChangeMenuItemsSource_Click">
-                Change To ItemsSource
-            </Button>
-            <Button Click="ClearMenuItemsSource_Click">
-                Clear ItemsSource
-            </Button>
 
-            <pages:Buttons />
-        </StackPanel>
+        <ScrollViewer>
+            <StackPanel >
+                <CheckBox IsChecked="{Binding IsPaneOpen, ElementName=NavView, Mode=TwoWay}">IsPaneOpen</CheckBox>
+                <CheckBox IsChecked="{Binding AlwaysShowHeader, ElementName=NavView, Mode=TwoWay}">AlwaysShowHeader</CheckBox>
+                <Slider Value="{Binding CompactModeThresholdWidth, ElementName=NavView, Mode=TwoWay}" 
+                        Minimum="0"
+                        Maximum="2000" />
+                <Slider Value="{Binding ExpandedModeThresholdWidth, ElementName=NavView, Mode=TwoWay}"
+                        Minimum="0"
+                        Maximum="2000" />
+                <Button Click="ChangeMenuItemButton_Click">
+                    Change MenuItems
+                </Button>
+                <Button Click="ClearMenuItemsButton_Click">
+                    Clear MenuItems
+                </Button>
+                <Button Click="ChangeMenuItemsSource_Click">
+                    Change To ItemsSource
+                </Button>
+                <Button Click="ClearMenuItemsSource_Click">
+                    Clear ItemsSource
+                </Button>
+
+                <pages:Buttons />
+                <pages:Cards />
+                <pages:Toggleables />
+            </StackPanel>
+        </ScrollViewer>
     </c:NavigationView>
 
     <!--<TabControl>

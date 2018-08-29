@@ -142,7 +142,7 @@
     - Foreground: -
     -->
     <Style x:Key="Accent1Border" TargetType="FrameworkElement">
-        <Setter Property="Control.Background" Value="{StaticResource Accent1ControlBorderBrush}" />
+        <Setter Property="Control.BorderBrush" Value="{StaticResource Accent1ControlBorderBrush}" />
         <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource Accent1ControlHoverBorderBrush}" />
         <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource Accent1ControlPressedBorderBrush}" />
         <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource Accent1ControlActiveBorderBrush}" />
@@ -170,7 +170,7 @@
     - Foreground: -
     -->
     <Style x:Key="Accent2Border" TargetType="FrameworkElement">
-        <Setter Property="Control.Background" Value="{StaticResource Accent2ControlBorderBrush}" />
+        <Setter Property="Control.BorderBrush" Value="{StaticResource Accent2ControlBorderBrush}" />
         <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource Accent2ControlHoverBorderBrush}" />
         <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource Accent2ControlPressedBorderBrush}" />
         <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource Accent2ControlActiveBorderBrush}" />
@@ -198,7 +198,7 @@
     - Foreground: -
     -->
     <Style x:Key="ErrorBorder" TargetType="FrameworkElement">
-        <Setter Property="Control.Background" Value="{StaticResource ErrorControlBorderBrush}" />
+        <Setter Property="Control.BorderBrush" Value="{StaticResource ErrorControlBorderBrush}" />
         <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource ErrorControlHoverBorderBrush}" />
         <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource ErrorControlPressedBorderBrush}" />
         <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource ErrorControlActiveBorderBrush}" />

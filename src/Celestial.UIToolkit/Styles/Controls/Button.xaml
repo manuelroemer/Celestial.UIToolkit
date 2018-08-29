@@ -218,18 +218,33 @@
     <Style x:Key="OutlinedButton" TargetType="ButtonBase" BasedOn="{StaticResource StandardButton}">
         <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
         <Setter Property="Background" Value="Transparent" />
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="BorderThickness" Value="0" />
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
     <Style x:Key="Accent1OutlinedButton" TargetType="ButtonBase" BasedOn="{StaticResource Accent1Button}">
         <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Foreground" Value="{StaticResource StandardForegroundBrush}" />
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="BorderThickness" Value="0" />
+            </Trigger>
+        </Style.Triggers>
     </Style>
     
     <Style x:Key="Accent2OutlinedButton" TargetType="ButtonBase" BasedOn="{StaticResource Accent2Button}">
         <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Foreground" Value="{StaticResource StandardForegroundBrush}" />
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="BorderThickness" Value="0" />
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
     <Style x:Key="ElevatedOutlinedButton"
