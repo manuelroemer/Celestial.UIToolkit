@@ -56,7 +56,7 @@
     This is not the whole set of colors for lists.
     The Accent defines additional ones.
     -->
-    <Color x:Key="ListLowColor">#000000</Color>
+    <Color x:Key="ListDefaultColor">#000000</Color>
     <Color x:Key="ListHighColor">#EAEAEA</Color>
 
     
@@ -116,6 +116,8 @@
     
 
 
+    
+    
     <!--
     Brush definitions based on the colors.
     These should not be changed.

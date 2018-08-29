@@ -2,54 +2,138 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <!--
-    The first accent is intended to be a bright, flashy color.
-    It basically identifies the application's brand and captures the user's attention.
-    It is rarely used by controls (by default).
+    The first accent is supposed to be rarely used inside an application.
+    As a result, it is expected to be a flashy, attention-raising color.
     -->
-    <Color x:Key="Accent1HighColor">#FF1A5F</Color>
-    <Color x:Key="Accent1MediumColor">#DE1753</Color>
-    <Color x:Key="Accent1LowColor">#7F0D2F</Color>
-    <Color x:Key="OnAccent1ForegroundColor">#FFFFFF</Color>
-    <Color x:Key="OnAccent1DisabledForegroundColor">#E2E2E2</Color>
+    <Color x:Key="Accent1LightestColor">#EC4F7E</Color>
+    <Color x:Key="Accent1LighterColor">#EA356B</Color>
+    <Color x:Key="Accent1LightColor">#E71B59</Color>
+    <Color x:Key="Accent1Color">#D1154E</Color>
+    <Color x:Key="Accent1DarkColor">#B71344</Color>
+    <Color x:Key="Accent1DarkerColor">#9D103B</Color>
+    <Color x:Key="Accent1DarkestColor">#840D31</Color>
 
-    <SolidColorBrush x:Key="Accent1HighBrush" Color="{StaticResource Accent1HighColor}" />
-    <SolidColorBrush x:Key="Accent1MediumBrush" Color="{StaticResource Accent1MediumColor}" />
-    <SolidColorBrush x:Key="Accent1LowBrush" Color="{StaticResource Accent1LowColor}" />
-    <SolidColorBrush x:Key="OnAccent1ForegroundBrush" Color="{StaticResource OnAccent1ForegroundColor}" />
-    <SolidColorBrush x:Key="OnAccent1DisabledForegroundBrush" Color="{StaticResource OnAccent1DisabledForegroundColor}" />
-
-
-    <!--
-    The second accent is commonly used by controls.
-    In comparison to the first one, it is visible across the application.
-    -->
-    <Color x:Key="Accent2HighColor">#23B1FB</Color>
-    <Color x:Key="Accent2MediumColor">#1F9BDC</Color>
-    <Color x:Key="Accent2LowColor">#1B89C2</Color>
-    <Color x:Key="OnAccent2ForegroundColor">#FFFFFF</Color>
-    <Color x:Key="OnAccent2DisabledForegroundColor">#E2E2E2</Color>
-
-    <SolidColorBrush x:Key="Accent2HighBrush" Color="{StaticResource Accent2HighColor}" />
-    <SolidColorBrush x:Key="Accent2MediumBrush" Color="{StaticResource Accent2MediumColor}" />
-    <SolidColorBrush x:Key="Accent2LowBrush" Color="{StaticResource Accent2LowColor}" />
-    <SolidColorBrush x:Key="OnAccent2ForegroundBrush" Color="{StaticResource OnAccent2ForegroundColor}" />
-    <SolidColorBrush x:Key="OnAccent2DisabledForegroundBrush" Color="{StaticResource OnAccent2DisabledForegroundColor}" />
+    <Color x:Key="OnAccent1TextColor">#FFFFFF</Color>
 
 
 
     <!--
-    The Error colors are used for error states (e.g. during validation).
+    The second accent is frequently used by Accent1Controls to guide the user's attention towards them.
     -->
-    <Color x:Key="ErrorHighColor">#E40010</Color>
-    <Color x:Key="ErrorMediumColor">#C5000E</Color>
-    <Color x:Key="ErrorLowColor">#AB000C</Color>
-    <Color x:Key="OnErrorForegroundColor">#FFFFFF</Color>
-    <Color x:Key="OnErrorDisabledForegroundColor">#E2E2E2</Color>
+    <Color x:Key="Accent2LightestColor">#689EE1</Color>
+    <Color x:Key="Accent2LighterColor">#508EDC</Color>
+    <Color x:Key="Accent2LightColor">#387FD8</Color>
+    <Color x:Key="Accent2Color">#2D78D6</Color>
+    <Color x:Key="Accent2DarkColor">#2364B5</Color>
+    <Color x:Key="Accent2DarkerColor">#1E569D</Color>
+    <Color x:Key="Accent2DarkestColor">#1A4985</Color>
 
-    <SolidColorBrush x:Key="ErrorHighBrush" Color="{StaticResource ErrorHighColor}" />
-    <SolidColorBrush x:Key="ErrorMediumBrush" Color="{StaticResource ErrorMediumColor}" />
-    <SolidColorBrush x:Key="ErrorLowBrush" Color="{StaticResource ErrorLowColor}" />
-    <SolidColorBrush x:Key="OnErrorForegroundBrush" Color="{StaticResource OnErrorForegroundColor}" />
-    <SolidColorBrush x:Key="OnErrorDisabledForegroundBrush" Color="{StaticResource OnErrorForegroundColor}" />
+    <Color x:Key="OnAccent2TextColor">#FFFFFF</Color>
+
+
+
+    <!--
+    The Error Color is used for, as the name suggests, error states within the application.
+    A common example is a validation error in a Accent1Control.
+    -->
+    <Color x:Key="ErrorLightestColor">#FF2A37</Color>
+    <Color x:Key="ErrorLighterColor">#FF0E1D</Color>
+    <Color x:Key="ErrorLightColor">#F1000E</Color>
+    <Color x:Key="ErrorColor">#E3000E</Color>
+    <Color x:Key="ErrorDarkColor">#B8000B</Color>
+    <Color x:Key="ErrorDarkerColor">#9C0009</Color>
+    <Color x:Key="ErrorDarkestColor">#7F0007</Color>
+
+    <Color x:Key="OnErrorTextColor">#FFFFFF</Color>
+
+
+
+    <!--
+    Brushes for the appearance of a control using the theme's accent.
+    -->
+    <SolidColorBrush x:Key="Accent1ControlBackgroundBrush" Color="{StaticResource Accent1Color}" />
+    <SolidColorBrush x:Key="Accent1ControlHoverBackgroundBrush" Color="{StaticResource Accent1LightColor}" />
+    <SolidColorBrush x:Key="Accent1ControlPressedBackgroundBrush" Color="{StaticResource Accent1DarkColor}" />
+
+    <SolidColorBrush x:Key="Accent1ControlBorderBrush" Color="{StaticResource Accent1DarkColor}" />
+    <SolidColorBrush x:Key="Accent1ControlHoverBorderBrush" Color="{StaticResource Accent1Color}" />
+    <SolidColorBrush x:Key="Accent1ControlPressedBorderBrush" Color="{StaticResource Accent1DarkerColor}" />
+
+    
+    
+    <SolidColorBrush x:Key="Accent2ControlBackgroundBrush" Color="{StaticResource Accent2Color}" />
+    <SolidColorBrush x:Key="Accent2ControlHoverBackgroundBrush" Color="{StaticResource Accent2LightColor}" />
+    <SolidColorBrush x:Key="Accent2ControlPressedBackgroundBrush" Color="{StaticResource Accent2DarkColor}" />
+
+    <SolidColorBrush x:Key="Accent2ControlBorderBrush" Color="{StaticResource Accent2DarkColor}" />
+    <SolidColorBrush x:Key="Accent2ControlHoverBorderBrush" Color="{StaticResource Accent2Color}" />
+    <SolidColorBrush x:Key="Accent2ControlPressedBorderBrush" Color="{StaticResource Accent2DarkerColor}" />
+
+    
+    
+    <SolidColorBrush x:Key="ErrorControlBackgroundBrush" Color="{StaticResource ErrorColor}" />
+    <SolidColorBrush x:Key="ErrorControlHoverBackgroundBrush" Color="{StaticResource ErrorLightColor}" />
+    <SolidColorBrush x:Key="ErrorControlPressedBackgroundBrush" Color="{StaticResource ErrorDarkColor}" />
+
+    <SolidColorBrush x:Key="ErrorControlBorderBrush" Color="{StaticResource ErrorDarkColor}" />
+    <SolidColorBrush x:Key="ErrorControlHoverBorderBrush" Color="{StaticResource ErrorColor}" />
+    <SolidColorBrush x:Key="ErrorControlPressedBorderBrush" Color="{StaticResource ErrorDarkerColor}" />
+
+    
+
+
+    
+    <!--
+    The theme's default List Colors are extended by the accents.
+    -->
+    <SolidColorBrush x:Key="ListAccent1LowBrush" Color="{StaticResource Accent1LightestColor}" />
+    <SolidColorBrush x:Key="ListAccent1MediumBrush" Color="{StaticResource Accent1LighterColor}" />
+    <SolidColorBrush x:Key="ListAccent1HighBrush" Color="{StaticResource Accent1LightColor}" />
+
+    <SolidColorBrush x:Key="ListAccent2LowBrush" Color="{StaticResource Accent2LightestColor}" />
+    <SolidColorBrush x:Key="ListAccent2MediumBrush" Color="{StaticResource Accent2LighterColor}" />
+    <SolidColorBrush x:Key="ListAccent2HighBrush" Color="{StaticResource Accent2LightColor}" />
+
+
+
+
+
+    <!--
+    Brush definitions based on the colors.
+    These should not be changed.
+    -->
+    <SolidColorBrush x:Key="Accent1LightestBrush" Color="{StaticResource Accent1LightestColor}" />
+    <SolidColorBrush x:Key="Accent1LighterBrush" Color="{StaticResource Accent1LighterColor}" />
+    <SolidColorBrush x:Key="Accent1LightBrush" Color="{StaticResource Accent1LightColor}" />
+    <SolidColorBrush x:Key="Accent1Brush" Color="{StaticResource Accent1Color}" />
+    <SolidColorBrush x:Key="Accent1DarkBrush" Color="{StaticResource Accent1DarkColor}" />
+    <SolidColorBrush x:Key="Accent1DarkerBrush" Color="{StaticResource Accent1DarkerColor}" />
+    <SolidColorBrush x:Key="Accent1DarkestBrush" Color="{StaticResource Accent1DarkestColor}" />
+    
+    <SolidColorBrush x:Key="OnAccent1TextColor" Color="{StaticResource OnAccent1TextColor}" />
+
+
+
+    <SolidColorBrush x:Key="Accent2LightestBrush" Color="{StaticResource Accent2LightestColor}" />
+    <SolidColorBrush x:Key="Accent2LighterBrush" Color="{StaticResource Accent2LighterColor}" />
+    <SolidColorBrush x:Key="Accent2LightBrush" Color="{StaticResource Accent2LightColor}" />
+    <SolidColorBrush x:Key="Accent2Brush" Color="{StaticResource Accent2Color}" />
+    <SolidColorBrush x:Key="Accent2DarkBrush" Color="{StaticResource Accent2DarkColor}" />
+    <SolidColorBrush x:Key="Accent2DarkerBrush" Color="{StaticResource Accent2DarkerColor}" />
+    <SolidColorBrush x:Key="Accent2DarkestBrush" Color="{StaticResource Accent2DarkestColor}" />
+
+    <SolidColorBrush x:Key="OnAccent2TextColor" Color="{StaticResource OnAccent2TextColor}" />
+
+
+
+    <SolidColorBrush x:Key="ErrorLightestBrush" Color="{StaticResource ErrorLightestColor}" />
+    <SolidColorBrush x:Key="ErrorLighterBrush" Color="{StaticResource ErrorLighterColor}" />
+    <SolidColorBrush x:Key="ErrorLightBrush" Color="{StaticResource ErrorLightColor}" />
+    <SolidColorBrush x:Key="ErrorBrush" Color="{StaticResource ErrorColor}" />
+    <SolidColorBrush x:Key="ErrorDarkBrush" Color="{StaticResource ErrorDarkColor}" />
+    <SolidColorBrush x:Key="ErrorDarkerBrush" Color="{StaticResource ErrorDarkerColor}" />
+    <SolidColorBrush x:Key="ErrorDarkestBrush" Color="{StaticResource ErrorDarkestColor}" />
+
+    <SolidColorBrush x:Key="OnErrorTextColor" Color="{StaticResource OnErrorTextColor}" />
 
 </ResourceDictionary>
