@@ -4,8 +4,8 @@
 
     <Style x:Key="StandardDropDownBorder" TargetType="Border">
         <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="Background" Value="{StaticResource BaseHighestBrush}" />
-        <Setter Property="BorderBrush" Value="{StaticResource BaseHighBrush}" />
+        <Setter Property="Background" Value="{StaticResource ListLowBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource PaneBackgroundBrush}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="CornerRadius" Value="0" />
     </Style>

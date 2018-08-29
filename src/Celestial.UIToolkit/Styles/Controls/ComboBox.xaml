@@ -4,7 +4,7 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
-    <ResourceDictionary.MergedDictionaries>
+    <!--<ResourceDictionary.MergedDictionaries>
         <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
         <c:SharedResourceDictionary Source="../../Icons/Arrows.xaml" />
         <c:SharedResourceDictionary Source="Popup.xaml" />
@@ -12,8 +12,8 @@
 
     <Style x:Key="StandardComboBox" TargetType="ComboBox" BasedOn="{StaticResource Accent2BorderThemingBase}">
         <Style.Resources>
-            <!-- This custom style is for the Down-Arrow in the ComboBox.
-                 It is fully animated, like a normal Button. -->
+            --><!-- This custom style is for the Down-Arrow in the ComboBox.
+                 It is fully animated, like a normal Button. --><!--
             <Style x:Key="ComboBoxToggleButton" TargetType="ToggleButton" BasedOn="{StaticResource Accent2BorderThemingBase}">
                 <Setter Property="MinWidth" Value="0" />
                 <Setter Property="MinHeight" Value="0" />
@@ -114,8 +114,8 @@
                 </Setter>
             </Style>
 
-            <!-- Since the ComboBox renders its own border, we only need
-                 the "raw" input functionality of a TextBox. -->
+            --><!-- Since the ComboBox renders its own border, we only need
+                 the "raw" input functionality of a TextBox. --><!--
             <Style x:Key="ComboBoxTextBox" TargetType="TextBox">
                 <Setter Property="Template">
                     <Setter.Value>
@@ -193,8 +193,8 @@
                                       ClickMode="Press"
                                       IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
                         <Grid Margin="{TemplateBinding BorderThickness}">
-                            <!-- This Margin is required, since the Content-Presenter needs to be aligned with the
-                                 TextBox. The Box itself adds these 2px automatically. -->
+                            --><!-- This Margin is required, since the Content-Presenter needs to be aligned with the
+                                 TextBox. The Box itself adds these 2px automatically. --><!--
                             <Grid Margin="2,0,0,0">
                                 <ContentPresenter x:Name="ContentSite"
                                                   Content="{TemplateBinding SelectionBoxItem}"
@@ -327,11 +327,11 @@
 
 
 
-    <!--
+    --><!--
     Subtle ComboBox.
     A ComboBox which is more subtle than the default ComboBox.
     This effect is achieved by only showing the Border at the ComboBox's bottom.
-    -->
+    --><!--
     <Style x:Key="SubtleComboBox" TargetType="ComboBox" BasedOn="{StaticResource StandardComboBox}">
         <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
         <Setter Property="BorderThickness" Value="0,0,0,1" />
@@ -342,10 +342,10 @@
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
     </Style>
 
-    <!--
+    --><!--
     Minimal ComboBox.
     Basically the same as the SubtleComboBox, but with the difference, that it shows no border at all.
-    -->
+    --><!--
     <Style x:Key="MinimalComboBox" TargetType="ComboBox" BasedOn="{StaticResource SubtleComboBox}">
         <Setter Property="BorderThickness" Value="0" />
     </Style>
@@ -456,6 +456,6 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    <Style TargetType="ComboBoxItem" BasedOn="{StaticResource StandardComboBoxItem}" />
+    <Style TargetType="ComboBoxItem" BasedOn="{StaticResource StandardComboBoxItem}" />-->
 
 </ResourceDictionary>

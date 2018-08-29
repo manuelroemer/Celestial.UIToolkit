@@ -11,7 +11,7 @@
         <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardButton" TargetType="ButtonBase" BasedOn="{c:MultiStyle 'StandardBackground StandardBorder StandardForeground AltFontProperties BottomShadow NoShadow'}">
+    <Style x:Key="StandardButton" TargetType="ButtonBase" BasedOn="{c:MultiStyle 'ControlBackground ControlBorder StandardForeground AltFontProperties BottomShadow NoShadow'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
@@ -23,7 +23,6 @@
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
         <Setter Property="theming:PressedProperties.BorderBrush" Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
-        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource BaseHighestBrush}" />
         <Setter Property="theming:ShadowProperties.ShadowType" Value="{x:Static controls:ShadowType.Directional}" />
         <Setter Property="Template">
             <Setter.Value>
@@ -177,25 +176,24 @@
     <Style x:Key="FlatButton" TargetType="ButtonBase" BasedOn="{StaticResource StandardButton}">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource BaseHighBrush}" />
-        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource BaseMediumBrush}" />
-        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource BaseMediumBrush}" />
+        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource ControlHoverBackgroundBrush}" />
+        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource ControlPressedBackgroundBrush}" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource ControlPressedBackgroundBrush}" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
-        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
     </Style>
 
     <Style x:Key="Accent1FlatButton" TargetType="ButtonBase" BasedOn="{StaticResource FlatButton}">
-        <Setter Property="Foreground" Value="{StaticResource Accent1MediumBrush}" />
-        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource Accent1MediumBrush}" />
-        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource Accent1MediumBrush}" />
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource Accent1MediumBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource Accent1Brush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource Accent1Brush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource Accent1Brush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource Accent1Brush}" />
     </Style>
 
     <Style x:Key="Accent2FlatButton" TargetType="ButtonBase" BasedOn="{StaticResource FlatButton}">
-        <Setter Property="Foreground" Value="{StaticResource Accent2MediumBrush}" />
-        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource Accent2MediumBrush}" />
-        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource Accent2MediumBrush}" />
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource Accent2MediumBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource Accent2Brush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource Accent2Brush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource Accent2Brush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource Accent2Brush}" />
     </Style>
 
     <Style x:Key="ElevatedFlatButton"
@@ -261,8 +259,6 @@
         <Setter Property="Height" Value="{c:GridUnit 8}" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
-        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource BaseHighBrush}" />
-        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
         <Style.Triggers>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
@@ -332,7 +328,7 @@
     <Style x:Key="HyperlinkButton" TargetType="Button">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource StandardButtonFocusVisual}" />
-        <Setter Property="Foreground" Value="{StaticResource Accent2MediumBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource Accent2Brush}" />
         <Setter Property="FontFamily" Value="{StaticResource StandardFontFamily}" />
         <Setter Property="FontSize" Value="{StaticResource StandardFontSize}" />
         <Setter Property="FontWeight" Value="{StaticResource StandardFontWeight}" />
@@ -355,11 +351,11 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Foreground" Value="{StaticResource Accent2HighBrush}" />
+                <Setter Property="Foreground" Value="{StaticResource Accent2LightBrush}" />
                 <Setter Property="Cursor" Value="Hand" />
             </Trigger>
             <Trigger Property="IsPressed" Value="True">
-                <Setter Property="Foreground" Value="{StaticResource Accent2LowBrush}" />
+                <Setter Property="Foreground" Value="{StaticResource Accent2DarkBrush}" />
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="Foreground" Value="{StaticResource DisabledForegroundBrush}" />

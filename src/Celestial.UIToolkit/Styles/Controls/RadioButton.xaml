@@ -11,7 +11,7 @@
         <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardRadioButton" TargetType="RadioButton" BasedOn="{c:MultiStyle 'StandardBorder BaseHighestBackground StandardForeground StandardFontProperties'}">
+    <Style x:Key="StandardRadioButton" TargetType="RadioButton" BasedOn="{c:MultiStyle 'ControlBorder PrimaryBackground StandardForeground StandardFontProperties'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
@@ -252,7 +252,7 @@
            BasedOn="{c:MultiStyle 'StandardRadioButton ControlAccent1Border'}" />
     <Style x:Key="Accent2RadioButton" 
            TargetType="RadioButton" 
-           BasedOn="{c:MultiStyle 'StandardRadioButton ControlAccent2Border'}" />
+           BasedOn="{c:MultiStyle 'StandardRadioButton ControlBorderAccent1States'}" />
 
     <Style TargetType="RadioButton" BasedOn="{StaticResource Accent2RadioButton}" />
 

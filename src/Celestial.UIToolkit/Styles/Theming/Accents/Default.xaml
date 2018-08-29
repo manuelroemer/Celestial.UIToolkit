@@ -14,6 +14,7 @@
     <Color x:Key="Accent1DarkestColor">#840D31</Color>
 
     <Color x:Key="OnAccent1TextColor">#FFFFFF</Color>
+    <Color x:Key="OnAccent1DisabledTextColor">#66000000</Color>
 
 
 
@@ -29,6 +30,7 @@
     <Color x:Key="Accent2DarkestColor">#1A4985</Color>
 
     <Color x:Key="OnAccent2TextColor">#FFFFFF</Color>
+    <Color x:Key="OnAccent2DisabledTextColor">#66000000</Color>
 
 
 
@@ -45,6 +47,7 @@
     <Color x:Key="ErrorDarkestColor">#7F0007</Color>
 
     <Color x:Key="OnErrorTextColor">#FFFFFF</Color>
+    <Color x:Key="OnErrorDisabledTextColor">#66000000</Color>
 
 
 
@@ -54,30 +57,36 @@
     <SolidColorBrush x:Key="Accent1ControlBackgroundBrush" Color="{StaticResource Accent1Color}" />
     <SolidColorBrush x:Key="Accent1ControlHoverBackgroundBrush" Color="{StaticResource Accent1LightColor}" />
     <SolidColorBrush x:Key="Accent1ControlPressedBackgroundBrush" Color="{StaticResource Accent1DarkColor}" />
+    <SolidColorBrush x:Key="Accent1ControlActiveBackgroundBrush" Color="{StaticResource Accent1DarkColor}" />
 
-    <SolidColorBrush x:Key="Accent1ControlBorderBrush" Color="{StaticResource Accent1DarkColor}" />
+    <SolidColorBrush x:Key="Accent1BorderBrush" Color="{StaticResource Accent1DarkColor}" />
     <SolidColorBrush x:Key="Accent1ControlHoverBorderBrush" Color="{StaticResource Accent1Color}" />
     <SolidColorBrush x:Key="Accent1ControlPressedBorderBrush" Color="{StaticResource Accent1DarkerColor}" />
+    <SolidColorBrush x:Key="Accent1ControlActiveBorderBrush" Color="{StaticResource Accent1DarkerColor}" />
 
     
     
     <SolidColorBrush x:Key="Accent2ControlBackgroundBrush" Color="{StaticResource Accent2Color}" />
     <SolidColorBrush x:Key="Accent2ControlHoverBackgroundBrush" Color="{StaticResource Accent2LightColor}" />
     <SolidColorBrush x:Key="Accent2ControlPressedBackgroundBrush" Color="{StaticResource Accent2DarkColor}" />
+    <SolidColorBrush x:Key="Accent2ControlActiveBackgroundBrush" Color="{StaticResource Accent2DarkColor}" />
 
-    <SolidColorBrush x:Key="Accent2ControlBorderBrush" Color="{StaticResource Accent2DarkColor}" />
+    <SolidColorBrush x:Key="Accent2BorderBrush" Color="{StaticResource Accent2DarkColor}" />
     <SolidColorBrush x:Key="Accent2ControlHoverBorderBrush" Color="{StaticResource Accent2Color}" />
     <SolidColorBrush x:Key="Accent2ControlPressedBorderBrush" Color="{StaticResource Accent2DarkerColor}" />
+    <SolidColorBrush x:Key="Accent2ControlActiveBorderBrush" Color="{StaticResource Accent2DarkerColor}" />
 
     
     
     <SolidColorBrush x:Key="ErrorControlBackgroundBrush" Color="{StaticResource ErrorColor}" />
     <SolidColorBrush x:Key="ErrorControlHoverBackgroundBrush" Color="{StaticResource ErrorLightColor}" />
     <SolidColorBrush x:Key="ErrorControlPressedBackgroundBrush" Color="{StaticResource ErrorDarkColor}" />
+    <SolidColorBrush x:Key="ErrorControlActiveBackgroundBrush" Color="{StaticResource ErrorDarkColor}" />
 
     <SolidColorBrush x:Key="ErrorControlBorderBrush" Color="{StaticResource ErrorDarkColor}" />
     <SolidColorBrush x:Key="ErrorControlHoverBorderBrush" Color="{StaticResource ErrorColor}" />
     <SolidColorBrush x:Key="ErrorControlPressedBorderBrush" Color="{StaticResource ErrorDarkerColor}" />
+    <SolidColorBrush x:Key="ErrorControlActiveBorderBrush" Color="{StaticResource ErrorDarkerColor}" />
 
     
 
@@ -110,7 +119,8 @@
     <SolidColorBrush x:Key="Accent1DarkerBrush" Color="{StaticResource Accent1DarkerColor}" />
     <SolidColorBrush x:Key="Accent1DarkestBrush" Color="{StaticResource Accent1DarkestColor}" />
     
-    <SolidColorBrush x:Key="OnAccent1TextColor" Color="{StaticResource OnAccent1TextColor}" />
+    <SolidColorBrush x:Key="OnAccent1TextBrush" Color="{StaticResource OnAccent1TextColor}" />
+    <SolidColorBrush x:Key="OnAccent1DisabledTextBrush" Color="{StaticResource OnAccent1DisabledTextColor}" />
 
 
 
@@ -122,7 +132,8 @@
     <SolidColorBrush x:Key="Accent2DarkerBrush" Color="{StaticResource Accent2DarkerColor}" />
     <SolidColorBrush x:Key="Accent2DarkestBrush" Color="{StaticResource Accent2DarkestColor}" />
 
-    <SolidColorBrush x:Key="OnAccent2TextColor" Color="{StaticResource OnAccent2TextColor}" />
+    <SolidColorBrush x:Key="OnAccent2TextBrush" Color="{StaticResource OnAccent2TextColor}" />
+    <SolidColorBrush x:Key="OnAccent2DisabledTextBrush" Color="{StaticResource OnAccent2DisabledTextColor}" />
 
 
 
@@ -134,6 +145,7 @@
     <SolidColorBrush x:Key="ErrorDarkerBrush" Color="{StaticResource ErrorDarkerColor}" />
     <SolidColorBrush x:Key="ErrorDarkestBrush" Color="{StaticResource ErrorDarkestColor}" />
 
-    <SolidColorBrush x:Key="OnErrorTextColor" Color="{StaticResource OnErrorTextColor}" />
+    <SolidColorBrush x:Key="OnErrorTextBrush" Color="{StaticResource OnErrorTextColor}" />
+    <SolidColorBrush x:Key="OnErrorDisabledTextBrush" Color="{StaticResource OnErrorDisabledTextColor}" />
 
 </ResourceDictionary>

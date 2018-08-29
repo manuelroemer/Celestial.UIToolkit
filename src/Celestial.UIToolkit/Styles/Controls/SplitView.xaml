@@ -7,7 +7,7 @@
     <Style TargetType="controls:SplitView">
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
-        <Setter Property="PaneBackground" Value="{StaticResource BaseHighBrush}" />
+        <Setter Property="PaneBackground" Value="{StaticResource PaneBackgroundBrush}" />
         <Setter Property="Focusable" Value="False" />
         <Setter Property="IsTabStop" Value="False" />
         <Setter Property="Template">

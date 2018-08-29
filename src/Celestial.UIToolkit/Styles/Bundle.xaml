@@ -9,7 +9,6 @@
     <ResourceDictionary.MergedDictionaries>
         <c:SharedResourceDictionary Source="Shared/FocusVisuals.xaml" />
         
-        <c:SharedResourceDictionary Source="Controls/IconButton.xaml" />
         <c:SharedResourceDictionary Source="Controls/RippleOverlay.xaml" />
         <c:SharedResourceDictionary Source="Controls/ShadowDecorator.xaml" />
         <c:SharedResourceDictionary Source="Controls/SplitView.xaml" />

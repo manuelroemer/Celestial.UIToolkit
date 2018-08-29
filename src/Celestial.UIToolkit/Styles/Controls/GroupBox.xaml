@@ -4,12 +4,12 @@
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming">
 
-    <ResourceDictionary.MergedDictionaries>
+    <!--<ResourceDictionary.MergedDictionaries>
         <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
     </ResourceDictionary.MergedDictionaries>
     
-    <!-- A GroupBox is, by default, a ContentControl whose Header
-         is a bold TextBlock. -->
+    --><!-- A GroupBox is, by default, a ContentControl whose Header
+         is a bold TextBlock. --><!--
     <Style x:Key="StandardGroupBox" TargetType="GroupBox" BasedOn="{StaticResource Accent2BorderWithForegroundThemingBase}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
@@ -64,6 +64,6 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    <Style TargetType="GroupBox" BasedOn="{StaticResource StandardGroupBox}" />
+    <Style TargetType="GroupBox" BasedOn="{StaticResource StandardGroupBox}" />-->
 
 </ResourceDictionary>

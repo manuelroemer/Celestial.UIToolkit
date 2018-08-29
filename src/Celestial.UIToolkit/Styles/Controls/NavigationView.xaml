@@ -12,13 +12,12 @@
         <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardNavigationViewItem" TargetType="controls:NavigationViewItem" BasedOn="{c:MultiStyle 'StandardBackground TransparentBorder StandardForeground StandardFontProperties'}">
-        <Setter Property="SnapsToDevicePixels" Value="True" />
+    <Style x:Key="StandardNavigationViewItem" TargetType="controls:NavigationViewItem" BasedOn="{c:MultiStyle 'ControlBackground TransparentBorder StandardForeground StandardFontProperties'}">
+        <!--<Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Height" Value="{c:GridUnit 9}" />
-        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="Red" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:NavigationViewItem">
@@ -126,7 +125,7 @@
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
-        </Setter>
+        </Setter>-->
     </Style>
     <Style TargetType="controls:NavigationViewItem" BasedOn="{StaticResource StandardNavigationViewItem}" />
 

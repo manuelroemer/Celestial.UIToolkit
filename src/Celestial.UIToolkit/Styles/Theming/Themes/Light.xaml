@@ -74,21 +74,24 @@
     <SolidColorBrush x:Key="ControlBackgroundBrush" Color="{StaticResource PrimaryMediumColor}" />
     <SolidColorBrush x:Key="ControlHoverBackgroundBrush" Color="{StaticResource PrimaryMediumLowColor}" />
     <SolidColorBrush x:Key="ControlPressedBackgroundBrush" Color="{StaticResource PrimaryMediumHighColor}" />
+    <SolidColorBrush x:Key="ControlActiveBackgroundBrush" Color="{StaticResource PrimaryMediumHighColor}" />
     <SolidColorBrush x:Key="ControlDisabledBackgroundBrush" Color="{StaticResource DisabledLowColor}" />
 
     <SolidColorBrush x:Key="ControlBorderBrush" Color="{StaticResource PrimaryMediumHighColor}" />
     <SolidColorBrush x:Key="ControlHoverBorderBrush" Color="{StaticResource PrimaryMediumColor}" />
     <SolidColorBrush x:Key="ControlPressedBorderBrush" Color="{StaticResource PrimaryHighColor}" />
+    <SolidColorBrush x:Key="ControlActiveBorderBrush" Color="{StaticResource PrimaryHighColor}" />
     <SolidColorBrush x:Key="ControlDisabledBorderBrush" Color="{StaticResource DisabledHighColor}" />
 
     <SolidColorBrush x:Key="AltControlBackgroundBrush" Color="{StaticResource AltPrimaryMediumColor}" />
     <SolidColorBrush x:Key="AltControlHoverBackgroundBrush" Color="{StaticResource AltPrimaryMediumLowColor}" />
     <SolidColorBrush x:Key="AltControlPressedBackgroundBrush" Color="{StaticResource AltPrimaryMediumHighColor}" />
+    <SolidColorBrush x:Key="AltControlActiveBackgroundBrush" Color="{StaticResource AltPrimaryMediumHighColor}" />
     <SolidColorBrush x:Key="AltControlDisabledBackgroundBrush" Color="{StaticResource DisabledLowColor}" />
 
     <SolidColorBrush x:Key="AltControlBorderBrush" Color="{StaticResource AltPrimaryMediumHighColor}" />
     <SolidColorBrush x:Key="AltControlHoverBorderBrush" Color="{StaticResource AltPrimaryMediumColor}" />
-    <SolidColorBrush x:Key="AltControlPressedBorderBrush" Color="{StaticResource AltPrimaryHighColor}" />
+    <SolidColorBrush x:Key="AltControlActiveBorderBrush" Color="{StaticResource AltPrimaryHighColor}" />
     <SolidColorBrush x:Key="AltControlDisabledBorderBrush" Color="{StaticResource DisabledHighColor}" />
 
     
@@ -100,7 +103,9 @@
     these brushes (typically controls which contain a larger amount of other controls).
     -->
     <SolidColorBrush x:Key="PaneBackgroundBrush" Color="{StaticResource PrimaryMediumLowColor}" />
+    <SolidColorBrush x:Key="PaneBorderBrush" Color="{StaticResource PrimaryMediumColor}" />
     <SolidColorBrush x:Key="AltPaneBackgroundBrush" Color="{StaticResource AltPrimaryMediumLowColor}" />
+    <SolidColorBrush x:Key="AltPaneBorderBrush" Color="{StaticResource AltPrimaryMediumColor}" />
 
     <!--
     Brushes for elements on a pane. They usually share the pane's background, but can have different colors
@@ -109,10 +114,14 @@
     <SolidColorBrush x:Key="OnPaneControlBackgroundBrush" Color="Transparent" />
     <SolidColorBrush x:Key="OnPaneControlBackgroundHoverBrush" Color="{StaticResource PrimaryLowColor}" />
     <SolidColorBrush x:Key="OnPaneControlBackgroundPressedBrush" Color="{StaticResource PrimaryMediumColor}" />
+    <SolidColorBrush x:Key="OnPaneControlBackgroundActiveBrush" Color="{StaticResource PrimaryMediumColor}" />
+    <SolidColorBrush x:Key="OnPaneControlBackgroundDisabledBrush" Color="Transparent" />
     
     <SolidColorBrush x:Key="AltOnPaneControlBackgroundBrush" Color="Transparent" />
     <SolidColorBrush x:Key="AltOnPaneControlBackgroundHoverBrush" Color="{StaticResource AltPrimaryLowColor}" />
     <SolidColorBrush x:Key="AltOnPaneControlBackgroundPressedBrush" Color="{StaticResource AltPrimaryMediumColor}" />
+    <SolidColorBrush x:Key="AltOnPaneControlBackgroundActiveBrush" Color="{StaticResource AltPrimaryMediumColor}" />
+    <SolidColorBrush x:Key="AltOnPaneControlBackgroundDisabledBrush" Color="Transparent" />
     
 
 

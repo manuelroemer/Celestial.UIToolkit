@@ -23,99 +23,6 @@
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
         <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="Transparent" />
     </Style>
-
-    <!--
-    - Background: BaseHighest
-    - Border:     -
-    - Foreground: -
-    -->
-    <Style x:Key="BaseHighestBackground" TargetType="FrameworkElement">
-        <Setter Property="Control.Background" Value="{StaticResource BaseHighestBrush}" />
-        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource BaseHighestBrush}" />
-        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource BaseHighestBrush}" />
-        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource BaseHighestBrush}" />
-        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource BaseHighestBrush}" />
-    </Style>
-
-    <!--
-    - Background: Standard (Base* Variations)
-    - Border:     -
-    - Foreground: -
-    -->
-    <Style x:Key="StandardBackground" TargetType="FrameworkElement">
-        <Setter Property="Control.Background" Value="{StaticResource BaseMediumBrush}" />
-        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource BaseHighBrush}" />
-        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource BaseLowBrush}" />
-        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource BaseHighBrush}" />
-        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource BaseLowBrush}" />
-    </Style>
-
-    <!--
-    - Background: ContentControl-Brushes
-    - Border:     -
-    - Foreground: -
-    -->
-    <Style x:Key="ContentControlBackground" TargetType="FrameworkElement">
-        <Setter Property="Control.Background" Value="{StaticResource ContentControlBackgroundBrush}" />
-        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource ContentControlBackgroundBrush}" />
-        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource ContentControlBackgroundBrush}" />
-        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource ContentControlBackgroundBrush}" />
-        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource ContentControlBackgroundBrush}" />
-    </Style>
-
-    <!--
-    - Background: Normal: StandardControl; Accent1 for special states.
-    - Border:     -
-    - Foreground: -
-    -->
-    <Style x:Key="ControlAccent1Background" TargetType="FrameworkElement">
-        <Setter Property="Control.Background" Value="{StaticResource StandardControlBackgroundBrush}" />
-        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource Accent1HighBrush}" />
-        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource Accent1LowBrush}" />
-        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource BaseHighBrush}" />
-        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource Accent1LowBrush}" />
-    </Style>
-    
-    <!--
-    - Background: Normal: StandardControl; Accent2 for special states.
-    - Border:     -
-    - Foreground: -
-    -->
-    <Style x:Key="ControlAccent2Background" TargetType="FrameworkElement">
-        <Setter Property="Control.Background" Value="{StaticResource StandardControlBackgroundBrush}" />
-        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource Accent2HighBrush}" />
-        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource Accent2LowBrush}" />
-        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource BaseHighBrush}" />
-        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource Accent2LowBrush}" />
-    </Style>
-    
-    <!--
-    - Background: Accent1
-    - Border:     -
-    - Foreground: -
-    -->
-    <Style x:Key="Accent1Background" TargetType="FrameworkElement">
-        <Setter Property="Control.Background" Value="{StaticResource Accent1MediumBrush}" />
-        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource Accent1HighBrush}" />
-        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource Accent1LowBrush}" />
-        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource BaseHighBrush}" />
-        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource Accent1LowBrush}" />
-    </Style>
-    
-    <!--
-    - Background: Accent2
-    - Border:     -
-    - Foreground: -
-    -->
-    <Style x:Key="Accent2Background" TargetType="FrameworkElement">
-        <Setter Property="Control.Background" Value="{StaticResource Accent2MediumBrush}" />
-        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource Accent2HighBrush}" />
-        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource Accent2LowBrush}" />
-        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource BaseHighBrush}" />
-        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource Accent2LowBrush}" />
-    </Style>
-    
-    
     
     <!--
     - Background: -
@@ -130,86 +37,316 @@
         <Setter Property="theming:ActiveProperties.BorderBrush" Value="Transparent" />
     </Style>
 
+
+
     <!--
-    - Background: -
-    - Border:     Standard (Base* Variations)
+    - Background: Primary
+    - Border:     -
     - Foreground: -
     -->
-    <Style x:Key="StandardBorder" TargetType="FrameworkElement">
-        <Setter Property="Control.BorderBrush" Value="{StaticResource BaseMediumBrush}" />
-        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource BaseHighBrush}" />
-        <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource BaseLowBrush}" />
-        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource BaseHighBrush}" />
-        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource BaseLowBrush}" />
+    <Style x:Key="PrimaryBackground" TargetType="FrameworkElement">
+        <Setter Property="Control.Background" Value="{StaticResource PrimaryBrush}" />
+        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource PrimaryBrush}" />
+        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource PrimaryBrush}" />
+        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource PrimaryBrush}" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource PrimaryBrush}" />
+    </Style>
+
+    <!--
+    - Background: AltPrimary
+    - Border:     -
+    - Foreground: -    
+    -->
+    <Style x:Key="AltPrimaryBackground" TargetType="FrameworkElement">
+        <Setter Property="Control.Background" Value="{StaticResource PrimaryBrush}" />
+        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource AltPrimaryBrush}" />
+        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource AltPrimaryBrush}" />
+        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource AltPrimaryBrush}" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource AltPrimaryBrush}" />
+    </Style>
+
+    
+    
+    <!--
+    - Background: Default ControlBackground variations
+    - Border:     -
+    - Foreground: -
+    -->
+    <Style x:Key="ControlBackground" TargetType="FrameworkElement">
+        <Setter Property="Control.Background" Value="{StaticResource ControlBackgroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource ControlHoverBackgroundBrush}" />
+        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource ControlPressedBackgroundBrush}" />
+        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource ControlDisabledBackgroundBrush}" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource ControlActiveBackgroundBrush}" />
+    </Style>
+
+    <!--
+    - Background: Alt ControlBackground variations
+    - Border:     -
+    - Foreground: -
+    -->
+    <Style x:Key="AltControlBackground" TargetType="FrameworkElement">
+        <Setter Property="Control.Background" Value="{StaticResource AltControlBackgroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource AltControlHoverBackgroundBrush}" />
+        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource AltControlPressedBackgroundBrush}" />
+        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource AltControlDisabledBackgroundBrush}" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource AltControlActiveBackgroundBrush}" />
+    </Style>
+
+
+
+    <!--
+    - Background: -
+    - Border:     Default ControlBorder variations
+    - Foreground: -
+    -->
+    <Style x:Key="ControlBorder" TargetType="FrameworkElement">
+        <Setter Property="Control.Background" Value="{StaticResource ControlBorderBrush}" />
+        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource ControlHoverBorderBrush}" />
+        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource ControlPressedBorderBrush}" />
+        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource ControlDisabledBorderBrush}" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource ControlActiveBorderBrush}" />
     </Style>
 
     <!--
     - Background: -
-    - Border:     ContentControl-Brushes
+    - Border:     Alt ControlBorder variations
     - Foreground: -
     -->
-    <Style x:Key="ContentControlBorder" TargetType="FrameworkElement">
-        <Setter Property="Control.BorderBrush" Value="{StaticResource ContentControlBorderBrush}" />
-        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource ContentControlBorderBrush}" />
-        <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource ContentControlBorderBrush}" />
-        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource ContentControlBorderBrush}" />
-        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource ContentControlBorderBrush}" />
+    <Style x:Key="AltControlBorder" TargetType="FrameworkElement">
+        <Setter Property="Control.Background" Value="{StaticResource AltControlBorderBrush}" />
+        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource AltControlHoverBorderBrush}" />
+        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource AltControlPressedBorderBrush}" />
+        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource AltControlDisabledBorderBrush}" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource AltControlActiveBorderBrush}" />
     </Style>
+    
+    
 
     <!--
-    - Background: -
-    - Border:     Normal: StandardControl; Accent1 for special states.
+    - Background: Accent1 ControlBackground variations
+    - Border:     -
     - Foreground: -
     -->
-    <Style x:Key="ControlAccent1Border" TargetType="FrameworkElement">
-        <Setter Property="Control.BorderBrush" Value="{StaticResource StandardControlBorderBrush}" />
-        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource Accent1HighBrush}" />
-        <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource Accent1LowBrush}" />
-        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource BaseHighBrush}" />
-        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource Accent1LowBrush}" />
+    <Style x:Key="Accent1Background" TargetType="FrameworkElement">
+        <Setter Property="Control.Background" Value="{StaticResource Accent1ControlBackgroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource Accent1ControlHoverBackgroundBrush}" />
+        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource Accent1ControlPressedBackgroundBrush}" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource Accent1ControlActiveBackgroundBrush}" />
+        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource ControlDisabledBackgroundBrush}" />
     </Style>
-
+    
     <!--
     - Background: -
-    - Border:     Normal: StandardControl; Accent2 for special states.
-    - Foreground: -
-    -->
-    <Style x:Key="ControlAccent2Border" TargetType="FrameworkElement">
-        <Setter Property="Control.BorderBrush" Value="{StaticResource StandardControlBorderBrush}" />
-        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource Accent2HighBrush}" />
-        <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource Accent2LowBrush}" />
-        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource BaseHighBrush}" />
-        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource Accent2LowBrush}" />
-    </Style>
-
-    <!--
-    - Background: -
-    - Border:     Accent1
+    - Border:     Accent1 ControlBorder variations
     - Foreground: -
     -->
     <Style x:Key="Accent1Border" TargetType="FrameworkElement">
-        <Setter Property="Control.BorderBrush" Value="{StaticResource Accent1MediumBrush}" />
-        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource Accent1HighBrush}" />
-        <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource Accent1LowBrush}" />
-        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource BaseHighBrush}" />
-        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource Accent1LowBrush}" />
+        <Setter Property="Control.Background" Value="{StaticResource Accent1ControlBorderBrush}" />
+        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource Accent1ControlHoverBorderBrush}" />
+        <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource Accent1ControlPressedBorderBrush}" />
+        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource Accent1ControlActiveBorderBrush}" />
+        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource ControlDisabledBorderBrush}" />
+    </Style>
+    
+    
+    
+    <!--
+    - Background: Accent2 ControlBackground variations
+    - Border:     -
+    - Foreground: -
+    -->
+    <Style x:Key="Accent2Background" TargetType="FrameworkElement">
+        <Setter Property="Control.Background" Value="{StaticResource Accent2ControlBackgroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource Accent2ControlHoverBackgroundBrush}" />
+        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource Accent2ControlPressedBackgroundBrush}" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource Accent2ControlActiveBackgroundBrush}" />
+        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource ControlDisabledBackgroundBrush}" />
+    </Style>
+    
+    <!--
+    - Background: -
+    - Border:     Accent2 ControlBorder variations
+    - Foreground: -
+    -->
+    <Style x:Key="Accent2Border" TargetType="FrameworkElement">
+        <Setter Property="Control.Background" Value="{StaticResource Accent2ControlBorderBrush}" />
+        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource Accent2ControlHoverBorderBrush}" />
+        <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource Accent2ControlPressedBorderBrush}" />
+        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource Accent2ControlActiveBorderBrush}" />
+        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource ControlDisabledBorderBrush}" />
+    </Style>
+    
+    
+    
+    <!--
+    - Background: Error ControlBackground variations
+    - Border:     -
+    - Foreground: -
+    -->
+    <Style x:Key="ErrorBackground" TargetType="FrameworkElement">
+        <Setter Property="Control.Background" Value="{StaticResource ErrorControlBackgroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource ErrorControlHoverBackgroundBrush}" />
+        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource ErrorControlPressedBackgroundBrush}" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource ErrorControlActiveBackgroundBrush}" />
+        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource ControlDisabledBackgroundBrush}" />
+    </Style>
+    
+    <!--
+    - Background: -
+    - Border:     Error ControlBorder variations
+    - Foreground: -
+    -->
+    <Style x:Key="ErrorBorder" TargetType="FrameworkElement">
+        <Setter Property="Control.Background" Value="{StaticResource ErrorControlBorderBrush}" />
+        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource ErrorControlHoverBorderBrush}" />
+        <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource ErrorControlPressedBorderBrush}" />
+        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource ErrorControlActiveBorderBrush}" />
+        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource ControlDisabledBorderBrush}" />
+    </Style>
+
+
+
+    <!--
+    - Background: Default: Normal ControlBackground; Accent1 for special states.
+    - Border:     -
+    - Foreground: -
+    -->
+    <Style x:Key="ControlBackgroundAccent1States" TargetType="FrameworkElement">
+        <Setter Property="Control.Background" Value="{StaticResource ControlBackgroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource Accent1ControlHoverBackgroundBrush}" />
+        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource Accent1ControlPressedBackgroundBrush}" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource Accent1ControlActiveBackgroundBrush}" />
+        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource ControlDisabledBackgroundBrush}" />
     </Style>
 
     <!--
     - Background: -
-    - Border:     Accent2
+    - Border:     Default: Normal ControlBorder; Accent1 for special states.
     - Foreground: -
     -->
-    <Style x:Key="Accent2Border" TargetType="FrameworkElement">
-        <Setter Property="Control.BorderBrush" Value="{StaticResource Accent2MediumBrush}" />
-        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource Accent2HighBrush}" />
-        <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource Accent2LowBrush}" />
-        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource BaseHighBrush}" />
-        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource Accent2LowBrush}" />
+    <Style x:Key="ControlBorderAccent1States" TargetType="FrameworkElement">
+        <Setter Property="Control.BorderBrush" Value="{StaticResource ControlBorderBrush}" />
+        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource Accent1ControlHoverBorderBrush}" />
+        <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource Accent1ControlPressedBorderBrush}" />
+        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource Accent1ControlActiveBorderBrush}" />
+        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource ControlDisabledBorderBrush}" />
+    </Style>
+
+    
+    
+    <!--
+    - Background: Default: Normal ControlBackground; Accent2 for special states.
+    - Border:     -
+    - Foreground: -
+    -->
+    <Style x:Key="ControlBackgroundAccent2States" TargetType="FrameworkElement">
+        <Setter Property="Control.Background" Value="{StaticResource ControlBackgroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource Accent2ControlHoverBackgroundBrush}" />
+        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource Accent2ControlPressedBackgroundBrush}" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource Accent2ControlActiveBackgroundBrush}" />
+        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource ControlDisabledBackgroundBrush}" />
+    </Style>
+
+    <!--
+    - Background: -
+    - Border:     Default: Normal ControlBorder; Accent2 for special states.
+    - Foreground: -
+    -->
+    <Style x:Key="ControlBorderAccent2States" TargetType="FrameworkElement">
+        <Setter Property="Control.BorderBrush" Value="{StaticResource ControlBorderBrush}" />
+        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource Accent2ControlHoverBorderBrush}" />
+        <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource Accent2ControlPressedBorderBrush}" />
+        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource Accent2ControlActiveBorderBrush}" />
+        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource ControlDisabledBorderBrush}" />
     </Style>
 
 
 
+    <!--
+    - Background: Default: Normal ControlBackground; Error for special states.
+    - Border:     -
+    - Foreground: -
+    -->
+    <Style x:Key="ControlBackgroundErrorStates" TargetType="FrameworkElement">
+        <Setter Property="Control.Background" Value="{StaticResource ControlBackgroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource ErrorControlHoverBackgroundBrush}" />
+        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource ErrorControlPressedBackgroundBrush}" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource ErrorControlActiveBackgroundBrush}" />
+        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource ControlDisabledBackgroundBrush}" />
+    </Style>
+
+    <!--
+    - Background: -
+    - Border:     Default: Normal ControlBorder; Error for special states.
+    - Foreground: -
+    -->
+    <Style x:Key="ControlBorderErrorStates" TargetType="FrameworkElement">
+        <Setter Property="Control.BorderBrush" Value="{StaticResource ControlBorderBrush}" />
+        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource ErrorControlHoverBorderBrush}" />
+        <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource ErrorControlPressedBorderBrush}" />
+        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource ErrorControlActiveBorderBrush}" />
+        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource ControlDisabledBorderBrush}" />
+    </Style>
+    
+    
+
+    <!--
+    - Background: OnPaneControl variations
+    - Border:     -
+    - Foreground: -
+    -->
+    <Style x:Key="OnPaneControlBackground" TargetType="FrameworkElement">
+        <Setter Property="Control.Background" Value="{StaticResource OnPaneControlBackgroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource OnPaneControlBackgroundHoverBrush}" />
+        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource OnPaneControlBackgroundPressedBrush}" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource OnPaneControlBackgroundActiveBrush}" />
+        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource OnPaneControlBackgroundDisabledBrush}" />
+    </Style>
+
+    <!--
+    - Background: AltOnPaneControl variations
+    - Border:     -
+    - Foreground: -
+    -->
+    <Style x:Key="AltOnPaneControlBackground" TargetType="FrameworkElement">
+        <Setter Property="Control.Background" Value="{StaticResource AltOnPaneControlBackgroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource AltOnPaneControlBackgroundHoverBrush}" />
+        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource AltOnPaneControlBackgroundPressedBrush}" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource AltOnPaneControlBackgroundActiveBrush}" />
+        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource AltOnPaneControlBackgroundDisabledBrush}" />
+    </Style>
+
+    <!--
+    - Background: -
+    - Border:     OnPaneControl variations
+    - Foreground: -
+    -->
+    <Style x:Key="OnPaneControlBorder" TargetType="FrameworkElement">
+        <Setter Property="Control.BorderBrush" Value="{StaticResource OnPaneControlBorderBrush}" />
+        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource OnPaneControlBorderHoverBrush}" />
+        <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource OnPaneControlBorderPressedBrush}" />
+        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource OnPaneControlBorderActiveBrush}" />
+        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource OnPaneControlBorderDisabledBrush}" />
+    </Style>
+
+    <!--
+    - Background: -
+    - Border:     OnPaneControl variations
+    - Foreground: -
+    -->
+    <Style x:Key="AltOnPaneControlBorder" TargetType="FrameworkElement">
+        <Setter Property="Control.BorderBrush" Value="{StaticResource AltOnPaneControlBorderBrush}" />
+        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource AltOnPaneControlBorderHoverBrush}" />
+        <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource AltOnPaneControlBorderPressedBrush}" />
+        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource AltOnPaneControlBorderActiveBrush}" />
+        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource AltOnPaneControlBorderDisabledBrush}" />
+    </Style>
+
+
+
+    
+    
     <!--
     - Background: -
     - Border:     -
@@ -229,11 +366,11 @@
     - Foreground: OnAccent1
     -->
     <Style x:Key="OnAccent1Foreground" TargetType="FrameworkElement">
-        <Setter Property="Control.Foreground" Value="{StaticResource OnAccent1ForegroundBrush}" />
-        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource OnAccent1ForegroundBrush}" />
-        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource OnAccent1ForegroundBrush}" />
-        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource OnAccent1DisabledForegroundBrush}" />
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnAccent1ForegroundBrush}" />
+        <Setter Property="Control.Foreground" Value="{StaticResource OnAccent1TextBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource OnAccent1TextBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource OnAccent1TextBrush}" />
+        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource OnAccent1DisabledTextBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnAccent1TextBrush}" />
     </Style>
     
     <!--
@@ -242,11 +379,24 @@
     - Foreground: OnAccent2
     -->
     <Style x:Key="OnAccent2Foreground" TargetType="FrameworkElement">
-        <Setter Property="Control.Foreground" Value="{StaticResource OnAccent2ForegroundBrush}" />
-        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource OnAccent2ForegroundBrush}" />
-        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource OnAccent2ForegroundBrush}" />
-        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource OnAccent2DisabledForegroundBrush}" />
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnAccent2ForegroundBrush}" />
+        <Setter Property="Control.Foreground" Value="{StaticResource OnAccent2TextBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource OnAccent2TextBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource OnAccent2TextBrush}" />
+        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource OnAccent2DisabledTextBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnAccent2TextBrush}" />
+    </Style>
+
+    <!--
+    - Background: -
+    - Border:     -
+    - Foreground: OnError
+    -->
+    <Style x:Key="OnErrorForeground" TargetType="FrameworkElement">
+        <Setter Property="Control.Foreground" Value="{StaticResource OnErrorTextBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource OnErrorTextBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource OnErrorTextBrush}" />
+        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource OnErrorDisabledTextBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnErrorTextBrush}" />
     </Style>
 
     <!--
@@ -263,6 +413,8 @@
     </Style>
 
 
+    
+    
 
     <!--
     Standard Font Properties.
@@ -381,45 +533,9 @@
     </Style>
     
     
-    
-    
-    
-    <!--
-    TODO:
-    Legacy styles from here on.
-    Remove when refactoring to the above styles is finished.
-    -->
-    <Style x:Key="Accent2BorderThemingBase" TargetType="FrameworkElement">
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
         
-        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource Accent2HighBrush}" />
-        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource BaseHighestBrush}" />
-        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
-
-        <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource Accent2LowBrush}" />
-        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource BaseHighestBrush}" />
-        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
-
-        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource Accent2MediumBrush}" />
-        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource BaseHighestBrush}" />
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
-
-        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource BaseHighBrush}" />
-        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
-        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
-    </Style>
-
-    <!--
-    - Background: Transparent
-    - Border:     Accent2
-    - Foreground: Bound to Self
-    -->
-    <Style x:Key="Accent2BorderWithForegroundThemingBase" TargetType="FrameworkElement" BasedOn="{StaticResource Accent2BorderThemingBase}">
-        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
-        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
-    </Style>
-
+    
+    
     <!--
     For controls like Label, TextBlock, ...
     Only the Foreground is set here.

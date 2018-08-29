@@ -62,7 +62,6 @@
       <DependentUpon>Card.GeneratedProperties.tt</DependentUpon>
     </Compile>
     <Compile Include="Controls\ClippingBorder.cs" />
-    <Compile Include="Controls\IconButton.cs" />
     <Compile Include="Controls\IconElement.cs" />
     <Compile Include="Controls\NavigationView\Items\NavigationViewItem.cs" />
     <Compile Include="Controls\NavigationView\NavigationView.cs" />
@@ -125,10 +124,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\Controls\Card.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Styles\Controls\IconButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
