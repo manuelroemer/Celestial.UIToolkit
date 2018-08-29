@@ -101,11 +101,11 @@
     - Foreground: -
     -->
     <Style x:Key="ControlBorder" TargetType="FrameworkElement">
-        <Setter Property="Control.Background" Value="{StaticResource ControlBorderBrush}" />
-        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource ControlHoverBorderBrush}" />
-        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource ControlPressedBorderBrush}" />
-        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource ControlDisabledBorderBrush}" />
-        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource ControlActiveBorderBrush}" />
+        <Setter Property="Control.BorderBrush" Value="{StaticResource ControlBorderBrush}" />
+        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource ControlHoverBorderBrush}" />
+        <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource ControlPressedBorderBrush}" />
+        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource ControlDisabledBorderBrush}" />
+        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource ControlActiveBorderBrush}" />
     </Style>
 
     <!--
@@ -114,11 +114,11 @@
     - Foreground: -
     -->
     <Style x:Key="AltControlBorder" TargetType="FrameworkElement">
-        <Setter Property="Control.Background" Value="{StaticResource AltControlBorderBrush}" />
-        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource AltControlHoverBorderBrush}" />
-        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource AltControlPressedBorderBrush}" />
-        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource AltControlDisabledBorderBrush}" />
-        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource AltControlActiveBorderBrush}" />
+        <Setter Property="Control.BorderBrush" Value="{StaticResource AltControlBorderBrush}" />
+        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource AltControlHoverBorderBrush}" />
+        <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource AltControlPressedBorderBrush}" />
+        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource AltControlDisabledBorderBrush}" />
+        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource AltControlActiveBorderBrush}" />
     </Style>
     
     

@@ -274,10 +274,10 @@
 
     <Style x:Key="Accent1CheckBox" 
            TargetType="CheckBox" 
-           BasedOn="{c:MultiStyle 'StandardCheckBox ControlAccent1Border'}" />
+           BasedOn="{c:MultiStyle 'StandardCheckBox ControlBorderAccent1States'}" />
     <Style x:Key="Accent2CheckBox" 
            TargetType="CheckBox" 
-           BasedOn="{c:MultiStyle 'StandardCheckBox ControlBorderAccent1States'}" />
+           BasedOn="{c:MultiStyle 'StandardCheckBox ControlBorderAccent2States'}" />
     
     <Style TargetType="CheckBox" BasedOn="{StaticResource Accent2CheckBox}" />
 

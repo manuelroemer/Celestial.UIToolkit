@@ -6,10 +6,10 @@
     <ScrollViewer>
         <UniformGrid HorizontalAlignment="Center"
                      VerticalAlignment="Center"
-                     c:MarginHelper.ChildrenGroup="ControlGroup"
+                     c:MarginHelper.ChildrenMargin="15"
                      Columns="3">
 
-            <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
+            <StackPanel c:MarginHelper.ChildrenMargin="10">
                 <TextBlock Style="{StaticResource TitleTextBlock}"
                            c:MarginHelper.MarginGroup="Title">Standard Button</TextBlock>
                 <Button>Standard</Button>
@@ -19,7 +19,7 @@
                 <Button IsEnabled="False">Disabled</Button>
             </StackPanel>
 
-            <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
+            <StackPanel c:MarginHelper.ChildrenMargin="10">
                 <TextBlock Style="{StaticResource TitleTextBlock}"
                            c:MarginHelper.MarginGroup="Title">Outlined Button</TextBlock>
                 <Button Style="{StaticResource OutlinedButton}">Standard</Button>
@@ -29,7 +29,7 @@
                 <Button Style="{StaticResource OutlinedButton}" IsEnabled="False">Disabled</Button>
             </StackPanel>
 
-            <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
+            <StackPanel c:MarginHelper.ChildrenMargin="10">
                 <TextBlock Style="{StaticResource TitleTextBlock}"
                            c:MarginHelper.MarginGroup="Title">Flat Button</TextBlock>
                 <Button Style="{StaticResource FlatButton}">Standard</Button>
@@ -39,7 +39,7 @@
                 <Button Style="{StaticResource FlatButton}" IsEnabled="False">Disabled</Button>
             </StackPanel>
 
-            <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
+            <StackPanel c:MarginHelper.ChildrenMargin="10">
                 <TextBlock Style="{StaticResource TitleTextBlock}"
                            c:MarginHelper.MarginGroup="Title">Hyperlink Button</TextBlock>
                 <Button Style="{StaticResource HyperlinkButton}">Hyperlink</Button>
@@ -75,7 +75,7 @@
 
 
             <!-- Toggle Buttons -->
-            <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
+            <StackPanel c:MarginHelper.ChildrenMargin="10">
                 <TextBlock Style="{StaticResource TitleTextBlock}"
                            c:MarginHelper.MarginGroup="Title">Standard Button</TextBlock>
                 <ToggleButton>Standard</ToggleButton>
@@ -85,7 +85,7 @@
                 <ToggleButton IsEnabled="False">Disabled</ToggleButton>
             </StackPanel>
 
-            <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
+            <StackPanel c:MarginHelper.ChildrenMargin="10">
                 <TextBlock Style="{StaticResource TitleTextBlock}"
                            c:MarginHelper.MarginGroup="Title">Outlined Button</TextBlock>
                 <ToggleButton Style="{StaticResource OutlinedButton}">Standard</ToggleButton>
@@ -95,7 +95,7 @@
                 <ToggleButton Style="{StaticResource OutlinedButton}" IsEnabled="False">Disabled</ToggleButton>
             </StackPanel>
 
-            <StackPanel c:MarginHelper.ChildrenGroup="CloseVertical">
+            <StackPanel c:MarginHelper.ChildrenMargin="10">
                 <TextBlock Style="{StaticResource TitleTextBlock}"
                            c:MarginHelper.MarginGroup="Title">Minimal Button</TextBlock>
                 <ToggleButton Style="{StaticResource FlatButton}">Standard</ToggleButton>

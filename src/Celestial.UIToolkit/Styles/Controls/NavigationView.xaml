@@ -13,7 +13,7 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="StandardNavigationViewItem" TargetType="controls:NavigationViewItem" BasedOn="{c:MultiStyle 'ControlBackground TransparentBorder StandardForeground StandardFontProperties'}">
-        <!--<Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
@@ -125,7 +125,7 @@
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
-        </Setter>-->
+        </Setter>
     </Style>
     <Style TargetType="controls:NavigationViewItem" BasedOn="{StaticResource StandardNavigationViewItem}" />
 

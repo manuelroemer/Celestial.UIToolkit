@@ -59,7 +59,7 @@
     <SolidColorBrush x:Key="Accent1ControlPressedBackgroundBrush" Color="{StaticResource Accent1DarkColor}" />
     <SolidColorBrush x:Key="Accent1ControlActiveBackgroundBrush" Color="{StaticResource Accent1DarkColor}" />
 
-    <SolidColorBrush x:Key="Accent1BorderBrush" Color="{StaticResource Accent1DarkColor}" />
+    <SolidColorBrush x:Key="Accent1ControlBorderBrush" Color="{StaticResource Accent1DarkColor}" />
     <SolidColorBrush x:Key="Accent1ControlHoverBorderBrush" Color="{StaticResource Accent1Color}" />
     <SolidColorBrush x:Key="Accent1ControlPressedBorderBrush" Color="{StaticResource Accent1DarkerColor}" />
     <SolidColorBrush x:Key="Accent1ControlActiveBorderBrush" Color="{StaticResource Accent1DarkerColor}" />
@@ -71,7 +71,7 @@
     <SolidColorBrush x:Key="Accent2ControlPressedBackgroundBrush" Color="{StaticResource Accent2DarkColor}" />
     <SolidColorBrush x:Key="Accent2ControlActiveBackgroundBrush" Color="{StaticResource Accent2DarkColor}" />
 
-    <SolidColorBrush x:Key="Accent2BorderBrush" Color="{StaticResource Accent2DarkColor}" />
+    <SolidColorBrush x:Key="Accent2ControlBorderBrush" Color="{StaticResource Accent2DarkColor}" />
     <SolidColorBrush x:Key="Accent2ControlHoverBorderBrush" Color="{StaticResource Accent2Color}" />
     <SolidColorBrush x:Key="Accent2ControlPressedBorderBrush" Color="{StaticResource Accent2DarkerColor}" />
     <SolidColorBrush x:Key="Accent2ControlActiveBorderBrush" Color="{StaticResource Accent2DarkerColor}" />
