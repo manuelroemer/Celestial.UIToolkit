@@ -1,6 +1,9 @@
 ﻿using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
+using System.Linq;
+using System.Windows.Media;
+using System.Collections;
 
 namespace Celestial.UIToolkit.Controls
 {
@@ -132,6 +135,19 @@ namespace Celestial.UIToolkit.Controls
         {
             get { return (string)GetValue(IconStringFormatProperty); }
             set { SetValue(IconStringFormatProperty, value); }
+        }
+
+        /// <summary>
+        /// Gets an enumerator on the <see cref="NavigationViewItem"/>'s logical children.
+        /// </summary>
+        protected override IEnumerator LogicalChildren
+        {
+            get
+            {
+                yield return base.LogicalChildren;
+                if (Icon != null)
+                    yield return Icon;
+            }
         }
 
         static NavigationViewItem()

@@ -104,6 +104,11 @@ namespace Celestial.UIToolkit.Controls
             }
         }
         
+        static PathIcon()
+        {
+            ForegroundProperty.AddOwner(typeof(PathIcon));
+        }
+        
         /// <summary>
         /// Initializes a new instance of the <see cref="PathIcon"/> class.
         /// </summary>
@@ -178,6 +183,7 @@ namespace Celestial.UIToolkit.Controls
         /// </param>
         protected override void OnRender(DrawingContext drawingContext)
         {
+            System.Diagnostics.Debug.WriteLine("Rendering");
             drawingContext.DrawGeometry(Fill, CreatePen(), Path.RenderedGeometry);
         }
         

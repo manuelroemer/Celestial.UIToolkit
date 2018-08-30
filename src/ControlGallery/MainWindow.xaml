@@ -65,6 +65,25 @@
                     Clear ItemsSource
                 </Button>
 
+                <!--<StackPanel c:IconElement.Foreground="Green">
+                    <c:PathIcon Data="{StaticResource HalfArrowRight}" />
+                    <c:PathIcon Data="{StaticResource HalfArrowRight}" Foreground="Red"  />
+
+                    <StackPanel>
+                        <StackPanel>
+                            <c:PathIcon Data="{StaticResource HalfArrowRight}" />
+                            <c:PathIcon Data="{StaticResource HalfArrowRight}" />
+                            <StackPanel>
+                                <ContentControl>
+                                    <ContentControl.Content>
+                                        <c:PathIcon Data="{StaticResource HalfArrowRight}" />
+                                    </ContentControl.Content>
+                                </ContentControl>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>-->
+
                 <pages:Buttons />
                 <pages:Cards />
                 <pages:Toggleables />
