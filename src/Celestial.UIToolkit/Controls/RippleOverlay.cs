@@ -298,8 +298,9 @@ namespace Celestial.UIToolkit.Controls
         /// </summary>
         public RippleOverlay()
         {
+            SizeChanged += RippleOverlay_SizeChanged;
         }
-        
+
         /// <summary>
         /// Loads template parts for the animation control.
         /// </summary>
@@ -380,6 +381,19 @@ namespace Celestial.UIToolkit.Controls
                 Pow(Max(rippleOrigin.Y, ActualHeight - rippleOrigin.Y), 2)) * 2;
             AnimationPositionX = AnimationOriginX - AnimationDiameter / 2;
             AnimationPositionY = AnimationOriginY - AnimationDiameter / 2;
+        }
+
+        private void RippleOverlay_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            // When the control is resized, while the ripple is visible, we need to re-calculate
+            // its animation diameter and bounds.
+            // The origin point is simply kept.
+            if (IsAnimationFading || IsAnimationExpanding || IsExpanded)
+            {
+                UpdateAnimationProperties(new Point(
+                    AnimationOriginX,
+                    AnimationOriginY));
+            }
         }
 
         private static void IsActiveTrigger_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
