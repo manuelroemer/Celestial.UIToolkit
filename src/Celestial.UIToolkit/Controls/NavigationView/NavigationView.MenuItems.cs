@@ -157,18 +157,34 @@ namespace Celestial.UIToolkit.Controls
                 if (_menuItems == null)
                 {
                     _menuItems = new ItemsSourceCollection();
+                    _menuItems.CollectionChanged += MenuItems_Changed;
                 }
                 return _menuItems;
             }   
         }
-        
+
         private static void MenuItemsSource_Changed(
             DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var self = (NavigationView)d;
             self.MenuItems.ItemsSource = e.NewValue;
         }
-        
+
+        private void MenuItems_Changed(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            if (e.Action == NotifyCollectionChangedAction.Add)
+            {
+                foreach (var newItem in e.NewItems)
+                    AddLogicalChild(newItem);
+            }
+            else if (e.Action == NotifyCollectionChangedAction.Remove ||
+                     e.Action == NotifyCollectionChangedAction.Reset)
+            {
+                foreach (var oldItem in e.OldItems)
+                    RemoveLogicalChild(oldItem);
+            }
+        }
+
     }
 
 }
