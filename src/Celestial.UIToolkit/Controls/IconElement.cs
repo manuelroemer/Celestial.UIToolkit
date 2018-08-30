@@ -9,7 +9,7 @@ namespace Celestial.UIToolkit.Controls
     /// <summary>
     /// The base class for an icon UI element.
     /// </summary>
-    public abstract class IconElement : FrameworkElement
+    public class IconElement : FrameworkElement
     {
 
         /// <summary>
@@ -31,6 +31,12 @@ namespace Celestial.UIToolkit.Controls
         {
             get { return GetForeground(this); }
             set { SetForeground(this, value); }
+        }
+
+        static IconElement()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(
+                typeof(IconElement), new FrameworkPropertyMetadata(typeof(IconElement)));
         }
 
         /// <summary>

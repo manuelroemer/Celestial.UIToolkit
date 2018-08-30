@@ -106,7 +106,8 @@ namespace Celestial.UIToolkit.Controls
         
         static PathIcon()
         {
-            ForegroundProperty.AddOwner(typeof(PathIcon));
+            DefaultStyleKeyProperty.OverrideMetadata(
+                typeof(PathIcon), new FrameworkPropertyMetadata(typeof(PathIcon)));
         }
         
         /// <summary>

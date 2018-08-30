@@ -10,6 +10,8 @@
         <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
         <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
         <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
+        <c:SharedResourceDictionary Source="../../Icons/Arrows.xaml" />
+        <c:SharedResourceDictionary Source="../../Icons/ControlParts.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="StandardNavigationViewItem" TargetType="controls:NavigationViewItem" BasedOn="{c:MultiStyle 'OnPaneControlBackground OnPaneControlBorder StandardForeground StandardFontProperties'}">
@@ -127,14 +129,12 @@
                                 BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 Visibility="Collapsed" />
-                        <controls:ClippingBorder>
-                            <controls:RippleOverlay x:Name="Ripple"
-                                                    IsEnabled="{TemplateBinding theming:RippleProperties.ShowRippleAnimation}"
-                                                    Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
-                                                    BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}" 
-                                                    IsActiveTrigger="{TemplateBinding IsSelected}" />
-                        </controls:ClippingBorder>
-                        
+                        <controls:RippleOverlay x:Name="Ripple"
+                                                IsEnabled="{TemplateBinding theming:RippleProperties.ShowRippleAnimation}"
+                                                Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
+                                                BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}" 
+                                                IsActiveTrigger="{TemplateBinding IsSelected}" />
+
                         <Grid Margin="{TemplateBinding Padding}">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" />
@@ -195,11 +195,19 @@
     </Style>
 
     <Style x:Key="NavigationViewBackButton" TargetType="Button" BasedOn="{StaticResource NavigationViewPaneButton}">
-        
+        <Setter Property="Content">
+            <Setter.Value>
+                <controls:PathIcon Data="{StaticResource BackwardNavigationArrow}" />
+            </Setter.Value>
+        </Setter>
     </Style>
 
     <Style x:Key="NavigationViewToggleButton" TargetType="Button" BasedOn="{StaticResource NavigationViewPaneButton}">
-        
+        <Setter Property="Content">
+            <Setter.Value>
+                <controls:PathIcon Data="{StaticResource GlobalNavigationButton}" />
+            </Setter.Value>
+        </Setter>
     </Style>
 
     <Style x:Key="NavigationViewMenuItemsListView" TargetType="ListView">
@@ -256,7 +264,7 @@
                                             <RowDefinition x:Name="MenuItemsRow"    Height="*" />
                                             <RowDefinition x:Name="FooterRow"       Height="Auto" />
                                         </Grid.RowDefinitions>
-                                        
+
                                         <Button x:Name="PART_BackButton"
                                                 Style="{TemplateBinding PaneBackButtonStyle}"
                                                 IsEnabled="{TemplateBinding IsBackButtonEnabled}"
@@ -265,9 +273,7 @@
                                                 Width="{TemplateBinding CompactPaneLength}"
                                                 Height="{TemplateBinding CompactPaneLength}"
                                                 Command="{TemplateBinding BackButtonCommand}"
-                                                CommandParameter="{TemplateBinding BackButtonCommandParameter}">
-                                            &lt;
-                                        </Button>
+                                                CommandParameter="{TemplateBinding BackButtonCommandParameter}" />
 
                                         <Grid Grid.Row="1">
                                             <Grid.Resources>
@@ -293,9 +299,7 @@
                                                     Visibility="{Binding IsToggleButtonVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}"
                                                     HorizontalAlignment="Left"
                                                     Width="{TemplateBinding CompactPaneLength}"
-                                                    Height="{TemplateBinding CompactPaneLength}">
-                                                =
-                                            </Button>
+                                                    Height="{TemplateBinding CompactPaneLength}" />
                                             <ContentPresenter x:Name="PaneHeaderContentSite"
                                                               Grid.Column="1"
                                                               ContentSource="PaneHeader"
