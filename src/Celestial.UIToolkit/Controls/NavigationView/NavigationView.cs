@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Celestial.UIToolkit.Extensions;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +38,12 @@ namespace Celestial.UIToolkit.Controls
         private ButtonBase _backButton;
         private ButtonBase _toggleButton;
         private UIElement _paneContentContainer;
+
+        /// <summary>
+        /// Gets a value indicating whether the pane is overlaying other content.
+        /// </summary>
+        protected bool IsInOverlayMode =>
+            DisplayMode != NavigationViewDisplayMode.Expanded && IsPaneOpen;
 
         /// <summary>
         /// Gets an enumerator on the <see cref="NavigationViewItem"/>'s logical children.
@@ -81,7 +88,24 @@ namespace Celestial.UIToolkit.Controls
 
         private void NavigationView_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            // TODO: Collapse NavigationView, if outside Pane.
+            ClosePaneOnOutsideClick(e);
+        }
+
+        private void ClosePaneOnOutsideClick(MouseButtonEventArgs e)
+        {
+            // If the user clicks outside of the pane and the pane is currently in an "Overlay"
+            // mode, it will be closed.
+            if (IsInOverlayMode)
+            {
+                if (e.OriginalSource is DependencyObject originalSource)
+                {
+                    // Not clicking on the pane == clicking on the content.
+                    if (!originalSource.HasVisualAncestor(_paneContentContainer))
+                    {
+                        IsPaneOpen = false;
+                    }
+                }
+            }
         }
 
         /// <summary>
