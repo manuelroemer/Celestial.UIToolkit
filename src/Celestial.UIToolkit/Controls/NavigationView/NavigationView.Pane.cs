@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Media;
 
 namespace Celestial.UIToolkit.Controls
 {
@@ -50,6 +51,16 @@ namespace Celestial.UIToolkit.Controls
                 new PropertyMetadata(DefaultCompactPaneLength));
 
         /// <summary>
+        /// Identifies the <see cref="PaneBackground"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty PaneBackgroundProperty =
+            DependencyProperty.Register(
+                nameof(PaneBackground),
+                typeof(Brush),
+                typeof(NavigationView),
+                new PropertyMetadata(Brushes.Transparent));
+
+        /// <summary>
         /// Gets or sets a value indicating whether the pane is currently expanded to its full 
         /// width.
         /// </summary>
@@ -85,6 +96,15 @@ namespace Celestial.UIToolkit.Controls
         {
             get { return (double)GetValue(CompactPaneLengthProperty); }
             set { SetValue(CompactPaneLengthProperty, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the background brush of the pane.
+        /// </summary>
+        public Brush PaneBackground
+        {
+            get { return (Brush)GetValue(PaneBackgroundProperty); }
+            set { SetValue(PaneBackgroundProperty, value); }
         }
 
     }

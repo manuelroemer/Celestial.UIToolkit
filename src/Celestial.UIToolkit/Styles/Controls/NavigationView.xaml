@@ -12,19 +12,22 @@
         <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardNavigationViewItem" TargetType="controls:NavigationViewItem" BasedOn="{c:MultiStyle 'ControlBackground TransparentBorder StandardForeground StandardFontProperties'}">
+    <Style x:Key="StandardNavigationViewItem" TargetType="controls:NavigationViewItem" BasedOn="{c:MultiStyle 'OnPaneControlBackground OnPaneControlBorder StandardForeground StandardFontProperties'}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="Height" Value="{c:GridUnit 9}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource Accent2Brush}" />
+        <Setter Property="Padding" Value="{c:GridUnit '0,2'}" />
+        <Setter Property="MinHeight" Value="{c:GridUnit 10}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:NavigationViewItem">
                     <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
                           Background="Transparent">
                         <Grid.Resources>
-                            
+                            <c:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+
                             <Storyboard x:Key="MouseOverStoryboard">
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                 Storyboard.TargetProperty="Background">
@@ -33,6 +36,18 @@
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                 Storyboard.TargetProperty="BorderBrush">
                                     <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                </c:BrushAnimationUsingKeyFrames>
+                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="SelectionBorder"
+                                                                Storyboard.TargetProperty="Background">
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                </c:BrushAnimationUsingKeyFrames>
+                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="SelectionBorder"
+                                                                Storyboard.TargetProperty="BorderBrush">
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                </c:BrushAnimationUsingKeyFrames>
+                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="SelectionIndicator"
+                                                                Storyboard.TargetProperty="Fill">
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{StaticResource Accent2ControlHoverBackgroundBrush}" />
                                 </c:BrushAnimationUsingKeyFrames>
                                 <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
                                                   Storyboard.TargetProperty="Foreground"
@@ -49,6 +64,18 @@
                                                   Storyboard.TargetProperty="BorderBrush"
                                                   Duration="0"
                                                   To="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                <c:BrushAnimation Storyboard.TargetName="SelectionBorder"
+                                                  Storyboard.TargetProperty="Background"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                <c:BrushAnimation Storyboard.TargetName="SelectionBorder"
+                                                  Storyboard.TargetProperty="BorderBrush"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                <c:BrushAnimation Storyboard.TargetName="SelectionIndicator"
+                                                  Storyboard.TargetProperty="Fill"
+                                                  Duration="0"
+                                                  To="{StaticResource ControlDisabledBackgroundBrush}" />
                                 <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
                                                   Storyboard.TargetProperty="Foreground"
                                                   Duration="0"
@@ -64,32 +91,54 @@
                                                                Storyboard.TargetProperty="Visibility">
                                     <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
                                 </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SelectionIndicator"
+                                                               Storyboard.TargetProperty="Visibility">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                                </ObjectAnimationUsingKeyFrames>
                             </Storyboard>
-                            
+
+                            <Storyboard x:Key="SelectedUnfocusedStoryboard">
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                               Storyboard.TargetProperty="Visibility">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SelectionBorder"
+                                                               Storyboard.TargetProperty="Visibility">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SelectionIndicator"
+                                                               Storyboard.TargetProperty="Visibility">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+
                             <DataTemplate DataType="{x:Type sys:String}">
-                                <TextBlock Style="{StaticResource TextBlockOverrideStyle}" Text="{Binding}" />
+                                <TextBlock Style="{StaticResource TextBlockOverrideStyle}"  />
                             </DataTemplate>
+                            
+                            <Style TargetType="controls:PathIcon">
+                                <Setter Property="Foreground" Value="Red" />
+                            </Style>
                         </Grid.Resources>
-                        
+
                         <Border x:Name="Bd"
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                Padding="{TemplateBinding Padding}" />
+                                BorderThickness="{TemplateBinding BorderThickness}" />
                         <Border x:Name="SelectionBorder"
                                 Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
                                 BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
-                                Padding="{TemplateBinding Padding}"
                                 Visibility="Collapsed" />
-                        <Grid>
+                        <Grid Margin="{TemplateBinding Padding}">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition />
                             </Grid.ColumnDefinitions>
 
                             <Border x:Name="IconContainer"
-                                    Width="{Binding CompactPaneLength, RelativeSource={RelativeSource AncestorType=c:NavigationView}}">
+                                    Width="{Binding CompactPaneLength, RelativeSource={RelativeSource AncestorType=c:NavigationView}}"
+                                    Visibility="{Binding HasIcon, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}">
                                 <ContentPresenter x:Name="IconContentSite"
                                                   ContentSource="Icon"
                                                   ContentTemplate="{TemplateBinding IconTemplate}"
@@ -106,6 +155,12 @@
                                               RecognizesAccessKey="True" />
                         </Grid>
 
+                        <Rectangle x:Name="SelectionIndicator"
+                                    Width="{c:GridUnit 1}"
+                                    HorizontalAlignment="Left"
+                                    Fill="{StaticResource Accent2ControlBackgroundBrush}"
+                                    Visibility="Collapsed" />
+
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualStateGroup.Transitions>
@@ -119,7 +174,7 @@
                             <VisualStateGroup x:Name="SelectionStates">
                                 <VisualState x:Name="Unselected" />
                                 <VisualState x:Name="Selected" Storyboard="{StaticResource SelectedStoryboard}" />
-                                <VisualState x:Name="SelectedUnfocused" />
+                                <VisualState x:Name="SelectedUnfocused" Storyboard="{StaticResource SelectedUnfocusedStoryboard}" />
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                     </Grid>
@@ -129,7 +184,7 @@
     </Style>
     <Style TargetType="controls:NavigationViewItem" BasedOn="{StaticResource StandardNavigationViewItem}" />
 
-    <Style x:Key="NavigationViewPaneButton" TargetType="Button" BasedOn="{StaticResource StandardButton}">
+    <Style x:Key="NavigationViewPaneButton" TargetType="Button" BasedOn="{c:MultiStyle 'StandardButton OnPaneControlBackground OnPaneControlBorder'}">
         <Setter Property="MinWidth" Value="0" />
         <Setter Property="MinHeight" Value="0" />
     </Style>
@@ -163,10 +218,11 @@
         <Setter Property="VerticalAlignment" Value="Stretch" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
-        <Setter Property="CompactPaneLength" Value="{c:GridUnit 11}" />
+        <Setter Property="CompactPaneLength" Value="{c:GridUnit 12}" />
         <Setter Property="OpenPaneLength" Value="{c:GridUnit 80}" />
         <Setter Property="PaneBackButtonStyle" Value="{StaticResource NavigationViewBackButton}" />
         <Setter Property="PaneToggleButtonStyle" Value="{StaticResource NavigationViewToggleButton}" />
+        <Setter Property="PaneBackground" Value="{StaticResource PaneBackgroundBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:NavigationView">
@@ -181,6 +237,7 @@
                                                 Background="{TemplateBinding Background}"
                                                 BorderBrush="{TemplateBinding BorderBrush}"
                                                 BorderThickness="{TemplateBinding BorderThickness}"
+                                                PaneBackground="{TemplateBinding PaneBackground}"
                                                 theming:ControlProperties.CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}"
                                                 DisplayMode="Overlay"
                                                 CompactPaneLength="{TemplateBinding CompactPaneLength}"

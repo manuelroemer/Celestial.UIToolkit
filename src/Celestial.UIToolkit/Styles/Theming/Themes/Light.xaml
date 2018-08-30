@@ -24,7 +24,7 @@
     The primary color is the identity of the theme.
     -->
     <Color x:Key="PrimaryColor">#FFFFFF</Color>
-    <Color x:Key="PrimaryLowColor">#F4F4F4</Color>
+    <Color x:Key="PrimaryLowColor">#F9F9F9</Color>
     <Color x:Key="PrimaryMediumLowColor">#EAEAEA</Color>
     <Color x:Key="PrimaryMediumColor">#C8C8C8</Color>
     <Color x:Key="PrimaryMediumHighColor">#A6A6A6</Color>
@@ -122,6 +122,18 @@
     <SolidColorBrush x:Key="AltOnPaneControlBackgroundPressedBrush" Color="{StaticResource AltPrimaryMediumColor}" />
     <SolidColorBrush x:Key="AltOnPaneControlBackgroundActiveBrush" Color="{StaticResource AltPrimaryMediumColor}" />
     <SolidColorBrush x:Key="AltOnPaneControlBackgroundDisabledBrush" Color="Transparent" />
+    
+    <SolidColorBrush x:Key="OnPaneControlBorderBrush" Color="Transparent" />
+    <SolidColorBrush x:Key="OnPaneControlBorderHoverBrush" Color="{StaticResource PrimaryMediumColor}" />
+    <SolidColorBrush x:Key="OnPaneControlBorderPressedBrush" Color="{StaticResource PrimaryMediumHighColor}" />
+    <SolidColorBrush x:Key="OnPaneControlBorderActiveBrush" Color="{StaticResource PrimaryMediumHighColor}" />
+    <SolidColorBrush x:Key="OnPaneControlBorderDisabledBrush" Color="Transparent" />
+    
+    <SolidColorBrush x:Key="AltOnPaneControlBorderBrush" Color="Transparent" />
+    <SolidColorBrush x:Key="AltOnPaneControlBorderHoverBrush" Color="{StaticResource AltPrimaryLowColor}" />
+    <SolidColorBrush x:Key="AltOnPaneControlBorderPressedBrush" Color="{StaticResource AltPrimaryMediumColor}" />
+    <SolidColorBrush x:Key="AltOnPaneControlBorderActiveBrush" Color="{StaticResource AltPrimaryMediumColor}" />
+    <SolidColorBrush x:Key="AltOnPaneControlBorderDisabledBrush" Color="Transparent" />
     
 
 
