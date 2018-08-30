@@ -1,4 +1,5 @@
-﻿using System.Collections.Specialized;
+﻿using System;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
@@ -8,6 +9,11 @@ namespace Celestial.UIToolkit.Controls
 
     public partial class NavigationView
     {
+
+        /// <summary>
+        /// Occurs when the <see cref="SelectedMenuItem"/> changes.
+        /// </summary>
+        public event EventHandler<NavigationViewItemEventArgs> MenuItemsSelectionChanged;
 
         private ItemsSourceCollection _menuItems;
         
@@ -31,7 +37,9 @@ namespace Celestial.UIToolkit.Controls
                 nameof(SelectedMenuItem),
                 typeof(object),
                 typeof(NavigationView),
-                new PropertyMetadata(null));
+                new PropertyMetadata(
+                    null,
+                    SelectedMenuItem_Changed));
 
         /// <summary>
         /// Identifies the <see cref="MenuItemTemplate"/> dependency property.
@@ -177,6 +185,32 @@ namespace Celestial.UIToolkit.Controls
                     RemoveLogicalChild(oldItem);
             }
         }
+
+        private static void SelectedMenuItem_Changed(
+            DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var self = (NavigationView)d;
+            
+            var selectionChangedArgs = new NavigationViewItemEventArgs(e.NewValue, false);
+            self.RaiseMenuItemsSelectionChanged(selectionChangedArgs);
+        }
+
+        /// <summary>
+        /// Raises the <see cref="MenuItemsSelectionChanged"/> event and
+        /// calls the <see cref="OnMenuItemsSelectionChanged"/> method afterwards.
+        /// </summary>
+        /// <param name="e">Event data for the event.</param>
+        protected void RaiseMenuItemsSelectionChanged(NavigationViewItemEventArgs e)
+        {
+            OnMenuItemsSelectionChanged(e);
+            MenuItemsSelectionChanged?.Invoke(this, e);
+        }
+
+        /// <summary>
+        /// Called before the <see cref="MenuItemsSelectionChanged"/> event occurs.
+        /// </summary>
+        /// <param name="e">Event data for the event.</param>
+        protected virtual void OnMenuItemsSelectionChanged(NavigationViewItemEventArgs e) { }
 
     }
 

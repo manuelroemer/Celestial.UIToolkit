@@ -260,6 +260,17 @@ namespace Celestial.UIToolkit.Controls
             string oldStringFormat, string newStringFormat)
         { }
 
+        /// <summary>
+        /// Returns a string representation of this <see cref="NavigationViewItem"/>.
+        /// </summary>
+        /// <returns>
+        /// A string representing this <see cref="NavigationViewItem"/>.
+        /// </returns>
+        public override string ToString()
+        {
+            return $"{nameof(NavigationViewItem)}: {Content}";
+        }
+
     }
 
 }

@@ -25,9 +25,6 @@ namespace Celestial.UIToolkit.Controls
         /// Initializes a new instance of the <see cref="NavigationViewItemEventArgs"/> class
         /// </summary>
         /// <param name="item">The item to which this event data object refers.</param>
-        /// <exception cref="ArgumentNullException">
-        /// Thrown if <paramref name="item"/> is null.
-        /// </exception>
         public NavigationViewItemEventArgs(object item)
             : this(item, false) { }
 
@@ -39,12 +36,9 @@ namespace Celestial.UIToolkit.Controls
         /// A value indicating whether the <see cref="Item"/> is the special settings
         /// navigation item.
         /// </param>
-        /// <exception cref="ArgumentNullException">
-        /// Thrown if <paramref name="item"/> is null.
-        /// </exception>
         public NavigationViewItemEventArgs(object item, bool isSettingsItem)
         {
-            Item = item ?? throw new ArgumentNullException(nameof(item));
+            Item = item;
             IsSettingsItem = isSettingsItem;
         }
 

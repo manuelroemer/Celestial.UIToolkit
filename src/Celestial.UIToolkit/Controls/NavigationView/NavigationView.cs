@@ -28,14 +28,12 @@ namespace Celestial.UIToolkit.Controls
     [TemplatePart(Name = BackButtonTemplatePart, Type = typeof(ButtonBase))]
     [TemplatePart(Name = ToggleButtonTemplatePart, Type = typeof(ButtonBase))]
     [TemplatePart(Name = PaneContentContainerPart, Type = typeof(UIElement))]
-    [TemplatePart(Name = MenuItemsListViewPart, Type = typeof(ListView))]
     public partial class NavigationView : HeaderedContentControl
     {
 
         internal const string BackButtonTemplatePart = "PART_BackButton";
         internal const string ToggleButtonTemplatePart = "PART_ToggleButton";
         internal const string PaneContentContainerPart = "PART_PaneContentContainer";
-        internal const string MenuItemsListViewPart = "PART_MenuItemsListView";
 
         private ButtonBase _backButton;
         private ButtonBase _toggleButton;
@@ -121,11 +119,9 @@ namespace Celestial.UIToolkit.Controls
             _backButton = GetTemplateChild(BackButtonTemplatePart) as ButtonBase;
             _toggleButton = GetTemplateChild(ToggleButtonTemplatePart) as ButtonBase;
             _paneContentContainer = GetTemplateChild(PaneContentContainerPart) as UIElement;
-            _menuItemsListView = GetTemplateChild(MenuItemsListViewPart) as ListView;
 
             InitializeBackButton();
             InitializeToggleButton();
-            InitializeMenuItemsListView();
         }
 
         private void InitializeBackButton()
@@ -143,15 +139,7 @@ namespace Celestial.UIToolkit.Controls
                 _toggleButton.Click += ToggleButton_Click;
             }
         }
-
-        private void InitializeMenuItemsListView()
-        {
-            if (_menuItemsListView != null)
-            {
-
-            }
-        }
-
+        
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             if (IsBackButtonEnabled)
@@ -164,7 +152,7 @@ namespace Celestial.UIToolkit.Controls
         {
             IsPaneOpen = !IsPaneOpen;
         }
-
+        
         private static void ThresholdWidth_Changed(
             DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
