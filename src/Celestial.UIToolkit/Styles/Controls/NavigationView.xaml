@@ -309,7 +309,8 @@
                                                               Visibility="{Binding HasPaneTitle, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                         </Grid>
 
-                                        <ListView Grid.Row="2"
+                                        <ListView x:Name="PART_MenuItemsListView"
+                                                  Grid.Row="2"
                                                   Style="{StaticResource NavigationViewMenuItemsListView}"
                                                   Margin="{c:GridUnit '0,3'}"
                                                   SelectionMode="Single"

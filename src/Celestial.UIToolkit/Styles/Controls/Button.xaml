@@ -21,6 +21,7 @@
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="controls:IconElement.Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
         <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
         <Setter Property="theming:PressedProperties.BorderBrush" Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
         <Setter Property="theming:ShadowProperties.ShadowType" Value="{x:Static controls:ShadowType.Directional}" />
