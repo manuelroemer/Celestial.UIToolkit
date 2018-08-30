@@ -183,7 +183,6 @@ namespace Celestial.UIToolkit.Controls
         /// </param>
         protected override void OnRender(DrawingContext drawingContext)
         {
-            System.Diagnostics.Debug.WriteLine("Rendering");
             drawingContext.DrawGeometry(Fill, CreatePen(), Path.RenderedGeometry);
         }
         
