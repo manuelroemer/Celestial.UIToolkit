@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -247,6 +248,19 @@ namespace Celestial.UIToolkit.Controls
         {
             get { return (string)GetValue(PaneStringFormatProperty); }
             set { SetValue(PaneStringFormatProperty, value); }
+        }
+
+        /// <summary>
+        /// Gets an enumerator on the <see cref="SplitView"/>'s logical children.
+        /// </summary>
+        protected override IEnumerator LogicalChildren
+        {
+            get
+            {
+                yield return base.LogicalChildren;
+                if (Pane != null)
+                    yield return Pane;
+            }
         }
 
         private static void Pane_Changed(

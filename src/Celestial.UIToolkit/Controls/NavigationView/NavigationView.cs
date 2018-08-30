@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,12 +12,7 @@ using System.Windows.Media;
 
 namespace Celestial.UIToolkit.Controls
 {
-
-    //
-    // This file contains the bootstrapping logic for the NavigationView.
-    // This does, for instance, include registering event handlers.
-    //
-
+    
     /// <summary>
     ///     A control which provides a central navigation structure to an application by providing
     ///     a pane for navigation commands and a central place for the content which is the current
@@ -41,7 +37,26 @@ namespace Celestial.UIToolkit.Controls
         private ButtonBase _backButton;
         private ButtonBase _toggleButton;
         private UIElement _paneContentContainer;
-        
+
+        /// <summary>
+        /// Gets an enumerator on the <see cref="NavigationViewItem"/>'s logical children.
+        /// </summary>
+        protected override IEnumerator LogicalChildren
+        {
+            get
+            {
+                yield return base.LogicalChildren;
+
+                if (PaneFooter != null)
+                    yield return PaneFooter;
+                if (PaneHeader != null)
+                    yield return PaneHeader;
+
+                foreach (var menuItem in MenuItems)
+                    yield return menuItem;
+            }
+        }
+
         static NavigationView()
         {
             DefaultStyleKeyProperty.OverrideMetadata(

@@ -127,6 +127,14 @@
                                 BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 Visibility="Collapsed" />
+                        <controls:ClippingBorder>
+                            <controls:RippleOverlay x:Name="Ripple"
+                                                    IsEnabled="{TemplateBinding theming:RippleProperties.ShowRippleAnimation}"
+                                                    Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
+                                                    BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}" 
+                                                    IsActiveTrigger="{TemplateBinding IsSelected}" />
+                        </controls:ClippingBorder>
+                        
                         <Grid Margin="{TemplateBinding Padding}">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" />
