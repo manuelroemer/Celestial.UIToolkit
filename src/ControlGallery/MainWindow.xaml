@@ -44,7 +44,7 @@
 
         <ScrollViewer>
             <StackPanel >
-                <CheckBox IsChecked="{Binding IsPaneOpen, ElementName=NavView, Mode=TwoWay}">IsPaneOpen</CheckBox>
+                <CheckBox IsChecked="{Binding IsPaneContentVisible, ElementName=NavView, Mode=TwoWay}">IsPaneContentVisible</CheckBox>
                 <CheckBox IsChecked="{Binding AlwaysShowHeader, ElementName=NavView, Mode=TwoWay}">AlwaysShowHeader</CheckBox>
                 <Slider Value="{Binding CompactModeThresholdWidth, ElementName=NavView, Mode=TwoWay}" 
                         Minimum="0"

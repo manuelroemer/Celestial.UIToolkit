@@ -16,19 +16,16 @@ namespace Celestial.UIToolkit.Controls
                 typeof(bool),
                 typeof(NavigationView),
                 new PropertyMetadata(true));
-        
-        private static readonly DependencyPropertyKey IsPaneVisiblePropertyKey =
-            DependencyProperty.RegisterReadOnly(
-                nameof(IsPaneVisible),
+
+        /// <summary>
+        /// Identifies the <see cref="IsPaneContentVisible"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty IsPaneContentVisibleProperty =
+            DependencyProperty.Register(
+                nameof(IsPaneContentVisible),
                 typeof(bool),
                 typeof(NavigationView),
                 new PropertyMetadata(true));
-
-        /// <summary>
-        /// Identifies the <see cref="IsPaneVisible"/> dependency property.
-        /// </summary>
-        public static readonly DependencyProperty IsPaneVisibleProperty =
-            IsPaneVisiblePropertyKey.DependencyProperty;
 
         /// <summary>
         /// Identifies the <see cref="OpenPaneLength"/> dependency property.
@@ -71,14 +68,15 @@ namespace Celestial.UIToolkit.Controls
         }
 
         /// <summary>
-        /// Gets a value indicating whether the pane is currently visible.
+        /// Gets or sets a value indicating whether the pane is currently visible.
+        /// This value relates to the panes <see cref="UIElement.Visibility"/> property.
         /// </summary>
-        public bool IsPaneVisible
+        public bool IsPaneContentVisible
         {
-            get { return (bool)GetValue(IsPaneVisibleProperty); }
-            private set { SetValue(IsPaneVisiblePropertyKey, value); }
+            get { return (bool)GetValue(IsPaneContentVisibleProperty); }
+            set { SetValue(IsPaneContentVisibleProperty, value); }
         }
-        
+
         /// <summary>
         /// Gets or sets the length of the pane when it is fully expanded.
         /// </summary>
