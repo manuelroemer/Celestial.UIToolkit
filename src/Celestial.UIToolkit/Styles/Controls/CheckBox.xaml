@@ -1,5 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
                     xmlns:c="http://celestial-ui.com"
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
@@ -10,18 +11,19 @@
         <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardCheckBox" TargetType="CheckBox" BasedOn="{c:MultiStyle 'StandardBorder BaseHighestBackground StandardForeground StandardFontProperties'}">
+    <Style x:Key="StandardCheckBox" TargetType="CheckBox" BasedOn="{c:MultiStyle 'ControlBorder PrimaryBackground StandardForeground StandardFontProperties'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="Padding" Value="{c:GridUnit '1,0,0,0'}" />
+        <Setter Property="Padding" Value="{c:GridUnit '2,0,0,0'}" />
         <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="CheckBox">
-                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
+                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
+                          Background="Transparent">
                         <Grid.Resources>
                             <PathGeometry x:Key="CheckedGeometry">M 1,5 L 6,11 L 11,1</PathGeometry>
                             <LineGeometry x:Key="IndeterminateGeometry" StartPoint="0,7" EndPoint="12,7" />
@@ -106,6 +108,10 @@
                                                   Duration="0"
                                                   To="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                             </Storyboard>
+                            
+                            <DataTemplate DataType="{x:Type sys:String}">
+                                <TextBlock Style="{StaticResource TextBlockOverrideStyle}" Text="{Binding}" />
+                            </DataTemplate>
                         </Grid.Resources>
                         <BulletDecorator SnapsToDevicePixels="False">
                             <BulletDecorator.Bullet>
@@ -268,10 +274,10 @@
 
     <Style x:Key="Accent1CheckBox" 
            TargetType="CheckBox" 
-           BasedOn="{c:MultiStyle 'StandardCheckBox ControlAccent1Border'}" />
+           BasedOn="{c:MultiStyle 'StandardCheckBox ControlBorderAccent1States'}" />
     <Style x:Key="Accent2CheckBox" 
            TargetType="CheckBox" 
-           BasedOn="{c:MultiStyle 'StandardCheckBox ControlAccent2Border'}" />
+           BasedOn="{c:MultiStyle 'StandardCheckBox ControlBorderAccent2States'}" />
     
     <Style TargetType="CheckBox" BasedOn="{StaticResource Accent2CheckBox}" />
 

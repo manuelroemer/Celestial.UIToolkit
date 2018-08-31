@@ -4,7 +4,7 @@
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming">
 
-    <ResourceDictionary.MergedDictionaries>
+    <!--<ResourceDictionary.MergedDictionaries>
         <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
     </ResourceDictionary.MergedDictionaries>
     
@@ -54,6 +54,6 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    <Style TargetType="ToolTip" BasedOn="{StaticResource StandardToolTip}" />
+    <Style TargetType="ToolTip" BasedOn="{StaticResource StandardToolTip}" />-->
 
 </ResourceDictionary>

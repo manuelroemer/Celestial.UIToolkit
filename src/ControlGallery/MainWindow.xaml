@@ -6,18 +6,98 @@
         xmlns:pages="clr-namespace:ControlGallery.Pages"
         xmlns:c="http://celestial-ui.com"
         mc:Ignorable="d"
-        Background="{StaticResource BaseHighestBrush}"
+        Background="{StaticResource PrimaryBrush}"
         Title="Aurora UI Toolkit - Control Gallery"
         Width="1000" Height="600">
+    
+    <c:NavigationView x:Name="NavView"
+                      PaneHeader="Pane Title"
+                      Header="Header!"
+                      IsSettingsVisible="True"
+                      SelectedItem="{x:Null}"
+                      BackRequested="NavView_BackRequested">
+        <c:NavigationView.PaneFooter>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Hello from the Footer!</TextBlock>
+        </c:NavigationView.PaneFooter>
+        <c:NavigationView.MenuItems>
+            <c:NavigationViewItem Content="Item 1">
+                <c:NavigationViewItem.Icon>
+                    <c:PathIcon Data="{StaticResource HalfArrowRight}" />
+                </c:NavigationViewItem.Icon>
+            </c:NavigationViewItem>
+            <c:NavigationViewItem Content="Item 2">
+                <c:NavigationViewItem.Icon>
+                    <c:PathIcon Data="{StaticResource HalfArrowRight}" />
+                </c:NavigationViewItem.Icon>
+            </c:NavigationViewItem>
+            <c:NavigationViewItem Content="Item 3">
+                <c:NavigationViewItem.Icon>
+                    <c:PathIcon Data="{StaticResource HalfArrowRight}" />
+                </c:NavigationViewItem.Icon>
+            </c:NavigationViewItem>
+            <c:NavigationViewItem Content="No Icon">
+            </c:NavigationViewItem>
+            <c:NavigationViewItem Content="Disabled" IsEnabled="False">
+                <c:NavigationViewItem.Icon>
+                    <c:PathIcon Data="{StaticResource HalfArrowRight}" />
+                </c:NavigationViewItem.Icon>
+            </c:NavigationViewItem>
+        </c:NavigationView.MenuItems>
 
-    <c:MarginHelper.MarginGroups>
-        <c:MarginGroup Name="Title" Margin="0,0,0,10" />
-        <c:MarginGroup Name="CloseHorizontal" Margin="0,0,5,0" />
-        <c:MarginGroup Name="CloseVertical" Margin="0,0,0,5" />
-        <c:MarginGroup Name="ControlGroup" Margin="10" />
-    </c:MarginHelper.MarginGroups>
+        <ScrollViewer>
+            <StackPanel >
+                <CheckBox IsChecked="{Binding IsPaneContentVisible, ElementName=NavView, Mode=TwoWay}">IsPaneContentVisible</CheckBox>
+                <CheckBox IsChecked="{Binding IsBackButtonVisible, ElementName=NavView, Mode=TwoWay}">IsBackButtonVisible</CheckBox>
+                <CheckBox IsChecked="{Binding IsToggleButtonVisible, ElementName=NavView, Mode=TwoWay}">IsToggleButtonVisible</CheckBox>
+                <CheckBox IsChecked="{Binding AlwaysShowHeader, ElementName=NavView, Mode=TwoWay}">AlwaysShowHeader</CheckBox>
+                <Slider Value="{Binding CompactModeThresholdWidth, ElementName=NavView, Mode=TwoWay}" 
+                        Minimum="0"
+                        Maximum="2000" />
+                <Slider Value="{Binding ExpandedModeThresholdWidth, ElementName=NavView, Mode=TwoWay}"
+                        Minimum="0"
+                        Maximum="2000" />
+                <Button Click="ChangeMenuItemButton_Click">
+                    Change MenuItems
+                </Button>
+                <Button Click="ClearMenuItemsButton_Click">
+                    Clear MenuItems
+                </Button>
+                <Button Click="ChangeMenuItemsSource_Click">
+                    Change To ItemsSource
+                </Button>
+                <Button Click="ClearMenuItemsSource_Click">
+                    Clear ItemsSource
+                </Button>
 
-    <TabControl>
+                <TextBlock Text="{Binding SelectedItem, ElementName=NavView}" />
+
+                <!--<StackPanel c:IconElement.Foreground="Green">
+                    <c:PathIcon Data="{StaticResource HalfArrowRight}" />
+                    <c:PathIcon Data="{StaticResource HalfArrowRight}" Foreground="Red"  />
+
+                    <StackPanel>
+                        <StackPanel>
+                            <c:PathIcon Data="{StaticResource HalfArrowRight}" />
+                            <c:PathIcon Data="{StaticResource HalfArrowRight}" />
+                            <StackPanel>
+                                <ContentControl>
+                                    <ContentControl.Content>
+                                        <c:PathIcon Data="{StaticResource HalfArrowRight}" />
+                                    </ContentControl.Content>
+                                </ContentControl>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>-->
+
+                <pages:Buttons />
+                <pages:Cards />
+                <pages:Toggleables />
+            </StackPanel>
+        </ScrollViewer>
+    </c:NavigationView>
+
+    <!--<TabControl>
         <TabItem Header="Colors">
             <pages:Colors />
         </TabItem>
@@ -48,6 +128,6 @@
         <TabItem Header="Icons">
             <pages:Icons />
         </TabItem>
-    </TabControl>
-    
+    </TabControl>-->
+
 </Window>

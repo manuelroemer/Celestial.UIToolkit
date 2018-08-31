@@ -3,12 +3,12 @@
                     xmlns:c="http://celestial-ui.com"
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming">
 
-    <ResourceDictionary.MergedDictionaries>
+    <!--<ResourceDictionary.MergedDictionaries>
         <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <!-- Use TargetType="Control", so that the PasswordBox can use the style too.
-         Slightly problematic, since this allows setting this style on any type of control. -->
+    --><!-- Use TargetType="Control", so that the PasswordBox can use the style too.
+         Slightly problematic, since this allows setting this style on any type of control. --><!--
     <Style x:Key="StandardTextBox" TargetType="Control" BasedOn="{StaticResource Accent2BorderWithForegroundThemingBase}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
@@ -144,11 +144,11 @@
 
 
 
-    <!--
+    --><!--
     Subtle TextBox.
     A TextBox which is more subtle than the default TextBox.
     This effect is achieved by only showing the Border at the TextBox's bottom.
-    -->
+    --><!--
     <Style x:Key="SubtleTextBoxBase" TargetType="Control" BasedOn="{StaticResource StandardTextBox}">
         <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
         <Setter Property="BorderThickness" Value="0,0,0,1" />
@@ -160,6 +160,6 @@
     </Style>
 
     <Style x:Key="SubtleTextBox" TargetType="TextBox" BasedOn="{StaticResource SubtleTextBoxBase}" />
-    <Style x:Key="SubtlePasswordBox" TargetType="PasswordBox" BasedOn="{StaticResource SubtleTextBoxBase}" />
+    <Style x:Key="SubtlePasswordBox" TargetType="PasswordBox" BasedOn="{StaticResource SubtleTextBoxBase}" />-->
 
 </ResourceDictionary>

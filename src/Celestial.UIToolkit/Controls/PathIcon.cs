@@ -104,6 +104,12 @@ namespace Celestial.UIToolkit.Controls
             }
         }
         
+        static PathIcon()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(
+                typeof(PathIcon), new FrameworkPropertyMetadata(typeof(PathIcon)));
+        }
+        
         /// <summary>
         /// Initializes a new instance of the <see cref="PathIcon"/> class.
         /// </summary>

@@ -10,12 +10,14 @@
         <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardCard" TargetType="controls:Card" BasedOn="{c:MultiStyle 'ContentControlBorder ContentControlBackground BottomShadow Elevated1Shadow'}">
+    <Style x:Key="StandardCard" TargetType="controls:Card" BasedOn="{c:MultiStyle 'BottomShadow Elevated1Shadow'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
+        <Setter Property="Background" Value="{StaticResource PrimaryBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource PrimaryMediumLowBrush}" />
         <Setter Property="Padding" Value="{c:GridUnit 4}" />
         <Setter Property="TitleTemplate">
             <Setter.Value>

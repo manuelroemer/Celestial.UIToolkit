@@ -1,5 +1,6 @@
 ﻿using Celestial.UIToolkit.Extensions;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Xunit;
 
@@ -49,6 +50,18 @@ namespace Celestial.UIToolkit.Tests.Extensions
             Assert.Equal(
                 default(int),
                 new int[0].ElementBeforeOrDefault(0));
+        }
+
+        [Theory]
+        [InlineData(new int[] { 0, 1, 2 }, 0, 0)]
+        [InlineData(new int[] { 0, 1, 2 }, 1, 1)]
+        [InlineData(new int[] { 0, 1, 2 }, 2, 2)]
+        [InlineData(new int[] { 0, 1, 2 }, 3, -1)]
+        public void IndexOfReturnsCorrectIndex(
+            IEnumerable<int> data, int item, int expectedIndex)
+        {
+            int index = data.IndexOf(item);
+            Assert.Equal(expectedIndex, index);
         }
 
         [Fact]

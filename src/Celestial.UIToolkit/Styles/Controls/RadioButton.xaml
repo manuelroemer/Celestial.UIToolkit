@@ -1,5 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
                     xmlns:c="http://celestial-ui.com"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls"
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming">
@@ -10,7 +11,7 @@
         <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardRadioButton" TargetType="RadioButton" BasedOn="{c:MultiStyle 'StandardBorder BaseHighestBackground StandardForeground StandardFontProperties'}">
+    <Style x:Key="StandardRadioButton" TargetType="RadioButton" BasedOn="{c:MultiStyle 'ControlBorder PrimaryBackground StandardForeground StandardFontProperties'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
@@ -119,6 +120,10 @@
                                                   Duration="0"
                                                   To="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                             </Storyboard>
+                            
+                            <DataTemplate DataType="{x:Type sys:String}">
+                                <TextBlock Style="{StaticResource TextBlockOverrideStyle}" Text="{Binding}" />
+                            </DataTemplate>
                         </Grid.Resources>
                         <BulletDecorator SnapsToDevicePixels="False">
                             <BulletDecorator.Bullet>
@@ -244,10 +249,10 @@
 
     <Style x:Key="Accent1RadioButton" 
            TargetType="RadioButton" 
-           BasedOn="{c:MultiStyle 'StandardRadioButton ControlAccent1Border'}" />
+           BasedOn="{c:MultiStyle 'StandardRadioButton ControlBorderAccent1States'}" />
     <Style x:Key="Accent2RadioButton" 
            TargetType="RadioButton" 
-           BasedOn="{c:MultiStyle 'StandardRadioButton ControlAccent2Border'}" />
+           BasedOn="{c:MultiStyle 'StandardRadioButton ControlBorderAccent2States'}" />
 
     <Style TargetType="RadioButton" BasedOn="{StaticResource Accent2RadioButton}" />
 
