@@ -372,7 +372,8 @@
 
                                     <StackPanel x:Name="HeaderContainer"
                                                 Orientation="Horizontal"
-                                                Height="{TemplateBinding CompactPaneLength}">
+                                                Height="{TemplateBinding CompactPaneLength}"
+                                                Visibility="{Binding AlwaysShowHeader, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}">
                                         <StackPanel.Resources>
                                             <DataTemplate DataType="{x:Type sys:String}">
                                                 <!-- By default (and assuming that the Header is a string), the Header has a
@@ -409,8 +410,7 @@
                                                           ContentSource="Header"
                                                           ContentTemplate="{TemplateBinding HeaderTemplate}"
                                                           ContentTemplateSelector="{TemplateBinding HeaderTemplateSelector}"
-                                                          ContentStringFormat="{TemplateBinding HeaderStringFormat}"
-                                                          Visibility="{Binding AlwaysShowHeader, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                                                          ContentStringFormat="{TemplateBinding HeaderStringFormat}" />
                                     </StackPanel>
                                     <ContentPresenter x:Name="ContentSite"
                                                       Grid.Row="1"
@@ -421,7 +421,7 @@
 
                             <!-- The Back-/ToggleButton floats over the other components and get re-arranged,
                                  depending on the display mode. -->
-                            <Grid x:Name="PaneButtonContainer">
+                            <Grid x:Name="PART_PaneButtonContainer">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto" />
                                     <RowDefinition Height="Auto" />
@@ -453,7 +453,7 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="DisplayMode" Value="Minimal">
-                            <Setter TargetName="HeaderContentSite" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="HeaderContainer" Property="Visibility" Value="Visible" />
                             <Setter TargetName="PART_ToggleButton" Property="Grid.Row" Value="0" />
                             <Setter TargetName="PART_ToggleButton" Property="Grid.Column" Value="1" />
                             <Setter TargetName="PaneToggleButtonPlaceholder" Property="Grid.Row" Value="0" />

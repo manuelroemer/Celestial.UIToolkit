@@ -22,19 +22,22 @@ namespace Celestial.UIToolkit.Controls
     /// </remarks>
     [TemplatePart(Name = BackButtonTemplatePart, Type = typeof(ButtonBase))]
     [TemplatePart(Name = ToggleButtonTemplatePart, Type = typeof(ButtonBase))]
-    [TemplatePart(Name = ContentContainerPart, Type = typeof(UIElement))]
+    [TemplatePart(Name = PaneContentContainerPart, Type = typeof(UIElement))]
+    [TemplatePart(Name = PaneButtonContainerPart, Type = typeof(UIElement))]
     [TemplatePart(Name = SettingsItemPart, Type = typeof(NavigationViewItem))]
     public partial class NavigationView : HeaderedContentControl
     {
 
         internal const string BackButtonTemplatePart = "PART_BackButton";
         internal const string ToggleButtonTemplatePart = "PART_ToggleButton";
-        internal const string ContentContainerPart = "PART_ContentContainer";
+        internal const string PaneContentContainerPart = "PART_PaneContentContainer";
+        internal const string PaneButtonContainerPart = "PART_PaneButtonContainer";
         internal const string SettingsItemPart = "PART_SettingsItem";
 
         private ButtonBase _backButton;
         private ButtonBase _toggleButton;
-        private UIElement _contentContainer;
+        private UIElement _paneContentContainer;
+        private UIElement _paneButtonContainer;
 
         /// <summary>
         /// Gets a value indicating whether the pane is overlaying other content.
@@ -98,8 +101,9 @@ namespace Celestial.UIToolkit.Controls
             {
                 if (e.OriginalSource is DependencyObject originalSource)
                 {
-                    // Not clicking on the pane == clicking on the content.
-                    if (originalSource.HasVisualAncestor(_contentContainer))
+                    // Not clicking on the pane/floating pane buttons == clicking on the content.
+                    if (!originalSource.HasVisualAncestor(_paneContentContainer) &&
+                        !originalSource.HasVisualAncestor(_paneButtonContainer))
                     {
                         IsPaneOpen = false;
                     }
@@ -116,7 +120,8 @@ namespace Celestial.UIToolkit.Controls
             base.OnApplyTemplate();
             _backButton = GetTemplateChild(BackButtonTemplatePart) as ButtonBase;
             _toggleButton = GetTemplateChild(ToggleButtonTemplatePart) as ButtonBase;
-            _contentContainer = GetTemplateChild(ContentContainerPart) as UIElement;
+            _paneContentContainer = GetTemplateChild(PaneContentContainerPart) as UIElement;
+            _paneButtonContainer = GetTemplateChild(PaneButtonContainerPart) as UIElement;
             SettingsItem = GetTemplateChild(SettingsItemPart) as NavigationViewItem;
 
             InitializeBackButton();
