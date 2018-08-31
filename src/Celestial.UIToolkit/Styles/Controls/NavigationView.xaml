@@ -242,13 +242,6 @@
                     <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
                           Background="Transparent">
                         <Grid.Resources>
-
-                            <Storyboard x:Key="MinimalStoryboard">
-                            </Storyboard>
-
-                            <Storyboard x:Key="CollapsedStoryboard">
-                            </Storyboard>
-                            
                             <c:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
                         </Grid.Resources>
 
@@ -285,7 +278,7 @@
                                                                Padding="{c:GridUnit '3,0'}" />
                                                 </DataTemplate>
                                             </Grid.Resources>
-                                            
+
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="Auto" />
                                                 <RowDefinition Height="Auto" />
@@ -295,16 +288,15 @@
                                                 <ColumnDefinition Width="Auto" />
                                                 <ColumnDefinition />
                                             </Grid.ColumnDefinitions>
-                                            
+
                                             <!-- The Back-/ToggleButtons are floating over the pane, so that
                                                  they can still be displayed in Minimal mode.
-                                                 To move the other elements down while in Compact/Expanded,
-                                                 create these placeholders. -->
-                                            <Rectangle x:Name="BackButtonPlaceholder"
+                                                 These two placeholders move the menu items down. -->
+                                            <Rectangle x:Name="PaneBackButtonPlaceholder"
                                                        Width="{Binding ActualWidth, ElementName=PART_BackButton}"
                                                        Height="{Binding ActualHeight, ElementName=PART_BackButton}"
                                                        Visibility="{Binding Visibility, ElementName=PART_BackButton}" />
-                                            <Rectangle x:Name="ToggleButtonPlaceholder"
+                                            <Rectangle x:Name="PaneToggleButtonPlaceholder"
                                                        Grid.Row="1"
                                                        Width="{Binding ActualWidth, ElementName=PART_ToggleButton}"
                                                        Height="{Binding ActualHeight, ElementName=PART_ToggleButton}"
@@ -313,13 +305,14 @@
                                             <ContentPresenter x:Name="PaneHeaderContentSite"
                                                               Grid.Row="1"
                                                               Grid.Column="1"
+                                                              Height="{TemplateBinding CompactPaneLength}"
                                                               ContentSource="PaneHeader"
                                                               ContentTemplate="{TemplateBinding PaneHeaderTemplate}"
                                                               ContentTemplateSelector="{TemplateBinding PaneHeaderTemplateSelector}"
                                                               ContentStringFormat="{TemplateBinding PaneHeaderStringFormat}"
                                                               Visibility="{Binding HasPaneTitle, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                         </Grid>
-                                        
+
                                         <Grid x:Name="PaneContentContainer"
                                               Grid.Row="1"
                                               Visibility="{Binding IsPaneContentVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}">
@@ -358,7 +351,7 @@
                                             <ListView Grid.Row="3"
                                                       IsSynchronizedWithCurrentItem="False"
                                                       SelectedValue="{Binding SelectedItem, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
-                                                      Style="{StaticResource NavigationViewMenuItemsListView}"> 
+                                                      Style="{StaticResource NavigationViewMenuItemsListView}">
                                                 <controls:NavigationViewItem x:Name="PART_SettingsItem"
                                                                              Content="Settings"
                                                                              Visibility="{Binding IsSettingsVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}">
@@ -377,13 +370,15 @@
                                         <RowDefinition />
                                     </Grid.RowDefinitions>
 
-                                    <Grid x:Name="HeaderContainer">
-                                        <Grid.Resources>
+                                    <StackPanel x:Name="HeaderContainer"
+                                                Orientation="Horizontal"
+                                                Height="{TemplateBinding CompactPaneLength}">
+                                        <StackPanel.Resources>
                                             <DataTemplate DataType="{x:Type sys:String}">
                                                 <!-- By default (and assuming that the Header is a string), the Header has a
                                                      fixed height. Align it with the CompactPaneLength, so that everything looks
                                                      symmetrical. -->
-                                                <Grid Height="{Binding CompactPaneLength, RelativeSource={RelativeSource AncestorType={x:Type controls:NavigationView}}}">
+                                                <Grid>
                                                     <TextBlock Style="{DynamicResource TitleTextBlock}"
                                                                HorizontalAlignment="Left"
                                                                VerticalAlignment="Center"
@@ -392,14 +387,31 @@
                                                                Text="{Binding}" />
                                                 </Grid>
                                             </DataTemplate>
-                                        </Grid.Resources>
+                                        </StackPanel.Resources>
+
+                                        <!-- If we are in minimal mode, the header needs to move right, so 
+                                             that the buttons get enough space. -->
+                                        <StackPanel x:Name="HeaderButtonPlaceholders" 
+                                                    Orientation="Horizontal"
+                                                    Visibility="Collapsed">
+                                            <Rectangle x:Name="HeaderBackButtonPlaceholder"
+                                                       Width="{Binding ActualWidth, ElementName=PART_BackButton}"
+                                                       Height="{Binding ActualHeight, ElementName=PART_BackButton}"
+                                                       Visibility="{Binding Visibility, ElementName=PART_BackButton}" />
+                                            <Rectangle x:Name="HeaderToggleButtonPlaceholder"
+                                                       Width="{Binding ActualWidth, ElementName=PART_ToggleButton}"
+                                                       Height="{Binding ActualHeight, ElementName=PART_ToggleButton}"
+                                                       Visibility="{Binding Visibility, ElementName=PART_ToggleButton}" />
+                                        </StackPanel>
+
                                         <ContentPresenter x:Name="HeaderContentSite"
+                                                          Grid.Column="2"
                                                           ContentSource="Header"
                                                           ContentTemplate="{TemplateBinding HeaderTemplate}"
                                                           ContentTemplateSelector="{TemplateBinding HeaderTemplateSelector}"
                                                           ContentStringFormat="{TemplateBinding HeaderStringFormat}"
                                                           Visibility="{Binding AlwaysShowHeader, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}" />
-                                    </Grid>
+                                    </StackPanel>
                                     <ContentPresenter x:Name="ContentSite"
                                                       Grid.Row="1"
                                                       HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
@@ -438,30 +450,26 @@
                                         Height="{TemplateBinding CompactPaneLength}" />
                             </Grid>
                         </Grid>
-
-                        <VisualStateManager.VisualStateGroups>
-                            <VisualStateGroup x:Name="DisplayModeStates">
-                                <c:ExtendedVisualState x:Name="Minimal" Storyboard="{StaticResource MinimalStoryboard}">
-                                    <c:ExtendedVisualState.Setters>
-                                        <Setter TargetName="PART_ToggleButton" Property="Grid.Row" Value="0" />
-                                        <Setter TargetName="PART_ToggleButton" Property="Grid.Column" Value="1" />
-                                        <Setter TargetName="ToggleButtonPlaceholder" Property="Grid.Row" Value="0" />
-                                        <Setter TargetName="ToggleButtonPlaceholder" Property="Grid.Column" Value="1" />
-                                        <Setter TargetName="PaneHeaderContentSite" Property="Grid.Row" Value="0" />
-                                        <Setter TargetName="PaneHeaderContentSite" Property="Grid.Column" Value="2" />
-                                    </c:ExtendedVisualState.Setters>
-                                </c:ExtendedVisualState>
-                                <c:ExtendedVisualState x:Name="Compact" />
-                                <c:ExtendedVisualState x:Name="Expanded" />
-                            </VisualStateGroup>
-                        </VisualStateManager.VisualStateGroups>
                     </Grid>
                     <ControlTemplate.Triggers>
+                        <Trigger Property="DisplayMode" Value="Minimal">
+                            <Setter TargetName="HeaderContentSite" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="PART_ToggleButton" Property="Grid.Row" Value="0" />
+                            <Setter TargetName="PART_ToggleButton" Property="Grid.Column" Value="1" />
+                            <Setter TargetName="PaneToggleButtonPlaceholder" Property="Grid.Row" Value="0" />
+                            <Setter TargetName="PaneToggleButtonPlaceholder" Property="Grid.Column" Value="1" />
+                            <Setter TargetName="HeaderButtonPlaceholders" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="PaneHeaderContentSite" Property="Grid.Row" Value="0" />
+                            <Setter TargetName="PaneHeaderContentSite" Property="Grid.Column" Value="2" />
+                        </Trigger>
                         <Trigger Property="DisplayMode" Value="Compact">
                             <Setter TargetName="SplitView" Property="DisplayMode" Value="CompactOverlay" />
                         </Trigger>
                         <Trigger Property="DisplayMode" Value="Expanded">
                             <Setter TargetName="SplitView" Property="DisplayMode" Value="CompactInline" />
+                        </Trigger>
+                        <Trigger Property="IsToggleButtonVisible" Value="False">
+                            <Setter TargetName="PaneHeaderContentSite" Property="Grid.Row" Value="0" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
