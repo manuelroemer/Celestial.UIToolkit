@@ -9,7 +9,7 @@
     <Style x:Key="SmallBackgroundRippleAnimation" x:Shared="False"  TargetType="controls:RippleOverlay">
         <Setter Property="Width" Value="{c:GridUnit 5}" />
         <Setter Property="Height" Value="{c:GridUnit 5}" />
-        <Setter Property="Background" Value="{StaticResource BaseHighBrush}" />
+        <Setter Property="Background" Value="{StaticResource PrimaryMediumLowBrush}" />
         <Setter Property="IsEnabled" Value="{Binding Path=(theming:RippleProperties.ShowRippleAnimation), RelativeSource={RelativeSource TemplatedParent}}" />
         <Setter Property="RippleOrigin" Value="Center" />
         <Setter Property="ClipToBounds" Value="False" />
@@ -77,5 +77,10 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
+
+    <!-- Default TextBlock Style override -> https://stackoverflow.com/a/5330534 -->
+    <Style x:Key="TextBlockOverrideStyle" TargetType="TextBlock">
+        <Setter Property="Text" Value="{Binding}" />
+    </Style>
+
 </ResourceDictionary>

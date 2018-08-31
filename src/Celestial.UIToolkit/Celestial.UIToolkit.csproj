@@ -55,18 +55,35 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\Card.cs" />
-    <Compile Include="Controls\Card.GeneratedProperties.cs">
+    <Compile Include="Controls\Card\Card.cs" />
+    <Compile Include="Controls\Card\Card.GeneratedProperties.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Card.GeneratedProperties.tt</DependentUpon>
     </Compile>
     <Compile Include="Controls\ClippingBorder.cs" />
-    <Compile Include="Controls\IconButton.cs" />
     <Compile Include="Controls\IconElement.cs" />
+    <Compile Include="Controls\NavigationView\Items\NavigationViewItem.cs" />
+    <Compile Include="Controls\NavigationView\NavigationView.cs" />
+    <Compile Include="Controls\NavigationView\NavigationView.Header.cs" />
+    <Compile Include="Controls\NavigationView\NavigationView.Items.cs" />
+    <Compile Include="Controls\NavigationView\NavigationView.PaneButtons.cs" />
+    <Compile Include="Controls\NavigationView\NavigationView.PaneCustomContent.cs" />
+    <Compile Include="Controls\NavigationView\NavigationView.PaneFooter.cs" />
+    <Compile Include="Controls\NavigationView\NavigationView.PaneHeader.cs" />
+    <Compile Include="Controls\NavigationView\NavigationView.Pane.cs" />
+    <Compile Include="Controls\NavigationView\NavigationView.VisualStates.cs" />
+    <Compile Include="Controls\NavigationView\NavigationViewDisplayMode.cs" />
+    <Compile Include="Controls\NavigationView\NavigationViewDisplayModeChangedEventArgs.cs" />
+    <Compile Include="Controls\NavigationView\NavigationViewItemEventArgs.cs" />
     <Compile Include="Controls\PathIcon.cs" />
     <Compile Include="Controls\RippleOverlay.cs" />
     <Compile Include="Controls\ShadowDecorator.cs" />
+    <Compile Include="Controls\SplitView\SplitView.cs" />
+    <Compile Include="Controls\SplitView\SplitView.Events.cs" />
+    <Compile Include="Controls\SplitView\SplitView.Properties.cs" />
+    <Compile Include="Controls\SplitView\SplitViewDisplayMode.cs" />
+    <Compile Include="Controls\SplitView\SplitViewPanePlacement.cs" />
     <Compile Include="Theming\ControlProperties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -94,13 +111,21 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <Compile Include="Controls\NavigationView\NavigationView.DisplayMode.cs" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\SplitView\SplitView.VisualStates.cs">
+      <Generator>MSBuild:Compile</Generator>
+    </Compile>
     <Page Include="Icons\Arrows.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Icons\ControlParts.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -108,11 +133,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\Controls\IconButton.xaml">
+    <Page Include="Styles\Controls\IconElements.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Controls\NavigationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\Controls\ShadowDecorator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Controls\SplitView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -210,7 +243,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Controls\Card.GeneratedProperties.tt">
+    <Content Include="Controls\Card\Card.GeneratedProperties.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Card.GeneratedProperties.cs</LastGenOutput>
     </Content>
@@ -228,5 +261,6 @@
       <Name>Celestial.UIToolkit.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

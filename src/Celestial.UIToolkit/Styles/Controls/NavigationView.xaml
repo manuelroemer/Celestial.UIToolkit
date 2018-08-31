@@ -1,0 +1,480 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:c="http://celestial-ui.com"
+                    xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls"
+                    xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming">
+
+    <ResourceDictionary.MergedDictionaries>
+        <c:SharedResourceDictionary Source="./Button.xaml" />
+        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
+        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
+        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
+        <c:SharedResourceDictionary Source="../../Icons/Arrows.xaml" />
+        <c:SharedResourceDictionary Source="../../Icons/ControlParts.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="StandardNavigationViewItem" TargetType="controls:NavigationViewItem" BasedOn="{c:MultiStyle 'OnPaneControlBackground OnPaneControlBorder StandardForeground StandardFontProperties'}">
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource Accent2Brush}" />
+        <Setter Property="Padding" Value="{c:GridUnit '0,2'}" />
+        <Setter Property="MinHeight" Value="{c:GridUnit 10}" />
+        <Setter Property="controls:IconElement.Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="controls:NavigationViewItem">
+                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
+                          Background="Transparent">
+                        <Grid.Resources>
+                            <c:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+
+                            <Storyboard x:Key="MouseOverStoryboard">
+                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                                Storyboard.TargetProperty="Background">
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                </c:BrushAnimationUsingKeyFrames>
+                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                                Storyboard.TargetProperty="BorderBrush">
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                </c:BrushAnimationUsingKeyFrames>
+                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="SelectionBorder"
+                                                                Storyboard.TargetProperty="Background">
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                </c:BrushAnimationUsingKeyFrames>
+                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="SelectionBorder"
+                                                                Storyboard.TargetProperty="BorderBrush">
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                </c:BrushAnimationUsingKeyFrames>
+                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="SelectionIndicator"
+                                                                Storyboard.TargetProperty="Fill">
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{StaticResource Accent2ControlHoverBackgroundBrush}" />
+                                </c:BrushAnimationUsingKeyFrames>
+                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                  Storyboard.TargetProperty="Foreground"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                            </Storyboard>
+
+                            <Storyboard x:Key="DisabledStoryboard">
+                                <c:BrushAnimation Storyboard.TargetName="Bd"
+                                                  Storyboard.TargetProperty="Background"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                <c:BrushAnimation Storyboard.TargetName="Bd"
+                                                  Storyboard.TargetProperty="BorderBrush"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                <c:BrushAnimation Storyboard.TargetName="SelectionBorder"
+                                                  Storyboard.TargetProperty="Background"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                <c:BrushAnimation Storyboard.TargetName="SelectionBorder"
+                                                  Storyboard.TargetProperty="BorderBrush"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                <c:BrushAnimation Storyboard.TargetName="SelectionIndicator"
+                                                  Storyboard.TargetProperty="Fill"
+                                                  Duration="0"
+                                                  To="{StaticResource ControlDisabledBackgroundBrush}" />
+                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                  Storyboard.TargetProperty="Foreground"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                            </Storyboard>
+
+                            <Storyboard x:Key="SelectedStoryboard">
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                               Storyboard.TargetProperty="Visibility">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SelectionBorder"
+                                                               Storyboard.TargetProperty="Visibility">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SelectionIndicator"
+                                                               Storyboard.TargetProperty="Visibility">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+
+                            <Storyboard x:Key="SelectedUnfocusedStoryboard">
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                               Storyboard.TargetProperty="Visibility">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SelectionBorder"
+                                                               Storyboard.TargetProperty="Visibility">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SelectionIndicator"
+                                                               Storyboard.TargetProperty="Visibility">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+
+                            <DataTemplate DataType="{x:Type sys:String}">
+                                <TextBlock Style="{StaticResource TextBlockOverrideStyle}"  />
+                            </DataTemplate>
+                        </Grid.Resources>
+
+                        <Border x:Name="Bd"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}" />
+                        <Border x:Name="SelectionBorder"
+                                Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
+                                BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Visibility="Collapsed" />
+                        <controls:RippleOverlay x:Name="Ripple"
+                                                IsEnabled="{TemplateBinding theming:RippleProperties.ShowRippleAnimation}"
+                                                Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
+                                                BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}" 
+                                                IsActiveTrigger="{TemplateBinding IsSelected}" />
+
+                        <Grid Margin="{TemplateBinding Padding}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <Border x:Name="IconContainer"
+                                    Width="{Binding CompactPaneLength, RelativeSource={RelativeSource AncestorType=c:NavigationView}}"
+                                    Visibility="{Binding HasIcon, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                <ContentPresenter x:Name="IconContentSite"
+                                                  Content="{TemplateBinding Icon}"
+                                                  ContentTemplate="{TemplateBinding IconTemplate}"
+                                                  ContentTemplateSelector="{TemplateBinding IconTemplateSelector}"
+                                                  ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                                                  HorizontalAlignment="Center"
+                                                  VerticalAlignment="Center" />
+                            </Border>
+                            <ContentPresenter x:Name="ContentSite"
+                                              Grid.Column="1"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              Margin="{c:GridUnit '3,0,0,0'}"
+                                              RecognizesAccessKey="True" />
+                        </Grid>
+
+                        <Rectangle x:Name="SelectionIndicator"
+                                    Width="{c:GridUnit 1}"
+                                    HorizontalAlignment="Left"
+                                    Fill="{StaticResource Accent2ControlBackgroundBrush}"
+                                    Visibility="Collapsed" />
+
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition GeneratedDuration="{StaticResource ColorAnimationDuration}" />
+                                    <VisualTransition To="Disabled" GeneratedDuration="0" />
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver" Storyboard="{StaticResource MouseOverStoryboard}" />
+                                <VisualState x:Name="Disabled" Storyboard="{StaticResource DisabledStoryboard}" />
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="SelectionStates">
+                                <VisualState x:Name="Unselected" />
+                                <VisualState x:Name="Selected" Storyboard="{StaticResource SelectedStoryboard}" />
+                                <VisualState x:Name="SelectedUnfocused" Storyboard="{StaticResource SelectedUnfocusedStoryboard}" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="controls:NavigationViewItem" BasedOn="{StaticResource StandardNavigationViewItem}" />
+
+    <Style x:Key="NavigationViewPaneButton" TargetType="Button" BasedOn="{c:MultiStyle 'StandardButton OnPaneControlBackground OnPaneControlBorder'}">
+        <Setter Property="MinWidth" Value="0" />
+        <Setter Property="MinHeight" Value="0" />
+    </Style>
+
+    <Style x:Key="NavigationViewBackButton" TargetType="Button" BasedOn="{StaticResource NavigationViewPaneButton}">
+        <Setter Property="Content">
+            <Setter.Value>
+                <controls:PathIcon Data="{StaticResource BackwardNavigationArrow}" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="NavigationViewToggleButton" TargetType="Button" BasedOn="{StaticResource NavigationViewPaneButton}">
+        <Setter Property="Content">
+            <Setter.Value>
+                <controls:PathIcon Data="{StaticResource GlobalNavigationButton}" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="NavigationViewMenuItemsListView" TargetType="ListView">
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListView">
+                    <ScrollViewer>
+                        <ItemsPresenter />
+                    </ScrollViewer>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style TargetType="controls:NavigationView">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="CompactPaneLength" Value="{c:GridUnit 12}" />
+        <Setter Property="OpenPaneLength" Value="{c:GridUnit 80}" />
+        <Setter Property="PaneBackButtonStyle" Value="{StaticResource NavigationViewBackButton}" />
+        <Setter Property="PaneToggleButtonStyle" Value="{StaticResource NavigationViewToggleButton}" />
+        <Setter Property="PaneBackground" Value="{StaticResource PaneBackgroundBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="controls:NavigationView">
+                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
+                          Background="Transparent">
+                        <Grid.Resources>
+                            <c:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+                        </Grid.Resources>
+
+                        <Grid>
+                            <controls:SplitView x:Name="SplitView"
+                                                Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                PaneBackground="{TemplateBinding PaneBackground}"
+                                                theming:ControlProperties.CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}"
+                                                DisplayMode="Overlay"
+                                                CompactPaneLength="{TemplateBinding CompactPaneLength}"
+                                                OpenPaneLength="{TemplateBinding OpenPaneLength}"
+                                                IsPaneOpen="{Binding IsPaneOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}, UpdateSourceTrigger=PropertyChanged}">
+                                <controls:SplitView.Pane>
+                                    <Grid x:Name="PART_PaneContentContainer">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition x:Name="ButtonPlaceholderRow" Height="Auto" />
+                                            <RowDefinition x:Name="PaneContentRow" />
+                                        </Grid.RowDefinitions>
+
+                                        <Grid x:Name="ButtonPlaceholderContainer">
+                                            <Grid.Resources>
+                                                <!-- This DataTemplate will be used by the PaneTitle-ContentPresenter below.
+                                                     By declaring it here, it will only affect String resources and 
+                                                     can still be overwritten by the 'PaneHeaderTemplate' property. -->
+                                                <DataTemplate DataType="{x:Type sys:String}">
+                                                    <TextBlock x:Name="PaneHeaderTitle"
+                                                               Style="{DynamicResource TitleTextBlock}"
+                                                               Text="{Binding}"
+                                                               HorizontalAlignment="Left"
+                                                               VerticalAlignment="Center"
+                                                               TextTrimming="CharacterEllipsis"
+                                                               Padding="{c:GridUnit '3,0'}" />
+                                                </DataTemplate>
+                                            </Grid.Resources>
+
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition />
+                                            </Grid.ColumnDefinitions>
+
+                                            <!-- The Back-/ToggleButtons are floating over the pane, so that
+                                                 they can still be displayed in Minimal mode.
+                                                 These two placeholders move the menu items down. -->
+                                            <Rectangle x:Name="PaneBackButtonPlaceholder"
+                                                       Width="{Binding ActualWidth, ElementName=PART_BackButton}"
+                                                       Height="{Binding ActualHeight, ElementName=PART_BackButton}"
+                                                       Visibility="{Binding Visibility, ElementName=PART_BackButton}" />
+                                            <Rectangle x:Name="PaneToggleButtonPlaceholder"
+                                                       Grid.Row="1"
+                                                       Width="{Binding ActualWidth, ElementName=PART_ToggleButton}"
+                                                       Height="{Binding ActualHeight, ElementName=PART_ToggleButton}"
+                                                       Visibility="{Binding Visibility, ElementName=PART_ToggleButton}" />
+
+                                            <ContentPresenter x:Name="PaneHeaderContentSite"
+                                                              Grid.Row="1"
+                                                              Grid.Column="1"
+                                                              Height="{TemplateBinding CompactPaneLength}"
+                                                              ContentSource="PaneHeader"
+                                                              ContentTemplate="{TemplateBinding PaneHeaderTemplate}"
+                                                              ContentTemplateSelector="{TemplateBinding PaneHeaderTemplateSelector}"
+                                                              ContentStringFormat="{TemplateBinding PaneHeaderStringFormat}"
+                                                              Visibility="{Binding HasPaneTitle, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                                        </Grid>
+
+                                        <Grid x:Name="PaneContentContainer"
+                                              Grid.Row="1"
+                                              Visibility="{Binding IsPaneContentVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition x:Name="CustomContentRow" Height="Auto" />
+                                                <RowDefinition x:Name="MenuItemsRow"     Height="*" />
+                                                <RowDefinition x:Name="FooterRow"        Height="Auto" />
+                                                <RowDefinition x:Name="SettingsRow"      Height="Auto" />
+                                            </Grid.RowDefinitions>
+
+                                            <ContentPresenter x:Name="PaneCustomContentSite"
+                                                              ContentSource="PaneCustomContent"
+                                                              ContentTemplate="{TemplateBinding PaneCustomContentTemplate}"
+                                                              ContentTemplateSelector="{TemplateBinding PaneCustomContentTemplateSelector}"
+                                                              ContentStringFormat="{TemplateBinding PaneCustomContentStringFormat}" />
+
+                                            <ListView Grid.Row="1"
+                                                      Style="{StaticResource NavigationViewMenuItemsListView}"
+                                                      Margin="{c:GridUnit '0,3'}"
+                                                      SelectionMode="Single"
+                                                      ItemsSource="{Binding MenuItems, RelativeSource={RelativeSource TemplatedParent}}"
+                                                      IsSynchronizedWithCurrentItem="False"
+                                                      SelectedValue="{Binding SelectedItem, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                                                      ItemTemplate="{TemplateBinding MenuItemTemplate}"
+                                                      ItemTemplateSelector="{TemplateBinding MenuItemTemplateSelector}"
+                                                      ItemContainerStyle="{TemplateBinding MenuItemContainerStyle}"
+                                                      ItemContainerStyleSelector="{TemplateBinding MenuItemContainerStyleSelector}" />
+
+                                            <ContentPresenter x:Name="PaneFooterContentSite" 
+                                                              Grid.Row="2"
+                                                              ContentSource="PaneFooter"
+                                                              ContentTemplate="{TemplateBinding PaneFooterTemplate}"
+                                                              ContentTemplateSelector="{TemplateBinding PaneFooterTemplateSelector}"
+                                                              ContentStringFormat="{TemplateBinding PaneFooterStringFormat}" />
+
+                                            <ListView Grid.Row="3"
+                                                      IsSynchronizedWithCurrentItem="False"
+                                                      SelectedValue="{Binding SelectedItem, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                                                      Style="{StaticResource NavigationViewMenuItemsListView}">
+                                                <controls:NavigationViewItem x:Name="PART_SettingsItem"
+                                                                             Content="Settings"
+                                                                             Visibility="{Binding IsSettingsVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                                    <controls:NavigationViewItem.Icon>
+                                                        <controls:PathIcon Data="{StaticResource HalfArrowUp}" />
+                                                    </controls:NavigationViewItem.Icon>
+                                                </controls:NavigationViewItem>
+                                            </ListView>
+                                        </Grid>
+                                    </Grid>
+                                </controls:SplitView.Pane>
+
+                                <Grid x:Name="PART_ContentContainer">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+
+                                    <StackPanel x:Name="HeaderContainer"
+                                                Orientation="Horizontal"
+                                                Height="{TemplateBinding CompactPaneLength}"
+                                                Visibility="{Binding AlwaysShowHeader, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                        <StackPanel.Resources>
+                                            <DataTemplate DataType="{x:Type sys:String}">
+                                                <!-- By default (and assuming that the Header is a string), the Header has a
+                                                     fixed height. Align it with the CompactPaneLength, so that everything looks
+                                                     symmetrical. -->
+                                                <Grid>
+                                                    <TextBlock Style="{DynamicResource TitleTextBlock}"
+                                                               HorizontalAlignment="Left"
+                                                               VerticalAlignment="Center"
+                                                               Padding="{c:GridUnit '3,0'}"
+                                                               TextTrimming="CharacterEllipsis"
+                                                               Text="{Binding}" />
+                                                </Grid>
+                                            </DataTemplate>
+                                        </StackPanel.Resources>
+
+                                        <!-- If we are in minimal mode, the header needs to move right, so 
+                                             that the buttons get enough space. -->
+                                        <StackPanel x:Name="HeaderButtonPlaceholders" 
+                                                    Orientation="Horizontal"
+                                                    Visibility="Collapsed">
+                                            <Rectangle x:Name="HeaderBackButtonPlaceholder"
+                                                       Width="{Binding ActualWidth, ElementName=PART_BackButton}"
+                                                       Height="{Binding ActualHeight, ElementName=PART_BackButton}"
+                                                       Visibility="{Binding Visibility, ElementName=PART_BackButton}" />
+                                            <Rectangle x:Name="HeaderToggleButtonPlaceholder"
+                                                       Width="{Binding ActualWidth, ElementName=PART_ToggleButton}"
+                                                       Height="{Binding ActualHeight, ElementName=PART_ToggleButton}"
+                                                       Visibility="{Binding Visibility, ElementName=PART_ToggleButton}" />
+                                        </StackPanel>
+
+                                        <ContentPresenter x:Name="HeaderContentSite"
+                                                          Grid.Column="2"
+                                                          ContentSource="Header"
+                                                          ContentTemplate="{TemplateBinding HeaderTemplate}"
+                                                          ContentTemplateSelector="{TemplateBinding HeaderTemplateSelector}"
+                                                          ContentStringFormat="{TemplateBinding HeaderStringFormat}" />
+                                    </StackPanel>
+                                    <ContentPresenter x:Name="ContentSite"
+                                                      Grid.Row="1"
+                                                      HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                </Grid>
+                            </controls:SplitView>
+
+                            <!-- The Back-/ToggleButton floats over the other components and get re-arranged,
+                                 depending on the display mode. -->
+                            <Grid x:Name="PART_PaneButtonContainer">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <Button x:Name="PART_BackButton"
+                                        Style="{TemplateBinding PaneBackButtonStyle}"
+                                        IsEnabled="{TemplateBinding IsBackButtonEnabled}"
+                                        Visibility="{Binding IsBackButtonVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                        HorizontalAlignment="Left"
+                                        Width="{TemplateBinding CompactPaneLength}"
+                                        Height="{TemplateBinding CompactPaneLength}"
+                                        Command="{TemplateBinding BackButtonCommand}"
+                                        CommandParameter="{TemplateBinding BackButtonCommandParameter}" />
+                                <Button x:Name="PART_ToggleButton"
+                                        Grid.Row="1"
+                                        Style="{TemplateBinding PaneToggleButtonStyle}"
+                                        IsEnabled="{TemplateBinding IsToggleButtonEnabled}"
+                                        Visibility="{Binding IsToggleButtonVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                        HorizontalAlignment="Left"
+                                        Width="{TemplateBinding CompactPaneLength}"
+                                        Height="{TemplateBinding CompactPaneLength}" />
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="DisplayMode" Value="Minimal">
+                            <Setter TargetName="HeaderContainer" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="PART_ToggleButton" Property="Grid.Row" Value="0" />
+                            <Setter TargetName="PART_ToggleButton" Property="Grid.Column" Value="1" />
+                            <Setter TargetName="PaneToggleButtonPlaceholder" Property="Grid.Row" Value="0" />
+                            <Setter TargetName="PaneToggleButtonPlaceholder" Property="Grid.Column" Value="1" />
+                            <Setter TargetName="HeaderButtonPlaceholders" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="PaneHeaderContentSite" Property="Grid.Row" Value="0" />
+                            <Setter TargetName="PaneHeaderContentSite" Property="Grid.Column" Value="2" />
+                        </Trigger>
+                        <Trigger Property="DisplayMode" Value="Compact">
+                            <Setter TargetName="SplitView" Property="DisplayMode" Value="CompactOverlay" />
+                        </Trigger>
+                        <Trigger Property="DisplayMode" Value="Expanded">
+                            <Setter TargetName="SplitView" Property="DisplayMode" Value="CompactInline" />
+                        </Trigger>
+                        <Trigger Property="IsToggleButtonVisible" Value="False">
+                            <Setter TargetName="PaneHeaderContentSite" Property="Grid.Row" Value="0" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>

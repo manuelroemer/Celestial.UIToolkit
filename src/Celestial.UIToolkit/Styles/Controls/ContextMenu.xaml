@@ -5,7 +5,7 @@
 
     <!-- TODO: Improve this. Bare-bone right now, but relies on Menu to be finished. -->
     
-    <Style x:Key="StandardContextMenu" TargetType="ContextMenu">
+    <!--<Style x:Key="StandardContextMenu" TargetType="ContextMenu">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Grid.IsSharedSizeScope" Value="True" />
@@ -48,6 +48,6 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    <Style TargetType="ContextMenu" BasedOn="{StaticResource StandardContextMenu}" />
+    <Style TargetType="ContextMenu" BasedOn="{StaticResource StandardContextMenu}" />-->
 
 </ResourceDictionary>

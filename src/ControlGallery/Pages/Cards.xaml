@@ -17,7 +17,7 @@
     </UserControl.Resources>
     
     <ScrollViewer>
-        <Grid c:MarginHelper.ChildrenGroup="ControlGroup"
+        <Grid c:MarginHelper.ChildrenMargin="10"
               HorizontalAlignment="Center"
               VerticalAlignment="Center">
             <Grid.RowDefinitions>
@@ -31,7 +31,7 @@
                 <ColumnDefinition Width="0.25*" />
             </Grid.ColumnDefinitions>
 
-            <controls:Card Grid.RowSpan="3"
+            <c:Card Grid.RowSpan="3"
                            Title="Card Title"
                            SubTitle="Card sub-title">
                 <controls:Card.Thumbnail>
@@ -54,9 +54,9 @@
                         <Hyperlink ToolTip="https://stocksnap.io/photo/VZBJUVPO25">Landscape</Hyperlink>
                     </TextBlock>
                 </StackPanel>
-            </controls:Card>
+            </c:Card>
             
-            <controls:Card Grid.Column="1"
+            <c:Card Grid.Column="1"
                            Title="The same card..."
                            SubTitle="...without any images">
                 <StackPanel>
@@ -66,9 +66,9 @@
                         aligns all elements correctly - even if some are missing.
                     </TextBlock>
                 </StackPanel>
-            </controls:Card>
+            </c:Card>
 
-            <controls:Card Grid.Column="2">
+            <c:Card Grid.Column="2">
                 <controls:Card.MediaContent>
                     <Image Source="../Assets/Images/Landscape.png" />
                 </controls:Card.MediaContent>
@@ -77,25 +77,25 @@
                         What about no header?
                     </TextBlock>
                 </StackPanel>
-            </controls:Card>
+            </c:Card>
 
-            <controls:Card Grid.Row="1"
+            <c:Card Grid.Row="1"
                            Grid.Column="1"
                            Title="Or no content?">
                 <controls:Card.MediaContent>
                     <Image Source="../Assets/Images/Landscape.png" />
                 </controls:Card.MediaContent>
-            </controls:Card>
+            </c:Card>
 
-            <controls:Card Grid.Row="1"
+            <c:Card Grid.Row="1"
                            Grid.Column="2">
                 <controls:Card.MediaContent>
                     <!-- Or only the media content? -->
                     <Image Source="../Assets/Images/Landscape.png" />
                 </controls:Card.MediaContent>
-            </controls:Card>
+            </c:Card>
 
-            <controls:Card Grid.Row="2"
+            <c:Card Grid.Row="2"
                            Grid.Column="1"
                            Grid.ColumnSpan="2">
                 <Grid>
@@ -107,7 +107,7 @@
                         creating a custom ControlTemplate, so that you can re-use it.
                     </TextBlock>
                 </Grid>
-            </controls:Card>
+            </c:Card>
         </Grid>
     </ScrollViewer>
 </UserControl>

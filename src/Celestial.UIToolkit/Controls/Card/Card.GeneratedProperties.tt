@@ -1,0 +1,289 @@
+﻿<#
+    // The Card control provides a lot of Content properties (like Title, SubTitle, Media, ...).
+    // Since the definition of each of these properties is very long, and since all of them are
+    // similar, they are auto-generated via this file.
+#>
+<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+<#
+    var properties = new PropertyInfo[] {
+        new PropertyInfo() { 
+            Name = "Title",
+            XmlDoc = "Gets or sets the <see cref=\"Card\"/>'s title."
+        },
+        new PropertyInfo() {
+            Name = "SubTitle",
+            XmlDoc = "Gets or sets the <see cref=\"Card\"/>'s sub-title."
+        },
+        new PropertyInfo() {
+            Name = "Thumbnail",
+            XmlDoc = "Gets or sets the <see cref=\"Card\"/>'s thumbnail. "  +
+                     "A thumbnail is a small piece of content which typically gets aligned near the " +
+                     "title and sub-title. " +
+                     "It will usually be used for displaying things like a person's profile picture, but can also " +
+                     "be used to display icons which relate to the card's content."
+        },
+        new PropertyInfo() {
+            Name = "MediaContent",
+            XmlDoc = "Gets or sets the <see cref=\"Card\"/>'s media content. " + 
+                     "Media content is a special kind of content which isn't influenced by the card's " +
+                     "default padding. As a result, it is perfect for images, videos, or large graphics alltogether."
+        }
+    };
+#>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.ComponentModel;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Collections;
+
+// This file is auto-generated.
+// Any changes made to this file will be lost.
+
+namespace Celestial.UIToolkit.Controls
+{
+
+    public partial class Card : ContentControl
+    {
+	
+	/// <summary>
+	/// Gets an enumerator on the <see cref="Card"/>'s logical children.
+	/// </summary>
+	protected override IEnumerator LogicalChildren
+    {
+        get
+        {
+			yield return base.LogicalChildren;
+			
+			<#
+				foreach (var property in properties) {
+			#>
+			if (<#=property.Name#> != null)
+			    yield return <#=property.Name#>;
+			<#
+			    }
+			#>
+		}
+	}
+
+
+    <#
+        foreach (var property in properties) {
+            string propName = property.Name;
+            string dpName = propName + "Property";
+
+    #>
+	
+	private static readonly DependencyPropertyKey Has<#=propName#>PropertyKey =
+		DependencyProperty.RegisterReadOnly(
+			nameof(Has<#=propName#>),
+			typeof(bool),
+			typeof(Card),
+			new PropertyMetadata(false));
+	/// <summary>
+	/// Identifies the <see cref="Has<#=propName#>"/> dependency property.
+	/// </summary>
+	public static readonly DependencyProperty Has<#=propName#>Property =
+		Has<#=propName#>PropertyKey.DependencyProperty;
+
+	/// <summary>
+	/// Identifies the <see cref="<#=propName#>"/> dependency property.
+	/// </summary>
+	public static readonly DependencyProperty <#=propName#>Property =
+		DependencyProperty.Register(
+			nameof(<#=propName#>),
+			typeof(object),
+			typeof(Card),
+			new PropertyMetadata(
+				null,
+				<#=propName#>_Changed));
+
+	/// <summary>
+	/// Identifies the <see cref="<#=propName#>Template"/> dependency property.
+	/// </summary>
+	public static readonly DependencyProperty <#=propName#>TemplateProperty =
+		DependencyProperty.Register(
+			nameof(<#=propName#>Template),
+			typeof(DataTemplate),
+			typeof(Card),
+			new PropertyMetadata(
+				null,
+				<#=propName#>Template_Changed));
+
+	/// <summary>
+	/// Identifies the <see cref="<#=propName#>TemplateSelector"/> dependency property.
+	/// </summary>
+	public static readonly DependencyProperty <#=propName#>TemplateSelectorProperty =
+		DependencyProperty.Register(
+			nameof(<#=propName#>TemplateSelector),
+			typeof(DataTemplateSelector),
+			typeof(Card),
+			new PropertyMetadata(
+				null,
+				<#=propName#>TemplateSelector_Changed));
+
+	/// <summary>
+	/// Identifies the <see cref="<#=propName#>StringFormat"/> dependency property.
+	/// </summary>
+	public static readonly DependencyProperty <#=propName#>StringFormatProperty =
+		DependencyProperty.Register(
+			nameof(<#=propName#>StringFormat),
+			typeof(string),
+			typeof(Card),
+			new PropertyMetadata(
+				null,
+				<#=propName#>StringFormat_Changed));
+            
+	/// <summary>
+	/// Gets a value indicating whether the <see cref="<#=propName#>"/> property of this
+	/// <see cref="Card"/> holds any content.
+	/// </summary>
+	[Bindable(false), Browsable(false)]
+	public bool Has<#=propName#>
+	{
+		get { return (bool)GetValue(Has<#=propName#>Property); }
+		private set { SetValue(Has<#=propName#>PropertyKey, value); }
+	}
+
+	/// <summary>
+	/// Gets or sets the content which is being displayed in the <#=propName#> of the
+	/// <see cref="Card"/>.
+	/// </summary>
+	[Bindable(true), Category("Content")]
+	[Localizability(LocalizationCategory.Label)]
+	public object <#=propName#>
+	{
+		get { return (object)GetValue(<#=propName#>Property); }
+		set { SetValue(<#=propName#>Property, value); }
+	}
+
+	/// <summary>
+	/// Gets or sets a <see cref="DataTemplate"/> to be used for displaying the 
+	/// <see cref="<#=propName#>"/> content.
+	/// </summary>
+	[Bindable(true), Category("Content")]
+	public DataTemplate <#=propName#>Template
+	{
+		get { return (DataTemplate)GetValue(<#=propName#>TemplateProperty); }
+		set { SetValue(<#=propName#>TemplateProperty, value); }
+	}
+
+	/// <summary>
+	/// Gets or sets <see cref="DataTemplateSelector"/> which enables an application writer
+	/// to provide custom template-selection logic for the <see cref="<#=propName#>"/> content.
+	/// </summary>
+	[Bindable(true), Category("Content")]
+	public DataTemplateSelector <#=propName#>TemplateSelector
+	{
+		get { return (DataTemplateSelector)GetValue(<#=propName#>TemplateSelectorProperty); }
+		set { SetValue(<#=propName#>TemplateSelectorProperty, value); }
+	}
+
+	/// <summary>
+	/// Gets or sets a composite string that specifies how to format the <see cref="<#=propName#>"/>
+	/// content property, if it is displayed as a string.
+	/// </summary>
+	[Bindable(true), Category("Content")]
+	public string <#=propName#>StringFormat
+	{
+		get { return (string)GetValue(<#=propName#>StringFormatProperty); }
+		set { SetValue(<#=propName#>StringFormatProperty, value); }
+	}
+
+	private static void <#=propName#>_Changed(
+		DependencyObject d, DependencyPropertyChangedEventArgs e)
+	{
+		var self = (Card)d;
+		self.Has<#=propName#> = e.NewValue != null;
+		self.On<#=propName#>Changed(e.OldValue, e.NewValue);
+	}
+
+	private static void <#=propName#>Template_Changed(
+		DependencyObject d, DependencyPropertyChangedEventArgs e)
+	{
+		var self = (Card)d;
+		self.On<#=propName#>TemplateChanged((DataTemplate)e.OldValue, (DataTemplate)e.NewValue);
+	}
+
+	private static void <#=propName#>TemplateSelector_Changed(
+		DependencyObject d, DependencyPropertyChangedEventArgs e)
+	{
+		var self = (Card)d;
+		self.On<#=propName#>TemplateSelectorChanged(
+			(DataTemplateSelector)e.OldValue, (DataTemplateSelector)e.NewValue);
+	}
+
+	private static void <#=propName#>StringFormat_Changed(
+		DependencyObject d, DependencyPropertyChangedEventArgs e)
+	{
+		var self = (Card)d;
+		self.On<#=propName#>StringFormatChanged((string)e.OldValue, (string)e.NewValue);
+	}
+
+	/// <summary>
+	/// Called when the <see cref="<#=propName#>"/> property was changed.
+	/// </summary>
+	/// <param name="oldValue">The old value of the <see cref="<#=propName#>"/> property.</param>
+	/// <param name="newValue">The new value of the <see cref="<#=propName#>"/> property.</param>
+	protected virtual void On<#=propName#>Changed(object oldValue, object newValue)
+	{
+		RemoveLogicalChild(oldValue);
+		AddLogicalChild(newValue);
+	}
+
+	/// <summary>
+	/// Called when the <see cref="<#=propName#>Template"/> property was changed.
+	/// </summary>
+	/// <param name="oldTemplate">The old value of the <see cref="<#=propName#>Template"/> property.</param>
+	/// <param name="newTemplate">The new value of the <see cref="<#=propName#>Template"/> property.</param>
+	protected virtual void On<#=propName#>TemplateChanged(
+		DataTemplate oldTemplate, DataTemplate newTemplate)
+	{ }
+
+	/// <summary>
+	/// Called when the <see cref="<#=propName#>TemplateSelector"/> property was changed.
+	/// </summary>
+	/// <param name="oldSelector">
+	/// The old value of the <see cref="<#=propName#>TemplateSelector"/> property.
+	/// </param>
+	/// <param name="newSelector">
+	/// The new value of the <see cref="<#=propName#>TemplateSelector"/> property.
+	/// </param>
+	protected virtual void On<#=propName#>TemplateSelectorChanged(
+		DataTemplateSelector oldSelector, DataTemplateSelector newSelector)
+	{ }
+
+	/// <summary>
+	/// Called when the <see cref="<#=propName#>StringFormat"/> property was changed.
+	/// </summary>
+	/// <param name="oldStringFormat">
+	/// The old value of the <see cref="<#=propName#>StringFormat"/> property.
+	/// </param>
+	/// <param name="newStringFormat">
+	/// The new value of the <see cref="<#=dpName#>StringFormat"/> property.
+	/// </param>
+	protected virtual void On<#=propName#>StringFormatChanged(
+		string oldStringFormat, string newStringFormat)
+	{ }
+    
+    <#
+        }
+    #>
+    }
+
+}
+
+<#+
+    class PropertyInfo {
+        public string Name;
+        public string XmlDoc;
+    }
+#>

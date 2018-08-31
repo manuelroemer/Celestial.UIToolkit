@@ -13,18 +13,18 @@ namespace Celestial.UIToolkit.Controls
     /// whenever the user clicks on it.
     /// The effect is based on the ripple effect by the Material Design language.
     /// </summary>
-    [TemplateVisualState(GroupName = AnimationStatesVisualStateGroup, Name = NormalVisualStateName)]
-    [TemplateVisualState(GroupName = AnimationStatesVisualStateGroup, Name = ExpandingVisualStateName)]
-    [TemplateVisualState(GroupName = AnimationStatesVisualStateGroup, Name = ExpandedVisualStateName)]
-    [TemplateVisualState(GroupName = AnimationStatesVisualStateGroup, Name = FadingVisualStateName)]
+    [TemplateVisualState(GroupName = AnimationStatesVisualStateGroup, Name = NormalVisualState)]
+    [TemplateVisualState(GroupName = AnimationStatesVisualStateGroup, Name = ExpandingVisualState)]
+    [TemplateVisualState(GroupName = AnimationStatesVisualStateGroup, Name = ExpandedVisualState)]
+    [TemplateVisualState(GroupName = AnimationStatesVisualStateGroup, Name = FadingVisualState)]
     public class RippleOverlay : ContentControl
     {
         
         internal const string AnimationStatesVisualStateGroup = "AnimationStates";
-        internal const string NormalVisualStateName = "Normal";
-        internal const string ExpandingVisualStateName = "Expanding";
-        internal const string ExpandedVisualStateName = "Expanded";
-        internal const string FadingVisualStateName = "Fading";
+        internal const string NormalVisualState = "Normal";
+        internal const string ExpandingVisualState = "Expanding";
+        internal const string ExpandedVisualState = "Expanded";
+        internal const string FadingVisualState = "Fading";
         
         private static readonly DependencyPropertyKey AnimationOriginXPropertyKey = DependencyProperty.RegisterReadOnly(
             nameof(AnimationOriginX), typeof(double), typeof(RippleOverlay), new PropertyMetadata(0d));
@@ -298,8 +298,9 @@ namespace Celestial.UIToolkit.Controls
         /// </summary>
         public RippleOverlay()
         {
+            SizeChanged += RippleOverlay_SizeChanged;
         }
-        
+
         /// <summary>
         /// Loads template parts for the animation control.
         /// </summary>
@@ -382,6 +383,19 @@ namespace Celestial.UIToolkit.Controls
             AnimationPositionY = AnimationOriginY - AnimationDiameter / 2;
         }
 
+        private void RippleOverlay_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            // When the control is resized, while the ripple is visible, we need to re-calculate
+            // its animation diameter and bounds.
+            // The origin point is simply kept.
+            if (IsAnimationFading || IsAnimationExpanding || IsExpanded)
+            {
+                UpdateAnimationProperties(new Point(
+                    AnimationOriginX,
+                    AnimationOriginY));
+            }
+        }
+
         private static void IsActiveTrigger_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var self = (RippleOverlay)d;
@@ -451,7 +465,7 @@ namespace Celestial.UIToolkit.Controls
             IsExpanding = false;
             IsExpanded = false;
             IsFading = false;
-            VisualStateManager.GoToState(this, NormalVisualStateName, true);
+            VisualStateManager.GoToState(this, NormalVisualState, true);
         }
 
         private void EnterExpandingVisualState()
@@ -459,8 +473,8 @@ namespace Celestial.UIToolkit.Controls
             IsExpanding = true;
             IsExpanded = false;
             IsFading = false;
-            VisualStateManager.GoToState(this, NormalVisualStateName, false); // Required to reset potentially running animations.
-            VisualStateManager.GoToState(this, ExpandingVisualStateName, true);
+            VisualStateManager.GoToState(this, NormalVisualState, false); // Required to reset potentially running animations.
+            VisualStateManager.GoToState(this, ExpandingVisualState, true);
         }
 
         private void EnterExpandedVisualState()
@@ -468,7 +482,7 @@ namespace Celestial.UIToolkit.Controls
             IsExpanding = false;
             IsExpanded = true;
             IsFading = false;
-            VisualStateManager.GoToState(this, ExpandedVisualStateName, true);
+            VisualStateManager.GoToState(this, ExpandedVisualState, true);
         }
 
         private void EnterFadingVisualState()
@@ -476,7 +490,7 @@ namespace Celestial.UIToolkit.Controls
             IsExpanding = false;
             IsExpanded = false;
             IsFading = true;
-            VisualStateManager.GoToState(this, FadingVisualStateName, true);
+            VisualStateManager.GoToState(this, FadingVisualState, true);
         }
         
         private void TryEnterFadingVisualState()

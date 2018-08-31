@@ -10,7 +10,7 @@
 
     <Style x:Key="StandardTabControl" TargetType="TabControl" BasedOn="{StaticResource Accent2BorderWithForegroundThemingBase}">
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="BorderBrush" Value="{StaticResource StandardControlBorderBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource ControlBorderBrush}" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="FontFamily" Value="{StaticResource StandardFontFamily}" />
         <Setter Property="FontSize" Value="{StaticResource StandardFontSize}" />
@@ -87,13 +87,13 @@
         <Setter Property="theming:TabControlProperties.SelectedMarkMargin" Value="0,3,0,3" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
         <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="Transparent" />
-        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource Accent2HighBrush}" />
-        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource Accent2HighBrush}" />
+        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource Accent2LightBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource Accent2LightBrush}" />
         <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="Transparent" />
-        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource Accent2MediumBrush}" />
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource Accent2MediumBrush}" />
+        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource Accent2Brush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource Accent2Brush}" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
-        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource BaseHighBrush}" />
+        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource ControlDisabledBorderBrush}" />
         <Setter Property="Foreground" Value="{StaticResource StandardForegroundBrush}" />
         <Setter Property="Template">
             <Setter.Value>
