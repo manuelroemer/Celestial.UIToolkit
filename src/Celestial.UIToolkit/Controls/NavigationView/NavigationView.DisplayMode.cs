@@ -7,14 +7,6 @@ using System.Windows;
 
 namespace Celestial.UIToolkit.Controls
 {
-
-    //
-    // This file provides the properties which deal with the NavigationView's "DisplayMode".
-    // It defines:
-    // - Threshold properties for switching between display modes
-    // - Pane properties for specific display modes
-    // - Methods dealing with the display modes.
-    //
     
     public partial class NavigationView
     {

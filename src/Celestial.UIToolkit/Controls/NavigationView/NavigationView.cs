@@ -1,19 +1,13 @@
 ﻿using Celestial.UIToolkit.Extensions;
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
-using System.Windows.Media;
 
 namespace Celestial.UIToolkit.Controls
 {
-    
+
     /// <summary>
     ///     A control which provides a central navigation structure to an application by providing
     ///     a pane for navigation commands and a central place for the content which is the current
@@ -38,7 +32,6 @@ namespace Celestial.UIToolkit.Controls
         private ButtonBase _backButton;
         private ButtonBase _toggleButton;
         private UIElement _paneContentContainer;
-        private ListView _menuItemsListView;
 
         /// <summary>
         /// Gets a value indicating whether the pane is overlaying other content.

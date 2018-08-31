@@ -39,7 +39,8 @@ namespace Celestial.UIToolkit.Controls
                 typeof(NavigationView),
                 new PropertyMetadata(
                     null,
-                    SelectedMenuItem_Changed));
+                    SelectedMenuItem_Changed,
+                    CoerceSelectedMenuItem));
 
         /// <summary>
         /// Identifies the <see cref="MenuItemTemplate"/> dependency property.
@@ -193,6 +194,12 @@ namespace Celestial.UIToolkit.Controls
             
             var selectionChangedArgs = new NavigationViewItemEventArgs(e.NewValue, false);
             self.RaiseMenuItemsSelectionChanged(selectionChangedArgs);
+        }
+
+        private static object CoerceSelectedMenuItem(DependencyObject d, object newSelectedItem)
+        {
+            var self = (NavigationView)d;
+            return self.MenuItems.Contains(newSelectedItem) ? newSelectedItem : null;
         }
 
         /// <summary>

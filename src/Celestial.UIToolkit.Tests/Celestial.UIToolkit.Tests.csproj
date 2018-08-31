@@ -71,6 +71,7 @@
   <ItemGroup>
     <Compile Include="Controls\ControlTestHelper.cs" />
     <Compile Include="Controls\NavigationViewTests\DisplayModeTests.cs" />
+    <Compile Include="Controls\NavigationViewTests\MenuItemsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -99,6 +100,10 @@
     <Analyzer Include="..\packages\xunit.analyzers.0.10.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Celestial.UIToolkit.Core\Celestial.UIToolkit.Core.csproj">
+      <Project>{A6432C42-1C26-4EFF-BED4-96AEB1EB2894}</Project>
+      <Name>Celestial.UIToolkit.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Celestial.UIToolkit\Celestial.UIToolkit.csproj">
       <Project>{9fcac9d8-2931-4a72-a626-3f1bd9ad2673}</Project>
       <Name>Celestial.UIToolkit</Name>
