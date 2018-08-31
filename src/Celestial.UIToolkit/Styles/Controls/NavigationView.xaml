@@ -242,6 +242,13 @@
                     <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
                           Background="Transparent">
                         <Grid.Resources>
+
+                            <Storyboard x:Key="MinimalStoryboard">
+                            </Storyboard>
+
+                            <Storyboard x:Key="CollapsedStoryboard">
+                            </Storyboard>
+                            
                             <c:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
                         </Grid.Resources>
 
@@ -259,61 +266,60 @@
                                 <controls:SplitView.Pane>
                                     <Grid x:Name="PART_PaneContentContainer">
                                         <Grid.RowDefinitions>
-                                            <RowDefinition x:Name="ButtonRow" Height="Auto" />
+                                            <RowDefinition x:Name="ButtonPlaceholderRow" Height="Auto" />
                                             <RowDefinition x:Name="PaneContentRow" />
                                         </Grid.RowDefinitions>
 
-                                        <Grid x:Name="PaneButtonContainer">
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition x:Name="BackButtonRow"   Height="Auto" />
-                                                <RowDefinition x:Name="ToggleButtonRow" Height="Auto" />
-                                            </Grid.RowDefinitions>
-                                            
-                                            <Button x:Name="PART_BackButton"
-                                                    Style="{TemplateBinding PaneBackButtonStyle}"
-                                                    IsEnabled="{TemplateBinding IsBackButtonEnabled}"
-                                                    Visibility="{Binding IsBackButtonVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}"
-                                                    HorizontalAlignment="Left"
-                                                    Width="{TemplateBinding CompactPaneLength}"
-                                                    Height="{TemplateBinding CompactPaneLength}"
-                                                    Command="{TemplateBinding BackButtonCommand}"
-                                                    CommandParameter="{TemplateBinding BackButtonCommandParameter}" />
-
-                                            <Grid Grid.Row="1">
-                                                <Grid.Resources>
-                                                    <!-- This DataTemplate will be used by the PaneTitle-ContentPresenter below.
+                                        <Grid x:Name="ButtonPlaceholderContainer">
+                                            <Grid.Resources>
+                                                <!-- This DataTemplate will be used by the PaneTitle-ContentPresenter below.
                                                      By declaring it here, it will only affect String resources and 
                                                      can still be overwritten by the 'PaneHeaderTemplate' property. -->
-                                                    <DataTemplate DataType="{x:Type sys:String}">
-                                                        <TextBlock Style="{DynamicResource TitleTextBlock}"
-                                                                   Text="{Binding}"
-                                                                   HorizontalAlignment="Left"
-                                                                   VerticalAlignment="Center"
-                                                                   TextTrimming="CharacterEllipsis"
-                                                                   Padding="{c:GridUnit '3,0'}" />
-                                                    </DataTemplate>
-                                                </Grid.Resources>
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="Auto" />
-                                                    <ColumnDefinition />
-                                                </Grid.ColumnDefinitions>
-                                                <Button x:Name="PART_ToggleButton"
-                                                        Style="{TemplateBinding PaneToggleButtonStyle}"
-                                                        IsEnabled="{TemplateBinding IsToggleButtonEnabled}"
-                                                        Visibility="{Binding IsToggleButtonVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}"
-                                                        HorizontalAlignment="Left"
-                                                        Width="{TemplateBinding CompactPaneLength}"
-                                                        Height="{TemplateBinding CompactPaneLength}" />
-                                                <ContentPresenter x:Name="PaneHeaderContentSite"
-                                                                  Grid.Column="1"
-                                                                  ContentSource="PaneHeader"
-                                                                  ContentTemplate="{TemplateBinding PaneHeaderTemplate}"
-                                                                  ContentTemplateSelector="{TemplateBinding PaneHeaderTemplateSelector}"
-                                                                  ContentStringFormat="{TemplateBinding PaneHeaderStringFormat}"
-                                                                  Visibility="{Binding HasPaneTitle, Converter={StaticResource BooleanToVisibilityConverter}}" />
-                                            </Grid>
-                                        </Grid>
+                                                <DataTemplate DataType="{x:Type sys:String}">
+                                                    <TextBlock x:Name="PaneHeaderTitle"
+                                                               Style="{DynamicResource TitleTextBlock}"
+                                                               Text="{Binding}"
+                                                               HorizontalAlignment="Left"
+                                                               VerticalAlignment="Center"
+                                                               TextTrimming="CharacterEllipsis"
+                                                               Padding="{c:GridUnit '3,0'}" />
+                                                </DataTemplate>
+                                            </Grid.Resources>
+                                            
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition />
+                                            </Grid.ColumnDefinitions>
+                                            
+                                            <!-- The Back-/ToggleButtons are floating over the pane, so that
+                                                 they can still be displayed in Minimal mode.
+                                                 To move the other elements down while in Compact/Expanded,
+                                                 create these placeholders. -->
+                                            <Rectangle x:Name="BackButtonPlaceholder"
+                                                       Width="{Binding ActualWidth, ElementName=PART_BackButton}"
+                                                       Height="{Binding ActualHeight, ElementName=PART_BackButton}"
+                                                       Visibility="{Binding Visibility, ElementName=PART_BackButton}" />
+                                            <Rectangle x:Name="ToggleButtonPlaceholder"
+                                                       Grid.Row="1"
+                                                       Width="{Binding ActualWidth, ElementName=PART_ToggleButton}"
+                                                       Height="{Binding ActualHeight, ElementName=PART_ToggleButton}"
+                                                       Visibility="{Binding Visibility, ElementName=PART_ToggleButton}" />
 
+                                            <ContentPresenter x:Name="PaneHeaderContentSite"
+                                                              Grid.Row="1"
+                                                              Grid.Column="1"
+                                                              ContentSource="PaneHeader"
+                                                              ContentTemplate="{TemplateBinding PaneHeaderTemplate}"
+                                                              ContentTemplateSelector="{TemplateBinding PaneHeaderTemplateSelector}"
+                                                              ContentStringFormat="{TemplateBinding PaneHeaderStringFormat}"
+                                                              Visibility="{Binding HasPaneTitle, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                                        </Grid>
+                                        
                                         <Grid x:Name="PaneContentContainer"
                                               Grid.Row="1"
                                               Visibility="{Binding IsPaneContentVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}">
@@ -365,7 +371,7 @@
                                     </Grid>
                                 </controls:SplitView.Pane>
 
-                                <Grid x:Name="ContentGrid">
+                                <Grid x:Name="PART_ContentContainer">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto" />
                                         <RowDefinition />
@@ -400,11 +406,51 @@
                                                       VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                                 </Grid>
                             </controls:SplitView>
+
+                            <!-- The Back-/ToggleButton floats over the other components and get re-arranged,
+                                 depending on the display mode. -->
+                            <Grid x:Name="PaneButtonContainer">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <Button x:Name="PART_BackButton"
+                                        Style="{TemplateBinding PaneBackButtonStyle}"
+                                        IsEnabled="{TemplateBinding IsBackButtonEnabled}"
+                                        Visibility="{Binding IsBackButtonVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                        HorizontalAlignment="Left"
+                                        Width="{TemplateBinding CompactPaneLength}"
+                                        Height="{TemplateBinding CompactPaneLength}"
+                                        Command="{TemplateBinding BackButtonCommand}"
+                                        CommandParameter="{TemplateBinding BackButtonCommandParameter}" />
+                                <Button x:Name="PART_ToggleButton"
+                                        Grid.Row="1"
+                                        Style="{TemplateBinding PaneToggleButtonStyle}"
+                                        IsEnabled="{TemplateBinding IsToggleButtonEnabled}"
+                                        Visibility="{Binding IsToggleButtonVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                        HorizontalAlignment="Left"
+                                        Width="{TemplateBinding CompactPaneLength}"
+                                        Height="{TemplateBinding CompactPaneLength}" />
+                            </Grid>
                         </Grid>
 
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="DisplayModeStates">
-                                <c:ExtendedVisualState x:Name="Minimal" />
+                                <c:ExtendedVisualState x:Name="Minimal" Storyboard="{StaticResource MinimalStoryboard}">
+                                    <c:ExtendedVisualState.Setters>
+                                        <Setter TargetName="PART_ToggleButton" Property="Grid.Row" Value="0" />
+                                        <Setter TargetName="PART_ToggleButton" Property="Grid.Column" Value="1" />
+                                        <Setter TargetName="ToggleButtonPlaceholder" Property="Grid.Row" Value="0" />
+                                        <Setter TargetName="ToggleButtonPlaceholder" Property="Grid.Column" Value="1" />
+                                        <Setter TargetName="PaneHeaderContentSite" Property="Grid.Row" Value="0" />
+                                        <Setter TargetName="PaneHeaderContentSite" Property="Grid.Column" Value="2" />
+                                    </c:ExtendedVisualState.Setters>
+                                </c:ExtendedVisualState>
                                 <c:ExtendedVisualState x:Name="Compact" />
                                 <c:ExtendedVisualState x:Name="Expanded" />
                             </VisualStateGroup>

@@ -22,18 +22,19 @@ namespace Celestial.UIToolkit.Controls
     /// </remarks>
     [TemplatePart(Name = BackButtonTemplatePart, Type = typeof(ButtonBase))]
     [TemplatePart(Name = ToggleButtonTemplatePart, Type = typeof(ButtonBase))]
-    [TemplatePart(Name = PaneContentContainerPart, Type = typeof(UIElement))]
+    [TemplatePart(Name = ContentContainerPart, Type = typeof(UIElement))]
+    [TemplatePart(Name = SettingsItemPart, Type = typeof(NavigationViewItem))]
     public partial class NavigationView : HeaderedContentControl
     {
 
         internal const string BackButtonTemplatePart = "PART_BackButton";
         internal const string ToggleButtonTemplatePart = "PART_ToggleButton";
-        internal const string PaneContentContainerPart = "PART_PaneContentContainer";
+        internal const string ContentContainerPart = "PART_ContentContainer";
         internal const string SettingsItemPart = "PART_SettingsItem";
 
         private ButtonBase _backButton;
         private ButtonBase _toggleButton;
-        private UIElement _paneContentContainer;
+        private UIElement _contentContainer;
 
         /// <summary>
         /// Gets a value indicating whether the pane is overlaying other content.
@@ -98,7 +99,7 @@ namespace Celestial.UIToolkit.Controls
                 if (e.OriginalSource is DependencyObject originalSource)
                 {
                     // Not clicking on the pane == clicking on the content.
-                    if (!originalSource.HasVisualAncestor(_paneContentContainer))
+                    if (originalSource.HasVisualAncestor(_contentContainer))
                     {
                         IsPaneOpen = false;
                     }
@@ -115,7 +116,7 @@ namespace Celestial.UIToolkit.Controls
             base.OnApplyTemplate();
             _backButton = GetTemplateChild(BackButtonTemplatePart) as ButtonBase;
             _toggleButton = GetTemplateChild(ToggleButtonTemplatePart) as ButtonBase;
-            _paneContentContainer = GetTemplateChild(PaneContentContainerPart) as UIElement;
+            _contentContainer = GetTemplateChild(ContentContainerPart) as UIElement;
             SettingsItem = GetTemplateChild(SettingsItemPart) as NavigationViewItem;
 
             InitializeBackButton();
