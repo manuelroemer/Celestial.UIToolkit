@@ -29,6 +29,7 @@ namespace Celestial.UIToolkit.Controls
         internal const string BackButtonTemplatePart = "PART_BackButton";
         internal const string ToggleButtonTemplatePart = "PART_ToggleButton";
         internal const string PaneContentContainerPart = "PART_PaneContentContainer";
+        internal const string SettingsItemPart = "PART_SettingsItem";
 
         private ButtonBase _backButton;
         private ButtonBase _toggleButton;
@@ -53,6 +54,8 @@ namespace Celestial.UIToolkit.Controls
                     yield return PaneFooter;
                 if (PaneHeader != null)
                     yield return PaneHeader;
+                if (PaneCustomContent != null)
+                    yield return PaneCustomContent;
 
                 foreach (var menuItem in MenuItems)
                     yield return menuItem;
@@ -113,6 +116,7 @@ namespace Celestial.UIToolkit.Controls
             _backButton = GetTemplateChild(BackButtonTemplatePart) as ButtonBase;
             _toggleButton = GetTemplateChild(ToggleButtonTemplatePart) as ButtonBase;
             _paneContentContainer = GetTemplateChild(PaneContentContainerPart) as UIElement;
+            SettingsItem = GetTemplateChild(SettingsItemPart) as NavigationViewItem;
 
             InitializeBackButton();
             InitializeToggleButton();

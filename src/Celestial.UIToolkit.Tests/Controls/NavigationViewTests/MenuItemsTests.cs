@@ -1,6 +1,7 @@
 ﻿using Celestial.UIToolkit.Controls;
 using Celestial.UIToolkit.Extensions;
 using System.Linq;
+using System.Windows;
 using Xunit;
 
 namespace Celestial.UIToolkit.Tests.Controls.NavigationViewTests
@@ -33,7 +34,7 @@ namespace Celestial.UIToolkit.Tests.Controls.NavigationViewTests
             navView.SelectedItem = navView.MenuItems.First();
             Assert.NotNull(navView.SelectedItem);
         }
-
+        
         [WpfFact]
         public void CanSetItemsViaItemsSource()
         {

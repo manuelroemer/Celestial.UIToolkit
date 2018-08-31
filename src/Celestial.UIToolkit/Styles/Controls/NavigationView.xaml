@@ -318,12 +318,20 @@
                                               Grid.Row="1"
                                               Visibility="{Binding IsPaneContentVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}">
                                             <Grid.RowDefinitions>
-                                                <RowDefinition x:Name="MenuItemsRow" Height="*" />
-                                                <RowDefinition x:Name="FooterRow"    Height="Auto" />
-                                                <RowDefinition x:Name="SettingsRow"  Height="Auto" />
+                                                <RowDefinition x:Name="CustomContentRow" Height="Auto" />
+                                                <RowDefinition x:Name="MenuItemsRow"     Height="*" />
+                                                <RowDefinition x:Name="FooterRow"        Height="Auto" />
+                                                <RowDefinition x:Name="SettingsRow"      Height="Auto" />
                                             </Grid.RowDefinitions>
 
-                                            <ListView Style="{StaticResource NavigationViewMenuItemsListView}"
+                                            <ContentPresenter x:Name="PaneCustomContentSite"
+                                                              ContentSource="PaneCustomContent"
+                                                              ContentTemplate="{TemplateBinding PaneCustomContentTemplate}"
+                                                              ContentTemplateSelector="{TemplateBinding PaneCustomContentTemplateSelector}"
+                                                              ContentStringFormat="{TemplateBinding PaneCustomContentStringFormat}" />
+
+                                            <ListView Grid.Row="1"
+                                                      Style="{StaticResource NavigationViewMenuItemsListView}"
                                                       Margin="{c:GridUnit '0,3'}"
                                                       SelectionMode="Single"
                                                       ItemsSource="{Binding MenuItems, RelativeSource={RelativeSource TemplatedParent}}"
@@ -335,17 +343,18 @@
                                                       ItemContainerStyleSelector="{TemplateBinding MenuItemContainerStyleSelector}" />
 
                                             <ContentPresenter x:Name="PaneFooterContentSite" 
-                                                              Grid.Row="1"
+                                                              Grid.Row="2"
                                                               ContentSource="PaneFooter"
                                                               ContentTemplate="{TemplateBinding PaneFooterTemplate}"
                                                               ContentTemplateSelector="{TemplateBinding PaneFooterTemplateSelector}"
                                                               ContentStringFormat="{TemplateBinding PaneFooterStringFormat}" />
 
-                                            <ListView Grid.Row="2"
+                                            <ListView Grid.Row="3"
                                                       IsSynchronizedWithCurrentItem="False"
                                                       SelectedValue="{Binding SelectedItem, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
                                                       Style="{StaticResource NavigationViewMenuItemsListView}"> 
-                                                <controls:NavigationViewItem Content="Settings"
+                                                <controls:NavigationViewItem x:Name="PART_SettingsItem"
+                                                                             Content="Settings"
                                                                              Visibility="{Binding IsSettingsVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}">
                                                     <controls:NavigationViewItem.Icon>
                                                         <controls:PathIcon Data="{StaticResource HalfArrowUp}" />
