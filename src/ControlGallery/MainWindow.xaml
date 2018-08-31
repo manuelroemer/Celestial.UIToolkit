@@ -13,6 +13,8 @@
     <c:NavigationView x:Name="NavView"
                       PaneHeader="Pane Title"
                       Header="Header!"
+                      IsSettingsVisible="True"
+                      SelectedItem="{x:Null}"
                       BackRequested="NavView_BackRequested">
         <c:NavigationView.PaneFooter>
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Hello from the Footer!</TextBlock>
@@ -64,6 +66,8 @@
                 <Button Click="ClearMenuItemsSource_Click">
                     Clear ItemsSource
                 </Button>
+
+                <TextBlock Text="{Binding SelectedItem, ElementName=NavView}" />
 
                 <!--<StackPanel c:IconElement.Foreground="Green">
                     <c:PathIcon Data="{StaticResource HalfArrowRight}" />

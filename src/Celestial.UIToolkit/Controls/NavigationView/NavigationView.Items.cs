@@ -11,11 +11,34 @@ namespace Celestial.UIToolkit.Controls
     {
 
         /// <summary>
-        /// Occurs when the <see cref="SelectedMenuItem"/> changes.
+        /// Occurs when the currently selected item changes.
         /// </summary>
-        public event EventHandler<NavigationViewItemEventArgs> MenuItemsSelectionChanged;
+        public event EventHandler<NavigationViewItemEventArgs> SelectedItemChanged;
 
         private ItemsSourceCollection _menuItems;
+
+        private static readonly DependencyPropertyKey SettingsItemPropertyKey =
+            DependencyProperty.RegisterReadOnly(
+                nameof(SettingsItem),
+                typeof(NavigationViewItem),
+                typeof(NavigationView),
+                new PropertyMetadata(null));
+
+        /// <summary>
+        /// Identifies the <see cref="SettingsItem"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty SettingsItemProperty =
+            SettingsItemPropertyKey.DependencyProperty;
+
+        /// <summary>
+        /// Identifies the <see cref="IsSettingsVisible"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty IsSettingsVisibleProperty =
+            DependencyProperty.Register(
+                nameof(IsSettingsVisible),
+                typeof(bool),
+                typeof(NavigationView),
+                new PropertyMetadata(false));
         
         /// <summary>
         /// Identifies the <see cref="MenuItemsSource"/> dependency property.
@@ -28,20 +51,7 @@ namespace Celestial.UIToolkit.Controls
                 new PropertyMetadata(
                     null,
                     MenuItemsSource_Changed));
-
-        /// <summary>
-        /// Identifies the <see cref="SelectedMenuItem"/> dependency property.
-        /// </summary>
-        public static readonly DependencyProperty SelectedMenuItemProperty =
-            DependencyProperty.Register(
-                nameof(SelectedMenuItem),
-                typeof(object),
-                typeof(NavigationView),
-                new PropertyMetadata(
-                    null,
-                    SelectedMenuItem_Changed,
-                    CoerceSelectedMenuItem));
-
+        
         /// <summary>
         /// Identifies the <see cref="MenuItemTemplate"/> dependency property.
         /// </summary>
@@ -83,6 +93,42 @@ namespace Celestial.UIToolkit.Controls
                 new PropertyMetadata(null));
 
         /// <summary>
+        /// Identifies the <see cref="SelectedItem"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty SelectedItemProperty =
+            DependencyProperty.Register(
+                nameof(SelectedItem),
+                typeof(object),
+                typeof(NavigationView),
+                new PropertyMetadata(
+                    null,
+                    SelectedItem_Changed,
+                    CoerceSelectedItem));
+
+        /// <summary>
+        /// Gets the special settings <see cref="NavigationViewItem"/>.
+        /// This can return null if the current template doesn't implement it.
+        /// </summary>
+        [Bindable(true)]
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public NavigationViewItem SettingsItem
+        {
+            get { return (NavigationViewItem)GetValue(SettingsItemProperty); }
+            private set { SetValue(SettingsItemPropertyKey, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the special settings navigation item is
+        /// visible.
+        /// </summary>
+        [Bindable(true), Category("Content")]
+        public bool IsSettingsVisible
+        {
+            get { return (bool)GetValue(IsSettingsVisibleProperty); }
+            set { SetValue(IsSettingsVisibleProperty, value); }
+        }
+
+        /// <summary>
         /// Gets or sets an object which serves as a source for the menu items of
         /// the <see cref="NavigationView"/>.
         /// </summary>
@@ -92,17 +138,7 @@ namespace Celestial.UIToolkit.Controls
             get { return (object)GetValue(MenuItemsSourceProperty); }
             set { SetValue(MenuItemsSourceProperty, value); }
         }
-
-        /// <summary>
-        /// Gets or sets the currently selected menu item.
-        /// </summary>
-        [Bindable(true), Category("Content")]
-        public object SelectedMenuItem
-        {
-            get { return (object)GetValue(SelectedMenuItemProperty); }
-            set { SetValue(SelectedMenuItemProperty, value); }
-        }
-
+        
         /// <summary>
         /// Gets or sets the <see cref="DataTemplate"/> used to display each menu item.
         /// </summary>
@@ -147,6 +183,16 @@ namespace Celestial.UIToolkit.Controls
         }
 
         /// <summary>
+        /// Gets or sets the currently selected item.
+        /// </summary>
+        [Bindable(true), Category("Content")]
+        public object SelectedItem
+        {
+            get { return (object)GetValue(SelectedItemProperty); }
+            set { SetValue(SelectedItemProperty, value); }
+        }
+
+        /// <summary>
         /// Gets a collection of the <see cref="NavigationView"/>'s menu items.
         /// The collection's contents can either directly be set by this collection, or via
         /// the <see cref="MenuItemsSource"/>.
@@ -164,7 +210,7 @@ namespace Celestial.UIToolkit.Controls
                 return _menuItems;
             }   
         }
-
+        
         private static void MenuItemsSource_Changed(
             DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
@@ -187,37 +233,42 @@ namespace Celestial.UIToolkit.Controls
             }
         }
 
-        private static void SelectedMenuItem_Changed(
+        private static void SelectedItem_Changed(
             DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var self = (NavigationView)d;
-            
-            var selectionChangedArgs = new NavigationViewItemEventArgs(e.NewValue, false);
-            self.RaiseMenuItemsSelectionChanged(selectionChangedArgs);
+            bool isSettingsItem = e.NewValue != null &&
+                                  e.NewValue == self.SettingsItem;
+            var itemChangedArgs = new NavigationViewItemEventArgs(e.NewValue, isSettingsItem);
+
+            self.RaiseSelectedItemChanged(itemChangedArgs);
         }
 
-        private static object CoerceSelectedMenuItem(DependencyObject d, object newSelectedItem)
+        private static object CoerceSelectedItem(DependencyObject d, object newSelectedItem)
         {
             var self = (NavigationView)d;
-            return self.MenuItems.Contains(newSelectedItem) ? newSelectedItem : null;
+            bool acceptsNewItem = newSelectedItem == null ||
+                                  self.MenuItems.Contains(newSelectedItem) ||
+                                  newSelectedItem == self.SettingsItem;
+            return acceptsNewItem ? newSelectedItem : null;
         }
-
+        
         /// <summary>
-        /// Raises the <see cref="MenuItemsSelectionChanged"/> event and
-        /// calls the <see cref="OnMenuItemsSelectionChanged"/> method afterwards.
+        /// Raises the <see cref="SelectedItemChanged"/> event and
+        /// calls the <see cref="OnSelectedItemChanged"/> method afterwards.
         /// </summary>
         /// <param name="e">Event data for the event.</param>
-        protected void RaiseMenuItemsSelectionChanged(NavigationViewItemEventArgs e)
+        protected void RaiseSelectedItemChanged(NavigationViewItemEventArgs e)
         {
-            OnMenuItemsSelectionChanged(e);
-            MenuItemsSelectionChanged?.Invoke(this, e);
+            OnSelectedItemChanged(e);
+            SelectedItemChanged?.Invoke(this, e);
         }
 
         /// <summary>
-        /// Called before the <see cref="MenuItemsSelectionChanged"/> event occurs.
+        /// Called before the <see cref="SelectedItemChanged"/> event occurs.
         /// </summary>
         /// <param name="e">Event data for the event.</param>
-        protected virtual void OnMenuItemsSelectionChanged(NavigationViewItemEventArgs e) { }
+        protected virtual void OnSelectedItemChanged(NavigationViewItemEventArgs e) { }
 
     }
 

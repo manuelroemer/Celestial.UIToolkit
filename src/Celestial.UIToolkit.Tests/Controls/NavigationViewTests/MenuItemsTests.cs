@@ -10,15 +10,15 @@ namespace Celestial.UIToolkit.Tests.Controls.NavigationViewTests
     {
 
         [WpfFact]
-        public void FiresMenuItemsSelectionChangedEvent()
+        public void FiresSelectedItemChanged()
         {
             var navView = new NavigationView();
             navView.MenuItems.AddRange(new object[] { 1, 2, 3, "Four", "Five" });
 
             Assert.Raises<NavigationViewItemEventArgs>(
-                (handler) => navView.MenuItemsSelectionChanged += handler,
-                (handler) => navView.MenuItemsSelectionChanged -= handler,
-                () => navView.SelectedMenuItem = navView.MenuItems.First());
+                (handler) => navView.SelectedItemChanged += handler,
+                (handler) => navView.SelectedItemChanged -= handler,
+                () => navView.SelectedItem = navView.MenuItems.First());
         }
 
         [WpfFact]
@@ -27,11 +27,11 @@ namespace Celestial.UIToolkit.Tests.Controls.NavigationViewTests
             var navView = new NavigationView();
             navView.MenuItems.Add("ExistingItem");
 
-            navView.SelectedMenuItem = 1; // Does not exist in MenuItems collection.
-            Assert.Null(navView.SelectedMenuItem);
+            navView.SelectedItem = 1; // Does not exist in MenuItems collection.
+            Assert.Null(navView.SelectedItem);
 
-            navView.SelectedMenuItem = navView.MenuItems.First();
-            Assert.NotNull(navView.SelectedMenuItem);
+            navView.SelectedItem = navView.MenuItems.First();
+            Assert.NotNull(navView.SelectedItem);
         }
 
         [WpfFact]
