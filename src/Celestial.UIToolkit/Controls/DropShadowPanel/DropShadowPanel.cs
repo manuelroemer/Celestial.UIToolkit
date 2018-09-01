@@ -107,7 +107,6 @@ namespace Celestial.UIToolkit.Controls
             double radians = Atan2(OffsetY, OffsetX);
             double degrees = radians * (180 / PI);
             _currentEffect.Direction = 360 - degrees;
-            Debug.WriteLine(degrees);
         }
 
         private void SetShadowDepth()
