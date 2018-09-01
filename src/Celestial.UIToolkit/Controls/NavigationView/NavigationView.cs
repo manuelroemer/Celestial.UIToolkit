@@ -131,12 +131,12 @@ namespace Celestial.UIToolkit.Controls
         {
             if (_menuItemsListView != null)
             {
-                _menuItemsListView.ItemInvoked += ItemsListView_ItemInvoked;
+                _menuItemsListView.ItemContainerInvoked += ItemsListView_ItemInvoked;
             }
 
             if (_settingsItemListView != null)
             {
-                _settingsItemListView.ItemInvoked += ItemsListView_ItemInvoked;
+                _settingsItemListView.ItemContainerInvoked += ItemsListView_ItemInvoked;
             }
         }
 

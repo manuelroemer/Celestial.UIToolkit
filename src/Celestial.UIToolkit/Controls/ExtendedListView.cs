@@ -61,7 +61,7 @@ namespace Celestial.UIToolkit.Controls
         /// <summary>
         /// Occurs when one of the items in the <see cref="ListView"/> is invoked.
         /// </summary>
-        public event EventHandler<ListViewItemInvokedEventArgs> ItemInvoked;
+        public event EventHandler<ListViewItemInvokedEventArgs> ItemContainerInvoked;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ExtendedListView"/> class.
@@ -73,7 +73,7 @@ namespace Celestial.UIToolkit.Controls
 
         /// <summary>
         /// Called when the <see cref="ItemsControl.Items"/> collection changes.
-        /// Attaches <see cref="ItemInvoked"/> handlers to new items.
+        /// Attaches <see cref="ItemContainerInvoked"/> handlers to new items.
         /// </summary>
         /// <param name="e">Event data about the collection change.</param>
         protected override void OnItemsChanged(NotifyCollectionChangedEventArgs e)
@@ -148,6 +148,10 @@ namespace Celestial.UIToolkit.Controls
                     itemContainer,
                     nameof(PreviewMouseLeftButtonDown),
                     ItemContainer_Clicked);
+                WeakEventManager<ListViewItem, KeyEventArgs>.AddHandler(
+                    itemContainer,
+                    nameof(PreviewKeyDown),
+                    ItemContainer_KeyDown);
             }
             return true;
         }
@@ -162,6 +166,10 @@ namespace Celestial.UIToolkit.Controls
                         itemContainer,
                         nameof(PreviewMouseLeftButtonDown),
                         ItemContainer_Clicked);
+                    WeakEventManager<ListViewItem, KeyEventArgs>.RemoveHandler(
+                        itemContainer,
+                        nameof(PreviewKeyDown),
+                        ItemContainer_KeyDown);
                 }
             }
         }
@@ -187,25 +195,34 @@ namespace Celestial.UIToolkit.Controls
         private void ItemContainer_Clicked(object sender, MouseButtonEventArgs e)
         {
             var invokedContainer = (ListViewItem)sender;
-            RaiseItemInvoked(new ListViewItemInvokedEventArgs(invokedContainer));
+            RaiseItemContainerInvoked(new ListViewItemInvokedEventArgs(invokedContainer));
         }
 
-        /// <summary>
-        /// Raises the <see cref="ItemInvoked"/> event and
-        /// calls the <see cref="OnItemInvoked"/> method afterwards.
-        /// </summary>
-        /// <param name="e">Event data for the event.</param>
-        protected void RaiseItemInvoked(ListViewItemInvokedEventArgs e)
+        private void ItemContainer_KeyDown(object sender, KeyEventArgs e)
         {
-            OnItemInvoked(e);
-            ItemInvoked?.Invoke(this, e);
+            if (e.Key == Key.Space)
+            {
+                var invokedContainer = (ListViewItem)sender;
+                RaiseItemContainerInvoked(new ListViewItemInvokedEventArgs(invokedContainer));
+            }
+        }
+        
+        /// <summary>
+        /// Raises the <see cref="ItemContainerInvoked"/> event and
+        /// calls the <see cref="OnItemContainerInvoked"/> method afterwards.
+        /// </summary>
+        /// <param name="e">Event data for the event.</param>
+        protected void RaiseItemContainerInvoked(ListViewItemInvokedEventArgs e)
+        {
+            OnItemContainerInvoked(e);
+            ItemContainerInvoked?.Invoke(this, e);
         }
 
         /// <summary>
-        /// Called before the <see cref="ItemInvoked"/> event occurs.
+        /// Called before the <see cref="ItemContainerInvoked"/> event occurs.
         /// </summary>
         /// <param name="e">Event data for the event.</param>
-        protected virtual void OnItemInvoked(ListViewItemInvokedEventArgs e) { }
+        protected virtual void OnItemContainerInvoked(ListViewItemInvokedEventArgs e) { }
 
     }
 
