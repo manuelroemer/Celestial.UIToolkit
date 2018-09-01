@@ -62,6 +62,7 @@
       <DependentUpon>Card.GeneratedProperties.tt</DependentUpon>
     </Compile>
     <Compile Include="Controls\ClippingBorder.cs" />
+    <Compile Include="Controls\DropShadowPanel\DropShadowPanel.cs" />
     <Compile Include="Controls\ExtendedListView.cs" />
     <Compile Include="Controls\IconElement.cs" />
     <Compile Include="Controls\NavigationView\Items\NavigationViewItem.cs" />
@@ -114,6 +115,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Controls\NavigationView\NavigationView.DisplayMode.cs" />
+    <Compile Include="Controls\DropShadowPanel\DropShadowPanel.Properties.cs" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -132,6 +134,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\Controls\Card.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Controls\DropShadowPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

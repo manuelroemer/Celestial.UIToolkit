@@ -70,30 +70,37 @@
                     Clear ItemsSource
                 </Button>
 
-                <TextBlock Text="{Binding SelectedItem, ElementName=NavView}" />
+                <Separator />
 
-                <!--<StackPanel c:IconElement.Foreground="Green">
-                    <c:PathIcon Data="{StaticResource HalfArrowRight}" />
-                    <c:PathIcon Data="{StaticResource HalfArrowRight}" Foreground="Red"  />
+                <Border Width="100" Height="100"
+                        BorderThickness="1"
+                        BorderBrush="Black" Background="White">
+                    <Border.Effect>
+                        <DropShadowEffect x:Name="Shadow" Color="Black" />
+                    </Border.Effect>
 
-                    <StackPanel>
-                        <StackPanel>
-                            <c:PathIcon Data="{StaticResource HalfArrowRight}" />
-                            <c:PathIcon Data="{StaticResource HalfArrowRight}" />
-                            <StackPanel>
-                                <ContentControl>
-                                    <ContentControl.Content>
-                                        <c:PathIcon Data="{StaticResource HalfArrowRight}" />
-                                    </ContentControl.Content>
-                                </ContentControl>
-                            </StackPanel>
-                        </StackPanel>
-                    </StackPanel>
-                </StackPanel>-->
+                    <Border Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"
+                            Background="Red"/>
+                </Border>
 
-                <pages:Buttons />
-                <pages:Cards />
-                <pages:Toggleables />
+                <Label>Blur Radius</Label>
+                <Slider Minimum="-100" Maximum="100" Value="{Binding ElementName=Shadow, Path=BlurRadius}" />
+                <Label>Direction</Label>
+                <Label Content="{Binding Direction, ElementName=Shadow}"></Label>
+                <Slider Minimum="0" Maximum="360" Value="{Binding ElementName=Shadow, Path=Direction}" />
+                <Label>ShadowDepth</Label>
+                <Slider Minimum="0" Maximum="100" Value="{Binding ElementName=Shadow, Path=ShadowDepth}" />
+
+
+                <c:DropShadowPanel x:Name="P" Margin="100">
+                    <Border Width="100" Height="100" Background="Red" />
+                </c:DropShadowPanel>
+                <Label>Blur Radius</Label>
+                <Slider Minimum="-100" Maximum="100" Value="{Binding ElementName=P, Path=BlurRadius}" />
+                <Label Content="{Binding OffsetX, ElementName=P}"></Label>
+                <Slider Minimum="-100" Maximum="100" Value="{Binding ElementName=P, Path=OffsetX}" />
+                <Label Content="{Binding OffsetY, ElementName=P}"></Label>
+                <Slider Minimum="-100" Maximum="100" Value="{Binding ElementName=P, Path=OffsetY}" />
             </StackPanel>
         </ScrollViewer>
     </c:NavigationView>
