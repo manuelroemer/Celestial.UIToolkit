@@ -45,10 +45,18 @@ namespace Celestial.UIToolkit.Controls
     /// An extension of the <see cref="ListView"/> control which provides events and methods
     /// dealing with its Item-Containers.
     /// </summary>
+    /// <remarks>
+    /// This custom list view is mainly intended to be used by the <see cref="NavigationView"/>.
+    /// Since the functionality here is universal and not specific to the 
+    /// <see cref="NavigationView"/>, it is provided as a publicly available class.
+    /// 
+    /// Note that it is not designed to work performantly with a large amount of items.
+    /// The normal ListView does a better job at that.
+    /// </remarks>
     public class ExtendedListView : ListView
     {
         
-        private HashSet<object> _unmonitoredItems = new HashSet<object>();
+        private List<object> _unmonitoredItems = new List<object>();
         
         /// <summary>
         /// Occurs when one of the items in the <see cref="ListView"/> is invoked.
@@ -125,8 +133,14 @@ namespace Celestial.UIToolkit.Controls
 
         private bool StartMonitoringItem(object item)
         {
-            var itemContainer = (ListViewItem)ItemContainerGenerator.ContainerFromItem(item);
-            if (itemContainer != null)
+            // Don't attach events twice, so do an unregister first.
+            StopMonitoringItem(item);
+
+            var itemContainers = GetAllContainersFromItem(item);
+            if (itemContainers.Count() == 0)
+                return false;
+
+            foreach (var itemContainer in itemContainers)
             {
                 // We don't really know when the item is removed.
                 // -> Use WeakEvents.
@@ -134,23 +148,39 @@ namespace Celestial.UIToolkit.Controls
                     itemContainer,
                     nameof(PreviewMouseLeftButtonDown),
                     ItemContainer_Clicked);
-                return true;
             }
-            else
-            {
-                return false;
-            }
+            return true;
         }
 
         private void StopMonitoringItem(object item)
         {
-            var itemContainer = (ListViewItem)ItemContainerGenerator.ContainerFromItem(item);
-            if (itemContainer != null)
+            foreach (var itemContainer in GetAllContainersFromItem(item))
             {
-                WeakEventManager<ListViewItem, MouseButtonEventArgs>.RemoveHandler(
-                    itemContainer,
-                    nameof(PreviewMouseLeftButtonDown),
-                    ItemContainer_Clicked);
+                if (itemContainer != null)
+                {
+                    WeakEventManager<ListViewItem, MouseButtonEventArgs>.RemoveHandler(
+                        itemContainer,
+                        nameof(PreviewMouseLeftButtonDown),
+                        ItemContainer_Clicked);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Returns all item containers for the specified <paramref name="item"/>.
+        /// </summary>
+        private IEnumerable<ListViewItem> GetAllContainersFromItem(object item)
+        {
+            // If the same instance of an object gets added to the LV's items multiple times,
+            // the ItemContainerGenerator.ContainerFromItem() would only return the container
+            // of the first instance in the list.
+            // -> We need to go through the items manually for finding all containers.
+            for (int i = 0; i < ItemContainerGenerator.Items.Count; i++)
+            {
+                if (item == ItemContainerGenerator.Items[i])
+                {
+                    yield return (ListViewItem)ItemContainerGenerator.ContainerFromIndex(i);
+                }
             }
         }
 

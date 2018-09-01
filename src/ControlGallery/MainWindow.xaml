@@ -15,7 +15,8 @@
                       Header="Header!"
                       IsSettingsVisible="True"
                       SelectedItem="{x:Null}"
-                      BackRequested="NavView_BackRequested">
+                      BackRequested="NavView_BackRequested"
+                      ItemInvoked="NavView_ItemInvoked">
         <c:NavigationView.PaneFooter>
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Hello from the Footer!</TextBlock>
         </c:NavigationView.PaneFooter>

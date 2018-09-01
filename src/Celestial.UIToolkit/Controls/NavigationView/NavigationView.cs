@@ -1,4 +1,5 @@
 ﻿using Celestial.UIToolkit.Extensions;
+using System;
 using System.Collections;
 using System.Collections.Specialized;
 using System.Windows;
@@ -24,6 +25,8 @@ namespace Celestial.UIToolkit.Controls
     [TemplatePart(Name = ToggleButtonTemplatePart, Type = typeof(ButtonBase))]
     [TemplatePart(Name = PaneContentContainerPart, Type = typeof(UIElement))]
     [TemplatePart(Name = PaneButtonContainerPart, Type = typeof(UIElement))]
+    [TemplatePart(Name = MenuItemsListViewPart, Type = typeof(NavigationViewListView))]
+    [TemplatePart(Name = SettingsItemListViewPart, Type = typeof(NavigationViewListView))]
     [TemplatePart(Name = SettingsItemPart, Type = typeof(NavigationViewItem))]
     public partial class NavigationView : HeaderedContentControl
     {
@@ -32,12 +35,16 @@ namespace Celestial.UIToolkit.Controls
         internal const string ToggleButtonTemplatePart = "PART_ToggleButton";
         internal const string PaneContentContainerPart = "PART_PaneContentContainer";
         internal const string PaneButtonContainerPart = "PART_PaneButtonContainer";
+        internal const string MenuItemsListViewPart = "PART_MenuItemsListView";
+        internal const string SettingsItemListViewPart = "PART_SettingsItemListView";
         internal const string SettingsItemPart = "PART_SettingsItem";
 
         private ButtonBase _backButton;
         private ButtonBase _toggleButton;
         private UIElement _paneContentContainer;
         private UIElement _paneButtonContainer;
+        private NavigationViewListView _menuItemsListView;
+        private NavigationViewListView _settingsItemListView;
 
         /// <summary>
         /// Gets a value indicating whether the pane is overlaying other content.
@@ -93,9 +100,12 @@ namespace Celestial.UIToolkit.Controls
             _toggleButton = GetTemplateChild(ToggleButtonTemplatePart) as ButtonBase;
             _paneContentContainer = GetTemplateChild(PaneContentContainerPart) as UIElement;
             _paneButtonContainer = GetTemplateChild(PaneButtonContainerPart) as UIElement;
+            _menuItemsListView = GetTemplateChild(MenuItemsListViewPart) as NavigationViewListView;
+            _settingsItemListView = GetTemplateChild(SettingsItemListViewPart) as NavigationViewListView;
             SettingsItem = GetTemplateChild(SettingsItemPart) as NavigationViewItem;
 
             HookPaneButtonEvents();
+            HookItemInvokedEvents();
         }
 
         private void HookPaneButtonEvents()
@@ -116,7 +126,35 @@ namespace Celestial.UIToolkit.Controls
         {
             IsPaneOpen = !IsPaneOpen;
         }
-        
+
+        private void HookItemInvokedEvents()
+        {
+            if (_menuItemsListView != null)
+            {
+                _menuItemsListView.ItemInvoked += ItemsListView_ItemInvoked;
+            }
+
+            if (_settingsItemListView != null)
+            {
+                _settingsItemListView.ItemInvoked += ItemsListView_ItemInvoked;
+            }
+        }
+
+        private void ItemsListView_ItemInvoked(object sender, ListViewItemInvokedEventArgs e)
+        {
+            // We always get a NavigationViewItem in the event args (the clicked item).
+            // We want to raise the ItemInvoked event with the "real" item in the MenuItems
+            // collection though.
+            // -> We need the ItemContainerGenerator to retrieve it.
+            var itemsContainer = (ItemsControl)sender;
+            var item = itemsContainer.ItemContainerGenerator.ItemFromContainer(e.InvokedItem);            
+            bool isSettingsItem = SettingsItem != null &&
+                                  e.InvokedItem == SettingsItem;
+
+            var eventData = new NavigationViewItemEventArgs(item, isSettingsItem);
+            RaiseItemInvoked(eventData);
+        }
+
         private void AdaptiveLayoutProperty_Changed(object sender, object e)
         {
             // Called when something size-related changed.

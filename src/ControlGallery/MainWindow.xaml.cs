@@ -1,6 +1,7 @@
 ﻿using Celestial.UIToolkit.Controls;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,13 +17,16 @@ namespace ControlGallery
         public MainWindow()
         {
             InitializeComponent();
+
+            var lv = new ListView();
+            var o = new object();
         }
 
         private void NavView_BackRequested(object sender, System.EventArgs e)
         {
             MessageBox.Show("Back requested!");
         }
-
+        
         private void ChangeMenuItemButton_Click(object sender, RoutedEventArgs e)
         {
             NavView.MenuItems.Add("New Item. It's a string!");
@@ -51,7 +55,11 @@ namespace ControlGallery
         {
             NavView.MenuItemsSource = null;
         }
-        
+
+        private void NavView_ItemInvoked(object sender, NavigationViewItemEventArgs e)
+        {
+            Debug.WriteLine(e.ToString());
+        }
     }
 
 }

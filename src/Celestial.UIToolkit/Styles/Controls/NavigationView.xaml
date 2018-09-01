@@ -329,7 +329,8 @@
                                                               ContentTemplateSelector="{TemplateBinding PaneCustomContentTemplateSelector}"
                                                               ContentStringFormat="{TemplateBinding PaneCustomContentStringFormat}" />
 
-                                            <controls:NavigationViewListView Grid.Row="1"
+                                            <controls:NavigationViewListView x:Name="PART_MenuItemsListView"
+                                                                             Grid.Row="1"
                                                                              Style="{StaticResource NavigationViewMenuItemsListView}"
                                                                              Margin="{c:GridUnit '0,3'}"
                                                                              SelectionMode="Single"
@@ -348,7 +349,8 @@
                                                               ContentTemplateSelector="{TemplateBinding PaneFooterTemplateSelector}"
                                                               ContentStringFormat="{TemplateBinding PaneFooterStringFormat}" />
 
-                                            <controls:NavigationViewListView Grid.Row="3"
+                                            <controls:NavigationViewListView x:Name="PART_SettingsItemListView"
+                                                                             Grid.Row="3"
                                                                              IsSynchronizedWithCurrentItem="False"
                                                                              SelectedValue="{Binding SelectedItem, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
                                                                              Style="{StaticResource NavigationViewMenuItemsListView}">
