@@ -329,17 +329,17 @@
                                                               ContentTemplateSelector="{TemplateBinding PaneCustomContentTemplateSelector}"
                                                               ContentStringFormat="{TemplateBinding PaneCustomContentStringFormat}" />
 
-                                            <ListView Grid.Row="1"
-                                                      Style="{StaticResource NavigationViewMenuItemsListView}"
-                                                      Margin="{c:GridUnit '0,3'}"
-                                                      SelectionMode="Single"
-                                                      ItemsSource="{Binding MenuItems, RelativeSource={RelativeSource TemplatedParent}}"
-                                                      IsSynchronizedWithCurrentItem="False"
-                                                      SelectedValue="{Binding SelectedItem, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
-                                                      ItemTemplate="{TemplateBinding MenuItemTemplate}"
-                                                      ItemTemplateSelector="{TemplateBinding MenuItemTemplateSelector}"
-                                                      ItemContainerStyle="{TemplateBinding MenuItemContainerStyle}"
-                                                      ItemContainerStyleSelector="{TemplateBinding MenuItemContainerStyleSelector}" />
+                                            <controls:NavigationViewListView Grid.Row="1"
+                                                                             Style="{StaticResource NavigationViewMenuItemsListView}"
+                                                                             Margin="{c:GridUnit '0,3'}"
+                                                                             SelectionMode="Single"
+                                                                             ItemsSource="{Binding MenuItems, RelativeSource={RelativeSource TemplatedParent}}"
+                                                                             IsSynchronizedWithCurrentItem="False"
+                                                                             SelectedValue="{Binding SelectedItem, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                                                                             ItemTemplate="{TemplateBinding MenuItemTemplate}"
+                                                                             ItemTemplateSelector="{TemplateBinding MenuItemTemplateSelector}"
+                                                                             ItemContainerStyle="{TemplateBinding MenuItemContainerStyle}"
+                                                                             ItemContainerStyleSelector="{TemplateBinding MenuItemContainerStyleSelector}" />
 
                                             <ContentPresenter x:Name="PaneFooterContentSite" 
                                                               Grid.Row="2"
@@ -348,10 +348,10 @@
                                                               ContentTemplateSelector="{TemplateBinding PaneFooterTemplateSelector}"
                                                               ContentStringFormat="{TemplateBinding PaneFooterStringFormat}" />
 
-                                            <ListView Grid.Row="3"
-                                                      IsSynchronizedWithCurrentItem="False"
-                                                      SelectedValue="{Binding SelectedItem, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
-                                                      Style="{StaticResource NavigationViewMenuItemsListView}">
+                                            <controls:NavigationViewListView Grid.Row="3"
+                                                                             IsSynchronizedWithCurrentItem="False"
+                                                                             SelectedValue="{Binding SelectedItem, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                                                                             Style="{StaticResource NavigationViewMenuItemsListView}">
                                                 <controls:NavigationViewItem x:Name="PART_SettingsItem"
                                                                              Content="Settings"
                                                                              Visibility="{Binding IsSettingsVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}">
@@ -359,7 +359,7 @@
                                                         <controls:PathIcon Data="{StaticResource HalfArrowUp}" />
                                                     </controls:NavigationViewItem.Icon>
                                                 </controls:NavigationViewItem>
-                                            </ListView>
+                                            </controls:NavigationViewListView>
                                         </Grid>
                                     </Grid>
                                 </controls:SplitView.Pane>

@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
@@ -12,19 +11,49 @@ namespace Celestial.UIToolkit.Controls
 {
 
     /// <summary>
+    /// Provides event data for when a <see cref="ListViewItem"/> is invoked.
+    /// </summary>
+    public class ListViewItemInvokedEventArgs : EventArgs
+    {
+
+        /// <summary>
+        /// Gets or sets the invoked item.
+        /// </summary>
+        public ListViewItem InvokedItem { get; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListViewItemInvokedEventArgs"/> class.
+        /// </summary>
+        /// <param name="invokedItem">The invoked item.</param>
+        public ListViewItemInvokedEventArgs(ListViewItem invokedItem)
+        {
+            InvokedItem = invokedItem ?? throw new ArgumentNullException(nameof(invokedItem));
+        }
+
+        /// <summary>
+        /// Returns a string representation of this class.
+        /// </summary>
+        /// <returns>A string representing this class.</returns>
+        public override string ToString()
+        {
+            return $"{nameof(ListViewItemInvokedEventArgs)}: {InvokedItem}";
+        }
+
+    }
+
+    /// <summary>
     /// An extension of the <see cref="ListView"/> control which provides events and methods
     /// dealing with its Item-Containers.
     /// </summary>
     public class ExtendedListView : ListView
     {
-
-        private bool _areInitialContainersHooked;
-        private Dictionary<object, ListViewItem> _monitoredContainers;
+        
+        private HashSet<object> _unmonitoredItems = new HashSet<object>();
         
         /// <summary>
         /// Occurs when one of the items in the <see cref="ListView"/> is invoked.
         /// </summary>
-        public event EventHandler<ListViewItem> ItemInvoked;
+        public event EventHandler<ListViewItemInvokedEventArgs> ItemInvoked;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ExtendedListView"/> class.
@@ -32,7 +61,48 @@ namespace Celestial.UIToolkit.Controls
         public ExtendedListView()
         {
             ItemContainerGenerator.StatusChanged += ItemContainerGenerator_StatusChanged;
-            ItemContainerGenerator.ItemsChanged += ItemContainerGenerator_ItemsChanged;
+        }
+
+        /// <summary>
+        /// Called when the <see cref="ItemsControl.Items"/> collection changes.
+        /// Attaches <see cref="ItemInvoked"/> handlers to new items.
+        /// </summary>
+        /// <param name="e">Event data about the collection change.</param>
+        protected override void OnItemsChanged(NotifyCollectionChangedEventArgs e)
+        {
+            // The goal of this class is to attach an event to an item's generated container.
+            // The ItemContainerGenerator takes some time to generate the items though.
+            // -> Store the items in a separate collection and wait for the generator to generate
+            //    the container. Once done, attach the event and forget about the item.
+            if (e.NewItems != null)
+            {
+                foreach (var newItem in e.NewItems)
+                {
+                    _unmonitoredItems.Add(newItem);
+                }
+            }
+
+            if (e.OldItems != null)
+            {
+                foreach (var oldItem in e.OldItems)
+                {
+                    // Even though we are using weak events, it doesn't hurt to remove unused
+                    // handlers manually.
+                    StopMonitoringItem(oldItem);
+                    _unmonitoredItems.Remove(oldItem);
+                }
+            }
+
+            if (e.Action == NotifyCollectionChangedAction.Reset)
+            {
+                // Reset means that the list was either cleared, or initialized with a range of items.
+                _unmonitoredItems.Clear();
+
+                foreach (var item in Items)
+                    _unmonitoredItems.Add(item);
+            }
+
+            base.OnItemsChanged(e);
         }
 
         private void ItemContainerGenerator_StatusChanged(object sender, EventArgs e)
@@ -40,90 +110,54 @@ namespace Celestial.UIToolkit.Controls
             // Once the initial item containers have been generated, attach event handlers
             // to the items.
             // This event gets called multiple times, so add a flag to only attach the handlers once.
-            if (ItemContainerGenerator.Status == GeneratorStatus.ContainersGenerated &&
-                !_areInitialContainersHooked)
+            if (ItemContainerGenerator.Status == GeneratorStatus.ContainersGenerated)
             {
-                foreach (var item in Items)
+                for (int i = _unmonitoredItems.Count - 1; i >= 0; i--)
                 {
-                    StartMonitoringItem(item);
+                    var item = _unmonitoredItems.ElementAt(i);
+                    if (StartMonitoringItem(item))
+                    {
+                        _unmonitoredItems.Remove(item);
+                    }
                 }
-                _areInitialContainersHooked = true;
             }
         }
 
-        private void ItemContainerGenerator_ItemsChanged(object sender, ItemsChangedEventArgs e)
+        private bool StartMonitoringItem(object item)
         {
-            if (e.Action == NotifyCollectionChangedAction.Add)
+            var itemContainer = (ListViewItem)ItemContainerGenerator.ContainerFromItem(item);
+            if (itemContainer != null)
             {
-
+                // We don't really know when the item is removed.
+                // -> Use WeakEvents.
+                WeakEventManager<ListViewItem, MouseButtonEventArgs>.AddHandler(
+                    itemContainer,
+                    nameof(PreviewMouseLeftButtonDown),
+                    ItemContainer_Clicked);
+                return true;
             }
-            else if (e.Action == NotifyCollectionChangedAction.Remove)
+            else
             {
-
-            }
-            else if (e.Action == NotifyCollectionChangedAction.Replace)
-            {
-
-            }
-            else if (e.Action == NotifyCollectionChangedAction.Reset)
-            {
-                // When a collection gets cleared, we don't get any information about the
-                // previous elements.
-                // We need to remove everything manually.
-                InvalidateMonitoredItemContainers();
-            }
-        }
-
-        private void StartMonitoringItem(object item)
-        {
-            if (!IsMonitoringItem(item))
-            {
-                var itemContainer = (ListViewItem)ItemContainerGenerator.ContainerFromItem(item);
-                if (itemContainer != null)
-                {
-                    itemContainer.PreviewMouseLeftButtonDown += ItemContainer_Clicked;
-                    _monitoredContainers[item] = itemContainer;
-                }
+                return false;
             }
         }
 
         private void StopMonitoringItem(object item)
         {
-            if (_monitoredContainers.TryGetValue(item, out ListViewItem itemContainer))
+            var itemContainer = (ListViewItem)ItemContainerGenerator.ContainerFromItem(item);
+            if (itemContainer != null)
             {
-                itemContainer.PreviewMouseLeftButtonDown -= ItemContainer_Clicked;
-                _monitoredContainers.Remove(item);
+                WeakEventManager<ListViewItem, MouseButtonEventArgs>.RemoveHandler(
+                    itemContainer,
+                    nameof(PreviewMouseLeftButtonDown),
+                    ItemContainer_Clicked);
             }
         }
 
-        /// <summary>
-        /// Forces the currently monitored item container elements to be invalidated.s
-        /// </summary>
-        protected void InvalidateMonitoredItemContainers()
-        {
-            // This method should be called whenever the monitored items are no longer up to date.
-            // We check which monitored container is no longer present in the ListView's items
-            // and remove handlers from that to avoid memory leaks.
-            foreach (var monitoredItem in _monitoredContainers.Keys)
-            {
-                if (!Items.Contains(monitoredItem))
-                {
-                    StopMonitoringItem(monitoredItem);
-                }
-            }
-        }
-
-        private bool IsMonitoringItem(object item)
-        {
-            // We can use Contains() since the class implements Equals()/GetHashCode()
-            // for arbitrary objects. The container part is not compared.
-            return _monitoredContainers.ContainsKey(item);
-        }
-
-        private void ItemContainer_Clicked(object sender, MouseEventArgs e)
+        private void ItemContainer_Clicked(object sender, MouseButtonEventArgs e)
         {
             var invokedContainer = (ListViewItem)sender;
-            RaiseItemInvoked(invokedContainer);
+            RaiseItemInvoked(new ListViewItemInvokedEventArgs(invokedContainer));
         }
 
         /// <summary>
@@ -131,7 +165,7 @@ namespace Celestial.UIToolkit.Controls
         /// calls the <see cref="OnItemInvoked"/> method afterwards.
         /// </summary>
         /// <param name="e">Event data for the event.</param>
-        protected void RaiseItemInvoked(ListViewItem e)
+        protected void RaiseItemInvoked(ListViewItemInvokedEventArgs e)
         {
             OnItemInvoked(e);
             ItemInvoked?.Invoke(this, e);
@@ -141,7 +175,7 @@ namespace Celestial.UIToolkit.Controls
         /// Called before the <see cref="ItemInvoked"/> event occurs.
         /// </summary>
         /// <param name="e">Event data for the event.</param>
-        protected virtual void OnItemInvoked(ListViewItem e) { }
+        protected virtual void OnItemInvoked(ListViewItemInvokedEventArgs e) { }
 
     }
 

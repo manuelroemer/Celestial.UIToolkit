@@ -77,6 +77,7 @@
     <Compile Include="Controls\NavigationView\NavigationViewDisplayMode.cs" />
     <Compile Include="Controls\NavigationView\NavigationViewDisplayModeChangedEventArgs.cs" />
     <Compile Include="Controls\NavigationView\NavigationViewItemEventArgs.cs" />
+    <Compile Include="Controls\NavigationView\NavigationViewListView.cs" />
     <Compile Include="Controls\PathIcon.cs" />
     <Compile Include="Controls\RippleOverlay.cs" />
     <Compile Include="Controls\ShadowDecorator.cs" />
