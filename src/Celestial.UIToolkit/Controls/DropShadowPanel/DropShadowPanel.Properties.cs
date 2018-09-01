@@ -22,6 +22,18 @@ namespace Celestial.UIToolkit.Controls
             DropShadowEffectPropertyKey.DependencyProperty;
 
         /// <summary>
+        /// Identifies the <see cref="RenderingBias"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty RenderingBiasProperty =
+            DependencyProperty.Register(
+                nameof(RenderingBias),
+                typeof(RenderingBias),
+                typeof(DropShadowPanel),
+                new PropertyMetadata(
+                    RenderingBias.Performance,
+                    Shadow_Changed));
+
+        /// <summary>
         /// Identifies the <see cref="ShadowColor"/> dependency property.
         /// </summary>
         public static readonly DependencyProperty ShadowColorProperty =
@@ -81,6 +93,18 @@ namespace Celestial.UIToolkit.Controls
                     Shadow_Changed));
 
         /// <summary>
+        /// Identifies the <see cref="IsShadowEnabled"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty IsShadowEnabledProperty =
+            DependencyProperty.Register(
+                nameof(IsShadowEnabled),
+                typeof(bool),
+                typeof(DropShadowPanel),
+                new PropertyMetadata(
+                    true,
+                    Shadow_Changed));
+
+        /// <summary>
         /// Gets the calculated <see cref="DropShadowEffect"/> which is applied to the
         /// panel's content.
         /// </summary>
@@ -88,6 +112,16 @@ namespace Celestial.UIToolkit.Controls
         {
             get { return (DropShadowEffect)GetValue(DropShadowEffectProperty); }
             private set { SetValue(DropShadowEffectPropertyKey, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets a <see cref="System.Windows.Media.Effects.RenderingBias"/> 
+        /// to be used with the drop shadow effect.
+        /// </summary>
+        public RenderingBias RenderingBias
+        {
+            get { return (RenderingBias)GetValue(RenderingBiasProperty); }
+            set { SetValue(RenderingBiasProperty, value); }
         }
 
         /// <summary>
@@ -133,6 +167,16 @@ namespace Celestial.UIToolkit.Controls
         {
             get { return (double)GetValue(OffsetYProperty); }
             set { SetValue(OffsetYProperty, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the drop shadow effect is enabled at the
+        /// moment.
+        /// </summary>
+        public bool IsShadowEnabled
+        {
+            get { return (bool)GetValue(IsShadowEnabledProperty); }
+            set { SetValue(IsShadowEnabledProperty, value); }
         }
 
     }

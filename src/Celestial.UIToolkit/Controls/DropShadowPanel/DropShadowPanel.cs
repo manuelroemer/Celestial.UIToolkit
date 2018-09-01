@@ -1,19 +1,17 @@
-﻿using Celestial.UIToolkit.Theming;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Media.Effects;
 using static System.Math;
 
 namespace Celestial.UIToolkit.Controls
 {
 
+    /// <summary>
+    /// A control which adds a drop shadow effect to its content.
+    /// This control uses the standard WPF 
+    /// <see cref="System.Windows.Media.Effects.DropShadowEffect"/>,
+    /// but simplifies its usage via more intuitive properties.
+    /// </summary>
     public partial class DropShadowPanel : ContentControl
     {
 
@@ -30,11 +28,16 @@ namespace Celestial.UIToolkit.Controls
             DefaultStyleKeyProperty.OverrideMetadata(
                 typeof(DropShadowPanel), new FrameworkPropertyMetadata(typeof(DropShadowPanel)));
         }
-
-        public override void OnApplyTemplate()
+        
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DropShadowPanel"/>.
+        /// </summary>
+        public DropShadowPanel()
         {
-            UpdateCurrentDropShadowEffect();
-            base.OnApplyTemplate();
+            Loaded += (sender, e) =>
+            {
+                UpdateCurrentDropShadowEffect();
+            };
         }
 
         private static void Shadow_Changed(
@@ -73,11 +76,19 @@ namespace Celestial.UIToolkit.Controls
         /// </remarks>
         protected virtual DropShadowEffect CalculateDropShadowEffect()
         {
+            if (!IsShadowEnabled)
+            {
+                // No need to take up resources when we don't need them.
+                _currentEffect = null;
+                return null;
+            }
+            
             if (_currentEffect == null)
             {
                 _currentEffect = new DropShadowEffect();
             }
 
+            SetRenderingBias();
             SetColor();
             SetOpacity();
             SetBlurRadius();
@@ -85,6 +96,11 @@ namespace Celestial.UIToolkit.Controls
             SetShadowDepth();
             
             return _currentEffect;
+        }
+
+        private void SetRenderingBias()
+        {
+            _currentEffect.RenderingBias = RenderingBias;
         }
 
         private void SetColor()
@@ -104,7 +120,7 @@ namespace Celestial.UIToolkit.Controls
 
         private void SetDirection()
         {
-            double radians = Atan2(OffsetY, OffsetX);
+            double radians = Atan2(-OffsetY, OffsetX);
             double degrees = radians * (180 / PI);
             _currentEffect.Direction = 360 - degrees;
         }
@@ -112,6 +128,17 @@ namespace Celestial.UIToolkit.Controls
         private void SetShadowDepth()
         {
             _currentEffect.ShadowDepth = Offset.Length;
+        }
+
+        /// <summary>
+        /// Returns a string representation of the panel and its shadow properties.
+        /// </summary>
+        /// <returns>A string representing the panel.</returns>
+        public override string ToString()
+        {
+            return $"{nameof(DropShadowPanel)}: " +
+                   $"{nameof(Offset)}: {Offset}, " +
+                   $"{nameof(BlurRadius)}: {BlurRadius}";
         }
 
     }
