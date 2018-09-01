@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace Celestial.UIToolkit.Controls
 {
-    
+
     public partial class NavigationView
     {
 
@@ -46,7 +42,7 @@ namespace Celestial.UIToolkit.Controls
                 typeof(NavigationView),
                 new PropertyMetadata(
                     DefaultCompactModeThresholdWidth,
-                    ThresholdWidth_Changed));
+                    (d, e) => ((NavigationView)d).AdaptiveLayoutProperty_Changed(d, e)));
 
         /// <summary>
         /// Identifies the <see cref="ExpandedModeThresholdWidth"/> dependency property.
@@ -58,7 +54,7 @@ namespace Celestial.UIToolkit.Controls
                 typeof(NavigationView),
                 new PropertyMetadata(
                     DefaultExpandedModeThresholdWidth,
-                    ThresholdWidth_Changed));
+                    (d, e) => ((NavigationView)d).AdaptiveLayoutProperty_Changed(d, e)));
 
         /// <summary>
         /// Gets the current display mode of the <see cref="NavigationView"/>.
@@ -89,18 +85,6 @@ namespace Celestial.UIToolkit.Controls
         {
             get { return (double)GetValue(ExpandedModeThresholdWidthProperty); }
             set { SetValue(ExpandedModeThresholdWidthProperty, value); }
-        }
-
-        private static void DisplayModeProperty_Changed(
-            DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var self = (NavigationView)d;
-
-            self.EnterCurrentDisplayModeVisualState();
-            var eventData = new NavigationViewDisplayModeChangedEventArgs(
-                (NavigationViewDisplayMode)e.OldValue,
-                (NavigationViewDisplayMode)e.NewValue);
-            self.RaiseDisplayModeChanged(eventData);
         }
 
         private void RaiseDisplayModeChanged(NavigationViewDisplayModeChangedEventArgs e)

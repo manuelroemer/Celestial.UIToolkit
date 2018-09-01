@@ -212,48 +212,6 @@ namespace Celestial.UIToolkit.Controls
             }   
         }
         
-        private static void MenuItemsSource_Changed(
-            DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var self = (NavigationView)d;
-            self.MenuItems.ItemsSource = e.NewValue;
-        }
-
-        private void MenuItems_Changed(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            if (e.Action == NotifyCollectionChangedAction.Add)
-            {
-                foreach (var newItem in e.NewItems)
-                    AddLogicalChild(newItem);
-            }
-            else if (e.Action == NotifyCollectionChangedAction.Remove ||
-                     e.Action == NotifyCollectionChangedAction.Reset)
-            {
-                foreach (var oldItem in e.OldItems)
-                    RemoveLogicalChild(oldItem);
-            }
-        }
-
-        private static void SelectedItem_Changed(
-            DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var self = (NavigationView)d;
-            bool isSettingsItem = e.NewValue != null &&
-                                  e.NewValue == self.SettingsItem;
-            var itemChangedArgs = new NavigationViewItemEventArgs(e.NewValue, isSettingsItem);
-
-            self.RaiseSelectedItemChanged(itemChangedArgs);
-        }
-
-        private static object CoerceSelectedItem(DependencyObject d, object newSelectedItem)
-        {
-            var self = (NavigationView)d;
-            bool acceptsNewItem = newSelectedItem == null ||
-                                  self.MenuItems.Contains(newSelectedItem) ||
-                                  newSelectedItem == self.SettingsItem;
-            return acceptsNewItem ? newSelectedItem : null;
-        }
-        
         /// <summary>
         /// Raises the <see cref="SelectedItemChanged"/> event and
         /// calls the <see cref="OnSelectedItemChanged"/> method afterwards.

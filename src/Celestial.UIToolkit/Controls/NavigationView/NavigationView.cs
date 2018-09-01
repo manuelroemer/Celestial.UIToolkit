@@ -1,6 +1,7 @@
 ﻿using Celestial.UIToolkit.Extensions;
 using System;
 using System.Collections;
+using System.Collections.Specialized;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -77,38 +78,9 @@ namespace Celestial.UIToolkit.Controls
         /// </summary>
         public NavigationView()
         {
-            SizeChanged += NavigationView_SizeChanged;
+            SizeChanged += AdaptiveLayoutProperty_Changed;
             PreviewMouseLeftButtonDown += NavigationView_MouseDown;
             PreviewMouseRightButtonDown += NavigationView_MouseDown;
-        }
-
-        private void NavigationView_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            // A size change might update the DisplayMode, depending on the thresholds.
-            UpdateAdaptiveProperties();
-        }
-
-        private void NavigationView_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            ClosePaneOnOutsideClick(e);
-        }
-
-        private void ClosePaneOnOutsideClick(MouseButtonEventArgs e)
-        {
-            // If the user clicks outside of the pane and the pane is currently in an "Overlay"
-            // mode, it will be closed.
-            if (IsInOverlayMode)
-            {
-                if (e.OriginalSource is DependencyObject originalSource)
-                {
-                    // Not clicking on the pane/floating pane buttons == clicking on the content.
-                    if (!originalSource.HasVisualAncestor(_paneContentContainer) &&
-                        !originalSource.HasVisualAncestor(_paneButtonContainer))
-                    {
-                        IsPaneOpen = false;
-                    }
-                }
-            }
         }
 
         /// <summary>
@@ -124,32 +96,21 @@ namespace Celestial.UIToolkit.Controls
             _paneButtonContainer = GetTemplateChild(PaneButtonContainerPart) as UIElement;
             SettingsItem = GetTemplateChild(SettingsItemPart) as NavigationViewItem;
 
-            InitializeBackButton();
-            InitializeToggleButton();
+            HookPaneButtonEvents();
         }
 
-        private void InitializeBackButton()
+        private void HookPaneButtonEvents()
         {
             if (_backButton != null)
-            {
                 _backButton.Click += BackButton_Click;
-            }
+
+            if (_toggleButton != null)
+                _toggleButton.Click += ToggleButton_Click;
         }
 
-        private void InitializeToggleButton()
-        {
-            if (_toggleButton != null)
-            {
-                _toggleButton.Click += ToggleButton_Click;
-            }
-        }
-        
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            if (IsBackButtonEnabled)
-            {
-                RaiseBackRequested();
-            }
+            RaiseBackRequested();
         }
 
         private void ToggleButton_Click(object sender, RoutedEventArgs e)
@@ -157,11 +118,11 @@ namespace Celestial.UIToolkit.Controls
             IsPaneOpen = !IsPaneOpen;
         }
         
-        private static void ThresholdWidth_Changed(
-            DependencyObject d, DependencyPropertyChangedEventArgs e)
+        private void AdaptiveLayoutProperty_Changed(object sender, object e)
         {
-            var self = (NavigationView)d;
-            self.UpdateAdaptiveProperties();
+            // Called when something size-related changed.
+            // When this happens, we might have to update some adaptive properties.
+            UpdateAdaptiveProperties();
         }
 
         /// <summary>
@@ -189,6 +150,84 @@ namespace Celestial.UIToolkit.Controls
             }
         }
 
+        private void NavigationView_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            ClosePaneOnOutsideClick(e.OriginalSource as DependencyObject);
+        }
+
+        /// <summary>
+        /// Closes the pane if it is in the "Overlay" mode and the user clicked outside of it.
+        /// </summary>
+        /// <param name="clickedElement">The element that was clicked.</param>
+        private void ClosePaneOnOutsideClick(DependencyObject clickedElement)
+        {
+            // If the user clicks outside of the pane and the pane is currently in an "Overlay"
+            // mode, it will be closed.
+            if (clickedElement != null && IsInOverlayMode)
+            {
+                // Not clicking on the pane/floating pane buttons == clicking on the content.
+                if (!clickedElement.HasVisualAncestor(_paneContentContainer) &&
+                    !clickedElement.HasVisualAncestor(_paneButtonContainer))
+                {
+                    IsPaneOpen = false;
+                }
+            }
+        }
+
+        private static void DisplayModeProperty_Changed(
+            DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var self = (NavigationView)d;
+
+            self.EnterCurrentDisplayModeVisualState();
+            var eventData = new NavigationViewDisplayModeChangedEventArgs(
+                (NavigationViewDisplayMode)e.OldValue,
+                (NavigationViewDisplayMode)e.NewValue);
+            self.RaiseDisplayModeChanged(eventData);
+        }
+        
+        private static void MenuItemsSource_Changed(
+            DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var self = (NavigationView)d;
+            self.MenuItems.ItemsSource = e.NewValue;
+        }
+
+        private void MenuItems_Changed(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            if (e.Action == NotifyCollectionChangedAction.Add)
+            {
+                foreach (var newItem in e.NewItems)
+                    AddLogicalChild(newItem);
+            }
+            else if (e.Action == NotifyCollectionChangedAction.Remove ||
+                     e.Action == NotifyCollectionChangedAction.Reset)
+            {
+                foreach (var oldItem in e.OldItems)
+                    RemoveLogicalChild(oldItem);
+            }
+        }
+
+        private static void SelectedItem_Changed(
+            DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var self = (NavigationView)d;
+            bool isSettingsItem = e.NewValue != null &&
+                                  e.NewValue == self.SettingsItem;
+            var itemChangedArgs = new NavigationViewItemEventArgs(e.NewValue, isSettingsItem);
+
+            self.RaiseSelectedItemChanged(itemChangedArgs);
+        }
+
+        private static object CoerceSelectedItem(DependencyObject d, object newSelectedItem)
+        {
+            var self = (NavigationView)d;
+            bool acceptsNewItem = newSelectedItem == null ||
+                                  self.MenuItems.Contains(newSelectedItem) ||
+                                  newSelectedItem == self.SettingsItem;
+            return acceptsNewItem ? newSelectedItem : null;
+        }
+        
     }
 
 }
