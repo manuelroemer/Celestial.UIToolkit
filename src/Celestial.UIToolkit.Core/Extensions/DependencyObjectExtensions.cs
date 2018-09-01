@@ -24,11 +24,13 @@ namespace Celestial.UIToolkit.Extensions
         public static bool HasVisualAncestor(
             this DependencyObject depObj, DependencyObject ancestor)
         {
-            if (ancestor == null) throw new ArgumentNullException(nameof(ancestor));
-            if (depObj == null) return false;
+            if (depObj == null) throw new ArgumentNullException(nameof(depObj));
+            if (ancestor == null) return false;
             var currentAncestor = VisualTreeHelper.GetParent(depObj);
 
-            if (ancestor == currentAncestor)
+            if (currentAncestor == null)
+                return false;
+            else if (currentAncestor == ancestor)
                 return true;
             else
                 return currentAncestor.HasVisualAncestor(ancestor);

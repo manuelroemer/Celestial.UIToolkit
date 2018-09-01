@@ -161,11 +161,12 @@ namespace Celestial.UIToolkit.Controls
         /// <param name="clickedElement">The element that was clicked.</param>
         private void ClosePaneOnOutsideClick(DependencyObject clickedElement)
         {
-            // If the user clicks outside of the pane and the pane is currently in an "Overlay"
-            // mode, it will be closed.
             if (clickedElement != null && IsInOverlayMode)
             {
-                // Not clicking on the pane/floating pane buttons == clicking on the content.
+                // We need to close the pane if the user clicks outside of the pane.
+                // -> Check if the clicked element is inside the pane. If not, close the pane.
+                // Also include the container of the back/toggle button, since they might be
+                // floating over the pane and thus aren't direct children of it.
                 if (!clickedElement.HasVisualAncestor(_paneContentContainer) &&
                     !clickedElement.HasVisualAncestor(_paneButtonContainer))
                 {
@@ -178,7 +179,7 @@ namespace Celestial.UIToolkit.Controls
             DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var self = (NavigationView)d;
-
+            
             self.EnterCurrentDisplayModeVisualState();
             var eventData = new NavigationViewDisplayModeChangedEventArgs(
                 (NavigationViewDisplayMode)e.OldValue,
@@ -195,13 +196,14 @@ namespace Celestial.UIToolkit.Controls
 
         private void MenuItems_Changed(object sender, NotifyCollectionChangedEventArgs e)
         {
-            if (e.Action == NotifyCollectionChangedAction.Add)
+            // Keep the logical children tree in sync.
+            if (e.NewItems != null)
             {
                 foreach (var newItem in e.NewItems)
                     AddLogicalChild(newItem);
             }
-            else if (e.Action == NotifyCollectionChangedAction.Remove ||
-                     e.Action == NotifyCollectionChangedAction.Reset)
+
+            if (e.OldItems != null)
             {
                 foreach (var oldItem in e.OldItems)
                     RemoveLogicalChild(oldItem);
@@ -211,6 +213,7 @@ namespace Celestial.UIToolkit.Controls
         private static void SelectedItem_Changed(
             DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
+            // Notify any listeners when the selected item changed.
             var self = (NavigationView)d;
             bool isSettingsItem = e.NewValue != null &&
                                   e.NewValue == self.SettingsItem;
@@ -221,6 +224,10 @@ namespace Celestial.UIToolkit.Controls
 
         private static object CoerceSelectedItem(DependencyObject d, object newSelectedItem)
         {
+            // Mimicing the ListView:
+            // If SelectedItem gets set to something which isn't part of the NavigationView
+            // (-> not added to MenuItems and not SettingsItem),
+            // change it to null.
             var self = (NavigationView)d;
             bool acceptsNewItem = newSelectedItem == null ||
                                   self.MenuItems.Contains(newSelectedItem) ||
