@@ -62,6 +62,7 @@
       <DependentUpon>Card.GeneratedProperties.tt</DependentUpon>
     </Compile>
     <Compile Include="Controls\ClippingBorder.cs" />
+    <Compile Include="Controls\ExtendedListView.cs" />
     <Compile Include="Controls\IconElement.cs" />
     <Compile Include="Controls\NavigationView\Items\NavigationViewItem.cs" />
     <Compile Include="Controls\NavigationView\NavigationView.cs" />

@@ -1,5 +1,4 @@
 ﻿using Celestial.UIToolkit.Extensions;
-using System;
 using System.Collections;
 using System.Collections.Specialized;
 using System.Windows;
@@ -234,7 +233,15 @@ namespace Celestial.UIToolkit.Controls
                                   newSelectedItem == self.SettingsItem;
             return acceptsNewItem ? newSelectedItem : null;
         }
-        
+     
+        private DependencyObject ContainerFromItem(object item)
+        {
+            var listView = new ListView();
+            var containerGenerator = listView.ItemContainerGenerator;
+
+            return containerGenerator.ContainerFromItem(item);
+        }
+
     }
 
 }

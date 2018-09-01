@@ -16,6 +16,13 @@ namespace Celestial.UIToolkit.Controls
         /// </summary>
         public event EventHandler<NavigationViewItemEventArgs> SelectedItemChanged;
 
+        /// <summary>
+        /// Occurs when one of the <see cref="NavigationView"/>'s menu items gets clicked.
+        /// In comparison to the <see cref="SelectedItemChanged"/> event, this one gets called
+        /// even when an already selected item is pressed.
+        /// </summary>
+        public event EventHandler<NavigationViewItemEventArgs> ItemInvoked;
+
         private ItemsSourceCollection _menuItems;
 
         private static readonly DependencyPropertyKey SettingsItemPropertyKey =
@@ -228,6 +235,23 @@ namespace Celestial.UIToolkit.Controls
         /// </summary>
         /// <param name="e">Event data for the event.</param>
         protected virtual void OnSelectedItemChanged(NavigationViewItemEventArgs e) { }
+
+        /// <summary>
+        /// Raises the <see cref="ItemInvoked"/> event and
+        /// calls the <see cref="OnItemInvoked"/> method afterwards.
+        /// </summary>
+        /// <param name="e">Event data for the event.</param>
+        protected void RaiseItemInvoked(NavigationViewItemEventArgs e)
+        {
+            OnItemInvoked(e);
+            ItemInvoked?.Invoke(this, e);
+        }
+
+        /// <summary>
+        /// Called before the <see cref="ItemInvoked"/> event occurs.
+        /// </summary>
+        /// <param name="e">Event data for the event.</param>
+        protected virtual void OnItemInvoked(NavigationViewItemEventArgs e) { }
 
     }
 
