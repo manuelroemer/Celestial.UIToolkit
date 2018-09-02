@@ -26,39 +26,44 @@ namespace ControlGallery
         {
             MessageBox.Show("Back requested!");
         }
-        
-        //private void ChangeMenuItemButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    NavView.MenuItems.Add("New Item. It's a string!");
-        //}
 
-        //private void ClearMenuItemsButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    NavView.MenuItems.Clear();
-        //}
+        private void ChangeMenuItemButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavView.MenuItems.Add("New Item. It's a string!");
+        }
 
-        //private void ChangeMenuItemsSource_Click(object sender, RoutedEventArgs e)
-        //{
-        //    var controlSource = new ObservableCollection<object>()
-        //    {
-        //    };
+        private void ClearMenuItemsButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavView.MenuItems.Clear();
+        }
 
-        //    NavView.MenuItemsSource = controlSource;
+        private void ChangeMenuItemsSource_Click(object sender, RoutedEventArgs e)
+        {
+            var controlSource = new ObservableCollection<object>()
+            {
+            };
 
-        //    controlSource.Add(new Label() { Content = "Hello" });
-        //    controlSource.Add(new Button() { Content = "From" });
-        //    controlSource.Add(new TextBox() { Text = "The" });
-        //    controlSource.Add("ItemsSource");
-        //}
+            NavView.MenuItemsSource = controlSource;
 
-        //private void ClearMenuItemsSource_Click(object sender, RoutedEventArgs e)
-        //{
-        //    NavView.MenuItemsSource = null;
-        //}
+            controlSource.Add(new Label() { Content = "Hello" });
+            controlSource.Add(new Button() { Content = "From" });
+            controlSource.Add(new TextBox() { Text = "The" });
+            controlSource.Add("ItemsSource");
+        }
+
+        private void ClearMenuItemsSource_Click(object sender, RoutedEventArgs e)
+        {
+            NavView.MenuItemsSource = null;
+        }
 
         private void NavView_ItemInvoked(object sender, NavigationViewItemEventArgs e)
         {
             Debug.WriteLine(e.ToString());
+        }
+
+        private void NavView_ItemInvoked(object sender, object e)
+        {
+
         }
     }
 

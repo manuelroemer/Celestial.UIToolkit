@@ -10,44 +10,7 @@
         Title="Aurora UI Toolkit - Control Gallery"
         Width="1000" Height="600">
 
-    <StackPanel>
-        <StackPanel.Resources>
-            <Style x:Key="ShadowButton" TargetType="Button">
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="Button">
-                            <Border Background="LightGray" Width="300" Height="300">
-                                <c:ThemeShadowHost HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <Border Background="White" Width="250" Height="250">
-                                        <ContentPresenter />
-                                    </Border>
-                                </c:ThemeShadowHost>
-                            </Border>
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-        </StackPanel.Resources>
-
-        <Border c:ThemeShadow.Elevation="20">
-            <c:ThemeShadow.Shadow>
-                <c:ThemeShadow />
-            </c:ThemeShadow.Shadow>
-            <Button Style="{StaticResource ShadowButton}" c:ThemeShadow.Elevation="2">
-                <c:ThemeShadow.Shadow>
-                    <c:ThemeShadow />
-                </c:ThemeShadow.Shadow>
-                <Border Width="100" Height="100" Background="Red" HorizontalAlignment="Center" VerticalAlignment="Center"
-                        c:ThemeShadow.Elevation="5">
-                    <c:ThemeShadow.Shadow>
-                        <c:ThemeShadow />
-                    </c:ThemeShadow.Shadow>
-                </Border>
-            </Button>
-        </Border>
-    </StackPanel>
-    
-    <!--<c:NavigationView x:Name="NavView"
+    <c:NavigationView x:Name="NavView"
                       PaneHeader="Pane Title"
                       Header="Header!"
                       IsSettingsVisible="True"
@@ -58,7 +21,10 @@
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Hello from the Footer!</TextBlock>
         </c:NavigationView.PaneFooter>
         <c:NavigationView.MenuItems>
-            <c:NavigationViewItem Content="Item 1">
+            <c:NavigationViewItem Content="Item 1" c:ThemeShadow.Elevation="10">
+                <c:ThemeShadow.Shadow>
+                    <c:ThemeShadow />
+                </c:ThemeShadow.Shadow>
                 <c:NavigationViewItem.Icon>
                     <c:PathIcon Data="{StaticResource HalfArrowRight}" />
                 </c:NavigationViewItem.Icon>
@@ -121,7 +87,7 @@
                 </Border>
             </StackPanel>
         </ScrollViewer>
-    </c:NavigationView>-->
+    </c:NavigationView>
 
     <!--<TabControl>
         <TabItem Header="Colors">
