@@ -1,21 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Media;
-using System.Windows.Media.Effects;
-using System.Windows.Controls.Primitives;
+﻿using System.Windows;
 
 namespace Celestial.UIToolkit.Controls
 {
 
     /// <summary>
-    /// Represents a shadow which can be attached to controls.
-    /// This special shadow aids in creating a unified shadow experience across the whole 
-    /// application by providing an elevation API to create layering and depth effects.
+    /// A special type of shadow which aids in creating a unified shadow experience across the
+    /// whole application by providing an elevation API to create layering and depth effects.
+    /// 
+    /// It can be attached to any type of controls via the <see cref="ShadowProperty"/>.
+    /// For the shadow to be displayed, control template authors are required to display the
+    /// <see cref="ThemeShadow"/> provided via the attached <see cref="ShadowProperty"/>.
+    /// The easiest way to do this is by simply adding a <see cref="ThemeShadowHost"/> to the 
+    /// control template.
     /// </summary>
     public partial class ThemeShadow : DependencyObject
     {

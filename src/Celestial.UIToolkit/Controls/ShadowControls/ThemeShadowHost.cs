@@ -6,8 +6,8 @@ namespace Celestial.UIToolkit.Controls
 
     /// <summary>
     /// A control which is used in conjunction with the <see cref="ThemeShadow"/>.
-    /// When added to a control's template, a <see cref="ThemeShadow"/> can use this host
-    /// to display itself.
+    /// When added to a control's template, it displays a <see cref="Controls.ThemeShadow"/>
+    /// which is attached to an element via the <see cref="ThemeShadow.ShadowProperty"/>.
     /// </summary>
     public class ThemeShadowHost : ContentControl
     {
@@ -41,6 +41,17 @@ namespace Celestial.UIToolkit.Controls
         /// Initializes a new instance of the <see cref="ThemeShadowHost"/> class.
         /// </summary>
         public ThemeShadowHost() { }
+
+        /// <summary>
+        /// Returns a string representation of this <see cref="ThemeShadowHost"/>.
+        /// </summary>
+        /// <returns>A string representing this <see cref="ThemeShadowHost"/>.</returns>
+        public override string ToString()
+        {
+            return $"{nameof(ThemeShadowHost)}: " +
+                   $"{nameof(ThemeShadow)}: {ThemeShadow}, " +
+                   $"{nameof(Content)}: {Content}";
+        }
 
     }
 
