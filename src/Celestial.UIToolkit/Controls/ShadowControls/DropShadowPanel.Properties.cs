@@ -153,6 +153,8 @@ namespace Celestial.UIToolkit.Controls
 
         /// <summary>
         /// Gets or sets the X-Offset of the drop shadow.
+        /// An offset of (0;0) means that the cast shadow is directly under
+        /// the element which casts it.
         /// </summary>
         public double OffsetX
         {
@@ -162,6 +164,8 @@ namespace Celestial.UIToolkit.Controls
 
         /// <summary>
         /// Gets or sets the Y-Offset of the drop shadow.
+        /// An offset of (0;0) means that the cast shadow is directly under
+        /// the element which casts it.
         /// </summary>
         public double OffsetY
         {
