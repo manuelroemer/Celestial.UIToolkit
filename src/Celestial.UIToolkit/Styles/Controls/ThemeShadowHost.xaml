@@ -7,11 +7,14 @@
             <!-- Without this disabled shadow, the DropShadowPanel would always displays its default
                  shadow if no ThemeShadow is set. -->
             <controls:ThemeShadow x:Key="NullThemeShadow" IsShadowEnabled="False" />
-        </Style.Resources>        
+        </Style.Resources>
+        
+        <Setter Property="ThemeShadowTarget" Value="{Binding RelativeSource={RelativeSource TemplatedParent}}" />
         <Setter Property="ThemeShadow" 
                 Value="{Binding Path=(controls:ThemeShadow.Shadow), 
                                 RelativeSource={RelativeSource TemplatedParent}, 
-                                TargetNullValue={StaticResource NullThemeShadow}}" />
+                                TargetNullValue={StaticResource NullThemeShadow},
+                                FallbackValue={StaticResource NullThemeShadow}}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:ThemeShadowHost">
@@ -21,11 +24,11 @@
                                               Padding="{TemplateBinding Padding}"
                                               IsShadowEnabled="{Binding ThemeShadow.IsShadowEnabled, RelativeSource={RelativeSource TemplatedParent}}"
                                               RenderingBias="{Binding ThemeShadow.RenderingBias, RelativeSource={RelativeSource TemplatedParent}}"
-                                              ShadowColor="{Binding ThemeShadow.ShadowColor, RelativeSource={RelativeSource TemplatedParent}}"
+                                              ShadowColor="{Binding ThemeShadowTarget.(controls:ThemeShadow.Shadow).ShadowColor, RelativeSource={RelativeSource TemplatedParent}}"
                                               ShadowOpacity="{Binding ThemeShadow.ShadowOpacity, RelativeSource={RelativeSource TemplatedParent}}"
-                                              BlurRadius="{Binding ThemeShadow.BlurRadius, RelativeSource={RelativeSource TemplatedParent}}"
-                                              OffsetX="{Binding ThemeShadow.OffsetX, RelativeSource={RelativeSource TemplatedParent}}"
-                                              OffsetY="{Binding ThemeShadow.OffsetY, RelativeSource={RelativeSource TemplatedParent}}">
+                                              BlurRadius="{Binding Path=ThemeShadowTarget.(controls:ThemeShadow.BlurRadius), RelativeSource={RelativeSource TemplatedParent}}"
+                                              OffsetX="{Binding Path=ThemeShadowTarget.(controls:ThemeShadow.OffsetX), RelativeSource={RelativeSource TemplatedParent}}"
+                                              OffsetY="{Binding Path=ThemeShadowTarget.(controls:ThemeShadow.OffsetY), RelativeSource={RelativeSource TemplatedParent}}">
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                     </controls:DropShadowPanel>

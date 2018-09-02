@@ -29,10 +29,22 @@
             </Style>
         </StackPanel.Resources>
 
-        <Button Style="{StaticResource ShadowButton}">
-            <Border Width="100" Height="100" Background="Red" HorizontalAlignment="Center" VerticalAlignment="Center">
-            </Border>
-        </Button>
+        <Border c:ThemeShadow.Elevation="20">
+            <c:ThemeShadow.Shadow>
+                <c:ThemeShadow />
+            </c:ThemeShadow.Shadow>
+            <Button Style="{StaticResource ShadowButton}" c:ThemeShadow.Elevation="2">
+                <c:ThemeShadow.Shadow>
+                    <c:ThemeShadow />
+                </c:ThemeShadow.Shadow>
+                <Border Width="100" Height="100" Background="Red" HorizontalAlignment="Center" VerticalAlignment="Center"
+                        c:ThemeShadow.Elevation="5">
+                    <c:ThemeShadow.Shadow>
+                        <c:ThemeShadow />
+                    </c:ThemeShadow.Shadow>
+                </Border>
+            </Button>
+        </Border>
     </StackPanel>
     
     <!--<c:NavigationView x:Name="NavView"

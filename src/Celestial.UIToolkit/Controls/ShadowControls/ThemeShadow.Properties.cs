@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Effects;
 
@@ -17,39 +18,22 @@ namespace Celestial.UIToolkit.Controls
                 "Shadow",
                 typeof(ThemeShadow),
                 typeof(ThemeShadow),
-                new PropertyMetadata(null));
+                new PropertyMetadata(
+                    null,
+                    ShadowProperty_Changed));
 
         /// <summary>
-        /// Gets the value of the <see cref="ShadowProperty"/> attached dependency property
-        /// for a given <see cref="DependencyObject"/>.
+        /// Identifies the Elevation attached dependency property.
         /// </summary>
-        /// <param name="obj">
-        /// The <see cref="DependencyObject"/> for which the local value of the
-        /// <see cref="ShadowProperty"/> attached dependency property
-        /// should be retrieved.
-        /// </param>
-        /// <returns>
-        /// The local value of the <see cref="ShadowProperty"/> attached dependency property,
-        /// which is of type <see cref="ThemeShadow"/>.
-        /// </returns>
-        public static ThemeShadow GetShadow(DependencyObject obj) =>
-            (ThemeShadow)obj.GetValue(ShadowProperty);
-
-        /// <summary>
-        /// Sets the value of the <see cref="ShadowProperty"/> attached dependency property
-        /// for a given <see cref="DependencyObject"/>.
-        /// </summary>
-        /// <param name="obj">
-        /// The <see cref="DependencyObject"/> for which the local value of the
-        /// <see cref="ShadowProperty"/> attached dependency property
-        /// should be set.
-        /// </param>
-        /// <param name="value">
-        /// The new value for the dependency property.
-        /// </param>
-        public static void SetShadow(DependencyObject obj, ThemeShadow value) =>
-            obj.SetValue(ShadowProperty, value);
-
+        public static readonly DependencyProperty ElevationProperty =
+            DependencyProperty.RegisterAttached(
+                "Elevation",
+                typeof(double),
+                typeof(ThemeShadow),
+                new PropertyMetadata(
+                    0d,
+                    ShadowProperty_Changed));
+        
         /// <summary>
         /// Identifies the <see cref="RenderingBias"/> dependency property.
         /// </summary>
@@ -94,69 +78,53 @@ namespace Celestial.UIToolkit.Controls
                 new PropertyMetadata(
                     true));
 
-        /// <summary>
-        /// Identifies the <see cref="Elevation"/> dependency property.
-        /// </summary>
-        public static readonly DependencyProperty ElevationProperty =
-            DependencyProperty.Register(
-                nameof(Elevation),
-                typeof(double),
-                typeof(ThemeShadow),
-                new PropertyMetadata(
-                    1d,
-                    ShadowElevation_Changed));
 
-        /// <summary>
-        /// Identifies the <see cref="ElevationShadowLengthMultiplier"/> dependency property.
-        /// </summary>
-        public static readonly DependencyProperty ElevationShadowLengthMultiplierProperty =
-            DependencyProperty.Register(
-                nameof(ElevationShadowLengthMultiplier),
-                typeof(double),
-                typeof(ThemeShadow),
-                new PropertyMetadata(
-                    4d,
-                    ShadowElevation_Changed));
 
         private static readonly DependencyPropertyKey BlurRadiusPropertyKey =
-            DependencyProperty.RegisterReadOnly(
-                nameof(BlurRadius),
+            DependencyProperty.RegisterAttachedReadOnly(
+                "BlurRadius",
                 typeof(double),
                 typeof(ThemeShadow),
                 new PropertyMetadata(0d));
 
         /// <summary>
-        /// Identifies the <see cref="BlurRadius"/> dependency property.
+        /// Identifies the BlurRadius attached dependency property.
         /// </summary>
         public static readonly DependencyProperty BlurRadiusProperty =
             BlurRadiusPropertyKey.DependencyProperty;
 
+
+
         private static readonly DependencyPropertyKey OffsetXPropertyKey =
-            DependencyProperty.RegisterReadOnly(
-                nameof(OffsetX),
+            DependencyProperty.RegisterAttachedReadOnly(
+                "OffsetX",
                 typeof(double),
                 typeof(ThemeShadow),
                 new PropertyMetadata(0d));
 
         /// <summary>
-        /// Identifies the <see cref="OffsetX"/> dependency property.
+        /// Identifies the OffsetX attached dependency property.
         /// </summary>
         public static readonly DependencyProperty OffsetXProperty =
             OffsetXPropertyKey.DependencyProperty;
 
+
+
         private static readonly DependencyPropertyKey OffsetYPropertyKey =
-            DependencyProperty.RegisterReadOnly(
-                nameof(OffsetY),
+            DependencyProperty.RegisterAttachedReadOnly(
+                "OffsetY",
                 typeof(double),
                 typeof(ThemeShadow),
                 new PropertyMetadata(0d));
 
         /// <summary>
-        /// Identifies the <see cref="OffsetY"/> dependency property.
+        /// Identifies the OffsetY attached dependency property.
         /// </summary>
         public static readonly DependencyProperty OffsetYProperty =
             OffsetYPropertyKey.DependencyProperty;
 
+
+        
         /// <summary>
         /// Gets or sets a <see cref="System.Windows.Media.Effects.RenderingBias"/> 
         /// to be used with the drop shadow effect.
@@ -194,58 +162,135 @@ namespace Celestial.UIToolkit.Controls
             get { return (bool)GetValue(IsShadowEnabledProperty); }
             set { SetValue(IsShadowEnabledProperty, value); }
         }
+        
+
 
         /// <summary>
-        /// Gets or sets the current elevation of the shadow.
+        /// Gets the value of the <see cref="ShadowProperty"/> attached dependency property
+        /// for a given <see cref="DependencyObject"/>.
         /// </summary>
-        public double Elevation
-        {
-            get { return (double)GetValue(ElevationProperty); }
-            set { SetValue(ElevationProperty, value); }
-        }
+        /// <param name="obj">
+        /// The <see cref="DependencyObject"/> for which the local value of the
+        /// <see cref="ShadowProperty"/> attached dependency property
+        /// should be retrieved.
+        /// </param>
+        /// <returns>
+        /// The local value of the <see cref="ShadowProperty"/> attached dependency property,
+        /// which is of type <see cref="ThemeShadow"/>.
+        /// </returns>
+        public static ThemeShadow GetShadow(DependencyObject obj) =>
+            (ThemeShadow)obj.GetValue(ShadowProperty);
 
         /// <summary>
-        /// Gets or sets a value with which the <see cref="Elevation"/> is multiplied, before the
-        /// shadow's final length is calculated.
+        /// Sets the value of the <see cref="ShadowProperty"/> attached dependency property
+        /// for a given <see cref="DependencyObject"/>.
         /// </summary>
-        public double ElevationShadowLengthMultiplier
-        {
-            get { return (double)GetValue(ElevationShadowLengthMultiplierProperty); }
-            set { SetValue(ElevationShadowLengthMultiplierProperty, value); }
-        }
+        /// <param name="obj">
+        /// The <see cref="DependencyObject"/> for which the local value of the
+        /// <see cref="ShadowProperty"/> attached dependency property
+        /// should be set.
+        /// </param>
+        /// <param name="value">
+        /// The new value for the dependency property.
+        /// </param>
+        public static void SetShadow(DependencyObject obj, ThemeShadow value) =>
+            obj.SetValue(ShadowProperty, value);
+
+
 
         /// <summary>
-        /// Gets a drop shadow's blur radius.
-        /// This blur radius is the result of a translation of this <see cref="ThemeShadow"/> to
-        /// a common drop shadow.
+        /// Gets the value of the <see cref="ElevationProperty"/> attached dependency property
+        /// for a given <see cref="DependencyObject"/>.
         /// </summary>
-        public double BlurRadius
-        {
-            get { return (double)GetValue(BlurRadiusProperty); }
-            private set { SetValue(BlurRadiusPropertyKey, value); }
-        }
+        /// <param name="obj">
+        /// The <see cref="DependencyObject"/> for which the local value of the
+        /// <see cref="ElevationProperty"/> attached dependency property
+        /// should be retrieved.
+        /// </param>
+        /// <returns>
+        /// The local value of the <see cref="ElevationProperty"/> attached dependency property,
+        /// which is of type <see cref="double"/>.
+        /// </returns>
+        public static double GetElevation(DependencyObject obj) =>
+            (double)obj.GetValue(ElevationProperty);
 
         /// <summary>
-        /// Gets or sets a drop shadow's X-Offset.
-        /// This value is the result of a translation of this <see cref="ThemeShadow"/> to
-        /// a common drop shadow.
+        /// Sets the value of the <see cref="ElevationProperty"/> attached dependency property
+        /// for a given <see cref="DependencyObject"/>.
         /// </summary>
-        public double OffsetX
-        {
-            get { return (double)GetValue(OffsetXProperty); }
-            private set { SetValue(OffsetXPropertyKey, value); }
-        }
+        /// <param name="obj">
+        /// The <see cref="DependencyObject"/> for which the local value of the
+        /// <see cref="ElevationProperty"/> attached dependency property
+        /// should be set.
+        /// </param>
+        /// <param name="value">
+        /// The new value for the dependency property.
+        /// </param>
+        public static void SetElevation(DependencyObject obj, double value) =>
+            obj.SetValue(ElevationProperty, value);
+
+
 
         /// <summary>
-        /// Gets or sets a drop shadow's Y-Offset.
-        /// This value is the result of a translation of this <see cref="ThemeShadow"/> to
-        /// a common drop shadow.
+        /// Gets the value of the <see cref="BlurRadiusProperty"/> attached dependency property
+        /// for a given <see cref="DependencyObject"/>.
         /// </summary>
-        public double OffsetY
-        {
-            get { return (double)GetValue(OffsetYProperty); }
-            private set { SetValue(OffsetYPropertyKey, value); }
-        }
+        /// <param name="obj">
+        /// The <see cref="DependencyObject"/> for which the local value of the
+        /// <see cref="BlurRadiusProperty"/> attached dependency property
+        /// should be retrieved.
+        /// </param>
+        /// <returns>
+        /// The local value of the <see cref="BlurRadiusProperty"/> attached dependency property,
+        /// which is of type <see cref="double"/>.
+        /// </returns>
+        public static double GetBlurRadius(DependencyObject obj) =>
+            (double)obj.GetValue(BlurRadiusProperty);
+
+        private static void SetBlurRadius(DependencyObject obj, double value) =>
+            obj.SetValue(BlurRadiusPropertyKey, value);
+
+
+
+        /// <summary>
+        /// Gets the value of the <see cref="OffsetXProperty"/> attached dependency property
+        /// for a given <see cref="DependencyObject"/>.
+        /// </summary>
+        /// <param name="obj">
+        /// The <see cref="DependencyObject"/> for which the local value of the
+        /// <see cref="OffsetXProperty"/> attached dependency property
+        /// should be retrieved.
+        /// </param>
+        /// <returns>
+        /// The local value of the <see cref="OffsetXProperty"/> attached dependency property,
+        /// which is of type <see cref="double"/>.
+        /// </returns>
+        public static double GetOffsetX(DependencyObject obj) =>
+            (double)obj.GetValue(OffsetXProperty);
+
+        private static void SetOffsetX(DependencyObject obj, double value) =>
+            obj.SetValue(OffsetXPropertyKey, value);
+
+
+
+        /// <summary>
+        /// Gets the value of the <see cref="OffsetYProperty"/> attached dependency property
+        /// for a given <see cref="DependencyObject"/>.
+        /// </summary>
+        /// <param name="obj">
+        /// The <see cref="DependencyObject"/> for which the local value of the
+        /// <see cref="OffsetYProperty"/> attached dependency property
+        /// should be retrieved.
+        /// </param>
+        /// <returns>
+        /// The local value of the <see cref="OffsetYProperty"/> attached dependency property,
+        /// which is of type <see cref="double"/>.
+        /// </returns>
+        public static double GetOffsetY(DependencyObject obj) =>
+            (double)obj.GetValue(OffsetYProperty);
+
+        private static void SetOffsetY(DependencyObject obj, double value) =>
+            obj.SetValue(OffsetYPropertyKey, value);
 
     }
 

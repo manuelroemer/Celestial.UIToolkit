@@ -31,6 +31,26 @@ namespace Celestial.UIToolkit.Controls
             set { SetValue(ThemeShadowProperty, value); }
         }
 
+        /// <summary>
+        /// Identifies the <see cref="ThemeShadowTarget"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty ThemeShadowTargetProperty =
+            DependencyProperty.Register(
+                nameof(ThemeShadowTarget),
+                typeof(DependencyObject),
+                typeof(ThemeShadowHost),
+                new PropertyMetadata(null));
+
+        /// <summary>
+        /// Gets or sets the element whose <see cref="ThemeShadow.ShadowProperty"/> is set.
+        /// This is the element from which the <see cref="ThemeShadow"/> property is retrieved.
+        /// </summary>
+        public DependencyObject ThemeShadowTarget
+        {
+            get { return (DependencyObject)GetValue(ThemeShadowTargetProperty); }
+            set { SetValue(ThemeShadowTargetProperty, value); }
+        }
+
         static ThemeShadowHost()
         {
             DefaultStyleKeyProperty.OverrideMetadata(
@@ -50,6 +70,7 @@ namespace Celestial.UIToolkit.Controls
         {
             return $"{nameof(ThemeShadowHost)}: " +
                    $"{nameof(ThemeShadow)}: {ThemeShadow}, " +
+                   $"{nameof(ThemeShadowTarget)}: {ThemeShadowTarget}, " +
                    $"{nameof(Content)}: {Content}";
         }
 
