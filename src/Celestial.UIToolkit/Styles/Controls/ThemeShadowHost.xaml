@@ -3,6 +3,15 @@
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
     <Style TargetType="controls:ThemeShadowHost">
+        <Style.Resources>
+            <!-- Without this disabled shadow, the DropShadowPanel would always displays its default
+                 shadow if no ThemeShadow is set. -->
+            <controls:ThemeShadow x:Key="NullThemeShadow" IsShadowEnabled="False" />
+        </Style.Resources>        
+        <Setter Property="ThemeShadow" 
+                Value="{Binding Path=(controls:ThemeShadow.Shadow), 
+                                RelativeSource={RelativeSource TemplatedParent}, 
+                                TargetNullValue={StaticResource NullThemeShadow}}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:ThemeShadowHost">

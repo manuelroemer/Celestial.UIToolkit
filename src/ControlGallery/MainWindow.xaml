@@ -17,14 +17,11 @@
                     <Setter.Value>
                         <ControlTemplate TargetType="Button">
                             <Border Background="LightGray" Width="300" Height="300">
-                                <c:DropShadowPanel x:Name="ThemeShadowHost"
-                                                   HorizontalAlignment="Center" 
-                                                   VerticalAlignment="Center" 
-                                                   BlurRadius="0">
+                                <c:ThemeShadowHost HorizontalAlignment="Center" VerticalAlignment="Center">
                                     <Border Background="White" Width="250" Height="250">
                                         <ContentPresenter />
                                     </Border>
-                                </c:DropShadowPanel>
+                                </c:ThemeShadowHost>
                             </Border>
                         </ControlTemplate>
                     </Setter.Value>
@@ -33,13 +30,8 @@
         </StackPanel.Resources>
 
         <Button Style="{StaticResource ShadowButton}">
-
-            <c:ThemeShadowHost HorizontalAlignment="Center" VerticalAlignment="Center">
-                <c:ThemeShadowHost.ThemeShadow>
-                    <c:ThemeShadow />
-                </c:ThemeShadowHost.ThemeShadow>
-                <Border Width="100" Height="100" Background="Red" HorizontalAlignment="Center" VerticalAlignment="Center" />
-            </c:ThemeShadowHost>
+            <Border Width="100" Height="100" Background="Red" HorizontalAlignment="Center" VerticalAlignment="Center">
+            </Border>
         </Button>
     </StackPanel>
     

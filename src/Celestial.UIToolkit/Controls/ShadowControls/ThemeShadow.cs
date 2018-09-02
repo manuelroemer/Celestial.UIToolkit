@@ -7,10 +7,16 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Effects;
+using System.Windows.Controls.Primitives;
 
 namespace Celestial.UIToolkit.Controls
 {
 
+    /// <summary>
+    /// Represents a shadow which can be attached to controls.
+    /// This special shadow aids in creating a unified shadow experience across the whole 
+    /// application by providing an elevation API to create layering and depth effects.
+    /// </summary>
     public partial class ThemeShadow : DependencyObject
     {
 
@@ -21,13 +27,7 @@ namespace Celestial.UIToolkit.Controls
         {
             UpdateCurrentDropShadowValues();
         }
-
-        private static void OnAttachedToElement(
-            DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-
-        }
-
+        
         private static void ShadowElevation_Changed(
             DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
@@ -69,6 +69,16 @@ namespace Celestial.UIToolkit.Controls
         {
             // The default ThemeShadow is ambient - it draws the shadow in neither direction.
             return new Vector(0d, 0d);
+        }
+
+        /// <summary>
+        /// Returns a string representation of the <see cref="ThemeShadow"/>.
+        /// </summary>
+        /// <returns>A string representing the <see cref="ThemeShadow"/>.</returns>
+        public override string ToString()
+        {
+            return $"{nameof(ThemeShadow)}: " +
+                   $"{nameof(Elevation)}: {Elevation}";
         }
 
     }

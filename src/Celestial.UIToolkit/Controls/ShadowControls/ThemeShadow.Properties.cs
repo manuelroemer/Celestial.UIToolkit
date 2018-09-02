@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Effects;
 
@@ -18,9 +17,7 @@ namespace Celestial.UIToolkit.Controls
                 "Shadow",
                 typeof(ThemeShadow),
                 typeof(ThemeShadow),
-                new PropertyMetadata(
-                    null,
-                    OnAttachedToElement));
+                new PropertyMetadata(null));
 
         /// <summary>
         /// Gets the value of the <see cref="ShadowProperty"/> attached dependency property
