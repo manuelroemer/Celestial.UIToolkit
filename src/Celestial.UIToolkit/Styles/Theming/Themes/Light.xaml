@@ -202,34 +202,34 @@
     <controls:ThemeShadow x:Key="AmbientControlThemeShadow"
                           ShadowColor="{StaticResource StandardDropShadowColor}"
                           ShadowOpacity="{StaticResource StandardDropShadowOpacity}"
-                          ElevationShadowLengthMultiplier="4"
+                          ElevationShadowLengthMultiplier="1"
                           IsShadowEnabled="{Binding Path=(theming:ShadowProperties.AreShadowsEnabled)}" />
 
     <controls:DirectionalThemeShadow x:Key="TopControlThemeShadow"
                                      ShadowColor="{StaticResource StandardDropShadowColor}"
                                      ShadowOpacity="{StaticResource StandardDropShadowOpacity}"
-                                     ElevationShadowLengthMultiplier="4"
+                                     ElevationShadowLengthMultiplier="1"
                                      IsShadowEnabled="{Binding Path=(theming:ShadowProperties.AreShadowsEnabled)}" 
                                      ShadowDirection="Top" />
 
     <controls:DirectionalThemeShadow x:Key="BottomControlThemeShadow"
                                      ShadowColor="{StaticResource StandardDropShadowColor}"
                                      ShadowOpacity="{StaticResource StandardDropShadowOpacity}"
-                                     ElevationShadowLengthMultiplier="4"
+                                     ElevationShadowLengthMultiplier="1"
                                      IsShadowEnabled="{Binding Path=(theming:ShadowProperties.AreShadowsEnabled)}" 
                                      ShadowDirection="Bottom" />
 
     <controls:DirectionalThemeShadow x:Key="LeftControlThemeShadow"
                                      ShadowColor="{StaticResource StandardDropShadowColor}"
                                      ShadowOpacity="{StaticResource StandardDropShadowOpacity}"
-                                     ElevationShadowLengthMultiplier="4"
+                                     ElevationShadowLengthMultiplier="1"
                                      IsShadowEnabled="{Binding Path=(theming:ShadowProperties.AreShadowsEnabled)}" 
                                      ShadowDirection="Left" />
 
     <controls:DirectionalThemeShadow x:Key="RightControlThemeShadow"
                                      ShadowColor="{StaticResource StandardDropShadowColor}"
                                      ShadowOpacity="{StaticResource StandardDropShadowOpacity}"
-                                     ElevationShadowLengthMultiplier="4"
+                                     ElevationShadowLengthMultiplier="1"
                                      IsShadowEnabled="{Binding Path=(theming:ShadowProperties.AreShadowsEnabled)}" 
                                      ShadowDirection="Right" />
 

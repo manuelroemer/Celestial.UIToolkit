@@ -20,7 +20,7 @@ namespace Celestial.UIToolkit.Controls
         /// Gets or sets a value with which the <see cref="ElevationProperty"/> 
         /// is multiplied, before the shadow's final length is calculated.
         /// </summary>
-        public double ElevationShadowLengthMultiplier { get; set; } = 4d;
+        public double ElevationShadowLengthMultiplier { get; set; } = 1d;
         // Not making the above property a DependencyProperty, because there is no way
         // to listen to change notifications and updating all elements, on which a shadow
         // is set. I don't expect this property to change anyway - it should be set once

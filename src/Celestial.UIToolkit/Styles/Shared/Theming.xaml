@@ -440,6 +440,108 @@
 
 
 
+
+
+    <!--
+    Styles for shadows at different elevation levels.
+    -->
+    <Style x:Key="Shadow0">
+        <Setter Property="controls:ThemeShadow.Elevation" Value="0" />
+        <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="0" />
+        <Setter Property="theming:PressedProperties.ShadowElevation" Value="0" />
+        <Setter Property="theming:DisabledProperties.ShadowElevation" Value="0" />
+    </Style>
+    <Style x:Key="NoShadow" BasedOn="{StaticResource Shadow0}" />
+
+    <Style x:Key="Shadow4">
+        <Setter Property="controls:ThemeShadow.Elevation" Value="4" />
+        <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="4" />
+        <Setter Property="theming:PressedProperties.ShadowElevation" Value="4" />
+        <Setter Property="theming:DisabledProperties.ShadowElevation" Value="4" />
+    </Style>
+
+    <Style x:Key="Shadow8">
+        <Setter Property="controls:ThemeShadow.Elevation" Value="8" />
+        <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="8" />
+        <Setter Property="theming:PressedProperties.ShadowElevation" Value="8" />
+        <Setter Property="theming:DisabledProperties.ShadowElevation" Value="8" />
+    </Style>
+
+    <Style x:Key="Shadow12">
+        <Setter Property="controls:ThemeShadow.Elevation" Value="12" />
+        <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="12" />
+        <Setter Property="theming:PressedProperties.ShadowElevation" Value="12" />
+        <Setter Property="theming:DisabledProperties.ShadowElevation" Value="12" />
+    </Style>
+
+    <Style x:Key="Shadow16">
+        <Setter Property="controls:ThemeShadow.Elevation" Value="16" />
+        <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="16" />
+        <Setter Property="theming:PressedProperties.ShadowElevation" Value="16" />
+        <Setter Property="theming:DisabledProperties.ShadowElevation" Value="16" />
+    </Style>
+
+    <Style x:Key="Shadow20">
+        <Setter Property="controls:ThemeShadow.Elevation" Value="20" />
+        <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="20" />
+        <Setter Property="theming:PressedProperties.ShadowElevation" Value="20" />
+        <Setter Property="theming:DisabledProperties.ShadowElevation" Value="20" />
+    </Style>
+
+    <Style x:Key="Shadow24">
+        <Setter Property="controls:ThemeShadow.Elevation" Value="24" />
+        <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="24" />
+        <Setter Property="theming:PressedProperties.ShadowElevation" Value="24" />
+        <Setter Property="theming:DisabledProperties.ShadowElevation" Value="24" />
+    </Style>
+
+
+
+    <!-- Elevation properties for "active" states. -->
+    <Style x:Key="InteractiveShadow0">
+        <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="0" />
+        <Setter Property="theming:PressedProperties.ShadowElevation" Value="0" />
+    </Style>
+    
+    <Style x:Key="InteractiveShadow4">
+        <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="4" />
+        <Setter Property="theming:PressedProperties.ShadowElevation" Value="4" />
+    </Style>
+
+    <Style x:Key="InteractiveShadow8">
+        <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="8" />
+        <Setter Property="theming:PressedProperties.ShadowElevation" Value="8" />
+    </Style>
+
+    <Style x:Key="InteractiveShadow12">
+        <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="12" />
+        <Setter Property="theming:PressedProperties.ShadowElevation" Value="12" />
+    </Style>
+
+    <Style x:Key="InteractiveShadow16">
+        <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="16" />
+        <Setter Property="theming:PressedProperties.ShadowElevation" Value="16" />
+    </Style>
+
+    <Style x:Key="InteractiveShadow20">
+        <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="20" />
+        <Setter Property="theming:PressedProperties.ShadowElevation" Value="20" />
+    </Style>
+
+    <Style x:Key="InteractiveShadow24">
+        <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="24" />
+        <Setter Property="theming:PressedProperties.ShadowElevation" Value="24" />
+    </Style>
+
+    <Style x:Key="InteractiveShadow28">
+        <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="28" />
+        <Setter Property="theming:PressedProperties.ShadowElevation" Value="28" />
+    </Style>
+
+
+
+
+    
     <!--
     For controls like Label, TextBlock, ...
     Only the Foreground is set here.

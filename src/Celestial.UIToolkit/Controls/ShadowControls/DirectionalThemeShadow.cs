@@ -17,11 +17,19 @@ namespace Celestial.UIToolkit.Controls
         public Dock ShadowDirection { get; set; }
 
         /// <summary>
+        /// Gets or sets a value with which the calculated shadow offset values are multiplied
+        /// before being applied to the shadow.
+        /// </summary>
+        public double DirectionLengthMultiplier { get; set; }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="DirectionalThemeShadow"/> which points
         /// to the Bottom.
         /// </summary>
         public DirectionalThemeShadow()
         {
+            // By default, 4 elevation levels should equal one pixel.
+            DirectionLengthMultiplier = 0.25;
             ShadowDirection = Dock.Bottom;
         }
 
@@ -35,7 +43,7 @@ namespace Celestial.UIToolkit.Controls
         protected override Vector CalculateCurrentShadowOffset(DependencyObject element)
         {
             // Move the Shadow by the Current Elevation Level.
-            double elevation = GetElevation(element);
+            double elevation = GetElevation(element) * DirectionLengthMultiplier;
 
             switch (ShadowDirection)
             {
