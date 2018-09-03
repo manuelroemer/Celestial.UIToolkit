@@ -203,8 +203,8 @@ namespace Celestial.UIToolkit.Xaml
             ISet<Timeline> toStateTimelines = FlattenTimelines(ToState.Storyboard);
 
             // If the transition already covers an animation, there is no need for that animation.
-            // Also, if there is already a "To" animation, we must never use a "From" animation
-            // aswell, as the two animations would fight over the same property.
+            // Also, if there is already a "To" animation, we must never use a "From" animation,
+            // because the two animations would fight over the same property.
             currentGroupTimelines.ExceptWith(transitionTimelines);
             toStateTimelines.ExceptWith(transitionTimelines);
             currentGroupTimelines.ExceptWith(toStateTimelines);
