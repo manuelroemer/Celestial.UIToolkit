@@ -479,6 +479,14 @@
                         <Trigger Property="DisplayMode" Value="Expanded">
                             <Setter TargetName="SplitView" Property="DisplayMode" Value="CompactInline" />
                         </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="DisplayMode" Value="Minimal" />
+                                <Condition Property="IsPaneOpen" Value="False" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="PART_BackButton" Property="Background" Value="Transparent" />
+                            <Setter TargetName="PART_ToggleButton" Property="Background" Value="Transparent" />
+                        </MultiTrigger>
                         <Trigger Property="IsToggleButtonVisible" Value="False">
                             <Setter TargetName="PaneHeaderContentSite" Property="Grid.Row" Value="0" />
                         </Trigger>
