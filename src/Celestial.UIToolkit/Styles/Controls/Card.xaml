@@ -10,7 +10,7 @@
         <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardCard" TargetType="controls:Card" BasedOn="{c:MultiStyle 'BottomShadow Elevated1Shadow'}">
+    <Style x:Key="StandardCard" TargetType="controls:Card">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />

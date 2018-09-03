@@ -158,16 +158,7 @@
            TargetType="ButtonBase" 
            BasedOn="{c:MultiStyle 'StandardButton Accent2Background Accent2Border OnAccent2Foreground'}" />
 
-    <Style x:Key="ElevatedStandardButton" 
-           TargetType="ButtonBase" 
-           BasedOn="{c:MultiStyle 'StandardButton Elevated0ShadowInteractive'}" />
-    <Style x:Key="ElevatedAccent1Button" 
-           TargetType="ButtonBase" 
-           BasedOn="{c:MultiStyle 'Accent1Button Elevated0ShadowInteractive'}" />
-    <Style x:Key="ElevatedAccent2Button" 
-           TargetType="ButtonBase" 
-           BasedOn="{c:MultiStyle 'Accent2Button Elevated0ShadowInteractive'}" />
-
+    
 
     <!--
     Flat Button.
@@ -197,18 +188,6 @@
         <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource Accent2Brush}" />
         <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource Accent2Brush}" />
     </Style>
-
-    <Style x:Key="ElevatedFlatButton"
-           TargetType="ButtonBase"
-           BasedOn="{c:MultiStyle 'FlatButton Elevated0ShadowInteractive'}" />
-    
-    <Style x:Key="ElevatedAccent1FlatButton"
-           TargetType="ButtonBase"
-           BasedOn="{c:MultiStyle 'Accent1FlatButton Elevated0ShadowInteractive'}" />
-    
-    <Style x:Key="ElevatedAccent2FlatButton"
-           TargetType="ButtonBase"
-           BasedOn="{c:MultiStyle 'Accent2FlatButton Elevated0ShadowInteractive'}" />
 
 
 
@@ -249,18 +228,6 @@
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="ElevatedOutlinedButton"
-           TargetType="ButtonBase"
-           BasedOn="{c:MultiStyle 'OutlinedButton Elevated0ShadowInteractive'}" />
-
-    <Style x:Key="ElevatedAccent1OutlinedButton"
-           TargetType="ButtonBase"
-           BasedOn="{c:MultiStyle 'Accent1OutlinedButton Elevated0ShadowInteractive'}" />
-
-    <Style x:Key="ElevatedAccent2OutlinedButton"
-           TargetType="ButtonBase"
-           BasedOn="{c:MultiStyle 'Accent2OutlinedButton Elevated0ShadowInteractive'}" />
-
 
 
     <!--
@@ -291,18 +258,6 @@
            TargetType="ButtonBase"
            BasedOn="{c:MultiStyle 'SquareButton Accent2Border Accent2Background OnAccent2Foreground'}" />
 
-    <Style x:Key="ElevatedSquareButton"
-           TargetType="ButtonBase"
-           BasedOn="{c:MultiStyle 'SquareButton Elevated0ShadowInteractive'}" />
-
-    <Style x:Key="ElevatedAccent1SquareButton"
-           TargetType="ButtonBase"
-           BasedOn="{c:MultiStyle 'Accent1SquareButton Elevated0ShadowInteractive'}" />
-
-    <Style x:Key="ElevatedAccent2SquareButton"
-           TargetType="ButtonBase"
-           BasedOn="{c:MultiStyle 'Accent2SquareButton Elevated0ShadowInteractive'}" />
-
 
 
     <!--
@@ -322,18 +277,6 @@
     <Style x:Key="Accent2CircleButton" TargetType="ButtonBase" BasedOn="{StaticResource Accent2SquareButton}">
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" />
     </Style>
-
-    <Style x:Key="ElevatedCircleButton"
-           TargetType="ButtonBase"
-           BasedOn="{c:MultiStyle 'CircleButton Elevated0ShadowInteractive'}" />
-
-    <Style x:Key="ElevatedAccent1CircleButton"
-           TargetType="ButtonBase"
-           BasedOn="{c:MultiStyle 'Accent1CircleButton Elevated0ShadowInteractive'}" />
-
-    <Style x:Key="ElevatedAccent2CircleButton"
-           TargetType="ButtonBase"
-           BasedOn="{c:MultiStyle 'Accent2CircleButton Elevated0ShadowInteractive'}" />
 
 
 
