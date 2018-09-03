@@ -10,6 +10,45 @@
         Title="Aurora UI Toolkit - Control Gallery"
         Width="1000" Height="600">
 
+    <!--<Grid>
+        <Grid.Resources>
+            <ControlTemplate x:Key="Btn" TargetType="Button">
+                <ControlTemplate.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="HorizontalAlignment" Value="Center" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                    </Style>
+                </ControlTemplate.Resources>
+                <Border Width="400" Height="400" Background="LightGray">
+                    <Border Background="White" Width="300" Height="300">
+                        <c:ThemeShadowPresenter>
+                            <c:ThemeShadowPresenter.ThemeShadow>
+                                <c:ThemeShadow x:Name="Shadow" ShadowColor="CornflowerBlue" />
+                            </c:ThemeShadowPresenter.ThemeShadow>
+                            <Border Background="Red" Width="100" Height="100">
+                                <ContentPresenter />
+                            </Border>
+                        </c:ThemeShadowPresenter>
+                    </Border>
+                </Border>
+            </ControlTemplate>
+        </Grid.Resources>
+
+        <TabControl>
+            <TabItem Style="{x:Null}">
+
+                <Button x:Name="Btn" Template="{StaticResource Btn}" c:ThemeShadow.Elevation="10" Click="Button_Click">
+                    <c:ThemeShadow.Shadow>
+                        <c:ThemeShadow x:Name="Shadow" ShadowColor="Red" />
+                    </c:ThemeShadow.Shadow>
+                </Button>
+            </TabItem>
+            <TabItem>
+                
+            </TabItem>
+        </TabControl>
+    </Grid>-->
+    
     <c:NavigationView x:Name="NavView"
                       PaneHeader="Pane Title"
                       Header="Header!"
@@ -21,10 +60,7 @@
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Hello from the Footer!</TextBlock>
         </c:NavigationView.PaneFooter>
         <c:NavigationView.MenuItems>
-            <c:NavigationViewItem Content="Item 1" c:ThemeShadow.Elevation="10">
-                <c:ThemeShadow.Shadow>
-                    <c:ThemeShadow />
-                </c:ThemeShadow.Shadow>
+            <c:NavigationViewItem Content="Item 1">
                 <c:NavigationViewItem.Icon>
                     <c:PathIcon Data="{StaticResource HalfArrowRight}" />
                 </c:NavigationViewItem.Icon>
@@ -75,15 +111,15 @@
 
                 <Separator />
 
-                <Border Width="100" Height="100"
+                <Border Width="200" Height="200"
                         BorderThickness="1"
                         BorderBrush="Black" Background="White">
-                    <Border.Effect>
-                        <DropShadowEffect x:Name="Shadow" Color="Black" />
-                    </Border.Effect>
-
-                    <Border Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"
-                            Background="Red"/>
+                    <c:DropShadowDecorator x:Name="ShadowDecorator" BlurRadius="10" OffsetX="-20" IsShadowEnabled="False">
+                        <Border Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                Background="Red">
+                            <CheckBox IsChecked="{Binding IsShadowEnabled, ElementName=ShadowDecorator}" />
+                        </Border>
+                    </c:DropShadowDecorator>
                 </Border>
             </StackPanel>
         </ScrollViewer>

@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Windows;
+using System.Windows.Media;
 
 namespace Celestial.UIToolkit.Controls
 {
@@ -11,7 +12,7 @@ namespace Celestial.UIToolkit.Controls
     /// It can be attached to any type of controls via the <see cref="ShadowProperty"/>.
     /// For the shadow to be displayed, control template authors are required to display the
     /// <see cref="ThemeShadow"/> provided via the attached <see cref="ShadowProperty"/>.
-    /// The easiest way to do this is by simply adding a <see cref="ThemeShadowHost"/> to the 
+    /// The easiest way to do this is by simply adding a <see cref="ThemeShadowPresenter"/> to the 
     /// control template.
     /// </summary>
     public partial class ThemeShadow : DependencyObject
@@ -33,7 +34,7 @@ namespace Celestial.UIToolkit.Controls
         public ThemeShadow()
         {
         }
-
+        
         private static void ShadowProperty_Changed(
             DependencyObject element, DependencyPropertyChangedEventArgs e)
         {

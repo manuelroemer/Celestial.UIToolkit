@@ -24,6 +24,12 @@
         <Setter Property="MinHeight" Value="{c:GridUnit 10}" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
         <Setter Property="controls:IconElement.Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="controls:ThemeShadow.Shadow">
+            <Setter.Value>
+                <controls:ThemeShadow ShadowColor="{DynamicResource StandardDropShadowColor}"
+                                      ShadowOpacity="{DynamicResource StandardDropShadowOpacity}" />
+            </Setter.Value>
+        </Setter>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:NavigationViewItem">
@@ -57,6 +63,10 @@
                                                   Storyboard.TargetProperty="Foreground"
                                                   Duration="0"
                                                   To="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                               Storyboard.TargetProperty="(controls:ThemeShadow.Elevation)">
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="1" />
+                                </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
 
                             <Storyboard x:Key="DisabledStoryboard">
@@ -121,30 +131,27 @@
                             </DataTemplate>
                         </Grid.Resources>
 
-                        <controls:ThemeShadowHost Background="Transparent">
+                        <controls:ThemeShadowPresenter>
                             <Grid>
-                                <Border BorderBrush="{TemplateBinding BorderBrush}"
-                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                <Border x:Name="Bd"
+                                        Background="{TemplateBinding Background}"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}" 
                                         CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}" />
+                                <Border x:Name="SelectionBorder"
+                                        Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
+                                        BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                        CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}" 
+                                        Visibility="Collapsed" />
+                                <controls:RippleOverlay x:Name="Ripple"
+                                                        IsEnabled="{TemplateBinding theming:RippleProperties.ShowRippleAnimation}"
+                                                        Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
+                                                        BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}" 
+                                                        IsActiveTrigger="{TemplateBinding IsSelected}" />
+
                             </Grid>
-                        </controls:ThemeShadowHost>
-                        
-                        <Border x:Name="Bd"
-                                Background="{TemplateBinding Background}"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}" 
-                                CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}" />
-                        <Border x:Name="SelectionBorder"
-                                Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
-                                BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}" 
-                                Visibility="Collapsed" />
-                        <controls:RippleOverlay x:Name="Ripple"
-                                                IsEnabled="{TemplateBinding theming:RippleProperties.ShowRippleAnimation}"
-                                                Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
-                                                BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}" 
-                                                IsActiveTrigger="{TemplateBinding IsSelected}" />
+                        </controls:ThemeShadowPresenter>
                         
                         <Grid Margin="{TemplateBinding Padding}">
                             <Grid.ColumnDefinitions>
@@ -227,7 +234,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ListView">
-                    <ScrollViewer>
+                    <ScrollViewer Padding="{TemplateBinding Padding}">
                         <ItemsPresenter />
                     </ScrollViewer>
                 </ControlTemplate>
@@ -343,7 +350,7 @@
                                             <controls:NavigationViewListView x:Name="PART_MenuItemsListView"
                                                                              Grid.Row="1"
                                                                              Style="{StaticResource NavigationViewMenuItemsListView}"
-                                                                             Margin="{c:GridUnit '0,3'}"
+                                                                             Padding="{c:GridUnit '0,3'}"
                                                                              SelectionMode="Single"
                                                                              ItemsSource="{Binding MenuItems, RelativeSource={RelativeSource TemplatedParent}}"
                                                                              IsSynchronizedWithCurrentItem="False"

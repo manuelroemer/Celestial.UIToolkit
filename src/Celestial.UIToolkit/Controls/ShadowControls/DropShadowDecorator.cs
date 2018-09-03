@@ -12,7 +12,7 @@ namespace Celestial.UIToolkit.Controls
     /// <see cref="System.Windows.Media.Effects.DropShadowEffect"/>,
     /// but simplifies its usage via more intuitive properties.
     /// </summary>
-    public partial class DropShadowPanel : ContentControl
+    public partial class DropShadowDecorator : Decorator
     {
 
         private DropShadowEffect _currentEffect;
@@ -23,16 +23,17 @@ namespace Celestial.UIToolkit.Controls
         /// </summary>
         public Vector Offset => new Vector(OffsetX, OffsetY);
 
-        static DropShadowPanel()
+        static DropShadowDecorator()
         {
             DefaultStyleKeyProperty.OverrideMetadata(
-                typeof(DropShadowPanel), new FrameworkPropertyMetadata(typeof(DropShadowPanel)));
+                typeof(DropShadowDecorator), 
+                new FrameworkPropertyMetadata(typeof(DropShadowDecorator)));
         }
         
         /// <summary>
-        /// Initializes a new instance of the <see cref="DropShadowPanel"/>.
+        /// Initializes a new instance of the <see cref="DropShadowDecorator"/>.
         /// </summary>
-        public DropShadowPanel()
+        public DropShadowDecorator()
         {
             Loaded += (sender, e) =>
             {
@@ -43,7 +44,7 @@ namespace Celestial.UIToolkit.Controls
         private static void Shadow_Changed(
             DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (d is DropShadowPanel panel)
+            if (d is DropShadowDecorator panel)
             {
                 panel.UpdateCurrentDropShadowEffect();
             }
@@ -136,7 +137,7 @@ namespace Celestial.UIToolkit.Controls
         /// <returns>A string representing the panel.</returns>
         public override string ToString()
         {
-            return $"{nameof(DropShadowPanel)}: " +
+            return $"{nameof(DropShadowDecorator)}: " +
                    $"{nameof(Offset)}: {Offset}, " +
                    $"{nameof(BlurRadius)}: {BlurRadius}";
         }

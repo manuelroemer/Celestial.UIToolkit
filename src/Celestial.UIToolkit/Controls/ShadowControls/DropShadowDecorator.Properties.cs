@@ -5,22 +5,9 @@ using System.Windows.Media.Effects;
 namespace Celestial.UIToolkit.Controls
 {
 
-    public partial class DropShadowPanel
+    public partial class DropShadowDecorator
     {
 		
-        private static readonly DependencyPropertyKey DropShadowEffectPropertyKey =
-            DependencyProperty.RegisterReadOnly(
-                nameof(DropShadowEffect),
-                typeof(DropShadowEffect),
-                typeof(DropShadowPanel),
-                new PropertyMetadata(null));
-
-        /// <summary>
-        /// Identifies the <see cref="DropShadowEffect"/> dependency property.
-        /// </summary>
-        public static readonly DependencyProperty DropShadowEffectProperty =
-            DropShadowEffectPropertyKey.DependencyProperty;
-
         /// <summary>
         /// Identifies the <see cref="RenderingBias"/> dependency property.
         /// </summary>
@@ -28,9 +15,10 @@ namespace Celestial.UIToolkit.Controls
             DependencyProperty.Register(
                 nameof(RenderingBias),
                 typeof(RenderingBias),
-                typeof(DropShadowPanel),
-                new PropertyMetadata(
+                typeof(DropShadowDecorator),
+                new FrameworkPropertyMetadata(
                     RenderingBias.Performance,
+                    FrameworkPropertyMetadataOptions.AffectsRender,
                     Shadow_Changed));
 
         /// <summary>
@@ -40,10 +28,11 @@ namespace Celestial.UIToolkit.Controls
             DependencyProperty.Register(
                 nameof(ShadowColor),
                 typeof(Color),
-                typeof(DropShadowPanel),
-                new PropertyMetadata(
+                typeof(DropShadowDecorator),
+                new FrameworkPropertyMetadata(
 					Colors.Black,
-					Shadow_Changed));
+                    FrameworkPropertyMetadataOptions.AffectsRender,
+                    Shadow_Changed));
 
         /// <summary>
         /// Identifies the <see cref="ShadowOpacity"/> dependency property.
@@ -52,9 +41,10 @@ namespace Celestial.UIToolkit.Controls
             DependencyProperty.Register(
                 nameof(ShadowOpacity),
                 typeof(double),
-                typeof(DropShadowPanel),
-                new PropertyMetadata(
+                typeof(DropShadowDecorator),
+                new FrameworkPropertyMetadata(
                     1d,
+                    FrameworkPropertyMetadataOptions.AffectsRender,
                     Shadow_Changed));
 
         /// <summary>
@@ -64,9 +54,11 @@ namespace Celestial.UIToolkit.Controls
             DependencyProperty.Register(
                 nameof(BlurRadius),
                 typeof(double),
-                typeof(DropShadowPanel),
-                new PropertyMetadata(
-                    5d, Shadow_Changed));
+                typeof(DropShadowDecorator),
+                new FrameworkPropertyMetadata(
+                    5d,
+                    FrameworkPropertyMetadataOptions.AffectsRender,
+                    Shadow_Changed));
 
         /// <summary>
         /// Identifies the <see cref="OffsetX"/> dependency property.
@@ -75,9 +67,10 @@ namespace Celestial.UIToolkit.Controls
             DependencyProperty.Register(
                 nameof(OffsetX),
                 typeof(double),
-                typeof(DropShadowPanel),
-                new PropertyMetadata(
+                typeof(DropShadowDecorator),
+                new FrameworkPropertyMetadata(
                     0d,
+                    FrameworkPropertyMetadataOptions.AffectsRender,
                     Shadow_Changed));
 
         /// <summary>
@@ -87,9 +80,10 @@ namespace Celestial.UIToolkit.Controls
             DependencyProperty.Register(
                 nameof(OffsetY),
                 typeof(double),
-                typeof(DropShadowPanel),
-                new PropertyMetadata(
+                typeof(DropShadowDecorator),
+                new FrameworkPropertyMetadata(
                     0d,
+                    FrameworkPropertyMetadataOptions.AffectsRender,
                     Shadow_Changed));
 
         /// <summary>
@@ -99,21 +93,12 @@ namespace Celestial.UIToolkit.Controls
             DependencyProperty.Register(
                 nameof(IsShadowEnabled),
                 typeof(bool),
-                typeof(DropShadowPanel),
-                new PropertyMetadata(
+                typeof(DropShadowDecorator),
+                new FrameworkPropertyMetadata(
                     true,
+                    FrameworkPropertyMetadataOptions.AffectsRender,
                     Shadow_Changed));
-
-        /// <summary>
-        /// Gets the calculated <see cref="DropShadowEffect"/> which is applied to the
-        /// panel's content.
-        /// </summary>
-        public DropShadowEffect DropShadowEffect
-        {
-            get { return (DropShadowEffect)GetValue(DropShadowEffectProperty); }
-            private set { SetValue(DropShadowEffectPropertyKey, value); }
-        }
-
+        
         /// <summary>
         /// Gets or sets a <see cref="System.Windows.Media.Effects.RenderingBias"/> 
         /// to be used with the drop shadow effect.
