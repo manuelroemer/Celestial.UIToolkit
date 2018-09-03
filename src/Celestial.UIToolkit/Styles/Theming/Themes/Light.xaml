@@ -210,27 +210,31 @@
                                      ShadowOpacity="{StaticResource StandardDropShadowOpacity}"
                                      ElevationShadowLengthMultiplier="1"
                                      IsShadowEnabled="{Binding Path=(theming:ShadowProperties.AreShadowsEnabled)}" 
-                                     ShadowDirection="Top" />
+                                     ShadowDirection="Top" 
+                                     DirectionOffsetMultiplier="0.25" />
 
     <controls:DirectionalThemeShadow x:Key="BottomControlThemeShadow"
                                      ShadowColor="{StaticResource StandardDropShadowColor}"
                                      ShadowOpacity="{StaticResource StandardDropShadowOpacity}"
                                      ElevationShadowLengthMultiplier="1"
                                      IsShadowEnabled="{Binding Path=(theming:ShadowProperties.AreShadowsEnabled)}" 
-                                     ShadowDirection="Bottom" />
+                                     ShadowDirection="Bottom" 
+                                     DirectionOffsetMultiplier="0.25" />
 
     <controls:DirectionalThemeShadow x:Key="LeftControlThemeShadow"
                                      ShadowColor="{StaticResource StandardDropShadowColor}"
                                      ShadowOpacity="{StaticResource StandardDropShadowOpacity}"
                                      ElevationShadowLengthMultiplier="1"
                                      IsShadowEnabled="{Binding Path=(theming:ShadowProperties.AreShadowsEnabled)}" 
-                                     ShadowDirection="Left" />
+                                     ShadowDirection="Left"
+                                     DirectionOffsetMultiplier="0.25"  />
 
     <controls:DirectionalThemeShadow x:Key="RightControlThemeShadow"
                                      ShadowColor="{StaticResource StandardDropShadowColor}"
                                      ShadowOpacity="{StaticResource StandardDropShadowOpacity}"
                                      ElevationShadowLengthMultiplier="1"
                                      IsShadowEnabled="{Binding Path=(theming:ShadowProperties.AreShadowsEnabled)}" 
-                                     ShadowDirection="Right" />
+                                     ShadowDirection="Right"
+                                     DirectionOffsetMultiplier="0.25" />
 
 </ResourceDictionary>
