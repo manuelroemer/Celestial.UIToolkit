@@ -33,7 +33,7 @@ namespace Celestial.UIToolkit.Theming
                 }
             }
         }
-
+        
     }
 
 }

@@ -43,10 +43,10 @@
                                                   Storyboard.TargetProperty="Foreground"
                                                   Duration="0"
                                                   To="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
-                                                               Storyboard.TargetProperty="(controls:ThemeShadow.Elevation)">
-                                    <LinearDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.ShadowElevation), RelativeSource={RelativeSource TemplatedParent}}" />
-                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                 Storyboard.TargetProperty="(controls:ThemeShadow.Elevation)"
+                                                 Duration="0"
+                                                 By="2" />
                             </Storyboard>
 
                             <Storyboard x:Key="PressedStoryboard">
@@ -62,10 +62,10 @@
                                                   Storyboard.TargetProperty="Foreground"
                                                   Duration="0"
                                                   To="{Binding Path=(theming:PressedProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
-                                                               Storyboard.TargetProperty="(controls:ThemeShadow.Elevation)">
-                                    <LinearDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:PressedProperties.ShadowElevation), RelativeSource={RelativeSource TemplatedParent}}" />
-                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                 Storyboard.TargetProperty="(controls:ThemeShadow.Elevation)"
+                                                 Duration="0"
+                                                 By="2" />
                             </Storyboard>
 
                             <Storyboard x:Key="DisabledStoryboard">
@@ -84,7 +84,7 @@
                                 <DoubleAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
                                                  Storyboard.TargetProperty="(controls:ThemeShadow.Elevation)"
                                                  Duration="0"
-                                                 To="{Binding Path=(theming:DisabledProperties.ShadowElevation), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                 By="0" />
                             </Storyboard>
 
                             <DataTemplate DataType="{x:Type sys:String}">
