@@ -113,8 +113,6 @@
                     Toggle Shadows
                 </Button>
 
-                <pages:Buttons />
-
                 <Separator />
 
                 <Border Width="200" Height="200"
@@ -127,6 +125,9 @@
                         </Border>
                     </c:DropShadowDecorator>
                 </Border>
+                
+                <pages:Buttons />
+                <pages:Cards />
             </StackPanel>
         </ScrollViewer>
     </c:NavigationView>
