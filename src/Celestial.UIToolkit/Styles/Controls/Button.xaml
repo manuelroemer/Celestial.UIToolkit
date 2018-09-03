@@ -11,7 +11,7 @@
         <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardButton" TargetType="ButtonBase" BasedOn="{c:MultiStyle 'ControlBackground ControlBorder StandardForeground AltFontProperties Shadow0 InteractiveShadow4'}">
+    <Style x:Key="StandardButton" TargetType="ButtonBase" BasedOn="{c:MultiStyle 'ControlBackground ControlBorder StandardForeground AltFontProperties ElevationZIndex Shadow0 InteractiveShadow4'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
