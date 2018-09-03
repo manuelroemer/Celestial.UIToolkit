@@ -1,8 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
-using System.Linq;
-using System.Windows.Media;
 using System.Collections;
 
 namespace Celestial.UIToolkit.Controls

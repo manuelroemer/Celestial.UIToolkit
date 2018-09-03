@@ -1,8 +1,4 @@
 ﻿using Celestial.UIToolkit.Controls;
-using System;
-using System.Threading;
-using System.Windows;
-using System.Windows.Threading;
 using Xunit;
 
 namespace Celestial.UIToolkit.Tests.Controls.NavigationViewTests

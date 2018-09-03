@@ -109,6 +109,8 @@
                     Clear ItemsSource
                 </Button>
 
+                <pages:Buttons />
+
                 <Separator />
 
                 <Border Width="200" Height="200"

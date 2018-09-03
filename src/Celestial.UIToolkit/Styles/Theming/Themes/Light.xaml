@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
     <!--
     These values define the application's text colors.
@@ -111,29 +112,29 @@
     Brushes for elements on a pane. They usually share the pane's background, but can have different colors
     when interacted with.
     -->
-    <SolidColorBrush x:Key="OnPaneControlBackgroundBrush" Color="Transparent" />
+    <SolidColorBrush x:Key="OnPaneControlBackgroundBrush" Color="{StaticResource PrimaryMediumLowColor}" />
     <SolidColorBrush x:Key="OnPaneControlBackgroundHoverBrush" Color="{StaticResource PrimaryLowColor}" />
     <SolidColorBrush x:Key="OnPaneControlBackgroundPressedBrush" Color="{StaticResource PrimaryMediumColor}" />
     <SolidColorBrush x:Key="OnPaneControlBackgroundActiveBrush" Color="{StaticResource PrimaryMediumColor}" />
-    <SolidColorBrush x:Key="OnPaneControlBackgroundDisabledBrush" Color="Transparent" />
-    
-    <SolidColorBrush x:Key="AltOnPaneControlBackgroundBrush" Color="Transparent" />
+    <SolidColorBrush x:Key="OnPaneControlBackgroundDisabledBrush" Color="{StaticResource PrimaryMediumLowColor}" />
+
+    <SolidColorBrush x:Key="AltOnPaneControlBackgroundBrush" Color="{StaticResource AltPrimaryMediumLowColor}" />
     <SolidColorBrush x:Key="AltOnPaneControlBackgroundHoverBrush" Color="{StaticResource AltPrimaryLowColor}" />
     <SolidColorBrush x:Key="AltOnPaneControlBackgroundPressedBrush" Color="{StaticResource AltPrimaryMediumColor}" />
     <SolidColorBrush x:Key="AltOnPaneControlBackgroundActiveBrush" Color="{StaticResource AltPrimaryMediumColor}" />
-    <SolidColorBrush x:Key="AltOnPaneControlBackgroundDisabledBrush" Color="Transparent" />
+    <SolidColorBrush x:Key="AltOnPaneControlBackgroundDisabledBrush" Color="{StaticResource AltPrimaryMediumLowColor}" />
     
-    <SolidColorBrush x:Key="OnPaneControlBorderBrush" Color="Transparent" />
+    <SolidColorBrush x:Key="OnPaneControlBorderBrush" Color="{StaticResource PrimaryMediumLowColor}" />
     <SolidColorBrush x:Key="OnPaneControlBorderHoverBrush" Color="{StaticResource PrimaryMediumColor}" />
     <SolidColorBrush x:Key="OnPaneControlBorderPressedBrush" Color="{StaticResource PrimaryMediumHighColor}" />
     <SolidColorBrush x:Key="OnPaneControlBorderActiveBrush" Color="{StaticResource PrimaryMediumHighColor}" />
-    <SolidColorBrush x:Key="OnPaneControlBorderDisabledBrush" Color="Transparent" />
-    
-    <SolidColorBrush x:Key="AltOnPaneControlBorderBrush" Color="Transparent" />
+    <SolidColorBrush x:Key="OnPaneControlBorderDisabledBrush" Color="{StaticResource PrimaryMediumLowColor}" />
+
+    <SolidColorBrush x:Key="AltOnPaneControlBorderBrush" Color="{StaticResource AltPrimaryMediumLowColor}" />
     <SolidColorBrush x:Key="AltOnPaneControlBorderHoverBrush" Color="{StaticResource AltPrimaryLowColor}" />
     <SolidColorBrush x:Key="AltOnPaneControlBorderPressedBrush" Color="{StaticResource AltPrimaryMediumColor}" />
     <SolidColorBrush x:Key="AltOnPaneControlBorderActiveBrush" Color="{StaticResource AltPrimaryMediumColor}" />
-    <SolidColorBrush x:Key="AltOnPaneControlBorderDisabledBrush" Color="Transparent" />
+    <SolidColorBrush x:Key="AltOnPaneControlBorderDisabledBrush" Color="{StaticResource AltPrimaryMediumLowColor}" />
     
 
 
@@ -193,5 +194,10 @@
 
     <Color x:Key="StandardDropShadowColor">#3A40441A</Color>
     <sys:Double x:Key="StandardDropShadowOpacity">0.3</sys:Double>
+
+    <controls:ThemeShadow x:Key="StandardControlThemeShadow"
+                          ShadowColor="{StaticResource StandardDropShadowColor}"
+                          ShadowOpacity="{StaticResource StandardDropShadowOpacity}"
+                          ElevationShadowLengthMultiplier="4" />
 
 </ResourceDictionary>

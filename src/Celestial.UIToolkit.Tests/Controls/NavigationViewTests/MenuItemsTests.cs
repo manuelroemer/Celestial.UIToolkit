@@ -1,7 +1,6 @@
 ﻿using Celestial.UIToolkit.Controls;
 using Celestial.UIToolkit.Extensions;
 using System.Linq;
-using System.Windows;
 using Xunit;
 
 namespace Celestial.UIToolkit.Tests.Controls.NavigationViewTests

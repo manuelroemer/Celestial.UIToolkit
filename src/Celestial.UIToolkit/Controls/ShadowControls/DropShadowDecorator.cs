@@ -44,9 +44,9 @@ namespace Celestial.UIToolkit.Controls
         private static void Shadow_Changed(
             DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (d is DropShadowDecorator panel)
+            if (d is DropShadowDecorator decorator)
             {
-                panel.UpdateCurrentDropShadowEffect();
+                decorator.UpdateCurrentDropShadowEffect();
             }
         }
 
@@ -77,7 +77,7 @@ namespace Celestial.UIToolkit.Controls
         /// </remarks>
         protected virtual DropShadowEffect CalculateDropShadowEffect()
         {
-            if (!IsShadowEnabled)
+            if (!IsShadowEnabled || BlurRadius == 0d)
             {
                 // No need to take up resources when we don't need them.
                 _currentEffect = null;
