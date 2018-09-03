@@ -1,4 +1,5 @@
 ﻿using Celestial.UIToolkit.Controls;
+using Celestial.UIToolkit.Theming;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Windows;
@@ -61,7 +62,12 @@ namespace ControlGallery
         {
 
         }
-        
+
+        private void ToggleShadowsButton_Click(object sender, RoutedEventArgs e)
+        {
+            ShadowProperties.AreShadowsEnabled = !ShadowProperties.AreShadowsEnabled;
+        }
+
     }
 
 }

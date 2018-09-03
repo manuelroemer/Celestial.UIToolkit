@@ -109,6 +109,10 @@
                     Clear ItemsSource
                 </Button>
 
+                <Button x:Name="ToggleShadowsButton" Click="ToggleShadowsButton_Click">
+                    Toggle Shadows
+                </Button>
+
                 <pages:Buttons />
 
                 <Separator />
