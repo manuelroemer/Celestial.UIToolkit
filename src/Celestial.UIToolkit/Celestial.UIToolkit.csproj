@@ -81,6 +81,7 @@
     <Compile Include="Controls\NavigationView\NavigationViewListView.cs" />
     <Compile Include="Controls\PathIcon.cs" />
     <Compile Include="Controls\RippleOverlay.cs" />
+    <Compile Include="Controls\ShadowControls\DirectionalThemeShadow.cs" />
     <Compile Include="Controls\ShadowControls\DropShadowDecorator.cs" />
     <Compile Include="Controls\ShadowControls\DropShadowDecorator.Properties.cs" />
     <Compile Include="Controls\ShadowControls\ThemeShadow.cs" />
