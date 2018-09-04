@@ -232,6 +232,20 @@
     <Style x:Key="NavigationViewPaneButton" TargetType="Button" BasedOn="{c:MultiStyle 'StandardButton OnPaneControlBackground OnPaneControlBorder'}">
         <Setter Property="MinWidth" Value="0" />
         <Setter Property="MinHeight" Value="0" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
+        <Style.Triggers>
+            <MultiDataTrigger>
+                <!-- Don't show a background color if the NavView is in the Minimal mode.
+                     This blends in way better with the Background. -->
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding DisplayMode, RelativeSource={RelativeSource AncestorType=controls:NavigationView}}"
+                               Value="{x:Static controls:NavigationViewDisplayMode.Minimal}" />
+                    <Condition Binding="{Binding IsPaneOpen, RelativeSource={RelativeSource AncestorType=controls:NavigationView}}"
+                               Value="False" />
+                </MultiDataTrigger.Conditions>
+                <Setter Property="Background" Value="Transparent" />
+            </MultiDataTrigger>
+        </Style.Triggers>
     </Style>
 
     <Style x:Key="NavigationViewBackButton" TargetType="Button" BasedOn="{StaticResource NavigationViewPaneButton}">
@@ -354,7 +368,7 @@
                                                               ContentTemplate="{TemplateBinding PaneHeaderTemplate}"
                                                               ContentTemplateSelector="{TemplateBinding PaneHeaderTemplateSelector}"
                                                               ContentStringFormat="{TemplateBinding PaneHeaderStringFormat}"
-                                                              Visibility="{Binding HasPaneTitle, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                                                              Visibility="{Binding HasPaneHeader, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                         </Grid>
 
                                         <Grid x:Name="PaneContentContainer"
@@ -514,14 +528,6 @@
                         <Trigger Property="DisplayMode" Value="Expanded">
                             <Setter TargetName="SplitView" Property="DisplayMode" Value="CompactInline" />
                         </Trigger>
-                        <MultiTrigger>
-                            <MultiTrigger.Conditions>
-                                <Condition Property="DisplayMode" Value="Minimal" />
-                                <Condition Property="IsPaneOpen" Value="False" />
-                            </MultiTrigger.Conditions>
-                            <Setter TargetName="PART_BackButton" Property="Background" Value="Transparent" />
-                            <Setter TargetName="PART_ToggleButton" Property="Background" Value="Transparent" />
-                        </MultiTrigger>
                         <Trigger Property="IsToggleButtonVisible" Value="False">
                             <Setter TargetName="PaneHeaderContentSite" Property="Grid.Row" Value="0" />
                         </Trigger>
