@@ -181,7 +181,6 @@
                                               Grid.Column="1"
                                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                              Margin="{c:GridUnit '3,0,0,0'}"
                                               RecognizesAccessKey="True" />
                         </Grid>
 
@@ -208,6 +207,12 @@
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                     </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="HasIcon" Value="False">
+                            <Setter TargetName="ContentSite" Property="Margin" Value="{c:GridUnit '3,0,0,0', TargetType=Thickness}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
