@@ -394,7 +394,7 @@
                                                                              Content="Settings"
                                                                              Visibility="{Binding IsSettingsVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}">
                                                     <controls:NavigationViewItem.Icon>
-                                                        <controls:PathIcon Data="{StaticResource HalfArrowUp}" />
+                                                        <controls:PathIcon Data="{StaticResource Settings}" />
                                                     </controls:NavigationViewItem.Icon>
                                                 </controls:NavigationViewItem>
                                             </controls:NavigationViewListView>
