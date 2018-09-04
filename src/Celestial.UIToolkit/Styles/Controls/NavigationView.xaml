@@ -259,7 +259,7 @@
         </Setter>
     </Style>
     
-    <Style TargetType="controls:NavigationView">
+    <Style TargetType="controls:NavigationView" BasedOn="{c:MultiStyle 'Shadow0 InteractiveShadow8'}">
         <Setter Property="Focusable" Value="False" />
         <Setter Property="IsTabStop" Value="False" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
@@ -271,6 +271,8 @@
         <Setter Property="PaneBackButtonStyle" Value="{StaticResource NavigationViewBackButton}" />
         <Setter Property="PaneToggleButtonStyle" Value="{StaticResource NavigationViewToggleButton}" />
         <Setter Property="PaneBackground" Value="{StaticResource PaneBackgroundBrush}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource RightControlThemeShadow}" />
+        <Setter Property="theming:ActiveProperties.ShadowElevation" Value="8" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:NavigationView">
@@ -287,10 +289,12 @@
                                                 BorderThickness="{TemplateBinding BorderThickness}"
                                                 PaneBackground="{TemplateBinding PaneBackground}"
                                                 theming:ControlProperties.CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}"
+                                                controls:ThemeShadow.Elevation="{TemplateBinding controls:ThemeShadow.Elevation}"
+                                                controls:ThemeShadow.Shadow="{TemplateBinding controls:ThemeShadow.Shadow}"
                                                 DisplayMode="Overlay"
+                                                IsPaneOpen="{Binding IsPaneOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}, UpdateSourceTrigger=PropertyChanged}"
                                                 CompactPaneLength="{TemplateBinding CompactPaneLength}"
-                                                OpenPaneLength="{TemplateBinding OpenPaneLength}"
-                                                IsPaneOpen="{Binding IsPaneOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}, UpdateSourceTrigger=PropertyChanged}">
+                                                OpenPaneLength="{TemplateBinding OpenPaneLength}">
                                 <controls:SplitView.Pane>
                                     <Grid x:Name="PART_PaneContentContainer">
                                         <Grid.RowDefinitions>
@@ -518,6 +522,23 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Style.Triggers>
+            <!-- Show a pane shadow when the NavView is in an Overlay mode. -->
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsPaneOpen" Value="True" />
+                    <Condition Property="DisplayMode" Value="Minimal" />
+                </MultiTrigger.Conditions>
+                <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:ActiveProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsPaneOpen" Value="True" />
+                    <Condition Property="DisplayMode" Value="Compact" />
+                </MultiTrigger.Conditions>
+                <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:ActiveProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
+            </MultiTrigger>
+        </Style.Triggers>
     </Style>
     
 </ResourceDictionary>

@@ -4,12 +4,20 @@
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls"
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming">
 
-    <Style TargetType="controls:SplitView">
+    <ResourceDictionary.MergedDictionaries>
+        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
+        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
+        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="controls:SplitView" BasedOn="{c:MultiStyle 'Shadow0'}">
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
         <Setter Property="PaneBackground" Value="{StaticResource PaneBackgroundBrush}" />
         <Setter Property="Focusable" Value="False" />
         <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:SplitView">
@@ -108,8 +116,7 @@
                                     Grid.Column="1"
                                     Background="{TemplateBinding Background}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
-                                    BorderThickness="{TemplateBinding BorderThickness}"
-                                    CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}">
+                                    BorderThickness="{TemplateBinding BorderThickness}">
                                 <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                             </Border>
@@ -119,16 +126,19 @@
                             <Border x:Name="PaneSpacer"
                                     Width="{Binding OpenPaneLength, RelativeSource={RelativeSource TemplatedParent}, NotifyOnSourceUpdated=True}" />
 
-                            <Border x:Name="PaneContainer"
-                                    Grid.ColumnSpan="2"
-                                    Background="{TemplateBinding PaneBackground}"
-                                    HorizontalAlignment="Left"
-                                    Width="{Binding OpenPaneLength, RelativeSource={RelativeSource TemplatedParent}}">
+                            <Grid x:Name="PaneContainer" 
+                                  Grid.ColumnSpan="2"
+                                  HorizontalAlignment="Left"
+                                  Width="{Binding OpenPaneLength, RelativeSource={RelativeSource TemplatedParent}}">
+                                <controls:ThemeShadowPresenter>
+                                    <Border Background="{TemplateBinding PaneBackground}"
+                                            CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}" />
+                                </controls:ThemeShadowPresenter>
                                 <ContentPresenter ContentSource="Pane"
-                                                  ContentTemplate="{TemplateBinding PaneTemplate}"
-                                                  ContentTemplateSelector="{TemplateBinding PaneTemplateSelector}"
-                                                  ContentStringFormat="{TemplateBinding PaneStringFormat}" />
-                            </Border>
+                                                    ContentTemplate="{TemplateBinding PaneTemplate}"
+                                                    ContentTemplateSelector="{TemplateBinding PaneTemplateSelector}"
+                                                    ContentStringFormat="{TemplateBinding PaneStringFormat}" />
+                            </Grid>
                         </Grid>
 
                         <VisualStateManager.VisualStateGroups>
