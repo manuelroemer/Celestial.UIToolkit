@@ -1,4 +1,9 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.ComponentModel;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Collections;
@@ -220,7 +225,7 @@ namespace Celestial.UIToolkit.Controls
 	/// The old value of the <see cref="TitleStringFormat"/> property.
 	/// </param>
 	/// <param name="newStringFormat">
-	/// The new value of the <see cref="TitlePropertyStringFormat"/> property.
+	/// The new value of the <see cref="TitleStringFormat"/> property.
 	/// </param>
 	protected virtual void OnTitleStringFormatChanged(
 		string oldStringFormat, string newStringFormat)
@@ -413,7 +418,7 @@ namespace Celestial.UIToolkit.Controls
 	/// The old value of the <see cref="SubTitleStringFormat"/> property.
 	/// </param>
 	/// <param name="newStringFormat">
-	/// The new value of the <see cref="SubTitlePropertyStringFormat"/> property.
+	/// The new value of the <see cref="SubTitleStringFormat"/> property.
 	/// </param>
 	protected virtual void OnSubTitleStringFormatChanged(
 		string oldStringFormat, string newStringFormat)
@@ -606,7 +611,7 @@ namespace Celestial.UIToolkit.Controls
 	/// The old value of the <see cref="ThumbnailStringFormat"/> property.
 	/// </param>
 	/// <param name="newStringFormat">
-	/// The new value of the <see cref="ThumbnailPropertyStringFormat"/> property.
+	/// The new value of the <see cref="ThumbnailStringFormat"/> property.
 	/// </param>
 	protected virtual void OnThumbnailStringFormatChanged(
 		string oldStringFormat, string newStringFormat)
@@ -799,7 +804,7 @@ namespace Celestial.UIToolkit.Controls
 	/// The old value of the <see cref="MediaContentStringFormat"/> property.
 	/// </param>
 	/// <param name="newStringFormat">
-	/// The new value of the <see cref="MediaContentPropertyStringFormat"/> property.
+	/// The new value of the <see cref="MediaContentStringFormat"/> property.
 	/// </param>
 	protected virtual void OnMediaContentStringFormatChanged(
 		string oldStringFormat, string newStringFormat)

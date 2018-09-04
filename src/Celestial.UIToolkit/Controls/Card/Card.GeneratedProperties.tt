@@ -268,7 +268,7 @@ namespace Celestial.UIToolkit.Controls
 	/// The old value of the <see cref="<#=propName#>StringFormat"/> property.
 	/// </param>
 	/// <param name="newStringFormat">
-	/// The new value of the <see cref="<#=dpName#>StringFormat"/> property.
+	/// The new value of the <see cref="<#=propName#>StringFormat"/> property.
 	/// </param>
 	protected virtual void On<#=propName#>StringFormatChanged(
 		string oldStringFormat, string newStringFormat)
