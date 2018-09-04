@@ -23,6 +23,8 @@
         <Setter Property="MinHeight" Value="{c:GridUnit 10}" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
         <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource Accent2Brush}" />
+        <Setter Property="theming:ActiveProperties.ShadowElevation" Value="0" />
+        <Setter Property="theming:PressedProperties.ShadowElevation" Value="0" />
         <Setter Property="controls:IconElement.Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
         <Setter Property="Template">
@@ -156,7 +158,6 @@
                                                         Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
                                                         BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}" 
                                                         IsActiveTrigger="{TemplateBinding IsSelected}" />
-
                             </Grid>
                         </controls:ThemeShadowPresenter>
 
