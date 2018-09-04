@@ -272,7 +272,6 @@
         <Setter Property="PaneToggleButtonStyle" Value="{StaticResource NavigationViewToggleButton}" />
         <Setter Property="PaneBackground" Value="{StaticResource PaneBackgroundBrush}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource RightControlThemeShadow}" />
-        <Setter Property="theming:ActiveProperties.ShadowElevation" Value="8" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:NavigationView">
