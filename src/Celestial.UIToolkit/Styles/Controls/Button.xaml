@@ -11,7 +11,7 @@
         <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardButton" TargetType="ButtonBase" BasedOn="{c:MultiStyle 'ControlBackground ControlBorder StandardForeground AltFontProperties BottomShadow NoShadow'}">
+    <Style x:Key="StandardButton" TargetType="ButtonBase" BasedOn="{c:MultiStyle 'ControlBackground ControlBorder StandardForeground AltFontProperties ElevationZIndex Shadow0 InteractiveShadow4'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
@@ -24,7 +24,8 @@
         <Setter Property="controls:IconElement.Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
         <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
         <Setter Property="theming:PressedProperties.BorderBrush" Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
-        <Setter Property="theming:ShadowProperties.ShadowType" Value="{x:Static controls:ShadowType.Directional}" />
+        <Setter Property="theming:ActiveProperties.ShadowElevation" Value="0" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource BottomControlThemeShadow}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ButtonBase">
@@ -43,9 +44,9 @@
                                                   Storyboard.TargetProperty="Foreground"
                                                   Duration="0"
                                                   To="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Shadow"
-                                                               Storyboard.TargetProperty="Elevation">
-                                    <LinearDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.ShadowElevation), RelativeSource={RelativeSource TemplatedParent}}" />
+                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                               Storyboard.TargetProperty="(controls:ThemeShadow.Elevation)">
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.ShadowElevation) ,RelativeSource={RelativeSource TemplatedParent}}" />
                                 </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
 
@@ -62,9 +63,9 @@
                                                   Storyboard.TargetProperty="Foreground"
                                                   Duration="0"
                                                   To="{Binding Path=(theming:PressedProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Shadow"
-                                                               Storyboard.TargetProperty="Elevation">
-                                    <LinearDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:PressedProperties.ShadowElevation), RelativeSource={RelativeSource TemplatedParent}}" />
+                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                               Storyboard.TargetProperty="(controls:ThemeShadow.Elevation)">
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:PressedProperties.ShadowElevation) ,RelativeSource={RelativeSource TemplatedParent}}" />
                                 </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
 
@@ -81,25 +82,26 @@
                                                   Storyboard.TargetProperty="Foreground"
                                                   Duration="0"
                                                   To="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                <DoubleAnimation Storyboard.TargetName="Shadow"
-                                                 Storyboard.TargetProperty="Elevation"
-                                                 Duration="0"
-                                                 To="{Binding Path=(theming:DisabledProperties.ShadowElevation), RelativeSource={RelativeSource TemplatedParent}}" />
+                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                               Storyboard.TargetProperty="(controls:ThemeShadow.Elevation)">
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:DisabledProperties.ShadowElevation) ,RelativeSource={RelativeSource TemplatedParent}}" />
+                                </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
 
                             <DataTemplate DataType="{x:Type sys:String}">
                                 <TextBlock Style="{StaticResource TextBlockOverrideStyle}" Text="{Binding}" />
                             </DataTemplate>
                         </Grid.Resources>
-                        <controls:ShadowDecorator x:Name="Shadow"
-                                                  Style="{StaticResource ThemeableShadowDecorator}">
+                        
+                        <controls:ThemeShadowPresenter>
                             <Border x:Name="Bd"
                                     CornerRadius="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
                                     BorderThickness="{TemplateBinding BorderThickness}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
                                     Background="{TemplateBinding Background}"
                                     Padding="{TemplateBinding Padding}" />
-                        </controls:ShadowDecorator>
+                        </controls:ThemeShadowPresenter>
+                        
                         <controls:RippleOverlay x:Name="Ripple"
                                                 theming:ControlProperties.CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}"
                                                 Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
@@ -157,16 +159,7 @@
            TargetType="ButtonBase" 
            BasedOn="{c:MultiStyle 'StandardButton Accent2Background Accent2Border OnAccent2Foreground'}" />
 
-    <Style x:Key="ElevatedStandardButton" 
-           TargetType="ButtonBase" 
-           BasedOn="{c:MultiStyle 'StandardButton Elevated0ShadowInteractive'}" />
-    <Style x:Key="ElevatedAccent1Button" 
-           TargetType="ButtonBase" 
-           BasedOn="{c:MultiStyle 'Accent1Button Elevated0ShadowInteractive'}" />
-    <Style x:Key="ElevatedAccent2Button" 
-           TargetType="ButtonBase" 
-           BasedOn="{c:MultiStyle 'Accent2Button Elevated0ShadowInteractive'}" />
-
+    
 
     <!--
     Flat Button.
@@ -196,18 +189,6 @@
         <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource Accent2Brush}" />
         <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource Accent2Brush}" />
     </Style>
-
-    <Style x:Key="ElevatedFlatButton"
-           TargetType="ButtonBase"
-           BasedOn="{c:MultiStyle 'FlatButton Elevated0ShadowInteractive'}" />
-    
-    <Style x:Key="ElevatedAccent1FlatButton"
-           TargetType="ButtonBase"
-           BasedOn="{c:MultiStyle 'Accent1FlatButton Elevated0ShadowInteractive'}" />
-    
-    <Style x:Key="ElevatedAccent2FlatButton"
-           TargetType="ButtonBase"
-           BasedOn="{c:MultiStyle 'Accent2FlatButton Elevated0ShadowInteractive'}" />
 
 
 
@@ -248,18 +229,6 @@
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="ElevatedOutlinedButton"
-           TargetType="ButtonBase"
-           BasedOn="{c:MultiStyle 'OutlinedButton Elevated0ShadowInteractive'}" />
-
-    <Style x:Key="ElevatedAccent1OutlinedButton"
-           TargetType="ButtonBase"
-           BasedOn="{c:MultiStyle 'Accent1OutlinedButton Elevated0ShadowInteractive'}" />
-
-    <Style x:Key="ElevatedAccent2OutlinedButton"
-           TargetType="ButtonBase"
-           BasedOn="{c:MultiStyle 'Accent2OutlinedButton Elevated0ShadowInteractive'}" />
-
 
 
     <!--
@@ -290,18 +259,6 @@
            TargetType="ButtonBase"
            BasedOn="{c:MultiStyle 'SquareButton Accent2Border Accent2Background OnAccent2Foreground'}" />
 
-    <Style x:Key="ElevatedSquareButton"
-           TargetType="ButtonBase"
-           BasedOn="{c:MultiStyle 'SquareButton Elevated0ShadowInteractive'}" />
-
-    <Style x:Key="ElevatedAccent1SquareButton"
-           TargetType="ButtonBase"
-           BasedOn="{c:MultiStyle 'Accent1SquareButton Elevated0ShadowInteractive'}" />
-
-    <Style x:Key="ElevatedAccent2SquareButton"
-           TargetType="ButtonBase"
-           BasedOn="{c:MultiStyle 'Accent2SquareButton Elevated0ShadowInteractive'}" />
-
 
 
     <!--
@@ -321,18 +278,6 @@
     <Style x:Key="Accent2CircleButton" TargetType="ButtonBase" BasedOn="{StaticResource Accent2SquareButton}">
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" />
     </Style>
-
-    <Style x:Key="ElevatedCircleButton"
-           TargetType="ButtonBase"
-           BasedOn="{c:MultiStyle 'CircleButton Elevated0ShadowInteractive'}" />
-
-    <Style x:Key="ElevatedAccent1CircleButton"
-           TargetType="ButtonBase"
-           BasedOn="{c:MultiStyle 'Accent1CircleButton Elevated0ShadowInteractive'}" />
-
-    <Style x:Key="ElevatedAccent2CircleButton"
-           TargetType="ButtonBase"
-           BasedOn="{c:MultiStyle 'Accent2CircleButton Elevated0ShadowInteractive'}" />
 
 
 

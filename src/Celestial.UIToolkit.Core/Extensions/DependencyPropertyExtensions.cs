@@ -28,6 +28,24 @@ namespace Celestial.UIToolkit.Extensions
         }
 
         /// <summary>
+        /// Returns a value indicating whether the dependency property has a local value
+        /// or if its current value is not its default value.
+        /// </summary>
+        /// <param name="dp">The <see cref="DependencyProperty"/>.</param>
+        /// <param name="depObj">A <see cref="DependencyObject"/>.</param>
+        /// <returns>
+        /// true if the dependency property can be treated as set;
+        /// false if not.
+        /// </returns>
+        public static bool IsSet(this DependencyProperty dp, DependencyObject depObj)
+        {
+            if (dp == null) throw new ArgumentNullException(nameof(dp));
+            if (depObj == null) throw new ArgumentNullException(nameof(depObj));
+            return dp.HasLocalValue(depObj) ||
+                   depObj.GetValue(dp) != dp.DefaultMetadata.DefaultValue;
+        }
+
+        /// <summary>
         /// Checks if the dependency property's local value is set for the specified
         /// dependency object.
         /// </summary>
@@ -39,11 +57,9 @@ namespace Celestial.UIToolkit.Extensions
         /// </returns>
         public static bool IsDependencyPropertySet(this DependencyObject depObj, DependencyProperty dp)
         {
-            // This does exactly the same as DependencyProperty.HasLocalValue.
-            // Depending on the code section, either version might sound better than the other one though.
-            if (depObj == null) throw new ArgumentNullException(nameof(depObj));
-            if (dp == null) throw new ArgumentNullException(nameof(dp));
-            return dp.HasLocalValue(depObj);
+            // This method just wraps the IsSet method.
+            // Depending on the context, calling this one makes more sense.
+            return IsSet(dp, depObj);
         }
 
     }

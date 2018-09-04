@@ -1,12 +1,9 @@
 ﻿using Celestial.UIToolkit.Controls;
-using System.Collections.Generic;
+using Celestial.UIToolkit.Theming;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Media;
-using System.Windows.Shapes;
 
 namespace ControlGallery
 {
@@ -26,7 +23,7 @@ namespace ControlGallery
         {
             MessageBox.Show("Back requested!");
         }
-        
+
         private void ChangeMenuItemButton_Click(object sender, RoutedEventArgs e)
         {
             NavView.MenuItems.Add("New Item. It's a string!");
@@ -60,6 +57,17 @@ namespace ControlGallery
         {
             Debug.WriteLine(e.ToString());
         }
+
+        private void NavView_ItemInvoked(object sender, object e)
+        {
+
+        }
+
+        private void ToggleShadowsButton_Click(object sender, RoutedEventArgs e)
+        {
+            ShadowProperties.AreShadowsEnabled = !ShadowProperties.AreShadowsEnabled;
+        }
+
     }
 
 }

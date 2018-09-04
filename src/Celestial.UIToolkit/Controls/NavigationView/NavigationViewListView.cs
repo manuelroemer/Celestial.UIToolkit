@@ -14,6 +14,13 @@ namespace Celestial.UIToolkit.Controls
     public class NavigationViewListView : ExtendedListView
     {
 
+        static NavigationViewListView()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(
+                typeof(NavigationViewListView),
+                new FrameworkPropertyMetadata(typeof(NavigationViewListView)));
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="NavigationViewListView"/> class.
         /// </summary>

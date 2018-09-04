@@ -10,7 +10,7 @@
         <c:SharedResourceDictionary Source="../../Icons/Arrows.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardExpander" TargetType="Expander" BasedOn="{c:MultiStyle 'TransparentBackground TransparentBorder StandardForeground AmbientShadow NoShadow'}">
+    <Style x:Key="StandardExpander" TargetType="Expander" BasedOn="{c:MultiStyle 'TransparentBackground TransparentBorder StandardForeground'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="BorderThickness" Value="0" />

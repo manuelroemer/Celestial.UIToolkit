@@ -1,6 +1,5 @@
 ﻿using System.Diagnostics;
 using System.Windows;
-using System.Windows.Markup;
 
 namespace Celestial.UIToolkit.Xaml
 {

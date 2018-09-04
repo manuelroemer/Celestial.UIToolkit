@@ -10,15 +10,15 @@
         <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardCard" TargetType="controls:Card" BasedOn="{c:MultiStyle 'BottomShadow Elevated1Shadow'}">
+    <Style x:Key="StandardCard" TargetType="controls:Card" BasedOn="{c:MultiStyle 'PrimaryBackground ControlBorder Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
-        <Setter Property="Background" Value="{StaticResource PrimaryBrush}" />
-        <Setter Property="BorderBrush" Value="{StaticResource PrimaryMediumLowBrush}" />
         <Setter Property="Padding" Value="{c:GridUnit 4}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
+        <Setter Property="BorderBrush" Value="{StaticResource PrimaryMediumBrush}" />
+        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource BottomControlThemeShadow}" />
         <Setter Property="TitleTemplate">
             <Setter.Value>
                 <DataTemplate>
@@ -50,15 +50,13 @@
                     </ControlTemplate.Resources>
 
                     <Grid>
-                        <controls:ShadowDecorator Style="{StaticResource ThemeableShadowDecorator}">
-                            <!-- Dummy border. We can't put the ShadowDecorator around the actual border,
-                                 since that would apply the effect to every single child. -->
+                        <controls:ThemeShadowPresenter>
                             <Border Background="{TemplateBinding Background}"
-                                                 BorderBrush="{TemplateBinding BorderBrush}"
-                                                 BorderThickness="{TemplateBinding BorderThickness}"
-                                                 Padding="{TemplateBinding Padding}"
-                                                 CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}" />
-                        </controls:ShadowDecorator>
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    Padding="{TemplateBinding Padding}"
+                                    CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}" />
+                        </controls:ThemeShadowPresenter>
                         <controls:ClippingBorder x:Name="Bd"
                                                  Background="{TemplateBinding Background}"
                                                  BorderBrush="{TemplateBinding BorderBrush}"

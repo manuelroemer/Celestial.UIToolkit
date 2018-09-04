@@ -14,15 +14,17 @@
         <c:SharedResourceDictionary Source="../../Icons/ControlParts.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardNavigationViewItem" TargetType="controls:NavigationViewItem" BasedOn="{c:MultiStyle 'OnPaneControlBackground OnPaneControlBorder StandardForeground StandardFontProperties'}">
+    <Style x:Key="StandardNavigationViewItem" TargetType="controls:NavigationViewItem" BasedOn="{c:MultiStyle 'OnPaneControlBackground OnPaneControlBorder StandardForeground StandardFontProperties ElevationZIndex Shadow0 InteractiveShadow4'}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource Accent2Brush}" />
         <Setter Property="Padding" Value="{c:GridUnit '0,2'}" />
         <Setter Property="MinHeight" Value="{c:GridUnit 10}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource Accent2Brush}" />
         <Setter Property="controls:IconElement.Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:NavigationViewItem">
@@ -56,6 +58,10 @@
                                                   Storyboard.TargetProperty="Foreground"
                                                   Duration="0"
                                                   To="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                               Storyboard.TargetProperty="(controls:ThemeShadow.Elevation)">
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.ShadowElevation) ,RelativeSource={RelativeSource TemplatedParent}}" />
+                                </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
 
                             <Storyboard x:Key="DisabledStoryboard">
@@ -83,6 +89,10 @@
                                                   Storyboard.TargetProperty="Foreground"
                                                   Duration="0"
                                                   To="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                               Storyboard.TargetProperty="(controls:ThemeShadow.Elevation)">
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:DisabledProperties.ShadowElevation) ,RelativeSource={RelativeSource TemplatedParent}}" />
+                                </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
 
                             <Storyboard x:Key="SelectedStoryboard">
@@ -98,6 +108,10 @@
                                                                Storyboard.TargetProperty="Visibility">
                                     <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
                                 </ObjectAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                               Storyboard.TargetProperty="(controls:ThemeShadow.Elevation)">
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:PressedProperties.ShadowElevation) ,RelativeSource={RelativeSource TemplatedParent}}" />
+                                </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
 
                             <Storyboard x:Key="SelectedUnfocusedStoryboard">
@@ -113,6 +127,10 @@
                                                                Storyboard.TargetProperty="Visibility">
                                     <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
                                 </ObjectAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                               Storyboard.TargetProperty="(controls:ThemeShadow.Elevation)">
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:ActiveProperties.ShadowElevation) ,RelativeSource={RelativeSource TemplatedParent}}" />
+                                </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
 
                             <DataTemplate DataType="{x:Type sys:String}">
@@ -120,20 +138,27 @@
                             </DataTemplate>
                         </Grid.Resources>
 
-                        <Border x:Name="Bd"
-                                Background="{TemplateBinding Background}"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}" />
-                        <Border x:Name="SelectionBorder"
-                                Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
-                                BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                Visibility="Collapsed" />
-                        <controls:RippleOverlay x:Name="Ripple"
-                                                IsEnabled="{TemplateBinding theming:RippleProperties.ShowRippleAnimation}"
-                                                Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
-                                                BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}" 
-                                                IsActiveTrigger="{TemplateBinding IsSelected}" />
+                        <controls:ThemeShadowPresenter>
+                            <Grid>
+                                <Border x:Name="Bd"
+                                        Background="{TemplateBinding Background}"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}" 
+                                        CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}" />
+                                <Border x:Name="SelectionBorder"
+                                        Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
+                                        BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                        CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}" 
+                                        Visibility="Collapsed" />
+                                <controls:RippleOverlay x:Name="Ripple"
+                                                        IsEnabled="{TemplateBinding theming:RippleProperties.ShowRippleAnimation}"
+                                                        Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
+                                                        BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}" 
+                                                        IsActiveTrigger="{TemplateBinding IsSelected}" />
+
+                            </Grid>
+                        </controls:ThemeShadowPresenter>
 
                         <Grid Margin="{TemplateBinding Padding}">
                             <Grid.ColumnDefinitions>
@@ -186,6 +211,15 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="controls:ThemeShadow.Elevation" Value="0" />
+                <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="0" />
+                <Setter Property="theming:PressedProperties.ShadowElevation" Value="0" />
+                <Setter Property="theming:ActiveProperties.ShadowElevation" Value="0" />
+                <Setter Property="theming:DisabledProperties.ShadowElevation" Value="0" />
+            </Trigger>
+        </Style.Triggers>
     </Style>
     <Style TargetType="controls:NavigationViewItem" BasedOn="{StaticResource StandardNavigationViewItem}" />
 
@@ -210,21 +244,22 @@
         </Setter>
     </Style>
 
-    <Style x:Key="NavigationViewMenuItemsListView" TargetType="ListView">
+    <Style TargetType="controls:NavigationViewListView">
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="ListView">
+                <ControlTemplate TargetType="controls:NavigationViewListView">
                     <ScrollViewer>
-                        <ItemsPresenter />
+                        <ItemsPresenter x:Name="ItemsPresenter"
+                                        Margin="{TemplateBinding Padding}"/>
                     </ScrollViewer>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
     
-    <Style TargetType="controls:NavigationView">
+    <Style TargetType="controls:NavigationView" BasedOn="{c:MultiStyle 'Shadow0 InteractiveShadow8'}">
         <Setter Property="Focusable" Value="False" />
         <Setter Property="IsTabStop" Value="False" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
@@ -236,6 +271,7 @@
         <Setter Property="PaneBackButtonStyle" Value="{StaticResource NavigationViewBackButton}" />
         <Setter Property="PaneToggleButtonStyle" Value="{StaticResource NavigationViewToggleButton}" />
         <Setter Property="PaneBackground" Value="{StaticResource PaneBackgroundBrush}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource RightControlThemeShadow}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:NavigationView">
@@ -252,10 +288,12 @@
                                                 BorderThickness="{TemplateBinding BorderThickness}"
                                                 PaneBackground="{TemplateBinding PaneBackground}"
                                                 theming:ControlProperties.CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}"
+                                                controls:ThemeShadow.Elevation="{TemplateBinding controls:ThemeShadow.Elevation}"
+                                                controls:ThemeShadow.Shadow="{TemplateBinding controls:ThemeShadow.Shadow}"
                                                 DisplayMode="Overlay"
+                                                IsPaneOpen="{Binding IsPaneOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}, UpdateSourceTrigger=PropertyChanged}"
                                                 CompactPaneLength="{TemplateBinding CompactPaneLength}"
-                                                OpenPaneLength="{TemplateBinding OpenPaneLength}"
-                                                IsPaneOpen="{Binding IsPaneOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}, UpdateSourceTrigger=PropertyChanged}">
+                                                OpenPaneLength="{TemplateBinding OpenPaneLength}">
                                 <controls:SplitView.Pane>
                                     <Grid x:Name="PART_PaneContentContainer">
                                         <Grid.RowDefinitions>
@@ -331,8 +369,7 @@
 
                                             <controls:NavigationViewListView x:Name="PART_MenuItemsListView"
                                                                              Grid.Row="1"
-                                                                             Style="{StaticResource NavigationViewMenuItemsListView}"
-                                                                             Margin="{c:GridUnit '0,3'}"
+                                                                             Padding="{c:GridUnit '0,3'}"
                                                                              SelectionMode="Single"
                                                                              ItemsSource="{Binding MenuItems, RelativeSource={RelativeSource TemplatedParent}}"
                                                                              IsSynchronizedWithCurrentItem="False"
@@ -352,8 +389,7 @@
                                             <controls:NavigationViewListView x:Name="PART_SettingsItemListView"
                                                                              Grid.Row="3"
                                                                              IsSynchronizedWithCurrentItem="False"
-                                                                             SelectedValue="{Binding SelectedItem, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
-                                                                             Style="{StaticResource NavigationViewMenuItemsListView}">
+                                                                             SelectedValue="{Binding SelectedItem, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}">
                                                 <controls:NavigationViewItem x:Name="PART_SettingsItem"
                                                                              Content="Settings"
                                                                              Visibility="{Binding IsSettingsVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}">
@@ -470,6 +506,14 @@
                         <Trigger Property="DisplayMode" Value="Expanded">
                             <Setter TargetName="SplitView" Property="DisplayMode" Value="CompactInline" />
                         </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="DisplayMode" Value="Minimal" />
+                                <Condition Property="IsPaneOpen" Value="False" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="PART_BackButton" Property="Background" Value="Transparent" />
+                            <Setter TargetName="PART_ToggleButton" Property="Background" Value="Transparent" />
+                        </MultiTrigger>
                         <Trigger Property="IsToggleButtonVisible" Value="False">
                             <Setter TargetName="PaneHeaderContentSite" Property="Grid.Row" Value="0" />
                         </Trigger>
@@ -477,6 +521,23 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Style.Triggers>
+            <!-- Show a pane shadow when the NavView is in an Overlay mode. -->
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsPaneOpen" Value="True" />
+                    <Condition Property="DisplayMode" Value="Minimal" />
+                </MultiTrigger.Conditions>
+                <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:ActiveProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsPaneOpen" Value="True" />
+                    <Condition Property="DisplayMode" Value="Compact" />
+                </MultiTrigger.Conditions>
+                <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:ActiveProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
+            </MultiTrigger>
+        </Style.Triggers>
     </Style>
     
 </ResourceDictionary>

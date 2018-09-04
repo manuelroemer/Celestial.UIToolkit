@@ -11,7 +11,6 @@
         
         <c:SharedResourceDictionary Source="Controls/IconElements.xaml" />
         <c:SharedResourceDictionary Source="Controls/RippleOverlay.xaml" />
-        <c:SharedResourceDictionary Source="Controls/ShadowDecorator.xaml" />
         <c:SharedResourceDictionary Source="Controls/SplitView.xaml" />
         <c:SharedResourceDictionary Source="Controls/NavigationView.xaml" />
         

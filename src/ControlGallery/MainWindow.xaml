@@ -9,6 +9,45 @@
         Background="{StaticResource PrimaryBrush}"
         Title="Aurora UI Toolkit - Control Gallery"
         Width="1000" Height="600">
+
+    <!--<Grid>
+        <Grid.Resources>
+            <ControlTemplate x:Key="Btn" TargetType="Button">
+                <ControlTemplate.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="HorizontalAlignment" Value="Center" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                    </Style>
+                </ControlTemplate.Resources>
+                <Border Width="400" Height="400" Background="LightGray">
+                    <Border Background="White" Width="300" Height="300">
+                        <c:ThemeShadowPresenter>
+                            <c:ThemeShadowPresenter.ThemeShadow>
+                                <c:ThemeShadow x:Name="Shadow" ShadowColor="CornflowerBlue" />
+                            </c:ThemeShadowPresenter.ThemeShadow>
+                            <Border Background="Red" Width="100" Height="100">
+                                <ContentPresenter />
+                            </Border>
+                        </c:ThemeShadowPresenter>
+                    </Border>
+                </Border>
+            </ControlTemplate>
+        </Grid.Resources>
+
+        <TabControl>
+            <TabItem Style="{x:Null}">
+
+                <Button x:Name="Btn" Template="{StaticResource Btn}" c:ThemeShadow.Elevation="10" Click="Button_Click">
+                    <c:ThemeShadow.Shadow>
+                        <c:ThemeShadow x:Name="Shadow" ShadowColor="Red" />
+                    </c:ThemeShadow.Shadow>
+                </Button>
+            </TabItem>
+            <TabItem>
+                
+            </TabItem>
+        </TabControl>
+    </Grid>-->
     
     <c:NavigationView x:Name="NavView"
                       PaneHeader="Pane Title"
@@ -70,30 +109,25 @@
                     Clear ItemsSource
                 </Button>
 
-                <TextBlock Text="{Binding SelectedItem, ElementName=NavView}" />
+                <Button x:Name="ToggleShadowsButton" Click="ToggleShadowsButton_Click">
+                    Toggle Shadows
+                </Button>
 
-                <!--<StackPanel c:IconElement.Foreground="Green">
-                    <c:PathIcon Data="{StaticResource HalfArrowRight}" />
-                    <c:PathIcon Data="{StaticResource HalfArrowRight}" Foreground="Red"  />
+                <Separator />
 
-                    <StackPanel>
-                        <StackPanel>
-                            <c:PathIcon Data="{StaticResource HalfArrowRight}" />
-                            <c:PathIcon Data="{StaticResource HalfArrowRight}" />
-                            <StackPanel>
-                                <ContentControl>
-                                    <ContentControl.Content>
-                                        <c:PathIcon Data="{StaticResource HalfArrowRight}" />
-                                    </ContentControl.Content>
-                                </ContentControl>
-                            </StackPanel>
-                        </StackPanel>
-                    </StackPanel>
-                </StackPanel>-->
-
+                <Border Width="200" Height="200"
+                        BorderThickness="1"
+                        BorderBrush="Black" Background="White">
+                    <c:DropShadowDecorator x:Name="ShadowDecorator" BlurRadius="10" OffsetX="-20" IsShadowEnabled="False">
+                        <Border Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                Background="Red">
+                            <CheckBox IsChecked="{Binding IsShadowEnabled, ElementName=ShadowDecorator}" />
+                        </Border>
+                    </c:DropShadowDecorator>
+                </Border>
+                
                 <pages:Buttons />
                 <pages:Cards />
-                <pages:Toggleables />
             </StackPanel>
         </ScrollViewer>
     </c:NavigationView>
