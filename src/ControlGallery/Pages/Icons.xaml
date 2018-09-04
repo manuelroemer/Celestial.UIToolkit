@@ -26,28 +26,6 @@
                 </Style>
             </StackPanel.Resources>
 
-            <controls:ShadowDecorator Elevation="1" ShadowType="Ambient" ShadowDirection="Top">
-                <Border />
-            </controls:ShadowDecorator>
-            <controls:ShadowDecorator Elevation="2" ShadowType="Directional" ShadowDirection="Top">
-                <Border />
-            </controls:ShadowDecorator>
-            <controls:ShadowDecorator Elevation="3" ShadowType="Directional" ShadowDirection="Top">
-                <Border />
-            </controls:ShadowDecorator>
-            <controls:ShadowDecorator Elevation="4" ShadowType="Directional" ShadowDirection="Top">
-                <Border />
-            </controls:ShadowDecorator>
-            <controls:ShadowDecorator x:Name="E5" Elevation="3" ShadowType="Ambient">
-                <Border />
-            </controls:ShadowDecorator>
-            <controls:ShadowDecorator Elevation="20" ShadowType="Directional">
-                <Border />
-            </controls:ShadowDecorator>
-            <controls:ShadowDecorator Elevation="20" ShadowType="Ambient">
-                <Border />
-            </controls:ShadowDecorator>
-
             <Button>
                 <Button.Triggers>
                     <EventTrigger RoutedEvent="Button.Click">
