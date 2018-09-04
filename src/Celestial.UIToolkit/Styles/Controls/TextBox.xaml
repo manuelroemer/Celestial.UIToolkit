@@ -45,7 +45,7 @@
                                     <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                                 </c:BrushAnimationUsingKeyFrames>
                             </Storyboard>
-                            
+
                             <Storyboard x:Key="DisabledStoryboard">
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                 Storyboard.TargetProperty="Background">
@@ -63,6 +63,10 @@
                                                                 Storyboard.TargetProperty="BorderBrush">
                                     <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                                 </c:BrushAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="FocusedIndicator"
+                                                               Storyboard.TargetProperty="RenderTransform.(ScaleTransform.ScaleX)">
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="0" />
+                                </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
 
                             <Storyboard x:Key="FocusedStoryboard">
@@ -80,7 +84,7 @@
                                 </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
                         </Grid.Resources>
-                        
+
                         <controls:ThemeShadowPresenter>
                             <Grid>
                                 <Border x:Name="Bd"
@@ -105,14 +109,14 @@
                                         </Rectangle.RenderTransform>
                                     </Rectangle>
                                 </Border>
-                            </Grid>                            
+                            </Grid>
                         </controls:ThemeShadowPresenter>
-                        
+
                         <ScrollViewer x:Name="PART_ContentHost"
                                       Padding="{TemplateBinding Padding}"
                                       HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
                                       VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
-                        
+
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualStateGroup.Transitions>
@@ -133,6 +137,26 @@
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                     </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="TextBoxBase.IsReadOnly" Value="True">
+                            <Setter Property="theming:ActiveProperties.BorderBrush" Value="{Binding BorderBrush, RelativeSource={RelativeSource Self}}" />
+                        </Trigger>
+                        <Trigger Property="Validation.HasError" Value="True">
+                            <Setter Property="BorderBrush" Value="{StaticResource ErrorControlBorderBrush}" />
+                            <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource ErrorControlHoverBorderBrush}" />
+                            <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource ErrorControlActiveBorderBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Validation.ErrorTemplate">
+            <Setter.Value>
+                <ControlTemplate>
+                    <StackPanel>
+                        <AdornedElementPlaceholder />
+                    </StackPanel>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -140,25 +164,5 @@
     <Style TargetType="TextBox" BasedOn="{StaticResource StandardTextBox}" />
     <Style TargetType="RichTextBox" BasedOn="{StaticResource StandardTextBox}" />
     <Style TargetType="PasswordBox" BasedOn="{StaticResource StandardTextBox}" />
-
-
-
-    <!--
-    Subtle TextBox.
-    A TextBox which is more subtle than the default TextBox.
-    This effect is achieved by only showing the Border at the TextBox's bottom.
-    --><!--
-    <Style x:Key="SubtleTextBoxBase" TargetType="Control" BasedOn="{StaticResource StandardTextBox}">
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
-        <Setter Property="BorderThickness" Value="0,0,0,1" />
-        <Setter Property="Padding" Value="-2,0" />
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="Transparent" />
-        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="Transparent" />
-        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
-    </Style>
-
-    <Style x:Key="SubtleTextBox" TargetType="TextBox" BasedOn="{StaticResource SubtleTextBoxBase}" />
-    <Style x:Key="SubtlePasswordBox" TargetType="PasswordBox" BasedOn="{StaticResource SubtleTextBoxBase}" />-->
 
 </ResourceDictionary>

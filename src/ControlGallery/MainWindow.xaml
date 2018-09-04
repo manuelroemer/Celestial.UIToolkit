@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ControlGallery"
         xmlns:pages="clr-namespace:ControlGallery.Pages"
         xmlns:c="http://celestial-ui.com"
         mc:Ignorable="d"
@@ -39,7 +40,21 @@
             </c:NavigationViewItem>
         </c:NavigationView.MenuItems>
 
-        <TextBox Width="200" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20" />
+        <StackPanel Margin="20">
+            <TextBox x:Name="StdTxt" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top"  />
+            <TextBox IsReadOnly="True" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top"  />
+            <TextBox Width="200" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <TextBox.Text>
+                    <Binding Path="Text"
+                             ElementName="StdTxt"
+                             NotifyOnValidationError="True">
+                        <Binding.ValidationRules>
+                            <local:NumericValidationRule ValidatesOnTargetUpdated="True" />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+        </StackPanel>
 
         <!--<ScrollViewer>
             <StackPanel >
