@@ -387,6 +387,7 @@
 
                                             <ContentPresenter x:Name="PaneFooterContentSite" 
                                                               Grid.Row="2"
+                                                              Margin="{c:GridUnit '0,0,0,-3'}"
                                                               ContentSource="PaneFooter"
                                                               ContentTemplate="{TemplateBinding PaneFooterTemplate}"
                                                               ContentTemplateSelector="{TemplateBinding PaneFooterTemplateSelector}"
@@ -395,7 +396,8 @@
                                             <controls:NavigationViewListView x:Name="PART_SettingsItemListView"
                                                                              Grid.Row="3"
                                                                              IsSynchronizedWithCurrentItem="False"
-                                                                             SelectedValue="{Binding SelectedItem, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}">
+                                                                             SelectedValue="{Binding SelectedItem, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                                                                             Padding="{c:GridUnit '0,3,0,0'}">
                                                 <controls:NavigationViewItem x:Name="PART_SettingsItem"
                                                                              Content="Settings"
                                                                              Visibility="{Binding IsSettingsVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}">
