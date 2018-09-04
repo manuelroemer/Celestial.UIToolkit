@@ -62,9 +62,8 @@
       <DependentUpon>Card.GeneratedProperties.tt</DependentUpon>
     </Compile>
     <Compile Include="Controls\ClippingBorder.cs" />
-    <Compile Include="Controls\DecoratorExtensions.cs" />
     <Compile Include="Controls\ExtendedListView.cs" />
-    <Compile Include="Controls\IconElement.cs" />
+    <Compile Include="Controls\Icon\IconElement.cs" />
     <Compile Include="Controls\NavigationView\Items\NavigationViewItem.cs" />
     <Compile Include="Controls\NavigationView\NavigationView.cs" />
     <Compile Include="Controls\NavigationView\NavigationView.Header.cs" />
@@ -79,7 +78,7 @@
     <Compile Include="Controls\NavigationView\NavigationViewDisplayModeChangedEventArgs.cs" />
     <Compile Include="Controls\NavigationView\NavigationViewItemEventArgs.cs" />
     <Compile Include="Controls\NavigationView\NavigationViewListView.cs" />
-    <Compile Include="Controls\PathIcon.cs" />
+    <Compile Include="Controls\Icon\PathIcon.cs" />
     <Compile Include="Controls\RippleOverlay.cs" />
     <Compile Include="Controls\ShadowControls\DirectionalThemeShadow.cs" />
     <Compile Include="Controls\ShadowControls\DropShadowDecorator.cs" />
