@@ -15,7 +15,7 @@
     <Style TargetType="controls:PlaceholderOverlay">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
-        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Top" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:PlaceholderOverlay">
@@ -143,10 +143,12 @@
                                 <VisualStateGroup.Transitions>
                                     <VisualTransition From="FloatingVisible" 
                                                       To="FloatingNotVisible"
-                                                      GeneratedDuration="{StaticResource FastExitAnimationDuration}" />
+                                                      GeneratedDuration="{StaticResource FastEnterAnimationDuration}" 
+                                                      GeneratedEasingFunction="{StaticResource FastEnterAnimationEase}" />
                                     <VisualTransition From="FloatingNotVisible" 
                                                       To="FloatingVisible"
-                                                      GeneratedDuration="{StaticResource FastEnterAnimationDuration}" />
+                                                      GeneratedDuration="{StaticResource FastExitAnimationDuration}"
+                                                      GeneratedEasingFunction="{StaticResource FastExitAnimationEase}" />
                                 </VisualStateGroup.Transitions>
                                 <VisualState x:Name="FloatingVisible" />
                                 <VisualState x:Name="FloatingNotVisible" Storyboard="{StaticResource FloatingNotVisibleStoryboard}" />

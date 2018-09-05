@@ -142,7 +142,8 @@
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualStateGroup.Transitions>
-                                    <VisualTransition GeneratedDuration="{StaticResource ColorAnimationDuration}" />
+                                    <VisualTransition GeneratedDuration="{StaticResource ColorAnimationDuration}"
+                                                      GeneratedEasingFunction="{StaticResource ColorAnimationEase}" />
                                     <VisualTransition To="Disabled" GeneratedDuration="0" />
                                     <VisualTransition To="ReadOnly" GeneratedDuration="0" />
                                 </VisualStateGroup.Transitions>
@@ -152,7 +153,8 @@
                             </VisualStateGroup>
                             <VisualStateGroup x:Name="FocusStates">
                                 <VisualStateGroup.Transitions>
-                                    <VisualTransition GeneratedDuration="{StaticResource ColorAnimationDuration}" />
+                                    <VisualTransition GeneratedDuration="{StaticResource ColorAnimationDuration}"
+                                                      GeneratedEasingFunction="{StaticResource ColorAnimationEase}" />
                                 </VisualStateGroup.Transitions>
                                 <VisualState x:Name="Unfocused" />
                                 <VisualState x:Name="Focused" Storyboard="{StaticResource FocusedStoryboard}" />
