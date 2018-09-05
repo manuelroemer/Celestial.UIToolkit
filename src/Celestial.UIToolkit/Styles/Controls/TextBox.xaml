@@ -109,10 +109,11 @@
                                         CornerRadius="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
                                         Visibility="Collapsed" />
                                 <Rectangle x:Name="FocusedIndicator"
-                                            Fill="{TemplateBinding theming:ActiveProperties.BorderBrush}"
-                                            RenderTransformOrigin="0.5,0.5"
-                                            Height="1"
-                                            VerticalAlignment="Bottom">
+                                           Fill="{TemplateBinding theming:ActiveProperties.BorderBrush}"
+                                           RenderTransformOrigin="0.5,0.5"
+                                           Height="1"
+                                           VerticalAlignment="Bottom"
+                                           Margin="{TemplateBinding BorderThickness}">
                                     <Rectangle.RenderTransform>
                                         <ScaleTransform ScaleX="0" />
                                     </Rectangle.RenderTransform>
