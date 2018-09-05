@@ -9,6 +9,7 @@
         <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
         <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
         <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
+        <c:SharedResourceDictionary Source="../../Icons/Badges.xaml" />
         <c:SharedResourceDictionary Source="./TextBlock.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
@@ -122,23 +123,37 @@
                         </controls:ThemeShadowPresenter>
 
                         <controls:PlaceholderOverlay x:Name="Placeholder"
-                                                     Placeholder="{TemplateBinding theming:PlaceholderProperties.Placeholder}"
-                                                     IsPlaceholderVisible="False"
-                                                     FloatingPlaceholderScale="0.8"
-                                                     PlaceholderDisplayKind="Floating"
-                                                     HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                     VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                                                     Padding="{TemplateBinding Padding}">
-                            <!-- Use a negative margin on the ScrollViewer, because of a .NET Bug:
-                                 https://stackoverflow.com/a/26300334
-                                 The ScrollViewer's margin is there to combat the internal TextBoxView being slightly moved to the right. -->                            
-                            <Border Margin="{Binding Padding, Converter={x:Static c:NegateValueConverter.Default}, RelativeSource={RelativeSource TemplatedParent}}">
-                                <ScrollViewer x:Name="PART_ContentHost"
-                                              Margin="-1,0,0,0"
-                                              HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                              VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
-                            </Border>
-                        </controls:PlaceholderOverlay>
+                                                        Placeholder="{TemplateBinding theming:PlaceholderProperties.Placeholder}"
+                                                        IsPlaceholderVisible="False"
+                                                        FloatingPlaceholderScale="0.8"
+                                                        PlaceholderDisplayKind="Floating"
+                                                        HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                        VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                        Padding="{TemplateBinding Padding}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                
+                                <!-- Use a negative margin on the ScrollViewer, because of a .NET Bug:
+                                        https://stackoverflow.com/a/26300334
+                                        The ScrollViewer's margin is there to combat the internal TextBoxView being slightly moved to the right. -->
+                                <Border Margin="{Binding Padding, Converter={x:Static c:NegateValueConverter.Default}, RelativeSource={RelativeSource TemplatedParent}}">
+                                    <ScrollViewer x:Name="PART_ContentHost"
+                                                    Margin="-1,0,0,0"
+                                                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                </Border>
+
+                                <controls:PathIcon x:Name="ValidationErrorIcon"
+                                                   Grid.Column="1"
+                                                   Margin="{c:GridUnit '1,0,0,0'}"
+                                                   Visibility="Collapsed"
+                                                   Foreground="{StaticResource ErrorBrush}"
+                                                   Data="{StaticResource Error}" />
+                            </Grid>
+                        </controls:PlaceholderOverlay>                        
 
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
@@ -168,6 +183,7 @@
                             <Setter Property="theming:ActiveProperties.BorderBrush" Value="{Binding BorderBrush, RelativeSource={RelativeSource Self}}" />
                         </Trigger>
                         <Trigger Property="Validation.HasError" Value="True">
+                            <Setter TargetName="ValidationErrorIcon" Property="Visibility" Value="Visible" />
                             <Setter Property="BorderBrush" Value="{StaticResource ErrorControlBorderBrush}" />
                             <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource ErrorControlHoverBorderBrush}" />
                             <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource ErrorControlActiveBorderBrush}" />
