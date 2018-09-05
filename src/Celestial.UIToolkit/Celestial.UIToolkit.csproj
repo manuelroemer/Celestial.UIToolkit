@@ -79,6 +79,7 @@
     <Compile Include="Controls\NavigationView\NavigationViewItemEventArgs.cs" />
     <Compile Include="Controls\NavigationView\NavigationViewListView.cs" />
     <Compile Include="Controls\Icon\PathIcon.cs" />
+    <Compile Include="Controls\PlaceholderDisplayer.cs" />
     <Compile Include="Controls\RippleOverlay.cs" />
     <Compile Include="Controls\ShadowControls\DirectionalThemeShadow.cs" />
     <Compile Include="Controls\ShadowControls\DropShadowDecorator.cs" />
@@ -104,6 +105,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Theming\PlaceholderProperties.cs" />
     <Compile Include="Theming\RippleProperties.cs" />
     <Compile Include="Theming\ShadowProperties.cs" />
     <Compile Include="Theming\TabControlProperties.cs" />
@@ -145,6 +147,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\Controls\NavigationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Controls\PlaceholderDisplayer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

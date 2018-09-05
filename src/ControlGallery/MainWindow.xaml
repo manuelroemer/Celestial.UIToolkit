@@ -40,8 +40,10 @@
             </c:NavigationViewItem>
         </c:NavigationView.MenuItems>
 
-        <StackPanel Margin="20">
+        <StackPanel Margin="20" c:MarginHelper.ChildrenMargin="10">
             <TextBox x:Name="StdTxt" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top">Standard</TextBox>
+            <TextBox x:Name="Placeholder" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top"
+                     c:PlaceholderProperties.Placeholder="Placeholder Text"></TextBox>
             <TextBox IsReadOnly="True" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top">ReadOnly</TextBox>
             <TextBox IsEnabled="False" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top">Disabled</TextBox>
             <TextBox Width="200" HorizontalAlignment="Center" VerticalAlignment="Top">

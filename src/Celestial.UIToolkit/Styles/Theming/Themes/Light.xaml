@@ -26,7 +26,7 @@
     The primary color is the identity of the theme.
     -->
     <Color x:Key="PrimaryColor">#FFFFFF</Color>
-    <Color x:Key="PrimaryLowColor">#F9F9F9</Color>
+    <Color x:Key="PrimaryLowColor">#F5F5F5</Color>
     <Color x:Key="PrimaryMediumLowColor">#EAEAEA</Color>
     <Color x:Key="PrimaryMediumColor">#C8C8C8</Color>
     <Color x:Key="PrimaryMediumHighColor">#A6A6A6</Color>
@@ -145,6 +145,8 @@
     Brush definitions based on the colors.
     These should not be changed.
     -->
+
+    <SolidColorBrush x:Key="CaretBrush" Color="{StaticResource TextMediumColor}" />
     
     <!-- Text Brushes. -->
     <SolidColorBrush x:Key="TextPrimaryBrush" Color="{StaticResource TextPrimaryColor}" />

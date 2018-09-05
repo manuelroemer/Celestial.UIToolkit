@@ -10,6 +10,7 @@
         <c:SharedResourceDictionary Source="Shared/FocusVisuals.xaml" />
         
         <c:SharedResourceDictionary Source="Controls/IconElements.xaml" />
+        <c:SharedResourceDictionary Source="Controls/PlaceholderDisplayer.xaml" />
         <c:SharedResourceDictionary Source="Controls/RippleOverlay.xaml" />
         <c:SharedResourceDictionary Source="Controls/SplitView.xaml" />
         <c:SharedResourceDictionary Source="Controls/NavigationView.xaml" />

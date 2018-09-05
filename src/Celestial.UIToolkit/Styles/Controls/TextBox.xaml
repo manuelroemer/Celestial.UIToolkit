@@ -1,5 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
                     xmlns:c="http://celestial-ui.com"
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
@@ -8,6 +9,7 @@
         <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
         <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
         <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
+        <c:SharedResourceDictionary Source="./TextBlock.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
 
@@ -21,8 +23,8 @@
         <Setter Property="Margin" Value="0" />
         <Setter Property="Padding" Value="{c:GridUnit '1,0'}" />
         <Setter Property="MinWidth" Value="{c:GridUnit 30}" />
-        <Setter Property="MinHeight" Value="{c:GridUnit 7}" />
-        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="MinHeight" Value="{c:GridUnit 8}" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="BorderThickness" Value="0,0,0,1" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
@@ -30,11 +32,19 @@
         <Setter Property="KeyboardNavigation.TabNavigation" Value="None" />
         <Setter Property="AllowDrop" Value="True" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource BottomControlThemeShadow}" />
+        <Setter Property="TextBoxBase.CaretBrush" Value="{StaticResource CaretBrush}" />
+        <Setter Property="PasswordBox.CaretBrush" Value="{StaticResource CaretBrush}" />
+        <Setter Property="Background" Value="{StaticResource PrimaryLowBrush}" />
+        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Control">
                     <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
                         <Grid.Resources>
+
+                            <c:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
 
                             <Storyboard x:Key="MouseOverStoryboard">
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
@@ -99,7 +109,7 @@
                                         BorderThickness="{TemplateBinding BorderThickness}"
                                         CornerRadius="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
                                         Visibility="Collapsed" />
-                                <Border BorderThickness="{TemplateBinding BorderThickness}">
+                                <Border >
                                     <Rectangle x:Name="FocusedIndicator"
                                                Fill="{TemplateBinding theming:ActiveProperties.BorderBrush}"
                                                RenderTransformOrigin="0.5,0.5"
@@ -113,10 +123,18 @@
                             </Grid>
                         </controls:ThemeShadowPresenter>
 
-                        <ScrollViewer x:Name="PART_ContentHost"
-                                      Padding="{TemplateBinding Padding}"
-                                      HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        <controls:PlaceholderDisplayer x:Name="Placeholder"
+                                                       Placeholder="{TemplateBinding theming:PlaceholderProperties.Placeholder}"
+                                                       IsPlaceholderVisible="False"
+                                                       PlaceholderDisplayKind="Disappearing"
+                                                       Cursor="{TemplateBinding Cursor}"
+                                                       HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                       VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                       Padding="{TemplateBinding Padding}">
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                          HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </controls:PlaceholderDisplayer>
 
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
@@ -148,6 +166,13 @@
                             <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource ErrorControlHoverBorderBrush}" />
                             <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource ErrorControlActiveBorderBrush}" />
                         </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="TextBox.Text" Value="" />
+                                <Condition Property="IsFocused" Value="False" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="Placeholder" Property="IsPlaceholderVisible" Value="True" />
+                        </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
