@@ -243,7 +243,8 @@ namespace Celestial.UIToolkit.Xaml
 
         private Thickness CalculateThickness()
         {
-            var thickness = (Thickness)_thicknessConverter.ConvertFromString(_formattedMultiplierString);
+            var thickness = (Thickness)_thicknessConverter
+                .ConvertFromInvariantString(_formattedMultiplierString);
             double multiplier = GetFinalLengthMultiplier();
             return new Thickness(
                 thickness.Left * multiplier,
@@ -254,7 +255,8 @@ namespace Celestial.UIToolkit.Xaml
 
         private CornerRadius CalculateCornerRadius()
         {
-            var cornerRadius = (CornerRadius)_cornerRadiusConverter.ConvertFromString(_formattedMultiplierString);
+            var cornerRadius = (CornerRadius)_cornerRadiusConverter
+                .ConvertFromInvariantString(_formattedMultiplierString);
             double multiplier = GetFinalLengthMultiplier();
             return new CornerRadius(
                 cornerRadius.TopLeft * multiplier,
@@ -265,14 +267,16 @@ namespace Celestial.UIToolkit.Xaml
 
         private object CalculateSize()
         {
-            var size = (Size)_sizeConverter.ConvertFromString(_formattedMultiplierString);
+            var size = (Size)_sizeConverter
+                .ConvertFromInvariantString(_formattedMultiplierString);
             double multiplier = GetFinalLengthMultiplier();
             return new Size(size.Width * multiplier, size.Height * multiplier);
         }
 
         private object CalculatePoint()
         {
-            var point = (Point)_pointConverter.ConvertFromString(_formattedMultiplierString);
+            var point = (Point)_pointConverter
+                .ConvertFromInvariantString(_formattedMultiplierString);
             double multiplier = GetFinalLengthMultiplier();
             return new Point(point.X * multiplier, point.Y * multiplier);
         }

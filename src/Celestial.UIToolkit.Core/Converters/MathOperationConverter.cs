@@ -66,8 +66,8 @@ namespace Celestial.UIToolkit.Converters
                     $"{typeof(IConvertible).FullName}.");
 
             // Get the right hand side from the parameter.
-            double l = System.Convert.ToDouble(value);
-            double r = System.Convert.ToDouble(paramConvertible);
+            double l = System.Convert.ToDouble(value, CultureInfo.InvariantCulture);
+            double r = System.Convert.ToDouble(paramConvertible, CultureInfo.InvariantCulture);
             double res = l;
 
             switch (Operator)

@@ -21,11 +21,10 @@
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Margin" Value="0" />
-        <Setter Property="Padding" Value="{c:GridUnit '1,0'}" />
+        <Setter Property="Padding" Value="{c:GridUnit '1'}" />
         <Setter Property="MinWidth" Value="{c:GridUnit 30}" />
-        <Setter Property="MinHeight" Value="{c:GridUnit 8}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Top" />
         <Setter Property="BorderThickness" Value="0,0,0,1" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
         <Setter Property="PasswordBox.PasswordChar" Value="&#x2022;" />
@@ -109,32 +108,36 @@
                                         BorderThickness="{TemplateBinding BorderThickness}"
                                         CornerRadius="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
                                         Visibility="Collapsed" />
-                                <Border >
-                                    <Rectangle x:Name="FocusedIndicator"
-                                               Fill="{TemplateBinding theming:ActiveProperties.BorderBrush}"
-                                               RenderTransformOrigin="0.5,0.5"
-                                               Height="1"
-                                               VerticalAlignment="Bottom">
-                                        <Rectangle.RenderTransform>
-                                            <ScaleTransform ScaleX="0" />
-                                        </Rectangle.RenderTransform>
-                                    </Rectangle>
-                                </Border>
+                                <Rectangle x:Name="FocusedIndicator"
+                                            Fill="{TemplateBinding theming:ActiveProperties.BorderBrush}"
+                                            RenderTransformOrigin="0.5,0.5"
+                                            Height="1"
+                                            VerticalAlignment="Bottom">
+                                    <Rectangle.RenderTransform>
+                                        <ScaleTransform ScaleX="0" />
+                                    </Rectangle.RenderTransform>
+                                </Rectangle>
                             </Grid>
                         </controls:ThemeShadowPresenter>
 
-                        <controls:PlaceholderDisplayer x:Name="Placeholder"
-                                                       Placeholder="{TemplateBinding theming:PlaceholderProperties.Placeholder}"
-                                                       IsPlaceholderVisible="False"
-                                                       PlaceholderDisplayKind="Disappearing"
-                                                       Cursor="{TemplateBinding Cursor}"
-                                                       HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                       VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                                                       Padding="{TemplateBinding Padding}">
-                            <ScrollViewer x:Name="PART_ContentHost"
-                                          HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                          VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
-                        </controls:PlaceholderDisplayer>
+                        <controls:PlaceholderOverlay x:Name="Placeholder"
+                                                     Placeholder="{TemplateBinding theming:PlaceholderProperties.Placeholder}"
+                                                     IsPlaceholderVisible="False"
+                                                     FloatingPlaceholderScale="0.8"
+                                                     PlaceholderDisplayKind="Floating"
+                                                     HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                     VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                     Padding="{TemplateBinding Padding}">
+                            <!-- Use a negative margin on the ScrollViewer, because of a .NET Bug:
+                                 https://stackoverflow.com/a/26300334
+                                 The ScrollViewer's margin is there to combat the internal TextBoxView being slightly moved to the right. -->                            
+                            <Border Margin="{Binding Padding, Converter={x:Static c:NegateValueConverter.Default}, RelativeSource={RelativeSource TemplatedParent}}">
+                                <ScrollViewer x:Name="PART_ContentHost"
+                                              Margin="-1,0,0,0"
+                                              HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                            </Border>
+                        </controls:PlaceholderOverlay>
 
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">

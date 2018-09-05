@@ -79,7 +79,9 @@
     <Compile Include="Controls\NavigationView\NavigationViewItemEventArgs.cs" />
     <Compile Include="Controls\NavigationView\NavigationViewListView.cs" />
     <Compile Include="Controls\Icon\PathIcon.cs" />
-    <Compile Include="Controls\PlaceholderDisplayer.cs" />
+    <Compile Include="Controls\PlaceholderOverlay\PlaceholderDisplayKind.cs" />
+    <Compile Include="Controls\PlaceholderOverlay\PlaceholderOverlay.cs" />
+    <Compile Include="Controls\PlaceholderOverlay\PlaceholderOverlay.Properties.cs" />
     <Compile Include="Controls\RippleOverlay.cs" />
     <Compile Include="Controls\ShadowControls\DirectionalThemeShadow.cs" />
     <Compile Include="Controls\ShadowControls\DropShadowDecorator.cs" />
@@ -150,7 +152,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\Controls\PlaceholderDisplayer.xaml">
+    <Page Include="Styles\Controls\PlaceholderOverlay.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
