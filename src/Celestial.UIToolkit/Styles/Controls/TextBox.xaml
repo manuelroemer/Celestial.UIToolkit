@@ -12,7 +12,8 @@
 
 
     <!-- Use TargetType="Control", so that the PasswordBox can use the style too.
-         Slightly problematic, since this allows setting this style on any type of control. -->
+         Slightly problematic, since this allows setting this style on any type of control.
+         To anyone reading this: Don't do that. -->
     <Style x:Key="StandardTextBox" TargetType="Control" BasedOn="{c:MultiStyle 'PrimaryBackground ControlBorderAccent2States StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
@@ -47,26 +48,26 @@
                             </Storyboard>
 
                             <Storyboard x:Key="DisabledStoryboard">
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                                Storyboard.TargetProperty="Background">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                </c:BrushAnimationUsingKeyFrames>
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                                Storyboard.TargetProperty="BorderBrush">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                </c:BrushAnimationUsingKeyFrames>
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="FocusedBorder"
-                                                                Storyboard.TargetProperty="Background">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                </c:BrushAnimationUsingKeyFrames>
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="FocusedBorder"
-                                                                Storyboard.TargetProperty="BorderBrush">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                </c:BrushAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                               Storyboard.TargetProperty="Visibility">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="FocusedBorder"
+                                                               Storyboard.TargetProperty="Visibility">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+                                </ObjectAnimationUsingKeyFrames>
                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="FocusedIndicator"
                                                                Storyboard.TargetProperty="RenderTransform.(ScaleTransform.ScaleX)">
                                     <DiscreteDoubleKeyFrame KeyTime="0" Value="0" />
                                 </DoubleAnimationUsingKeyFrames>
+                                <c:BrushAnimation Storyboard.TargetName="Bd"
+                                                  Storyboard.TargetProperty="Background"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                <c:BrushAnimation Storyboard.TargetName="Bd"
+                                                  Storyboard.TargetProperty="BorderBrush"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                             </Storyboard>
 
                             <Storyboard x:Key="FocusedStoryboard">
@@ -156,10 +157,31 @@
                 <ControlTemplate>
                     <StackPanel>
                         <AdornedElementPlaceholder />
+                        <ItemsControl ItemsSource="{Binding}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding ErrorContent}" />
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
                     </StackPanel>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Style.Triggers>
+            <!-- I'd like to animate the Foreground via BrushAnimations, but I'm getting InvalidOperationExceptions 
+                 in the TextBox (related to invalidating the TimeManager).
+                 Since I don't have a reasonable way to fix this, I'm taking the old-fashioned Trigger route. -->
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+            </Trigger>
+            <Trigger Property="IsFocused" Value="True">
+                <Setter Property="Foreground" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+            </Trigger>
+        </Style.Triggers>
     </Style>
     <Style TargetType="TextBox" BasedOn="{StaticResource StandardTextBox}" />
     <Style TargetType="RichTextBox" BasedOn="{StaticResource StandardTextBox}" />
