@@ -79,7 +79,7 @@
     <Compile Include="Controls\NavigationView\NavigationViewItemEventArgs.cs" />
     <Compile Include="Controls\NavigationView\NavigationViewListView.cs" />
     <Compile Include="Controls\Icon\PathIcon.cs" />
-    <Compile Include="Controls\PlaceholderOverlay\PlaceholderDisplayKind.cs" />
+    <Compile Include="Controls\PlaceholderOverlay\PlaceholderDisplayType.cs" />
     <Compile Include="Controls\PlaceholderOverlay\PlaceholderOverlay.cs" />
     <Compile Include="Controls\PlaceholderOverlay\PlaceholderOverlay.Properties.cs" />
     <Compile Include="Controls\RippleOverlay.cs" />
