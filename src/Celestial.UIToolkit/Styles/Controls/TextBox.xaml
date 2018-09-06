@@ -25,7 +25,7 @@
         <Setter Property="Padding" Value="{c:GridUnit '2'}" />
         <Setter Property="MinWidth" Value="{c:GridUnit 30}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-        <Setter Property="VerticalContentAlignment" Value="Top" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
         <Setter Property="BorderThickness" Value="0,0,0,1" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
         <Setter Property="PasswordBox.PasswordChar" Value="&#x2022;" />
@@ -38,6 +38,7 @@
         <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
         <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="theming:TextBoxHelper.TextBox" Value="{Binding RelativeSource={RelativeSource Self}}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Control">
@@ -133,10 +134,10 @@
                         </controls:ThemeShadowPresenter>
 
                         <controls:PlaceholderOverlay x:Name="PlaceholderOverlay"
-                                                     Placeholder="{TemplateBinding theming:PlaceholderProperties.Placeholder}"
+                                                     Placeholder="{TemplateBinding theming:TextBoxProperties.Placeholder}"
+                                                     PlaceholderDisplayType="{TemplateBinding theming:TextBoxProperties.PlaceholderType}"
                                                      IsPlaceholderVisible="False"
                                                      FloatingPlaceholderScale="0.8"
-                                                     PlaceholderDisplayKind="Floating"
                                                      HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
                                                      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
                                                      Padding="{TemplateBinding Padding}">
@@ -222,8 +223,8 @@
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
-                                <Condition Property="TextBox.Text" Value="" />
-                                <Condition Property="IsFocused" Value="False" />
+                                <Condition Property="theming:TextBoxHelper.HasText" Value="False" />
+                                <Condition Property="IsKeyboardFocused" Value="False" />
                             </MultiTrigger.Conditions>
                             <Setter TargetName="PlaceholderOverlay" Property="IsPlaceholderVisible" Value="True" />
                         </MultiTrigger>

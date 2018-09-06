@@ -35,15 +35,15 @@ namespace Celestial.UIToolkit.Controls
                     PlaceholderDisplayProperty_Changed));
 
         /// <summary>
-        /// Identifies the <see cref="PlaceholderDisplayKind"/> dependency property.
+        /// Identifies the <see cref="PlaceholderDisplayType"/> dependency property.
         /// </summary>
-        public static readonly DependencyProperty PlaceholderDisplayKindProperty =
+        public static readonly DependencyProperty PlaceholderDisplayTypeProperty =
             DependencyProperty.Register(
-                nameof(PlaceholderDisplayKind),
-                typeof(PlaceholderDisplayKind),
+                nameof(PlaceholderDisplayType),
+                typeof(PlaceholderDisplayType),
                 typeof(PlaceholderOverlay),
                 new PropertyMetadata(
-                    PlaceholderDisplayKind.Floating,
+                    PlaceholderDisplayType.Floating,
                     PlaceholderDisplayProperty_Changed));
 
         /// <summary>
@@ -87,14 +87,14 @@ namespace Celestial.UIToolkit.Controls
         }
 
         /// <summary>
-        /// Gets or sets the <see cref="Controls.PlaceholderDisplayKind"/> which is used
+        /// Gets or sets the <see cref="Controls.PlaceholderDisplayType"/> which is used
         /// for displaying the placeholder.
         /// </summary>
         [Bindable(true), Category("Content")]
-        public PlaceholderDisplayKind PlaceholderDisplayKind
+        public PlaceholderDisplayType PlaceholderDisplayType
         {
-            get { return (PlaceholderDisplayKind)GetValue(PlaceholderDisplayKindProperty); }
-            set { SetValue(PlaceholderDisplayKindProperty, value); }
+            get { return (PlaceholderDisplayType)GetValue(PlaceholderDisplayTypeProperty); }
+            set { SetValue(PlaceholderDisplayTypeProperty, value); }
         }
 
         /// <summary>

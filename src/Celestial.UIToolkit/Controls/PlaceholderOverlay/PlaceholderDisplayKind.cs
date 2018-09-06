@@ -4,7 +4,7 @@
     /// <summary>
     /// Defines the different display types of a placeholder.
     /// </summary>
-    public enum PlaceholderDisplayKind
+    public enum PlaceholderDisplayType
     {
 
         /// <summary>

@@ -369,7 +369,7 @@
                                                               ContentTemplate="{TemplateBinding PaneHeaderTemplate}"
                                                               ContentTemplateSelector="{TemplateBinding PaneHeaderTemplateSelector}"
                                                               ContentStringFormat="{TemplateBinding PaneHeaderStringFormat}"
-                                                              Visibility="{Binding HasPaneHeader, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                                                              Visibility="{Binding HasPaneHeader, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                         </Grid>
 
                                         <Grid x:Name="PaneContentContainer"

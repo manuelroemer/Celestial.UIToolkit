@@ -45,7 +45,7 @@
             <TextBox x:Name="Placeholder"
                      Width="200" HorizontalAlignment="Center" 
                      VerticalAlignment="Top"
-                     c:PlaceholderProperties.Placeholder="Placeholder Text"
+                     c:TextBoxProperties.Placeholder="Placeholder Text"
                      c:TextBoxProperties.AssistiveText="Helper text below the box"
                      AcceptsReturn="True"></TextBox>
             <TextBox IsReadOnly="True" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top">ReadOnly</TextBox>

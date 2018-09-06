@@ -46,13 +46,13 @@ namespace Celestial.UIToolkit.Controls
         private void EnterCurrentPlaceholderVisualState(bool useTransitions = true)
         {
             string stateName = null;
-            if (PlaceholderDisplayKind == PlaceholderDisplayKind.Floating)
+            if (PlaceholderDisplayType == PlaceholderDisplayType.Floating)
             {
                 stateName = IsPlaceholderVisible ?
                             FloatingVisibleState :
                             FloatingNotVisibleState;
             }
-            else if (PlaceholderDisplayKind == PlaceholderDisplayKind.Disappearing)
+            else if (PlaceholderDisplayType == PlaceholderDisplayType.Disappearing)
             {
                 stateName = IsPlaceholderVisible ?
                             DisappearingVisibleState :
@@ -75,7 +75,7 @@ namespace Celestial.UIToolkit.Controls
             return $"{nameof(PlaceholderOverlay)}: " +
                    $"{nameof(Placeholder)}: {Placeholder}, " +
                    $"{nameof(IsPlaceholderVisible)}: {IsPlaceholderVisible}, " +
-                   $"{nameof(PlaceholderDisplayKind)}: {PlaceholderDisplayKind}";
+                   $"{nameof(PlaceholderDisplayType)}: {PlaceholderDisplayType}";
         }
 
     }
