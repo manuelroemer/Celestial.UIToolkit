@@ -194,7 +194,8 @@
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualStateGroup.Transitions>
-                                    <VisualTransition GeneratedDuration="{StaticResource ColorAnimationDuration}" />
+                                    <VisualTransition GeneratedDuration="{StaticResource ColorAnimationDuration}"
+                                                      GeneratedEasingFunction="{StaticResource ColorAnimationEase}" />
                                     <VisualTransition To="Disabled" GeneratedDuration="0" />
                                 </VisualStateGroup.Transitions>
                                 <VisualState x:Name="Normal" />
@@ -328,7 +329,7 @@
                                                      can still be overwritten by the 'PaneHeaderTemplate' property. -->
                                                 <DataTemplate DataType="{x:Type sys:String}">
                                                     <TextBlock x:Name="PaneHeaderTitle"
-                                                               Style="{DynamicResource TitleTextBlock}"
+                                                               Style="{DynamicResource BaseTextBlock}"
                                                                Text="{Binding}"
                                                                HorizontalAlignment="Left"
                                                                VerticalAlignment="Center"
@@ -368,7 +369,7 @@
                                                               ContentTemplate="{TemplateBinding PaneHeaderTemplate}"
                                                               ContentTemplateSelector="{TemplateBinding PaneHeaderTemplateSelector}"
                                                               ContentStringFormat="{TemplateBinding PaneHeaderStringFormat}"
-                                                              Visibility="{Binding HasPaneHeader, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                                                              Visibility="{Binding HasPaneHeader, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                         </Grid>
 
                                         <Grid x:Name="PaneContentContainer"

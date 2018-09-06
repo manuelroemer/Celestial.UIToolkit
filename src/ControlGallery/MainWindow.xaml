@@ -3,62 +3,20 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ControlGallery"
         xmlns:pages="clr-namespace:ControlGallery.Pages"
         xmlns:c="http://celestial-ui.com"
         mc:Ignorable="d"
-        Background="{StaticResource PrimaryBrush}"
         Title="Aurora UI Toolkit - Control Gallery"
         Width="1000" Height="600">
 
-    <!--<Grid>
-        <Grid.Resources>
-            <ControlTemplate x:Key="Btn" TargetType="Button">
-                <ControlTemplate.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="HorizontalAlignment" Value="Center" />
-                        <Setter Property="VerticalAlignment" Value="Center" />
-                    </Style>
-                </ControlTemplate.Resources>
-                <Border Width="400" Height="400" Background="LightGray">
-                    <Border Background="White" Width="300" Height="300">
-                        <c:ThemeShadowPresenter>
-                            <c:ThemeShadowPresenter.ThemeShadow>
-                                <c:ThemeShadow x:Name="Shadow" ShadowColor="CornflowerBlue" />
-                            </c:ThemeShadowPresenter.ThemeShadow>
-                            <Border Background="Red" Width="100" Height="100">
-                                <ContentPresenter />
-                            </Border>
-                        </c:ThemeShadowPresenter>
-                    </Border>
-                </Border>
-            </ControlTemplate>
-        </Grid.Resources>
-
-        <TabControl>
-            <TabItem Style="{x:Null}">
-
-                <Button x:Name="Btn" Template="{StaticResource Btn}" c:ThemeShadow.Elevation="10" Click="Button_Click">
-                    <c:ThemeShadow.Shadow>
-                        <c:ThemeShadow x:Name="Shadow" ShadowColor="Red" />
-                    </c:ThemeShadow.Shadow>
-                </Button>
-            </TabItem>
-            <TabItem>
-                
-            </TabItem>
-        </TabControl>
-    </Grid>-->
-    
     <c:NavigationView x:Name="NavView"
                       PaneHeader="Pane Title"
-                      Header="Header!"
+                      Header="Sample Application"
                       IsSettingsVisible="True"
                       SelectedItem="{x:Null}"
                       BackRequested="NavView_BackRequested"
                       ItemInvoked="NavView_ItemInvoked">
-        <c:NavigationView.PaneFooter>
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Hello from the Footer!</TextBlock>
-        </c:NavigationView.PaneFooter>
         <c:NavigationView.MenuItems>
             <c:NavigationViewItem Content="Item 1">
                 <c:NavigationViewItem.Icon>
@@ -75,16 +33,48 @@
                     <c:PathIcon Data="{StaticResource HalfArrowRight}" />
                 </c:NavigationViewItem.Icon>
             </c:NavigationViewItem>
-            <c:NavigationViewItem Content="No Icon">
-            </c:NavigationViewItem>
-            <c:NavigationViewItem Content="Disabled" IsEnabled="False">
+            <c:NavigationViewItem Content="Disabled Item" IsEnabled="False">
                 <c:NavigationViewItem.Icon>
                     <c:PathIcon Data="{StaticResource HalfArrowRight}" />
                 </c:NavigationViewItem.Icon>
             </c:NavigationViewItem>
         </c:NavigationView.MenuItems>
 
-        <ScrollViewer>
+        <StackPanel Margin="20">
+            <StackPanel x:Name="Boxes" c:MarginHelper.ChildrenMargin="10">
+                <TextBox x:Name="StdTxt" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top"
+                         Style="{StaticResource OutlinedTextBox}">Standard</TextBox>
+                <TextBox x:Name="Placeholder"
+                         Style="{StaticResource OutlinedTextBox}"
+                         Width="200" HorizontalAlignment="Center" 
+                         VerticalAlignment="Top"
+                         c:TextBoxProperties.Placeholder="Placeholder Text"
+                         c:TextBoxProperties.AssistiveText="Helper text below the box"
+                         AcceptsReturn="True"></TextBox>
+                <TextBox IsReadOnly="True" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top">ReadOnly</TextBox>
+                <TextBox IsEnabled="False" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top">Disabled</TextBox>
+                <TextBox Width="200" HorizontalAlignment="Center" VerticalAlignment="Top"
+                         c:TextBoxProperties.AssistiveText="AssistiveText"
+                         c:TextBoxProperties.ShowFocusedIndicator="True">
+                    <TextBox.Text>
+                        <Binding Path="Text"
+                                 ElementName="StdTxt"
+                                 NotifyOnValidationError="True">
+                            <Binding.ValidationRules>
+                                <local:NumericValidationRule ValidatesOnTargetUpdated="True" />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </TextBox>
+
+                <PasswordBox />
+                <PasswordBox Style="{StaticResource OutlinedPasswordBox}" />
+            </StackPanel>
+
+            <CheckBox IsChecked="{Binding IsEnabled, ElementName=Boxes, Mode=TwoWay}" />
+        </StackPanel>
+
+        <!--<ScrollViewer>
             <StackPanel >
                 <CheckBox IsChecked="{Binding IsPaneContentVisible, ElementName=NavView, Mode=TwoWay}">IsPaneContentVisible</CheckBox>
                 <CheckBox IsChecked="{Binding IsBackButtonVisible, ElementName=NavView, Mode=TwoWay}">IsBackButtonVisible</CheckBox>
@@ -129,7 +119,7 @@
                 <pages:Buttons />
                 <pages:Cards />
             </StackPanel>
-        </ScrollViewer>
+        </ScrollViewer>-->
     </c:NavigationView>
 
     <!--<TabControl>

@@ -37,6 +37,10 @@ namespace Celestial.UIToolkit.Converters
         {
             Type valueType = value.GetType();
             
+            if (valueType == typeof(bool))
+            {
+                return NegateBool((bool)value);
+            }
             if (typeof(IConvertible).IsAssignableFrom(valueType))
             {
                 return NegateConvertible((IConvertible)value);
@@ -72,6 +76,11 @@ namespace Celestial.UIToolkit.Converters
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return Convert(value, targetType, parameter, culture);
+        }
+
+        private object NegateBool(bool value)
+        {
+            return !value;
         }
 
         private IConvertible NegateConvertible(IConvertible convertible)

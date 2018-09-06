@@ -3,36 +3,44 @@
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
     <FontFamily x:Key="StandardFontFamily">Segoe UI</FontFamily>
-    <sys:Double x:Key="StandardFontSize">14</sys:Double>
+    <sys:Double x:Key="StandardFontSize">15</sys:Double>
     <FontWeight x:Key="StandardFontWeight">Normal</FontWeight>
     <FontStyle x:Key="StandardFontStyle">Normal</FontStyle>
     <FontStretch x:Key="StandardFontStretch">Normal</FontStretch>
 
-    <FontFamily x:Key="TitleFontFamily">Segoe UI Light</FontFamily>
+    <FontFamily x:Key="HeaderFontFamily">Segoe UI</FontFamily>
+    <sys:Double x:Key="HeaderFontSize">46</sys:Double>
+    <FontWeight x:Key="HeaderFontWeight">Light</FontWeight>
+    <FontStyle x:Key="HeaderFontStyle">Normal</FontStyle>
+    <FontStretch x:Key="HeaderFontStretch">Normal</FontStretch>
+
+    <FontFamily x:Key="SubHeaderFontFamily">Segoe UI</FontFamily>
+    <sys:Double x:Key="SubHeaderFontSize">34</sys:Double>
+    <FontWeight x:Key="SubHeaderFontWeight">Light</FontWeight>
+    <FontStyle x:Key="SubHeaderFontStyle">Normal</FontStyle>
+    <FontStretch x:Key="SubHeaderFontStretch">Normal</FontStretch>
+
+    <FontFamily x:Key="TitleFontFamily">Segoe UI</FontFamily>
     <sys:Double x:Key="TitleFontSize">24</sys:Double>
-    <FontWeight x:Key="TitleFontWeight">Normal</FontWeight>
+    <FontWeight x:Key="TitleFontWeight">Light</FontWeight>
     <FontStyle x:Key="TitleFontStyle">Normal</FontStyle>
     <FontStretch x:Key="TitleFontStretch">Normal</FontStretch>
 
     <FontFamily x:Key="SubTitleFontFamily">Segoe UI</FontFamily>
-    <sys:Double x:Key="SubTitleFontSize">18</sys:Double>
+    <sys:Double x:Key="SubTitleFontSize">20</sys:Double>
     <FontWeight x:Key="SubTitleFontWeight">Normal</FontWeight>
     <FontStyle x:Key="SubTitleFontStyle">Normal</FontStyle>
     <FontStretch x:Key="SubTitleFontStretch">Normal</FontStretch>
 
-    <FontFamily x:Key="TinyFontFamily">Segoe UI</FontFamily>
-    <sys:Double x:Key="TinyFontSize">12</sys:Double>
-    <FontWeight x:Key="TinyFontWeight">Normal</FontWeight>
-    <FontStyle x:Key="TinyFontStyle">Normal</FontStyle>
-    <FontStretch x:Key="TinyFontStretch">Normal</FontStretch>
+    <FontFamily x:Key="CaptionFontFamily">Segoe UI</FontFamily>
+    <sys:Double x:Key="CaptionFontSize">12</sys:Double>
+    <FontWeight x:Key="CaptionFontWeight">Normal</FontWeight>
+    <FontStyle x:Key="CaptionFontStyle">Normal</FontStyle>
+    <FontStretch x:Key="CaptionFontStretch">Normal</FontStretch>
 
-    <FontWeight x:Key="AltFontWeight">Bold</FontWeight>
-    <FontStyle x:Key="AltFontStyle">Normal</FontStyle>
-    <FontStretch x:Key="AltFontStretch">Normal</FontStretch>
-
-    <FontWeight x:Key="SubtleFontWeight">Normal</FontWeight>
-    <FontStyle x:Key="SubtleFontStyle">Italic</FontStyle>
-    <FontStretch x:Key="SubtleFontStretch">Normal</FontStretch>
+    <FontWeight x:Key="BaseFontWeight">Bold</FontWeight>
+    <FontStyle x:Key="BaseFontStyle">Normal</FontStyle>
+    <FontStretch x:Key="BaseFontStretch">Normal</FontStretch>
 
     <FontWeight x:Key="HintFontWeight">Normal</FontWeight>
     <FontStyle x:Key="HintFontStyle">Normal</FontStyle>

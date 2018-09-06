@@ -79,6 +79,9 @@
     <Compile Include="Controls\NavigationView\NavigationViewItemEventArgs.cs" />
     <Compile Include="Controls\NavigationView\NavigationViewListView.cs" />
     <Compile Include="Controls\Icon\PathIcon.cs" />
+    <Compile Include="Controls\PlaceholderOverlay\PlaceholderDisplayKind.cs" />
+    <Compile Include="Controls\PlaceholderOverlay\PlaceholderOverlay.cs" />
+    <Compile Include="Controls\PlaceholderOverlay\PlaceholderOverlay.Properties.cs" />
     <Compile Include="Controls\RippleOverlay.cs" />
     <Compile Include="Controls\ShadowControls\DirectionalThemeShadow.cs" />
     <Compile Include="Controls\ShadowControls\DropShadowDecorator.cs" />
@@ -90,6 +93,7 @@
     <Compile Include="Controls\SplitView\SplitView.Properties.cs" />
     <Compile Include="Controls\SplitView\SplitViewDisplayMode.cs" />
     <Compile Include="Controls\SplitView\SplitViewPanePlacement.cs" />
+    <Compile Include="Theming\TextBoxHelper.cs" />
     <Compile Include="Theming\ControlProperties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -107,6 +111,7 @@
     <Compile Include="Theming\RippleProperties.cs" />
     <Compile Include="Theming\ShadowProperties.cs" />
     <Compile Include="Theming\TabControlProperties.cs" />
+    <Compile Include="Theming\TextBoxProperties.cs" />
     <Compile Include="Theming\VisualStateProperties.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -132,6 +137,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Icons\Badges.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Icons\ControlParts.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -145,6 +154,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\Controls\NavigationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Controls\PlaceholderOverlay.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
