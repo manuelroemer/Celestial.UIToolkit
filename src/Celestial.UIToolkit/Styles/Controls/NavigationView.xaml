@@ -329,7 +329,7 @@
                                                      can still be overwritten by the 'PaneHeaderTemplate' property. -->
                                                 <DataTemplate DataType="{x:Type sys:String}">
                                                     <TextBlock x:Name="PaneHeaderTitle"
-                                                               Style="{DynamicResource TitleTextBlock}"
+                                                               Style="{DynamicResource BaseTextBlock}"
                                                                Text="{Binding}"
                                                                HorizontalAlignment="Left"
                                                                VerticalAlignment="Center"

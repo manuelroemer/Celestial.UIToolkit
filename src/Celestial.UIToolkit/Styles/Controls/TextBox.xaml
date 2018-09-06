@@ -22,7 +22,7 @@
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Margin" Value="0" />
-        <Setter Property="Padding" Value="{c:GridUnit '1'}" />
+        <Setter Property="Padding" Value="{c:GridUnit '2'}" />
         <Setter Property="MinWidth" Value="{c:GridUnit 30}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Top" />
@@ -43,8 +43,6 @@
                 <ControlTemplate TargetType="Control">
                     <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
                         <Grid.Resources>
-
-                            <c:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
 
                             <Storyboard x:Key="MouseOverStoryboard">
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
@@ -94,10 +92,19 @@
                                     <DiscreteDoubleKeyFrame KeyTime="0" Value="1" />
                                 </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
+
+                            <c:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+                            <c:StringToVisibilityConverter x:Key="StringToVisibilityConverter" />
+                            <c:ThicknessSidePickerConverter x:Key="ThicknessLeftPickerConverter" Top="0" Right="0" Bottom="0" />
                         </Grid.Resources>
 
+                        <Grid.RowDefinitions>
+                            <RowDefinition x:Name="TextBoxRow" />
+                            <RowDefinition x:Name="AssistiveRow" Height="Auto" />
+                        </Grid.RowDefinitions>
+                        
                         <controls:ThemeShadowPresenter>
-                            <Grid>
+                            <Grid SnapsToDevicePixels="False">
                                 <Border x:Name="Bd"
                                         Background="{TemplateBinding Background}"
                                         BorderThickness="{TemplateBinding BorderThickness}"
@@ -109,33 +116,36 @@
                                         BorderThickness="{TemplateBinding BorderThickness}"
                                         CornerRadius="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
                                         Visibility="Collapsed" />
-                                <Rectangle x:Name="FocusedIndicator"
-                                           Fill="{TemplateBinding theming:ActiveProperties.BorderBrush}"
-                                           RenderTransformOrigin="0.5,0.5"
-                                           Height="1"
-                                           VerticalAlignment="Bottom"
-                                           Margin="{TemplateBinding BorderThickness}">
-                                    <Rectangle.RenderTransform>
-                                        <ScaleTransform ScaleX="0" />
-                                    </Rectangle.RenderTransform>
-                                </Rectangle>
+                                <Border BorderThickness="{TemplateBinding BorderThickness}">
+                                    <Rectangle x:Name="FocusedIndicator"
+                                               Fill="{TemplateBinding theming:ActiveProperties.BorderBrush}"
+                                               RenderTransformOrigin="0.5,0.5"
+                                               Visibility="{Binding Path=(theming:TextBoxProperties.ShowFocusedIndicator), RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                               VerticalAlignment="Bottom"
+                                               Height="1.5"
+                                               Margin="0,0,0,-0.5">
+                                        <Rectangle.RenderTransform>
+                                            <ScaleTransform ScaleX="0" />
+                                        </Rectangle.RenderTransform>
+                                    </Rectangle>
+                                </Border>
                             </Grid>
                         </controls:ThemeShadowPresenter>
 
-                        <controls:PlaceholderOverlay x:Name="Placeholder"
-                                                        Placeholder="{TemplateBinding theming:PlaceholderProperties.Placeholder}"
-                                                        IsPlaceholderVisible="False"
-                                                        FloatingPlaceholderScale="0.8"
-                                                        PlaceholderDisplayKind="Floating"
-                                                        HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                        VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                                                        Padding="{TemplateBinding Padding}">
+                        <controls:PlaceholderOverlay x:Name="PlaceholderOverlay"
+                                                     Placeholder="{TemplateBinding theming:PlaceholderProperties.Placeholder}"
+                                                     IsPlaceholderVisible="False"
+                                                     FloatingPlaceholderScale="0.8"
+                                                     PlaceholderDisplayKind="Floating"
+                                                     HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                     VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                     Padding="{TemplateBinding Padding}">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition />
                                     <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
-                                
+
                                 <!-- Use a negative margin on the ScrollViewer, because of a .NET Bug:
                                         https://stackoverflow.com/a/26300334
                                         The ScrollViewer's margin is there to combat the internal TextBoxView being slightly moved to the right. -->
@@ -153,7 +163,27 @@
                                                    Foreground="{StaticResource ErrorBrush}"
                                                    Data="{StaticResource Error}" />
                             </Grid>
-                        </controls:PlaceholderOverlay>                        
+                        </controls:PlaceholderOverlay>
+
+                        <Border x:Name="AssistiveElementsContainer"
+                                Grid.Row="1"
+                                Padding="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessLeftPickerConverter}}">
+                            <Grid>
+                                <TextBlock x:Name="AssistiveText"
+                                           Style="{StaticResource CaptionHintTextBlock}"
+                                           Text="{TemplateBinding theming:TextBoxProperties.AssistiveText}"
+                                           TextTrimming="CharacterEllipsis"
+                                           Margin="{c:GridUnit '0,0.5,0,0'}"
+                                           Visibility="{Binding Path=(theming:TextBoxProperties.AssistiveText), RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource StringToVisibilityConverter}}" />
+                                <TextBlock x:Name="ValidationErrorText"
+                                           Style="{StaticResource CaptionHintTextBlock}"
+                                           Foreground="{StaticResource ErrorBrush}"
+                                           Text="{Binding Path=(Validation.Errors)[0].ErrorContent, RelativeSource={RelativeSource TemplatedParent}}"
+                                           TextTrimming="CharacterEllipsis"
+                                           Margin="{c:GridUnit '0,0.5,0,0'}"
+                                           Visibility="Collapsed" />
+                            </Grid>
+                        </Border>
 
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
@@ -184,6 +214,8 @@
                         </Trigger>
                         <Trigger Property="Validation.HasError" Value="True">
                             <Setter TargetName="ValidationErrorIcon" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="ValidationErrorText" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="AssistiveText" Property="Visibility" Value="Collapsed" />
                             <Setter Property="BorderBrush" Value="{StaticResource ErrorControlBorderBrush}" />
                             <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource ErrorControlHoverBorderBrush}" />
                             <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource ErrorControlActiveBorderBrush}" />
@@ -193,28 +225,13 @@
                                 <Condition Property="TextBox.Text" Value="" />
                                 <Condition Property="IsFocused" Value="False" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="Placeholder" Property="IsPlaceholderVisible" Value="True" />
+                            <Setter TargetName="PlaceholderOverlay" Property="IsPlaceholderVisible" Value="True" />
                         </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <Setter Property="Validation.ErrorTemplate">
-            <Setter.Value>
-                <ControlTemplate>
-                    <StackPanel>
-                        <AdornedElementPlaceholder />
-                        <ItemsControl ItemsSource="{Binding}">
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding ErrorContent}" />
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                        </ItemsControl>
-                    </StackPanel>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
+        <Setter Property="Validation.ErrorTemplate" Value="{StaticResource EmptyValidationErrorTemplate}" />
         <Style.Triggers>
             <!-- I'd like to animate the Foreground via BrushAnimations, but I'm getting InvalidOperationExceptions 
                  in the TextBox (related to invalidating the TimeManager).

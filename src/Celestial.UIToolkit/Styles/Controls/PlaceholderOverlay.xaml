@@ -23,7 +23,6 @@
                             BorderBrush="{TemplateBinding BorderBrush}"
                             CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}"
                             BorderThickness="{TemplateBinding BorderThickness}"
-                            Padding="{TemplateBinding Padding}"
                             VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
 
                         <Border.Resources>

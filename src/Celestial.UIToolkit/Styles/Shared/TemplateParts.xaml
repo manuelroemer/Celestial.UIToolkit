@@ -71,5 +71,10 @@
     <Style x:Key="TextBlockOverrideStyle" TargetType="TextBlock">
         <Setter Property="Text" Value="{Binding}" />
     </Style>
-
+    
+    
+    <ControlTemplate x:Key="EmptyValidationErrorTemplate">
+        <AdornedElementPlaceholder />
+    </ControlTemplate>
+    
 </ResourceDictionary>
