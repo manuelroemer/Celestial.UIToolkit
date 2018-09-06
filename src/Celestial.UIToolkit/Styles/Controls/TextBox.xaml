@@ -103,7 +103,7 @@
                             <RowDefinition x:Name="TextBoxRow" />
                             <RowDefinition x:Name="AssistiveRow" Height="Auto" />
                         </Grid.RowDefinitions>
-                        
+
                         <controls:ThemeShadowPresenter>
                             <Grid SnapsToDevicePixels="False">
                                 <Border x:Name="Bd"
@@ -251,5 +251,14 @@
     <Style TargetType="TextBox" BasedOn="{StaticResource StandardTextBox}" />
     <Style TargetType="RichTextBox" BasedOn="{StaticResource StandardTextBox}" />
     <Style TargetType="PasswordBox" BasedOn="{StaticResource StandardTextBox}" />
+
+    <Style x:Key="OutlinedTextBoxBase" TargetType="Control" BasedOn="{StaticResource StandardTextBox}">
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="theming:TextBoxProperties.ShowFocusedIndicator" Value="False" />
+    </Style>
+
+    <Style x:Key="OutlinedTextBox" TargetType="TextBox" BasedOn="{StaticResource OutlinedTextBoxBase}" />
+    <Style x:Key="OutlinedRichTextBox" TargetType="RichTextBox" BasedOn="{StaticResource OutlinedTextBoxBase}" />
+    <Style x:Key="OutlinedPasswordBox" TargetType="PasswordBox" BasedOn="{StaticResource OutlinedTextBoxBase}" />
 
 </ResourceDictionary>

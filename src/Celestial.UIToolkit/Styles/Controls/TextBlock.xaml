@@ -15,6 +15,8 @@
         <Setter Property="FontStretch" Value="{StaticResource StandardFontStretch}" />
         <Setter Property="FontFamily" Value="{StaticResource StandardFontFamily}" />
         <Setter Property="Foreground" Value="{StaticResource StandardForegroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Foreground" Value="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
