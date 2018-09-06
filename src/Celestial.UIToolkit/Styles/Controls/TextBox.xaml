@@ -151,9 +151,9 @@
                                         The ScrollViewer's margin is there to combat the internal TextBoxView being slightly moved to the right. -->
                                 <Border Margin="{Binding Padding, Converter={x:Static c:NegateValueConverter.Default}, RelativeSource={RelativeSource TemplatedParent}}">
                                     <ScrollViewer x:Name="PART_ContentHost"
-                                                    Margin="-1,0,0,0"
-                                                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                                  Margin="-1,0,0,0"
+                                                  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
                                 </Border>
 
                                 <controls:PathIcon x:Name="ValidationErrorIcon"
