@@ -4,6 +4,13 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
+    <ResourceDictionary.MergedDictionaries>
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Fonts.xaml" />
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/GlobalValues.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
     <!--
     This file contains base-styles for nearly any type of control.
     This includes attached properties from the Theming namespace and
@@ -433,9 +440,9 @@
     <Style x:Key="AltFontProperties" TargetType="Control">
         <Setter Property="FontFamily" Value="{StaticResource StandardFontFamily}" />
         <Setter Property="FontSize" Value="{StaticResource StandardFontSize}" />
-        <Setter Property="FontWeight" Value="{StaticResource AltFontWeight}" />
-        <Setter Property="FontStretch" Value="{StaticResource AltFontStretch}" />
-        <Setter Property="FontStyle" Value="{StaticResource AltFontStyle}" />
+        <Setter Property="FontWeight" Value="{StaticResource BaseFontWeight}" />
+        <Setter Property="FontStretch" Value="{StaticResource BaseFontStretch}" />
+        <Setter Property="FontStyle" Value="{StaticResource BaseFontStyle}" />
     </Style>
 
 

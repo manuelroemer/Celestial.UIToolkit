@@ -1,0 +1,134 @@
+﻿<UserControl x:Class="ControlGallery.Xaml.CategoryPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:c="http://celestial-ui.com"
+             xmlns:local="clr-namespace:ControlGallery.Xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:data="clr-namespace:ControlGallery.Data"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+
+    <UserControl.Resources>
+        <Style x:Key="CardListViewItem" TargetType="ListViewItem">
+            <Setter Property="c:ThemeShadow.Elevation" Value="8" />
+            <Setter Property="c:MouseOverProperties.ShadowElevation" Value="16" />
+            <Setter Property="c:DisabledProperties.ShadowElevation" Value="0" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListViewItem">
+                        <Grid>
+                            <Grid.Resources>
+                                
+                                <Storyboard x:Key="MouseOverStoryboard">
+                                    <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Card"
+                                                                   Storyboard.TargetProperty="(c:ThemeShadow.Elevation)">
+                                        <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Path=(c:MouseOverProperties.ShadowElevation), RelativeSource={RelativeSource TemplatedParent}}" />
+                                    </DoubleAnimationUsingKeyFrames>
+                                </Storyboard>
+                                
+                                <Storyboard x:Key="DisabledStoryboard">
+                                    <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Card"
+                                                                   Storyboard.TargetProperty="(c:ThemeShadow.Elevation)">
+                                        <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Path=(c:MouseOverProperties.ShadowElevation), RelativeSource={RelativeSource TemplatedParent}}" />
+                                    </DoubleAnimationUsingKeyFrames>
+                                </Storyboard>
+                                
+                            </Grid.Resources>
+                            
+                            <c:Card x:Name="Card"
+                                    Content="{TemplateBinding Content}"
+                                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                                    ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
+                                    ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                    Padding="{TemplateBinding Padding}"
+                                    c:ThemeShadow.Elevation="{TemplateBinding c:ThemeShadow.Elevation}" />
+
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualStateGroup.Transitions>
+                                        <VisualTransition To="Disabled" GeneratedDuration="0" />
+                                        <VisualTransition GeneratedDuration="{StaticResource ColorAnimationDuration}" 
+                                                          GeneratedEasingFunction="{StaticResource ColorAnimationEase}" />
+                                    </VisualStateGroup.Transitions>
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="MouseOver" Storyboard="{StaticResource MouseOverStoryboard}" />
+                                    <VisualState x:Name="Disabled" Storyboard="{StaticResource DisabledStoryboard}" />
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <Style x:Key="CardListView" TargetType="ListView">
+            <Setter Property="ItemContainerStyle" Value="{StaticResource CardListViewItem}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListView">
+                        <ScrollViewer>
+                            <ItemsPresenter x:Name="ItemsPresenter"
+                                            Margin="{TemplateBinding Padding}"/>
+                        </ScrollViewer>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <WrapPanel />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <DataTemplate x:Key="CategoryItemTemplate" DataType="data:ControlInformation">
+            <ContentControl Width="{c:GridUnit 70}" Height="{c:GridUnit 40}">
+                <Grid Margin="{c:GridUnit 2}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <ContentControl x:Name="ControlIcon"
+                                    Content="{Binding Icon}" 
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center" />
+                    
+                    <TextBlock x:Name="ControlName"
+                               Grid.Column="1"
+                               Margin="{c:GridUnit '2,0,0,0'}"
+                               Style="{StaticResource SubTitleTextBlock}" 
+                               Text="{Binding Name}"
+                               VerticalAlignment="Center" />
+                    
+                    <TextBlock x:Name="ControlDescription"
+                               Grid.Row="1"
+                               Grid.ColumnSpan="2"
+                               Margin="{c:GridUnit '0,2,0,0'}"
+                               Style="{StaticResource HintTextBlock}"
+                               Text="{Binding Description}" 
+                               TextWrapping="Wrap"
+                               TextTrimming="CharacterEllipsis" />
+                </Grid>
+            </ContentControl>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <ListView ItemTemplate="{StaticResource CategoryItemTemplate}"
+              ItemsSource="{Binding Category.Controls}"
+              SelectedItem="{Binding SelectedControl, Mode=TwoWay}"
+              SelectionMode="Single"
+              Style="{StaticResource CardListView}" 
+              Padding="{c:GridUnit '3,3,3,0'}"/>
+
+</UserControl>

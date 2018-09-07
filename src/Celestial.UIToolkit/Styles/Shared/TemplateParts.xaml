@@ -70,6 +70,7 @@
     <!-- Default TextBlock Style override -> https://stackoverflow.com/a/5330534 -->
     <Style x:Key="TextBlockOverrideStyle" TargetType="TextBlock">
         <Setter Property="Text" Value="{Binding}" />
+        <Setter Property="FontStretch" Value="Normal" />
     </Style>
     
     

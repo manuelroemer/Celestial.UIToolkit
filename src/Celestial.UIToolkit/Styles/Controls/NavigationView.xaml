@@ -12,6 +12,10 @@
         <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
         <c:SharedResourceDictionary Source="../../Icons/Arrows.xaml" />
         <c:SharedResourceDictionary Source="../../Icons/ControlParts.xaml" />
+
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="StandardNavigationViewItem" TargetType="controls:NavigationViewItem" BasedOn="{c:MultiStyle 'OnPaneControlBackground OnPaneControlBorder StandardForeground StandardFontProperties ElevationZIndex Shadow0 InteractiveShadow4'}">
@@ -209,12 +213,6 @@
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                     </Grid>
-
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="HasIcon" Value="False">
-                            <Setter TargetName="ContentSite" Property="Margin" Value="{c:GridUnit '3,0,0,0', TargetType=Thickness}" />
-                        </Trigger>
-                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -268,12 +266,13 @@
     <Style TargetType="controls:NavigationViewListView">
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+        <Setter Property="SelectionMode" Value="Single" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:NavigationViewListView">
                     <ScrollViewer>
                         <ItemsPresenter x:Name="ItemsPresenter"
-                                        Margin="{TemplateBinding Padding}"/>
+                                        Margin="{TemplateBinding Padding}" />
                     </ScrollViewer>
                 </ControlTemplate>
             </Setter.Value>

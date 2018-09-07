@@ -11,6 +11,7 @@ namespace Celestial.UIToolkit.Controls
     /// an item gets invoked, creates <see cref="NavigationViewItem"/> container elements by
     /// default and disallows Keyboard Navigation.
     /// </summary>
+    [StyleTypedProperty(Property = nameof(ItemContainerStyle), StyleTargetType = typeof(NavigationViewItem))]
     public class NavigationViewListView : ExtendedListView
     {
 
@@ -27,7 +28,7 @@ namespace Celestial.UIToolkit.Controls
         public NavigationViewListView()
         {
         }
-
+        
         /// <summary>
         /// Creates and returns a new <see cref="NavigationViewItem"/> container.
         /// </summary>
@@ -35,6 +36,20 @@ namespace Celestial.UIToolkit.Controls
         protected override DependencyObject GetContainerForItemOverride()
         {
             return new NavigationViewItem();
+        }
+
+        /// <summary>
+        /// Returns a value indicating whether the <paramref name="item"/> is of type
+        /// <see cref="NavigationViewItem"/>.
+        /// </summary>
+        /// <param name="item">The item to be checked.</param>
+        /// <returns>
+        /// true if <paramref name="item"/> is an <see cref="NavigationViewItem"/>;
+        /// false if not.
+        /// </returns>
+        protected override bool IsItemItsOwnContainerOverride(object item)
+        {
+            return item is NavigationViewItem;
         }
 
     }

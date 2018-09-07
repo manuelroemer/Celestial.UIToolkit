@@ -185,7 +185,8 @@ namespace Celestial.UIToolkit.Xaml
                     $"The {MultiplierString} was null or empty. The {nameof(GridUnitExtension)} " +
                     $"is unable to convert such a string.");
 
-            Type targetType = DetermineConversionTargetType((IProvideValueTarget)serviceProvider);
+            var provideValueTarget = (IProvideValueTarget)serviceProvider.GetService(typeof(IProvideValueTarget));
+            Type targetType = DetermineConversionTargetType(provideValueTarget);
             return CalculateValue(targetType);
         }
 
