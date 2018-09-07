@@ -98,6 +98,7 @@
     <Compile Include="Common\NavigationViewModel.cs" />
     <Compile Include="Common\RegionNames.cs" />
     <Compile Include="Common\RegionNavigationExtensions.cs" />
+    <Compile Include="Controls\ControlPresenter.cs" />
     <Compile Include="Converters\StringToTextDocumentConverter.cs" />
     <Compile Include="Data\Categories\KnownCategories.Commanding.cs" />
     <Compile Include="Data\ControlCategory.cs" />
@@ -123,6 +124,10 @@
     <Compile Include="Xaml\SamplePages\Commanding\Button.xaml.cs">
       <DependentUpon>Button.xaml</DependentUpon>
     </Compile>
+    <Page Include="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\XamlDisplay.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

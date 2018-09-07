@@ -1,0 +1,115 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:c="http://celestial-ui.com"
+                    xmlns:smtx="clr-namespace:ShowMeTheXAML;assembly=ShowMeTheXAML"
+                    xmlns:controls="clr-namespace:ControlGallery.Controls"
+                    xmlns:converters="clr-namespace:ControlGallery.Converters"
+                    xmlns:ics="http://icsharpcode.net/sharpdevelop/avalonedit"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <c:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    <c:StringToVisibilityConverter x:Key="StringToVisibilityConverter" />
+
+    <Style TargetType="controls:ControlPresenter">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="{DynamicResource PrimaryMediumLowBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="controls:ControlPresenter">
+                    <ControlTemplate.Resources>
+                        <!-- Default template for the header -->
+                        <DataTemplate DataType="{x:Type sys:String}">
+                            <TextBlock Style="{DynamicResource SubTitleTextBlock}"
+                                       Text="{Binding}" />
+                        </DataTemplate>
+                    </ControlTemplate.Resources>
+                    
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <Border x:Name="HeaderContainer"
+                                Margin="{c:GridUnit '0,0,0,2'}">
+                            <ContentPresenter ContentSource="Header"
+                                              ContentTemplate="{TemplateBinding HeaderTemplate}"
+                                              ContentTemplateSelector="{TemplateBinding HeaderTemplateSelector}"
+                                              ContentStringFormat="{TemplateBinding HeaderStringFormat}" />
+                        </Border>
+                        
+                        <Border Grid.Row="1"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Padding="{TemplateBinding Padding}"
+                                CornerRadius="{TemplateBinding c:ControlProperties.CornerRadius}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <!-- Wrap the content in a border with padding to not cut off shadows. -->
+                                <Border Padding="{c:GridUnit 3}">
+                                    <ContentPresenter x:Name="ContentSite"
+                                                      HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                </Border>
+                                <Border x:Name="OptionsPane"
+                                        Grid.Column="1"
+                                        Background="{DynamicResource PaneBackgroundBrush}"
+                                        Margin="{c:GridUnit 3}"
+                                        Padding="{c:GridUnit 3}"
+                                        VerticalAlignment="Top"
+                                        Visibility="{Binding HasOptions, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                    <ContentPresenter ContentSource="Options" />
+                                </Border>
+
+                                <TextBlock Grid.Row="1"
+                                           Margin="{c:GridUnit '3'}"
+                                           Text="{TemplateBinding Description}"
+                                           Visibility="{Binding Description, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource StringToVisibilityConverter}}" />
+
+                                <Border x:Name="XamlContainer"
+                                        Grid.Row="2"
+                                        Grid.ColumnSpan="2"
+                                        Padding="{c:GridUnit 3}"
+                                        Background="{DynamicResource PrimaryMediumLowBrush}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition />
+                                        </Grid.RowDefinitions>
+
+                                        <TextBlock Style="{DynamicResource BaseTextBlock}"
+                                                   Margin="{c:GridUnit '0,0,0,1'}"
+                                                   Text="XAML:" />
+                                        <ics:TextEditor Grid.Row="1"
+                                                        Document="{Binding Xaml, RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:StringToTextDocumentConverter.Default}}"
+                                                        Background="Transparent"
+                                                        SyntaxHighlighting="XML"
+                                                        FontSize="12pt"
+                                                        FontFamily="Consolas"
+                                                        IsReadOnly="True"
+                                                        ScrollViewer.PanningMode="Both"
+                                                        HorizontalScrollBarVisibility="Auto"
+                                                        VerticalScrollBarVisibility="Auto" />
+                                    </Grid>
+                                    
+                                </Border>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>

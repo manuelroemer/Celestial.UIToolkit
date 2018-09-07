@@ -4,6 +4,12 @@
                     xmlns:ics="http://icsharpcode.net/sharpdevelop/avalonedit"
                     xmlns:converters="clr-namespace:ControlGallery.Converters">
 
+    <!-- The default style for the XamlDisplay is one that doesn't even show any code.
+         That's because the gallery is using a special control for displaying examples:
+         The ControlPresenter.
+         This control is responsible for displaying XAML code in the app,
+         and simply binds to the XamlDisplay's Xaml property.
+    -->
     <Style TargetType="smtx:XamlDisplay" BasedOn="{StaticResource {x:Type smtx:XamlDisplay}}">
         <Setter Property="Template">
             <Setter.Value>
@@ -16,15 +22,6 @@
 
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-
-                        <ics:TextEditor Grid.Row="1"
-                                        Document="{Binding Xaml, RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:StringToTextDocumentConverter.Default}}"
-                                        SyntaxHighlighting="XML"
-                                        FontSize="12pt"
-                                        FontFamily="Consolas"
-                                        IsReadOnly="True"
-                                        HorizontalScrollBarVisibility="Auto"
-                                        VerticalScrollBarVisibility="Auto" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
