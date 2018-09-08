@@ -16,6 +16,7 @@ namespace ControlGallery.Data
         public IEnumerable<ControlCategory> GetCategories()
         {
             yield return KnownCategories.Commanding;
+            yield return KnownCategories.Input;
         }
 
     }

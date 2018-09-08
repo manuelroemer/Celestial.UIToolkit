@@ -13,7 +13,7 @@ namespace ControlGallery.Converters
 
         public override TextDocument Convert(string value, object parameter, CultureInfo culture)
         {
-            return new TextDocument(value);
+            return new TextDocument(value ?? "");
         }
 
     }
