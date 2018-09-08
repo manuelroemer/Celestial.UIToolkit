@@ -83,7 +83,7 @@
                               c:ActiveProperties.BorderBrush="DarkRed"
                               c:RippleProperties.ShowRippleAnimation="False"
                               IsThreeState="True"
-                              Content="Custom styled" />
+                              Content="Custom style" />
                 </StackPanel>
             </smtx:XamlDisplay>
             <controls:ControlPresenter.Options>
