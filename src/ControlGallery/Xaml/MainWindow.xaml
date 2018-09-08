@@ -50,6 +50,7 @@
                       Header="{Binding Path=Content.DataContext.Title, ElementName=MainRegionContentSite}">
         <ScrollViewer HorizontalScrollBarVisibility="Disabled"
                       VerticalScrollBarVisibility="Auto"
+                      PanningMode="Both"
                       CanContentScroll="False">
             <ContentControl x:Name="MainRegionContentSite"
                             prism:RegionManager.RegionName="{x:Static common:RegionNames.Main}" />
