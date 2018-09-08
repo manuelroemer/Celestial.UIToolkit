@@ -101,6 +101,7 @@
                                                         FontFamily="Consolas"
                                                         IsReadOnly="True"
                                                         ScrollViewer.PanningMode="Both"
+                                                        MaxHeight="{c:GridUnit 250}"
                                                         HorizontalScrollBarVisibility="Auto"
                                                         VerticalScrollBarVisibility="Auto" />
                                     </Grid>

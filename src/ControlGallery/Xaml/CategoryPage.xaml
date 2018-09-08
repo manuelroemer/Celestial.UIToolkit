@@ -16,6 +16,7 @@
             <Setter Property="c:ThemeShadow.Elevation" Value="8" />
             <Setter Property="c:MouseOverProperties.ShadowElevation" Value="16" />
             <Setter Property="c:DisabledProperties.ShadowElevation" Value="0" />
+            <Setter Property="Margin" Value="{c:GridUnit '0,0,6,0'}" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ListViewItem">

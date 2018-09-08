@@ -22,10 +22,19 @@ namespace ControlGallery.Data.Categories
             }
         };
 
+        private static ControlInformation PasswordBoxInfo = new ControlInformation()
+        {
+            Name = "PasswordBox",
+            Description = "A PasswordBox is a variation of the TextBox that allows the user to enter passwords.",
+            Icon = new PackIconModern() { Kind = PackIconModernKind.Key },
+            SamplePageType = typeof(PasswordBox)
+        };
+
         public static ControlCategory Input { get; } = new ControlCategory(
             "Input",
             new PackIconMaterialLight() { Kind = PackIconMaterialLightKind.BorderOutside },
-            TextBoxInfo);
+            TextBoxInfo,
+            PasswordBoxInfo);
 
     }
 
