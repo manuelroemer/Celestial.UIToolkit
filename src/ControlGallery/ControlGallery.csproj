@@ -102,6 +102,7 @@
     <Compile Include="Converters\StringToTextDocumentConverter.cs" />
     <Compile Include="Data\Categories\KnownCategories.Commanding.cs" />
     <Compile Include="Data\Categories\KnownCategories.Input.cs" />
+    <Compile Include="Data\Categories\KnownCategories.Layout.cs" />
     <Compile Include="Data\ControlCategory.cs" />
     <Compile Include="Data\ControlDataSource.cs" />
     <Compile Include="Data\ControlInformation.cs" />
@@ -136,6 +137,9 @@
     </Compile>
     <Compile Include="Xaml\SamplePages\Input\TextBox.xaml.cs">
       <DependentUpon>TextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Xaml\SamplePages\Layout\SplitView.xaml.cs">
+      <DependentUpon>SplitView.xaml</DependentUpon>
     </Compile>
     <Page Include="Themes\Generic.xaml">
       <SubType>Designer</SubType>
@@ -178,6 +182,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Xaml\SamplePages\Input\TextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\SamplePages\Layout\SplitView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

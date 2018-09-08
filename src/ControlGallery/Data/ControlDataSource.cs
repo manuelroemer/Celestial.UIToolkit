@@ -17,6 +17,7 @@ namespace ControlGallery.Data
         {
             yield return KnownCategories.Commanding;
             yield return KnownCategories.Input;
+            yield return KnownCategories.Layout;
         }
 
     }
