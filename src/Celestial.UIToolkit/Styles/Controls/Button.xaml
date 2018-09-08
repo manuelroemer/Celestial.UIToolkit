@@ -102,8 +102,7 @@
                                     CornerRadius="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
                                     BorderThickness="{TemplateBinding BorderThickness}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
-                                    Background="{TemplateBinding Background}"
-                                    Padding="{TemplateBinding Padding}" />
+                                    Background="{TemplateBinding Background}" />
                         </controls:ThemeShadowPresenter>
                         
                         <controls:RippleOverlay x:Name="Ripple"
@@ -115,6 +114,7 @@
                                                 IsEnabled="{TemplateBinding theming:RippleProperties.ShowRippleAnimation}" />
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          Margin="{TemplateBinding Padding}"
                                           RecognizesAccessKey="True" />
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
