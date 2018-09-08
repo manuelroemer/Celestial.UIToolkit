@@ -19,11 +19,11 @@
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledSplitViewEx1}">
                     <c:SplitView IsPaneOpen="{Binding IsChecked, ElementName=IsPaneOpenEx1}"
-                                 DisplayMode="{Binding SelectedValue, ElementName=DisplayModeEx1}"
+                                 DisplayMode="{Binding SelectedValue, ElementName=DisplayModeEx1, Mode=TwoWay}"
                                  Height="{c:GridUnit 50}">
                         <c:SplitView.Pane>
-                            <TextBlock Style="{StaticResource HeaderTextBlock}"
-                                       Text="Hello Pane!" />
+                            <TextBlock Style="{StaticResource TitleTextBlock}"
+                                       Text="Hello from the Pane!" />
                         </c:SplitView.Pane>
                         <TextBlock Text="Hello from the Content!" />
                     </c:SplitView>
@@ -38,11 +38,15 @@
                     <CheckBox x:Name="IsPaneOpenEx1"
                               IsChecked="True"
                               Content="IsPaneOpen" />
-                    <ComboBox x:Name="DisplayModeEx1" />
+                    <ComboBox x:Name="DisplayModeEx1"
+                              ItemsSource="{c:EnumBindingSource c:SplitViewDisplayMode}"
+                              SelectedIndex="0" />
                 </StackPanel>
             </controls:ControlPresenter.Options>
         </controls:ControlPresenter>
 
+        <!-- TODO: Enable Pane shadows. -->
+        
     </StackPanel>
 
 </UserControl>
