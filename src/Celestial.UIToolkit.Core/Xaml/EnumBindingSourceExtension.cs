@@ -70,7 +70,7 @@ namespace Celestial.UIToolkit.Xaml
         public override string ToString()
         {
             return $"{nameof(EnumBindingSourceExtension)}: " +
-                   $"{nameof(EnumType)}: {EnumType.FullName}";
+                   $"{nameof(EnumType)}: {EnumType?.FullName}";
         }
 
     }
