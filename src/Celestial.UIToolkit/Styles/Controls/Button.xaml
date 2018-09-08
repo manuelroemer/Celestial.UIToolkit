@@ -177,7 +177,7 @@
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource ControlHoverBackgroundBrush}" />
         <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource ControlPressedBackgroundBrush}" />
-        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource ControlPressedBackgroundBrush}" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource ControlActiveBackgroundBrush}" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
     </Style>
 
@@ -204,6 +204,11 @@
 
     <Style x:Key="OutlinedButton" TargetType="ButtonBase" BasedOn="{StaticResource StandardButton}">
         <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
+        <Setter Property="BorderBrush" Value="{StaticResource ControlBackgroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource ControlHoverBackgroundBrush}" />
+        <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource ControlPressedBackgroundBrush}" />
+        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource ControlActiveBackgroundBrush}" />
+        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource ControlDisabledBackgroundBrush}" />
         <Setter Property="Background" Value="Transparent" />
         <Style.Triggers>
             <Trigger Property="IsEnabled" Value="False">
@@ -216,6 +221,10 @@
         <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Foreground" Value="{StaticResource StandardForegroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource Accent1ControlHoverBackgroundBrush}" />
+        <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource Accent1ControlPressedBackgroundBrush}" />
+        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource Accent1ControlActiveBackgroundBrush}" />
+        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource ControlDisabledBackgroundBrush}" />
         <Style.Triggers>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="BorderThickness" Value="0" />
@@ -227,6 +236,10 @@
         <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Foreground" Value="{StaticResource StandardForegroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource Accent2ControlHoverBackgroundBrush}" />
+        <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource Accent2ControlPressedBackgroundBrush}" />
+        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource Accent2ControlActiveBackgroundBrush}" />
+        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource ControlDisabledBackgroundBrush}" />
         <Style.Triggers>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="BorderThickness" Value="0" />
@@ -258,11 +271,17 @@
 
     <Style x:Key="Accent1SquareButton" 
            TargetType="ButtonBase" 
-           BasedOn="{c:MultiStyle 'SquareButton Accent1Border Accent1Background OnAccent1Foreground'}" />
+           BasedOn="{c:MultiStyle 'SquareButton Accent1Border Accent1Background OnAccent1Foreground'}">
+        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
+        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
+    </Style>
 
     <Style x:Key="Accent2SquareButton" 
            TargetType="ButtonBase"
-           BasedOn="{c:MultiStyle 'SquareButton Accent2Border Accent2Background OnAccent2Foreground'}" />
+           BasedOn="{c:MultiStyle 'SquareButton Accent2Border Accent2Background OnAccent2Foreground'}">
+        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
+        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />        
+    </Style>
 
 
 
@@ -336,6 +355,7 @@
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualStateGroup.Transitions>
+                                    <VisualTransition To="Disabled" GeneratedDuration="0" />
                                     <VisualTransition GeneratedDuration="{StaticResource ColorAnimationDuration}"
                                                       GeneratedEasingFunction="{StaticResource ColorAnimationEase}"/>
                                 </VisualStateGroup.Transitions>
