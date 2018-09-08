@@ -30,9 +30,29 @@ namespace ControlGallery.Data.Categories
             SamplePageType = typeof(PasswordBox)
         };
 
+        private static ControlInformation CheckBoxInfo = new ControlInformation()
+        {
+            Name = "CheckBox",
+            Description = "A CheckBox allows the user to enter different check states, namely " +
+                          "true, false or indeterminate.",
+            Icon = new PackIconModern() { Kind = PackIconModernKind.Checkmark },
+            SamplePageType = typeof(CheckBox)
+        };
+
+        private static ControlInformation RadioButtonInfo = new ControlInformation()
+        {
+            Name = "RadioButton",
+            Description = "A RadioButton allows the user to enter different check states, like the CheckBox. " +
+                          "The difference is that within a group of RadioButtons, only one can be checked.",
+            Icon = new PackIconModern() { Kind = PackIconModernKind.Checkmark },
+            SamplePageType = typeof(RadioButton)
+        };
+
         public static ControlCategory Input { get; } = new ControlCategory(
             "Input",
             new PackIconMaterialLight() { Kind = PackIconMaterialLightKind.BorderOutside },
+            CheckBoxInfo,
+            RadioButtonInfo,
             TextBoxInfo,
             PasswordBoxInfo);
 
