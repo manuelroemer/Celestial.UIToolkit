@@ -396,6 +396,45 @@
     <!--
     - Background: -
     - Border:     -
+    - Foreground: Primary color variations
+    -->
+    <Style x:Key="PrimaryForeground" TargetType="FrameworkElement">
+        <Setter Property="Control.Foreground" Value="{StaticResource ControlBackgroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource ControlHoverBackgroundBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource ControlPressedBackgroundBrush}" />
+        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource ControlActiveBackgroundBrush}" />
+    </Style>
+
+    <!--
+    - Background: -
+    - Border:     -
+    - Foreground: Accent1
+    -->
+    <Style x:Key="Accent1Foreground" TargetType="FrameworkElement">
+        <Setter Property="Control.Foreground" Value="{StaticResource Accent1ControlBackgroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource Accent1ControlHoverBackgroundBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource Accent1ControlPressedBackgroundBrush}" />
+        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource Accent1ControlActiveBackgroundBrush}" />
+    </Style>
+
+    <!--
+    - Background: -
+    - Border:     -
+    - Foreground: Accent2
+    -->
+    <Style x:Key="Accent2Foreground" TargetType="FrameworkElement">
+        <Setter Property="Control.Foreground" Value="{StaticResource Accent2ControlBackgroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource Accent2ControlHoverBackgroundBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource Accent2ControlPressedBackgroundBrush}" />
+        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource Accent2ControlActiveBackgroundBrush}" />
+    </Style>
+
+    <!--
+    - Background: -
+    - Border:     -
     - Foreground: OnError
     -->
     <Style x:Key="OnErrorForeground" TargetType="FrameworkElement">

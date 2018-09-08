@@ -111,9 +111,9 @@
             <smtx:XamlDisplay x:Name="ButtonEx5" Key="ButtonEx5">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx5}">
-                    <ToggleButton Style="{StaticResource FlatButton}" Width="{c:GridUnit 60}">Toggle Button</ToggleButton>
-                    <ToggleButton Style="{StaticResource Accent1OutlinedButton}" Width="{c:GridUnit 60}">Outlined ToggleButton</ToggleButton>
-                    <ToggleButton Style="{StaticResource Accent2FlatButton}" Width="{c:GridUnit 60}">Flat ToggleButton</ToggleButton>
+                    <ToggleButton Style="{StaticResource StandardButton}" Width="{c:GridUnit 60}">ToggleButton</ToggleButton>
+                    <ToggleButton Style="{StaticResource Accent1OutlinedButton}" Width="{c:GridUnit 60}">ToggleButton</ToggleButton>
+                    <ToggleButton Style="{StaticResource Accent2FlatButton}" Width="{c:GridUnit 60}">ToggleButton</ToggleButton>
                 </StackPanel>
             </smtx:XamlDisplay>
             <controls:ControlPresenter.Options>
@@ -146,6 +146,32 @@
             </smtx:XamlDisplay>
             <controls:ControlPresenter.Options>
                 <CheckBox x:Name="IsEnabledCheckBoxEx6"
+                          IsChecked="True"
+                          Content="IsEnabled" />
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+
+        <controls:ControlPresenter Header="Hyperlink Buttons."
+                                   Xaml="{Binding Xaml, ElementName=ButtonEx7}"
+                                   VerticalAlignment="Top">
+            <controls:ControlPresenter.Description>
+                Hyperlink Buttons mimic the behavior of links on the web.
+                In comparison to WPF's Hyperlink element, this style is applied to buttons,
+                and thus gives you the ability to use, for example, commanding.
+            </controls:ControlPresenter.Description>
+            <smtx:XamlDisplay x:Name="ButtonEx7" Key="ButtonEx7">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx7}">
+                    <Button Style="{StaticResource StandardHyperlinkButton}"
+                            Content="Primary Colors" />
+                    <Button Style="{StaticResource Accent1HyperlinkButton}"
+                            Content="Accent1 Colors" />
+                    <Button Style="{StaticResource Accent2HyperlinkButton}"
+                            Content="Accent2 Colors" />
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <CheckBox x:Name="IsEnabledCheckBoxEx7"
                           IsChecked="True"
                           Content="IsEnabled" />
             </controls:ControlPresenter.Options>

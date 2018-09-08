@@ -45,7 +45,7 @@
                 <ItemsControl ItemsSource="{Binding ControlInformation.DocumentationLinks}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate DataType="{x:Type data:LinkViewModel}">
-                            <Button Style="{StaticResource HyperlinkButton}"
+                            <Button Style="{StaticResource Accent2HyperlinkButton}"
                                     Margin="{c:GridUnit '0,1,0,0'}"
                                     Content="{Binding Title}"
                                     ToolTip="{Binding UriString}"
