@@ -75,6 +75,7 @@
                                 <TextBlock Grid.Row="1"
                                            Margin="{c:GridUnit '3'}"
                                            Text="{TemplateBinding Description}"
+                                           TextWrapping="Wrap"
                                            Visibility="{Binding Description, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource StringToVisibilityConverter}}" />
 
                                 <Border x:Name="XamlContainer"

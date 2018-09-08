@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:smtx="clr-namespace:ShowMeTheXAML;assembly=ShowMeTheXAML"
+             xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:c="http://celestial-ui.com"
              xmlns:local="clr-namespace:ControlGallery.Xaml.SamplePages.Commanding"
@@ -10,24 +11,101 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     
-    <Grid c:MarginHelper.ChildrenMargin="{c:GridUnit '0,4'}">
+    <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,4,0,12'}">
+        
         <controls:ControlPresenter Header="The Standard Button in different colors."
                                    Xaml="{Binding Xaml, ElementName=ButtonEx1}"
                                    VerticalAlignment="Top">
             <smtx:XamlDisplay x:Name="ButtonEx1" Key="ButtonEx1">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
-                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBox}">
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx1}">
                     <Button Width="{c:GridUnit 40}">Standard Button</Button>
-                    <Button Width="{c:GridUnit 40}" Style="{StaticResource Accent1Button}">Accent1 Button</Button>
-                    <Button Width="{c:GridUnit 40}" Style="{StaticResource Accent2Button}">Accent1 Button</Button>
+                    <Button Style="{StaticResource Accent1Button}" Width="{c:GridUnit 40}">Accent1 Button</Button>
+                    <Button Style="{StaticResource Accent2Button}" Width="{c:GridUnit 40}">Accent2 Button</Button>
                 </StackPanel>
             </smtx:XamlDisplay>
             <controls:ControlPresenter.Options>
-                <CheckBox x:Name="IsEnabledCheckBox"
+                <CheckBox x:Name="IsEnabledCheckBoxEx1"
                           IsChecked="True"
                           Content="IsEnabled" />
             </controls:ControlPresenter.Options>
         </controls:ControlPresenter>
-    </Grid>
+        
+        <controls:ControlPresenter Header="Outlined Buttons in different colors."
+                                   Xaml="{Binding Xaml, ElementName=ButtonEx2}"
+                                   VerticalAlignment="Top">
+            <smtx:XamlDisplay x:Name="ButtonEx2" Key="ButtonEx2">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx2}">
+                    <Button Style="{StaticResource OutlinedButton}" Width="{c:GridUnit 40}">Outlined Button</Button>
+                    <Button Style="{StaticResource Accent1OutlinedButton}" Width="{c:GridUnit 40}">Accent1 Button</Button>
+                    <Button Style="{StaticResource Accent2OutlinedButton}" Width="{c:GridUnit 40}">Accent2 Button</Button>
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <CheckBox x:Name="IsEnabledCheckBoxEx2"
+                          IsChecked="True"
+                          Content="IsEnabled" />
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+        
+        <controls:ControlPresenter Header="Flat Buttons in different colors."
+                                   Xaml="{Binding Xaml, ElementName=ButtonEx3}"
+                                   VerticalAlignment="Top">
+            <smtx:XamlDisplay x:Name="ButtonEx3" Key="ButtonEx3">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx3}">
+                    <Button Style="{StaticResource FlatButton}" Width="{c:GridUnit 40}">Flat Button</Button>
+                    <Button Style="{StaticResource Accent1FlatButton}" Width="{c:GridUnit 40}">Accent1 Button</Button>
+                    <Button Style="{StaticResource Accent2FlatButton}" Width="{c:GridUnit 40}">Accent2 Button</Button>
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <CheckBox x:Name="IsEnabledCheckBoxEx3"
+                          IsChecked="True"
+                          Content="IsEnabled" />
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+        
+        <controls:ControlPresenter Header="Circle and Square Buttons."
+                                   Xaml="{Binding Xaml, ElementName=ButtonEx4}"
+                                   VerticalAlignment="Top">
+            <controls:ControlPresenter.Description>
+                Circle/Square buttons are smaller variants of the normal button.
+                In comparison to a normal one, they have a fixed size and are intended
+                to be used with icons.
+            </controls:ControlPresenter.Description>
+            <smtx:XamlDisplay x:Name="ButtonEx4" Key="ButtonEx4">
+                <StackPanel>
+                    <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,4,4'}"
+                                IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx4}"
+                                Orientation="Horizontal">
+                        <Button Style="{StaticResource CircleButton}"
+                                Content="{icon:Modern Kind=Question}" />
+                        <Button Style="{StaticResource Accent1CircleButton}"
+                                Content="{icon:Modern Kind=Question}" />
+                        <Button Style="{StaticResource Accent2CircleButton}"
+                                Content="{icon:Modern Kind=Question}" />
+                    </StackPanel>
+                    <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,4,4'}"
+                                IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx4}"
+                                Orientation="Horizontal">
+                        <Button Style="{StaticResource SquareButton}"
+                                Content="{icon:Modern Kind=Save}" />
+                        <Button Style="{StaticResource Accent1SquareButton}"
+                                Content="{icon:Modern Kind=Delete}" />
+                        <Button Style="{StaticResource Accent2SquareButton}"
+                                Content="{icon:Modern Kind=Scissor}" />
+                    </StackPanel>
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <CheckBox x:Name="IsEnabledCheckBoxEx4"
+                          IsChecked="True"
+                          Content="IsEnabled" />
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+        
+    </StackPanel>
     
 </UserControl>
