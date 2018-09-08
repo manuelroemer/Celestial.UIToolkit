@@ -42,6 +42,7 @@ namespace Celestial.UIToolkit.Xaml
         private static readonly CornerRadiusConverter _cornerRadiusConverter;
         private static readonly SizeConverter _sizeConverter;
         private static readonly PointConverter _pointConverter;
+        private static readonly GridLengthConverter _gridLengthConverter;
         private static readonly double _dipMultiplier;
         private string _multiplierString;
         private string _formattedMultiplierString;
@@ -158,6 +159,7 @@ namespace Celestial.UIToolkit.Xaml
             _cornerRadiusConverter = new CornerRadiusConverter();
             _sizeConverter = new SizeConverter();
             _pointConverter = new PointConverter();
+            _gridLengthConverter = new GridLengthConverter();
         }
 
         private void FormatMultiplierString()
@@ -216,6 +218,10 @@ namespace Celestial.UIToolkit.Xaml
             {
                 return CalculatePoint();
             }
+            else if (targetType == typeof(GridLength))
+            {
+                return CalculateGridLength();
+            }
             else
             {
                 throw new NotSupportedException(
@@ -266,7 +272,7 @@ namespace Celestial.UIToolkit.Xaml
                 cornerRadius.BottomLeft * multiplier);
         }
 
-        private object CalculateSize()
+        private Size CalculateSize()
         {
             var size = (Size)_sizeConverter
                 .ConvertFromInvariantString(_formattedMultiplierString);
@@ -274,12 +280,23 @@ namespace Celestial.UIToolkit.Xaml
             return new Size(size.Width * multiplier, size.Height * multiplier);
         }
 
-        private object CalculatePoint()
+        private Point CalculatePoint()
         {
             var point = (Point)_pointConverter
                 .ConvertFromInvariantString(_formattedMultiplierString);
             double multiplier = GetFinalLengthMultiplier();
             return new Point(point.X * multiplier, point.Y * multiplier);
+        }
+
+        private GridLength CalculateGridLength()
+        {
+            var gridLength = (GridLength)_gridLengthConverter
+                .ConvertFromInvariantString(_formattedMultiplierString);
+            double multiplier = GetFinalLengthMultiplier();
+
+            return new GridLength(
+                gridLength.Value * multiplier,
+                gridLength.GridUnitType);
         }
 
     }

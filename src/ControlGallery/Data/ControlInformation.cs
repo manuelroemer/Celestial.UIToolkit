@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Prism.Commands;
+using System;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Windows.Input;
 
 namespace ControlGallery.Data
 {
@@ -19,28 +22,38 @@ namespace ControlGallery.Data
         
         public Type SamplePageType { get; set; }
 
-        public ObservableCollection<ControlInformation> RelatedControls { get; } =
+        public ObservableCollection<ControlInformation> RelatedControls { get; set; } =
             new ObservableCollection<ControlInformation>();
 
-        public ObservableCollection<DocumentationLinkInfo> DocumentationLinks { get; } =
-            new ObservableCollection<DocumentationLinkInfo>();
+        public ObservableCollection<LinkViewModel> DocumentationLinks { get; set; } =
+            new ObservableCollection<LinkViewModel>();
 
     }
 
-    public class DocumentationLinkInfo
+    public class LinkViewModel
     {
 
         public string Title { get; }
 
         public string UriString { get; }
+        
+        public ICommand OpenInBrowserCommand { get; }
 
-        public Uri Uri { get; }
-
-        public DocumentationLinkInfo(string title, string uriString)
+        public LinkViewModel(string title, string uriString)
         {
             Title = title;
             UriString = uriString;
-            Uri = new Uri(uriString, UriKind.RelativeOrAbsolute);
+
+            OpenInBrowserCommand = new DelegateCommand(OpenInBrowser);
+        }
+
+        public void OpenInBrowser()
+        {
+            try
+            {
+                 Process.Start(UriString);
+            }
+            catch { } // It doesn't really matter if this fails. No ex. handling required.
         }
 
     }
