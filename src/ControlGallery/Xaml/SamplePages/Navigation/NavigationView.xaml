@@ -22,6 +22,7 @@
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledNavigationViewEx1}">
                     <c:NavigationView PaneHeader="Pane Header"
+                                      Header="Normal Header."
                                       IsPaneOpen="{Binding IsChecked, ElementName=IsPaneOpenEx1, Mode=TwoWay}"
                                       AlwaysShowHeader="{Binding IsChecked, ElementName=AlwaysShowHeaderEx1, Mode=TwoWay}"
                                       IsSettingsVisible="{Binding IsChecked, ElementName=IsSettingsVisibleEx1, Mode=TwoWay}"
@@ -31,7 +32,9 @@
                                       IsToggleButtonEnabled="{Binding IsChecked, ElementName=IsToggleButtonEnabledEx1, Mode=TwoWay}"
                                       CompactModeThresholdWidth="{Binding Value, ElementName=CompactModeThresholdWidthEx1, Mode=TwoWay}"
                                       ExpandedModeThresholdWidth="{Binding Value, ElementName=ExpandedModeThresholdWidthEx1, Mode=TwoWay}"
-                                      Height="{c:GridUnit 100}">
+                                      CompactPaneLength="{Binding Value, ElementName=CompactPaneLengthEx1, Mode=TwoWay}"
+                                      OpenPaneLength="{Binding Value, ElementName=OpenPaneLengthEx1, Mode=TwoWay}"
+                                      Height="{c:GridUnit 150}">
                         <c:NavigationView.MenuItems>
                             <c:NavigationViewItem Content="Library" Icon="{icon:Modern Kind=Book}" />
                             <c:NavigationViewItem Content="Songs" Icon="{icon:Modern Kind=Music}" />
@@ -87,6 +90,16 @@
                             Value="400"
                             Minimum="0"
                             Maximum="1000" />
+                    <Label Content="CompactPaneLength:" />
+                    <Slider x:Name="CompactPaneLengthEx1"
+                            Value="{c:GridUnit 12}"
+                            Minimum="0"
+                            Maximum="{c:GridUnit 25}" />
+                    <Label Content="OpenPaneLength:" />
+                    <Slider x:Name="OpenPaneLengthEx1"
+                            Value="{c:GridUnit 80}"
+                            Minimum="0"
+                            Maximum="{c:GridUnit 100}" />
                 </StackPanel>
             </controls:ControlPresenter.Options>
         </controls:ControlPresenter>
