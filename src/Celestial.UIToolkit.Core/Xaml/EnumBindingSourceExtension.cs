@@ -6,7 +6,6 @@ namespace Celestial.UIToolkit.Xaml
 
     // Inspired by:
     // http://brianlagunas.com/a-better-way-to-data-bind-enums-in-wpf/
-    // This is a modified version though.
 
     /// <summary>
     /// A custom markup extension which takes an enum's type and returns
@@ -23,6 +22,14 @@ namespace Celestial.UIToolkit.Xaml
         [ConstructorArgument("enumType")]
         public Type EnumType { get; set; }
         
+        /// <summary>
+        /// Gets or sets a value whether a null value should be prepended to the resulting
+        /// enum values.
+        /// This may be useful when binding to elements like the ComboBox, which should potentially
+        /// allow the selection of a "Nothing"-item.
+        /// </summary>
+        public bool PrependWithNull { get; set; }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="EnumBindingSourceExtension"/> class
         /// without an enum type.
@@ -59,8 +66,7 @@ namespace Celestial.UIToolkit.Xaml
                     $"The {nameof(EnumType)} property must have a value.");
             }
 
-            Array enumValues = Enum.GetValues(EnumType);
-            return enumValues;
+            return Enum.GetValues(EnumType);
         }
 
         /// <summary>
