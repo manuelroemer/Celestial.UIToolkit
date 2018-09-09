@@ -23,14 +23,6 @@ namespace Celestial.UIToolkit.Xaml
         public Type EnumType { get; set; }
         
         /// <summary>
-        /// Gets or sets a value whether a null value should be prepended to the resulting
-        /// enum values.
-        /// This may be useful when binding to elements like the ComboBox, which should potentially
-        /// allow the selection of a "Nothing"-item.
-        /// </summary>
-        public bool PrependWithNull { get; set; }
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="EnumBindingSourceExtension"/> class
         /// without an enum type.
         /// </summary>
