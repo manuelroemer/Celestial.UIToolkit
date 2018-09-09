@@ -31,9 +31,7 @@
                                       IsToggleButtonEnabled="{Binding IsChecked, ElementName=IsToggleButtonEnabledEx1, Mode=TwoWay}"
                                       CompactModeThresholdWidth="{Binding Value, ElementName=CompactModeThresholdWidthEx1, Mode=TwoWay}"
                                       ExpandedModeThresholdWidth="{Binding Value, ElementName=ExpandedModeThresholdWidthEx1, Mode=TwoWay}"
-                                      BorderBrush="{StaticResource PrimaryMediumLowBrush}"
-                                      Height="{c:GridUnit 100}"
-                                      BorderThickness="1">
+                                      Height="{c:GridUnit 100}">
                         <c:NavigationView.MenuItems>
                             <c:NavigationViewItem Content="Library" Icon="{icon:Modern Kind=Book}" />
                             <c:NavigationViewItem Content="Songs" Icon="{icon:Modern Kind=Music}" />

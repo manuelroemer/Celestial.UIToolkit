@@ -247,7 +247,7 @@
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="NavigationViewBackButton" TargetType="Button" BasedOn="{StaticResource NavigationViewPaneButton}">
+    <Style x:Key="NavigationViewBackButton" x:Shared="False" TargetType="Button" BasedOn="{StaticResource NavigationViewPaneButton}">
         <Setter Property="Content">
             <Setter.Value>
                 <controls:PathIcon Data="{StaticResource BackwardNavigationArrow}" />
@@ -255,7 +255,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="NavigationViewToggleButton" TargetType="Button" BasedOn="{StaticResource NavigationViewPaneButton}">
+    <Style x:Key="NavigationViewToggleButton" x:Shared="False"  TargetType="Button" BasedOn="{StaticResource NavigationViewPaneButton}">
         <Setter Property="Content">
             <Setter.Value>
                 <controls:PathIcon Data="{StaticResource GlobalNavigationButton}" />
