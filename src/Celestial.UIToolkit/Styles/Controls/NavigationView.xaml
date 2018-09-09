@@ -389,7 +389,7 @@
 
                                             <controls:NavigationViewListView x:Name="PART_MenuItemsListView"
                                                                              Grid.Row="1"
-                                                                             Padding="{c:GridUnit '0,3'}"
+                                                                             Padding="{c:GridUnit '0,2'}"
                                                                              SelectionMode="Single"
                                                                              ItemsSource="{Binding MenuItems, RelativeSource={RelativeSource TemplatedParent}}"
                                                                              IsSynchronizedWithCurrentItem="False"
@@ -411,7 +411,7 @@
                                                                              Grid.Row="3"
                                                                              IsSynchronizedWithCurrentItem="False"
                                                                              SelectedValue="{Binding SelectedItem, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
-                                                                             Padding="{c:GridUnit '0,3,0,0'}">
+                                                                             Padding="{c:GridUnit '0,3,0,2'}">
                                                 <controls:NavigationViewItem x:Name="PART_SettingsItem"
                                                                              Content="Settings"
                                                                              Visibility="{Binding IsSettingsVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}">

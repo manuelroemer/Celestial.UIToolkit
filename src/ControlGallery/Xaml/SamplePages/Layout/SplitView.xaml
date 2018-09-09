@@ -66,6 +66,7 @@
             <controls:ControlPresenter.Description>
                 The SplitView supports shadows on the pane via the ThemeShadow API.
                 The pane's background can also be changed via a property.
+                The pane's width/compact width can be configured aswell.
             </controls:ControlPresenter.Description>
             <smtx:XamlDisplay x:Name="SplitViewEx2" Key="SplitViewEx2">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
@@ -75,6 +76,8 @@
                                  IsPaneOpen="{Binding IsChecked, ElementName=IsPaneOpenEx2}"
                                  DisplayMode="{Binding SelectedValue, ElementName=DisplayModeEx2, Mode=TwoWay}"
                                  PanePlacement="{Binding SelectedValue, ElementName=PanePlacementEx2, Mode=TwoWay}"
+                                 OpenPaneLength="200"
+                                 CompactPaneLength="100"
                                  BorderBrush="{StaticResource PrimaryMediumLowBrush}"
                                  BorderThickness="1"
                                  Width="{c:GridUnit 125}"
