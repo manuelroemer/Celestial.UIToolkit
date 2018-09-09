@@ -23,6 +23,7 @@
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledNavigationViewEx1}">
                     <c:NavigationView PaneHeader="Pane Header"
                                       Header="Normal Header."
+                                      HorizontalAlignment="Stretch"
                                       IsPaneOpen="{Binding IsChecked, ElementName=IsPaneOpenEx1, Mode=TwoWay}"
                                       AlwaysShowHeader="{Binding IsChecked, ElementName=AlwaysShowHeaderEx1, Mode=TwoWay}"
                                       IsSettingsVisible="{Binding IsChecked, ElementName=IsSettingsVisibleEx1, Mode=TwoWay}"

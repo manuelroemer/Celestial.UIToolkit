@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
+using static Celestial.UIToolkit.TraceSources;
 
 namespace Celestial.UIToolkit.Controls
 {
@@ -169,17 +170,22 @@ namespace Celestial.UIToolkit.Controls
         {
             // Ensure that Expanded takes precedence over Compact, so that the view gets expanded
             // if CompactThreshold > ExpandedThreshold.
-            if (ActualWidth >= ExpandedModeThresholdWidth)
+            // Don't change anything, if we are already in the state. This could potentially
+            // screw up the IsPaneOpen property.
+            if (ActualWidth >= ExpandedModeThresholdWidth &&
+                DisplayMode != NavigationViewDisplayMode.Expanded)
             {
                 DisplayMode = NavigationViewDisplayMode.Expanded;
                 IsPaneOpen = true;
             }
-            else if (ActualWidth >= CompactModeThresholdWidth)
+            else if (ActualWidth >= CompactModeThresholdWidth &&
+                     DisplayMode != NavigationViewDisplayMode.Compact)
             {
                 DisplayMode = NavigationViewDisplayMode.Compact;
                 IsPaneOpen = false;
             }
-            else
+            else if (ActualWidth < CompactModeThresholdWidth &&
+                     DisplayMode != NavigationViewDisplayMode.Minimal)
             {
                 DisplayMode = NavigationViewDisplayMode.Minimal;
                 IsPaneOpen = false;
