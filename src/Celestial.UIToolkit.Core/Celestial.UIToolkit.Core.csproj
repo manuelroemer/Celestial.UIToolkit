@@ -57,6 +57,7 @@
     <Compile Include="DesignTimeOnlyResourceDictionary.cs" />
     <Compile Include="Extensions\DependencyObjectExtensions.cs" />
     <Compile Include="ItemsSourceCollection.cs" />
+    <Compile Include="TraceSources.cs" />
     <Compile Include="Xaml\BindingProxy.cs" />
     <Compile Include="Common\Singleton.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
