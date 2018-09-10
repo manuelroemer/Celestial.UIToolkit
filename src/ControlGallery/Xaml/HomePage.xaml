@@ -3,14 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:c="http://celestial-ui.com"
              xmlns:local="clr-namespace:ControlGallery.Xaml"
              xmlns:prism="http://prismlibrary.com/"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              prism:ViewModelLocator.AutoWireViewModel="True">
 
-    <Grid>
-        <TextBlock>Hello from Home!</TextBlock>
-    </Grid>
+    <StackPanel>
+        <Border Width="100" Height="100">
+            <c:SelectedIndicator IsSelected="{Binding IsChecked, ElementName=CheckBox, Mode=TwoWay}"
+                                 IsEnabled="{Binding IsChecked, ElementName=IsEnabled, Mode=TwoWay}"
+                                 Orientation="Vertical"
+                                 Background="Blue"  />
+        </Border>
+        <CheckBox x:Name="CheckBox">IsSelected</CheckBox>
+        <CheckBox x:Name="IsEnabled">IsEnabled</CheckBox>
+    </StackPanel>
     
 </UserControl>
