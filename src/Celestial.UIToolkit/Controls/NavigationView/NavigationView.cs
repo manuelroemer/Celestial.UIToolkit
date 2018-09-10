@@ -119,11 +119,13 @@ namespace Celestial.UIToolkit.Controls
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
+            this.TraceInfo("Back Button clicked.");
             RaiseBackRequested();
         }
 
         private void ToggleButton_Click(object sender, RoutedEventArgs e)
         {
+            this.TraceInfo("Toggle Button clicked.");
             IsPaneOpen = !IsPaneOpen;
         }
 
@@ -151,6 +153,7 @@ namespace Celestial.UIToolkit.Controls
             bool isSettingsItem = SettingsItem != null &&
                                   e.InvokedItem == SettingsItem;
 
+            this.TraceInfo("Menu Item Invoked. Item: {0}", item);
             var eventData = new NavigationViewItemEventArgs(item, isSettingsItem);
             RaiseItemInvoked(eventData);
         }
@@ -172,23 +175,33 @@ namespace Celestial.UIToolkit.Controls
             // if CompactThreshold > ExpandedThreshold.
             // Don't change anything, if we are already in the state. This could potentially
             // screw up the IsPaneOpen property.
-            if (ActualWidth >= ExpandedModeThresholdWidth &&
-                DisplayMode != NavigationViewDisplayMode.Expanded)
+            this.TraceVerbose("Adaptive properties changed. Potentially modifying state.");
+            if (ActualWidth >= ExpandedModeThresholdWidth)
             {
-                DisplayMode = NavigationViewDisplayMode.Expanded;
-                IsPaneOpen = true;
+                if (DisplayMode != NavigationViewDisplayMode.Expanded)
+                {
+                    this.TraceInfo("Adapting into Expanded mode.");
+                    DisplayMode = NavigationViewDisplayMode.Expanded;
+                    IsPaneOpen = true;
+                }
             }
-            else if (ActualWidth >= CompactModeThresholdWidth &&
-                     DisplayMode != NavigationViewDisplayMode.Compact)
+            else if (ActualWidth >= CompactModeThresholdWidth)
             {
-                DisplayMode = NavigationViewDisplayMode.Compact;
-                IsPaneOpen = false;
+                if (DisplayMode != NavigationViewDisplayMode.Compact)
+                {
+                    this.TraceInfo("Adapting into Compact mode.");
+                    DisplayMode = NavigationViewDisplayMode.Compact;
+                    IsPaneOpen = false;
+                }
             }
-            else if (ActualWidth < CompactModeThresholdWidth &&
-                     DisplayMode != NavigationViewDisplayMode.Minimal)
+            else if (ActualWidth < CompactModeThresholdWidth)
             {
-                DisplayMode = NavigationViewDisplayMode.Minimal;
-                IsPaneOpen = false;
+                if (DisplayMode != NavigationViewDisplayMode.Minimal)
+                {
+                    this.TraceInfo("Adapting into Minimal mode.");
+                    DisplayMode = NavigationViewDisplayMode.Minimal;
+                    IsPaneOpen = false;
+                }
             }
         }
 
@@ -212,6 +225,7 @@ namespace Celestial.UIToolkit.Controls
                 if (!clickedElement.HasVisualAncestor(_paneContentContainer) &&
                     !clickedElement.HasVisualAncestor(_paneButtonContainer))
                 {
+                    this.TraceInfo("User clicked outside of pane while in Overlay mode. Collapsing pane.");
                     IsPaneOpen = false;
                 }
             }

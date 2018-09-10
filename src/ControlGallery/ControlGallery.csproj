@@ -101,6 +101,7 @@
     <Compile Include="Controls\ControlPresenter.cs" />
     <Compile Include="Converters\StringToTextDocumentConverter.cs" />
     <Compile Include="Data\Categories\KnownCategories.Commanding.cs" />
+    <Compile Include="Data\Categories\KnownCategories.Containers.cs" />
     <Compile Include="Data\Categories\KnownCategories.Input.cs" />
     <Compile Include="Data\Categories\KnownCategories.Layout.cs" />
     <Compile Include="Data\Categories\KnownCategories.Navigation.cs" />
@@ -126,6 +127,9 @@
     <Compile Include="Xaml\MainWindowViewModel.cs" />
     <Compile Include="Xaml\SamplePages\Commanding\Button.xaml.cs">
       <DependentUpon>Button.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Xaml\SamplePages\Containers\Card.xaml.cs">
+      <DependentUpon>Card.xaml</DependentUpon>
     </Compile>
     <Compile Include="Xaml\SamplePages\Input\CheckBox.xaml.cs">
       <DependentUpon>CheckBox.xaml</DependentUpon>
@@ -170,6 +174,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Xaml\SamplePages\Commanding\Button.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\SamplePages\Containers\Card.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -237,6 +245,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Data\README.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Images\ThumbnailAbstract.png" />
+    <Resource Include="Assets\Images\Landscape.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\ShowMeTheXAML.MSBuild.1.0.11-ci49\build\net45\ShowMeTheXAML.MSBuild.targets" Condition="Exists('..\packages\ShowMeTheXAML.MSBuild.1.0.11-ci49\build\net45\ShowMeTheXAML.MSBuild.targets')" />
