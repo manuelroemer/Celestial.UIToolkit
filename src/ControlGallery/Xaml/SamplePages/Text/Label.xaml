@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="ControlGallery.Xaml.SamplePages.Text.Label"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:smtx="clr-namespace:ShowMeTheXAML;assembly=ShowMeTheXAML"
+             xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:c="http://celestial-ui.com"
+             xmlns:controls="clr-namespace:ControlGallery.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,4,0,12'}">
+
+        <controls:ControlPresenter Header="A standard Label control."
+                                   Xaml="{Binding Xaml, ElementName=LabelEx1}"
+                                   VerticalAlignment="Top">
+            <smtx:XamlDisplay x:Name="LabelEx1" Key="LabelEx1">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledLabelEx1}">
+                    <Label Content="Standard Label" />
+                    <Label Style="{StaticResource BaseLabel}" Content="Base Label" />
+                    <Label Style="{StaticResource HintLabel}" Content="Hint Label" />
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,3'}"
+                            Margin="{c:GridUnit '0,0,0,-3'}">
+                    <CheckBox x:Name="IsEnabledLabelEx1"
+                              IsChecked="True"
+                              Content="IsEnabled" />
+                </StackPanel>
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+
+    </StackPanel>
+
+</UserControl>

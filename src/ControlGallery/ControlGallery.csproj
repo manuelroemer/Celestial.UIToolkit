@@ -105,6 +105,7 @@
     <Compile Include="Data\Categories\KnownCategories.Input.cs" />
     <Compile Include="Data\Categories\KnownCategories.Layout.cs" />
     <Compile Include="Data\Categories\KnownCategories.Navigation.cs" />
+    <Compile Include="Data\Categories\KnownCategories.Text.cs" />
     <Compile Include="Data\ControlCategory.cs" />
     <Compile Include="Data\ControlDataSource.cs" />
     <Compile Include="Data\ControlInformation.cs" />
@@ -148,6 +149,12 @@
     </Compile>
     <Compile Include="Xaml\SamplePages\Navigation\NavigationView.xaml.cs">
       <DependentUpon>NavigationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Xaml\SamplePages\Text\Label.xaml.cs">
+      <DependentUpon>Label.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Xaml\SamplePages\Text\TextBlock.xaml.cs">
+      <DependentUpon>TextBlock.xaml</DependentUpon>
     </Compile>
     <Page Include="Themes\Generic.xaml">
       <SubType>Designer</SubType>
@@ -202,6 +209,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Xaml\SamplePages\Navigation\NavigationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\SamplePages\Text\Label.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\SamplePages\Text\TextBlock.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
