@@ -1,0 +1,60 @@
+﻿<Window x:Class="ControlGallery.Xaml.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:c="http://celestial-ui.com"
+        xmlns:common="clr-namespace:ControlGallery.Common"
+        xmlns:local="clr-namespace:ControlGallery.Xaml"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        WindowStartupLocation="CenterScreen"
+        Width="1200"
+        Height="800"
+        prism:ViewModelLocator.AutoWireViewModel="True">
+
+    <Window.Resources>
+
+        <DataTemplate DataType="{x:Type local:NavigationMenuItemInfo}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                
+                <ContentControl Width="{Binding CompactPaneLength, RelativeSource={RelativeSource AncestorType=c:NavigationView}}">
+                    <ContentPresenter Content="{Binding Icon}"
+                                      HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </ContentControl>
+                
+                <TextBlock Grid.Column="1"
+                           Margin="{c:GridUnit '1,0,0,0'}"
+                           Text="{Binding Title}" />
+            </Grid>
+        </DataTemplate>
+
+        <!-- By default, the NavViewItem has a padding for the icons.
+             Since we provide our own template, override that padding. -->
+        <Style x:Key="CustomMenuItemStyle" TargetType="c:NavigationViewItem" BasedOn="{StaticResource StandardNavigationViewItem}">
+            <Setter Property="Padding" Value="0" />
+        </Style>
+        
+    </Window.Resources>
+
+    <c:NavigationView BackButtonCommand="{Binding GoBackCommand}"
+                      MenuItemsSource="{Binding MenuItems}"
+                      MenuItemContainerStyle="{StaticResource CustomMenuItemStyle}"
+                      SelectedItem="{Binding CurrentMenuItem, Mode=TwoWay}"
+                      PaneHeader="Control Gallery"
+                      Header="{Binding Path=Content.DataContext.Title, ElementName=MainRegionContentSite}">
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled"
+                      VerticalScrollBarVisibility="Auto"
+                      PanningMode="Both"
+                      CanContentScroll="False">
+            <ContentControl x:Name="MainRegionContentSite"
+                            prism:RegionManager.RegionName="{x:Static common:RegionNames.Main}" />
+        </ScrollViewer>
+    </c:NavigationView>
+    
+</Window>

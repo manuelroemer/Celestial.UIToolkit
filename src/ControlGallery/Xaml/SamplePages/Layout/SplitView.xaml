@@ -1,0 +1,108 @@
+﻿<UserControl x:Class="ControlGallery.Xaml.SamplePages.Layout.SplitView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:smtx="clr-namespace:ShowMeTheXAML;assembly=ShowMeTheXAML"
+             xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:c="http://celestial-ui.com"
+             xmlns:controls="clr-namespace:ControlGallery.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,4,0,12'}">
+
+        <controls:ControlPresenter Header="A standard SplitView control."
+                                   Xaml="{Binding Xaml, ElementName=SplitViewEx1}"
+                                   VerticalAlignment="Top">
+            <controls:ControlPresenter.Description>
+                The SplitView's pane display and behavior can be controlled via the
+                "DisplayMode" and "IsPaneOpen" properties.
+                In addition, the pane can be positioned on multiple sides via the
+                "PanePlacement" property.
+            </controls:ControlPresenter.Description>
+            <smtx:XamlDisplay x:Name="SplitViewEx1" Key="SplitViewEx1">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledSplitViewEx1}">
+                    <c:SplitView IsPaneOpen="{Binding IsChecked, ElementName=IsPaneOpenEx1}"
+                                 DisplayMode="{Binding SelectedValue, ElementName=DisplayModeEx1, Mode=TwoWay}"
+                                 PanePlacement="{Binding SelectedValue, ElementName=PanePlacementEx1, Mode=TwoWay}"
+                                 BorderBrush="{StaticResource PrimaryMediumLowBrush}"
+                                 BorderThickness="1"
+                                 Width="{c:GridUnit 125}"
+                                 Height="{c:GridUnit 50}">
+                        <c:SplitView.Pane>
+                            <TextBlock Style="{StaticResource TitleTextBlock}"
+                                       Text="Hello from the Pane!" />
+                        </c:SplitView.Pane>
+                        <TextBlock Text="Hello from the Content!" />
+                    </c:SplitView>
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,3'}"
+                            Margin="{c:GridUnit '0,0,0,-3'}">
+                    <CheckBox x:Name="IsEnabledSplitViewEx1"
+                              IsChecked="True"
+                              Content="IsEnabled" />
+                    <CheckBox x:Name="IsPaneOpenEx1"
+                              IsChecked="True"
+                              Content="IsPaneOpen" />
+                    <ComboBox x:Name="DisplayModeEx1"
+                              Width="{c:GridUnit 40}"
+                              ItemsSource="{c:EnumBindingSource c:SplitViewDisplayMode}"
+                              SelectedIndex="0" />
+                    <ComboBox x:Name="PanePlacementEx1"
+                              Width="{c:GridUnit 40}"
+                              ItemsSource="{c:EnumBindingSource c:SplitViewPanePlacement}"
+                              SelectedIndex="0" />
+                </StackPanel>
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+
+        <controls:ControlPresenter Header="Styling the SplitView."
+                                   Xaml="{Binding Xaml, ElementName=SplitViewEx2}"
+                                   VerticalAlignment="Top">
+            <controls:ControlPresenter.Description>
+                The SplitView supports shadows on the pane via the ThemeShadow API.
+                The pane's background can also be changed via a property.
+                The pane's width/compact width can be configured aswell.
+            </controls:ControlPresenter.Description>
+            <smtx:XamlDisplay x:Name="SplitViewEx2" Key="SplitViewEx2">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledSplitViewEx2}">
+                    <c:SplitView c:ThemeShadow.Elevation="20"
+                                 PaneBackground="LightPink"
+                                 IsPaneOpen="{Binding IsChecked, ElementName=IsPaneOpenEx2}"
+                                 DisplayMode="{Binding SelectedValue, ElementName=DisplayModeEx2, Mode=TwoWay}"
+                                 PanePlacement="{Binding SelectedValue, ElementName=PanePlacementEx2, Mode=TwoWay}"
+                                 OpenPaneLength="200"
+                                 CompactPaneLength="100"
+                                 BorderBrush="{StaticResource PrimaryMediumLowBrush}"
+                                 BorderThickness="1"
+                                 Width="{c:GridUnit 125}"
+                                 Height="{c:GridUnit 50}">
+                        <c:SplitView.Pane>
+                            <TextBlock Style="{StaticResource TitleTextBlock}"
+                                       Text="Hello from the Pane!" />
+                        </c:SplitView.Pane>
+                        <TextBlock Text="Hello from the Content!" />
+                    </c:SplitView>
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,3'}"
+                            Margin="{c:GridUnit '0,0,0,-3'}">
+                    <CheckBox x:Name="IsEnabledSplitViewEx2"
+                              IsChecked="True"
+                              Content="IsEnabled" />
+                    <CheckBox x:Name="IsPaneOpenEx2"
+                              IsChecked="True"
+                              Content="IsPaneOpen" />
+                </StackPanel>
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+        
+    </StackPanel>
+
+</UserControl>

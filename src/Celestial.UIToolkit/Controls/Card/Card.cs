@@ -34,6 +34,13 @@ namespace Celestial.UIToolkit.Controls
                 typeof(Card), new FrameworkPropertyMetadata(typeof(Card)));
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Card"/> class.
+        /// </summary>
+        public Card()
+        {
+        }
+
     }
 
 }

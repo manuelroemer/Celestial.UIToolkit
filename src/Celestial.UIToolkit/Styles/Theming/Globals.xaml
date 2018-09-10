@@ -1,0 +1,101 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!--
+    KeyTimes and durations for animations.
+    -->
+    <Duration x:Key="ColorAnimationDuration">0:0:0.175</Duration>
+    <KeyTime x:Key="ColorAnimationKeyTime">0:0:0.175</KeyTime>
+    <PowerEase x:Key="ColorAnimationEase" EasingMode="EaseIn" Power="1" />
+
+    <Duration x:Key="EnterAnimationDuration">0:0:0.300</Duration>
+    <KeyTime x:Key="EnterAnimationKeyTime">0:0:0.300</KeyTime>
+    <PowerEase x:Key="EnterAnimationEase" EasingMode="EaseOut" Power="2" />
+
+    <Duration x:Key="ExitAnimationDuration">0:0:0.150</Duration>
+    <KeyTime x:Key="ExitAnimationKeyTime">0:0:0.150</KeyTime>
+    <PowerEase x:Key="ExitAnimationEase" EasingMode="EaseOut" Power="2" />
+
+    <Duration x:Key="MoveAnimationDuration">0:0:0.500</Duration>
+    <KeyTime x:Key="MoveAnimationKeyTime">0:0:0.500</KeyTime>
+    <PowerEase x:Key="MoveAnimationEase" EasingMode="EaseIn" Power="1" />
+    <PowerEase x:Key="MoveInAnimationEase" EasingMode="EaseOut" Power="1" />
+    <PowerEase x:Key="MoveOutAnimationEase" EasingMode="EaseOut" Power="1" />
+
+    <Duration x:Key="FastEnterAnimationDuration">0:0:0.200</Duration>
+    <KeyTime x:Key="FastEnterAnimationKeyTime">0:0:0.200</KeyTime>
+    <PowerEase x:Key="FastEnterAnimationEase" EasingMode="EaseOut" Power="2" />
+
+    <Duration x:Key="FastExitAnimationDuration">0:0:0.100</Duration>
+    <KeyTime x:Key="FastExitAnimationKeyTime">0:0:0.100</KeyTime>
+    <PowerEase x:Key="FastExitAnimationEase" EasingMode="EaseOut" Power="2" />
+
+    <Duration x:Key="FastMoveAnimationDuration">0:0:0.250</Duration>
+    <KeyTime x:Key="FastMoveAnimationKeyTime">0:0:0.250</KeyTime>
+    <PowerEase x:Key="FastMoveAnimationEase" EasingMode="EaseIn" Power="1" />
+    <PowerEase x:Key="FastMoveInAnimationEase" EasingMode="EaseOut" Power="1" />
+    <PowerEase x:Key="FastMoveOutAnimationEase" EasingMode="EaseOut" Power="1" />
+    
+    <Duration x:Key="InnerPartialAnimationDuration">0:0:0.150</Duration>
+    <KeyTime x:Key="InnerPartialAnimationKeyTime">0:0:0.150</KeyTime>
+    <PowerEase x:Key="InnerPartialAnimationEase" EasingMode="EaseIn" Power="1" />
+    <PowerEase x:Key="InnerPartialInAnimationEase" EasingMode="EaseOut" Power="1" />
+    <PowerEase x:Key="InnerPartialOutAnimationEase" EasingMode="EaseOut" Power="1" />
+
+
+
+    <CornerRadius x:Key="StandardCornerRadius">0</CornerRadius>
+
+
+
+    <Thickness x:Key="SlimBorderThickness">1</Thickness>
+    <Thickness x:Key="WideBorderThickness">2</Thickness>
+
+
+
+    <FontFamily x:Key="StandardFontFamily">Segoe UI</FontFamily>
+    <sys:Double x:Key="StandardFontSize">15</sys:Double>
+    <FontWeight x:Key="StandardFontWeight">Normal</FontWeight>
+    <FontStyle x:Key="StandardFontStyle">Normal</FontStyle>
+    <FontStretch x:Key="StandardFontStretch">Normal</FontStretch>
+
+    <FontFamily x:Key="HeaderFontFamily">Segoe UI</FontFamily>
+    <sys:Double x:Key="HeaderFontSize">46</sys:Double>
+    <FontWeight x:Key="HeaderFontWeight">Light</FontWeight>
+    <FontStyle x:Key="HeaderFontStyle">Normal</FontStyle>
+    <FontStretch x:Key="HeaderFontStretch">Normal</FontStretch>
+
+    <FontFamily x:Key="SubHeaderFontFamily">Segoe UI</FontFamily>
+    <sys:Double x:Key="SubHeaderFontSize">34</sys:Double>
+    <FontWeight x:Key="SubHeaderFontWeight">Light</FontWeight>
+    <FontStyle x:Key="SubHeaderFontStyle">Normal</FontStyle>
+    <FontStretch x:Key="SubHeaderFontStretch">Normal</FontStretch>
+
+    <FontFamily x:Key="TitleFontFamily">Segoe UI</FontFamily>
+    <sys:Double x:Key="TitleFontSize">24</sys:Double>
+    <FontWeight x:Key="TitleFontWeight">Light</FontWeight>
+    <FontStyle x:Key="TitleFontStyle">Normal</FontStyle>
+    <FontStretch x:Key="TitleFontStretch">Normal</FontStretch>
+
+    <FontFamily x:Key="SubTitleFontFamily">Segoe UI</FontFamily>
+    <sys:Double x:Key="SubTitleFontSize">20</sys:Double>
+    <FontWeight x:Key="SubTitleFontWeight">Normal</FontWeight>
+    <FontStyle x:Key="SubTitleFontStyle">Normal</FontStyle>
+    <FontStretch x:Key="SubTitleFontStretch">Normal</FontStretch>
+
+    <FontFamily x:Key="CaptionFontFamily">Segoe UI</FontFamily>
+    <sys:Double x:Key="CaptionFontSize">12</sys:Double>
+    <FontWeight x:Key="CaptionFontWeight">Normal</FontWeight>
+    <FontStyle x:Key="CaptionFontStyle">Normal</FontStyle>
+    <FontStretch x:Key="CaptionFontStretch">Normal</FontStretch>
+
+    <FontWeight x:Key="BaseFontWeight">Bold</FontWeight>
+    <FontStyle x:Key="BaseFontStyle">Normal</FontStyle>
+    <FontStretch x:Key="BaseFontStretch">Normal</FontStretch>
+
+    <FontWeight x:Key="HintFontWeight">Normal</FontWeight>
+    <FontStyle x:Key="HintFontStyle">Normal</FontStyle>
+    <FontStretch x:Key="HintFontStretch">Normal</FontStretch>
+
+</ResourceDictionary>

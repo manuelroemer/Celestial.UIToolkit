@@ -4,6 +4,13 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
+    <ResourceDictionary.MergedDictionaries>
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Fonts.xaml" />
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/GlobalValues.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
     <!--
     This file contains base-styles for nearly any type of control.
     This includes attached properties from the Theming namespace and
@@ -389,6 +396,45 @@
     <!--
     - Background: -
     - Border:     -
+    - Foreground: Primary color variations
+    -->
+    <Style x:Key="PrimaryForeground" TargetType="FrameworkElement">
+        <Setter Property="Control.Foreground" Value="{StaticResource ControlBackgroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource ControlHoverBackgroundBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource ControlPressedBackgroundBrush}" />
+        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource ControlActiveBackgroundBrush}" />
+    </Style>
+
+    <!--
+    - Background: -
+    - Border:     -
+    - Foreground: Accent1
+    -->
+    <Style x:Key="Accent1Foreground" TargetType="FrameworkElement">
+        <Setter Property="Control.Foreground" Value="{StaticResource Accent1ControlBackgroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource Accent1ControlHoverBackgroundBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource Accent1ControlPressedBackgroundBrush}" />
+        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource Accent1ControlActiveBackgroundBrush}" />
+    </Style>
+
+    <!--
+    - Background: -
+    - Border:     -
+    - Foreground: Accent2
+    -->
+    <Style x:Key="Accent2Foreground" TargetType="FrameworkElement">
+        <Setter Property="Control.Foreground" Value="{StaticResource Accent2ControlBackgroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource Accent2ControlHoverBackgroundBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource Accent2ControlPressedBackgroundBrush}" />
+        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource Accent2ControlActiveBackgroundBrush}" />
+    </Style>
+
+    <!--
+    - Background: -
+    - Border:     -
     - Foreground: OnError
     -->
     <Style x:Key="OnErrorForeground" TargetType="FrameworkElement">
@@ -433,9 +479,9 @@
     <Style x:Key="AltFontProperties" TargetType="Control">
         <Setter Property="FontFamily" Value="{StaticResource StandardFontFamily}" />
         <Setter Property="FontSize" Value="{StaticResource StandardFontSize}" />
-        <Setter Property="FontWeight" Value="{StaticResource AltFontWeight}" />
-        <Setter Property="FontStretch" Value="{StaticResource AltFontStretch}" />
-        <Setter Property="FontStyle" Value="{StaticResource AltFontStyle}" />
+        <Setter Property="FontWeight" Value="{StaticResource BaseFontWeight}" />
+        <Setter Property="FontStretch" Value="{StaticResource BaseFontStretch}" />
+        <Setter Property="FontStyle" Value="{StaticResource BaseFontStyle}" />
     </Style>
 
 

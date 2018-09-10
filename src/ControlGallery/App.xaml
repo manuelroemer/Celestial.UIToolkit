@@ -1,20 +1,22 @@
-﻿<Application x:Class="ControlGallery.App"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             StartupUri="MainWindow.xaml">
+<Application
+    x:Class="ControlGallery.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <!-- Custom XAML display style. -->
+                <ResourceDictionary Source="Themes/XamlDisplay.xaml" />
+                
+                <!-- UI Toolkit resources. -->
                 <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Theming/Themes/Light.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Theming/Accents/Default.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Theming/GlobalValues.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Theming/Fonts.xaml" />
-                
+                <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Theming/Globals.xaml" />
+
                 <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Bundle.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Icons/Arrows.xaml" />
             </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>     
+        </ResourceDictionary>
     </Application.Resources>
     
 </Application>

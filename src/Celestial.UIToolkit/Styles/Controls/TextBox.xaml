@@ -11,13 +11,17 @@
         <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
         <c:SharedResourceDictionary Source="../../Icons/Badges.xaml" />
         <c:SharedResourceDictionary Source="./TextBlock.xaml" />
+
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
 
     <!-- Use TargetType="Control", so that the PasswordBox can use the style too.
          Slightly problematic, since this allows setting this style on any type of control.
          To anyone reading this: Don't do that. -->
-    <Style x:Key="StandardTextBox" TargetType="Control" BasedOn="{c:MultiStyle 'PrimaryBackground ControlBorderAccent2States StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="StandardTextBox" TargetType="Control" BasedOn="{c:MultiStyle 'PrimaryBackground ControlBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -248,17 +252,21 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    <Style TargetType="TextBox" BasedOn="{StaticResource StandardTextBox}" />
-    <Style TargetType="RichTextBox" BasedOn="{StaticResource StandardTextBox}" />
-    <Style TargetType="PasswordBox" BasedOn="{StaticResource StandardTextBox}" />
+    <Style x:Key="Accent1TextBox" TargetType="Control" BasedOn="{c:MultiStyle 'StandardTextBox ControlBorderAccent1States'}" />
+    <Style x:Key="Accent2TextBox" TargetType="Control" BasedOn="{c:MultiStyle 'StandardTextBox ControlBorderAccent2States'}" />
+    
+    <Style TargetType="TextBox" BasedOn="{StaticResource Accent2TextBox}" />
+    <Style TargetType="RichTextBox" BasedOn="{StaticResource Accent2TextBox}" />
+    <Style TargetType="PasswordBox" BasedOn="{StaticResource Accent2TextBox}" />
+
 
     <Style x:Key="OutlinedTextBoxBase" TargetType="Control" BasedOn="{StaticResource StandardTextBox}">
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="theming:TextBoxProperties.ShowFocusedIndicator" Value="False" />
     </Style>
 
-    <Style x:Key="OutlinedTextBox" TargetType="TextBox" BasedOn="{StaticResource OutlinedTextBoxBase}" />
-    <Style x:Key="OutlinedRichTextBox" TargetType="RichTextBox" BasedOn="{StaticResource OutlinedTextBoxBase}" />
-    <Style x:Key="OutlinedPasswordBox" TargetType="PasswordBox" BasedOn="{StaticResource OutlinedTextBoxBase}" />
+    <Style x:Key="StandardOutlinedTextBox" TargetType="Control" BasedOn="{StaticResource OutlinedTextBoxBase}" />
+    <Style x:Key="Accent1OutlinedTextBox" TargetType="Control" BasedOn="{c:MultiStyle 'OutlinedTextBoxBase ControlBorderAccent1States'}" />
+    <Style x:Key="Accent2OutlinedTextBox" TargetType="Control" BasedOn="{c:MultiStyle 'OutlinedTextBoxBase ControlBorderAccent2States'}" />
 
 </ResourceDictionary>

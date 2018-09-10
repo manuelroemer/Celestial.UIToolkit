@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Celestial.UIToolkit", "Celestial.UIToolkit\Celestial.UIToolkit.csproj", "{9FCAC9D8-2931-4A72-A626-3F1BD9AD2673}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlGallery", "ControlGallery\ControlGallery.csproj", "{2037FD7D-729C-43F7-B9B2-03D606F32CB0}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Celestial.UIToolkit.Core", "Celestial.UIToolkit.Core\Celestial.UIToolkit.Core.csproj", "{A6432C42-1C26-4EFF-BED4-96AEB1EB2894}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{58E616A5-4B9F-49AB-A47B-754D60F50B7F}"
@@ -14,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Celestial.UIToolkit.Core.Tests", "Celestial.UIToolkit.Core.Tests\Celestial.UIToolkit.Core.Tests.csproj", "{9C20A11E-852F-4E55-AF5D-A7E5097CEFF1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Celestial.UIToolkit.Tests", "Celestial.UIToolkit.Tests\Celestial.UIToolkit.Tests.csproj", "{85CE154F-CE42-4605-9683-C7F80957C98E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlGallery", "ControlGallery\ControlGallery.csproj", "{3EB5815E-C0FF-44FE-8022-BEBE88DD7FB5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +25,6 @@ Global
 		{9FCAC9D8-2931-4A72-A626-3F1BD9AD2673}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FCAC9D8-2931-4A72-A626-3F1BD9AD2673}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FCAC9D8-2931-4A72-A626-3F1BD9AD2673}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2037FD7D-729C-43F7-B9B2-03D606F32CB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2037FD7D-729C-43F7-B9B2-03D606F32CB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2037FD7D-729C-43F7-B9B2-03D606F32CB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2037FD7D-729C-43F7-B9B2-03D606F32CB0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A6432C42-1C26-4EFF-BED4-96AEB1EB2894}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A6432C42-1C26-4EFF-BED4-96AEB1EB2894}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6432C42-1C26-4EFF-BED4-96AEB1EB2894}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,6 +37,10 @@ Global
 		{85CE154F-CE42-4605-9683-C7F80957C98E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85CE154F-CE42-4605-9683-C7F80957C98E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{85CE154F-CE42-4605-9683-C7F80957C98E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EB5815E-C0FF-44FE-8022-BEBE88DD7FB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EB5815E-C0FF-44FE-8022-BEBE88DD7FB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EB5815E-C0FF-44FE-8022-BEBE88DD7FB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EB5815E-C0FF-44FE-8022-BEBE88DD7FB5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

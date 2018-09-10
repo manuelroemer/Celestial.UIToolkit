@@ -1,0 +1,165 @@
+﻿<UserControl x:Class="ControlGallery.Xaml.SamplePages.Input.TextBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:smtx="clr-namespace:ShowMeTheXAML;assembly=ShowMeTheXAML"
+             xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:c="http://celestial-ui.com"
+             xmlns:controls="clr-namespace:ControlGallery.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,4,0,12'}">
+
+        <controls:ControlPresenter Header="The Standard TextBox in different colors."
+                                   Xaml="{Binding Xaml, ElementName=TextBoxEx1}"
+                                   VerticalAlignment="Top">
+            <controls:ControlPresenter.Description>
+                As you can see, there are styles for the Standard colors, aswell as for the two accents.
+                Even though all of these are provided, the intended color range is the Accent2-set,
+                which is why that style is the default, implicit one.
+            </controls:ControlPresenter.Description>
+            <smtx:XamlDisplay x:Name="TextBoxEx1" Key="TextBoxEx1">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx1}">
+                    <TextBox Width="{c:GridUnit 60}" />
+                    <TextBox Style="{StaticResource StandardTextBox}" Width="{c:GridUnit 60}" />
+                    <TextBox Style="{StaticResource Accent1TextBox}" Width="{c:GridUnit 60}" />
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <CheckBox x:Name="IsEnabledCheckBoxEx1"
+                          IsChecked="True"
+                          Content="IsEnabled" />
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+
+        <controls:ControlPresenter Header="A multi-line TextBox."
+                                   Xaml="{Binding Xaml, ElementName=TextBoxEx2}"
+                                   VerticalAlignment="Top">
+            <smtx:XamlDisplay x:Name="TextBoxEx2" Key="TextBoxEx2">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx2}">
+                    <TextBox Width="{c:GridUnit 60}" 
+                             Height="{c:GridUnit 30}"
+                             AcceptsReturn="True" 
+                             HorizontalScrollBarVisibility="Auto"
+                             VerticalScrollBarVisibility="Auto" />
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <CheckBox x:Name="IsEnabledCheckBoxEx2"
+                          IsChecked="True"
+                          Content="IsEnabled" />
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+
+        <controls:ControlPresenter Header="A read-only TextBox."
+                                   Xaml="{Binding Xaml, ElementName=TextBoxEx3}"
+                                   VerticalAlignment="Top">
+            <smtx:XamlDisplay x:Name="TextBoxEx3" Key="TextBoxEx3">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx3}">
+                    <TextBox Width="{c:GridUnit 60}" 
+                             IsReadOnly="{Binding IsChecked, ElementName=IsReadOnlyCheckBoxEx3}">
+                        ReadOnly TextBox
+                    </TextBox>
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,3'}"
+                            Margin="{c:GridUnit '0,0,0,-3'}">
+                    <CheckBox x:Name="IsEnabledCheckBoxEx3"
+                              IsChecked="True"
+                              Content="IsEnabled" />
+                    <CheckBox x:Name="IsReadOnlyCheckBoxEx3"
+                              IsChecked="True"
+                              Content="IsReadOnly" />
+                </StackPanel>
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+
+        <controls:ControlPresenter Header="TextBoxes can have a placeholder."
+                                   Xaml="{Binding Xaml, ElementName=TextBoxEx4}"
+                                   VerticalAlignment="Top">
+            <smtx:XamlDisplay x:Name="TextBoxEx4" Key="TextBoxEx4">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx4}">
+                    <TextBox Width="{c:GridUnit 80}"
+                             c:TextBoxProperties.Placeholder="Default, floating Placeholder" />
+                    <TextBox Width="{c:GridUnit 80}"
+                             c:TextBoxProperties.Placeholder="Disappearing Placeholder"
+                             c:TextBoxProperties.PlaceholderType="Disappearing" />
+                    <TextBox Width="{c:GridUnit 80}">
+                        <c:TextBoxProperties.Placeholder>
+                            <CheckBox Content="Anything can be a placeholder!"
+                                      IsChecked="True" />
+                        </c:TextBoxProperties.Placeholder>
+                    </TextBox>
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,3'}"
+                            Margin="{c:GridUnit '0,0,0,-3'}">
+                    <CheckBox x:Name="IsEnabledCheckBoxEx4"
+                              IsChecked="True"
+                              Content="IsEnabled" />
+                </StackPanel>
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+
+        <controls:ControlPresenter Header="TextBoxes can display an assistive text."
+                                   Xaml="{Binding Xaml, ElementName=TextBoxEx5}"
+                                   VerticalAlignment="Top">
+            <controls:ControlPresenter.Description>
+                This feature is coming from the Material Design specification.
+                Assistive texts can replace the common label next to the TextBox.
+            </controls:ControlPresenter.Description>
+            <smtx:XamlDisplay x:Name="TextBoxEx5" Key="TextBoxEx5">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx5}">
+                    <TextBox Width="{c:GridUnit 60}"
+                             c:TextBoxProperties.AssistiveText="See the placeholder above me?"
+                             c:TextBoxProperties.Placeholder="See the assistive text below me?" />
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,3'}"
+                            Margin="{c:GridUnit '0,0,0,-3'}">
+                    <CheckBox x:Name="IsEnabledCheckBoxEx5"
+                              IsChecked="True"
+                              Content="IsEnabled" />
+                </StackPanel>
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+
+        <controls:ControlPresenter Header="Assistive texts are useful when used with 'forms'."
+                                   Xaml="{Binding Xaml, ElementName=TextBoxEx6}"
+                                   VerticalAlignment="Top">
+            <controls:ControlPresenter.Description>
+                This example uses an outlined TextBox.
+                Using this style is recommended when having multiple TextBoxes next to each other.
+            </controls:ControlPresenter.Description>
+            <smtx:XamlDisplay x:Name="TextBoxEx6" Key="TextBoxEx6">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx6}">
+                    <TextBox Width="{c:GridUnit 60}"
+                             Style="{StaticResource Accent2OutlinedTextBox}"
+                             c:TextBoxProperties.AssistiveText="*Required"
+                             c:TextBoxProperties.Placeholder="Name*" />
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,3'}"
+                            Margin="{c:GridUnit '0,0,0,-3'}">
+                    <CheckBox x:Name="IsEnabledCheckBoxEx6"
+                              IsChecked="True"
+                              Content="IsEnabled" />
+                </StackPanel>
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+
+    </StackPanel>
+
+</UserControl>

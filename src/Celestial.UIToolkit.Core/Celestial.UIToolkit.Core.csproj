@@ -53,8 +53,11 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DesignMode.cs" />
+    <Compile Include="DesignTimeOnlyResourceDictionary.cs" />
     <Compile Include="Extensions\DependencyObjectExtensions.cs" />
     <Compile Include="ItemsSourceCollection.cs" />
+    <Compile Include="TraceSources.cs" />
     <Compile Include="Xaml\BindingProxy.cs" />
     <Compile Include="Common\Singleton.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
@@ -67,6 +70,7 @@
     <Compile Include="Converters\NullToVisibilityConverter.cs" />
     <Compile Include="Converters\ThicknessSidePickerConverter.cs" />
     <Compile Include="Converters\ValueConverter.cs" />
+    <Compile Include="Xaml\EnumBindingSourceExtension.cs" />
     <Compile Include="Xaml\ExtendedVisualStateManager\ExtendedVisualState.cs" />
     <Compile Include="Xaml\ExtendedVisualStateManager\ExtendedVisualStateManager.cs" />
     <Compile Include="Extensions\ArrayExtensions.cs" />
@@ -119,7 +123,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Xaml\SharedResourceDictionary.cs" />
+    <Compile Include="SharedResourceDictionary.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

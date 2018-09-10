@@ -1,0 +1,31 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:smtx="clr-namespace:ShowMeTheXAML;assembly=ShowMeTheXAML"
+                    xmlns:ics="http://icsharpcode.net/sharpdevelop/avalonedit"
+                    xmlns:converters="clr-namespace:ControlGallery.Converters">
+
+    <!-- The default style for the XamlDisplay is one that doesn't even show any code.
+         That's because the gallery is using a special control for displaying examples:
+         The ControlPresenter.
+         This control is responsible for displaying XAML code in the app,
+         and simply binds to the XamlDisplay's Xaml property.
+    -->
+    <Style TargetType="smtx:XamlDisplay" BasedOn="{StaticResource {x:Type smtx:XamlDisplay}}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="smtx:XamlDisplay">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>
