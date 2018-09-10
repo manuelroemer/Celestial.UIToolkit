@@ -203,7 +203,8 @@
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="TextBoxBase.IsReadOnly" Value="True">
-                            <Setter Property="theming:ActiveProperties.BorderBrush" Value="{Binding BorderBrush, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource ControlBorderBrush}" />
+                            <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource ControlBorderBrush}" />
                         </Trigger>
                         <Trigger Property="Validation.HasError" Value="True">
                             <Setter TargetName="ValidationErrorIcon" Property="Visibility" Value="Visible" />

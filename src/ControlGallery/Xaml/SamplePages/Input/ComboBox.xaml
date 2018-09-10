@@ -5,6 +5,7 @@
              xmlns:smtx="clr-namespace:ShowMeTheXAML;assembly=ShowMeTheXAML"
              xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:data="clr-namespace:ControlGallery.Data"
              xmlns:c="http://celestial-ui.com"
              xmlns:controls="clr-namespace:ControlGallery.Controls"
              mc:Ignorable="d" 
@@ -12,39 +13,42 @@
 
     <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,4,0,12'}">
 
-        <controls:ControlPresenter Header="ComboBoxes in different colors."
+        <controls:ControlPresenter Header="The Standard ComboBox in different colors."
                                    Xaml="{Binding Xaml, ElementName=ComboBoxEx1}"
                                    VerticalAlignment="Top">
             <smtx:XamlDisplay x:Name="ComboBoxEx1" Key="ComboBoxEx1">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
-                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledComboBoxEx1}">
-                    <ComboBox IsEditable="{Binding IsChecked, ElementName=IsEditableComboBoxEx1}" 
-                              Width="{c:GridUnit 80}"
-                              ShouldPreserveUserEnteredPrefix="True"
-                              c:TextBoxProperties.Placeholder="Placeholder"
-                              c:TextBoxProperties.AssistiveText="Assistive text">
-                        <ComboBoxItem>Item 1</ComboBoxItem>
-                        <ComboBoxItem>Item 2</ComboBoxItem>
-                        <ComboBoxItem>Item 3</ComboBoxItem>
-                        <ComboBoxItem>Item 4</ComboBoxItem>
-                        <ComboBoxItem>Item 5</ComboBoxItem>
-                    </ComboBox>
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx1}">
+                    <ComboBox Style="{StaticResource StandardComboBox}" 
+                              IsEditable="{Binding IsChecked, ElementName=IsEditableCheckBoxEx1}"
+                              IsReadOnly="{Binding IsChecked, ElementName=IsReadOnlyCheckBoxEx1}"
+                              Width="{c:GridUnit 60}"
+                              ItemsSource="{x:Static data:FruitItems.Fruits}"/>
+                    <ComboBox IsEditable="{Binding IsChecked, ElementName=IsEditableCheckBoxEx1}"
+                              IsReadOnly="{Binding IsChecked, ElementName=IsReadOnlyCheckBoxEx1}"
+                              Width="{c:GridUnit 60}" />
+                    <ComboBox Style="{StaticResource Accent1ComboBox}" 
+                              IsEditable="{Binding IsChecked, ElementName=IsEditableCheckBoxEx1}"
+                              IsReadOnly="{Binding IsChecked, ElementName=IsReadOnlyCheckBoxEx1}"
+                              Width="{c:GridUnit 60}" />
                 </StackPanel>
-                
             </smtx:XamlDisplay>
             <controls:ControlPresenter.Options>
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,3'}"
                             Margin="{c:GridUnit '0,0,0,-3'}">
-                    <CheckBox x:Name="IsEnabledComboBoxEx1"
+                    <CheckBox x:Name="IsEnabledCheckBoxEx1"
                               IsChecked="True"
                               Content="IsEnabled" />
-                    <CheckBox x:Name="IsEditableComboBoxEx1"
+                    <CheckBox x:Name="IsReadOnlyCheckBoxEx1"
+                              IsChecked="False"
+                              Content="IsReadOnly" />
+                    <CheckBox x:Name="IsEditableCheckBoxEx1"
                               IsChecked="True"
                               Content="IsEditable" />
                 </StackPanel>
             </controls:ControlPresenter.Options>
         </controls:ControlPresenter>
-        
+
     </StackPanel>
 
 </UserControl>
