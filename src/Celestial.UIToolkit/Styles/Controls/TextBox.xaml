@@ -149,12 +149,15 @@
                                                   VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
                                 </Border>
 
-                                <controls:PathIcon x:Name="ValidationErrorIcon"
-                                                   Grid.Column="1"
-                                                   Margin="{c:GridUnit '1,0,0,0'}"
-                                                   Visibility="Collapsed"
-                                                   Foreground="{StaticResource ErrorBrush}"
-                                                   Data="{StaticResource Error}" />
+                                <StackPanel x:Name="InnerPartsContainer">
+                                    <controls:PathIcon x:Name="ValidationErrorIcon"
+                                                       Grid.Column="1"
+                                                       Margin="{c:GridUnit '1,0,0,0'}"
+                                                       Visibility="Collapsed"
+                                                       Foreground="{StaticResource ErrorBrush}"
+                                                       Data="{StaticResource Error}" />
+                                </StackPanel>
+                                
                             </Grid>
                         </controls:PlaceholderOverlay>
 

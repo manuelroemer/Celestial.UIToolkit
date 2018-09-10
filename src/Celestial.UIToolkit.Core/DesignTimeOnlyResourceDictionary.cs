@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Windows;
+using static Celestial.UIToolkit.TraceSources;
 
 namespace Celestial.UIToolkit
 {
@@ -32,15 +32,13 @@ namespace Celestial.UIToolkit
                 if (DesignMode.IsEnabled)
                 {
                     base.Source = value;
-                    Debug.WriteLine(
-                        "Loaded design time resource dictionary: " + value,
-                        nameof(DesignTimeOnlyResourceDictionary));
+                    ResourcesSource.TraceInformation(
+                        "Loaded design time resource dictionary at {0}", Source);
                 }
                 else
                 {
-                    Debug.WriteLine(
-                        "Skipping design time resource dictionary: " + value,
-                        nameof(DesignTimeOnlyResourceDictionary));
+                    ResourcesSource.TraceInformation(
+                        "Skipping design time resource dictionary at {0}", Source);
                 }
             }
         }

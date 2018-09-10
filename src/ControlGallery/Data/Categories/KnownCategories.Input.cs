@@ -30,6 +30,14 @@ namespace ControlGallery.Data.Categories
             SamplePageType = typeof(PasswordBox)
         };
 
+        private static ControlInformation ComboBoxInfo = new ControlInformation()
+        {
+            Name = "ComboBox",
+            Description = "A ComboBox allows the selection of an item from a list.",
+            Icon = new PackIconModern() { Kind = PackIconModernKind.BaseSelect },
+            SamplePageType = typeof(ComboBox)
+        };
+
         private static ControlInformation CheckBoxInfo = new ControlInformation()
         {
             Name = "CheckBox",
@@ -54,7 +62,8 @@ namespace ControlGallery.Data.Categories
             CheckBoxInfo,
             RadioButtonInfo,
             TextBoxInfo,
-            PasswordBoxInfo);
+            PasswordBoxInfo,
+            ComboBoxInfo);
 
     }
 

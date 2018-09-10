@@ -2,15 +2,101 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:c="http://celestial-ui.com"
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
+                    xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
-    <!--<ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary.MergedDictionaries>
         <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
+        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
+        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
         <c:SharedResourceDictionary Source="../../Icons/Arrows.xaml" />
-        <c:SharedResourceDictionary Source="Popup.xaml" />
+        <c:SharedResourceDictionary Source="./TextBlock.xaml" />
+
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardComboBox" TargetType="ComboBox" BasedOn="{StaticResource Accent2BorderThemingBase}">
+    <Style x:Key="StandardComboBox" TargetType="ComboBox" BasedOn="{c:MultiStyle 'PrimaryBackground ControlBorder StandardForeground StandardFontProperties Shadow0'}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Padding" Value="{c:GridUnit '2'}" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
+        <Setter Property="KeyboardNavigation.TabNavigation" Value="None" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource BottomControlThemeShadow}" />
+        <Setter Property="Background" Value="{StaticResource PrimaryLowBrush}" />
+        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ComboBox">
+                    <Grid Background="Transparent"
+                          VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
+                        <TextBox x:Name="PART_EditableTextBox" />
+                        <ToggleButton x:Name="ToggleButton"
+                                      Background="Transparent"
+                                      theming:ActiveProperties.BackgroundBrush="Transparent"
+                                      theming:MouseOverProperties.BackgroundBrush="Transparent"
+                                      theming:PressedProperties.BackgroundBrush="Transparent"
+                                      Focusable="False"
+                                      ClickMode="Press"
+                                      HorizontalAlignment="Right"
+                                      VerticalAlignment="Center"
+                                      IsChecked="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}">
+                            <controls:PathIcon Data="{StaticResource HalfArrowDown}" />
+                        </ToggleButton>
+                        <Popup x:Name="Popup"
+                               Placement="Bottom"
+                               IsOpen="{TemplateBinding IsDropDownOpen}"
+                               AllowsTransparency="True"
+                               Focusable="False"
+                               PopupAnimation="Slide">
+                            <Grid x:Name="DropDown"
+                                  SnapsToDevicePixels="True"
+                                  MinWidth="{TemplateBinding ActualWidth}"
+                                  MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                <Border x:Name="DropDownBorder"
+                                        BorderThickness="1"
+                                        Background="{StaticResource PrimaryBrush}"
+                                        BorderBrush="{StaticResource ControlBorderBrush}">
+                                    <ScrollViewer Margin="{c:GridUnit 4}"
+                                                  SnapsToDevicePixels="True">
+                                        <StackPanel IsItemsHost="True"
+                                                    KeyboardNavigation.DirectionalNavigation="Contained" />
+                                    </ScrollViewer>
+                                </Border>
+                            </Grid>
+                        </Popup>
+
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="EditStates">
+                                <VisualState x:Name="Uneditable">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ToggleButton"
+                                                                       Storyboard.TargetProperty="HorizontalAlignment">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Stretch}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Editable" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Accent1ComboBox" TargetType="Control" BasedOn="{c:MultiStyle 'StandardComboBox ControlBorderAccent1States'}" />
+    <Style x:Key="Accent2ComboBox" TargetType="Control" BasedOn="{c:MultiStyle 'StandardComboBox ControlBorderAccent2States'}" />
+    <Style TargetType="ComboBox" BasedOn="{StaticResource StandardComboBox}" />
+
+    <!--<Style x:Key="StandardComboBox" TargetType="ComboBox" BasedOn="{StaticResource Accent2BorderThemingBase}">
         <Style.Resources>
             --><!-- This custom style is for the Down-Arrow in the ComboBox.
                  It is fully animated, like a normal Button. --><!--
