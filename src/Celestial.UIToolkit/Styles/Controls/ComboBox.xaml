@@ -144,6 +144,8 @@
                                     <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
                                 
+                                <!-- Depending on IsEditable, the Box displays either a TextBox (for entering text),
+                                     or a ContentPresenter which displays the current item. -->
                                 <Grid x:Name="EditStateElementsContainer">
                                     <TextBox x:Name="PART_EditableTextBox"
                                              Style="{StaticResource ComboBoxTextBox}"
@@ -160,6 +162,7 @@
                                                       VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                                 </Grid>
 
+                                <!-- Additional elements floating between text and toggle button. -->
                                 <StackPanel x:Name="InnerPartsContainer"
                                             Grid.Column="1">
                                     <controls:PathIcon x:Name="ValidationErrorIcon"
@@ -173,6 +176,8 @@
 
                         <Grid x:Name="ToggleButtonContainer"
                               Grid.Column="1">
+                            <!-- This Button gets fully expanded across the whole control when IsEditable=false.
+                                 By default, it's docked to the right. -->
                             <ToggleButton x:Name="ToggleButton"
                                           Style="{StaticResource Accent2ForegroundOnlyButton}"
                                           Foreground="{TemplateBinding BorderBrush}"
