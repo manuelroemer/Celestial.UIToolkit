@@ -28,9 +28,9 @@
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="TextBox">
-                            <Border x:Name="PART_ContentHost"
-                                    Focusable="False"
-                                    Padding="{TemplateBinding Padding}" />
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                          Focusable="False"
+                                          Padding="{TemplateBinding Padding}" />
                         </ControlTemplate>
                     </Setter.Value>
                 </Setter>
@@ -41,10 +41,10 @@
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Margin" Value="0" />
-        <Setter Property="Padding" Value="{c:GridUnit '2'}" />
+        <Setter Property="Padding" Value="{c:GridUnit '2,2,0,2'}" />
         <Setter Property="MinWidth" Value="{c:GridUnit 30}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="BorderThickness" Value="0,0,0,1" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
         <Setter Property="AllowDrop" Value="True" />
@@ -88,6 +88,10 @@
                                                   To="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                             </Storyboard>
 
+                            <DataTemplate DataType="{x:Type sys:String}">
+                                <TextBlock Style="{StaticResource TextBlockOverrideStyle}" Text="{Binding}" />
+                            </DataTemplate>
+                            
                             <c:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
                             <c:StringToVisibilityConverter x:Key="StringToVisibilityConverter" />
                             <c:ThicknessSidePickerConverter x:Key="ThicknessLeftPickerConverter" Top="0" Right="0" Bottom="0" />
@@ -97,8 +101,12 @@
                             <RowDefinition x:Name="TextBoxRow" />
                             <RowDefinition x:Name="AssistiveRow" Height="Auto" />
                         </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition x:Name="ToggleButtonCol" Width="Auto" />
+                        </Grid.ColumnDefinitions>
 
-                        <controls:ThemeShadowPresenter>
+                        <controls:ThemeShadowPresenter Grid.ColumnSpan="2">
                             <Grid SnapsToDevicePixels="False">
                                 <Border x:Name="Bd"
                                         Background="{TemplateBinding Background}"
@@ -135,17 +143,26 @@
                                     <ColumnDefinition />
                                     <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
-
-                                <Border>
+                                
+                                <Grid x:Name="EditStateElementsContainer">
                                     <TextBox x:Name="PART_EditableTextBox"
                                              Style="{StaticResource ComboBoxTextBox}"
+                                             Margin="-2,0,0,0"
                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                             VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-                                </Border>
+                                             VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                             IsReadOnly="{TemplateBinding IsReadOnly}" />
+                                    <ContentPresenter x:Name="ContentSite"
+                                                      IsHitTestVisible="False"
+                                                      Content="{TemplateBinding SelectionBoxItem}"
+                                                      ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                                      ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                                                      HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                </Grid>
 
-                                <StackPanel x:Name="InnerPartsContainer">
+                                <StackPanel x:Name="InnerPartsContainer"
+                                            Grid.Column="1">
                                     <controls:PathIcon x:Name="ValidationErrorIcon"
-                                                       Grid.Column="1"
                                                        Margin="{c:GridUnit '1,0,0,0'}"
                                                        Visibility="Collapsed"
                                                        Foreground="{StaticResource ErrorBrush}"
@@ -154,8 +171,28 @@
                             </Grid>
                         </controls:PlaceholderOverlay>
 
+                        <Grid x:Name="ToggleButtonContainer"
+                              Grid.Column="1">
+                            <ToggleButton x:Name="ToggleButton"
+                                          Style="{StaticResource Accent2ForegroundOnlyButton}"
+                                          Foreground="{TemplateBinding BorderBrush}"
+                                          theming:MouseOverProperties.ForegroundBrush="{TemplateBinding theming:MouseOverProperties.BorderBrush}"
+                                          theming:PressedProperties.ForegroundBrush="{TemplateBinding theming:PressedProperties.BorderBrush}"
+                                          theming:ActiveProperties.ForegroundBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}"
+                                          theming:DisabledProperties.ForegroundBrush="{TemplateBinding theming:DisabledProperties.BorderBrush}"
+                                          IsChecked="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                                          Focusable="False"
+                                          ClickMode="Press"
+                                          HorizontalContentAlignment="Right"
+                                          VerticalContentAlignment="Center"
+                                          Padding="{c:GridUnit '1,0'}">
+                                <controls:PathIcon Data="{StaticResource HalfArrowDown}" />
+                            </ToggleButton>
+                        </Grid>
+                       
                         <Border x:Name="AssistiveElementsContainer"
                                 Grid.Row="1"
+                                IsHitTestVisible="False"
                                 Padding="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessLeftPickerConverter}}">
                             <Grid>
                                 <TextBlock x:Name="AssistiveText"
@@ -174,6 +211,29 @@
                             </Grid>
                         </Border>
 
+                        <Popup x:Name="PART_Popup"
+                               Grid.RowSpan="2"
+                               Placement="Center"
+                               PopupAnimation="Fade"
+                               IsOpen="{TemplateBinding IsDropDownOpen}"
+                               AllowsTransparency="True"
+                               Focusable="False">
+                            <Grid x:Name="DropDown"
+                                  SnapsToDevicePixels="True"
+                                  MinWidth="{TemplateBinding ActualWidth}"
+                                  MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                <Border x:Name="DropDownBorder"
+                                        BorderThickness="1"
+                                        Background="{StaticResource PrimaryBrush}"
+                                        BorderBrush="{StaticResource ControlBorderBrush}">
+                                    <ScrollViewer SnapsToDevicePixels="True">
+                                        <StackPanel IsItemsHost="True"
+                                                    KeyboardNavigation.DirectionalNavigation="Contained" />
+                                    </ScrollViewer>
+                                </Border>
+                            </Grid>
+                        </Popup>
+
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualStateGroup.Transitions>
@@ -186,11 +246,8 @@
                                 <VisualState x:Name="MouseOver" Storyboard="{StaticResource MouseOverStoryboard}" />
                                 <VisualState x:Name="Disabled" Storyboard="{StaticResource DisabledStoryboard}" />
                             </VisualStateGroup>
+                            
                             <VisualStateGroup x:Name="FocusStates">
-                                <VisualStateGroup.Transitions>
-                                    <VisualTransition GeneratedDuration="{StaticResource ColorAnimationDuration}"
-                                                      GeneratedEasingFunction="{StaticResource ColorAnimationEase}" />
-                                </VisualStateGroup.Transitions>
                                 <c:ExtendedVisualState x:Name="Unfocused">
                                     <c:ExtendedVisualState.Setters>
                                         <Setter TargetName="FocusedIndicator" Property="controls:SelectedIndicator.IsSelected" Value="False" />
@@ -203,6 +260,32 @@
                                         <Setter TargetName="FocusedIndicator" Property="controls:SelectedIndicator.IsSelected" Value="True" />
                                         <Setter TargetName="Bd" Property="Visibility" Value="Collapsed" />
                                         <Setter TargetName="FocusedBorder" Property="Visibility" Value="Visible" />
+                                    </c:ExtendedVisualState.Setters>
+                                </c:ExtendedVisualState>
+                                <c:ExtendedVisualState x:Name="FocusedDropDown">
+                                    <c:ExtendedVisualState.Setters>
+                                        <Setter TargetName="FocusedIndicator" Property="controls:SelectedIndicator.IsSelected" Value="True" />
+                                        <Setter TargetName="Bd" Property="Visibility" Value="Collapsed" />
+                                        <Setter TargetName="FocusedBorder" Property="Visibility" Value="Visible" />
+                                    </c:ExtendedVisualState.Setters>
+                                </c:ExtendedVisualState>
+                            </VisualStateGroup>
+
+                            <VisualStateGroup x:Name="EditStates">
+                                <c:ExtendedVisualState x:Name="Editable">
+                                    <c:ExtendedVisualState.Setters>
+                                        <Setter TargetName="PART_EditableTextBox" Property="Visibility" Value="Visible" />
+                                        <Setter TargetName="ContentSite" Property="Visibility" Value="Collapsed" />
+                                        <Setter TargetName="ToggleButtonContainer" Property="Grid.Column" Value="1" />
+                                        <Setter TargetName="ToggleButtonContainer" Property="Grid.ColumnSpan" Value="1" />
+                                    </c:ExtendedVisualState.Setters>
+                                </c:ExtendedVisualState>
+                                <c:ExtendedVisualState x:Name="Uneditable">
+                                    <c:ExtendedVisualState.Setters>
+                                        <Setter TargetName="PART_EditableTextBox" Property="Visibility" Value="Collapsed" />
+                                        <Setter TargetName="ContentSite" Property="Visibility" Value="Visible" />
+                                        <Setter TargetName="ToggleButtonContainer" Property="Grid.Column" Value="0" />
+                                        <Setter TargetName="ToggleButtonContainer" Property="Grid.ColumnSpan" Value="2" />
                                     </c:ExtendedVisualState.Setters>
                                 </c:ExtendedVisualState>
                             </VisualStateGroup>
@@ -292,19 +375,27 @@
                         </Trigger>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
-                                <Condition Binding="{Binding Path=Text, RelativeSource={RelativeSource Self}}" Value="" />
+                                <Condition Binding="{Binding Text, RelativeSource={RelativeSource Self}}" Value="" />
+                                <Condition Binding="{Binding IsEditable, RelativeSource={RelativeSource Self}}" Value="True" />
                                 <Condition Binding="{Binding IsFocused, ElementName=PART_EditableTextBox}" Value="False" />
                             </MultiDataTrigger.Conditions>
                             <Setter TargetName="PlaceholderOverlay" Property="IsPlaceholderVisible" Value="True" />
                         </MultiDataTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsEditable" Value="False" />
+                                <Condition Property="SelectedItem" Value="{x:Null}" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="PlaceholderOverlay" Property="IsPlaceholderVisible" Value="True" />
+                        </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-    <Style x:Key="Accent1ComboBox" TargetType="Control" BasedOn="{c:MultiStyle 'StandardComboBox ControlBorderAccent1States'}" />
-    <Style x:Key="Accent2ComboBox" TargetType="Control" BasedOn="{c:MultiStyle 'StandardComboBox ControlBorderAccent2States'}" />
-    <Style TargetType="ComboBox" BasedOn="{StaticResource StandardComboBox}" />
+    <Style x:Key="Accent1ComboBox" TargetType="ComboBox" BasedOn="{c:MultiStyle 'StandardComboBox ControlBorderAccent1States'}" />
+    <Style x:Key="Accent2ComboBox" TargetType="ComboBox" BasedOn="{c:MultiStyle 'StandardComboBox ControlBorderAccent2States'}" />
+    <Style TargetType="ComboBox" BasedOn="{StaticResource Accent2ComboBox}" />
 
     <!--<Style x:Key="StandardComboBox" TargetType="ComboBox" BasedOn="{StaticResource Accent2BorderThemingBase}">
         <Style.Resources>

@@ -20,6 +20,7 @@
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledComboBoxEx1}">
                     <ComboBox IsEditable="{Binding IsChecked, ElementName=IsEditableComboBoxEx1}" 
                               Width="{c:GridUnit 80}"
+                              ShouldPreserveUserEnteredPrefix="True"
                               c:TextBoxProperties.Placeholder="Placeholder"
                               c:TextBoxProperties.AssistiveText="Assistive text">
                         <ComboBoxItem>Item 1</ComboBoxItem>

@@ -149,9 +149,9 @@
                                                   VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
                                 </Border>
 
-                                <StackPanel x:Name="InnerPartsContainer">
+                                <StackPanel x:Name="InnerPartsContainer"
+                                            Grid.Column="1">
                                     <controls:PathIcon x:Name="ValidationErrorIcon"
-                                                       Grid.Column="1"
                                                        Margin="{c:GridUnit '1,0,0,0'}"
                                                        Visibility="Collapsed"
                                                        Foreground="{StaticResource ErrorBrush}"
@@ -163,6 +163,7 @@
 
                         <Border x:Name="AssistiveElementsContainer"
                                 Grid.Row="1"
+                                IsHitTestVisible="False"
                                 Padding="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessLeftPickerConverter}}">
                             <Grid>
                                 <TextBlock x:Name="AssistiveText"
@@ -194,10 +195,6 @@
                                 <VisualState x:Name="Disabled" Storyboard="{StaticResource DisabledStoryboard}" />
                             </VisualStateGroup>
                             <VisualStateGroup x:Name="FocusStates">
-                                <VisualStateGroup.Transitions>
-                                    <VisualTransition GeneratedDuration="{StaticResource ColorAnimationDuration}"
-                                                      GeneratedEasingFunction="{StaticResource ColorAnimationEase}" />
-                                </VisualStateGroup.Transitions>
                                 <VisualState x:Name="Unfocused" />
                                 <VisualState x:Name="Focused" Storyboard="{StaticResource FocusedStoryboard}" />
                             </VisualStateGroup>
