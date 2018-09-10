@@ -9,10 +9,10 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
     
-    <Style TargetType="controls:SelectedIndicator">
+    <Style TargetType="controls:SelectionIndicator">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="controls:SelectedIndicator">
+                <ControlTemplate TargetType="controls:SelectionIndicator">
                     <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
                         <Border x:Name="Bd"
                                 Background="{TemplateBinding Background}"

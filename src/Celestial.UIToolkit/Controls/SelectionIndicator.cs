@@ -15,7 +15,7 @@ namespace Celestial.UIToolkit.Controls
     /// </summary>
     [TemplateVisualState(Name = SelectedVisualState, GroupName = SelectionStatesVisualStateGroup)]
     [TemplateVisualState(Name = UnselectedVisualState, GroupName = SelectionStatesVisualStateGroup)]
-    public class SelectedIndicator : Control
+    public class SelectionIndicator : Control
     {
 
         internal const string SelectionStatesVisualStateGroup = "SelectionStates";
@@ -29,7 +29,7 @@ namespace Celestial.UIToolkit.Controls
             DependencyProperty.Register(
                 nameof(Orientation),
                 typeof(Orientation),
-                typeof(SelectedIndicator),
+                typeof(SelectionIndicator),
                 new PropertyMetadata(Orientation.Horizontal));
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace Celestial.UIToolkit.Controls
             DependencyProperty.Register(
                 nameof(IsSelected),
                 typeof(bool),
-                typeof(SelectedIndicator),
+                typeof(SelectionIndicator),
                 new PropertyMetadata(
                     false,
                     IsSelected_Changed));
@@ -63,17 +63,17 @@ namespace Celestial.UIToolkit.Controls
             set { SetValue(IsSelectedProperty, value); }
         }
         
-        static SelectedIndicator()
+        static SelectionIndicator()
         {
             DefaultStyleKeyProperty.OverrideMetadata(
-                typeof(SelectedIndicator),
-                new FrameworkPropertyMetadata(typeof(SelectedIndicator)));
+                typeof(SelectionIndicator),
+                new FrameworkPropertyMetadata(typeof(SelectionIndicator)));
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SelectedIndicator"/> class.
+        /// Initializes a new instance of the <see cref="SelectionIndicator"/> class.
         /// </summary>
-        public SelectedIndicator()
+        public SelectionIndicator()
         {
         }
 
@@ -90,7 +90,7 @@ namespace Celestial.UIToolkit.Controls
         private static void IsSelected_Changed(
             DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var self = (SelectedIndicator)d;
+            var self = (SelectionIndicator)d;
             self.EnterCurrentVisualState(true);
         }
 
@@ -101,14 +101,14 @@ namespace Celestial.UIToolkit.Controls
         }
 
         /// <summary>
-        /// Returns a string representation of this <see cref="SelectedIndicator"/>.
+        /// Returns a string representation of this <see cref="SelectionIndicator"/>.
         /// </summary>
         /// <returns>
-        /// A string representing this <see cref="SelectedIndicator"/>.
+        /// A string representing this <see cref="SelectionIndicator"/>.
         /// </returns>
         public override string ToString()
         {
-            return $"{nameof(SelectedIndicator)}: " +
+            return $"{nameof(SelectionIndicator)}: " +
                    $"{nameof(IsSelected)}: {IsSelected}, " +
                    $"{nameof(Orientation)}: {Orientation}";
         }

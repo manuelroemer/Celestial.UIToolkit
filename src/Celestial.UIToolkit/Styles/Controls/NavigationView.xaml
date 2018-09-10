@@ -180,12 +180,12 @@
                                               RecognizesAccessKey="True" />
                         </Grid>
 
-                        <controls:SelectedIndicator x:Name="SelectionIndicator"
-                                                    Background="{StaticResource Accent2ControlBackgroundBrush}"
-                                                    Width="{c:GridUnit 1}"
-                                                    HorizontalAlignment="Left"
-                                                    Orientation="Vertical"
-                                                    IsSelected="{TemplateBinding IsSelected}" />
+                        <controls:SelectionIndicator x:Name="SelectionIndicator"
+                                                     Background="{StaticResource Accent2ControlBackgroundBrush}"
+                                                     Width="{c:GridUnit 1}"
+                                                     HorizontalAlignment="Left"
+                                                     Orientation="Vertical"
+                                                     IsSelected="{TemplateBinding IsSelected}" />
                         
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">

@@ -120,12 +120,12 @@
                                         CornerRadius="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
                                         Visibility="Collapsed" />
                                 <Border BorderThickness="{TemplateBinding BorderThickness}">
-                                    <controls:SelectedIndicator x:Name="FocusedIndicator"
-                                                                Background="{TemplateBinding theming:ActiveProperties.BorderBrush}"
-                                                                Visibility="{Binding Path=(theming:TextBoxProperties.ShowFocusedIndicator), RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}"
-                                                                Height="1.5"
-                                                                VerticalAlignment="Bottom"
-                                                                Margin="0,0,0,-0.5" />
+                                    <controls:SelectionIndicator x:Name="FocusedIndicator"
+                                                                 Background="{TemplateBinding theming:ActiveProperties.BorderBrush}"
+                                                                 Visibility="{Binding Path=(theming:TextBoxProperties.ShowFocusedIndicator), RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                                                 Height="1.5"
+                                                                 VerticalAlignment="Bottom"
+                                                                 Margin="0,0,0,-0.5" />
                                 </Border>
                             </Grid>
                         </controls:ThemeShadowPresenter>
@@ -255,21 +255,21 @@
                             <VisualStateGroup x:Name="FocusStates">
                                 <c:ExtendedVisualState x:Name="Unfocused">
                                     <c:ExtendedVisualState.Setters>
-                                        <Setter TargetName="FocusedIndicator" Property="controls:SelectedIndicator.IsSelected" Value="False" />
+                                        <Setter TargetName="FocusedIndicator" Property="controls:SelectionIndicator.IsSelected" Value="False" />
                                         <Setter TargetName="Bd" Property="Visibility" Value="Visible" />
                                         <Setter TargetName="FocusedBorder" Property="Visibility" Value="Collapsed" />
                                     </c:ExtendedVisualState.Setters>
                                 </c:ExtendedVisualState>
                                 <c:ExtendedVisualState x:Name="Focused">
                                     <c:ExtendedVisualState.Setters>
-                                        <Setter TargetName="FocusedIndicator" Property="controls:SelectedIndicator.IsSelected" Value="True" />
+                                        <Setter TargetName="FocusedIndicator" Property="controls:SelectionIndicator.IsSelected" Value="True" />
                                         <Setter TargetName="Bd" Property="Visibility" Value="Collapsed" />
                                         <Setter TargetName="FocusedBorder" Property="Visibility" Value="Visible" />
                                     </c:ExtendedVisualState.Setters>
                                 </c:ExtendedVisualState>
                                 <c:ExtendedVisualState x:Name="FocusedDropDown">
                                     <c:ExtendedVisualState.Setters>
-                                        <Setter TargetName="FocusedIndicator" Property="controls:SelectedIndicator.IsSelected" Value="True" />
+                                        <Setter TargetName="FocusedIndicator" Property="controls:SelectionIndicator.IsSelected" Value="True" />
                                         <Setter TargetName="Bd" Property="Visibility" Value="Collapsed" />
                                         <Setter TargetName="FocusedBorder" Property="Visibility" Value="Visible" />
                                     </c:ExtendedVisualState.Setters>
