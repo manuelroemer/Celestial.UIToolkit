@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Documents;
 using System.Windows.Media;
 
 namespace Celestial.UIToolkit.Controls
@@ -13,14 +14,8 @@ namespace Celestial.UIToolkit.Controls
         /// <summary>
         /// Identifies the <see cref="Foreground"/> dependency property.
         /// </summary>
-        public static readonly DependencyProperty ForegroundProperty = DependencyProperty.RegisterAttached(
-            nameof(Foreground), 
-            typeof(Brush), 
-            typeof(IconElement), 
-            new FrameworkPropertyMetadata(
-                SystemColors.ControlTextBrush,
-                FrameworkPropertyMetadataOptions.Inherits |
-                FrameworkPropertyMetadataOptions.AffectsRender));
+        public static readonly DependencyProperty ForegroundProperty =
+            TextElement.ForegroundProperty.AddOwner(typeof(IconElement));
         
         /// <summary>
         /// Gets or sets a <see cref="Brush"/> which identifies the icon's color.

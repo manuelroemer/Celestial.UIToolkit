@@ -10,7 +10,9 @@
         <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
         <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
         <c:SharedResourceDictionary Source="../../Icons/Arrows.xaml" />
+        <c:SharedResourceDictionary Source="../../Icons/Badges.xaml" />
         <c:SharedResourceDictionary Source="./TextBlock.xaml" />
+        <c:SharedResourceDictionary Source="./Button.xaml" />
 
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
@@ -18,17 +20,34 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="StandardComboBox" TargetType="ComboBox" BasedOn="{c:MultiStyle 'PrimaryBackground ControlBorder StandardForeground StandardFontProperties Shadow0'}">
+        <Style.Resources>
+            <Style x:Key="ComboBoxTextBox" TargetType="TextBox">
+                <Setter Property="HorizontalAlignment" Value="Stretch" />
+                <Setter Property="VerticalAlignment" Value="Stretch" />
+                <Setter Property="CaretBrush" Value="{StaticResource CaretBrush}" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="TextBox">
+                            <Border x:Name="PART_ContentHost"
+                                    Focusable="False"
+                                    Padding="{TemplateBinding Padding}" />
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Style.Resources>
+
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Margin" Value="0" />
         <Setter Property="Padding" Value="{c:GridUnit '2'}" />
-        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
-        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
-        <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
-        <Setter Property="KeyboardNavigation.TabNavigation" Value="None" />
+        <Setter Property="MinWidth" Value="{c:GridUnit 30}" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="BorderThickness" Value="0,0,0,1" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource BottomControlThemeShadow}" />
+        <Setter Property="AllowDrop" Value="True" />
         <Setter Property="Background" Value="{StaticResource PrimaryLowBrush}" />
         <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
         <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
@@ -36,22 +55,199 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ComboBox">
-                    <Grid Background="Transparent"
+                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
+                        <Grid.Resources>
+
+                            <Storyboard x:Key="MouseOverStoryboard">
+                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                                Storyboard.TargetProperty="Background">
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                </c:BrushAnimationUsingKeyFrames>
+                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                                Storyboard.TargetProperty="BorderBrush">
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                </c:BrushAnimationUsingKeyFrames>
+                            </Storyboard>
+
+                            <Storyboard x:Key="DisabledStoryboard">
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                               Storyboard.TargetProperty="Visibility">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="FocusedBorder"
+                                                               Storyboard.TargetProperty="Visibility">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+                                </ObjectAnimationUsingKeyFrames>
+                                <c:BrushAnimation Storyboard.TargetName="Bd"
+                                                  Storyboard.TargetProperty="Background"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                <c:BrushAnimation Storyboard.TargetName="Bd"
+                                                  Storyboard.TargetProperty="BorderBrush"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                            </Storyboard>
+
+                            <c:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+                            <c:StringToVisibilityConverter x:Key="StringToVisibilityConverter" />
+                            <c:ThicknessSidePickerConverter x:Key="ThicknessLeftPickerConverter" Top="0" Right="0" Bottom="0" />
+                        </Grid.Resources>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition x:Name="TextBoxRow" />
+                            <RowDefinition x:Name="AssistiveRow" Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <controls:ThemeShadowPresenter>
+                            <Grid SnapsToDevicePixels="False">
+                                <Border x:Name="Bd"
+                                        Background="{TemplateBinding Background}"
+                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        CornerRadius="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}" />
+                                <Border x:Name="FocusedBorder"
+                                        Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
+                                        BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                        CornerRadius="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
+                                        Visibility="Collapsed" />
+                                <Border BorderThickness="{TemplateBinding BorderThickness}">
+                                    <controls:SelectedIndicator x:Name="FocusedIndicator"
+                                                                Background="{TemplateBinding theming:ActiveProperties.BorderBrush}"
+                                                                Visibility="{Binding Path=(theming:TextBoxProperties.ShowFocusedIndicator), RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                                                Height="1.5"
+                                                                VerticalAlignment="Bottom"
+                                                                Margin="0,0,0,-0.5" />
+                                </Border>
+                            </Grid>
+                        </controls:ThemeShadowPresenter>
+
+                        <controls:PlaceholderOverlay x:Name="PlaceholderOverlay"
+                                                     Placeholder="{TemplateBinding theming:TextBoxProperties.Placeholder}"
+                                                     PlaceholderDisplayType="{TemplateBinding theming:TextBoxProperties.PlaceholderType}"
+                                                     IsPlaceholderVisible="False"
+                                                     FloatingPlaceholderScale="0.8"
+                                                     HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                     VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                     Padding="{TemplateBinding Padding}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <Border>
+                                    <TextBox x:Name="PART_EditableTextBox"
+                                             Style="{StaticResource ComboBoxTextBox}"
+                                             HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                             VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                </Border>
+
+                                <StackPanel x:Name="InnerPartsContainer">
+                                    <controls:PathIcon x:Name="ValidationErrorIcon"
+                                                       Grid.Column="1"
+                                                       Margin="{c:GridUnit '1,0,0,0'}"
+                                                       Visibility="Collapsed"
+                                                       Foreground="{StaticResource ErrorBrush}"
+                                                       Data="{StaticResource Error}" />
+                                </StackPanel>
+                            </Grid>
+                        </controls:PlaceholderOverlay>
+
+                        <Border x:Name="AssistiveElementsContainer"
+                                Grid.Row="1"
+                                Padding="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessLeftPickerConverter}}">
+                            <Grid>
+                                <TextBlock x:Name="AssistiveText"
+                                           Style="{StaticResource CaptionHintTextBlock}"
+                                           Text="{TemplateBinding theming:TextBoxProperties.AssistiveText}"
+                                           TextTrimming="CharacterEllipsis"
+                                           Margin="{c:GridUnit '0,0.5,0,0'}"
+                                           Visibility="{Binding Path=(theming:TextBoxProperties.AssistiveText), RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource StringToVisibilityConverter}}" />
+                                <TextBlock x:Name="ValidationErrorText"
+                                           Style="{StaticResource CaptionHintTextBlock}"
+                                           Foreground="{StaticResource ErrorBrush}"
+                                           Text="{Binding Path=(Validation.Errors)[0].ErrorContent, RelativeSource={RelativeSource TemplatedParent}}"
+                                           TextTrimming="CharacterEllipsis"
+                                           Margin="{c:GridUnit '0,0.5,0,0'}"
+                                           Visibility="Collapsed" />
+                            </Grid>
+                        </Border>
+
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition GeneratedDuration="{StaticResource ColorAnimationDuration}"
+                                                      GeneratedEasingFunction="{StaticResource ColorAnimationEase}" />
+                                    <VisualTransition To="Disabled" GeneratedDuration="0" />
+                                    <VisualTransition To="ReadOnly" GeneratedDuration="0" />
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver" Storyboard="{StaticResource MouseOverStoryboard}" />
+                                <VisualState x:Name="Disabled" Storyboard="{StaticResource DisabledStoryboard}" />
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition GeneratedDuration="{StaticResource ColorAnimationDuration}"
+                                                      GeneratedEasingFunction="{StaticResource ColorAnimationEase}" />
+                                </VisualStateGroup.Transitions>
+                                <c:ExtendedVisualState x:Name="Unfocused">
+                                    <c:ExtendedVisualState.Setters>
+                                        <Setter TargetName="FocusedIndicator" Property="controls:SelectedIndicator.IsSelected" Value="False" />
+                                        <Setter TargetName="Bd" Property="Visibility" Value="Visible" />
+                                        <Setter TargetName="FocusedBorder" Property="Visibility" Value="Collapsed" />
+                                    </c:ExtendedVisualState.Setters>
+                                </c:ExtendedVisualState>
+                                <c:ExtendedVisualState x:Name="Focused">
+                                    <c:ExtendedVisualState.Setters>
+                                        <Setter TargetName="FocusedIndicator" Property="controls:SelectedIndicator.IsSelected" Value="True" />
+                                        <Setter TargetName="Bd" Property="Visibility" Value="Collapsed" />
+                                        <Setter TargetName="FocusedBorder" Property="Visibility" Value="Visible" />
+                                    </c:ExtendedVisualState.Setters>
+                                </c:ExtendedVisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Grid>
+                    
+                    <!--<Grid Background="Transparent"
                           VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
-                        <TextBox x:Name="PART_EditableTextBox" />
-                        <ToggleButton x:Name="ToggleButton"
-                                      Background="Transparent"
-                                      theming:ActiveProperties.BackgroundBrush="Transparent"
-                                      theming:MouseOverProperties.BackgroundBrush="Transparent"
-                                      theming:PressedProperties.BackgroundBrush="Transparent"
-                                      Focusable="False"
-                                      ClickMode="Press"
-                                      HorizontalAlignment="Right"
-                                      VerticalAlignment="Center"
-                                      IsChecked="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}">
-                            <controls:PathIcon Data="{StaticResource HalfArrowDown}" />
-                        </ToggleButton>
-                        <Popup x:Name="Popup"
+
+                        <Grid x:Name="ContentContainer" 
+                                Margin="{TemplateBinding BorderThickness}">
+                            <Grid x:Name="TextBoxContainer">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <TextBox x:Name="PART_EditableTextBox"
+                                     Style="{StaticResource ComboBoxTextBox}" />
+                                <Rectangle x:Name="ToggleButtonPlaceholder"
+                                       Width="{Binding ActualWidth, ElementName=ToggleButton}" />
+                            </Grid>
+
+                            <ContentPresenter x:Name="ContentSite"
+                                              IsHitTestVisible="False"
+                                              Content="{TemplateBinding SelectionBoxItem}"
+                                              ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                              ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                                              HorizontalAlignment="Left"
+                                              VerticalAlignment="Stretch"
+                                              Visibility="Collapsed" />
+                            <ToggleButton x:Name="ToggleButton"
+                                          Style="{StaticResource Accent2ForegroundOnlyButton}"
+                                          Focusable="False"
+                                          ClickMode="Press"
+                                          HorizontalAlignment="Right"
+                                          HorizontalContentAlignment="Right"
+                                          VerticalAlignment="Stretch"
+                                          VerticalContentAlignment="Center"
+                                          Padding="{c:GridUnit '1,0'}"
+                                          IsChecked="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}">
+                                <controls:PathIcon Data="{StaticResource HalfArrowDown}" />
+                            </ToggleButton>
+                        </Grid>
+                        
+                        <Popup x:Name="PART_Popup"
                                Placement="Bottom"
                                IsOpen="{TemplateBinding IsDropDownOpen}"
                                AllowsTransparency="True"
@@ -65,8 +261,7 @@
                                         BorderThickness="1"
                                         Background="{StaticResource PrimaryBrush}"
                                         BorderBrush="{StaticResource ControlBorderBrush}">
-                                    <ScrollViewer Margin="{c:GridUnit 4}"
-                                                  SnapsToDevicePixels="True">
+                                    <ScrollViewer SnapsToDevicePixels="True">
                                         <StackPanel IsItemsHost="True"
                                                     KeyboardNavigation.DirectionalNavigation="Contained" />
                                     </ScrollViewer>
@@ -75,19 +270,34 @@
                         </Popup>
 
                         <VisualStateManager.VisualStateGroups>
-                            <VisualStateGroup x:Name="EditStates">
-                                <VisualState x:Name="Uneditable">
-                                    <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ToggleButton"
-                                                                       Storyboard.TargetProperty="HorizontalAlignment">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static HorizontalAlignment.Stretch}" />
-                                        </ObjectAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </VisualState>
-                                <VisualState x:Name="Editable" />
-                            </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
-                    </Grid>
+                    </Grid>-->
+
+                    <ControlTemplate.Triggers>
+                        <!--<Trigger Property="IsEditable" Value="False">
+                            <Setter TargetName="ContentSite" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="PART_EditableTextBox" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="ToggleButton" Property="HorizontalAlignment" Value="Stretch" />
+                        </Trigger>-->
+                        <Trigger Property="IsReadOnly" Value="True">
+                            <Setter Property="theming:ActiveProperties.BorderBrush" Value="{Binding BorderBrush, RelativeSource={RelativeSource Self}}" />
+                        </Trigger>
+                        <Trigger Property="Validation.HasError" Value="True">
+                            <Setter TargetName="ValidationErrorIcon" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="ValidationErrorText" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="AssistiveText" Property="Visibility" Value="Collapsed" />
+                            <Setter Property="BorderBrush" Value="{StaticResource ErrorControlBorderBrush}" />
+                            <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource ErrorControlHoverBorderBrush}" />
+                            <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource ErrorControlActiveBorderBrush}" />
+                        </Trigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding Path=Text, RelativeSource={RelativeSource Self}}" Value="" />
+                                <Condition Binding="{Binding IsFocused, ElementName=PART_EditableTextBox}" Value="False" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter TargetName="PlaceholderOverlay" Property="IsPlaceholderVisible" Value="True" />
+                        </MultiDataTrigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

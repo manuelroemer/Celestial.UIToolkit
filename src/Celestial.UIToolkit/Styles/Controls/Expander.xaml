@@ -60,7 +60,7 @@
                                 </Border>
                             </ToggleButton>
                             <ToggleButton IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
-                                          Style="{StaticResource InvisibleButton}"
+                                          Style="{StaticResource TransparentButton}"
                                           Focusable="False"
                                           IsTabStop="False">
                                 <ContentPresenter x:Name="HeaderContentSite"

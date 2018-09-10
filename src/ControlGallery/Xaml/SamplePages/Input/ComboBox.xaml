@@ -19,7 +19,9 @@
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledComboBoxEx1}">
                     <ComboBox IsEditable="{Binding IsChecked, ElementName=IsEditableComboBoxEx1}" 
-                              Width="{c:GridUnit 80}">
+                              Width="{c:GridUnit 80}"
+                              c:TextBoxProperties.Placeholder="Placeholder"
+                              c:TextBoxProperties.AssistiveText="Assistive text">
                         <ComboBoxItem>Item 1</ComboBoxItem>
                         <ComboBoxItem>Item 2</ComboBoxItem>
                         <ComboBoxItem>Item 3</ComboBoxItem>

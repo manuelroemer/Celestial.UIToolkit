@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
+using static Celestial.UIToolkit.TraceSources;
 
 namespace Celestial.UIToolkit.Theming
 {
@@ -66,6 +67,7 @@ namespace Celestial.UIToolkit.Theming
                     nameof(TextBox.TextChanged),
                     TextBox_TextChanged);
                 UpdateHasTextForTextBox(textBox);
+                textBox.TraceVerbose("TextBoxHelper - Attached TextChanged handler.");
             }
             else if (d is RichTextBox richTextBox)
             {
@@ -74,6 +76,7 @@ namespace Celestial.UIToolkit.Theming
                     nameof(RichTextBox.TextChanged),
                     RichTextBox_TextChanged);
                 UpdateHasTextForRichTextBox(richTextBox);
+                richTextBox.TraceVerbose("TextBoxHelper - Attached TextChanged handler.");
             }
             else if (d is PasswordBox passwordBox)
             {
@@ -82,6 +85,7 @@ namespace Celestial.UIToolkit.Theming
                     nameof(PasswordBox.PasswordChanged),
                     PasswordBox_PasswordChanged);
                 UpdateHasTextForPasswordBox(passwordBox);
+                passwordBox.TraceVerbose("TextBoxHelper - Attached PasswordChanged handler.");
             }
 
             // Clear the value to not create memory leaks.
@@ -109,6 +113,7 @@ namespace Celestial.UIToolkit.Theming
         {
             bool hasText = !string.IsNullOrEmpty(textBox.Text);
             SetHasText(textBox, hasText);
+            textBox.TraceVerbose("HasText set to {0}.", hasText);
         }
 
         private static void UpdateHasTextForRichTextBox(RichTextBox richTextBox)
@@ -117,12 +122,14 @@ namespace Celestial.UIToolkit.Theming
             // It will do for now though.
             bool hasText = !IsRichTextBoxEmpty(richTextBox);
             SetHasText(richTextBox, hasText);
+            richTextBox.TraceVerbose("HasText set to {0}.", hasText);
         }
 
         private static void UpdateHasTextForPasswordBox(PasswordBox passwordBox)
         {
             bool hasText = passwordBox.SecurePassword.Length > 0;
             SetHasText(passwordBox, hasText);
+            passwordBox.TraceVerbose("HasText set to {0}.", hasText);
         }
 
         private static bool IsRichTextBoxEmpty(RichTextBox richTextBox)

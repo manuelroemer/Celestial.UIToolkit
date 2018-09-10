@@ -25,7 +25,6 @@
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="controls:IconElement.Foreground" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
         <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
         <Setter Property="theming:PressedProperties.BorderBrush" Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
         <Setter Property="theming:ActiveProperties.ShadowElevation" Value="0" />
@@ -148,9 +147,9 @@
             </Setter.Value>
         </Setter>
         <Style.Triggers>
-            <DataTrigger Binding="{Binding IsChecked, RelativeSource={RelativeSource Self}, FallbackValue=False}" Value="True">
+            <Trigger Property="ToggleButton.IsChecked" Value="True">
                 <Setter Property="Foreground" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
-            </DataTrigger>
+            </Trigger>
         </Style.Triggers>
     </Style>
     <Style TargetType="Button" BasedOn="{StaticResource StandardButton}" />
@@ -320,27 +319,27 @@
                                     VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
                         <ContentControl.Resources>
                             <Storyboard x:Key="MouseOverStoryboard">
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="TextBlock"
-                                                                Storyboard.TargetProperty="Foreground">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                </c:BrushAnimationUsingKeyFrames>
+                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                  Storyboard.TargetProperty="Foreground"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                             </Storyboard>
 
                             <Storyboard x:Key="PressedStoryboard">
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="TextBlock"
-                                                                Storyboard.TargetProperty="Foreground">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:PressedProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                </c:BrushAnimationUsingKeyFrames>
+                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                  Storyboard.TargetProperty="Foreground"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:PressedProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                             </Storyboard>
 
                             <Storyboard x:Key="DisabledStoryboard">
-                                <c:BrushAnimation Storyboard.TargetName="TextBlock"
+                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
                                                   Storyboard.TargetProperty="Foreground"
                                                   Duration="0"
                                                   To="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                             </Storyboard>
                         </ContentControl.Resources>
-                        
+
                         <TextBlock x:Name="TextBlock"
                                    Foreground="{TemplateBinding Foreground}"
                                    Background="{TemplateBinding Background}"
@@ -349,8 +348,15 @@
                                    FontWeight="{TemplateBinding FontWeight}"
                                    FontStyle="{TemplateBinding FontStyle}"
                                    FontStretch="{TemplateBinding FontStretch}"
-                                   TextDecorations="Underline"
-                                   Text="{TemplateBinding Content}" />
+                                   Text="{TemplateBinding Content}">
+                            <TextBlock.TextDecorations>
+                                <TextDecoration Location="Underline">
+                                    <TextDecoration.Pen>
+                                        <Pen Brush="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}" />
+                                    </TextDecoration.Pen>
+                                </TextDecoration>
+                            </TextBlock.TextDecorations>
+                        </TextBlock>
 
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
