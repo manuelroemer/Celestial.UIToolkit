@@ -305,12 +305,12 @@
                             <!-- This Button gets fully expanded across the whole control when IsEditable=false.
                                  By default, it's docked to the right. -->
                             <ToggleButton x:Name="ToggleButton"
-                                          Style="{StaticResource Accent2ForegroundOnlyButton}"
+                                          Style="{StaticResource TransparentButton}"
                                           Foreground="{TemplateBinding BorderBrush}"
-                                          theming:MouseOverProperties.ForegroundBrush="{TemplateBinding theming:MouseOverProperties.BorderBrush}"
-                                          theming:PressedProperties.ForegroundBrush="{TemplateBinding theming:PressedProperties.BorderBrush}"
-                                          theming:ActiveProperties.ForegroundBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}"
-                                          theming:DisabledProperties.ForegroundBrush="{TemplateBinding theming:DisabledProperties.BorderBrush}"
+                                          theming:MouseOverProperties.ForegroundBrush="{TemplateBinding theming:MouseOverProperties.ForegroundBrush}"
+                                          theming:PressedProperties.ForegroundBrush="{TemplateBinding theming:PressedProperties.ForegroundBrush}"
+                                          theming:ActiveProperties.ForegroundBrush="{TemplateBinding theming:ActiveProperties.ForegroundBrush}"
+                                          theming:DisabledProperties.ForegroundBrush="{TemplateBinding theming:DisabledProperties.ForegroundBrush}"
                                           IsChecked="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
                                           Focusable="False"
                                           ClickMode="Press"
@@ -507,10 +507,16 @@
     
     <Style x:Key="Accent1ComboBox" TargetType="ComboBox" BasedOn="{c:MultiStyle 'StandardComboBox ControlBorderAccent1States'}">
         <Setter Property="ItemContainerStyle" Value="{StaticResource Accent1ComboBoxItem}" />
+        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
     </Style>
     
     <Style x:Key="Accent2ComboBox" TargetType="ComboBox" BasedOn="{c:MultiStyle 'StandardComboBox ControlBorderAccent2States'}">
         <Setter Property="ItemContainerStyle" Value="{StaticResource Accent2ComboBoxItem}" />
+        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
     </Style>
     
     <Style TargetType="ComboBox" BasedOn="{StaticResource Accent2ComboBox}" />
