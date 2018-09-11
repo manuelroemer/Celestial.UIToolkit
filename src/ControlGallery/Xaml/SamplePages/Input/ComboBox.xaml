@@ -11,6 +11,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type data:Fruit}">
+            <TextBlock Style="{x:Null}" Text="{Binding Name}" />
+        </DataTemplate>
+    </UserControl.Resources>
+    
     <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,4,0,12'}">
 
         <controls:ControlPresenter Header="The Standard ComboBox in different colors."
@@ -23,14 +29,18 @@
                               IsEditable="{Binding IsChecked, ElementName=IsEditableCheckBoxEx1}"
                               IsReadOnly="{Binding IsChecked, ElementName=IsReadOnlyCheckBoxEx1}"
                               Width="{c:GridUnit 60}"
-                              ItemsSource="{x:Static data:FruitItems.Fruits}"/>
+                              ItemsSource="{x:Static data:FruitItems.Fruits}" />
                     <ComboBox IsEditable="{Binding IsChecked, ElementName=IsEditableCheckBoxEx1}"
                               IsReadOnly="{Binding IsChecked, ElementName=IsReadOnlyCheckBoxEx1}"
-                              Width="{c:GridUnit 60}" />
+                              Width="{c:GridUnit 60}" 
+                              ItemsSource="{x:Static data:FruitItems.Fruits}"
+                              c:TextBoxProperties.Placeholder="Placeholder"
+                              c:TextBoxProperties.AssistiveText="Assistive Text" />
                     <ComboBox Style="{StaticResource Accent1ComboBox}" 
                               IsEditable="{Binding IsChecked, ElementName=IsEditableCheckBoxEx1}"
                               IsReadOnly="{Binding IsChecked, ElementName=IsReadOnlyCheckBoxEx1}"
-                              Width="{c:GridUnit 60}" />
+                              Width="{c:GridUnit 60}" 
+                              ItemsSource="{x:Static data:FruitItems.Fruits}" />
                 </StackPanel>
             </smtx:XamlDisplay>
             <controls:ControlPresenter.Options>

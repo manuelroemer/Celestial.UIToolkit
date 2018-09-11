@@ -83,7 +83,7 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="ToggleButton.IsChecked" Value="True">
-                <Setter Property="Foreground" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                <Setter Property="Foreground" Value="Green" />
                 <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
                 <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
             </Trigger>
