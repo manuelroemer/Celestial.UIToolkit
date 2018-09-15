@@ -33,6 +33,7 @@
                     <ComboBox IsEditable="{Binding IsChecked, ElementName=IsEditableCheckBoxEx1}"
                               IsReadOnly="{Binding IsChecked, ElementName=IsReadOnlyCheckBoxEx1}"
                               Width="{c:GridUnit 60}" 
+                              IsDropDownOpen="True"
                               ItemsSource="{x:Static data:FruitItems.Fruits}"
                               c:TextBoxProperties.Placeholder="Placeholder"
                               c:TextBoxProperties.AssistiveText="Assistive Text" />

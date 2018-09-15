@@ -5,6 +5,12 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
   
+    <!-- Default TextBlock Style override -> https://stackoverflow.com/a/5330534 -->
+    <Style x:Key="TextBlockOverrideStyle" TargetType="TextBlock">
+        <Setter Property="Text" Value="{Binding}" />
+        <Setter Property="FontStretch" Value="Normal" />
+    </Style>
+    
     <!-- A ripple animation which is being played in the background of a control.
          Example: CheckBox, RadioButton -->
     <Style x:Key="SmallBackgroundRippleAnimation" x:Shared="False"  TargetType="controls:RippleOverlay">
@@ -45,7 +51,7 @@
                                           RecognizesAccessKey="True" />
 
                         <Border.Resources>
-                            <DataTemplate DataType="{x:Type sys:String}">
+                            <DataTemplate DataType="sys:String">
                                 <TextBlock Style="{DynamicResource TextBlockOverrideStyle}" Text="{Binding}" />
                             </DataTemplate>
                             
@@ -67,6 +73,13 @@
                                                   Duration="0"
                                                   To="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                             </Storyboard>
+
+                            <Storyboard x:Key="CheckedStoryboard">
+                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                  Storyboard.TargetProperty="Foreground"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                            </Storyboard>
                         </Border.Resources>
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
@@ -79,6 +92,11 @@
                                 <VisualState x:Name="MouseOver" Storyboard="{StaticResource MouseOverStoryboard}" />
                                 <VisualState x:Name="Pressed" Storyboard="{StaticResource PressedStoryboard}" />
                                 <VisualState x:Name="Disabled" Storyboard="{StaticResource DisabledStoryboard}" />
+                                
+                                <!-- This should belong into the "CheckStates" category.
+                                     When put into this group, it overrides the other states when active,
+                                     which is exactly what we want here. -->
+                                <VisualState x:Name="Checked" Storyboard="{StaticResource CheckedStoryboard}" />
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                     </Border>
@@ -120,13 +138,6 @@
         </Setter>
     </Style>
 
-    <!-- Default TextBlock Style override -> https://stackoverflow.com/a/5330534 -->
-    <Style x:Key="TextBlockOverrideStyle" TargetType="TextBlock">
-        <Setter Property="Text" Value="{Binding}" />
-        <Setter Property="FontStretch" Value="Normal" />
-    </Style>
-    
-    
     <ControlTemplate x:Key="EmptyValidationErrorTemplate">
         <AdornedElementPlaceholder />
     </ControlTemplate>

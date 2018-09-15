@@ -91,11 +91,18 @@
                                 </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
 
+                            <Storyboard x:Key="CheckedStoryboard">
+                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                  Storyboard.TargetProperty="Foreground"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                            </Storyboard>
+
                             <DataTemplate DataType="{x:Type sys:String}">
                                 <TextBlock Style="{StaticResource TextBlockOverrideStyle}" Text="{Binding}" />
                             </DataTemplate>
                         </Grid.Resources>
-                        
+
                         <controls:ThemeShadowPresenter>
                             <Border x:Name="Bd"
                                     CornerRadius="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
@@ -103,7 +110,7 @@
                                     BorderBrush="{TemplateBinding BorderBrush}"
                                     Background="{TemplateBinding Background}" />
                         </controls:ThemeShadowPresenter>
-                        
+
                         <controls:RippleOverlay x:Name="Ripple"
                                                 theming:ControlProperties.CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}"
                                                 Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
@@ -126,6 +133,11 @@
                                 <VisualState x:Name="MouseOver" Storyboard="{StaticResource MouseOverStoryboard}" />
                                 <VisualState x:Name="Pressed" Storyboard="{StaticResource PressedStoryboard}" />
                                 <VisualState x:Name="Disabled" Storyboard="{StaticResource DisabledStoryboard}" />
+
+                                <!-- This should belong into the "CheckStates" category.
+                                     When put into this group, it overrides the other states when active,
+                                     which is exactly what we want here. -->
+                                <VisualState x:Name="Checked" Storyboard="{StaticResource CheckedStoryboard}" />
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                     </Grid>
@@ -146,11 +158,6 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <Style.Triggers>
-            <Trigger Property="ToggleButton.IsChecked" Value="True">
-                <Setter Property="Foreground" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
-            </Trigger>
-        </Style.Triggers>
     </Style>
     <Style TargetType="Button" BasedOn="{StaticResource StandardButton}" />
     <Style TargetType="ToggleButton" BasedOn="{StaticResource StandardButton}" />
