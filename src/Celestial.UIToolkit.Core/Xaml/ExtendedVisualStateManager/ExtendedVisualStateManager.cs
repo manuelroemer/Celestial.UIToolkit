@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using static Celestial.UIToolkit.TraceSources;
 
 namespace Celestial.UIToolkit.Xaml
 {
@@ -75,6 +76,13 @@ namespace Celestial.UIToolkit.Xaml
             VisualState state, 
             bool useTransitions)
         {
+            VisualStateSource.Info(
+                "Transitioning from state \"{0}\" to \"{1}\" on control {2} with root element {3}.",
+                group.GetCurrentState()?.Name ?? group.CurrentState?.Name,
+                stateName,
+                control,
+                stateGroupsRoot);
+
             // We offload the actual transitioning logic into multiple different StateSwitchers,
             // so that this class doesn't become cluttered.
             // Simply call them in order and check if one of them managed to transition to a new state.

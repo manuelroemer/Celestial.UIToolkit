@@ -14,7 +14,7 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardCard" TargetType="controls:Card" BasedOn="{c:MultiStyle 'PrimaryBackground ControlBorder Shadow8'}">
+    <Style x:Key="StandardCard" TargetType="controls:Card" BasedOn="{c:MultiStyle 'PrimaryBackground ControlBorder StandardForeground StandardFontProperties Shadow8'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -173,7 +173,7 @@
                             <Setter TargetName="HeaderGrid" Property="Margin" Value="0" />
                         </MultiTrigger>
 
-                         <!--Only MediaContent visible. Remove its top/bottom margin.--> 
+                         <!--Only MediaContent visible. Remove its top/bottom margin.-->
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="HasTitle" Value="False" />
@@ -183,7 +183,6 @@
                             </MultiTrigger.Conditions>
                             <Setter TargetName="MediaContentSpacer" Property="Margin" Value="0" />
                         </MultiTrigger>
-
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
