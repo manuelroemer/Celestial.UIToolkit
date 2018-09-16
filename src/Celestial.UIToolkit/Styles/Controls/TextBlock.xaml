@@ -12,14 +12,7 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="StandardTextBlock" TargetType="TextBlock" BasedOn="{StaticResource ForegroundBasedThemingProperties}">
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Foreground" Value="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
-            </Trigger>
-            <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Foreground" Value="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
-            </Trigger>
-        </Style.Triggers>
+        <!-- Empty for now, but let's keep this style, in case we want to add sth. later on. -->
     </Style>
     <Style TargetType="TextBlock" BasedOn="{StaticResource StandardTextBlock}" />
 

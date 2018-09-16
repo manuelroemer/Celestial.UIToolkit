@@ -11,6 +11,14 @@
          and simply binds to the XamlDisplay's Xaml property.
     -->
     <Style TargetType="smtx:XamlDisplay" BasedOn="{StaticResource {x:Type smtx:XamlDisplay}}">
+        <!-- XamlDisplay is of type ContentControl, which doesn't inherit DepProperties. 
+             => Set these standard properties manually.-->
+        <Setter Property="FontFamily" Value="{DynamicResource StandardFontFamily}" />
+        <Setter Property="FontSize" Value="{DynamicResource StandardFontSize}" />
+        <Setter Property="FontWeight" Value="{DynamicResource StandardFontWeight}" />
+        <Setter Property="FontStretch" Value="{DynamicResource StandardFontStretch}" />
+        <Setter Property="FontStyle" Value="{DynamicResource StandardFontStyle}" />
+        <Setter Property="Foreground" Value="{DynamicResource StandardForegroundBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="smtx:XamlDisplay">
