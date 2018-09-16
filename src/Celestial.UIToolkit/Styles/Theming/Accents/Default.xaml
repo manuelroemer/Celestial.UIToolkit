@@ -103,6 +103,9 @@
     <SolidColorBrush x:Key="ListAccent2MediumBrush" Color="{StaticResource Accent2LighterColor}" />
     <SolidColorBrush x:Key="ListAccent2HighBrush" Color="{StaticResource Accent2LightColor}" />
 
+    <SolidColorBrush x:Key="OnListAccent1Brush" Color="{StaticResource AltTextPrimaryColor}" />
+    <SolidColorBrush x:Key="OnListAccent2Brush" Color="{StaticResource AltTextPrimaryColor}" />
+
 
 
 

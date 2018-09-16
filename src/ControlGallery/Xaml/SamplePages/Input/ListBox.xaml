@@ -11,6 +11,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type data:Fruit}">
+            <TextBlock Text="{Binding Name}" />
+        </DataTemplate>
+    </UserControl.Resources>
+
     <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,4,0,12'}">
 
         <controls:ControlPresenter Header="The Standard ListBox in different colors."
@@ -19,6 +25,12 @@
             <smtx:XamlDisplay x:Name="ListBoxEx1" Key="ListBoxEx1">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx1}">
+                    <ListBox Style="{StaticResource StandardListBox}"
+                             Width="{c:GridUnit 60}"
+                             ItemsSource="{x:Static data:FruitItems.Fruits}"/>
+                    <ListBox Style="{StaticResource Accent1ListBox}"
+                             Width="{c:GridUnit 60}"
+                             ItemsSource="{x:Static data:FruitItems.Fruits}"/>
                     <ListBox Width="{c:GridUnit 60}"
                              ItemsSource="{x:Static data:FruitItems.Fruits}"/>
                 </StackPanel>
