@@ -114,13 +114,13 @@
                                         CornerRadius="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
                                         Visibility="Collapsed" />
                                 <Border BorderThickness="{TemplateBinding BorderThickness}">
-                                    <controls:SelectedIndicator x:Name="FocusedIndicator"
-                                                                Background="{TemplateBinding theming:ActiveProperties.BorderBrush}"
-                                                                Visibility="{Binding Path=(theming:TextBoxProperties.ShowFocusedIndicator), RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}"
-                                                                Height="1.5"
-                                                                VerticalAlignment="Bottom"
-                                                                Margin="0,0,0,-0.5"
-                                                                IsSelected="{TemplateBinding IsKeyboardFocused}" />
+                                    <controls:SelectionIndicator x:Name="FocusedIndicator"
+                                                                 Background="{TemplateBinding theming:ActiveProperties.BorderBrush}"
+                                                                 Visibility="{Binding Path=(theming:TextBoxProperties.ShowFocusedIndicator), RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                                                 Height="1.5"
+                                                                 VerticalAlignment="Bottom"
+                                                                 Margin="0,0,0,-0.5"
+                                                                 IsSelected="{TemplateBinding IsKeyboardFocused}" />
                                 </Border>
                             </Grid>
                         </controls:ThemeShadowPresenter>
@@ -149,17 +149,21 @@
                                                   VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
                                 </Border>
 
-                                <controls:PathIcon x:Name="ValidationErrorIcon"
-                                                   Grid.Column="1"
-                                                   Margin="{c:GridUnit '1,0,0,0'}"
-                                                   Visibility="Collapsed"
-                                                   Foreground="{StaticResource ErrorBrush}"
-                                                   Data="{StaticResource Error}" />
+                                <StackPanel x:Name="InnerPartsContainer"
+                                            Grid.Column="1">
+                                    <controls:PathIcon x:Name="ValidationErrorIcon"
+                                                       Margin="{c:GridUnit '1,0,0,0'}"
+                                                       Visibility="Collapsed"
+                                                       Foreground="{StaticResource ErrorBrush}"
+                                                       Data="{StaticResource Error}" />
+                                </StackPanel>
+                                
                             </Grid>
                         </controls:PlaceholderOverlay>
 
                         <Border x:Name="AssistiveElementsContainer"
                                 Grid.Row="1"
+                                IsHitTestVisible="False"
                                 Padding="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessLeftPickerConverter}}">
                             <Grid>
                                 <TextBlock x:Name="AssistiveText"
@@ -191,10 +195,6 @@
                                 <VisualState x:Name="Disabled" Storyboard="{StaticResource DisabledStoryboard}" />
                             </VisualStateGroup>
                             <VisualStateGroup x:Name="FocusStates">
-                                <VisualStateGroup.Transitions>
-                                    <VisualTransition GeneratedDuration="{StaticResource ColorAnimationDuration}"
-                                                      GeneratedEasingFunction="{StaticResource ColorAnimationEase}" />
-                                </VisualStateGroup.Transitions>
                                 <VisualState x:Name="Unfocused" />
                                 <VisualState x:Name="Focused" Storyboard="{StaticResource FocusedStoryboard}" />
                             </VisualStateGroup>
@@ -203,7 +203,8 @@
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="TextBoxBase.IsReadOnly" Value="True">
-                            <Setter Property="theming:ActiveProperties.BorderBrush" Value="{Binding BorderBrush, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource ControlBorderBrush}" />
+                            <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource ControlBorderBrush}" />
                         </Trigger>
                         <Trigger Property="Validation.HasError" Value="True">
                             <Setter TargetName="ValidationErrorIcon" Property="Visibility" Value="Visible" />
@@ -248,12 +249,11 @@
     <Style TargetType="PasswordBox" BasedOn="{StaticResource Accent2TextBox}" />
 
 
-    <Style x:Key="OutlinedTextBoxBase" TargetType="Control" BasedOn="{StaticResource StandardTextBox}">
+    <Style x:Key="StandardOutlinedTextBox" TargetType="Control" BasedOn="{StaticResource StandardTextBox}">
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="theming:TextBoxProperties.ShowFocusedIndicator" Value="False" />
     </Style>
 
-    <Style x:Key="StandardOutlinedTextBox" TargetType="Control" BasedOn="{StaticResource OutlinedTextBoxBase}" />
     <Style x:Key="Accent1OutlinedTextBox" TargetType="Control" BasedOn="{c:MultiStyle 'OutlinedTextBoxBase ControlBorderAccent1States'}" />
     <Style x:Key="Accent2OutlinedTextBox" TargetType="Control" BasedOn="{c:MultiStyle 'OutlinedTextBoxBase ControlBorderAccent2States'}" />
 

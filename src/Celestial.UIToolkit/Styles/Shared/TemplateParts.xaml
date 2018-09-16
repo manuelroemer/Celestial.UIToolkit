@@ -1,9 +1,16 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
                     xmlns:c="http://celestial-ui.com"
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
   
+    <!-- Default TextBlock Style override -> https://stackoverflow.com/a/5330534 -->
+    <Style x:Key="TextBlockOverrideStyle" TargetType="TextBlock">
+        <Setter Property="Text" Value="{Binding}" />
+        <Setter Property="FontStretch" Value="Normal" />
+    </Style>
+    
     <!-- A ripple animation which is being played in the background of a control.
          Example: CheckBox, RadioButton -->
     <Style x:Key="SmallBackgroundRippleAnimation" x:Shared="False"  TargetType="controls:RippleOverlay">
@@ -23,15 +30,18 @@
 
 
     
-    <!-- A button which only displays the content. -->
-    <Style x:Key="InvisibleButton" TargetType="ButtonBase" BasedOn="{c:MultiStyle 'TransparentBorder TransparentBackground'}">
+    <!-- A button which only displays the content.
+         The Foreground is animated though. -->
+    <Style x:Key="TransparentButton" TargetType="ButtonBase" BasedOn="{c:MultiStyle 'TransparentBorder TransparentBackground StandardForeground StandardFontProperties'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ButtonBase">
-                    <Border Background="{TemplateBinding Background}"
+                    <Border x:Name="Bd"
+                            VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
+                            Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             Padding="{TemplateBinding Padding}">
@@ -39,14 +49,75 @@
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                           Margin="{TemplateBinding Padding}"
                                           RecognizesAccessKey="True" />
+
+                        <Border.Resources>
+                            <DataTemplate DataType="sys:String">
+                                <TextBlock Style="{DynamicResource TextBlockOverrideStyle}" Text="{Binding}" />
+                            </DataTemplate>
+                            
+                            <Storyboard x:Key="MouseOverStoryboard">
+                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                  Storyboard.TargetProperty="Foreground"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                            </Storyboard>
+                            <Storyboard x:Key="PressedStoryboard">
+                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                  Storyboard.TargetProperty="Foreground"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:PressedProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                            </Storyboard>
+                            <Storyboard x:Key="DisabledStoryboard">
+                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                  Storyboard.TargetProperty="Foreground"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                            </Storyboard>
+
+                            <Storyboard x:Key="CheckedStoryboard">
+                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                  Storyboard.TargetProperty="Foreground"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                            </Storyboard>
+                        </Border.Resources>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition GeneratedDuration="{StaticResource ColorAnimationDuration}"
+                                                      GeneratedEasingFunction="{StaticResource ColorAnimationEase}" />
+                                    <VisualTransition To="Disabled" GeneratedDuration="0" />
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver" Storyboard="{StaticResource MouseOverStoryboard}" />
+                                <VisualState x:Name="Pressed" Storyboard="{StaticResource PressedStoryboard}" />
+                                <VisualState x:Name="Disabled" Storyboard="{StaticResource DisabledStoryboard}" />
+                                
+                                <!-- This should belong into the "CheckStates" category.
+                                     When put into this group, it overrides the other states when active,
+                                     which is exactly what we want here. -->
+                                <VisualState x:Name="Checked" Storyboard="{StaticResource CheckedStoryboard}" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Style.Triggers>
+            <Trigger Property="ToggleButton.IsChecked" Value="True">
+                <Setter Property="Foreground" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
+    <Style x:Key="StandardForegroundOnlyButton" TargetType="ButtonBase" BasedOn="{c:MultiStyle 'TransparentButton StandardForegroundPrimaryStates'}" />
+    <Style x:Key="Accent1ForegroundOnlyButton" TargetType="ButtonBase" BasedOn="{c:MultiStyle 'TransparentButton StandardForegroundAccent1States'}" />
+    <Style x:Key="Accent2ForegroundOnlyButton" TargetType="ButtonBase" BasedOn="{c:MultiStyle 'TransparentButton StandardForegroundAccent2States'}" />
+    
     <!-- An otherwise invisible button, which shows a standard ripple animation when pressed. -->
-    <Style x:Key="InvisibleRippleButton" TargetType="ButtonBase" BasedOn="{StaticResource InvisibleButton}">
+    <Style x:Key="InvisibleRippleButton" TargetType="ButtonBase" BasedOn="{StaticResource TransparentButton}">
         <Setter Property="Focusable" Value="True" />
         <Setter Property="Template">
             <Setter.Value>
@@ -67,13 +138,6 @@
         </Setter>
     </Style>
 
-    <!-- Default TextBlock Style override -> https://stackoverflow.com/a/5330534 -->
-    <Style x:Key="TextBlockOverrideStyle" TargetType="TextBlock">
-        <Setter Property="Text" Value="{Binding}" />
-        <Setter Property="FontStretch" Value="Normal" />
-    </Style>
-    
-    
     <ControlTemplate x:Key="EmptyValidationErrorTemplate">
         <AdornedElementPlaceholder />
     </ControlTemplate>

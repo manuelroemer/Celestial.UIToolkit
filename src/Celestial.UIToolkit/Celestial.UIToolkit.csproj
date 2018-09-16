@@ -83,7 +83,7 @@
     <Compile Include="Controls\PlaceholderOverlay\PlaceholderOverlay.cs" />
     <Compile Include="Controls\PlaceholderOverlay\PlaceholderOverlay.Properties.cs" />
     <Compile Include="Controls\RippleOverlay.cs" />
-    <Compile Include="Controls\SelectedIndicator.cs" />
+    <Compile Include="Controls\SelectionIndicator.cs" />
     <Compile Include="Controls\ShadowControls\DirectionalThemeShadow.cs" />
     <Compile Include="Controls\ShadowControls\DropShadowDecorator.cs" />
     <Compile Include="Controls\ShadowControls\DropShadowDecorator.Properties.cs" />
@@ -162,7 +162,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\Controls\SelectedIndicator.xaml">
+    <Page Include="Styles\Controls\SelectionIndicator.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

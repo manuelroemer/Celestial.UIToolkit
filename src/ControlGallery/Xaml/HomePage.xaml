@@ -12,7 +12,7 @@
 
     <StackPanel>
         <Border Width="100" Height="100">
-            <c:SelectedIndicator IsSelected="{Binding IsChecked, ElementName=CheckBox, Mode=TwoWay}"
+            <c:SelectionIndicator IsSelected="{Binding IsChecked, ElementName=CheckBox, Mode=TwoWay}"
                                  IsEnabled="{Binding IsChecked, ElementName=IsEnabled, Mode=TwoWay}"
                                  Orientation="Vertical"
                                  Background="Blue"  />
