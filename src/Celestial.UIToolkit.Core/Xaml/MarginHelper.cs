@@ -9,9 +9,8 @@ namespace Celestial.UIToolkit.Xaml
 {
 
     /// <summary>
-    /// Provides attached dependency properties which allow setting the
-    /// Margin properties of both <see cref="FrameworkElement"/> objects, aswell as
-    /// an object's children.
+    /// Provides attached dependency properties regarding margins
+    /// which can be helpful when creating layouts.
     /// </summary>
     public static class MarginHelper
     {
