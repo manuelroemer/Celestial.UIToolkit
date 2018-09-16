@@ -104,9 +104,9 @@
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualStateGroup.Transitions>
-                                    <VisualTransition GeneratedDuration="{StaticResource ColorAnimationDuration}"
-                                                      GeneratedEasingFunction="{StaticResource ColorAnimationEase}" />
-                                    <VisualTransition To="Disabled" GeneratedDuration="0" />
+                                    <!-- Not using the default ColorAnim duration here, because imo
+                                         it looks weird on menu items. -->
+                                    <VisualTransition GeneratedDuration="0" />
                                 </VisualStateGroup.Transitions>
                                 <VisualState x:Name="Normal" />
                                 <VisualState x:Name="MouseOver" Storyboard="{StaticResource MouseOverStoryboard}" />
@@ -355,7 +355,8 @@
                                PopupAnimation="Slide"
                                IsOpen="{TemplateBinding IsDropDownOpen}"
                                AllowsTransparency="True"
-                               Focusable="False">
+                               Focusable="False"
+                               MaxHeight="{TemplateBinding MaxDropDownHeight}">
                             <Grid x:Name="DropDownContainer"
                                   SnapsToDevicePixels="True"
                                   MinWidth="{TemplateBinding ActualWidth}"
@@ -458,6 +459,14 @@
                             </MultiDataTrigger.Conditions>
                             <Setter TargetName="PlaceholderOverlay" Property="IsPlaceholderVisible" Value="True" />
                         </MultiDataTrigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding Text, RelativeSource={RelativeSource Self}}" Value="{x:Null}" />
+                                <Condition Binding="{Binding IsEditable, RelativeSource={RelativeSource Self}}" Value="True" />
+                                <Condition Binding="{Binding IsFocused, ElementName=PART_EditableTextBox}" Value="False" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter TargetName="PlaceholderOverlay" Property="IsPlaceholderVisible" Value="True" />
+                        </MultiDataTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="IsEditable" Value="False" />
@@ -506,20 +515,26 @@
     
     <Style x:Key="Accent1ComboBox" TargetType="ComboBox" BasedOn="{c:MultiStyle 'StandardComboBox ControlBorderAccent1States'}">
         <Setter Property="ItemContainerStyle" Value="{StaticResource Accent1ComboBoxItem}" />
-        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
-        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
-        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
     </Style>
     
     <Style x:Key="Accent2ComboBox" TargetType="ComboBox" BasedOn="{c:MultiStyle 'StandardComboBox ControlBorderAccent2States'}">
         <Setter Property="ItemContainerStyle" Value="{StaticResource Accent2ComboBoxItem}" />
-        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
-        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
-        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
     </Style>
     
     <Style TargetType="ComboBox" BasedOn="{StaticResource Accent2ComboBox}" />
 
+
+
+    <Style x:Key="StandardOutlinedComboBox" TargetType="ComboBox" BasedOn="{StaticResource StandardComboBox}">
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="theming:TextBoxProperties.ShowFocusedIndicator" Value="False" />
+    </Style>
+    <Style x:Key="Accent1OutlinedComboBox" TargetType="ComboBox" BasedOn="{c:MultiStyle 'StandardOutlinedComboBox ControlBorderAccent1States'}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource Accent1ComboBoxItem}" />
+    </Style>
+    <Style x:Key="Accent2OutlinedComboBox" TargetType="ComboBox" BasedOn="{c:MultiStyle 'StandardOutlinedComboBox ControlBorderAccent2States'}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource Accent2ComboBoxItem}" />
+    </Style>
 
 
 </ResourceDictionary>

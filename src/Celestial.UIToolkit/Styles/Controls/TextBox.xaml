@@ -249,12 +249,11 @@
     <Style TargetType="PasswordBox" BasedOn="{StaticResource Accent2TextBox}" />
 
 
-    <Style x:Key="OutlinedTextBoxBase" TargetType="Control" BasedOn="{StaticResource StandardTextBox}">
+    <Style x:Key="StandardOutlinedTextBox" TargetType="Control" BasedOn="{StaticResource StandardTextBox}">
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="theming:TextBoxProperties.ShowFocusedIndicator" Value="False" />
     </Style>
 
-    <Style x:Key="StandardOutlinedTextBox" TargetType="Control" BasedOn="{StaticResource OutlinedTextBoxBase}" />
     <Style x:Key="Accent1OutlinedTextBox" TargetType="Control" BasedOn="{c:MultiStyle 'OutlinedTextBoxBase ControlBorderAccent1States'}" />
     <Style x:Key="Accent2OutlinedTextBox" TargetType="Control" BasedOn="{c:MultiStyle 'OutlinedTextBoxBase ControlBorderAccent2States'}" />
 
