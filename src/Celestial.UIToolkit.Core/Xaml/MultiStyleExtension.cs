@@ -105,7 +105,16 @@ namespace Celestial.UIToolkit.Xaml
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
             ThrowIfNoStyleKeyPartsExist();
-            return CreateMergedStyle(serviceProvider);
+            
+            if (_styleKeyParts.Length == 1)
+            {
+                // No need to create new styles when there is only one. Act like a StaticResource.
+                return RetrieveStyleFromResources(_styleKeyParts[0], serviceProvider);
+            }
+            else
+            {
+                return CreateMergedStyle(serviceProvider);
+            }
         }
         
         private void ThrowIfNoStyleKeyPartsExist()
