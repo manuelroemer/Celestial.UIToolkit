@@ -12,11 +12,12 @@ namespace Celestial.UIToolkit.Tests.Xaml
     {
 
         [Fact]
-        public void ThrowsForNoStyleKeyParts()
+        public void ReturnsEmptyStyleForNoStyleKeyParts()
         {
             var multiStyleExtension = new MultiStyleExtension(null);
-            var ex = Record.Exception(() => multiStyleExtension.ProvideValue(null));
-            Assert.IsType<InvalidOperationException>(ex);
+            var style = multiStyleExtension.ProvideValue(null);
+            Assert.NotNull(style);
+            Assert.IsType<Style>(style);
         }
 
     }
