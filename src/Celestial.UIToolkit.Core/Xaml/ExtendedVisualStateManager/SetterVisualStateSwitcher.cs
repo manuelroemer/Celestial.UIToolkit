@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using static Celestial.UIToolkit.TraceSources;
 
 namespace Celestial.UIToolkit.Xaml
 {
@@ -35,7 +36,7 @@ namespace Celestial.UIToolkit.Xaml
         {
             if (ExtendedToState == null)
                 return false;
-
+            
             RemovePreviousStateSetters();
             ApplyCurrentStateSetters();
 
@@ -48,10 +49,9 @@ namespace Celestial.UIToolkit.Xaml
 
             foreach (SetterBase setterBase in ExtendedFromState.Setters)
             {
-                if (setterBase is Setter setter && 
-                    IsSetterValid(setter))
+                if (IsValidSetter(setterBase))
                 {
-                    RemoveSetter(setter);
+                    RemoveSetter((Setter)setterBase);
                 }
             }
         }
@@ -64,6 +64,10 @@ namespace Celestial.UIToolkit.Xaml
             if (setterTarget != null)
             {
                 setterTarget.InvalidateProperty(setter.Property);
+                VisualStateSource.Verbose(
+                    "Removed visual state setter for property {0} from element {1}.", 
+                    setter.Property.Name, 
+                    setterTarget);
             }
         }
 
@@ -73,10 +77,9 @@ namespace Celestial.UIToolkit.Xaml
 
             foreach (SetterBase setterBase in ExtendedToState.Setters)
             {
-                if (setterBase is Setter setter && 
-                    IsSetterValid(setter))
+                if (IsValidSetter(setterBase))
                 {
-                    ApplySetter(setter);
+                    ApplySetter((Setter)setterBase);
                 }
             }
         }
@@ -91,22 +94,36 @@ namespace Celestial.UIToolkit.Xaml
                 // This is ideal, as long as we reset the property again 
                 // (which is done in the RemoveSetter method(s)).
                 setterTarget.SetCurrentValue(setter.Property, setter.Value);
+                VisualStateSource.Verbose(
+                    "Setting property {0} to {1} on element {2}.",
+                    setter.Property.Name,
+                    setter.Value,
+                    setterTarget);
             }
         }
 
         private DependencyObject FindSetterTarget(Setter setter)
         {
             // Try to locate the target in the template part, or in the control itself.
-            return StateGroupsRoot.FindName(setter.TargetName) as DependencyObject ??
-                   Control.FindName(setter.TargetName) as DependencyObject;
+            var target = StateGroupsRoot.FindName(setter.TargetName) as DependencyObject ??
+                         Control.FindName(setter.TargetName) as DependencyObject;
+
+            if (target == null)
+            {
+                VisualStateSource.Warn(
+                    "Couldn't find the visual state setter target \"{0}\".", setter.TargetName);
+            }
+
+            return target;
         }
 
-        private bool IsSetterValid(Setter setter)
+        private bool IsValidSetter(SetterBase setterBase)
         {
             // We can't enforce that the setter's Property matches the Value (and that's not our 
             // job), but we must ensure that its TargetName and Property are valid values,
             // since this class makes use of them.
-            return !string.IsNullOrEmpty(setter.TargetName) &&
+            return setterBase is Setter setter &&
+                   !string.IsNullOrEmpty(setter.TargetName) &&
                    setter.Property != null;
         }
 
