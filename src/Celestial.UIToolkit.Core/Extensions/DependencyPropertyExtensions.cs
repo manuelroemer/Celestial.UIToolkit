@@ -42,7 +42,7 @@ namespace Celestial.UIToolkit.Extensions
             if (dp == null) throw new ArgumentNullException(nameof(dp));
             if (depObj == null) throw new ArgumentNullException(nameof(depObj));
             return dp.HasLocalValue(depObj) ||
-                   depObj.GetValue(dp) != dp.DefaultMetadata.DefaultValue;
+                   !Equals(depObj.GetValue(dp), (dp.DefaultMetadata.DefaultValue));
         }
 
         /// <summary>
