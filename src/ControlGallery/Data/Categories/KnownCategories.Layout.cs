@@ -16,10 +16,20 @@ namespace ControlGallery.Data.Categories
             SamplePageType = typeof(SplitView)
         };
 
+        private static ControlInformation ExpanderInfo = new ControlInformation()
+        {
+            Name = "Expander",
+            Description = "An Expander is a control which displays content that can be collapsed in " +
+                          "different directions.",
+            Icon = new PackIconModern() { Kind = PackIconModernKind.ArrowDown },
+            SamplePageType = typeof(Expander)
+        };
+
         public static ControlCategory Layout { get; } = new ControlCategory(
             "Layout",
             new PackIconMaterialLight() { Kind = PackIconMaterialLightKind.BorderAll },
-            SplitViewInfo);
+            SplitViewInfo,
+            ExpanderInfo);
 
     }
 
