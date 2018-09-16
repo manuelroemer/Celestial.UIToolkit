@@ -6,6 +6,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+using static Celestial.UIToolkit.TraceSources;
 
 namespace Celestial.UIToolkit.Xaml
 {
@@ -41,10 +42,14 @@ namespace Celestial.UIToolkit.Xaml
             {
                 // Without a transition (or a transition which has no duration), the animations 
                 // defined in the ToState are supposed to start immediately.
+                VisualStateSource.Verbose(
+                    "Not using transitions. Transitions available: {0}",
+                    currentTransition != null);
                 PlayToStateAnimations(currentTransition);
             }
             else
             {
+                VisualStateSource.Verbose("Using generated transition storyboard...");
                 PlayTransitionAnimations(currentTransition, dynamicTransitionStoryboard);
             }
 
@@ -78,6 +83,7 @@ namespace Celestial.UIToolkit.Xaml
             };
 
             // Play the dynamically created storyboard every single time.
+            VisualStateSource.Verbose("Preparing dynamically generated transition storyboard.");
             currentTransition.SetDynamicStoryboardCompleted(false);
             dynamicTransitionStoryboard.Completed += dynamicStoryboardCompletedHandler;
 
@@ -86,10 +92,12 @@ namespace Celestial.UIToolkit.Xaml
             if (currentTransition.Storyboard != null &&
                 currentTransition.GetExplicitStoryboardCompleted())
             {
+                VisualStateSource.Verbose("Preparing explicit storyboard defined in transition.");
                 currentTransition.SetExplicitStoryboardCompleted(false);
                 currentTransition.Storyboard.Completed += currentStoryboardCompletedHandler;
             }
-            
+
+            VisualStateSource.Verbose("Starting storyboards.");
             Group.StartNewThenStopOldStoryboards(
                 StateGroupsRoot,
                 currentTransition.Storyboard,
@@ -99,11 +107,13 @@ namespace Celestial.UIToolkit.Xaml
         private void OnDynamicTransitionStoryboardCompleted(
             Storyboard dynamicTransitionStoryboard, VisualTransition currentTransition)
         {
+            VisualStateSource.Verbose("Dynamic transition storyboard completed. State: {0}", StateName);
             if (currentTransition.Storyboard != null || 
                 currentTransition.GetExplicitStoryboardCompleted())
             {
                 if (ShouldRunStateStoryboard())
                 {
+                    VisualStateSource.Verbose("Running ToState storyboards.");
                     Group.StartNewThenStopOldStoryboards(StateGroupsRoot, ToState.Storyboard);
                 }
             }
@@ -112,9 +122,11 @@ namespace Celestial.UIToolkit.Xaml
 
         private void OnCurrentTransitionStoryboardCompleted(VisualTransition currentTransition)
         {
+            VisualStateSource.Verbose("Explicit storyboard completed. State: {0}", StateName);
             if (currentTransition.GetDynamicStoryboardCompleted() &&
                 ShouldRunStateStoryboard())
             {
+                VisualStateSource.Verbose("Running ToState storyboards.");
                 Group.StartNewThenStopOldStoryboards(StateGroupsRoot, ToState.Storyboard);
             }
             currentTransition.SetExplicitStoryboardCompleted(true);
