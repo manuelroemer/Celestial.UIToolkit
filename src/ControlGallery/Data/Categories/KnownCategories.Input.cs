@@ -56,6 +56,14 @@ namespace ControlGallery.Data.Categories
             SamplePageType = typeof(RadioButton)
         };
 
+        private static ControlInformation ListBoxInfo = new ControlInformation()
+        {
+            Name = "ListBox",
+            Description = "A ListBox presents multiple items in a box. One item can be selected by the user.",
+            Icon = new PackIconModern() { Kind = PackIconModernKind.Box },
+            SamplePageType = typeof(ListBox)
+        };
+
         public static ControlCategory Input { get; } = new ControlCategory(
             "Input",
             new PackIconMaterialLight() { Kind = PackIconMaterialLightKind.BorderOutside },
@@ -63,7 +71,8 @@ namespace ControlGallery.Data.Categories
             RadioButtonInfo,
             TextBoxInfo,
             PasswordBoxInfo,
-            ComboBoxInfo);
+            ComboBoxInfo,
+            ListBoxInfo);
 
     }
 

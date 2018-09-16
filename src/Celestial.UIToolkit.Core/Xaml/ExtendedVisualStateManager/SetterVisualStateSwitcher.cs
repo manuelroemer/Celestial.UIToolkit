@@ -104,6 +104,10 @@ namespace Celestial.UIToolkit.Xaml
 
         private DependencyObject FindSetterTarget(Setter setter)
         {
+            // If no target name is specified, the setter referes (by convention) to the control.
+            if (string.IsNullOrEmpty(setter.TargetName))
+                return Control;
+
             // Try to locate the target in the template part, or in the control itself.
             var target = StateGroupsRoot.FindName(setter.TargetName) as DependencyObject ??
                          Control.FindName(setter.TargetName) as DependencyObject;
@@ -123,7 +127,6 @@ namespace Celestial.UIToolkit.Xaml
             // job), but we must ensure that its TargetName and Property are valid values,
             // since this class makes use of them.
             return setterBase is Setter setter &&
-                   !string.IsNullOrEmpty(setter.TargetName) &&
                    setter.Property != null;
         }
 

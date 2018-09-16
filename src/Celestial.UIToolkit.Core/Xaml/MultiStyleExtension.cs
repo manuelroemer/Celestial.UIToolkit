@@ -104,20 +104,17 @@ namespace Celestial.UIToolkit.Xaml
         /// </returns>
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
-            ThrowIfNoStyleKeyPartsExist();
-            return CreateMergedStyle(serviceProvider);
-        }
-        
-        private void ThrowIfNoStyleKeyPartsExist()
-        {
-            if (_styleKeyParts == null || _styleKeyParts.Length == 0)
+            if (_styleKeyParts.Length == 1)
             {
-                throw new InvalidOperationException(
-                    $"The {nameof(MultiStyleExtension)} expects the name of at least one style. " +
-                    $"Make sure that you provided a valid string in the {nameof(StyleKeys)} property.");
+                // No need to create new styles when there is only one. Act like a StaticResource.
+                return RetrieveStyleFromResources(_styleKeyParts[0], serviceProvider);
+            }
+            else
+            {
+                return CreateMergedStyle(serviceProvider);
             }
         }
-
+        
         private Style CreateMergedStyle(IServiceProvider serviceProvider)
         {
             var finalStyle = new Style();

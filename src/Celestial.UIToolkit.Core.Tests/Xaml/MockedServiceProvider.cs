@@ -19,8 +19,8 @@ namespace Celestial.UIToolkit.Tests.Xaml
         public object TargetObject { get; set; }
 
         public object TargetProperty { get; set; }
-        
-        public object GetService(Type serviceType) => null;
+
+        public object GetService(Type serviceType) => this;
 
         /// <summary>
         /// Creates a new <see cref="MockedServiceProvider"/> whose <see cref="TargetProperty"/>
