@@ -112,10 +112,6 @@
                                                   Duration="0"
                                                   To="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                             </Storyboard>
-                            
-                            <DataTemplate DataType="{x:Type sys:String}">
-                                <TextBlock Style="{StaticResource TextBlockOverrideStyle}" Text="{Binding}" />
-                            </DataTemplate>
                         </Grid.Resources>
                         <BulletDecorator SnapsToDevicePixels="False">
                             <BulletDecorator.Bullet>

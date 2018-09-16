@@ -5,12 +5,6 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
   
-    <!-- Default TextBlock Style override -> https://stackoverflow.com/a/5330534 -->
-    <Style x:Key="TextBlockOverrideStyle" TargetType="TextBlock">
-        <Setter Property="Text" Value="{Binding}" />
-        <Setter Property="FontStretch" Value="Normal" />
-    </Style>
-    
     <!-- A ripple animation which is being played in the background of a control.
          Example: CheckBox, RadioButton -->
     <Style x:Key="SmallBackgroundRippleAnimation" x:Shared="False"  TargetType="controls:RippleOverlay">
@@ -50,11 +44,7 @@
                                           Margin="{TemplateBinding Padding}"
                                           RecognizesAccessKey="True" />
 
-                        <Border.Resources>
-                            <DataTemplate DataType="sys:String">
-                                <TextBlock Style="{DynamicResource TextBlockOverrideStyle}" Text="{Binding}" />
-                            </DataTemplate>
-                            
+                        <Border.Resources>                            
                             <Storyboard x:Key="MouseOverStoryboard">
                                 <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
                                                   Storyboard.TargetProperty="Foreground"
@@ -122,11 +112,6 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ButtonBase">
-                    <ControlTemplate.Resources>
-                        <DataTemplate DataType="sys:String">
-                            <TextBlock Style="{DynamicResource TextBlockOverrideStyle}" Text="{Binding}" />
-                        </DataTemplate>
-                    </ControlTemplate.Resources>
                     <Border Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"

@@ -98,11 +98,6 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TabItem">
-                    <ControlTemplate.Resources>
-                        <DataTemplate DataType="{x:Type sys:String}">
-                            <TextBlock Style="{DynamicResource TextBlockOverrideStyle}" />
-                        </DataTemplate>
-                    </ControlTemplate.Resources>
                     <Grid HorizontalAlignment="Stretch">
                         <Grid.Resources>
                             <c:BindingProxy x:Key="ActiveBackgroundBrushProxy"

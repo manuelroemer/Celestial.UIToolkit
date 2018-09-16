@@ -25,11 +25,6 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ToolTip">
-                    <ControlTemplate.Resources>
-                        <DataTemplate DataType="{x:Type sys:String}">
-                            <TextBlock Text="{Binding}" Style="{DynamicResource TextBlockOverrideStyle}" />
-                        </DataTemplate>
-                    </ControlTemplate.Resources>
                     <Border x:Name="Bd"
                             CornerRadius="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
                             Background="{TemplateBinding Background}"

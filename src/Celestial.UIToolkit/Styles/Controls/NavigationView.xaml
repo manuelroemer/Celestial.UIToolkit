@@ -129,10 +129,6 @@
                                     <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:ActiveProperties.ShadowElevation) ,RelativeSource={RelativeSource TemplatedParent}}" />
                                 </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
-
-                            <DataTemplate DataType="{x:Type sys:String}">
-                                <TextBlock Style="{StaticResource TextBlockOverrideStyle}"  />
-                            </DataTemplate>
                         </Grid.Resources>
 
                         <controls:ThemeShadowPresenter>
@@ -431,14 +427,12 @@
                                                 <!-- By default (and assuming that the Header is a string), the Header has a
                                                      fixed height. Align it with the CompactPaneLength, so that everything looks
                                                      symmetrical. -->
-                                                <Grid>
-                                                    <TextBlock Style="{DynamicResource TitleTextBlock}"
-                                                               HorizontalAlignment="Left"
-                                                               VerticalAlignment="Center"
-                                                               Padding="{c:GridUnit '3,0'}"
-                                                               TextTrimming="CharacterEllipsis"
-                                                               Text="{Binding}" />
-                                                </Grid>
+                                                <TextBlock Style="{DynamicResource TitleTextBlock}"
+                                                            HorizontalAlignment="Left"
+                                                            VerticalAlignment="Center"
+                                                            Padding="{c:GridUnit '3,0'}"
+                                                            TextTrimming="CharacterEllipsis"
+                                                            Text="{Binding}" />
                                             </DataTemplate>
                                         </StackPanel.Resources>
 

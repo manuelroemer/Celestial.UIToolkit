@@ -19,14 +19,6 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:ControlPresenter">
-                    <ControlTemplate.Resources>
-                        <!-- Default template for the header -->
-                        <DataTemplate DataType="{x:Type sys:String}">
-                            <TextBlock Style="{DynamicResource SubTitleTextBlock}"
-                                       Text="{Binding}" />
-                        </DataTemplate>
-                    </ControlTemplate.Resources>
-                    
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
@@ -35,6 +27,13 @@
 
                         <Border x:Name="HeaderContainer"
                                 Margin="{c:GridUnit '0,0,0,2'}">
+                            <Border.Resources>
+                                <!-- Default template for the header -->
+                                <DataTemplate DataType="{x:Type sys:String}">
+                                    <TextBlock Style="{DynamicResource SubTitleTextBlock}"
+                                               Text="{Binding}" />
+                                </DataTemplate>
+                            </Border.Resources>
                             <ContentPresenter ContentSource="Header"
                                               ContentTemplate="{TemplateBinding HeaderTemplate}"
                                               ContentTemplateSelector="{TemplateBinding HeaderTemplateSelector}"

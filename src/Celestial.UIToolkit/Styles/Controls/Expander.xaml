@@ -89,11 +89,6 @@
                                     <Binding Path="ActualHeight" ElementName="ContentSite" />
                                 </MultiBinding>
                             </StackPanel.Height>
-                            <StackPanel.Resources>
-                                <DataTemplate DataType="sys:String">
-                                    <TextBlock Style="{StaticResource TextBlockOverrideStyle}" Text="{Binding}" />
-                                </DataTemplate>
-                            </StackPanel.Resources>
                             <ContentPresenter x:Name="ContentSite"
                                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
