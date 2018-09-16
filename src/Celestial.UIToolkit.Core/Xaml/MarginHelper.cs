@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
+﻿using Celestial.UIToolkit.Extensions;
+using System;
 using System.Windows;
-using Celestial.UIToolkit.Extensions;
 using System.Windows.Media;
 
 namespace Celestial.UIToolkit.Xaml
