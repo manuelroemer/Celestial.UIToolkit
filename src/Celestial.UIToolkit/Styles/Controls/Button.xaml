@@ -97,10 +97,6 @@
                                                   Duration="0"
                                                   To="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                             </Storyboard>
-
-                            <DataTemplate DataType="{x:Type sys:String}">
-                                <TextBlock Style="{StaticResource TextBlockOverrideStyle}" Text="{Binding}" />
-                            </DataTemplate>
                         </Grid.Resources>
 
                         <controls:ThemeShadowPresenter>
@@ -314,7 +310,7 @@
     <!--
     Hyperlink Buttons don't provide any support for Background/BorderBrush by design.
     -->
-    <Style x:Key="StandardHyperlinkButton" TargetType="ButtonBase" BasedOn="{c:MultiStyle 'TransparentBackground TransparentBorder StandardFontProperties PrimaryForeground'}">
+    <Style x:Key="StandardHyperlinkButton" TargetType="ButtonBase" BasedOn="{c:MultiStyle 'TransparentBackground TransparentBorder PrimaryForeground'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource StandardButtonFocusVisual}" />
         <Setter Property="Cursor" Value="Hand" />

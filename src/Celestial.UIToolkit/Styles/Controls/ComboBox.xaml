@@ -72,10 +72,6 @@
                                     <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:DisabledProperties.ShadowElevation), RelativeSource={RelativeSource TemplatedParent}}" />
                                 </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
-
-                            <DataTemplate DataType="{x:Type sys:String}">
-                                <TextBlock Style="{StaticResource TextBlockOverrideStyle}" Text="{Binding}" />
-                            </DataTemplate>
                         </Grid.Resources>
 
                         <controls:ThemeShadowPresenter SnapsToDevicePixels="False">
@@ -213,10 +209,6 @@
                                                   Duration="0"
                                                   To="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                             </Storyboard>
-
-                            <DataTemplate DataType="{x:Type sys:String}">
-                                <TextBlock Style="{StaticResource TextBlockOverrideStyle}" Text="{Binding}" />
-                            </DataTemplate>
                             
                             <c:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
                             <c:StringToVisibilityConverter x:Key="StringToVisibilityConverter" />

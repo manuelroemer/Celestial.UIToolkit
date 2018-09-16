@@ -29,6 +29,7 @@
         <c:SharedResourceDictionary Source="Controls/TabControl.xaml" />
         <c:SharedResourceDictionary Source="Controls/Expander.xaml" />
         <c:SharedResourceDictionary Source="Controls/GroupBox.xaml" />
+        <c:SharedResourceDictionary Source="Controls/Window.xaml" />
     </ResourceDictionary.MergedDictionaries>
     
 </ResourceDictionary>

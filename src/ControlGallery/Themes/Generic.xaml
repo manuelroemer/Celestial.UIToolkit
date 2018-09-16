@@ -11,22 +11,23 @@
     <c:StringToVisibilityConverter x:Key="StringToVisibilityConverter" />
 
     <Style TargetType="controls:ControlPresenter">
+        <!-- ControlPresenter is of type ContentControl, which doesn't inherit DepProperties. 
+             => Set these standard properties manually.-->
+        <Setter Property="FontFamily" Value="{DynamicResource StandardFontFamily}" />
+        <Setter Property="FontSize" Value="{DynamicResource StandardFontSize}" />
+        <Setter Property="FontWeight" Value="{DynamicResource StandardFontWeight}" />
+        <Setter Property="FontStretch" Value="{DynamicResource StandardFontStretch}" />
+        <Setter Property="FontStyle" Value="{DynamicResource StandardFontStyle}" />
+        <Setter Property="Foreground" Value="{DynamicResource StandardForegroundBrush}" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderBrush" Value="{DynamicResource PrimaryMediumLowBrush}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="FontSize" Value="{StaticResource StandardFontSize}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:ControlPresenter">
-                    <ControlTemplate.Resources>
-                        <!-- Default template for the header -->
-                        <DataTemplate DataType="{x:Type sys:String}">
-                            <TextBlock Style="{DynamicResource SubTitleTextBlock}"
-                                       Text="{Binding}" />
-                        </DataTemplate>
-                    </ControlTemplate.Resources>
-                    
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
@@ -35,6 +36,13 @@
 
                         <Border x:Name="HeaderContainer"
                                 Margin="{c:GridUnit '0,0,0,2'}">
+                            <Border.Resources>
+                                <!-- Default template for the header -->
+                                <DataTemplate DataType="{x:Type sys:String}">
+                                    <TextBlock Style="{DynamicResource SubTitleTextBlock}"
+                                               Text="{Binding}" />
+                                </DataTemplate>
+                            </Border.Resources>
                             <ContentPresenter ContentSource="Header"
                                               ContentTemplate="{TemplateBinding HeaderTemplate}"
                                               ContentTemplateSelector="{TemplateBinding HeaderTemplateSelector}"

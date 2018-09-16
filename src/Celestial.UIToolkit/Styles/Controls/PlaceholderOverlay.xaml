@@ -73,12 +73,7 @@
                         </Border.Resources>
 
                         <Grid>
-                            <Grid x:Name="ContentContainer">
-                                <Grid.Resources>
-                                    <DataTemplate DataType="{x:Type sys:String}">
-                                        <TextBlock Style="{StaticResource TextBlockOverrideStyle}" Text="{Binding}" />
-                                    </DataTemplate>
-                                </Grid.Resources>                                
+                            <Grid x:Name="ContentContainer">                            
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto" />
                                     <RowDefinition />

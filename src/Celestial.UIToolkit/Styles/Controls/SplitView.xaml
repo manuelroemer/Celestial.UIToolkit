@@ -14,7 +14,7 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style TargetType="controls:SplitView" BasedOn="{StaticResource Shadow0}">
+    <Style TargetType="controls:SplitView" BasedOn="{c:MultiStyle 'TransparentBorder TransparentBackground StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
         <Setter Property="PaneBackground" Value="{StaticResource PaneBackgroundBrush}" />
@@ -97,7 +97,7 @@
                                     <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Data, Source={StaticResource CompactPaneLengthProxy}}" />
                                 </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
-                            
+
                             <Storyboard x:Key="OpenCompactInlineStoryboard">
                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PaneContainer"
                                                                Storyboard.TargetProperty="Width">

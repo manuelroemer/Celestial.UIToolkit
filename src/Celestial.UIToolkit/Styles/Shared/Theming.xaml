@@ -432,7 +432,7 @@
     - Foreground: StandardForegroundBrush / DisabledForegroundBrush
     -->
     <Style x:Key="StandardForeground" TargetType="FrameworkElement">
-        <Setter Property="Control.Foreground" Value="{StaticResource StandardForegroundBrush}" />
+        <Setter Property="TextElement.Foreground" Value="{StaticResource StandardForegroundBrush}" />
         <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
         <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
         <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
@@ -699,21 +699,19 @@
         <Setter Property="theming:ActiveProperties.ShadowElevation" Value="28" />
     </Style>
 
-
-
-
+    
+    
+    
     
     <!--
     For controls like Label, TextBlock, ...
-    Only the Foreground is set here.
-    - Background: Transparent
-    - Border:     Transparent
     - Foreground: Bound to Self
     -->
-    <Style x:Key="TextElementThemingBase" TargetType="FrameworkElement">
+    <Style x:Key="ForegroundBasedThemingProperties" TargetType="FrameworkElement">
         <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
         <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
         <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
     </Style>
     
 </ResourceDictionary>

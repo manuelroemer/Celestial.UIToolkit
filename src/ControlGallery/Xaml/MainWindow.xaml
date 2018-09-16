@@ -12,6 +12,7 @@
         WindowStartupLocation="CenterScreen"
         Width="1200"
         Height="800"
+        Style="{StaticResource StandardWindow}"
         prism:ViewModelLocator.AutoWireViewModel="True">
 
     <Window.Resources>

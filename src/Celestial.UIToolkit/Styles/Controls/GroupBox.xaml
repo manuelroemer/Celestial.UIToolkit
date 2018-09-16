@@ -27,11 +27,6 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="GroupBox">
-                    <ControlTemplate.Resources>
-                        <DataTemplate DataType="{x:Type sys:String}">
-                            <TextBlock Text="{Binding}" Style="{DynamicResource TextBlockOverrideStyle}" />
-                        </DataTemplate>
-                    </ControlTemplate.Resources>
                     <Border Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"

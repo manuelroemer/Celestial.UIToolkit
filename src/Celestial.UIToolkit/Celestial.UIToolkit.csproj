@@ -104,11 +104,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
     <Compile Include="Theming\RippleProperties.cs" />
     <Compile Include="Theming\ShadowProperties.cs" />
     <Compile Include="Theming\TabControlProperties.cs" />
@@ -125,10 +120,6 @@
     </EmbeddedResource>
     <Compile Include="Controls\NavigationView\NavigationView.DisplayMode.cs" />
     <Compile Include="Controls\ShadowControls\ThemeShadow.Properties.cs" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controls\SplitView\SplitView.VisualStates.cs">
@@ -167,6 +158,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\Controls\SplitView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Controls\Window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
