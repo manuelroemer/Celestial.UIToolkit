@@ -49,10 +49,12 @@
                               IsChecked="True"
                               Content="IsPaneOpen" />
                     <ComboBox x:Name="DisplayModeEx1"
+                              Style="{StaticResource Accent2OutlinedComboBox}"
                               Width="{c:GridUnit 40}"
                               ItemsSource="{c:EnumBindingSource c:SplitViewDisplayMode}"
                               SelectedIndex="0" />
                     <ComboBox x:Name="PanePlacementEx1"
+                              Style="{StaticResource Accent2OutlinedComboBox}"
                               Width="{c:GridUnit 40}"
                               ItemsSource="{c:EnumBindingSource c:SplitViewPanePlacement}"
                               SelectedIndex="0" />

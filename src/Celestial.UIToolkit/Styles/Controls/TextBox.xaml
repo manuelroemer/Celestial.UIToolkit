@@ -254,7 +254,7 @@
         <Setter Property="theming:TextBoxProperties.ShowFocusedIndicator" Value="False" />
     </Style>
 
-    <Style x:Key="Accent1OutlinedTextBox" TargetType="Control" BasedOn="{c:MultiStyle 'OutlinedTextBoxBase ControlBorderAccent1States'}" />
-    <Style x:Key="Accent2OutlinedTextBox" TargetType="Control" BasedOn="{c:MultiStyle 'OutlinedTextBoxBase ControlBorderAccent2States'}" />
+    <Style x:Key="Accent1OutlinedTextBox" TargetType="Control" BasedOn="{c:MultiStyle 'StandardOutlinedTextBox ControlBorderAccent1States'}" />
+    <Style x:Key="Accent2OutlinedTextBox" TargetType="Control" BasedOn="{c:MultiStyle 'StandardOutlinedTextBox ControlBorderAccent2States'}" />
 
 </ResourceDictionary>
