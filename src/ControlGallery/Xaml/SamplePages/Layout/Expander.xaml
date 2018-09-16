@@ -13,7 +13,7 @@
     <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,4,0,12'}">
 
         <controls:ControlPresenter Header="A standard Expander control."
-                                   Xaml="{Binding Xaml, ElementName=SplitViewEx1}"
+                                   Xaml="{Binding Xaml, ElementName=ExpanderEx1}"
                                    VerticalAlignment="Top">
             <smtx:XamlDisplay x:Name="ExpanderEx1" Key="ExpanderEx1">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
@@ -44,8 +44,8 @@
             </controls:ControlPresenter.Options>
         </controls:ControlPresenter>
 
-        <controls:ControlPresenter Header="Tip: Put Expanders in Cards to achieve a nice layering effect."
-                                   Xaml="{Binding Xaml, ElementName=SplitViewEx2}"
+        <controls:ControlPresenter Header="Tip: Put Expanders in Cards to create a layering effect."
+                                   Xaml="{Binding Xaml, ElementName=ExpanderEx2}"
                                    VerticalAlignment="Top">
             <smtx:XamlDisplay x:Name="ExpanderEx2" Key="ExpanderEx2">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
@@ -56,12 +56,10 @@
                                       IsEnabled="{Binding IsChecked, ElementName=IsEnabledExpanderEx2}">
                                 <TextBlock Text="Hello from the Expander's content!" />
                             </Expander>
-                            <Separator Margin="{c:GridUnit '0,2'}" />
                             <Expander Header="Category 2"
                                       IsEnabled="{Binding IsChecked, ElementName=IsEnabledExpanderEx2}">
                                 <TextBlock Text="Hello from the Expander's content!" />
                             </Expander>
-                            <Separator Margin="{c:GridUnit '0,2'}" />
                             <Expander Header="Category 3"
                                       IsEnabled="{Binding IsChecked, ElementName=IsEnabledExpanderEx2}">
                                 <TextBlock Text="Hello from the Expander's content!" />

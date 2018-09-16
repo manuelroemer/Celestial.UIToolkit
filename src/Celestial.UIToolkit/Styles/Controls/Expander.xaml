@@ -23,6 +23,13 @@
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Padding" Value="0" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
+        <Setter Property="HeaderTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <TextBlock Style="{StaticResource TitleTextBlock}" Text="{Binding}" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Expander">
@@ -39,6 +46,11 @@
                                           DockPanel.Dock="Right"
                                           IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
                                           Style="{StaticResource InvisibleRippleButton}"
+                                          Foreground="{TemplateBinding Foreground}"
+                                          theming:MouseOverProperties.ForegroundBrush="{TemplateBinding theming:MouseOverProperties.ForegroundBrush}"
+                                          theming:PressedProperties.ForegroundBrush="{TemplateBinding theming:PressedProperties.ForegroundBrush}"
+                                          theming:ActiveProperties.ForegroundBrush="{TemplateBinding theming:ActiveProperties.ForegroundBrush}"
+                                          theming:DisabledProperties.ForegroundBrush="{TemplateBinding theming:DisabledProperties.ForegroundBrush}"
                                           Padding="{c:GridUnit '3,1'}">
                                 <Border RenderTransformOrigin="0.5,0.5">
                                     <Border.RenderTransform>
@@ -59,11 +71,6 @@
                                           Style="{StaticResource TransparentButton}"
                                           Focusable="False"
                                           IsTabStop="False">
-                                <ToggleButton.Resources>
-                                    <DataTemplate DataType="sys:String">
-                                        <TextBlock Style="{StaticResource TitleTextBlock}" Text="{Binding}" />
-                                    </DataTemplate>
-                                </ToggleButton.Resources>
                                 <ContentPresenter x:Name="HeaderContentSite"
                                                   ContentSource="Header"
                                                   ContentStringFormat="{TemplateBinding HeaderStringFormat}"
