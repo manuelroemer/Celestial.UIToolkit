@@ -1,5 +1,6 @@
 ﻿using Celestial.UIToolkit.Extensions;
 using System;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Media;
 
@@ -55,13 +56,16 @@ namespace Celestial.UIToolkit.Xaml
         /// <param name="e">Event args about the changed property.</param>
         private static void ChildrenMargin_Changed(DependencyObject obj, DependencyPropertyChangedEventArgs e)
         {
-            if (obj is FrameworkElement frameworkElement &&
-                !frameworkElement.IsInitialized)
+            if (obj is FrameworkElement frameworkElement)
             {
-                WeakEventManager<FrameworkElement, EventArgs>.AddHandler(
-                    frameworkElement,
-                    nameof(FrameworkElement.Initialized),
-                    Element_Initialized);
+                if (!frameworkElement.IsInitialized)
+                {
+                    frameworkElement.Initialized += Element_Initialized;
+                }
+                else
+                {
+                    SetChildrenMargin(frameworkElement, (Thickness)e.NewValue);
+                }
             }
             else
             {
@@ -70,6 +74,7 @@ namespace Celestial.UIToolkit.Xaml
 
             void Element_Initialized(object sender, EventArgs args)
             {
+                frameworkElement.Initialized -= Element_Initialized;
                 UpdateChildrenMargins(obj, (Thickness)e.NewValue);
             }
         }
@@ -80,6 +85,7 @@ namespace Celestial.UIToolkit.Xaml
             {
                 if (VisualTreeHelper.GetChild(parent, i) is FrameworkElement child)
                 {
+                    Debug.WriteLine(child.ToString());
                     // If a child's margin is explicitly set, don't overwrite it.
                     if (!child.IsDependencyPropertySet(FrameworkElement.MarginProperty))
                     {
