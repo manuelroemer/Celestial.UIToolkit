@@ -14,8 +14,45 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardListBox" TargetType="ListBox" BasedOn="{c:MultiStyle 'ControlBackground ControlBorder StandardForeground AltFontProperties ElevationZIndex Shadow0 InteractiveShadow4'}">
-        
+    <Style x:Key="StandardListBox" TargetType="ListBox" BasedOn="{c:MultiStyle 'PrimaryBackground ControlBorder StandardForeground StandardFontProperties Shadow0'}">
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
+        <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBox">
+                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
+                        <controls:ThemeShadowPresenter>
+                            <Border x:Name="Bd"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </controls:ThemeShadowPresenter>
+
+                        <ScrollViewer x:Name="ItemsScrollViewer"
+                                      Focusable="False"
+                                      IsTabStop="False"
+                                      SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                      HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                      Margin="{TemplateBinding BorderThickness}"
+                                      Padding="{TemplateBinding Padding}">
+                            <ItemsPresenter x:Name="ItemsHost" />
+                        </ScrollViewer>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsGrouping" Value="False">
+                            <Setter Property="ScrollViewer.CanContentScroll" Value="False" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
     <Style TargetType="ListBox" BasedOn="{StaticResource StandardListBox}" />
 

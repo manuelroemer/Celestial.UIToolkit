@@ -150,6 +150,7 @@
                         <ControlTemplate TargetType="TextBox">
                             <ScrollViewer x:Name="PART_ContentHost"
                                           Focusable="False"
+                                          IsTabStop="False"
                                           Padding="{TemplateBinding Padding}" />
                         </ControlTemplate>
                     </Setter.Value>
