@@ -51,15 +51,17 @@
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledExpanderEx2}">
                     <c:Card>
-                        <StackPanel>
+                        <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,1'}">
                             <Expander Header="Category 1"
                                       IsEnabled="{Binding IsChecked, ElementName=IsEnabledExpanderEx2}">
                                 <TextBlock Text="Hello from the Expander's content!" />
                             </Expander>
+                            <Separator />
                             <Expander Header="Category 2"
                                       IsEnabled="{Binding IsChecked, ElementName=IsEnabledExpanderEx2}">
                                 <TextBlock Text="Hello from the Expander's content!" />
                             </Expander>
+                            <Separator />
                             <Expander Header="Category 3"
                                       IsEnabled="{Binding IsChecked, ElementName=IsEnabledExpanderEx2}">
                                 <TextBlock Text="Hello from the Expander's content!" />
