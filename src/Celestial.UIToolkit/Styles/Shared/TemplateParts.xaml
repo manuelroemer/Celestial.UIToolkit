@@ -122,6 +122,11 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ButtonBase">
+                    <ControlTemplate.Resources>
+                        <DataTemplate DataType="sys:String">
+                            <TextBlock Style="{DynamicResource TextBlockOverrideStyle}" Text="{Binding}" />
+                        </DataTemplate>
+                    </ControlTemplate.Resources>
                     <Border Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"

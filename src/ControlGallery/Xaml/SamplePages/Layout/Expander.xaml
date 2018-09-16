@@ -12,7 +12,7 @@
 
     <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,4,0,12'}">
 
-        <controls:ControlPresenter Header="A standard SplitView control."
+        <controls:ControlPresenter Header="A standard Expander control."
                                    Xaml="{Binding Xaml, ElementName=SplitViewEx1}"
                                    VerticalAlignment="Top">
             <smtx:XamlDisplay x:Name="ExpanderEx1" Key="ExpanderEx1">
@@ -40,6 +40,42 @@
                               Width="{c:GridUnit 40}"
                               ItemsSource="{c:EnumBindingSource ExpandDirection}"
                               SelectedIndex="0" />
+                </StackPanel>
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+
+        <controls:ControlPresenter Header="Tip: Put Expanders in Cards to achieve a nice layering effect."
+                                   Xaml="{Binding Xaml, ElementName=SplitViewEx2}"
+                                   VerticalAlignment="Top">
+            <smtx:XamlDisplay x:Name="ExpanderEx2" Key="ExpanderEx2">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledExpanderEx2}">
+                    <c:Card>
+                        <StackPanel>
+                            <Expander Header="Category 1"
+                                      IsEnabled="{Binding IsChecked, ElementName=IsEnabledExpanderEx2}">
+                                <TextBlock Text="Hello from the Expander's content!" />
+                            </Expander>
+                            <Separator Margin="{c:GridUnit '0,2'}" />
+                            <Expander Header="Category 2"
+                                      IsEnabled="{Binding IsChecked, ElementName=IsEnabledExpanderEx2}">
+                                <TextBlock Text="Hello from the Expander's content!" />
+                            </Expander>
+                            <Separator Margin="{c:GridUnit '0,2'}" />
+                            <Expander Header="Category 3"
+                                      IsEnabled="{Binding IsChecked, ElementName=IsEnabledExpanderEx2}">
+                                <TextBlock Text="Hello from the Expander's content!" />
+                            </Expander>
+                        </StackPanel>
+                    </c:Card>
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,3'}"
+                            Margin="{c:GridUnit '0,0,0,-3'}">
+                    <CheckBox x:Name="IsEnabledExpanderEx2"
+                              IsChecked="True"
+                              Content="IsEnabled" />
                 </StackPanel>
             </controls:ControlPresenter.Options>
         </controls:ControlPresenter>
