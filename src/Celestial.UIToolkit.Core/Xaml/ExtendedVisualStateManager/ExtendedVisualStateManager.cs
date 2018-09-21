@@ -54,20 +54,32 @@ namespace Celestial.UIToolkit.Xaml
         {
             if (control == null || stateGroupsRoot == null || stateName == null || group == null || state == null)
                 return false;
-            if (!ShouldTransitionToState(group, state))
+            if (!ShouldTransitionToState(control, group, state))
                 return true;
 
             return TransitionToState(control, stateGroupsRoot, stateName, group, state, useTransitions);
         }
-
-        private bool ShouldTransitionToState(VisualStateGroup group, VisualState state)
+        
+        private bool ShouldTransitionToState(FrameworkElement control, VisualStateGroup group, VisualState state)
         {
             // No need to transition, if we are already at the target state.
             if ((group.GetCurrentState() ?? group.CurrentState) == state)
                 return false;
+
+            // The ExtendedVisualState can have a set of Conditions, which need to apply.
+            if (state is ExtendedVisualState extendedState &&
+                !extendedState.AreConditionsApplyingToControl(control))
+            {
+                VisualStateSource.Verbose(
+                    "Not transitioning to state {0}, because one of " +
+                    "the state's conditions doesn't apply.",
+                    state.Name);
+                return false;
+            }
+
             return true;
         }
-
+        
         private static bool TransitionToState(
             FrameworkElement control, 
             FrameworkElement stateGroupsRoot, 

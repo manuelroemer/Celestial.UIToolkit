@@ -82,11 +82,12 @@
                                 <VisualState x:Name="MouseOver" Storyboard="{StaticResource MouseOverStoryboard}" />
                                 <VisualState x:Name="Pressed" Storyboard="{StaticResource PressedStoryboard}" />
                                 <VisualState x:Name="Disabled" Storyboard="{StaticResource DisabledStoryboard}" />
-                                
-                                <!-- This should belong into the "CheckStates" category.
-                                     When put into this group, it overrides the other states when active,
-                                     which is exactly what we want here. -->
-                                <VisualState x:Name="Checked" Storyboard="{StaticResource CheckedStoryboard}" />
+                                <c:ExtendedVisualState x:Name="Checked" Storyboard="{StaticResource CheckedStoryboard}">
+                                    <c:ExtendedVisualState.Conditions>
+                                        <!-- The Button would stay "Selected", even if disabled without this condition. -->
+                                        <Condition Property="IsEnabled" Value="True" />
+                                    </c:ExtendedVisualState.Conditions>
+                                </c:ExtendedVisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                     </Border>

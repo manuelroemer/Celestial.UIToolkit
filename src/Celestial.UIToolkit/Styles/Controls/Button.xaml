@@ -131,6 +131,12 @@
                                 <VisualState x:Name="MouseOver" Storyboard="{StaticResource MouseOverStoryboard}" />
                                 <VisualState x:Name="Pressed" Storyboard="{StaticResource PressedStoryboard}" />
                                 <VisualState x:Name="Disabled" Storyboard="{StaticResource DisabledStoryboard}" />
+                                <c:ExtendedVisualState x:Name="Checked" Storyboard="{StaticResource CheckedStoryboard}">
+                                    <c:ExtendedVisualState.Conditions>
+                                        <!-- The Button would stay "Selected", even if disabled without this condition. -->
+                                        <Condition Property="IsEnabled" Value="True" />
+                                    </c:ExtendedVisualState.Conditions>
+                                </c:ExtendedVisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                     </Grid>
@@ -144,11 +150,6 @@
                         </MultiTrigger>
                         <Trigger Property="ToggleButton.IsChecked" Value="True">
                             <Setter TargetName="Ripple" Property="AllowFading" Value="False" />
-                        </Trigger>
-                        <Trigger Property="ToggleButton.IsChecked" Value="True">
-                            <Setter Property="Foreground" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
