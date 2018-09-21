@@ -111,8 +111,6 @@
                                                 theming:ControlProperties.CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}"
                                                 Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
                                                 BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}"
-                                                IsActiveTrigger="{TemplateBinding IsPressed}"
-                                                AllowFading="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, FallbackValue=True, Converter={x:Static c:InvertBooleanConverter.Default}}"
                                                 IsEnabled="{TemplateBinding theming:RippleProperties.ShowRippleAnimation}" />
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
@@ -138,18 +136,16 @@
                         </VisualStateManager.VisualStateGroups>
                     </Grid>
                     <ControlTemplate.Triggers>
-                        <MultiDataTrigger>
-                            <!-- This Trigger will start the RippleAnimation (and keep it expanded)
-                                 when a ToggleButton's IsChecked property gets changed via non-click input (e.g. binding).
-                                 Without this, the animation would not run and thus, no IsChecked effect would be visible. -->
-                            <MultiDataTrigger.Conditions>
-                                <Condition Binding="{Binding IsChecked, RelativeSource={RelativeSource Self}}" Value="True" />
-                                <Condition Binding="{Binding IsPressed, RelativeSource={RelativeSource Self}}" Value="False" />
-                                <Condition Binding="{Binding IsAnimationExpanding, ElementName=Ripple}" Value="False" />
-                                <Condition Binding="{Binding IsExpanded, ElementName=Ripple}" Value="False" />
-                            </MultiDataTrigger.Conditions>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsPressed" Value="True" />
+                                <Condition Property="ToggleButton.IsChecked" Value="False" />
+                            </MultiTrigger.Conditions>
                             <Setter TargetName="Ripple" Property="IsActiveTrigger" Value="True" />
-                        </MultiDataTrigger>
+                        </MultiTrigger>
+                        <Trigger Property="ToggleButton.IsChecked" Value="True">
+                            <Setter TargetName="Ripple" Property="AllowFading" Value="False" />
+                        </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
