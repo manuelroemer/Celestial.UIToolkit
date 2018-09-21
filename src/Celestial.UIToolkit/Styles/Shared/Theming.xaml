@@ -421,7 +421,7 @@
         <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource ListAccent2HighBrush}" />
         <Setter Property="theming:DisabledProperties.BorderBrush" Value="Transparent" />
     </Style>
-
+    
 
 
 
@@ -532,6 +532,45 @@
         <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource OnErrorTextBrush}" />
         <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource OnErrorDisabledTextBrush}" />
         <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnErrorTextBrush}" />
+    </Style>
+
+    <!--
+    - Background: -
+    - Border:     -
+    - Foreground: Accent1 List
+    -->
+    <Style x:Key="Accent1ListForeground" TargetType="FrameworkElement">
+        <Setter Property="Control.Foreground" Value="{StaticResource ListAccent1MediumBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource ListAccent1LowBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource ListAccent1HighBrush}" />
+        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource ListAccent1HighBrush}" />
+    </Style>
+
+    <!--
+    - Background: -
+    - Border:     -
+    - Foreground: Accent2 List
+    -->
+    <Style x:Key="Accent2ListForeground" TargetType="FrameworkElement">
+        <Setter Property="Control.Foreground" Value="{StaticResource ListAccent2MediumBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource ListAccent2LowBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource ListAccent2HighBrush}" />
+        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource ListAccent2HighBrush}" />
+    </Style>
+
+    <!--
+    - Background: -
+    - Border:     -
+    - Foreground: Standard Foreground; States Accent1 List/Accent2 List.
+    -->
+    <Style x:Key="StandardForegroundAccent1ListStates" TargetType="FrameworkElement" BasedOn="{StaticResource Accent1ListForeground}">
+        <Setter Property="Control.Foreground" Value="{StaticResource StandardForegroundBrush}" />
+    </Style>
+
+    <Style x:Key="StandardForegroundAccent2ListStates" TargetType="FrameworkElement" BasedOn="{StaticResource Accent2ListForeground}">
+        <Setter Property="Control.Foreground" Value="{StaticResource StandardForegroundBrush}" />
     </Style>
 
     <!--
