@@ -89,6 +89,10 @@
                                                                Storyboard.TargetProperty="(controls:ThemeShadow.Elevation)">
                                     <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:DisabledProperties.ShadowElevation) ,RelativeSource={RelativeSource TemplatedParent}}" />
                                 </DoubleAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Ripple"
+                                                               Storyboard.TargetProperty="Visibility">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
+                                </ObjectAnimationUsingKeyFrames>
                             </Storyboard>
 
                             <Storyboard x:Key="CheckedStoryboard">
@@ -127,11 +131,6 @@
                                 <VisualState x:Name="MouseOver" Storyboard="{StaticResource MouseOverStoryboard}" />
                                 <VisualState x:Name="Pressed" Storyboard="{StaticResource PressedStoryboard}" />
                                 <VisualState x:Name="Disabled" Storyboard="{StaticResource DisabledStoryboard}" />
-
-                                <!-- This should belong into the "CheckStates" category.
-                                     When put into this group, it overrides the other states when active,
-                                     which is exactly what we want here. -->
-                                <VisualState x:Name="Checked" Storyboard="{StaticResource CheckedStoryboard}" />
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                     </Grid>
@@ -145,6 +144,11 @@
                         </MultiTrigger>
                         <Trigger Property="ToggleButton.IsChecked" Value="True">
                             <Setter TargetName="Ripple" Property="AllowFading" Value="False" />
+                        </Trigger>
+                        <Trigger Property="ToggleButton.IsChecked" Value="True">
+                            <Setter Property="Foreground" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
