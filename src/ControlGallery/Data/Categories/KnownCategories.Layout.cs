@@ -25,10 +25,19 @@ namespace ControlGallery.Data.Categories
             SamplePageType = typeof(Expander)
         };
 
+        private static ControlInformation MenuInfo = new ControlInformation()
+        {
+            Name = "Menu",
+            Description = "An Menu organizes menu items which can be used to invoke commands.",
+            Icon = new PackIconModern() { Kind = PackIconModernKind.ListSelect },
+            SamplePageType = typeof(Menu)
+        };
+
         public static ControlCategory Layout { get; } = new ControlCategory(
             "Layout",
             new PackIconMaterialLight() { Kind = PackIconMaterialLightKind.BorderAll },
             SplitViewInfo,
+            MenuInfo,
             ExpanderInfo);
 
     }
