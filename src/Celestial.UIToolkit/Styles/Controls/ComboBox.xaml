@@ -19,7 +19,7 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardComboBoxItem" TargetType="ComboBoxItem" BasedOn="{c:MultiStyle 'ListBackground ListBorder StandardForegroundListStates StandardFontProperties Shadow0'}">
+    <Style x:Key="StandardComboBoxItem" TargetType="ComboBoxItem" BasedOn="{c:MultiStyle 'ListBackground ListBorder StandardForegroundActiveListStates StandardFontProperties Shadow0'}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="BorderThickness" Value="0" />
@@ -132,8 +132,8 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    <Style x:Key="Accent1ComboBoxItem" TargetType="ComboBoxItem" BasedOn="{c:MultiStyle 'StandardComboBoxItem Accent1ListBackground Accent1ListBorder StandardForegroundAccent1ListStates'}" />
-    <Style x:Key="Accent2ComboBoxItem" TargetType="ComboBoxItem" BasedOn="{c:MultiStyle 'StandardComboBoxItem Accent2ListBackground Accent2ListBorder StandardForegroundAccent2ListStates'}" />
+    <Style x:Key="Accent1ComboBoxItem" TargetType="ComboBoxItem" BasedOn="{c:MultiStyle 'StandardComboBoxItem Accent1ListBackground Accent1ListBorder StandardForegroundActiveAccent1ListStates'}" />
+    <Style x:Key="Accent2ComboBoxItem" TargetType="ComboBoxItem" BasedOn="{c:MultiStyle 'StandardComboBoxItem Accent2ListBackground Accent2ListBorder StandardForegroundActiveAccent2ListStates'}" />
     <Style TargetType="ComboBoxItem" BasedOn="{StaticResource Accent2ComboBoxItem}" />
 
     
