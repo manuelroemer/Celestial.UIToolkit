@@ -18,7 +18,12 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardNavigationViewItem" TargetType="controls:NavigationViewItem" BasedOn="{c:MultiStyle 'OnPaneControlBackground OnPaneControlBorder StandardForeground StandardFontProperties ElevationZIndex Shadow0 InteractiveShadow4'}">
+    <!--
+    The default NavigationViewItem style focuses on the item's foreground.
+    It does still support a Ripple, border/background animations and shadows.
+    These can be controlled via theming properties.
+    -->
+    <Style x:Key="StandardNavigationViewItem" TargetType="controls:NavigationViewItem" BasedOn="{c:MultiStyle 'TransparentBackground TransparentBorder StandardForegroundAccent2ListStates StandardFontProperties ElevationZIndex Shadow0'}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
@@ -26,9 +31,6 @@
         <Setter Property="Padding" Value="{c:GridUnit '0,2'}" />
         <Setter Property="MinHeight" Value="{c:GridUnit 10}" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource Accent2Brush}" />
-        <Setter Property="theming:ActiveProperties.ShadowElevation" Value="0" />
-        <Setter Property="theming:PressedProperties.ShadowElevation" Value="0" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
         <Setter Property="Template">
             <Setter.Value>
@@ -54,10 +56,6 @@
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="SelectionBorder"
                                                                 Storyboard.TargetProperty="BorderBrush">
                                     <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                </c:BrushAnimationUsingKeyFrames>
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="SelectionIndicator"
-                                                                Storyboard.TargetProperty="Background">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{StaticResource Accent2ControlHoverBackgroundBrush}" />
                                 </c:BrushAnimationUsingKeyFrames>
                                 <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
                                                   Storyboard.TargetProperty="Foreground"
@@ -86,10 +84,6 @@
                                                   Storyboard.TargetProperty="BorderBrush"
                                                   Duration="0"
                                                   To="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                <c:BrushAnimation Storyboard.TargetName="SelectionIndicator"
-                                                  Storyboard.TargetProperty="Background"
-                                                  Duration="0"
-                                                  To="{StaticResource ControlDisabledBackgroundBrush}" />
                                 <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
                                                   Storyboard.TargetProperty="Foreground"
                                                   Duration="0"
@@ -111,23 +105,12 @@
                                 </ObjectAnimationUsingKeyFrames>
                                 <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
                                                                Storyboard.TargetProperty="(controls:ThemeShadow.Elevation)">
-                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:PressedProperties.ShadowElevation) ,RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:ActiveProperties.ShadowElevation), RelativeSource={RelativeSource TemplatedParent}}" />
                                 </DoubleAnimationUsingKeyFrames>
-                            </Storyboard>
-
-                            <Storyboard x:Key="SelectedUnfocusedStoryboard">
-                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                               Storyboard.TargetProperty="Visibility">
-                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
-                                </ObjectAnimationUsingKeyFrames>
-                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SelectionBorder"
-                                                               Storyboard.TargetProperty="Visibility">
-                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
-                                </ObjectAnimationUsingKeyFrames>
-                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
-                                                               Storyboard.TargetProperty="(controls:ThemeShadow.Elevation)">
-                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:ActiveProperties.ShadowElevation) ,RelativeSource={RelativeSource TemplatedParent}}" />
-                                </DoubleAnimationUsingKeyFrames>
+                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                  Storyboard.TargetProperty="Foreground"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                             </Storyboard>
                         </Grid.Resources>
 
@@ -177,12 +160,12 @@
                         </Grid>
 
                         <controls:SelectionIndicator x:Name="SelectionIndicator"
-                                                     Background="{StaticResource Accent2ControlBackgroundBrush}"
+                                                     Background="{TemplateBinding Foreground}"
                                                      Width="{c:GridUnit 1}"
                                                      HorizontalAlignment="Left"
                                                      Orientation="Vertical"
                                                      IsSelected="{TemplateBinding IsSelected}" />
-                        
+
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualStateGroup.Transitions>
@@ -197,10 +180,16 @@
                             <VisualStateGroup x:Name="SelectionStates">
                                 <VisualState x:Name="Unselected" />
                                 <VisualState x:Name="Selected" Storyboard="{StaticResource SelectedStoryboard}" />
-                                <VisualState x:Name="SelectedUnfocused" Storyboard="{StaticResource SelectedUnfocusedStoryboard}" />
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                     </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Foreground" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

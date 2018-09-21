@@ -14,7 +14,7 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardListBoxItem" TargetType="ListBoxItem" BasedOn="{c:MultiStyle 'ListBackground ListBorder StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="StandardListBoxItem" TargetType="ListBoxItem" BasedOn="{c:MultiStyle 'ListBackground ListBorder StandardForegroundActiveListStates StandardFontProperties Shadow0'}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="BorderThickness" Value="0" />
@@ -23,7 +23,6 @@
         <Setter Property="Padding" Value="{c:GridUnit '4,2,2,2'}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{Binding Path=(theming:ActiveProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ListBoxItem">
@@ -118,8 +117,8 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style x:Key="Accent1ListBoxItem" TargetType="ListBoxItem" BasedOn="{c:MultiStyle 'StandardListBoxItem Accent1ListBackground Accent1ListBorder'}" />
-    <Style x:Key="Accent2ListBoxItem" TargetType="ListBoxItem" BasedOn="{c:MultiStyle 'StandardListBoxItem Accent2ListBackground Accent2ListBorder'}" />
+    <Style x:Key="Accent1ListBoxItem" TargetType="ListBoxItem" BasedOn="{c:MultiStyle 'StandardListBoxItem Accent1ListBackground Accent1ListBorder StandardForegroundActiveAccent1ListStates'}" />
+    <Style x:Key="Accent2ListBoxItem" TargetType="ListBoxItem" BasedOn="{c:MultiStyle 'StandardListBoxItem Accent2ListBackground Accent2ListBorder StandardForegroundActiveAccent2ListStates'}" />
     <Style TargetType="ListBoxItem" BasedOn="{StaticResource Accent2ListBoxItem}" />
 
 
