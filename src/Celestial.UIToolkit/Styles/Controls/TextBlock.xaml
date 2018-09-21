@@ -73,7 +73,7 @@
         <Setter Property="FontFamily" Value="{StaticResource CaptionFontFamily}" />
     </Style>
 
-    <Style x:Key="CaptionHintTextBlock" TargetType="TextBlock" BasedOn="{StaticResource StandardTextBlock}">
+    <Style x:Key="CaptionHintTextBlock" TargetType="TextBlock" BasedOn="{StaticResource CaptionTextBlock}">
         <Setter Property="Foreground" Value="{StaticResource SecondaryForegroundBrush}" />
     </Style>
 
