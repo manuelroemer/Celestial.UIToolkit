@@ -19,16 +19,22 @@
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledMenuEx1}">
                     <Menu>
-                        <MenuItem Header="_File">
+                        <MenuItem Header="_File" Icon="{icon:Modern Kind=Acorn}">
                             <MenuItem Header="Open" />
                             <MenuItem Header="Save" />
                             <MenuItem Header="Save As..." />
+                            <MenuItem Header="Auto save" IsCheckable="True" Icon="{icon:Modern Kind=AdobeSpeedgrade}" />
                             <Separator />
                             <MenuItem Header="Exit" IsEnabled="False" />
                         </MenuItem>
                         <MenuItem Header="Edit">
-                            <MenuItem Header="Undo" />
-                            <MenuItem Header="Redo" />
+                            <MenuItem Header="Undo" Icon="{icon:Modern Kind=Undo}" />
+                            <MenuItem Header="Redo" Icon="{icon:Modern Kind=Redo}" />
+                            <MenuItem Header="Sub-Sub-Menu">
+                                <MenuItem Header="Item 1" />
+                                <MenuItem Header="Item 2" />
+                                <MenuItem Header="Item 3" />
+                            </MenuItem>
                         </MenuItem>
                         <MenuItem Header="Help" />
                     </Menu>

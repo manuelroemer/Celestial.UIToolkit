@@ -9,6 +9,7 @@
         <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
         <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
         <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
+        <c:SharedResourceDictionary Source="../../Icons/ControlParts.xaml" />
 
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
@@ -46,5 +47,149 @@
         </Setter>
     </Style>
     <Style TargetType="Menu" BasedOn="{StaticResource StandardMenu}" />
+
+
+
+    <!--<ControlTemplate x:Key="{x:Static MenuItem.TopLevelHeaderTemplateKey}" TargetType="MenuItem">
+        
+
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsHighlighted" Value="True">
+                <Setter TargetName="Ripple" Property="IsActiveTrigger" Value="True" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>-->
+
+    <Style x:Key="StandardMenuItem" TargetType="MenuItem" BasedOn="{c:MultiStyle 'TransparentBorder OnPaneControlBackground StandardForeground StandardFontProperties Shadow16'}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource BottomControlThemeShadow}" />
+        <Setter Property="MinHeight" Value="{c:GridUnit 8}" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="{c:GridUnit '4,0'}" />
+        <Setter Property="Grid.IsSharedSizeScope" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="MenuItem">
+                    <ControlTemplate.Resources>
+                        <c:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+                    </ControlTemplate.Resources>
+                    
+                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
+                        <Border x:Name="Bd"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}" />
+                        <controls:RippleOverlay x:Name="Ripple"
+                                                Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
+                                                BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}"
+                                                Margin="{TemplateBinding BorderThickness}"
+                                                IsEnabled="{TemplateBinding theming:RippleProperties.ShowRippleAnimation}" />
+                        
+                        <Border BorderThickness="{TemplateBinding BorderThickness}"
+                                Padding="{TemplateBinding Padding}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" SharedSizeGroup="Icon" />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="Auto" SharedSizeGroup="Shortcut" />
+                                </Grid.ColumnDefinitions>
+
+                                <Grid x:Name="IconContainer"
+                                      Margin="{c:GridUnit '0,0,4,0'}"
+                                      VerticalAlignment="Stretch">
+                                    <ContentPresenter x:Name="IconContentSite"
+                                                      HorizontalAlignment="Center"
+                                                      VerticalAlignment="Center"
+                                                      ContentSource="Icon" />
+
+                                    <controls:PathIcon x:Name="CheckedIcon"
+                                                       HorizontalAlignment="Center"
+                                                       VerticalAlignment="Center"
+                                                       Foreground="{TemplateBinding Foreground}"
+                                                       Data="{StaticResource Checkmark}"
+                                                       Visibility="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                                </Grid>
+                                
+                                <ContentPresenter x:Name="HeaderContentSite"
+                                                  Grid.Column="1"
+                                                  ContentSource="Header"
+                                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                  RecognizesAccessKey="True" />
+                                <Popup x:Name="Popup"
+                                       Placement="Bottom"
+                                       IsOpen="{TemplateBinding IsSubmenuOpen}"
+                                       AllowsTransparency="True"
+                                       Focusable="False"
+                                       PopupAnimation="Fade">
+                                    <Grid Margin="20">
+                                        <controls:ThemeShadowPresenter>
+                                            <Border x:Name="SubmenuBorder"
+                                                    BorderThickness="1"
+                                                    Background="{StaticResource PrimaryBrush}"
+                                                    BorderBrush="{StaticResource ControlBorderBrush}" />
+                                        </controls:ThemeShadowPresenter>
+
+                                        <ItemsPresenter x:Name="ItemsPresenter"
+                                                        Grid.IsSharedSizeScope="True"
+                                                        KeyboardNavigation.DirectionalNavigation="Cycle"
+                                                        Margin="{c:GridUnit '0,2'}" />
+                                    </Grid>
+                                </Popup>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Role" Value="TopLevelHeader">
+                            <Setter TargetName="IconContainer" Property="Margin" Value="{c:GridUnit '0,0,2,0', TargetType=Thickness}" />
+                        </Trigger>
+                        <Trigger Property="Role" Value="TopLevelItem">
+
+                        </Trigger>
+                        <Trigger Property="Role" Value="SubmenuHeader">
+                            
+                        </Trigger>
+                        <Trigger Property="Role" Value="SubmenuItem">
+
+                        </Trigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Icon" Value="{x:Null}" />
+                                <Condition Property="IsChecked" Value="False" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="IconContainer" Property="Visibility" Value="Collapsed" />
+                        </MultiTrigger>
+
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="IconContentSite" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+
+                        <Trigger Property="IsHighlighted" Value="True">
+                            <Setter TargetName="Bd" Property="Background" Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Trigger>
+                        
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Ripple" Property="IsActiveTrigger" Value="True" />
+                        </Trigger>
+
+                        <Trigger Property="IsSubmenuOpen" Value="True">
+                            <Setter TargetName="Ripple" Property="IsActiveTrigger" Value="True" />
+                            <Setter TargetName="Ripple" Property="AllowFading" Value="False" />
+                        </Trigger>
+
+                        <Trigger Property="IsSuspendingPopupAnimation" Value="True">
+                            <Setter TargetName="Popup" Property="PopupAnimation" Value="None" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="MenuItem" BasedOn="{StaticResource StandardMenuItem}" />
 
 </ResourceDictionary>

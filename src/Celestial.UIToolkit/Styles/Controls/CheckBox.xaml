@@ -9,6 +9,7 @@
         <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
         <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
         <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
+        <c:SharedResourceDictionary Source="../../Icons/ControlParts.xaml" />
 
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
@@ -29,7 +30,6 @@
                     <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
                           Background="Transparent">
                         <Grid.Resources>
-                            <PathGeometry x:Key="CheckedGeometry">M 1,5 L 6,11 L 11,1</PathGeometry>
                             <LineGeometry x:Key="IndeterminateGeometry" StartPoint="0,7" EndPoint="12,7" />
 
                             <Storyboard x:Key="MouseOverStoryboard">
@@ -156,7 +156,7 @@
                                         </Border.RenderTransform>
                                     </Border>
                                     <Path x:Name="Checkmark"
-                                          Data="{StaticResource CheckedGeometry}">
+                                          Data="{StaticResource Checkmark}">
                                         <Path.RenderTransform>
                                             <ScaleTransform x:Name="CheckmarkScaleTransform"
                                                             ScaleX="0"

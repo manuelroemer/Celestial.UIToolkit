@@ -358,8 +358,7 @@
                                     <Border x:Name="DropDownBorder"
                                             BorderThickness="1"
                                             Background="{StaticResource PrimaryBrush}"
-                                            BorderBrush="{StaticResource ControlBorderBrush}">
-                                    </Border>
+                                            BorderBrush="{StaticResource ControlBorderBrush}" />
                                 </controls:ThemeShadowPresenter>
                                 <ScrollViewer SnapsToDevicePixels="True"
                                               Margin="{Binding BorderThickness, ElementName=DropDownBorder}"
