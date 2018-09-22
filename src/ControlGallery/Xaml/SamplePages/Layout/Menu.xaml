@@ -55,6 +55,41 @@
                 </StackPanel>
             </controls:ControlPresenter.Options>
         </controls:ControlPresenter>
+
+        <controls:ControlPresenter Header="A standard ContextMenu."
+                                   Xaml="{Binding Xaml, ElementName=ContextMenuEx1}"
+                                   VerticalAlignment="Top">
+            <smtx:XamlDisplay x:Name="ContextMenuEx1" Key="ContextMenuEx1">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledContextMenuEx1}">
+                    <TextBlock Text="Right-Click me to see a Context Menu!">
+                        <TextBlock.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Item 1" />
+                                <MenuItem Header="Item 2" />
+                                <MenuItem Header="Item 3"
+                                          Icon="{icon:Modern Kind=ListAddBelow}"
+                                          InputGestureText="Open me...">
+                                    <MenuItem Header="Item 1" />
+                                    <MenuItem Header="Item 2" />
+                                    <MenuItem Header="Item 3" />
+                                </MenuItem>
+                                <Separator />
+                                <MenuItem Header="Disabled" IsEnabled="False" />
+                            </ContextMenu>
+                        </TextBlock.ContextMenu>
+                    </TextBlock>
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,3'}"
+                            Margin="{c:GridUnit '0,0,0,-3'}">
+                    <CheckBox x:Name="IsEnabledContextMenuEx1"
+                              IsChecked="True"
+                              Content="IsEnabled" />
+                </StackPanel>
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
         
     </StackPanel>
 

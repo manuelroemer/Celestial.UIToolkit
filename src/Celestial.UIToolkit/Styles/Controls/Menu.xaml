@@ -18,6 +18,46 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
+    <Style x:Key="StandardContextMenu" TargetType="ContextMenu" BasedOn="{c:MultiStyle 'StandardForeground StandardFontProperties Shadow16'}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Background" Value="{StaticResource PrimaryBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource ControlBorderBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Padding" Value="{c:GridUnit '0,2'}" />
+        <Setter Property="HasDropShadow" Value="True" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource BottomControlThemeShadow}" />
+        <Setter Property="Margin" Value="60" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ContextMenu">
+                    <Grid>
+                        <controls:ThemeShadowPresenter SnapsToDevicePixels="False">
+                            <Border x:Name="Bd"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    SnapsToDevicePixels="False" />
+                        </controls:ThemeShadowPresenter>
+
+                        <Border x:Name="ItemsBorder"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Padding="{TemplateBinding Padding}"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                            <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                            Grid.IsSharedSizeScope="True" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="ContextMenu" BasedOn="{StaticResource StandardContextMenu}" />
+
+
+
     <Style x:Key="StandardMenu" TargetType="Menu" BasedOn="{c:MultiStyle 'StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
@@ -33,12 +73,14 @@
                             <Border x:Name="Bd"
                                     Background="{TemplateBinding Background}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
-                                    BorderThickness="{TemplateBinding BorderThickness}" />
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    SnapsToDevicePixels="False" />
                         </controls:ThemeShadowPresenter>
 
                         <Border x:Name="ItemsBorder"
                                 BorderThickness="{TemplateBinding BorderThickness}"
-                                Padding="{TemplateBinding Padding}">
+                                Padding="{TemplateBinding Padding}"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
                             <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                             HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                             VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
@@ -51,17 +93,7 @@
     <Style TargetType="Menu" BasedOn="{StaticResource StandardMenu}" />
 
 
-
-    <!--<ControlTemplate x:Key="{x:Static MenuItem.TopLevelHeaderTemplateKey}" TargetType="MenuItem">
-        
-
-        <ControlTemplate.Triggers>
-            <Trigger Property="IsHighlighted" Value="True">
-                <Setter TargetName="Ripple" Property="IsActiveTrigger" Value="True" />
-            </Trigger>
-        </ControlTemplate.Triggers>
-    </ControlTemplate>-->
-
+    
     <Style x:Key="StandardMenuItem" TargetType="MenuItem" BasedOn="{c:MultiStyle 'TransparentBorder OnPaneControlBackground StandardForeground StandardFontProperties'}">
         <Style.Resources>
             <c:MathOperationConverter x:Key="ElevationAddConverter" Operator="Add" />
@@ -99,15 +131,18 @@
                         <Border x:Name="Bd"
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}" />
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                SnapsToDevicePixels="False" />
                         <controls:RippleOverlay x:Name="Ripple"
                                                 Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
                                                 BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}"
                                                 Margin="{TemplateBinding BorderThickness}"
-                                                IsEnabled="{TemplateBinding theming:RippleProperties.ShowRippleAnimation}" />
+                                                IsEnabled="{TemplateBinding theming:RippleProperties.ShowRippleAnimation}"
+                                                SnapsToDevicePixels="False" />
                         
                         <Border BorderThickness="{TemplateBinding BorderThickness}"
-                                Padding="{TemplateBinding Padding}">
+                                Padding="{TemplateBinding Padding}"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto" SharedSizeGroup="Icon" />
@@ -224,6 +259,10 @@
 
                         <Trigger Property="IsSuspendingPopupAnimation" Value="True">
                             <Setter TargetName="Popup" Property="PopupAnimation" Value="None" />
+                        </Trigger>
+
+                        <Trigger Property="theming:RippleProperties.ShowRippleAnimation" Value="True">
+                            <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
                         </Trigger>
 
                         <Trigger Property="IsHighlighted" Value="True">
