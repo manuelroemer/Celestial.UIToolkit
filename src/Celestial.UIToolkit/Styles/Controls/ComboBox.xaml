@@ -25,7 +25,7 @@
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
         <Setter Property="MinHeight" Value="{c:GridUnit 8}" />
-        <Setter Property="Padding" Value="{c:GridUnit '4,2,2,2'}" />
+        <Setter Property="Padding" Value="{c:GridUnit '4,2,4,2'}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Template">
@@ -358,14 +358,14 @@
                                     <Border x:Name="DropDownBorder"
                                             BorderThickness="1"
                                             Background="{StaticResource PrimaryBrush}"
-                                            BorderBrush="{StaticResource ControlBorderBrush}">
-                                    </Border>
+                                            BorderBrush="{StaticResource ControlBorderBrush}" />
                                 </controls:ThemeShadowPresenter>
                                 <ScrollViewer SnapsToDevicePixels="True"
                                               Margin="{Binding BorderThickness, ElementName=DropDownBorder}"
                                               VerticalScrollBarVisibility="Auto">
                                     <StackPanel IsItemsHost="True"
-                                                KeyboardNavigation.DirectionalNavigation="Contained" />
+                                                KeyboardNavigation.DirectionalNavigation="Contained"
+                                                Margin="{c:GridUnit '0,2'}" />
                                 </ScrollViewer>
                             </Grid>
                         </Popup>

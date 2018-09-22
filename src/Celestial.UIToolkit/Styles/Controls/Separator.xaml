@@ -32,4 +32,8 @@
     </Style>
     <Style TargetType="Separator" BasedOn="{StaticResource StandardSeparator}" />
 
+    <Style x:Key="{x:Static MenuItem.SeparatorStyleKey}" TargetType="Separator" BasedOn="{StaticResource StandardSeparator}">
+        <Setter Property="Margin" Value="{c:GridUnit '0,1'}" />
+    </Style>
+    
 </ResourceDictionary>

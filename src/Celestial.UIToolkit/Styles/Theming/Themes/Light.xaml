@@ -195,7 +195,7 @@
 
 
 
-    <Color x:Key="StandardDropShadowColor">#40404040</Color>
+    <Color x:Key="StandardDropShadowColor">#60404040</Color>
     <sys:Double x:Key="StandardDropShadowOpacity">0.3</sys:Double>
 
     <controls:ThemeShadow x:Key="DisabledThemeShadow"

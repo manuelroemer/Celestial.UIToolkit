@@ -1,0 +1,296 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:c="http://celestial-ui.com"
+                    xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
+                    xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
+
+    <ResourceDictionary.MergedDictionaries>
+        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
+        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
+        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
+        <c:SharedResourceDictionary Source="./TextBlock.xaml" />
+        <c:SharedResourceDictionary Source="../../Icons/Arrows.xaml" />
+        <c:SharedResourceDictionary Source="../../Icons/ControlParts.xaml" />
+
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="StandardContextMenu" TargetType="ContextMenu" BasedOn="{c:MultiStyle 'StandardForeground StandardFontProperties Shadow16'}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Background" Value="{StaticResource PrimaryBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource ControlBorderBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Padding" Value="{c:GridUnit '0,2'}" />
+        <Setter Property="HasDropShadow" Value="True" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource BottomControlThemeShadow}" />
+        <Setter Property="Margin" Value="60" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ContextMenu">
+                    <Grid>
+                        <controls:ThemeShadowPresenter SnapsToDevicePixels="False">
+                            <Border x:Name="Bd"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    SnapsToDevicePixels="False" />
+                        </controls:ThemeShadowPresenter>
+
+                        <Border x:Name="ItemsBorder"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Padding="{TemplateBinding Padding}"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                            <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                            Grid.IsSharedSizeScope="True" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="ContextMenu" BasedOn="{StaticResource StandardContextMenu}" />
+
+
+
+    <Style x:Key="StandardMenu" TargetType="Menu" BasedOn="{c:MultiStyle 'StandardForeground StandardFontProperties Shadow0'}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Background" Value="{StaticResource PaneBackgroundBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource PaneBorderBrush}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Menu">
+                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
+                          Background="Transparent">
+                        <controls:ThemeShadowPresenter SnapsToDevicePixels="False">
+                            <Border x:Name="Bd"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    SnapsToDevicePixels="False" />
+                        </controls:ThemeShadowPresenter>
+
+                        <Border x:Name="ItemsBorder"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Padding="{TemplateBinding Padding}"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                            <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="Menu" BasedOn="{StaticResource StandardMenu}" />
+
+
+    
+    <Style x:Key="StandardMenuItem" TargetType="MenuItem" BasedOn="{c:MultiStyle 'TransparentBorder OnPaneControlBackground StandardForeground StandardFontProperties'}">
+        <Style.Resources>
+            <c:MathOperationConverter x:Key="ElevationAddConverter" Operator="Add" />
+        </Style.Resources>
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="{c:GridUnit '4,2,4,2'}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource BottomControlThemeShadow}" />
+        <Setter Property="controls:ThemeShadow.Elevation">
+            <Setter.Value>
+                <!-- This increases the shadow elevation, the further down we go into a menu-item tree. -->
+                <Binding Path="(controls:ThemeShadow.Elevation)"
+                         RelativeSource="{RelativeSource AncestorType=MenuItem}"
+                         Converter="{StaticResource ElevationAddConverter}"
+                         ConverterParameter="8"
+                         FallbackValue="16" />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="{Binding Path=(controls:ThemeShadow.Elevation), RelativeSource={RelativeSource Self}}" />
+        <Setter Property="theming:PressedProperties.ShadowElevation" Value="{Binding Path=(controls:ThemeShadow.Elevation), RelativeSource={RelativeSource Self}}" />
+        <Setter Property="theming:DisabledProperties.ShadowElevation" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="MenuItem">
+                    <ControlTemplate.Resources>
+                        <c:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+                        <c:StringToVisibilityConverter x:Key="StringToVisibilityConverter" />
+                    </ControlTemplate.Resources>
+                    
+                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
+                        <Border x:Name="Bd"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                SnapsToDevicePixels="False" />
+                        <controls:RippleOverlay x:Name="Ripple"
+                                                Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
+                                                BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}"
+                                                Margin="{TemplateBinding BorderThickness}"
+                                                IsEnabled="{TemplateBinding theming:RippleProperties.ShowRippleAnimation}"
+                                                SnapsToDevicePixels="False" />
+                        
+                        <Border BorderThickness="{TemplateBinding BorderThickness}"
+                                Padding="{TemplateBinding Padding}"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" SharedSizeGroup="Icon" />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="Auto" SharedSizeGroup="Shortcut" />
+                                    <ColumnDefinition Width="Auto" SharedSizeGroup="ExpandArrow" />
+                                </Grid.ColumnDefinitions>
+
+                                <Grid x:Name="IconContainer"
+                                      Margin="{c:GridUnit '0,0,4,0'}"
+                                      VerticalAlignment="Stretch">
+                                    <ContentPresenter x:Name="IconContentSite"
+                                                      HorizontalAlignment="Center"
+                                                      VerticalAlignment="Center"
+                                                      ContentSource="Icon" />
+
+                                    <controls:PathIcon x:Name="CheckedIcon"
+                                                       HorizontalAlignment="Center"
+                                                       VerticalAlignment="Center"
+                                                       Foreground="{TemplateBinding Foreground}"
+                                                       Data="{StaticResource Checkmark}"
+                                                       Visibility="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                                </Grid>
+                                
+                                <ContentPresenter x:Name="HeaderContentSite"
+                                                  Grid.Column="1"
+                                                  ContentSource="Header"
+                                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                  RecognizesAccessKey="True" />
+
+                                <TextBlock x:Name="InputGestureText"
+                                           Grid.Column="2"
+                                           Style="{StaticResource HintTextBlock}"
+                                           Margin="{c:GridUnit '4,0,0,0'}"
+                                           Text="{TemplateBinding InputGestureText}"
+                                           Visibility="{Binding InputGestureText, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource StringToVisibilityConverter}}" />
+
+                                <controls:PathIcon x:Name="ExpandArrowIcon"
+                                                   Grid.Column="3"
+                                                   HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center"
+                                                   Margin="{c:GridUnit '4,0,0,0'}"
+                                                   Foreground="{TemplateBinding Foreground}"
+                                                   Data="{StaticResource HalfArrowRight}"
+                                                   Visibility="Collapsed" />
+                                
+                                <Popup x:Name="Popup"
+                                       Placement="Bottom"
+                                       PlacementTarget="{Binding ElementName=Bd}"
+                                       IsOpen="{TemplateBinding IsSubmenuOpen}"
+                                       AllowsTransparency="True"
+                                       Focusable="False"
+                                       PopupAnimation="Fade">
+                                    <Grid Margin="60">
+                                        <controls:ThemeShadowPresenter>
+                                            <Border x:Name="SubmenuBorder"
+                                                    BorderThickness="1"
+                                                    Background="{StaticResource PrimaryBrush}"
+                                                    BorderBrush="{StaticResource ControlBorderBrush}" />
+                                        </controls:ThemeShadowPresenter>
+
+                                        <Border BorderThickness="{Binding BorderThickness, ElementName=SubmenuBorder}">
+                                            <ItemsPresenter x:Name="ItemsPresenter"
+                                                            Grid.IsSharedSizeScope="True"
+                                                            KeyboardNavigation.DirectionalNavigation="Cycle"
+                                                            Margin="{c:GridUnit '0,2'}" />
+                                        </Border>
+                                    </Grid>
+                                </Popup>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Role" Value="TopLevelHeader">
+                            <Setter TargetName="IconContainer" Property="Margin" Value="{c:GridUnit '0,0,2,0', TargetType=Thickness}" />
+                        </Trigger>
+                        <Trigger Property="Role" Value="TopLevelItem">
+                            <Setter TargetName="IconContainer" Property="Margin" Value="{c:GridUnit '0,0,2,0', TargetType=Thickness}" />
+                        </Trigger>
+                        <Trigger Property="Role" Value="SubmenuHeader">
+                            <Setter TargetName="Popup" Property="Placement" Value="Right" />
+                            <Setter TargetName="ExpandArrowIcon" Property="Visibility" Value="Visible" />
+                            <Setter Property="Background" Value="Transparent" />
+                            <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource ListLowBrush}" />
+                            <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource ListHighBrush}" />
+                            <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
+                            <Setter Property="theming:DisabledProperties.BorderBrush" Value="Transparent" />
+                        </Trigger>
+                        <Trigger Property="Role" Value="SubmenuItem">
+                            <Setter Property="Background" Value="Transparent" />
+                            <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource ListLowBrush}" />
+                            <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource ListHighBrush}" />
+                            <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
+                            <Setter Property="theming:DisabledProperties.BorderBrush" Value="Transparent" />
+                        </Trigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Icon" Value="{x:Null}" />
+                                <Condition Property="IsChecked" Value="False" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="IconContainer" Property="Visibility" Value="Collapsed" />
+                        </MultiTrigger>
+
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="IconContentSite" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+
+                        <Trigger Property="IsSubmenuOpen" Value="True">
+                            <Setter TargetName="Ripple" Property="IsActiveTrigger" Value="True" />
+                            <Setter TargetName="Ripple" Property="AllowFading" Value="False" />
+                        </Trigger>
+
+                        <Trigger Property="IsSuspendingPopupAnimation" Value="True">
+                            <Setter TargetName="Popup" Property="PopupAnimation" Value="None" />
+                        </Trigger>
+
+                        <Trigger Property="theming:RippleProperties.ShowRippleAnimation" Value="True">
+                            <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
+                        </Trigger>
+
+                        <Trigger Property="IsHighlighted" Value="True">
+                            <Setter Property="Background" Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="BorderBrush" Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Foreground" Value="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:MouseOverProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
+                        </Trigger>
+                        
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Ripple" Property="IsActiveTrigger" Value="True" />
+                            <Setter Property="Background" Value="{Binding Path=(theming:PressedProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="BorderBrush" Value="{Binding Path=(theming:PressedProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Foreground" Value="{Binding Path=(theming:PressedProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:PressedProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
+                        </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="BorderBrush" Value="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Foreground" Value="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:DisabledProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="MenuItem" BasedOn="{StaticResource StandardMenuItem}" />
+
+</ResourceDictionary>

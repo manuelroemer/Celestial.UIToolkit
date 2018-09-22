@@ -1,6 +1,10 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+    <PathGeometry x:Key="Checkmark">
+        M 1,5 L 6,11 L 11,1
+    </PathGeometry>
+    
     <GeometryGroup x:Key="GlobalNavigationButton">
         <PathGeometry>
             M 0,0 L 10,0
