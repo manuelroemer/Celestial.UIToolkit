@@ -28,12 +28,18 @@
                             <MenuItem Header="Exit" IsEnabled="False" />
                         </MenuItem>
                         <MenuItem Header="Edit">
-                            <MenuItem Header="Undo" Icon="{icon:Modern Kind=Undo}" />
-                            <MenuItem Header="Redo" Icon="{icon:Modern Kind=Redo}" />
+                            <MenuItem Header="Undo" Icon="{icon:Modern Kind=Undo}" InputGestureText="CTRL+Z" />
+                            <MenuItem Header="Redo" Icon="{icon:Modern Kind=Redo}" InputGestureText="CTRL+Y" />
                             <MenuItem Header="Sub-Sub-Menu">
                                 <MenuItem Header="Item 1" />
                                 <MenuItem Header="Item 2" />
                                 <MenuItem Header="Item 3" />
+                                <Separator />
+                                <MenuItem Header="Even more sub-items">
+                                    <MenuItem Header="Item 1" />
+                                    <MenuItem Header="Item 2" />
+                                    <MenuItem Header="Item 3" />
+                                </MenuItem>
                             </MenuItem>
                         </MenuItem>
                         <MenuItem Header="Help" />

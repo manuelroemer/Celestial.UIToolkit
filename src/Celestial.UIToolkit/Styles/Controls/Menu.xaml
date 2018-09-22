@@ -9,6 +9,8 @@
         <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
         <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
         <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
+        <c:SharedResourceDictionary Source="./TextBlock.xaml" />
+        <c:SharedResourceDictionary Source="../../Icons/Arrows.xaml" />
         <c:SharedResourceDictionary Source="../../Icons/ControlParts.xaml" />
 
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
@@ -60,22 +62,37 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>-->
 
-    <Style x:Key="StandardMenuItem" TargetType="MenuItem" BasedOn="{c:MultiStyle 'TransparentBorder OnPaneControlBackground StandardForeground StandardFontProperties Shadow16'}">
+    <Style x:Key="StandardMenuItem" TargetType="MenuItem" BasedOn="{c:MultiStyle 'TransparentBorder OnPaneControlBackground StandardForeground StandardFontProperties'}">
+        <Style.Resources>
+            <c:MathOperationConverter x:Key="ElevationAddConverter" Operator="Add" />
+        </Style.Resources>
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="{c:GridUnit '4,2,4,2'}" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource BottomControlThemeShadow}" />
-        <Setter Property="MinHeight" Value="{c:GridUnit 8}" />
-        <Setter Property="HorizontalContentAlignment" Value="Left" />
-        <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="Padding" Value="{c:GridUnit '4,0'}" />
-        <Setter Property="Grid.IsSharedSizeScope" Value="True" />
+        <Setter Property="controls:ThemeShadow.Elevation">
+            <Setter.Value>
+                <!-- This increases the shadow elevation, the further down we go into a menu-item tree. -->
+                <Binding Path="(controls:ThemeShadow.Elevation)"
+                         RelativeSource="{RelativeSource AncestorType=MenuItem}"
+                         Converter="{StaticResource ElevationAddConverter}"
+                         ConverterParameter="8"
+                         FallbackValue="16" />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="{Binding Path=(controls:ThemeShadow.Elevation), RelativeSource={RelativeSource Self}}" />
+        <Setter Property="theming:PressedProperties.ShadowElevation" Value="{Binding Path=(controls:ThemeShadow.Elevation), RelativeSource={RelativeSource Self}}" />
+        <Setter Property="theming:DisabledProperties.ShadowElevation" Value="0" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="MenuItem">
                     <ControlTemplate.Resources>
                         <c:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+                        <c:StringToVisibilityConverter x:Key="StringToVisibilityConverter" />
                     </ControlTemplate.Resources>
                     
                     <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
@@ -96,6 +113,7 @@
                                     <ColumnDefinition Width="Auto" SharedSizeGroup="Icon" />
                                     <ColumnDefinition />
                                     <ColumnDefinition Width="Auto" SharedSizeGroup="Shortcut" />
+                                    <ColumnDefinition Width="Auto" SharedSizeGroup="ExpandArrow" />
                                 </Grid.ColumnDefinitions>
 
                                 <Grid x:Name="IconContainer"
@@ -120,13 +138,31 @@
                                                   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                                   RecognizesAccessKey="True" />
+
+                                <TextBlock x:Name="InputGestureText"
+                                           Grid.Column="2"
+                                           Style="{StaticResource HintTextBlock}"
+                                           Margin="{c:GridUnit '4,0,0,0'}"
+                                           Text="{TemplateBinding InputGestureText}"
+                                           Visibility="{Binding InputGestureText, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource StringToVisibilityConverter}}" />
+
+                                <controls:PathIcon x:Name="ExpandArrowIcon"
+                                                   Grid.Column="3"
+                                                   HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center"
+                                                   Margin="{c:GridUnit '4,0,0,0'}"
+                                                   Foreground="{TemplateBinding Foreground}"
+                                                   Data="{StaticResource HalfArrowRight}"
+                                                   Visibility="Collapsed" />
+                                
                                 <Popup x:Name="Popup"
                                        Placement="Bottom"
+                                       PlacementTarget="{Binding ElementName=Bd}"
                                        IsOpen="{TemplateBinding IsSubmenuOpen}"
                                        AllowsTransparency="True"
                                        Focusable="False"
                                        PopupAnimation="Fade">
-                                    <Grid Margin="20">
+                                    <Grid Margin="60">
                                         <controls:ThemeShadowPresenter>
                                             <Border x:Name="SubmenuBorder"
                                                     BorderThickness="1"
@@ -134,10 +170,12 @@
                                                     BorderBrush="{StaticResource ControlBorderBrush}" />
                                         </controls:ThemeShadowPresenter>
 
-                                        <ItemsPresenter x:Name="ItemsPresenter"
-                                                        Grid.IsSharedSizeScope="True"
-                                                        KeyboardNavigation.DirectionalNavigation="Cycle"
-                                                        Margin="{c:GridUnit '0,2'}" />
+                                        <Border BorderThickness="{Binding BorderThickness, ElementName=SubmenuBorder}">
+                                            <ItemsPresenter x:Name="ItemsPresenter"
+                                                            Grid.IsSharedSizeScope="True"
+                                                            KeyboardNavigation.DirectionalNavigation="Cycle"
+                                                            Margin="{c:GridUnit '0,2'}" />
+                                        </Border>
                                     </Grid>
                                 </Popup>
                             </Grid>
@@ -148,13 +186,23 @@
                             <Setter TargetName="IconContainer" Property="Margin" Value="{c:GridUnit '0,0,2,0', TargetType=Thickness}" />
                         </Trigger>
                         <Trigger Property="Role" Value="TopLevelItem">
-
+                            <Setter TargetName="IconContainer" Property="Margin" Value="{c:GridUnit '0,0,2,0', TargetType=Thickness}" />
                         </Trigger>
                         <Trigger Property="Role" Value="SubmenuHeader">
-                            
+                            <Setter TargetName="Popup" Property="Placement" Value="Right" />
+                            <Setter TargetName="ExpandArrowIcon" Property="Visibility" Value="Visible" />
+                            <Setter Property="Background" Value="Transparent" />
+                            <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource ListLowBrush}" />
+                            <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource ListHighBrush}" />
+                            <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
+                            <Setter Property="theming:DisabledProperties.BorderBrush" Value="Transparent" />
                         </Trigger>
                         <Trigger Property="Role" Value="SubmenuItem">
-
+                            <Setter Property="Background" Value="Transparent" />
+                            <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource ListLowBrush}" />
+                            <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource ListHighBrush}" />
+                            <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
+                            <Setter Property="theming:DisabledProperties.BorderBrush" Value="Transparent" />
                         </Trigger>
 
                         <MultiTrigger>
@@ -169,14 +217,6 @@
                             <Setter TargetName="IconContentSite" Property="Visibility" Value="Collapsed" />
                         </Trigger>
 
-                        <Trigger Property="IsHighlighted" Value="True">
-                            <Setter TargetName="Bd" Property="Background" Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                        </Trigger>
-                        
-                        <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="Ripple" Property="IsActiveTrigger" Value="True" />
-                        </Trigger>
-
                         <Trigger Property="IsSubmenuOpen" Value="True">
                             <Setter TargetName="Ripple" Property="IsActiveTrigger" Value="True" />
                             <Setter TargetName="Ripple" Property="AllowFading" Value="False" />
@@ -184,6 +224,28 @@
 
                         <Trigger Property="IsSuspendingPopupAnimation" Value="True">
                             <Setter TargetName="Popup" Property="PopupAnimation" Value="None" />
+                        </Trigger>
+
+                        <Trigger Property="IsHighlighted" Value="True">
+                            <Setter Property="Background" Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="BorderBrush" Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Foreground" Value="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:MouseOverProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
+                        </Trigger>
+                        
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Ripple" Property="IsActiveTrigger" Value="True" />
+                            <Setter Property="Background" Value="{Binding Path=(theming:PressedProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="BorderBrush" Value="{Binding Path=(theming:PressedProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Foreground" Value="{Binding Path=(theming:PressedProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:PressedProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
+                        </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="BorderBrush" Value="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Foreground" Value="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:DisabledProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
