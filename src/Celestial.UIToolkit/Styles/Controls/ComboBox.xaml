@@ -365,7 +365,7 @@
                                               VerticalScrollBarVisibility="Auto">
                                     <StackPanel IsItemsHost="True"
                                                 KeyboardNavigation.DirectionalNavigation="Contained"
-                                                Margin="{c:GridUnit '0,2'}" />
+                                                Margin="{c:GridUnit '0,0,0,2'}" />
                                 </ScrollViewer>
                             </Grid>
                         </Popup>
