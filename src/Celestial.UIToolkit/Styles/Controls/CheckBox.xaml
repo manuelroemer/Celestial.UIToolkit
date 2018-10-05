@@ -196,19 +196,19 @@
                                     <Storyboard>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="CheckmarkScaleTransform"
                                                                        Storyboard.TargetProperty="ScaleX">
-                                            <SplineDoubleKeyFrame KeyTime="{StaticResource FastEnterAnimationKeyTime}" Value="1" />
+                                            <EasingDoubleKeyFrame KeyTime="{StaticResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="CheckmarkScaleTransform"
                                                                        Storyboard.TargetProperty="ScaleY">
-                                            <SplineDoubleKeyFrame KeyTime="{StaticResource FastEnterAnimationKeyTime}" Value="1" />
+                                            <EasingDoubleKeyFrame KeyTime="{StaticResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="FillingBorderScaleTransform"
                                                                        Storyboard.TargetProperty="ScaleX">
-                                            <SplineDoubleKeyFrame KeyTime="{StaticResource FastEnterAnimationKeyTime}" Value="1" />
+                                            <EasingDoubleKeyFrame KeyTime="{StaticResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="FillingBorderScaleTransform"
                                                                        Storyboard.TargetProperty="ScaleY">
-                                            <SplineDoubleKeyFrame KeyTime="{StaticResource FastEnterAnimationKeyTime}" Value="1" />
+                                            <EasingDoubleKeyFrame KeyTime="{StaticResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                        Storyboard.TargetProperty="(UIElement.Visibility)">
@@ -224,11 +224,11 @@
                                     <Storyboard>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="FillingBorderScaleTransform"
                                                                        Storyboard.TargetProperty="ScaleX">
-                                            <SplineDoubleKeyFrame KeyTime="{StaticResource FastExitAnimationKeyTime}" Value="0" />
+                                            <EasingDoubleKeyFrame KeyTime="{StaticResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="0" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="FillingBorderScaleTransform"
                                                                        Storyboard.TargetProperty="ScaleY">
-                                            <SplineDoubleKeyFrame KeyTime="{StaticResource FastExitAnimationKeyTime}" Value="0" />
+                                            <EasingDoubleKeyFrame KeyTime="{StaticResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="0" />
                                         </DoubleAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -236,19 +236,19 @@
                                     <Storyboard>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="IndeterminateCheckmarkScaleTransform"
                                                                        Storyboard.TargetProperty="ScaleX">
-                                            <SplineDoubleKeyFrame KeyTime="{StaticResource FastEnterAnimationKeyTime}" Value="1" />
+                                            <EasingDoubleKeyFrame KeyTime="{StaticResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="IndeterminateCheckmarkScaleTransform"
                                                                        Storyboard.TargetProperty="ScaleY">
-                                            <SplineDoubleKeyFrame KeyTime="{StaticResource FastEnterAnimationKeyTime}" Value="1" />
+                                            <EasingDoubleKeyFrame KeyTime="{StaticResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="FillingBorderScaleTransform"
                                                                        Storyboard.TargetProperty="ScaleX">
-                                            <SplineDoubleKeyFrame KeyTime="{StaticResource FastEnterAnimationKeyTime}" Value="1" />
+                                            <EasingDoubleKeyFrame KeyTime="{StaticResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="FillingBorderScaleTransform"
                                                                        Storyboard.TargetProperty="ScaleY">
-                                            <SplineDoubleKeyFrame KeyTime="{StaticResource FastEnterAnimationKeyTime}" Value="1" />
+                                            <EasingDoubleKeyFrame KeyTime="{StaticResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                        Storyboard.TargetProperty="(UIElement.Visibility)">
