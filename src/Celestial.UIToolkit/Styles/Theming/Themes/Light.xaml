@@ -137,10 +137,19 @@
     <SolidColorBrush x:Key="AltOnPaneControlBorderActiveBrush" Color="{StaticResource AltPrimaryMediumColor}" />
     <SolidColorBrush x:Key="AltOnPaneControlBorderDisabledBrush" Color="{StaticResource AltPrimaryMediumLowColor}" />
     
-
-
     
     
+    <!-- 
+    Brushes for Popup-Controls or control parts.
+    Examples are ToolTips, ComboBox-DropDowns and the ContextMenu.
+    -->
+    <SolidColorBrush x:Key="PopupBackground" Color="{StaticResource PrimaryColor}" />
+    <SolidColorBrush x:Key="PopupBorder" Color="{StaticResource PrimaryMediumHighColor}" />
+    
+
+
+
+
     <!--
     Brush definitions based on the colors.
     These should not be changed.

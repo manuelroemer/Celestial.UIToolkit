@@ -2,53 +2,54 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:c="http://celestial-ui.com"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
-                    xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming">
+                    xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
+                    xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
-    <!--<ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary.MergedDictionaries>
         <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
+        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
+        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
+        <c:SharedResourceDictionary Source="./TextBlock.xaml" />
+
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
-    
-    <Style x:Key="StandardToolTip" TargetType="ToolTip" BasedOn="{StaticResource Accent2BorderWithForegroundThemingBase}">
+
+    <Style x:Key="StandardToolTip" TargetType="ToolTip" BasedOn="{c:MultiStyle 'StandardForeground StandardFontProperties Shadow8'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="HasDropShadow" Value="True" />
-        <Setter Property="Background" Value="{StaticResource StandardControlBackgroundBrush}" />
-        <Setter Property="BorderBrush" Value="{StaticResource StandardControlBorderBrush}" />
-        <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
-        <Setter Property="Padding" Value="5" />
-        <Setter Property="FontFamily" Value="{StaticResource TinyFontFamily}" />
-        <Setter Property="FontSize" Value="{StaticResource TinyFontSize}" />
-        <Setter Property="FontWeight" Value="{StaticResource TinyFontWeight}" />
-        <Setter Property="FontStretch" Value="{StaticResource TinyFontStretch}" />
-        <Setter Property="FontStyle" Value="{StaticResource TinyFontStyle}" />
-        <Setter Property="Foreground" Value="{StaticResource HintForegroundBrush}" />
+        <Setter Property="Background" Value="{StaticResource PopupBackground}" />
+        <Setter Property="BorderBrush" Value="{StaticResource PopupBorder}" />
+        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
+        <Setter Property="Padding" Value="{c:GridUnit 2}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
+        <Setter Property="Margin" Value="{StaticResource PopupShadowSpacerMargin}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ToolTip">
-                    <Border x:Name="Bd"
-                            CornerRadius="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
-                            Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            Padding="{TemplateBinding Padding}">
-                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-                    </Border>
+                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
+                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                        <controls:ThemeShadowPresenter SnapsToDevicePixels="False">
+                            <Border x:Name="Bd"
+                                    CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    Padding="{TemplateBinding Padding}" />
+                        </controls:ThemeShadowPresenter>
+                        <Border BorderThickness="{TemplateBinding BorderThickness}"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Border>
+                    </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Foreground" Value="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
-            </Trigger>
-            <Trigger Property="IsFocused" Value="True">
-                <Setter Property="Foreground" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
-            </Trigger>
-            <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Foreground" Value="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
-            </Trigger>
-        </Style.Triggers>
     </Style>
-    <Style TargetType="ToolTip" BasedOn="{StaticResource StandardToolTip}" />-->
-
+    <Style TargetType="ToolTip" BasedOn="{StaticResource StandardToolTip}" />
+    
 </ResourceDictionary>

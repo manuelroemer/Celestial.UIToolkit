@@ -646,18 +646,19 @@
     
     
     <!--
-    Standard Popup.
+    Standard Popup properties.
     -->
     <Style x:Key="StandardPopup">
-        <Setter Property="theming:PopupProperties.BackgroundBrush" Value="{StaticResource PrimaryBrush}" />
-        <Setter Property="theming:PopupProperties.BorderBrush" Value="{StaticResource ControlBorderBrush}" />
+        <Setter Property="theming:PopupProperties.BackgroundBrush" Value="{StaticResource PopupBackground}" />
+        <Setter Property="theming:PopupProperties.BorderBrush" Value="{StaticResource PopupBorder}" />
         <Setter Property="theming:PopupProperties.BorderThickness" Value="{StaticResource SlimBorderThickness}" />
         <Setter Property="theming:PopupProperties.Padding" Value="0" />
+        <Setter Property="theming:PopupProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
     </Style>
 
 
-    
-    
+
+
     
     <!-- Binds the ZIndex to the current elevation. Should be used by most controls,
          but I want this to be opt-in, since the ZIndex might be hard-set in some scenarios. -->

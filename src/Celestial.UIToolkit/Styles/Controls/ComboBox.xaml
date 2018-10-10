@@ -359,6 +359,7 @@
                                   Margin="{StaticResource PopupShadowSpacerMargin}">
                                 <controls:ThemeShadowPresenter>
                                     <Border x:Name="DropDownBorder"
+                                            CornerRadius="{TemplateBinding theming:PopupProperties.CornerRadius}"
                                             BorderThickness="{TemplateBinding theming:PopupProperties.BorderThickness}"
                                             Background="{TemplateBinding theming:PopupProperties.BackgroundBrush}"
                                             BorderBrush="{TemplateBinding theming:PopupProperties.BorderBrush}" />

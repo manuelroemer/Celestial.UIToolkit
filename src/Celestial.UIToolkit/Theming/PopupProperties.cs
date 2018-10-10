@@ -137,6 +137,47 @@ namespace Celestial.UIToolkit.Theming
 
 
         /// <summary>
+        /// Identifies the CornerRadius attached dependency property.
+        /// </summary>
+        public static readonly DependencyProperty CornerRadiusProperty =
+            DependencyProperty.RegisterAttached(
+                "CornerRadius",
+                typeof(CornerRadius),
+                typeof(PopupProperties),
+                new PropertyMetadata(new CornerRadius(0d)));
+
+        /// <summary>
+        /// Gets the value of the <see cref="CornerRadiusProperty"/> attached dependency property.
+        /// </summary>
+        /// <param name="obj">
+        /// The <see cref="DependencyObject"/> for which the local value of the
+        /// <see cref="CornerRadiusProperty"/> attached dependency property
+        /// should be retrieved.
+        /// </param>
+        /// <returns>
+        /// The local value of the <see cref="CornerRadiusProperty"/> attached dependency property.
+        /// </returns>
+        public static CornerRadius GetCornerRadius(DependencyObject obj) =>
+            (CornerRadius)obj.GetValue(CornerRadiusProperty);
+
+        /// <summary>
+        /// Sets the value of the <see cref="CornerRadiusProperty"/> attached dependency property.
+        /// </summary>
+        /// <param name="obj">
+        /// The <see cref="DependencyObject"/> for which the local value of the
+        /// <see cref="CornerRadiusProperty"/> attached dependency property
+        /// should be set.
+        /// </param>
+        /// <param name="value">
+        /// The new value for the dependency property.
+        /// </param>
+        public static void SetCornerRadius(DependencyObject obj, CornerRadius value) =>
+            obj.SetValue(CornerRadiusProperty, value);
+
+
+
+
+        /// <summary>
         /// Identifies the Padding attached dependency property.
         /// </summary>
         public static readonly DependencyProperty PaddingProperty =

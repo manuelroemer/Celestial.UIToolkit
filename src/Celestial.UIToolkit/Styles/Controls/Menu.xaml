@@ -18,22 +18,24 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardContextMenu" TargetType="ContextMenu" BasedOn="{c:MultiStyle 'StandardForeground StandardFontProperties StandardPopup Shadow16'}">
+    <Style x:Key="StandardContextMenu" TargetType="ContextMenu" BasedOn="{c:MultiStyle 'StandardForeground StandardFontProperties Shadow16'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="Background" Value="{StaticResource PrimaryBrush}" />
-        <Setter Property="BorderBrush" Value="{StaticResource ControlBorderBrush}" />
-        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Background" Value="{StaticResource PopupBackground}" />
+        <Setter Property="BorderBrush" Value="{StaticResource PopupBorder}" />
+        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
         <Setter Property="Padding" Value="{c:GridUnit '0,2'}" />
         <Setter Property="HasDropShadow" Value="True" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource BottomControlThemeShadow}" />
-        <Setter Property="Margin" Value="60" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
+        <Setter Property="Margin" Value="{StaticResource PopupShadowSpacerMargin}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ContextMenu">
                     <Grid>
                         <controls:ThemeShadowPresenter SnapsToDevicePixels="False">
                             <Border x:Name="Bd"
+                                    CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}"
                                     Background="{TemplateBinding Background}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
                                     BorderThickness="{TemplateBinding BorderThickness}"
@@ -64,6 +66,7 @@
         <Setter Property="Background" Value="{StaticResource PaneBackgroundBrush}" />
         <Setter Property="BorderBrush" Value="{StaticResource PaneBorderBrush}" />
         <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Menu">
@@ -71,6 +74,7 @@
                           Background="Transparent">
                         <controls:ThemeShadowPresenter SnapsToDevicePixels="False">
                             <Border x:Name="Bd"
+                                    CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}"
                                     Background="{TemplateBinding Background}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
                                     BorderThickness="{TemplateBinding BorderThickness}"
@@ -104,7 +108,7 @@
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Padding" Value="{c:GridUnit '4,2,4,2'}" />
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource BottomControlThemeShadow}" />
         <Setter Property="controls:ThemeShadow.Elevation">
             <Setter.Value>
@@ -201,6 +205,7 @@
                                     <Grid Margin="{StaticResource PopupShadowSpacerMargin}">
                                         <controls:ThemeShadowPresenter>
                                             <Border x:Name="SubmenuBorder"
+                                                    CornerRadius="{TemplateBinding theming:PopupProperties.CornerRadius}"
                                                     BorderThickness="{TemplateBinding theming:PopupProperties.BorderThickness}"
                                                     Background="{TemplateBinding theming:PopupProperties.BackgroundBrush}"
                                                     BorderBrush="{TemplateBinding theming:PopupProperties.BorderBrush}" />
