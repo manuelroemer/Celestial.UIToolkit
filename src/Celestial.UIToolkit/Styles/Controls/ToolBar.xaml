@@ -21,8 +21,10 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardToolBarButton" TargetType="ButtonBase" BasedOn="{c:MultiStyle ''}">
-        
+    <Style x:Key="StandardToolBarButton" TargetType="ButtonBase" BasedOn="{c:MultiStyle 'StandardButton OnPaneControlBackground OnPaneControlBorder StandardForeground StandardFontProperties Shadow0'}">
+        <Setter Property="Padding" Value="{c:GridUnit 2}" />
+        <Setter Property="MinHeight" Value="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=ToolBar}, FallbackValue=0}" />
+        <Setter Property="MinWidth" Value="{Binding MinHeight, RelativeSource={RelativeSource Self}}" />
     </Style>
     
     <Style x:Key="{x:Static ToolBar.ButtonStyleKey}" 
