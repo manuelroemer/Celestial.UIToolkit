@@ -138,7 +138,7 @@
 
     
     
-    <Style x:Key="StandardComboBox" TargetType="ComboBox" BasedOn="{c:MultiStyle 'PrimaryBackground ControlBorder StandardForeground StandardFontProperties Shadow16'}">
+    <Style x:Key="StandardComboBox" TargetType="ComboBox" BasedOn="{c:MultiStyle 'PrimaryBackground ControlBorder StandardForeground StandardFontProperties StandardPopup Shadow16'}">
         <Style.Resources>
             <Style x:Key="ComboBoxTextBox" TargetType="TextBox">
                 <Setter Property="HorizontalAlignment" Value="Stretch" />
@@ -353,19 +353,19 @@
                                   SnapsToDevicePixels="True"
                                   MinWidth="{TemplateBinding ActualWidth}"
                                   MaxHeight="{TemplateBinding MaxDropDownHeight}"
-                                  Margin="20">
+                                  Margin="{StaticResource PopupShadowSpacerMargin}">
                                 <controls:ThemeShadowPresenter>
                                     <Border x:Name="DropDownBorder"
-                                            BorderThickness="1"
-                                            Background="{StaticResource PrimaryBrush}"
-                                            BorderBrush="{StaticResource ControlBorderBrush}" />
+                                            BorderThickness="{TemplateBinding theming:PopupProperties.BorderThickness}"
+                                            Background="{TemplateBinding theming:PopupProperties.BackgroundBrush}"
+                                            BorderBrush="{TemplateBinding theming:PopupProperties.BorderBrush}" />
                                 </controls:ThemeShadowPresenter>
                                 <ScrollViewer SnapsToDevicePixels="True"
                                               Margin="{Binding BorderThickness, ElementName=DropDownBorder}"
+                                              Padding="{TemplateBinding theming:PopupProperties.Padding}"
                                               VerticalScrollBarVisibility="Auto">
                                     <StackPanel IsItemsHost="True"
-                                                KeyboardNavigation.DirectionalNavigation="Contained"
-                                                Margin="{c:GridUnit '0,0,0,2'}" />
+                                                KeyboardNavigation.DirectionalNavigation="Contained" />
                                 </ScrollViewer>
                             </Grid>
                         </Popup>

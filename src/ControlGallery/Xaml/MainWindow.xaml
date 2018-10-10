@@ -10,6 +10,7 @@
         mc:Ignorable="d"
         Title="MainWindow" 
         WindowStartupLocation="CenterScreen"
+        Background="{StaticResource PrimaryBrush}"
         Width="1200"
         Height="800"
         Style="{StaticResource StandardWindow}"

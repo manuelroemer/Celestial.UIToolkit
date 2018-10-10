@@ -39,7 +39,7 @@ foreach (var visualState in visualStates) {
     var ClassName = $"{visualState}Properties";
 #>
 
-    public static class <#=ClassName#>
+    public static partial class <#=ClassName#>
     {
 <#
     foreach (var property in properties) {

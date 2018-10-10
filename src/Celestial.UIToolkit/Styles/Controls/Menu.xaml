@@ -18,7 +18,7 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardContextMenu" TargetType="ContextMenu" BasedOn="{c:MultiStyle 'StandardForeground StandardFontProperties Shadow16'}">
+    <Style x:Key="StandardContextMenu" TargetType="ContextMenu" BasedOn="{c:MultiStyle 'StandardForeground StandardFontProperties StandardPopup Shadow16'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Background" Value="{StaticResource PrimaryBrush}" />
@@ -93,8 +93,8 @@
     <Style TargetType="Menu" BasedOn="{StaticResource StandardMenu}" />
 
 
-    
-    <Style x:Key="StandardMenuItem" TargetType="MenuItem" BasedOn="{c:MultiStyle 'TransparentBorder OnPaneControlBackground StandardForeground StandardFontProperties'}">
+
+    <Style x:Key="StandardMenuItem" TargetType="MenuItem" BasedOn="{c:MultiStyle 'TransparentBorder OnPaneControlBackground StandardForeground StandardFontProperties StandardPopup'}">
         <Style.Resources>
             <c:MathOperationConverter x:Key="ElevationAddConverter" Operator="Add" />
         </Style.Resources>
@@ -119,6 +119,7 @@
         <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="{Binding Path=(controls:ThemeShadow.Elevation), RelativeSource={RelativeSource Self}}" />
         <Setter Property="theming:PressedProperties.ShadowElevation" Value="{Binding Path=(controls:ThemeShadow.Elevation), RelativeSource={RelativeSource Self}}" />
         <Setter Property="theming:DisabledProperties.ShadowElevation" Value="0" />
+        <Setter Property="theming:PopupProperties.Padding" Value="{c:GridUnit '0,2'}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="MenuItem">
@@ -197,19 +198,20 @@
                                        AllowsTransparency="True"
                                        Focusable="False"
                                        PopupAnimation="Fade">
-                                    <Grid Margin="60">
+                                    <Grid Margin="{StaticResource PopupShadowSpacerMargin}">
                                         <controls:ThemeShadowPresenter>
                                             <Border x:Name="SubmenuBorder"
-                                                    BorderThickness="1"
-                                                    Background="{StaticResource PrimaryBrush}"
-                                                    BorderBrush="{StaticResource ControlBorderBrush}" />
+                                                    BorderThickness="{TemplateBinding theming:PopupProperties.BorderThickness}"
+                                                    Background="{TemplateBinding theming:PopupProperties.BackgroundBrush}"
+                                                    BorderBrush="{TemplateBinding theming:PopupProperties.BorderBrush}" />
                                         </controls:ThemeShadowPresenter>
 
-                                        <Border BorderThickness="{Binding BorderThickness, ElementName=SubmenuBorder}">
+                                        <Border BorderThickness="{Binding BorderThickness, ElementName=SubmenuBorder}"
+                                                Margin="{Binding BorderThickness, ElementName=DropDownBorder}" 
+                                                Padding="{TemplateBinding theming:PopupProperties.Padding}">
                                             <ItemsPresenter x:Name="ItemsPresenter"
                                                             Grid.IsSharedSizeScope="True"
-                                                            KeyboardNavigation.DirectionalNavigation="Cycle"
-                                                            Margin="{c:GridUnit '0,2'}" />
+                                                            KeyboardNavigation.DirectionalNavigation="Cycle" />
                                         </Border>
                                     </Grid>
                                 </Popup>

@@ -10,7 +10,7 @@ using System.Windows.Media;
 namespace Celestial.UIToolkit.Theming
 {
 
-    public static class MouseOverProperties
+    public static partial class MouseOverProperties
     {
 
         public static readonly DependencyProperty BorderBrushProperty =
@@ -83,7 +83,7 @@ namespace Celestial.UIToolkit.Theming
 
     }
 
-    public static class PressedProperties
+    public static partial class PressedProperties
     {
 
         public static readonly DependencyProperty BorderBrushProperty =
@@ -156,7 +156,7 @@ namespace Celestial.UIToolkit.Theming
 
     }
 
-    public static class ActiveProperties
+    public static partial class ActiveProperties
     {
 
         public static readonly DependencyProperty BorderBrushProperty =
@@ -229,7 +229,7 @@ namespace Celestial.UIToolkit.Theming
 
     }
 
-    public static class DisabledProperties
+    public static partial class DisabledProperties
     {
 
         public static readonly DependencyProperty BorderBrushProperty =

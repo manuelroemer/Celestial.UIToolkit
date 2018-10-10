@@ -52,6 +52,8 @@
     <Thickness x:Key="SlimBorderThickness">1</Thickness>
     <Thickness x:Key="WideBorderThickness">2</Thickness>
 
+    <Thickness x:Key="PopupShadowSpacerMargin">50</Thickness>
+
 
 
     <FontFamily x:Key="StandardFontFamily">Segoe UI</FontFamily>
