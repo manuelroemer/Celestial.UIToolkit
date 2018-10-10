@@ -42,6 +42,7 @@ namespace Celestial.UIToolkit.Xaml
         private static readonly CornerRadiusConverter _cornerRadiusConverter;
         private static readonly SizeConverter _sizeConverter;
         private static readonly PointConverter _pointConverter;
+        private static readonly RectConverter _rectConverter;
         private static readonly GridLengthConverter _gridLengthConverter;
         private static readonly double _dipMultiplier;
         private string _multiplierString;
@@ -159,6 +160,7 @@ namespace Celestial.UIToolkit.Xaml
             _cornerRadiusConverter = new CornerRadiusConverter();
             _sizeConverter = new SizeConverter();
             _pointConverter = new PointConverter();
+            _rectConverter = new RectConverter();
             _gridLengthConverter = new GridLengthConverter();
         }
 
@@ -217,6 +219,10 @@ namespace Celestial.UIToolkit.Xaml
             else if (targetType == typeof(Point))
             {
                 return CalculatePoint();
+            }
+            else if (targetType == typeof(Rect))
+            {
+                return CalculateRect();
             }
             else if (targetType == typeof(GridLength))
             {
@@ -286,6 +292,14 @@ namespace Celestial.UIToolkit.Xaml
                 .ConvertFromInvariantString(_formattedMultiplierString);
             double multiplier = GetFinalLengthMultiplier();
             return new Point(point.X * multiplier, point.Y * multiplier);
+        }
+
+        private Rect CalculateRect()
+        {
+            var rect = (Rect)_rectConverter.ConvertFromInvariantString(_formattedMultiplierString);
+            double multiplier = GetFinalLengthMultiplier();
+            rect.Scale(multiplier, multiplier);
+            return rect;
         }
 
         private GridLength CalculateGridLength()

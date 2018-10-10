@@ -70,7 +70,7 @@
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledToolBarEx3}">
                     <ToolBarTray>
-                        <ToolBar x:Name="ToolBar1">
+                        <ToolBar>
                             <Button Content="{icon:Modern Kind=ArrowLeft}" ToolTip="Go back" />
                             <Button Content="{icon:Modern Kind=ArrowRight}" ToolTip="Go forward" />
                             <Separator />
@@ -78,11 +78,11 @@
                             <Button Content="{icon:Modern Kind=Folder}" ToolTip="Open file..." />
                             <Button Content="{icon:Modern Kind=Save}" ToolTip="Save..." />
                         </ToolBar>
-                        <ToolBar x:Name="ToolBar2">
+                        <ToolBar>
                             <Button Content="{icon:Modern Kind=Undo}" ToolTip="Undo" />
                             <Button Content="{icon:Modern Kind=Redo}" ToolTip="Redo" />
                         </ToolBar>
-                        <ToolBar x:Name="ToolBar3" ToolBarTray.IsLocked="True">
+                        <ToolBar ToolBarTray.IsLocked="True">
                             <Button Content="{icon:Modern Kind=Magnify}" ToolTip="Magnify" />
                             <Button Content="{icon:Modern Kind=Reset}" ToolTip="Reset Zoom" />
                         </ToolBar>

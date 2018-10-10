@@ -442,6 +442,19 @@
     <!--
     - Background: -
     - Border:     -
+    - Foreground: SecondaryForegroundBrush / DisabledForegroundBrush
+    -->
+    <Style x:Key="SecondaryForeground" TargetType="FrameworkElement">
+        <Setter Property="TextElement.Foreground" Value="{StaticResource SecondaryForegroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource SecondaryForegroundBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource SecondaryForegroundBrush}" />
+        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource SecondaryForegroundBrush}" />
+    </Style>
+    
+    <!--
+    - Background: -
+    - Border:     -
     - Foreground: Primary color variations
     -->
     <Style x:Key="PrimaryForeground" TargetType="FrameworkElement">

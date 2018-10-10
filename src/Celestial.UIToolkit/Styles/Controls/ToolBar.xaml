@@ -9,7 +9,7 @@
         <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
         <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
         <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-        <c:SharedResourceDictionary Source="./TextBlock.xaml" />
+        <c:SharedResourceDictionary Source="./Thumb.xaml" />
         <c:SharedResourceDictionary Source="./TextBox.xaml" />
         <c:SharedResourceDictionary Source="./Button.xaml" />
         <c:SharedResourceDictionary Source="./CheckBox.xaml" />
@@ -57,8 +57,9 @@
 
 
 
-    <Style x:Key="StandardToolBarThumb" TargetType="Thumb" BasedOn="{c:MultiStyle ''}">
-        
+    <Style x:Key="StandardToolBarThumb" TargetType="Thumb" BasedOn="{StaticResource RectanglePatternThumb}">
+        <Setter Property="Padding" Value="{c:GridUnit '1'}" />
+        <Setter Property="Width" Value="{c:GridUnit 3}" />
     </Style>
     
     
@@ -74,11 +75,7 @@
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="ToolBar">
-                    <ControlTemplate.Resources>
-                        <c:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
-                    </ControlTemplate.Resources>
-                    
+                <ControlTemplate TargetType="ToolBar">                    
                     <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
                         <Border x:Name="Bd"
                                 Background="{TemplateBinding Background}"
@@ -105,8 +102,8 @@
                                 <ToggleButton x:Name="OverflowToggleButton"
                                               Grid.Column="2"
                                               IsChecked="{Binding IsOverflowOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
-                                              Visibility="{Binding HasOverflowItems, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}"
-                                              Style="{StaticResource StandardToolBarButton}">
+                                              Style="{StaticResource StandardToolBarButton}"
+                                              Visibility="Collapsed">
                                     ...
                                 </ToggleButton>
 
@@ -149,11 +146,24 @@
                              b) ToolBarTray.IsLocked is false. -->
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
-                                <Condition Binding="{Binding RelativeSource={RelativeSource AncestorType=ToolBarTray, AncestorLevel=1}}" Value="{x:Type ToolBarTray}" />
+                                <Condition Value="{x:Type ToolBarTray}">
+                                    <Condition.Binding>
+                                        <Binding RelativeSource="{RelativeSource AncestorType=ToolBarTray, AncestorLevel=1}"
+                                                 Converter="{x:Static c:GetTypeConverter.Default}" />
+                                    </Condition.Binding>
+                                </Condition>
                                 <Condition Binding="{Binding Path=(ToolBarTray.IsLocked), RelativeSource={RelativeSource Self}}" Value="False" />
                             </MultiDataTrigger.Conditions>
                             <Setter TargetName="Thumb" Property="Visibility" Value="Visible" />
                         </MultiDataTrigger>
+
+                        <Trigger Property="HasOverflowItems" Value="True">
+                            <Setter TargetName="OverflowToggleButton" Property="Visibility" Value="Visible" />
+                        </Trigger>
+
+                        <Trigger Property="IsOverflowOpen" Value="True">
+                            <Setter TargetName="Thumb" Property="IsEnabled" Value="False" />
+                        </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
@@ -161,4 +171,10 @@
     </Style>
     <Style TargetType="ToolBar" BasedOn="{StaticResource StandardToolBar}" />
 
+
+
+    <Style x:Name="StandardToolBarTray" TargetType="ToolBarTray">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+    
 </ResourceDictionary>
