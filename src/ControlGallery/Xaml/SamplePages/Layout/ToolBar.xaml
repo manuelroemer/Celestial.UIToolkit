@@ -99,5 +99,40 @@
             </controls:ControlPresenter.Options>
         </controls:ControlPresenter>
 
+        <controls:ControlPresenter Header="A TransparentToolBar."
+                                   Xaml="{Binding Xaml, ElementName=ToolBarEx4}"
+                                   VerticalAlignment="Top">
+            <controls:ControlPresenter.Description>
+                The transparent ToolBar is supposed to be used with Buttons only.
+                Using special button styles like the SquareButton creates a good-looking effect.
+                These buttons are floating over the content.
+                The ToolBar automatically takes care of hiding them.
+            </controls:ControlPresenter.Description>
+            <smtx:XamlDisplay x:Name="ToolBarEx4" Key="ToolBarEx4">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledToolBarEx4}">
+                    <ToolBar Style="{StaticResource TransparentToolBar}"
+                             c:MarginHelper.ChildrenMargin="{c:GridUnit '2,0'}">
+                        <Button Style="{StaticResource SquareButton}" Content="{icon:Modern Kind=ArrowLeft}" ToolTip="Go back" />
+                        <Button Style="{StaticResource SquareButton}" Content="{icon:Modern Kind=ArrowRight}" ToolTip="Go forward" />
+                        <Separator />
+                        <Button Style="{StaticResource SquareButton}" Content="{icon:Modern Kind=PageNew}" ToolTip="New file..." />
+                        <Button Style="{StaticResource SquareButton}" Content="{icon:Modern Kind=Folder}" ToolTip="Open file..." />
+                        <Button Style="{StaticResource SquareButton}" Content="{icon:Modern Kind=Save}" ToolTip="Save..." />
+                        <Separator />
+                        <Button Style="{StaticResource Accent1SquareButton}" Content="{icon:Modern Kind=Delete}" ToolTip="Delete" />
+                    </ToolBar>
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,3'}"
+                            Margin="{c:GridUnit '0,0,0,-3'}">
+                    <CheckBox x:Name="IsEnabledToolBarEx4"
+                              IsChecked="True"
+                              Content="IsEnabled" />
+                </StackPanel>
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+
     </StackPanel>
 </UserControl>

@@ -21,50 +21,52 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardToolBarButton" TargetType="ButtonBase" BasedOn="{c:MultiStyle 'StandardButton OnPaneControlBackground OnPaneControlBorder StandardForeground StandardFontProperties Shadow0'}">
-        <Setter Property="Padding" Value="{c:GridUnit 2}" />
-        <Setter Property="MinHeight" Value="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=ToolBar}, FallbackValue=0}" />
-        <Setter Property="MinWidth" Value="{Binding MinHeight, RelativeSource={RelativeSource Self}}" />
-    </Style>
-    
-    <Style x:Key="{x:Static ToolBar.ButtonStyleKey}" 
-           TargetType="Button" 
-           BasedOn="{StaticResource StandardToolBarButton}" />
-    
-    <Style x:Key="{x:Static ToolBar.ComboBoxStyleKey}"
-           TargetType="ComboBox"
-           BasedOn="{StaticResource Accent2OutlinedComboBox}">
-        <Setter Property="theming:TextBoxProperties.PlaceholderType" Value="Disappearing" />
-    </Style>
-    
-    <Style x:Key="{x:Static ToolBar.TextBoxStyleKey}"
-           TargetType="TextBox"
-           BasedOn="{StaticResource Accent2OutlinedTextBox}">
-        <Setter Property="theming:TextBoxProperties.PlaceholderType" Value="Disappearing" />
-    </Style>
 
-    <Style x:Key="{x:Static ToolBar.CheckBoxStyleKey}"
-           TargetType="CheckBox"
-           BasedOn="{StaticResource Accent2CheckBox}">
-        <Setter Property="theming:RippleProperties.ShowRippleAnimation" Value="False" />
-    </Style>
-
-    <Style x:Key="{x:Static ToolBar.RadioButtonStyleKey}"
-           TargetType="RadioButton"
-           BasedOn="{StaticResource Accent2RadioButton}">
-        <Setter Property="theming:RippleProperties.ShowRippleAnimation" Value="False" />
-    </Style>
-
-
-
-    <Style x:Key="StandardToolBarThumb" TargetType="Thumb" BasedOn="{StaticResource RectanglePatternThumb}">
-        <Setter Property="Padding" Value="{c:GridUnit '1'}" />
-        <Setter Property="Width" Value="{c:GridUnit 3}" />
-    </Style>
     
     
     
     <Style x:Key="StandardToolBar" TargetType="ToolBar" BasedOn="{c:MultiStyle 'StandardForeground StandardFontProperties StandardPopup Shadow8'}">
+        <Style.Resources>
+            <Style x:Key="StandardToolBarButton" TargetType="ButtonBase" BasedOn="{c:MultiStyle 'StandardButton OnPaneControlBackground OnPaneControlBorder StandardForeground StandardFontProperties Shadow0'}">
+                <Setter Property="Padding" Value="{c:GridUnit 2}" />
+                <Setter Property="MinHeight" Value="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=ToolBar}, FallbackValue=0}" />
+                <Setter Property="MinWidth" Value="{Binding MinHeight, RelativeSource={RelativeSource Self}}" />
+            </Style>
+
+            <Style x:Key="{x:Static ToolBar.ButtonStyleKey}" 
+                   TargetType="Button" 
+                   BasedOn="{StaticResource StandardToolBarButton}" />
+
+            <Style x:Key="{x:Static ToolBar.ComboBoxStyleKey}"
+                   TargetType="ComboBox"
+                   BasedOn="{StaticResource Accent2OutlinedComboBox}">
+                <Setter Property="theming:TextBoxProperties.PlaceholderType" Value="Disappearing" />
+            </Style>
+
+            <Style x:Key="{x:Static ToolBar.TextBoxStyleKey}"
+                   TargetType="TextBox"
+                   BasedOn="{StaticResource Accent2OutlinedTextBox}">
+                <Setter Property="theming:TextBoxProperties.PlaceholderType" Value="Disappearing" />
+            </Style>
+
+            <Style x:Key="{x:Static ToolBar.CheckBoxStyleKey}"
+                   TargetType="CheckBox"
+                   BasedOn="{StaticResource Accent2CheckBox}">
+                <Setter Property="theming:RippleProperties.ShowRippleAnimation" Value="False" />
+            </Style>
+
+            <Style x:Key="{x:Static ToolBar.RadioButtonStyleKey}"
+                   TargetType="RadioButton"
+                   BasedOn="{StaticResource Accent2RadioButton}">
+                <Setter Property="theming:RippleProperties.ShowRippleAnimation" Value="False" />
+            </Style>
+
+            <Style x:Key="StandardToolBarThumb" TargetType="Thumb" BasedOn="{StaticResource RectanglePatternThumb}">
+                <Setter Property="Padding" Value="{c:GridUnit '1'}" />
+                <Setter Property="Width" Value="{c:GridUnit 3}" />
+            </Style>
+        </Style.Resources>
+        
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -99,10 +101,12 @@
                                               Grid.Column="1"
                                               IsItemsHost="True" />
 
+                                <!-- Be sure to always keep the Button's Style as a DynamicResource.
+                                     Otherwise, the TransparentToolBar will have the wrong one. -->
                                 <ToggleButton x:Name="OverflowToggleButton"
+                                              Style="{DynamicResource StandardToolBarButton}"
                                               Grid.Column="2"
                                               IsChecked="{Binding IsOverflowOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
-                                              Style="{StaticResource StandardToolBarButton}"
                                               Visibility="Collapsed">
                                     ...
                                 </ToggleButton>
@@ -171,6 +175,20 @@
     </Style>
     <Style TargetType="ToolBar" BasedOn="{StaticResource StandardToolBar}" />
 
+
+    
+    <Style x:Key="TransparentToolBar" TargetType="ToolBar" BasedOn="{c:MultiStyle 'StandardToolBar TransparentBackground TransparentBorder'}">
+        <Style.Resources>
+            <Style x:Key="StandardToolBarButton" TargetType="ButtonBase" BasedOn="{c:MultiStyle 'StandardButton'}">
+                <Setter Property="MinHeight" Value="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=ToolBar}, FallbackValue=0}" />
+                <Setter Property="MinWidth" Value="{Binding MinHeight, RelativeSource={RelativeSource Self}}" />
+            </Style>
+
+            <Style x:Key="{x:Static ToolBar.ButtonStyleKey}"
+                   TargetType="Button" 
+                   BasedOn="{StaticResource StandardToolBarButton}" />
+        </Style.Resources>
+    </Style>
 
 
     <Style x:Name="StandardToolBarTray" TargetType="ToolBarTray">

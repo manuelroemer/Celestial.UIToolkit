@@ -85,8 +85,18 @@ namespace Celestial.UIToolkit.Xaml
             {
                 if (VisualTreeHelper.GetChild(parent, i) is FrameworkElement child)
                 {
-                    Debug.WriteLine(child.ToString());
                     // If a child's margin is explicitly set, don't overwrite it.
+                    if (!child.IsDependencyPropertySet(FrameworkElement.MarginProperty))
+                    {
+                        child.Margin = margin;
+                    }
+                }
+            }
+
+            foreach (var logicalChild in LogicalTreeHelper.GetChildren(parent))
+            {
+                if (logicalChild is FrameworkElement child)
+                {
                     if (!child.IsDependencyPropertySet(FrameworkElement.MarginProperty))
                     {
                         child.Margin = margin;
