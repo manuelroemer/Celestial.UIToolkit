@@ -125,9 +125,12 @@
                                                   To="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                             </Storyboard>
                         </Grid.Resources>
-                        <BulletDecorator SnapsToDevicePixels="False">
+                        
+                        <BulletDecorator SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                         HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                         VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
                             <BulletDecorator.Bullet>
-                                <Grid>
+                                <Grid VerticalAlignment="Stretch" SnapsToDevicePixels="False">
                                     <Grid.Resources>
                                         <Style TargetType="Border">
                                             <Setter Property="Width" Value="{c:GridUnit 5}" />
@@ -175,9 +178,7 @@
                                     </Path>
                                 </Grid>
                             </BulletDecorator.Bullet>
-                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                              RecognizesAccessKey="True"
+                            <ContentPresenter RecognizesAccessKey="True"
                                               Margin="{TemplateBinding Padding}" />
                         </BulletDecorator>
                         
