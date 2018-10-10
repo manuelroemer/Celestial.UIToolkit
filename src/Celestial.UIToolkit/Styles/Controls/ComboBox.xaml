@@ -174,10 +174,12 @@
         <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource BottomControlThemeShadow}" />
+        <Setter Property="theming:PopupProperties.BorderThickness" Value="1,0,1,1" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ComboBox">
-                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
+                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
+                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
                         <Grid.Resources>
 
                             <Storyboard x:Key="MouseOverStoryboard">
@@ -348,7 +350,8 @@
                                IsOpen="{TemplateBinding IsDropDownOpen}"
                                AllowsTransparency="True"
                                Focusable="False"
-                               MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                               MaxHeight="{TemplateBinding MaxDropDownHeight}"
+                               SnapsToDevicePixels="False">
                             <Grid x:Name="DropDownContainer"
                                   SnapsToDevicePixels="True"
                                   MinWidth="{TemplateBinding ActualWidth}"
@@ -360,7 +363,7 @@
                                             Background="{TemplateBinding theming:PopupProperties.BackgroundBrush}"
                                             BorderBrush="{TemplateBinding theming:PopupProperties.BorderBrush}" />
                                 </controls:ThemeShadowPresenter>
-                                <ScrollViewer SnapsToDevicePixels="True"
+                                <ScrollViewer SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                               Margin="{Binding BorderThickness, ElementName=DropDownBorder}"
                                               Padding="{TemplateBinding theming:PopupProperties.Padding}"
                                               VerticalScrollBarVisibility="Auto">
