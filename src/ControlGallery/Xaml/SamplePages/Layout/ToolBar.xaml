@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="ControlGallery.Xaml.SamplePages.Layout.ToolBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:smtx="clr-namespace:ShowMeTheXAML;assembly=ShowMeTheXAML"
+             xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:c="http://celestial-ui.com"
+             xmlns:controls="clr-namespace:ControlGallery.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,4,0,12'}">
+
+        <controls:ControlPresenter Header="A standard ToolBar control."
+                                   Xaml="{Binding Xaml, ElementName=ToolBarEx1}"
+                                   VerticalAlignment="Top">
+            <smtx:XamlDisplay x:Name="ToolBarEx1" Key="ToolBarEx1">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledToolBarEx1}">
+                    <ToolBar>
+                        <Button Content="{icon:Modern Kind=ArrowLeft}" ToolTip="Go back" />
+                        <Button Content="{icon:Modern Kind=ArrowRight}" ToolTip="Go forward" />
+                        <Separator />
+                        <Button Content="{icon:Modern Kind=PageNew}" ToolTip="New file..." />
+                        <Button Content="{icon:Modern Kind=Folder}" ToolTip="Open file..." />
+                        <Button Content="{icon:Modern Kind=Save}" ToolTip="Save..." />
+                    </ToolBar>
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,3'}"
+                            Margin="{c:GridUnit '0,0,0,-3'}">
+                    <CheckBox x:Name="IsEnabledToolBarEx1"
+                              IsChecked="True"
+                              Content="IsEnabled" />
+                </StackPanel>
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+        
+        <controls:ControlPresenter Header="A ToolBar with the different supported control types."
+                                   Xaml="{Binding Xaml, ElementName=ToolBarEx2}"
+                                   VerticalAlignment="Top">
+            <smtx:XamlDisplay x:Name="ToolBarEx2" Key="ToolBarEx2">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledToolBarEx2}">
+                    <ToolBar>
+                        <Button Content="Button" />
+                        <CheckBox Content="CheckBox" />
+                        <RadioButton Content="RadioButton" />
+                        <TextBox c:TextBoxProperties.Placeholder="TextBox" />
+                        <ComboBox c:TextBoxProperties.Placeholder="ComboBox" />
+                    </ToolBar>
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,3'}"
+                            Margin="{c:GridUnit '0,0,0,-3'}">
+                    <CheckBox x:Name="IsEnabledToolBarEx2"
+                              IsChecked="True"
+                              Content="IsEnabled" />
+                </StackPanel>
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+
+    </StackPanel>
+</UserControl>

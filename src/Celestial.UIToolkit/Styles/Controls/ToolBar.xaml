@@ -1,0 +1,130 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:c="http://celestial-ui.com"
+                    xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
+                    xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
+
+    <ResourceDictionary.MergedDictionaries>
+        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
+        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
+        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
+        <c:SharedResourceDictionary Source="./TextBlock.xaml" />
+        <c:SharedResourceDictionary Source="./TextBox.xaml" />
+        <c:SharedResourceDictionary Source="./Button.xaml" />
+        <c:SharedResourceDictionary Source="./CheckBox.xaml" />
+        <c:SharedResourceDictionary Source="./RadioButton.xaml" />
+        <c:SharedResourceDictionary Source="./ComboBox.xaml" />
+
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="StandardToolBarButton" TargetType="ButtonBase" BasedOn="{c:MultiStyle ''}">
+        
+    </Style>
+    
+    <Style x:Key="{x:Static ToolBar.ButtonStyleKey}" 
+           TargetType="Button" 
+           BasedOn="{StaticResource StandardToolBarButton}" />
+    
+    <Style x:Key="{x:Static ToolBar.ComboBoxStyleKey}"
+           TargetType="ComboBox"
+           BasedOn="{StaticResource Accent2OutlinedComboBox}">
+        <Setter Property="theming:TextBoxProperties.PlaceholderType" Value="Disappearing" />
+    </Style>
+    
+    <Style x:Key="{x:Static ToolBar.TextBoxStyleKey}"
+           TargetType="TextBox"
+           BasedOn="{StaticResource Accent2OutlinedTextBox}">
+        <Setter Property="theming:TextBoxProperties.PlaceholderType" Value="Disappearing" />
+    </Style>
+
+    <Style x:Key="{x:Static ToolBar.CheckBoxStyleKey}"
+           TargetType="CheckBox"
+           BasedOn="{StaticResource Accent2CheckBox}">
+        <Setter Property="theming:RippleProperties.ShowRippleAnimation" Value="False" />
+    </Style>
+
+    <Style x:Key="{x:Static ToolBar.RadioButtonStyleKey}"
+           TargetType="RadioButton"
+           BasedOn="{StaticResource Accent2RadioButton}">
+        <Setter Property="theming:RippleProperties.ShowRippleAnimation" Value="False" />
+    </Style>
+
+
+    <Style x:Key="StandardToolBar" TargetType="ToolBar" BasedOn="{c:MultiStyle 'StandardForeground StandardFontProperties StandardPopup Shadow8'}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Background" Value="{StaticResource PaneBackgroundBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource PaneBorderBrush}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToolBar">
+                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
+                        <Border x:Name="Bd"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}"
+                                Padding="{TemplateBinding Padding}"
+                                SnapsToDevicePixels="False">
+                            <Grid SnapsToDevicePixels="True">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <ToolBarPanel x:Name="PART_ToolBarPanel"
+                                              IsItemsHost="True" />
+
+                                <ToggleButton x:Name="OverflowToggleButton"
+                                              Grid.Column="1"
+                                              IsChecked="{Binding IsOverflowOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                              IsEnabled="{TemplateBinding HasOverflowItems}" 
+                                              Style="{StaticResource StandardToolBarButton}" />
+
+                                <Popup x:Name="OverflowPopup"
+                                       Placement="Bottom"
+                                       PlacementTarget="{Binding ElementName=OverflowToggleButton}"
+                                       IsOpen="{TemplateBinding IsOverflowOpen}"
+                                       AllowsTransparency="True"
+                                       Focusable="True"
+                                       PopupAnimation="Fade">
+                                    <Grid Margin="{StaticResource PopupShadowSpacerMargin}">
+                                        <controls:ThemeShadowPresenter SnapsToDevicePixels="False">
+                                            <Border x:Name="PopupBorder"
+                                                    CornerRadius="{TemplateBinding theming:PopupProperties.CornerRadius}"
+                                                    BorderThickness="{TemplateBinding theming:PopupProperties.BorderThickness}"
+                                                    Background="{TemplateBinding theming:PopupProperties.BackgroundBrush}"
+                                                    BorderBrush="{TemplateBinding theming:PopupProperties.BorderBrush}" />
+                                        </controls:ThemeShadowPresenter>
+
+                                        <Border BorderThickness="{Binding BorderThickness, ElementName=PopupBorder}"
+                                                Margin="{Binding BorderThickness, ElementName=DropDownBorder}" 
+                                                Padding="{TemplateBinding theming:PopupProperties.Padding}"
+                                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                                            <ToolBarOverflowPanel x:Name="PART_ToolBarOverflowPanel"
+                                                                  FocusVisualStyle="{x:Null}"
+                                                                  Focusable="True"
+                                                                  KeyboardNavigation.DirectionalNavigation="Cycle"
+                                                                  KeyboardNavigation.ControlTabNavigation="Cycle"
+                                                                  WrapWidth="{c:GridUnit 10}" />
+                                        </Border>
+                                    </Grid>
+                                </Popup>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="ToolBar" BasedOn="{StaticResource StandardToolBar}" />
+
+</ResourceDictionary>

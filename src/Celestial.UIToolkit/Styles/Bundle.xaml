@@ -26,8 +26,9 @@
         <c:SharedResourceDictionary Source="Controls/TextBox.xaml" />
         <c:SharedResourceDictionary Source="Controls/ComboBox.xaml" />
         <c:SharedResourceDictionary Source="Controls/ListBox.xaml" />
-        <c:SharedResourceDictionary Source="Controls/Menu.xaml" />
         <c:SharedResourceDictionary Source="Controls/ToolTip.xaml" />
+        <c:SharedResourceDictionary Source="Controls/Menu.xaml" />
+        <c:SharedResourceDictionary Source="Controls/ToolBar.xaml" />
         <c:SharedResourceDictionary Source="Controls/TabControl.xaml" />
         <c:SharedResourceDictionary Source="Controls/Expander.xaml" />
         <c:SharedResourceDictionary Source="Controls/GroupBox.xaml" />

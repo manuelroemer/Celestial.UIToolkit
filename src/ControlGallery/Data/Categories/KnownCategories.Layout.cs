@@ -33,11 +33,20 @@ namespace ControlGallery.Data.Categories
             SamplePageType = typeof(Menu)
         };
 
+        private static ControlInformation ToolBarInfo = new ControlInformation()
+        {
+            Name = "ToolBar",
+            Description = "A ToolBar usually displays multiple small controls that fall into a certain category and execute commands.",
+            Icon = new PackIconModern() { Kind = PackIconModernKind.ListSelect },
+            SamplePageType = typeof(ToolBar)
+        };
+
         public static ControlCategory Layout { get; } = new ControlCategory(
             "Layout",
             new PackIconMaterialLight() { Kind = PackIconMaterialLightKind.BorderAll },
             SplitViewInfo,
             MenuInfo,
+            ToolBarInfo,
             ExpanderInfo);
 
     }
