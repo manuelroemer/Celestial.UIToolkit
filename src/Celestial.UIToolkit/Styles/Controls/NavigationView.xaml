@@ -23,7 +23,7 @@
     It does still support a Ripple, border/background animations and shadows.
     These can be controlled via theming properties.
     -->
-    <Style x:Key="StandardNavigationViewItem" TargetType="controls:NavigationViewItem" BasedOn="{c:MultiStyle 'TransparentBackground TransparentBorder StandardForegroundAccent2ListStates StandardFontProperties ElevationZIndex Shadow0'}">
+    <Style x:Key="StandardNavigationViewItem" TargetType="controls:NavigationViewItem" BasedOn="{c:MultiStyle 'OnPaneControlBackground OnPaneControlBorder StandardForegroundAccent2ListStates StandardFontProperties ElevationZIndex Shadow0'}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />

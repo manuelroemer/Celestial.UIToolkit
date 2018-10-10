@@ -28,7 +28,7 @@
     <Color x:Key="PrimaryColor">#FFFFFF</Color>
     <Color x:Key="PrimaryLowColor">#F5F5F5</Color>
     <Color x:Key="PrimaryMediumLowColor">#EAEAEA</Color>
-    <Color x:Key="PrimaryMediumColor">#C8C8C8</Color>
+    <Color x:Key="PrimaryMediumColor">#D8D8D8</Color>
     <Color x:Key="PrimaryMediumHighColor">#A6A6A6</Color>
     <Color x:Key="PrimaryHighColor">#848484</Color>
 
