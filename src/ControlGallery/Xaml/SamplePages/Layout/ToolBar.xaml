@@ -63,5 +63,41 @@
             </controls:ControlPresenter.Options>
         </controls:ControlPresenter>
 
+        <controls:ControlPresenter Header="A ToolBar placed in a ToolBarTray."
+                                   Xaml="{Binding Xaml, ElementName=ToolBarEx3}"
+                                   VerticalAlignment="Top">
+            <smtx:XamlDisplay x:Name="ToolBarEx3" Key="ToolBarEx3">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledToolBarEx3}">
+                    <ToolBarTray>
+                        <ToolBar x:Name="ToolBar1">
+                            <Button Content="{icon:Modern Kind=ArrowLeft}" ToolTip="Go back" />
+                            <Button Content="{icon:Modern Kind=ArrowRight}" ToolTip="Go forward" />
+                            <Separator />
+                            <Button Content="{icon:Modern Kind=PageNew}" ToolTip="New file..." />
+                            <Button Content="{icon:Modern Kind=Folder}" ToolTip="Open file..." />
+                            <Button Content="{icon:Modern Kind=Save}" ToolTip="Save..." />
+                        </ToolBar>
+                        <ToolBar x:Name="ToolBar2">
+                            <Button Content="{icon:Modern Kind=Undo}" ToolTip="Undo" />
+                            <Button Content="{icon:Modern Kind=Redo}" ToolTip="Redo" />
+                        </ToolBar>
+                        <ToolBar x:Name="ToolBar3" ToolBarTray.IsLocked="True">
+                            <Button Content="{icon:Modern Kind=Magnify}" ToolTip="Magnify" />
+                            <Button Content="{icon:Modern Kind=Reset}" ToolTip="Reset Zoom" />
+                        </ToolBar>
+                    </ToolBarTray>
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,3'}"
+                            Margin="{c:GridUnit '0,0,0,-3'}">
+                    <CheckBox x:Name="IsEnabledToolBarEx3"
+                              IsChecked="True"
+                              Content="IsEnabled" />
+                </StackPanel>
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+
     </StackPanel>
 </UserControl>

@@ -56,6 +56,13 @@
     </Style>
 
 
+
+    <Style x:Key="StandardToolBarThumb" TargetType="Thumb" BasedOn="{c:MultiStyle ''}">
+        
+    </Style>
+    
+    
+    
     <Style x:Key="StandardToolBar" TargetType="ToolBar" BasedOn="{c:MultiStyle 'StandardForeground StandardFontProperties StandardPopup Shadow8'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
@@ -68,6 +75,10 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ToolBar">
+                    <ControlTemplate.Resources>
+                        <c:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+                    </ControlTemplate.Resources>
+                    
                     <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
                         <Border x:Name="Bd"
                                 Background="{TemplateBinding Background}"
@@ -78,18 +89,26 @@
                                 SnapsToDevicePixels="False">
                             <Grid SnapsToDevicePixels="True">
                                 <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition />
                                     <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
 
+                                <Thumb x:Name="Thumb"
+                                       Style="{StaticResource StandardToolBarThumb}" 
+                                       Visibility="Collapsed" />
+
                                 <ToolBarPanel x:Name="PART_ToolBarPanel"
+                                              Grid.Column="1"
                                               IsItemsHost="True" />
 
                                 <ToggleButton x:Name="OverflowToggleButton"
-                                              Grid.Column="1"
+                                              Grid.Column="2"
                                               IsChecked="{Binding IsOverflowOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
-                                              IsEnabled="{TemplateBinding HasOverflowItems}" 
-                                              Style="{StaticResource StandardToolBarButton}" />
+                                              Visibility="{Binding HasOverflowItems, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                              Style="{StaticResource StandardToolBarButton}">
+                                    ...
+                                </ToggleButton>
 
                                 <Popup x:Name="OverflowPopup"
                                        Placement="Bottom"
@@ -123,6 +142,19 @@
                             </Grid>
                         </Border>
                     </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <!-- Only show the Thumb if:
+                             a) The ToolBar is directly inside a ToolBarTray.
+                             b) ToolBarTray.IsLocked is false. -->
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding RelativeSource={RelativeSource AncestorType=ToolBarTray, AncestorLevel=1}}" Value="{x:Type ToolBarTray}" />
+                                <Condition Binding="{Binding Path=(ToolBarTray.IsLocked), RelativeSource={RelativeSource Self}}" Value="False" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter TargetName="Thumb" Property="Visibility" Value="Visible" />
+                        </MultiDataTrigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
