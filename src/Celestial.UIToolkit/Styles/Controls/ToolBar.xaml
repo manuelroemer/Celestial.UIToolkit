@@ -34,6 +34,8 @@
                 <Setter Property="MinWidth" Value="{Binding MinHeight, RelativeSource={RelativeSource Self}}" />
             </Style>
 
+            <Style x:Key="ToolBarOverflowToggleButton" TargetType="ToggleButton" BasedOn="{StaticResource StandardToolBarButton}" />
+
             <Style x:Key="{x:Static ToolBar.ButtonStyleKey}" 
                    TargetType="Button" 
                    BasedOn="{StaticResource StandardToolBarButton}" />
@@ -105,7 +107,7 @@
                                 <!-- Be sure to always keep the Button's Style as a DynamicResource.
                                      Otherwise, the TransparentToolBar will have the wrong one. -->
                                 <ToggleButton x:Name="OverflowToggleButton"
-                                              Style="{DynamicResource StandardToolBarButton}"
+                                              Style="{DynamicResource ToolBarOverflowToggleButton}"
                                               Grid.Column="2"
                                               IsChecked="{Binding IsOverflowOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
                                               Visibility="Collapsed">
@@ -183,6 +185,11 @@
             <Style x:Key="StandardToolBarButton" TargetType="ButtonBase" BasedOn="{c:MultiStyle 'StandardButton'}">
                 <Setter Property="MinHeight" Value="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=ToolBar}, FallbackValue=0}" />
                 <Setter Property="MinWidth" Value="{Binding MinHeight, RelativeSource={RelativeSource Self}}" />
+            </Style>
+
+            <Style x:Key="ToolBarOverflowToggleButton" TargetType="ToggleButton" BasedOn="{StaticResource SquareButton}">
+                <Setter Property="MinHeight" Value="0" />
+                <Setter Property="MinWidth" Value="0" />
             </Style>
 
             <Style x:Key="{x:Static ToolBar.ButtonStyleKey}"
