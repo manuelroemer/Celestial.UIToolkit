@@ -4,12 +4,23 @@
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
     <Style x:Key="StandardIconElement" TargetType="controls:IconElement">
-        <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="Width" Value="{c:GridUnit 5}" />
-        <Setter Property="Width" Value="{c:GridUnit 5}" />
+        <Setter Property="SnapsToDevicePixels" Value="False" />
+        <Setter Property="UseLayoutRounding" Value="False" />
+        <Setter Property="Width" Value="{c:GridUnit 4}" />
+        <Setter Property="Width" Value="{c:GridUnit 4}" />
     </Style>
 
     <Style TargetType="controls:IconElement" BasedOn="{StaticResource StandardIconElement}" />
     <Style TargetType="controls:PathIcon" BasedOn="{StaticResource StandardIconElement}" />
+
+    <Style x:Key="SmallIconElement" TargetType="controls:IconElement">
+        <Setter Property="Width" Value="{c:GridUnit 3}" />
+        <Setter Property="Height" Value="{c:GridUnit 3}" />
+    </Style>
+
+    <Style x:Key="LargeIconElement" TargetType="controls:IconElement">
+        <Setter Property="Width" Value="{c:GridUnit 5}" />
+        <Setter Property="Height" Value="{c:GridUnit 5}" />
+    </Style>
 
 </ResourceDictionary>

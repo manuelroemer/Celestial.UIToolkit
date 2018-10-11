@@ -9,7 +9,7 @@
         <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
         <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
         <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-        <c:SharedResourceDictionary Source="../../Icons/Arrows.xaml" />
+        <c:SharedResourceDictionary Source="../../Icons/ControlParts.xaml" />
         <c:SharedResourceDictionary Source="./TextBlock.xaml" />
 
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
@@ -61,7 +61,7 @@
                                             <RotateTransform x:Name="ExpandDirectionRotateTransform" Angle="0" />
                                         </Border.RenderTransform>
                                         <controls:PathIcon x:Name="ToggleExpandedIcon"
-                                                           Data="{StaticResource HalfArrowDown}"
+                                                           Data="{StaticResource SimpleArrowDown}"
                                                            Width="{c:GridUnit 5}"
                                                            Height="{c:GridUnit 5}" />
                                     </Border>

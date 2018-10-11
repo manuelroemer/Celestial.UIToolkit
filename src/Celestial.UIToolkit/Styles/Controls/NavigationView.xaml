@@ -10,7 +10,6 @@
         <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
         <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
         <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-        <c:SharedResourceDictionary Source="../../Icons/Arrows.xaml" />
         <c:SharedResourceDictionary Source="../../Icons/ControlParts.xaml" />
 
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
@@ -222,7 +221,7 @@
     <Style x:Key="NavigationViewBackButton" x:Shared="False" TargetType="Button" BasedOn="{StaticResource NavigationViewPaneButton}">
         <Setter Property="Content">
             <Setter.Value>
-                <controls:PathIcon Data="{StaticResource BackwardNavigationArrow}" />
+                <controls:PathIcon Data="{StaticResource Back}" />
             </Setter.Value>
         </Setter>
     </Style>

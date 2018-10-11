@@ -10,7 +10,7 @@
         <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
         <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
         <c:SharedResourceDictionary Source="./TextBlock.xaml" />
-        <c:SharedResourceDictionary Source="../../Icons/Arrows.xaml" />
+        <c:SharedResourceDictionary Source="./IconElements.xaml" />
         <c:SharedResourceDictionary Source="../../Icons/ControlParts.xaml" />
 
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
@@ -165,6 +165,7 @@
                                                       ContentSource="Icon" />
 
                                     <controls:PathIcon x:Name="CheckedIcon"
+                                                       Style="{StaticResource SmallIconElement}"
                                                        HorizontalAlignment="Center"
                                                        VerticalAlignment="Center"
                                                        Foreground="{TemplateBinding Foreground}"
@@ -188,11 +189,12 @@
 
                                 <controls:PathIcon x:Name="ExpandArrowIcon"
                                                    Grid.Column="3"
+                                                   Style="{StaticResource SmallIconElement}"
                                                    HorizontalAlignment="Center"
                                                    VerticalAlignment="Center"
                                                    Margin="{c:GridUnit '4,0,0,0'}"
                                                    Foreground="{TemplateBinding Foreground}"
-                                                   Data="{StaticResource HalfArrowRight}"
+                                                   Data="{StaticResource SimpleArrowRight}"
                                                    Visibility="Collapsed" />
                                 
                                 <Popup x:Name="Popup"

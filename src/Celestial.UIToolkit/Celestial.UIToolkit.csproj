@@ -62,6 +62,7 @@
       <DependentUpon>Card.GeneratedProperties.tt</DependentUpon>
     </Compile>
     <Compile Include="Controls\ClippingBorder.cs" />
+    <Compile Include="Controls\ConstructedFrameworkElement.cs" />
     <Compile Include="Controls\ExtendedListView.cs" />
     <Compile Include="Controls\Icon\IconElement.cs" />
     <Compile Include="Controls\NavigationView\Items\NavigationViewItem.cs" />
@@ -126,10 +127,6 @@
     <Compile Include="Controls\SplitView\SplitView.VisualStates.cs">
       <Generator>MSBuild:Compile</Generator>
     </Compile>
-    <Page Include="Icons\Arrows.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Icons\Badges.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

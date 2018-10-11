@@ -9,10 +9,11 @@
         <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
         <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
         <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-        <c:SharedResourceDictionary Source="../../Icons/Arrows.xaml" />
+        <c:SharedResourceDictionary Source="../../Icons/ControlParts.xaml" />
         <c:SharedResourceDictionary Source="../../Icons/Badges.xaml" />
         <c:SharedResourceDictionary Source="./TextBlock.xaml" />
         <c:SharedResourceDictionary Source="./Button.xaml" />
+        <c:SharedResourceDictionary Source="./IconElements.xaml" />
 
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
@@ -312,7 +313,8 @@
                                           VerticalContentAlignment="Center"
                                           Padding="{c:GridUnit '1,0'}">
                                 <controls:PathIcon x:Name="ToggleButtonArrowIcon"
-                                                   Data="{StaticResource HalfArrowDown}"
+                                                   Style="{StaticResource SmallIconElement}"
+                                                   Data="{StaticResource SimpleArrowDown}"
                                                    RenderTransformOrigin="0.5,0.5">
                                     <controls:PathIcon.RenderTransform>
                                         <RotateTransform Angle="0" />
