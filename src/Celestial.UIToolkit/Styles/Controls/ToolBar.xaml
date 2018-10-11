@@ -9,6 +9,7 @@
         <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
         <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
         <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
+        <c:SharedResourceDictionary Source="../../Icons/ControlParts.xaml" />
         <c:SharedResourceDictionary Source="./Thumb.xaml" />
         <c:SharedResourceDictionary Source="./TextBox.xaml" />
         <c:SharedResourceDictionary Source="./Button.xaml" />
@@ -108,7 +109,7 @@
                                               Grid.Column="2"
                                               IsChecked="{Binding IsOverflowOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
                                               Visibility="Collapsed">
-                                    ...
+                                    <controls:PathIcon Data="{StaticResource More}" />
                                 </ToggleButton>
 
                                 <Popup x:Name="OverflowPopup"
