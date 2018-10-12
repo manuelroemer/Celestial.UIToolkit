@@ -1,0 +1,77 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:c="http://celestial-ui.com"
+                    xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
+                    xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
+
+    <ResourceDictionary.MergedDictionaries>
+        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
+        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
+        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
+
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="StandardProgressBar" TargetType="ProgressBar" BasedOn="{c:MultiStyle 'ControlBackground ControlBorder StandardForeground StandardFontProperties Shadow0'}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
+        <Setter Property="MinHeight" Value="{c:GridUnit 1}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ProgressBar">
+                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
+                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                        <controls:ThemeShadowPresenter SnapsToDevicePixels="False">
+                            <Grid>
+                                <Border x:Name="PART_Track"
+                                        Background="{TemplateBinding Background}"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                        CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}" />
+                                <Border x:Name="PART_Indicator"
+                                        Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
+                                        BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}"
+                                        Margin="{TemplateBinding BorderThickness}"
+                                        CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}"
+                                        HorizontalAlignment="Left" />
+                            </Grid>
+                        </controls:ThemeShadowPresenter>
+                        <!--<Border x:Name="BorderSpacer"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Padding="{TemplateBinding Padding}"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                            <Grid>
+                                
+                            </Grid>
+                        </Border>-->
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Determinate" />
+                                <VisualState x:Name="Indeterminate">
+                                    
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Accent1ProgressBar" TargetType="ProgressBar" BasedOn="{c:MultiStyle 'StandardProgressBar ControlBackgroundAccent1States ControlBorderAccent1States'}" />
+    <Style x:Key="Accent2ProgressBar" TargetType="ProgressBar" BasedOn="{c:MultiStyle 'StandardProgressBar ControlBackgroundAccent2States ControlBorderAccent2States'}" />
+
+    <Style TargetType="ProgressBar" BasedOn="{StaticResource Accent2ProgressBar}" />
+
+</ResourceDictionary>

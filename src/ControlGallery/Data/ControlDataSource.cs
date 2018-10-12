@@ -18,6 +18,7 @@ namespace ControlGallery.Data
             yield return KnownCategories.Text;
             yield return KnownCategories.Commanding;
             yield return KnownCategories.Input;
+            yield return KnownCategories.Indicators;
             yield return KnownCategories.Containers;
             yield return KnownCategories.Layout;
             yield return KnownCategories.Navigation;

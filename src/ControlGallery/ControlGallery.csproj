@@ -102,6 +102,7 @@
     <Compile Include="Converters\StringToTextDocumentConverter.cs" />
     <Compile Include="Data\Categories\KnownCategories.Commanding.cs" />
     <Compile Include="Data\Categories\KnownCategories.Containers.cs" />
+    <Compile Include="Data\Categories\KnownCategories.Indicators.cs" />
     <Compile Include="Data\Categories\KnownCategories.Input.cs" />
     <Compile Include="Data\Categories\KnownCategories.Layout.cs" />
     <Compile Include="Data\Categories\KnownCategories.Navigation.cs" />
@@ -132,6 +133,9 @@
     </Compile>
     <Compile Include="Xaml\SamplePages\Containers\Card.xaml.cs">
       <DependentUpon>Card.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Xaml\SamplePages\Indicators\ProgressBar.xaml.cs">
+      <DependentUpon>ProgressBar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Xaml\SamplePages\Input\CheckBox.xaml.cs">
       <DependentUpon>CheckBox.xaml</DependentUpon>
@@ -204,6 +208,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Xaml\SamplePages\Containers\Card.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\SamplePages\Indicators\ProgressBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
