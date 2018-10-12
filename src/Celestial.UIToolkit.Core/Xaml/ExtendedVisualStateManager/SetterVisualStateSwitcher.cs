@@ -34,9 +34,6 @@ namespace Celestial.UIToolkit.Xaml
         /// </returns>
         protected override bool GoToStateCore()
         {
-            if (ExtendedToState == null && ExtendedFromState == null)
-                return false;
-            
             RemovePreviousStateSetters();
             ApplyCurrentStateSetters();
 
