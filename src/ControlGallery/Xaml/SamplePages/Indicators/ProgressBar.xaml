@@ -56,13 +56,16 @@
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledProgressBarEx2}">
                     <ProgressBar Style="{StaticResource StandardProgressBar}"
-                                 IsIndeterminate="True"
-                                 Width="{c:GridUnit 50}" />
+                                 Width="{c:GridUnit 50}"
+                                 Value="50"
+                                 IsIndeterminate="{Binding IsChecked, ElementName=IsIndeterminateProgressBarEx2, Mode=TwoWay}" />
                     <ProgressBar Style="{StaticResource Accent1ProgressBar}"
-                                 IsIndeterminate="True"
-                                 Width="{c:GridUnit 50}" />
+                                 Width="{c:GridUnit 50}"
+                                 Value="50"
+                                 IsIndeterminate="{Binding IsChecked, ElementName=IsIndeterminateProgressBarEx2, Mode=TwoWay}" />
                     <ProgressBar Width="{c:GridUnit 50}"
-                                 IsIndeterminate="True" />
+                                 Value="50"
+                                 IsIndeterminate="{Binding IsChecked, ElementName=IsIndeterminateProgressBarEx2, Mode=TwoWay}" />
                 </StackPanel>
             </smtx:XamlDisplay>
             <controls:ControlPresenter.Options>
@@ -71,6 +74,9 @@
                     <CheckBox x:Name="IsEnabledProgressBarEx2"
                               IsChecked="True"
                               Content="IsEnabled" />
+                    <CheckBox x:Name="IsIndeterminateProgressBarEx2"
+                              IsChecked="True"
+                              Content="IsIndeterminate" />
                 </StackPanel>
             </controls:ControlPresenter.Options>
         </controls:ControlPresenter>

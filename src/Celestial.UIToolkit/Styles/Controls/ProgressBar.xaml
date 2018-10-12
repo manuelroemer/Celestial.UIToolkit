@@ -39,7 +39,8 @@
                                         BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}"
                                         Margin="{TemplateBinding BorderThickness}"
                                         CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}"
-                                        HorizontalAlignment="Left" />
+                                        HorizontalAlignment="Left"
+                                        Visibility="Visible"/>
                             </Grid>
                         </controls:ThemeShadowPresenter>
                         <!--<Border x:Name="BorderSpacer"
@@ -53,15 +54,18 @@
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualState x:Name="Determinate" />
-                                <VisualState x:Name="Indeterminate">
-                                    
-                                </VisualState>
+                                <c:ExtendedVisualState x:Name="Indeterminate">
+                                    <c:ExtendedVisualState.Setters>
+                                        <Setter TargetName="PART_Indicator" Property="Visibility" Value="Collapsed" />
+                                    </c:ExtendedVisualState.Setters>
+                                </c:ExtendedVisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="theming:ActiveProperties.BackgroundBrush" 
+                                    Value="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
