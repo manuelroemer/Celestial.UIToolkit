@@ -117,6 +117,8 @@
                                 </c:ExtendedVisualState>
                                 <c:ExtendedVisualState x:Name="Unselected">
                                     <c:ExtendedVisualState.Setters>
+                                        <!-- This Setter is important for resetting, since there is a third state
+                                             (which we just don't need). -->
                                         <Setter TargetName="Bd" Property="Visibility" Value="Visible" />
                                     </c:ExtendedVisualState.Setters>
                                 </c:ExtendedVisualState>
@@ -280,7 +282,8 @@
                                                       ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
                                                       ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
                                                       HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                      Visibility="Collapsed" />
                                 </Grid>
 
                                 <!-- Additional elements floating between text and toggle button. -->
@@ -414,14 +417,7 @@
                             </VisualStateGroup>
 
                             <VisualStateGroup x:Name="EditStates">
-                                <c:ExtendedVisualState x:Name="Editable">
-                                    <c:ExtendedVisualState.Setters>
-                                        <Setter TargetName="PART_EditableTextBox" Property="Visibility" Value="Visible" />
-                                        <Setter TargetName="ContentSite" Property="Visibility" Value="Collapsed" />
-                                        <Setter TargetName="ToggleButtonContainer" Property="Grid.Column" Value="1" />
-                                        <Setter TargetName="ToggleButtonContainer" Property="Grid.ColumnSpan" Value="1" />
-                                    </c:ExtendedVisualState.Setters>
-                                </c:ExtendedVisualState>
+                                <c:ExtendedVisualState x:Name="Editable" />
                                 <c:ExtendedVisualState x:Name="Uneditable">
                                     <c:ExtendedVisualState.Setters>
                                         <Setter TargetName="PART_EditableTextBox" Property="Visibility" Value="Collapsed" />
