@@ -76,6 +76,7 @@ namespace Celestial.UIToolkit.Controls
         {
             if (Child == null || index != 0)
             {
+                // Be consistent with the Decorator exception.
                 throw new ArgumentOutOfRangeException(nameof(index));
             }
             return _child;
