@@ -41,13 +41,22 @@ namespace ControlGallery.Data.Categories
             SamplePageType = typeof(ToolBar)
         };
 
+        private static ControlInformation RelativeCanvasInfo = new ControlInformation()
+        {
+            Name = "RelativeCanvas",
+            Description = "A RelativeCanvas provides the same functionality as the default Canvas, but works with relative coordinates.",
+            Icon = new PackIconModern() { Kind = PackIconModernKind.BorderOutside },
+            SamplePageType = typeof(RelativeCanvas)
+        };
+
         public static ControlCategory Layout { get; } = new ControlCategory(
             "Layout",
             new PackIconMaterialLight() { Kind = PackIconMaterialLightKind.BorderAll },
             SplitViewInfo,
             MenuInfo,
             ToolBarInfo,
-            ExpanderInfo);
+            ExpanderInfo,
+            RelativeCanvasInfo);
 
     }
 

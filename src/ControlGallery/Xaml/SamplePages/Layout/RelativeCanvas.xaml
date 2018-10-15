@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="ControlGallery.Xaml.SamplePages.Layout.RelativeCanvas"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:smtx="clr-namespace:ShowMeTheXAML;assembly=ShowMeTheXAML"
+             xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:c="http://celestial-ui.com"
+             xmlns:controls="clr-namespace:ControlGallery.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,4,0,12'}">
+
+        <controls:ControlPresenter Header="A RelativeCanvas which aligns the controls using Left/Top properties."
+                                   Xaml="{Binding Xaml, ElementName=RelativeCanvasEx1}"
+                                   VerticalAlignment="Top">
+            <smtx:XamlDisplay x:Name="RelativeCanvasEx1" Key="RelativeCanvasEx1">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}">
+                    <Border Background="{StaticResource PrimaryMediumLowBrush}">
+                        <c:RelativeCanvas Height="400" Width="400">
+                            <Rectangle c:RelativeCanvas.Top="0" c:RelativeCanvas.Left="0" Width="100" Height="100" Fill="Red" />
+                            <Rectangle c:RelativeCanvas.Top="0.5" c:RelativeCanvas.Left="0.5" Width="100" Height="100" Fill="Green" />
+                            <Rectangle c:RelativeCanvas.Top="1" c:RelativeCanvas.Left="1" Width="100" Height="100" Fill="Yellow" />
+                        </c:RelativeCanvas>
+                    </Border>
+                </StackPanel>
+            </smtx:XamlDisplay>
+        </controls:ControlPresenter>
+
+        <controls:ControlPresenter Header="A comparison of Left/Top and Right/Bottom alignments."
+                                   Xaml="{Binding Xaml, ElementName=RelativeCanvasEx2}"
+                                   VerticalAlignment="Top">
+            <smtx:XamlDisplay x:Name="RelativeCanvasEx2" Key="RelativeCanvasEx2">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}">
+                    <Border Background="{StaticResource PrimaryMediumLowBrush}">
+                        <c:RelativeCanvas Height="400" Width="400">
+                            <Rectangle c:RelativeCanvas.Left="0.5" c:RelativeCanvas.Top="0.5" Width="100" Height="100" Fill="Green" />
+                            <Rectangle c:RelativeCanvas.Right="0.5" c:RelativeCanvas.Bottom="0.5" Width="100" Height="100" Fill="Yellow" />
+                        </c:RelativeCanvas>
+                    </Border>
+                </StackPanel>
+            </smtx:XamlDisplay>
+        </controls:ControlPresenter>
+
+        <controls:ControlPresenter Header="Using ClipToBounds."
+                                   Xaml="{Binding Xaml, ElementName=RelativeCanvasEx3}"
+                                   VerticalAlignment="Top">
+            <controls:ControlPresenter.Description>
+                If ClipToBounds is set to true, elements are cut off when the Canvas ends.
+            </controls:ControlPresenter.Description>
+            <smtx:XamlDisplay x:Name="RelativeCanvasEx3" Key="RelativeCanvasEx3">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}">
+                    <Border Background="{StaticResource PrimaryMediumLowBrush}">
+                        <c:RelativeCanvas Height="200" Width="200" ClipToBounds="True">
+                            <Rectangle c:RelativeCanvas.Left="0.9" c:RelativeCanvas.Top="0.9" Width="100" Height="100" Fill="Green" />
+                        </c:RelativeCanvas>
+                    </Border>
+                </StackPanel>
+            </smtx:XamlDisplay>
+        </controls:ControlPresenter>
+
+    </StackPanel>
+</UserControl>

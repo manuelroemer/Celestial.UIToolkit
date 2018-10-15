@@ -83,6 +83,7 @@
     <Compile Include="Controls\PlaceholderOverlay\PlaceholderDisplayType.cs" />
     <Compile Include="Controls\PlaceholderOverlay\PlaceholderOverlay.cs" />
     <Compile Include="Controls\PlaceholderOverlay\PlaceholderOverlay.Properties.cs" />
+    <Compile Include="Controls\RelativeCanvas.cs" />
     <Compile Include="Controls\RippleOverlay.cs" />
     <Compile Include="Controls\SelectionIndicator.cs" />
     <Compile Include="Controls\ShadowControls\DirectionalThemeShadow.cs" />
