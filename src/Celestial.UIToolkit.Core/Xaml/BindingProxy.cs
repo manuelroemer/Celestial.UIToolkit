@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Windows;
+using System.Windows.Markup;
 
 namespace Celestial.UIToolkit.Xaml
 {
@@ -13,6 +14,7 @@ namespace Celestial.UIToolkit.Xaml
     /// by creating a proxy between the two parties.
     /// </summary>
     [DebuggerDisplay(nameof(Data) + ": {" + nameof(Data) + "}")]
+    [ContentProperty(nameof(Data))]
     public class BindingProxy : Freezable
     {
 
