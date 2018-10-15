@@ -99,9 +99,9 @@ namespace Celestial.UIToolkit.Xaml
             // so that this class doesn't become cluttered.
             // Simply call them in order and check if one of them managed to transition to a new state.
             bool couldTransitionToState = false;
-            couldTransitionToState |= new AnimationVisualStateSwitcher().GoToState(
-                control, stateGroupsRoot, stateName, group, state, useTransitions);
             couldTransitionToState |= new SetterVisualStateSwitcher().GoToState(
+                control, stateGroupsRoot, stateName, group, state, useTransitions);
+            couldTransitionToState |= new AnimationVisualStateSwitcher().GoToState(
                 control, stateGroupsRoot, stateName, group, state, useTransitions);
 
             group.SetCurrentState(state);
