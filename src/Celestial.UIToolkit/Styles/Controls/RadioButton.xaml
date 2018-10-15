@@ -21,7 +21,7 @@
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="Padding" Value="{c:GridUnit '1,0,0,0'}" />
+        <Setter Property="Padding" Value="{c:GridUnit '2,0,0,0'}" />
         <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" />
         <Setter Property="Template">
