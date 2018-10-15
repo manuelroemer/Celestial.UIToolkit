@@ -1,7 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using static Celestial.UIToolkit.TraceSources;
 
 namespace Celestial.UIToolkit.Controls
 {
@@ -190,9 +189,6 @@ namespace Celestial.UIToolkit.Controls
             if (d is UIElement child &&
                 VisualTreeHelper.GetParent(child) is RelativeCanvas parentCanvas)
             {
-                parentCanvas.TraceVerbose(
-                    "Position property of child {0} changed. Rearranging the children...",
-                    child);
                 parentCanvas.InvalidateArrange();
             }
         }
@@ -223,7 +219,6 @@ namespace Celestial.UIToolkit.Controls
             {
                 if (child is UIElement uiElement)
                 {
-                    ControlsSource.Verbose("Measuring child {0}.", uiElement);
                     uiElement.Measure(availableSize);
                 }
             }
@@ -247,7 +242,6 @@ namespace Celestial.UIToolkit.Controls
                         CalculateEffectiveChildX(uiElementChild, finalSize),
                         CalculateEffectiveChildY(uiElementChild, finalSize));
                     uiElementChild.Arrange(new Rect(finalPosition, uiElementChild.DesiredSize));
-                    this.TraceVerbose("Arranged child {0} at position {1}", uiElementChild, finalPosition);
                 }
             }
 
