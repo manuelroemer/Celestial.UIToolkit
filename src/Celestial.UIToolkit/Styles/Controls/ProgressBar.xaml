@@ -17,7 +17,7 @@
 
     <Style x:Key="StandardProgressBar" TargetType="ProgressBar" BasedOn="{c:MultiStyle 'ControlBackground ControlBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
-        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="False" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource DisabledThemeShadow}" />
@@ -41,66 +41,9 @@
                                     </Setter.Value>
                                 </Setter>
                             </Style>
-                        
-                            <Style TargetType="Border">
-                                <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
-                                <Setter Property="RenderTransform">
-                                    <Setter.Value>
-                                        <TranslateTransform />
-                                    </Setter.Value>
-                                </Setter>
-                            </Style>
-
-                            <Style TargetType="Rectangle">
-                                <Setter Property="Width" Value="{c:GridUnit 1}" />
-                            </Style>
-                                
-                                
-                            <!-- UWP is using a TemplateSettings for calculating certain animation points, 
-                                 which we don't have here.
-                                 Luckily we can use BindingProxys with Converters to get the same values. -->
-                            <c:BindingProxy x:Key="ContainerAnimationStartPosition">
-                                <Binding Path="ActualWidth"
-                                         RelativeSource="{RelativeSource TemplatedParent}"
-                                         ConverterParameter="-10">
-                                    <Binding.Converter>
-                                        <c:MathOperationConverter Operator="Divide" />
-                                    </Binding.Converter>
-                                </Binding>
-                            </c:BindingProxy>
-                        
-                            <c:BindingProxy x:Key="ContainerAnimationEndPosition">
-                                <Binding Path="ActualWidth"
-                                         RelativeSource="{RelativeSource TemplatedParent}"
-                                         ConverterParameter="0.375">
-                                    <Binding.Converter>
-                                        <c:MathOperationConverter Operator="Multiply" />
-                                    </Binding.Converter>
-                                </Binding>
-                            </c:BindingProxy>
-                        
-                            <c:BindingProxy x:Key="EllipseAnimationEndPosition">
-                                <Binding Path="ActualWidth"
-                                         RelativeSource="{RelativeSource TemplatedParent}"
-                                         ConverterParameter="0.667">
-                                    <Binding.Converter>
-                                        <c:MathOperationConverter Operator="Multiply" />
-                                    </Binding.Converter>
-                                </Binding>
-                            </c:BindingProxy>
-                                
-                            <c:BindingProxy x:Key="EllipseAnimationWellPosition">
-                                <Binding Path="ActualWidth"
-                                         RelativeSource="{RelativeSource TemplatedParent}"
-                                         ConverterParameter="3">
-                                    <Binding.Converter>
-                                        <c:MathOperationConverter Operator="Divide" />
-                                    </Binding.Converter>
-                                </Binding>
-                            </c:BindingProxy>
                         </Grid.Resources>
                         
-                        <controls:ThemeShadowPresenter SnapsToDevicePixels="False">
+                        <controls:ThemeShadowPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
                             <Grid ClipToBounds="True">
                                 <Grid x:Name="DeterminateContainer">
                                     <Border x:Name="PART_Track"
@@ -117,54 +60,20 @@
                                 </Grid>
                                 
                                 <!-- The Indeterminate template is modeled after the UWP ProgressBar.
-                                     The container aligns 5 Ellipses in a row, separated by Rectangles
-                                     which serve as spacers.
                                      When indeterminate, the Ellipses are shown and animated from the
                                      left to the right. -->
-                                <Grid x:Name="IndeterminateContainer"
-                                      VerticalAlignment="Center"
-                                      Visibility="Collapsed">
-                                    <!-- 9 Columns: 5 Ellipses + 4 Spacer Rects -->
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="Auto" />
-                                    </Grid.ColumnDefinitions>
-
-                                    <Grid.RenderTransform>
-                                        <TranslateTransform />
-                                    </Grid.RenderTransform>
-
-                                    <Border x:Name="B5" Grid.Column="0">
-                                        <Ellipse x:Name="E5" />
-                                    </Border>
-                                    <Rectangle Grid.Column="1" />
-
-                                    <Border x:Name="B4" Grid.Column="2">
-                                        <Ellipse x:Name="E4" />
-                                    </Border>
-                                    <Rectangle Grid.Column="3" />
-
-                                    <Border x:Name="B3" Grid.Column="4">
-                                        <Ellipse x:Name="E3" />
-                                    </Border>
-                                    <Rectangle Grid.Column="5" />
-
-                                    <Border x:Name="B2" Grid.Column="6">
-                                        <Ellipse x:Name="E2" />
-                                    </Border>
-                                    <Rectangle Grid.Column="7" />
-
-                                    <Border x:Name="B1" Grid.Column="8">
-                                        <Ellipse x:Name="E1" />
-                                    </Border>
-                                </Grid>
+                                <controls:RelativeCanvas x:Name="IndeterminateContainer"
+                                                         Visibility="Collapsed">
+                                    <controls:RelativeCanvas x:Name="EllipseContainer"
+                                                             Width="{TemplateBinding ActualWidth}"
+                                                             Height="{TemplateBinding ActualHeight}">
+                                        <Ellipse x:Name="E5" controls:RelativeCanvas.Left="0.5" />
+                                        <Ellipse x:Name="E4" Margin="{c:GridUnit '2,0,0,0'}" />
+                                        <Ellipse x:Name="E3" Margin="{c:GridUnit '4,0,0,0'}" />
+                                        <Ellipse x:Name="E2" Margin="{c:GridUnit '6,0,0,0'}" />
+                                        <Ellipse x:Name="E1" Margin="{c:GridUnit '8,0,0,0'}" />
+                                    </controls:RelativeCanvas>
+                                </controls:RelativeCanvas>
                             </Grid>
                         </controls:ThemeShadowPresenter>
                         
@@ -178,15 +87,17 @@
                                     </c:ExtendedVisualState.Setters>
 
                                     <Storyboard RepeatBehavior="Forever">
-                                        <!-- These animations are more or less taken/adapted from the UWP Source Code. -->
-                                        <DoubleAnimation Storyboard.TargetName="IndeterminateContainer" 
-                                                         Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)"
+                                        <!-- The timings/spline values of the following animations are taken from the UWP XAML Template,
+                                             since the goal is to mimick the Windows 10 Style. -->
+                                        
+                                        <DoubleAnimation Storyboard.TargetName="EllipseContainer" 
+                                                         Storyboard.TargetProperty="(controls:RelativeCanvas.Left)"
                                                          Duration="0:0:3.917" 
-                                                         From="{Binding Data, Source={StaticResource ContainerAnimationStartPosition}}" 
-                                                         To="{Binding Data, Source={StaticResource ContainerAnimationEndPosition}}" />
+                                                         From="-0.1" 
+                                                         To="0.375" />
 
-                                        <!-- Border Movement Animations. -->
-                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="B5"
+                                        <!-- Ellipse Translation Animations. -->
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="E5"
                                                                        Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)">
                                             <EasingDoubleKeyFrame KeyTime="0" Value="-50"/>
                                             <EasingDoubleKeyFrame KeyTime="0:0:1.167" Value="0"/>
@@ -194,7 +105,7 @@
                                             <EasingDoubleKeyFrame KeyTime="0:0:3.667" Value="100"/>
                                         </DoubleAnimationUsingKeyFrames>
 
-                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="B4" 
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="E4" 
                                                                        Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)">
                                             <EasingDoubleKeyFrame KeyTime="0" Value="-50"/>
                                             <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
@@ -202,7 +113,7 @@
                                             <EasingDoubleKeyFrame KeyTime="0:0:3.5" Value="100"/>
                                         </DoubleAnimationUsingKeyFrames>
 
-                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="B3" 
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="E3" 
                                                                        Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)">
                                             <EasingDoubleKeyFrame KeyTime="0" Value="-50"/>
                                             <EasingDoubleKeyFrame KeyTime="0:0:0.833" Value="0"/>
@@ -210,7 +121,7 @@
                                             <EasingDoubleKeyFrame KeyTime="0:0:3.333" Value="100"/>
                                         </DoubleAnimationUsingKeyFrames>
 
-                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="B2" 
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="E2" 
                                                                        Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)">
                                             <EasingDoubleKeyFrame KeyTime="0" Value="-50"/>
                                             <EasingDoubleKeyFrame KeyTime="0:0:0.667" Value="0"/>
@@ -218,7 +129,7 @@
                                             <EasingDoubleKeyFrame KeyTime="0:0:3.167" Value="100"/>
                                         </DoubleAnimationUsingKeyFrames>
 
-                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="B1" 
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="E1" 
                                                                        Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)">
                                             <EasingDoubleKeyFrame KeyTime="0" Value="-50"/>
                                             <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
@@ -226,74 +137,74 @@
                                             <EasingDoubleKeyFrame KeyTime="0:0:3" Value="100"/>
                                         </DoubleAnimationUsingKeyFrames>
 
-                                        <!-- Ellipse Movement Animations. -->
+                                        <!-- Ellipse RelativeCanvas Movement Animations. -->
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="E5" 
-                                                                       Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)">
+                                                                       Storyboard.TargetProperty="(c:RelativeCanvas.Left)">
                                             <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
                                             <EasingDoubleKeyFrame KeyTime="0:0:0.667" Value="0"/>
                                             <SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" 
                                                                   KeyTime="0:0:1.667" 
-                                                                  Value="{Binding Data, Source={StaticResource EllipseAnimationWellPosition}}" />
+                                                                  Value="0.333" />
                                             <EasingDoubleKeyFrame KeyTime="0:0:2.667" 
-                                                                  Value="{Binding Data, Source={StaticResource EllipseAnimationWellPosition}}" />
+                                                                  Value="0.333" />
                                             <SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" 
                                                                   KeyTime="0:0:3.667" 
-                                                                  Value="{Binding Data, Source={StaticResource EllipseAnimationEndPosition}}" />
+                                                                  Value="0.667" />
                                         </DoubleAnimationUsingKeyFrames>
 
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="E4" 
-                                                                       Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)">
+                                                                       Storyboard.TargetProperty="(c:RelativeCanvas.Left)">
                                             <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
                                             <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
                                             <SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" 
                                                                   KeyTime="0:0:1.5"
-                                                                  Value="{Binding Data, Source={StaticResource EllipseAnimationWellPosition}}"/>
+                                                                  Value="0.333"/>
                                             <EasingDoubleKeyFrame KeyTime="0:0:2.5" 
-                                                                  Value="{Binding Data, Source={StaticResource EllipseAnimationWellPosition}}"/>
+                                                                  Value="0.333"/>
                                             <SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" 
                                                                   KeyTime="0:0:3.5" 
-                                                                  Value="{Binding Data, Source={StaticResource EllipseAnimationEndPosition}}"/>
+                                                                  Value="0.667"/>
                                         </DoubleAnimationUsingKeyFrames>
 
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="E3" 
-                                                                       Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)">
+                                                                       Storyboard.TargetProperty="(c:RelativeCanvas.Left)">
                                             <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
                                             <EasingDoubleKeyFrame KeyTime="0:0:0.333" Value="0"/>
                                             <SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" 
                                                                   KeyTime="0:0:1.333" 
-                                                                  Value="{Binding Data, Source={StaticResource EllipseAnimationWellPosition}}"/>
+                                                                  Value="0.333"/>
                                             <EasingDoubleKeyFrame KeyTime="0:0:2.333" 
-                                                                  Value="{Binding Data, Source={StaticResource EllipseAnimationWellPosition}}"/>
+                                                                  Value="0.333"/>
                                             <SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1"
                                                                   KeyTime="0:0:3.333" 
-                                                                  Value="{Binding Data, Source={StaticResource EllipseAnimationEndPosition}}"/>
+                                                                  Value="0.667"/>
                                         </DoubleAnimationUsingKeyFrames>
 
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="E2" 
-                                                                       Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)">
+                                                                       Storyboard.TargetProperty="(c:RelativeCanvas.Left)">
                                             <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
                                             <EasingDoubleKeyFrame KeyTime="0:0:0.167" Value="0"/>
                                             <SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" 
                                                                   KeyTime="0:0:1.167"
-                                                                  Value="{Binding Data, Source={StaticResource EllipseAnimationWellPosition}}"/>
+                                                                  Value="0.333"/>
                                             <EasingDoubleKeyFrame KeyTime="0:0:2.167" 
-                                                                  Value="{Binding Data, Source={StaticResource EllipseAnimationWellPosition}}"/>
+                                                                  Value="0.333"/>
                                             <SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" 
                                                                   KeyTime="0:0:3.167" 
-                                                                  Value="{Binding Data, Source={StaticResource EllipseAnimationEndPosition}}"/>
+                                                                  Value="0.667"/>
                                         </DoubleAnimationUsingKeyFrames>
 
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="E1" 
-                                                                       Storyboard.TargetProperty="RenderTransform.(TranslateTransform.X)">
+                                                                       Storyboard.TargetProperty="(c:RelativeCanvas.Left)">
                                             <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
                                             <SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" 
                                                                   KeyTime="0:0:1" 
-                                                                  Value="{Binding Data, Source={StaticResource EllipseAnimationWellPosition}}"/>
+                                                                  Value="0.333"/>
                                             <EasingDoubleKeyFrame KeyTime="0:0:2" 
-                                                                  Value="{Binding Data, Source={StaticResource EllipseAnimationWellPosition}}"/>
+                                                                  Value="0.333"/>
                                             <SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" 
                                                                   KeyTime="0:0:3" 
-                                                                  Value="{Binding Data, Source={StaticResource EllipseAnimationEndPosition}}"/>
+                                                                  Value="0.667"/>
                                         </DoubleAnimationUsingKeyFrames>
 
                                         <!-- Ellipse Opacity animations. -->
