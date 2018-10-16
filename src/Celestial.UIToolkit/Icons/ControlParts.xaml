@@ -4,7 +4,8 @@
     <PathGeometry x:Key="Checkmark">
         M 1,5 L 6,11 L 11,1
     </PathGeometry>
-        <PathGeometry x:Key="GlobalNavigationButton">
+    
+    <PathGeometry x:Key="GlobalNavigationButton">
         F1 M 0.5,30.6L 63.5,30.6L 63.5,33.4L 0.5,33.4L 0.5,30.6 Z M 0.500002,14.6L 63.5,14.6L 63.5,17.4L 0.500002,17.4L 0.500002,14.6 Z M 0.500003,46.6L 63.5,46.6L 63.5,49.4L 0.500003,49.4L 0.500003,46.6 Z
     </PathGeometry>
 

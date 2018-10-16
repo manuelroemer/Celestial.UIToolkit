@@ -22,6 +22,8 @@
         <c:SharedResourceDictionary Source="Controls/CheckBox.xaml" />
         <c:SharedResourceDictionary Source="Controls/RadioButton.xaml" />
         <c:SharedResourceDictionary Source="Controls/Separator.xaml" />
+        <c:SharedResourceDictionary Source="Controls/ScrollBar.xaml" />
+        <c:SharedResourceDictionary Source="Controls/ScrollViewer.xaml" />
         <c:SharedResourceDictionary Source="Controls/Card.xaml" />
         <c:SharedResourceDictionary Source="Controls/TextBox.xaml" />
         <c:SharedResourceDictionary Source="Controls/ComboBox.xaml" />
