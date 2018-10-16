@@ -23,11 +23,13 @@
                         <StatusBarItem>
                             <TextBlock Text="A TextBlock" />
                         </StatusBarItem>
+                        <Separator />
                         <StatusBarItem>
-                            <ProgressBar Value="80" />
+                            <ProgressBar Value="80" Width="{c:GridUnit 25}" />
                         </StatusBarItem>
+                        <Separator />
                         <StatusBarItem>
-                            <ProgressBar IsIndeterminate="True" />
+                            <ProgressBar IsIndeterminate="True" Width="{c:GridUnit 25}" />
                         </StatusBarItem>
                     </StatusBar>
                 </StackPanel>
