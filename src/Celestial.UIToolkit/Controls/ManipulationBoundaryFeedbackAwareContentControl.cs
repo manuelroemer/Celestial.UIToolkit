@@ -57,6 +57,56 @@ namespace Celestial.UIToolkit.Controls
                 new PropertyMetadata(0d));
 
         /// <summary>
+        /// Identifies the <see cref="Rotation"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty RotationProperty =
+            DependencyProperty.Register(
+                nameof(Rotation),
+                typeof(double),
+                typeof(ManipulationBoundaryFeedbackAwareContentControl),
+                new PropertyMetadata(0d));
+
+        /// <summary>
+        /// Identifies the <see cref="ScaleDeltaX"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty ScaleDeltaXProperty =
+            DependencyProperty.Register(
+                nameof(ScaleDeltaX),
+                typeof(double),
+                typeof(ManipulationBoundaryFeedbackAwareContentControl),
+                new PropertyMetadata(0d));
+
+        /// <summary>
+        /// Identifies the <see cref="ScaleDeltaY"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty ScaleDeltaYProperty =
+            DependencyProperty.Register(
+                nameof(ScaleDeltaY),
+                typeof(double),
+                typeof(ManipulationBoundaryFeedbackAwareContentControl),
+                new PropertyMetadata(0d));
+
+        /// <summary>
+        /// Identifies the <see cref="ExpansionDeltaX"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty ExpansionDeltaXProperty =
+            DependencyProperty.Register(
+                nameof(ExpansionDeltaX),
+                typeof(double),
+                typeof(ManipulationBoundaryFeedbackAwareContentControl),
+                new PropertyMetadata(0d));
+
+        /// <summary>
+        /// Identifies the <see cref="ExpansionDeltaY"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty ExpansionDeltaYProperty =
+            DependencyProperty.Register(
+                nameof(ExpansionDeltaY),
+                typeof(double),
+                typeof(ManipulationBoundaryFeedbackAwareContentControl),
+                new PropertyMetadata(0d));
+
+        /// <summary>
         /// Gets or sets the <see cref="UIElement"/> which provides manipulation boundary
         /// feedback via the <see cref="UIElement.ManipulationBoundaryFeedback"/> event
         /// to which this control listens.
@@ -95,6 +145,51 @@ namespace Celestial.UIToolkit.Controls
         {
             get { return (double)GetValue(TranslationDeltaYProperty); }
             set { SetValue(TranslationDeltaYProperty, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the rotation of the most recent manipulation in degrees.
+        /// </summary>
+        public double Rotation
+        {
+            get { return (double)GetValue(RotationProperty); }
+            set { SetValue(RotationProperty, value); }
+        }
+
+        /// <summary>
+        /// Gets the x-coordinate of the most recent manipulation's delta scale.
+        /// </summary>
+        public double ScaleDeltaX
+        {
+            get { return (double)GetValue(ScaleDeltaXProperty); }
+            set { SetValue(ScaleDeltaXProperty, value); }
+        }
+
+        /// <summary>
+        /// Gets the y-coordinate of the most recent manipulation's delta scale.
+        /// </summary>
+        public double ScaleDeltaY
+        {
+            get { return (double)GetValue(ScaleDeltaYProperty); }
+            set { SetValue(ScaleDeltaYProperty, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the x-coordinate of the most recent manipulation's expansion delta.
+        /// </summary>
+        public double ExpansionDeltaX
+        {
+            get { return (double)GetValue(ExpansionDeltaXProperty); }
+            set { SetValue(ExpansionDeltaXProperty, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the y-coordinate of the most recent manipulation's expansion delta.
+        /// </summary>
+        public double ExpansionDeltaY
+        {
+            get { return (double)GetValue(ExpansionDeltaYProperty); }
+            set { SetValue(ExpansionDeltaYProperty, value); }
         }
 
         static ManipulationBoundaryFeedbackAwareContentControl()
@@ -181,6 +276,11 @@ namespace Celestial.UIToolkit.Controls
             // manipulation boundary feedback data.
             TranslationDeltaX = e.BoundaryFeedback.Translation.X;
             TranslationDeltaY = e.BoundaryFeedback.Translation.Y;
+            Rotation = e.BoundaryFeedback.Rotation;
+            ScaleDeltaX = e.BoundaryFeedback.Scale.X;
+            ScaleDeltaY = e.BoundaryFeedback.Scale.Y;
+            ExpansionDeltaX = e.BoundaryFeedback.Expansion.X;
+            ExpansionDeltaY = e.BoundaryFeedback.Expansion.Y;
         }
 
     }
