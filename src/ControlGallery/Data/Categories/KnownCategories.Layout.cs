@@ -33,6 +33,14 @@ namespace ControlGallery.Data.Categories
             SamplePageType = typeof(Menu)
         };
 
+        private static ControlInformation StatusBarInfo = new ControlInformation()
+        {
+            Name = "StatusBar",
+            Description = "A StatusBar displays information about the application's status in a horizontal bar.",
+            Icon = new PackIconModern() { Kind = PackIconModernKind.GraphBar },
+            SamplePageType = typeof(StatusBar)
+        };
+
         private static ControlInformation ToolBarInfo = new ControlInformation()
         {
             Name = "ToolBar",
@@ -54,6 +62,7 @@ namespace ControlGallery.Data.Categories
             new PackIconMaterialLight() { Kind = PackIconMaterialLightKind.BorderAll },
             SplitViewInfo,
             MenuInfo,
+            StatusBarInfo,
             ToolBarInfo,
             ExpanderInfo,
             RelativeCanvasInfo);
