@@ -57,6 +57,14 @@ namespace ControlGallery.Data.Categories
             SamplePageType = typeof(RelativeCanvas)
         };
 
+        private static ControlInformation ScrollViewerInfo = new ControlInformation()
+        {
+            Name = "ScrollViewer",
+            Description = "A ScrollViewer hosts content and allows the user to scroll over it, if it exceeds its bounds.",
+            Icon = new PackIconModern() { Kind = PackIconModernKind.BorderOutside },
+            SamplePageType = typeof(ScrollViewer)
+        };
+
         public static ControlCategory Layout { get; } = new ControlCategory(
             "Layout",
             new PackIconMaterialLight() { Kind = PackIconMaterialLightKind.BorderAll },
@@ -65,7 +73,8 @@ namespace ControlGallery.Data.Categories
             StatusBarInfo,
             ToolBarInfo,
             ExpanderInfo,
-            RelativeCanvasInfo);
+            RelativeCanvasInfo,
+            ScrollViewerInfo);
 
     }
 

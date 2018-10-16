@@ -164,6 +164,9 @@
     <Compile Include="Xaml\SamplePages\Layout\RelativeCanvas.xaml.cs">
       <DependentUpon>RelativeCanvas.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Xaml\SamplePages\Layout\ScrollViewer.xaml.cs">
+      <DependentUpon>ScrollViewer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Xaml\SamplePages\Layout\SplitView.xaml.cs">
       <DependentUpon>SplitView.xaml</DependentUpon>
     </Compile>
@@ -254,6 +257,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Xaml\SamplePages\Layout\RelativeCanvas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\SamplePages\Layout\ScrollViewer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
