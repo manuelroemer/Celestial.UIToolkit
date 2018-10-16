@@ -16,7 +16,7 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <!--<Style x:Key="StandardControl" TargetType="Control" BasedOn="{c:MultiStyle 'StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="StandardScrollViewer" TargetType="ScrollViewer" BasedOn="{c:MultiStyle 'TransparentBorder TransparentBackground StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
@@ -25,7 +25,7 @@
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="Control">
+                <ControlTemplate TargetType="ScrollViewer">
                     <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
                         <controls:ThemeShadowPresenter>
@@ -40,13 +40,15 @@
                                 Padding="{TemplateBinding Padding}"
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
                             <Grid>
-                                --><!-- Put control content here. --><!--
+                                
                             </Grid>
                         </Border>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-    </Style>-->
-    
+    </Style>
+
+    <Style TargetType="ScrollViewer" BasedOn="{StaticResource StandardScrollViewer}" />
+
 </ResourceDictionary>
