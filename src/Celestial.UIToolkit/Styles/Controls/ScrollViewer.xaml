@@ -9,6 +9,7 @@
         <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
         <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
         <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
+        <c:SharedResourceDictionary Source="./ManipulationBoundaryFeedbackAwareContentControl.xaml" />
         <c:SharedResourceDictionary Source="./TextBlock.xaml" />
 
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
@@ -72,12 +73,16 @@
                                            ViewportSize="{TemplateBinding ViewportWidth}"
                                            Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"
                                            Value="{TemplateBinding HorizontalOffset}" />
-                                
-                                <ScrollContentPresenter x:Name="PART_ScrollContentPresenter"
-                                                        Margin="{TemplateBinding Padding}"
-                                                        CanContentScroll="{TemplateBinding CanContentScroll}"
-                                                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+
+                                <controls:ManipulationBoundaryFeedbackAwareContentControl 
+                                    Style="{StaticResource BouncingManipulationBoundaryFeedbackAwareContentControl}"
+                                    FeedbackProvider="{Binding RelativeSource={RelativeSource TemplatedParent}}">
+                                    <ScrollContentPresenter x:Name="PART_ScrollContentPresenter"
+                                                            Margin="{TemplateBinding Padding}"
+                                                            CanContentScroll="{TemplateBinding CanContentScroll}"
+                                                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                </controls:ManipulationBoundaryFeedbackAwareContentControl>
                             </Grid>
                         </Border>
                     </Grid>

@@ -65,6 +65,7 @@
     <Compile Include="Controls\ConstructedFrameworkElement.cs" />
     <Compile Include="Controls\ExtendedListView.cs" />
     <Compile Include="Controls\Icon\IconElement.cs" />
+    <Compile Include="Controls\ManipulationBoundaryFeedbackAwareContentControl.cs" />
     <Compile Include="Controls\NavigationView\Items\NavigationViewItem.cs" />
     <Compile Include="Controls\NavigationView\NavigationView.cs" />
     <Compile Include="Controls\NavigationView\NavigationView.Header.cs" />
@@ -145,6 +146,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\Controls\ListBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Controls\ManipulationBoundaryFeedbackAwareContentControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
