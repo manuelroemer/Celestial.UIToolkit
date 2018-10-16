@@ -19,8 +19,10 @@
     <Style x:Key="StandardStatusBar" TargetType="StatusBar" BasedOn="{c:MultiStyle 'StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
-        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Background" Value="{StaticResource PaneBackgroundBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource PaneBorderBrush}" />
+        <Setter Property="BorderThickness" Value="0" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
         <Setter Property="Template">
@@ -40,7 +42,8 @@
                                 Padding="{TemplateBinding Padding}"
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
                             <Grid>
-                                <!-- Put control content here. -->
+                                <ItemsPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                             </Grid>
                         </Border>
                     </Grid>
