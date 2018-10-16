@@ -5,8 +5,8 @@
     <!--
     KeyTimes and durations for animations.
     -->
-    <Duration x:Key="ColorAnimationDuration">0:0:0.175</Duration>
-    <KeyTime x:Key="ColorAnimationKeyTime">0:0:0.175</KeyTime>
+    <Duration x:Key="ColorAnimationDuration">0:0:0.150</Duration>
+    <KeyTime x:Key="ColorAnimationKeyTime">0:0:0.150</KeyTime>
     <PowerEase x:Key="ColorAnimationEase" EasingMode="EaseIn" Power="1" />
 
     <Duration x:Key="EnterAnimationDuration">0:0:0.300</Duration>

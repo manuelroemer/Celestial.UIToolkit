@@ -20,13 +20,30 @@
 
     <Style x:Key="StandardScrollBar" TargetType="ScrollBar" BasedOn="{c:MultiStyle 'PaneBackground PaneBorder StandardForeground StandardFontProperties Shadow0'}">
         <Style.Resources>
+
+            <!-- Controls on the ScrollBar use special colors. In comparison to most others, they
+                 darken when the user hovers over them. -->
+            <Style x:Key="OnScrollBarControl" TargetType="Control">
+                <Setter Property="Background" Value="{StaticResource PrimaryMediumBrush}" />
+                <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource PrimaryMediumHighBrush}" />
+                <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource PrimaryHighBrush}" />
+                <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource PrimaryHighBrush}" />
+                <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource ControlDisabledBackgroundBrush}" />
+                
+                <Setter Property="BorderBrush" Value="{StaticResource PrimaryMediumHighBrush}" />
+                <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource PrimaryHighBrush}" />
+                <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource PrimaryHighBrush}" />
+                <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource AltPrimaryHighBrush}" />
+                <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource ControlDisabledBorderBrush}" />
+            </Style>
             
             <!-- The Style for the outer ScrollBar Buttons (with the Arrow Icons). -->
-            <Style x:Key="ScrollBarLineButton" TargetType="RepeatButton" BasedOn="{c:MultiStyle 'StandardButton Shadow0'}">
+            <Style x:Key="ScrollBarLineButton" TargetType="RepeatButton" BasedOn="{c:MultiStyle 'StandardButton OnScrollBarControl Shadow0'}">
                 <Setter Property="Focusable" Value="False" />
                 <Setter Property="MinWidth" Value="0" />
                 <Setter Property="MinHeight" Value="0" />
                 <Setter Property="Padding" Value="0" />
+                <Setter Property="theming:RippleProperties.ShowRippleAnimation" Value="False" />
             </Style>
 
             <!-- A transparent button on the track (between the Line buttons and the thumb). -->
@@ -36,7 +53,7 @@
             </Style>
 
             <!-- The ScrollBar's Thumb which is can be dragged for scrolling. -->
-            <Style x:Key="ScrollBarThumb" TargetType="Thumb" BasedOn="{c:MultiStyle 'MonochromeThumb'}">
+            <Style x:Key="ScrollBarThumb" TargetType="Thumb" BasedOn="{c:MultiStyle 'MonochromeThumb OnScrollBarControl'}">
             </Style>
             
         </Style.Resources>
@@ -81,7 +98,7 @@
                                 <RepeatButton x:Name="LineUpLeftButton"
                                               Grid.Column="1"
                                               Style="{StaticResource ScrollBarLineButton}" 
-                                              Command="ScrollBar.LineUpCommand">
+                                              Command="ScrollBar.PageUpCommand">
                                     <controls:PathIcon x:Name="UpIcon"
                                                        Data="{StaticResource SimpleArrowUp}"
                                                        Style="{StaticResource SmallIconElement}"
@@ -111,7 +128,7 @@
                                               Grid.Row="2"
                                               Grid.Column="1"
                                               Style="{StaticResource ScrollBarLineButton}"
-                                              Command="ScrollBar.LineDownCommand">
+                                              Command="ScrollBar.PageDownCommand">
                                     <controls:PathIcon x:Name="DownIcon"
                                                        Data="{StaticResource SimpleArrowDown}"
                                                        Style="{StaticResource SmallIconElement}"
@@ -194,10 +211,10 @@
                             <Setter TargetName="LineDownRightButton" Property="Grid.Column" Value="2" />
 
                             <!-- Change Button Commands. -->
-                            <Setter TargetName="LineUpLeftButton" Property="Command" Value="ScrollBar.LineLeftCommand" />
-                            <Setter TargetName="LineDownRightButton" Property="Command" Value="ScrollBar.LineRightCommand" />
-                            <Setter TargetName="PageUpLeftButton" Property="Command" Value="ScrollBar.LineLeftCommand" />
-                            <Setter TargetName="PageDownRightButton" Property="Command" Value="ScrollBar.LineRightCommand" />
+                            <Setter TargetName="LineUpLeftButton" Property="Command" Value="ScrollBar.PageLeftCommand" />
+                            <Setter TargetName="LineDownRightButton" Property="Command" Value="ScrollBar.PageRightCommand" />
+                            <Setter TargetName="PageUpLeftButton" Property="Command" Value="ScrollBar.PageLeftCommand" />
+                            <Setter TargetName="PageDownRightButton" Property="Command" Value="ScrollBar.PageRightCommand" />
 
                             <!-- The Track is no longer reversed when horizontal. -->
                             <Setter TargetName="PART_Track" Property="IsDirectionReversed" Value="False" />
