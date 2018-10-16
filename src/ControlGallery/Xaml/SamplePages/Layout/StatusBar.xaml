@@ -44,6 +44,70 @@
             </controls:ControlPresenter.Options>
         </controls:ControlPresenter>
 
+        <controls:ControlPresenter Header="A StatusBar using Accent1 Brushes."
+                                   Xaml="{Binding Xaml, ElementName=StatusBarEx2}"
+                                   VerticalAlignment="Top">
+            <smtx:XamlDisplay x:Name="StatusBarEx2" Key="StatusBarEx2">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledStatusBarEx2}">
+                    <StatusBar Style="{StaticResource Accent1StatusBar}">
+                        <StatusBarItem Content="A normal string" />
+                        <StatusBarItem>
+                            <TextBlock Text="A TextBlock" />
+                        </StatusBarItem>
+                        <Separator />
+                        <StatusBarItem>
+                            <ProgressBar Value="80" Width="{c:GridUnit 25}" />
+                        </StatusBarItem>
+                        <Separator />
+                        <StatusBarItem>
+                            <ProgressBar IsIndeterminate="True" Width="{c:GridUnit 25}" />
+                        </StatusBarItem>
+                    </StatusBar>
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,3'}"
+                            Margin="{c:GridUnit '0,0,0,-3'}">
+                    <CheckBox x:Name="IsEnabledStatusBarEx2"
+                              IsChecked="True"
+                              Content="IsEnabled" />
+                </StackPanel>
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+
+        <controls:ControlPresenter Header="A StatusBar using Accent2 Brushes."
+                                   Xaml="{Binding Xaml, ElementName=StatusBarEx3}"
+                                   VerticalAlignment="Top">
+            <smtx:XamlDisplay x:Name="StatusBarEx3" Key="StatusBarEx3">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledStatusBarEx3}">
+                    <StatusBar Style="{StaticResource Accent2StatusBar}">
+                        <StatusBarItem Content="A normal string" />
+                        <StatusBarItem>
+                            <TextBlock Text="A TextBlock" />
+                        </StatusBarItem>
+                        <Separator />
+                        <StatusBarItem>
+                            <ProgressBar Value="80" Width="{c:GridUnit 25}" />
+                        </StatusBarItem>
+                        <Separator />
+                        <StatusBarItem>
+                            <ProgressBar IsIndeterminate="True" Width="{c:GridUnit 25}" />
+                        </StatusBarItem>
+                    </StatusBar>
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,3'}"
+                            Margin="{c:GridUnit '0,0,0,-3'}">
+                    <CheckBox x:Name="IsEnabledStatusBarEx3"
+                              IsChecked="True"
+                              Content="IsEnabled" />
+                </StackPanel>
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+
     </StackPanel>
 
 </UserControl>

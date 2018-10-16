@@ -19,7 +19,7 @@
     <Color x:Key="Accent1DarkestColor">#840D31</Color>
 
     <Color x:Key="OnAccent1TextColor">#FFFFFF</Color>
-    <Color x:Key="OnAccent1DisabledTextColor">#66000000</Color>
+    <Color x:Key="OnAccent1DisabledTextColor">#CCCCCC</Color>
 
 
 
@@ -35,7 +35,7 @@
     <Color x:Key="Accent2DarkestColor">#1A4985</Color>
 
     <Color x:Key="OnAccent2TextColor">#FFFFFF</Color>
-    <Color x:Key="OnAccent2DisabledTextColor">#66000000</Color>
+    <Color x:Key="OnAccent2DisabledTextColor">#CCCCCC</Color>
 
 
 
@@ -52,7 +52,7 @@
     <Color x:Key="ErrorDarkestColor">#7F0007</Color>
 
     <Color x:Key="OnErrorTextColor">#FFFFFF</Color>
-    <Color x:Key="OnErrorDisabledTextColor">#66000000</Color>
+    <Color x:Key="OnErrorDisabledTextColor">#CCCCCC</Color>
 
 
 
