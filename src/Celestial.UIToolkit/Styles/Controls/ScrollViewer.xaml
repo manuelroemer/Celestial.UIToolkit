@@ -16,13 +16,16 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardScrollViewer" TargetType="ScrollViewer" BasedOn="{c:MultiStyle 'TransparentBorder TransparentBackground StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="StandardScrollViewer" TargetType="ScrollViewer" BasedOn="{c:MultiStyle 'TransparentBorder TransparentBackground  Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
-        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource DisabledThemeShadow}" />
+        <Setter Property="PanningMode" Value="Both" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ScrollViewer">
@@ -37,10 +40,44 @@
                         </controls:ThemeShadowPresenter>
                         <Border x:Name="BorderSpacer"
                                 BorderThickness="{TemplateBinding BorderThickness}"
-                                Padding="{TemplateBinding Padding}"
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
                             <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
                                 
+                                <ScrollBar x:Name="PART_VerticalScrollBar"
+                                           Grid.Column="1"
+                                           AutomationProperties.AutomationId="VerticalScrollBar"
+                                           Cursor="Arrow"
+                                           Orientation="Vertical"
+                                           Minimum="0"
+                                           Maximum="{TemplateBinding ScrollableHeight}"
+                                           ViewportSize="{TemplateBinding ViewportHeight}"
+                                           Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
+                                           Value="{TemplateBinding VerticalOffset}" />
+
+                                <ScrollBar x:Name="PART_HorizontalScrollBar"
+                                           Grid.Row="1"
+                                           AutomationProperties.AutomationId="HorizontalScrollBar"
+                                           Cursor="Arrow"
+                                           Orientation="Horizontal"
+                                           Minimum="0"
+                                           Maximum="{TemplateBinding ScrollableWidth}"
+                                           ViewportSize="{TemplateBinding ViewportWidth}"
+                                           Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"
+                                           Value="{TemplateBinding HorizontalOffset}" />
+                                
+                                <ScrollContentPresenter x:Name="PART_ScrollContentPresenter"
+                                                        Margin="{TemplateBinding Padding}"
+                                                        CanContentScroll="{TemplateBinding CanContentScroll}"
+                                                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                             </Grid>
                         </Border>
                     </Grid>

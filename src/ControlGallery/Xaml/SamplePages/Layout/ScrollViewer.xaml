@@ -33,5 +33,39 @@
             </controls:ControlPresenter.Options>
         </controls:ControlPresenter>
         
+        <controls:ControlPresenter Header="A ScrollViewer."
+                                   Xaml="{Binding Xaml, ElementName=ScrollViewerEx1}"
+                                   VerticalAlignment="Top">
+            <smtx:XamlDisplay x:Name="ScrollViewerEx1" Key="ScrollViewerEx1">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,4,0'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledScrollViewerEx1}"
+                            Orientation="Horizontal">
+                    <ScrollViewer Width="{c:GridUnit 50}" Height="{c:GridUnit 50}"
+                                  HorizontalScrollBarVisibility="Visible">
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel>
+                                <Rectangle Width="{c:GridUnit 50}" Height="{c:GridUnit 50}" Fill="Red" />
+                                <Rectangle Width="{c:GridUnit 50}" Height="{c:GridUnit 50}" Fill="Yellow" />
+                                <Rectangle Width="{c:GridUnit 50}" Height="{c:GridUnit 50}" Fill="Green" />
+                            </StackPanel>
+                            <StackPanel>
+                                <Rectangle Width="{c:GridUnit 50}" Height="{c:GridUnit 50}" Fill="Green" />
+                                <Rectangle Width="{c:GridUnit 50}" Height="{c:GridUnit 50}" Fill="Yellow" />
+                                <Rectangle Width="{c:GridUnit 50}" Height="{c:GridUnit 50}" Fill="Red" />
+                            </StackPanel>
+                        </StackPanel>
+                    </ScrollViewer>
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,3'}"
+                            Margin="{c:GridUnit '0,0,0,-3'}">
+                    <CheckBox x:Name="IsEnabledScrollViewerEx1"
+                              IsChecked="True"
+                              Content="IsEnabled" />
+                </StackPanel>
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+        
     </StackPanel>
 </UserControl>

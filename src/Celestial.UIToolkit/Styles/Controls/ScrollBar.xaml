@@ -63,6 +63,7 @@
         <Setter Property="Focusable" Value="False" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Orientation" Value="Vertical" />
         <Setter Property="Width" Value="{c:GridUnit 4.5}" />
         <Setter Property="Height" Value="Auto" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
