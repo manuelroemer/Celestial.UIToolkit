@@ -299,6 +299,60 @@
     
 
     <!--
+    - Background: Pane variations
+    - Border:     -
+    - Foreground: -
+    -->
+    <Style x:Key="PaneBackground" TargetType="FrameworkElement">
+        <Setter Property="Control.Background" Value="{StaticResource PaneBackgroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource PaneBackgroundBrush}" />
+        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource PaneBackgroundBrush}" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource PaneBackgroundBrush}" />
+        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource PaneBackgroundBrush}" />
+    </Style>
+
+    <!--
+    - Background: AltPane variations
+    - Border:     -
+    - Foreground: -
+    -->
+    <Style x:Key="AltPaneBackground" TargetType="FrameworkElement">
+        <Setter Property="Control.Background" Value="{StaticResource AltPaneBackgroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource AltPaneBackgroundBrush}" />
+        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource AltPaneBackgroundBrush}" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource AltPaneBackgroundBrush}" />
+        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource AltPaneBackgroundBrush}" />
+    </Style>
+
+    <!--
+    - Border: Pane variations
+    - Border:     -
+    - Foreground: -
+    -->
+    <Style x:Key="PaneBorder" TargetType="FrameworkElement">
+        <Setter Property="Control.BorderBrush" Value="{StaticResource PaneBorderBrush}" />
+        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource PaneBorderBrush}" />
+        <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource PaneBorderBrush}" />
+        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource PaneBorderBrush}" />
+        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource PaneBorderBrush}" />
+    </Style>
+
+    <!--
+    - Border: AltPane variations
+    - Border:     -
+    - Foreground: -
+    -->
+    <Style x:Key="AltPaneBorder" TargetType="FrameworkElement">
+        <Setter Property="Control.BorderBrush" Value="{StaticResource AltPaneBorderBrush}" />
+        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource AltPaneBorderBrush}" />
+        <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource AltPaneBorderBrush}" />
+        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource AltPaneBorderBrush}" />
+        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource AltPaneBorderBrush}" />
+    </Style>
+
+    
+    
+    <!--
     - Background: OnPaneControl variations
     - Border:     -
     - Foreground: -
@@ -350,6 +404,8 @@
         <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource AltOnPaneControlBorderDisabledBrush}" />
     </Style>
 
+    
+    
     <!--
     - Background: Transparent, with theme list variation states.
     - Border:     -

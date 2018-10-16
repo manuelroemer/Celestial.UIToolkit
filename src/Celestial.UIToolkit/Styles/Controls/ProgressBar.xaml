@@ -28,12 +28,14 @@
                     <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
                         <Grid.Resources>
+                            <sys:String x:Key="EllipseSizeMultiplier">1</sys:String>
+                            
                             <!-- The Ellipses/Borders all share the same style.
                                  Define them here, so that the following XAML doesn't get cluttered. -->
                             <Style TargetType="Ellipse">
                                 <Setter Property="Fill" Value="{Binding Path=(theming:ActiveProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                <Setter Property="Width" Value="{c:GridUnit 1}" />
-                                <Setter Property="Height" Value="{c:GridUnit 1}" />
+                                <Setter Property="Width" Value="{c:GridUnit MultiplierString={StaticResource EllipseSizeMultiplier}}" />
+                                <Setter Property="Height" Value="{c:GridUnit MultiplierString={StaticResource EllipseSizeMultiplier}}" />
                                 <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
                                 <Setter Property="RenderTransform">
                                     <Setter.Value>
@@ -63,10 +65,12 @@
                                      When indeterminate, the Ellipses are shown and animated from the
                                      left to the right. -->
                                 <controls:RelativeCanvas x:Name="IndeterminateContainer"
-                                                         Visibility="Collapsed">
+                                                         Visibility="Collapsed"
+                                                         Height="{c:GridUnit MultiplierString={StaticResource EllipseSizeMultiplier}}"
+                                                         VerticalAlignment="Center">
                                     <controls:RelativeCanvas x:Name="EllipseContainer"
                                                              Width="{TemplateBinding ActualWidth}"
-                                                             Height="{TemplateBinding ActualHeight}">
+                                                             Height="{c:GridUnit MultiplierString={StaticResource EllipseSizeMultiplier}}">
                                         <Ellipse x:Name="E5" controls:RelativeCanvas.Left="0.5" />
                                         <Ellipse x:Name="E4" Margin="{c:GridUnit '2,0,0,0'}" />
                                         <Ellipse x:Name="E3" Margin="{c:GridUnit '4,0,0,0'}" />

@@ -32,7 +32,7 @@
     </Style>
     <Style TargetType="Separator" BasedOn="{StaticResource StandardSeparator}" />
 
-    <Style x:Key="VerticalSeparator" TargetType="Separator">
+    <Style x:Key="VerticalSeparator" TargetType="Separator" BasedOn="{StaticResource StandardSeparator}">
         <Setter Property="LayoutTransform">
             <Setter.Value>
                 <RotateTransform Angle="90" />
@@ -55,6 +55,12 @@
         <Setter Property="Margin" Value="{c:GridUnit '0,1'}" />
     </Style>
 
-    <Style x:Key="{x:Static ToolBar.SeparatorStyleKey}" TargetType="Separator" BasedOn="{StaticResource VerticalSeparator}" />
+    <Style x:Key="{x:Static ToolBar.SeparatorStyleKey}" TargetType="Separator" BasedOn="{StaticResource VerticalSeparator}">
+        <Setter Property="Background" Value="{StaticResource PrimaryMediumHighBrush}" />
+    </Style>
+
+    <Style x:Key="{x:Static StatusBar.SeparatorStyleKey}" TargetType="Separator" BasedOn="{StaticResource VerticalSeparator}">
+        <Setter Property="Background" Value="{StaticResource PrimaryMediumHighBrush}" />
+    </Style>
 
 </ResourceDictionary>

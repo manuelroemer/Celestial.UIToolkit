@@ -26,7 +26,7 @@
     
     
     
-    <Style x:Key="StandardToolBar" TargetType="ToolBar" BasedOn="{c:MultiStyle 'StandardForeground StandardFontProperties StandardPopup Shadow8'}">
+    <Style x:Key="StandardToolBar" TargetType="ToolBar" BasedOn="{c:MultiStyle 'PaneBackground PaneBorder StandardForeground StandardFontProperties StandardPopup Shadow8'}">
         <Style.Resources>
             <Style x:Key="StandardToolBarButton" TargetType="ButtonBase" BasedOn="{c:MultiStyle 'StandardButton OnPaneControlBackground OnPaneControlBorder StandardForeground StandardFontProperties Shadow0'}">
                 <Setter Property="Padding" Value="{c:GridUnit 2}" />
@@ -73,8 +73,6 @@
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-        <Setter Property="Background" Value="{StaticResource PaneBackgroundBrush}" />
-        <Setter Property="BorderBrush" Value="{StaticResource PaneBorderBrush}" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
@@ -170,6 +168,20 @@
 
                         <Trigger Property="IsOverflowOpen" Value="True">
                             <Setter TargetName="Thumb" Property="IsEnabled" Value="False" />
+                        </Trigger>
+                        
+                        <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
+                                <Setter Property="BorderBrush" Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
+                                <Setter Property="Foreground" Value="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                                <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:MouseOverProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
+                            </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="BorderBrush" Value="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Foreground" Value="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:DisabledProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
