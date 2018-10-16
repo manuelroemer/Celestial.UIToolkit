@@ -36,6 +36,11 @@
         <controls:ControlPresenter Header="A ScrollViewer."
                                    Xaml="{Binding Xaml, ElementName=ScrollViewerEx1}"
                                    VerticalAlignment="Top">
+            <controls:ControlPresenter.Description>
+                If you have a touch-enabled device, try to drag the content over the edges.
+                You will notice that, in comparison to the "default WPF Style", the window won't move.
+                Instead, the content of the ScrollViewer gets moved.
+            </controls:ControlPresenter.Description>
             <smtx:XamlDisplay x:Name="ScrollViewerEx1" Key="ScrollViewerEx1">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,4,0'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledScrollViewerEx1}"
