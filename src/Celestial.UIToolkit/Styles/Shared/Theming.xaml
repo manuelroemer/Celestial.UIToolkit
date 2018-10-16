@@ -303,7 +303,7 @@
     - Border:     -
     - Foreground: -
     -->
-    <Style x:Key="OnPaneBackground" TargetType="FrameworkElement">
+    <Style x:Key="PaneBackground" TargetType="FrameworkElement">
         <Setter Property="Control.Background" Value="{StaticResource PaneBackgroundBrush}" />
         <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource PaneBackgroundBrush}" />
         <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource PaneBackgroundBrush}" />
@@ -329,7 +329,7 @@
     - Border:     -
     - Foreground: -
     -->
-    <Style x:Key="OnPaneBorder" TargetType="FrameworkElement">
+    <Style x:Key="PaneBorder" TargetType="FrameworkElement">
         <Setter Property="Control.BorderBrush" Value="{StaticResource PaneBorderBrush}" />
         <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource PaneBorderBrush}" />
         <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource PaneBorderBrush}" />
@@ -357,7 +357,7 @@
     - Border:     -
     - Foreground: -
     -->
-    <Style x:Key="PaneControlBackground" TargetType="FrameworkElement">
+    <Style x:Key="OnPaneControlBackground" TargetType="FrameworkElement">
         <Setter Property="Control.Background" Value="{StaticResource OnPaneControlBackgroundBrush}" />
         <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource OnPaneControlBackgroundHoverBrush}" />
         <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource OnPaneControlBackgroundPressedBrush}" />
