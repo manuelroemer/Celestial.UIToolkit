@@ -9,6 +9,7 @@
         <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
         <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
         <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
+        <c:SharedResourceDictionary Source="./ManipulationBoundaryFeedbackAwareContentControl.xaml" />
         <c:SharedResourceDictionary Source="./TextBlock.xaml" />
 
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
@@ -16,16 +17,19 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <!--<Style x:Key="StandardControl" TargetType="Control" BasedOn="{c:MultiStyle 'StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="StandardScrollViewer" TargetType="ScrollViewer" BasedOn="{c:MultiStyle 'TransparentBorder TransparentBackground  Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
-        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource DisabledThemeShadow}" />
+        <Setter Property="PanningMode" Value="Both" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="Control">
+                <ControlTemplate TargetType="ScrollViewer">
                     <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
                         <controls:ThemeShadowPresenter>
@@ -37,16 +41,56 @@
                         </controls:ThemeShadowPresenter>
                         <Border x:Name="BorderSpacer"
                                 BorderThickness="{TemplateBinding BorderThickness}"
-                                Padding="{TemplateBinding Padding}"
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
                             <Grid>
-                                --><!-- Put control content here. --><!--
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                
+                                <ScrollBar x:Name="PART_VerticalScrollBar"
+                                           Grid.Column="1"
+                                           AutomationProperties.AutomationId="VerticalScrollBar"
+                                           Cursor="Arrow"
+                                           Orientation="Vertical"
+                                           Minimum="0"
+                                           Maximum="{TemplateBinding ScrollableHeight}"
+                                           ViewportSize="{TemplateBinding ViewportHeight}"
+                                           Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
+                                           Value="{TemplateBinding VerticalOffset}" />
+
+                                <ScrollBar x:Name="PART_HorizontalScrollBar"
+                                           Grid.Row="1"
+                                           AutomationProperties.AutomationId="HorizontalScrollBar"
+                                           Cursor="Arrow"
+                                           Orientation="Horizontal"
+                                           Minimum="0"
+                                           Maximum="{TemplateBinding ScrollableWidth}"
+                                           ViewportSize="{TemplateBinding ViewportWidth}"
+                                           Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"
+                                           Value="{TemplateBinding HorizontalOffset}" />
+
+                                <controls:ManipulationBoundaryFeedbackAwareContentControl 
+                                    Style="{StaticResource BouncingManipulationBoundaryFeedbackAwareContentControl}"
+                                    FeedbackProvider="{Binding RelativeSource={RelativeSource TemplatedParent}}">
+                                    <ScrollContentPresenter x:Name="PART_ScrollContentPresenter"
+                                                            Margin="{TemplateBinding Padding}"
+                                                            CanContentScroll="{TemplateBinding CanContentScroll}"
+                                                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                </controls:ManipulationBoundaryFeedbackAwareContentControl>
                             </Grid>
                         </Border>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-    </Style>-->
-    
+    </Style>
+
+    <Style TargetType="ScrollViewer" BasedOn="{StaticResource StandardScrollViewer}" />
+
 </ResourceDictionary>

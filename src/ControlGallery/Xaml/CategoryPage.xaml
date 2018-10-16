@@ -70,13 +70,12 @@
         <Style x:Key="CardListView" TargetType="ListView">
             <Setter Property="ItemContainerStyle" Value="{StaticResource CardListViewItem}" />
             <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ListView">
-                        <ScrollViewer>
-                            <ItemsPresenter x:Name="ItemsPresenter"
-                                            Margin="{TemplateBinding Padding}"/>
-                        </ScrollViewer>
+                        <ItemsPresenter x:Name="ItemsPresenter"
+                                        Margin="{TemplateBinding Padding}" />
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>

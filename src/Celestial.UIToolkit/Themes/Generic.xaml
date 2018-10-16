@@ -4,6 +4,7 @@
 
     <ResourceDictionary.MergedDictionaries>
         <c:SharedResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Controls/IconElements.xaml" />
+        <c:SharedResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Controls/ManipulationBoundaryFeedbackAwareContentControl.xaml" />
         <c:SharedResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Controls/SelectionIndicator.xaml" />
         <c:SharedResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Controls/PlaceholderOverlay.xaml" />
         <c:SharedResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Controls/Card.xaml" />
