@@ -167,6 +167,9 @@
     <Compile Include="Xaml\SamplePages\Layout\SplitView.xaml.cs">
       <DependentUpon>SplitView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Xaml\SamplePages\Layout\StatusBar.xaml.cs">
+      <DependentUpon>StatusBar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Xaml\SamplePages\Layout\ToolBar.xaml.cs">
       <DependentUpon>ToolBar.xaml</DependentUpon>
     </Compile>
@@ -255,6 +258,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Xaml\SamplePages\Layout\SplitView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\SamplePages\Layout\StatusBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
