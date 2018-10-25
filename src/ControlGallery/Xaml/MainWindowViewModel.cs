@@ -14,7 +14,7 @@ using System.Windows.Input;
 namespace ControlGallery.Xaml
 {
 
-    public class MainWindowViewModel : BindableBase
+    public class MainWindowViewModel : NavigationAwareViewModel
     {
 
         private IRegionManager _regionManager;
@@ -53,6 +53,27 @@ namespace ControlGallery.Xaml
             MenuItems = new ObservableCollection<NavigationMenuItemInfo>();
             
             InitializeMenuItems();
+
+            // The following is ugly, but ultimately, it works.
+            // In the MainWindow, we don't have a default NavigationService, since we aren't in
+            // a region.
+            // In addition, the RegionManager is not initialized when this Constructor is called.
+            // To get the "Main" region's NavigationService (to allow going Back via the global
+            // NavigationView), we can wait until the Region Collection gets populated.
+            // Then we can grab the NavigationService of the Main region.
+            regionManager.Regions.CollectionChanged += (sender, e) =>
+            {
+                if (NavigationService == null)
+                {
+                    foreach (var region in regionManager.Regions)
+                    {
+                        if (region.Name == RegionNames.Main)
+                        {
+                            NavigationService = region.NavigationService;
+                        }
+                    }
+                }
+            };
         }
 
         private void InitializeMenuItems()
@@ -104,7 +125,7 @@ namespace ControlGallery.Xaml
                 CurrentMenuItem.NavigationTarget,
                 CurrentMenuItem.NavigationParameters);
         }
-
+        
     }
 
     /// <summary>

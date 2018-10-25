@@ -16,6 +16,11 @@
         Style="{StaticResource StandardWindow}"
         prism:ViewModelLocator.AutoWireViewModel="True">
 
+    <Window.InputBindings>
+        <KeyBinding Key="BrowserBack" Command="{Binding GoBackCommand}" />
+        <KeyBinding Key="BrowserForward" Command="{Binding GoForwardCommand}" />
+    </Window.InputBindings>
+    
     <Window.Resources>
 
         <DataTemplate DataType="{x:Type local:NavigationMenuItemInfo}">
