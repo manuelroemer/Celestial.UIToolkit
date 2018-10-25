@@ -25,14 +25,17 @@
             <smtx:XamlDisplay x:Name="ListViewEx1" Key="ListViewEx1">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx1}">
+                    <ListView Style="{StaticResource StandardListView}"
+                              Width="{c:GridUnit 100}"
+                              Height="{c:GridUnit 40}"
+                              ItemsSource="{x:Static data:LoremItems.Lorem50}" />
+                    <ListView Style="{StaticResource Accent1ListView}"
+                              Width="{c:GridUnit 100}"
+                              Height="{c:GridUnit 40}"
+                              ItemsSource="{x:Static data:LoremItems.Lorem50}" />
                     <ListView Width="{c:GridUnit 100}"
                               Height="{c:GridUnit 40}"
                               ItemsSource="{x:Static data:LoremItems.Lorem50}" />
-                    <!--<ListView Style="{StaticResource Accent1ListView}"
-                             Width="{c:GridUnit 60}"
-                             ItemsSource="{x:Static data:FruitItems.Fruits}" />
-                    <ListView Width="{c:GridUnit 60}"
-                             ItemsSource="{x:Static data:FruitItems.Fruits}" />-->
                 </StackPanel>
             </smtx:XamlDisplay>
             <controls:ControlPresenter.Options>

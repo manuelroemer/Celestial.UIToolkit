@@ -61,10 +61,10 @@
     <Color x:Key="ListLowColor">#EAEAEA</Color>
     <Color x:Key="ListHighColor">#C8C8C8</Color>
 
-    
-    
-    
-    
+
+
+
+
     <!--
     The following brushes define how the colors are used by controls.
     These should be modified, depending on your theme.
@@ -186,9 +186,16 @@
     <!-- List brushes. -->
     <SolidColorBrush x:Key="ListLowBrush" Color="{StaticResource ListLowColor}" />
     <SolidColorBrush x:Key="ListHighBrush" Color="{StaticResource ListHighColor}" />
+    
+    <SolidColorBrush x:Key="ListActiveDisabledBrush" Color="{StaticResource ListLowColor}" />
 
-    
-    
+    <SolidColorBrush x:Key="ListAlternationIndex0BackgroundBrush" Color="Transparent" />
+    <SolidColorBrush x:Key="ListAlternationIndex0BorderBrush" Color="Transparent" />
+    <SolidColorBrush x:Key="ListAlternationIndex1BackgroundBrush" Color="{StaticResource PrimaryLowColor}" />
+    <SolidColorBrush x:Key="ListAlternationIndex1BorderBrush" Color="{StaticResource PrimaryLowColor}" />
+
+
+
     <!--
     Alias resource names for the Text resources to allow an easier distinction of the resource's use-case.
     -->

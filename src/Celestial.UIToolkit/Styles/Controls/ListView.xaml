@@ -16,6 +16,90 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
+    <Style x:Key="StandardListViewItem" TargetType="ListViewItem" BasedOn="{c:MultiStyle 'ListBackground ListBorder StandardForeground StandardFontProperties Shadow0'}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Padding" Value="{c:GridUnit '2,1'}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListViewItem">
+                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
+                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                        <controls:ThemeShadowPresenter>
+                            <Border x:Name="Bd"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}" />
+                        </controls:ThemeShadowPresenter>
+                        <Border x:Name="BorderSpacer"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Padding="{TemplateBinding Padding}"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                            <Grid>
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                            </Grid>
+                        </Border>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                            <Setter Property="Background" Value="{StaticResource ListAlternationIndex0BackgroundBrush}" />
+                            <Setter Property="Background" Value="{StaticResource ListAlternationIndex0BorderBrush}" />
+                        </Trigger>
+                        
+                        <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                            <Setter Property="Background" Value="{StaticResource ListAlternationIndex1BackgroundBrush}" />
+                            <Setter Property="Background" Value="{StaticResource ListAlternationIndex1BorderBrush}" />
+                        </Trigger>
+                        
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="BorderBrush" Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Foreground" Value="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:MouseOverProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
+                        </Trigger>
+
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="{Binding Path=(theming:ActiveProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="BorderBrush" Value="{Binding Path=(theming:ActiveProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Foreground" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:ActiveProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
+                        </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="BorderBrush" Value="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Foreground" Value="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:DisabledProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
+                        </Trigger>
+                        
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="True" />
+                                <Condition Property="IsEnabled" Value="False" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" Value="{StaticResource ListActiveDisabledBrush}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource ListActiveDisabledBrush}" />
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Accent1ListViewItem" TargetType="ListViewItem" BasedOn="{c:MultiStyle 'StandardListViewItem Accent1ListBackground Accent1ListBorder'}" />
+    <Style x:Key="Accent2ListViewItem" TargetType="ListViewItem" BasedOn="{c:MultiStyle 'StandardListViewItem Accent2ListBackground Accent2ListBorder'}" />
+    <Style TargetType="ListViewItem" BasedOn="{StaticResource Accent2ListViewItem}" />
+    
+    
+
     <Style x:Key="StandardListView" TargetType="ListView" BasedOn="{c:MultiStyle 'PrimaryBackground ControlBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
@@ -31,6 +115,7 @@
         <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
+        <Setter Property="ItemContainerStyle" Value="{StaticResource StandardListViewItem}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ListView">
@@ -64,7 +149,15 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
-    <Style TargetType="ListView" BasedOn="{StaticResource StandardListView}" />
+
+    <Style x:Key="Accent1ListView" TargetType="ListView" BasedOn="{StaticResource StandardListView}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource Accent1ListViewItem}" />
+    </Style>
+
+    <Style x:Key="Accent2ListView" TargetType="ListView" BasedOn="{StaticResource StandardListView}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource Accent2ListViewItem}" />
+    </Style>
+
+    <Style TargetType="ListView" BasedOn="{StaticResource Accent2ListView}" />
 
 </ResourceDictionary>
