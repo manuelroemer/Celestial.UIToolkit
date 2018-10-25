@@ -94,8 +94,8 @@
         </Setter>
     </Style>
 
-    <Style x:Key="Accent1ListViewItem" TargetType="ListViewItem" BasedOn="{c:MultiStyle 'StandardListViewItem Accent1ListBackground Accent1ListBorder'}" />
-    <Style x:Key="Accent2ListViewItem" TargetType="ListViewItem" BasedOn="{c:MultiStyle 'StandardListViewItem Accent2ListBackground Accent2ListBorder'}" />
+    <Style x:Key="Accent1ListViewItem" TargetType="ListViewItem" BasedOn="{c:MultiStyle 'StandardListViewItem Accent1ListBackground Accent1ListBorder OnListAccent1Foreground'}" />
+    <Style x:Key="Accent2ListViewItem" TargetType="ListViewItem" BasedOn="{c:MultiStyle 'StandardListViewItem Accent2ListBackground Accent2ListBorder OnListAccent2Foreground'}" />
     <Style TargetType="ListViewItem" BasedOn="{StaticResource Accent2ListViewItem}" />
     
     
