@@ -64,6 +64,14 @@ namespace ControlGallery.Data.Categories
             SamplePageType = typeof(ListBox)
         };
 
+        private static ControlInformation ListViewInfo = new ControlInformation()
+        {
+            Name = "ListView",
+            Description = "The ListView control provides the infrastructure to display a set of data items in different layouts or views.",
+            Icon = new PackIconModern() { Kind = PackIconModernKind.Box },
+            SamplePageType = typeof(ListView)
+        };
+
         public static ControlCategory Input { get; } = new ControlCategory(
             "Input",
             new PackIconMaterialLight() { Kind = PackIconMaterialLightKind.BorderOutside },
@@ -72,7 +80,8 @@ namespace ControlGallery.Data.Categories
             TextBoxInfo,
             PasswordBoxInfo,
             ComboBoxInfo,
-            ListBoxInfo);
+            ListBoxInfo,
+            ListViewInfo);
 
     }
 
