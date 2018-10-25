@@ -27,7 +27,7 @@
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx1}">
                     <ListView Width="{c:GridUnit 100}"
                               Height="{c:GridUnit 40}"
-                              ItemsSource="{x:Static data:FruitItems.Fruits}" />
+                              ItemsSource="{x:Static data:LoremItems.Lorem50}" />
                     <!--<ListView Style="{StaticResource Accent1ListView}"
                              Width="{c:GridUnit 60}"
                              ItemsSource="{x:Static data:FruitItems.Fruits}" />
