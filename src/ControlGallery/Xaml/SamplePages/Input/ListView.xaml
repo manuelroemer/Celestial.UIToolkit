@@ -126,6 +126,38 @@
             </controls:ControlPresenter.Options>
         </controls:ControlPresenter>
 
+        <controls:ControlPresenter Header="Disabling the stripes."
+                                   Xaml="{Binding Xaml, ElementName=ListViewEx4}"
+                                   VerticalAlignment="Top">
+            <controls:ControlPresenter.Description>
+                The Stripes can be disabled by setting the ListView.AlternationCount property to 0.
+            </controls:ControlPresenter.Description>
+            <smtx:XamlDisplay x:Name="ListViewEx4" Key="ListViewEx4">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx4}">
+                    <ListView AlternationCount="0"
+                              Width="{c:GridUnit 100}"
+                              Height="{c:GridUnit 40}"
+                              ItemsSource="{x:Static data:SongItems.Songs}">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Title}" />
+                                <GridViewColumn Header="Genre" DisplayMemberBinding="{Binding Genre}" />
+                                <GridViewColumn Header="Duration" DisplayMemberBinding="{Binding Duration}" />
+                                <GridViewColumn Header="Likes" DisplayMemberBinding="{Binding Likes}" />
+                                <GridViewColumn Header="LikedByMe" DisplayMemberBinding="{Binding LikedByMe}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <CheckBox x:Name="IsEnabledCheckBoxEx4"
+                          IsChecked="True"
+                          Content="IsEnabled" />
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+
     </StackPanel>
 
 </UserControl>

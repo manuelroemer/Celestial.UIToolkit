@@ -18,7 +18,7 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="{x:Static GridView.GridViewScrollViewerStyleKey}" TargetType="ScrollViewer" BasedOn="{StaticResource StandardScrollViewer}">
+    <Style x:Key="StandardGridViewScrollViewer" TargetType="ScrollViewer" BasedOn="{StaticResource StandardScrollViewer}">
         <Setter Property="Focusable" Value="False" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Template">
@@ -105,6 +105,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <Style x:Key="{x:Static GridView.GridViewScrollViewerStyleKey}" TargetType="ScrollViewer" BasedOn="{StaticResource StandardGridViewScrollViewer}" />
 
 
 
@@ -114,7 +115,8 @@
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
-        <Setter Property="Padding" Value="{c:GridUnit '1,1,1,1'}" />
+        <Setter Property="Padding" Value="{c:GridUnit '2,1'}" />
+        <Setter Property="MinWidth" Value="{c:GridUnit 1}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource BottomControlThemeShadow}" />
         <Setter Property="FontWeight" Value="SemiBold" />
         <Setter Property="Template">
@@ -273,8 +275,8 @@
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="Padding" Value="{c:GridUnit '0,1'}" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="Padding" Value="{c:GridUnit '2,1'}" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
         <Setter Property="Template">
@@ -292,13 +294,24 @@
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 Padding="{TemplateBinding Padding}">
                             <Grid SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
-                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                <GridViewRowPresenter x:Name="RowContentSite"
+                                                      HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                <ContentPresenter x:Name="StandardContentSite"
+                                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                  Visibility="Collapsed" />
                             </Grid>
                         </Border>
                     </Grid>
 
                     <ControlTemplate.Triggers>
+                        <Trigger Property="GridView.ColumnCollection" Value="{x:Null}">
+                            <Setter Property="Padding" Value="{c:GridUnit '2,1', TargetType=Thickness}" />
+                            <Setter TargetName="RowContentSite" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="StandardContentSite" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                        
                         <Trigger Property="ItemsControl.AlternationIndex" Value="0">
                             <Setter Property="Background" Value="{StaticResource ListAlternationIndex0BackgroundBrush}" />
                             <Setter Property="Background" Value="{StaticResource ListAlternationIndex0BorderBrush}" />
