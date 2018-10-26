@@ -20,12 +20,11 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardComboBoxItem" TargetType="ComboBoxItem" BasedOn="{c:MultiStyle 'ListBackground ListBorder StandardForegroundActiveListStates StandardFontProperties Shadow0'}">
+    <Style x:Key="StandardComboBoxItem" TargetType="ComboBoxItem" BasedOn="{c:MultiStyle 'ListBackground ListBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
-        <Setter Property="MinHeight" Value="{c:GridUnit 8}" />
         <Setter Property="Padding" Value="{StaticResource StandardListItemPadding}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
@@ -34,109 +33,65 @@
                 <ControlTemplate TargetType="ComboBoxItem">
                     <Grid Background="Transparent"
                           VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
-                        <Grid.Resources>
-                            <Storyboard x:Key="MouseOverStoryboard">
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                                Storyboard.TargetProperty="Background">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                </c:BrushAnimationUsingKeyFrames>
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                                Storyboard.TargetProperty="BorderBrush">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                </c:BrushAnimationUsingKeyFrames>
-                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
-                                                  Storyboard.TargetProperty="Foreground"
-                                                  Duration="0"
-                                                  To="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
-                                                               Storyboard.TargetProperty="(controls:ThemeShadow.Elevation)">
-                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.ShadowElevation), RelativeSource={RelativeSource TemplatedParent}}" />
-                                </DoubleAnimationUsingKeyFrames>
-                            </Storyboard>
-
-                            <Storyboard x:Key="DisabledStoryboard">
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                                Storyboard.TargetProperty="Background">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                </c:BrushAnimationUsingKeyFrames>
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                                Storyboard.TargetProperty="BorderBrush">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                </c:BrushAnimationUsingKeyFrames>
-                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
-                                                  Storyboard.TargetProperty="Foreground"
-                                                  Duration="0"
-                                                  To="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
-                                                               Storyboard.TargetProperty="(controls:ThemeShadow.Elevation)">
-                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:DisabledProperties.ShadowElevation), RelativeSource={RelativeSource TemplatedParent}}" />
-                                </DoubleAnimationUsingKeyFrames>
-                            </Storyboard>
-                        </Grid.Resources>
-
                         <controls:ThemeShadowPresenter SnapsToDevicePixels="False">
-                            <Grid>
-                                <Border x:Name="Bd"
-                                        Background="{TemplateBinding Background}"
-                                        BorderBrush="{TemplateBinding BorderBrush}"
-                                        BorderThickness="{TemplateBinding BorderThickness}"
-                                        CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}" />
-                                <controls:SelectionIndicator Width="{c:GridUnit 1}"
-                                                             Orientation="Vertical"
-                                                             HorizontalAlignment="Left"
-                                                             Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
-                                                             BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}"
-                                                             IsSelected="{TemplateBinding IsSelected}" />
-                            </Grid>
+                            <Border x:Name="Bd"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}" />
                         </controls:ThemeShadowPresenter>
                         <Border BorderThickness="{TemplateBinding BorderThickness}"
                                 CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}"
                                 Padding="{TemplateBinding Padding}">
                             <ContentPresenter x:Name="ContentSite"
                                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                              RecognizesAccessKey="True" />
                         </Border>
-
-                        <VisualStateManager.VisualStateGroups>
-                            <VisualStateGroup x:Name="CommonStates">
-                                <VisualStateGroup.Transitions>
-                                    <!-- Not using the default ColorAnim duration here, because imo
-                                         it looks weird on menu items. -->
-                                    <VisualTransition GeneratedDuration="0" />
-                                </VisualStateGroup.Transitions>
-                                <VisualState x:Name="Normal" />
-                                <VisualState x:Name="MouseOver" Storyboard="{StaticResource MouseOverStoryboard}" />
-                                <VisualState x:Name="Disabled" Storyboard="{StaticResource DisabledStoryboard}" />
-                            </VisualStateGroup>
-
-                            <VisualStateGroup x:Name="SelectionStates">
-                                <c:ExtendedVisualState x:Name="Selected">
-                                    <c:ExtendedVisualState.Setters>
-                                        <Setter TargetName="Bd" Property="Visibility" Value="Collapsed" />
-                                    </c:ExtendedVisualState.Setters>
-                                </c:ExtendedVisualState>
-                                <c:ExtendedVisualState x:Name="Unselected">
-                                    <c:ExtendedVisualState.Setters>
-                                        <!-- This Setter is important for resetting, since there is a third state
-                                             (which we just don't need). -->
-                                        <Setter TargetName="Bd" Property="Visibility" Value="Visible" />
-                                    </c:ExtendedVisualState.Setters>
-                                </c:ExtendedVisualState>
-                            </VisualStateGroup>
-                        </VisualStateManager.VisualStateGroups>
                     </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                            <Setter Property="Background" Value="{StaticResource ListAlternationIndex1BackgroundBrush}" />
+                            <Setter Property="Background" Value="{StaticResource ListAlternationIndex1BorderBrush}" />
+                        </Trigger>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="BorderBrush" Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Foreground" Value="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:MouseOverProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
+                        </Trigger>
+
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="{Binding Path=(theming:ActiveProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="BorderBrush" Value="{Binding Path=(theming:ActiveProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Foreground" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:ActiveProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
+                        </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="BorderBrush" Value="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Foreground" Value="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:DisabledProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
+                        </Trigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="True" />
+                                <Condition Property="IsEnabled" Value="False" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" Value="{StaticResource ListActiveDisabledBrush}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource ListActiveDisabledBrush}" />
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <Style.Triggers>
-            <Trigger Property="IsSelected" Value="True">
-                <Setter Property="Foreground" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
-                <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
-            </Trigger>
-        </Style.Triggers>
     </Style>
-    <Style x:Key="Accent1ComboBoxItem" TargetType="ComboBoxItem" BasedOn="{c:MultiStyle 'StandardComboBoxItem Accent1ListBackground Accent1ListBorder StandardForegroundActiveAccent1ListStates'}" />
-    <Style x:Key="Accent2ComboBoxItem" TargetType="ComboBoxItem" BasedOn="{c:MultiStyle 'StandardComboBoxItem Accent2ListBackground Accent2ListBorder StandardForegroundActiveAccent2ListStates'}" />
+    <Style x:Key="Accent1ComboBoxItem" TargetType="ComboBoxItem" BasedOn="{c:MultiStyle 'StandardComboBoxItem Accent1ListBackground Accent1ListBorder OnListAccent1Foreground'}" />
+    <Style x:Key="Accent2ComboBoxItem" TargetType="ComboBoxItem" BasedOn="{c:MultiStyle 'StandardComboBoxItem Accent2ListBackground Accent2ListBorder OnListAccent2Foreground'}" />
     <Style TargetType="ComboBoxItem" BasedOn="{StaticResource Accent2ComboBoxItem}" />
 
     
