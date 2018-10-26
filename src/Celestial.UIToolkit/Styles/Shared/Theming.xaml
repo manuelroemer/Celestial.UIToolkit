@@ -759,7 +759,7 @@
     </Style>
     
     <!--
-    Alt Font Properties.
+    Base Font Properties.
     -->
     <Style x:Key="BaseFontProperties" TargetType="Control">
         <Setter Property="FontFamily" Value="{StaticResource StandardFontFamily}" />
@@ -767,6 +767,72 @@
         <Setter Property="FontWeight" Value="{StaticResource BaseFontWeight}" />
         <Setter Property="FontStretch" Value="{StaticResource BaseFontStretch}" />
         <Setter Property="FontStyle" Value="{StaticResource BaseFontStyle}" />
+    </Style>
+
+    <!--
+    Hint Font Properties.
+    -->
+    <Style x:Key="HintFontProperties" TargetType="Control">
+        <Setter Property="FontFamily" Value="{StaticResource StandardFontFamily}" />
+        <Setter Property="FontSize" Value="{StaticResource StandardFontSize}" />
+        <Setter Property="FontWeight" Value="{StaticResource HintFontWeight}" />
+        <Setter Property="FontStyle" Value="{StaticResource HintFontStyle}" />
+        <Setter Property="FontStretch" Value="{StaticResource HintFontStretch}" />
+    </Style>
+
+    <!--
+    Header Font Properties.
+    -->
+    <Style x:Key="HeaderFontProperties" TargetType="Control">
+        <Setter Property="FontFamily" Value="{StaticResource HeaderFontFamily}" />
+        <Setter Property="FontSize" Value="{StaticResource HeaderFontSize}" />
+        <Setter Property="FontWeight" Value="{StaticResource HeaderFontWeight}" />
+        <Setter Property="FontStretch" Value="{StaticResource HeaderFontStretch}" />
+        <Setter Property="FontStyle" Value="{StaticResource HeaderFontStyle}" />
+    </Style>
+
+    <!--
+    SubHeader Font Properties.
+    -->
+    <Style x:Key="SubHeaderFontProperties" TargetType="Control">
+        <Setter Property="FontFamily" Value="{StaticResource SubHeaderFontFamily}" />
+        <Setter Property="FontSize" Value="{StaticResource SubHeaderFontSize}" />
+        <Setter Property="FontWeight" Value="{StaticResource SubHeaderFontWeight}" />
+        <Setter Property="FontStretch" Value="{StaticResource SubHeaderFontStretch}" />
+        <Setter Property="FontStyle" Value="{StaticResource SubHeaderFontStyle}" />
+    </Style>
+
+    <!--
+    Title Font Properties.
+    -->
+    <Style x:Key="TitleFontProperties" TargetType="Control">
+        <Setter Property="FontFamily" Value="{StaticResource TitleFontFamily}" />
+        <Setter Property="FontSize" Value="{StaticResource TitleFontSize}" />
+        <Setter Property="FontWeight" Value="{StaticResource TitleFontWeight}" />
+        <Setter Property="FontStretch" Value="{StaticResource TitleFontStretch}" />
+        <Setter Property="FontStyle" Value="{StaticResource TitleFontStyle}" />
+    </Style>
+
+    <!--
+    SubTitle Font Properties.
+    -->
+    <Style x:Key="SubTitleFontProperties" TargetType="Control">
+        <Setter Property="FontFamily" Value="{StaticResource SubTitleFontFamily}" />
+        <Setter Property="FontSize" Value="{StaticResource SubTitleFontSize}" />
+        <Setter Property="FontWeight" Value="{StaticResource SubTitleFontWeight}" />
+        <Setter Property="FontStretch" Value="{StaticResource SubTitleFontStretch}" />
+        <Setter Property="FontStyle" Value="{StaticResource SubTitleFontStyle}" />
+    </Style>
+
+    <!--
+    Caption Font Properties.
+    -->
+    <Style x:Key="CaptionFontProperties" TargetType="Control">
+        <Setter Property="FontFamily" Value="{StaticResource CaptionFontFamily}" />
+        <Setter Property="FontSize" Value="{StaticResource CaptionFontSize}" />
+        <Setter Property="FontWeight" Value="{StaticResource CaptionFontWeight}" />
+        <Setter Property="FontStretch" Value="{StaticResource CaptionFontStretch}" />
+        <Setter Property="FontStyle" Value="{StaticResource CaptionFontStyle}" />
     </Style>
 
 

@@ -27,10 +27,23 @@ namespace ControlGallery.Data.Categories
             }
         };
 
+        private static ControlInformation GroupBoxInfo = new ControlInformation()
+        {
+            Name = "GroupBox",
+            Description = "A GroupBox is a container for elements which fall into a common category. It groups them together under a common Header.",
+            Icon = new PackIconModern() { Kind = PackIconModernKind.BorderOutside },
+            SamplePageType = typeof(GroupBox),
+            DocumentationLinks = new ObservableCollection<LinkViewModel>()
+            {
+                new LinkViewModel("MSDN - GroupBox", "https://docs.microsoft.com/en-us/dotnet/api/system.windows.controls.groupbox?view=netframework-4.7.2")
+            }
+        };
+
         public static ControlCategory Containers { get; } = new ControlCategory(
             "Containers",
             new PackIconModern() { Kind = PackIconModernKind.BorderOutside },
-            CardInfo);
+            CardInfo,
+            GroupBoxInfo);
 
     }
 
