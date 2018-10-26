@@ -168,7 +168,16 @@
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}" />
+                            CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}">
+                        <Canvas Margin="{c:GridUnit '-2,0'}">
+                            <Border x:Name="PART_SelectionRange"
+                                    Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
+                                    BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    Height="{Binding ActualHeight, ElementName=TrackBackground}"
+                                    Visibility="Collapsed" />
+                        </Canvas>
+                    </Border>
 
                     <Track x:Name="PART_Track" Grid.Row="1">
                         <Track.Thumb>
@@ -203,6 +212,10 @@
                 <Setter TargetName="TopTick" Property="Visibility" Value="Visible" />
                 <Setter TargetName="BottomTick" Property="Visibility" Value="Visible" />
             </Trigger>
+
+            <Trigger Property="IsSelectionRangeEnabled" Value="True">
+                <Setter TargetName="PART_SelectionRange" Property="Visibility" Value="Visible" />
+            </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
@@ -218,15 +231,26 @@
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource DisabledThemeShadow}" />
         <Setter Property="Template" Value="{StaticResource HorizontalSliderTemplate}" />
+        
+        <!-- This makes the SelectionRange line follow the Thumb. -->
+        <Setter Property="IsSelectionRangeEnabled" Value="True" />
+        <Setter Property="SelectionStart" Value="{Binding Minimum, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="SelectionEnd" Value="{Binding Value, RelativeSource={RelativeSource Self}}" />
+        
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="IsSelectionRangeEnabled" Value="False" />
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
-    <Style x:Key="Accent1Slider" TargetType="Slider" BasedOn="{StaticResource StandardSlider}">
+    <Style x:Key="Accent1Slider" TargetType="Slider" BasedOn="{c:MultiStyle 'StandardSlider ControlBackgroundAccent1States ControlBorderAccent1States'}">
         <Style.Resources>
             <Style x:Key="SliderThumbStyle" TargetType="Thumb" BasedOn="{StaticResource Accent1SliderThumb}" />
         </Style.Resources>
     </Style>
-    
-    <Style x:Key="Accent2Slider" TargetType="Slider" BasedOn="{StaticResource StandardSlider}">
+
+    <Style x:Key="Accent2Slider" TargetType="Slider" BasedOn="{c:MultiStyle 'StandardSlider ControlBackgroundAccent2States ControlBorderAccent2States'}">
         <Style.Resources>
             <Style x:Key="SliderThumbStyle" TargetType="Thumb" BasedOn="{StaticResource Accent2SliderThumb}" />
         </Style.Resources>
