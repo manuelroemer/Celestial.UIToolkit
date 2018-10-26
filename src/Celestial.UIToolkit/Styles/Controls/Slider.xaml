@@ -9,7 +9,7 @@
         <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
         <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
         <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-        <c:SharedResourceDictionary Source="./TextBlock.xaml" />
+        <c:SharedResourceDictionary Source="./ToolTip.xaml" />
 
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
@@ -17,6 +17,27 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="StandardSliderThumb" TargetType="Thumb" BasedOn="{c:MultiStyle 'PrimaryBackground ControlBorder Shadow0'}">
+        <Style.Resources>
+            <!-- The default ToolTip Style has a Margin for the Shadows.
+                 The Slider uses the Thumb's ToolTip for displaying the current value.
+                 It also uses a custom ToolTipPlacement method, which doesn't take the margin into account.
+                 Thus, the ToolTip gets moved to the down-right.
+                 We can override this by removing the margin (and thus disabling shadows). -->
+            <Style TargetType="ToolTip" BasedOn="{StaticResource StandardToolTip}">
+                <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource DisabledThemeShadow}" />
+                <Setter Property="Margin" Value="0" />
+                <Style.Triggers>
+                    <!-- While we are fixing Popups:
+                         The Thumb grows larger with a RenderTransform. This doesn't get taken into account
+                         when placing the ToolTip. -> The ToolTip is a little bit over the Thumb.
+                         We can offset this by setting the 'VerticalOffset' property, because it doesn't get used by the Slider. -->
+                    <DataTrigger Binding="{Binding Orientation, RelativeSource={RelativeSource AncestorType=Slider}}" Value="Horizontal">
+                        <Setter Property="VerticalOffset" Value="{c:GridUnit -1}" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </Style.Resources>
+        
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="False" />
         <Setter Property="Width" Value="{c:GridUnit 4}" />
@@ -26,8 +47,8 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Thumb">
-                    <controls:ThemeShadowPresenter VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
-                                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
+                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
                         <Border x:Name="Bd"
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
@@ -39,7 +60,7 @@
                             </Border.RenderTransform>
                         </Border>
 
-                        <controls:ThemeShadowPresenter.Resources>
+                        <Grid.Resources>
                             <Storyboard x:Key="MouseOverStoryboard">
                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                Storyboard.TargetProperty="RenderTransform.(ScaleTransform.ScaleX)">
@@ -49,8 +70,46 @@
                                                                Storyboard.TargetProperty="RenderTransform.(ScaleTransform.ScaleY)">
                                     <DiscreteDoubleKeyFrame KeyTime="0" Value="1.2" />
                                 </DoubleAnimationUsingKeyFrames>
+                                <c:BrushAnimation Storyboard.TargetName="Bd"
+                                                  Storyboard.TargetProperty="Background"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                <c:BrushAnimation Storyboard.TargetName="Bd"
+                                                  Storyboard.TargetProperty="BorderBrush"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                             </Storyboard>
-                        </controls:ThemeShadowPresenter.Resources>
+
+                            <Storyboard x:Key="PressedStoryboard">
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                               Storyboard.TargetProperty="RenderTransform.(ScaleTransform.ScaleX)">
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="1.2" />
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                               Storyboard.TargetProperty="RenderTransform.(ScaleTransform.ScaleY)">
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="1.2" />
+                                </DoubleAnimationUsingKeyFrames>
+                                <c:BrushAnimation Storyboard.TargetName="Bd"
+                                                  Storyboard.TargetProperty="Background"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:PressedProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                <c:BrushAnimation Storyboard.TargetName="Bd"
+                                                  Storyboard.TargetProperty="BorderBrush"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:PressedProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                            </Storyboard>
+
+                            <Storyboard x:Key="DisabledStoryboard">
+                                <c:BrushAnimation Storyboard.TargetName="Bd"
+                                                  Storyboard.TargetProperty="Background"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                <c:BrushAnimation Storyboard.TargetName="Bd"
+                                                  Storyboard.TargetProperty="BorderBrush"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                            </Storyboard>
+                        </Grid.Resources>
                         
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
@@ -61,9 +120,11 @@
                                 </VisualStateGroup.Transitions>
                                 <VisualState x:Name="Normal" />
                                 <VisualState x:Name="MouseOver" Storyboard="{StaticResource MouseOverStoryboard}" />
+                                <VisualState x:Name="Pressed" Storyboard="{StaticResource PressedStoryboard}" />
+                                <VisualState x:Name="Disabled" Storyboard="{StaticResource DisabledStoryboard}" />
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
-                    </controls:ThemeShadowPresenter>
+                    </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -85,6 +146,7 @@
                     <Border x:Name="TrackBackground"
                             Grid.Row="1"
                             Height="{c:GridUnit 0.5}"
+                            Margin="{c:GridUnit '2,0'}"
                             VerticalAlignment="Center"
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
