@@ -219,6 +219,90 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
+    <ControlTemplate x:Key="VerticalSliderTemplate" TargetType="Slider">
+        <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
+              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+            <controls:ThemeShadowPresenter>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" MinWidth="{TemplateBinding MinWidth}" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <TickBar x:Name="LeftTick" 
+                             Fill="{TemplateBinding Foreground}" 
+                             Width="{c:GridUnit 1}"
+                             Margin="{c:GridUnit '0,0,0.5,0'}"
+                             Placement="Left"
+                             Visibility="Collapsed" />
+                    <TickBar x:Name="RightTick" Fill="{TemplateBinding Foreground}" 
+                             Grid.Column="2" 
+                             Width="{c:GridUnit 1}" 
+                             Margin="{c:GridUnit '0.5,0,0,0'}"
+                             Placement="Right"
+                             Visibility="Collapsed" />
+
+                    <Border x:Name="TrackBackground"
+                            Grid.Column="1"
+                            Width="{c:GridUnit 0.5}"
+                            Margin="{c:GridUnit '0,2'}"
+                            HorizontalAlignment="Center"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}">
+                        <Canvas Margin="{c:GridUnit '0,-2'}">
+                            <Border x:Name="PART_SelectionRange"
+                                    Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
+                                    BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    Width="{Binding ActualWidth, ElementName=TrackBackground}"
+                                    Visibility="Collapsed" />
+                        </Canvas>
+                    </Border>
+
+                    <Track x:Name="PART_Track" Grid.Column="1">
+                        <Track.Thumb>
+                            <!-- The style must always be Dynamic, since it gets "injected" via Style.Resources. -->
+                            <Thumb x:Name="Thumb"
+                                   Style="{DynamicResource SliderThumbStyle}"
+                                   Focusable="False"
+                                   HorizontalAlignment="Center" />
+                        </Track.Thumb>
+                        <Track.IncreaseRepeatButton>
+                            <RepeatButton Style="{StaticResource TransparentButton}"
+                                          Command="{x:Static Slider.IncreaseLarge}" />
+                        </Track.IncreaseRepeatButton>
+                        <Track.DecreaseRepeatButton>
+                            <RepeatButton Style="{StaticResource TransparentButton}"
+                                          Command="{x:Static Slider.DecreaseLarge}" />
+                        </Track.DecreaseRepeatButton>
+                    </Track>
+                </Grid>
+            </controls:ThemeShadowPresenter>
+        </Grid>
+
+        <ControlTemplate.Triggers>
+            <Trigger Property="TickPlacement" Value="TopLeft">
+                <Setter TargetName="LeftTick" Property="Visibility" Value="Visible" />
+            </Trigger>
+
+            <Trigger Property="TickPlacement" Value="BottomRight">
+                <Setter TargetName="RightTick" Property="Visibility" Value="Visible" />
+            </Trigger>
+
+            <Trigger Property="TickPlacement" Value="Both">
+                <Setter TargetName="LeftTick" Property="Visibility" Value="Visible" />
+                <Setter TargetName="RightTick" Property="Visibility" Value="Visible" />
+            </Trigger>
+
+            <Trigger Property="IsSelectionRangeEnabled" Value="True">
+                <Setter TargetName="PART_SelectionRange" Property="Visibility" Value="Visible" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
     <Style x:Key="StandardSlider" TargetType="Slider" BasedOn="{c:MultiStyle 'ControlBackground ControlBorder SecondaryForeground StandardFontProperties Shadow0'}">
         <Style.Resources>
             <Style x:Key="SliderThumbStyle" TargetType="Thumb" BasedOn="{StaticResource StandardSliderThumb}" />
@@ -240,6 +324,10 @@
         <Style.Triggers>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="IsSelectionRangeEnabled" Value="False" />
+            </Trigger>
+
+            <Trigger Property="Orientation" Value="Vertical">
+                <Setter Property="Template" Value="{StaticResource VerticalSliderTemplate}" />
             </Trigger>
         </Style.Triggers>
     </Style>
