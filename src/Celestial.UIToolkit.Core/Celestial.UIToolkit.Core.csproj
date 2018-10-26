@@ -53,6 +53,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converters\DoubleToCornerRadiusConverter.cs" />
     <Compile Include="Converters\GetTypeConverter.cs" />
     <Compile Include="DesignMode.cs" />
     <Compile Include="DesignTimeOnlyResourceDictionary.cs" />

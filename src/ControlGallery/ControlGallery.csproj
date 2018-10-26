@@ -160,6 +160,9 @@
     <Compile Include="Xaml\SamplePages\Input\RadioButton.xaml.cs">
       <DependentUpon>RadioButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Xaml\SamplePages\Input\Slider.xaml.cs">
+      <DependentUpon>Slider.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Xaml\SamplePages\Input\TextBox.xaml.cs">
       <DependentUpon>TextBox.xaml</DependentUpon>
     </Compile>
@@ -257,6 +260,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Xaml\SamplePages\Input\RadioButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\SamplePages\Input\Slider.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

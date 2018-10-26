@@ -205,6 +205,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Styles\Controls\Slider.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Styles\Controls\_Template.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

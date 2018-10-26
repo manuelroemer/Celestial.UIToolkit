@@ -72,11 +72,20 @@ namespace ControlGallery.Data.Categories
             SamplePageType = typeof(ListView)
         };
 
+        private static ControlInformation SliderInfo = new ControlInformation()
+        {
+            Name = "Slider",
+            Description = "A Slider allows the user to pick a value from a range of numbers.",
+            Icon = new PackIconModern() { Kind = PackIconModernKind.Calculator },
+            SamplePageType = typeof(Slider)
+        };
+
         public static ControlCategory Input { get; } = new ControlCategory(
             "Input",
             new PackIconMaterialLight() { Kind = PackIconMaterialLightKind.BorderOutside },
             CheckBoxInfo,
             RadioButtonInfo,
+            SliderInfo,
             TextBoxInfo,
             PasswordBoxInfo,
             ComboBoxInfo,
