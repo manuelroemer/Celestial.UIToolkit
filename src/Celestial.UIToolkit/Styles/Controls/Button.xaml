@@ -15,7 +15,7 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardButton" TargetType="ButtonBase" BasedOn="{c:MultiStyle 'ControlBackground ControlBorder StandardForeground AltFontProperties ElevationZIndex Shadow0 InteractiveShadow4'}">
+    <Style x:Key="StandardButton" TargetType="ButtonBase" BasedOn="{c:MultiStyle 'ControlBackground ControlBorder StandardForeground BaseFontProperties ElevationZIndex Shadow0 InteractiveShadow4'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
@@ -162,10 +162,10 @@
 
     <Style x:Key="Accent1Button" 
            TargetType="ButtonBase" 
-           BasedOn="{c:MultiStyle 'StandardButton Accent1Background Accent1Border OnAccent1Foreground'}" />
+           BasedOn="{c:MultiStyle 'StandardButton Accent1Background Accent1Border OnDarkerAccent1Foreground'}" />
     <Style x:Key="Accent2Button" 
            TargetType="ButtonBase" 
-           BasedOn="{c:MultiStyle 'StandardButton Accent2Background Accent2Border OnAccent2Foreground'}" />
+           BasedOn="{c:MultiStyle 'StandardButton Accent2Background Accent2Border OnDarkerAccent2Foreground'}" />
 
     
 
@@ -274,14 +274,14 @@
 
     <Style x:Key="Accent1SquareButton" 
            TargetType="ButtonBase" 
-           BasedOn="{c:MultiStyle 'SquareButton Accent1Border Accent1Background OnAccent1Foreground'}">
+           BasedOn="{c:MultiStyle 'SquareButton Accent1Border Accent1Background OnDarkerAccent1Foreground'}">
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
     </Style>
 
     <Style x:Key="Accent2SquareButton" 
            TargetType="ButtonBase"
-           BasedOn="{c:MultiStyle 'SquareButton Accent2Border Accent2Background OnAccent2Foreground'}">
+           BasedOn="{c:MultiStyle 'SquareButton Accent2Border Accent2Background OnDarkerAccent2Foreground'}">
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />        
     </Style>

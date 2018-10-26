@@ -112,6 +112,7 @@
     <Compile Include="Data\ControlInformation.cs" />
     <Compile Include="Data\FruitItems.cs" />
     <Compile Include="Data\LoremItems.cs" />
+    <Compile Include="Data\SongItems.cs" />
     <Compile Include="GalleryBootstrapper.cs" />
     <Compile Include="Xaml\CategoryPage.xaml.cs">
       <DependentUpon>CategoryPage.xaml</DependentUpon>

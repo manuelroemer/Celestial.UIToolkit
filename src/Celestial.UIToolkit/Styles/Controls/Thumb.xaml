@@ -15,6 +15,7 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
+    <!-- A Thumb in one color with support for VisualStates via Theming properties. -->
     <Style x:Key="MonochromeThumb" TargetType="Thumb" BasedOn="{c:MultiStyle 'ControlBackground ControlBorder'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
@@ -84,6 +85,9 @@
         </Setter>
     </Style>
     
+    
+
+    <!-- A Thumb which displays a sequence of small rectangles. -->
     <Style x:Key="RectanglePatternThumb" TargetType="Thumb" BasedOn="{c:MultiStyle 'TransparentBackground TransparentBorder StandardForeground SecondaryForeground'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />

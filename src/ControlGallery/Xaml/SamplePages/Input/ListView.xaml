@@ -45,6 +45,87 @@
             </controls:ControlPresenter.Options>
         </controls:ControlPresenter>
 
+        <controls:ControlPresenter Header="A ListView with a GridView layout."
+                                   Xaml="{Binding Xaml, ElementName=ListViewEx2}"
+                                   VerticalAlignment="Top">
+            <controls:ControlPresenter.Description>
+                Even though only a single color style is shown here, all of the styles above will work.
+            </controls:ControlPresenter.Description>
+            <smtx:XamlDisplay x:Name="ListViewEx2" Key="ListViewEx2">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx2}">
+                    <ListView Width="{c:GridUnit 100}"
+                              Height="{c:GridUnit 40}"
+                              ItemsSource="{x:Static data:SongItems.Songs}">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Title}" />
+                                <GridViewColumn Header="Genre" DisplayMemberBinding="{Binding Genre}" />
+                                <GridViewColumn Header="Duration" DisplayMemberBinding="{Binding Duration}" />
+                                <GridViewColumn Header="Likes" DisplayMemberBinding="{Binding Likes}" />
+                                <GridViewColumn Header="LikedByMe" DisplayMemberBinding="{Binding LikedByMe}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <CheckBox x:Name="IsEnabledCheckBoxEx2"
+                          IsChecked="True"
+                          Content="IsEnabled" />
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+
+        <controls:ControlPresenter Header="Styling the Column Header."
+                                   Xaml="{Binding Xaml, ElementName=ListViewEx3}"
+                                   VerticalAlignment="Top">
+            <controls:ControlPresenter.Description>
+                The Column Header can be accentuated too.
+                Use the GridView's ColumnHeaderContainerStyle property for this.
+                Note that this does not influence the Colors of the ListView itself.
+                This means that you could, in theory, have a ListView whose selected rows use the
+                Accent1-colors, while the Header is styled using the Accent2-colors.
+            </controls:ControlPresenter.Description>
+            <smtx:XamlDisplay x:Name="ListViewEx3" Key="ListViewEx3">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx3}">
+                    <ListView Style="{StaticResource Accent1ListView}"
+                              Width="{c:GridUnit 100}"
+                              Height="{c:GridUnit 40}"
+                              ItemsSource="{x:Static data:SongItems.Songs}">
+                        <ListView.View>
+                            <GridView ColumnHeaderContainerStyle="{StaticResource Accent1GridViewColumnHeader}">
+                                <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Title}" />
+                                <GridViewColumn Header="Genre" DisplayMemberBinding="{Binding Genre}" />
+                                <GridViewColumn Header="Duration" DisplayMemberBinding="{Binding Duration}" />
+                                <GridViewColumn Header="Likes" DisplayMemberBinding="{Binding Likes}" />
+                                <GridViewColumn Header="LikedByMe" DisplayMemberBinding="{Binding LikedByMe}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    
+                    <ListView Width="{c:GridUnit 100}"
+                              Height="{c:GridUnit 40}"
+                              ItemsSource="{x:Static data:SongItems.Songs}">
+                        <ListView.View>
+                            <GridView ColumnHeaderContainerStyle="{StaticResource Accent2GridViewColumnHeader}">
+                                <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Title}" />
+                                <GridViewColumn Header="Genre" DisplayMemberBinding="{Binding Genre}" />
+                                <GridViewColumn Header="Duration" DisplayMemberBinding="{Binding Duration}" />
+                                <GridViewColumn Header="Likes" DisplayMemberBinding="{Binding Likes}" />
+                                <GridViewColumn Header="LikedByMe" DisplayMemberBinding="{Binding LikedByMe}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <CheckBox x:Name="IsEnabledCheckBoxEx3"
+                          IsChecked="True"
+                          Content="IsEnabled" />
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+
     </StackPanel>
 
 </UserControl>

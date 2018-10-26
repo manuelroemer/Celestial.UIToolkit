@@ -9,12 +9,264 @@
         <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
         <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
         <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-        <c:SharedResourceDictionary Source="./TextBlock.xaml" />
+        <c:SharedResourceDictionary Source="./ScrollViewer.xaml" />
+        <c:SharedResourceDictionary Source="./Thumb.xaml" />
+        <c:SharedResourceDictionary Source="./ManipulationBoundaryFeedbackAwareContentControl.xaml" />
 
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="{x:Static GridView.GridViewScrollViewerStyleKey}" TargetType="ScrollViewer" BasedOn="{StaticResource StandardScrollViewer}">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ScrollViewer">
+                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
+                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                        <controls:ThemeShadowPresenter>
+                            <Border x:Name="Bd"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}" />
+                        </controls:ThemeShadowPresenter>
+                        <Border x:Name="BorderSpacer"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <ScrollBar x:Name="PART_VerticalScrollBar"
+                                           Grid.Column="1"
+                                           AutomationProperties.AutomationId="VerticalScrollBar"
+                                           Cursor="Arrow"
+                                           Orientation="Vertical"
+                                           Minimum="0"
+                                           Maximum="{TemplateBinding ScrollableHeight}"
+                                           ViewportSize="{TemplateBinding ViewportHeight}"
+                                           Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
+                                           Value="{TemplateBinding VerticalOffset}" />
+
+                                <ScrollBar x:Name="PART_HorizontalScrollBar"
+                                           Grid.Row="1"
+                                           AutomationProperties.AutomationId="HorizontalScrollBar"
+                                           Cursor="Arrow"
+                                           Orientation="Horizontal"
+                                           Minimum="0"
+                                           Maximum="{TemplateBinding ScrollableWidth}"
+                                           ViewportSize="{TemplateBinding ViewportWidth}"
+                                           Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"
+                                           Value="{TemplateBinding HorizontalOffset}" />
+
+                                <DockPanel Margin="{TemplateBinding Padding}">
+                                    <ScrollViewer x:Name="ColumnScrollViewer"
+                                                  DockPanel.Dock="Top"
+                                                  Focusable="False"
+                                                  HorizontalScrollBarVisibility="Hidden"
+                                                  VerticalScrollBarVisibility="Hidden">
+                                        <GridViewHeaderRowPresenter x:Name="PART_HeaderRowPresenter"
+                                                                    AllowsColumnReorder="{Binding TemplatedParent.View.AllowsColumnReorder, RelativeSource={RelativeSource TemplatedParent}}"
+                                                                    ColumnHeaderContainerStyle="{Binding TemplatedParent.View.ColumnHeaderContainerStyle, RelativeSource={RelativeSource TemplatedParent}}"
+                                                                    ColumnHeaderContextMenu="{Binding TemplatedParent.View.ColumnHeaderContextMenu, RelativeSource={RelativeSource TemplatedParent}}"
+                                                                    ColumnHeaderStringFormat="{Binding TemplatedParent.View.ColumnHeaderStringFormat, RelativeSource={RelativeSource TemplatedParent}}"
+                                                                    ColumnHeaderTemplate="{Binding TemplatedParent.View.ColumnHeaderTemplate, RelativeSource={RelativeSource TemplatedParent}}"
+                                                                    ColumnHeaderTemplateSelector="{Binding TemplatedParent.View.ColumnHeaderTemplateSelector, RelativeSource={RelativeSource TemplatedParent}}"
+                                                                    ColumnHeaderToolTip="{Binding TemplatedParent.View.ColumnHeaderToolTip, RelativeSource={RelativeSource TemplatedParent}}"
+                                                                    Columns="{Binding TemplatedParent.View.Columns, RelativeSource={RelativeSource TemplatedParent}}"
+                                                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                    </ScrollViewer>
+
+
+                                    <controls:ManipulationBoundaryFeedbackAwareContentControl 
+                                        Style="{StaticResource BouncingManipulationBoundaryFeedbackAwareContentControl}"
+                                        FeedbackProvider="{Binding RelativeSource={RelativeSource TemplatedParent}}">
+                                        <ScrollContentPresenter x:Name="PART_ScrollContentPresenter"
+                                                                Margin="{TemplateBinding Padding}"
+                                                                CanContentScroll="{TemplateBinding CanContentScroll}"
+                                                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                    </controls:ManipulationBoundaryFeedbackAwareContentControl>
+                                </DockPanel>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+    <Style x:Key="StandardGridViewColumnHeader" TargetType="GridViewColumnHeader" BasedOn="{c:MultiStyle 'OnPaneControlBackground OnPaneControlBorder StandardForeground StandardFontProperties Shadow0'}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="Padding" Value="{c:GridUnit '1,1,1,1'}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource BottomControlThemeShadow}" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="GridViewColumnHeader">
+                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
+                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                        <Grid.Resources>
+                            <Storyboard x:Key="MouseOverStoryboard">
+                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                                Storyboard.TargetProperty="Background">
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                </c:BrushAnimationUsingKeyFrames>
+                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                                Storyboard.TargetProperty="BorderBrush">
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                </c:BrushAnimationUsingKeyFrames>
+                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                  Storyboard.TargetProperty="Foreground"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                               Storyboard.TargetProperty="(controls:ThemeShadow.Elevation)">
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.ShadowElevation) ,RelativeSource={RelativeSource TemplatedParent}}" />
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+
+                            <Storyboard x:Key="PressedStoryboard">
+                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                                Storyboard.TargetProperty="Background">
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:PressedProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                </c:BrushAnimationUsingKeyFrames>
+                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                                Storyboard.TargetProperty="BorderBrush">
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:PressedProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                </c:BrushAnimationUsingKeyFrames>
+                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                  Storyboard.TargetProperty="Foreground"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:PressedProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                               Storyboard.TargetProperty="(controls:ThemeShadow.Elevation)">
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:PressedProperties.ShadowElevation) ,RelativeSource={RelativeSource TemplatedParent}}" />
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+
+                            <Storyboard x:Key="DisabledStoryboard">
+                                <c:BrushAnimation Storyboard.TargetName="Bd"
+                                                  Storyboard.TargetProperty="Background"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                <c:BrushAnimation Storyboard.TargetName="Bd"
+                                                  Storyboard.TargetProperty="BorderBrush"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                  Storyboard.TargetProperty="Foreground"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                               Storyboard.TargetProperty="(controls:ThemeShadow.Elevation)">
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:DisabledProperties.ShadowElevation) ,RelativeSource={RelativeSource TemplatedParent}}" />
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </Grid.Resources>
+
+                        <controls:ThemeShadowPresenter>
+                            <Border x:Name="Bd"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}" />
+                        </controls:ThemeShadowPresenter>
+                        <Border x:Name="BorderSpacer"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Padding="{TemplateBinding Padding}"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                            <ContentPresenter x:Name="HeaderContentSite"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                              RecognizesAccessKey="True" />
+                        </Border>
+
+                        <Thumb x:Name="PART_HeaderGripper"
+                               Style="{c:MultiStyle 'MonochromeThumb TransparentBackground TransparentBorder'}"
+                               Width="{c:GridUnit 1}"
+                               HorizontalAlignment="Right" />
+
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition GeneratedDuration="{StaticResource ColorAnimationDuration}"
+                                                      GeneratedEasingFunction="{StaticResource ColorAnimationEase}" />
+                                    <VisualTransition To="Disabled" GeneratedDuration="0" />
+                                </VisualStateGroup.Transitions>
+
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver" Storyboard="{StaticResource MouseOverStoryboard}" />
+                                <VisualState x:Name="Pressed" Storyboard="{StaticResource PressedStoryboard}" />
+                                <VisualState x:Name="Disabled" Storyboard="{StaticResource DisabledStoryboard}" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Role" Value="Padding">
+                            <!-- Disable Visual States for the last padding header. -->
+                            <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{Binding BorderBrush, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="{Binding Path=(controls:ThemeShadow.Elevation), RelativeSource={RelativeSource Self}}" />
+
+                            <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="theming:PressedProperties.BorderBrush" Value="{Binding BorderBrush, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="theming:PressedProperties.ShadowElevation" Value="{Binding Path=(controls:ThemeShadow.Elevation), RelativeSource={RelativeSource Self}}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="Role" Value="Floating">
+                <Setter Property="Opacity" Value="0.6" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <!-- Only display a Border, so that the user can see the Columns below. -->
+                        <ControlTemplate TargetType="GridViewColumnHeader">
+                            <Canvas x:Name="PART_FloatingHeaderCanvas">
+                                <Rectangle Width="{TemplateBinding ActualWidth}"
+                                           Height="{TemplateBinding ActualHeight}" />
+                            </Canvas>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="Accent1GridViewColumnHeader" 
+           TargetType="GridViewColumnHeader" 
+           BasedOn="{c:MultiStyle 'StandardGridViewColumnHeader Accent1Background Accent1Border OnDarkerAccent1Foreground'}" />
+    
+    <Style x:Key="Accent2GridViewColumnHeader" 
+           TargetType="GridViewColumnHeader" 
+           BasedOn="{c:MultiStyle 'StandardGridViewColumnHeader Accent2Background Accent2Border OnDarkerAccent2Foreground'}" />
+    
+    <Style x:Key="{x:Type GridViewColumnHeader}" 
+           TargetType="GridViewColumnHeader" 
+           BasedOn="{StaticResource StandardGridViewColumnHeader}" />
+
+    
 
     <Style x:Key="StandardListViewItem" TargetType="ListViewItem" BasedOn="{c:MultiStyle 'ListBackground ListBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
@@ -28,8 +280,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ListViewItem">
-                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
-                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
                         <controls:ThemeShadowPresenter>
                             <Border x:Name="Bd"
                                     Background="{TemplateBinding Background}"
@@ -39,9 +290,8 @@
                         </controls:ThemeShadowPresenter>
                         <Border x:Name="BorderSpacer"
                                 BorderThickness="{TemplateBinding BorderThickness}"
-                                Padding="{TemplateBinding Padding}"
-                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
-                            <Grid>
+                                Padding="{TemplateBinding Padding}">
+                            <Grid SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
                                 <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                             </Grid>
@@ -119,7 +369,8 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ListView">
-                    <ScrollViewer Background="{TemplateBinding Background}"
+                    <ScrollViewer Style="{StaticResource {x:Static GridView.GridViewScrollViewerStyleKey}}"
+                                  Background="{TemplateBinding Background}"
                                   BorderBrush="{TemplateBinding BorderBrush}"
                                   BorderThickness="{TemplateBinding BorderThickness}"
                                   theming:ControlProperties.CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}"
@@ -159,5 +410,6 @@
     </Style>
 
     <Style TargetType="ListView" BasedOn="{StaticResource Accent2ListView}" />
+
 
 </ResourceDictionary>
