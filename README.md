@@ -62,7 +62,7 @@ LargeAccent2ListView
 
 
 **All together:**
-*(Note that this style doesn't exist - it is just an example.)*
+*(Note: This style doesn't exist - it is just an example.)*
 
 ```
 CompactAccent1SpecializedButton
