@@ -108,6 +108,8 @@
     <Style x:Key="{x:Static GridView.GridViewScrollViewerStyleKey}" TargetType="ScrollViewer" BasedOn="{StaticResource StandardGridViewScrollViewer}" />
 
 
+    
+    
 
     <Style x:Key="StandardGridViewColumnHeader" TargetType="GridViewColumnHeader" BasedOn="{c:MultiStyle 'OnPaneControlBackground OnPaneControlBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
@@ -267,15 +269,43 @@
     <Style x:Key="{x:Type GridViewColumnHeader}" 
            TargetType="GridViewColumnHeader" 
            BasedOn="{StaticResource StandardGridViewColumnHeader}" />
+    
+    <!-- Compact Column Headers. -->
+    <Style x:Key="CompactStandardGridViewColumnHeader" TargetType="GridViewColumnHeader" BasedOn="{StaticResource StandardGridViewColumnHeader}">
+        <Setter Property="Padding" Value="{StaticResource CompactListItemPadding}" />
+    </Style>
+
+    <Style x:Key="CompactAccent1GridViewColumnHeader" TargetType="GridViewColumnHeader" BasedOn="{StaticResource Accent1GridViewColumnHeader}">
+        <Setter Property="Padding" Value="{StaticResource CompactListItemPadding}" />
+    </Style>
+
+    <Style x:Key="CompactAccent2GridViewColumnHeader" TargetType="GridViewColumnHeader" BasedOn="{StaticResource Accent2GridViewColumnHeader}">
+        <Setter Property="Padding" Value="{StaticResource CompactListItemPadding}" />
+    </Style>
+
+    <!-- Large Column Headers. -->
+    <Style x:Key="LargeStandardGridViewColumnHeader" TargetType="GridViewColumnHeader" BasedOn="{StaticResource StandardGridViewColumnHeader}">
+        <Setter Property="Padding" Value="{StaticResource LargeListItemPadding}" />
+    </Style>
+
+    <Style x:Key="LargeAccent1GridViewColumnHeader" TargetType="GridViewColumnHeader" BasedOn="{StaticResource Accent1GridViewColumnHeader}">
+        <Setter Property="Padding" Value="{StaticResource LargeListItemPadding}" />
+    </Style>
+
+    <Style x:Key="LargeAccent2GridViewColumnHeader" TargetType="GridViewColumnHeader" BasedOn="{StaticResource Accent2GridViewColumnHeader}">
+        <Setter Property="Padding" Value="{StaticResource LargeListItemPadding}" />
+    </Style>
 
     
 
+    
+    
     <Style x:Key="StandardListViewItem" TargetType="ListViewItem" BasedOn="{c:MultiStyle 'ListBackground ListBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
-        <Setter Property="Padding" Value="{c:GridUnit '0,1'}" />
+        <Setter Property="Padding" Value="{StaticResource StandardListItemPadding}" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
@@ -294,7 +324,10 @@
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 Padding="{TemplateBinding Padding}">
                             <Grid SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                                <!-- The GridViewRowPresenter has a Hard-Coded Margin of 6px left and right.
+                                     Manually offset this here. -->
                                 <GridViewRowPresenter x:Name="RowContentSite"
+                                                      Margin="-6,0"
                                                       HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                                       VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                                 <ContentPresenter x:Name="StandardContentSite"
@@ -307,7 +340,6 @@
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="GridView.ColumnCollection" Value="{x:Null}">
-                            <Setter Property="Padding" Value="{StaticResource StandardListItemPadding}" />
                             <Setter TargetName="RowContentSite" Property="Visibility" Value="Collapsed" />
                             <Setter TargetName="StandardContentSite" Property="Visibility" Value="Visible" />
                         </Trigger>
@@ -360,6 +392,34 @@
     <Style x:Key="Accent1ListViewItem" TargetType="ListViewItem" BasedOn="{c:MultiStyle 'StandardListViewItem Accent1ListBackground Accent1ListBorder OnListAccent1Foreground'}" />
     <Style x:Key="Accent2ListViewItem" TargetType="ListViewItem" BasedOn="{c:MultiStyle 'StandardListViewItem Accent2ListBackground Accent2ListBorder OnListAccent2Foreground'}" />
     <Style TargetType="ListViewItem" BasedOn="{StaticResource Accent2ListViewItem}" />
+    
+    <!-- Compact ListViewItems. -->
+    <Style x:Key="CompactStandardListViewItem" TargetType="ListViewItem" BasedOn="{StaticResource StandardListViewItem}">
+        <Setter Property="Padding" Value="{StaticResource CompactListItemPadding}" />
+    </Style>
+    
+    <Style x:Key="CompactAccent1ListViewItem" TargetType="ListViewItem" BasedOn="{StaticResource Accent1ListViewItem}">
+        <Setter Property="Padding" Value="{StaticResource CompactListItemPadding}" />
+    </Style>
+    
+    <Style x:Key="CompactAccent2ListViewItem" TargetType="ListViewItem" BasedOn="{StaticResource Accent2ListViewItem}">
+        <Setter Property="Padding" Value="{StaticResource CompactListItemPadding}" />
+    </Style>
+    
+    <!-- Large ListViewItems. -->
+    <Style x:Key="LargeStandardListViewItem" TargetType="ListViewItem" BasedOn="{StaticResource StandardListViewItem}">
+        <Setter Property="Padding" Value="{StaticResource LargeListItemPadding}" />
+    </Style>
+    
+    <Style x:Key="LargeAccent1ListViewItem" TargetType="ListViewItem" BasedOn="{StaticResource Accent1ListViewItem}">
+        <Setter Property="Padding" Value="{StaticResource LargeListItemPadding}" />
+    </Style>
+    
+    <Style x:Key="LargeAccent2ListViewItem" TargetType="ListViewItem" BasedOn="{StaticResource Accent2ListViewItem}">
+        <Setter Property="Padding" Value="{StaticResource LargeListItemPadding}" />
+    </Style>
+    
+    
     
     
 
@@ -424,5 +484,31 @@
 
     <Style TargetType="ListView" BasedOn="{StaticResource Accent2ListView}" />
 
+    
+    <!-- Compact ListViews. -->
+    <Style x:Key="CompactStandardListView" TargetType="ListView" BasedOn="{StaticResource StandardListView}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource CompactStandardListViewItem}" />
+    </Style>
+
+    <Style x:Key="CompactAccent1ListView" TargetType="ListView" BasedOn="{StaticResource Accent1ListView}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource CompactAccent1ListViewItem}" />
+    </Style>
+
+    <Style x:Key="CompactAccent2ListView" TargetType="ListView" BasedOn="{StaticResource Accent2ListView}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource CompactAccent2ListViewItem}" />
+    </Style>
+
+    <!-- Large ListViews. -->
+    <Style x:Key="LargeStandardListView" TargetType="ListView" BasedOn="{StaticResource StandardListView}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource LargeStandardListViewItem}" />
+    </Style>
+
+    <Style x:Key="LargeAccent1ListView" TargetType="ListView" BasedOn="{StaticResource Accent1ListView}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource LargeAccent1ListViewItem}" />
+    </Style>
+
+    <Style x:Key="LargeAccent2ListView" TargetType="ListView" BasedOn="{StaticResource Accent2ListView}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource LargeAccent2ListViewItem}" />
+    </Style>
 
 </ResourceDictionary>
