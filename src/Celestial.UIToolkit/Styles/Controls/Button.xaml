@@ -175,7 +175,7 @@
     When hovered/clicked, it will behave normally though.
     -->
 
-    <Style x:Key="FlatButton" TargetType="ButtonBase" BasedOn="{StaticResource StandardButton}">
+    <Style x:Key="StandardFlatButton" TargetType="ButtonBase" BasedOn="{StaticResource StandardButton}">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource ControlHoverBackgroundBrush}" />
@@ -184,14 +184,14 @@
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
     </Style>
 
-    <Style x:Key="Accent1FlatButton" TargetType="ButtonBase" BasedOn="{StaticResource FlatButton}">
+    <Style x:Key="Accent1FlatButton" TargetType="ButtonBase" BasedOn="{StaticResource StandardFlatButton}">
         <Setter Property="Foreground" Value="{StaticResource Accent1Brush}" />
         <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource Accent1Brush}" />
         <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource Accent1Brush}" />
         <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource Accent1Brush}" />
     </Style>
 
-    <Style x:Key="Accent2FlatButton" TargetType="ButtonBase" BasedOn="{StaticResource FlatButton}">
+    <Style x:Key="Accent2FlatButton" TargetType="ButtonBase" BasedOn="{StaticResource StandardFlatButton}">
         <Setter Property="Foreground" Value="{StaticResource Accent2Brush}" />
         <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource Accent2Brush}" />
         <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource Accent2Brush}" />
@@ -205,7 +205,7 @@
     An otherwise normal button with a border and transparent background in its default state.
     -->
 
-    <Style x:Key="OutlinedButton" TargetType="ButtonBase" BasedOn="{StaticResource StandardButton}">
+    <Style x:Key="StandardOutlinedButton" TargetType="ButtonBase" BasedOn="{StaticResource StandardButton}">
         <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
         <Setter Property="BorderBrush" Value="{StaticResource ControlBackgroundBrush}" />
         <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource ControlHoverBackgroundBrush}" />
@@ -258,7 +258,7 @@
     It is supposed to be used in conjunction with symbols. 
     -->
 
-    <Style x:Key="SquareButton" TargetType="ButtonBase" BasedOn="{StaticResource StandardButton}">
+    <Style x:Key="StandardSquareButton" TargetType="ButtonBase" BasedOn="{StaticResource StandardButton}">
         <Setter Property="MinWidth" Value="{c:GridUnit 8}" />
         <Setter Property="MinHeight" Value="{c:GridUnit 8}" />
         <Setter Property="Width" Value="{c:GridUnit 8}" />
@@ -274,14 +274,14 @@
 
     <Style x:Key="Accent1SquareButton" 
            TargetType="ButtonBase" 
-           BasedOn="{c:MultiStyle 'SquareButton Accent1Border Accent1Background OnDarkerAccent1Foreground'}">
+           BasedOn="{c:MultiStyle 'StandardSquareButton Accent1Border Accent1Background OnDarkerAccent1Foreground'}">
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
     </Style>
 
     <Style x:Key="Accent2SquareButton" 
            TargetType="ButtonBase"
-           BasedOn="{c:MultiStyle 'SquareButton Accent2Border Accent2Background OnDarkerAccent2Foreground'}">
+           BasedOn="{c:MultiStyle 'StandardSquareButton Accent2Border Accent2Background OnDarkerAccent2Foreground'}">
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />        
     </Style>
@@ -293,10 +293,10 @@
     A variation of the Square Button, which is, as expected, a circle.
     -->
 
-    <Style x:Key="CircleButtonBase" TargetType="ButtonBase" BasedOn="{StaticResource SquareButton}">
+    <Style x:Key="CircleButtonBase" TargetType="ButtonBase" BasedOn="{StaticResource StandardSquareButton}">
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" />
     </Style>
-    <Style x:Key="CircleButton" TargetType="ButtonBase" BasedOn="{StaticResource CircleButtonBase}" />
+    <Style x:Key="StandardCircleButton" TargetType="ButtonBase" BasedOn="{StaticResource CircleButtonBase}" />
 
     <Style x:Key="Accent1CircleButton" TargetType="ButtonBase" BasedOn="{StaticResource Accent1SquareButton}">
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" />
