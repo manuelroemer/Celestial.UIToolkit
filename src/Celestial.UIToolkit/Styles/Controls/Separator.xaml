@@ -32,7 +32,7 @@
     </Style>
     <Style TargetType="Separator" BasedOn="{StaticResource StandardSeparator}" />
 
-    <Style x:Key="VerticalSeparator" TargetType="Separator" BasedOn="{StaticResource StandardSeparator}">
+    <Style x:Key="StandardVerticalSeparator" TargetType="Separator" BasedOn="{StaticResource StandardSeparator}">
         <Setter Property="LayoutTransform">
             <Setter.Value>
                 <RotateTransform Angle="90" />
@@ -40,8 +40,8 @@
         </Setter>
     </Style>
     
-    <!-- Define this alias to be consistent with "VerticalSeparator". -->
-    <Style x:Key="HorizontalSeparator" TargetType="Separator" BasedOn="{StaticResource StandardSeparator}" />
+    <!-- Define this alias to be consistent with "StandardVerticalSeparator". -->
+    <Style x:Key="StandardHorizontalSeparator" TargetType="Separator" BasedOn="{StaticResource StandardSeparator}" />
 
     
     
@@ -55,11 +55,11 @@
         <Setter Property="Margin" Value="{c:GridUnit '0,1'}" />
     </Style>
 
-    <Style x:Key="{x:Static ToolBar.SeparatorStyleKey}" TargetType="Separator" BasedOn="{StaticResource VerticalSeparator}">
+    <Style x:Key="{x:Static ToolBar.SeparatorStyleKey}" TargetType="Separator" BasedOn="{StaticResource StandardVerticalSeparator}">
         <Setter Property="Background" Value="{StaticResource PrimaryMediumHighBrush}" />
     </Style>
 
-    <Style x:Key="{x:Static StatusBar.SeparatorStyleKey}" TargetType="Separator" BasedOn="{StaticResource VerticalSeparator}">
+    <Style x:Key="{x:Static StatusBar.SeparatorStyleKey}" TargetType="Separator" BasedOn="{StaticResource StandardVerticalSeparator}">
         <Setter Property="Background" Value="{StaticResource PrimaryMediumHighBrush}" />
     </Style>
 

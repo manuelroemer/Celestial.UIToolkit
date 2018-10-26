@@ -36,7 +36,7 @@
             <smtx:XamlDisplay x:Name="ButtonEx2" Key="ButtonEx2">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx2}">
-                    <Button Style="{StaticResource OutlinedButton}" Width="{c:GridUnit 40}">Outlined Button</Button>
+                    <Button Style="{StaticResource StandardOutlinedButton}" Width="{c:GridUnit 40}">Outlined Button</Button>
                     <Button Style="{StaticResource Accent1OutlinedButton}" Width="{c:GridUnit 40}">Accent1 Button</Button>
                     <Button Style="{StaticResource Accent2OutlinedButton}" Width="{c:GridUnit 40}">Accent2 Button</Button>
                 </StackPanel>
@@ -54,7 +54,7 @@
             <smtx:XamlDisplay x:Name="ButtonEx3" Key="ButtonEx3">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx3}">
-                    <Button Style="{StaticResource FlatButton}" Width="{c:GridUnit 40}">Flat Button</Button>
+                    <Button Style="{StaticResource StandardFlatButton}" Width="{c:GridUnit 40}">Flat Button</Button>
                     <Button Style="{StaticResource Accent1FlatButton}" Width="{c:GridUnit 40}">Accent1 Button</Button>
                     <Button Style="{StaticResource Accent2FlatButton}" Width="{c:GridUnit 40}">Accent2 Button</Button>
                 </StackPanel>
@@ -79,7 +79,7 @@
                     <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,4,4'}"
                                 IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx4}"
                                 Orientation="Horizontal">
-                        <Button Style="{StaticResource CircleButton}"
+                        <Button Style="{StaticResource StandardCircleButton}"
                                 Content="{icon:Modern Kind=Question}" />
                         <Button Style="{StaticResource Accent1CircleButton}"
                                 Content="{icon:Modern Kind=Question}" />
@@ -89,7 +89,7 @@
                     <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,4,4'}"
                                 IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx4}"
                                 Orientation="Horizontal">
-                        <Button Style="{StaticResource SquareButton}"
+                        <Button Style="{StaticResource StandardSquareButton}"
                                 Content="{icon:Modern Kind=Save}" />
                         <Button Style="{StaticResource Accent1SquareButton}"
                                 Content="{icon:Modern Kind=Delete}" />

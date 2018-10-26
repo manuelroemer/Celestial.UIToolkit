@@ -199,7 +199,7 @@
                 <Setter Property="MinWidth" Value="{Binding MinHeight, RelativeSource={RelativeSource Self}}" />
             </Style>
 
-            <Style x:Key="ToolBarOverflowToggleButton" TargetType="ToggleButton" BasedOn="{StaticResource SquareButton}">
+            <Style x:Key="ToolBarOverflowToggleButton" TargetType="ToggleButton" BasedOn="{StaticResource StandardSquareButton}">
                 <Setter Property="MinHeight" Value="0" />
                 <Setter Property="MinWidth" Value="0" />
             </Style>

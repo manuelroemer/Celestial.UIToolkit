@@ -79,23 +79,23 @@
         <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource Accent1ControlBorderBrush}" />
         <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource Accent1ControlBorderBrush}" />
         <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource Accent1ControlBorderBrush}" />
-        <Setter Property="Foreground" Value="{StaticResource OnAccent1TextBrush}" />
-        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource OnAccent1TextBrush}" />
-        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource OnAccent1TextBrush}" />
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnAccent1TextBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource OnDarkerAccent1TextBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource OnDarkerAccent1TextBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource OnDarkerAccent1TextBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnDarkerAccent1TextBrush}" />
         <!-- Disabled values are inherited from StandardStatusBar. -->
 
         <Style.Resources>
             <!-- Override some typical styles to match the Accent1 Background.
                  This may need to be updated, depending on typical controls that may exist in a StatusBar. -->
-            <Style x:Key="{x:Static StatusBar.SeparatorStyleKey}" TargetType="Separator" BasedOn="{StaticResource VerticalSeparator}">
+            <Style x:Key="{x:Static StatusBar.SeparatorStyleKey}" TargetType="Separator" BasedOn="{StaticResource StandardVerticalSeparator}">
                 <Setter Property="Background" Value="{StaticResource OnAccent1DisabledTextBrush}" />
             </Style>
 
             <Style TargetType="ProgressBar" BasedOn="{StaticResource StandardProgressBar}">
                 <Setter Property="Background" Value="Transparent" />
-                <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource OnAccent1TextBrush}" />
-                <Setter Property="BorderBrush" Value="{StaticResource OnAccent1TextBrush}" />
+                <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource OnDarkerAccent1TextBrush}" />
+                <Setter Property="BorderBrush" Value="{StaticResource OnDarkerAccent1TextBrush}" />
                 <Setter Property="theming:ActiveProperties.BorderBrush" Value="Transparent" />
                 <Setter Property="MinHeight" Value="{c:GridUnit 2}" />
 
@@ -121,23 +121,23 @@
         <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource Accent2ControlBorderBrush}" />
         <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource Accent2ControlBorderBrush}" />
         <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource Accent2ControlBorderBrush}" />
-        <Setter Property="Foreground" Value="{StaticResource OnAccent2TextBrush}" />
-        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource OnAccent2TextBrush}" />
-        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource OnAccent2TextBrush}" />
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnAccent2TextBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource OnDarkerAccent2TextBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource OnDarkerAccent2TextBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource OnDarkerAccent2TextBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnDarkerAccent2TextBrush}" />
         <!-- Disabled values are inherited from StandardStatusBar. -->
 
         <Style.Resources>
             <!-- Override some typical styles to match the Accent2 Background.
                  This may need to be updated, depending on typical controls that may exist in a StatusBar. -->
-            <Style x:Key="{x:Static StatusBar.SeparatorStyleKey}" TargetType="Separator" BasedOn="{StaticResource VerticalSeparator}">
+            <Style x:Key="{x:Static StatusBar.SeparatorStyleKey}" TargetType="Separator" BasedOn="{StaticResource StandardVerticalSeparator}">
                 <Setter Property="Background" Value="{StaticResource OnAccent2DisabledTextBrush}" />
             </Style>
 
             <Style TargetType="ProgressBar" BasedOn="{StaticResource StandardProgressBar}">
                 <Setter Property="Background" Value="Transparent" />
-                <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource OnAccent2TextBrush}" />
-                <Setter Property="BorderBrush" Value="{StaticResource OnAccent2TextBrush}" />
+                <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource OnDarkerAccent2TextBrush}" />
+                <Setter Property="BorderBrush" Value="{StaticResource OnDarkerAccent2TextBrush}" />
                 <Setter Property="theming:ActiveProperties.BorderBrush" Value="Transparent" />
                 <Setter Property="MinHeight" Value="{c:GridUnit 2}" />
 
