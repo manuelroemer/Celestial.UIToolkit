@@ -15,6 +15,16 @@
         <controls:ControlPresenter Header="A standard GroupBox."
                                    Xaml="{Binding Xaml, ElementName=GroupBoxEx1}"
                                    VerticalAlignment="Top">
+            <controls:ControlPresenter.Description>
+                The default GroupBox simply puts a Header above the elements inside.
+                This is done because the whole UI Toolkit is mostly working borderless.
+                In most modern design languages, GroupBoxes are nowhere to be found.
+                
+                Grouping elements under titles is found quite often though.
+                By using a GroupBox for this, you gain the advantage of "logical grouping".
+                For instance, RadioButtons in different GroupBoxes don't share the same
+                Pressed-Scope.
+            </controls:ControlPresenter.Description>
             <smtx:XamlDisplay x:Name="GroupBoxEx1" Key="GroupBoxEx1">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledGroupBoxEx1}">
