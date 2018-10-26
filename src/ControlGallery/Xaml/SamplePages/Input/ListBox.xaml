@@ -42,6 +42,54 @@
             </controls:ControlPresenter.Options>
         </controls:ControlPresenter>
         
+        <controls:ControlPresenter Header="Compact ListBoxes."
+                                   Xaml="{Binding Xaml, ElementName=ListBoxEx2}"
+                                   VerticalAlignment="Top">
+            <smtx:XamlDisplay x:Name="ListBoxEx2" Key="ListBoxEx2">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx2}">
+                    <ListBox Style="{StaticResource CompactStandardListBox}"
+                             Width="{c:GridUnit 60}"
+                             ItemsSource="{x:Static data:FruitItems.Fruits}" />
+                    <ListBox Style="{StaticResource CompactAccent1ListBox}"
+                             Width="{c:GridUnit 60}"
+                             ItemsSource="{x:Static data:FruitItems.Fruits}" />
+                    <ListBox Style="{StaticResource CompactAccent2ListBox}"
+                             Width="{c:GridUnit 60}"
+                             ItemsSource="{x:Static data:FruitItems.Fruits}" />
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <CheckBox x:Name="IsEnabledCheckBoxEx2"
+                          IsChecked="True"
+                          Content="IsEnabled" />
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+        
+        <controls:ControlPresenter Header="Large ListBoxes."
+                                   Xaml="{Binding Xaml, ElementName=ListBoxEx3}"
+                                   VerticalAlignment="Top">
+            <smtx:XamlDisplay x:Name="ListBoxEx3" Key="ListBoxEx3">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx3}">
+                    <ListBox Style="{StaticResource LargeStandardListBox}"
+                             Width="{c:GridUnit 60}"
+                             ItemsSource="{x:Static data:FruitItems.Fruits}" />
+                    <ListBox Style="{StaticResource LargeAccent1ListBox}"
+                             Width="{c:GridUnit 60}"
+                             ItemsSource="{x:Static data:FruitItems.Fruits}" />
+                    <ListBox Style="{StaticResource LargeAccent2ListBox}"
+                             Width="{c:GridUnit 60}"
+                             ItemsSource="{x:Static data:FruitItems.Fruits}" />
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <CheckBox x:Name="IsEnabledCheckBoxEx3"
+                          IsChecked="True"
+                          Content="IsEnabled" />
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+        
     </StackPanel>
 
 </UserControl>

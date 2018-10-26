@@ -74,11 +74,11 @@
                                            Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"
                                            Value="{TemplateBinding HorizontalOffset}" />
 
-                                <controls:ManipulationBoundaryFeedbackAwareContentControl 
+                                <controls:ManipulationBoundaryFeedbackAwareContentControl
+                                    Padding="{TemplateBinding Padding}"
                                     Style="{StaticResource BouncingManipulationBoundaryFeedbackAwareContentControl}"
                                     FeedbackProvider="{Binding RelativeSource={RelativeSource TemplatedParent}}">
                                     <ScrollContentPresenter x:Name="PART_ScrollContentPresenter"
-                                                            Margin="{TemplateBinding Padding}"
                                                             CanContentScroll="{TemplateBinding CanContentScroll}"
                                                             HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                                             VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />

@@ -44,7 +44,7 @@
         <!-- By default, the NavViewItem has a padding for the icons.
              Since we provide our own template, override that padding. -->
         <Style x:Key="CustomMenuItemStyle" TargetType="c:NavigationViewItem" BasedOn="{StaticResource StandardNavigationViewItem}">
-            <Setter Property="Padding" Value="0" />
+            <!--<Setter Property="Padding" Value="0" />-->
         </Style>
         
     </Window.Resources>

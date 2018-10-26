@@ -14,76 +14,26 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardListBoxItem" TargetType="ListBoxItem" BasedOn="{c:MultiStyle 'ListBackground ListBorder StandardForegroundActiveListStates StandardFontProperties Shadow0'}">
+    <Style x:Key="StandardListBoxItem" TargetType="ListBoxItem" BasedOn="{c:MultiStyle 'ListBackground ListBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
-        <Setter Property="MinHeight" Value="{c:GridUnit 8}" />
-        <Setter Property="Padding" Value="{c:GridUnit '4,2,4,2'}" />
+        <Setter Property="Padding" Value="{StaticResource StandardListItemPadding}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ListBoxItem">
-                    <Grid >
-                        <Grid.Resources>
-                            <Storyboard x:Key="MouseOverStoryboard">
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                                Storyboard.TargetProperty="Background">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                </c:BrushAnimationUsingKeyFrames>
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                                Storyboard.TargetProperty="BorderBrush">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                </c:BrushAnimationUsingKeyFrames>
-                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
-                                                               Storyboard.TargetProperty="(controls:ThemeShadow.Elevation)">
-                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.ShadowElevation), RelativeSource={RelativeSource TemplatedParent}}" />
-                                </DoubleAnimationUsingKeyFrames>
-                            </Storyboard>
-
-                            <Storyboard x:Key="DisabledStoryboard">
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                                Storyboard.TargetProperty="Background">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                </c:BrushAnimationUsingKeyFrames>
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                                Storyboard.TargetProperty="BorderBrush">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                </c:BrushAnimationUsingKeyFrames>
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="SelectionIndicator"
-                                                                Storyboard.TargetProperty="Background">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                </c:BrushAnimationUsingKeyFrames>
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="SelectionIndicator"
-                                                                Storyboard.TargetProperty="BorderBrush">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                </c:BrushAnimationUsingKeyFrames>
-                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
-                                                               Storyboard.TargetProperty="(controls:ThemeShadow.Elevation)">
-                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:DisabledProperties.ShadowElevation), RelativeSource={RelativeSource TemplatedParent}}" />
-                                </DoubleAnimationUsingKeyFrames>
-                            </Storyboard>
-                        </Grid.Resources>
-                        
+                    <Grid>
                         <controls:ThemeShadowPresenter>
-                            <Grid>
-                                <Border x:Name="Bd"
-                                        Background="{TemplateBinding Background}"
-                                        BorderBrush="{TemplateBinding BorderBrush}"
-                                        BorderThickness="{TemplateBinding BorderThickness}"
-                                        SnapsToDevicePixels="False" />
-                                <controls:SelectionIndicator x:Name="SelectionIndicator"
-                                                             Width="{c:GridUnit 1}"
-                                                             Orientation="Vertical"
-                                                             HorizontalAlignment="Left"
-                                                             Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
-                                                             BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}"
-                                                             IsSelected="{TemplateBinding IsSelected}" />
-                            </Grid>
+                            <Border x:Name="Bd"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    SnapsToDevicePixels="False" />
                         </controls:ThemeShadowPresenter>
-                            
+
                         <Border x:Name="ContentContainer"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 Padding="{TemplateBinding Padding}">
@@ -91,36 +41,74 @@
                                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                         </Border>
-
-                        <VisualStateManager.VisualStateGroups>
-                            <VisualStateGroup x:Name="CommonStates">
-                                <VisualStateGroup.Transitions>
-                                    <VisualTransition GeneratedDuration="0" />
-                                </VisualStateGroup.Transitions>
-                                <VisualState x:Name="Normal" />
-                                <VisualState x:Name="MouseOver" Storyboard="{StaticResource MouseOverStoryboard}" />
-                                <VisualState x:Name="Disabled" Storyboard="{StaticResource DisabledStoryboard}" />
-                            </VisualStateGroup>
-                        </VisualStateManager.VisualStateGroups>
                     </Grid>
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="BorderBrush" Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
                             <Setter Property="Foreground" Value="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:MouseOverProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
                         </Trigger>
+
                         <Trigger Property="IsSelected" Value="True">
-                            <Setter TargetName="Bd" Property="Visibility" Value="Collapsed" />
+                            <Setter Property="Background" Value="{Binding Path=(theming:ActiveProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="BorderBrush" Value="{Binding Path=(theming:ActiveProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
                             <Setter Property="Foreground" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:ActiveProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
                         </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="BorderBrush" Value="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Foreground" Value="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:DisabledProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
+                        </Trigger>
+                        
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="True" />
+                                <Condition Property="IsEnabled" Value="False" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" Value="{StaticResource ListActiveDisabledBrush}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource ListActiveDisabledBrush}" />
+                        </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-    <Style x:Key="Accent1ListBoxItem" TargetType="ListBoxItem" BasedOn="{c:MultiStyle 'StandardListBoxItem Accent1ListBackground Accent1ListBorder StandardForegroundActiveAccent1ListStates'}" />
-    <Style x:Key="Accent2ListBoxItem" TargetType="ListBoxItem" BasedOn="{c:MultiStyle 'StandardListBoxItem Accent2ListBackground Accent2ListBorder StandardForegroundActiveAccent2ListStates'}" />
+    <Style x:Key="Accent1ListBoxItem" TargetType="ListBoxItem" BasedOn="{c:MultiStyle 'StandardListBoxItem Accent1ListBackground Accent1ListBorder OnListAccent1Foreground'}" />
+    <Style x:Key="Accent2ListBoxItem" TargetType="ListBoxItem" BasedOn="{c:MultiStyle 'StandardListBoxItem Accent2ListBackground Accent2ListBorder OnListAccent2Foreground'}" />
     <Style TargetType="ListBoxItem" BasedOn="{StaticResource Accent2ListBoxItem}" />
 
+    <!-- Compact ListBoxItems. -->
+    <Style x:Key="CompactStandardListBoxItem" TargetType="ListBoxItem" BasedOn="{StaticResource StandardListBoxItem}">
+        <Setter Property="Padding" Value="{StaticResource CompactListItemPadding}" />
+    </Style>
+
+    <Style x:Key="CompactAccent1ListBoxItem" TargetType="ListBoxItem" BasedOn="{StaticResource Accent1ListBoxItem}">
+        <Setter Property="Padding" Value="{StaticResource CompactListItemPadding}" />
+    </Style>
+
+    <Style x:Key="CompactAccent2ListBoxItem" TargetType="ListBoxItem" BasedOn="{StaticResource Accent2ListBoxItem}">
+        <Setter Property="Padding" Value="{StaticResource CompactListItemPadding}" />
+    </Style>
+
+    <!-- Large ListBoxItems. -->
+    <Style x:Key="LargeStandardListBoxItem" TargetType="ListBoxItem" BasedOn="{StaticResource StandardListBoxItem}">
+        <Setter Property="Padding" Value="{StaticResource LargeListItemPadding}" />
+    </Style>
+
+    <Style x:Key="LargeAccent1ListBoxItem" TargetType="ListBoxItem" BasedOn="{StaticResource Accent1ListBoxItem}">
+        <Setter Property="Padding" Value="{StaticResource LargeListItemPadding}" />
+    </Style>
+
+    <Style x:Key="LargeAccent2ListBoxItem" TargetType="ListBoxItem" BasedOn="{StaticResource Accent2ListBoxItem}">
+        <Setter Property="Padding" Value="{StaticResource LargeListItemPadding}" />
+    </Style>
+    
+    
 
     <Style x:Key="StandardListBox" TargetType="ListBox" BasedOn="{c:MultiStyle 'PrimaryBackground ControlBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
@@ -176,4 +164,30 @@
     
     <Style TargetType="ListBox" BasedOn="{StaticResource Accent2ListBox}" />
 
+    <!-- ListBoxes with compact ItemContainerStyles. -->
+    <Style x:Key="CompactStandardListBox" TargetType="ListBox" BasedOn="{StaticResource StandardListBox}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource CompactStandardListBoxItem}" />
+    </Style>
+    
+    <Style x:Key="CompactAccent1ListBox" TargetType="ListBox" BasedOn="{StaticResource Accent1ListBox}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource CompactAccent1ListBoxItem}" />
+    </Style>
+    
+    <Style x:Key="CompactAccent2ListBox" TargetType="ListBox" BasedOn="{StaticResource Accent2ListBox}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource CompactAccent2ListBoxItem}" />
+    </Style>
+    
+    <!-- ListBoxes with large ItemContainerStyles. -->
+    <Style x:Key="LargeStandardListBox" TargetType="ListBox" BasedOn="{StaticResource StandardListBox}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource LargeStandardListBoxItem}" />
+    </Style>
+    
+    <Style x:Key="LargeAccent1ListBox" TargetType="ListBox" BasedOn="{StaticResource Accent1ListBox}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource LargeAccent1ListBoxItem}" />
+    </Style>
+    
+    <Style x:Key="LargeAccent2ListBox" TargetType="ListBox" BasedOn="{StaticResource Accent2ListBox}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource LargeAccent2ListBoxItem}" />
+    </Style>
+    
 </ResourceDictionary>
