@@ -10,13 +10,13 @@
     The first accent is supposed to be rarely used inside an application.
     As a result, it is expected to be a flashy, attention-raising color.
     -->
-    <Color x:Key="Accent1LightestColor">#EC4F7E</Color>
-    <Color x:Key="Accent1LighterColor">#EA356B</Color>
-    <Color x:Key="Accent1LightColor">#E71B59</Color>
+    <Color x:Key="Accent1LightestColor">#f38baa</Color>
+    <Color x:Key="Accent1LighterColor">#ef648e</Color>
+    <Color x:Key="Accent1LightColor">#eb3d72</Color>
     <Color x:Key="Accent1Color">#D1154E</Color>
-    <Color x:Key="Accent1DarkColor">#B71344</Color>
-    <Color x:Key="Accent1DarkerColor">#9D103B</Color>
-    <Color x:Key="Accent1DarkestColor">#840D31</Color>
+    <Color x:Key="Accent1DarkColor">#c11348</Color>
+    <Color x:Key="Accent1DarkerColor">#9a0f39</Color>
+    <Color x:Key="Accent1DarkestColor">#730b2b</Color>
 
     <Color x:Key="OnLighterAccent1TextColor">#000000</Color>
     <Color x:Key="OnDarkerAccent1TextColor">#FFFFFF</Color>
@@ -27,13 +27,13 @@
     <!--
     The second accent is frequently used by Accent1Controls to guide the user's attention towards them.
     -->
-    <Color x:Key="Accent2LightestColor">#689EE1</Color>
-    <Color x:Key="Accent2LighterColor">#508EDC</Color>
-    <Color x:Key="Accent2LightColor">#387FD8</Color>
+    <Color x:Key="Accent2LightestColor">#a4caf1</Color>
+    <Color x:Key="Accent2LighterColor">#70a3e3</Color>
+    <Color x:Key="Accent2LightColor">#4d8cdc</Color>
     <Color x:Key="Accent2Color">#2D78D6</Color>
-    <Color x:Key="Accent2DarkColor">#2364B5</Color>
-    <Color x:Key="Accent2DarkerColor">#1E569D</Color>
-    <Color x:Key="Accent2DarkestColor">#1A4985</Color>
+    <Color x:Key="Accent2DarkColor">#2262b1</Color>
+    <Color x:Key="Accent2DarkerColor">#1b4e8e</Color>
+    <Color x:Key="Accent2DarkestColor">#143a6a</Color>
 
     <Color x:Key="OnLighterAccent2TextColor">#000000</Color>
     <Color x:Key="OnDarkerAccent2TextColor">#FFFFFF</Color>
@@ -45,13 +45,13 @@
     The Error Color is used for, as the name suggests, error states within the application.
     A common example is a validation error in a Accent1Control.
     -->
-    <Color x:Key="ErrorLightestColor">#FF2A37</Color>
-    <Color x:Key="ErrorLighterColor">#FF0E1D</Color>
-    <Color x:Key="ErrorLightColor">#F1000E</Color>
+    <Color x:Key="ErrorLightestColor">#ff7f87</Color>
+    <Color x:Key="ErrorLighterColor">#fe555f</Color>
+    <Color x:Key="ErrorLightColor">#ff2a37</Color>
     <Color x:Key="ErrorColor">#E3000E</Color>
-    <Color x:Key="ErrorDarkColor">#B8000B</Color>
-    <Color x:Key="ErrorDarkerColor">#9C0009</Color>
-    <Color x:Key="ErrorDarkestColor">#7F0007</Color>
+    <Color x:Key="ErrorDarkColor">#d4000d</Color>
+    <Color x:Key="ErrorDarkerColor">#aa000a</Color>
+    <Color x:Key="ErrorDarkestColor">#7f0007</Color>
 
     <Color x:Key="OnLighterErrorTextColor">#000000</Color>
     <Color x:Key="OnDarkerErrorTextColor">#FFFFFF</Color>
