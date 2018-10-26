@@ -344,11 +344,6 @@
                             <Setter TargetName="StandardContentSite" Property="Visibility" Value="Visible" />
                         </Trigger>
                         
-                        <Trigger Property="ItemsControl.AlternationIndex" Value="0">
-                            <Setter Property="Background" Value="{StaticResource ListAlternationIndex0BackgroundBrush}" />
-                            <Setter Property="Background" Value="{StaticResource ListAlternationIndex0BorderBrush}" />
-                        </Trigger>
-                        
                         <Trigger Property="ItemsControl.AlternationIndex" Value="1">
                             <Setter Property="Background" Value="{StaticResource ListAlternationIndex1BackgroundBrush}" />
                             <Setter Property="Background" Value="{StaticResource ListAlternationIndex1BorderBrush}" />
@@ -427,7 +422,6 @@
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-        <Setter Property="AlternationCount" Value="2" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />

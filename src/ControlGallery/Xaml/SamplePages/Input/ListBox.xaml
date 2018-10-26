@@ -90,6 +90,28 @@
             </controls:ControlPresenter.Options>
         </controls:ControlPresenter>
         
+        <controls:ControlPresenter Header="Enabling Stripes."
+                                   Xaml="{Binding Xaml, ElementName=ListBoxEx4}"
+                                   VerticalAlignment="Top">
+            <controls:ControlPresenter.Description>
+                The ListBox supports stripes, but they are opt-in.
+                Simply set the AlternationCount property to 2.
+            </controls:ControlPresenter.Description>
+            <smtx:XamlDisplay x:Name="ListBoxEx4" Key="ListBoxEx4">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx4}">
+                    <ListBox AlternationCount="2"
+                             Width="{c:GridUnit 60}"
+                             ItemsSource="{x:Static data:FruitItems.Fruits}" />
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <CheckBox x:Name="IsEnabledCheckBoxEx4"
+                          IsChecked="True"
+                          Content="IsEnabled" />
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+        
     </StackPanel>
 
 </UserControl>

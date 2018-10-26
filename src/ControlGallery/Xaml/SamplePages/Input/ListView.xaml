@@ -126,16 +126,17 @@
             </controls:ControlPresenter.Options>
         </controls:ControlPresenter>
 
-        <controls:ControlPresenter Header="Disabling the stripes."
+        <controls:ControlPresenter Header="Enabling stripes."
                                    Xaml="{Binding Xaml, ElementName=ListViewEx4}"
                                    VerticalAlignment="Top">
             <controls:ControlPresenter.Description>
-                The Stripes can be disabled by setting the ListView.AlternationCount property to 0.
+                The ListView supports stripes, but they are opt-in.
+                Simply set the AlternationCount property to 2.
             </controls:ControlPresenter.Description>
             <smtx:XamlDisplay x:Name="ListViewEx4" Key="ListViewEx4">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx4}">
-                    <ListView AlternationCount="0"
+                    <ListView AlternationCount="2"
                               Width="{c:GridUnit 100}"
                               Height="{c:GridUnit 40}"
                               ItemsSource="{x:Static data:SongItems.Songs}">
