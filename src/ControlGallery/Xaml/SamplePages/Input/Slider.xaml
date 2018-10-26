@@ -19,14 +19,14 @@
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledSliderEx1}">
                     <Slider Style="{StaticResource StandardSlider}"
-                            Width="{c:GridUnit 100}" 
+                            Width="{c:GridUnit 80}" 
                             Minimum="0" 
                             Maximum="100" />
                     <Slider Style="{StaticResource Accent1Slider}"
-                            Width="{c:GridUnit 100}" 
+                            Width="{c:GridUnit 80}" 
                             Minimum="0"
                             Maximum="100" />
-                    <Slider Width="{c:GridUnit 100}" 
+                    <Slider Width="{c:GridUnit 80}" 
                             Minimum="0"
                             Maximum="100" />
                 </StackPanel>
@@ -35,6 +35,69 @@
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,3'}"
                             Margin="{c:GridUnit '0,0,0,-3'}">
                     <CheckBox x:Name="IsEnabledSliderEx1"
+                              IsChecked="True"
+                              Content="IsEnabled" />
+                </StackPanel>
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+
+        <controls:ControlPresenter Header="Vertical Sliders."
+                                   Xaml="{Binding Xaml, ElementName=SliderEx2}"
+                                   VerticalAlignment="Top">
+            <smtx:XamlDisplay x:Name="SliderEx2" Key="SliderEx2">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,4,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledSliderEx2}"
+                            Orientation="Horizontal">
+                    <Slider Style="{StaticResource StandardSlider}"
+                            Orientation="Vertical"
+                            Height="{c:GridUnit 80}" 
+                            Minimum="0" 
+                            Maximum="100" />
+                    <Slider Style="{StaticResource Accent1Slider}"
+                            Orientation="Vertical"
+                            Height="{c:GridUnit 80}" 
+                            Minimum="0"
+                            Maximum="100" />
+                    <Slider Height="{c:GridUnit 80}" 
+                            Orientation="Vertical"
+                            Minimum="0"
+                            Maximum="100" />
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,3'}"
+                            Margin="{c:GridUnit '0,0,0,-3'}">
+                    <CheckBox x:Name="IsEnabledSliderEx2"
+                              IsChecked="True"
+                              Content="IsEnabled" />
+                </StackPanel>
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+
+        <controls:ControlPresenter Header="Sliders with Ticks."
+                                   Xaml="{Binding Xaml, ElementName=SliderEx3}"
+                                   VerticalAlignment="Top">
+            <smtx:XamlDisplay x:Name="SliderEx3" Key="SliderEx3">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,4,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledSliderEx3}"
+                            Orientation="Horizontal">
+                    <Slider TickPlacement="Both"
+                            TickFrequency="10"
+                            Width="{c:GridUnit 80}" 
+                            Minimum="0"
+                            Maximum="100" />
+                    <Slider TickPlacement="Both"
+                            TickFrequency="10"
+                            Orientation="Vertical"
+                            Height="{c:GridUnit 80}" 
+                            Minimum="0"
+                            Maximum="100" />
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,3'}"
+                            Margin="{c:GridUnit '0,0,0,-3'}">
+                    <CheckBox x:Name="IsEnabledSliderEx3"
                               IsChecked="True"
                               Content="IsEnabled" />
                 </StackPanel>

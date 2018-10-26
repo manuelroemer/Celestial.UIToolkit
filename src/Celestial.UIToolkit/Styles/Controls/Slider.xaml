@@ -30,9 +30,12 @@
                     <!-- While we are fixing Popups:
                          The Thumb grows larger with a RenderTransform. This doesn't get taken into account
                          when placing the ToolTip. -> The ToolTip is a little bit over the Thumb.
-                         We can offset this by setting the 'VerticalOffset' property, because it doesn't get used by the Slider. -->
+                         We can offset this by setting the Offset properties, because they don't get used by the Slider. -->
                     <DataTrigger Binding="{Binding Orientation, RelativeSource={RelativeSource AncestorType=Slider}}" Value="Horizontal">
                         <Setter Property="VerticalOffset" Value="{c:GridUnit -1}" />
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding Orientation, RelativeSource={RelativeSource AncestorType=Slider}}" Value="Vertical">
+                        <Setter Property="HorizontalOffset" Value="{c:GridUnit -1}" />
                     </DataTrigger>
                 </Style.Triggers>
             </Style>
@@ -110,7 +113,7 @@
                                                   To="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                             </Storyboard>
                         </Grid.Resources>
-                        
+
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualStateGroup.Transitions>
@@ -143,6 +146,20 @@
                         <RowDefinition Height="Auto" MinHeight="{TemplateBinding MinHeight}" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
+                    
+                    <TickBar x:Name="TopTick" 
+                             Fill="{TemplateBinding Foreground}" 
+                             Height="{c:GridUnit 1}"
+                             Margin="{c:GridUnit '0,0,0,0.5'}"
+                             Placement="Top"
+                             Visibility="Collapsed" />
+                    <TickBar x:Name="BottomTick" Fill="{TemplateBinding Foreground}" 
+                             Grid.Row="2" 
+                             Height="{c:GridUnit 1}" 
+                             Margin="{c:GridUnit '0,0.5,0,0'}"
+                             Placement="Bottom"
+                             Visibility="Collapsed" />
+
                     <Border x:Name="TrackBackground"
                             Grid.Row="1"
                             Height="{c:GridUnit 0.5}"
@@ -172,9 +189,24 @@
                 </Grid>
             </controls:ThemeShadowPresenter>
         </Grid>
+
+        <ControlTemplate.Triggers>
+            <Trigger Property="TickPlacement" Value="TopLeft">
+                <Setter TargetName="TopTick" Property="Visibility" Value="Visible" />
+            </Trigger>
+
+            <Trigger Property="TickPlacement" Value="BottomRight">
+                <Setter TargetName="BottomTick" Property="Visibility" Value="Visible" />
+            </Trigger>
+
+            <Trigger Property="TickPlacement" Value="Both">
+                <Setter TargetName="TopTick" Property="Visibility" Value="Visible" />
+                <Setter TargetName="BottomTick" Property="Visibility" Value="Visible" />
+            </Trigger>
+        </ControlTemplate.Triggers>
     </ControlTemplate>
 
-    <Style x:Key="StandardSlider" TargetType="Slider" BasedOn="{c:MultiStyle 'ControlBackground ControlBorder StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="StandardSlider" TargetType="Slider" BasedOn="{c:MultiStyle 'ControlBackground ControlBorder SecondaryForeground StandardFontProperties Shadow0'}">
         <Style.Resources>
             <Style x:Key="SliderThumbStyle" TargetType="Thumb" BasedOn="{StaticResource StandardSliderThumb}" />
         </Style.Resources>
