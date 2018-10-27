@@ -72,6 +72,14 @@ namespace ControlGallery.Data.Categories
             SamplePageType = typeof(ListView)
         };
 
+        private static ControlInformation TreeViewInfo = new ControlInformation()
+        {
+            Name = "TreeView",
+            Description = "A TreeView displays item in a hierarchical order (like a tree with its branches).",
+            Icon = new PackIconModern() { Kind = PackIconModernKind.Tree },
+            SamplePageType = typeof(TreeView)
+        };
+
         private static ControlInformation SliderInfo = new ControlInformation()
         {
             Name = "Slider",
@@ -90,7 +98,8 @@ namespace ControlGallery.Data.Categories
             PasswordBoxInfo,
             ComboBoxInfo,
             ListBoxInfo,
-            ListViewInfo);
+            ListViewInfo,
+            TreeViewInfo);
 
     }
 

@@ -112,6 +112,7 @@
     <Compile Include="Theming\ShadowProperties.cs" />
     <Compile Include="Theming\TabControlProperties.cs" />
     <Compile Include="Theming\TextBoxProperties.cs" />
+    <Compile Include="Theming\TreeViewHelper.cs" />
     <Compile Include="Theming\VisualStateProperties.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -206,6 +207,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Styles\Controls\Slider.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\TreeView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
