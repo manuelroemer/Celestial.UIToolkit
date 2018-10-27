@@ -112,6 +112,17 @@
                                                   Duration="0"
                                                   To="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                             </Storyboard>
+
+                            <Storyboard x:Key="FocusedStoryboard">
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                               Storyboard.TargetProperty="RenderTransform.(ScaleTransform.ScaleX)">
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="1.2" />
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                               Storyboard.TargetProperty="RenderTransform.(ScaleTransform.ScaleY)">
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="1.2" />
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
                         </Grid.Resources>
 
                         <VisualStateManager.VisualStateGroups>
@@ -310,7 +321,7 @@
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="AutoToolTipPlacement" Value="TopLeft" />
-        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource DisabledThemeShadow}" />
