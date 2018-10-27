@@ -441,7 +441,9 @@
                                   BorderBrush="{TemplateBinding BorderBrush}"
                                   BorderThickness="{TemplateBinding BorderThickness}"
                                   theming:ControlProperties.CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}"
-                                  Padding="{TemplateBinding Padding}">
+                                  Padding="{TemplateBinding Padding}"
+                                  controls:ThemeShadow.Shadow="{TemplateBinding controls:ThemeShadow.Shadow}"
+                                  controls:ThemeShadow.Elevation="{TemplateBinding controls:ThemeShadow.Elevation}">
                         <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                         HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                         VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
