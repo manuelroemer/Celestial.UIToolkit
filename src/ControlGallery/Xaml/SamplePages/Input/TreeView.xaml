@@ -95,6 +95,76 @@
             </controls:ControlPresenter.Options>
         </controls:ControlPresenter>
         
+        <controls:ControlPresenter Header="A Compact TreeView."
+                                   Xaml="{Binding Xaml, ElementName=TreeViewEx2}"
+                                   VerticalAlignment="Top">
+            <smtx:XamlDisplay x:Name="TreeViewEx2" Key="TreeViewEx2">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx2}">
+                    <TreeView Style="{StaticResource CompactAccent2TreeView}"
+                              Width="{c:GridUnit 100}"
+                              Height="{c:GridUnit 40}">
+                        <TreeViewItem Header="Item 1">
+                            <TreeViewItem Header="Item 1-1">
+                                <TreeViewItem Header="Item 1-1-1" />
+                                <TreeViewItem Header="Item 1-1-2" />
+                                <TreeViewItem Header="Item 1-1-3" />
+                            </TreeViewItem>
+                            <TreeViewItem Header="Item 1-2">
+                                <TreeViewItem Header="Item 1-2-1" />
+                                <TreeViewItem Header="Item 1-2-2" />
+                            </TreeViewItem>
+                            <TreeViewItem Header="Item 1-3" />
+                        </TreeViewItem>
+                        <TreeViewItem Header="Item 2">
+                            <TreeViewItem Header="Item 2-1" />
+                        </TreeViewItem>
+                        <TreeViewItem Header="Item 3" />
+                    </TreeView>
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <CheckBox x:Name="IsEnabledCheckBoxEx2"
+                          IsChecked="True"
+                          Content="IsEnabled" />
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+        
+        <controls:ControlPresenter Header="A Large TreeView."
+                                   Xaml="{Binding Xaml, ElementName=TreeViewEx3}"
+                                   VerticalAlignment="Top">
+            <smtx:XamlDisplay x:Name="TreeViewEx3" Key="TreeViewEx3">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx3}">
+                    <TreeView Style="{StaticResource LargeAccent1TreeView}"
+                              Width="{c:GridUnit 100}"
+                              Height="{c:GridUnit 40}">
+                        <TreeViewItem Header="Item 1">
+                            <TreeViewItem Header="Item 1-1">
+                                <TreeViewItem Header="Item 1-1-1" />
+                                <TreeViewItem Header="Item 1-1-2" />
+                                <TreeViewItem Header="Item 1-1-3" />
+                            </TreeViewItem>
+                            <TreeViewItem Header="Item 1-2">
+                                <TreeViewItem Header="Item 1-2-1" />
+                                <TreeViewItem Header="Item 1-2-2" />
+                            </TreeViewItem>
+                            <TreeViewItem Header="Item 1-3" />
+                        </TreeViewItem>
+                        <TreeViewItem Header="Item 2">
+                            <TreeViewItem Header="Item 2-1" />
+                        </TreeViewItem>
+                        <TreeViewItem Header="Item 3" />
+                    </TreeView>
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <CheckBox x:Name="IsEnabledCheckBoxEx3"
+                          IsChecked="True"
+                          Content="IsEnabled" />
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+        
     </StackPanel>
 
 </UserControl>

@@ -30,12 +30,12 @@
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
         <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType=TreeView}}" />
-        <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType=TreeViewItem}}" />
+        <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType=TreeView}}" />
+        <Setter Property="ItemContainerStyle" Value="{Binding ItemContainerStyle, RelativeSource={RelativeSource AncestorType=TreeView}}" />
         <Setter Property="Padding" Value="{StaticResource StandardListItemPadding}" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource DisabledThemeShadow}" />
-        <Setter Property="ItemContainerStyle" Value="{Binding ItemContainerStyle, RelativeSource={RelativeSource AncestorType=TreeView}}" />
         
         <!-- We need to manually set the current depth level of the TreeViewItem for the template.
              This works recursively:    ThisDepth = ParentElementDepth + 1. 
@@ -225,7 +225,33 @@
 
     <Style TargetType="TreeViewItem" BasedOn="{StaticResource Accent2TreeViewItem}" />
 
+    <!-- Compact Styles. -->
+    <Style x:Key="CompactStandardTreeViewItem" TargetType="TreeViewItem" BasedOn="{StaticResource StandardTreeViewItem}">
+        <Setter Property="Padding" Value="{StaticResource CompactListItemPadding}" />
+    </Style>
 
+    <Style x:Key="CompactAccent1TreeViewItem" TargetType="TreeViewItem" BasedOn="{StaticResource Accent1TreeViewItem}">
+        <Setter Property="Padding" Value="{StaticResource CompactListItemPadding}" />
+    </Style>
+
+    <Style x:Key="CompactAccent2TreeViewItem" TargetType="TreeViewItem" BasedOn="{StaticResource Accent2TreeViewItem}">
+        <Setter Property="Padding" Value="{StaticResource CompactListItemPadding}" />
+    </Style>
+
+    <!-- Large Styles. -->
+    <Style x:Key="LargeStandardTreeViewItem" TargetType="TreeViewItem" BasedOn="{StaticResource StandardTreeViewItem}">
+        <Setter Property="Padding" Value="{StaticResource LargeListItemPadding}" />
+    </Style>
+
+    <Style x:Key="LargeAccent1TreeViewItem" TargetType="TreeViewItem" BasedOn="{StaticResource Accent1TreeViewItem}">
+        <Setter Property="Padding" Value="{StaticResource LargeListItemPadding}" />
+    </Style>
+
+    <Style x:Key="LargeAccent2TreeViewItem" TargetType="TreeViewItem" BasedOn="{StaticResource Accent2TreeViewItem}">
+        <Setter Property="Padding" Value="{StaticResource LargeListItemPadding}" />
+    </Style>
+
+    
 
     <Style x:Key="StandardTreeView" TargetType="TreeView" BasedOn="{c:MultiStyle 'PrimaryBackground ControlBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
@@ -292,4 +318,30 @@
 
     <Style TargetType="TreeView" BasedOn="{StaticResource Accent2TreeView}" />
 
+    <!-- Compact Styles. -->
+    <Style x:Key="CompactStandardTreeView" TargetType="TreeView" BasedOn="{StaticResource StandardTreeView}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource CompactStandardTreeViewItem}" />
+    </Style>
+    
+    <Style x:Key="CompactAccent1TreeView" TargetType="TreeView" BasedOn="{StaticResource Accent1TreeView}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource CompactAccent1TreeViewItem}" />
+    </Style>
+    
+    <Style x:Key="CompactAccent2TreeView" TargetType="TreeView" BasedOn="{StaticResource Accent2TreeView}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource CompactAccent2TreeViewItem}" />
+    </Style>
+    
+    <!-- Large Styles. -->
+    <Style x:Key="LargeStandardTreeView" TargetType="TreeView" BasedOn="{StaticResource StandardTreeView}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource LargeStandardTreeViewItem}" />
+    </Style>
+    
+    <Style x:Key="LargeAccent1TreeView" TargetType="TreeView" BasedOn="{StaticResource Accent1TreeView}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource LargeAccent1TreeViewItem}" />
+    </Style>
+    
+    <Style x:Key="LargeAccent2TreeView" TargetType="TreeView" BasedOn="{StaticResource Accent2TreeView}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource LargeAccent2TreeViewItem}" />
+    </Style>
+    
 </ResourceDictionary>
