@@ -1,46 +1,44 @@
 ﻿using Celestial.UIToolkit.Converters;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Globalization;
+using Xunit;
 
 namespace Celestial.UIToolkit.Tests.Converters
 {
 
-    // These tests also cover the NullToVisibilityConverter.
-
-    [TestClass]
     public class StringToVisibilityConverterTests
     {
 
-        [TestMethod]
+        [Fact]
         public void ConvertsNullValues()
         {
             var converter = new StringToVisibilityConverter();
-            Assert.AreEqual(
+            Assert.Equal(
                 converter.NullVisibility,
                 converter.Convert(null, null, CultureInfo.CurrentCulture));
-            Assert.AreEqual(
+            Assert.Equal(
                 converter.NotNullVisibility,
                 converter.Convert(new object(), null, CultureInfo.CurrentCulture));
         }
 
-        [TestMethod]
+        [Fact]
         public void ConvertsStringValues()
         {
             var converter = new StringToVisibilityConverter();
             converter.IncludeWhiteSpace = false;
 
-            Assert.AreEqual(
+            Assert.Equal(
                 converter.NullVisibility,
                 converter.Convert("", null, CultureInfo.CurrentCulture));
-            Assert.AreEqual(
+            Assert.Equal(
                 converter.NotNullVisibility,
                 converter.Convert("Not empty", null, CultureInfo.CurrentCulture));
 
             converter.IncludeWhiteSpace = true;
-            Assert.AreEqual(
+            Assert.Equal(
                 converter.NullVisibility,
                 converter.Convert("   \t", null, CultureInfo.CurrentCulture));
         }
 
     }
+
 }

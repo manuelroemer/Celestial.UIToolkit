@@ -1,16 +1,14 @@
-﻿using System;
+﻿using Celestial.UIToolkit.Converters;
 using System.Windows;
-using Celestial.UIToolkit.Converters;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace Celestial.UIToolkit.Tests.Converters
 {
 
-    [TestClass]
     public class ThicknessSidePickerConverterTests
     {
 
-        [TestMethod]
+        [Fact]
         public void ChangesAllSides()
         {
             var converter = new ThicknessSidePickerConverter()
@@ -24,17 +22,17 @@ namespace Celestial.UIToolkit.Tests.Converters
             var thickness = new Thickness(1, 2, 3, 4);
             var expectedThickness = new Thickness(5);
 
-            Assert.AreEqual(
+            Assert.Equal(
                 expectedThickness,
                 converter.Convert(thickness, null, null));
         }
 
-        [TestMethod]
+        [Fact]
         public void KeepsAllSides()
         {
             var converter = new ThicknessSidePickerConverter();
             var thickness = new Thickness(1, 2, 3, 4);
-            Assert.AreEqual(
+            Assert.Equal(
                 thickness,
                 converter.Convert(thickness, null, null));
         }

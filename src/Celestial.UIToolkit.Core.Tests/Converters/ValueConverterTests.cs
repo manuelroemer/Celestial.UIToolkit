@@ -1,45 +1,42 @@
 ﻿using Celestial.UIToolkit.Converters;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Globalization;
+using Xunit;
 
 namespace Celestial.UIToolkit.Tests.Converters
 {
 
-    [TestClass]
     public class ValueConverterTests
     {
 
-        [TestMethod]
+        [Fact]
         public void ThrowsForUnimplementedMethods()
         {
             var converter = new UnimplementedValueConverter();
-            Assert.ThrowsException<NotSupportedException>(() =>
+            Assert.Throws<NotSupportedException>(() =>
                 converter.Convert(0, typeof(int), null, CultureInfo.CurrentCulture));
-            Assert.ThrowsException<NotSupportedException>(() =>
+            Assert.Throws<NotSupportedException>(() =>
                 converter.ConvertBack(0, typeof(int), null, CultureInfo.CurrentCulture));
         }
 
-        [TestMethod]
+        [Fact]
         public void ThrowsForWrongInputs()
         {
             var converter = new ImplementedValueConverter();
 
             // Wrong Input type.
-            Assert.ThrowsException<NotSupportedException>(() =>
+            Assert.Throws<NotSupportedException>(() =>
                 converter.Convert("String", typeof(int), null, CultureInfo.CurrentCulture));
-            Assert.ThrowsException<NotSupportedException>(() =>
+            Assert.Throws<NotSupportedException>(() =>
                 converter.ConvertBack("String", typeof(int), null, CultureInfo.CurrentCulture));
 
             // Wrong target type.
-            Assert.ThrowsException<NotSupportedException>(() =>
+            Assert.Throws<NotSupportedException>(() =>
                 converter.Convert(0, typeof(string), null, CultureInfo.CurrentCulture));
-            Assert.ThrowsException<NotSupportedException>(() =>
+            Assert.Throws<NotSupportedException>(() =>
                 converter.ConvertBack(0, typeof(string), null, CultureInfo.CurrentCulture));
         }
-
-        #region Test Class Implementations
-
+        
         private class UnimplementedValueConverter : ValueConverter<int, int> { }
 
         private class ImplementedValueConverter : UnimplementedValueConverter
@@ -47,9 +44,7 @@ namespace Celestial.UIToolkit.Tests.Converters
             public override int Convert(int value, object parameter, CultureInfo culture) => value;
             public override int ConvertBack(int value, object parameter, CultureInfo culture) => value;
         }
-
-        #endregion
-
+        
     }
 
 }

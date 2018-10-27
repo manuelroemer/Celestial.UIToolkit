@@ -1,43 +1,59 @@
-﻿using System;
+﻿using Celestial.UIToolkit.Converters;
+using System;
 using System.Globalization;
 using System.Windows.Data;
-using Celestial.UIToolkit.Converters;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace Celestial.UIToolkit.Tests.Converters
 {
-    [TestClass]
+
     public class InvertingConverterTests
     {
 
-        [TestMethod]
+        [Fact]
         public void InvertsOtherConverter()
         {
             IValueConverter normalConverter = new IntToStringConverter();
-            InvertingConverter invertingConverter = new InvertingConverter(normalConverter);
+            var invertingConverter = new InvertingConverter(normalConverter);
 
             const int convertValue = 123;
             const string convertBackValue = "123";
 
-            Assert.AreEqual(
+            Assert.Equal(
                 normalConverter.Convert(convertValue, typeof(string), null, null),
                 invertingConverter.ConvertBack(convertValue, typeof(string), null, null));
-            Assert.AreEqual(
+            Assert.Equal(
                 normalConverter.ConvertBack(convertBackValue, typeof(string), null, null),
                 invertingConverter.Convert(convertBackValue, typeof(string), null, null));
         }
 
-        [TestMethod]
+        [Fact]
         public void ThrowsWithoutUnderlyingConverter()
         {
             var invertingConverter = new InvertingConverter();
 
-            Assert.ThrowsException<InvalidOperationException>(() => invertingConverter.Convert(
+            Assert.Throws<InvalidOperationException>(() => invertingConverter.Convert(
                 new object(), typeof(object), null, CultureInfo.CurrentCulture));
 
-            Assert.ThrowsException<InvalidOperationException>(() => invertingConverter.ConvertBack(
+            Assert.Throws<InvalidOperationException>(() => invertingConverter.ConvertBack(
                 new object(), typeof(object), null, CultureInfo.CurrentCulture));
         }
-        
+
+        private class IntToStringConverter : IValueConverter
+        {
+
+            public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+            {
+                return value.ToString();
+            }
+
+            public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+            {
+                return int.Parse((String)value);
+            }
+
+        }
+
     }
+
 }
