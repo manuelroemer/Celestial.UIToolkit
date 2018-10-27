@@ -112,6 +112,7 @@
     <Compile Include="Theming\ShadowProperties.cs" />
     <Compile Include="Theming\TabControlProperties.cs" />
     <Compile Include="Theming\TextBoxProperties.cs" />
+    <Compile Include="Theming\TreeViewHelper.cs" />
     <Compile Include="Theming\VisualStateProperties.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
