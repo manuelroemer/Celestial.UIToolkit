@@ -30,6 +30,7 @@
         <c:SharedResourceDictionary Source="Controls/ComboBox.xaml" />
         <c:SharedResourceDictionary Source="Controls/ListBox.xaml" />
         <c:SharedResourceDictionary Source="Controls/ListView.xaml" />
+        <c:SharedResourceDictionary Source="Controls/TreeView.xaml" />
         <c:SharedResourceDictionary Source="Controls/ToolTip.xaml" />
         <c:SharedResourceDictionary Source="Controls/ProgressBar.xaml" />
         <c:SharedResourceDictionary Source="Controls/Menu.xaml" />
