@@ -13,7 +13,7 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardWindow" TargetType="Window" BasedOn="{c:MultiStyle 'StandardForeground StandardFontProperties'}">
+    <Style x:Key="StandardWindow" TargetType="Window" BasedOn="{c:MultiStyle 'PrimaryBackground StandardForeground StandardFontProperties'}">
     </Style>
     
 </ResourceDictionary>
