@@ -65,6 +65,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converters\BooleanToVisibilityConverterTests.cs" />
+    <Compile Include="Converters\ColorToSolidColorBrushConverterTests.cs" />
+    <Compile Include="Converters\DoubleToCornerRadiusConverterTests.cs" />
+    <Compile Include="Converters\GetTypeConverterTests.cs" />
+    <Compile Include="Converters\GroupConverterTests.cs" />
+    <Compile Include="Converters\InvertBooleanConverterTests.cs" />
+    <Compile Include="Converters\InvertingConverterTests.cs" />
+    <Compile Include="Converters\MathOperationConverterTests.cs" />
+    <Compile Include="Converters\NegateValueConverterTests.cs" />
+    <Compile Include="Converters\NullToVisibilityConverterTests.cs" />
+    <Compile Include="Converters\StringToVisibilityConverterTests.cs" />
+    <Compile Include="Converters\ThicknessSidePickerConverterTests.cs" />
+    <Compile Include="Converters\ValueConverterTests.cs" />
     <Compile Include="Extensions\ArrayExtensionsTests.cs" />
     <Compile Include="Extensions\ArraySegmentExtensionsTests.cs" />
     <Compile Include="Extensions\EnumerableExtensionsTests.cs" />
@@ -113,9 +126,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Converters\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
