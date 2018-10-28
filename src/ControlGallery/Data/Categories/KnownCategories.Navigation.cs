@@ -21,10 +21,19 @@ namespace ControlGallery.Data.Categories
             SamplePageType = typeof(NavigationView)
         };
 
+        private static ControlInformation TabControlInfo = new ControlInformation()
+        {
+            Name = "TabControl",
+            Description = "A TabControl displays multiple pages of controls. A user can switch between them via Tabs.",
+            Icon = new PackIconModern() { Kind = PackIconModernKind.Table },
+            SamplePageType = typeof(TabControl)
+        };
+
         public static ControlCategory Navigation { get; } = new ControlCategory(
             "Navigation",
             new PackIconModern() { Kind = PackIconModernKind.LinesHorizontal4 },
-            NavigationViewInfo);
+            NavigationViewInfo,
+            TabControlInfo);
 
     }
 
