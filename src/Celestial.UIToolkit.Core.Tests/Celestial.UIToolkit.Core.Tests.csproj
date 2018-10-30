@@ -96,6 +96,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Resources\SampleDictionaryKeys.cs" />
+    <Compile Include="Xaml\BindingExtensionsTests.cs" />
     <Compile Include="Xaml\DependencyProperties.cs" />
     <Compile Include="Xaml\GridUnitExtensionTests.cs" />
     <Compile Include="Xaml\MockedServiceProvider.cs" />
