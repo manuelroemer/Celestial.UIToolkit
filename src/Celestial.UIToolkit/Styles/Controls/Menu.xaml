@@ -40,10 +40,10 @@
                          FallbackValue="16" />
             </Setter.Value>
         </Setter>
-        <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="{Binding Path=(controls:ThemeShadow.Elevation), RelativeSource={RelativeSource Self}}" />
-        <Setter Property="theming:PressedProperties.ShadowElevation" Value="{Binding Path=(controls:ThemeShadow.Elevation), RelativeSource={RelativeSource Self}}" />
+        <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="{c:SelfBinding Path=(controls:ThemeShadow.Elevation)}" />
+        <Setter Property="theming:PressedProperties.ShadowElevation" Value="{c:SelfBinding Path=(controls:ThemeShadow.Elevation)}" />
         <Setter Property="theming:DisabledProperties.ShadowElevation" Value="0" />
-        <Setter Property="theming:PopupProperties.Padding" Value="{Binding Padding, RelativeSource={RelativeSource Self}, Converter={StaticResource TopBottomPicker}}" />
+        <Setter Property="theming:PopupProperties.Padding" Value="{c:SelfBinding Padding, Converter={StaticResource TopBottomPicker}}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="MenuItem">
@@ -90,7 +90,7 @@
                                                        VerticalAlignment="Center"
                                                        Foreground="{TemplateBinding Foreground}"
                                                        Data="{StaticResource Checkmark}"
-                                                       Visibility="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                                                       Visibility="{c:TemplatedParentBinding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                                 </Grid>
 
                                 <ContentPresenter x:Name="HeaderContentSite"
@@ -105,7 +105,7 @@
                                            Style="{StaticResource HintTextBlock}"
                                            Margin="{c:GridUnit '4,0,0,0'}"
                                            Text="{TemplateBinding InputGestureText}"
-                                           Visibility="{Binding InputGestureText, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource StringToVisibilityConverter}}" />
+                                           Visibility="{c:TemplatedParentBinding InputGestureText, Converter={StaticResource StringToVisibilityConverter}}" />
 
                                 <controls:PathIcon x:Name="ExpandArrowIcon"
                                                    Grid.Column="3"
@@ -191,29 +191,29 @@
                         </Trigger>
 
                         <Trigger Property="theming:RippleProperties.ShowRippleAnimation" Value="True">
-                            <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{c:SelfBinding Background}" />
                         </Trigger>
 
                         <Trigger Property="IsHighlighted" Value="True">
-                            <Setter Property="Background" Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="BorderBrush" Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="Foreground" Value="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:MouseOverProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Background" Value="{c:SelfBinding Path=(theming:MouseOverProperties.BackgroundBrush)}" />
+                            <Setter Property="BorderBrush" Value="{c:SelfBinding Path=(theming:MouseOverProperties.BorderBrush)}" />
+                            <Setter Property="Foreground" Value="{c:SelfBinding Path=(theming:MouseOverProperties.ForegroundBrush)}" />
+                            <Setter Property="controls:ThemeShadow.Elevation" Value="{c:SelfBinding Path=(theming:MouseOverProperties.ShadowElevation)}" />
                         </Trigger>
 
                         <Trigger Property="IsPressed" Value="True">
                             <Setter TargetName="Ripple" Property="IsActiveTrigger" Value="True" />
-                            <Setter Property="Background" Value="{Binding Path=(theming:PressedProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="BorderBrush" Value="{Binding Path=(theming:PressedProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="Foreground" Value="{Binding Path=(theming:PressedProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:PressedProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Background" Value="{c:SelfBinding Path=(theming:PressedProperties.BackgroundBrush)}" />
+                            <Setter Property="BorderBrush" Value="{c:SelfBinding Path=(theming:PressedProperties.BorderBrush)}" />
+                            <Setter Property="Foreground" Value="{c:SelfBinding Path=(theming:PressedProperties.ForegroundBrush)}" />
+                            <Setter Property="controls:ThemeShadow.Elevation" Value="{c:SelfBinding Path=(theming:PressedProperties.ShadowElevation)}" />
                         </Trigger>
 
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Background" Value="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="BorderBrush" Value="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="Foreground" Value="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:DisabledProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Background" Value="{c:SelfBinding Path=(theming:DisabledProperties.BackgroundBrush)}" />
+                            <Setter Property="BorderBrush" Value="{c:SelfBinding Path=(theming:DisabledProperties.BorderBrush)}" />
+                            <Setter Property="Foreground" Value="{c:SelfBinding Path=(theming:DisabledProperties.ForegroundBrush)}" />
+                            <Setter Property="controls:ThemeShadow.Elevation" Value="{c:SelfBinding Path=(theming:DisabledProperties.ShadowElevation)}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -323,17 +323,17 @@
                     
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="BorderBrush" Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="Foreground" Value="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:MouseOverProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Background" Value="{c:SelfBinding Path=(theming:MouseOverProperties.BackgroundBrush)}" />
+                            <Setter Property="BorderBrush" Value="{c:SelfBinding Path=(theming:MouseOverProperties.BorderBrush)}" />
+                            <Setter Property="Foreground" Value="{c:SelfBinding Path=(theming:MouseOverProperties.ForegroundBrush)}" />
+                            <Setter Property="controls:ThemeShadow.Elevation" Value="{c:SelfBinding Path=(theming:MouseOverProperties.ShadowElevation)}" />
                         </Trigger>
 
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Background" Value="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="BorderBrush" Value="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="Foreground" Value="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:DisabledProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Background" Value="{c:SelfBinding Path=(theming:DisabledProperties.BackgroundBrush)}" />
+                            <Setter Property="BorderBrush" Value="{c:SelfBinding Path=(theming:DisabledProperties.BorderBrush)}" />
+                            <Setter Property="Foreground" Value="{c:SelfBinding Path=(theming:DisabledProperties.ForegroundBrush)}" />
+                            <Setter Property="controls:ThemeShadow.Elevation" Value="{c:SelfBinding Path=(theming:DisabledProperties.ShadowElevation)}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

@@ -77,7 +77,7 @@
                                 <controls:ManipulationBoundaryFeedbackAwareContentControl
                                     Padding="{TemplateBinding Padding}"
                                     Style="{StaticResource BouncingManipulationBoundaryFeedbackAwareContentControl}"
-                                    FeedbackProvider="{Binding RelativeSource={RelativeSource TemplatedParent}}">
+                                    FeedbackProvider="{c:TemplatedParentBinding}">
                                     <ScrollContentPresenter x:Name="PART_ScrollContentPresenter"
                                                             CanContentScroll="{TemplateBinding CanContentScroll}"
                                                             HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"

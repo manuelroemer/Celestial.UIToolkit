@@ -33,7 +33,7 @@
                             <!-- The Ellipses/Borders all share the same style.
                                  Define them here, so that the following XAML doesn't get cluttered. -->
                             <Style TargetType="Ellipse">
-                                <Setter Property="Fill" Value="{Binding Path=(theming:ActiveProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                <Setter Property="Fill" Value="{c:TemplatedParentBinding Path=(theming:ActiveProperties.BackgroundBrush)}" />
                                 <Setter Property="Width" Value="{c:GridUnit MultiplierString={StaticResource EllipseSizeMultiplier}}" />
                                 <Setter Property="Height" Value="{c:GridUnit MultiplierString={StaticResource EllipseSizeMultiplier}}" />
                                 <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
@@ -253,7 +253,7 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="theming:ActiveProperties.BackgroundBrush" 
-                                    Value="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
+                                    Value="{c:SelfBinding Path=(theming:DisabledProperties.BackgroundBrush)}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
