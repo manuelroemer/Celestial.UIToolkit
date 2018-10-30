@@ -33,9 +33,9 @@
         <Setter Property="theming:TabItemProperties.HeaderFontStretch" Value="{StaticResource TitleFontStretch}" />
     </Style>
 
-    
-    
-    <Style x:Key="StandardTabItem" TargetType="TabItem" BasedOn="{c:MultiStyle 'StandardTabItemHeader TransparentBackground TransparentBorder StandardForeground StandardFontProperties ElevationZIndex Shadow0'}">
+
+
+    <Style x:Key="StandardTabItem" TargetType="TabItem" BasedOn="{c:MultiStyle 'StandardTabItemHeader TransparentBackground TransparentBorder StandardForegroundPrimaryStates StandardFontProperties ElevationZIndex Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
