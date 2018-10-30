@@ -23,17 +23,20 @@
                                    Xaml="{Binding Xaml, ElementName=TabControlEx1}"
                                    VerticalAlignment="Top">
             <smtx:XamlDisplay x:Name="TabControlEx1" Key="TabControlEx1">
-                <TabControl Width="{c:GridUnit 100}" Height="{c:GridUnit 60}">
-                    <TabItem Header="Page 1">
-                        <TextBlock Text="Hello from Page 1." />
-                    </TabItem>
-                    <TabItem Header="Page 2">
-                        <TextBlock Text="Hello from Page 2." />
-                    </TabItem>
-                    <TabItem Header="Page 3">
-                        <TextBlock Text="Hello from Page 3." />
-                    </TabItem>
-                </TabControl>
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx1}">
+                    <TabControl Width="{c:GridUnit 100}" Height="{c:GridUnit 60}">
+                        <TabItem Header="Page 1">
+                            <TextBlock Text="Hello from Page 1." />
+                        </TabItem>
+                        <TabItem Header="Page 2">
+                            <TextBlock Text="Hello from Page 2." />
+                        </TabItem>
+                        <TabItem Header="Page 3">
+                            <TextBlock Text="Hello from Page 3." />
+                        </TabItem>
+                    </TabControl>
+                </StackPanel>
             </smtx:XamlDisplay>
             <controls:ControlPresenter.Options>
                 <CheckBox x:Name="IsEnabledCheckBoxEx1"
