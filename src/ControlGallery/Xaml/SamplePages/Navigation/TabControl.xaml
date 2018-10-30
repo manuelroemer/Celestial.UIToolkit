@@ -74,6 +74,93 @@
             </controls:ControlPresenter.Options>
         </controls:ControlPresenter>
 
+        <controls:ControlPresenter Header="A TabControl with left-aligned TabItems."
+                                   Xaml="{Binding Xaml, ElementName=TabControlEx2}"
+                                   VerticalAlignment="Top">
+            <smtx:XamlDisplay x:Name="TabControlEx2" Key="TabControlEx2">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx2}">
+                    <TabControl TabStripPlacement="Left"
+                                Background="{StaticResource PaneBackgroundBrush}"
+                                MinWidth="{c:GridUnit 100}" 
+                                MinHeight="{c:GridUnit 20}">
+                        <TabItem Header="Page 1">
+                            <TextBlock Text="Hello from Page 1." />
+                        </TabItem>
+                        <TabItem Header="Page 2">
+                            <TextBlock Text="Hello from Page 2." />
+                        </TabItem>
+                        <TabItem Header="Page 3">
+                            <TextBlock Text="Hello from Page 3." />
+                        </TabItem>
+                    </TabControl>
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <CheckBox x:Name="IsEnabledCheckBoxEx2"
+                          IsChecked="True"
+                          Content="IsEnabled" />
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+
+        <controls:ControlPresenter Header="A TabControl with right-aligned TabItems."
+                                   Xaml="{Binding Xaml, ElementName=TabControlEx3}"
+                                   VerticalAlignment="Top">
+            <smtx:XamlDisplay x:Name="TabControlEx3" Key="TabControlEx3">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx3}">
+                    <TabControl TabStripPlacement="Right"
+                                Background="{StaticResource PaneBackgroundBrush}"
+                                MinWidth="{c:GridUnit 100}" 
+                                MinHeight="{c:GridUnit 20}">
+                        <TabItem Header="Page 1">
+                            <TextBlock Text="Hello from Page 1." />
+                        </TabItem>
+                        <TabItem Header="Page 2">
+                            <TextBlock Text="Hello from Page 2." />
+                        </TabItem>
+                        <TabItem Header="Page 3">
+                            <TextBlock Text="Hello from Page 3." />
+                        </TabItem>
+                    </TabControl>
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <CheckBox x:Name="IsEnabledCheckBoxEx3"
+                          IsChecked="True"
+                          Content="IsEnabled" />
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+
+        <controls:ControlPresenter Header="A TabControl with bottom-aligned TabItems."
+                                   Xaml="{Binding Xaml, ElementName=TabControlEx4}"
+                                   VerticalAlignment="Top">
+            <smtx:XamlDisplay x:Name="TabControlEx4" Key="TabControlEx4">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx4}">
+                    <TabControl TabStripPlacement="Bottom"
+                                Background="{StaticResource PaneBackgroundBrush}"
+                                MinWidth="{c:GridUnit 100}" 
+                                MinHeight="{c:GridUnit 20}">
+                        <TabItem Header="Page 1">
+                            <TextBlock Text="Hello from Page 1." />
+                        </TabItem>
+                        <TabItem Header="Page 2">
+                            <TextBlock Text="Hello from Page 2." />
+                        </TabItem>
+                        <TabItem Header="Page 3">
+                            <TextBlock Text="Hello from Page 3." />
+                        </TabItem>
+                    </TabControl>
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <CheckBox x:Name="IsEnabledCheckBoxEx4"
+                          IsChecked="True"
+                          Content="IsEnabled" />
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+
     </StackPanel>
 
 </UserControl>

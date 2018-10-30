@@ -45,14 +45,18 @@
         <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType=TabControl}}" />
         <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType=TabControl}}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
+        <Setter Property="theming:SelectionProperties.SelectionIndicatorSize" Value="{c:GridUnit 0.5}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TabItem">
                     <ControlTemplate.Resources>
                         <c:ThicknessSidePickerConverter x:Key="LeftRightPicker" Top="0" Bottom="0" />
+                        <c:ThicknessSidePickerConverter x:Key="TopBottomPicker" Left="0" Right="0" />
+                        <c:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
                     </ControlTemplate.Resources>
                     
-                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
+                    <Grid x:Name="RootGrid"
+                          VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                           Margin="{c:GridUnit '-2,0,0,0'}">
                         <controls:ThemeShadowPresenter>
@@ -77,14 +81,17 @@
                                             FontStyle="{TemplateBinding theming:TabItemProperties.HeaderFontStyle}"
                                             FontWeight="{TemplateBinding theming:TabItemProperties.HeaderFontWeight}"
                                             FontStretch="{TemplateBinding theming:TabItemProperties.HeaderFontStretch}"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
                                             Focusable="False" />
                         </Border>
 
                         <controls:SelectionIndicator x:Name="SelectionIndicator"
-                                                     Height="{c:GridUnit 0.5}"
                                                      VerticalAlignment="Bottom"
+                                                     Height="{TemplateBinding theming:SelectionProperties.SelectionIndicatorSize}"
                                                      Background="{TemplateBinding theming:ActiveProperties.ForegroundBrush}"
                                                      IsSelected="{TemplateBinding IsSelected}"
+                                                     Visibility="{Binding Path=(theming:SelectionProperties.ShowSelectionIndicator), RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}"
                                                      SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                                      Margin="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource LeftRightPicker}}"/>
 
@@ -176,6 +183,39 @@
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter TargetName="SelectionIndicator" Property="Background" Value="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                         </Trigger>
+
+                        <DataTrigger Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource AncestorType=TabControl}}" Value="Left">
+                            <Setter TargetName="SelectionIndicator" Property="HorizontalAlignment" Value="Right" />
+                            <Setter TargetName="SelectionIndicator" Property="VerticalAlignment" Value="Stretch" />
+                            <Setter TargetName="SelectionIndicator" Property="Width" Value="{Binding Path=(theming:SelectionProperties.SelectionIndicatorSize), RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter TargetName="SelectionIndicator" Property="Height" Value="Auto" />
+                            <Setter TargetName="SelectionIndicator" Property="Margin" Value="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource TopBottomPicker}}" />
+                            <Setter TargetName="SelectionIndicator" Property="Orientation" Value="Vertical" />
+                            <Setter Property="Padding" Value="{c:GridUnit '0,2,1,2', TargetType=Thickness}" />
+                            <Setter TargetName="RootGrid" Property="Margin" Value="{c:GridUnit '0,-2,0,0', TargetType=Thickness}" />
+                        </DataTrigger>
+                        
+                        <DataTrigger Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource AncestorType=TabControl}}" Value="Right">
+                            <Setter TargetName="SelectionIndicator" Property="HorizontalAlignment" Value="Left" />
+                            <Setter TargetName="SelectionIndicator" Property="VerticalAlignment" Value="Stretch" />
+                            <Setter TargetName="SelectionIndicator" Property="Width" Value="{Binding Path=(theming:SelectionProperties.SelectionIndicatorSize), RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter TargetName="SelectionIndicator" Property="Height" Value="Auto" />
+                            <Setter TargetName="SelectionIndicator" Property="Margin" Value="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource TopBottomPicker}}" />
+                            <Setter TargetName="SelectionIndicator" Property="Orientation" Value="Vertical" />
+                            <Setter Property="Padding" Value="{c:GridUnit '1,2,0,2', TargetType=Thickness}" />
+                            <Setter TargetName="RootGrid" Property="Margin" Value="{c:GridUnit '0,-2,0,0', TargetType=Thickness}" />
+                        </DataTrigger>
+                        
+                        <DataTrigger Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource AncestorType=TabControl}}" Value="Bottom">
+                            <Setter TargetName="SelectionIndicator" Property="HorizontalAlignment" Value="Stretch" />
+                            <Setter TargetName="SelectionIndicator" Property="VerticalAlignment" Value="Top" />
+                            <Setter TargetName="SelectionIndicator" Property="Width" Value="Auto" />
+                            <Setter TargetName="SelectionIndicator" Property="Height" Value="{Binding Path=(theming:SelectionProperties.SelectionIndicatorSize), RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter TargetName="SelectionIndicator" Property="Margin" Value="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource LeftRightPicker}}" />
+                            <Setter TargetName="SelectionIndicator" Property="Orientation" Value="Horizontal" />
+                            <Setter Property="Padding" Value="{c:GridUnit '2,0,2,0', TargetType=Thickness}" />
+                            <Setter TargetName="RootGrid" Property="Margin" Value="{c:GridUnit '-2,0,0,0', TargetType=Thickness}" />
+                        </DataTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
@@ -200,10 +240,20 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TabControl">
-                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
-                        <DockPanel>
+                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
+                          ClipToBounds="True"
+                          KeyboardNavigation.TabNavigation="Local">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition x:Name="Row0" Height="Auto" />
+                                <RowDefinition x:Name="Row1" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition x:Name="Col0" />
+                                <ColumnDefinition x:Name="Col1" Width="0" />
+                            </Grid.ColumnDefinitions>
+                            
                             <TabPanel x:Name="HeaderPanel"
-                                      DockPanel.Dock="Top"
                                       Background="Transparent"
                                       SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                       IsItemsHost="True"
@@ -211,6 +261,7 @@
                                       Panel.ZIndex="1" />
 
                             <Border x:Name="Bd"
+                                    Grid.Row="1"
                                     SnapsToDevicePixels="False"
                                     Background="{TemplateBinding Background}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
@@ -226,20 +277,41 @@
                                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                             </Border>
-                        </DockPanel>
+                        </Grid>
                     </Grid>
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="TabStripPlacement" Value="Left">
-                            <Setter TargetName="HeaderPanel" Property="DockPanel.Dock" Value="Left" />
+                            <Setter TargetName="Row0" Property="Height" Value="*" />
+                            <Setter TargetName="Row1" Property="Height" Value="0" />
+                            <Setter TargetName="Col0" Property="Width" Value="Auto" />
+                            <Setter TargetName="Col1" Property="Width" Value="*" />
+                            <Setter TargetName="HeaderPanel" Property="Grid.Row" Value="0" />
+                            <Setter TargetName="HeaderPanel" Property="Grid.Column" Value="0" />
+                            <Setter TargetName="Bd" Property="Grid.Row" Value="0" />
+                            <Setter TargetName="Bd" Property="Grid.Column" Value="1" />
                         </Trigger>
-                        
+
                         <Trigger Property="TabStripPlacement" Value="Right">
-                            <Setter TargetName="HeaderPanel" Property="DockPanel.Dock" Value="Right" />
+                            <Setter TargetName="Row0" Property="Height" Value="*" />
+                            <Setter TargetName="Row1" Property="Height" Value="0" />
+                            <Setter TargetName="Col0" Property="Width" Value="*" />
+                            <Setter TargetName="Col1" Property="Width" Value="Auto" />
+                            <Setter TargetName="HeaderPanel" Property="Grid.Row" Value="0" />
+                            <Setter TargetName="HeaderPanel" Property="Grid.Column" Value="1" />
+                            <Setter TargetName="Bd" Property="Grid.Row" Value="0" />
+                            <Setter TargetName="Bd" Property="Grid.Column" Value="0" />
                         </Trigger>
-                        
+
                         <Trigger Property="TabStripPlacement" Value="Bottom">
-                            <Setter TargetName="HeaderPanel" Property="DockPanel.Dock" Value="Bottom" />
+                            <Setter TargetName="Row0" Property="Height" Value="*" />
+                            <Setter TargetName="Row1" Property="Height" Value="Auto" />
+                            <Setter TargetName="Col0" Property="Width" Value="*" />
+                            <Setter TargetName="Col1" Property="Width" Value="0" />
+                            <Setter TargetName="HeaderPanel" Property="Grid.Row" Value="1" />
+                            <Setter TargetName="HeaderPanel" Property="Grid.Column" Value="0" />
+                            <Setter TargetName="Bd" Property="Grid.Row" Value="0" />
+                            <Setter TargetName="Bd" Property="Grid.Column" Value="0" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
