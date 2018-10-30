@@ -26,6 +26,7 @@
         <Setter Property="MinHeight" Value="{c:GridUnit 10}" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
+        <Setter Property="theming:SelectionProperties.SelectionIndicatorSize" Value="{c:GridUnit 1}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:NavigationViewItem">
@@ -155,10 +156,11 @@
 
                         <controls:SelectionIndicator x:Name="SelectionIndicator"
                                                      Background="{TemplateBinding Foreground}"
-                                                     Width="{c:GridUnit 1}"
                                                      HorizontalAlignment="Left"
                                                      Orientation="Vertical"
-                                                     IsSelected="{TemplateBinding IsSelected}" />
+                                                     IsSelected="{TemplateBinding IsSelected}"
+                                                     Width="{TemplateBinding theming:SelectionProperties.SelectionIndicatorSize}"
+                                                     Visibility="{Binding Path=(theming:SelectionProperties.ShowSelectionIndicator), RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}" />
 
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
