@@ -43,6 +43,7 @@
         <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
         <Setter Property="theming:TextBoxHelper.TextBox" Value="{Binding RelativeSource={RelativeSource Self}}" />
+        <Setter Property="theming:SelectionProperties.SelectionIndicatorSize" Value="{c:GridUnit '0.377'}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Control">
@@ -116,8 +117,8 @@
                                 <Border BorderThickness="{TemplateBinding BorderThickness}">
                                     <controls:SelectionIndicator x:Name="FocusedIndicator"
                                                                  Background="{TemplateBinding theming:ActiveProperties.BorderBrush}"
-                                                                 Visibility="{Binding Path=(theming:TextBoxProperties.ShowFocusedIndicator), RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}"
-                                                                 Height="1.5"
+                                                                 Visibility="{Binding Path=(theming:SelectionProperties.ShowSelectionIndicator), RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                                                 Height="{TemplateBinding theming:SelectionProperties.SelectionIndicatorSize}"
                                                                  VerticalAlignment="Bottom"
                                                                  Margin="0,0,0,-0.5"
                                                                  IsSelected="{TemplateBinding IsKeyboardFocused}" />
@@ -251,7 +252,7 @@
 
     <Style x:Key="StandardOutlinedTextBox" TargetType="Control" BasedOn="{StaticResource StandardTextBox}">
         <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="theming:TextBoxProperties.ShowFocusedIndicator" Value="False" />
+        <Setter Property="theming:SelectionProperties.ShowSelectionIndicator" Value="False" />
     </Style>
 
     <Style x:Key="Accent1OutlinedTextBox" TargetType="Control" BasedOn="{c:MultiStyle 'StandardOutlinedTextBox ControlBorderAccent1States'}" />

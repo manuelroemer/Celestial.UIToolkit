@@ -133,6 +133,7 @@
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource BottomControlThemeShadow}" />
         <Setter Property="theming:PopupProperties.BorderThickness" Value="1,0,1,1" />
+        <Setter Property="theming:SelectionProperties.SelectionIndicatorSize" Value="{c:GridUnit 0.377}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ComboBox">
@@ -201,8 +202,8 @@
                             <Border BorderThickness="{TemplateBinding BorderThickness}">
                                 <controls:SelectionIndicator x:Name="FocusedIndicator"
                                                              Background="{TemplateBinding theming:ActiveProperties.BorderBrush}"
-                                                             Visibility="{Binding Path=(theming:TextBoxProperties.ShowFocusedIndicator), RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}"
-                                                             Height="1.5"
+                                                             Visibility="{Binding Path=(theming:SelectionProperties.ShowSelectionIndicator), RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                                             Height="{TemplateBinding theming:SelectionProperties.SelectionIndicatorSize}"
                                                              VerticalAlignment="Bottom"
                                                              Margin="0,0,0,-0.5" />
                             </Border>
@@ -476,7 +477,7 @@
 
     <Style x:Key="StandardOutlinedComboBox" TargetType="ComboBox" BasedOn="{StaticResource StandardComboBox}">
         <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="theming:TextBoxProperties.ShowFocusedIndicator" Value="False" />
+        <Setter Property="theming:SelectionProperties.ShowSelectionIndicator" Value="False" />
     </Style>
     <Style x:Key="Accent1OutlinedComboBox" TargetType="ComboBox" BasedOn="{c:MultiStyle 'StandardOutlinedComboBox ControlBorderAccent1States'}">
         <Setter Property="ItemContainerStyle" Value="{StaticResource Accent1ComboBoxItem}" />
