@@ -25,7 +25,36 @@
             <smtx:XamlDisplay x:Name="TabControlEx1" Key="TabControlEx1">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx1}">
-                    <TabControl Width="{c:GridUnit 100}" Height="{c:GridUnit 60}">
+                    <TabControl Style="{StaticResource StandardTabControl}"
+                                Width="{c:GridUnit 100}" 
+                                Height="{c:GridUnit 20}">
+                        <TabItem Header="Page 1">
+                            <TextBlock Text="Hello from Page 1." />
+                        </TabItem>
+                        <TabItem Header="Page 2">
+                            <TextBlock Text="Hello from Page 2." />
+                        </TabItem>
+                        <TabItem Header="Page 3">
+                            <TextBlock Text="Hello from Page 3." />
+                        </TabItem>
+                    </TabControl>
+
+                    <TabControl Style="{StaticResource Accent1TabControl}"
+                                Width="{c:GridUnit 100}" 
+                                Height="{c:GridUnit 20}">
+                        <TabItem Header="Page 1">
+                            <TextBlock Text="Hello from Page 1." />
+                        </TabItem>
+                        <TabItem Header="Page 2">
+                            <TextBlock Text="Hello from Page 2." />
+                        </TabItem>
+                        <TabItem Header="Page 3">
+                            <TextBlock Text="Hello from Page 3." />
+                        </TabItem>
+                    </TabControl>
+                    
+                    <TabControl Width="{c:GridUnit 100}" 
+                                Height="{c:GridUnit 20}">
                         <TabItem Header="Page 1">
                             <TextBlock Text="Hello from Page 1." />
                         </TabItem>
