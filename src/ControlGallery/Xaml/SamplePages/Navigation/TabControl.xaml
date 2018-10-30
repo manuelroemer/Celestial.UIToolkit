@@ -161,6 +161,47 @@
             </controls:ControlPresenter.Options>
         </controls:ControlPresenter>
 
+        <controls:ControlPresenter Header="Styling the TabItems."
+                                   Xaml="{Binding Xaml, ElementName=TabControlEx5}"
+                                   VerticalAlignment="Top">
+            <smtx:XamlDisplay x:Name="TabControlEx5" Key="TabControlEx5">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx5}">
+                    <StackPanel.Resources>
+                        <Style x:Key="MyTabItem" TargetType="TabItem" BasedOn="{StaticResource Accent2TabItem}">
+                            <Setter Property="c:SelectionProperties.ShowSelectionIndicator" Value="True" />
+                            <Setter Property="c:SelectionProperties.SelectionIndicatorSize" Value="{c:GridUnit 1}" />
+                            <Setter Property="c:TabItemProperties.HeaderForeground" Value="{StaticResource StandardForegroundBrush}" />
+                            <Setter Property="c:TabItemProperties.HeaderFontSize" Value="{StaticResource StandardFontSize}" />
+                            <Setter Property="c:TabItemProperties.HeaderFontFamily" Value="{StaticResource StandardFontFamily}" />
+                            <Setter Property="c:TabItemProperties.HeaderFontStyle" Value="{StaticResource BaseFontStyle}" />
+                            <Setter Property="c:TabItemProperties.HeaderFontWeight" Value="{StaticResource BaseFontWeight}" />
+                            <Setter Property="c:TabItemProperties.HeaderFontStretch" Value="{StaticResource BaseFontStretch}" />
+                        </Style>
+                    </StackPanel.Resources>
+                    
+                    <TabControl ItemContainerStyle="{StaticResource MyTabItem}"
+                                MinWidth="{c:GridUnit 100}" 
+                                MinHeight="{c:GridUnit 20}">
+                        <TabItem Header="Page 1">
+                            <TextBlock Text="Hello from Page 1." />
+                        </TabItem>
+                        <TabItem Header="Page 2">
+                            <TextBlock Text="Hello from Page 2." />
+                        </TabItem>
+                        <TabItem Header="Page 3">
+                            <TextBlock Text="Hello from Page 3." />
+                        </TabItem>
+                    </TabControl>
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <CheckBox x:Name="IsEnabledCheckBoxEx5"
+                          IsChecked="True"
+                          Content="IsEnabled" />
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+
     </StackPanel>
 
 </UserControl>
