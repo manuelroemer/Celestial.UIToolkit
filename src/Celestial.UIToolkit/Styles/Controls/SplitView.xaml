@@ -32,8 +32,8 @@
                                  That results in the pane being displayed incorrectly (hidden) when the control is loaded, even if
                                  IsPaneOpen = True.
                                  Don't ask me why, but it works as intended if BindingProxys are used. -->
-                            <c:BindingProxy x:Key="OpenPaneLengthProxy" Data="{Binding OpenPaneLength, RelativeSource={RelativeSource TemplatedParent}}" />
-                            <c:BindingProxy x:Key="CompactPaneLengthProxy" Data="{Binding CompactPaneLength, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <c:BindingProxy x:Key="OpenPaneLengthProxy" Data="{c:TemplatedParentBinding OpenPaneLength}" />
+                            <c:BindingProxy x:Key="CompactPaneLengthProxy" Data="{c:TemplatedParentBinding CompactPaneLength}" />
 
                             <Storyboard x:Key="ClosedStoryboard">
                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PaneContainer"
@@ -128,12 +128,12 @@
                             <!-- The PaneSpacer is simply there to take up the space in certain modes, since the
                                  PaneContainer spans both Grid Columns and thus doesn't change the 'Auto' grid length. -->
                             <Border x:Name="PaneSpacer"
-                                    Width="{Binding OpenPaneLength, RelativeSource={RelativeSource TemplatedParent}, NotifyOnSourceUpdated=True}" />
+                                    Width="{c:TemplatedParentBinding OpenPaneLength, NotifyOnSourceUpdated=True}" />
 
                             <Grid x:Name="PaneContainer" 
                                   Grid.ColumnSpan="2"
                                   HorizontalAlignment="Left"
-                                  Width="{Binding OpenPaneLength, RelativeSource={RelativeSource TemplatedParent}}">
+                                  Width="{c:TemplatedParentBinding OpenPaneLength}">
                                 <controls:ThemeShadowPresenter>
                                     <Border Background="{TemplateBinding PaneBackground}"
                                             CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}" />

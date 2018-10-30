@@ -14,7 +14,7 @@
     <Style x:Key="StandardTextBlock" TargetType="TextBlock" BasedOn="{StaticResource ForegroundBasedThemingProperties}">
         <Style.Triggers>
             <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Foreground" Value="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                <Setter Property="Foreground" Value="{c:SelfBinding Path=(theming:DisabledProperties.ForegroundBrush)}" />
             </Trigger>
         </Style.Triggers>
     </Style>

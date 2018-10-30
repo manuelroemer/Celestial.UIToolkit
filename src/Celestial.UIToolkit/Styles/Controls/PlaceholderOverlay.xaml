@@ -37,11 +37,11 @@
                                 </DoubleAnimationUsingKeyFrames>
                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PlaceholderContentSite"
                                                                Storyboard.TargetProperty="RenderTransform.(ScaleTransform.ScaleX)">
-                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding FloatingPlaceholderScale, RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding FloatingPlaceholderScale}" />
                                 </DoubleAnimationUsingKeyFrames>
                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="PlaceholderContentSite"
                                                                Storyboard.TargetProperty="RenderTransform.(ScaleTransform.ScaleY)">
-                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding FloatingPlaceholderScale, RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding FloatingPlaceholderScale}" />
                                 </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
 
