@@ -144,89 +144,93 @@
                         CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}" />
             </controls:ThemeShadowPresenter>
 
-            <Grid x:Name="LayoutGrid"
-                  Margin="{TemplateBinding BorderThickness}"
-                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
+            <Border x:Name="MaximizedSpacerBorder">
+                <Grid x:Name="LayoutGrid"
+                      Margin="{TemplateBinding BorderThickness}"
+                      SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
 
-                <Grid x:Name="TitlebarContainer"
-                        Panel.ZIndex="1"
-                        Height="{TemplateBinding theming:WindowTitlebarProperties.Height}"
-                        TextElement.Foreground="{TemplateBinding theming:WindowTitlebarProperties.ForegroundBrush}"
-                        TextElement.FontSize="{TemplateBinding theming:WindowTitlebarProperties.TitleFontSize}">
-                    <Border x:Name="TitlebarBorder"
-                            Background="{TemplateBinding theming:WindowTitlebarProperties.BackgroundBrush}"
-                            BorderBrush="{TemplateBinding theming:WindowTitlebarProperties.BorderBrush}"
-                            BorderThickness="{TemplateBinding theming:WindowTitlebarProperties.BorderThickness}"
-                            Padding="{c:GridUnit '2,0'}">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition />
-                            </Grid.ColumnDefinitions>
+                    <Grid x:Name="TitlebarContainer"
+                            Panel.ZIndex="1"
+                            Height="{TemplateBinding theming:WindowTitlebarProperties.Height}"
+                            TextElement.Foreground="{TemplateBinding theming:WindowTitlebarProperties.ForegroundBrush}"
+                            TextElement.FontSize="{TemplateBinding theming:WindowTitlebarProperties.TitleFontSize}">
+                        <Border x:Name="TitlebarBorder"
+                                Background="{TemplateBinding theming:WindowTitlebarProperties.BackgroundBrush}"
+                                BorderBrush="{TemplateBinding theming:WindowTitlebarProperties.BorderBrush}"
+                                BorderThickness="{TemplateBinding theming:WindowTitlebarProperties.BorderThickness}"
+                                Padding="{c:GridUnit '2,0'}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
 
-                            <Button x:Name="ShowSystemMenuButton"
-                                    Style="{StaticResource TransparentButton}"
-                                    Command="{x:Static controls:WindowCommands.ShowSystemMenuCommand}"
-                                    CommandParameter="{c:TemplatedParentBinding}"
-                                    WindowChrome.IsHitTestVisibleInChrome="True">
-                                <Image x:Name="Icon"
-                                        Source="{c:TemplatedParentBinding Icon}"
-                                        Margin="{c:GridUnit '1'}" />
+                                <Button x:Name="ShowSystemMenuButton"
+                                        Style="{StaticResource TransparentButton}"
+                                        Command="{x:Static controls:WindowCommands.ShowSystemMenuCommand}"
+                                        CommandParameter="{c:TemplatedParentBinding}"
+                                        WindowChrome.IsHitTestVisibleInChrome="True">
+                                    <Image x:Name="Icon"
+                                            Source="{c:TemplatedParentBinding Icon}"
+                                            Margin="{c:GridUnit '1'}" />
+                                </Button>
+
+                                <ContentPresenter x:Name="TitleContentSite"
+                                                    Grid.ColumnSpan="3"
+                                                    VerticalAlignment="Center"
+                                                    HorizontalAlignment="Left"
+                                                    Margin="{c:GridUnit '1,0'}"
+                                                    Content="{TemplateBinding Title}" />
+                            </Grid>
+                        </Border>
+                    </Grid>
+
+                    <Border x:Name="WindowCaptionButtonContainer"
+                            Grid.RowSpan="2"
+                            Panel.ZIndex="100"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Height="{TemplateBinding theming:WindowTitlebarProperties.Height}"
+                            Padding="{TemplateBinding theming:WindowTitlebarProperties.BorderThickness}"
+                            WindowChrome.IsHitTestVisibleInChrome="True">
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="MinimizeButton"
+                                    Style="{TemplateBinding theming:WindowTitlebarProperties.MinimizeButtonStyle}"
+                                    Command="{x:Static controls:WindowCommands.MinimizeWindowCommand}"
+                                    CommandParameter="{c:TemplatedParentBinding}">
+                                _
                             </Button>
+                            <Button x:Name="MaximizeButton"
+                                    Style="{TemplateBinding theming:WindowTitlebarProperties.MaximizeButtonStyle}"
+                                    Command="{x:Static controls:WindowCommands.MaximizeWindowCommand}"
+                                    CommandParameter="{c:TemplatedParentBinding}">
+                                O
+                            </Button>
+                            <Button x:Name="CloseButton"
+                                    Style="{TemplateBinding theming:WindowTitlebarProperties.CloseButtonStyle}"
+                                    Command="{x:Static controls:WindowCommands.CloseWindowCommand}"
+                                    CommandParameter="{c:TemplatedParentBinding}">
+                                X
+                            </Button>
+                        </StackPanel>
+                    </Border>
 
-                            <ContentPresenter x:Name="TitleContentSite"
-                                                Grid.ColumnSpan="3"
-                                                VerticalAlignment="Center"
-                                                HorizontalAlignment="Left"
-                                                Margin="{c:GridUnit '1,0'}"
-                                                Content="{TemplateBinding Title}" />
-                        </Grid>
+                    <Border x:Name="WindowContentContainer"
+                            Panel.ZIndex="0"
+                            Grid.Row="1">
+                        <AdornerDecorator>
+                            <ContentPresenter x:Name="ContentSite"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </AdornerDecorator>
                     </Border>
                 </Grid>
-
-                <Border x:Name="WindowCaptionButtonContainer"
-                        Grid.RowSpan="2"
-                        Panel.ZIndex="100"
-                        HorizontalAlignment="Right"
-                        VerticalAlignment="Top"
-                        Height="{TemplateBinding theming:WindowTitlebarProperties.Height}"
-                        Padding="{TemplateBinding theming:WindowTitlebarProperties.BorderThickness}"
-                        WindowChrome.IsHitTestVisibleInChrome="True">
-                    <StackPanel Orientation="Horizontal">
-                        <Button x:Name="MinimizeButton"
-                                Style="{TemplateBinding theming:WindowTitlebarProperties.MinimizeButtonStyle}"
-                                Command="{x:Static controls:WindowCommands.MinimizeWindowCommand}"
-                                CommandParameter="{c:TemplatedParentBinding}">
-                            _
-                        </Button>
-                        <Button x:Name="MaximizeButton"
-                                Style="{TemplateBinding theming:WindowTitlebarProperties.MaximizeButtonStyle}"
-                                Command="{x:Static controls:WindowCommands.MaximizeWindowCommand}"
-                                CommandParameter="{c:TemplatedParentBinding}">
-                            O
-                        </Button>
-                        <Button x:Name="CloseButton"
-                                Style="{TemplateBinding theming:WindowTitlebarProperties.CloseButtonStyle}"
-                                Command="{x:Static controls:WindowCommands.CloseWindowCommand}"
-                                CommandParameter="{c:TemplatedParentBinding}">
-                            X
-                        </Button>
-                    </StackPanel>
-                </Border>
-
-                <Border x:Name="WindowContentContainer"
-                        Panel.ZIndex="0"
-                        Grid.Row="1">
-                    <AdornerDecorator>
-                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-                    </AdornerDecorator>
-                </Border>
-            </Grid>
+            </Border>
+            
         </Grid>
         
         <ControlTemplate.Triggers>
@@ -239,18 +243,23 @@
                 <Setter TargetName="TitlebarBorder" Property="Background" Value="{c:TemplatedParentBinding Path=(theming:WindowTitlebarProperties.InactiveBackgroundBrush)}" />
                 <Setter TargetName="TitlebarBorder" Property="BorderBrush" Value="{c:TemplatedParentBinding Path=(theming:WindowTitlebarProperties.InactiveBorderBrush)}" />
             </Trigger>
+
+            <Trigger Property="WindowState" Value="Maximized">
+                <Setter TargetName="MaximizedSpacerBorder" Property="Margin" Value="{c:TemplatedParentBinding Path=(WindowChrome.WindowChrome).(WindowChrome.ResizeBorderThickness)}" />
+                <Setter TargetName="MaximizedSpacerBorder" Property="BorderThickness" Value="{c:TemplatedParentBinding BorderThickness}" />
+            </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
     
     
-    <Style x:Key="StandardWindow" TargetType="Window" BasedOn="{c:MultiStyle 'DefaultWindow Shadow8'}">
+    <Style x:Key="StandardWindow" TargetType="Window" BasedOn="{c:MultiStyle 'DefaultWindow Shadow0'}">
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
                 <WindowChrome GlassFrameThickness="0,0,0,1"
                               CornerRadius="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource AncestorType=Window}}"
                               CaptionHeight="{Binding Path=(theming:WindowTitlebarProperties.Height), RelativeSource={RelativeSource AncestorType=Window}}"
-                              ResizeBorderThickness="0" />
+                              ResizeBorderThickness="3" />
             </Setter.Value>
         </Setter>
 
