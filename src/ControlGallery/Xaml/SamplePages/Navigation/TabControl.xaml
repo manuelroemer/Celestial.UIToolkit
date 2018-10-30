@@ -81,7 +81,6 @@
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx2}">
                     <TabControl TabStripPlacement="Left"
-                                Background="{StaticResource PaneBackgroundBrush}"
                                 MinWidth="{c:GridUnit 100}" 
                                 MinHeight="{c:GridUnit 20}">
                         <TabItem Header="Page 1">
@@ -110,7 +109,6 @@
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx3}">
                     <TabControl TabStripPlacement="Right"
-                                Background="{StaticResource PaneBackgroundBrush}"
                                 MinWidth="{c:GridUnit 100}" 
                                 MinHeight="{c:GridUnit 20}">
                         <TabItem Header="Page 1">
@@ -139,7 +137,6 @@
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx4}">
                     <TabControl TabStripPlacement="Bottom"
-                                Background="{StaticResource PaneBackgroundBrush}"
                                 MinWidth="{c:GridUnit 100}" 
                                 MinHeight="{c:GridUnit 20}">
                         <TabItem Header="Page 1">

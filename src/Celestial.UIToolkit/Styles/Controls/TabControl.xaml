@@ -273,8 +273,8 @@
                                     KeyboardNavigation.TabIndex="2">
                                 <ContentPresenter x:Name="PART_SelectedContentHost"
                                                   ContentSource="SelectedContent"
-                                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                  HorizontalAlignment="Stretch"
+                                                  VerticalAlignment="Stretch"
                                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                             </Border>
                         </Grid>
