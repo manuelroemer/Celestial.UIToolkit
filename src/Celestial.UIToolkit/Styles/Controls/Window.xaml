@@ -244,9 +244,24 @@
                 <Setter TargetName="TitlebarBorder" Property="BorderBrush" Value="{c:TemplatedParentBinding Path=(theming:WindowTitlebarProperties.InactiveBorderBrush)}" />
             </Trigger>
 
+            <Trigger Property="ResizeMode" Value="CanMinimize">
+                <Setter TargetName="MaximizeButton" Property="IsEnabled" Value="False" />
+            </Trigger>
+
+            <Trigger Property="ResizeMode" Value="NoResize">
+                <Setter TargetName="MinimizeButton" Property="Visibility" Value="Collapsed" />
+                <Setter TargetName="MaximizeButton" Property="Visibility" Value="Collapsed" />
+            </Trigger>
+
             <Trigger Property="WindowState" Value="Maximized">
+                <!-- This fixes the WindowChrome's maximizing-logic which swallows parts of the border. -->
                 <Setter TargetName="MaximizedSpacerBorder" Property="Margin" Value="{c:TemplatedParentBinding Path=(WindowChrome.WindowChrome).(WindowChrome.ResizeBorderThickness)}" />
                 <Setter TargetName="MaximizedSpacerBorder" Property="BorderThickness" Value="{c:TemplatedParentBinding BorderThickness}" />
+                <Setter TargetName="MaximizedSpacerBorder" Property="Padding" Value="1" />
+            </Trigger>
+
+            <Trigger Property="theming:WindowTitlebarProperties.ExtendContentIntoTitlebar" Value="True">
+                <Setter TargetName="TitlebarContainer" Property="Visibility" Value="Collapsed" />
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -285,7 +300,7 @@
 
         <!-- Client area properties. -->
         <Setter Property="Background" Value="{StaticResource PrimaryBrush}" />
-        <Setter Property="BorderBrush" Value="{StaticResource Accent2Brush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource ControlBorderBrush}" />
         <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
