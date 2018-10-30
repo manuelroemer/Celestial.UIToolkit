@@ -135,94 +135,105 @@
     <ControlTemplate x:Key="StandardWindowTemplate" TargetType="Window">
         <Grid x:Name="RootGrid"
               VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition />
-            </Grid.RowDefinitions>
 
-            <Grid x:Name="TitlebarContainer"
-                  Height="{TemplateBinding theming:WindowTitlebarProperties.Height}"
-                  TextElement.Foreground="{TemplateBinding theming:WindowTitlebarProperties.ForegroundBrush}"
-                  TextElement.FontSize="{TemplateBinding theming:WindowTitlebarProperties.TitleFontSize}">
-                <Border x:Name="TitlebarBorder"
-                        Background="{TemplateBinding theming:WindowTitlebarProperties.BackgroundBrush}"
-                        BorderBrush="{TemplateBinding theming:WindowTitlebarProperties.BorderBrush}"
-                        BorderThickness="{TemplateBinding theming:WindowTitlebarProperties.BorderThickness}"
-                        Padding="{c:GridUnit '2,0'}">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition />
-                        </Grid.ColumnDefinitions>
+            <controls:ThemeShadowPresenter SnapsToDevicePixels="False">
+                <Border x:Name="OuterBorder"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}" />
+            </controls:ThemeShadowPresenter>
 
-                        <Button x:Name="ShowSystemMenuButton"
-                                Style="{StaticResource TransparentButton}"
-                                Command="{x:Static controls:WindowCommands.ShowSystemMenuCommand}"
-                                CommandParameter="{c:TemplatedParentBinding}"
-                                WindowChrome.IsHitTestVisibleInChrome="True">
-                            <Image x:Name="Icon"
-                                   Source="{c:TemplatedParentBinding Icon}"
-                                   Margin="{c:GridUnit '1'}" />
+            <Grid x:Name="LayoutGrid"
+                  Margin="{TemplateBinding BorderThickness}"
+                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Grid x:Name="TitlebarContainer"
+                        Panel.ZIndex="1"
+                        Height="{TemplateBinding theming:WindowTitlebarProperties.Height}"
+                        TextElement.Foreground="{TemplateBinding theming:WindowTitlebarProperties.ForegroundBrush}"
+                        TextElement.FontSize="{TemplateBinding theming:WindowTitlebarProperties.TitleFontSize}">
+                    <Border x:Name="TitlebarBorder"
+                            Background="{TemplateBinding theming:WindowTitlebarProperties.BackgroundBrush}"
+                            BorderBrush="{TemplateBinding theming:WindowTitlebarProperties.BorderBrush}"
+                            BorderThickness="{TemplateBinding theming:WindowTitlebarProperties.BorderThickness}"
+                            Padding="{c:GridUnit '2,0'}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <Button x:Name="ShowSystemMenuButton"
+                                    Style="{StaticResource TransparentButton}"
+                                    Command="{x:Static controls:WindowCommands.ShowSystemMenuCommand}"
+                                    CommandParameter="{c:TemplatedParentBinding}"
+                                    WindowChrome.IsHitTestVisibleInChrome="True">
+                                <Image x:Name="Icon"
+                                        Source="{c:TemplatedParentBinding Icon}"
+                                        Margin="{c:GridUnit '1'}" />
+                            </Button>
+
+                            <ContentPresenter x:Name="TitleContentSite"
+                                                Grid.ColumnSpan="3"
+                                                VerticalAlignment="Center"
+                                                HorizontalAlignment="Left"
+                                                Margin="{c:GridUnit '1,0'}"
+                                                Content="{TemplateBinding Title}" />
+                        </Grid>
+                    </Border>
+                </Grid>
+
+                <Border x:Name="WindowCaptionButtonContainer"
+                        Grid.RowSpan="2"
+                        Panel.ZIndex="100"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Height="{TemplateBinding theming:WindowTitlebarProperties.Height}"
+                        Padding="{TemplateBinding theming:WindowTitlebarProperties.BorderThickness}"
+                        WindowChrome.IsHitTestVisibleInChrome="True">
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="MinimizeButton"
+                                Style="{TemplateBinding theming:WindowTitlebarProperties.MinimizeButtonStyle}"
+                                Command="{x:Static controls:WindowCommands.MinimizeWindowCommand}"
+                                CommandParameter="{c:TemplatedParentBinding}">
+                            _
                         </Button>
+                        <Button x:Name="MaximizeButton"
+                                Style="{TemplateBinding theming:WindowTitlebarProperties.MaximizeButtonStyle}"
+                                Command="{x:Static controls:WindowCommands.MaximizeWindowCommand}"
+                                CommandParameter="{c:TemplatedParentBinding}">
+                            O
+                        </Button>
+                        <Button x:Name="CloseButton"
+                                Style="{TemplateBinding theming:WindowTitlebarProperties.CloseButtonStyle}"
+                                Command="{x:Static controls:WindowCommands.CloseWindowCommand}"
+                                CommandParameter="{c:TemplatedParentBinding}">
+                            X
+                        </Button>
+                    </StackPanel>
+                </Border>
 
-                        <ContentPresenter x:Name="TitleContentSite"
-                                          Grid.ColumnSpan="3"
-                                          VerticalAlignment="Center"
-                                          HorizontalAlignment="Left"
-                                          Margin="{c:GridUnit '1,0'}"
-                                          Content="{TemplateBinding Title}" />
-                    </Grid>
+                <Border x:Name="WindowContentContainer"
+                        Panel.ZIndex="0"
+                        Grid.Row="1">
+                    <AdornerDecorator>
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                    </AdornerDecorator>
                 </Border>
             </Grid>
-
-            <Border x:Name="WindowCaptionButtonContainer"
-                    Grid.RowSpan="2"
-                    Panel.ZIndex="100"
-                    HorizontalAlignment="Right"
-                    VerticalAlignment="Top"
-                    Height="{TemplateBinding theming:WindowTitlebarProperties.Height}"
-                    Padding="{TemplateBinding theming:WindowTitlebarProperties.BorderThickness}"
-                    WindowChrome.IsHitTestVisibleInChrome="True">
-                <StackPanel Orientation="Horizontal">
-                    <Button x:Name="MinimizeButton"
-                            Style="{TemplateBinding theming:WindowTitlebarProperties.MinimizeButtonStyle}"
-                            Command="{x:Static controls:WindowCommands.MinimizeWindowCommand}"
-                            CommandParameter="{c:TemplatedParentBinding}">
-                        _
-                    </Button>
-                    <Button x:Name="MaximizeButton"
-                            Style="{TemplateBinding theming:WindowTitlebarProperties.MaximizeButtonStyle}"
-                            Command="{x:Static controls:WindowCommands.MaximizeWindowCommand}"
-                            CommandParameter="{c:TemplatedParentBinding}">
-                        O
-                    </Button>
-                    <Button x:Name="CloseButton"
-                            Style="{TemplateBinding theming:WindowTitlebarProperties.CloseButtonStyle}"
-                            Command="{x:Static controls:WindowCommands.CloseWindowCommand}"
-                            CommandParameter="{c:TemplatedParentBinding}">
-                        X
-                    </Button>
-                </StackPanel>
-            </Border>
-            
-            <Border x:Name="WindowContentContainer"
-                    Grid.Row="1"
-                    Background="{TemplateBinding Background}"
-                    BorderBrush="{TemplateBinding BorderBrush}"
-                    BorderThickness="{TemplateBinding BorderThickness}"
-                    CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}">
-                <AdornerDecorator>
-                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-                </AdornerDecorator>
-            </Border>
         </Grid>
-
+        
         <ControlTemplate.Triggers>
             <Trigger Property="Icon" Value="{x:Null}">
                 <Setter TargetName="ShowSystemMenuButton" Property="Visibility" Value="Collapsed" />
             </Trigger>
-            
+
             <Trigger Property="IsActive" Value="False">
                 <Setter TargetName="TitlebarContainer" Property="TextElement.Foreground" Value="{c:TemplatedParentBinding Path=(theming:WindowTitlebarProperties.InactiveForegroundBrush)}" />
                 <Setter TargetName="TitlebarBorder" Property="Background" Value="{c:TemplatedParentBinding Path=(theming:WindowTitlebarProperties.InactiveBackgroundBrush)}" />
@@ -231,8 +242,20 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
-    <Style x:Key="StandardWindow" TargetType="Window" BasedOn="{c:MultiStyle 'DefaultWindow'}">
-        <!--<Setter Property="WindowChrome.WindowChrome" Value="{StaticResource StandardWindowChrome}" />-->
+    
+    
+    <Style x:Key="StandardWindow" TargetType="Window" BasedOn="{c:MultiStyle 'DefaultWindow Shadow8'}">
+        <Setter Property="WindowChrome.WindowChrome">
+            <Setter.Value>
+                <WindowChrome GlassFrameThickness="0,0,0,1"
+                              CornerRadius="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource AncestorType=Window}}"
+                              CaptionHeight="{Binding Path=(theming:WindowTitlebarProperties.Height), RelativeSource={RelativeSource AncestorType=Window}}"
+                              ResizeBorderThickness="0" />
+            </Setter.Value>
+        </Setter>
+
+        <Setter Property="Margin" Value="{StaticResource PopupShadowSpacerMargin}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
 
         <!-- Non-client area properties. -->
         <Setter Property="theming:WindowTitlebarProperties.ExtendContentIntoTitlebar" Value="False" />
@@ -252,10 +275,12 @@
         <Setter Property="theming:WindowTitlebarProperties.CloseButtonStyle" Value="{StaticResource StandardCloseWindowCaptionButton}" />
 
         <!-- Client area properties. -->
-        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Background" Value="{StaticResource PrimaryBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Accent2Brush}" />
+        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
-        
+
         <Setter Property="Template" Value="{StaticResource StandardWindowTemplate}" />
     </Style>
     
