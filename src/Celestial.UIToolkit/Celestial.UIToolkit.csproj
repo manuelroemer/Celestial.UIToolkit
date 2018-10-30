@@ -97,6 +97,7 @@
     <Compile Include="Controls\SplitView\SplitView.Properties.cs" />
     <Compile Include="Controls\SplitView\SplitViewDisplayMode.cs" />
     <Compile Include="Controls\SplitView\SplitViewPanePlacement.cs" />
+    <Compile Include="Controls\WindowCommands.cs" />
     <Compile Include="Theming\PopupProperties.cs" />
     <Compile Include="Theming\SelectionProperties.cs" />
     <Compile Include="Theming\TabItemProperties.cs" />
@@ -119,6 +120,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>VisualStateProperties.tt</DependentUpon>
     </Compile>
+    <Compile Include="Theming\WindowTitlebarProperties.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
