@@ -68,7 +68,7 @@
                                             ContentTemplate="{TemplateBinding HeaderTemplate}"
                                             ContentTemplateSelector="{TemplateBinding HeaderTemplateSelector}"
                                             ContentStringFormat="{TemplateBinding ContentStringFormat}"
-                                            Foreground="Orange"
+                                            Foreground="{TemplateBinding theming:TabItemProperties.HeaderForeground}"
                                             FontSize="{TemplateBinding theming:TabItemProperties.HeaderFontSize}"
                                             FontFamily="{TemplateBinding theming:TabItemProperties.HeaderFontFamily}"
                                             FontStyle="{TemplateBinding theming:TabItemProperties.HeaderFontStyle}"
@@ -94,25 +94,6 @@
                                 <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
                                                                Storyboard.TargetProperty="(controls:ThemeShadow.Elevation)">
                                     <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.ShadowElevation), RelativeSource={RelativeSource TemplatedParent}}" />
-                                </DoubleAnimationUsingKeyFrames>
-                            </Storyboard>
-
-                            <Storyboard x:Key="SelectedStoryboard">
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="HeaderContentSite"
-                                                                Storyboard.TargetProperty="Foreground">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="Red" />
-                                </c:BrushAnimationUsingKeyFrames>
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                                Storyboard.TargetProperty="Background">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:ActiveProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                </c:BrushAnimationUsingKeyFrames>
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                                Storyboard.TargetProperty="BorderBrush">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:ActiveProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                </c:BrushAnimationUsingKeyFrames>
-                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
-                                                               Storyboard.TargetProperty="(controls:ThemeShadow.Elevation)">
-                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:ActiveProperties.ShadowElevation), RelativeSource={RelativeSource TemplatedParent}}" />
                                 </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
 
@@ -148,13 +129,38 @@
                                     <VisualTransition To="Disabled" GeneratedDuration="0" />
                                 </VisualStateGroup.Transitions>
 
-                                <VisualState x:Name="Normal" />
-                                <VisualState x:Name="MouseOver" Storyboard="{StaticResource MouseOverStoryboard}" />
-                                <VisualState x:Name="Selected" Storyboard="{StaticResource SelectedStoryboard}" />
-                                <VisualState x:Name="Disabled" Storyboard="{StaticResource DisabledStoryboard}" />
+                                <c:ExtendedVisualState x:Name="Normal" />
+                                <c:ExtendedVisualState x:Name="Disabled" Storyboard="{StaticResource DisabledStoryboard}" />
+                                
+                                <!-- Since the default TabControl unloads a TabItem when it isn't selected, the Bindings to
+                                     the theming: Properties will always fail.
+                                     This means that we cannot implement a "Selected" Visual State, since the animations will
+                                     have to animate from 'null'.
+                                     We need to trick around this by setting the Selected-State-Properties via a Trigger (see below).
+                                
+                                     By declaring an empty "Selected" Visual State, the VSM animates the "MouseOver"
+                                     visual state "back" to the fixed Selected properties. -> There is still an animation to Selected.
+                                
+                                     We can also use the ExtendedVisualState's Conditions to deny the MouseOver State 
+                                     when a TabItem is selected. -->
+                                <c:ExtendedVisualState x:Name="Selected" />
+                                <c:ExtendedVisualState x:Name="MouseOver" Storyboard="{StaticResource MouseOverStoryboard}">
+                                    <c:ExtendedVisualState.Conditions>
+                                        <Condition Property="IsSelected" Value="False" />
+                                    </c:ExtendedVisualState.Conditions>
+                                </c:ExtendedVisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                     </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="{Binding Path=(theming:ActiveProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="BorderBrush" Value="{Binding Path=(theming:ActiveProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="theming:TabItemProperties.HeaderForeground" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:ActiveProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
