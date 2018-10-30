@@ -75,21 +75,21 @@
                                                   HorizontalScrollBarVisibility="Hidden"
                                                   VerticalScrollBarVisibility="Hidden">
                                         <GridViewHeaderRowPresenter x:Name="PART_HeaderRowPresenter"
-                                                                    AllowsColumnReorder="{Binding TemplatedParent.View.AllowsColumnReorder, RelativeSource={RelativeSource TemplatedParent}}"
-                                                                    ColumnHeaderContainerStyle="{Binding TemplatedParent.View.ColumnHeaderContainerStyle, RelativeSource={RelativeSource TemplatedParent}}"
-                                                                    ColumnHeaderContextMenu="{Binding TemplatedParent.View.ColumnHeaderContextMenu, RelativeSource={RelativeSource TemplatedParent}}"
-                                                                    ColumnHeaderStringFormat="{Binding TemplatedParent.View.ColumnHeaderStringFormat, RelativeSource={RelativeSource TemplatedParent}}"
-                                                                    ColumnHeaderTemplate="{Binding TemplatedParent.View.ColumnHeaderTemplate, RelativeSource={RelativeSource TemplatedParent}}"
-                                                                    ColumnHeaderTemplateSelector="{Binding TemplatedParent.View.ColumnHeaderTemplateSelector, RelativeSource={RelativeSource TemplatedParent}}"
-                                                                    ColumnHeaderToolTip="{Binding TemplatedParent.View.ColumnHeaderToolTip, RelativeSource={RelativeSource TemplatedParent}}"
-                                                                    Columns="{Binding TemplatedParent.View.Columns, RelativeSource={RelativeSource TemplatedParent}}"
+                                                                    AllowsColumnReorder="{c:TemplatedParentBinding TemplatedParent.View.AllowsColumnReorder}"
+                                                                    ColumnHeaderContainerStyle="{c:TemplatedParentBinding TemplatedParent.View.ColumnHeaderContainerStyle}"
+                                                                    ColumnHeaderContextMenu="{c:TemplatedParentBinding TemplatedParent.View.ColumnHeaderContextMenu}"
+                                                                    ColumnHeaderStringFormat="{c:TemplatedParentBinding TemplatedParent.View.ColumnHeaderStringFormat}"
+                                                                    ColumnHeaderTemplate="{c:TemplatedParentBinding TemplatedParent.View.ColumnHeaderTemplate}"
+                                                                    ColumnHeaderTemplateSelector="{c:TemplatedParentBinding TemplatedParent.View.ColumnHeaderTemplateSelector}"
+                                                                    ColumnHeaderToolTip="{c:TemplatedParentBinding TemplatedParent.View.ColumnHeaderToolTip}"
+                                                                    Columns="{c:TemplatedParentBinding TemplatedParent.View.Columns}"
                                                                     SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                                     </ScrollViewer>
 
 
                                     <controls:ManipulationBoundaryFeedbackAwareContentControl 
                                         Style="{StaticResource BouncingManipulationBoundaryFeedbackAwareContentControl}"
-                                        FeedbackProvider="{Binding RelativeSource={RelativeSource TemplatedParent}}">
+                                        FeedbackProvider="{c:TemplatedParentBinding}">
                                         <ScrollContentPresenter x:Name="PART_ScrollContentPresenter"
                                                                 Margin="{TemplateBinding Padding}"
                                                                 CanContentScroll="{TemplateBinding CanContentScroll}"
@@ -130,38 +130,38 @@
                             <Storyboard x:Key="MouseOverStoryboard">
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                 Storyboard.TargetProperty="Background">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:MouseOverProperties.BackgroundBrush)}" />
                                 </c:BrushAnimationUsingKeyFrames>
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                 Storyboard.TargetProperty="BorderBrush">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:MouseOverProperties.BorderBrush)}" />
                                 </c:BrushAnimationUsingKeyFrames>
-                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                <c:BrushAnimation Storyboard.Target="{c:TemplatedParentBinding}"
                                                   Storyboard.TargetProperty="Foreground"
                                                   Duration="0"
-                                                  To="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                  To="{c:TemplatedParentBinding Path=(theming:MouseOverProperties.ForegroundBrush)}" />
+                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{c:TemplatedParentBinding}"
                                                                Storyboard.TargetProperty="(controls:ThemeShadow.Elevation)">
-                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.ShadowElevation) ,RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:MouseOverProperties.ShadowElevation) }" />
                                 </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
 
                             <Storyboard x:Key="PressedStoryboard">
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                 Storyboard.TargetProperty="Background">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:PressedProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:PressedProperties.BackgroundBrush)}" />
                                 </c:BrushAnimationUsingKeyFrames>
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                 Storyboard.TargetProperty="BorderBrush">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:PressedProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:PressedProperties.BorderBrush)}" />
                                 </c:BrushAnimationUsingKeyFrames>
-                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                <c:BrushAnimation Storyboard.Target="{c:TemplatedParentBinding}"
                                                   Storyboard.TargetProperty="Foreground"
                                                   Duration="0"
-                                                  To="{Binding Path=(theming:PressedProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                  To="{c:TemplatedParentBinding Path=(theming:PressedProperties.ForegroundBrush)}" />
+                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{c:TemplatedParentBinding}"
                                                                Storyboard.TargetProperty="(controls:ThemeShadow.Elevation)">
-                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:PressedProperties.ShadowElevation) ,RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:PressedProperties.ShadowElevation) }" />
                                 </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
 
@@ -169,18 +169,18 @@
                                 <c:BrushAnimation Storyboard.TargetName="Bd"
                                                   Storyboard.TargetProperty="Background"
                                                   Duration="0"
-                                                  To="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                  To="{c:TemplatedParentBinding Path=(theming:DisabledProperties.BackgroundBrush)}" />
                                 <c:BrushAnimation Storyboard.TargetName="Bd"
                                                   Storyboard.TargetProperty="BorderBrush"
                                                   Duration="0"
-                                                  To="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                  To="{c:TemplatedParentBinding Path=(theming:DisabledProperties.BorderBrush)}" />
+                                <c:BrushAnimation Storyboard.Target="{c:TemplatedParentBinding}"
                                                   Storyboard.TargetProperty="Foreground"
                                                   Duration="0"
-                                                  To="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                  To="{c:TemplatedParentBinding Path=(theming:DisabledProperties.ForegroundBrush)}" />
+                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{c:TemplatedParentBinding}"
                                                                Storyboard.TargetProperty="(controls:ThemeShadow.Elevation)">
-                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:DisabledProperties.ShadowElevation) ,RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:DisabledProperties.ShadowElevation) }" />
                                 </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
                         </Grid.Resources>
@@ -226,15 +226,15 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="Role" Value="Padding">
                             <!-- Disable Visual States for the last padding header. -->
-                            <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{Binding BorderBrush, RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="{Binding Path=(controls:ThemeShadow.Elevation), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{c:SelfBinding Background}" />
+                            <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{c:SelfBinding BorderBrush}" />
+                            <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{c:SelfBinding Foreground}" />
+                            <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="{c:SelfBinding Path=(controls:ThemeShadow.Elevation)}" />
 
-                            <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="theming:PressedProperties.BorderBrush" Value="{Binding BorderBrush, RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="theming:PressedProperties.ShadowElevation" Value="{Binding Path=(controls:ThemeShadow.Elevation), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{c:SelfBinding Background}" />
+                            <Setter Property="theming:PressedProperties.BorderBrush" Value="{c:SelfBinding BorderBrush}" />
+                            <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{c:SelfBinding Foreground}" />
+                            <Setter Property="theming:PressedProperties.ShadowElevation" Value="{c:SelfBinding Path=(controls:ThemeShadow.Elevation)}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -350,24 +350,24 @@
                         </Trigger>
                         
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="BorderBrush" Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="Foreground" Value="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:MouseOverProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Background" Value="{c:SelfBinding Path=(theming:MouseOverProperties.BackgroundBrush)}" />
+                            <Setter Property="BorderBrush" Value="{c:SelfBinding Path=(theming:MouseOverProperties.BorderBrush)}" />
+                            <Setter Property="Foreground" Value="{c:SelfBinding Path=(theming:MouseOverProperties.ForegroundBrush)}" />
+                            <Setter Property="controls:ThemeShadow.Elevation" Value="{c:SelfBinding Path=(theming:MouseOverProperties.ShadowElevation)}" />
                         </Trigger>
 
                         <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Background" Value="{Binding Path=(theming:ActiveProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="BorderBrush" Value="{Binding Path=(theming:ActiveProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="Foreground" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:ActiveProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Background" Value="{c:SelfBinding Path=(theming:ActiveProperties.BackgroundBrush)}" />
+                            <Setter Property="BorderBrush" Value="{c:SelfBinding Path=(theming:ActiveProperties.BorderBrush)}" />
+                            <Setter Property="Foreground" Value="{c:SelfBinding Path=(theming:ActiveProperties.ForegroundBrush)}" />
+                            <Setter Property="controls:ThemeShadow.Elevation" Value="{c:SelfBinding Path=(theming:ActiveProperties.ShadowElevation)}" />
                         </Trigger>
 
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Background" Value="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="BorderBrush" Value="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="Foreground" Value="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:DisabledProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Background" Value="{c:SelfBinding Path=(theming:DisabledProperties.BackgroundBrush)}" />
+                            <Setter Property="BorderBrush" Value="{c:SelfBinding Path=(theming:DisabledProperties.BorderBrush)}" />
+                            <Setter Property="Foreground" Value="{c:SelfBinding Path=(theming:DisabledProperties.ForegroundBrush)}" />
+                            <Setter Property="controls:ThemeShadow.Elevation" Value="{c:SelfBinding Path=(theming:DisabledProperties.ShadowElevation)}" />
                         </Trigger>
                         
                         <MultiTrigger>
@@ -451,10 +451,10 @@
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Background" Value="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="BorderBrush" Value="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="Foreground" Value="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:DisabledProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Background" Value="{c:SelfBinding Path=(theming:DisabledProperties.BackgroundBrush)}" />
+                            <Setter Property="BorderBrush" Value="{c:SelfBinding Path=(theming:DisabledProperties.BorderBrush)}" />
+                            <Setter Property="Foreground" Value="{c:SelfBinding Path=(theming:DisabledProperties.ForegroundBrush)}" />
+                            <Setter Property="controls:ThemeShadow.Elevation" Value="{c:SelfBinding Path=(theming:DisabledProperties.ShadowElevation)}" />
                         </Trigger>
                         
                         <MultiTrigger>

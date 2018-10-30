@@ -91,50 +91,50 @@
                                                      Height="{TemplateBinding theming:SelectionProperties.SelectionIndicatorSize}"
                                                      Background="{TemplateBinding theming:ActiveProperties.ForegroundBrush}"
                                                      IsSelected="{TemplateBinding IsSelected}"
-                                                     Visibility="{Binding Path=(theming:SelectionProperties.ShowSelectionIndicator), RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                                     Visibility="{c:TemplatedParentBinding Path=(theming:SelectionProperties.ShowSelectionIndicator), Converter={StaticResource BooleanToVisibilityConverter}}"
                                                      SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                                     Margin="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource LeftRightPicker}}"/>
+                                                     Margin="{c:TemplatedParentBinding Padding, Converter={StaticResource LeftRightPicker}}"/>
 
                         <Grid.Resources>
                             <Storyboard x:Key="MouseOverStoryboard">
-                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                <c:BrushAnimation Storyboard.Target="{c:TemplatedParentBinding}"
                                                   Storyboard.TargetProperty="(theming:TabItemProperties.HeaderForeground)"
                                                   Duration="0"
-                                                  To="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                  To="{c:TemplatedParentBinding Path=(theming:MouseOverProperties.ForegroundBrush)}" />
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                 Storyboard.TargetProperty="Background">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:MouseOverProperties.BackgroundBrush)}" />
                                 </c:BrushAnimationUsingKeyFrames>
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                 Storyboard.TargetProperty="BorderBrush">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:MouseOverProperties.BorderBrush)}" />
                                 </c:BrushAnimationUsingKeyFrames>
-                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{c:TemplatedParentBinding}"
                                                                Storyboard.TargetProperty="(controls:ThemeShadow.Elevation)">
-                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.ShadowElevation), RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:MouseOverProperties.ShadowElevation)}" />
                                 </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
 
                             <Storyboard x:Key="DisabledStoryboard">
-                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                <c:BrushAnimation Storyboard.Target="{c:TemplatedParentBinding}"
                                                   Storyboard.TargetProperty="Foreground"
                                                   Duration="0"
-                                                  To="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                  To="{c:TemplatedParentBinding Path=(theming:DisabledProperties.ForegroundBrush)}" />
+                                <c:BrushAnimation Storyboard.Target="{c:TemplatedParentBinding}"
                                                   Storyboard.TargetProperty="(theming:TabItemProperties.HeaderForeground)"
                                                   Duration="0"
-                                                  To="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                  To="{c:TemplatedParentBinding Path=(theming:DisabledProperties.ForegroundBrush)}" />
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                 Storyboard.TargetProperty="Background">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:DisabledProperties.BackgroundBrush)}" />
                                 </c:BrushAnimationUsingKeyFrames>
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                 Storyboard.TargetProperty="BorderBrush">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:DisabledProperties.BorderBrush)}" />
                                 </c:BrushAnimationUsingKeyFrames>
-                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                <DoubleAnimationUsingKeyFrames Storyboard.Target="{c:TemplatedParentBinding}"
                                                                Storyboard.TargetProperty="(controls:ThemeShadow.Elevation)">
-                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Path=(theming:DisabledProperties.ShadowElevation), RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:DisabledProperties.ShadowElevation)}" />
                                 </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
                         </Grid.Resources>
@@ -174,22 +174,22 @@
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Background" Value="{Binding Path=(theming:ActiveProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="BorderBrush" Value="{Binding Path=(theming:ActiveProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="theming:TabItemProperties.HeaderForeground" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:ActiveProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Background" Value="{c:SelfBinding Path=(theming:ActiveProperties.BackgroundBrush)}" />
+                            <Setter Property="BorderBrush" Value="{c:SelfBinding Path=(theming:ActiveProperties.BorderBrush)}" />
+                            <Setter Property="theming:TabItemProperties.HeaderForeground" Value="{c:SelfBinding Path=(theming:ActiveProperties.ForegroundBrush)}" />
+                            <Setter Property="controls:ThemeShadow.Elevation" Value="{c:SelfBinding Path=(theming:ActiveProperties.ShadowElevation)}" />
                         </Trigger>
 
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter TargetName="SelectionIndicator" Property="Background" Value="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter TargetName="SelectionIndicator" Property="Background" Value="{c:TemplatedParentBinding Path=(theming:DisabledProperties.ForegroundBrush)}" />
                         </Trigger>
 
                         <DataTrigger Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource AncestorType=TabControl}}" Value="Left">
                             <Setter TargetName="SelectionIndicator" Property="HorizontalAlignment" Value="Right" />
                             <Setter TargetName="SelectionIndicator" Property="VerticalAlignment" Value="Stretch" />
-                            <Setter TargetName="SelectionIndicator" Property="Width" Value="{Binding Path=(theming:SelectionProperties.SelectionIndicatorSize), RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter TargetName="SelectionIndicator" Property="Width" Value="{c:TemplatedParentBinding Path=(theming:SelectionProperties.SelectionIndicatorSize)}" />
                             <Setter TargetName="SelectionIndicator" Property="Height" Value="Auto" />
-                            <Setter TargetName="SelectionIndicator" Property="Margin" Value="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource TopBottomPicker}}" />
+                            <Setter TargetName="SelectionIndicator" Property="Margin" Value="{c:TemplatedParentBinding Padding, Converter={StaticResource TopBottomPicker}}" />
                             <Setter TargetName="SelectionIndicator" Property="Orientation" Value="Vertical" />
                             <Setter Property="Padding" Value="{c:GridUnit '0,2,1,2', TargetType=Thickness}" />
                             <Setter TargetName="RootGrid" Property="Margin" Value="{c:GridUnit '0,-2,0,0', TargetType=Thickness}" />
@@ -198,9 +198,9 @@
                         <DataTrigger Binding="{Binding TabStripPlacement, RelativeSource={RelativeSource AncestorType=TabControl}}" Value="Right">
                             <Setter TargetName="SelectionIndicator" Property="HorizontalAlignment" Value="Left" />
                             <Setter TargetName="SelectionIndicator" Property="VerticalAlignment" Value="Stretch" />
-                            <Setter TargetName="SelectionIndicator" Property="Width" Value="{Binding Path=(theming:SelectionProperties.SelectionIndicatorSize), RelativeSource={RelativeSource TemplatedParent}}" />
+                            <Setter TargetName="SelectionIndicator" Property="Width" Value="{c:TemplatedParentBinding Path=(theming:SelectionProperties.SelectionIndicatorSize)}" />
                             <Setter TargetName="SelectionIndicator" Property="Height" Value="Auto" />
-                            <Setter TargetName="SelectionIndicator" Property="Margin" Value="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource TopBottomPicker}}" />
+                            <Setter TargetName="SelectionIndicator" Property="Margin" Value="{c:TemplatedParentBinding Padding, Converter={StaticResource TopBottomPicker}}" />
                             <Setter TargetName="SelectionIndicator" Property="Orientation" Value="Vertical" />
                             <Setter Property="Padding" Value="{c:GridUnit '1,2,0,2', TargetType=Thickness}" />
                             <Setter TargetName="RootGrid" Property="Margin" Value="{c:GridUnit '0,-2,0,0', TargetType=Thickness}" />
@@ -210,8 +210,8 @@
                             <Setter TargetName="SelectionIndicator" Property="HorizontalAlignment" Value="Stretch" />
                             <Setter TargetName="SelectionIndicator" Property="VerticalAlignment" Value="Top" />
                             <Setter TargetName="SelectionIndicator" Property="Width" Value="Auto" />
-                            <Setter TargetName="SelectionIndicator" Property="Height" Value="{Binding Path=(theming:SelectionProperties.SelectionIndicatorSize), RelativeSource={RelativeSource TemplatedParent}}" />
-                            <Setter TargetName="SelectionIndicator" Property="Margin" Value="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource LeftRightPicker}}" />
+                            <Setter TargetName="SelectionIndicator" Property="Height" Value="{c:TemplatedParentBinding Path=(theming:SelectionProperties.SelectionIndicatorSize)}" />
+                            <Setter TargetName="SelectionIndicator" Property="Margin" Value="{c:TemplatedParentBinding Padding, Converter={StaticResource LeftRightPicker}}" />
                             <Setter TargetName="SelectionIndicator" Property="Orientation" Value="Horizontal" />
                             <Setter Property="Padding" Value="{c:GridUnit '2,0,2,0', TargetType=Thickness}" />
                             <Setter TargetName="RootGrid" Property="Margin" Value="{c:GridUnit '-2,0,0,0', TargetType=Thickness}" />

@@ -44,7 +44,7 @@
                                    Margin="{c:GridUnit '0,0,0,1'}">
                             <ToggleButton x:Name="VisibleToggleButton"
                                           DockPanel.Dock="Right"
-                                          IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                                          IsChecked="{c:TemplatedParentBinding IsExpanded, Mode=TwoWay}"
                                           Style="{StaticResource InvisibleRippleButton}"
                                           Foreground="{TemplateBinding Foreground}"
                                           theming:MouseOverProperties.ForegroundBrush="{TemplateBinding theming:MouseOverProperties.ForegroundBrush}"
@@ -67,7 +67,7 @@
                                     </Border>
                                 </Border>
                             </ToggleButton>
-                            <ToggleButton IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                            <ToggleButton IsChecked="{c:TemplatedParentBinding IsExpanded, Mode=TwoWay}"
                                           Style="{StaticResource TransparentButton}"
                                           Focusable="False"
                                           IsTabStop="False">
@@ -104,10 +104,10 @@
 
                         <DockPanel.Resources>
                             <Storyboard x:Key="DisabledStoryboard">
-                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                <c:BrushAnimation Storyboard.Target="{c:TemplatedParentBinding}"
                                                   Storyboard.TargetProperty="Foreground"
                                                   Duration="0"
-                                                  To="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                  To="{c:TemplatedParentBinding Path=(theming:DisabledProperties.ForegroundBrush)}" />
                             </Storyboard>
                         </DockPanel.Resources>
                         

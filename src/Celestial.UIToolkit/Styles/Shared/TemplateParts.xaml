@@ -11,7 +11,7 @@
         <Setter Property="Width" Value="{c:GridUnit 5}" />
         <Setter Property="Height" Value="{c:GridUnit 5}" />
         <Setter Property="Background" Value="{StaticResource PrimaryMediumLowBrush}" />
-        <Setter Property="IsEnabled" Value="{Binding Path=(theming:RippleProperties.ShowRippleAnimation), RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="IsEnabled" Value="{c:TemplatedParentBinding Path=(theming:RippleProperties.ShowRippleAnimation)}" />
         <Setter Property="RippleOrigin" Value="Center" />
         <Setter Property="ClipToBounds" Value="False" />
         <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
@@ -48,29 +48,29 @@
 
                         <Border.Resources>                            
                             <Storyboard x:Key="MouseOverStoryboard">
-                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                <c:BrushAnimation Storyboard.Target="{c:TemplatedParentBinding}"
                                                   Storyboard.TargetProperty="Foreground"
                                                   Duration="0"
-                                                  To="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                  To="{c:TemplatedParentBinding Path=(theming:MouseOverProperties.ForegroundBrush)}" />
                             </Storyboard>
                             <Storyboard x:Key="PressedStoryboard">
-                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                <c:BrushAnimation Storyboard.Target="{c:TemplatedParentBinding}"
                                                   Storyboard.TargetProperty="Foreground"
                                                   Duration="0"
-                                                  To="{Binding Path=(theming:PressedProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                  To="{c:TemplatedParentBinding Path=(theming:PressedProperties.ForegroundBrush)}" />
                             </Storyboard>
                             <Storyboard x:Key="DisabledStoryboard">
-                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                <c:BrushAnimation Storyboard.Target="{c:TemplatedParentBinding}"
                                                   Storyboard.TargetProperty="Foreground"
                                                   Duration="0"
-                                                  To="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                  To="{c:TemplatedParentBinding Path=(theming:DisabledProperties.ForegroundBrush)}" />
                             </Storyboard>
 
                             <Storyboard x:Key="CheckedStoryboard">
-                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                <c:BrushAnimation Storyboard.Target="{c:TemplatedParentBinding}"
                                                   Storyboard.TargetProperty="Foreground"
                                                   Duration="0"
-                                                  To="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                  To="{c:TemplatedParentBinding Path=(theming:ActiveProperties.ForegroundBrush)}" />
                             </Storyboard>
                         </Border.Resources>
                         <VisualStateManager.VisualStateGroups>
@@ -98,9 +98,9 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="ToggleButton.IsChecked" Value="True">
-                <Setter Property="Foreground" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
-                <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
-                <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                <Setter Property="Foreground" Value="{c:SelfBinding Path=(theming:ActiveProperties.ForegroundBrush)}" />
+                <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{c:SelfBinding Path=(theming:ActiveProperties.ForegroundBrush)}" />
+                <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{c:SelfBinding Path=(theming:ActiveProperties.ForegroundBrush)}" />
             </Trigger>
         </Style.Triggers>
     </Style>

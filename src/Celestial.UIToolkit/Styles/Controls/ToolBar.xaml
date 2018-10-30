@@ -31,7 +31,7 @@
             <Style x:Key="StandardToolBarButton" TargetType="ButtonBase" BasedOn="{c:MultiStyle 'StandardButton OnPaneControlBackground OnPaneControlBorder StandardForeground StandardFontProperties Shadow0'}">
                 <Setter Property="Padding" Value="{c:GridUnit 2}" />
                 <Setter Property="MinHeight" Value="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=ToolBar}, FallbackValue=0}" />
-                <Setter Property="MinWidth" Value="{Binding MinHeight, RelativeSource={RelativeSource Self}}" />
+                <Setter Property="MinWidth" Value="{c:SelfBinding MinHeight}" />
             </Style>
 
             <Style x:Key="ToolBarOverflowToggleButton" TargetType="ToggleButton" BasedOn="{StaticResource StandardToolBarButton}" />
@@ -107,7 +107,7 @@
                                 <ToggleButton x:Name="OverflowToggleButton"
                                               Style="{DynamicResource ToolBarOverflowToggleButton}"
                                               Grid.Column="2"
-                                              IsChecked="{Binding IsOverflowOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                              IsChecked="{c:TemplatedParentBinding IsOverflowOpen, Mode=TwoWay}"
                                               Visibility="Collapsed">
                                     <controls:PathIcon Data="{StaticResource More}" />
                                 </ToggleButton>
@@ -157,7 +157,7 @@
                                                  Converter="{x:Static c:GetTypeConverter.Default}" />
                                     </Condition.Binding>
                                 </Condition>
-                                <Condition Binding="{Binding Path=(ToolBarTray.IsLocked), RelativeSource={RelativeSource Self}}" Value="False" />
+                                <Condition Binding="{c:SelfBinding Path=(ToolBarTray.IsLocked)}" Value="False" />
                             </MultiDataTrigger.Conditions>
                             <Setter TargetName="Thumb" Property="Visibility" Value="Visible" />
                         </MultiDataTrigger>
@@ -171,17 +171,17 @@
                         </Trigger>
                         
                         <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
-                                <Setter Property="BorderBrush" Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
-                                <Setter Property="Foreground" Value="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
-                                <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:MouseOverProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
+                                <Setter Property="Background" Value="{c:SelfBinding Path=(theming:MouseOverProperties.BackgroundBrush)}" />
+                                <Setter Property="BorderBrush" Value="{c:SelfBinding Path=(theming:MouseOverProperties.BorderBrush)}" />
+                                <Setter Property="Foreground" Value="{c:SelfBinding Path=(theming:MouseOverProperties.ForegroundBrush)}" />
+                                <Setter Property="controls:ThemeShadow.Elevation" Value="{c:SelfBinding Path=(theming:MouseOverProperties.ShadowElevation)}" />
                             </Trigger>
 
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Background" Value="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="BorderBrush" Value="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="Foreground" Value="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
-                            <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:DisabledProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
+                            <Setter Property="Background" Value="{c:SelfBinding Path=(theming:DisabledProperties.BackgroundBrush)}" />
+                            <Setter Property="BorderBrush" Value="{c:SelfBinding Path=(theming:DisabledProperties.BorderBrush)}" />
+                            <Setter Property="Foreground" Value="{c:SelfBinding Path=(theming:DisabledProperties.ForegroundBrush)}" />
+                            <Setter Property="controls:ThemeShadow.Elevation" Value="{c:SelfBinding Path=(theming:DisabledProperties.ShadowElevation)}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -196,7 +196,7 @@
         <Style.Resources>
             <Style x:Key="StandardToolBarButton" TargetType="ButtonBase" BasedOn="{c:MultiStyle 'StandardButton'}">
                 <Setter Property="MinHeight" Value="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=ToolBar}, FallbackValue=0}" />
-                <Setter Property="MinWidth" Value="{Binding MinHeight, RelativeSource={RelativeSource Self}}" />
+                <Setter Property="MinWidth" Value="{c:SelfBinding MinHeight}" />
             </Style>
 
             <Style x:Key="ToolBarOverflowToggleButton" TargetType="ToggleButton" BasedOn="{StaticResource StandardSquareButton}">

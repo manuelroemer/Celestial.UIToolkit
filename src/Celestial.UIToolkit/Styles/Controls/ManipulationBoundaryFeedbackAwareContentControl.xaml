@@ -53,8 +53,8 @@
                                           Margin="{TemplateBinding Padding}"
                                           RenderTransformOrigin="0.5,0.5">
                             <ContentPresenter.RenderTransform>
-                                <TranslateTransform X="{Binding TranslationDeltaX, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource DivideConverter}, ConverterParameter=10}"
-                                                    Y="{Binding TranslationDeltaY, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource DivideConverter}, ConverterParameter=10}" />
+                                <TranslateTransform X="{c:TemplatedParentBinding TranslationDeltaX, Converter={StaticResource DivideConverter}, ConverterParameter=10}"
+                                                    Y="{c:TemplatedParentBinding TranslationDeltaY, Converter={StaticResource DivideConverter}, ConverterParameter=10}" />
                             </ContentPresenter.RenderTransform>
                         </ContentPresenter>
                     </Grid>

@@ -737,10 +737,10 @@
     -->
     <Style x:Key="DynamicallyBoundForeground" TargetType="FrameworkElement">
         <Setter Property="Control.Foreground" Value="{StaticResource StandardForegroundBrush}" />
-        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
-        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{c:SelfBinding Foreground}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{c:SelfBinding Foreground}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{c:SelfBinding Foreground}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{c:SelfBinding Foreground}" />
     </Style>
 
 
@@ -985,9 +985,9 @@
     - Foreground: Bound to Self
     -->
     <Style x:Key="ForegroundBasedThemingProperties" TargetType="FrameworkElement">
-        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
-        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{c:SelfBinding Foreground}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{c:SelfBinding Foreground}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{c:SelfBinding Foreground}" />
         <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
     </Style>
     

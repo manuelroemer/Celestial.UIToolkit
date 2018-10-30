@@ -78,7 +78,7 @@
                                         Margin="{c:GridUnit 3}"
                                         Padding="{c:GridUnit 3}"
                                         VerticalAlignment="Top"
-                                        Visibility="{Binding HasOptions, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                        Visibility="{c:TemplatedParentBinding HasOptions, Converter={StaticResource BooleanToVisibilityConverter}}">
                                     <ContentPresenter ContentSource="Options" />
                                 </Border>
 
@@ -87,7 +87,7 @@
                                            Margin="{c:GridUnit '3'}"
                                            Text="{TemplateBinding Description}"
                                            TextWrapping="Wrap"
-                                           Visibility="{Binding Description, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource StringToVisibilityConverter}}" />
+                                           Visibility="{c:TemplatedParentBinding Description, Converter={StaticResource StringToVisibilityConverter}}" />
 
                                 <Border x:Name="XamlContainer"
                                         Grid.Row="2"
@@ -104,7 +104,7 @@
                                                    Margin="{c:GridUnit '0,0,0,1'}"
                                                    Text="XAML:" />
                                         <ics:TextEditor Grid.Row="1"
-                                                        Document="{Binding Xaml, RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:StringToTextDocumentConverter.Default}}"
+                                                        Document="{c:TemplatedParentBinding Xaml, Converter={x:Static converters:StringToTextDocumentConverter.Default}}"
                                                         Background="Transparent"
                                                         SyntaxHighlighting="XML"
                                                         FontSize="12pt"
