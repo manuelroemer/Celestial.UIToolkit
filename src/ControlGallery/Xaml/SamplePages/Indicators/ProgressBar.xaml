@@ -81,6 +81,47 @@
             </controls:ControlPresenter.Options>
         </controls:ControlPresenter>
 
+        <controls:ControlPresenter Header="Styling a ProgressBar."
+                                   Xaml="{Binding Xaml, ElementName=ProgressBarEx3}"
+                                   VerticalAlignment="Top">
+            <smtx:XamlDisplay x:Name="ProgressBarEx3" Key="ProgressBarEx3">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledProgressBarEx3}">
+                    <StackPanel.Resources>
+                        <Style TargetType="ProgressBar" BasedOn="{StaticResource StandardProgressBar}">
+                            <!-- The Standard Properties change the Track. This also includes BorderBrush and BorderThickness. -->
+                            <Setter Property="Background" Value="LightPink" />
+                            
+                            <!-- The ActiveProperties from the Theming namespace set the appearance of the other states. -->
+                            <Setter Property="c:ActiveProperties.BackgroundBrush" Value="HotPink" />
+                            
+                            <!-- DisabledProperties can be used, as always. -->
+                            <Setter Property="c:DisabledProperties.BackgroundBrush" Value="{StaticResource ControlDisabledBackgroundBrush}" />
+                        </Style>
+                    </StackPanel.Resources>
+
+                    <ProgressBar Value="{Binding Value, ElementName=ValueProgressBarEx3}"
+                                 Width="{c:GridUnit 50}" />
+                    <ProgressBar IsIndeterminate="True" 
+                                 Value="{Binding Value, ElementName=ValueProgressBarEx3}" 
+                                 Width="{c:GridUnit 50}" />
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,3'}"
+                            Margin="{c:GridUnit '0,0,0,-3'}">
+                    <CheckBox x:Name="IsEnabledProgressBarEx3"
+                              IsChecked="True"
+                              Content="IsEnabled" />
+                    <Label Content="Value:" />
+                    <Slider x:Name="ValueProgressBarEx3"
+                            Minimum="0"
+                            Maximum="100"
+                            Value="0" />
+                </StackPanel>
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+
     </StackPanel>
 
 </UserControl>

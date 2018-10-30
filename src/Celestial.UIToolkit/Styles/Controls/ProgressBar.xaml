@@ -29,7 +29,7 @@
                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
                         <Grid.Resources>
                             <sys:String x:Key="EllipseSizeMultiplier">1</sys:String>
-                            
+
                             <!-- The Ellipses/Borders all share the same style.
                                  Define them here, so that the following XAML doesn't get cluttered. -->
                             <Style TargetType="Ellipse">
@@ -143,7 +143,7 @@
 
                                         <!-- Ellipse RelativeCanvas Movement Animations. -->
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="E5" 
-                                                                       Storyboard.TargetProperty="(c:RelativeCanvas.Left)">
+                                                                       Storyboard.TargetProperty="(controls:RelativeCanvas.Left)">
                                             <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
                                             <EasingDoubleKeyFrame KeyTime="0:0:0.667" Value="0"/>
                                             <SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" 
@@ -157,7 +157,7 @@
                                         </DoubleAnimationUsingKeyFrames>
 
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="E4" 
-                                                                       Storyboard.TargetProperty="(c:RelativeCanvas.Left)">
+                                                                       Storyboard.TargetProperty="(controls:RelativeCanvas.Left)">
                                             <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
                                             <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
                                             <SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" 
@@ -171,7 +171,7 @@
                                         </DoubleAnimationUsingKeyFrames>
 
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="E3" 
-                                                                       Storyboard.TargetProperty="(c:RelativeCanvas.Left)">
+                                                                       Storyboard.TargetProperty="(controls:RelativeCanvas.Left)">
                                             <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
                                             <EasingDoubleKeyFrame KeyTime="0:0:0.333" Value="0"/>
                                             <SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" 
@@ -185,7 +185,7 @@
                                         </DoubleAnimationUsingKeyFrames>
 
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="E2" 
-                                                                       Storyboard.TargetProperty="(c:RelativeCanvas.Left)">
+                                                                       Storyboard.TargetProperty="(controls:RelativeCanvas.Left)">
                                             <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
                                             <EasingDoubleKeyFrame KeyTime="0:0:0.167" Value="0"/>
                                             <SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" 
@@ -199,7 +199,7 @@
                                         </DoubleAnimationUsingKeyFrames>
 
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="E1" 
-                                                                       Storyboard.TargetProperty="(c:RelativeCanvas.Left)">
+                                                                       Storyboard.TargetProperty="(controls:RelativeCanvas.Left)">
                                             <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
                                             <SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" 
                                                                   KeyTime="0:0:1" 
