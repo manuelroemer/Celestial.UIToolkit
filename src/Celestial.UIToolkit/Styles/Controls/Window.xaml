@@ -13,7 +13,29 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardWindow" TargetType="Window" BasedOn="{c:MultiStyle 'PrimaryBackground StandardForeground StandardFontProperties'}">
+    <!-- This is the absolute minimum style for a Window.
+         Since windows are the root of everything else, they must set all inheriting
+         properties (like Foreground, FontSize, ...). 
+         This style must always be applied to any Window!-->
+    <Style x:Key="DefaultWindow" TargetType="Window" BasedOn="{c:MultiStyle 'PrimaryBackground StandardForeground StandardFontProperties'}">
+    </Style>
+
+
+
+    <WindowChrome x:Key="StandardWindowChrome"
+                  GlassFrameThickness="1" />
+
+    <ControlTemplate x:Key="StandardWindowTemplate" TargetType="Window">
+        <Grid x:Name="RootGrid"
+              VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
+            
+        </Grid>
+    </ControlTemplate>
+
+    <Style x:Key="StandardWindow" TargetType="Window" BasedOn="{c:MultiStyle 'DefaultWindow'}">
+        <Setter Property="WindowChrome.WindowChrome" Value="{StaticResource StandardWindowChrome}" />
+        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
+        <Setter Property="Template" Value="{StaticResource StandardWindowTemplate}" />
     </Style>
     
 </ResourceDictionary>
