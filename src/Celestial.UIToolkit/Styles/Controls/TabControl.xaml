@@ -39,17 +39,22 @@
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
-        <Setter Property="Padding" Value="{c:GridUnit '0,2,2,2'}" />
+        <Setter Property="Padding" Value="{c:GridUnit '2,0,2,1'}" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
-        <Setter Property="HorizontalContentAlignment" Value="Center" />
-        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType=TabControl}}" />
+        <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType=TabControl}}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TabItem">
+                    <ControlTemplate.Resources>
+                        <c:ThicknessSidePickerConverter x:Key="LeftRightPicker" Top="0" Bottom="0" />
+                    </ControlTemplate.Resources>
+                    
                     <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
-                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                          Margin="{c:GridUnit '-2,0,0,0'}">
                         <controls:ThemeShadowPresenter>
                             <Border x:Name="Bd"
                                     Background="{TemplateBinding Background}"
@@ -62,8 +67,6 @@
                                 Padding="{TemplateBinding Padding}"
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
                             <ContentControl x:Name="HeaderContentSite"
-                                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                             Content="{TemplateBinding Header}"
                                             ContentTemplate="{TemplateBinding HeaderTemplate}"
                                             ContentTemplateSelector="{TemplateBinding HeaderTemplateSelector}"
@@ -77,12 +80,20 @@
                                             Focusable="False" />
                         </Border>
 
+                        <controls:SelectionIndicator x:Name="SelectionIndicator"
+                                                     Height="{c:GridUnit 0.5}"
+                                                     VerticalAlignment="Bottom"
+                                                     Background="{TemplateBinding theming:ActiveProperties.ForegroundBrush}"
+                                                     IsSelected="{TemplateBinding IsSelected}"
+                                                     SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                                     Margin="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource LeftRightPicker}}"/>
+
                         <Grid.Resources>
                             <Storyboard x:Key="MouseOverStoryboard">
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="HeaderContentSite"
-                                                                Storyboard.TargetProperty="Foreground">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                </c:BrushAnimationUsingKeyFrames>
+                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                  Storyboard.TargetProperty="(theming:TabItemProperties.HeaderForeground)"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                 Storyboard.TargetProperty="Background">
                                     <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
@@ -102,10 +113,10 @@
                                                   Storyboard.TargetProperty="Foreground"
                                                   Duration="0"
                                                   To="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="HeaderContentSite"
-                                                                Storyboard.TargetProperty="Foreground">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                </c:BrushAnimationUsingKeyFrames>
+                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                  Storyboard.TargetProperty="(theming:TabItemProperties.HeaderForeground)"
+                                                  Duration="0"
+                                                  To="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                 Storyboard.TargetProperty="Background">
                                     <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
@@ -127,6 +138,7 @@
                                     <VisualTransition GeneratedDuration="{StaticResource ColorAnimationDuration}"
                                                       GeneratedEasingFunction="{StaticResource ColorAnimationEase}" />
                                     <VisualTransition To="Disabled" GeneratedDuration="0" />
+                                    <VisualTransition From="Disabled" GeneratedDuration="0" />
                                 </VisualStateGroup.Transitions>
 
                                 <c:ExtendedVisualState x:Name="Normal" />
@@ -160,6 +172,10 @@
                             <Setter Property="theming:TabItemProperties.HeaderForeground" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
                             <Setter Property="controls:ThemeShadow.Elevation" Value="{Binding Path=(theming:ActiveProperties.ShadowElevation), RelativeSource={RelativeSource Self}}" />
                         </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="SelectionIndicator" Property="Background" Value="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
@@ -175,9 +191,12 @@
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
         <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource DisabledThemeShadow}" />
+        <Setter Property="ItemContainerStyle" Value="{StaticResource StandardTabItem}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TabControl">
@@ -228,6 +247,14 @@
         </Setter>
     </Style>
 
-    <Style TargetType="TabControl" BasedOn="{StaticResource StandardTabControl}" />
+    <Style x:Key="Accent1TabControl" TargetType="TabControl" BasedOn="{StaticResource StandardTabControl}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource Accent1TabItem}" />
+    </Style>
+    
+    <Style x:Key="Accent2TabControl" TargetType="TabControl" BasedOn="{StaticResource StandardTabControl}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource Accent2TabItem}" />
+    </Style>
+    
+    <Style TargetType="TabControl" BasedOn="{StaticResource Accent2TabControl}" />
 
 </ResourceDictionary>
