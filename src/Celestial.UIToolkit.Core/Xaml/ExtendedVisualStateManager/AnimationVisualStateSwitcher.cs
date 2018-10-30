@@ -213,7 +213,7 @@ namespace Celestial.UIToolkit.Xaml
             ISet<Timeline> currentGroupTimelines = FlattenTimelines(Group.GetCurrentStoryboards().ToArray());
             ISet<Timeline> transitionTimelines = FlattenTimelines(currentTransition?.Storyboard);
             ISet<Timeline> toStateTimelines = FlattenTimelines(ToState.Storyboard);
-
+            
             // If the transition already covers an animation, there is no need for that animation.
             // Also, if there is already a "To" animation, we must never use a "From" animation,
             // because the two animations would fight over the same property.
@@ -222,14 +222,13 @@ namespace Celestial.UIToolkit.Xaml
             currentGroupTimelines.ExceptWith(toStateTimelines);
 
             IList<Timeline> toTransitions = CreateToTransitions(toStateTimelines, easingFunction);
-            IList<Timeline> fromTransitions = CreateFromTransitions(currentGroupTimelines, easingFunction);
-
             foreach (var toTransition in toTransitions)
             {
                 AddTimelineToCurrentStoryboard(toTransition);
                 currentGroupTimelines.Remove(toTransition);
             }
 
+            IList<Timeline> fromTransitions = CreateFromTransitions(currentGroupTimelines, easingFunction);
             foreach (var fromTransition in fromTransitions)
             {
                 AddTimelineToCurrentStoryboard(fromTransition);
