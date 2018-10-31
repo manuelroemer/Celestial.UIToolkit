@@ -29,9 +29,18 @@ namespace ControlGallery.Data.Categories
             SamplePageType = typeof(TabControl)
         };
 
+        private static ControlInformation WindowInfo = new ControlInformation()
+        {
+            Name = "Window",
+            Description = "Windows are typically the root of your application and host its content..",
+            Icon = new PackIconModern() { Kind = PackIconModernKind.Window },
+            SamplePageType = typeof(Window)
+        };
+
         public static ControlCategory Navigation { get; } = new ControlCategory(
             "Navigation",
             new PackIconModern() { Kind = PackIconModernKind.LinesHorizontal4 },
+            WindowInfo,
             NavigationViewInfo,
             TabControlInfo);
 
