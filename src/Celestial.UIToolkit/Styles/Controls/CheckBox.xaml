@@ -158,22 +158,32 @@
                                                             ScaleY="0" />
                                         </Border.RenderTransform>
                                     </Border>
-                                    <Path x:Name="Checkmark"
-                                          Data="{StaticResource Checkmark}">
-                                        <Path.RenderTransform>
+                                    <controls:PathIcon x:Name="Checkmark"
+                                                       Data="{StaticResource Checkmark}"
+                                                       Width="{c:GridUnit 3}"
+                                                       Height="{c:GridUnit 3}"
+                                                       Foreground="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
+                                                       StrokeThickness="1"
+                                                       RenderTransformOrigin="0.5,0.5">
+                                        <controls:PathIcon.RenderTransform>
                                             <ScaleTransform x:Name="CheckmarkScaleTransform"
                                                             ScaleX="0"
                                                             ScaleY="0" />
-                                        </Path.RenderTransform>
-                                    </Path>
-                                    <Path x:Name="IndeterminateCheckmark"
-                                          Data="{StaticResource IndeterminateGeometry}">
-                                        <Path.RenderTransform>
+                                        </controls:PathIcon.RenderTransform>
+                                    </controls:PathIcon>
+                                    <controls:PathIcon x:Name="IndeterminateCheckmark"
+                                                       Data="{StaticResource IndeterminateCheckmark}"
+                                                       Width="{c:GridUnit 3}"
+                                                       Height="{c:GridUnit 3}"
+                                                       Foreground="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
+                                                       StrokeThickness="1"
+                                                       RenderTransformOrigin="0.5,0.5">
+                                        <controls:PathIcon.RenderTransform>
                                             <ScaleTransform x:Name="IndeterminateCheckmarkScaleTransform"
                                                             ScaleX="0"
                                                             ScaleY="0" />
-                                        </Path.RenderTransform>
-                                    </Path>
+                                        </controls:PathIcon.RenderTransform>
+                                    </controls:PathIcon>
                                 </Grid>
                             </BulletDecorator.Bullet>
                             <ContentPresenter RecognizesAccessKey="True"

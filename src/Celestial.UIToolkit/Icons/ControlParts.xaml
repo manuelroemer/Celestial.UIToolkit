@@ -2,9 +2,13 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <PathGeometry x:Key="Checkmark">
-        M 1,5 L 6,11 L 11,1
+        F1 M 2.47921,29.5896L 22.7868,49.4507L 61.4545,10.6704L 63.4373,12.6474L 22.7774,53.4257L 20.7946,51.4487L 20.8097,51.4336L 0.521444,31.5914L 2.47921,29.5896 Z
     </PathGeometry>
-    
+
+    <PathGeometry x:Key="IndeterminateCheckmark">
+        F1 M 0.500001,60.7L 63.5,60.7L 63.5,63.5L 0.500001,63.5L 0.500001,60.7 Z
+    </PathGeometry>
+
     <PathGeometry x:Key="GlobalNavigationButton">
         F1 M 0.5,30.6L 63.5,30.6L 63.5,33.4L 0.5,33.4L 0.5,30.6 Z M 0.500002,14.6L 63.5,14.6L 63.5,17.4L 0.500002,17.4L 0.500002,14.6 Z M 0.500003,46.6L 63.5,46.6L 63.5,49.4L 0.500003,49.4L 0.500003,46.6 Z
     </PathGeometry>
