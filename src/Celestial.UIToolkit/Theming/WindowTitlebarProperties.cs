@@ -557,6 +557,174 @@ namespace Celestial.UIToolkit.Theming
 
         #endregion
 
+        #region TitleFontFamily
+
+        /// <summary>
+        /// Identifies the TitleFontFamily attached dependency property.
+        /// </summary>
+        public static readonly DependencyProperty TitleFontFamilyProperty =
+            DependencyProperty.RegisterAttached(
+                "TitleFontFamily",
+                typeof(FontFamily),
+                typeof(WindowTitlebarProperties),
+                new PropertyMetadata(null));
+
+        /// <summary>
+        /// Gets the value of the <see cref="TitleFontFamilyProperty"/> attached dependency property.
+        /// </summary>
+        /// <param name="obj">
+        /// The <see cref="DependencyObject"/> for which the local value of the
+        /// <see cref="TitleFontFamilyProperty"/> attached dependency property
+        /// should be retrieved.
+        /// </param>
+        /// <returns>
+        /// The local value of the <see cref="TitleFontFamilyProperty"/> attached dependency property.
+        /// </returns>
+        public static FontFamily GetTitleFontFamily(DependencyObject obj) =>
+            (FontFamily)obj.GetValue(TitleFontFamilyProperty);
+
+        /// <summary>
+        /// Sets the value of the <see cref="TitleFontFamilyProperty"/> attached dependency property.
+        /// </summary>
+        /// <param name="obj">
+        /// The <see cref="DependencyObject"/> for which the local value of the
+        /// <see cref="TitleFontFamilyProperty"/> attached dependency property
+        /// should be set.
+        /// </param>
+        /// <param name="value">
+        /// The new value for the dependency property.
+        /// </param>
+        public static void SetTitleFontFamily(DependencyObject obj, FontFamily value) =>
+            obj.SetValue(TitleFontFamilyProperty, value);
+
+        #endregion
+
+        #region TitleFontStretch
+
+        /// <summary>
+        /// Identifies the FontStretch attached dependency property.
+        /// </summary>
+        public static readonly DependencyProperty TitleFontStretchProperty =
+            DependencyProperty.RegisterAttached(
+                "TitleFontStretch",
+                typeof(FontStretch),
+                typeof(WindowTitlebarProperties),
+                new PropertyMetadata(FontStretches.Normal));
+
+        /// <summary>
+        /// Gets the value of the <see cref="TitleFontStretchProperty"/> attached dependency property.
+        /// </summary>
+        /// <param name="obj">
+        /// The <see cref="DependencyObject"/> for which the local value of the
+        /// <see cref="TitleFontStretchProperty"/> attached dependency property
+        /// should be retrieved.
+        /// </param>
+        /// <returns>
+        /// The local value of the <see cref="TitleFontStretchProperty"/> attached dependency property.
+        /// </returns>
+        public static FontStretch GetTitleFontStretch(DependencyObject obj) =>
+            (FontStretch)obj.GetValue(TitleFontStretchProperty);
+
+        /// <summary>
+        /// Sets the value of the <see cref="TitleFontStretchProperty"/> attached dependency property.
+        /// </summary>
+        /// <param name="obj">
+        /// The <see cref="DependencyObject"/> for which the local value of the
+        /// <see cref="TitleFontStretchProperty"/> attached dependency property
+        /// should be set.
+        /// </param>
+        /// <param name="value">
+        /// The new value for the dependency property.
+        /// </param>
+        public static void SetTitleFontStretch(DependencyObject obj, FontStretch value) =>
+            obj.SetValue(TitleFontStretchProperty, value);
+
+        #endregion
+
+        #region TitleFontStyle
+
+        /// <summary>
+        /// Identifies the TitleFontStyle attached dependency property.
+        /// </summary>
+        public static readonly DependencyProperty TitleFontStyleProperty =
+            DependencyProperty.RegisterAttached(
+                "TitleFontStyle",
+                typeof(FontStyle),
+                typeof(WindowTitlebarProperties),
+                new PropertyMetadata(FontStyles.Normal));
+
+        /// <summary>
+        /// Gets the value of the <see cref="TitleFontStyleProperty"/> attached dependency property.
+        /// </summary>
+        /// <param name="obj">
+        /// The <see cref="DependencyObject"/> for which the local value of the
+        /// <see cref="TitleFontStyleProperty"/> attached dependency property
+        /// should be retrieved.
+        /// </param>
+        /// <returns>
+        /// The local value of the <see cref="TitleFontStyleProperty"/> attached dependency property.
+        /// </returns>
+        public static FontStyle GetTitleFontStyle(DependencyObject obj) =>
+            (FontStyle)obj.GetValue(TitleFontStyleProperty);
+
+        /// <summary>
+        /// Sets the value of the <see cref="TitleFontStyleProperty"/> attached dependency property.
+        /// </summary>
+        /// <param name="obj">
+        /// The <see cref="DependencyObject"/> for which the local value of the
+        /// <see cref="TitleFontStyleProperty"/> attached dependency property
+        /// should be set.
+        /// </param>
+        /// <param name="value">
+        /// The new value for the dependency property.
+        /// </param>
+        public static void SetTitleFontStyle(DependencyObject obj, FontStyle value) =>
+            obj.SetValue(TitleFontStyleProperty, value);
+
+        #endregion
+
+        #region TitleFontWeight
+
+        /// <summary>
+        /// Identifies the TitleFontWeight attached dependency property.
+        /// </summary>
+        public static readonly DependencyProperty TitleFontWeightProperty =
+            DependencyProperty.RegisterAttached(
+                "TitleFontWeight",
+                typeof(FontWeight),
+                typeof(WindowTitlebarProperties),
+                new PropertyMetadata(FontWeights.Normal));
+
+        /// <summary>
+        /// Gets the value of the <see cref="TitleFontWeightProperty"/> attached dependency property.
+        /// </summary>
+        /// <param name="obj">
+        /// The <see cref="DependencyObject"/> for which the local value of the
+        /// <see cref="TitleFontWeightProperty"/> attached dependency property
+        /// should be retrieved.
+        /// </param>
+        /// <returns>
+        /// The local value of the <see cref="TitleFontWeightProperty"/> attached dependency property.
+        /// </returns>
+        public static FontWeight GetTitleFontWeight(DependencyObject obj) =>
+            (FontWeight)obj.GetValue(TitleFontWeightProperty);
+
+        /// <summary>
+        /// Sets the value of the <see cref="TitleFontWeightProperty"/> attached dependency property.
+        /// </summary>
+        /// <param name="obj">
+        /// The <see cref="DependencyObject"/> for which the local value of the
+        /// <see cref="TitleFontWeightProperty"/> attached dependency property
+        /// should be set.
+        /// </param>
+        /// <param name="value">
+        /// The new value for the dependency property.
+        /// </param>
+        public static void SetTitleFontWeight(DependencyObject obj, FontWeight value) =>
+            obj.SetValue(TitleFontWeightProperty, value);
+
+        #endregion
+
     }
 
 }

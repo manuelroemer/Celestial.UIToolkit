@@ -25,9 +25,9 @@
     </Style>
 
 
-
-    <WindowChrome x:Key="StandardWindowChrome" />
-
+    
+    
+    
     <Style x:Key="StandardWindowCaptionButton" TargetType="Button" BasedOn="{c:MultiStyle 'OnPaneControlBackground OnPaneControlBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
@@ -159,7 +159,11 @@
                           Panel.ZIndex="1"
                           Height="{TemplateBinding theming:WindowTitlebarProperties.Height}"
                           TextElement.Foreground="{TemplateBinding theming:WindowTitlebarProperties.ForegroundBrush}"
-                          TextElement.FontSize="{TemplateBinding theming:WindowTitlebarProperties.TitleFontSize}">
+                          TextElement.FontFamily="{TemplateBinding theming:WindowTitlebarProperties.TitleFontFamily}"
+                          TextElement.FontSize="{TemplateBinding theming:WindowTitlebarProperties.TitleFontSize}"
+                          TextElement.FontStyle="{TemplateBinding theming:WindowTitlebarProperties.TitleFontStyle}"
+                          TextElement.FontStretch="{TemplateBinding theming:WindowTitlebarProperties.TitleFontStretch}"
+                          TextElement.FontWeight="{TemplateBinding theming:WindowTitlebarProperties.TitleFontWeight}">
                         <Border x:Name="TitlebarBorder"
                                 Background="{TemplateBinding theming:WindowTitlebarProperties.BackgroundBrush}"
                                 BorderBrush="{TemplateBinding theming:WindowTitlebarProperties.BorderBrush}"
@@ -306,7 +310,12 @@
         <Setter Property="theming:WindowTitlebarProperties.ExtendContentIntoTitlebar" Value="False" />
         <Setter Property="theming:WindowTitlebarProperties.Height" Value="{c:GridUnit 8}" />
         <Setter Property="theming:WindowTitlebarProperties.BorderThickness" Value="0" />
+        <Setter Property="theming:WindowTitlebarProperties.TitleFontFamily" Value="{StaticResource CaptionFontFamily}" />
         <Setter Property="theming:WindowTitlebarProperties.TitleFontSize" Value="{StaticResource CaptionFontSize}" />
+        <Setter Property="theming:WindowTitlebarProperties.TitleFontStyle" Value="{StaticResource CaptionFontStyle}" />
+        <Setter Property="theming:WindowTitlebarProperties.TitleFontStretch" Value="{StaticResource CaptionFontStretch}" />
+        <Setter Property="theming:WindowTitlebarProperties.TitleFontWeight" Value="{StaticResource CaptionFontWeight}" />
+
 
         <Setter Property="theming:WindowTitlebarProperties.BackgroundBrush" Value="{StaticResource PaneBackgroundBrush}" />
         <Setter Property="theming:WindowTitlebarProperties.InactiveBackgroundBrush" Value="{StaticResource PrimaryBrush}" />
