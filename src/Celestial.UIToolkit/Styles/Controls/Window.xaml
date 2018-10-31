@@ -202,7 +202,7 @@
                         <StackPanel Orientation="Horizontal">
                             <Button x:Name="MinimizeButton"
                                     Style="{TemplateBinding theming:WindowTitlebarProperties.MinimizeButtonStyle}"
-                                    Command="{x:Static controls:WindowCommands.MinimizeWindowCommand}"
+                                    Command="{x:Static controls:WindowCommands.MinimizeCommand}"
                                     CommandParameter="{c:TemplatedParentBinding}">
                                 <controls:PathIcon x:Name="MinimizeIcon"
                                                    Data="{StaticResource WindowMinimize}"
@@ -211,7 +211,7 @@
                             </Button>
                             <Button x:Name="MaximizeButton"
                                     Style="{TemplateBinding theming:WindowTitlebarProperties.MaximizeButtonStyle}"
-                                    Command="{x:Static controls:WindowCommands.MaximizeWindowCommand}"
+                                    Command="{x:Static controls:WindowCommands.MaximizeCommand}"
                                     CommandParameter="{c:TemplatedParentBinding}">
                                 <Grid>
                                     <controls:PathIcon x:Name="MaximizeIcon"
@@ -227,7 +227,7 @@
                             </Button>
                             <Button x:Name="CloseButton"
                                     Style="{TemplateBinding theming:WindowTitlebarProperties.CloseButtonStyle}"
-                                    Command="{x:Static controls:WindowCommands.CloseWindowCommand}"
+                                    Command="{x:Static controls:WindowCommands.CloseCommand}"
                                     CommandParameter="{c:TemplatedParentBinding}">
                                 <controls:PathIcon x:Name="CloseIcon"
                                                    Data="{StaticResource WindowClose}"
