@@ -206,6 +206,8 @@
         <Setter Property="MinHeight" Value="0" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
+        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
+        <Setter Property="theming:DisabledProperties.BorderBrush" Value="Transparent" />
         <Style.Triggers>
             <MultiDataTrigger>
                 <!-- Don't show a background color if the NavView is in the Minimal mode.
