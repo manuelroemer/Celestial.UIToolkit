@@ -87,7 +87,7 @@ namespace Celestial.UIToolkit.Controls
 
             protected override void ExecuteCore(Window window)
             {
-                SystemCommands.CloseWindow(window);
+                window.Close();
             }
 
         }
