@@ -13,7 +13,8 @@
         Width="1200"
         Height="800"
         Style="{StaticResource StandardWindow}"
-        prism:ViewModelLocator.AutoWireViewModel="True">
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        c:WindowTitlebarProperties.ExtendContentIntoTitlebar="True">
 
     <Window.InputBindings>
         <KeyBinding Key="BrowserBack" Command="{Binding GoBackCommand}" />

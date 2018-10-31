@@ -97,6 +97,7 @@
     <Compile Include="Controls\SplitView\SplitView.Properties.cs" />
     <Compile Include="Controls\SplitView\SplitViewDisplayMode.cs" />
     <Compile Include="Controls\SplitView\SplitViewPanePlacement.cs" />
+    <Compile Include="Controls\WindowCommands.cs" />
     <Compile Include="Theming\PopupProperties.cs" />
     <Compile Include="Theming\SelectionProperties.cs" />
     <Compile Include="Theming\TabItemProperties.cs" />
@@ -104,11 +105,6 @@
     <Compile Include="Theming\ControlProperties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Theming\RippleProperties.cs" />
     <Compile Include="Theming\ShadowProperties.cs" />
@@ -119,11 +115,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>VisualStateProperties.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
+    <Compile Include="Theming\WindowTitlebarProperties.cs" />
     <Compile Include="Controls\NavigationView\NavigationView.DisplayMode.cs" />
     <Compile Include="Controls\ShadowControls\ThemeShadow.Properties.cs" />
   </ItemGroup>
@@ -323,6 +315,5 @@
       <Name>Celestial.UIToolkit.Core</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
