@@ -51,6 +51,9 @@
                         </c:GroupConverter>
 
                         <c:BooleanToVisibilityConverter x:Key="FalseCollapsedVisibilityConverter" />
+                        <c:ThicknessSidePickerConverter x:Key="RemoveTopConverter" Top="0" />
+                        <c:ThicknessSidePickerConverter x:Key="RemoveBottomConverter" Bottom="0" />
+                        <c:ThicknessSidePickerConverter x:Key="RemoveTopBottomConverter" Bottom="0" Top="0" />
                     </ControlTemplate.Resources>
 
                     <Grid>
@@ -71,13 +74,14 @@
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto" />
                                     <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
                                     <RowDefinition />
                                 </Grid.RowDefinitions>
 
                                 <!-- Header Content. -->
                                 <Grid x:Name="HeaderGrid"
-                                        Grid.Row="0"
-                                        Margin="{c:GridUnit '0,0,0,2'}">
+                                        Grid.Row="0">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto" />
                                         <RowDefinition Height="Auto" />
@@ -115,30 +119,31 @@
                                                         Visibility="{c:TemplatedParentBinding HasSubTitle, Converter={StaticResource FalseCollapsedVisibilityConverter}}" />
                                 </Grid>
 
-                                <!-- Media Content. -->
-                                <Border x:Name="MediaContentSpacer"
-                                        Grid.Row="1"
-                                        Margin="{c:GridUnit '0,2,0,2'}"
-                                        Visibility="{c:TemplatedParentBinding HasMediaContent, Converter={StaticResource FalseCollapsedVisibilityConverter}}">
-                                    <ContentPresenter x:Name="MediaContentSite"
-                                                      Grid.Row="1"
-                                                      ContentSource="MediaContent"
-                                                      ContentStringFormat="{TemplateBinding MediaContentStringFormat}"
-                                                      ContentTemplate="{TemplateBinding MediaContentTemplate}"
-                                                      ContentTemplateSelector="{TemplateBinding MediaContentTemplateSelector}"
-                                                      Margin="{c:TemplatedParentBinding Padding, Converter={StaticResource MediaContentMarginConverter}}" />
-                                </Border>
-                                
-                                
+                                <Rectangle x:Name="HeaderMediaSpacer" 
+                                           Grid.Row="1"
+                                           Height="{c:GridUnit 4}" />
+
+                                <ContentPresenter x:Name="MediaContentSite"
+                                                  Grid.Row="2"
+                                                  ContentSource="MediaContent"
+                                                  ContentStringFormat="{TemplateBinding MediaContentStringFormat}"
+                                                  ContentTemplate="{TemplateBinding MediaContentTemplate}"
+                                                  ContentTemplateSelector="{TemplateBinding MediaContentTemplateSelector}"
+                                                  Margin="{c:TemplatedParentBinding Padding, Converter={StaticResource MediaContentMarginConverter}}"
+                                                  Visibility="{c:TemplatedParentBinding HasMediaContent, Converter={StaticResource FalseCollapsedVisibilityConverter}}" />
+
+                                <Rectangle x:Name="MediaContentSpacer"
+                                           Grid.Row="3"
+                                           Height="{c:GridUnit 4}" />
+
                                 <!-- Normal Content. -->
                                 <ContentPresenter x:Name="ContentSite"
-                                                  Grid.Row="2"
+                                                  Grid.Row="4"
                                                   ContentSource="Content"
                                                   ContentStringFormat="{TemplateBinding ContentStringFormat}"
                                                   ContentTemplate="{TemplateBinding ContentTemplate}"
                                                   ContentTemplateSelector="{TemplateBinding MediaContentTemplateSelector}"
-                                                  Visibility="{c:TemplatedParentBinding HasContent, Converter={StaticResource FalseCollapsedVisibilityConverter}}" 
-                                                  Margin="{c:GridUnit '0,2,0,0'}"/>
+                                                  Visibility="{c:TemplatedParentBinding HasContent, Converter={StaticResource FalseCollapsedVisibilityConverter}}" />
                             </Grid>
                         </controls:ClippingBorder>
                     </Grid>
@@ -153,7 +158,7 @@
                             <Setter TargetName="HeaderGrid" Property="Visibility" Value="Collapsed" />
                         </MultiTrigger>
                         
-                         <!-- Only Content visible. Remove its top margin. --> 
+                         <!-- Only Content visible. --> 
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="HasTitle" Value="False" />
@@ -161,18 +166,10 @@
                                 <Condition Property="HasThumbnail" Value="False" />
                                 <Condition Property="HasMediaContent" Value="False" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="ContentSite" Property="Margin" Value="0" />
+                            <Setter TargetName="MediaContentSpacer" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="HeaderMediaSpacer" Property="Visibility" Value="Collapsed" />
                         </MultiTrigger>
                         
-                         <!-- Only Header visible. Remove its bottom margin. --> 
-                        <MultiTrigger>
-                            <MultiTrigger.Conditions>
-                                <Condition Property="HasContent" Value="False" />
-                                <Condition Property="HasMediaContent" Value="False" />
-                            </MultiTrigger.Conditions>
-                            <Setter TargetName="HeaderGrid" Property="Margin" Value="0" />
-                        </MultiTrigger>
-
                          <!--Only MediaContent visible. Remove its top/bottom margin.-->
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
@@ -181,7 +178,44 @@
                                 <Condition Property="HasThumbnail" Value="False" />
                                 <Condition Property="HasContent" Value="False" />
                             </MultiTrigger.Conditions>
-                            <Setter TargetName="MediaContentSpacer" Property="Margin" Value="0" />
+                            <Setter TargetName="MediaContentSpacer" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="HeaderMediaSpacer" Property="Visibility" Value="Collapsed" />
+                            <Setter Property="Padding" Value="{c:SelfBinding Padding, Converter={StaticResource RemoveTopBottomConverter}}" />
+                        </MultiTrigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="HasTitle" Value="False" />
+                                <Condition Property="HasSubTitle" Value="False" />
+                                <Condition Property="HasThumbnail" Value="False" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="HeaderMediaSpacer" Property="Visibility" Value="Collapsed" />
+                        </MultiTrigger>
+                        
+                        <Trigger Property="HasMediaContent" Value="False">
+                            <Setter TargetName="HeaderMediaSpacer" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+
+                        <Trigger Property="HasContent" Value="False">
+                            <Setter TargetName="MediaContentSpacer" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="HasMediaContent" Value="True" />
+                                <Condition Property="HasContent" Value="False" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Padding" Value="{c:SelfBinding Padding, Converter={StaticResource RemoveBottomConverter}}" />
+                        </MultiTrigger>
+                        
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="HasTitle" Value="False" />
+                                <Condition Property="HasSubTitle" Value="False" />
+                                <Condition Property="HasThumbnail" Value="False" />
+                                <Condition Property="HasMediaContent" Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Padding" Value="{c:SelfBinding Padding, Converter={StaticResource RemoveTopConverter}}" />
                         </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
