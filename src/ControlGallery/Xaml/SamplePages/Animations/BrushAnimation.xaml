@@ -203,15 +203,17 @@
             <controls:ControlPresenter.Description>
                 It was stated above that you can only animate between brushes of the same type.
                 There is an exception to this rule: You can animate from/to SolidColorBrushes to GradientBrushes.
+                Please note that this is slower than simply specifying two brushes of the same type.
             </controls:ControlPresenter.Description>
             <smtx:XamlDisplay x:Name="BrushAnimationEx3" Key="BrushAnimationEx3">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}">
-                    <Rectangle x:Name="SolidColorBrushRectangleEx3" Width="{c:GridUnit 50}" Height="{c:GridUnit 25}">
+                    <Rectangle x:Name="LinearGradientBrushRectangleEx3" Width="{c:GridUnit 50}" Height="{c:GridUnit 25}"
+                               Fill="Orange">
                         <Rectangle.Triggers>
                             <EventTrigger RoutedEvent="Loaded">
                                 <BeginStoryboard>
                                     <Storyboard>
-                                        <c:BrushAnimation Storyboard.TargetName="SolidColorBrushRectangleEx3"
+                                        <c:BrushAnimation Storyboard.TargetName="LinearGradientBrushRectangleEx3"
                                                           Storyboard.TargetProperty="Fill"
                                                           Duration="0:0:3"
                                                           RepeatBehavior="Forever"
@@ -226,6 +228,89 @@
                                                 </LinearGradientBrush>
                                             </c:BrushAnimation.To>
                                         </c:BrushAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Rectangle.Triggers>
+                    </Rectangle>
+                    
+                    <Rectangle x:Name="RadialGradientBrushRectangleEx3" Width="{c:GridUnit 50}" Height="{c:GridUnit 25}"
+                               Fill="Orange">
+                        <Rectangle.Triggers>
+                            <EventTrigger RoutedEvent="Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <c:BrushAnimation Storyboard.TargetName="RadialGradientBrushRectangleEx3"
+                                                          Storyboard.TargetProperty="Fill"
+                                                          Duration="0:0:3"
+                                                          RepeatBehavior="Forever"
+                                                          AutoReverse="True">
+                                            <c:BrushAnimation.From>
+                                                <SolidColorBrush Color="{DynamicResource Accent1Color}" />
+                                            </c:BrushAnimation.From>
+                                            <c:BrushAnimation.To>
+                                                <RadialGradientBrush Center="0.5,0.5">
+                                                    <GradientStop Offset="0" Color="{DynamicResource Accent2LightColor}" />
+                                                    <GradientStop Offset="1" Color="{DynamicResource Accent2DarkestColor}" />
+                                                </RadialGradientBrush>
+                                            </c:BrushAnimation.To>
+                                        </c:BrushAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Rectangle.Triggers>
+                    </Rectangle>
+                </StackPanel>
+            </smtx:XamlDisplay>
+        </controls:ControlPresenter>
+
+        <controls:ControlPresenter Header="Animations between SolidColorBrushes and GradientBrushes using keyframe animations."
+                                   Xaml="{Binding Xaml, ElementName=BrushAnimationEx4}"
+                                   VerticalAlignment="Top">
+            <smtx:XamlDisplay x:Name="BrushAnimationEx4" Key="BrushAnimationEx4">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}">
+                    <Rectangle x:Name="LinearGradientBrushRectangleEx4" Width="{c:GridUnit 50}" Height="{c:GridUnit 25}"
+                               Fill="Orange">
+                        <Rectangle.Triggers>
+                            <EventTrigger RoutedEvent="Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="LinearGradientBrushRectangleEx4"
+                                                                        Storyboard.TargetProperty="Fill"
+                                                                        RepeatBehavior="Forever"
+                                                                        AutoReverse="True">
+                                            <c:DiscreteBrushKeyFrame KeyTime="0" Value="{DynamicResource Accent1Brush}" />
+                                            <c:LinearBrushKeyFrame KeyTime="0:0:3">
+                                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                                    <GradientStop Offset="0" Color="{DynamicResource Accent2LightColor}" />
+                                                    <GradientStop Offset="1" Color="{DynamicResource Accent2DarkestColor}" />
+                                                </LinearGradientBrush>
+                                            </c:LinearBrushKeyFrame>
+                                        </c:BrushAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Rectangle.Triggers>
+                    </Rectangle>
+                    
+                    <Rectangle x:Name="RadialGradientBrushRectangleEx4" Width="{c:GridUnit 50}" Height="{c:GridUnit 25}"
+                               Fill="Orange">
+                        <Rectangle.Triggers>
+                            <EventTrigger RoutedEvent="Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="RadialGradientBrushRectangleEx4"
+                                                                        Storyboard.TargetProperty="Fill"
+                                                                        RepeatBehavior="Forever"
+                                                                        AutoReverse="True">
+                                            <c:DiscreteBrushKeyFrame KeyTime="0" Value="{DynamicResource Accent1Brush}" />
+                                            <c:LinearBrushKeyFrame KeyTime="0:0:3">
+                                                <RadialGradientBrush Center="0.5,0.5">
+                                                    <GradientStop Offset="0" Color="{DynamicResource Accent2LightColor}" />
+                                                    <GradientStop Offset="1" Color="{DynamicResource Accent2DarkestColor}" />
+                                                </RadialGradientBrush>
+                                            </c:LinearBrushKeyFrame>
+                                        </c:BrushAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </EventTrigger>

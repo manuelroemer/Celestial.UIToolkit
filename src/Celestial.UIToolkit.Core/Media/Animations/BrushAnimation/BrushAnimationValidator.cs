@@ -29,8 +29,8 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <param name="destination">The destination brush.</param>
         public static void ValidateBrushes(Brush origin, Brush destination)
         {
-            ValidateThatBrushesAreNotNull(origin, destination);
-            ValidateThatBrushesHaveSameType(origin, destination);
+            //ValidateThatBrushesAreNotNull(origin, destination);
+            //ValidateThatBrushesHaveSameType(origin, destination);
             ValidateThatBrushesHaveSupportedType(origin, destination);
             ValidateThatBrushesHaveSameTransform(origin, destination);
             ValidateGradientBrushes(origin, destination);

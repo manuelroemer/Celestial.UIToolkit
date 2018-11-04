@@ -50,6 +50,10 @@ namespace Celestial.UIToolkit.Media.Animations
         /// </returns>
         protected override sealed Brush AddValues(Brush a, Brush b)
         {
+            BrushAnimationInput transformedInput = BrushAnimationInputTransformer.Transform(a, b);
+            a = transformedInput.From;
+            b = transformedInput.To;
+
             BrushAnimationValidator.ValidateBrushes(a, b);
             return BrushAnimationHelper.Instance.AddValues(a, b);
         }
@@ -62,6 +66,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <returns>A new <see cref="Brush"/>, which represents the scaling's result.</returns>
         protected override sealed Brush ScaleValue(Brush value, double factor)
         {
+            value = BrushAnimationInputTransformer.Transform(value);
             return BrushAnimationHelper.Instance.ScaleValue(value, factor);
         }
 

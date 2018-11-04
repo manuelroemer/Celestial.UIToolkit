@@ -40,7 +40,8 @@
                                 <!-- Default template for the header -->
                                 <DataTemplate DataType="{x:Type sys:String}">
                                     <TextBlock Style="{DynamicResource SubTitleTextBlock}"
-                                               Text="{Binding}" />
+                                               Text="{Binding}"
+                                               TextWrapping="Wrap" />
                                 </DataTemplate>
                             </Border.Resources>
                             <ContentPresenter ContentSource="Header"

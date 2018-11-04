@@ -13,29 +13,43 @@ namespace Celestial.UIToolkit.Media.Animations
 
         public Brush GetZeroValue()
         {
-            return Brushes.Transparent;
+            return new SolidColorBrush(new Color());
         }
 
         public Brush AddValues(Brush a, Brush b)
         {
+            BrushAnimationInput transformedInput = BrushAnimationInputTransformer.Transform(a, b);
+            a = transformedInput.From;
+            b = transformedInput.To;
+
             return GetAnimationHelperForBrush(a)
                 .AddValues(a, b);
         }
 
         public Brush SubtractValues(Brush a, Brush b)
         {
+            BrushAnimationInput transformedInput = BrushAnimationInputTransformer.Transform(a, b);
+            a = transformedInput.From;
+            b = transformedInput.To;
+
             return GetAnimationHelperForBrush(a)
                 .SubtractValues(a, b);
         }
 
         public Brush ScaleValue(Brush value, double factor)
         {
+            value = BrushAnimationInputTransformer.Transform(value);
+
             return GetAnimationHelperForBrush(value)
                 .ScaleValue(value, factor);
         }
 
         public Brush InterpolateValue(Brush from, Brush to, double progress)
         {
+            BrushAnimationInput transformedInput = BrushAnimationInputTransformer.Transform(from, to);
+            from = transformedInput.From;
+            to = transformedInput.To;
+
             return GetAnimationHelperForBrush(from)
                 .InterpolateValue(from, to, progress);
         }

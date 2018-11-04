@@ -1,4 +1,5 @@
-﻿using System.Windows.Media;
+﻿using System;
+using System.Windows.Media;
 
 namespace Celestial.UIToolkit.Media.Animations
 {
@@ -14,6 +15,23 @@ namespace Celestial.UIToolkit.Media.Animations
     internal static class BrushAnimationInputTransformer
     {
 
+        // We must use a custom transparent brush, since the WPF Transparent brush is defined as
+        // 0x00FFFFFF. 
+        // When adding brushes, this means that the RGB channels of other colors get "filled".
+        // With this custom brush (0x00000000) that doesn't happen.
+        private static readonly SolidColorBrush _transparent = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0));
+
+        public static Brush Transform(Brush brush)
+        {
+            // We can also transform a single brush (e.g. for Scale() methods).
+            // We can however only do null checks.
+            if (brush == null)
+            {
+                brush = _transparent;
+            }
+            return brush;
+        }
+
         public static BrushAnimationInput Transform(Brush from, Brush to)
         {
             // If one of the two brushes is null, change them to Transparent.
@@ -24,15 +42,11 @@ namespace Celestial.UIToolkit.Media.Animations
             // didn't do anything wrong.
             if (from == null)
             {
-                from = Brushes.Transparent;
-                TraceSources.AnimationSource.Warn(
-                    "The animation's 'From' value was null. Replacing it with a transparent brush.");
+                from = _transparent;
             }
             if (to == null)
             {
-                to = Brushes.Transparent;
-                TraceSources.AnimationSource.Warn(
-                    "The animation's 'To' value was null. Replacing it with a transparent brush.");
+                to = _transparent;
             }
 
             
@@ -48,8 +62,17 @@ namespace Celestial.UIToolkit.Media.Animations
                 {
                     to = solidTo.ToGradientBrush(gradientFrom);
                 }
+                else
+                {
+                    // We cannot match the types.
+                    // This should have been handled by validation!
+                    throw new InvalidOperationException(
+                        $"Cannot create an animation between brushes of type " +
+                        $"${from.GetType().FullName} and {to.GetType().FullName}.");
+                }
             }
 
+            // All good, the brushes now have a value and are of the same type.
             return new BrushAnimationInput(from, to);
         }
 
