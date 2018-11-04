@@ -19,7 +19,7 @@ namespace Celestial.UIToolkit.Media.Animations
         // 0x00FFFFFF. 
         // When adding brushes, this means that the RGB channels of other colors get "filled".
         // With this custom brush (0x00000000) that doesn't happen.
-        private static readonly SolidColorBrush _transparent = new SolidColorBrush(Color.FromArgb(0, 0, 0, 0));
+        private static readonly SolidColorBrush _transparent = new SolidColorBrush(new Color());
 
         public static Brush Transform(Brush brush)
         {

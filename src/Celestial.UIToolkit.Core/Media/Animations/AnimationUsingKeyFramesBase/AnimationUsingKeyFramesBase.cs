@@ -340,6 +340,8 @@ namespace Celestial.UIToolkit.Media.Animations
                 currentValue = currentFrame.OriginalKeyFrame.InterpolateValue((T)previousFrame.Value, progress);
             }
 
+            // IsCumulative => Multiply the final key frame's value by the current repeat count.
+            //                 Add the result to the return value.
             if (IsCumulative)
             {
                 double factor = animationClock.CurrentIteration.GetValueOrDefault() - 1;
@@ -349,6 +351,8 @@ namespace Celestial.UIToolkit.Media.Animations
                     currentValue = AddValues(currentValue, scaledValue);
                 }
             }
+
+            // IsAdditive => Add the base value to the return value.
             if (IsAdditive)
             {
                 currentValue = AddValues(defaultOriginValue, currentValue);
