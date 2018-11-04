@@ -22,6 +22,7 @@ namespace ControlGallery.Data
             yield return KnownCategories.Containers;
             yield return KnownCategories.Layout;
             yield return KnownCategories.Navigation;
+            yield return KnownCategories.Animations;
         }
 
     }
