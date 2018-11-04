@@ -29,8 +29,8 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <param name="destination">The destination brush.</param>
         public static void ValidateBrushes(Brush origin, Brush destination)
         {
-            //ValidateThatBrushesAreNotNull(origin, destination);
-            //ValidateThatBrushesHaveSameType(origin, destination);
+            ValidateThatBrushesAreNotNull(origin, destination);
+            ValidateThatBrushesHaveSameType(origin, destination);
             ValidateThatBrushesHaveSupportedType(origin, destination);
             ValidateThatBrushesHaveSameTransform(origin, destination);
             ValidateGradientBrushes(origin, destination);
@@ -38,7 +38,8 @@ namespace Celestial.UIToolkit.Media.Animations
 
         private static void ValidateThatBrushesAreNotNull(Brush origin, Brush destination)
         {
-            if (origin == null || destination == null)
+            // One of the two brushes is allowed to be null.
+            if (origin == null && destination == null)
             {
                 throw new InvalidOperationException(
                     $"The animation cannot animate a brush which is set to null (Nothing in VB).");
@@ -47,7 +48,15 @@ namespace Celestial.UIToolkit.Media.Animations
 
         private static void ValidateThatBrushesHaveSameType(Brush origin, Brush destination)
         {
-            if (origin.GetType() != destination.GetType())
+            if (origin == null || destination == null)
+                return;
+
+            // The two brushes must have the same type,
+            // except if one of the two is a SolidColorBrush.
+            // Then we support inter-brush animations.
+            if (origin.GetType() != destination.GetType() &&
+                !(origin is SolidColorBrush) &&
+                !(destination is SolidColorBrush))
             {
                 throw new InvalidOperationException(
                     $"The animation can only handle brushes of the same type. " +
@@ -77,6 +86,9 @@ namespace Celestial.UIToolkit.Media.Animations
 
         private static void ValidateThatBrushesHaveSameTransform(Brush origin, Brush destination)
         {
+            if (origin == null || destination == null)
+                return;
+
             if (origin.Transform != destination.Transform ||
                 origin.RelativeTransform != destination.RelativeTransform)
             {
