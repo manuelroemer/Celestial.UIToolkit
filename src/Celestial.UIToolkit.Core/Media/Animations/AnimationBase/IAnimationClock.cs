@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Media.Animation;
 
@@ -236,6 +237,7 @@ namespace Celestial.UIToolkit.Media.Animations
 
 
 
+    [DebuggerStepThrough]
     internal class ClockAdapter : IClock
     {
 
@@ -289,6 +291,7 @@ namespace Celestial.UIToolkit.Media.Animations
         
     }
 
+    [DebuggerStepThrough]
     internal sealed class ClockControllerAdapter : IClockController
     {
 
@@ -328,6 +331,7 @@ namespace Celestial.UIToolkit.Media.Animations
 
     }
 
+    [DebuggerStepThrough]
     internal sealed class AnimationClockAdapter : ClockAdapter, IAnimationClock
     {
 
