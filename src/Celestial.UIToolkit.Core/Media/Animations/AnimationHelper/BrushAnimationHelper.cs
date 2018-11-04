@@ -100,9 +100,6 @@ namespace Celestial.UIToolkit.Media.Animations
             //    modification to the methods below.
             public Brush AddValues(Brush a, Brush b)
             {
-                if (a == null) throw new ArgumentNullException(nameof(a));
-                if (b == null) throw new ArgumentNullException(nameof(b));
-
                 Brush result = a.Clone();
                 AddValuesToResult((TBrush)result, (TBrush)a, (TBrush)b);
                 return result;
@@ -110,9 +107,6 @@ namespace Celestial.UIToolkit.Media.Animations
 
             public Brush SubtractValues(Brush a, Brush b)
             {
-                if (a == null) throw new ArgumentNullException(nameof(a));
-                if (b == null) throw new ArgumentNullException(nameof(b));
-
                 Brush result = a.Clone();
                 SubtractValuesFromResult((TBrush)result, (TBrush)a, (TBrush)b);
                 return result;
@@ -120,8 +114,6 @@ namespace Celestial.UIToolkit.Media.Animations
 
             public Brush ScaleValue(Brush value, double factor)
             {
-                if (value == null) throw new ArgumentNullException(nameof(value));
-
                 Brush result = value.Clone();
                 ScaleResult((TBrush)result, factor);
                 return result;
@@ -129,9 +121,6 @@ namespace Celestial.UIToolkit.Media.Animations
 
             public Brush InterpolateValue(Brush from, Brush to, double progress)
             {
-                if (from == null) throw new ArgumentNullException(nameof(from));
-                if (to == null) throw new ArgumentNullException(nameof(to));
-
                 Brush result = from.Clone();
                 InterpolateResult((TBrush)result, (TBrush)from, (TBrush)to, progress);
                 return result;
