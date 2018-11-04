@@ -17,7 +17,7 @@ namespace Celestial.UIToolkit.Tests.Media.Animations.Mocks
         protected override double GetCurrentValueCore(
             double from,
             double to, 
-            AnimationClock animationClock)
+            IAnimationClock animationClock)
         {
             double progress = animationClock.CurrentProgress.Value;
 

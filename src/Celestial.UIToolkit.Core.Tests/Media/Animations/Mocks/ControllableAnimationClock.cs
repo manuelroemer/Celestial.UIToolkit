@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media.Animation;
 
 namespace Celestial.UIToolkit.Tests.Media.Animations.Mocks
@@ -13,20 +14,15 @@ namespace Celestial.UIToolkit.Tests.Media.Animations.Mocks
     /// </summary>
     public class ControllableAnimationClock : AnimationClock
     {
-
-        /// <summary>
-        /// Gets a clock which has just been started and whose progress is thus 0.
-        /// </summary>
-        public static ControllableAnimationClock Started { get; }
-
-        /// <summary>
-        /// Gets a clock which has finished and whose progress is thus 1.
-        /// </summary>
-        public static ControllableAnimationClock Finished { get; }
         
         public ControllableAnimationClock(AnimationTimeline animation)
             : base(animation) { }
-        
+
+        protected override TimeSpan GetCurrentTimeCore()
+        {
+            return TimeSpan.FromSeconds(1.0d);
+        }
+
     }
     
 }

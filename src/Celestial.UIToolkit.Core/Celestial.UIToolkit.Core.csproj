@@ -61,6 +61,7 @@
     <Compile Include="DesignTimeOnlyResourceDictionary.cs" />
     <Compile Include="Extensions\DependencyObjectExtensions.cs" />
     <Compile Include="ItemsSourceCollection.cs" />
+    <Compile Include="Media\Animations\AnimationBase\IAnimationClock.cs" />
     <Compile Include="Media\Animations\BrushAnimation\BrushAnimationInputTransformer.cs" />
     <Compile Include="TraceSources.cs" />
     <Compile Include="Xaml\BindingProxy.cs" />
