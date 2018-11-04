@@ -33,8 +33,7 @@ namespace Celestial.UIToolkit.Media.Animations
             if (splineProgress <= 0) return baseValue;
             if (splineProgress >= 1) return Value;
             BrushAnimationValidator.ValidateBrushes(baseValue, Value);
-            return SupportedAnimationBrushes.GetAnimationHelper(baseValue)
-                                            .InterpolateValue(baseValue, Value, splineProgress);
+            return BrushAnimationHelper.Instance.InterpolateValue(baseValue, Value, splineProgress);
         }
 
     }

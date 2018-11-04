@@ -12,7 +12,14 @@ namespace Celestial.UIToolkit.Media.Animations
     /// </summary>
     internal static class BrushAnimationValidator
     {
-        
+
+        private static readonly Type[] _supportedBrushes = new Type[]
+        {
+            typeof(SolidColorBrush),
+            typeof(LinearGradientBrush),
+            typeof(RadialGradientBrush)
+        };
+
         /// <summary>
         /// Ensures that the two brushes are not null, have the same supported type
         /// and that their un-animatable properties have the same values.
@@ -51,15 +58,21 @@ namespace Celestial.UIToolkit.Media.Animations
 
         private static void ValidateThatBrushesHaveSupportedType(Brush origin, Brush destination)
         {
-            if (!SupportedAnimationBrushes.IsSupported(origin) ||
-                !SupportedAnimationBrushes.IsSupported(destination))
+            if (!HasSupportedType(origin) ||
+                !HasSupportedType(destination))
             {
                 throw new InvalidOperationException(
                     $"The animation can only animate brushes of the following types: " +
-                    $"{string.Join(", ", SupportedAnimationBrushes.SupportedTypes.Select(type => type.Name))}. " +
+                    $"{string.Join(", ", _supportedBrushes.Select(type => type.Name))}. " +
                     $"Ensure that all target properties of this animation have been set to brushes of " +
                     $"the specified types.");
             }
+        }
+
+        private static bool HasSupportedType(Brush brush)
+        {
+            return brush == null ||
+                   _supportedBrushes.Any(supportedType => brush.GetType() == supportedType);
         }
 
         private static void ValidateThatBrushesHaveSameTransform(Brush origin, Brush destination)

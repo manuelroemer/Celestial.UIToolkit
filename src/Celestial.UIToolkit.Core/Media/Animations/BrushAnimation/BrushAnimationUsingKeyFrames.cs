@@ -35,8 +35,7 @@ namespace Celestial.UIToolkit.Media.Animations
 
             var firstFrame = KeyFrames.First();
             var brushType = firstFrame.Value.GetType();
-            return SupportedAnimationBrushes.GetAnimationHelper(brushType)
-                                            .GetZeroValue();
+            return BrushAnimationHelper.Instance.GetZeroValue();
         }
 
         /// <summary>
@@ -52,8 +51,7 @@ namespace Celestial.UIToolkit.Media.Animations
         protected override sealed Brush AddValues(Brush a, Brush b)
         {
             BrushAnimationValidator.ValidateBrushes(a, b);
-            return SupportedAnimationBrushes.GetAnimationHelper(a)
-                                            .AddValues(a, b);
+            return BrushAnimationHelper.Instance.AddValues(a, b);
         }
 
         /// <summary>
@@ -64,8 +62,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <returns>A new <see cref="Brush"/>, which represents the scaling's result.</returns>
         protected override sealed Brush ScaleValue(Brush value, double factor)
         {
-            return SupportedAnimationBrushes.GetAnimationHelper(value)
-                                            .ScaleValue(value, factor);
+            return BrushAnimationHelper.Instance.ScaleValue(value, factor);
         }
 
         /// <summary>
