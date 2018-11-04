@@ -84,6 +84,9 @@
     <Compile Include="Extensions\ArraySegmentExtensionsTests.cs" />
     <Compile Include="Extensions\EnumerableExtensionsTests.cs" />
     <Compile Include="ItemsSourceCollectionTests.cs" />
+    <Compile Include="Media\Animations\AnimationBaseTests.cs" />
+    <Compile Include="Media\Animations\Mocks\ControllableAnimationClock.cs" />
+    <Compile Include="Media\Animations\Mocks\SimpleDoubleAnimation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
