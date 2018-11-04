@@ -197,6 +197,44 @@
             </smtx:XamlDisplay>
         </controls:ControlPresenter>
         
+        <controls:ControlPresenter Header="Animations between SolidColorBrushes and GradientBrushes."
+                                   Xaml="{Binding Xaml, ElementName=BrushAnimationEx3}"
+                                   VerticalAlignment="Top">
+            <controls:ControlPresenter.Description>
+                It was stated above that you can only animate between brushes of the same type.
+                There is an exception to this rule: You can animate from/to SolidColorBrushes to GradientBrushes.
+            </controls:ControlPresenter.Description>
+            <smtx:XamlDisplay x:Name="BrushAnimationEx3" Key="BrushAnimationEx3">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}">
+                    <Rectangle x:Name="SolidColorBrushRectangleEx3" Width="{c:GridUnit 50}" Height="{c:GridUnit 25}">
+                        <Rectangle.Triggers>
+                            <EventTrigger RoutedEvent="Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <c:BrushAnimation Storyboard.TargetName="SolidColorBrushRectangleEx3"
+                                                          Storyboard.TargetProperty="Fill"
+                                                          Duration="0:0:3"
+                                                          RepeatBehavior="Forever"
+                                                          AutoReverse="True">
+                                            <c:BrushAnimation.From>
+                                                <SolidColorBrush Color="{DynamicResource Accent1Color}" />
+                                            </c:BrushAnimation.From>
+                                            <c:BrushAnimation.To>
+                                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                                    <GradientStop Offset="0" Color="{DynamicResource Accent2LightColor}" />
+                                                    <GradientStop Offset="1" Color="{DynamicResource Accent2DarkestColor}" />
+                                                </LinearGradientBrush>
+                                            </c:BrushAnimation.To>
+                                        </c:BrushAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Rectangle.Triggers>
+                    </Rectangle>
+                </StackPanel>
+            </smtx:XamlDisplay>
+        </controls:ControlPresenter>
+        
     </StackPanel>
     
 </UserControl>
