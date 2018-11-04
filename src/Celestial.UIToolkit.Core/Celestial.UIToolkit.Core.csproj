@@ -25,6 +25,7 @@
     <DocumentationFile>bin\Debug\Celestial.UIToolkit.Core.xml</DocumentationFile>
     <RunCodeAnalysis>true</RunCodeAnalysis>
     <UseVSHostingProcess>true</UseVSHostingProcess>
+    <LangVersion>7.2</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -35,6 +36,7 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\Celestial.UIToolkit.Core.xml</DocumentationFile>
     <RunCodeAnalysis>true</RunCodeAnalysis>
+    <LangVersion>7.2</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -59,6 +61,7 @@
     <Compile Include="DesignTimeOnlyResourceDictionary.cs" />
     <Compile Include="Extensions\DependencyObjectExtensions.cs" />
     <Compile Include="ItemsSourceCollection.cs" />
+    <Compile Include="Media\Animations\BrushAnimation\BrushAnimationInputTransformer.cs" />
     <Compile Include="TraceSources.cs" />
     <Compile Include="Xaml\BindingProxy.cs" />
     <Compile Include="Common\Singleton.cs" />
@@ -106,7 +109,6 @@
     <Compile Include="Media\Animations\BrushAnimation\EasingBrushKeyFrame.cs" />
     <Compile Include="Media\Animations\BrushAnimation\LinearBrushKeyFrame.cs" />
     <Compile Include="Media\Animations\BrushAnimation\SplineBrushKeyFrame.cs" />
-    <Compile Include="Media\Animations\BrushAnimation\SupportedAnimationBrushes.cs" />
     <Compile Include="Xaml\ExtendedVisualStateManager\AnimationVisualStateSwitcher.cs" />
     <Compile Include="Xaml\ExtendedVisualStateManager\VisualStateGroupExtensions.cs" />
     <Compile Include="Xaml\ExtendedVisualStateManager\VisualTransitionExtensions.cs" />
