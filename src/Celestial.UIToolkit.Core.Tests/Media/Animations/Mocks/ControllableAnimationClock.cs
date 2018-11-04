@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Celestial.UIToolkit.Media.Animations;
+using System;
 using System.Windows;
 using System.Windows.Media.Animation;
 
@@ -10,19 +7,84 @@ namespace Celestial.UIToolkit.Tests.Media.Animations.Mocks
 {
 
     /// <summary>
-    /// A special <see cref="AnimationClock"/> which can be controlled from the outside.
+    /// An implementation of the <see cref="IAnimationClock"/> interface which supports instant
+    /// property changes.
     /// </summary>
-    public class ControllableAnimationClock : AnimationClock
+    public sealed class ControllableAnimationClock : IAnimationClock
     {
-        
-        public ControllableAnimationClock(AnimationTimeline animation)
-            : base(animation) { }
 
-        protected override TimeSpan GetCurrentTimeCore()
+        public static ControllableAnimationClock Started { get; } = new ControllableAnimationClock()
         {
-            return TimeSpan.FromSeconds(1.0d);
+            CurrentProgress = 0d
+        };
+
+        public static ControllableAnimationClock Finished { get; } = new ControllableAnimationClock()
+        {
+            CurrentProgress = 1d
+        };
+
+        public event EventHandler Completed;
+        public event EventHandler RemoveRequested;
+        public event EventHandler CurrentTimeInvalidated;
+        public event EventHandler CurrentStateInvalidated;
+        public event EventHandler CurrentGlobalSpeedInvalidated;
+
+        public IClock Parent { get; set; }
+
+        Timeline IClock.Timeline => Timeline;
+
+        public AnimationTimeline Timeline { get; set; }
+
+        public TimeSpan? CurrentTime { get; set; }
+
+        public double? CurrentProgress { get; set; }
+
+        public int? CurrentIteration { get; set; }
+
+        public ClockState CurrentState { get; set; }
+
+        public bool IsPaused { get; set; }
+
+        public Duration NaturalDuration { get; set; }
+
+        public bool HasControllableRoot { get; set; }
+
+        public IClockController Controller { get; set; }
+
+        public double? CurrentGlobalSpeed { get; set; }
+
+        public object GetCurrentValue(object defaultOriginValue, object defaultDestinationValue)
+        {
+            // This method cannot work, since the AnimationTimeline instances require a real
+            // AnimationClock instance.
+            throw new NotSupportedException();
+        }
+
+        public void RaiseCompleted()
+        {
+            Completed?.Invoke(this, EventArgs.Empty);
+        }
+
+        public void RaiseRemoveRequested()
+        {
+            RemoveRequested?.Invoke(this, EventArgs.Empty);
+        }
+
+        public void RaiseCurrentTimeInvalidated()
+        {
+            CurrentTimeInvalidated?.Invoke(this, EventArgs.Empty);
+        }
+
+        public void RaiseCurrentStateInvalidated()
+        {
+            CurrentStateInvalidated?.Invoke(this, EventArgs.Empty);
+        }
+
+        public void RaiseCurrentGlobalSpeedInvalidated()
+        {
+            CurrentGlobalSpeedInvalidated?.Invoke(this, EventArgs.Empty);
         }
 
     }
-    
+
 }

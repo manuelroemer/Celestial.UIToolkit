@@ -13,14 +13,29 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
     {
 
         [Fact]
-        public void EmptyAnimationReturnsDefaultDestinationOnceFinished()
+        public void EmptyAnimationReturnsDefaultDestinationWhenFinished()
         {
             var animation = new FromToByDoubleAnimation();
-            var clock = new ControllableAnimationClock(animation);
+            var clock = ControllableAnimationClock.Started;
+            double from = 50.0;
+            double to = 100.0;
 
-            var d = clock.CurrentProgress;
-            var x = clock.CurrentTime;
+            double result = animation.GetCurrentValue(from, to, clock);
+            Assert.Equal(from, result);
         }
+
+        [Fact]
+        public void EmptyAnimationReturnsDefaultDestinationWhenStarted()
+        {
+            var animation = new FromToByDoubleAnimation();
+            var clock = ControllableAnimationClock.Finished;
+            double from = 50.0;
+            double to = 100.0;
+
+            double result = animation.GetCurrentValue(from, to, clock);
+            Assert.Equal(to, result);
+        }
+
 
     }
 

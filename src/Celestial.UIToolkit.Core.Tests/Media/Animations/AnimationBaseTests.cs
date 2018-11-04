@@ -21,7 +21,7 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
         public void ThrowsIfInputValuesHaveWrongType(object from, object to)
         {
             var animation = new SimpleDoubleAnimation();
-            var clock = new ControllableAnimationClock(animation);
+            var clock = new ControllableAnimationClock();
 
             Assert.Throws<InvalidOperationException>(() =>
                 animation.GetCurrentValue(from, to, clock));

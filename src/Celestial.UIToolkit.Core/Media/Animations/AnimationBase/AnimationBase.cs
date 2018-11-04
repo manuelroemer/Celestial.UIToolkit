@@ -85,7 +85,7 @@ namespace Celestial.UIToolkit.Media.Animations
         ///     animation to generate its output value.
         /// </param>
         /// <returns>The value this animation believes should be the current value for the property.</returns>
-        public virtual object GetCurrentValue(
+        public virtual T GetCurrentValue(
             object defaultOriginValue, object defaultDestinationValue, IAnimationClock animationClock)
         {
             ReadPreamble();
