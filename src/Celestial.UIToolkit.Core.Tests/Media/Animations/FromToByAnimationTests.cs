@@ -1,14 +1,9 @@
 ﻿using Celestial.UIToolkit.Tests.Media.Animations.Mocks;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace Celestial.UIToolkit.Tests.Media.Animations
 {
-    
+
     public class FromToByAnimationTests
     {
         
@@ -18,7 +13,7 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
         // They simply "get fed" with the defaultOrigin and defaultDestination values.
 
         [Fact]
-        public void EmptyAnimationReturnsDefaultOriginWhenStarted()
+        public void AutomaticAnimationReturnsDefaultOriginWhenStarted()
         {
             var animation = new FromToByDoubleAnimation();
             var clock = ControllableAnimationClock.NewFinished();
@@ -30,7 +25,7 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
         }
 
         [Fact]
-        public void EmptyAnimationReturnsDefaultDestinationWhenFinished()
+        public void AutomaticAnimationReturnsDefaultDestinationWhenFinished()
         {
             var animation = new FromToByDoubleAnimation();
             var clock = ControllableAnimationClock.NewStarted();
@@ -39,6 +34,23 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
 
             double result = animation.GetCurrentValue(defaultOrigin, defaultDestination, clock);
             Assert.Equal(defaultOrigin, result);
+        }
+
+        [Fact]
+        public void AutomaticAnimationReturnsExpectedIntermediaryValues()
+        {
+            double defaultOrigin = 25d;
+            double defaultDestination = 200d;
+            var animation = new FromToByDoubleAnimation();
+            var clock = new ControllableAnimationClock();
+
+            for (double progress = 0d; progress <= 1d; progress += 0.01)
+            {
+                clock.CurrentProgress = progress;
+                double result = animation.GetCurrentValue(defaultOrigin, defaultDestination, clock);
+                double expected = defaultOrigin + (defaultDestination - defaultOrigin) * progress;
+                Assert.Equal(expected, result);
+            }
         }
 
         #endregion
@@ -52,11 +64,7 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
             double defaultDestination = 200d;
             double from = 50d;
             double to = 100d;
-            var animation = new FromToByDoubleAnimation()
-            {
-                From = from,
-                To = to
-            };
+            var animation = new FromToByDoubleAnimation(from, to);
             var clock = ControllableAnimationClock.NewStarted();
 
             double result = animation.GetCurrentValue(defaultOrigin, defaultDestination, clock);
@@ -70,11 +78,7 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
             double defaultDestination = 200d;
             double from = 50d;
             double to = 100d;
-            var animation = new FromToByDoubleAnimation()
-            {
-                From = from,
-                To = to
-            };
+            var animation = new FromToByDoubleAnimation(from, to);
             var clock = ControllableAnimationClock.NewFinished();
 
             double result = animation.GetCurrentValue(defaultOrigin, defaultDestination, clock);
@@ -88,11 +92,7 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
             double defaultDestination = 200d;
             double from = 50d;
             double to = 100d;
-            var animation = new FromToByDoubleAnimation()
-            {
-                From = from,
-                To = to
-            };
+            var animation = new FromToByDoubleAnimation(from, to);
             var clock = new ControllableAnimationClock();
 
             for (double progress = 0d; progress <= 1d; progress += 0.01)
@@ -115,11 +115,7 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
             double defaultDestination = 200d;
             double from = 50d;
             double by = 100d;
-            var animation = new FromToByDoubleAnimation()
-            {
-                From = from,
-                By = by
-            };
+            var animation = new FromToByDoubleAnimation(from: from, by: by);
             var clock = ControllableAnimationClock.NewStarted();
 
             double result = animation.GetCurrentValue(defaultOrigin, defaultDestination, clock);
@@ -133,11 +129,7 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
             double defaultDestination = 200d;
             double from = 50d;
             double by = 100d;
-            var animation = new FromToByDoubleAnimation()
-            {
-                From = from,
-                By = by
-            };
+            var animation = new FromToByDoubleAnimation(from: from, by: by);
             var clock = ControllableAnimationClock.NewFinished();
 
             double result = animation.GetCurrentValue(defaultOrigin, defaultDestination, clock);
@@ -151,11 +143,7 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
             double defaultDestination = 200d;
             double from = 50d;
             double by = 100d;
-            var animation = new FromToByDoubleAnimation()
-            {
-                From = from,
-                By = by
-            };
+            var animation = new FromToByDoubleAnimation(from: from, by: by);
             var clock = new ControllableAnimationClock();
 
             for (double progress = 0d; progress <= 1d; progress += 0.01)
@@ -164,6 +152,156 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
 
                 double result = animation.GetCurrentValue(defaultOrigin, defaultDestination, clock);
                 double expected = from + by * progress;
+
+                Assert.Equal(expected, result);
+            }
+        }
+
+        #endregion
+
+        #region From Animation
+
+        [Fact]
+        public void FromAnimationReturnsFromWhenStarted()
+        {
+            double defaultOrigin = 25d;
+            double defaultDestination = 200d;
+            double from = 50d;
+            var animation = new FromToByDoubleAnimation(from);
+            var clock = ControllableAnimationClock.NewStarted();
+
+            double result = animation.GetCurrentValue(defaultOrigin, defaultDestination, clock);
+            Assert.Equal(from, result);
+        }
+
+        [Fact]
+        public void FromAnimationReturnsFromPlusByWhenStopped()
+        {
+            double defaultOrigin = 25d;
+            double defaultDestination = 200d;
+            double from = 50d;
+            var animation = new FromToByDoubleAnimation(from);
+            var clock = ControllableAnimationClock.NewFinished();
+
+            double result = animation.GetCurrentValue(defaultOrigin, defaultDestination, clock);
+            Assert.Equal(defaultDestination, result);
+        }
+
+        [Fact]
+        public void FromAnimationReturnsExpectedIntermediaryValues()
+        {
+            double defaultOrigin = 25d;
+            double defaultDestination = 200d;
+            double from = 50d;
+            var animation = new FromToByDoubleAnimation(from);
+            var clock = new ControllableAnimationClock();
+
+            for (double progress = 0d; progress <= 1d; progress += 0.01)
+            {
+                clock.CurrentProgress = progress;
+
+                double result = animation.GetCurrentValue(defaultOrigin, defaultDestination, clock);
+                double expected = from + (defaultDestination - from) * progress;
+
+                Assert.Equal(expected, result);
+            }
+        }
+
+        #endregion
+
+        #region To Animation
+
+        [Fact]
+        public void ToAnimationReturnsFromWhenStarted()
+        {
+            double defaultOrigin = 25d;
+            double defaultDestination = 200d;
+            double to = 100d;
+            var animation = new FromToByDoubleAnimation(to: to);
+            var clock = ControllableAnimationClock.NewStarted();
+
+            double result = animation.GetCurrentValue(defaultOrigin, defaultDestination, clock);
+            Assert.Equal(defaultOrigin, result);
+        }
+
+        [Fact]
+        public void ToAnimationReturnsFromPlusByWhenStopped()
+        {
+            double defaultOrigin = 25d;
+            double defaultDestination = 200d;
+            double to = 100d;
+            var animation = new FromToByDoubleAnimation(to: to);
+            var clock = ControllableAnimationClock.NewFinished();
+
+            double result = animation.GetCurrentValue(defaultOrigin, defaultDestination, clock);
+            Assert.Equal(to, result);
+        }
+
+        [Fact]
+        public void ToAnimationReturnsExpectedIntermediaryValues()
+        {
+            double defaultOrigin = 25d;
+            double defaultDestination = 200d;
+            double to = 100d;
+            var animation = new FromToByDoubleAnimation(to: to);
+            var clock = new ControllableAnimationClock();
+
+            for (double progress = 0d; progress <= 1d; progress += 0.01)
+            {
+                clock.CurrentProgress = progress;
+
+                double result = animation.GetCurrentValue(defaultOrigin, defaultDestination, clock);
+                double expected = defaultOrigin + (to - defaultOrigin) * progress;
+
+                Assert.Equal(expected, result);
+            }
+        }
+
+        #endregion
+
+        #region By Animation
+
+        [Fact]
+        public void ByAnimationReturnsFromWhenStarted()
+        {
+            double defaultOrigin = 25d;
+            double defaultDestination = 200d;
+            double by = 100d;
+            var animation = new FromToByDoubleAnimation(by: by);
+            var clock = ControllableAnimationClock.NewStarted();
+
+            double result = animation.GetCurrentValue(defaultOrigin, defaultDestination, clock);
+            Assert.Equal(defaultOrigin, result);
+        }
+
+        [Fact]
+        public void ByAnimationReturnsFromPlusByWhenStopped()
+        {
+            double defaultOrigin = 25d;
+            double defaultDestination = 200d;
+            double by = 100d;
+            var animation = new FromToByDoubleAnimation(by: by);
+            var clock = ControllableAnimationClock.NewFinished();
+
+            double result = animation.GetCurrentValue(defaultOrigin, defaultDestination, clock);
+            Assert.Equal(defaultOrigin + by, result);
+        }
+
+        [Fact]
+        public void ByAnimationReturnsExpectedIntermediaryValues()
+        {
+            double defaultOrigin = 25d;
+            double defaultDestination = 200d;
+            double by = 100d;
+            var animation = new FromToByDoubleAnimation(by: by);
+            var clock = new ControllableAnimationClock();
+
+            for (double progress = 0d; progress <= 1d; progress += 0.01)
+            {
+                clock.CurrentProgress = progress;
+
+                double result = animation.GetCurrentValue(defaultOrigin, defaultDestination, clock);
+                double expected = defaultOrigin + by * progress;
 
                 Assert.Equal(expected, result);
             }

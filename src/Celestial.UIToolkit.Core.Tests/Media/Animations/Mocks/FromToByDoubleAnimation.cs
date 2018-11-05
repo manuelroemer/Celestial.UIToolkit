@@ -10,6 +10,19 @@ namespace Celestial.UIToolkit.Tests.Media.Animations.Mocks
     public class FromToByDoubleAnimation : FromToByAnimationBase<double>
     {
 
+        public FromToByDoubleAnimation(
+            double? from = null,
+            double? to = null,
+            double? by = null)
+        {
+            if (from != null)
+                From = from.Value;
+            if (to != null)
+                To = to.Value;
+            if (by != null)
+                By = by.Value;
+        }
+
         protected override Freezable CreateInstanceCore()
         {
             return new FromToByDoubleAnimation();
