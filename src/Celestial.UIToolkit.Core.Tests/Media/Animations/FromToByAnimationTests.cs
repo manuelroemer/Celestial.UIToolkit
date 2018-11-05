@@ -8,18 +8,14 @@ using Xunit;
 
 namespace Celestial.UIToolkit.Tests.Media.Animations
 {
-
-    // Terms used in this class:
-    // 
-    // - Empty Animation:
-    //   An animation which only has the defaultOrigin/defaultDestination values from
-    //   the GetCurrentValue() method.
-    //   From/To/By are not set.
-
+    
     public class FromToByAnimationTests
     {
         
-        #region Empty Animation
+        #region Automatic Animation
+
+        // Automatic animations are animations without a From/To/By value.
+        // They simply "get fed" with the defaultOrigin and defaultDestination values.
 
         [Fact]
         public void EmptyAnimationReturnsDefaultOriginWhenStarted()
