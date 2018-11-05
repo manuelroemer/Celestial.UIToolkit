@@ -25,7 +25,7 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
         public void EmptyAnimationReturnsDefaultOriginWhenStarted()
         {
             var animation = new FromToByDoubleAnimation();
-            var clock = ControllableAnimationClock.Finished;
+            var clock = ControllableAnimationClock.NewFinished();
             double defaultOrigin = 50.0;
             double defaultDestination = 100.0;
 
@@ -37,7 +37,7 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
         public void EmptyAnimationReturnsDefaultDestinationWhenFinished()
         {
             var animation = new FromToByDoubleAnimation();
-            var clock = ControllableAnimationClock.Started;
+            var clock = ControllableAnimationClock.NewStarted();
             double defaultOrigin = 50.0;
             double defaultDestination = 100.0;
 
@@ -61,7 +61,7 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
                 From = from,
                 To = to
             };
-            var clock = ControllableAnimationClock.Started;
+            var clock = ControllableAnimationClock.NewStarted();
 
             double result = animation.GetCurrentValue(defaultOrigin, defaultDestination, clock);
             Assert.Equal(from, result);
@@ -79,7 +79,7 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
                 From = from,
                 To = to
             };
-            var clock = ControllableAnimationClock.Finished;
+            var clock = ControllableAnimationClock.NewFinished();
 
             double result = animation.GetCurrentValue(defaultOrigin, defaultDestination, clock);
             Assert.Equal(to, result);
@@ -97,7 +97,7 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
                 From = from,
                 To = to
             };
-            var clock = ControllableAnimationClock.Finished;
+            var clock = new ControllableAnimationClock();
 
             for (double progress = 0d; progress <= 1d; progress += 0.01)
             {
@@ -110,6 +110,70 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
 
         #endregion
 
+        #region From/By Animation
+
+        [Fact]
+        public void FromByAnimationReturnsFromWhenStarted()
+        {
+            double defaultOrigin = 25d;
+            double defaultDestination = 200d;
+            double from = 50d;
+            double by = 100d;
+            var animation = new FromToByDoubleAnimation()
+            {
+                From = from,
+                By = by
+            };
+            var clock = ControllableAnimationClock.NewStarted();
+
+            double result = animation.GetCurrentValue(defaultOrigin, defaultDestination, clock);
+            Assert.Equal(from, result);
+        }
+
+        [Fact]
+        public void FromByAnimationReturnsFromPlusByWhenStopped()
+        {
+            double defaultOrigin = 25d;
+            double defaultDestination = 200d;
+            double from = 50d;
+            double by = 100d;
+            var animation = new FromToByDoubleAnimation()
+            {
+                From = from,
+                By = by
+            };
+            var clock = ControllableAnimationClock.NewFinished();
+
+            double result = animation.GetCurrentValue(defaultOrigin, defaultDestination, clock);
+            Assert.Equal(from + by, result);
+        }
+
+        [Fact]
+        public void FromByAnimationReturnsExpectedIntermediaryValues()
+        {
+            double defaultOrigin = 25d;
+            double defaultDestination = 200d;
+            double from = 50d;
+            double by = 100d;
+            var animation = new FromToByDoubleAnimation()
+            {
+                From = from,
+                By = by
+            };
+            var clock = new ControllableAnimationClock();
+
+            for (double progress = 0d; progress <= 1d; progress += 0.01)
+            {
+                clock.CurrentProgress = progress;
+
+                double result = animation.GetCurrentValue(defaultOrigin, defaultDestination, clock);
+                double expected = from + by * progress;
+
+                Assert.Equal(expected, result);
+            }
+        }
+
+        #endregion
 
     }
 

@@ -12,17 +12,7 @@ namespace Celestial.UIToolkit.Tests.Media.Animations.Mocks
     /// </summary>
     public sealed class ControllableAnimationClock : IAnimationClock
     {
-
-        public static ControllableAnimationClock Started { get; } = new ControllableAnimationClock()
-        {
-            CurrentProgress = 0d
-        };
-
-        public static ControllableAnimationClock Finished { get; } = new ControllableAnimationClock()
-        {
-            CurrentProgress = 1d
-        };
-
+        
         public event EventHandler Completed;
         public event EventHandler RemoveRequested;
         public event EventHandler CurrentTimeInvalidated;
@@ -52,6 +42,32 @@ namespace Celestial.UIToolkit.Tests.Media.Animations.Mocks
         public IClockController Controller { get; set; }
 
         public double? CurrentGlobalSpeed { get; set; }
+
+        public ControllableAnimationClock()
+            : this(null) { }
+
+        public ControllableAnimationClock(double? progress)
+        {
+            CurrentProgress = progress;
+        }
+
+        /// <summary>
+        /// Returns a new <see cref="ControllableAnimationClock"/> instance whose
+        /// <see cref="CurrentProgress"/> is set to 0.
+        /// </summary>
+        public static ControllableAnimationClock NewStarted()
+        {
+            return new ControllableAnimationClock(0d);
+        }
+
+        /// <summary>
+        /// Returns a new <see cref="ControllableAnimationClock"/> instance whose
+        /// <see cref="CurrentProgress"/> is set to 1.
+        /// </summary>
+        public static ControllableAnimationClock NewFinished()
+        {
+            return new ControllableAnimationClock(1d);
+        }
 
         public object GetCurrentValue(object defaultOriginValue, object defaultDestinationValue)
         {
