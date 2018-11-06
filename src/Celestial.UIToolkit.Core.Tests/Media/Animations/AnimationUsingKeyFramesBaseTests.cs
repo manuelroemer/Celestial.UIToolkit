@@ -20,24 +20,9 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
 
     public class AnimationUsingKeyFramesBaseTests
     {
-
-        [Fact]
-        public void ReturnsLastKeyFrameValueIfPastFinalKeyTime()
-        {
-            const double finalValue = 10;
-
-            var animation = new DoubleAnimationUsingKeyFrames(new Duration(TimeSpan.FromSeconds(10)));
-            var clock = ControllableAnimationClock.FromTime(TimeSpan.FromSeconds(10));
-            animation.KeyFrames = new DoubleKeyFrameCollection()
-            {
-                new DiscreteDoubleKeyFrame(finalValue, KeyTime.FromTimeSpan(TimeSpan.FromSeconds(5)))
-            };
-
-            double result = animation.GetCurrentValue(0d, 0d, clock);
-
-            Assert.Equal(finalValue, result);
-        }
         
+        // TODO
+
     }
 
 }
