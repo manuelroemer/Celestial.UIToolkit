@@ -76,7 +76,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <param name="from">Not used.</param>
         /// <param name="to">Not used.</param>
         /// <returns>1.</returns>
-        protected override sealed double GetSegmentLengthCore(Brush from, Brush to)
+        protected override sealed double GetDistanceBetweenCore(Brush from, Brush to)
         {
             // Brushes are nominal which means that we can't get any kind of distance out of them.
             // By returning a uniform value, we basically treat Paced KeyTimes as Uniform.

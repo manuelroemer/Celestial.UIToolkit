@@ -60,11 +60,31 @@ namespace Celestial.UIToolkit.Media.Animations
                 WritePostscript();
             }
         }
-
+        
         IList IKeyFrameAnimation.KeyFrames
         {
             get => KeyFrames;
             set => KeyFrames = (TKeyFrameCollection)value;
+        }
+
+        /// <summary>
+        ///     Gets a list of resolved key frames.
+        ///     If the key frames haven't been resolved yet, they will be resolved when accessing
+        ///     this property.
+        ///     
+        /// 
+        ///     This property is only introduced for unit tests.
+        ///     If you want to access the resolved key frames from inside this class,
+        ///     use the <see cref="_resolvedKeyFrames"/> field for performance reasons.
+        /// </summary>
+        internal IReadOnlyList<ResolvedKeyFrame<TKeyFrame>> ResolvedKeyFrames
+        {
+            get
+            {
+                ReadPreamble();
+                ResolveKeyTimes();
+                return _resolvedKeyFrames;
+            }
         }
 
         /// <summary>
@@ -241,11 +261,29 @@ namespace Celestial.UIToolkit.Media.Animations
         {
             if (_areKeyFramesResolved) return;
             _resolvedKeyFrames = KeyFrameResolver<TKeyFrame>.ResolveKeyFrames(
-                _keyFrames, GetAnimationsActualDuration(), this);
+                _keyFrames, GetTotalInterpolationTime(), this);
             _areKeyFramesResolved = true;
         }
+        
+        /// <summary>
+        /// Returns the length of a single iteration of this <see cref="AnimationTimeline"/>.
+        /// </summary>
+        /// <param name="clock">
+        /// The clock that was created for this <see cref="AnimationTimeline"/>.
+        /// </param>
+        /// <returns>The animation's natural duration.</returns>
+        protected override sealed Duration GetNaturalDurationCore(Clock clock)
+        {
+            return new Duration(GetTotalInterpolationTime());
+        }
 
-        private TimeSpan GetAnimationsActualDuration()
+        /// <summary>
+        /// Returns the length of a single iteration of this animation.
+        /// </summary>
+        /// <returns>
+        /// The length of a single iteration of this animation, as <see cref="TimeSpan"/>.
+        /// </returns>
+        internal TimeSpan GetTotalInterpolationTime()
         {
             if (Duration != Duration.Automatic &&
                 Duration != Duration.Forever &&
@@ -261,6 +299,8 @@ namespace Celestial.UIToolkit.Media.Animations
 
         private TimeSpan GetDurationBasedOnKeyFrames()
         {
+            // Return the KeyTime of the largest TimeSpan-KeyFrame.
+            // If none is found, the time defaults to 1sec, as defined by the standard WPF algorithm.
             TimeSpan duration = TimeSpan.Zero;
             foreach (IKeyFrame frame in KeyFrames)
             {
@@ -271,18 +311,6 @@ namespace Celestial.UIToolkit.Media.Animations
                 }
             }
             return duration == TimeSpan.Zero ? TimeSpan.FromSeconds(1) : duration;
-        }
-
-        /// <summary>
-        /// Returns the length of a single iteration of this <see cref="AnimationTimeline"/>.
-        /// </summary>
-        /// <param name="clock">
-        /// The clock that was created for this <see cref="AnimationTimeline"/>.
-        /// </param>
-        /// <returns>The animation's natural duration.</returns>
-        protected override sealed Duration GetNaturalDurationCore(Clock clock)
-        {
-            return new Duration(GetAnimationsActualDuration());
         }
 
         /// <summary>
@@ -297,12 +325,12 @@ namespace Celestial.UIToolkit.Media.Animations
         ///     The suggested destination value. Not used by the animation.
         /// </param>
         /// <param name="animationClock">
-        ///     An <see cref="AnimationClock"/> which can generate the <see cref="Clock.CurrentTime"/>
-        ///     or <see cref="Clock.CurrentProgress"/> value to be used by the
+        ///     An <see cref="IAnimationClock"/> which can generate the <see cref="IClock.CurrentTime"/>
+        ///     or <see cref="IClock.CurrentProgress"/> value to be used by the
         ///     animation to generate its output value.
         /// </param>
         /// <returns>The value this animation believes should be the current value for the property.</returns>
-        protected override sealed T GetCurrentValueCore(T defaultOriginValue, T defaultDestinationValue, AnimationClock animationClock)
+        protected override sealed T GetCurrentValueCore(T defaultOriginValue, T defaultDestinationValue, IAnimationClock animationClock)
         {
             ResolveKeyTimes();
             if (_resolvedKeyFrames == null || _resolvedKeyFrames.Count == 0)
@@ -313,7 +341,7 @@ namespace Celestial.UIToolkit.Media.Animations
             var currentFrame = _resolvedKeyFrames[currentFrameIndex];
 
             T currentValue;
-            if (currentFrame == _resolvedKeyFrames.Last() && currentFrame.IsTimeAfter(currentClockTime))
+            if (currentFrame == _resolvedKeyFrames.Last() && currentFrame.IsTimeAfterThisFrame(currentClockTime))
             {
                 // We are past the last frame.
                 currentValue = (T)currentFrame.Value;
@@ -397,9 +425,9 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <returns>
         /// The distance between the two elements, as double.
         /// </returns>
-        public double GetSegmentLength(object from, object to)
+        public double GetDistanceBetween(object from, object to)
         {
-            return GetSegmentLengthCore((T)from, (T)to);
+            return GetDistanceBetweenCore((T)from, (T)to);
         }
 
         /// <summary>
@@ -410,7 +438,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <returns>
         /// The distance between the two elements, as double.
         /// </returns>
-        protected abstract double GetSegmentLengthCore(T from, T to);
+        protected abstract double GetDistanceBetweenCore(T from, T to);
         
     }
 
