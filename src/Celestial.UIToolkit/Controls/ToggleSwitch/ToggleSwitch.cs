@@ -51,6 +51,12 @@ namespace Celestial.UIToolkit.Controls
             remove { RemoveHandler(ToggledEvent, value); }
         }
 
+        static ToggleSwitch()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(
+                typeof(ToggleSwitch), new FrameworkPropertyMetadata(typeof(ToggleSwitch)));
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ToggleSwitch"/> class.
         /// </summary>

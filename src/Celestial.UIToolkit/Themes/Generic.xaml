@@ -11,6 +11,7 @@
         <c:SharedResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Controls/RippleOverlay.xaml" />
         <c:SharedResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Controls/SplitView.xaml" />
         <c:SharedResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Controls/NavigationView.xaml" />
+        <c:SharedResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Controls/ToggleSwitch.xaml" />
     </ResourceDictionary.MergedDictionaries>
     
 </ResourceDictionary>
