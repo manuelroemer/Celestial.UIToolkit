@@ -99,6 +99,8 @@
     <Compile Include="Controls\SplitView\SplitView.Properties.cs" />
     <Compile Include="Controls\SplitView\SplitViewDisplayMode.cs" />
     <Compile Include="Controls\SplitView\SplitViewPanePlacement.cs" />
+    <Compile Include="Controls\ToggleSwitch\ToggleSwitch.cs" />
+    <Compile Include="Controls\ToggleSwitch\ToggleSwitch.Properties.cs" />
     <Compile Include="Controls\WindowCommands.cs" />
     <Compile Include="Theming\PopupProperties.cs" />
     <Compile Include="Theming\SelectionProperties.cs" />
