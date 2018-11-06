@@ -17,7 +17,7 @@ namespace Celestial.UIToolkit.Controls
     public partial class ToggleSwitch : Control
     {
 
-        internal const string ToggleStatesVisualStateGroup = "ToggleStates";
+        internal const string ToggleStatesVisualStateGroup = "ToggledStates";
         internal const string OnVisualState = "On";
         internal const string OffVisualState = "Off";
         internal const string DraggingVisualState = "Dragging";
@@ -29,7 +29,10 @@ namespace Celestial.UIToolkit.Controls
         /// Gets a value indicating whether the user is currently dragging the
         /// <see cref="ToggleSwitch"/>.
         /// </summary>
-        protected bool IsDragging => !_isDraggingViaKey && !_isDraggingViaMouse;
+        protected bool IsDragging
+        {
+            get { return _isDraggingViaKey || _isDraggingViaMouse; }
+        }
 
         /// <summary>
         /// Identifies the <see cref="Toggled"/> routed event.
