@@ -25,9 +25,7 @@ namespace Celestial.UIToolkit.Media.Animations
     /// </summary>
     internal sealed class KeyFrameResolver<TKeyFrame> where TKeyFrame : IKeyFrame
     {
-
-        // Using an IList instead of IList<T>, to provide backward-compatibility for
-        // WPF's *KeyFrameCollection classes, which don't implement the generic interface.
+        
         private int _frameCount;
         private ResolvedKeyFrame<TKeyFrame>[] _keyFrames;
         private TimeSpan _duration;
@@ -95,7 +93,7 @@ namespace Celestial.UIToolkit.Media.Animations
         {
             var lastFrame = _keyFrames.Last();
 
-            // We will only inside this condition, if the frame's KeyTime is Uniform or Paced.
+            // We will only go inside this condition, if the frame's KeyTime is Uniform or Paced.
             if (!lastFrame.IsResolved)
             {
                 lastFrame.Resolve(_duration);
@@ -133,7 +131,7 @@ namespace Celestial.UIToolkit.Media.Animations
 
         private TimeSpan GetUniformSegmentStartTime(ArraySegment<ResolvedKeyFrame<TKeyFrame>> segment)
         {
-            // Usually the KeyTime of the previous frame.
+            // This usually returns the KeyTime of the previous frame.
             // If there is none, it's 0:0:0.
             if (segment.IncludesFirstArrayItem())
             {
@@ -147,7 +145,7 @@ namespace Celestial.UIToolkit.Media.Animations
 
         private TimeSpan GetUniformSegmentEndTime(ArraySegment<ResolvedKeyFrame<TKeyFrame>> segment)
         {
-            // Usually the KeyTime of the frame after the segment.
+            // This usually returns the KeyTime of the frame after the segment.
             // If there is none (i.e. the segment's last element is the end), use the global end time.
             if (segment.IncludesLastArrayItem())
             {
