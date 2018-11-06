@@ -1,5 +1,5 @@
 ﻿using Celestial.UIToolkit.Tests.Media.Animations.Mocks;
-using System.Collections.Generic;
+using System.Windows.Media.Animation;
 using Xunit;
 
 namespace Celestial.UIToolkit.Tests.Media.Animations
@@ -89,10 +89,104 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
             }
         }
         
+        [Theory]
+        [MemberData(
+            nameof(FromToByAnimationTestsDataSources.AllAnimationTypes),
+            MemberType = typeof(FromToByAnimationTestsDataSources)
+        )]
+        public void AnimationRespectsIsAdditive(FromToByAnimationData animationData)
+        {
+            var animation = new FromToByDoubleAnimation(
+                animationData.From,
+                animationData.To,
+                animationData.By
+            );
+            var clock = new ControllableAnimationClock();
+            animation.IsAdditive = true;
+
+            for (double progress = 0d; progress <= 1d; progress += 0.01)
+            {
+                clock.CurrentProgress = progress;
+
+                double result = animation.GetCurrentValue(
+                    animationData.DefaultOrigin,
+                    animationData.DefaultDestination,
+                    clock
+                );
+                double expectedResult = animationData.GetExpectedValueForProgress(clock.CurrentProgress.Value);
+
+                // If the animation supports IsAdditive, we add the DefaultOrigin value to the expected result.
+                // IsAdditive only gets supported, if both From and To/By are set.
+                // See https://docs.microsoft.com/en-us/dotnet/api/system.windows.media.animation.doubleanimation.isadditive?view=netframework-4.7.2
+                // for details.
+                if (animationData.From.HasValue &&
+                    (animationData.To.HasValue || animationData.By.HasValue))
+                {
+                    expectedResult += animationData.DefaultOrigin;
+                }
+
+                Assert.Equal(expectedResult, result);
+            }
+        }
+        
+        [Theory]
+        [MemberData(
+            nameof(FromToByAnimationTestsDataSources.AllAnimationTypes),
+            MemberType = typeof(FromToByAnimationTestsDataSources)
+        )]
+        public void AnimationRespectsIsCumulative(FromToByAnimationData animationData)
+        {
+            const int repeatCount = 10;
+
+            var animation = new FromToByDoubleAnimation(
+                animationData.From,
+                animationData.To,
+                animationData.By
+            );
+            var clock = new ControllableAnimationClock();
+            animation.IsCumulative = true;
+            animation.RepeatBehavior = new RepeatBehavior(repeatCount);
+
+            // IsCumulative only works, if the animation repeats.
+            // In each iteration, the previously calculated value gets set as the starting value
+            // of the next iteration.
+            // This basically means that an animation doesn't get reset after each repetition.
+            //
+            // WPF's CurrentIteration always starts from 1, not 0!
+            for (int iteration = 1; iteration <= repeatCount; iteration++)
+            {
+                for (double progress = 0d; progress <= 1d; progress += 0.01)
+                {
+                    clock.CurrentProgress = progress;
+                    clock.CurrentIteration = iteration;
+
+                    double result = animation.GetCurrentValue(
+                        animationData.DefaultOrigin,
+                        animationData.DefaultDestination,
+                        clock
+                    );
+                    double expectedResult = animationData.GetExpectedValueForProgress(clock.CurrentProgress.Value);
+                    
+                    // Calculate the value which should be added on top of the expected result for the current
+                    // iteration.
+                    double toFromDiff = animationData.ActualTo - animationData.ActualFrom;
+                    double accumulatedValue = toFromDiff * (iteration - 1);
+                    expectedResult += accumulatedValue;
+                    
+                    Assert.Equal(expectedResult, result);
+                }
+            }
+        }
 
 
         public static class FromToByAnimationTestsDataSources
         {
+
+            const double DefaultOrigin = 25d;
+            const double DefaultDestination = 200d;
+            const double From = 50d;
+            const double To = 100d;
+            const double By = 340d;
 
             /// <summary>
             ///     Returns a set of <see cref="FromToByAnimationData"/> objects which cover
@@ -109,24 +203,18 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
             {
                 get
                 {
-                    const double defaultOrigin = 25d;
-                    const double defaultDestination = 200d;
-                    const double from = 50d;
-                    const double to = 100d;
-                    const double by = 340d;
-
                     return new TheoryData<FromToByAnimationData>()
                     {
-                        new AutomaticAnimationData(defaultOrigin, defaultDestination),
-                        new FromAnimationData(defaultOrigin, defaultDestination, from),
-                        new ToAnimationData(defaultOrigin, defaultDestination, to),
-                        new ByAnimationData(defaultOrigin, defaultDestination, by),
-                        new FromToAnimationData(defaultOrigin, defaultDestination, from, to),
-                        new FromByAnimationData(defaultOrigin, defaultDestination, from, by)
+                        new AutomaticAnimationData(DefaultOrigin, DefaultDestination),
+                        new FromAnimationData(DefaultOrigin, DefaultDestination, From),
+                        new ToAnimationData(DefaultOrigin, DefaultDestination, To),
+                        new ByAnimationData(DefaultOrigin, DefaultDestination, By),
+                        new FromToAnimationData(DefaultOrigin, DefaultDestination, From, To),
+                        new FromByAnimationData(DefaultOrigin, DefaultDestination, From, By)
                     };
                 }
             }
-
+            
         }
 
         /// <summary>
@@ -144,6 +232,27 @@ namespace Celestial.UIToolkit.Tests.Media.Animations
             public double? To { get; protected set; }
 
             public double? By { get; protected set; }
+
+            public double ActualFrom
+            {
+                get
+                {
+                    return From ?? DefaultOrigin;
+                }
+            }
+
+            public double ActualTo
+            {
+                get
+                {
+                    if (To.HasValue)
+                        return To.Value;
+                    else if (By.HasValue)
+                        return ActualFrom + By.Value;
+                    else
+                        return DefaultDestination;
+                }
+            }
             
             public FromToByAnimationData(double defaultOrigin, double defaultDestination)
             {
