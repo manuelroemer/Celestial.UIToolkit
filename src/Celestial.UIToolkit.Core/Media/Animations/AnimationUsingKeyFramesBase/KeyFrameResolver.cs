@@ -189,7 +189,7 @@ namespace Celestial.UIToolkit.Media.Animations
                 for (int i = pacedSegment.Offset; i < pacedSegment.Offset + pacedSegment.Count; i++)
                 {
                     var to = _keyFrames[i].Value;
-                    totalSegmentLength += _segmentLengthProvider.GetSegmentLength(from, to);
+                    totalSegmentLength += _segmentLengthProvider.GetDistanceBetween(from, to);
                     segmentLengths.Add(totalSegmentLength);
                     from = to;
                 }
@@ -197,7 +197,7 @@ namespace Celestial.UIToolkit.Media.Animations
                 int frameAfterSegmentIndex = pacedSegment.Offset + pacedSegment.Count;
                 var frameAfterSegment = _keyFrames[frameAfterSegmentIndex];
                 TimeSpan totalSegmentDuration = frameAfterSegment.ResolvedKeyTime - startTime;
-                totalSegmentLength += _segmentLengthProvider.GetSegmentLength(from, frameAfterSegment.Value);
+                totalSegmentLength += _segmentLengthProvider.GetDistanceBetween(from, frameAfterSegment.Value);
 
                 for (int i = pacedSegment.Offset; i < pacedSegment.Offset + pacedSegment.Count; i++)
                 {

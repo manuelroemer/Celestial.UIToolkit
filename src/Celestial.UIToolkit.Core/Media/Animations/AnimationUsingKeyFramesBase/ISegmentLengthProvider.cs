@@ -7,7 +7,7 @@
     /// </summary>
     internal interface ISegmentLengthProvider
     {
-        double GetSegmentLength(object from, object to);
+        double GetDistanceBetween(object from, object to);
     }
 
 }

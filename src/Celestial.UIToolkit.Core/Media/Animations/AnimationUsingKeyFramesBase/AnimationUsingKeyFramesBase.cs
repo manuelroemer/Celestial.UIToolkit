@@ -245,6 +245,18 @@ namespace Celestial.UIToolkit.Media.Animations
             _areKeyFramesResolved = true;
         }
 
+        /// <summary>
+        /// Returns the length of a single iteration of this <see cref="AnimationTimeline"/>.
+        /// </summary>
+        /// <param name="clock">
+        /// The clock that was created for this <see cref="AnimationTimeline"/>.
+        /// </param>
+        /// <returns>The animation's natural duration.</returns>
+        protected override sealed Duration GetNaturalDurationCore(Clock clock)
+        {
+            return new Duration(GetAnimationsActualDuration());
+        }
+
         private TimeSpan GetAnimationsActualDuration()
         {
             if (Duration != Duration.Automatic &&
@@ -271,18 +283,6 @@ namespace Celestial.UIToolkit.Media.Animations
                 }
             }
             return duration == TimeSpan.Zero ? TimeSpan.FromSeconds(1) : duration;
-        }
-
-        /// <summary>
-        /// Returns the length of a single iteration of this <see cref="AnimationTimeline"/>.
-        /// </summary>
-        /// <param name="clock">
-        /// The clock that was created for this <see cref="AnimationTimeline"/>.
-        /// </param>
-        /// <returns>The animation's natural duration.</returns>
-        protected override sealed Duration GetNaturalDurationCore(Clock clock)
-        {
-            return new Duration(GetAnimationsActualDuration());
         }
 
         /// <summary>
@@ -397,9 +397,9 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <returns>
         /// The distance between the two elements, as double.
         /// </returns>
-        public double GetSegmentLength(object from, object to)
+        public double GetDistanceBetween(object from, object to)
         {
-            return GetSegmentLengthCore((T)from, (T)to);
+            return GetDistanceBetweenCore((T)from, (T)to);
         }
 
         /// <summary>
@@ -410,7 +410,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <returns>
         /// The distance between the two elements, as double.
         /// </returns>
-        protected abstract double GetSegmentLengthCore(T from, T to);
+        protected abstract double GetDistanceBetweenCore(T from, T to);
         
     }
 
