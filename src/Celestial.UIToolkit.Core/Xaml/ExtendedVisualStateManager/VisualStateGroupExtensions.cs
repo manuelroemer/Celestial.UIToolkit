@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows;
 using System.Windows.Media.Animation;
 
@@ -74,32 +75,59 @@ namespace Celestial.UIToolkit.Xaml
         /// <param name="group">The group on which the storyboards will be started/stopped.</param>
         /// <param name="element">The element on which the storyboards will be run.</param>
         /// <param name="newStoryboards">The new storyboards to be run.</param>
-        public static void StartNewThenStopOldStoryboards(
+        public static void StartNewAndStopOldStoryboards(
             this VisualStateGroup group, FrameworkElement element, params Storyboard[] newStoryboards)
         {
             if (group == null) throw new ArgumentNullException(nameof(group));
 
+            // Stop old storyboards before starting new ones.
             StopCurrentStoryboards(group, element);
-            StartStoryboards(element, newStoryboards);
-            foreach (var newStoryboard in newStoryboards)
+
+            // Merge all of the passed Storyboards into one single master storyboard.
+            // This fixes a bug in the WPF animation system which sometimes causes certain
+            // storyboards to not fire a completed event.
+            // See https://stackoverflow.com/questions/5002501/visualstatemanager-not-working-as-advertised
+            // for details.
+            Storyboard masterStoryboard = BuildMasterStoryboard(newStoryboards);
+            if (masterStoryboard != null)
             {
-                if (newStoryboard != null)
-                    group.GetCurrentStoryboards().Add(newStoryboard);
+                masterStoryboard.Begin(element, HandoffBehavior.SnapshotAndReplace, true);
+                group.GetCurrentStoryboards().Add(masterStoryboard);
             }
         }
 
-        private static void StartStoryboards(FrameworkElement element, params Storyboard[] storyboards)
+        /// <summary>
+        /// Wraps all specified <paramref name="storyboards"/> into a single
+        /// master storyboard.
+        /// </summary>
+        /// <param name="storyboards">
+        /// A range of storyboards. If this is null or empty, the resulting master storyboard will
+        /// also be null.
+        /// </param>
+        /// <returns>
+        /// A single master storyboard or null, if no input storyboards were provided.
+        /// </returns>
+        private static Storyboard BuildMasterStoryboard(Storyboard[] storyboards)
         {
-            if (storyboards == null || storyboards.Length == 0) return;
-            foreach (var storyboard in storyboards)
+            if (storyboards == null || storyboards.Length == 0)
+                return null;
+
+            if (storyboards.Length == 1 && storyboards[0] != null)
             {
-                if (storyboard != null)
-                {
-                    storyboard.Begin(element, HandoffBehavior.SnapshotAndReplace, true);
-                }
+                // If there is only one storyboard, we can recycle it.
+                // No need to create a new instance.
+                return storyboards[0];
+            }
+            else
+            {
+                var masterStoryboard = new Storyboard();
+                foreach (var sb in storyboards)
+                    if (sb != null)
+                        masterStoryboard.Children.Add(sb);
+                return masterStoryboard;
             }
         }
-
+        
         private static void StopCurrentStoryboards(VisualStateGroup group, FrameworkElement element)
         {
             var currentStoryboards = group.GetCurrentStoryboards();

@@ -59,7 +59,7 @@ namespace Celestial.UIToolkit.Xaml
         private void PlayToStateAnimations(VisualTransition currentTransition)
         {
             // Immediately start playing the ToState animations.
-            Group.StartNewThenStopOldStoryboards(
+            Group.StartNewAndStopOldStoryboards(
                 StateGroupsRoot, currentTransition?.Storyboard, ToState.Storyboard);
         }
 
@@ -98,7 +98,7 @@ namespace Celestial.UIToolkit.Xaml
             }
 
             VisualStateSource.Verbose("Starting storyboards.");
-            Group.StartNewThenStopOldStoryboards(
+            Group.StartNewAndStopOldStoryboards(
                 StateGroupsRoot,
                 currentTransition.Storyboard,
                 dynamicTransitionStoryboard);
@@ -114,7 +114,7 @@ namespace Celestial.UIToolkit.Xaml
                 if (ShouldRunStateStoryboard())
                 {
                     VisualStateSource.Verbose("Running ToState storyboards.");
-                    Group.StartNewThenStopOldStoryboards(StateGroupsRoot, ToState.Storyboard);
+                    Group.StartNewAndStopOldStoryboards(StateGroupsRoot, ToState.Storyboard);
                 }
             }
             currentTransition.SetDynamicStoryboardCompleted(true);
@@ -127,7 +127,7 @@ namespace Celestial.UIToolkit.Xaml
                 ShouldRunStateStoryboard())
             {
                 VisualStateSource.Verbose("Running ToState storyboards.");
-                Group.StartNewThenStopOldStoryboards(StateGroupsRoot, ToState.Storyboard);
+                Group.StartNewAndStopOldStoryboards(StateGroupsRoot, ToState.Storyboard);
             }
             currentTransition.SetExplicitStoryboardCompleted(true);
         }
