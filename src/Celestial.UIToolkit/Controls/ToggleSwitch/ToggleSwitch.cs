@@ -20,7 +20,7 @@ namespace Celestial.UIToolkit.Controls
     [TemplateVisualState(Name = OnContentVisualState, GroupName = ContentDisplayStatesVisualStateGroup)]
     [TemplateVisualState(Name = OffContentVisualState, GroupName = ContentDisplayStatesVisualStateGroup)]
     [TemplatePart(Name = DraggableAreaTemplatePart, Type = typeof(Thumb))]
-    public partial class ToggleSwitch : Control
+    public partial class ToggleSwitch : CommonVisualStatesControl
     {
 
         internal const string DraggableAreaTemplatePart = "PART_DraggableArea";
