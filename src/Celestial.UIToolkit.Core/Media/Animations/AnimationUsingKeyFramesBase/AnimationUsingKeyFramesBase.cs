@@ -60,11 +60,31 @@ namespace Celestial.UIToolkit.Media.Animations
                 WritePostscript();
             }
         }
-
+        
         IList IKeyFrameAnimation.KeyFrames
         {
             get => KeyFrames;
             set => KeyFrames = (TKeyFrameCollection)value;
+        }
+
+        /// <summary>
+        ///     Gets a list of resolved key frames.
+        ///     If the key frames haven't been resolved yet, they will be resolved when accessing
+        ///     this property.
+        ///     
+        /// 
+        ///     This property is only introduced for unit tests.
+        ///     If you want to access the resolved key frames from inside this class,
+        ///     use the <see cref="_resolvedKeyFrames"/> field for performance reasons.
+        /// </summary>
+        internal IReadOnlyList<ResolvedKeyFrame<TKeyFrame>> ResolvedKeyFrames
+        {
+            get
+            {
+                ReadPreamble();
+                ResolveKeyTimes();
+                return _resolvedKeyFrames;
+            }
         }
 
         /// <summary>
@@ -313,7 +333,7 @@ namespace Celestial.UIToolkit.Media.Animations
             var currentFrame = _resolvedKeyFrames[currentFrameIndex];
 
             T currentValue;
-            if (currentFrame == _resolvedKeyFrames.Last() && currentFrame.IsTimeAfter(currentClockTime))
+            if (currentFrame == _resolvedKeyFrames.Last() && currentFrame.IsTimeAfterThisFrame(currentClockTime))
             {
                 // We are past the last frame.
                 currentValue = (T)currentFrame.Value;
