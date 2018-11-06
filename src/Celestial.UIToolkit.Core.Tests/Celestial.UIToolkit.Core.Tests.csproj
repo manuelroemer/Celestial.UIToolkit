@@ -85,6 +85,7 @@
     <Compile Include="Extensions\EnumerableExtensionsTests.cs" />
     <Compile Include="ItemsSourceCollectionTests.cs" />
     <Compile Include="Media\Animations\AnimationBaseTests.cs" />
+    <Compile Include="Media\Animations\EasingFromToByAnimationTests.cs" />
     <Compile Include="Media\Animations\FromToByAnimationTests.cs" />
     <Compile Include="Media\Animations\Mocks\ControllableAnimationClock.cs" />
     <Compile Include="Media\Animations\Mocks\FromToByDoubleAnimation.cs" />

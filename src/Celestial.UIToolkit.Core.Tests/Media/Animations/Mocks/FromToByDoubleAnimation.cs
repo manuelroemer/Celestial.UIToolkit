@@ -7,7 +7,7 @@ namespace Celestial.UIToolkit.Tests.Media.Animations.Mocks
     /// <summary>
     /// A From/To/By animation which animates doubles.
     /// </summary>
-    public class FromToByDoubleAnimation : FromToByAnimationBase<double>
+    public class FromToByDoubleAnimation : EasingFromToByAnimationBase<double>
     {
 
         public FromToByDoubleAnimation(
@@ -43,7 +43,7 @@ namespace Celestial.UIToolkit.Tests.Media.Animations.Mocks
             return value * factor;
         }
 
-        protected override double InterpolateValue(double from, double to, double progress)
+        protected override double InterpolateValueCore(double from, double to, double progress)
         {
             return from + (to - from) * progress;
         }
