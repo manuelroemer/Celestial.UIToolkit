@@ -109,20 +109,6 @@
                                IsManipulationEnabled="True" />
                         
                         <Grid.Resources>
-                            <Storyboard x:Key="OnToDraggingStoryboard">
-                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="SwitchKnobContainerTranslateTransform"
-                                                               Storyboard.TargetProperty="(TranslateTransform.X)">
-                                    <LinearDoubleKeyFrame KeyTime="0" Value="{c:GridUnit 6}" />
-                                </DoubleAnimationUsingKeyFrames>
-                            </Storyboard>
-
-                            <Storyboard x:Key="OffToDraggingStoryboard">
-                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="SwitchKnobContainerTranslateTransform"
-                                                               Storyboard.TargetProperty="(TranslateTransform.X)">
-                                    <LinearDoubleKeyFrame KeyTime="0" Value="0" />
-                                </DoubleAnimationUsingKeyFrames>
-                            </Storyboard>
-
                             <Storyboard x:Key="OnStoryboard">
                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="SwitchKnobContainerTranslateTransform"
                                                                Storyboard.TargetProperty="(TranslateTransform.X)">
@@ -140,11 +126,6 @@
                         
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="ToggledStates">
-                                <!--<VisualStateGroup.Transitions>
-                                    <VisualTransition From="On" To="Dragging" Storyboard="{StaticResource OnToDraggingStoryboard}" />
-                                    <VisualTransition From="Off" To="Dragging" Storyboard="{StaticResource OffToDraggingStoryboard}" />
-                                </VisualStateGroup.Transitions>-->
-                                
                                 <VisualState x:Name="On" Storyboard="{StaticResource OnStoryboard}" />
                                 <VisualState x:Name="Off" Storyboard="{StaticResource OffStoryboard}" />
                                 <VisualState x:Name="Dragging" />
