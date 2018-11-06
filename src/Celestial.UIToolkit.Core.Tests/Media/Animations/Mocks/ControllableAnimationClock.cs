@@ -51,6 +51,21 @@ namespace Celestial.UIToolkit.Tests.Media.Animations.Mocks
             CurrentProgress = progress;
         }
 
+        public ControllableAnimationClock(TimeSpan currentTime)
+        {
+            CurrentTime = currentTime;
+        }
+
+        public static ControllableAnimationClock FromProgress(double progress)
+        {
+            return new ControllableAnimationClock(progress);
+        }
+
+        public static ControllableAnimationClock FromTime(TimeSpan currentTime)
+        {
+            return new ControllableAnimationClock(currentTime);
+        }
+        
         /// <summary>
         /// Returns a new <see cref="ControllableAnimationClock"/> instance whose
         /// <see cref="CurrentProgress"/> is set to 0.
