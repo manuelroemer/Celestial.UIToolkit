@@ -261,10 +261,10 @@ namespace Celestial.UIToolkit.Media.Animations
         {
             if (_areKeyFramesResolved) return;
             _resolvedKeyFrames = KeyFrameResolver<TKeyFrame>.ResolveKeyFrames(
-                _keyFrames, GetAnimationsActualDuration(), this);
+                _keyFrames, GetTotalInterpolationTime(), this);
             _areKeyFramesResolved = true;
         }
-
+        
         /// <summary>
         /// Returns the length of a single iteration of this <see cref="AnimationTimeline"/>.
         /// </summary>
@@ -274,10 +274,16 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <returns>The animation's natural duration.</returns>
         protected override sealed Duration GetNaturalDurationCore(Clock clock)
         {
-            return new Duration(GetAnimationsActualDuration());
+            return new Duration(GetTotalInterpolationTime());
         }
 
-        private TimeSpan GetAnimationsActualDuration()
+        /// <summary>
+        /// Returns the length of a single iteration of this animation.
+        /// </summary>
+        /// <returns>
+        /// The length of a single iteration of this animation, as <see cref="TimeSpan"/>.
+        /// </returns>
+        internal TimeSpan GetTotalInterpolationTime()
         {
             if (Duration != Duration.Automatic &&
                 Duration != Duration.Forever &&
@@ -293,6 +299,8 @@ namespace Celestial.UIToolkit.Media.Animations
 
         private TimeSpan GetDurationBasedOnKeyFrames()
         {
+            // Return the KeyTime of the largest TimeSpan-KeyFrame.
+            // If none is found, the time defaults to 1sec, as defined by the standard WPF algorithm.
             TimeSpan duration = TimeSpan.Zero;
             foreach (IKeyFrame frame in KeyFrames)
             {
