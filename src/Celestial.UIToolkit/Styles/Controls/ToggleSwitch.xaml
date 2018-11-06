@@ -16,15 +16,17 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style TargetType="controls:ToggleSwitch" BasedOn="{c:MultiStyle 'StandardForeground StandardFontProperties Shadow0'}">
+    <Style TargetType="controls:ToggleSwitch" BasedOn="{c:MultiStyle 'PrimaryBackground ControlBorderAccent2States StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
-        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
+        <Setter Property="BorderThickness" Value="{StaticResource WideBorderThickness}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource DisabledThemeShadow}" />
+        <Setter Property="OffKnobOffset" Value="0" />
+        <Setter Property="OnKnobOffset" Value="{c:GridUnit 6, TargetType=sys:Double}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:ToggleSwitch">
@@ -61,7 +63,7 @@
                                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                           Visibility="Collapsed" />
-                        
+
                         <ContentPresenter x:Name="OffContentSite"
                                           Grid.Row="2"
                                           Grid.Column="2"
@@ -73,72 +75,106 @@
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                           Visibility="Collapsed" />
 
+                        <Border x:Name="SwitchBorder"
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Height="{c:GridUnit 5}"
+                                CornerRadius="{c:GridUnit 2.5}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Background="{TemplateBinding Background}" />
+
+                        <Grid x:Name="SwitchKnobContainer"
+                              Grid.Row="2"
+                              Grid.Column="0"
+                              Width="{c:GridUnit 5}"
+                              Height="{c:GridUnit 5}"
+                              HorizontalAlignment="Left">
+                            <Grid.RenderTransform>
+                                <TranslateTransform x:Name="SwitchKnobContainerTranslateTransform"
+                                                    X="{c:TemplatedParentBinding KnobOffset}" />
+                            </Grid.RenderTransform>
+                            <Ellipse x:Name="SwitchKnob" 
+                                     Fill="{TemplateBinding BorderBrush}"
+                                     Width="{c:GridUnit 2.5}"
+                                     Height="{c:GridUnit 2.5}" />
+                        </Grid>
+
+                        <Thumb x:Name="PART_DraggableArea"
+                               Style="{DynamicResource TransparentThumb}"
+                               Grid.Row="1"
+                               Grid.Column="0"
+                               Grid.ColumnSpan="3"
+                               Grid.RowSpan="3"
+                               IsManipulationEnabled="True" />
+                        
+                        <Grid.Resources>
+                            <Storyboard x:Key="OnToDraggingStoryboard">
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="SwitchKnobContainerTranslateTransform"
+                                                               Storyboard.TargetProperty="(TranslateTransform.X)">
+                                    <LinearDoubleKeyFrame KeyTime="0" Value="{c:GridUnit 6}" />
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+
+                            <Storyboard x:Key="OffToDraggingStoryboard">
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="SwitchKnobContainerTranslateTransform"
+                                                               Storyboard.TargetProperty="(TranslateTransform.X)">
+                                    <LinearDoubleKeyFrame KeyTime="0" Value="0" />
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+
+                            <Storyboard x:Key="OnStoryboard">
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="SwitchKnobContainerTranslateTransform"
+                                                               Storyboard.TargetProperty="(TranslateTransform.X)">
+                                    <LinearDoubleKeyFrame KeyTime="{DynamicResource InnerPartialAnimationKeyTime}" Value="{c:GridUnit 6}" />
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+
+                            <Storyboard x:Key="OffStoryboard">
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="SwitchKnobContainerTranslateTransform"
+                                                               Storyboard.TargetProperty="(TranslateTransform.X)">
+                                    <LinearDoubleKeyFrame KeyTime="{DynamicResource InnerPartialAnimationKeyTime}" Value="0" />
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </Grid.Resources>
+                        
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="ToggledStates">
-                                <VisualStateGroup.Transitions>
-
-                                    <!-- Since we are dealing with three-way states, we need to do the hiding
-                                         of the relevant content presenters here, with VisualTransitions. -->
-                                    <VisualTransition From="On" To="Dragging" GeneratedDuration="0">
-                                        <VisualTransition.Storyboard>
-                                            <Storyboard>
-                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="OnContentSite"
-                                                                               Storyboard.TargetProperty="(UIElement.Visibility)">
-                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
-                                                </ObjectAnimationUsingKeyFrames>
-                                            </Storyboard>
-                                        </VisualTransition.Storyboard>
-                                    </VisualTransition>
-
-                                    <VisualTransition From="Off" To="Dragging" GeneratedDuration="0">
-                                        <VisualTransition.Storyboard>
-                                            <Storyboard>
-                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="OffContentSite"
-                                                                               Storyboard.TargetProperty="(UIElement.Visibility)">
-                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
-                                                </ObjectAnimationUsingKeyFrames>
-                                            </Storyboard>
-                                        </VisualTransition.Storyboard>
-                                    </VisualTransition>
-
-                                    <VisualTransition From="Dragging" To="On" GeneratedDuration="0">
-                                        <VisualTransition.Storyboard>
-                                            <Storyboard>
-                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="OnContentSite"
-                                                                               Storyboard.TargetProperty="(UIElement.Visibility)">
-                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
-                                                </ObjectAnimationUsingKeyFrames>
-                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="OffContentSite"
-                                                                               Storyboard.TargetProperty="(UIElement.Visibility)">
-                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
-                                                </ObjectAnimationUsingKeyFrames>
-                                            </Storyboard>
-                                        </VisualTransition.Storyboard>
-                                    </VisualTransition>
-
-                                    <VisualTransition From="Dragging" To="Off" GeneratedDuration="0">
-                                        <VisualTransition.Storyboard>
-                                            <Storyboard>
-                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="OnContentSite"
-                                                                               Storyboard.TargetProperty="(UIElement.Visibility)">
-                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}" />
-                                                </ObjectAnimationUsingKeyFrames>
-                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetName="OffContentSite"
-                                                                               Storyboard.TargetProperty="(UIElement.Visibility)">
-                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
-                                                </ObjectAnimationUsingKeyFrames>
-                                            </Storyboard>
-                                        </VisualTransition.Storyboard>
-                                    </VisualTransition>
-                                    
-                                </VisualStateGroup.Transitions>
-
-                                <VisualState x:Name="On" />
-                                <VisualState x:Name="Off" />
+                                <!--<VisualStateGroup.Transitions>
+                                    <VisualTransition From="On" To="Dragging" Storyboard="{StaticResource OnToDraggingStoryboard}" />
+                                    <VisualTransition From="Off" To="Dragging" Storyboard="{StaticResource OffToDraggingStoryboard}" />
+                                </VisualStateGroup.Transitions>-->
+                                
+                                <VisualState x:Name="On" Storyboard="{StaticResource OnStoryboard}" />
+                                <VisualState x:Name="Off" Storyboard="{StaticResource OffStoryboard}" />
                                 <VisualState x:Name="Dragging" />
+                            </VisualStateGroup>
+
+                            <VisualStateGroup x:Name="ContentDisplayStates">
+                                <c:ExtendedVisualState x:Name="OnContent">
+                                    <c:ExtendedVisualState.Setters>
+                                        <Setter TargetName="OnContentSite" Property="Visibility" Value="Visible" />
+                                    </c:ExtendedVisualState.Setters>
+                                </c:ExtendedVisualState>
+                                <c:ExtendedVisualState x:Name="OffContent">
+                                    <c:ExtendedVisualState.Setters>
+                                        <Setter TargetName="OffContentSite" Property="Visibility" Value="Visible" />
+                                    </c:ExtendedVisualState.Setters>
+                                </c:ExtendedVisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                     </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="ReplaceOnOffContentWithHeader" Value="True">
+                            <Setter TargetName="OnContentSite" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="OffContentSite" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="HeaderContentSite" Property="Grid.Row" Value="2" />
+                            <Setter TargetName="HeaderContentSite" Property="Grid.Column" Value="2" />
+                            <Setter TargetName="HeaderContentSite" Property="HorizontalAlignment" Value="{c:TemplatedParentBinding HorizontalContentAlignment}" />
+                            <Setter TargetName="HeaderContentSite" Property="VerticalAlignment" Value="{c:TemplatedParentBinding VerticalContentAlignment}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

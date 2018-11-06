@@ -15,6 +15,18 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
+    <Style x:Key="TransparentThumb" TargetType="Thumb">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Thumb">
+                    <Rectangle Fill="Transparent" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
     <!-- A Thumb in one color with support for VisualStates via Theming properties. -->
     <Style x:Key="MonochromeThumb" TargetType="Thumb" BasedOn="{c:MultiStyle 'ControlBackground ControlBorder'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />

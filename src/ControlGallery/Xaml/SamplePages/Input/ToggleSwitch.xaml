@@ -37,6 +37,28 @@
             </controls:ControlPresenter.Options>
         </controls:ControlPresenter>
 
+        <controls:ControlPresenter Header="A ToggleSwitch with the Header replacing the content."
+                                   Xaml="{Binding Xaml, ElementName=ToggleSwitchEx2}"
+                                   VerticalAlignment="Top">
+            <controls:ControlPresenter.Description>
+                Sometimes, you may want to have the On- and Off-Content to display the same thing.
+                This can be done by setting the Header, and then setting
+                ReplaceOnOffContentWithHeader to true.
+            </controls:ControlPresenter.Description>
+            <smtx:XamlDisplay x:Name="ToggleSwitchEx2" Key="ToggleSwitchEx2">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx2}">
+                    <c:ToggleSwitch ReplaceOnOffContentWithHeader="True"
+                                    Header="This Header gets displayed as Content" />
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <CheckBox x:Name="IsEnabledCheckBoxEx2"
+                          IsChecked="True"
+                          Content="IsEnabled" />
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+
     </StackPanel>
 
 </UserControl>

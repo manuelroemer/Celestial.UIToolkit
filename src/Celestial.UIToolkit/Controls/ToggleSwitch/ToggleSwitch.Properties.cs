@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
@@ -9,7 +10,9 @@ namespace Celestial.UIToolkit.Controls
 
     public partial class ToggleSwitch
     {
-        
+
+        #region Common Properties
+
         /// <summary>
         /// Identifies the <see cref="IsOn"/> dependency property.
         /// </summary>
@@ -63,6 +66,16 @@ namespace Celestial.UIToolkit.Controls
                 new PropertyMetadata(null));
 
         /// <summary>
+        /// Identifies the <see cref="ReplaceOnOffContentWithHeader"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty ReplaceOnOffContentWithHeaderProperty =
+            DependencyProperty.Register(
+                nameof(ReplaceOnOffContentWithHeader),
+                typeof(bool),
+                typeof(ToggleSwitch),
+                new PropertyMetadata(false));
+
+        /// <summary>
         /// Gets or sets a value indicating whether the switch is currently "On", meaning that
         /// it is toggled.
         /// </summary>
@@ -109,6 +122,115 @@ namespace Celestial.UIToolkit.Controls
             get { return (object)GetValue(OffCommandParameterProperty); }
             set { SetValue(OffCommandParameterProperty, value); }
         }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the <see cref="OnContent"/> and
+        /// <see cref="OffContent"/> get replaced with the <see cref="Header"/>.
+        /// </summary>
+        public bool ReplaceOnOffContentWithHeader
+        {
+            get { return (bool)GetValue(ReplaceOnOffContentWithHeaderProperty); }
+            set { SetValue(ReplaceOnOffContentWithHeaderProperty, value); }
+        }
+
+        #endregion
+
+        #region Template Properties
+        
+        /// <summary>
+        /// Identifies the <see cref="DragOrientation"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty DragOrientationProperty =
+            DependencyProperty.Register(
+                nameof(DragOrientation),
+                typeof(Orientation),
+                typeof(ToggleSwitch),
+                new PropertyMetadata(Orientation.Horizontal));
+
+        private static readonly DependencyPropertyKey KnobOffsetPropertyKey =
+            DependencyProperty.RegisterReadOnly(
+                nameof(KnobOffset),
+                typeof(double),
+                typeof(ToggleSwitch),
+                new PropertyMetadata(
+                    0d,
+                    null,
+                    (d, value) => ((ToggleSwitch)d).CoerceKnobOffset((double)value)));
+
+        /// <summary>
+        /// Identifies the <see cref="KnobOffset"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty KnobOffsetProperty =
+            KnobOffsetPropertyKey.DependencyProperty;
+
+        /// <summary>
+        /// Identifies the <see cref="OnKnobOffset"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty OnKnobOffsetProperty =
+            DependencyProperty.Register(
+                nameof(OnKnobOffset),
+                typeof(double?),
+                typeof(ToggleSwitch),
+                new PropertyMetadata(null));
+
+        /// <summary>
+        /// Identifies the <see cref="OffKnobOffset"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty OffKnobOffsetProperty =
+            DependencyProperty.Register(
+                nameof(OffKnobOffset),
+                typeof(double?),
+                typeof(ToggleSwitch),
+                new PropertyMetadata(null));
+
+        /// <summary>
+        /// Gets or sets whether x or y coordinates are captured when the user drags the
+        /// <see cref="ToggleSwitch"/>.
+        /// </summary>
+        public Orientation DragOrientation
+        {
+            get { return (Orientation)GetValue(DragOrientationProperty); }
+            set { SetValue(DragOrientationProperty, value); }
+        }
+
+        /// <summary>
+        /// Gets the offset of the <see cref="ToggleSwitch"/>'s knob.
+        /// This value is calculated when the user drags the <see cref="ToggleSwitch"/>.
+        /// This is intended to be used by templates.
+        /// </summary>
+        public double KnobOffset
+        {
+            get { return (double)GetValue(KnobOffsetProperty); }
+            private set { SetValue(KnobOffsetPropertyKey, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the value of the <see cref="KnobOffset"/>, when <see cref="IsOn"/>
+        /// is false.
+        /// This is intended to be used by templates and must explicitly be set in a style to have
+        /// an effect.
+        /// </summary>
+        public double? OnKnobOffset
+        {
+            get { return (double?)GetValue(OnKnobOffsetProperty); }
+            set { SetValue(OnKnobOffsetProperty, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the value of the <see cref="KnobOffset"/>, when <see cref="IsOn"/>
+        /// is true.
+        /// This is intended to be used by templates and must explicitly be set in a style to have
+        /// an effect.
+        /// </summary>
+        public double? OffKnobOffset
+        {
+            get { return (double?)GetValue(OffKnobOffsetProperty); }
+            set { SetValue(OffKnobOffsetProperty, value); }
+        }
+
+        #endregion
+
+        #region Content Properties
 
         /// <summary>
         /// Gets an enumerator on the <see cref="ToggleSwitch"/>'s logical children.
@@ -715,6 +837,8 @@ namespace Celestial.UIToolkit.Controls
         protected virtual void OnOffContentStringFormatChanged(
             string oldStringFormat, string newStringFormat)
         { }
+
+        #endregion
 
         #endregion
 
