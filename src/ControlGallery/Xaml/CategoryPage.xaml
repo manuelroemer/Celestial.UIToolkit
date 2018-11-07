@@ -26,14 +26,14 @@
                                 <Storyboard x:Key="MouseOverStoryboard">
                                     <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Card"
                                                                    Storyboard.TargetProperty="(c:ThemeShadow.Elevation)">
-                                        <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Path=(c:MouseOverProperties.ShadowElevation), RelativeSource={RelativeSource TemplatedParent}}" />
+                                        <DiscreteDoubleKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(c:MouseOverProperties.ShadowElevation)}" />
                                     </DoubleAnimationUsingKeyFrames>
                                 </Storyboard>
                                 
                                 <Storyboard x:Key="DisabledStoryboard">
                                     <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Card"
                                                                    Storyboard.TargetProperty="(c:ThemeShadow.Elevation)">
-                                        <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding Path=(c:MouseOverProperties.ShadowElevation), RelativeSource={RelativeSource TemplatedParent}}" />
+                                        <DiscreteDoubleKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(c:MouseOverProperties.ShadowElevation)}" />
                                     </DoubleAnimationUsingKeyFrames>
                                 </Storyboard>
                                 
@@ -70,13 +70,12 @@
         <Style x:Key="CardListView" TargetType="ListView">
             <Setter Property="ItemContainerStyle" Value="{StaticResource CardListViewItem}" />
             <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ListView">
-                        <ScrollViewer>
-                            <ItemsPresenter x:Name="ItemsPresenter"
-                                            Margin="{TemplateBinding Padding}"/>
-                        </ScrollViewer>
+                        <ItemsPresenter x:Name="ItemsPresenter"
+                                        Margin="{TemplateBinding Padding}" />
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>

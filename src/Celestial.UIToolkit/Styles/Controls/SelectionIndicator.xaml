@@ -13,12 +13,14 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:SelectionIndicator">
-                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
+                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
+                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
                         <Border x:Name="Bd"
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
-                                RenderTransformOrigin="0.5,0.5">
+                                RenderTransformOrigin="0.5,0.5"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
                             <Border.RenderTransform>
                                 <ScaleTransform ScaleX="0" ScaleY="1" />
                             </Border.RenderTransform>

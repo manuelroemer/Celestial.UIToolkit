@@ -229,6 +229,79 @@ namespace Celestial.UIToolkit.Theming
 
     }
 
+    public static partial class MouseOverActiveProperties
+    {
+
+        public static readonly DependencyProperty BorderBrushProperty =
+            DependencyProperty.RegisterAttached(
+                "BorderBrush",
+                typeof(Brush),
+                typeof(MouseOverActiveProperties),
+                new PropertyMetadata(Brushes.Transparent));
+
+        public static Brush GetBorderBrush(DependencyObject obj)
+        {
+            return (Brush)obj.GetValue(BorderBrushProperty);
+        }
+
+        public static void SetBorderBrush(DependencyObject obj, Brush value)
+        {
+            obj.SetValue(BorderBrushProperty, value);
+        }
+
+        public static readonly DependencyProperty BackgroundBrushProperty =
+            DependencyProperty.RegisterAttached(
+                "BackgroundBrush",
+                typeof(Brush),
+                typeof(MouseOverActiveProperties),
+                new PropertyMetadata(Brushes.Transparent));
+
+        public static Brush GetBackgroundBrush(DependencyObject obj)
+        {
+            return (Brush)obj.GetValue(BackgroundBrushProperty);
+        }
+
+        public static void SetBackgroundBrush(DependencyObject obj, Brush value)
+        {
+            obj.SetValue(BackgroundBrushProperty, value);
+        }
+
+        public static readonly DependencyProperty ForegroundBrushProperty =
+            DependencyProperty.RegisterAttached(
+                "ForegroundBrush",
+                typeof(Brush),
+                typeof(MouseOverActiveProperties),
+                new PropertyMetadata(Brushes.Transparent));
+
+        public static Brush GetForegroundBrush(DependencyObject obj)
+        {
+            return (Brush)obj.GetValue(ForegroundBrushProperty);
+        }
+
+        public static void SetForegroundBrush(DependencyObject obj, Brush value)
+        {
+            obj.SetValue(ForegroundBrushProperty, value);
+        }
+
+        public static readonly DependencyProperty ShadowElevationProperty =
+            DependencyProperty.RegisterAttached(
+                "ShadowElevation",
+                typeof(double),
+                typeof(MouseOverActiveProperties),
+                new PropertyMetadata(0d));
+
+        public static double GetShadowElevation(DependencyObject obj)
+        {
+            return (double)obj.GetValue(ShadowElevationProperty);
+        }
+
+        public static void SetShadowElevation(DependencyObject obj, double value)
+        {
+            obj.SetValue(ShadowElevationProperty, value);
+        }
+
+    }
+
     public static partial class DisabledProperties
     {
 

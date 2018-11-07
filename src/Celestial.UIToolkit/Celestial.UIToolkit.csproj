@@ -25,6 +25,7 @@
     <DocumentationFile>bin\Debug\Celestial.UIToolkit.xml</DocumentationFile>
     <RunCodeAnalysis>true</RunCodeAnalysis>
     <UseVSHostingProcess>true</UseVSHostingProcess>
+    <LangVersion>7.2</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -34,6 +35,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\Celestial.UIToolkit.xml</DocumentationFile>
+    <LangVersion>7.2</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
@@ -62,9 +64,11 @@
       <DependentUpon>Card.GeneratedProperties.tt</DependentUpon>
     </Compile>
     <Compile Include="Controls\ClippingBorder.cs" />
+    <Compile Include="Controls\CommonVisualStatesControl.cs" />
     <Compile Include="Controls\ConstructedFrameworkElement.cs" />
     <Compile Include="Controls\ExtendedListView.cs" />
     <Compile Include="Controls\Icon\IconElement.cs" />
+    <Compile Include="Controls\ManipulationBoundaryFeedbackAwareContentControl.cs" />
     <Compile Include="Controls\NavigationView\Items\NavigationViewItem.cs" />
     <Compile Include="Controls\NavigationView\NavigationView.cs" />
     <Compile Include="Controls\NavigationView\NavigationView.Header.cs" />
@@ -96,31 +100,27 @@
     <Compile Include="Controls\SplitView\SplitView.Properties.cs" />
     <Compile Include="Controls\SplitView\SplitViewDisplayMode.cs" />
     <Compile Include="Controls\SplitView\SplitViewPanePlacement.cs" />
+    <Compile Include="Controls\ToggleSwitch\ToggleSwitch.cs" />
+    <Compile Include="Controls\ToggleSwitch\ToggleSwitch.Properties.cs" />
+    <Compile Include="Controls\WindowCommands.cs" />
     <Compile Include="Theming\PopupProperties.cs" />
+    <Compile Include="Theming\SelectionProperties.cs" />
+    <Compile Include="Theming\TabItemProperties.cs" />
     <Compile Include="Theming\TextBoxHelper.cs" />
     <Compile Include="Theming\ControlProperties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Theming\RippleProperties.cs" />
     <Compile Include="Theming\ShadowProperties.cs" />
-    <Compile Include="Theming\TabControlProperties.cs" />
     <Compile Include="Theming\TextBoxProperties.cs" />
+    <Compile Include="Theming\TreeViewHelper.cs" />
     <Compile Include="Theming\VisualStateProperties.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>VisualStateProperties.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
+    <Compile Include="Theming\WindowTitlebarProperties.cs" />
     <Compile Include="Controls\NavigationView\NavigationView.DisplayMode.cs" />
     <Compile Include="Controls\ShadowControls\ThemeShadow.Properties.cs" />
   </ItemGroup>
@@ -145,6 +145,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\Controls\ListBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Controls\ManipulationBoundaryFeedbackAwareContentControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -181,6 +185,34 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Styles\Controls\ProgressBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\StatusBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\ScrollBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\ScrollViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\ListView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\Slider.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\TreeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\ToggleSwitch.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -292,6 +324,5 @@
       <Name>Celestial.UIToolkit.Core</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

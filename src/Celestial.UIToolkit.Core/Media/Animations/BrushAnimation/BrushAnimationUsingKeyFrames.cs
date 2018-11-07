@@ -35,8 +35,7 @@ namespace Celestial.UIToolkit.Media.Animations
 
             var firstFrame = KeyFrames.First();
             var brushType = firstFrame.Value.GetType();
-            return SupportedAnimationBrushes.GetAnimationHelper(brushType)
-                                            .GetZeroValue();
+            return BrushAnimationHelper.Instance.GetZeroValue();
         }
 
         /// <summary>
@@ -51,9 +50,12 @@ namespace Celestial.UIToolkit.Media.Animations
         /// </returns>
         protected override sealed Brush AddValues(Brush a, Brush b)
         {
+            BrushAnimationInput transformedInput = BrushAnimationInputTransformer.Transform(a, b);
+            a = transformedInput.From;
+            b = transformedInput.To;
+
             BrushAnimationValidator.ValidateBrushes(a, b);
-            return SupportedAnimationBrushes.GetAnimationHelper(a)
-                                            .AddValues(a, b);
+            return BrushAnimationHelper.Instance.AddValues(a, b);
         }
 
         /// <summary>
@@ -64,8 +66,8 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <returns>A new <see cref="Brush"/>, which represents the scaling's result.</returns>
         protected override sealed Brush ScaleValue(Brush value, double factor)
         {
-            return SupportedAnimationBrushes.GetAnimationHelper(value)
-                                            .ScaleValue(value, factor);
+            value = BrushAnimationInputTransformer.Transform(value);
+            return BrushAnimationHelper.Instance.ScaleValue(value, factor);
         }
 
         /// <summary>
@@ -74,7 +76,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <param name="from">Not used.</param>
         /// <param name="to">Not used.</param>
         /// <returns>1.</returns>
-        protected override sealed double GetSegmentLengthCore(Brush from, Brush to)
+        protected override sealed double GetDistanceBetweenCore(Brush from, Brush to)
         {
             // Brushes are nominal which means that we can't get any kind of distance out of them.
             // By returning a uniform value, we basically treat Paced KeyTimes as Uniform.

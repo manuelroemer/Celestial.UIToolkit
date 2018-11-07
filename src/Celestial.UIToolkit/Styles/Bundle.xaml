@@ -10,11 +10,13 @@
         <c:SharedResourceDictionary Source="Shared/FocusVisuals.xaml" />
         
         <c:SharedResourceDictionary Source="Controls/IconElements.xaml" />
+        <c:SharedResourceDictionary Source="Controls/ManipulationBoundaryFeedbackAwareContentControl.xaml" />
         <c:SharedResourceDictionary Source="Controls/SelectionIndicator.xaml" />
         <c:SharedResourceDictionary Source="Controls/PlaceholderOverlay.xaml" />
         <c:SharedResourceDictionary Source="Controls/RippleOverlay.xaml" />
         <c:SharedResourceDictionary Source="Controls/SplitView.xaml" />
         <c:SharedResourceDictionary Source="Controls/NavigationView.xaml" />
+        <c:SharedResourceDictionary Source="Controls/ToggleSwitch.xaml" />
         
         <c:SharedResourceDictionary Source="Controls/TextBlock.xaml" />
         <c:SharedResourceDictionary Source="Controls/Label.xaml" />
@@ -22,15 +24,21 @@
         <c:SharedResourceDictionary Source="Controls/CheckBox.xaml" />
         <c:SharedResourceDictionary Source="Controls/RadioButton.xaml" />
         <c:SharedResourceDictionary Source="Controls/Separator.xaml" />
+        <c:SharedResourceDictionary Source="Controls/ScrollBar.xaml" />
+        <c:SharedResourceDictionary Source="Controls/ScrollViewer.xaml" />
         <c:SharedResourceDictionary Source="Controls/Card.xaml" />
         <c:SharedResourceDictionary Source="Controls/TextBox.xaml" />
         <c:SharedResourceDictionary Source="Controls/ComboBox.xaml" />
         <c:SharedResourceDictionary Source="Controls/ListBox.xaml" />
+        <c:SharedResourceDictionary Source="Controls/ListView.xaml" />
+        <c:SharedResourceDictionary Source="Controls/TreeView.xaml" />
         <c:SharedResourceDictionary Source="Controls/ToolTip.xaml" />
         <c:SharedResourceDictionary Source="Controls/ProgressBar.xaml" />
         <c:SharedResourceDictionary Source="Controls/Menu.xaml" />
         <c:SharedResourceDictionary Source="Controls/ToolBar.xaml" />
+        <c:SharedResourceDictionary Source="Controls/StatusBar.xaml" />
         <c:SharedResourceDictionary Source="Controls/TabControl.xaml" />
+        <c:SharedResourceDictionary Source="Controls/Slider.xaml" />
         <c:SharedResourceDictionary Source="Controls/Expander.xaml" />
         <c:SharedResourceDictionary Source="Controls/GroupBox.xaml" />
         <c:SharedResourceDictionary Source="Controls/Window.xaml" />

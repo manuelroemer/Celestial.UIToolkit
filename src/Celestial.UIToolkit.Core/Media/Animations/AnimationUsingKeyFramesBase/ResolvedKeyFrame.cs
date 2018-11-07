@@ -87,12 +87,12 @@ namespace Celestial.UIToolkit.Media.Animations
             return ResolvedKeyTime.CompareTo(otherFrame.ResolvedKeyTime);
         }
 
-        public bool IsTimeAfter(TimeSpan time)
+        public bool IsTimeAfterThisFrame(TimeSpan time)
         {
             return time > ResolvedKeyTime;
         }
 
-        public bool IsTimeBeforeOrInside(TimeSpan time)
+        public bool IsTimeBeforeOrInsideThisFrame(TimeSpan time)
         {
             return time <= ResolvedKeyTime;
         }

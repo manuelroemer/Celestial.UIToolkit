@@ -22,14 +22,14 @@ namespace Celestial.UIToolkit.Controls
         public bool IsSettingsItem { get; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="NavigationViewItemEventArgs"/> class
+        /// Initializes a new instance of the <see cref="NavigationViewItemEventArgs"/> class.
         /// </summary>
         /// <param name="item">The item to which this event data object refers.</param>
         public NavigationViewItemEventArgs(object item)
             : this(item, false) { }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="NavigationViewItemEventArgs"/> class
+        /// Initializes a new instance of the <see cref="NavigationViewItemEventArgs"/> class.
         /// </summary>
         /// <param name="item">The item to which this event data object refers.</param>
         /// <param name="isSettingsItem">

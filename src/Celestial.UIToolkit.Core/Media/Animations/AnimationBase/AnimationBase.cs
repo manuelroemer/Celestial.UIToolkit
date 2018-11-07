@@ -30,7 +30,7 @@ namespace Celestial.UIToolkit.Media.Animations
                 return typeof(T);
             }
         }
-        
+
         /// <summary>
         ///     Returns the current value of the animation.
         /// </summary>
@@ -50,8 +50,43 @@ namespace Celestial.UIToolkit.Media.Animations
         ///     animation to generate its output value.
         /// </param>
         /// <returns>The value this animation believes should be the current value for the property.</returns>
-        public override object GetCurrentValue(
+        public override sealed object GetCurrentValue(
             object defaultOriginValue, object defaultDestinationValue, AnimationClock animationClock)
+        {
+            if (animationClock is null)
+                throw new ArgumentNullException(nameof(animationClock)); 
+
+            // The custom animations are using an IAnimationClock instead of the WPF class.
+            // Use an adapter to proxy the WPF type to the interface.
+            var clockAdapter = new AnimationClockAdapter(animationClock);
+            return GetCurrentValue(
+                defaultOriginValue,
+                defaultDestinationValue,
+                clockAdapter
+            );
+        }
+
+        /// <summary>
+        ///     Returns the current value of the animation.
+        /// </summary>
+        /// <param name="defaultOriginValue">
+        ///     The origin value provided to the animation if the animation does not have its
+        ///     own start value. If this animation is the first in a composition chain it will
+        ///     be the base value of the property being animated; otherwise it will be the value
+        ///     returned by the previous animation in the chain.
+        /// </param>
+        /// <param name="defaultDestinationValue">
+        ///     The destination value provided to the animation if the animation does not have
+        ///     its own destination value.
+        /// </param>
+        /// <param name="animationClock">
+        ///     A non-specific <see cref="IAnimationClock"/> which can generate the <see cref="IClock.CurrentTime"/>
+        ///     or <see cref="IClock.CurrentProgress"/> value to be used by the
+        ///     animation to generate its output value.
+        /// </param>
+        /// <returns>The value this animation believes should be the current value for the property.</returns>
+        public virtual T GetCurrentValue(
+            object defaultOriginValue, object defaultDestinationValue, IAnimationClock animationClock)
         {
             ReadPreamble();
             if (animationClock == null) throw new ArgumentNullException(nameof(animationClock));
@@ -78,15 +113,15 @@ namespace Celestial.UIToolkit.Media.Animations
         ///     does not have its own explicitly set end value.
         /// </param>
         /// <param name="animationClock">
-        ///     An <see cref="AnimationClock"/> which can generate the <see cref="Clock.CurrentTime"/>
-        ///     or <see cref="Clock.CurrentProgress"/> value to be used by the
+        ///     An <see cref="IAnimationClock"/> which can generate the <see cref="IClock.CurrentTime"/>
+        ///     or <see cref="IClock.CurrentProgress"/> value to be used by the
         ///     animation to generate its output value.
         /// </param>
         /// <returns>The value this animation believes should be the current value for the property.</returns>
         protected abstract T GetCurrentValueCore(
             T defaultOriginValue,
             T defaultDestinationValue,
-            AnimationClock animationClock);
+            IAnimationClock animationClock);
         
         private void ThrowForInvalidAnimationValueType(string paramName)
         {

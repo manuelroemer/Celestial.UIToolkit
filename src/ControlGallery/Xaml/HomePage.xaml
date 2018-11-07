@@ -5,20 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:c="http://celestial-ui.com"
              xmlns:local="clr-namespace:ControlGallery.Xaml"
+             xmlns:presentationOptions="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options" 
              xmlns:prism="http://prismlibrary.com/"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              prism:ViewModelLocator.AutoWireViewModel="True">
 
-    <StackPanel>
-        <Border Width="100" Height="100">
-            <c:SelectionIndicator IsSelected="{Binding IsChecked, ElementName=CheckBox, Mode=TwoWay}"
-                                 IsEnabled="{Binding IsChecked, ElementName=IsEnabled, Mode=TwoWay}"
-                                 Orientation="Vertical"
-                                 Background="Blue"  />
-        </Border>
-        <CheckBox x:Name="CheckBox">IsSelected</CheckBox>
-        <CheckBox x:Name="IsEnabled">IsEnabled</CheckBox>
-    </StackPanel>
-    
+    <Grid Margin="20">
+        <c:ToggleSwitch IsOn="True" Header="Header" />
+    </Grid>
+
 </UserControl>

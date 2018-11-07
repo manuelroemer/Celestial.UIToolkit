@@ -15,6 +15,91 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
+    <Style x:Key="TransparentThumb" TargetType="Thumb">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Thumb">
+                    <Rectangle Fill="Transparent" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!-- A Thumb in one color with support for VisualStates via Theming properties. -->
+    <Style x:Key="MonochromeThumb" TargetType="Thumb" BasedOn="{c:MultiStyle 'ControlBackground ControlBorder'}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Thumb">
+                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
+                          Background="Transparent">
+                        <Border x:Name="Bd"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Padding="{TemplateBinding Padding}"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+
+                        <Grid.Resources>
+                            <Storyboard x:Key="MouseOverStoryboard">
+                                <c:BrushAnimation Storyboard.TargetName="Bd"
+                                                  Storyboard.TargetProperty="Background"
+                                                  Duration="0"
+                                                  To="{c:TemplatedParentBinding Path=(theming:MouseOverProperties.BackgroundBrush)}" />
+                                <c:BrushAnimation Storyboard.TargetName="Bd"
+                                                  Storyboard.TargetProperty="BorderBrush"
+                                                  Duration="0"
+                                                  To="{c:TemplatedParentBinding Path=(theming:MouseOverProperties.BorderBrush)}" />
+                            </Storyboard>
+
+                            <Storyboard x:Key="PressedStoryboard">
+                                <c:BrushAnimation Storyboard.TargetName="Bd"
+                                                  Storyboard.TargetProperty="Background"
+                                                  Duration="0"
+                                                  To="{c:TemplatedParentBinding Path=(theming:PressedProperties.BackgroundBrush)}" />
+                                <c:BrushAnimation Storyboard.TargetName="Bd"
+                                                  Storyboard.TargetProperty="BorderBrush"
+                                                  Duration="0"
+                                                  To="{c:TemplatedParentBinding Path=(theming:PressedProperties.BorderBrush)}" />
+                            </Storyboard>
+
+                            <Storyboard x:Key="DisabledStoryboard">
+                                <c:BrushAnimation Storyboard.TargetName="Bd"
+                                                  Storyboard.TargetProperty="Background"
+                                                  Duration="0"
+                                                  To="{c:TemplatedParentBinding Path=(theming:DisabledProperties.BackgroundBrush)}" />
+                                <c:BrushAnimation Storyboard.TargetName="Bd"
+                                                  Storyboard.TargetProperty="BorderBrush"
+                                                  Duration="0"
+                                                  To="{c:TemplatedParentBinding Path=(theming:DisabledProperties.BorderBrush)}" />
+                            </Storyboard>
+                        </Grid.Resources>
+
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition GeneratedDuration="{StaticResource ColorAnimationDuration}"
+                                                      GeneratedEasingFunction="{StaticResource ColorAnimationEase}" />
+                                    <VisualTransition To="Disabled" GeneratedDuration="0" />
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver" Storyboard="{StaticResource MouseOverStoryboard}" />
+                                <VisualState x:Name="Pressed" Storyboard="{StaticResource PressedStoryboard}" />
+                                <VisualState x:Name="Disabled" Storyboard="{StaticResource DisabledStoryboard}" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    
+
+    <!-- A Thumb which displays a sequence of small rectangles. -->
     <Style x:Key="RectanglePatternThumb" TargetType="Thumb" BasedOn="{c:MultiStyle 'TransparentBackground TransparentBorder StandardForeground SecondaryForeground'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
@@ -40,7 +125,7 @@
                                         <DrawingBrush.Drawing>
                                             <!-- TemplateBinding isn't working here for some reason... -->
                                             <GeometryDrawing x:Name="ThumbDrawing" 
-                                                             Brush="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}">
+                                                             Brush="{c:TemplatedParentBinding Foreground}">
                                                 <GeometryDrawing.Geometry>
                                                     <RectangleGeometry Rect="{c:GridUnit '0.25,0.25,0.5,0.5'}" />
                                                 </GeometryDrawing.Geometry>
@@ -56,45 +141,45 @@
                                 <c:BrushAnimation Storyboard.TargetName="ThumbDrawing"
                                                   Storyboard.TargetProperty="Brush"
                                                   Duration="0"
-                                                  To="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                  To="{c:TemplatedParentBinding Path=(theming:MouseOverProperties.ForegroundBrush)}" />
                                 <c:BrushAnimation Storyboard.TargetName="Bd"
                                                   Storyboard.TargetProperty="Background"
                                                   Duration="0"
-                                                  To="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                  To="{c:TemplatedParentBinding Path=(theming:MouseOverProperties.BackgroundBrush)}" />
                                 <c:BrushAnimation Storyboard.TargetName="Bd"
                                                   Storyboard.TargetProperty="BorderBrush"
                                                   Duration="0"
-                                                  To="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                  To="{c:TemplatedParentBinding Path=(theming:MouseOverProperties.BorderBrush)}" />
                             </Storyboard>
                             
                             <Storyboard x:Key="PressedStoryboard">
                                 <c:BrushAnimation Storyboard.TargetName="ThumbDrawing"
                                                   Storyboard.TargetProperty="Brush"
                                                   Duration="0"
-                                                  To="{Binding Path=(theming:PressedProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                  To="{c:TemplatedParentBinding Path=(theming:PressedProperties.ForegroundBrush)}" />
                                 <c:BrushAnimation Storyboard.TargetName="Bd"
                                                   Storyboard.TargetProperty="Background"
                                                   Duration="0"
-                                                  To="{Binding Path=(theming:PressedProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                  To="{c:TemplatedParentBinding Path=(theming:PressedProperties.BackgroundBrush)}" />
                                 <c:BrushAnimation Storyboard.TargetName="Bd"
                                                   Storyboard.TargetProperty="BorderBrush"
                                                   Duration="0"
-                                                  To="{Binding Path=(theming:PressedProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                  To="{c:TemplatedParentBinding Path=(theming:PressedProperties.BorderBrush)}" />
                             </Storyboard>
                             
                             <Storyboard x:Key="DisabledStoryboard">
                                 <c:BrushAnimation Storyboard.TargetName="ThumbDrawing"
                                                   Storyboard.TargetProperty="Brush"
                                                   Duration="0"
-                                                  To="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                  To="{c:TemplatedParentBinding Path=(theming:DisabledProperties.ForegroundBrush)}" />
                                 <c:BrushAnimation Storyboard.TargetName="Bd"
                                                   Storyboard.TargetProperty="Background"
                                                   Duration="0"
-                                                  To="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                  To="{c:TemplatedParentBinding Path=(theming:DisabledProperties.BackgroundBrush)}" />
                                 <c:BrushAnimation Storyboard.TargetName="Bd"
                                                   Storyboard.TargetProperty="BorderBrush"
                                                   Duration="0"
-                                                  To="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                  To="{c:TemplatedParentBinding Path=(theming:DisabledProperties.BorderBrush)}" />
                             </Storyboard>
                         </Grid.Resources>
 

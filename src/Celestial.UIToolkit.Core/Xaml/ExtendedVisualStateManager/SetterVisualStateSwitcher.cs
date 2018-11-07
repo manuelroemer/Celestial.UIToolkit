@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Data;
 using static Celestial.UIToolkit.TraceSources;
 
 namespace Celestial.UIToolkit.Xaml
@@ -60,10 +61,20 @@ namespace Celestial.UIToolkit.Xaml
             DependencyObject setterTarget = FindSetterTarget(setter);
             if (setterTarget != null)
             {
-                setterTarget.InvalidateProperty(setter.Property);
+                if (setter.Value is Binding)
+                {
+                    BindingOperations.ClearBinding(setterTarget, setter.Property);
+                }
+                else
+                {
+                    // A normal .NET value can simply be invalidated. The DP remembers the previous
+                    // value.
+                    setterTarget.InvalidateProperty(setter.Property);
+                }
+
                 VisualStateSource.Verbose(
-                    "Removed visual state setter for property {0} from element {1}.", 
-                    setter.Property.Name, 
+                    "Removed visual state setter for property {0} from element {1}.",
+                    setter.Property.Name,
                     setterTarget);
             }
         }
@@ -86,11 +97,21 @@ namespace Celestial.UIToolkit.Xaml
             DependencyObject setterTarget = FindSetterTarget(setter);
             if (setterTarget != null)
             {
-                // SetCurrentValue doesn't change the property source, but changes the value until
-                // reset.
-                // This is ideal, as long as we reset the property again 
-                // (which is done in the RemoveSetter method(s)).
-                setterTarget.SetCurrentValue(setter.Property, setter.Value);
+                if (setter.Value is Binding binding)
+                {
+                    BindingOperations.SetBinding(setterTarget, setter.Property, binding);
+                }
+                else
+                {
+                    // We are dealing with a "normal" .NET property value.
+                    //
+                    // SetCurrentValue doesn't change the property source, but changes the value until
+                    // reset.
+                    // This is ideal, as long as we reset the property again 
+                    // (which is done in the RemoveSetter method(s)).
+                    setterTarget.SetCurrentValue(setter.Property, setter.Value);
+                }
+
                 VisualStateSource.Verbose(
                     "Setting property {0} to {1} on element {2}.",
                     setter.Property.Name,

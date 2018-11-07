@@ -18,7 +18,7 @@
     <Style x:Key="StandardProgressBar" TargetType="ProgressBar" BasedOn="{c:MultiStyle 'ControlBackground ControlBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="False" />
-        <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource DisabledThemeShadow}" />
         <Setter Property="MinHeight" Value="{c:GridUnit 1}" />
@@ -28,12 +28,14 @@
                     <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
                         <Grid.Resources>
+                            <sys:String x:Key="EllipseSizeMultiplier">1</sys:String>
+
                             <!-- The Ellipses/Borders all share the same style.
                                  Define them here, so that the following XAML doesn't get cluttered. -->
                             <Style TargetType="Ellipse">
-                                <Setter Property="Fill" Value="{Binding Path=(theming:ActiveProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
-                                <Setter Property="Width" Value="{c:GridUnit 1}" />
-                                <Setter Property="Height" Value="{c:GridUnit 1}" />
+                                <Setter Property="Fill" Value="{c:TemplatedParentBinding Path=(theming:ActiveProperties.BackgroundBrush)}" />
+                                <Setter Property="Width" Value="{c:GridUnit MultiplierString={StaticResource EllipseSizeMultiplier}}" />
+                                <Setter Property="Height" Value="{c:GridUnit MultiplierString={StaticResource EllipseSizeMultiplier}}" />
                                 <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
                                 <Setter Property="RenderTransform">
                                     <Setter.Value>
@@ -63,10 +65,12 @@
                                      When indeterminate, the Ellipses are shown and animated from the
                                      left to the right. -->
                                 <controls:RelativeCanvas x:Name="IndeterminateContainer"
-                                                         Visibility="Collapsed">
+                                                         Visibility="Collapsed"
+                                                         Height="{c:GridUnit MultiplierString={StaticResource EllipseSizeMultiplier}}"
+                                                         VerticalAlignment="Center">
                                     <controls:RelativeCanvas x:Name="EllipseContainer"
                                                              Width="{TemplateBinding ActualWidth}"
-                                                             Height="{TemplateBinding ActualHeight}">
+                                                             Height="{c:GridUnit MultiplierString={StaticResource EllipseSizeMultiplier}}">
                                         <Ellipse x:Name="E5" controls:RelativeCanvas.Left="0.5" />
                                         <Ellipse x:Name="E4" Margin="{c:GridUnit '2,0,0,0'}" />
                                         <Ellipse x:Name="E3" Margin="{c:GridUnit '4,0,0,0'}" />
@@ -139,7 +143,7 @@
 
                                         <!-- Ellipse RelativeCanvas Movement Animations. -->
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="E5" 
-                                                                       Storyboard.TargetProperty="(c:RelativeCanvas.Left)">
+                                                                       Storyboard.TargetProperty="(controls:RelativeCanvas.Left)">
                                             <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
                                             <EasingDoubleKeyFrame KeyTime="0:0:0.667" Value="0"/>
                                             <SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" 
@@ -153,7 +157,7 @@
                                         </DoubleAnimationUsingKeyFrames>
 
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="E4" 
-                                                                       Storyboard.TargetProperty="(c:RelativeCanvas.Left)">
+                                                                       Storyboard.TargetProperty="(controls:RelativeCanvas.Left)">
                                             <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
                                             <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
                                             <SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" 
@@ -167,7 +171,7 @@
                                         </DoubleAnimationUsingKeyFrames>
 
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="E3" 
-                                                                       Storyboard.TargetProperty="(c:RelativeCanvas.Left)">
+                                                                       Storyboard.TargetProperty="(controls:RelativeCanvas.Left)">
                                             <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
                                             <EasingDoubleKeyFrame KeyTime="0:0:0.333" Value="0"/>
                                             <SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" 
@@ -181,7 +185,7 @@
                                         </DoubleAnimationUsingKeyFrames>
 
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="E2" 
-                                                                       Storyboard.TargetProperty="(c:RelativeCanvas.Left)">
+                                                                       Storyboard.TargetProperty="(controls:RelativeCanvas.Left)">
                                             <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
                                             <EasingDoubleKeyFrame KeyTime="0:0:0.167" Value="0"/>
                                             <SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" 
@@ -195,7 +199,7 @@
                                         </DoubleAnimationUsingKeyFrames>
 
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="E1" 
-                                                                       Storyboard.TargetProperty="(c:RelativeCanvas.Left)">
+                                                                       Storyboard.TargetProperty="(controls:RelativeCanvas.Left)">
                                             <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
                                             <SplineDoubleKeyFrame KeySpline="0.4,0,0.6,1" 
                                                                   KeyTime="0:0:1" 
@@ -249,7 +253,7 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="theming:ActiveProperties.BackgroundBrush" 
-                                    Value="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource Self}}" />
+                                    Value="{c:SelfBinding Path=(theming:DisabledProperties.BackgroundBrush)}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

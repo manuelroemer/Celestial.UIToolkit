@@ -23,7 +23,7 @@
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Padding" Value="{c:GridUnit '2,0,0,0'}" />
         <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{c:SelfBinding ActualWidth}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="RadioButton">
@@ -35,94 +35,94 @@
                             <Storyboard x:Key="MouseOverStoryboard">
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                 Storyboard.TargetProperty="Background">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:MouseOverProperties.BackgroundBrush)}" />
                                 </c:BrushAnimationUsingKeyFrames>
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                 Storyboard.TargetProperty="BorderBrush">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:MouseOverProperties.BorderBrush)}" />
                                 </c:BrushAnimationUsingKeyFrames>
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="CheckedBorder"
                                                                 Storyboard.TargetProperty="Background">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:MouseOverProperties.BackgroundBrush)}" />
                                 </c:BrushAnimationUsingKeyFrames>
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="CheckedBorder"
                                                                 Storyboard.TargetProperty="BorderBrush">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:MouseOverProperties.BorderBrush)}" />
                                 </c:BrushAnimationUsingKeyFrames>
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Checkmark"
                                                                 Storyboard.TargetProperty="Fill">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:MouseOverProperties.BorderBrush)}" />
                                 </c:BrushAnimationUsingKeyFrames>
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="IndeterminateCheckmark"
                                                                 Storyboard.TargetProperty="Stroke">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:MouseOverProperties.BorderBrush)}" />
                                 </c:BrushAnimationUsingKeyFrames>
-                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                <c:BrushAnimation Storyboard.Target="{c:TemplatedParentBinding}"
                                                   Storyboard.TargetProperty="Foreground"
                                                   Duration="0"
-                                                  To="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                  To="{c:TemplatedParentBinding Path=(theming:MouseOverProperties.ForegroundBrush)}" />
                             </Storyboard>
                             
                             <Storyboard x:Key="PressedStoryboard">
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                 Storyboard.TargetProperty="Background">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:PressedProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:PressedProperties.BackgroundBrush)}" />
                                 </c:BrushAnimationUsingKeyFrames>
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                 Storyboard.TargetProperty="BorderBrush">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:PressedProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:PressedProperties.BorderBrush)}" />
                                 </c:BrushAnimationUsingKeyFrames>
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="CheckedBorder"
                                                                 Storyboard.TargetProperty="Background">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:PressedProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:PressedProperties.BackgroundBrush)}" />
                                 </c:BrushAnimationUsingKeyFrames>
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="CheckedBorder"
                                                                 Storyboard.TargetProperty="BorderBrush">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:PressedProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:PressedProperties.BorderBrush)}" />
                                 </c:BrushAnimationUsingKeyFrames>
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Checkmark"
                                                                 Storyboard.TargetProperty="Fill">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:PressedProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:PressedProperties.BorderBrush)}" />
                                 </c:BrushAnimationUsingKeyFrames>
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="IndeterminateCheckmark"
                                                                 Storyboard.TargetProperty="Stroke">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:PressedProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:PressedProperties.BorderBrush)}" />
                                 </c:BrushAnimationUsingKeyFrames>
-                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                <c:BrushAnimation Storyboard.Target="{c:TemplatedParentBinding}"
                                                   Storyboard.TargetProperty="Foreground"
                                                   Duration="0"
-                                                  To="{Binding Path=(theming:PressedProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                  To="{c:TemplatedParentBinding Path=(theming:PressedProperties.ForegroundBrush)}" />
                             </Storyboard>
 
                             <Storyboard x:Key="DisabledStoryboard">
                                 <c:BrushAnimation Storyboard.TargetName="Bd"
                                                   Storyboard.TargetProperty="Background"
                                                   Duration="0"
-                                                  To="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}"/>
+                                                  To="{c:TemplatedParentBinding Path=(theming:DisabledProperties.BackgroundBrush)}"/>
                                 <c:BrushAnimation Storyboard.TargetName="Bd"
                                                   Storyboard.TargetProperty="BorderBrush"
                                                   Duration="0"
-                                                  To="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}"/>
+                                                  To="{c:TemplatedParentBinding Path=(theming:DisabledProperties.BorderBrush)}"/>
                                 <c:BrushAnimation Storyboard.TargetName="CheckedBorder"
                                                   Storyboard.TargetProperty="Background"
                                                   Duration="0"
-                                                  To="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}"/>
+                                                  To="{c:TemplatedParentBinding Path=(theming:DisabledProperties.BackgroundBrush)}"/>
                                 <c:BrushAnimation Storyboard.TargetName="CheckedBorder"
                                                   Storyboard.TargetProperty="BorderBrush"
                                                   Duration="0"
-                                                  To="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}"/>
+                                                  To="{c:TemplatedParentBinding Path=(theming:DisabledProperties.BorderBrush)}"/>
                                 <c:BrushAnimation Storyboard.TargetName="Checkmark"
                                                   Storyboard.TargetProperty="Fill"
                                                   Duration="0"
-                                                  To="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}"/>
+                                                  To="{c:TemplatedParentBinding Path=(theming:DisabledProperties.BorderBrush)}"/>
                                 <c:BrushAnimation Storyboard.TargetName="IndeterminateCheckmark"
                                                   Storyboard.TargetProperty="Stroke"
                                                   Duration="0"
-                                                  To="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}"/>
-                                <c:BrushAnimation Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                                  To="{c:TemplatedParentBinding Path=(theming:DisabledProperties.BorderBrush)}"/>
+                                <c:BrushAnimation Storyboard.Target="{c:TemplatedParentBinding}"
                                                   Storyboard.TargetProperty="Foreground"
                                                   Duration="0"
-                                                  To="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                  To="{c:TemplatedParentBinding Path=(theming:DisabledProperties.ForegroundBrush)}" />
                             </Storyboard>
                         </Grid.Resources>
                         
@@ -135,8 +135,8 @@
                                         <Style TargetType="Border">
                                             <Setter Property="Width" Value="{c:GridUnit 5}" />
                                             <Setter Property="Height" Value="{c:GridUnit 5}" />
-                                            <Setter Property="CornerRadius" Value="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}" />
-                                            <Setter Property="BorderThickness" Value="{Binding BorderThickness, RelativeSource={RelativeSource TemplatedParent}}" />
+                                            <Setter Property="CornerRadius" Value="{c:TemplatedParentBinding Path=(theming:ControlProperties.CornerRadius)}" />
+                                            <Setter Property="BorderThickness" Value="{c:TemplatedParentBinding BorderThickness}" />
                                         </Style>
 
                                         <Style TargetType="Path">
@@ -148,19 +148,19 @@
                                             <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
                                         </Style>
                                     </Grid.Resources>
-                                    <controls:RippleOverlay IsActiveTrigger="{Binding IsPressed, RelativeSource={RelativeSource TemplatedParent}}" 
+                                    <controls:RippleOverlay IsActiveTrigger="{c:TemplatedParentBinding IsPressed}" 
                                                             Style="{StaticResource SmallBackgroundRippleAnimation}" />
                                     <Border x:Name="CheckedBorder"
-                                            BorderBrush="{Binding Path=(theming:ActiveProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}"
-                                            Background="{Binding Path=(theming:ActiveProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}"
+                                            BorderBrush="{c:TemplatedParentBinding Path=(theming:ActiveProperties.BorderBrush)}"
+                                            Background="{c:TemplatedParentBinding Path=(theming:ActiveProperties.BackgroundBrush)}"
                                             Visibility="Collapsed" />
                                     <Border x:Name="Bd"
                                             BorderBrush="{TemplateBinding BorderBrush}"
                                             Background="{TemplateBinding Background}"
-                                            CornerRadius="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}" />
+                                            CornerRadius="{c:TemplatedParentBinding Path=(theming:ControlProperties.CornerRadius)}" />
                                     <Path x:Name="Checkmark"
                                           Data="{StaticResource CheckedGeometry}"
-                                          Fill="{Binding Path=(theming:ActiveProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}">
+                                          Fill="{c:TemplatedParentBinding Path=(theming:ActiveProperties.BorderBrush)}">
                                         <Path.RenderTransform>
                                             <ScaleTransform x:Name="CheckmarkScaleTransform"
                                                             ScaleX="0"
@@ -168,7 +168,7 @@
                                         </Path.RenderTransform>
                                     </Path>
                                     <Path x:Name="IndeterminateCheckmark"
-                                          Stroke="{Binding Path=(theming:ActiveProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}"
+                                          Stroke="{c:TemplatedParentBinding Path=(theming:ActiveProperties.BorderBrush)}"
                                           Data="{StaticResource IndeterminateGeometry}">
                                         <Path.RenderTransform>
                                             <ScaleTransform x:Name="IndeterminateCheckmarkScaleTransform"
@@ -244,7 +244,7 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsChecked" Value="True">
-                <Setter Property="Foreground" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                <Setter Property="Foreground" Value="{c:SelfBinding Path=(theming:ActiveProperties.ForegroundBrush)}" />
             </Trigger>
         </Style.Triggers>
     </Style>

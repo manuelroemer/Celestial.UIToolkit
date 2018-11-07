@@ -29,6 +29,7 @@
         <Setter Property="theming:PressedProperties.BackgroundBrush" Value="Transparent" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
         <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="Transparent" />
+        <Setter Property="theming:MouseOverActiveProperties.BackgroundBrush" Value="Transparent" />
     </Style>
     
     <!--
@@ -42,6 +43,7 @@
         <Setter Property="theming:PressedProperties.BorderBrush" Value="Transparent" />
         <Setter Property="theming:DisabledProperties.BorderBrush" Value="Transparent" />
         <Setter Property="theming:ActiveProperties.BorderBrush" Value="Transparent" />
+        <Setter Property="theming:MouseOverActiveProperties.BorderBrush" Value="Transparent" />
     </Style>
 
 
@@ -57,6 +59,7 @@
         <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource PrimaryBrush}" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource PrimaryBrush}" />
         <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource PrimaryBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.BackgroundBrush" Value="{StaticResource PrimaryBrush}" />
     </Style>
 
     <!--
@@ -70,6 +73,7 @@
         <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource AltPrimaryBrush}" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource AltPrimaryBrush}" />
         <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource AltPrimaryBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.BackgroundBrush" Value="{StaticResource AltPrimaryBrush}" />
     </Style>
 
     
@@ -85,6 +89,7 @@
         <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource ControlPressedBackgroundBrush}" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource ControlDisabledBackgroundBrush}" />
         <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource ControlActiveBackgroundBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.BackgroundBrush" Value="{StaticResource ControlHoverBackgroundBrush}" />
     </Style>
 
     <!--
@@ -98,6 +103,7 @@
         <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource AltControlPressedBackgroundBrush}" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource AltControlDisabledBackgroundBrush}" />
         <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource AltControlActiveBackgroundBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.BackgroundBrush" Value="{StaticResource AltControlHoverBackgroundBrush}" />
     </Style>
 
 
@@ -113,6 +119,7 @@
         <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource ControlPressedBorderBrush}" />
         <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource ControlDisabledBorderBrush}" />
         <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource ControlActiveBorderBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.BorderBrush" Value="{StaticResource ControlHoverBorderBrush}" />
     </Style>
 
     <!--
@@ -126,6 +133,7 @@
         <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource AltControlPressedBorderBrush}" />
         <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource AltControlDisabledBorderBrush}" />
         <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource AltControlActiveBorderBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.BorderBrush" Value="{StaticResource AltControlHoverBorderBrush}" />
     </Style>
     
     
@@ -141,6 +149,7 @@
         <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource Accent1ControlPressedBackgroundBrush}" />
         <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource Accent1ControlActiveBackgroundBrush}" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource ControlDisabledBackgroundBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.BackgroundBrush" Value="{StaticResource Accent1ControlHoverBackgroundBrush}" />
     </Style>
     
     <!--
@@ -154,6 +163,7 @@
         <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource Accent1ControlPressedBorderBrush}" />
         <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource Accent1ControlActiveBorderBrush}" />
         <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource ControlDisabledBorderBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.BorderBrush" Value="{StaticResource Accent1ControlHoverBorderBrush}" />
     </Style>
     
     
@@ -169,6 +179,7 @@
         <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource Accent2ControlPressedBackgroundBrush}" />
         <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource Accent2ControlActiveBackgroundBrush}" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource ControlDisabledBackgroundBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.BackgroundBrush" Value="{StaticResource Accent2ControlHoverBackgroundBrush}" />
     </Style>
     
     <!--
@@ -182,6 +193,7 @@
         <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource Accent2ControlPressedBorderBrush}" />
         <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource Accent2ControlActiveBorderBrush}" />
         <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource ControlDisabledBorderBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.BorderBrush" Value="{StaticResource Accent2ControlHoverBorderBrush}" />
     </Style>
     
     
@@ -197,6 +209,7 @@
         <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource ErrorControlPressedBackgroundBrush}" />
         <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource ErrorControlActiveBackgroundBrush}" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource ControlDisabledBackgroundBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.BackgroundBrush" Value="{StaticResource ErrorControlHoverBackgroundBrush}" />
     </Style>
     
     <!--
@@ -210,6 +223,7 @@
         <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource ErrorControlPressedBorderBrush}" />
         <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource ErrorControlActiveBorderBrush}" />
         <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource ControlDisabledBorderBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.BorderBrush" Value="{StaticResource ErrorControlHoverBorderBrush}" />
     </Style>
 
 
@@ -225,6 +239,7 @@
         <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource Accent1ControlPressedBackgroundBrush}" />
         <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource Accent1ControlActiveBackgroundBrush}" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource ControlDisabledBackgroundBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.BackgroundBrush" Value="{StaticResource Accent1ControlHoverBackgroundBrush}" />
     </Style>
 
     <!--
@@ -238,6 +253,7 @@
         <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource Accent1ControlPressedBorderBrush}" />
         <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource Accent1ControlActiveBorderBrush}" />
         <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource ControlDisabledBorderBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.BorderBrush" Value="{StaticResource Accent1ControlHoverBorderBrush}" />
     </Style>
 
     
@@ -253,6 +269,7 @@
         <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource Accent2ControlPressedBackgroundBrush}" />
         <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource Accent2ControlActiveBackgroundBrush}" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource ControlDisabledBackgroundBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.BackgroundBrush" Value="{StaticResource Accent2ControlHoverBackgroundBrush}" />
     </Style>
 
     <!--
@@ -266,6 +283,7 @@
         <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource Accent2ControlPressedBorderBrush}" />
         <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource Accent2ControlActiveBorderBrush}" />
         <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource ControlDisabledBorderBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.BorderBrush" Value="{StaticResource Accent2ControlHoverBorderBrush}" />
     </Style>
 
 
@@ -281,6 +299,7 @@
         <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource ErrorControlPressedBackgroundBrush}" />
         <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource ErrorControlActiveBackgroundBrush}" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource ControlDisabledBackgroundBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.BackgroundBrush" Value="{StaticResource ErrorControlHoverBackgroundBrush}" />
     </Style>
 
     <!--
@@ -294,10 +313,69 @@
         <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource ErrorControlPressedBorderBrush}" />
         <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource ErrorControlActiveBorderBrush}" />
         <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource ControlDisabledBorderBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.BorderBrush" Value="{StaticResource ErrorControlHoverBorderBrush}" />
     </Style>
     
     
 
+    <!--
+    - Background: Pane variations
+    - Border:     -
+    - Foreground: -
+    -->
+    <Style x:Key="PaneBackground" TargetType="FrameworkElement">
+        <Setter Property="Control.Background" Value="{StaticResource PaneBackgroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource PaneBackgroundBrush}" />
+        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource PaneBackgroundBrush}" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource PaneBackgroundBrush}" />
+        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource PaneBackgroundBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.BackgroundBrush" Value="{StaticResource PaneBackgroundBrush}" />
+    </Style>
+
+    <!--
+    - Background: AltPane variations
+    - Border:     -
+    - Foreground: -
+    -->
+    <Style x:Key="AltPaneBackground" TargetType="FrameworkElement">
+        <Setter Property="Control.Background" Value="{StaticResource AltPaneBackgroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource AltPaneBackgroundBrush}" />
+        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource AltPaneBackgroundBrush}" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource AltPaneBackgroundBrush}" />
+        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource AltPaneBackgroundBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.BackgroundBrush" Value="{StaticResource AltPaneBackgroundBrush}" />
+    </Style>
+
+    <!--
+    - Border: Pane variations
+    - Border:     -
+    - Foreground: -
+    -->
+    <Style x:Key="PaneBorder" TargetType="FrameworkElement">
+        <Setter Property="Control.BorderBrush" Value="{StaticResource PaneBorderBrush}" />
+        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource PaneBorderBrush}" />
+        <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource PaneBorderBrush}" />
+        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource PaneBorderBrush}" />
+        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource PaneBorderBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.BorderBrush" Value="{StaticResource PaneBorderBrush}" />
+    </Style>
+
+    <!--
+    - Border: AltPane variations
+    - Border:     -
+    - Foreground: -
+    -->
+    <Style x:Key="AltPaneBorder" TargetType="FrameworkElement">
+        <Setter Property="Control.BorderBrush" Value="{StaticResource AltPaneBorderBrush}" />
+        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource AltPaneBorderBrush}" />
+        <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource AltPaneBorderBrush}" />
+        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource AltPaneBorderBrush}" />
+        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource AltPaneBorderBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.BorderBrush" Value="{StaticResource AltPaneBorderBrush}" />
+    </Style>
+
+    
+    
     <!--
     - Background: OnPaneControl variations
     - Border:     -
@@ -309,6 +387,7 @@
         <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource OnPaneControlBackgroundPressedBrush}" />
         <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource OnPaneControlBackgroundActiveBrush}" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource OnPaneControlBackgroundDisabledBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.BackgroundBrush" Value="{StaticResource OnPaneControlBackgroundHoverBrush}" />
     </Style>
 
     <!--
@@ -322,6 +401,7 @@
         <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource AltOnPaneControlBackgroundPressedBrush}" />
         <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource AltOnPaneControlBackgroundActiveBrush}" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource AltOnPaneControlBackgroundDisabledBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.BackgroundBrush" Value="{StaticResource AltOnPaneControlBackgroundHoverBrush}" />
     </Style>
 
     <!--
@@ -335,6 +415,7 @@
         <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource OnPaneControlBorderPressedBrush}" />
         <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource OnPaneControlBorderActiveBrush}" />
         <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource OnPaneControlBorderDisabledBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.BorderBrush" Value="{StaticResource OnPaneControlBorderHoverBrush}" />
     </Style>
 
     <!--
@@ -348,18 +429,22 @@
         <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource AltOnPaneControlBorderPressedBrush}" />
         <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource AltOnPaneControlBorderActiveBrush}" />
         <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource AltOnPaneControlBorderDisabledBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.BorderBrush" Value="{StaticResource AltOnPaneControlBorderHoverBrush}" />
     </Style>
 
+    
+    
     <!--
     - Background: Transparent, with theme list variation states.
     - Border:     -
     - Foreground: -
     -->
     <Style x:Key="ListBackground" TargetType="Control">
-        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Background" Value="{StaticResource ListAlternationIndex0BackgroundBrush}" />
         <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource ListLowBrush}" />
         <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource ListHighBrush}" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
+        <Setter Property="theming:MouseOverActiveProperties.BackgroundBrush" Value="{StaticResource ListLowBrush}" />
     </Style>
 
     <!--
@@ -368,10 +453,11 @@
     - Foreground: -
     -->
     <Style x:Key="ListBorder" TargetType="Control">
-        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="{StaticResource ListAlternationIndex1BorderBrush}" />
         <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource ListLowBrush}" />
         <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource ListHighBrush}" />
         <Setter Property="theming:DisabledProperties.BorderBrush" Value="Transparent" />
+        <Setter Property="theming:MouseOverActiveProperties.BorderBrush" Value="{StaticResource ListLowBrush}" />
     </Style>
 
     <!--
@@ -384,6 +470,7 @@
         <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource ListLowBrush}" />
         <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource ListAccent1MediumBrush}" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
+        <Setter Property="theming:MouseOverActiveProperties.BackgroundBrush" Value="{StaticResource ListLowBrush}" />
     </Style>
 
     <!--
@@ -396,6 +483,7 @@
         <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource ListHighBrush}" />
         <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource ListAccent1HighBrush}" />
         <Setter Property="theming:DisabledProperties.BorderBrush" Value="Transparent" />
+        <Setter Property="theming:MouseOverActiveProperties.BorderBrush" Value="{StaticResource ListHighBrush}" />
     </Style>
 
     <!--
@@ -406,8 +494,9 @@
     <Style x:Key="Accent2ListBackground" TargetType="Control">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource ListLowBrush}" />
-        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource ListAccent2MediumBrush}" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource ListAccent2LowBrush}" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
+        <Setter Property="theming:MouseOverActiveProperties.BackgroundBrush" Value="{StaticResource ListLowBrush}" />
     </Style>
 
     <!--
@@ -418,8 +507,9 @@
     <Style x:Key="Accent2ListBorder" TargetType="Control">
         <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource ListHighBrush}" />
-        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource ListAccent2HighBrush}" />
+        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource ListAccent2MediumBrush}" />
         <Setter Property="theming:DisabledProperties.BorderBrush" Value="Transparent" />
+        <Setter Property="theming:MouseOverActiveProperties.BorderBrush" Value="{StaticResource ListHighBrush}" />
     </Style>
     
 
@@ -437,6 +527,7 @@
         <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
         <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
         <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
     </Style>
     
     <!--
@@ -450,6 +541,7 @@
         <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource SecondaryForegroundBrush}" />
         <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
         <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource SecondaryForegroundBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource SecondaryForegroundBrush}" />
     </Style>
     
     <!--
@@ -458,11 +550,12 @@
     - Foreground: Primary color variations
     -->
     <Style x:Key="PrimaryForeground" TargetType="FrameworkElement">
-        <Setter Property="Control.Foreground" Value="{StaticResource ControlBackgroundBrush}" />
-        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource ControlHoverBackgroundBrush}" />
-        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource ControlPressedBackgroundBrush}" />
+        <Setter Property="Control.Foreground" Value="{StaticResource ControlBorderBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource ControlHoverBorderBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource ControlPressedBorderBrush}" />
         <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource ControlActiveBackgroundBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource ControlActiveBorderBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource ControlHoverBorderBrush}" />
     </Style>
 
     <!--
@@ -476,6 +569,7 @@
         <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource Accent1ControlPressedBackgroundBrush}" />
         <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
         <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource Accent1ControlActiveBackgroundBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource Accent1ControlHoverBackgroundBrush}" />
     </Style>
 
     <!--
@@ -489,6 +583,7 @@
         <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource Accent2ControlPressedBackgroundBrush}" />
         <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
         <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource Accent2ControlActiveBackgroundBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource Accent2ControlHoverBackgroundBrush}" />
     </Style>
 
     <!--
@@ -511,44 +606,109 @@
     <!--
     - Background: -
     - Border:     -
-    - Foreground: OnAccent1
+    - Foreground: OnDarkerAccent1TextBrush
     -->
-    <Style x:Key="OnAccent1Foreground" TargetType="FrameworkElement">
-        <Setter Property="Control.Foreground" Value="{StaticResource OnAccent1TextBrush}" />
-        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource OnAccent1TextBrush}" />
-        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource OnAccent1TextBrush}" />
+    <Style x:Key="OnDarkerAccent1Foreground" TargetType="FrameworkElement">
+        <Setter Property="Control.Foreground" Value="{StaticResource OnDarkerAccent1TextBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource OnDarkerAccent1TextBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource OnDarkerAccent1TextBrush}" />
         <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource OnAccent1DisabledTextBrush}" />
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnAccent1TextBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnDarkerAccent1TextBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource OnDarkerAccent1TextBrush}" />
     </Style>
     
     <!--
     - Background: -
     - Border:     -
-    - Foreground: OnAccent2
+    - Foreground: OnLighterAccent1TextBrush
     -->
-    <Style x:Key="OnAccent2Foreground" TargetType="FrameworkElement">
-        <Setter Property="Control.Foreground" Value="{StaticResource OnAccent2TextBrush}" />
-        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource OnAccent2TextBrush}" />
-        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource OnAccent2TextBrush}" />
-        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource OnAccent2DisabledTextBrush}" />
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnAccent2TextBrush}" />
+    <Style x:Key="OnLighterAccent1Foreground" TargetType="FrameworkElement">
+        <Setter Property="Control.Foreground" Value="{StaticResource OnLighterAccent1TextBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource OnLighterAccent1TextBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource OnLighterAccent1TextBrush}" />
+        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource OnAccent1DisabledTextBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnLighterAccent1TextBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource OnLighterAccent1TextBrush}" />
     </Style>
-
+    
     <!--
     - Background: -
     - Border:     -
-    - Foreground: OnError
+    - Foreground: OnDarkerAccent2TextBrush
     -->
-    <Style x:Key="OnErrorForeground" TargetType="FrameworkElement">
-        <Setter Property="Control.Foreground" Value="{StaticResource OnErrorTextBrush}" />
-        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource OnErrorTextBrush}" />
-        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource OnErrorTextBrush}" />
-        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource OnErrorDisabledTextBrush}" />
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnErrorTextBrush}" />
+    <Style x:Key="OnDarkerAccent2Foreground" TargetType="FrameworkElement">
+        <Setter Property="Control.Foreground" Value="{StaticResource OnDarkerAccent2TextBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource OnDarkerAccent2TextBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource OnDarkerAccent2TextBrush}" />
+        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource OnAccent2DisabledTextBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnDarkerAccent2TextBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource OnDarkerAccent2TextBrush}" />
     </Style>
+    
+    <!--
+    - Background: -
+    - Border:     -
+    - Foreground: OnLighterAccent2TextBrush
+    -->
+    <Style x:Key="OnLighterAccent2Foreground" TargetType="FrameworkElement">
+        <Setter Property="Control.Foreground" Value="{StaticResource OnLighterAccent2TextBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource OnLighterAccent2TextBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource OnLighterAccent2TextBrush}" />
+        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource OnAccent2DisabledTextBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnLighterAccent2TextBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource OnLighterAccent2TextBrush}" />
+    </Style>
+    
+    <!--
+    - Background: -
+    - Border:     -
+    - Foreground: OnDarkerErrorTextBrush
+    -->
+    <Style x:Key="OnDarkerErrorForeground" TargetType="FrameworkElement">
+        <Setter Property="Control.Foreground" Value="{StaticResource OnDarkerErrorTextBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource OnDarkerErrorTextBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource OnDarkerErrorTextBrush}" />
+        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource OnErrorDisabledTextBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnDarkerErrorTextBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource OnDarkerErrorTextBrush}" />
+    </Style>
+    
+    <!--
+    - Background: -
+    - Border:     -
+    - Foreground: OnLighterErrorTextBrush
+    -->
+    <Style x:Key="OnLighterErrorForeground" TargetType="FrameworkElement">
+        <Setter Property="Control.Foreground" Value="{StaticResource OnLighterErrorTextBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource OnLighterErrorTextBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource OnLighterErrorTextBrush}" />
+        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource OnErrorDisabledTextBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnLighterErrorTextBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource OnLighterErrorTextBrush}" />
+    </Style>
+    
+    <!--
+    - Background: -
+    - Border:     -
+    - Foreground: OnListAccent1
+    -->
+    <Style x:Key="OnListAccent1Foreground" TargetType="FrameworkElement" BasedOn="{StaticResource StandardForeground}">
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnListAccent1TextBrush}" />
+    </Style>
+    
+    <!--
+    - Background: -
+    - Border:     -
+    - Foreground: OnListAccent2
+    -->
+    <Style x:Key="OnListAccent2Foreground" TargetType="FrameworkElement" BasedOn="{StaticResource StandardForeground}">
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnListAccent2TextBrush}" />
+    </Style>
+    
+    
 
     <!--
-    - Foreground: Primary List
+    - Foreground: Primary List Brushes
     -->
     <Style x:Key="ListForeground" TargetType="FrameworkElement">
         <Setter Property="Control.Foreground" Value="{StaticResource StandardForegroundBrush}" />
@@ -556,11 +716,12 @@
         <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
         <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
         <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
     </Style>
 
 
     <!--
-    - Foreground: Accent1 List
+    - Foreground: Accent1 List Brushes
     -->
     <Style x:Key="Accent1ListForeground" TargetType="FrameworkElement">
         <Setter Property="Control.Foreground" Value="{StaticResource ListAccent1MediumBrush}" />
@@ -568,10 +729,11 @@
         <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource ListAccent1HighBrush}" />
         <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
         <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource ListAccent1HighBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource ListAccent1LowBrush}" />
     </Style>
 
     <!--
-    - Foreground: Accent2 List
+    - Foreground: Accent2 List Brushes
     -->
     <Style x:Key="Accent2ListForeground" TargetType="FrameworkElement">
         <Setter Property="Control.Foreground" Value="{StaticResource ListAccent2MediumBrush}" />
@@ -579,10 +741,11 @@
         <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource ListAccent2HighBrush}" />
         <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
         <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource ListAccent2HighBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource ListAccent2LowBrush}" />
     </Style>
 
     <!--
-    - Foreground: Standard Foreground; States Accent1 List/Accent2 List.
+    - Foreground: Standard Foreground; States Accent1 List/Accent2 List Brushes.
                   For List Items that only display foreground and have a transparent border/background.
     -->
     <Style x:Key="StandardForegroundListStates" TargetType="FrameworkElement" BasedOn="{StaticResource ListForeground}">
@@ -598,21 +761,24 @@
     </Style>
     
     <!--
-    Only the Active state is colored in the List brushes.
+    Only the Active state is colored in the List Brushes brushes.
     -->
     <Style x:Key="StandardForegroundActiveListStates" TargetType="FrameworkElement" BasedOn="{StaticResource StandardForegroundListStates}">
         <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
         <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
     </Style>
 
     <Style x:Key="StandardForegroundActiveAccent1ListStates" TargetType="FrameworkElement" BasedOn="{StaticResource StandardForegroundAccent1ListStates}">
         <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
         <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
     </Style>
 
     <Style x:Key="StandardForegroundActiveAccent2ListStates" TargetType="FrameworkElement" BasedOn="{StaticResource StandardForegroundAccent2ListStates}">
         <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
         <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
     </Style>
     
     <!--
@@ -622,10 +788,10 @@
     -->
     <Style x:Key="DynamicallyBoundForeground" TargetType="FrameworkElement">
         <Setter Property="Control.Foreground" Value="{StaticResource StandardForegroundBrush}" />
-        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
-        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{c:SelfBinding Foreground}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{c:SelfBinding Foreground}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{c:SelfBinding Foreground}" />
+        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{c:SelfBinding Foreground}" />
     </Style>
 
 
@@ -644,14 +810,80 @@
     </Style>
     
     <!--
-    Alt Font Properties.
+    Base Font Properties.
     -->
-    <Style x:Key="AltFontProperties" TargetType="Control">
+    <Style x:Key="BaseFontProperties" TargetType="Control">
         <Setter Property="FontFamily" Value="{StaticResource StandardFontFamily}" />
         <Setter Property="FontSize" Value="{StaticResource StandardFontSize}" />
         <Setter Property="FontWeight" Value="{StaticResource BaseFontWeight}" />
         <Setter Property="FontStretch" Value="{StaticResource BaseFontStretch}" />
         <Setter Property="FontStyle" Value="{StaticResource BaseFontStyle}" />
+    </Style>
+
+    <!--
+    Hint Font Properties.
+    -->
+    <Style x:Key="HintFontProperties" TargetType="Control">
+        <Setter Property="FontFamily" Value="{StaticResource StandardFontFamily}" />
+        <Setter Property="FontSize" Value="{StaticResource StandardFontSize}" />
+        <Setter Property="FontWeight" Value="{StaticResource HintFontWeight}" />
+        <Setter Property="FontStyle" Value="{StaticResource HintFontStyle}" />
+        <Setter Property="FontStretch" Value="{StaticResource HintFontStretch}" />
+    </Style>
+
+    <!--
+    Header Font Properties.
+    -->
+    <Style x:Key="HeaderFontProperties" TargetType="Control">
+        <Setter Property="FontFamily" Value="{StaticResource HeaderFontFamily}" />
+        <Setter Property="FontSize" Value="{StaticResource HeaderFontSize}" />
+        <Setter Property="FontWeight" Value="{StaticResource HeaderFontWeight}" />
+        <Setter Property="FontStretch" Value="{StaticResource HeaderFontStretch}" />
+        <Setter Property="FontStyle" Value="{StaticResource HeaderFontStyle}" />
+    </Style>
+
+    <!--
+    SubHeader Font Properties.
+    -->
+    <Style x:Key="SubHeaderFontProperties" TargetType="Control">
+        <Setter Property="FontFamily" Value="{StaticResource SubHeaderFontFamily}" />
+        <Setter Property="FontSize" Value="{StaticResource SubHeaderFontSize}" />
+        <Setter Property="FontWeight" Value="{StaticResource SubHeaderFontWeight}" />
+        <Setter Property="FontStretch" Value="{StaticResource SubHeaderFontStretch}" />
+        <Setter Property="FontStyle" Value="{StaticResource SubHeaderFontStyle}" />
+    </Style>
+
+    <!--
+    Title Font Properties.
+    -->
+    <Style x:Key="TitleFontProperties" TargetType="Control">
+        <Setter Property="FontFamily" Value="{StaticResource TitleFontFamily}" />
+        <Setter Property="FontSize" Value="{StaticResource TitleFontSize}" />
+        <Setter Property="FontWeight" Value="{StaticResource TitleFontWeight}" />
+        <Setter Property="FontStretch" Value="{StaticResource TitleFontStretch}" />
+        <Setter Property="FontStyle" Value="{StaticResource TitleFontStyle}" />
+    </Style>
+
+    <!--
+    SubTitle Font Properties.
+    -->
+    <Style x:Key="SubTitleFontProperties" TargetType="Control">
+        <Setter Property="FontFamily" Value="{StaticResource SubTitleFontFamily}" />
+        <Setter Property="FontSize" Value="{StaticResource SubTitleFontSize}" />
+        <Setter Property="FontWeight" Value="{StaticResource SubTitleFontWeight}" />
+        <Setter Property="FontStretch" Value="{StaticResource SubTitleFontStretch}" />
+        <Setter Property="FontStyle" Value="{StaticResource SubTitleFontStyle}" />
+    </Style>
+
+    <!--
+    Caption Font Properties.
+    -->
+    <Style x:Key="CaptionFontProperties" TargetType="Control">
+        <Setter Property="FontFamily" Value="{StaticResource CaptionFontFamily}" />
+        <Setter Property="FontSize" Value="{StaticResource CaptionFontSize}" />
+        <Setter Property="FontWeight" Value="{StaticResource CaptionFontWeight}" />
+        <Setter Property="FontStretch" Value="{StaticResource CaptionFontStretch}" />
+        <Setter Property="FontStyle" Value="{StaticResource CaptionFontStyle}" />
     </Style>
 
 
@@ -693,6 +925,7 @@
         <Setter Property="theming:PressedProperties.ShadowElevation" Value="0" />
         <Setter Property="theming:ActiveProperties.ShadowElevation" Value="0" />
         <Setter Property="theming:DisabledProperties.ShadowElevation" Value="0" />
+        <Setter Property="theming:MouseOverActiveProperties.ShadowElevation" Value="0" />
     </Style>
     <Style x:Key="NoShadow" BasedOn="{StaticResource Shadow0}" />
 
@@ -702,6 +935,7 @@
         <Setter Property="theming:PressedProperties.ShadowElevation" Value="4" />
         <Setter Property="theming:ActiveProperties.ShadowElevation" Value="4" />
         <Setter Property="theming:DisabledProperties.ShadowElevation" Value="4" />
+        <Setter Property="theming:MouseOverActiveProperties.ShadowElevation" Value="4" />
     </Style>
 
     <Style x:Key="Shadow8">
@@ -710,6 +944,7 @@
         <Setter Property="theming:PressedProperties.ShadowElevation" Value="8" />
         <Setter Property="theming:ActiveProperties.ShadowElevation" Value="8" />
         <Setter Property="theming:DisabledProperties.ShadowElevation" Value="8" />
+        <Setter Property="theming:MouseOverActiveProperties.ShadowElevation" Value="8" />
     </Style>
 
     <Style x:Key="Shadow12">
@@ -718,6 +953,7 @@
         <Setter Property="theming:PressedProperties.ShadowElevation" Value="12" />
         <Setter Property="theming:ActiveProperties.ShadowElevation" Value="12" />
         <Setter Property="theming:DisabledProperties.ShadowElevation" Value="12" />
+        <Setter Property="theming:MouseOverActiveProperties.ShadowElevation" Value="12" />
     </Style>
 
     <Style x:Key="Shadow16">
@@ -726,6 +962,7 @@
         <Setter Property="theming:PressedProperties.ShadowElevation" Value="16" />
         <Setter Property="theming:ActiveProperties.ShadowElevation" Value="16" />
         <Setter Property="theming:DisabledProperties.ShadowElevation" Value="16" />
+        <Setter Property="theming:MouseOverActiveProperties.ShadowElevation" Value="16" />
     </Style>
 
     <Style x:Key="Shadow20">
@@ -734,6 +971,7 @@
         <Setter Property="theming:PressedProperties.ShadowElevation" Value="20" />
         <Setter Property="theming:ActiveProperties.ShadowElevation" Value="20" />
         <Setter Property="theming:DisabledProperties.ShadowElevation" Value="20" />
+        <Setter Property="theming:MouseOverActiveProperties.ShadowElevation" Value="20" />
     </Style>
 
     <Style x:Key="Shadow24">
@@ -742,6 +980,7 @@
         <Setter Property="theming:PressedProperties.ShadowElevation" Value="24" />
         <Setter Property="theming:ActiveProperties.ShadowElevation" Value="24" />
         <Setter Property="theming:DisabledProperties.ShadowElevation" Value="24" />
+        <Setter Property="theming:MouseOverActiveProperties.ShadowElevation" Value="24" />
     </Style>
 
 
@@ -751,6 +990,7 @@
         <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="0" />
         <Setter Property="theming:PressedProperties.ShadowElevation" Value="0" />
         <Setter Property="theming:ActiveProperties.ShadowElevation" Value="0" />
+        <Setter Property="theming:MouseOverActiveProperties.ShadowElevation" Value="0" />
     </Style>
     
     <Style x:Key="InteractiveShadow4">
@@ -763,36 +1003,42 @@
         <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="8" />
         <Setter Property="theming:PressedProperties.ShadowElevation" Value="8" />
         <Setter Property="theming:ActiveProperties.ShadowElevation" Value="8" />
+        <Setter Property="theming:MouseOverActiveProperties.ShadowElevation" Value="8" />
     </Style>
 
     <Style x:Key="InteractiveShadow12">
         <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="12" />
         <Setter Property="theming:PressedProperties.ShadowElevation" Value="12" />
         <Setter Property="theming:ActiveProperties.ShadowElevation" Value="12" />
+        <Setter Property="theming:MouseOverActiveProperties.ShadowElevation" Value="12" />
     </Style>
 
     <Style x:Key="InteractiveShadow16">
         <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="16" />
         <Setter Property="theming:PressedProperties.ShadowElevation" Value="16" />
         <Setter Property="theming:ActiveProperties.ShadowElevation" Value="16" />
+        <Setter Property="theming:MouseOverActiveProperties.ShadowElevation" Value="16" />
     </Style>
 
     <Style x:Key="InteractiveShadow20">
         <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="20" />
         <Setter Property="theming:PressedProperties.ShadowElevation" Value="20" />
         <Setter Property="theming:ActiveProperties.ShadowElevation" Value="20" />
+        <Setter Property="theming:MouseOverActiveProperties.ShadowElevation" Value="20" />
     </Style>
 
     <Style x:Key="InteractiveShadow24">
         <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="24" />
         <Setter Property="theming:PressedProperties.ShadowElevation" Value="24" />
         <Setter Property="theming:ActiveProperties.ShadowElevation" Value="24" />
+        <Setter Property="theming:MouseOverActiveProperties.ShadowElevation" Value="24" />
     </Style>
 
     <Style x:Key="InteractiveShadow28">
         <Setter Property="theming:MouseOverProperties.ShadowElevation" Value="28" />
         <Setter Property="theming:PressedProperties.ShadowElevation" Value="28" />
         <Setter Property="theming:ActiveProperties.ShadowElevation" Value="28" />
+        <Setter Property="theming:MouseOverActiveProperties.ShadowElevation" Value="28" />
     </Style>
 
     
@@ -804,10 +1050,11 @@
     - Foreground: Bound to Self
     -->
     <Style x:Key="ForegroundBasedThemingProperties" TargetType="FrameworkElement">
-        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
-        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{Binding Foreground, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{c:SelfBinding Foreground}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{c:SelfBinding Foreground}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{c:SelfBinding Foreground}" />
         <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{c:SelfBinding Foreground}" />
     </Style>
     
 </ResourceDictionary>

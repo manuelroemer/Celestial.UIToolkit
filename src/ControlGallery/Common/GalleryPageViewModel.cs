@@ -1,4 +1,6 @@
-﻿namespace ControlGallery.Common
+﻿using Prism.Mvvm;
+
+namespace ControlGallery.Common
 {
 
     public abstract class GalleryPageViewModel : NavigationAwareViewModel

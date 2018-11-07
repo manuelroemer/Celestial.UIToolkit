@@ -107,10 +107,10 @@ namespace Celestial.UIToolkit.Media.Animations
         /// The suggested origin value, used if <see cref="To"/> is not set.
         /// </param>
         /// <param name="animationClock">
-        /// The <see cref="AnimationClock"/> to be used by the animation to generate its output value.
+        /// The <see cref="IAnimationClock"/> to be used by the animation to generate its output value.
         /// </param>
         /// <returns>The value which this animation believes to be the current one.</returns>
-        protected override T GetCurrentValueCore(T defaultOriginValue, T defaultDestinationValue, AnimationClock animationClock)
+        protected override T GetCurrentValueCore(T defaultOriginValue, T defaultDestinationValue, IAnimationClock animationClock)
         {
             SetConstantAnimationValues();
             SetDynamicAnimationValues(defaultOriginValue, defaultDestinationValue, animationClock);
@@ -157,7 +157,7 @@ namespace Celestial.UIToolkit.Media.Animations
                 _animationType = AnimationType.Automatic;
         }
 
-        private void SetDynamicAnimationValues(T defaultOrigin, T defaultDestination, AnimationClock animationClock)
+        private void SetDynamicAnimationValues(T defaultOrigin, T defaultDestination, IAnimationClock animationClock)
         {
             SetActualFromAndTo(defaultOrigin, defaultDestination);
             SetCurrentAdditiveModifier(defaultOrigin);
@@ -203,7 +203,7 @@ namespace Celestial.UIToolkit.Media.Animations
             }
         }
 
-        private void SetCurrentCumulativeModifier(AnimationClock animationClock)
+        private void SetCurrentCumulativeModifier(IAnimationClock animationClock)
         {
             if (IsCumulative)
             {
@@ -224,7 +224,7 @@ namespace Celestial.UIToolkit.Media.Animations
         }
 
         /// <summary>
-        /// A method which is called inside the <see cref="GetCurrentValueCore(T, T, AnimationClock)"/> method,
+        /// A method which is called inside the <see cref="GetCurrentValueCore(T, T, IAnimationClock)"/> method,
         /// before the actual animation is done.
         /// If overridden, it can be used to perform additional validation on the values to be animated and,
         /// if required, throw exceptions, if the values are not as required.

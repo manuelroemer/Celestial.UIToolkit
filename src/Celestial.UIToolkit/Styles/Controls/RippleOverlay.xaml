@@ -27,12 +27,12 @@
                             </Storyboard>
 
                             <Storyboard x:Key="ExpandingStoryboard">
-                                <BooleanAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                <BooleanAnimationUsingKeyFrames Storyboard.Target="{c:TemplatedParentBinding}"
                                                                 Storyboard.TargetProperty="IsAnimationExpanding">
                                     <DiscreteBooleanKeyFrame KeyTime="0" Value="True" />
                                     <DiscreteBooleanKeyFrame KeyTime="{StaticResource ColorAnimationKeyTime}" Value="False" />
                                 </BooleanAnimationUsingKeyFrames>
-                                <BooleanAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                <BooleanAnimationUsingKeyFrames Storyboard.Target="{c:TemplatedParentBinding}"
                                                                 Storyboard.TargetProperty="IsAnimationFading">
                                     <!-- Important: Reset IsAnimationFading, since we can interrupt the Fading state.
                                                     This would result in IsAnimExpanding and IsAnimFading both being true. -->
@@ -41,21 +41,21 @@
                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorderScaleTransform"
                                                                Storyboard.TargetProperty="ScaleX">
                                     <DiscreteDoubleKeyFrame KeyTime="0" Value="0" />
-                                    <LinearDoubleKeyFrame KeyTime="{StaticResource ColorAnimationKeyTime}" Value="{Binding AnimationScale, RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <LinearDoubleKeyFrame KeyTime="{StaticResource ColorAnimationKeyTime}" Value="{c:TemplatedParentBinding AnimationScale}" />
                                 </DoubleAnimationUsingKeyFrames>
                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorderScaleTransform"
                                                                Storyboard.TargetProperty="ScaleY">
                                     <DiscreteDoubleKeyFrame KeyTime="0" Value="0" />
-                                    <LinearDoubleKeyFrame KeyTime="{StaticResource ColorAnimationKeyTime}" Value="{Binding AnimationScale, RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <LinearDoubleKeyFrame KeyTime="{StaticResource ColorAnimationKeyTime}" Value="{c:TemplatedParentBinding AnimationScale}" />
                                 </DoubleAnimationUsingKeyFrames>
                             </Storyboard>
 
                             <Storyboard x:Key="ExpandedStoryboard">
-                                <BooleanAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                <BooleanAnimationUsingKeyFrames Storyboard.Target="{c:TemplatedParentBinding}"
                                                                 Storyboard.TargetProperty="IsAnimationFading">
                                     <DiscreteBooleanKeyFrame KeyTime="0" Value="False" />
                                 </BooleanAnimationUsingKeyFrames>
-                                <BooleanAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                <BooleanAnimationUsingKeyFrames Storyboard.Target="{c:TemplatedParentBinding}"
                                                                 Storyboard.TargetProperty="IsAnimationExpanding">
                                     <DiscreteBooleanKeyFrame KeyTime="0" Value="False" />
                                 </BooleanAnimationUsingKeyFrames>
@@ -71,18 +71,18 @@
 
                             <Storyboard x:Key="FadingStoryboard">
                                 <!-- Change IsAnimationFading property to notify the backing class when the fading animation is done. -->
-                                <BooleanAnimationUsingKeyFrames Storyboard.Target="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                <BooleanAnimationUsingKeyFrames Storyboard.Target="{c:TemplatedParentBinding}"
                                                                 Storyboard.TargetProperty="IsAnimationFading">
                                     <DiscreteBooleanKeyFrame KeyTime="0" Value="True" />
                                     <DiscreteBooleanKeyFrame KeyTime="{StaticResource ColorAnimationKeyTime}" Value="False" />
                                 </BooleanAnimationUsingKeyFrames>
                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorderScaleTransform"
                                                                Storyboard.TargetProperty="ScaleX">
-                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding AnimationScale, RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding AnimationScale}" />
                                 </DoubleAnimationUsingKeyFrames>
                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorderScaleTransform"
                                                                Storyboard.TargetProperty="ScaleY">
-                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{Binding AnimationScale, RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <DiscreteDoubleKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding AnimationScale}" />
                                 </DoubleAnimationUsingKeyFrames>
                                 <DoubleAnimationUsingKeyFrames Storyboard.TargetName="RippleBorder"
                                                                Storyboard.TargetProperty="Opacity">

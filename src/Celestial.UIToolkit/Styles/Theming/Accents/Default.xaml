@@ -10,32 +10,34 @@
     The first accent is supposed to be rarely used inside an application.
     As a result, it is expected to be a flashy, attention-raising color.
     -->
-    <Color x:Key="Accent1LightestColor">#EC4F7E</Color>
-    <Color x:Key="Accent1LighterColor">#EA356B</Color>
-    <Color x:Key="Accent1LightColor">#E71B59</Color>
+    <Color x:Key="Accent1LightestColor">#f38baa</Color>
+    <Color x:Key="Accent1LighterColor">#ef648e</Color>
+    <Color x:Key="Accent1LightColor">#eb3d72</Color>
     <Color x:Key="Accent1Color">#D1154E</Color>
-    <Color x:Key="Accent1DarkColor">#B71344</Color>
-    <Color x:Key="Accent1DarkerColor">#9D103B</Color>
-    <Color x:Key="Accent1DarkestColor">#840D31</Color>
+    <Color x:Key="Accent1DarkColor">#c11348</Color>
+    <Color x:Key="Accent1DarkerColor">#9a0f39</Color>
+    <Color x:Key="Accent1DarkestColor">#730b2b</Color>
 
-    <Color x:Key="OnAccent1TextColor">#FFFFFF</Color>
-    <Color x:Key="OnAccent1DisabledTextColor">#66000000</Color>
+    <Color x:Key="OnLighterAccent1TextColor">#000000</Color>
+    <Color x:Key="OnDarkerAccent1TextColor">#FFFFFF</Color>
+    <Color x:Key="OnAccent1DisabledTextColor">#CCCCCC</Color>
 
 
 
     <!--
     The second accent is frequently used by Accent1Controls to guide the user's attention towards them.
     -->
-    <Color x:Key="Accent2LightestColor">#689EE1</Color>
-    <Color x:Key="Accent2LighterColor">#508EDC</Color>
-    <Color x:Key="Accent2LightColor">#387FD8</Color>
+    <Color x:Key="Accent2LightestColor">#a4caf1</Color>
+    <Color x:Key="Accent2LighterColor">#70a3e3</Color>
+    <Color x:Key="Accent2LightColor">#4d8cdc</Color>
     <Color x:Key="Accent2Color">#2D78D6</Color>
-    <Color x:Key="Accent2DarkColor">#2364B5</Color>
-    <Color x:Key="Accent2DarkerColor">#1E569D</Color>
-    <Color x:Key="Accent2DarkestColor">#1A4985</Color>
+    <Color x:Key="Accent2DarkColor">#2262b1</Color>
+    <Color x:Key="Accent2DarkerColor">#1b4e8e</Color>
+    <Color x:Key="Accent2DarkestColor">#143a6a</Color>
 
-    <Color x:Key="OnAccent2TextColor">#FFFFFF</Color>
-    <Color x:Key="OnAccent2DisabledTextColor">#66000000</Color>
+    <Color x:Key="OnLighterAccent2TextColor">#000000</Color>
+    <Color x:Key="OnDarkerAccent2TextColor">#FFFFFF</Color>
+    <Color x:Key="OnAccent2DisabledTextColor">#CCCCCC</Color>
 
 
 
@@ -43,16 +45,17 @@
     The Error Color is used for, as the name suggests, error states within the application.
     A common example is a validation error in a Accent1Control.
     -->
-    <Color x:Key="ErrorLightestColor">#FF2A37</Color>
-    <Color x:Key="ErrorLighterColor">#FF0E1D</Color>
-    <Color x:Key="ErrorLightColor">#F1000E</Color>
+    <Color x:Key="ErrorLightestColor">#ff7f87</Color>
+    <Color x:Key="ErrorLighterColor">#fe555f</Color>
+    <Color x:Key="ErrorLightColor">#ff2a37</Color>
     <Color x:Key="ErrorColor">#E3000E</Color>
-    <Color x:Key="ErrorDarkColor">#B8000B</Color>
-    <Color x:Key="ErrorDarkerColor">#9C0009</Color>
-    <Color x:Key="ErrorDarkestColor">#7F0007</Color>
+    <Color x:Key="ErrorDarkColor">#d4000d</Color>
+    <Color x:Key="ErrorDarkerColor">#aa000a</Color>
+    <Color x:Key="ErrorDarkestColor">#7f0007</Color>
 
-    <Color x:Key="OnErrorTextColor">#FFFFFF</Color>
-    <Color x:Key="OnErrorDisabledTextColor">#66000000</Color>
+    <Color x:Key="OnLighterErrorTextColor">#000000</Color>
+    <Color x:Key="OnDarkerErrorTextColor">#FFFFFF</Color>
+    <Color x:Key="OnErrorDisabledTextColor">#CCCCCC</Color>
 
 
 
@@ -108,8 +111,8 @@
     <SolidColorBrush x:Key="ListAccent2MediumBrush" Color="{StaticResource Accent2LighterColor}" />
     <SolidColorBrush x:Key="ListAccent2HighBrush" Color="{StaticResource Accent2LightColor}" />
 
-    <SolidColorBrush x:Key="OnListAccent1Brush" Color="{StaticResource AltTextPrimaryColor}" />
-    <SolidColorBrush x:Key="OnListAccent2Brush" Color="{StaticResource AltTextPrimaryColor}" />
+    <SolidColorBrush x:Key="OnListAccent1TextBrush" Color="{StaticResource OnLighterAccent1TextColor}" />
+    <SolidColorBrush x:Key="OnListAccent2TextBrush" Color="{StaticResource OnLighterAccent2TextColor}" />
 
 
 
@@ -127,7 +130,8 @@
     <SolidColorBrush x:Key="Accent1DarkerBrush" Color="{StaticResource Accent1DarkerColor}" />
     <SolidColorBrush x:Key="Accent1DarkestBrush" Color="{StaticResource Accent1DarkestColor}" />
     
-    <SolidColorBrush x:Key="OnAccent1TextBrush" Color="{StaticResource OnAccent1TextColor}" />
+    <SolidColorBrush x:Key="OnLighterAccent1TextBrush" Color="{StaticResource OnLighterAccent1TextColor}" />
+    <SolidColorBrush x:Key="OnDarkerAccent1TextBrush" Color="{StaticResource OnDarkerAccent1TextColor}" />
     <SolidColorBrush x:Key="OnAccent1DisabledTextBrush" Color="{StaticResource OnAccent1DisabledTextColor}" />
 
 
@@ -140,7 +144,8 @@
     <SolidColorBrush x:Key="Accent2DarkerBrush" Color="{StaticResource Accent2DarkerColor}" />
     <SolidColorBrush x:Key="Accent2DarkestBrush" Color="{StaticResource Accent2DarkestColor}" />
 
-    <SolidColorBrush x:Key="OnAccent2TextBrush" Color="{StaticResource OnAccent2TextColor}" />
+    <SolidColorBrush x:Key="OnLighterAccent2TextBrush" Color="{StaticResource OnLighterAccent2TextColor}" />
+    <SolidColorBrush x:Key="OnDarkerAccent2TextBrush" Color="{StaticResource OnDarkerAccent2TextColor}" />
     <SolidColorBrush x:Key="OnAccent2DisabledTextBrush" Color="{StaticResource OnAccent2DisabledTextColor}" />
 
 
@@ -153,7 +158,8 @@
     <SolidColorBrush x:Key="ErrorDarkerBrush" Color="{StaticResource ErrorDarkerColor}" />
     <SolidColorBrush x:Key="ErrorDarkestBrush" Color="{StaticResource ErrorDarkestColor}" />
 
-    <SolidColorBrush x:Key="OnErrorTextBrush" Color="{StaticResource OnErrorTextColor}" />
+    <SolidColorBrush x:Key="OnLighterErrorTextBrush" Color="{StaticResource OnLighterErrorTextColor}" />
+    <SolidColorBrush x:Key="OnDarkerErrorTextBrush" Color="{StaticResource OnDarkerErrorTextColor}" />
     <SolidColorBrush x:Key="OnErrorDisabledTextBrush" Color="{StaticResource OnErrorDisabledTextColor}" />
 
 </ResourceDictionary>

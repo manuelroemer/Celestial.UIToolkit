@@ -1,0 +1,212 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:c="http://celestial-ui.com"
+                    xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
+                    xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
+
+    <ResourceDictionary.MergedDictionaries>
+        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
+        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
+        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
+        <c:SharedResourceDictionary Source="./Separator.xaml" />
+        <c:SharedResourceDictionary Source="./ProgressBar.xaml" />
+
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="StandardStatusBar" TargetType="StatusBar" BasedOn="{c:MultiStyle 'PaneBackground PaneBorder StandardForeground StandardFontProperties Shadow0'}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="StatusBar">
+                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
+                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                        <controls:ThemeShadowPresenter>
+                            <Border x:Name="Bd"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}" />
+                        </controls:ThemeShadowPresenter>
+                        <Border x:Name="BorderSpacer"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Padding="{TemplateBinding Padding}"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                            <Grid>
+                                <ItemsPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                            </Grid>
+                        </Border>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{c:SelfBinding Path=(theming:MouseOverProperties.BackgroundBrush)}" />
+                            <Setter Property="BorderBrush" Value="{c:SelfBinding Path=(theming:MouseOverProperties.BorderBrush)}" />
+                            <Setter Property="Foreground" Value="{c:SelfBinding Path=(theming:MouseOverProperties.ForegroundBrush)}" />
+                            <Setter Property="controls:ThemeShadow.Elevation" Value="{c:SelfBinding Path=(theming:MouseOverProperties.ShadowElevation)}" />
+                        </Trigger>
+                        
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{c:SelfBinding Path=(theming:DisabledProperties.BackgroundBrush)}" />
+                            <Setter Property="BorderBrush" Value="{c:SelfBinding Path=(theming:DisabledProperties.BorderBrush)}" />
+                            <Setter Property="Foreground" Value="{c:SelfBinding Path=(theming:DisabledProperties.ForegroundBrush)}" />
+                            <Setter Property="controls:ThemeShadow.Elevation" Value="{c:SelfBinding Path=(theming:DisabledProperties.ShadowElevation)}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="StatusBar" BasedOn="{StaticResource StandardStatusBar}" />
+
+    
+    
+    <Style x:Key="Accent1StatusBar" TargetType="StatusBar" BasedOn="{c:MultiStyle 'StandardStatusBar'}">
+        <Setter Property="Background" Value="{StaticResource Accent1ControlBackgroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource Accent1ControlBackgroundBrush}" />
+        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource Accent1ControlBackgroundBrush}" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource Accent1ControlBackgroundBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Accent1ControlBorderBrush}" />
+        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource Accent1ControlBorderBrush}" />
+        <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource Accent1ControlBorderBrush}" />
+        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource Accent1ControlBorderBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource OnDarkerAccent1TextBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource OnDarkerAccent1TextBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource OnDarkerAccent1TextBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnDarkerAccent1TextBrush}" />
+        <!-- Disabled values are inherited from StandardStatusBar. -->
+
+        <Style.Resources>
+            <!-- Override some typical styles to match the Accent1 Background.
+                 This may need to be updated, depending on typical controls that may exist in a StatusBar. -->
+            <Style x:Key="{x:Static StatusBar.SeparatorStyleKey}" TargetType="Separator" BasedOn="{StaticResource StandardVerticalSeparator}">
+                <Setter Property="Background" Value="{StaticResource OnAccent1DisabledTextBrush}" />
+            </Style>
+
+            <Style TargetType="ProgressBar" BasedOn="{StaticResource StandardProgressBar}">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource OnDarkerAccent1TextBrush}" />
+                <Setter Property="BorderBrush" Value="{StaticResource OnDarkerAccent1TextBrush}" />
+                <Setter Property="theming:ActiveProperties.BorderBrush" Value="Transparent" />
+                <Setter Property="MinHeight" Value="{c:GridUnit 2}" />
+
+                <Style.Triggers>
+                    <MultiTrigger>
+                        <MultiTrigger.Conditions>
+                            <Condition Property="IsEnabled" Value="True" />
+                            <Condition Property="IsIndeterminate" Value="False" />
+                        </MultiTrigger.Conditions>
+                        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
+                    </MultiTrigger>
+                </Style.Triggers>
+            </Style>
+        </Style.Resources>
+    </Style>
+
+    <Style x:Key="Accent2StatusBar" TargetType="StatusBar" BasedOn="{c:MultiStyle 'StandardStatusBar'}">
+        <Setter Property="Background" Value="{StaticResource Accent2ControlBackgroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource Accent2ControlBackgroundBrush}" />
+        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource Accent2ControlBackgroundBrush}" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource Accent2ControlBackgroundBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Accent2ControlBorderBrush}" />
+        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource Accent2ControlBorderBrush}" />
+        <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource Accent2ControlBorderBrush}" />
+        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource Accent2ControlBorderBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource OnDarkerAccent2TextBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource OnDarkerAccent2TextBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource OnDarkerAccent2TextBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnDarkerAccent2TextBrush}" />
+        <!-- Disabled values are inherited from StandardStatusBar. -->
+
+        <Style.Resources>
+            <!-- Override some typical styles to match the Accent2 Background.
+                 This may need to be updated, depending on typical controls that may exist in a StatusBar. -->
+            <Style x:Key="{x:Static StatusBar.SeparatorStyleKey}" TargetType="Separator" BasedOn="{StaticResource StandardVerticalSeparator}">
+                <Setter Property="Background" Value="{StaticResource OnAccent2DisabledTextBrush}" />
+            </Style>
+
+            <Style TargetType="ProgressBar" BasedOn="{StaticResource StandardProgressBar}">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource OnDarkerAccent2TextBrush}" />
+                <Setter Property="BorderBrush" Value="{StaticResource OnDarkerAccent2TextBrush}" />
+                <Setter Property="theming:ActiveProperties.BorderBrush" Value="Transparent" />
+                <Setter Property="MinHeight" Value="{c:GridUnit 2}" />
+
+                <Style.Triggers>
+                    <MultiTrigger>
+                        <MultiTrigger.Conditions>
+                            <Condition Property="IsEnabled" Value="True" />
+                            <Condition Property="IsIndeterminate" Value="False" />
+                        </MultiTrigger.Conditions>
+                        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
+                    </MultiTrigger>
+                </Style.Triggers>
+            </Style>
+        </Style.Resources>
+    </Style>
+
+    
+    
+    <Style x:Key="StandardStatusBarItem" TargetType="StatusBarItem" BasedOn="{c:MultiStyle 'TransparentBorder TransparentBackground Shadow0'}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="{c:GridUnit '1'}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="StatusBarItem">
+                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
+                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                        <controls:ThemeShadowPresenter>
+                            <Border x:Name="Bd"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}" />
+                        </controls:ThemeShadowPresenter>
+                        <Border x:Name="BorderSpacer"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Padding="{TemplateBinding Padding}"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                            <ContentPresenter x:Name="ContentSite"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Border>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{c:SelfBinding Path=(theming:MouseOverProperties.BackgroundBrush)}" />
+                            <Setter Property="BorderBrush" Value="{c:SelfBinding Path=(theming:MouseOverProperties.BorderBrush)}" />
+                            <Setter Property="Foreground" Value="{c:SelfBinding Path=(theming:MouseOverProperties.ForegroundBrush)}" />
+                            <Setter Property="controls:ThemeShadow.Elevation" Value="{c:SelfBinding Path=(theming:MouseOverProperties.ShadowElevation)}" />
+                        </Trigger>
+                        
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{c:SelfBinding Path=(theming:DisabledProperties.BackgroundBrush)}" />
+                            <Setter Property="BorderBrush" Value="{c:SelfBinding Path=(theming:DisabledProperties.BorderBrush)}" />
+                            <Setter Property="Foreground" Value="{c:SelfBinding Path=(theming:DisabledProperties.ForegroundBrush)}" />
+                            <Setter Property="controls:ThemeShadow.Elevation" Value="{c:SelfBinding Path=(theming:DisabledProperties.ShadowElevation)}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="StatusBarItem" BasedOn="{StaticResource StandardStatusBarItem}" />
+
+</ResourceDictionary>

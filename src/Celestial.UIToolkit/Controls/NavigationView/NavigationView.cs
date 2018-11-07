@@ -31,6 +31,13 @@ namespace Celestial.UIToolkit.Controls
     public partial class NavigationView : HeaderedContentControl
     {
 
+        /// <summary>
+        /// Identifies whether the user has explicitly toggled the NavigationView closed via
+        /// the toggle button.
+        /// The NavigationView doesn't automatically expand if this is true.
+        /// </summary>
+        private bool _isExplicitlyClosed = false;
+
         internal const string BackButtonTemplatePart = "PART_BackButton";
         internal const string ToggleButtonTemplatePart = "PART_ToggleButton";
         internal const string PaneContentContainerPart = "PART_PaneContentContainer";
@@ -126,6 +133,7 @@ namespace Celestial.UIToolkit.Controls
         private void ToggleButton_Click(object sender, RoutedEventArgs e)
         {
             this.TraceInfo("Toggle Button clicked.");
+            _isExplicitlyClosed = IsPaneOpen;
             IsPaneOpen = !IsPaneOpen;
         }
 
@@ -176,13 +184,14 @@ namespace Celestial.UIToolkit.Controls
             // Don't change anything, if we are already in the state. This could potentially
             // screw up the IsPaneOpen property.
             this.TraceVerbose("Adaptive properties changed. Potentially modifying state.");
+            
             if (ActualWidth >= ExpandedModeThresholdWidth)
             {
                 if (DisplayMode != NavigationViewDisplayMode.Expanded)
                 {
                     this.TraceInfo("Adapting into Expanded mode.");
                     DisplayMode = NavigationViewDisplayMode.Expanded;
-                    IsPaneOpen = true;
+                    IsPaneOpen = !_isExplicitlyClosed;
                 }
             }
             else if (ActualWidth >= CompactModeThresholdWidth)
@@ -230,7 +239,7 @@ namespace Celestial.UIToolkit.Controls
                 }
             }
         }
-
+        
         private static void DisplayModeProperty_Changed(
             DependencyObject d, DependencyPropertyChangedEventArgs e)
         {

@@ -27,6 +27,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <UseVSHostingProcess>true</UseVSHostingProcess>
+    <LangVersion>7.2</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -35,6 +36,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>7.2</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -65,10 +67,31 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converters\BooleanToVisibilityConverterTests.cs" />
+    <Compile Include="Converters\ColorToSolidColorBrushConverterTests.cs" />
+    <Compile Include="Converters\DoubleToCornerRadiusConverterTests.cs" />
+    <Compile Include="Converters\GetTypeConverterTests.cs" />
+    <Compile Include="Converters\GroupConverterTests.cs" />
+    <Compile Include="Converters\InvertBooleanConverterTests.cs" />
+    <Compile Include="Converters\InvertingConverterTests.cs" />
+    <Compile Include="Converters\MathOperationConverterTests.cs" />
+    <Compile Include="Converters\NegateValueConverterTests.cs" />
+    <Compile Include="Converters\NullToVisibilityConverterTests.cs" />
+    <Compile Include="Converters\StringToVisibilityConverterTests.cs" />
+    <Compile Include="Converters\ThicknessSidePickerConverterTests.cs" />
+    <Compile Include="Converters\ValueConverterTests.cs" />
     <Compile Include="Extensions\ArrayExtensionsTests.cs" />
     <Compile Include="Extensions\ArraySegmentExtensionsTests.cs" />
     <Compile Include="Extensions\EnumerableExtensionsTests.cs" />
     <Compile Include="ItemsSourceCollectionTests.cs" />
+    <Compile Include="Media\Animations\AnimationBaseTests.cs" />
+    <Compile Include="Media\Animations\AnimationUsingKeyFramesBaseTests.cs" />
+    <Compile Include="Media\Animations\EasingFromToByAnimationTests.cs" />
+    <Compile Include="Media\Animations\FromToByAnimationTests.cs" />
+    <Compile Include="Media\Animations\Mocks\ControllableAnimationClock.cs" />
+    <Compile Include="Media\Animations\Mocks\DoubleAnimationUsingKeyFrames.cs" />
+    <Compile Include="Media\Animations\Mocks\FromToByDoubleAnimation.cs" />
+    <Compile Include="Media\Animations\Mocks\SimpleDoubleAnimation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -83,6 +106,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Resources\SampleDictionaryKeys.cs" />
+    <Compile Include="Xaml\BindingExtensionsTests.cs" />
     <Compile Include="Xaml\DependencyProperties.cs" />
     <Compile Include="Xaml\GridUnitExtensionTests.cs" />
     <Compile Include="Xaml\MockedServiceProvider.cs" />
@@ -113,9 +137,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Converters\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

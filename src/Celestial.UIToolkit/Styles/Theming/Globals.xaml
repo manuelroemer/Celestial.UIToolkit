@@ -1,12 +1,13 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:c="http://celestial-ui.com"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
     <!--
     KeyTimes and durations for animations.
     -->
-    <Duration x:Key="ColorAnimationDuration">0:0:0.175</Duration>
-    <KeyTime x:Key="ColorAnimationKeyTime">0:0:0.175</KeyTime>
+    <Duration x:Key="ColorAnimationDuration">0:0:0.150</Duration>
+    <KeyTime x:Key="ColorAnimationKeyTime">0:0:0.150</KeyTime>
     <PowerEase x:Key="ColorAnimationEase" EasingMode="EaseIn" Power="1" />
 
     <Duration x:Key="EnterAnimationDuration">0:0:0.300</Duration>
@@ -53,6 +54,20 @@
     <Thickness x:Key="WideBorderThickness">2</Thickness>
 
     <Thickness x:Key="PopupShadowSpacerMargin">50</Thickness>
+
+    <c:GridUnit x:Key="StandardListItemPadding" 
+                TargetType="{x:Type Thickness}" 
+                MultiplierString="2,1" />
+
+    <c:GridUnit x:Key="LargeListItemPadding" 
+                TargetType="{x:Type Thickness}" 
+                MultiplierString="4,2" />
+
+    <c:GridUnit x:Key="CompactListItemPadding"
+                TargetType="{x:Type Thickness}"
+                MultiplierString="1,0.5" />
+
+
 
 
 

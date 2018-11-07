@@ -64,8 +64,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <returns>The result of the addition.</returns>
         protected override sealed Brush AddValues(Brush a, Brush b)
         {
-            return SupportedAnimationBrushes.GetAnimationHelper(a)
-                                            .AddValues(a, b);
+            return BrushAnimationHelper.Instance.AddValues(a, b);
         }
 
         /// <summary>
@@ -77,8 +76,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <returns>The result of the subtraction.</returns>
         protected override sealed Brush SubtractValues(Brush a, Brush b)
         {
-            return SupportedAnimationBrushes.GetAnimationHelper(a)
-                                            .SubtractValues(a, b);
+            return BrushAnimationHelper.Instance.SubtractValues(a, b);
         }
 
         /// <summary>
@@ -90,8 +88,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <returns>The result of the scaling.</returns>
         protected override sealed Brush ScaleValue(Brush value, double factor)
         {
-            return SupportedAnimationBrushes.GetAnimationHelper(value)
-                                            .ScaleValue(value, factor);
+            return BrushAnimationHelper.Instance.ScaleValue(value, factor);
         }
 
         /// <summary>
@@ -107,8 +104,7 @@ namespace Celestial.UIToolkit.Media.Animations
         /// <returns>The output value of the interpolation, given the specified values.</returns>
         protected override sealed Brush InterpolateValueCore(Brush from, Brush to, double progress)
         {
-            return SupportedAnimationBrushes.GetAnimationHelper(from)
-                                            .InterpolateValue(from, to, progress);
+            return BrushAnimationHelper.Instance.InterpolateValue(from, to, progress);
         }
         
     }

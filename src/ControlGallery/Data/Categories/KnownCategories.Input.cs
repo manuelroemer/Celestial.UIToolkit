@@ -56,6 +56,14 @@ namespace ControlGallery.Data.Categories
             SamplePageType = typeof(RadioButton)
         };
 
+        private static ControlInformation ToggleSwitchInfo = new ControlInformation()
+        {
+            Name = "ToggleSwitch",
+            Description = "A physical switch which allows users to turn something on or off.",
+            Icon = new PackIconModern() { Kind = PackIconModernKind.SwitchOff },
+            SamplePageType = typeof(ToggleSwitch)
+        };
+
         private static ControlInformation ListBoxInfo = new ControlInformation()
         {
             Name = "ListBox",
@@ -64,15 +72,43 @@ namespace ControlGallery.Data.Categories
             SamplePageType = typeof(ListBox)
         };
 
+        private static ControlInformation ListViewInfo = new ControlInformation()
+        {
+            Name = "ListView",
+            Description = "The ListView control provides the infrastructure to display a set of data items in different layouts or views.",
+            Icon = new PackIconModern() { Kind = PackIconModernKind.Box },
+            SamplePageType = typeof(ListView)
+        };
+
+        private static ControlInformation TreeViewInfo = new ControlInformation()
+        {
+            Name = "TreeView",
+            Description = "A TreeView displays item in a hierarchical order (like a tree with its branches).",
+            Icon = new PackIconModern() { Kind = PackIconModernKind.Tree },
+            SamplePageType = typeof(TreeView)
+        };
+
+        private static ControlInformation SliderInfo = new ControlInformation()
+        {
+            Name = "Slider",
+            Description = "A Slider allows the user to pick a value from a range of numbers.",
+            Icon = new PackIconModern() { Kind = PackIconModernKind.Calculator },
+            SamplePageType = typeof(Slider)
+        };
+
         public static ControlCategory Input { get; } = new ControlCategory(
             "Input",
             new PackIconMaterialLight() { Kind = PackIconMaterialLightKind.BorderOutside },
             CheckBoxInfo,
             RadioButtonInfo,
+            ToggleSwitchInfo,
+            SliderInfo,
             TextBoxInfo,
             PasswordBoxInfo,
             ComboBoxInfo,
-            ListBoxInfo);
+            ListBoxInfo,
+            ListViewInfo,
+            TreeViewInfo);
 
     }
 

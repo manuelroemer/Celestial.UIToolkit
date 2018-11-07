@@ -25,6 +25,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>7.2</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,6 +35,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>7.2</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ControlzEx, Version=3.0.2.4, Culture=neutral, processorArchitecture=MSIL">
@@ -111,6 +113,9 @@
     <Compile Include="Data\ControlDataSource.cs" />
     <Compile Include="Data\ControlInformation.cs" />
     <Compile Include="Data\FruitItems.cs" />
+    <Compile Include="Data\LoremItems.cs" />
+    <Compile Include="Data\SampleCommands.cs" />
+    <Compile Include="Data\SongItems.cs" />
     <Compile Include="GalleryBootstrapper.cs" />
     <Compile Include="Xaml\CategoryPage.xaml.cs">
       <DependentUpon>CategoryPage.xaml</DependentUpon>
@@ -128,11 +133,17 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Xaml\MainWindowViewModel.cs" />
+    <Compile Include="Xaml\SamplePages\Animations\BrushAnimation.xaml.cs">
+      <DependentUpon>BrushAnimation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Xaml\SamplePages\Commanding\Button.xaml.cs">
       <DependentUpon>Button.xaml</DependentUpon>
     </Compile>
     <Compile Include="Xaml\SamplePages\Containers\Card.xaml.cs">
       <DependentUpon>Card.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Xaml\SamplePages\Containers\GroupBox.xaml.cs">
+      <DependentUpon>GroupBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="Xaml\SamplePages\Indicators\ProgressBar.xaml.cs">
       <DependentUpon>ProgressBar.xaml</DependentUpon>
@@ -146,14 +157,26 @@
     <Compile Include="Xaml\SamplePages\Input\ListBox.xaml.cs">
       <DependentUpon>ListBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Xaml\SamplePages\Input\ListView.xaml.cs">
+      <DependentUpon>ListView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Xaml\SamplePages\Input\PasswordBox.xaml.cs">
       <DependentUpon>PasswordBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="Xaml\SamplePages\Input\RadioButton.xaml.cs">
       <DependentUpon>RadioButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Xaml\SamplePages\Input\Slider.xaml.cs">
+      <DependentUpon>Slider.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Xaml\SamplePages\Input\TextBox.xaml.cs">
       <DependentUpon>TextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Xaml\SamplePages\Input\ToggleSwitch.xaml.cs">
+      <DependentUpon>ToggleSwitch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Xaml\SamplePages\Input\TreeView.xaml.cs">
+      <DependentUpon>TreeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Xaml\SamplePages\Layout\Expander.xaml.cs">
       <DependentUpon>Expander.xaml</DependentUpon>
@@ -164,14 +187,26 @@
     <Compile Include="Xaml\SamplePages\Layout\RelativeCanvas.xaml.cs">
       <DependentUpon>RelativeCanvas.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Xaml\SamplePages\Layout\ScrollViewer.xaml.cs">
+      <DependentUpon>ScrollViewer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Xaml\SamplePages\Layout\SplitView.xaml.cs">
       <DependentUpon>SplitView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Xaml\SamplePages\Layout\StatusBar.xaml.cs">
+      <DependentUpon>StatusBar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Xaml\SamplePages\Layout\ToolBar.xaml.cs">
       <DependentUpon>ToolBar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Xaml\SamplePages\Navigation\NavigationView.xaml.cs">
       <DependentUpon>NavigationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Xaml\SamplePages\Navigation\TabControl.xaml.cs">
+      <DependentUpon>TabControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Xaml\SamplePages\Navigation\Window.xaml.cs">
+      <DependentUpon>Window.xaml</DependentUpon>
     </Compile>
     <Compile Include="Xaml\SamplePages\Text\Label.xaml.cs">
       <DependentUpon>Label.xaml</DependentUpon>
@@ -206,11 +241,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Xaml\SamplePages\Animations\BrushAnimation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Xaml\SamplePages\Commanding\Button.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Xaml\SamplePages\Containers\Card.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\SamplePages\Containers\GroupBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -230,6 +273,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Xaml\SamplePages\Input\ListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Xaml\SamplePages\Input\PasswordBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -238,7 +285,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Xaml\SamplePages\Input\Slider.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Xaml\SamplePages\Input\TextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\SamplePages\Input\ToggleSwitch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\SamplePages\Input\TreeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -254,7 +313,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Xaml\SamplePages\Layout\ScrollViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Xaml\SamplePages\Layout\SplitView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\SamplePages\Layout\StatusBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -263,6 +330,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Xaml\SamplePages\Navigation\NavigationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\SamplePages\Navigation\TabControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\SamplePages\Navigation\Window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -297,6 +372,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Compile Include="Data\Categories\KnownCategories.Animations.cs" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -33,6 +33,14 @@ namespace ControlGallery.Data.Categories
             SamplePageType = typeof(Menu)
         };
 
+        private static ControlInformation StatusBarInfo = new ControlInformation()
+        {
+            Name = "StatusBar",
+            Description = "A StatusBar displays information about the application's status in a horizontal bar.",
+            Icon = new PackIconModern() { Kind = PackIconModernKind.GraphBar },
+            SamplePageType = typeof(StatusBar)
+        };
+
         private static ControlInformation ToolBarInfo = new ControlInformation()
         {
             Name = "ToolBar",
@@ -49,14 +57,24 @@ namespace ControlGallery.Data.Categories
             SamplePageType = typeof(RelativeCanvas)
         };
 
+        private static ControlInformation ScrollViewerInfo = new ControlInformation()
+        {
+            Name = "ScrollViewer",
+            Description = "A ScrollViewer hosts content and allows the user to scroll over it, if it exceeds its bounds.",
+            Icon = new PackIconModern() { Kind = PackIconModernKind.BorderOutside },
+            SamplePageType = typeof(ScrollViewer)
+        };
+
         public static ControlCategory Layout { get; } = new ControlCategory(
             "Layout",
             new PackIconMaterialLight() { Kind = PackIconMaterialLightKind.BorderAll },
             SplitViewInfo,
             MenuInfo,
+            StatusBarInfo,
             ToolBarInfo,
             ExpanderInfo,
-            RelativeCanvasInfo);
+            RelativeCanvasInfo,
+            ScrollViewerInfo);
 
     }
 

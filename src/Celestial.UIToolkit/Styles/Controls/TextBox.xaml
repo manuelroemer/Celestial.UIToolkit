@@ -39,10 +39,11 @@
         <Setter Property="TextBoxBase.CaretBrush" Value="{StaticResource CaretBrush}" />
         <Setter Property="PasswordBox.CaretBrush" Value="{StaticResource CaretBrush}" />
         <Setter Property="Background" Value="{StaticResource PrimaryLowBrush}" />
-        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
-        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
-        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
-        <Setter Property="theming:TextBoxHelper.TextBox" Value="{Binding RelativeSource={RelativeSource Self}}" />
+        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{c:SelfBinding Background}" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{c:SelfBinding Background}" />
+        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{c:SelfBinding Background}" />
+        <Setter Property="theming:TextBoxHelper.TextBox" Value="{c:SelfBinding}" />
+        <Setter Property="theming:SelectionProperties.SelectionIndicatorSize" Value="{c:GridUnit '0.377'}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Control">
@@ -52,11 +53,11 @@
                             <Storyboard x:Key="MouseOverStoryboard">
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                 Storyboard.TargetProperty="Background">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:MouseOverProperties.BackgroundBrush)}" />
                                 </c:BrushAnimationUsingKeyFrames>
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                 Storyboard.TargetProperty="BorderBrush">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{Binding Path=(theming:MouseOverProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:MouseOverProperties.BorderBrush)}" />
                                 </c:BrushAnimationUsingKeyFrames>
                             </Storyboard>
 
@@ -72,11 +73,11 @@
                                 <c:BrushAnimation Storyboard.TargetName="Bd"
                                                   Storyboard.TargetProperty="Background"
                                                   Duration="0"
-                                                  To="{Binding Path=(theming:DisabledProperties.BackgroundBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                  To="{c:TemplatedParentBinding Path=(theming:DisabledProperties.BackgroundBrush)}" />
                                 <c:BrushAnimation Storyboard.TargetName="Bd"
                                                   Storyboard.TargetProperty="BorderBrush"
                                                   Duration="0"
-                                                  To="{Binding Path=(theming:DisabledProperties.BorderBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                                  To="{c:TemplatedParentBinding Path=(theming:DisabledProperties.BorderBrush)}" />
                             </Storyboard>
 
                             <Storyboard x:Key="FocusedStoryboard">
@@ -106,18 +107,18 @@
                                         Background="{TemplateBinding Background}"
                                         BorderThickness="{TemplateBinding BorderThickness}"
                                         BorderBrush="{TemplateBinding BorderBrush}"
-                                        CornerRadius="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}" />
+                                        CornerRadius="{c:TemplatedParentBinding Path=(theming:ControlProperties.CornerRadius)}" />
                                 <Border x:Name="FocusedBorder"
                                         Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
                                         BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}"
                                         BorderThickness="{TemplateBinding BorderThickness}"
-                                        CornerRadius="{Binding Path=(theming:ControlProperties.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}"
+                                        CornerRadius="{c:TemplatedParentBinding Path=(theming:ControlProperties.CornerRadius)}"
                                         Visibility="Collapsed" />
                                 <Border BorderThickness="{TemplateBinding BorderThickness}">
                                     <controls:SelectionIndicator x:Name="FocusedIndicator"
                                                                  Background="{TemplateBinding theming:ActiveProperties.BorderBrush}"
-                                                                 Visibility="{Binding Path=(theming:TextBoxProperties.ShowFocusedIndicator), RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}"
-                                                                 Height="1.5"
+                                                                 Visibility="{c:TemplatedParentBinding Path=(theming:SelectionProperties.ShowSelectionIndicator), Converter={StaticResource BooleanToVisibilityConverter}}"
+                                                                 Height="{TemplateBinding theming:SelectionProperties.SelectionIndicatorSize}"
                                                                  VerticalAlignment="Bottom"
                                                                  Margin="0,0,0,-0.5"
                                                                  IsSelected="{TemplateBinding IsKeyboardFocused}" />
@@ -142,7 +143,7 @@
                                 <!-- Use a negative margin on the ScrollViewer, because of a .NET Bug:
                                         https://stackoverflow.com/a/26300334
                                         The ScrollViewer's margin is there to combat the internal TextBoxView being slightly moved to the right. -->
-                                <Border Margin="{Binding Padding, Converter={x:Static c:NegateValueConverter.Default}, RelativeSource={RelativeSource TemplatedParent}}">
+                                <Border Margin="{c:TemplatedParentBinding Padding, Converter={x:Static c:NegateValueConverter.Default}}">
                                     <ScrollViewer x:Name="PART_ContentHost"
                                                   Margin="-1,0,0,0"
                                                   HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
@@ -164,18 +165,18 @@
                         <Border x:Name="AssistiveElementsContainer"
                                 Grid.Row="1"
                                 IsHitTestVisible="False"
-                                Padding="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessLeftPickerConverter}}">
+                                Padding="{c:TemplatedParentBinding Padding, Converter={StaticResource ThicknessLeftPickerConverter}}">
                             <Grid>
                                 <TextBlock x:Name="AssistiveText"
                                            Style="{StaticResource CaptionHintTextBlock}"
                                            Text="{TemplateBinding theming:TextBoxProperties.AssistiveText}"
                                            TextTrimming="CharacterEllipsis"
                                            Margin="{c:GridUnit '0,0.5,0,0'}"
-                                           Visibility="{Binding Path=(theming:TextBoxProperties.AssistiveText), RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource StringToVisibilityConverter}}" />
+                                           Visibility="{c:TemplatedParentBinding Path=(theming:TextBoxProperties.AssistiveText), Converter={StaticResource StringToVisibilityConverter}}" />
                                 <TextBlock x:Name="ValidationErrorText"
                                            Style="{StaticResource CaptionHintTextBlock}"
                                            Foreground="{StaticResource ErrorBrush}"
-                                           Text="{Binding Path=(Validation.Errors)[0].ErrorContent, RelativeSource={RelativeSource TemplatedParent}}"
+                                           Text="{c:TemplatedParentBinding Path=(Validation.Errors)[0].ErrorContent}"
                                            TextTrimming="CharacterEllipsis"
                                            Margin="{c:GridUnit '0,0.5,0,0'}"
                                            Visibility="Collapsed" />
@@ -231,13 +232,13 @@
                  in the TextBox (related to invalidating the TimeManager).
                  Since I don't have a reasonable way to fix this, I'm taking the old-fashioned Trigger route. -->
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Foreground" Value="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                <Setter Property="Foreground" Value="{c:SelfBinding Path=(theming:MouseOverProperties.ForegroundBrush)}" />
             </Trigger>
             <Trigger Property="IsFocused" Value="True">
-                <Setter Property="Foreground" Value="{Binding Path=(theming:ActiveProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                <Setter Property="Foreground" Value="{c:SelfBinding Path=(theming:ActiveProperties.ForegroundBrush)}" />
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Foreground" Value="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
+                <Setter Property="Foreground" Value="{c:SelfBinding Path=(theming:DisabledProperties.ForegroundBrush)}" />
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -251,7 +252,7 @@
 
     <Style x:Key="StandardOutlinedTextBox" TargetType="Control" BasedOn="{StaticResource StandardTextBox}">
         <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="theming:TextBoxProperties.ShowFocusedIndicator" Value="False" />
+        <Setter Property="theming:SelectionProperties.ShowSelectionIndicator" Value="False" />
     </Style>
 
     <Style x:Key="Accent1OutlinedTextBox" TargetType="Control" BasedOn="{c:MultiStyle 'StandardOutlinedTextBox ControlBorderAccent1States'}" />

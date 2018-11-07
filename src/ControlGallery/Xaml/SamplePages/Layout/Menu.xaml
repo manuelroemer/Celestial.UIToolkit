@@ -56,6 +56,96 @@
             </controls:ControlPresenter.Options>
         </controls:ControlPresenter>
 
+        <controls:ControlPresenter Header="A Compact Menu control."
+                                   Xaml="{Binding Xaml, ElementName=MenuEx2}"
+                                   VerticalAlignment="Top">
+            <smtx:XamlDisplay x:Name="MenuEx2" Key="MenuEx2">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledMenuEx2}">
+                    <Menu Style="{StaticResource CompactStandardMenu}">
+                        <MenuItem Header="_File" Icon="{icon:Modern Kind=Acorn}">
+                            <MenuItem Header="Open" />
+                            <MenuItem Header="Save" />
+                            <MenuItem Header="Save As..." />
+                            <MenuItem Header="Auto save" IsCheckable="True" Icon="{icon:Modern Kind=AdobeSpeedgrade}" />
+                            <Separator />
+                            <MenuItem Header="Exit" IsEnabled="False" />
+                        </MenuItem>
+                        <MenuItem Header="Edit">
+                            <MenuItem Header="Undo" Icon="{icon:Modern Kind=Undo}" InputGestureText="CTRL+Z" />
+                            <MenuItem Header="Redo" Icon="{icon:Modern Kind=Redo}" InputGestureText="CTRL+Y" />
+                            <MenuItem Header="Sub-Sub-Menu">
+                                <MenuItem Header="Item 1" />
+                                <MenuItem Header="Item 2" />
+                                <MenuItem Header="Item 3" />
+                                <Separator />
+                                <MenuItem Header="Even more sub-items">
+                                    <MenuItem Header="Item 1" />
+                                    <MenuItem Header="Item 2" />
+                                    <MenuItem Header="Item 3" />
+                                </MenuItem>
+                            </MenuItem>
+                        </MenuItem>
+                        <MenuItem Header="Help" />
+                    </Menu>
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,3'}"
+                            Margin="{c:GridUnit '0,0,0,-3'}">
+                    <CheckBox x:Name="IsEnabledMenuEx2"
+                              IsChecked="True"
+                              Content="IsEnabled" />
+                </StackPanel>
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+
+        <controls:ControlPresenter Header="A Large Menu control."
+                                   Xaml="{Binding Xaml, ElementName=MenuEx3}"
+                                   VerticalAlignment="Top">
+            <smtx:XamlDisplay x:Name="MenuEx3" Key="MenuEx3">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledMenuEx3}">
+                    <Menu Style="{StaticResource LargeStandardMenu}">
+                        <MenuItem Header="_File" Icon="{icon:Modern Kind=Acorn}">
+                            <MenuItem Header="Open" />
+                            <MenuItem Header="Save" />
+                            <MenuItem Header="Save As..." />
+                            <MenuItem Header="Auto save" IsCheckable="True" Icon="{icon:Modern Kind=AdobeSpeedgrade}" />
+                            <Separator />
+                            <MenuItem Header="Exit" IsEnabled="False" />
+                        </MenuItem>
+                        <MenuItem Header="Edit">
+                            <MenuItem Header="Undo" Icon="{icon:Modern Kind=Undo}" InputGestureText="CTRL+Z" />
+                            <MenuItem Header="Redo" Icon="{icon:Modern Kind=Redo}" InputGestureText="CTRL+Y" />
+                            <MenuItem Header="Sub-Sub-Menu">
+                                <MenuItem Header="Item 1" />
+                                <MenuItem Header="Item 2" />
+                                <MenuItem Header="Item 3" />
+                                <Separator />
+                                <MenuItem Header="Even more sub-items">
+                                    <MenuItem Header="Item 1" />
+                                    <MenuItem Header="Item 2" />
+                                    <MenuItem Header="Item 3" />
+                                </MenuItem>
+                            </MenuItem>
+                        </MenuItem>
+                        <MenuItem Header="Help" />
+                    </Menu>
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,3'}"
+                            Margin="{c:GridUnit '0,0,0,-3'}">
+                    <CheckBox x:Name="IsEnabledMenuEx3"
+                              IsChecked="True"
+                              Content="IsEnabled" />
+                </StackPanel>
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+
+        
+        
         <controls:ControlPresenter Header="A standard ContextMenu."
                                    Xaml="{Binding Xaml, ElementName=ContextMenuEx1}"
                                    VerticalAlignment="Top">
@@ -85,6 +175,76 @@
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,3'}"
                             Margin="{c:GridUnit '0,0,0,-3'}">
                     <CheckBox x:Name="IsEnabledContextMenuEx1"
+                              IsChecked="True"
+                              Content="IsEnabled" />
+                </StackPanel>
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+        
+        <controls:ControlPresenter Header="A Compact ContextMenu."
+                                   Xaml="{Binding Xaml, ElementName=ContextMenuEx2}"
+                                   VerticalAlignment="Top">
+            <smtx:XamlDisplay x:Name="ContextMenuEx2" Key="ContextMenuEx2">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledContextMenuEx2}">
+                    <TextBlock Text="Right-Click me to see a Context Menu!">
+                        <TextBlock.ContextMenu>
+                            <ContextMenu Style="{StaticResource CompactStandardContextMenu}">
+                                <MenuItem Header="Item 1" />
+                                <MenuItem Header="Item 2" />
+                                <MenuItem Header="Item 3"
+                                          Icon="{icon:Modern Kind=ListAddBelow}"
+                                          InputGestureText="Open me...">
+                                    <MenuItem Header="Item 1" />
+                                    <MenuItem Header="Item 2" />
+                                    <MenuItem Header="Item 3" />
+                                </MenuItem>
+                                <Separator />
+                                <MenuItem Header="Disabled" IsEnabled="False" />
+                            </ContextMenu>
+                        </TextBlock.ContextMenu>
+                    </TextBlock>
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,3'}"
+                            Margin="{c:GridUnit '0,0,0,-3'}">
+                    <CheckBox x:Name="IsEnabledContextMenuEx2"
+                              IsChecked="True"
+                              Content="IsEnabled" />
+                </StackPanel>
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+        
+        <controls:ControlPresenter Header="A Large ContextMenu."
+                                   Xaml="{Binding Xaml, ElementName=ContextMenuEx3}"
+                                   VerticalAlignment="Top">
+            <smtx:XamlDisplay x:Name="ContextMenuEx3" Key="ContextMenuEx3">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledContextMenuEx3}">
+                    <TextBlock Text="Right-Click me to see a Context Menu!">
+                        <TextBlock.ContextMenu>
+                            <ContextMenu Style="{StaticResource LargeStandardContextMenu}">
+                                <MenuItem Header="Item 1" />
+                                <MenuItem Header="Item 2" />
+                                <MenuItem Header="Item 3"
+                                          Icon="{icon:Modern Kind=ListAddBelow}"
+                                          InputGestureText="Open me...">
+                                    <MenuItem Header="Item 1" />
+                                    <MenuItem Header="Item 2" />
+                                    <MenuItem Header="Item 3" />
+                                </MenuItem>
+                                <Separator />
+                                <MenuItem Header="Disabled" IsEnabled="False" />
+                            </ContextMenu>
+                        </TextBlock.ContextMenu>
+                    </TextBlock>
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,3'}"
+                            Margin="{c:GridUnit '0,0,0,-3'}">
+                    <CheckBox x:Name="IsEnabledContextMenuEx3"
                               IsChecked="True"
                               Content="IsEnabled" />
                 </StackPanel>

@@ -1,64 +1,81 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:c="http://celestial-ui.com"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
-                    xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming">
+                    xmlns:c="http://celestial-ui.com"
+                    xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
+                    xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
-    <!--<ResourceDictionary.MergedDictionaries>
+    <ResourceDictionary.MergedDictionaries>
         <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
+        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
+        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
+        <c:SharedResourceDictionary Source="./TextBlock.xaml" />
+
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
+        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
-    
-    --><!-- A GroupBox is, by default, a ContentControl whose Header
-         is a bold TextBlock. --><!--
-    <Style x:Key="StandardGroupBox" TargetType="GroupBox" BasedOn="{StaticResource Accent2BorderWithForegroundThemingBase}">
+
+    <!-- The default GroupBox simply displays the Header as a Bold Strings.
+         This allows categorization of the following elements, similar to a Label. -->
+    <Style x:Key="StandardGroupBox" TargetType="GroupBox" BasedOn="{c:MultiStyle 'TransparentBackground TransparentBorder StandardForeground BaseFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-        <Setter Property="FontFamily" Value="{StaticResource StandardFontFamily}" />
-        <Setter Property="FontSize" Value="{StaticResource StandardFontSize}" />
-        <Setter Property="FontWeight" Value="Bold" />
-        <Setter Property="FontStretch" Value="{StaticResource StandardFontStretch}" />
-        <Setter Property="FontStyle" Value="{StaticResource StandardFontStyle}" />
-        <Setter Property="Foreground" Value="{StaticResource StandardForegroundBrush}" />
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="BorderBrush" Value="{StaticResource StandardControlBorderBrush}" />
-        <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="Padding" Value="{c:GridUnit '0,1,0,0'}" />
+        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
+        <Setter Property="Padding" Value="{c:GridUnit '0,2,0,0'}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="GroupBox">
-                    <Border Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition />
-                            </Grid.RowDefinitions>
-                            <ContentPresenter x:Name="HeaderContentSite"
-                                              ContentSource="Header"
-                                              RecognizesAccessKey="True" />
-                            <ContentPresenter x:Name="ContentSite"
-                                              Grid.Row="1"
-                                              Margin="{TemplateBinding Padding}"
-                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                              RecognizesAccessKey="True" />
-                        </Grid>
-                    </Border>
+                    <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
+                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                        <controls:ThemeShadowPresenter>
+                            <Border x:Name="Bd"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}" />
+                        </controls:ThemeShadowPresenter>
+                        <Border x:Name="BorderSpacer"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+
+                                <ContentPresenter x:Name="HeaderContentSite"
+                                                  ContentSource="Header"
+                                                  ContentTemplate="{TemplateBinding HeaderTemplate}"
+                                                  ContentTemplateSelector="{TemplateBinding HeaderTemplateSelector}"
+                                                  ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                                                  RecognizesAccessKey="True" />
+
+                                <ContentPresenter x:Name="ContentSite"
+                                                  Grid.Row="1"
+                                                  Margin="{TemplateBinding Padding}"
+                                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                  RecognizesAccessKey="True" />
+                            </Grid>
+                        </Border>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{c:SelfBinding Path=(theming:DisabledProperties.BackgroundBrush)}" />
+                            <Setter Property="BorderBrush" Value="{c:SelfBinding Path=(theming:DisabledProperties.BorderBrush)}" />
+                            <Setter Property="Foreground" Value="{c:SelfBinding Path=(theming:DisabledProperties.ForegroundBrush)}" />
+                            <Setter Property="controls:ThemeShadow.Elevation" Value="{c:SelfBinding Path=(theming:DisabledProperties.ShadowElevation)}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Foreground" Value="{Binding Path=(theming:MouseOverProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
-            </Trigger>
-            <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Foreground" Value="{Binding Path=(theming:DisabledProperties.ForegroundBrush), RelativeSource={RelativeSource Self}}" />
-            </Trigger>
-        </Style.Triggers>
     </Style>
-    <Style TargetType="GroupBox" BasedOn="{StaticResource StandardGroupBox}" />-->
+    <Style TargetType="GroupBox" BasedOn="{StaticResource StandardGroupBox}" />
 
 </ResourceDictionary>

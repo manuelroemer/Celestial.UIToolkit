@@ -1,0 +1,261 @@
+﻿<UserControl x:Class="ControlGallery.Xaml.SamplePages.Navigation.Window"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:smtx="clr-namespace:ShowMeTheXAML;assembly=ShowMeTheXAML"
+             xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:c="http://celestial-ui.com"
+             xmlns:controls="clr-namespace:ControlGallery.Controls"
+             xmlns:data="clr-namespace:ControlGallery.Data"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type data:Fruit}">
+            <TextBlock Text="{Binding Name}" />
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,4,0,12'}">
+
+        <controls:ControlPresenter Header="The default Window."
+                                   Xaml="{Binding Xaml, ElementName=WindowEx1}"
+                                   VerticalAlignment="Top">
+            <controls:ControlPresenter.Description>
+                Even though the Toolkit provides a custom Window style (see this application),
+                you don't have to use it.
+                The standard Windows/WPF Window can still be used.
+                When doing this, you must apply the "DefaultWindow" style to the window.
+                Otherwise, certain styles will not work correctly (TextElements, for example, will
+                have the wrong Font properties).
+            </controls:ControlPresenter.Description>
+            <smtx:XamlDisplay x:Name="WindowEx1" Key="WindowEx1">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}">
+                    <StackPanel.Resources>
+                        <Window x:Key="WindowWithDefaultWindowStyle"
+                                Style="{StaticResource DefaultWindow}"
+                                Title="Window with the 'DefaultWindow' style"
+                                Width="{c:GridUnit 200}"
+                                Height="{c:GridUnit 120}">
+                            <Grid>
+                                <TextBlock TextWrapping="Wrap">
+                                    A Window with the "DefaultWindow" style. <LineBreak />
+                                    Do you see how this text grew larger in comparison to the other window?
+                                </TextBlock>
+                            </Grid>
+                        </Window>
+
+                        <Window x:Key="WindowWithoutDefaultWindowStyle"
+                                Title="Window without the 'DefaultWindow' style"
+                                Width="{c:GridUnit 200}"
+                                Height="{c:GridUnit 120}">
+                            <Grid>
+                                <TextBlock TextWrapping="Wrap">
+                                    This window isn't using the "DefaultWindow" style. <LineBreak />
+                                    Compare this TextBlock to the other window. You can see that the Font
+                                    properties are not matching. <LineBreak />
+                                    That's because the Window is the root element for every other element.
+                                    This allows it to set certain dependency properties which get inherited by
+                                    all of its children (e.g. the "TextElement" properties).
+                                </TextBlock>
+                            </Grid>
+                        </Window>
+                    </StackPanel.Resources>
+
+                    <Button Command="{x:Static c:WindowCommands.ShowCommand}"
+                            CommandParameter="{StaticResource WindowWithDefaultWindowStyle}"
+                            Content="Show Window with 'DefaultWindow' Style" />
+
+                    <Button Command="{x:Static c:WindowCommands.ShowCommand}"
+                            CommandParameter="{StaticResource WindowWithoutDefaultWindowStyle}"
+                            Content="Show Window without 'DefaultWindow' Style" />
+                </StackPanel>
+            </smtx:XamlDisplay>
+        </controls:ControlPresenter>
+
+        <controls:ControlPresenter Header="The StandardWindow."
+                                   Xaml="{Binding Xaml, ElementName=WindowEx2}"
+                                   VerticalAlignment="Top">
+            <controls:ControlPresenter.Description>
+                The Toolkit provides a custom Window style which overrides the system style.
+                It's design is similar to the Windows 10/UWP Window and mirrors the current Primary colors.
+                
+                In comparison to a lot of other Toolkits, you don't need to subclass a special Window class.
+                You can simply use the default WPF "System.Windows.Window"!
+            </controls:ControlPresenter.Description>
+            <smtx:XamlDisplay x:Name="WindowEx2" Key="WindowEx2">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}">
+                    <StackPanel.Resources>
+                        <Window x:Key="Window"
+                                Style="{StaticResource StandardWindow}"
+                                Title="A StandardWindow"
+                                Width="{c:GridUnit 200}"
+                                Height="{c:GridUnit 120}">
+                            <Grid>
+                                <TextBlock TextWrapping="Wrap" Text="A Window with the 'StandardWindow' Style." />
+                            </Grid>
+                        </Window>
+                    </StackPanel.Resources>
+
+                    <Button Command="{x:Static c:WindowCommands.ShowCommand}"
+                            CommandParameter="{StaticResource Window}"
+                            Content="Show Window" />
+                </StackPanel>
+            </smtx:XamlDisplay>
+        </controls:ControlPresenter>
+
+        <controls:ControlPresenter Header="Modifying the StandardWindow Style - Changing Colors."
+                                   Xaml="{Binding Xaml, ElementName=WindowEx3}"
+                                   VerticalAlignment="Top">
+            <controls:ControlPresenter.Description>
+                The advantage of using the StandardWindow is the capability of styling it via
+                Theming properties.
+            </controls:ControlPresenter.Description>
+            <smtx:XamlDisplay x:Name="WindowEx3" Key="WindowEx3">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}">
+                    <StackPanel.Resources>
+                        <Style x:Key="CustomCaptionButton" TargetType="Button" BasedOn="{StaticResource StandardWindowCaptionButton}">
+                            <Setter Property="Background" Value="{DynamicResource Accent2DarkestBrush}" />
+                            <Setter Property="Foreground" Value="{DynamicResource OnDarkerAccent2TextBrush}" />
+                            <Setter Property="c:MouseOverProperties.BackgroundBrush" Value="{DynamicResource Accent2DarkerBrush}" />
+                            <Setter Property="c:MouseOverProperties.ForegroundBrush" Value="{DynamicResource OnDarkerAccent2TextBrush}" />
+                            <Setter Property="c:PressedProperties.BackgroundBrush" Value="{DynamicResource Accent2DarkBrush}" />
+                            <Setter Property="c:PressedProperties.ForegroundBrush" Value="{DynamicResource OnDarkerAccent2TextBrush}" />
+                        </Style>
+
+                        <Style x:Key="CustomCloseCaptionButton" TargetType="Button" BasedOn="{StaticResource StandardCloseWindowCaptionButton}">
+                            <Setter Property="Background" Value="{DynamicResource Accent2DarkestBrush}" />
+                            <Setter Property="Foreground" Value="{DynamicResource OnDarkerAccent2TextBrush}" />
+                        </Style>
+                        
+                        <Window x:Key="Window"
+                                Style="{StaticResource StandardWindow}"
+                                c:WindowTitlebarProperties.BackgroundBrush="{DynamicResource Accent2DarkestBrush}"
+                                c:WindowTitlebarProperties.ForegroundBrush="{DynamicResource OnDarkerAccent2TextBrush}"
+                                c:WindowTitlebarProperties.MinimizeButtonStyle="{StaticResource CustomCaptionButton}"
+                                c:WindowTitlebarProperties.MaximizeButtonStyle="{StaticResource CustomCaptionButton}"
+                                c:WindowTitlebarProperties.CloseButtonStyle="{StaticResource CustomCloseCaptionButton}"
+                                c:WindowTitlebarProperties.TitleFontSize="{StaticResource SubTitleFontSize}"
+                                c:WindowTitlebarProperties.Height="{c:GridUnit 10}"
+                                BorderBrush="{DynamicResource Accent2Brush}"
+                                Title="A StandardWindow with custom colors"
+                                Width="{c:GridUnit 200}"
+                                Height="{c:GridUnit 120}">
+                            <Grid>
+                                <TextBlock TextWrapping="Wrap" Text="A StandardWindow with custom colors. There are more theming properties than shown in this example. Let IntelliSense help you with this." />
+                            </Grid>
+                        </Window>
+                    </StackPanel.Resources>
+
+                    <Button Command="{x:Static c:WindowCommands.ShowCommand}"
+                            CommandParameter="{StaticResource Window}"
+                            Content="Show Window" />
+                </StackPanel>
+            </smtx:XamlDisplay>
+        </controls:ControlPresenter>
+
+        <controls:ControlPresenter Header="StandardWindow - Extending into the TitleBar."
+                                   Xaml="{Binding Xaml, ElementName=WindowEx4}"
+                                   VerticalAlignment="Top">
+            <controls:ControlPresenter.Description>
+                Similar to the UWP API, you can extend the StandardWindow's content into the TitleBar.
+                A prime example of what this looks like is this application.
+            </controls:ControlPresenter.Description>
+            <smtx:XamlDisplay x:Name="WindowEx4" Key="WindowEx4">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}">
+                    <StackPanel.Resources>
+                        <Window x:Key="Window"
+                                Style="{StaticResource StandardWindow}"
+                                c:WindowTitlebarProperties.ExtendContentIntoTitlebar="True"
+                                Width="{c:GridUnit 200}"
+                                Height="{c:GridUnit 120}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="{c:GridUnit 8}" />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <TextBlock TextWrapping="Wrap" Text="This TextBlock is in the TitleBar!" />
+                                <TextBlock Grid.Row="1"
+                                           TextWrapping="Wrap"
+                                           Text="When extending content into the TitleBar, you should, in most cases, only place read-only elements in there, because the user must still be able to interact with the title bar, even though content is displayed there." />
+                            </Grid>
+                        </Window>
+                    </StackPanel.Resources>
+
+                    <Button Command="{x:Static c:WindowCommands.ShowCommand}"
+                            CommandParameter="{StaticResource Window}"
+                            Content="Show Window" />
+                </StackPanel>
+            </smtx:XamlDisplay>
+        </controls:ControlPresenter>
+
+        <controls:ControlPresenter Header="StandardWindow - Extending into the TitleBar."
+                                   Xaml="{Binding Xaml, ElementName=WindowEx5}"
+                                   VerticalAlignment="Top">
+            <controls:ControlPresenter.Description>
+                If you place interactive elements in the title bar, you need to manually make them hit test visible.
+            </controls:ControlPresenter.Description>
+            <smtx:XamlDisplay x:Name="WindowEx5" Key="WindowEx5">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,5'}">
+                    <StackPanel.Resources>
+                        <Window x:Key="Window"
+                                Style="{StaticResource StandardWindow}"
+                                c:WindowTitlebarProperties.ExtendContentIntoTitlebar="True"
+                                Width="{c:GridUnit 200}"
+                                Height="{c:GridUnit 120}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="{c:GridUnit 8}" />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button WindowChrome.IsHitTestVisibleInChrome="True" Content="I can be clicked" />
+                                    <Button Content="I can't..." Margin="{c:GridUnit '2,0,0,0'}" />
+                                </StackPanel>
+                                <TextBlock Grid.Row="1"
+                                           TextWrapping="Wrap"
+                                           Text="Use the 'WindowChrome.IsHitTestVisibleInChrome' property to allow elements in the title bar to be interacted with." />
+                            </Grid>
+                        </Window>
+                    </StackPanel.Resources>
+
+                    <Button Command="{x:Static c:WindowCommands.ShowCommand}"
+                            CommandParameter="{StaticResource Window}"
+                            Content="Show Window" />
+                </StackPanel>
+            </smtx:XamlDisplay>
+        </controls:ControlPresenter>
+
+        <controls:ControlPresenter Header="StandardWindow - Extending into the TitleBar."
+                                   Xaml="{Binding Xaml, ElementName=WindowEx6}"
+                                   VerticalAlignment="Top">
+            <controls:ControlPresenter.Description>
+                Since the NavigationView is a prominent control for TitleBar-less windows, it
+                comes with WindowChrome support out of the box.
+            </controls:ControlPresenter.Description>
+            <smtx:XamlDisplay x:Name="WindowEx6" Key="WindowEx6">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,5'}">
+                    <StackPanel.Resources>
+                        <Window x:Key="Window"
+                                Style="{StaticResource StandardWindow}"
+                                c:WindowTitlebarProperties.ExtendContentIntoTitlebar="True"
+                                Width="{c:GridUnit 200}"
+                                Height="{c:GridUnit 120}">
+                            <Grid>
+                                <c:NavigationView Header="WindowChrome support">
+                                    <TextBlock Text="The NavigationView's buttons can be clicked!" />
+                                </c:NavigationView>
+                            </Grid>
+                        </Window>
+                    </StackPanel.Resources>
+
+                    <Button Command="{x:Static c:WindowCommands.ShowCommand}"
+                            CommandParameter="{StaticResource Window}"
+                            Content="Show Window" />
+                </StackPanel>
+            </smtx:XamlDisplay>
+        </controls:ControlPresenter>
+
+    </StackPanel>
+</UserControl>

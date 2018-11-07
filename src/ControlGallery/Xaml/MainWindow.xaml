@@ -10,12 +10,17 @@
         mc:Ignorable="d"
         Title="MainWindow" 
         WindowStartupLocation="CenterScreen"
-        Background="{StaticResource PrimaryBrush}"
         Width="1200"
         Height="800"
         Style="{StaticResource StandardWindow}"
-        prism:ViewModelLocator.AutoWireViewModel="True">
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        c:WindowTitlebarProperties.ExtendContentIntoTitlebar="True">
 
+    <Window.InputBindings>
+        <KeyBinding Key="BrowserBack" Command="{Binding GoBackCommand}" />
+        <KeyBinding Key="BrowserForward" Command="{Binding GoForwardCommand}" />
+    </Window.InputBindings>
+    
     <Window.Resources>
 
         <DataTemplate DataType="{x:Type local:NavigationMenuItemInfo}">
@@ -39,7 +44,7 @@
         <!-- By default, the NavViewItem has a padding for the icons.
              Since we provide our own template, override that padding. -->
         <Style x:Key="CustomMenuItemStyle" TargetType="c:NavigationViewItem" BasedOn="{StaticResource StandardNavigationViewItem}">
-            <Setter Property="Padding" Value="0" />
+            <!--<Setter Property="Padding" Value="0" />-->
         </Style>
         
     </Window.Resources>
