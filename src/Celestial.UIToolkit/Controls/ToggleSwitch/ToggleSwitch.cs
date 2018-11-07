@@ -14,6 +14,9 @@ namespace Celestial.UIToolkit.Controls
     /// Represents a physical switch which allows users to turn something on or off.
     /// </summary>
     [ContentProperty(nameof(Header))]
+    [TemplateVisualState(Name = ActiveVisualState, GroupName = CommonStatesVisualStateGroup)]
+    [TemplateVisualState(Name = MouseOverActiveVisualState, GroupName = CommonStatesVisualStateGroup)]
+    [TemplateVisualState(Name = PressedVisualState, GroupName = CommonStatesVisualStateGroup)]
     [TemplateVisualState(Name = OnVisualState, GroupName = ToggledStatesVisualStateGroup)]
     [TemplateVisualState(Name = OffVisualState, GroupName = ToggledStatesVisualStateGroup)]
     [TemplateVisualState(Name = DraggingVisualState, GroupName = ToggledStatesVisualStateGroup)]
@@ -24,6 +27,19 @@ namespace Celestial.UIToolkit.Controls
     {
 
         internal const string DraggableAreaTemplatePart = "PART_DraggableArea";
+
+        // These three states are introduced for styling only.
+        // The On/Off/Dragging states are meant for moving the knob around.
+        // For color manipulation, these "CommonStates" exist.
+        // Together with the base class' states, the following mapping exists:
+        // - Off           <>  Normal
+        // - MouseOverOff  <>  MouseOver
+        // - Dragging      <>  Pressed
+        // - MouseOverOn   <>  MouseOverActive
+        // - On            <>  Active
+        internal const string ActiveVisualState = "Active";
+        internal const string MouseOverActiveVisualState = "MouseOverActive";
+        internal const string PressedVisualState = "Pressed";
 
         internal const string ToggledStatesVisualStateGroup = "ToggledStates";
         internal const string OnVisualState = "On";
@@ -326,6 +342,9 @@ namespace Celestial.UIToolkit.Controls
             }
         }
         
+        /// <summary>
+        /// Changes ALL visual states of the <see cref="ToggleSwitch"/> to the appropriate one.
+        /// </summary>
         private void EnterCurrentVisualStates(bool useTransitions = true)
         {
             // Dragging takes priority over On/Off.
@@ -345,6 +364,39 @@ namespace Celestial.UIToolkit.Controls
                     VisualStateManager.GoToState(this, OffVisualState, useTransitions);
                     VisualStateManager.GoToState(this, OffContentVisualState, useTransitions);
                 }
+            }
+
+            // Also update the CommonStates.
+            EnterCurrentCommonStatesVisualState(useTransitions);
+        }
+
+        /// <summary>
+        /// Enters the current common visual state.
+        /// </summary>
+        /// <param name="useTransitions">
+        /// A value indicating whether visual transitions should be used.
+        /// </param>
+        protected override void EnterCurrentCommonStatesVisualState(bool useTransitions)
+        {
+            if (!IsEnabled)
+            {
+                VisualStateManager.GoToState(this, DisabledVisualState, useTransitions);
+            }
+            else if (IsDragging)
+            {
+                VisualStateManager.GoToState(this, PressedVisualState, useTransitions);
+            }
+            else if (IsMouseOver)
+            {
+                string state = IsOn ? MouseOverActiveVisualState 
+                                    : MouseOverVisualState;
+                VisualStateManager.GoToState(this, state, useTransitions);
+            }
+            else
+            {
+                string state = IsOn ? ActiveVisualState
+                                    : NormalVisualState;
+                VisualStateManager.GoToState(this, state, useTransitions);
             }
         }
 
