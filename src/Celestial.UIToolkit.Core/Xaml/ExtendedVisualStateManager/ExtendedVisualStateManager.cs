@@ -63,14 +63,21 @@ namespace Celestial.UIToolkit.Xaml
         {
             // No need to transition, if we are already at the target state.
             if ((group.GetCurrentState() ?? group.CurrentState) == state)
+            {
+                VisualStateSource.Verbose(
+                    "Not changing to visual state {0}, because the control \"{1}\" is already at that state.",
+                    state.Name,
+                    control
+                );
                 return false;
+            }
 
             // The ExtendedVisualState can have a set of Conditions, which need to apply.
             if (state is ExtendedVisualState extendedState &&
                 !extendedState.AreConditionsApplyingToControl(control))
             {
                 VisualStateSource.Verbose(
-                    "Not transitioning to state {0}, because one of " +
+                    "Not changing to visual state {0}, because one of " +
                     "the state's conditions doesn't apply.",
                     state.Name
                 );
@@ -89,7 +96,7 @@ namespace Celestial.UIToolkit.Xaml
             bool useTransitions)
         {
             VisualStateSource.Info(
-                "Transitioning from state \"{0}\" to \"{1}\" on control {2} with root element {3}.",
+                "Changing visual state from \"{0}\" to \"{1}\" on control {2} with root element {3}.",
                 group.GetCurrentState()?.Name ?? group.CurrentState?.Name,
                 stateName,
                 control,

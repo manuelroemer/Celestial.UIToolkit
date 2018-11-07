@@ -106,6 +106,12 @@ namespace Celestial.UIToolkit.Controls
             PreviewKeyDown += ToggleSwitch_PreviewKeyDown;
             PreviewKeyUp += ToggleSwitch_PreviewKeyUp;
             PreviewMouseLeftButtonDown += (sender, e) => Keyboard.Focus(this);
+
+            Loaded += (sender, e) =>
+            {
+                VisualStateManager.GoToState(this, NormalVisualState, false);
+                EnterCurrentVisualStates();
+            };
         }
 
         /// <summary>
@@ -128,8 +134,6 @@ namespace Celestial.UIToolkit.Controls
                 _draggableArea.PreviewTouchMove += DraggableArea_PreviewTouchMove;
                 _draggableArea.PreviewTouchUp += DraggableArea_PreviewTouchUp;
             }
-
-            EnterCurrentVisualStates(false);
         }
 
         // The Thumb's Drag Events can directly be translated into our OnKnobDrag-Calls.

@@ -70,16 +70,45 @@
             </controls:ControlPresenter.Options>
         </controls:ControlPresenter>
 
-        <controls:ControlPresenter Header="Styling the ToggleSwitch."
+        <controls:ControlPresenter Header="Using Commands."
                                    Xaml="{Binding Xaml, ElementName=ToggleSwitchEx3}"
+                                   VerticalAlignment="Top">
+            <controls:ControlPresenter.Description>
+                The Switch provides commands for when it is toggled.
+            </controls:ControlPresenter.Description>
+            <smtx:XamlDisplay x:Name="ToggleSwitchEx3" Key="ToggleSwitchEx3">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx3}">
+                    <c:ToggleSwitch Header="Switch me on!"
+                                    OnCommand="{x:Static data:SampleCommands.ShowMessageBox}"
+                                    OnCommandParameter="You switched the ToggleSwitch on."
+                                    OnContent="On"
+                                    OffContent="Off" />
+                    <c:ToggleSwitch Header="Switch me off!"
+                                    OffCommand="{x:Static data:SampleCommands.ShowMessageBox}"
+                                    OffCommandParameter="You switched the ToggleSwitch off."
+                                    IsOn="True"
+                                    OnContent="On"
+                                    OffContent="Off" />
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <CheckBox x:Name="IsEnabledCheckBoxEx3"
+                          IsChecked="True"
+                          Content="IsEnabled" />
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+
+        <controls:ControlPresenter Header="Styling the ToggleSwitch."
+                                   Xaml="{Binding Xaml, ElementName=ToggleSwitchEx4}"
                                    VerticalAlignment="Top">
             <controls:ControlPresenter.Description>
                 The ToggleSwitch is a little special regarding the Theming Properties.
                 It is one of the few controls that use the "MouseOverActive" properties.
             </controls:ControlPresenter.Description>
-            <smtx:XamlDisplay x:Name="ToggleSwitchEx3" Key="ToggleSwitchEx3">
+            <smtx:XamlDisplay x:Name="ToggleSwitchEx4" Key="ToggleSwitchEx4">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
-                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx3}">
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx4}">
                     <StackPanel.Resources>
                         <Style x:Key="MyToggleSwitch" TargetType="c:ToggleSwitch" BasedOn="{StaticResource StandardToggleSwitch}">
                             <!-- The ToggleSwitch uses the Background and BorderBrush for the knob container. -->
@@ -111,7 +140,7 @@
                 </StackPanel>
             </smtx:XamlDisplay>
             <controls:ControlPresenter.Options>
-                <CheckBox x:Name="IsEnabledCheckBoxEx3"
+                <CheckBox x:Name="IsEnabledCheckBoxEx4"
                           IsChecked="True"
                           Content="IsEnabled" />
             </controls:ControlPresenter.Options>

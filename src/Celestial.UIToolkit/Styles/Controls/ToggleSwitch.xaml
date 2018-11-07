@@ -132,56 +132,56 @@
                             </Storyboard>
 
                             <Storyboard x:Key="MouseOverStoryboard">
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                                Storyboard.TargetProperty="Background">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:MouseOverProperties.BackgroundBrush)}" />
-                                </c:BrushAnimationUsingKeyFrames>
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                                Storyboard.TargetProperty="BorderBrush">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:MouseOverProperties.BorderBrush)}" />
-                                </c:BrushAnimationUsingKeyFrames>
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="SwitchKnob"
-                                                                Storyboard.TargetProperty="Fill">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:MouseOverProperties.BorderBrush)}" />
-                                </c:BrushAnimationUsingKeyFrames>
+                                <c:BrushAnimation Storyboard.TargetName="Bd"
+                                                  Storyboard.TargetProperty="Background"
+                                                  Duration="0"
+                                                  To="{c:TemplatedParentBinding Path=(theming:MouseOverProperties.BackgroundBrush)}" />
+                                <c:BrushAnimation Storyboard.TargetName="Bd"
+                                                  Storyboard.TargetProperty="BorderBrush"
+                                                  Duration="0"
+                                                  To="{c:TemplatedParentBinding Path=(theming:MouseOverProperties.BorderBrush)}" />
+                                <c:BrushAnimation Storyboard.TargetName="SwitchKnob"
+                                                  Storyboard.TargetProperty="Fill"
+                                                  Duration="0"
+                                                  To="{c:TemplatedParentBinding Path=(theming:MouseOverProperties.BorderBrush)}" />
                                 <c:BrushAnimation Storyboard.Target="{c:TemplatedParentBinding}"
-                                                    Storyboard.TargetProperty="Foreground"
-                                                    Duration="0"
-                                                    To="{c:TemplatedParentBinding Path=(theming:MouseOverProperties.ForegroundBrush)}" />
+                                                  Storyboard.TargetProperty="Foreground"
+                                                  Duration="0"
+                                                  To="{c:TemplatedParentBinding Path=(theming:MouseOverProperties.ForegroundBrush)}" />
                             </Storyboard>
 
                             <Storyboard x:Key="PressedStoryboard">
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                                Storyboard.TargetProperty="Background">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:PressedProperties.BorderBrush)}" />
-                                </c:BrushAnimationUsingKeyFrames>
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                                Storyboard.TargetProperty="BorderBrush">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:PressedProperties.BorderBrush)}" />
-                                </c:BrushAnimationUsingKeyFrames>
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="SwitchKnob"
-                                                                Storyboard.TargetProperty="Fill">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:PressedProperties.BackgroundBrush)}" />
-                                </c:BrushAnimationUsingKeyFrames>
+                                <c:BrushAnimation Storyboard.TargetName="Bd"
+                                                  Storyboard.TargetProperty="Background"
+                                                  Duration="0"
+                                                  To="{c:TemplatedParentBinding Path=(theming:PressedProperties.BorderBrush)}" />
+                                <c:BrushAnimation Storyboard.TargetName="Bd"
+                                                  Storyboard.TargetProperty="BorderBrush"
+                                                  Duration="0"
+                                                  To="{c:TemplatedParentBinding Path=(theming:PressedProperties.BorderBrush)}" />
+                                <c:BrushAnimation Storyboard.TargetName="SwitchKnob"
+                                                  Storyboard.TargetProperty="Fill"
+                                                  Duration="0"
+                                                  To="{c:TemplatedParentBinding Path=(theming:PressedProperties.BackgroundBrush)}" />
                                 <c:BrushAnimation Storyboard.Target="{c:TemplatedParentBinding}"
-                                                    Storyboard.TargetProperty="Foreground"
-                                                    Duration="0"
-                                                    To="{c:TemplatedParentBinding Path=(theming:PressedProperties.ForegroundBrush)}" />
+                                                  Storyboard.TargetProperty="Foreground"
+                                                  Duration="0"
+                                                  To="{c:TemplatedParentBinding Path=(theming:PressedProperties.ForegroundBrush)}" />
                             </Storyboard>
 
                             <Storyboard x:Key="ActiveStoryboard">
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                                Storyboard.TargetProperty="Background">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:ActiveProperties.BorderBrush)}" />
-                                </c:BrushAnimationUsingKeyFrames>
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                                Storyboard.TargetProperty="BorderBrush">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:ActiveProperties.BorderBrush)}" />
-                                </c:BrushAnimationUsingKeyFrames>
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="SwitchKnob"
-                                                                Storyboard.TargetProperty="Fill">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:ActiveProperties.BackgroundBrush)}" />
-                                </c:BrushAnimationUsingKeyFrames>
+                                <c:BrushAnimation Storyboard.TargetName="Bd"
+                                                  Storyboard.TargetProperty="Background"
+                                                  Duration="0"
+                                                  To="{c:TemplatedParentBinding Path=(theming:ActiveProperties.BorderBrush)}" />
+                                <c:BrushAnimation Storyboard.TargetName="Bd"
+                                                  Storyboard.TargetProperty="BorderBrush"
+                                                  Duration="0"
+                                                  To="{c:TemplatedParentBinding Path=(theming:ActiveProperties.BorderBrush)}" />
+                                <c:BrushAnimation Storyboard.TargetName="SwitchKnob"
+                                                  Storyboard.TargetProperty="Fill"
+                                                  Duration="0"
+                                                  To="{c:TemplatedParentBinding Path=(theming:ActiveProperties.BackgroundBrush)}" />
                                 <c:BrushAnimation Storyboard.Target="{c:TemplatedParentBinding}"
                                                   Storyboard.TargetProperty="Foreground"
                                                   Duration="0"
@@ -189,18 +189,18 @@
                             </Storyboard>
                             
                             <Storyboard x:Key="MouseOverActiveStoryboard">
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                                Storyboard.TargetProperty="Background">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:MouseOverActiveProperties.BorderBrush)}" />
-                                </c:BrushAnimationUsingKeyFrames>
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                                Storyboard.TargetProperty="BorderBrush">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:MouseOverActiveProperties.BorderBrush)}" />
-                                </c:BrushAnimationUsingKeyFrames>
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="SwitchKnob"
-                                                                Storyboard.TargetProperty="Fill">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:MouseOverActiveProperties.BackgroundBrush)}" />
-                                </c:BrushAnimationUsingKeyFrames>
+                                <c:BrushAnimation Storyboard.TargetName="Bd"
+                                                  Storyboard.TargetProperty="Background"
+                                                  Duration="0"
+                                                  To="{c:TemplatedParentBinding Path=(theming:MouseOverActiveProperties.BorderBrush)}" />
+                                <c:BrushAnimation Storyboard.TargetName="Bd"
+                                                  Storyboard.TargetProperty="BorderBrush"
+                                                  Duration="0"
+                                                  To="{c:TemplatedParentBinding Path=(theming:MouseOverActiveProperties.BorderBrush)}" />
+                                <c:BrushAnimation Storyboard.TargetName="SwitchKnob"
+                                                  Storyboard.TargetProperty="Fill"
+                                                  Duration="0"
+                                                  To="{c:TemplatedParentBinding Path=(theming:MouseOverActiveProperties.BackgroundBrush)}" />
                                 <c:BrushAnimation Storyboard.Target="{c:TemplatedParentBinding}"
                                                   Storyboard.TargetProperty="Foreground"
                                                   Duration="0"
@@ -208,18 +208,18 @@
                             </Storyboard>
                             
                             <Storyboard x:Key="DisabledStoryboard">
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                                Storyboard.TargetProperty="Background">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:DisabledProperties.BackgroundBrush)}" />
-                                </c:BrushAnimationUsingKeyFrames>
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
-                                                                Storyboard.TargetProperty="BorderBrush">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:DisabledProperties.BorderBrush)}" />
-                                </c:BrushAnimationUsingKeyFrames>
-                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="SwitchKnob"
-                                                                Storyboard.TargetProperty="Fill">
-                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:DisabledProperties.BorderBrush)}" />
-                                </c:BrushAnimationUsingKeyFrames>
+                                <c:BrushAnimation Storyboard.TargetName="Bd"
+                                                  Storyboard.TargetProperty="Background"
+                                                  Duration="0"
+                                                  To="{c:TemplatedParentBinding Path=(theming:DisabledProperties.BorderBrush)}" />
+                                <c:BrushAnimation Storyboard.TargetName="Bd"
+                                                  Storyboard.TargetProperty="BorderBrush"
+                                                  Duration="0"
+                                                  To="{c:TemplatedParentBinding Path=(theming:DisabledProperties.BorderBrush)}" />
+                                <c:BrushAnimation Storyboard.TargetName="SwitchKnob"
+                                                  Storyboard.TargetProperty="Fill"
+                                                  Duration="0"
+                                                  To="{c:TemplatedParentBinding Path=(theming:DisabledProperties.BackgroundBrush)}" />
                                 <c:BrushAnimation Storyboard.Target="{c:TemplatedParentBinding}"
                                                   Storyboard.TargetProperty="Foreground"
                                                   Duration="0"
