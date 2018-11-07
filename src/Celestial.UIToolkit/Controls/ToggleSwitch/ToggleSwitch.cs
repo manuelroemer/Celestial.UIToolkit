@@ -53,29 +53,10 @@ namespace Celestial.UIToolkit.Controls
         private Thumb _draggableArea;
         private bool _isDraggingViaKey;
         private bool _isDraggingViaMouse;
+        private bool _isDraggingViaTouch;
         private double _dragStartKnobOffset;
         private bool _wasKnobDragged;
         private Point _touchDownPoint;
-
-        private bool IsDraggingViaKey
-        {
-            get { return _isDraggingViaKey; }
-            set
-            {
-                _isDraggingViaKey = value;
-                IsDragging = IsDraggingViaKey || IsDraggingViaMouse;
-            }
-        }
-        
-        private bool IsDraggingViaMouse
-        {
-            get { return _isDraggingViaMouse; }
-            set
-            {
-                _isDraggingViaMouse = value;
-                IsDragging = IsDraggingViaKey || IsDraggingViaMouse;
-            }
-        }
         
         /// <summary>
         /// Identifies the <see cref="Toggled"/> routed event.
@@ -138,10 +119,9 @@ namespace Celestial.UIToolkit.Controls
             if (_draggableArea != null)
             {
                 // Drag events.
-                _draggableArea.DragStarted += (sender, e) => HandleMouseDragStarted();
-                _draggableArea.DragCompleted += (sender, e) => HandleMouseDragCompleted();
-                _draggableArea.DragDelta += (sender, e) => 
-                    HandleMouseDragDelta(new Point(e.HorizontalChange, e.VerticalChange));
+                _draggableArea.DragStarted += DraggableArea_DragStarted;
+                _draggableArea.DragCompleted += DraggableArea_DragCompleted;
+                _draggableArea.DragDelta += DraggableArea_DragDelta;
 
                 // Touch events.
                 _draggableArea.PreviewTouchDown += DraggableArea_PreviewTouchDown;
@@ -152,41 +132,109 @@ namespace Celestial.UIToolkit.Controls
             EnterCurrentVisualStates(false);
         }
 
+        // The Thumb's Drag Events can directly be translated into our OnKnobDrag-Calls.
+        private void DraggableArea_DragStarted(object sender, DragStartedEventArgs e)
+        {
+            if (!IsDragging)
+            {
+                this.TraceVerbose("Invoking drag operation via mouse.");
+                _isDraggingViaMouse = true;
+                OnKnobDragStarted();
+            }
+        }
+        
+        private void DraggableArea_DragDelta(object sender, DragDeltaEventArgs e)
+        {
+            if (_isDraggingViaMouse)
+            {
+                OnKnobDragDelta(new Point(e.HorizontalChange, e.VerticalChange));
+            }
+        }
+
+        private void DraggableArea_DragCompleted(object sender, DragCompletedEventArgs e)
+        {
+            if (_isDraggingViaMouse)
+            {
+                this.TraceVerbose("Drag via mouse completed.");
+                _isDraggingViaMouse = false;
+                OnKnobDragCompleted();
+            }
+        }
+
+        // Touch events are a little harder.
+        // WPF doesn't provide a DragDelta event in the TouchMove API, so we have to manually
+        // remember the starting point and calculate the delta.
         private void DraggableArea_PreviewTouchDown(object sender, TouchEventArgs e)
         {
-            // Touch doesn't provide a DragDelta event, so we have to manually collect the information.
-            _touchDownPoint = e.GetTouchPoint(this).Position;
-            HandleMouseDragStarted();
+            if (!IsDragging)
+            {
+                this.TraceVerbose("Invoking drag operation via touch.");
+                _touchDownPoint = e.GetTouchPoint(this).Position;
+                _isDraggingViaTouch = true;
+                OnKnobDragStarted();
+            }
         }
 
         private void DraggableArea_PreviewTouchMove(object sender, TouchEventArgs e)
         {
-            Point currentPoint = e.GetTouchPoint(this).Position;
-            Point delta = (Point)(currentPoint - _touchDownPoint);
-            HandleMouseDragDelta(delta);
+            if (_isDraggingViaTouch)
+            {
+                Point currentPoint = e.GetTouchPoint(this).Position;
+                Point delta = (Point)(currentPoint - _touchDownPoint);
+                OnKnobDragDelta(delta);
+            }
         }
 
         private void DraggableArea_PreviewTouchUp(object sender, TouchEventArgs e)
         {
-            HandleMouseDragCompleted();
+            if (_isDraggingViaTouch)
+            {
+                this.TraceVerbose("Drag via touch completed.");
+                _isDraggingViaTouch = false;
+                OnKnobDragCompleted();
+            }
+        }
+
+        // Dragging via Keys is easy.
+        // Simply wait until the user releases the key and then toggle IsOn.
+        // There is no DragDelta with key presses.
+        private void ToggleSwitch_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (!IsDragging && e.Key == Key.Space)
+            {
+                this.TraceVerbose("Invoking drag operation via key.");
+                _isDraggingViaKey = true;
+                OnKnobDragStarted();
+            }
+        }
+
+        private void ToggleSwitch_PreviewKeyUp(object sender, KeyEventArgs e)
+        {
+            if (_isDraggingViaKey && e.Key == Key.Space)
+            {
+                // The user released the previously pressed Toggle-Key.
+                this.TraceVerbose("Drag via key completed.");
+                _isDraggingViaKey = false;
+                OnKnobDragCompleted();
+            }
         }
 
         /// <summary>
         /// Once called, initiates a dragging sequence, until stopped via 
-        /// <see cref="HandleMouseDragCompleted"/>.
-        /// During this time, drag events relayed via <see cref="HandleMouseDragDelta(Point)"/>
+        /// <see cref="OnKnobDragCompleted"/>.
+        /// During this time, drag events relayed via <see cref="OnKnobDragDelta(Point)"/>
         /// are translated to the <see cref="KnobOffset"/> property to move the knob.
         /// </summary>
-        private void HandleMouseDragStarted()
+        private void OnKnobDragStarted()
         {
             if (!IsDragging)
             {
-                IsDraggingViaMouse = true;
+                IsDragging = true;
                 _wasKnobDragged = false;
                 KnobOffset = (IsOn ? OnKnobOffset : OffKnobOffset) ?? KnobOffset;
                 _dragStartKnobOffset = KnobOffset;
 
-                this.TraceVerbose("Dragging invoked via mouse/touch.");
+                this.TraceVerbose("Dragging invoked.");
                 this.TraceVerbose("Drag started at offset {0}.", _dragStartKnobOffset);
                 
                 EnterCurrentVisualStates();
@@ -198,8 +246,10 @@ namespace Celestial.UIToolkit.Controls
         /// <paramref name="dragDelta"/>.
         /// </summary>
         /// <param name="dragDelta">A point indicating how much the user dragged the knob.</param>
-        private void HandleMouseDragDelta(Point dragDelta)
+        private void OnKnobDragDelta(Point dragDelta)
         {
+            this.TraceVerbose("New drag delta received: ({0};{1})", dragDelta.X, dragDelta.Y);
+
             double offsetChange;
             if (DragOrientation == Orientation.Horizontal)
                 offsetChange = dragDelta.X;
@@ -220,12 +270,12 @@ namespace Celestial.UIToolkit.Controls
         /// Stops a dragging sequence and potentially updates the <see cref="IsOn"/> property,
         /// depending on how the user dragged the switch's knob.
         /// </summary>
-        private void HandleMouseDragCompleted()
+        private void OnKnobDragCompleted()
         {
-            if (IsDraggingViaMouse)
+            if (IsDragging)
             {
-                this.TraceVerbose("Dragging via mouse stopped.");
-                IsDraggingViaMouse = false;
+                this.TraceVerbose("Dragging stopped.");
+                IsDragging = false;
 
                 if (!_wasKnobDragged)
                 {
@@ -283,29 +333,6 @@ namespace Celestial.UIToolkit.Controls
             }
         }
 
-        // Dragging via Keys is easy.
-        // Simply wait until the user releases the key and then toggle IsOn.
-        private void ToggleSwitch_PreviewKeyDown(object sender, KeyEventArgs e)
-        {
-            if (!IsDragging && e.Key == Key.Space)
-            {
-                this.TraceVerbose("Dragging invoked via key.");
-                IsDraggingViaKey = true;
-                EnterCurrentVisualStates();
-            }
-        }
-
-        private void ToggleSwitch_PreviewKeyUp(object sender, KeyEventArgs e)
-        {
-            if (IsDraggingViaKey && e.Key == Key.Space)
-            {
-                // The user released the previously pressed Toggle-Key.
-                this.TraceVerbose("Dragging via key stopped.");
-                IsDraggingViaKey = false;
-                IsOn = !IsOn;
-            }
-        }
-        
         private double CoerceKnobOffset(double value)
         {
             // In this callback, we can ensure that the KnobOffset falls in the range of
