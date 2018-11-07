@@ -248,8 +248,6 @@ namespace Celestial.UIToolkit.Controls
         /// <param name="dragDelta">A point indicating how much the user dragged the knob.</param>
         private void OnKnobDragDelta(Point dragDelta)
         {
-            this.TraceVerbose("New drag delta received: ({0};{1})", dragDelta.X, dragDelta.Y);
-
             double offsetChange;
             if (DragOrientation == Orientation.Horizontal)
                 offsetChange = dragDelta.X;
