@@ -54,23 +54,6 @@ namespace Celestial.UIToolkit.Xaml
         {
             if (control == null || stateGroupsRoot == null || stateName == null || group == null || state == null)
                 return false;
-
-            bool didTransition = false;
-            var availableStateGroups = GetVisualStateGroups(stateGroupsRoot);
-            foreach (VisualStateGroup availableGroup in availableStateGroups)
-            {
-                foreach (VisualState visualState in availableGroup.States)
-                {
-                    if (visualState.Name == stateName && 
-                        ShouldTransitionToState(control, availableGroup, visualState))
-                    {
-                        didTransition |= TransitionToState(
-                            control, stateGroupsRoot, stateName, availableGroup, visualState, useTransitions);
-                    }
-                }
-            }
-            return didTransition;
-
             if (!ShouldTransitionToState(control, group, state))
                 return true;
             return TransitionToState(control, stateGroupsRoot, stateName, group, state, useTransitions);
