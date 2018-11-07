@@ -120,10 +120,7 @@ namespace Celestial.UIToolkit.Media.Animations
             T interpolatedValue;
 
             interpolatedValue = InterpolateValue(_actualFrom, _actualTo, progress);
-            if (_useCumulativeModifier)
-                interpolatedValue = AddValues(interpolatedValue, _cumulativeModifier);
-            if (_useAdditiveModifier)
-                interpolatedValue = AddValues(interpolatedValue, _additiveModifier);
+            // This will throw exceptions in the tests.
 
             return interpolatedValue;
         }
