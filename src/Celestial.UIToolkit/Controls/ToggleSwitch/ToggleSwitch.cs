@@ -138,10 +138,10 @@ namespace Celestial.UIToolkit.Controls
             if (_draggableArea != null)
             {
                 // Drag events.
-                _draggableArea.DragStarted += (sender, e) => HandleDragStarted();
-                _draggableArea.DragCompleted += (sender, e) => HandleDragCompleted();
+                _draggableArea.DragStarted += (sender, e) => HandleMouseDragStarted();
+                _draggableArea.DragCompleted += (sender, e) => HandleMouseDragCompleted();
                 _draggableArea.DragDelta += (sender, e) => 
-                    HandleDragDelta(new Point(e.HorizontalChange, e.VerticalChange));
+                    HandleMouseDragDelta(new Point(e.HorizontalChange, e.VerticalChange));
 
                 // Touch events.
                 _draggableArea.PreviewTouchDown += DraggableArea_PreviewTouchDown;
@@ -156,37 +156,39 @@ namespace Celestial.UIToolkit.Controls
         {
             // Touch doesn't provide a DragDelta event, so we have to manually collect the information.
             _touchDownPoint = e.GetTouchPoint(this).Position;
-            HandleDragStarted();
+            HandleMouseDragStarted();
         }
 
         private void DraggableArea_PreviewTouchMove(object sender, TouchEventArgs e)
         {
             Point currentPoint = e.GetTouchPoint(this).Position;
             Point delta = (Point)(currentPoint - _touchDownPoint);
-            HandleDragDelta(delta);
+            HandleMouseDragDelta(delta);
         }
 
         private void DraggableArea_PreviewTouchUp(object sender, TouchEventArgs e)
         {
-            HandleDragCompleted();
+            HandleMouseDragCompleted();
         }
 
         /// <summary>
         /// Once called, initiates a dragging sequence, until stopped via 
-        /// <see cref="HandleDragCompleted"/>.
-        /// During this time, drag events relayed via <see cref="HandleDragDelta(Point)"/>
+        /// <see cref="HandleMouseDragCompleted"/>.
+        /// During this time, drag events relayed via <see cref="HandleMouseDragDelta(Point)"/>
         /// are translated to the <see cref="KnobOffset"/> property to move the knob.
         /// </summary>
-        private void HandleDragStarted()
+        private void HandleMouseDragStarted()
         {
             if (!IsDragging)
             {
-                this.TraceVerbose("Dragging invoked via mouse/touch.");
                 IsDraggingViaMouse = true;
                 _wasKnobDragged = false;
                 KnobOffset = (IsOn ? OnKnobOffset : OffKnobOffset) ?? KnobOffset;
                 _dragStartKnobOffset = KnobOffset;
 
+                this.TraceVerbose("Dragging invoked via mouse/touch.");
+                this.TraceVerbose("Drag started at offset {0}.", _dragStartKnobOffset);
+                
                 EnterCurrentVisualStates();
             }
         }
@@ -196,7 +198,7 @@ namespace Celestial.UIToolkit.Controls
         /// <paramref name="dragDelta"/>.
         /// </summary>
         /// <param name="dragDelta">A point indicating how much the user dragged the knob.</param>
-        private void HandleDragDelta(Point dragDelta)
+        private void HandleMouseDragDelta(Point dragDelta)
         {
             double offsetChange;
             if (DragOrientation == Orientation.Horizontal)
@@ -218,7 +220,7 @@ namespace Celestial.UIToolkit.Controls
         /// Stops a dragging sequence and potentially updates the <see cref="IsOn"/> property,
         /// depending on how the user dragged the switch's knob.
         /// </summary>
-        private void HandleDragCompleted()
+        private void HandleMouseDragCompleted()
         {
             if (IsDraggingViaMouse)
             {
