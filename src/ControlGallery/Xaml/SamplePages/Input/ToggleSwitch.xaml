@@ -25,9 +25,17 @@
             <smtx:XamlDisplay x:Name="ToggleSwitchEx1" Key="ToggleSwitchEx1">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx1}">
-                    <c:ToggleSwitch Header="Header"
-                                    OnContent="OnContent"
-                                    OffContent="OffContent" />
+                    <c:ToggleSwitch Style="{DynamicResource StandardToggleSwitch}"
+                                    Header="StandardToggleSwitch"
+                                    OnContent="On"
+                                    OffContent="Off" />
+                    <c:ToggleSwitch Style="{DynamicResource Accent1ToggleSwitch}"
+                                    Header="Accent1ToggleSwitch"
+                                    OnContent="On"
+                                    OffContent="Off" />
+                    <c:ToggleSwitch Header="Accent2ToggleSwitch (default)"
+                                    OnContent="On"
+                                    OffContent="Off" />
                 </StackPanel>
             </smtx:XamlDisplay>
             <controls:ControlPresenter.Options>

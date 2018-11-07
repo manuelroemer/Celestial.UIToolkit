@@ -11,7 +11,7 @@ namespace Celestial.UIToolkit.Controls
 {
 
     /// <summary>
-    /// Represents a physical switch which allows users to turn something on or off.
+    /// Represents a switch which allows users to turn something on or off.
     /// </summary>
     [ContentProperty(nameof(Header))]
     [TemplateVisualState(Name = ActiveVisualState, GroupName = CommonStatesVisualStateGroup)]
@@ -57,15 +57,26 @@ namespace Celestial.UIToolkit.Controls
         private bool _wasKnobDragged;
         private Point _touchDownPoint;
 
-        /// <summary>
-        /// Gets a value indicating whether the user is currently dragging the
-        /// <see cref="ToggleSwitch"/>.
-        /// </summary>
-        protected bool IsDragging
+        private bool IsDraggingViaKey
         {
-            get { return _isDraggingViaKey || _isDraggingViaMouse; }
+            get { return _isDraggingViaKey; }
+            set
+            {
+                _isDraggingViaKey = value;
+                IsDragging = IsDraggingViaKey || IsDraggingViaMouse;
+            }
         }
-
+        
+        private bool IsDraggingViaMouse
+        {
+            get { return _isDraggingViaMouse; }
+            set
+            {
+                _isDraggingViaMouse = value;
+                IsDragging = IsDraggingViaKey || IsDraggingViaMouse;
+            }
+        }
+        
         /// <summary>
         /// Identifies the <see cref="Toggled"/> routed event.
         /// </summary>
@@ -171,7 +182,7 @@ namespace Celestial.UIToolkit.Controls
             if (!IsDragging)
             {
                 this.TraceVerbose("Dragging invoked via mouse/touch.");
-                _isDraggingViaMouse = true;
+                IsDraggingViaMouse = true;
                 _wasKnobDragged = false;
                 KnobOffset = (IsOn ? OnKnobOffset : OffKnobOffset) ?? KnobOffset;
                 _dragStartKnobOffset = KnobOffset;
@@ -209,10 +220,10 @@ namespace Celestial.UIToolkit.Controls
         /// </summary>
         private void HandleDragCompleted()
         {
-            if (_isDraggingViaMouse)
+            if (IsDraggingViaMouse)
             {
                 this.TraceVerbose("Dragging via mouse stopped.");
-                _isDraggingViaMouse = false;
+                IsDraggingViaMouse = false;
 
                 if (!_wasKnobDragged)
                 {
@@ -277,18 +288,18 @@ namespace Celestial.UIToolkit.Controls
             if (!IsDragging && e.Key == Key.Space)
             {
                 this.TraceVerbose("Dragging invoked via key.");
-                _isDraggingViaKey = true;
+                IsDraggingViaKey = true;
                 EnterCurrentVisualStates();
             }
         }
 
         private void ToggleSwitch_PreviewKeyUp(object sender, KeyEventArgs e)
         {
-            if (_isDraggingViaKey && e.Key == Key.Space)
+            if (IsDraggingViaKey && e.Key == Key.Space)
             {
                 // The user released the previously pressed Toggle-Key.
                 this.TraceVerbose("Dragging via key stopped.");
-                _isDraggingViaKey = false;
+                IsDraggingViaKey = false;
                 IsOn = !IsOn;
             }
         }

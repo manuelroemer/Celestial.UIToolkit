@@ -16,7 +16,7 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style TargetType="controls:ToggleSwitch" BasedOn="{c:MultiStyle 'PrimaryBackground ControlBorderAccent2States StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="StandardToggleSwitch" TargetType="controls:ToggleSwitch" BasedOn="{c:MultiStyle 'PrimaryBackground StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
@@ -29,8 +29,10 @@
         <Setter Property="OnKnobOffset" Value="{c:GridUnit 6, TargetType=sys:Double}" />
         <Setter Property="BorderBrush" Value="{DynamicResource AltPrimaryMediumBrush}" />
         <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{DynamicResource AltPrimaryLowBrush}" />
-        <Setter Property="theming:PressedProperties.BorderBrush" Value="{DynamicResource ControlBorderBrush}" />
-        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{DynamicResource Accent2Brush}" />
+        <Setter Property="theming:PressedProperties.BorderBrush" Value="{DynamicResource ControlActiveBorderBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.BorderBrush" Value="{DynamicResource ControlHoverBorderBrush}" />
+        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{DynamicResource ControlBorderBrush}" />
+        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{DynamicResource ControlDisabledBorderBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:ToggleSwitch">
@@ -184,6 +186,25 @@
                                                   To="{c:TemplatedParentBinding Path=(theming:ActiveProperties.ForegroundBrush)}" />
                             </Storyboard>
                             
+                            <Storyboard x:Key="MouseOverActiveStoryboard">
+                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                                Storyboard.TargetProperty="Background">
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:MouseOverActiveProperties.BackgroundBrush)}" />
+                                </c:BrushAnimationUsingKeyFrames>
+                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                                Storyboard.TargetProperty="BorderBrush">
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:MouseOverActiveProperties.BorderBrush)}" />
+                                </c:BrushAnimationUsingKeyFrames>
+                                <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="SwitchKnob"
+                                                                Storyboard.TargetProperty="Fill">
+                                    <c:DiscreteBrushKeyFrame KeyTime="0" Value="{c:TemplatedParentBinding Path=(theming:MouseOverActiveProperties.BorderBrush)}" />
+                                </c:BrushAnimationUsingKeyFrames>
+                                <c:BrushAnimation Storyboard.Target="{c:TemplatedParentBinding}"
+                                                  Storyboard.TargetProperty="Foreground"
+                                                  Duration="0"
+                                                  To="{c:TemplatedParentBinding Path=(theming:MouseOverActiveProperties.ForegroundBrush)}" />
+                            </Storyboard>
+                            
                             <Storyboard x:Key="DisabledStoryboard">
                                 <c:BrushAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                 Storyboard.TargetProperty="Background">
@@ -213,7 +234,7 @@
                                 <VisualState x:Name="Normal" />
                                 <VisualState x:Name="MouseOver" Storyboard="{StaticResource MouseOverStoryboard}" />
                                 <VisualState x:Name="Pressed" Storyboard="{StaticResource PressedStoryboard}" />
-                                <VisualState x:Name="MouseOverActive" Storyboard="{StaticResource MouseOverStoryboard}" />
+                                <VisualState x:Name="MouseOverActive" Storyboard="{StaticResource MouseOverActiveStoryboard}" />
                                 <VisualState x:Name="Active" Storyboard="{StaticResource ActiveStoryboard}" />
                                 <VisualState x:Name="Disabled" Storyboard="{StaticResource DisabledStoryboard}" />
                             </VisualStateGroup>
@@ -256,5 +277,17 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style x:Key="Accent1ToggleSwitch" TargetType="controls:ToggleSwitch" BasedOn="{StaticResource StandardToggleSwitch}">
+        <Setter Property="theming:MouseOverActiveProperties.BorderBrush" Value="{DynamicResource Accent1ControlHoverBorderBrush}" />
+        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{DynamicResource Accent1ControlBorderBrush}" />
+    </Style>
+
+    <Style x:Key="Accent2ToggleSwitch" TargetType="controls:ToggleSwitch" BasedOn="{StaticResource StandardToggleSwitch}">
+        <Setter Property="theming:MouseOverActiveProperties.BorderBrush" Value="{DynamicResource Accent2ControlHoverBorderBrush}" />
+        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{DynamicResource Accent2ControlBorderBrush}" />
+    </Style>
     
+    <Style TargetType="controls:ToggleSwitch" BasedOn="{StaticResource Accent2ToggleSwitch}" />
+
 </ResourceDictionary>

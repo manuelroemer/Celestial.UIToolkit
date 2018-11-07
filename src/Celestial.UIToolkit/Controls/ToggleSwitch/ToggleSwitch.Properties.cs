@@ -75,6 +75,19 @@ namespace Celestial.UIToolkit.Controls
                 typeof(ToggleSwitch),
                 new PropertyMetadata(false));
 
+        private static readonly DependencyPropertyKey IsDraggingPropertyKey =
+            DependencyProperty.RegisterReadOnly(
+                nameof(IsDragging),
+                typeof(bool),
+                typeof(ToggleSwitch),
+                new PropertyMetadata(false));
+
+        /// <summary>
+        /// Identifies the <see cref="IsDragging"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty IsDraggingProperty =
+            IsDraggingPropertyKey.DependencyProperty;
+
         /// <summary>
         /// Gets or sets a value indicating whether the switch is currently "On", meaning that
         /// it is toggled.
@@ -133,10 +146,20 @@ namespace Celestial.UIToolkit.Controls
             set { SetValue(ReplaceOnOffContentWithHeaderProperty, value); }
         }
 
+        /// <summary>
+        /// Gets a value indicating whether the user is currently dragging the
+        /// <see cref="ToggleSwitch"/>.
+        /// </summary>
+        public bool IsDragging
+        {
+            get { return (bool)GetValue(IsDraggingProperty); }
+            private set { SetValue(IsDraggingPropertyKey, value); }
+        }
+
         #endregion
 
         #region Template Properties
-        
+
         /// <summary>
         /// Identifies the <see cref="DragOrientation"/> dependency property.
         /// </summary>
