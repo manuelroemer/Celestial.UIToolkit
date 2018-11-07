@@ -64,6 +64,7 @@
       <DependentUpon>Card.GeneratedProperties.tt</DependentUpon>
     </Compile>
     <Compile Include="Controls\ClippingBorder.cs" />
+    <Compile Include="Controls\CommonVisualStatesControl.cs" />
     <Compile Include="Controls\ConstructedFrameworkElement.cs" />
     <Compile Include="Controls\ExtendedListView.cs" />
     <Compile Include="Controls\Icon\IconElement.cs" />
@@ -99,6 +100,8 @@
     <Compile Include="Controls\SplitView\SplitView.Properties.cs" />
     <Compile Include="Controls\SplitView\SplitViewDisplayMode.cs" />
     <Compile Include="Controls\SplitView\SplitViewPanePlacement.cs" />
+    <Compile Include="Controls\ToggleSwitch\ToggleSwitch.cs" />
+    <Compile Include="Controls\ToggleSwitch\ToggleSwitch.Properties.cs" />
     <Compile Include="Controls\WindowCommands.cs" />
     <Compile Include="Theming\PopupProperties.cs" />
     <Compile Include="Theming\SelectionProperties.cs" />
@@ -206,6 +209,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Styles\Controls\TreeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Controls\ToggleSwitch.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

@@ -114,6 +114,7 @@
     <Compile Include="Data\ControlInformation.cs" />
     <Compile Include="Data\FruitItems.cs" />
     <Compile Include="Data\LoremItems.cs" />
+    <Compile Include="Data\SampleCommands.cs" />
     <Compile Include="Data\SongItems.cs" />
     <Compile Include="GalleryBootstrapper.cs" />
     <Compile Include="Xaml\CategoryPage.xaml.cs">
@@ -170,6 +171,9 @@
     </Compile>
     <Compile Include="Xaml\SamplePages\Input\TextBox.xaml.cs">
       <DependentUpon>TextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Xaml\SamplePages\Input\ToggleSwitch.xaml.cs">
+      <DependentUpon>ToggleSwitch.xaml</DependentUpon>
     </Compile>
     <Compile Include="Xaml\SamplePages\Input\TreeView.xaml.cs">
       <DependentUpon>TreeView.xaml</DependentUpon>
@@ -286,6 +290,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Xaml\SamplePages\Input\TextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\SamplePages\Input\ToggleSwitch.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,0 +1,151 @@
+﻿<UserControl x:Class="ControlGallery.Xaml.SamplePages.Input.ToggleSwitch"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:smtx="clr-namespace:ShowMeTheXAML;assembly=ShowMeTheXAML"
+             xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:c="http://celestial-ui.com"
+             xmlns:controls="clr-namespace:ControlGallery.Controls"
+             xmlns:data="clr-namespace:ControlGallery.Data"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type data:Fruit}">
+            <TextBlock Text="{Binding Name}" />
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,4,0,12'}">
+
+        <controls:ControlPresenter Header="The Standard ToggleSwitch in different colors."
+                                   Xaml="{Binding Xaml, ElementName=ToggleSwitchEx1}"
+                                   VerticalAlignment="Top">
+            <controls:ControlPresenter.Description>
+                If you have a Touch-Display, you can see that the Switch is touch-compatible.
+            </controls:ControlPresenter.Description>
+            <smtx:XamlDisplay x:Name="ToggleSwitchEx1" Key="ToggleSwitchEx1">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx1}">
+                    <c:ToggleSwitch Style="{DynamicResource StandardToggleSwitch}"
+                                    Header="StandardToggleSwitch"
+                                    OnContent="On"
+                                    OffContent="Off" />
+                    <c:ToggleSwitch Style="{DynamicResource Accent1ToggleSwitch}"
+                                    Header="Accent1ToggleSwitch"
+                                    OnContent="On"
+                                    OffContent="Off" />
+                    <c:ToggleSwitch Header="Accent2ToggleSwitch (default)"
+                                    OnContent="On"
+                                    OffContent="Off" />
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <CheckBox x:Name="IsEnabledCheckBoxEx1"
+                          IsChecked="True"
+                          Content="IsEnabled" />
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+
+        <controls:ControlPresenter Header="A ToggleSwitch with the Header replacing the content."
+                                   Xaml="{Binding Xaml, ElementName=ToggleSwitchEx2}"
+                                   VerticalAlignment="Top">
+            <controls:ControlPresenter.Description>
+                Sometimes, you may want to have the On- and Off-Content to display the same thing.
+                This can be done by setting the Header, and then setting
+                ReplaceOnOffContentWithHeader to true.
+            </controls:ControlPresenter.Description>
+            <smtx:XamlDisplay x:Name="ToggleSwitchEx2" Key="ToggleSwitchEx2">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx2}">
+                    <c:ToggleSwitch ReplaceOnOffContentWithHeader="True"
+                                    Header="This Header gets displayed as Content" />
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <CheckBox x:Name="IsEnabledCheckBoxEx2"
+                          IsChecked="True"
+                          Content="IsEnabled" />
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+
+        <controls:ControlPresenter Header="Using Commands."
+                                   Xaml="{Binding Xaml, ElementName=ToggleSwitchEx3}"
+                                   VerticalAlignment="Top">
+            <controls:ControlPresenter.Description>
+                The Switch provides commands for when it is toggled.
+            </controls:ControlPresenter.Description>
+            <smtx:XamlDisplay x:Name="ToggleSwitchEx3" Key="ToggleSwitchEx3">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx3}">
+                    <c:ToggleSwitch Header="Switch me on!"
+                                    OnCommand="{x:Static data:SampleCommands.ShowMessageBox}"
+                                    OnCommandParameter="You switched the ToggleSwitch on."
+                                    OnContent="On"
+                                    OffContent="Off" />
+                    <c:ToggleSwitch Header="Switch me off!"
+                                    OffCommand="{x:Static data:SampleCommands.ShowMessageBox}"
+                                    OffCommandParameter="You switched the ToggleSwitch off."
+                                    IsOn="True"
+                                    OnContent="On"
+                                    OffContent="Off" />
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <CheckBox x:Name="IsEnabledCheckBoxEx3"
+                          IsChecked="True"
+                          Content="IsEnabled" />
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+
+        <controls:ControlPresenter Header="Styling the ToggleSwitch."
+                                   Xaml="{Binding Xaml, ElementName=ToggleSwitchEx4}"
+                                   VerticalAlignment="Top">
+            <controls:ControlPresenter.Description>
+                The ToggleSwitch is a little special regarding the Theming Properties.
+                It is one of the few controls that use the "MouseOverActive" properties.
+            </controls:ControlPresenter.Description>
+            <smtx:XamlDisplay x:Name="ToggleSwitchEx4" Key="ToggleSwitchEx4">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx4}">
+                    <StackPanel.Resources>
+                        <Style x:Key="MyToggleSwitch" TargetType="c:ToggleSwitch" BasedOn="{StaticResource StandardToggleSwitch}">
+                            <!-- The ToggleSwitch uses the Background and BorderBrush for the knob container. -->
+                            <!-- We will leave the Background as the default (Primary-Brushes). -->
+                            <Setter Property="BorderBrush" Value="{DynamicResource AltPrimaryMediumBrush}" />
+                            
+                            <!-- There are two MouseOver states: One for the Off-Switch... -->
+                            <Setter Property="c:MouseOverProperties.BorderBrush" Value="{DynamicResource AltPrimaryMediumLowBrush}" />
+                            <!-- ...and one for the On-Switch. -->
+                            <Setter Property="c:MouseOverActiveProperties.BorderBrush" Value="{DynamicResource ErrorControlHoverBorderBrush}" />
+                            
+                            <!-- Pressed == Dragging -->
+                            <Setter Property="c:PressedProperties.BorderBrush" Value="{DynamicResource ControlActiveBorderBrush}" />
+                            
+                            <!-- Active == On -->
+                            <Setter Property="c:ActiveProperties.BorderBrush" Value="{DynamicResource ErrorControlBorderBrush}" />
+
+                            <Setter Property="c:DisabledProperties.BorderBrush" Value="{DynamicResource ControlDisabledBorderBrush}" />
+                            
+                            <!-- We can also control the outer CornerRadius. -->
+                            <Setter Property="c:ControlProperties.CornerRadius" Value="0" />
+                        </Style>
+                    </StackPanel.Resources>
+                    
+                    <c:ToggleSwitch Style="{StaticResource MyToggleSwitch}"
+                                    Header="Header"
+                                    OnContent="On"
+                                    OffContent="Off" />
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <CheckBox x:Name="IsEnabledCheckBoxEx4"
+                          IsChecked="True"
+                          Content="IsEnabled" />
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+
+    </StackPanel>
+
+</UserControl>

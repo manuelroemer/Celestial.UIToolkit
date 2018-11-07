@@ -56,6 +56,14 @@ namespace ControlGallery.Data.Categories
             SamplePageType = typeof(RadioButton)
         };
 
+        private static ControlInformation ToggleSwitchInfo = new ControlInformation()
+        {
+            Name = "ToggleSwitch",
+            Description = "A physical switch which allows users to turn something on or off.",
+            Icon = new PackIconModern() { Kind = PackIconModernKind.SwitchOff },
+            SamplePageType = typeof(ToggleSwitch)
+        };
+
         private static ControlInformation ListBoxInfo = new ControlInformation()
         {
             Name = "ListBox",
@@ -93,6 +101,7 @@ namespace ControlGallery.Data.Categories
             new PackIconMaterialLight() { Kind = PackIconMaterialLightKind.BorderOutside },
             CheckBoxInfo,
             RadioButtonInfo,
+            ToggleSwitchInfo,
             SliderInfo,
             TextBoxInfo,
             PasswordBoxInfo,
