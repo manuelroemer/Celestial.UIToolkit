@@ -12,13 +12,18 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+# Install NuGet packages and do a nuget restore.
 - task: NuGetToolInstaller@0
+  displayName: 'Use latest NuGet version'
 
 - task: NuGetCommand@2
+  displayName: 'nuget restore'
   inputs:
     restoreSolution: '$(solution)'
+    noCache: true
 
-- task: VSBuild@1
+- task: MSBuild@1
+  displayName: 'Build $(solution)'
   inputs:
     solution: '$(solution)'
     platform: '$(buildPlatform)'
@@ -28,3 +33,11 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Assemblies'
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
+    artifactName: 'Release'
+  condition:
+    and(succeeded(), eq(variables['system.pullrequest.isfork'], false))
