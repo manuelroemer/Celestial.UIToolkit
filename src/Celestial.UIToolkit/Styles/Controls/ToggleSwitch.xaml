@@ -23,21 +23,22 @@
         <Setter Property="BorderThickness" Value="{StaticResource WideBorderThickness}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource DisabledThemeShadow}" />
         <Setter Property="OffKnobOffset" Value="0" />
         <Setter Property="OnKnobOffset" Value="{c:GridUnit 6, TargetType=sys:Double}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
         <Setter Property="BorderBrush" Value="{DynamicResource AltPrimaryMediumBrush}" />
         <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{DynamicResource AltPrimaryLowBrush}" />
         <Setter Property="theming:PressedProperties.BorderBrush" Value="{DynamicResource ControlActiveBorderBrush}" />
         <Setter Property="theming:MouseOverActiveProperties.BorderBrush" Value="{DynamicResource ControlHoverBorderBrush}" />
         <Setter Property="theming:ActiveProperties.BorderBrush" Value="{DynamicResource ControlBorderBrush}" />
         <Setter Property="theming:DisabledProperties.BorderBrush" Value="{DynamicResource ControlDisabledBorderBrush}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource DisabledThemeShadow}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:ToggleSwitch">
                     <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
-                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                          Margin="{TemplateBinding Padding}">
                         <Grid.RowDefinitions>
                             <RowDefinition x:Name="HeaderRow" Height="Auto" />
                             <RowDefinition x:Name="HeaderSpacerRow" Height="{c:GridUnit 2.5}" />
