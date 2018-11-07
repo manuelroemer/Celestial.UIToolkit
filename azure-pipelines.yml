@@ -1,10 +1,5 @@
 name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)_$(Rev:.r)
 
-trigger:
-  branches:
-    include:
-    - master
-
 pool:
   vmImage: 'VS2017-Win2016'
 
