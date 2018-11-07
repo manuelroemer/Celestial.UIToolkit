@@ -1,11 +1,13 @@
 root = true
 
-############################### 
-# Core EditorConfig Options   # 
-############################### 
 # All files 
 [*] 
 indent_style = space 
+
+# Markdown/Doc
+[*.{md}]
+indent_style = space
+indent_size = 2
 
 # Code files 
 [*.{cs,csx,vb,vbx}] 
