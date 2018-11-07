@@ -1,3 +1,6 @@
+trigger:
+  - master
+
 name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)_$(Rev:.r)
 
 pool:
