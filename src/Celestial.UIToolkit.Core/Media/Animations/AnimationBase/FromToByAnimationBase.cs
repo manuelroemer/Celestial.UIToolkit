@@ -118,9 +118,12 @@ namespace Celestial.UIToolkit.Media.Animations
 
             double progress = animationClock.CurrentProgress.Value;
             T interpolatedValue;
-
+            
             interpolatedValue = InterpolateValue(_actualFrom, _actualTo, progress);
-            // This will throw exceptions in the tests.
+            if (_useCumulativeModifier)
+                interpolatedValue = AddValues(interpolatedValue, _cumulativeModifier);
+            if (_useAdditiveModifier)
+                interpolatedValue = AddValues(interpolatedValue, _additiveModifier);
 
             return interpolatedValue;
         }
