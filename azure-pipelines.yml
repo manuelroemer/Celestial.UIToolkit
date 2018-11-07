@@ -34,10 +34,10 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish Assemblies'
-  inputs:
-    pathtoPublish: '$(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
-    artifactName: 'Release'
-  condition:
-    and(succeeded(), eq(variables['system.pullrequest.isfork'], false))
+# - task: PublishBuildArtifacts@1
+#   displayName: 'Publish Assemblies'
+#   inputs:
+#     pathtoPublish: '$(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
+#     artifactName: 'Release'
+#   condition:
+#     and(succeeded(), eq(variables['system.pullrequest.isfork'], false))
