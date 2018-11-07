@@ -22,6 +22,9 @@
         <controls:ControlPresenter Header="The Standard ToggleSwitch in different colors."
                                    Xaml="{Binding Xaml, ElementName=ToggleSwitchEx1}"
                                    VerticalAlignment="Top">
+            <controls:ControlPresenter.Description>
+                If you have a Touch-Display, you can see that the Switch is touch-compatible.
+            </controls:ControlPresenter.Description>
             <smtx:XamlDisplay x:Name="ToggleSwitchEx1" Key="ToggleSwitchEx1">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx1}">
@@ -62,6 +65,53 @@
             </smtx:XamlDisplay>
             <controls:ControlPresenter.Options>
                 <CheckBox x:Name="IsEnabledCheckBoxEx2"
+                          IsChecked="True"
+                          Content="IsEnabled" />
+            </controls:ControlPresenter.Options>
+        </controls:ControlPresenter>
+
+        <controls:ControlPresenter Header="Styling the ToggleSwitch."
+                                   Xaml="{Binding Xaml, ElementName=ToggleSwitchEx3}"
+                                   VerticalAlignment="Top">
+            <controls:ControlPresenter.Description>
+                The ToggleSwitch is a little special regarding the Theming Properties.
+                It is one of the few controls that use the "MouseOverActive" properties.
+            </controls:ControlPresenter.Description>
+            <smtx:XamlDisplay x:Name="ToggleSwitchEx3" Key="ToggleSwitchEx3">
+                <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
+                            IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx3}">
+                    <StackPanel.Resources>
+                        <Style x:Key="MyToggleSwitch" TargetType="c:ToggleSwitch" BasedOn="{StaticResource StandardToggleSwitch}">
+                            <!-- The ToggleSwitch uses the Background and BorderBrush for the knob container. -->
+                            <!-- We will leave the Background as the default (Primary-Brushes). -->
+                            <Setter Property="BorderBrush" Value="{DynamicResource AltPrimaryMediumBrush}" />
+                            
+                            <!-- There are two MouseOver states: One for the Off-Switch... -->
+                            <Setter Property="c:MouseOverProperties.BorderBrush" Value="{DynamicResource AltPrimaryMediumLowBrush}" />
+                            <!-- ...and one for the On-Switch. -->
+                            <Setter Property="c:MouseOverActiveProperties.BorderBrush" Value="{DynamicResource ErrorControlHoverBorderBrush}" />
+                            
+                            <!-- Pressed == Dragging -->
+                            <Setter Property="c:PressedProperties.BorderBrush" Value="{DynamicResource ControlActiveBorderBrush}" />
+                            
+                            <!-- Active == On -->
+                            <Setter Property="c:ActiveProperties.BorderBrush" Value="{DynamicResource ErrorControlBorderBrush}" />
+
+                            <Setter Property="c:DisabledProperties.BorderBrush" Value="{DynamicResource ControlDisabledBorderBrush}" />
+                            
+                            <!-- We can also control the outer CornerRadius. -->
+                            <Setter Property="c:ControlProperties.CornerRadius" Value="0" />
+                        </Style>
+                    </StackPanel.Resources>
+                    
+                    <c:ToggleSwitch Style="{StaticResource MyToggleSwitch}"
+                                    Header="Header"
+                                    OnContent="On"
+                                    OffContent="Off" />
+                </StackPanel>
+            </smtx:XamlDisplay>
+            <controls:ControlPresenter.Options>
+                <CheckBox x:Name="IsEnabledCheckBoxEx3"
                           IsChecked="True"
                           Content="IsEnabled" />
             </controls:ControlPresenter.Options>

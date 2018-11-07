@@ -25,7 +25,7 @@
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
         <Setter Property="OffKnobOffset" Value="0" />
         <Setter Property="OnKnobOffset" Value="{c:GridUnit 6, TargetType=sys:Double}" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{c:GridUnit 2.5}" />
         <Setter Property="BorderBrush" Value="{DynamicResource AltPrimaryMediumBrush}" />
         <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{DynamicResource AltPrimaryLowBrush}" />
         <Setter Property="theming:PressedProperties.BorderBrush" Value="{DynamicResource ControlActiveBorderBrush}" />
@@ -86,7 +86,7 @@
                                 Grid.Row="2"
                                 Grid.Column="0"
                                 Height="{c:GridUnit 5}"
-                                CornerRadius="{c:GridUnit 2.5}"
+                                CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 Background="{TemplateBinding Background}" 
