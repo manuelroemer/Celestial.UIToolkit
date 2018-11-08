@@ -24,6 +24,10 @@
     <RepositoryUrl>https://github.com/manuelroemer/Celestial.UIToolkit</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
 
+
+    <!-- Output directories. Required for the Azure pipeline. -->
+    <ArtifactStagingRoot>$(MSBuildThisFileDirectory)Artifacts</ArtifactStagingRoot>
+    <PackageOutputPath>$([System.IO.Path]::Combine('$(ArtifactStagingRoot)', 'NuGet'))</PackageOutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
