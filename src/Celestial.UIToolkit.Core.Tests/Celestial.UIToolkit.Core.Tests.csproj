@@ -2,21 +2,32 @@
 <Project Sdk="MSBuild.Sdk.Extras" ToolsVersion="15.0">
 
   <PropertyGroup>
-    <TargetFrameworks>net45</TargetFrameworks>
+    <TargetFrameworks>net46</TargetFrameworks>
 
     <AppDesignerFolder>Properties</AppDesignerFolder>
 
+    <AutoGenerateBindingRedirects>False</AutoGenerateBindingRedirects>
+    
     <ExtrasEnableDefaultWpfItems>true</ExtrasEnableDefaultWpfItems>
     <ExtrasEnableDefaultXamlItems>true</ExtrasEnableDefaultXamlItems>
   </PropertyGroup>
 
   <ItemGroup>
+    <Resource Remove="Resources\SampleDictionary.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
     <PackageReference Include="xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Xunit.StaFact" Version="0.3.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="Resources\SampleDictionary.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,6 +39,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Celestial.UIToolkit.Core\Celestial.UIToolkit.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Resources\SampleDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
   </ItemGroup>
 
 </Project>

@@ -3,7 +3,11 @@
     <!-- We require C# 7.2 at the very least. Might as well use the latest version. -->
     <LangVersion>latest</LangVersion>
   
+    <!-- Helper variables -->
+    <IsTestProject>$(MSBuildProjectName.Contains('Test'))</IsTestProject>
+    <IsControlGallery>$(MSBuildProjectName.Contains('ControlGallery')</IsControlGallery>
+
     <!-- XML documentation -->
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GenerateDocumentationFile>!$(IsTestProject) And !$(IsControlGallery)</GenerateDocumentationFile>
   </PropertyGroup>
 </Project>
