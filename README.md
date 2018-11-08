@@ -1,5 +1,5 @@
 # Celestial.UIToolkit
-A custom WPF UI-Toolkit which is inspired by a lot of the current design languages, including Microsoft's Fluent Design, Google's Material Design and last, but not least, a custom mix of colorful flat design. 
+A custom WPF UI-Toolkit which is inspired by a lot of the current design languages, including Microsoft's Fluent Design and Google's Material Design.
 
 [![Build Status](https://dev.azure.com/ManuelRoemer/Celestial%20UIToolkit/_apis/build/status/Celestial.UIToolkit)](https://dev.azure.com/ManuelRoemer/Celestial%20UIToolkit/_build/latest?definitionId=2)
 
