@@ -7,19 +7,6 @@ using System.Windows.Markup;
 [assembly: InternalsVisibleTo("Celestial.UIToolkit")]
 [assembly: InternalsVisibleTo("Celestial.UIToolkit.Core.Tests")]
 
-[assembly: AssemblyTitle("Celestial.UIToolkit.Core")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Celestial.UIToolkit.Core")]
-[assembly: AssemblyCopyright("Copyright © 2018")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-[assembly: ComVisible(false)]
-
-[assembly: AssemblyVersion("0.1.0.0")]
-[assembly: AssemblyFileVersion("0.1.0.0")]
-
 [assembly: ThemeInfo(
     ResourceDictionaryLocation.None,
     ResourceDictionaryLocation.SourceAssembly
