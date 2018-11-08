@@ -10,6 +10,7 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+  releaseVersion: '0.1.0'
 
 steps:
 # Install NuGet packages and do a nuget restore.
@@ -17,11 +18,12 @@ steps:
   displayName: 'Use latest NuGet version'
 
 - task: NuGetCommand@2
-  displayName: 'nuget restore'
+  displayName: 'NuGet Restore'
   inputs:
     restoreSolution: '$(solution)'
     noCache: true
 
+# Build and test.
 - task: MSBuild@1
   displayName: 'Build $(solution)'
   inputs:
@@ -34,10 +36,24 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-# - task: PublishBuildArtifacts@1
-#   displayName: 'Publish Assemblies'
-#   inputs:
-#     pathtoPublish: '$(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
-#     artifactName: 'Release'
-#   condition:
-#     and(succeeded(), eq(variables['system.pullrequest.isfork'], false))
+# Publish Dlls, Packages and ControlGallery.
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Dll Artifacts'
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/Binaries'
+    ArtifactName: 'Binaries'
+condition: and(succeeded(), eq(variables['system.pullrequest.isfork'], false))
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish ControlGallery'
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/ControlGallery'
+    ArtifactName: 'ControlGallery'
+condition: and(succeeded(), eq(variables['system.pullrequest.isfork'], false))
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish NuGet Package Artifacts'
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/NuGet'
+    ArtifactName: 'NuGet-Packages'
+condition: and(succeeded(), eq(variables['system.pullrequest.isfork'], false))
