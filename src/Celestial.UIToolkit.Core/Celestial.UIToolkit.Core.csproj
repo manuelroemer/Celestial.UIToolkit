@@ -9,6 +9,11 @@
 
     <ExtrasEnableDefaultWpfItems>true</ExtrasEnableDefaultWpfItems>
     <ExtrasEnableDefaultXamlItems>true</ExtrasEnableDefaultXamlItems>
+
+    <!-- Assembly-specific NuGet properties. -->
+    <Description>The base assembly of Celestial UIToolkit which provides non-specific members that can be useful in any WPF application.
+Have a look at the GitHub repository for details on how to use it.</Description>
+    <PackageTags>wpf;ui;toolkit;animation;markup;extensions;vsm;visual;state;manager;resources</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,13 +1,37 @@
 <Project>
+  
   <PropertyGroup>
+    <!-- Global assembly values. -->
+    <Version Condition=" '$(ReleaseVersion)' != '' ">$(ReleaseVersion)</Version>
+    <Version Condition=" '$(ReleaseVersion)' == ''">0.0.1</Version>
+    <NeutralLanguage>en</NeutralLanguage>
+    
     <!-- We require C# 7.2 at the very least. Might as well use the latest version. -->
     <LangVersion>latest</LangVersion>
   
     <!-- Helper variables -->
     <IsTestProject>$(MSBuildProjectName.Contains('Test'))</IsTestProject>
-    <IsControlGallery>$(MSBuildProjectName.Contains('ControlGallery')</IsControlGallery>
+    <IsControlGallery>$(MSBuildProjectName.Contains('ControlGallery'))</IsControlGallery>
+    
+    <!-- Always generate XML documentation for DLLs, but not for tests or exes. 
+         This would clutter build logs otherwise. -->
+    <GenerateDocumentationFile Condition="!$(IsTestProject) And !$(IsControlGallery)">True</GenerateDocumentationFile>
+    
+    <!-- NuGet package - Shared properties -->
+    <Authors>Manuel Römer</Authors>
+    <PackageProjectUrl>https://github.com/manuelroemer/Celestial.UIToolkit</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/LICENSE</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/manuelroemer/Celestial.UIToolkit</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
 
-    <!-- XML documentation -->
-    <GenerateDocumentationFile>!$(IsTestProject) And !$(IsControlGallery)</GenerateDocumentationFile>
+
+    <!-- Output directories. Required for the Azure pipeline. -->
+    <ArtifactStagingRoot>$(MSBuildThisFileDirectory)Artifacts</ArtifactStagingRoot>
+    <PackageOutputPath>$([System.IO.Path]::Combine('$(ArtifactStagingRoot)', 'NuGet'))</PackageOutputPath>
   </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <GeneratePackageOnBuild Condition="!$(IsTestProject) And !$(IsControlGallery)">True</GeneratePackageOnBuild>
+  </PropertyGroup>
+  
 </Project>

@@ -1,0 +1,42 @@
+﻿<Project>
+  
+  <Target Name="_ReleaseDlls"
+          Condition=" !'$(IsTestProject)' And !'$(IsControlGallery)' And ('$(Configuration)' == 'Release')  "
+          BeforeTargets="AfterBuild">
+
+    <PropertyGroup>
+      <ArtifactStaging>$([System.IO.Path]::Combine('$(ArtifactStagingRoot)', 'Binaries', '$(MSBuildProjectName)', '$(TargetFramework)'))</ArtifactStaging>
+    </PropertyGroup>
+
+    <!-- Don't include dependencies with the DLLs. They need to be installed manually. -->
+    <Copy SourceFiles="$(OutputPath)$(AssemblyName).dll"
+          DestinationFolder="$(ArtifactStaging)"
+          Condition=" Exists('$(OutputPath)$(AssemblyName).dll') " />
+    <Copy SourceFiles="$(OutputPath)$(AssemblyName).xml"
+          DestinationFolder="$(ArtifactStaging)"
+          Condition=" Exists('$(OutputPath)$(AssemblyName).xml') " />
+    <Copy SourceFiles="$(OutputPath)$(AssemblyName).pdb"
+          DestinationFolder="$(ArtifactStaging)"
+          Condition=" Exists('$(OutputPath)$(AssemblyName).pdb') " />
+
+  </Target>
+
+  <Target Name="_ReleaseControlGallery"
+          Condition=" $(IsControlGallery) And ('$(Configuration)' == 'Release') "
+          BeforeTargets="AfterBuild">
+
+    <PropertyGroup>
+      <ArtifactStaging>$([System.IO.Path]::Combine('$(ArtifactStagingRoot)', 'ControlGallery', '$(TargetFramework)'))</ArtifactStaging>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <AllFiles Include="$(OutputPath)*.*" />
+    </ItemGroup>
+
+    <!-- Include all built files, to ensure that this will continue to work in the future.
+         Who knows what type of files will be required at some point... -->
+    <Copy SourceFiles="@(AllFiles)" DestinationFolder="$(ArtifactStaging)" />
+
+  </Target>
+
+</Project>
