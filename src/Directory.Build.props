@@ -26,7 +26,7 @@
 
 
     <!-- Output directories. Required for the Azure pipeline. -->
-    <ArtifactStagingRoot>$(Build.ArtifactStagingDirectory)</ArtifactStagingRoot>
+    <ArtifactStagingRoot>$(BUILD_ARTIFACTSTAGINGDIRECTORY)</ArtifactStagingRoot>
     <ArtifactStagingRoot Condition=" '$(ArtifactStagingRoot)' == '' ">$(MSBuildThisFileDirectory)Artifacts</ArtifactStagingRoot>
     
     <PackageOutputPath>$([System.IO.Path]::Combine('$(ArtifactStagingRoot)', 'NuGet'))</PackageOutputPath>

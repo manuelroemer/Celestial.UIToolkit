@@ -25,13 +25,14 @@ steps:
 
 # Build and test.
 - task: MSBuild@1
-  displayName: 'Build $(solution)'
+  displayName: 'Build solutions'
   inputs:
     solution: '$(solution)'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
 - task: VSTest@2
+  displayName: 'Run tests'
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
