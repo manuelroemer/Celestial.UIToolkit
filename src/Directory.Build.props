@@ -3,7 +3,7 @@
   <PropertyGroup>
     <!-- Global assembly values. -->
     <Version Condition=" '$(ReleaseVersion)' != '' ">$(ReleaseVersion)</Version>
-    <Version Condition=" '$(ReleaseVersion)' == ''">0.0.1</Version>
+    <Version Condition=" '$(ReleaseVersion)' == ''">0.0.0-unknown</Version>
     <NeutralLanguage>en</NeutralLanguage>
     
     <!-- We require C# 7.2 at the very least. Might as well use the latest version. -->
@@ -26,7 +26,9 @@
 
 
     <!-- Output directories. Required for the Azure pipeline. -->
-    <ArtifactStagingRoot>$(MSBuildThisFileDirectory)Artifacts</ArtifactStagingRoot>
+    <ArtifactStagingRoot>$(BUILD_ARTIFACTSTAGINGDIRECTORY)</ArtifactStagingRoot>
+    <ArtifactStagingRoot Condition=" '$(ArtifactStagingRoot)' == '' ">$(MSBuildThisFileDirectory)Artifacts</ArtifactStagingRoot>
+    
     <PackageOutputPath>$([System.IO.Path]::Combine('$(ArtifactStagingRoot)', 'NuGet'))</PackageOutputPath>
   </PropertyGroup>
 
