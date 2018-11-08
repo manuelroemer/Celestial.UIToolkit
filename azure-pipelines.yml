@@ -42,18 +42,18 @@ steps:
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)/Binaries'
     ArtifactName: 'Binaries'
-condition: and(succeeded(), eq(variables['system.pullrequest.isfork'], false))
+  condition: and(succeeded(), eq(variables['system.pullrequest.isfork'], false))
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish ControlGallery'
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)/ControlGallery'
     ArtifactName: 'ControlGallery'
-condition: and(succeeded(), eq(variables['system.pullrequest.isfork'], false))
+  condition: and(succeeded(), eq(variables['system.pullrequest.isfork'], false))
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish NuGet Package Artifacts'
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)/NuGet'
     ArtifactName: 'NuGet-Packages'
-condition: and(succeeded(), eq(variables['system.pullrequest.isfork'], false))
+  condition: and(succeeded(), eq(variables['system.pullrequest.isfork'], false))
