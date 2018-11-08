@@ -6,7 +6,7 @@
     <OutputType>WinExe</OutputType>
     <StartupObject />
     
-    <TargetFrameworks>net45</TargetFrameworks>
+    <TargetFrameworks>net46</TargetFrameworks>
 
     <AppDesignerFolder>Properties</AppDesignerFolder>
 
