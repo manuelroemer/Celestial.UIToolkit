@@ -1,0 +1,9 @@
+<Project>
+  <PropertyGroup>
+    <!-- We require C# 7.2 at the very least. Might as well use the latest version. -->
+    <LangVersion>latest</LangVersion>
+  
+    <!-- XML documentation -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+</Project>
