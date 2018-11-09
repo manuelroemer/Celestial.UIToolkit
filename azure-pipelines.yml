@@ -1,7 +1,7 @@
 trigger:
   - master
 
-name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)_$(Rev:.r)
+name: $(versionMajor).$(versionMinor).$(versionPatch)$(versionSuffix)+ci-$(Build.BuildId)
 
 pool:
   vmImage: 'VS2017-Win2016'
@@ -10,7 +10,10 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-  releaseVersion: '0.1.0'
+  versionMajor: 0
+  versionMinor: 1
+  versionPatch: 0
+  versionSuffix: '' # If set, must start with "-", e.g. "-beta"
 
 steps:
 # Install NuGet packages and do a nuget restore.
