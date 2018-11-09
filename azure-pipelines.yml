@@ -1,7 +1,7 @@
 trigger:
   - master
 
-name: $(versionMajor).$(versionMinor).$(Rev:.r)$(versionSuffix)$(versionBuildMetadata)
+name: $(versionMajor).$(versionMinor).$(Rev:r)$(versionSuffix)$(versionBuildMetadata)
 
 pool:
   vmImage: 'VS2017-Win2016'
