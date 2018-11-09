@@ -2,8 +2,8 @@
   
   <PropertyGroup>
     <!-- Global assembly values. -->
-    <Version Condition=" '$(BUILD_BUILDNUMBER)' != '' ">$(BUILD_BUILDNUMBER)</Version>
-    <Version Condition=" '$(BUILD_BUILDNUMBER)' == ''">0.0.0-unknown</Version>
+    <Version Condition=" '$(releaseVersion)' != '' ">$(releaseVersion)</Version>
+    <Version Condition=" '$(releaseVersion)' == ''">0.0.0-unknown</Version>
     <NeutralLanguage>en</NeutralLanguage>
     
     <!-- We require C# 7.2 at the very least. Might as well use the latest version. -->

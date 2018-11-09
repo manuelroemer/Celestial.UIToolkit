@@ -1,7 +1,7 @@
 trigger:
   - master
 
-name: $(versionMajor).$(versionMinor).$(Rev:r)$(versionSuffix)$(versionBuildMetadata)
+name: $(releaseVersion)
 
 pool:
   vmImage: 'VS2017-Win2016'
@@ -12,8 +12,10 @@ variables:
   buildConfiguration: 'Release'
   versionMajor: 0
   versionMinor: 1
-  versionSuffix: ''        # If set, must start with "-", e.g. "-beta"
-  versionBuildMetadata: '' # If set, must start with "+", e.g. "+20180706"
+  versionPatch: 0
+  versionSuffix: ''                            # If set, must start with "-", e.g. "-beta"
+  versionBuildMetadata: '+ci-$(Build.BuildId)' # If set, must start with "+", e.g. "+20180706"
+  releaseVersion: $(versionMajor).$(versionMinor).$(versionPatch)$(versionSuffix)$(versionBuildMetadata)
 
 steps:
 # Install NuGet packages and do a nuget restore.
