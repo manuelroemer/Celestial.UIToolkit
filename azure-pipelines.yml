@@ -12,7 +12,7 @@ variables:
   buildConfiguration: 'Release'
   versionMajor: 0
   versionMinor: 1
-  versionPatch: 0
+  versionPatch: 1
   versionSuffix: '' # If set, must start with "-", e.g. "-beta"
 
 steps:
