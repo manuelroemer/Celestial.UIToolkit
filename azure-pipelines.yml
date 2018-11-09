@@ -14,7 +14,7 @@ variables:
   versionMinor: 1
   versionPatch: 0
   versionSuffix: ''                            # If set, must start with "-", e.g. "-beta"
-  versionBuildMetadata: '+ci-$(Build_BuildId)' # If set, must start with "+", e.g. "+20180706"
+  versionBuildMetadata: +ci-$(Build.BuildId) # If set, must start with "+", e.g. "+20180706"
 
 steps:
 # Install NuGet packages and do a nuget restore.
