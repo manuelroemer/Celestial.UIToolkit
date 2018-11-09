@@ -1,9 +1,10 @@
 <Project>
   
   <PropertyGroup>
-    <!-- Global assembly values. -->
-    <Version Condition=" '$(BUILD_BUILDNUMBER)' != '' ">$(BUILD_BUILDNUMBER)</Version>
-    <Version Condition=" '$(BUILD_BUILDNUMBER)' == ''">0.0.0-unknown</Version>
+    <!-- Dynamically build the version from the Build environment's paramters.
+         We want a SemVer1.0 version, since that is the best for NuGet. -->
+    <Version Condition=" '$(ReleaseVersion)' != '' ">$(ReleaseVersion)</Version>
+    <Version Condition=" '$(ReleaseVersion)' == ''">0.0.0-unknown</Version>
     <NeutralLanguage>en</NeutralLanguage>
     
     <!-- We require C# 7.2 at the very least. Might as well use the latest version. -->

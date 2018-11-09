@@ -1,7 +1,7 @@
 trigger:
   - master
 
-name: $(versionMajor).$(versionMinor).$(versionPatch)$(versionSuffix)+ci-$(Build.BuildId)
+name: $(releaseVersion)+ci-$(Build.BuildId)
 
 pool:
   vmImage: 'VS2017-Win2016'
@@ -10,10 +10,7 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-  versionMajor: 0
-  versionMinor: 1
-  versionPatch: 1
-  versionSuffix: '' # If set, must start with "-", e.g. "-beta"
+  releaseVersion: '0.1.2' # This needs to be incremented manually and should follow SemVer 1.0.
 
 steps:
 # Install NuGet packages and do a nuget restore.
