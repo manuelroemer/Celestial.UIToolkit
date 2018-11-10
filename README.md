@@ -5,6 +5,49 @@ A custom WPF UI-Toolkit which is inspired by a lot of the current design languag
 [![NuGet - Celestial.UIToolkit.Core](https://img.shields.io/nuget/v/Celestial.UIToolkit.Core.svg?label=Celestial.UIToolkit.Core)](https://www.nuget.org/packages/Celestial.UIToolkit.Core/)
 [![NuGet - Celestial.UIToolkit](https://img.shields.io/nuget/v/Celestial.UIToolkit.svg?label=Celestial.UIToolkit)](https://www.nuget.org/packages/Celestial.UIToolkit/)
 
+
+## Table of Contents
+
+
+
+## 1. Getting Started
+### 1.1 What is this project?
+There are a lot of amazing WPF UI Frameworks, like *MahApps.Metro* or *MaterialDesignInXaml*.
+None of these fulfilled all requirements for an upcoming project of mine though - I was looking
+for an easy to use UI toolkit with a modern look and modern controls - at best, similar to the UWP.
+
+Thus, this project was born. It started out as a library of custom control styles, but quickly
+developed certain features that are also useable (and hopefully useful!) to other libraries.
+
+### 1.2 Installation
+The libraries can be installed via NuGet (preferred way), or via
+[GitHub Releases](https://github.com/manuelroemer/Celestial.UIToolkit/releases/latest).
+
+**Install the whole toolkit:**
+```
+Install-Package Celestial.UIToolkit
+```
+
+**Install only the Core library:**
+```
+Install-Package Celestial.UIToolkit.Core
+```
+
+**Install the Control Gallery:**
+
+The *ControlGallery* application (the toolkit's interactive companion) can be downloaded on 
+[GitHub Releases](https://github.com/manuelroemer/Celestial.UIToolkit/releases/latest).
+
+
+### 1.3 Requirements
+| Component                    | Minimum .NET Framework Requirement(s) |
+| ---------------------------- | ------------------------------------- |
+| `Celestial.UIToolkit.Core`   | .NET 4.5                              |
+| `Celestial.UIToolkit`        | .NET 4.5                              |
+| `ControlGallery`             | .NET 4.6                              |
+| Solution (for custom builds) | .NET 4.6                              |
+
+
 ## Style Naming Format
 The styles in the toolkit follow the following naming convention:
 
