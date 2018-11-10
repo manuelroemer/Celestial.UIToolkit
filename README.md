@@ -45,7 +45,7 @@ If you don't require any styles or custom controls for your project, you only ne
 
 See the following image for a basic overview of the features:
 
-![DLL Overview](./.github/Images/DLL Architecture.png)
+![DLL Overview](./.github/Images/DllArchitecture.png)
 
 
 ### 1.4 Requirements
