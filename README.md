@@ -12,14 +12,13 @@ A custom WPF UI-Toolkit which is inspired by a lot of the current design languag
 
 ## 1. Getting Started
 ### 1.1 What is this project?
-There are a lot of amazing WPF UI Frameworks, like *MahApps.Metro* or *MaterialDesignInXaml*.
-None of these fulfilled all requirements for an upcoming project of mine though - I was looking
-for an easy to use UI toolkit with a modern look and modern controls - at best, similar to the UWP.
+There are amazing UI Frameworks for WPF out there, like *MahApps.Metro* or *MaterialDesignInXaml*.
+None of these fulfilled all requirements for an upcoming project of mine though.
 
-Thus, this project was born. It started out as a library of custom control styles, but quickly
-developed certain features that are also useable (and hopefully useful!) to other libraries.
+Thus, this project was born. It started out as a library of custom styles, but quickly
+developed certain features that are also useable by other libraries or projects.
 
-### 1.2 Installation
+### 1.2 Installation and requirements
 The libraries can be installed via NuGet (preferred way), or via
 [GitHub Releases](https://github.com/manuelroemer/Celestial.UIToolkit/releases/latest).
 
@@ -38,6 +37,13 @@ Install-Package Celestial.UIToolkit.Core
 The *ControlGallery* application (the toolkit's interactive companion) can be downloaded on 
 [GitHub Releases](https://github.com/manuelroemer/Celestial.UIToolkit/releases/latest).
 
+**Minimum Requirements:**
+| Component                    | Minimum .NET Framework Requirement(s) |
+| ---------------------------- | ------------------------------------- |
+| `Celestial.UIToolkit.Core`   | .NET 4.5                              |
+| `Celestial.UIToolkit`        | .NET 4.5                              |
+| `ControlGallery`             | .NET 4.6                              |
+| Solution (for custom builds) | .NET 4.6                              |
 
 ### 1.3 Which DLL do I need?
 In most cases, you will want to install the `Celestial.UIToolkit` library, since it provides every single feature of the toolkit. 
@@ -46,15 +52,6 @@ If you don't require any styles or custom controls for your project, you only ne
 See the following image for a basic overview of the features:
 
 ![DLL Overview](./.github/Images/DllArchitecture.png)
-
-
-### 1.4 Requirements
-| Component                    | Minimum .NET Framework Requirement(s) |
-| ---------------------------- | ------------------------------------- |
-| `Celestial.UIToolkit.Core`   | .NET 4.5                              |
-| `Celestial.UIToolkit`        | .NET 4.5                              |
-| `ControlGallery`             | .NET 4.6                              |
-| Solution (for custom builds) | .NET 4.6                              |
 
 
 ## Style Naming Format
