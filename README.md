@@ -1,5 +1,5 @@
 # Celestial.UIToolkit
-A custom WPF UI-Toolkit which is inspired by a lot of the current design languages, including Microsoft's Fluent Design and Google's Material Design.
+A custom WPF toolkit which is inspired by a lot of the current design languages, including Microsoft's Fluent Design and Google's Material Design.
 
 [![Build Status](https://dev.azure.com/ManuelRoemer/Celestial%20UIToolkit/_apis/build/status/Celestial.UIToolkit)](https://dev.azure.com/ManuelRoemer/Celestial%20UIToolkit/_build/latest?definitionId=2)
 [![NuGet - Celestial.UIToolkit.Core](https://img.shields.io/nuget/v/Celestial.UIToolkit.Core.svg?label=Celestial.UIToolkit.Core)](https://www.nuget.org/packages/Celestial.UIToolkit.Core/)
@@ -7,20 +7,30 @@ A custom WPF UI-Toolkit which is inspired by a lot of the current design languag
 
 
 ## Table of Contents
-
+* [1. Getting started](#1-getting-started)
+  * [1.1 What is Celestial.UIToolkit?](#11-what-is-celestialuitoolkit)
+  * [1.2 Installation and Requirements](#12-installation)
+  * [1.3 Minimum System Requirements](#13-minimum-system-requirements)
+  * [1.4 Which DLL do I need?](#14-which-dll-do-i-need)
 
 
 ## 1. Getting Started
-### 1.1 What is this project?
+### 1.1 What is Celestial.UIToolkit?
 There are amazing UI Frameworks for WPF out there, like *MahApps.Metro* or *MaterialDesignInXaml*.
 None of these fulfilled all requirements for an upcoming project of mine though.
 
 Thus, this project was born. It started out as a library of custom styles, but quickly
 developed certain features that are also useable by other libraries or projects.
 
-### 1.2 Installation and requirements
+It provides a vast set of utilities for the day-to-day WPF development, custom animations (for 
+instance `BrushAnimation` classes), a set of standard converters, a Behavior API, a lot of
+modern controls, custom and consistent styles for all types of controls and lots of other things.
+
+### 1.2 Installation
 The libraries can be installed via NuGet (preferred way), or via
 [GitHub Releases](https://github.com/manuelroemer/Celestial.UIToolkit/releases/latest).
+
+*Unsure about what to install? See [Section 1.4](#14-which-dll-do-i-need) for details.*
 
 **Install the whole toolkit:**
 ```
@@ -37,7 +47,7 @@ Install-Package Celestial.UIToolkit.Core
 The *ControlGallery* application (the toolkit's interactive companion) can be downloaded on 
 [GitHub Releases](https://github.com/manuelroemer/Celestial.UIToolkit/releases/latest).
 
-**Minimum Requirements:**
+### 1.3 Minimum System Requirements
 
 | Component                    | Minimum .NET Framework Requirement(s) |
 | ---------------------------- | ------------------------------------- |
@@ -46,7 +56,7 @@ The *ControlGallery* application (the toolkit's interactive companion) can be do
 | `ControlGallery`             | .NET 4.6                              |
 | Solution (for custom builds) | .NET 4.6                              |
 
-### 1.3 Which DLL do I need?
+### 1.4 Which DLL do I need?
 In most cases, you will want to install the `Celestial.UIToolkit` library, since it provides every single feature of the toolkit. 
 If you don't require any styles or custom controls for your project, you only need the `Celestial.UIToolkit.Core` library.
 
