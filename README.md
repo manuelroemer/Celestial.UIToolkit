@@ -38,6 +38,7 @@ The *ControlGallery* application (the toolkit's interactive companion) can be do
 [GitHub Releases](https://github.com/manuelroemer/Celestial.UIToolkit/releases/latest).
 
 **Minimum Requirements:**
+
 | Component                    | Minimum .NET Framework Requirement(s) |
 | ---------------------------- | ------------------------------------- |
 | `Celestial.UIToolkit.Core`   | .NET 4.5                              |
