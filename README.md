@@ -39,7 +39,16 @@ The *ControlGallery* application (the toolkit's interactive companion) can be do
 [GitHub Releases](https://github.com/manuelroemer/Celestial.UIToolkit/releases/latest).
 
 
-### 1.3 Requirements
+### 1.3 Which DLL do I need?
+In most cases, you will want to install the `Celestial.UIToolkit` library, since it provides every single feature of the toolkit. 
+If you don't require any styles or custom controls for your project, you only need the `Celestial.UIToolkit.Core` library.
+
+See the following image for a basic overview of the features:
+
+![DLL Overview](./.github/Images/DLL Architecture.png)
+
+
+### 1.4 Requirements
 | Component                    | Minimum .NET Framework Requirement(s) |
 | ---------------------------- | ------------------------------------- |
 | `Celestial.UIToolkit.Core`   | .NET 4.5                              |
