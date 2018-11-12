@@ -1,0 +1,193 @@
+### YamlMime:ManagedReference
+items:
+- uid: Celestial.UIToolkit.Converters.MathOperator
+  commentId: T:Celestial.UIToolkit.Converters.MathOperator
+  id: MathOperator
+  parent: Celestial.UIToolkit.Converters
+  children:
+  - Celestial.UIToolkit.Converters.MathOperator.Add
+  - Celestial.UIToolkit.Converters.MathOperator.Divide
+  - Celestial.UIToolkit.Converters.MathOperator.Multiply
+  - Celestial.UIToolkit.Converters.MathOperator.Subtract
+  langs:
+  - csharp
+  - vb
+  name: MathOperator
+  nameWithType: MathOperator
+  fullName: Celestial.UIToolkit.Converters.MathOperator
+  type: Enum
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Converters/MathOperationConverter.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: MathOperator
+    path: src/Celestial.UIToolkit.Core/Converters/MathOperationConverter.cs
+    startLine: 156
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Converters
+  summary: "\nDefines the supported mathematical operations which are used by the\n<xref href=\"Celestial.UIToolkit.Converters.MathOperationConverter\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public enum MathOperator
+    content.vb: Public Enum MathOperator
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: Celestial.UIToolkit.Converters.MathOperator.Add
+  commentId: F:Celestial.UIToolkit.Converters.MathOperator.Add
+  id: Add
+  parent: Celestial.UIToolkit.Converters.MathOperator
+  langs:
+  - csharp
+  - vb
+  name: Add
+  nameWithType: MathOperator.Add
+  fullName: Celestial.UIToolkit.Converters.MathOperator.Add
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Converters/MathOperationConverter.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: Add
+    path: src/Celestial.UIToolkit.Core/Converters/MathOperationConverter.cs
+    startLine: 162
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Converters
+  summary: "\nTwo values are added to another.\n"
+  example: []
+  syntax:
+    content: Add = 0
+    return:
+      type: Celestial.UIToolkit.Converters.MathOperator
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Celestial.UIToolkit.Converters.MathOperator.Subtract
+  commentId: F:Celestial.UIToolkit.Converters.MathOperator.Subtract
+  id: Subtract
+  parent: Celestial.UIToolkit.Converters.MathOperator
+  langs:
+  - csharp
+  - vb
+  name: Subtract
+  nameWithType: MathOperator.Subtract
+  fullName: Celestial.UIToolkit.Converters.MathOperator.Subtract
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Converters/MathOperationConverter.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: Subtract
+    path: src/Celestial.UIToolkit.Core/Converters/MathOperationConverter.cs
+    startLine: 167
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Converters
+  summary: "\nTwo values are subtracted from each other.\n"
+  example: []
+  syntax:
+    content: Subtract = 1
+    return:
+      type: Celestial.UIToolkit.Converters.MathOperator
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Celestial.UIToolkit.Converters.MathOperator.Multiply
+  commentId: F:Celestial.UIToolkit.Converters.MathOperator.Multiply
+  id: Multiply
+  parent: Celestial.UIToolkit.Converters.MathOperator
+  langs:
+  - csharp
+  - vb
+  name: Multiply
+  nameWithType: MathOperator.Multiply
+  fullName: Celestial.UIToolkit.Converters.MathOperator.Multiply
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Converters/MathOperationConverter.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: Multiply
+    path: src/Celestial.UIToolkit.Core/Converters/MathOperationConverter.cs
+    startLine: 172
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Converters
+  summary: "\nTwo values are multiplied by each other.\n"
+  example: []
+  syntax:
+    content: Multiply = 2
+    return:
+      type: Celestial.UIToolkit.Converters.MathOperator
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Celestial.UIToolkit.Converters.MathOperator.Divide
+  commentId: F:Celestial.UIToolkit.Converters.MathOperator.Divide
+  id: Divide
+  parent: Celestial.UIToolkit.Converters.MathOperator
+  langs:
+  - csharp
+  - vb
+  name: Divide
+  nameWithType: MathOperator.Divide
+  fullName: Celestial.UIToolkit.Converters.MathOperator.Divide
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Converters/MathOperationConverter.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: Divide
+    path: src/Celestial.UIToolkit.Core/Converters/MathOperationConverter.cs
+    startLine: 177
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Converters
+  summary: "\nTwo values are divided by each other.\n"
+  example: []
+  syntax:
+    content: Divide = 3
+    return:
+      type: Celestial.UIToolkit.Converters.MathOperator
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: Celestial.UIToolkit.Converters.MathOperationConverter
+  commentId: T:Celestial.UIToolkit.Converters.MathOperationConverter
+  name: MathOperationConverter
+  nameWithType: MathOperationConverter
+  fullName: Celestial.UIToolkit.Converters.MathOperationConverter
+- uid: Celestial.UIToolkit.Converters
+  commentId: N:Celestial.UIToolkit.Converters
+  name: Celestial.UIToolkit.Converters
+  nameWithType: Celestial.UIToolkit.Converters
+  fullName: Celestial.UIToolkit.Converters
+- uid: Celestial.UIToolkit.Converters.MathOperator
+  commentId: T:Celestial.UIToolkit.Converters.MathOperator
+  parent: Celestial.UIToolkit.Converters
+  name: MathOperator
+  nameWithType: MathOperator
+  fullName: Celestial.UIToolkit.Converters.MathOperator

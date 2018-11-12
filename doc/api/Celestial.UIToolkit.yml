@@ -1,0 +1,52 @@
+### YamlMime:ManagedReference
+items:
+- uid: Celestial.UIToolkit
+  commentId: N:Celestial.UIToolkit
+  id: Celestial.UIToolkit
+  children:
+  - Celestial.UIToolkit.DesignMode
+  - Celestial.UIToolkit.DesignTimeOnlyResourceDictionary
+  - Celestial.UIToolkit.ItemsSourceCollection
+  - Celestial.UIToolkit.SharedResourceDictionary
+  - Celestial.UIToolkit.TraceSources
+  langs:
+  - csharp
+  - vb
+  name: Celestial.UIToolkit
+  nameWithType: Celestial.UIToolkit
+  fullName: Celestial.UIToolkit
+  type: Namespace
+  assemblies:
+  - Celestial.UIToolkit.Core
+references:
+- uid: Celestial.UIToolkit.DesignMode
+  commentId: T:Celestial.UIToolkit.DesignMode
+  name: DesignMode
+  nameWithType: DesignMode
+  fullName: Celestial.UIToolkit.DesignMode
+- uid: Celestial.UIToolkit.DesignTimeOnlyResourceDictionary
+  commentId: T:Celestial.UIToolkit.DesignTimeOnlyResourceDictionary
+  name: DesignTimeOnlyResourceDictionary
+  nameWithType: DesignTimeOnlyResourceDictionary
+  fullName: Celestial.UIToolkit.DesignTimeOnlyResourceDictionary
+- uid: Celestial.UIToolkit.ItemsSourceCollection
+  commentId: T:Celestial.UIToolkit.ItemsSourceCollection
+  parent: Celestial.UIToolkit
+  name: ItemsSourceCollection
+  nameWithType: ItemsSourceCollection
+  fullName: Celestial.UIToolkit.ItemsSourceCollection
+- uid: Celestial.UIToolkit.SharedResourceDictionary
+  commentId: T:Celestial.UIToolkit.SharedResourceDictionary
+  name: SharedResourceDictionary
+  nameWithType: SharedResourceDictionary
+  fullName: Celestial.UIToolkit.SharedResourceDictionary
+- uid: Celestial.UIToolkit.TraceSources
+  commentId: T:Celestial.UIToolkit.TraceSources
+  name: TraceSources
+  nameWithType: TraceSources
+  fullName: Celestial.UIToolkit.TraceSources
+- uid: Celestial.UIToolkit
+  commentId: N:Celestial.UIToolkit
+  name: Celestial.UIToolkit
+  nameWithType: Celestial.UIToolkit
+  fullName: Celestial.UIToolkit

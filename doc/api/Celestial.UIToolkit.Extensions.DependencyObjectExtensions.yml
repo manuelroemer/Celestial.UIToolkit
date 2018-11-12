@@ -1,0 +1,477 @@
+### YamlMime:ManagedReference
+items:
+- uid: Celestial.UIToolkit.Extensions.DependencyObjectExtensions
+  commentId: T:Celestial.UIToolkit.Extensions.DependencyObjectExtensions
+  id: DependencyObjectExtensions
+  parent: Celestial.UIToolkit.Extensions
+  children:
+  - Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor(System.Windows.DependencyObject,System.Windows.DependencyObject)
+  - Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild(System.Windows.DependencyObject,System.Windows.UIElement)
+  langs:
+  - csharp
+  - vb
+  name: DependencyObjectExtensions
+  nameWithType: DependencyObjectExtensions
+  fullName: Celestial.UIToolkit.Extensions.DependencyObjectExtensions
+  type: Class
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Extensions/DependencyObjectExtensions.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: DependencyObjectExtensions
+    path: src/Celestial.UIToolkit.Core/Extensions/DependencyObjectExtensions.cs
+    startLine: 11
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Extensions
+  summary: "\nProvides extension methods for the <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> type.\n"
+  example: []
+  syntax:
+    content: public static class DependencyObjectExtensions
+    content.vb: Public Module DependencyObjectExtensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor(System.Windows.DependencyObject,System.Windows.DependencyObject)
+  commentId: M:Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor(System.Windows.DependencyObject,System.Windows.DependencyObject)
+  id: HasVisualAncestor(System.Windows.DependencyObject,System.Windows.DependencyObject)
+  isExtensionMethod: true
+  parent: Celestial.UIToolkit.Extensions.DependencyObjectExtensions
+  langs:
+  - csharp
+  - vb
+  name: HasVisualAncestor(DependencyObject, DependencyObject)
+  nameWithType: DependencyObjectExtensions.HasVisualAncestor(DependencyObject, DependencyObject)
+  fullName: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor(System.Windows.DependencyObject, System.Windows.DependencyObject)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Extensions/DependencyObjectExtensions.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: HasVisualAncestor
+    path: src/Celestial.UIToolkit.Core/Extensions/DependencyObjectExtensions.cs
+    startLine: 24
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Extensions
+  summary: "\nReturns a value indicating whether the provided <code data-dev-comment-type=\"paramref\" class=\"paramref\">ancestor</code>\nis one of the current dependency object&apos;s ancestor in the visual tree.\n"
+  example: []
+  syntax:
+    content: public static bool HasVisualAncestor(this DependencyObject depObj, DependencyObject ancestor)
+    parameters:
+    - id: depObj
+      type: System.Windows.DependencyObject
+      description: The dependency object.
+    - id: ancestor
+      type: System.Windows.DependencyObject
+      description: A potential ancestor.
+    return:
+      type: System.Boolean
+      description: "\ntrue if <code data-dev-comment-type=\"paramref\" class=\"paramref\">ancestor</code> is part of the object&apos;s visual tree;\nfalse if not.\n"
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function HasVisualAncestor(depObj As DependencyObject, ancestor As DependencyObject) As Boolean
+  overload: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild(System.Windows.DependencyObject,System.Windows.UIElement)
+  commentId: M:Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild(System.Windows.DependencyObject,System.Windows.UIElement)
+  id: RemoveLogicalChild(System.Windows.DependencyObject,System.Windows.UIElement)
+  isExtensionMethod: true
+  parent: Celestial.UIToolkit.Extensions.DependencyObjectExtensions
+  langs:
+  - csharp
+  - vb
+  name: RemoveLogicalChild(DependencyObject, UIElement)
+  nameWithType: DependencyObjectExtensions.RemoveLogicalChild(DependencyObject, UIElement)
+  fullName: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild(System.Windows.DependencyObject, System.Windows.UIElement)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Extensions/DependencyObjectExtensions.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: RemoveLogicalChild
+    path: src/Celestial.UIToolkit.Core/Extensions/DependencyObjectExtensions.cs
+    startLine: 45
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Extensions
+  summary: "\nTries to remove the specified <code data-dev-comment-type=\"paramref\" class=\"paramref\">child</code> from the elements logical\ntree.\n"
+  example: []
+  syntax:
+    content: public static void RemoveLogicalChild(this DependencyObject parent, UIElement child)
+    parameters:
+    - id: parent
+      type: System.Windows.DependencyObject
+      description: The parent.
+    - id: child
+      type: System.Windows.UIElement
+      description: The child to be removed.
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Sub RemoveLogicalChild(parent As DependencyObject, child As UIElement)
+  overload: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: System.Windows.DependencyObject
+  commentId: T:System.Windows.DependencyObject
+  parent: System.Windows
+  isExternal: true
+  name: DependencyObject
+  nameWithType: DependencyObject
+  fullName: System.Windows.DependencyObject
+- uid: Celestial.UIToolkit.Extensions
+  commentId: N:Celestial.UIToolkit.Extensions
+  name: Celestial.UIToolkit.Extensions
+  nameWithType: Celestial.UIToolkit.Extensions
+  fullName: Celestial.UIToolkit.Extensions
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows
+  commentId: N:System.Windows
+  isExternal: true
+  name: System.Windows
+  nameWithType: System.Windows
+  fullName: System.Windows
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor*
+  commentId: Overload:Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor
+  name: HasVisualAncestor
+  nameWithType: DependencyObjectExtensions.HasVisualAncestor
+  fullName: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild*
+  commentId: Overload:Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild
+  name: RemoveLogicalChild
+  nameWithType: DependencyObjectExtensions.RemoveLogicalChild
+  fullName: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild
+- uid: System.Windows.UIElement
+  commentId: T:System.Windows.UIElement
+  parent: System.Windows
+  isExternal: true
+  name: UIElement
+  nameWithType: UIElement
+  fullName: System.Windows.UIElement

@@ -1,0 +1,2044 @@
+### YamlMime:ManagedReference
+items:
+- uid: Celestial.UIToolkit.Xaml.ExtendedVisualStateManager
+  commentId: T:Celestial.UIToolkit.Xaml.ExtendedVisualStateManager
+  id: ExtendedVisualStateManager
+  parent: Celestial.UIToolkit.Xaml
+  children:
+  - Celestial.UIToolkit.Xaml.ExtendedVisualStateManager.Default
+  - Celestial.UIToolkit.Xaml.ExtendedVisualStateManager.GoToStateCore(System.Windows.FrameworkElement,System.Windows.FrameworkElement,System.String,System.Windows.VisualStateGroup,System.Windows.VisualState,System.Boolean)
+  langs:
+  - csharp
+  - vb
+  name: ExtendedVisualStateManager
+  nameWithType: ExtendedVisualStateManager
+  fullName: Celestial.UIToolkit.Xaml.ExtendedVisualStateManager
+  type: Class
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Xaml/ExtendedVisualStateManager/ExtendedVisualStateManager.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: ExtendedVisualStateManager
+    path: src/Celestial.UIToolkit.Core/Xaml/ExtendedVisualStateManager/ExtendedVisualStateManager.cs
+    startLine: 17
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Xaml
+  summary: "\nA custom visual state manager which provides the same features, aswell as additional ones,\nas the default <xref href=\"System.Windows.VisualStateManager\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  remarks: "\nFor using this extended visual state manager, the \n<xref href=\"System.Windows.VisualStateManager.CustomVisualStateManagerProperty\" data-throw-if-not-resolved=\"false\"></xref> dependency property must\nbe set on a control which defines the visual state groups (-> the state groups root \nelement).\n"
+  example: []
+  syntax:
+    content: 'public class ExtendedVisualStateManager : VisualStateManager'
+    content.vb: >-
+      Public Class ExtendedVisualStateManager
+
+          Inherits VisualStateManager
+  inheritance:
+  - System.Object
+  - System.Windows.Threading.DispatcherObject
+  - System.Windows.DependencyObject
+  - System.Windows.VisualStateManager
+  inheritedMembers:
+  - System.Windows.VisualStateManager.CustomVisualStateManagerProperty
+  - System.Windows.VisualStateManager.VisualStateGroupsProperty
+  - System.Windows.VisualStateManager.GoToState(System.Windows.FrameworkElement,System.String,System.Boolean)
+  - System.Windows.VisualStateManager.GoToElementState(System.Windows.FrameworkElement,System.String,System.Boolean)
+  - System.Windows.VisualStateManager.GetCustomVisualStateManager(System.Windows.FrameworkElement)
+  - System.Windows.VisualStateManager.SetCustomVisualStateManager(System.Windows.FrameworkElement,System.Windows.VisualStateManager)
+  - System.Windows.VisualStateManager.GetVisualStateGroups(System.Windows.FrameworkElement)
+  - System.Windows.VisualStateManager.RaiseCurrentStateChanging(System.Windows.VisualStateGroup,System.Windows.VisualState,System.Windows.VisualState,System.Windows.FrameworkElement,System.Windows.FrameworkElement)
+  - System.Windows.VisualStateManager.RaiseCurrentStateChanged(System.Windows.VisualStateGroup,System.Windows.VisualState,System.Windows.VisualState,System.Windows.FrameworkElement,System.Windows.FrameworkElement)
+  - System.Windows.DependencyObject.Equals(System.Object)
+  - System.Windows.DependencyObject.GetHashCode
+  - System.Windows.DependencyObject.GetValue(System.Windows.DependencyProperty)
+  - System.Windows.DependencyObject.SetValue(System.Windows.DependencyProperty,System.Object)
+  - System.Windows.DependencyObject.SetCurrentValue(System.Windows.DependencyProperty,System.Object)
+  - System.Windows.DependencyObject.SetValue(System.Windows.DependencyPropertyKey,System.Object)
+  - System.Windows.DependencyObject.ClearValue(System.Windows.DependencyProperty)
+  - System.Windows.DependencyObject.ClearValue(System.Windows.DependencyPropertyKey)
+  - System.Windows.DependencyObject.CoerceValue(System.Windows.DependencyProperty)
+  - System.Windows.DependencyObject.InvalidateProperty(System.Windows.DependencyProperty)
+  - System.Windows.DependencyObject.OnPropertyChanged(System.Windows.DependencyPropertyChangedEventArgs)
+  - System.Windows.DependencyObject.ShouldSerializeProperty(System.Windows.DependencyProperty)
+  - System.Windows.DependencyObject.ReadLocalValue(System.Windows.DependencyProperty)
+  - System.Windows.DependencyObject.GetLocalValueEnumerator
+  - System.Windows.DependencyObject.DependencyObjectType
+  - System.Windows.DependencyObject.IsSealed
+  - System.Windows.Threading.DispatcherObject.Dispatcher
+  - System.Object.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - System.Windows.DependencyObject.Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor(System.Windows.DependencyObject)
+  - System.Windows.DependencyObject.Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild(System.Windows.UIElement)
+  - System.Windows.DependencyObject.Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.IsDependencyPropertySet(System.Windows.DependencyProperty)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Celestial.UIToolkit.Xaml.ExtendedVisualStateManager.Default
+  commentId: P:Celestial.UIToolkit.Xaml.ExtendedVisualStateManager.Default
+  id: Default
+  parent: Celestial.UIToolkit.Xaml.ExtendedVisualStateManager
+  langs:
+  - csharp
+  - vb
+  name: Default
+  nameWithType: ExtendedVisualStateManager.Default
+  fullName: Celestial.UIToolkit.Xaml.ExtendedVisualStateManager.Default
+  type: Property
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Xaml/ExtendedVisualStateManager/ExtendedVisualStateManager.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: Default
+    path: src/Celestial.UIToolkit.Core/Xaml/ExtendedVisualStateManager/ExtendedVisualStateManager.cs
+    startLine: 24
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Xaml
+  summary: "\nGets a default instance of the <xref href=\"Celestial.UIToolkit.Xaml.ExtendedVisualStateManager\" data-throw-if-not-resolved=\"false\"></xref> for quick\naccess (for instance in XAML).\n"
+  example: []
+  syntax:
+    content: public static ExtendedVisualStateManager Default { get; }
+    parameters: []
+    return:
+      type: Celestial.UIToolkit.Xaml.ExtendedVisualStateManager
+    content.vb: Public Shared ReadOnly Property Default As ExtendedVisualStateManager
+  overload: Celestial.UIToolkit.Xaml.ExtendedVisualStateManager.Default*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Xaml.ExtendedVisualStateManager.GoToStateCore(System.Windows.FrameworkElement,System.Windows.FrameworkElement,System.String,System.Windows.VisualStateGroup,System.Windows.VisualState,System.Boolean)
+  commentId: M:Celestial.UIToolkit.Xaml.ExtendedVisualStateManager.GoToStateCore(System.Windows.FrameworkElement,System.Windows.FrameworkElement,System.String,System.Windows.VisualStateGroup,System.Windows.VisualState,System.Boolean)
+  id: GoToStateCore(System.Windows.FrameworkElement,System.Windows.FrameworkElement,System.String,System.Windows.VisualStateGroup,System.Windows.VisualState,System.Boolean)
+  parent: Celestial.UIToolkit.Xaml.ExtendedVisualStateManager
+  langs:
+  - csharp
+  - vb
+  name: GoToStateCore(FrameworkElement, FrameworkElement, String, VisualStateGroup, VisualState, Boolean)
+  nameWithType: ExtendedVisualStateManager.GoToStateCore(FrameworkElement, FrameworkElement, String, VisualStateGroup, VisualState, Boolean)
+  fullName: Celestial.UIToolkit.Xaml.ExtendedVisualStateManager.GoToStateCore(System.Windows.FrameworkElement, System.Windows.FrameworkElement, System.String, System.Windows.VisualStateGroup, System.Windows.VisualState, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Xaml/ExtendedVisualStateManager/ExtendedVisualStateManager.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: GoToStateCore
+    path: src/Celestial.UIToolkit.Core/Xaml/ExtendedVisualStateManager/ExtendedVisualStateManager.cs
+    startLine: 46
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Xaml
+  summary: "\nTransitions a control between states by letting each registered\n<xref href=\"Celestial.UIToolkit.Xaml.VisualStateSwitcher\" data-throw-if-not-resolved=\"false\"></xref> transition to the new state.\n"
+  example: []
+  syntax:
+    content: protected override bool GoToStateCore(FrameworkElement control, FrameworkElement stateGroupsRoot, string stateName, VisualStateGroup group, VisualState state, bool useTransitions)
+    parameters:
+    - id: control
+      type: System.Windows.FrameworkElement
+      description: The control to transition between states.
+    - id: stateGroupsRoot
+      type: System.Windows.FrameworkElement
+      description: "\nThe root element that contains the <xref href=\"Celestial.UIToolkit.Xaml.ExtendedVisualStateManager\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+    - id: stateName
+      type: System.String
+      description: The name of the state to transition to.
+    - id: group
+      type: System.Windows.VisualStateGroup
+      description: The <xref href="System.Windows.VisualStateGroup" data-throw-if-not-resolved="false"></xref> that the state belongs to.
+    - id: state
+      type: System.Windows.VisualState
+      description: The representation of the state to transition to.
+    - id: useTransitions
+      type: System.Boolean
+      description: "\ntrue to use a <xref href=\"System.Windows.VisualTransition\" data-throw-if-not-resolved=\"false\"></xref> object to transition between states;\notherwise, false.\n"
+    return:
+      type: System.Boolean
+      description: "\n<code>true</code> if the control successfully transitioned to the new state; \notherwise, <code>false</code>.\n"
+    content.vb: Protected Overrides Function GoToStateCore(control As FrameworkElement, stateGroupsRoot As FrameworkElement, stateName As String, group As VisualStateGroup, state As VisualState, useTransitions As Boolean) As Boolean
+  overridden: System.Windows.VisualStateManager.GoToStateCore(System.Windows.FrameworkElement,System.Windows.FrameworkElement,System.String,System.Windows.VisualStateGroup,System.Windows.VisualState,System.Boolean)
+  overload: Celestial.UIToolkit.Xaml.ExtendedVisualStateManager.GoToStateCore*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+references:
+- uid: System.Windows.VisualStateManager
+  commentId: T:System.Windows.VisualStateManager
+  parent: System.Windows
+  isExternal: true
+  name: VisualStateManager
+  nameWithType: VisualStateManager
+  fullName: System.Windows.VisualStateManager
+- uid: System.Windows.VisualStateManager.CustomVisualStateManagerProperty
+  commentId: F:System.Windows.VisualStateManager.CustomVisualStateManagerProperty
+  parent: System.Windows.VisualStateManager
+  isExternal: true
+  name: CustomVisualStateManagerProperty
+  nameWithType: VisualStateManager.CustomVisualStateManagerProperty
+  fullName: System.Windows.VisualStateManager.CustomVisualStateManagerProperty
+- uid: Celestial.UIToolkit.Xaml
+  commentId: N:Celestial.UIToolkit.Xaml
+  name: Celestial.UIToolkit.Xaml
+  nameWithType: Celestial.UIToolkit.Xaml
+  fullName: Celestial.UIToolkit.Xaml
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Windows.Threading.DispatcherObject
+  commentId: T:System.Windows.Threading.DispatcherObject
+  parent: System.Windows.Threading
+  isExternal: true
+  name: DispatcherObject
+  nameWithType: DispatcherObject
+  fullName: System.Windows.Threading.DispatcherObject
+- uid: System.Windows.DependencyObject
+  commentId: T:System.Windows.DependencyObject
+  parent: System.Windows
+  isExternal: true
+  name: DependencyObject
+  nameWithType: DependencyObject
+  fullName: System.Windows.DependencyObject
+- uid: System.Windows.VisualStateManager.VisualStateGroupsProperty
+  commentId: F:System.Windows.VisualStateManager.VisualStateGroupsProperty
+  parent: System.Windows.VisualStateManager
+  isExternal: true
+  name: VisualStateGroupsProperty
+  nameWithType: VisualStateManager.VisualStateGroupsProperty
+  fullName: System.Windows.VisualStateManager.VisualStateGroupsProperty
+- uid: System.Windows.VisualStateManager.GoToState(System.Windows.FrameworkElement,System.String,System.Boolean)
+  commentId: M:System.Windows.VisualStateManager.GoToState(System.Windows.FrameworkElement,System.String,System.Boolean)
+  parent: System.Windows.VisualStateManager
+  isExternal: true
+  name: GoToState(FrameworkElement, String, Boolean)
+  nameWithType: VisualStateManager.GoToState(FrameworkElement, String, Boolean)
+  fullName: System.Windows.VisualStateManager.GoToState(System.Windows.FrameworkElement, System.String, System.Boolean)
+  spec.csharp:
+  - uid: System.Windows.VisualStateManager.GoToState(System.Windows.FrameworkElement,System.String,System.Boolean)
+    name: GoToState
+    nameWithType: VisualStateManager.GoToState
+    fullName: System.Windows.VisualStateManager.GoToState
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.FrameworkElement
+    name: FrameworkElement
+    nameWithType: FrameworkElement
+    fullName: System.Windows.FrameworkElement
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.VisualStateManager.GoToState(System.Windows.FrameworkElement,System.String,System.Boolean)
+    name: GoToState
+    nameWithType: VisualStateManager.GoToState
+    fullName: System.Windows.VisualStateManager.GoToState
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.FrameworkElement
+    name: FrameworkElement
+    nameWithType: FrameworkElement
+    fullName: System.Windows.FrameworkElement
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.VisualStateManager.GoToElementState(System.Windows.FrameworkElement,System.String,System.Boolean)
+  commentId: M:System.Windows.VisualStateManager.GoToElementState(System.Windows.FrameworkElement,System.String,System.Boolean)
+  parent: System.Windows.VisualStateManager
+  isExternal: true
+  name: GoToElementState(FrameworkElement, String, Boolean)
+  nameWithType: VisualStateManager.GoToElementState(FrameworkElement, String, Boolean)
+  fullName: System.Windows.VisualStateManager.GoToElementState(System.Windows.FrameworkElement, System.String, System.Boolean)
+  spec.csharp:
+  - uid: System.Windows.VisualStateManager.GoToElementState(System.Windows.FrameworkElement,System.String,System.Boolean)
+    name: GoToElementState
+    nameWithType: VisualStateManager.GoToElementState
+    fullName: System.Windows.VisualStateManager.GoToElementState
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.FrameworkElement
+    name: FrameworkElement
+    nameWithType: FrameworkElement
+    fullName: System.Windows.FrameworkElement
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.VisualStateManager.GoToElementState(System.Windows.FrameworkElement,System.String,System.Boolean)
+    name: GoToElementState
+    nameWithType: VisualStateManager.GoToElementState
+    fullName: System.Windows.VisualStateManager.GoToElementState
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.FrameworkElement
+    name: FrameworkElement
+    nameWithType: FrameworkElement
+    fullName: System.Windows.FrameworkElement
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.VisualStateManager.GetCustomVisualStateManager(System.Windows.FrameworkElement)
+  commentId: M:System.Windows.VisualStateManager.GetCustomVisualStateManager(System.Windows.FrameworkElement)
+  parent: System.Windows.VisualStateManager
+  isExternal: true
+  name: GetCustomVisualStateManager(FrameworkElement)
+  nameWithType: VisualStateManager.GetCustomVisualStateManager(FrameworkElement)
+  fullName: System.Windows.VisualStateManager.GetCustomVisualStateManager(System.Windows.FrameworkElement)
+  spec.csharp:
+  - uid: System.Windows.VisualStateManager.GetCustomVisualStateManager(System.Windows.FrameworkElement)
+    name: GetCustomVisualStateManager
+    nameWithType: VisualStateManager.GetCustomVisualStateManager
+    fullName: System.Windows.VisualStateManager.GetCustomVisualStateManager
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.FrameworkElement
+    name: FrameworkElement
+    nameWithType: FrameworkElement
+    fullName: System.Windows.FrameworkElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.VisualStateManager.GetCustomVisualStateManager(System.Windows.FrameworkElement)
+    name: GetCustomVisualStateManager
+    nameWithType: VisualStateManager.GetCustomVisualStateManager
+    fullName: System.Windows.VisualStateManager.GetCustomVisualStateManager
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.FrameworkElement
+    name: FrameworkElement
+    nameWithType: FrameworkElement
+    fullName: System.Windows.FrameworkElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.VisualStateManager.SetCustomVisualStateManager(System.Windows.FrameworkElement,System.Windows.VisualStateManager)
+  commentId: M:System.Windows.VisualStateManager.SetCustomVisualStateManager(System.Windows.FrameworkElement,System.Windows.VisualStateManager)
+  parent: System.Windows.VisualStateManager
+  isExternal: true
+  name: SetCustomVisualStateManager(FrameworkElement, VisualStateManager)
+  nameWithType: VisualStateManager.SetCustomVisualStateManager(FrameworkElement, VisualStateManager)
+  fullName: System.Windows.VisualStateManager.SetCustomVisualStateManager(System.Windows.FrameworkElement, System.Windows.VisualStateManager)
+  spec.csharp:
+  - uid: System.Windows.VisualStateManager.SetCustomVisualStateManager(System.Windows.FrameworkElement,System.Windows.VisualStateManager)
+    name: SetCustomVisualStateManager
+    nameWithType: VisualStateManager.SetCustomVisualStateManager
+    fullName: System.Windows.VisualStateManager.SetCustomVisualStateManager
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.FrameworkElement
+    name: FrameworkElement
+    nameWithType: FrameworkElement
+    fullName: System.Windows.FrameworkElement
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.VisualStateManager
+    name: VisualStateManager
+    nameWithType: VisualStateManager
+    fullName: System.Windows.VisualStateManager
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.VisualStateManager.SetCustomVisualStateManager(System.Windows.FrameworkElement,System.Windows.VisualStateManager)
+    name: SetCustomVisualStateManager
+    nameWithType: VisualStateManager.SetCustomVisualStateManager
+    fullName: System.Windows.VisualStateManager.SetCustomVisualStateManager
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.FrameworkElement
+    name: FrameworkElement
+    nameWithType: FrameworkElement
+    fullName: System.Windows.FrameworkElement
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.VisualStateManager
+    name: VisualStateManager
+    nameWithType: VisualStateManager
+    fullName: System.Windows.VisualStateManager
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.VisualStateManager.GetVisualStateGroups(System.Windows.FrameworkElement)
+  commentId: M:System.Windows.VisualStateManager.GetVisualStateGroups(System.Windows.FrameworkElement)
+  parent: System.Windows.VisualStateManager
+  isExternal: true
+  name: GetVisualStateGroups(FrameworkElement)
+  nameWithType: VisualStateManager.GetVisualStateGroups(FrameworkElement)
+  fullName: System.Windows.VisualStateManager.GetVisualStateGroups(System.Windows.FrameworkElement)
+  spec.csharp:
+  - uid: System.Windows.VisualStateManager.GetVisualStateGroups(System.Windows.FrameworkElement)
+    name: GetVisualStateGroups
+    nameWithType: VisualStateManager.GetVisualStateGroups
+    fullName: System.Windows.VisualStateManager.GetVisualStateGroups
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.FrameworkElement
+    name: FrameworkElement
+    nameWithType: FrameworkElement
+    fullName: System.Windows.FrameworkElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.VisualStateManager.GetVisualStateGroups(System.Windows.FrameworkElement)
+    name: GetVisualStateGroups
+    nameWithType: VisualStateManager.GetVisualStateGroups
+    fullName: System.Windows.VisualStateManager.GetVisualStateGroups
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.FrameworkElement
+    name: FrameworkElement
+    nameWithType: FrameworkElement
+    fullName: System.Windows.FrameworkElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.VisualStateManager.RaiseCurrentStateChanging(System.Windows.VisualStateGroup,System.Windows.VisualState,System.Windows.VisualState,System.Windows.FrameworkElement,System.Windows.FrameworkElement)
+  commentId: M:System.Windows.VisualStateManager.RaiseCurrentStateChanging(System.Windows.VisualStateGroup,System.Windows.VisualState,System.Windows.VisualState,System.Windows.FrameworkElement,System.Windows.FrameworkElement)
+  parent: System.Windows.VisualStateManager
+  isExternal: true
+  name: RaiseCurrentStateChanging(VisualStateGroup, VisualState, VisualState, FrameworkElement, FrameworkElement)
+  nameWithType: VisualStateManager.RaiseCurrentStateChanging(VisualStateGroup, VisualState, VisualState, FrameworkElement, FrameworkElement)
+  fullName: System.Windows.VisualStateManager.RaiseCurrentStateChanging(System.Windows.VisualStateGroup, System.Windows.VisualState, System.Windows.VisualState, System.Windows.FrameworkElement, System.Windows.FrameworkElement)
+  spec.csharp:
+  - uid: System.Windows.VisualStateManager.RaiseCurrentStateChanging(System.Windows.VisualStateGroup,System.Windows.VisualState,System.Windows.VisualState,System.Windows.FrameworkElement,System.Windows.FrameworkElement)
+    name: RaiseCurrentStateChanging
+    nameWithType: VisualStateManager.RaiseCurrentStateChanging
+    fullName: System.Windows.VisualStateManager.RaiseCurrentStateChanging
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.VisualStateGroup
+    name: VisualStateGroup
+    nameWithType: VisualStateGroup
+    fullName: System.Windows.VisualStateGroup
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.VisualState
+    name: VisualState
+    nameWithType: VisualState
+    fullName: System.Windows.VisualState
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.VisualState
+    name: VisualState
+    nameWithType: VisualState
+    fullName: System.Windows.VisualState
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.FrameworkElement
+    name: FrameworkElement
+    nameWithType: FrameworkElement
+    fullName: System.Windows.FrameworkElement
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.FrameworkElement
+    name: FrameworkElement
+    nameWithType: FrameworkElement
+    fullName: System.Windows.FrameworkElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.VisualStateManager.RaiseCurrentStateChanging(System.Windows.VisualStateGroup,System.Windows.VisualState,System.Windows.VisualState,System.Windows.FrameworkElement,System.Windows.FrameworkElement)
+    name: RaiseCurrentStateChanging
+    nameWithType: VisualStateManager.RaiseCurrentStateChanging
+    fullName: System.Windows.VisualStateManager.RaiseCurrentStateChanging
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.VisualStateGroup
+    name: VisualStateGroup
+    nameWithType: VisualStateGroup
+    fullName: System.Windows.VisualStateGroup
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.VisualState
+    name: VisualState
+    nameWithType: VisualState
+    fullName: System.Windows.VisualState
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.VisualState
+    name: VisualState
+    nameWithType: VisualState
+    fullName: System.Windows.VisualState
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.FrameworkElement
+    name: FrameworkElement
+    nameWithType: FrameworkElement
+    fullName: System.Windows.FrameworkElement
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.FrameworkElement
+    name: FrameworkElement
+    nameWithType: FrameworkElement
+    fullName: System.Windows.FrameworkElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.VisualStateManager.RaiseCurrentStateChanged(System.Windows.VisualStateGroup,System.Windows.VisualState,System.Windows.VisualState,System.Windows.FrameworkElement,System.Windows.FrameworkElement)
+  commentId: M:System.Windows.VisualStateManager.RaiseCurrentStateChanged(System.Windows.VisualStateGroup,System.Windows.VisualState,System.Windows.VisualState,System.Windows.FrameworkElement,System.Windows.FrameworkElement)
+  parent: System.Windows.VisualStateManager
+  isExternal: true
+  name: RaiseCurrentStateChanged(VisualStateGroup, VisualState, VisualState, FrameworkElement, FrameworkElement)
+  nameWithType: VisualStateManager.RaiseCurrentStateChanged(VisualStateGroup, VisualState, VisualState, FrameworkElement, FrameworkElement)
+  fullName: System.Windows.VisualStateManager.RaiseCurrentStateChanged(System.Windows.VisualStateGroup, System.Windows.VisualState, System.Windows.VisualState, System.Windows.FrameworkElement, System.Windows.FrameworkElement)
+  spec.csharp:
+  - uid: System.Windows.VisualStateManager.RaiseCurrentStateChanged(System.Windows.VisualStateGroup,System.Windows.VisualState,System.Windows.VisualState,System.Windows.FrameworkElement,System.Windows.FrameworkElement)
+    name: RaiseCurrentStateChanged
+    nameWithType: VisualStateManager.RaiseCurrentStateChanged
+    fullName: System.Windows.VisualStateManager.RaiseCurrentStateChanged
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.VisualStateGroup
+    name: VisualStateGroup
+    nameWithType: VisualStateGroup
+    fullName: System.Windows.VisualStateGroup
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.VisualState
+    name: VisualState
+    nameWithType: VisualState
+    fullName: System.Windows.VisualState
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.VisualState
+    name: VisualState
+    nameWithType: VisualState
+    fullName: System.Windows.VisualState
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.FrameworkElement
+    name: FrameworkElement
+    nameWithType: FrameworkElement
+    fullName: System.Windows.FrameworkElement
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.FrameworkElement
+    name: FrameworkElement
+    nameWithType: FrameworkElement
+    fullName: System.Windows.FrameworkElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.VisualStateManager.RaiseCurrentStateChanged(System.Windows.VisualStateGroup,System.Windows.VisualState,System.Windows.VisualState,System.Windows.FrameworkElement,System.Windows.FrameworkElement)
+    name: RaiseCurrentStateChanged
+    nameWithType: VisualStateManager.RaiseCurrentStateChanged
+    fullName: System.Windows.VisualStateManager.RaiseCurrentStateChanged
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.VisualStateGroup
+    name: VisualStateGroup
+    nameWithType: VisualStateGroup
+    fullName: System.Windows.VisualStateGroup
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.VisualState
+    name: VisualState
+    nameWithType: VisualState
+    fullName: System.Windows.VisualState
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.VisualState
+    name: VisualState
+    nameWithType: VisualState
+    fullName: System.Windows.VisualState
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.FrameworkElement
+    name: FrameworkElement
+    nameWithType: FrameworkElement
+    fullName: System.Windows.FrameworkElement
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.FrameworkElement
+    name: FrameworkElement
+    nameWithType: FrameworkElement
+    fullName: System.Windows.FrameworkElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.DependencyObject.Equals(System.Object)
+  commentId: M:System.Windows.DependencyObject.Equals(System.Object)
+  parent: System.Windows.DependencyObject
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: DependencyObject.Equals(Object)
+  fullName: System.Windows.DependencyObject.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Windows.DependencyObject.Equals(System.Object)
+    name: Equals
+    nameWithType: DependencyObject.Equals
+    fullName: System.Windows.DependencyObject.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.DependencyObject.Equals(System.Object)
+    name: Equals
+    nameWithType: DependencyObject.Equals
+    fullName: System.Windows.DependencyObject.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.DependencyObject.GetHashCode
+  commentId: M:System.Windows.DependencyObject.GetHashCode
+  parent: System.Windows.DependencyObject
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: DependencyObject.GetHashCode()
+  fullName: System.Windows.DependencyObject.GetHashCode()
+  spec.csharp:
+  - uid: System.Windows.DependencyObject.GetHashCode
+    name: GetHashCode
+    nameWithType: DependencyObject.GetHashCode
+    fullName: System.Windows.DependencyObject.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.DependencyObject.GetHashCode
+    name: GetHashCode
+    nameWithType: DependencyObject.GetHashCode
+    fullName: System.Windows.DependencyObject.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.DependencyObject.GetValue(System.Windows.DependencyProperty)
+  commentId: M:System.Windows.DependencyObject.GetValue(System.Windows.DependencyProperty)
+  parent: System.Windows.DependencyObject
+  isExternal: true
+  name: GetValue(DependencyProperty)
+  nameWithType: DependencyObject.GetValue(DependencyProperty)
+  fullName: System.Windows.DependencyObject.GetValue(System.Windows.DependencyProperty)
+  spec.csharp:
+  - uid: System.Windows.DependencyObject.GetValue(System.Windows.DependencyProperty)
+    name: GetValue
+    nameWithType: DependencyObject.GetValue
+    fullName: System.Windows.DependencyObject.GetValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.DependencyObject.GetValue(System.Windows.DependencyProperty)
+    name: GetValue
+    nameWithType: DependencyObject.GetValue
+    fullName: System.Windows.DependencyObject.GetValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.DependencyObject.SetValue(System.Windows.DependencyProperty,System.Object)
+  commentId: M:System.Windows.DependencyObject.SetValue(System.Windows.DependencyProperty,System.Object)
+  parent: System.Windows.DependencyObject
+  isExternal: true
+  name: SetValue(DependencyProperty, Object)
+  nameWithType: DependencyObject.SetValue(DependencyProperty, Object)
+  fullName: System.Windows.DependencyObject.SetValue(System.Windows.DependencyProperty, System.Object)
+  spec.csharp:
+  - uid: System.Windows.DependencyObject.SetValue(System.Windows.DependencyProperty,System.Object)
+    name: SetValue
+    nameWithType: DependencyObject.SetValue
+    fullName: System.Windows.DependencyObject.SetValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.DependencyObject.SetValue(System.Windows.DependencyProperty,System.Object)
+    name: SetValue
+    nameWithType: DependencyObject.SetValue
+    fullName: System.Windows.DependencyObject.SetValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.DependencyObject.SetCurrentValue(System.Windows.DependencyProperty,System.Object)
+  commentId: M:System.Windows.DependencyObject.SetCurrentValue(System.Windows.DependencyProperty,System.Object)
+  parent: System.Windows.DependencyObject
+  isExternal: true
+  name: SetCurrentValue(DependencyProperty, Object)
+  nameWithType: DependencyObject.SetCurrentValue(DependencyProperty, Object)
+  fullName: System.Windows.DependencyObject.SetCurrentValue(System.Windows.DependencyProperty, System.Object)
+  spec.csharp:
+  - uid: System.Windows.DependencyObject.SetCurrentValue(System.Windows.DependencyProperty,System.Object)
+    name: SetCurrentValue
+    nameWithType: DependencyObject.SetCurrentValue
+    fullName: System.Windows.DependencyObject.SetCurrentValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.DependencyObject.SetCurrentValue(System.Windows.DependencyProperty,System.Object)
+    name: SetCurrentValue
+    nameWithType: DependencyObject.SetCurrentValue
+    fullName: System.Windows.DependencyObject.SetCurrentValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.DependencyObject.SetValue(System.Windows.DependencyPropertyKey,System.Object)
+  commentId: M:System.Windows.DependencyObject.SetValue(System.Windows.DependencyPropertyKey,System.Object)
+  parent: System.Windows.DependencyObject
+  isExternal: true
+  name: SetValue(DependencyPropertyKey, Object)
+  nameWithType: DependencyObject.SetValue(DependencyPropertyKey, Object)
+  fullName: System.Windows.DependencyObject.SetValue(System.Windows.DependencyPropertyKey, System.Object)
+  spec.csharp:
+  - uid: System.Windows.DependencyObject.SetValue(System.Windows.DependencyPropertyKey,System.Object)
+    name: SetValue
+    nameWithType: DependencyObject.SetValue
+    fullName: System.Windows.DependencyObject.SetValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyPropertyKey
+    name: DependencyPropertyKey
+    nameWithType: DependencyPropertyKey
+    fullName: System.Windows.DependencyPropertyKey
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.DependencyObject.SetValue(System.Windows.DependencyPropertyKey,System.Object)
+    name: SetValue
+    nameWithType: DependencyObject.SetValue
+    fullName: System.Windows.DependencyObject.SetValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyPropertyKey
+    name: DependencyPropertyKey
+    nameWithType: DependencyPropertyKey
+    fullName: System.Windows.DependencyPropertyKey
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.DependencyObject.ClearValue(System.Windows.DependencyProperty)
+  commentId: M:System.Windows.DependencyObject.ClearValue(System.Windows.DependencyProperty)
+  parent: System.Windows.DependencyObject
+  isExternal: true
+  name: ClearValue(DependencyProperty)
+  nameWithType: DependencyObject.ClearValue(DependencyProperty)
+  fullName: System.Windows.DependencyObject.ClearValue(System.Windows.DependencyProperty)
+  spec.csharp:
+  - uid: System.Windows.DependencyObject.ClearValue(System.Windows.DependencyProperty)
+    name: ClearValue
+    nameWithType: DependencyObject.ClearValue
+    fullName: System.Windows.DependencyObject.ClearValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.DependencyObject.ClearValue(System.Windows.DependencyProperty)
+    name: ClearValue
+    nameWithType: DependencyObject.ClearValue
+    fullName: System.Windows.DependencyObject.ClearValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.DependencyObject.ClearValue(System.Windows.DependencyPropertyKey)
+  commentId: M:System.Windows.DependencyObject.ClearValue(System.Windows.DependencyPropertyKey)
+  parent: System.Windows.DependencyObject
+  isExternal: true
+  name: ClearValue(DependencyPropertyKey)
+  nameWithType: DependencyObject.ClearValue(DependencyPropertyKey)
+  fullName: System.Windows.DependencyObject.ClearValue(System.Windows.DependencyPropertyKey)
+  spec.csharp:
+  - uid: System.Windows.DependencyObject.ClearValue(System.Windows.DependencyPropertyKey)
+    name: ClearValue
+    nameWithType: DependencyObject.ClearValue
+    fullName: System.Windows.DependencyObject.ClearValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyPropertyKey
+    name: DependencyPropertyKey
+    nameWithType: DependencyPropertyKey
+    fullName: System.Windows.DependencyPropertyKey
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.DependencyObject.ClearValue(System.Windows.DependencyPropertyKey)
+    name: ClearValue
+    nameWithType: DependencyObject.ClearValue
+    fullName: System.Windows.DependencyObject.ClearValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyPropertyKey
+    name: DependencyPropertyKey
+    nameWithType: DependencyPropertyKey
+    fullName: System.Windows.DependencyPropertyKey
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.DependencyObject.CoerceValue(System.Windows.DependencyProperty)
+  commentId: M:System.Windows.DependencyObject.CoerceValue(System.Windows.DependencyProperty)
+  parent: System.Windows.DependencyObject
+  isExternal: true
+  name: CoerceValue(DependencyProperty)
+  nameWithType: DependencyObject.CoerceValue(DependencyProperty)
+  fullName: System.Windows.DependencyObject.CoerceValue(System.Windows.DependencyProperty)
+  spec.csharp:
+  - uid: System.Windows.DependencyObject.CoerceValue(System.Windows.DependencyProperty)
+    name: CoerceValue
+    nameWithType: DependencyObject.CoerceValue
+    fullName: System.Windows.DependencyObject.CoerceValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.DependencyObject.CoerceValue(System.Windows.DependencyProperty)
+    name: CoerceValue
+    nameWithType: DependencyObject.CoerceValue
+    fullName: System.Windows.DependencyObject.CoerceValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.DependencyObject.InvalidateProperty(System.Windows.DependencyProperty)
+  commentId: M:System.Windows.DependencyObject.InvalidateProperty(System.Windows.DependencyProperty)
+  parent: System.Windows.DependencyObject
+  isExternal: true
+  name: InvalidateProperty(DependencyProperty)
+  nameWithType: DependencyObject.InvalidateProperty(DependencyProperty)
+  fullName: System.Windows.DependencyObject.InvalidateProperty(System.Windows.DependencyProperty)
+  spec.csharp:
+  - uid: System.Windows.DependencyObject.InvalidateProperty(System.Windows.DependencyProperty)
+    name: InvalidateProperty
+    nameWithType: DependencyObject.InvalidateProperty
+    fullName: System.Windows.DependencyObject.InvalidateProperty
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.DependencyObject.InvalidateProperty(System.Windows.DependencyProperty)
+    name: InvalidateProperty
+    nameWithType: DependencyObject.InvalidateProperty
+    fullName: System.Windows.DependencyObject.InvalidateProperty
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.DependencyObject.OnPropertyChanged(System.Windows.DependencyPropertyChangedEventArgs)
+  commentId: M:System.Windows.DependencyObject.OnPropertyChanged(System.Windows.DependencyPropertyChangedEventArgs)
+  parent: System.Windows.DependencyObject
+  isExternal: true
+  name: OnPropertyChanged(DependencyPropertyChangedEventArgs)
+  nameWithType: DependencyObject.OnPropertyChanged(DependencyPropertyChangedEventArgs)
+  fullName: System.Windows.DependencyObject.OnPropertyChanged(System.Windows.DependencyPropertyChangedEventArgs)
+  spec.csharp:
+  - uid: System.Windows.DependencyObject.OnPropertyChanged(System.Windows.DependencyPropertyChangedEventArgs)
+    name: OnPropertyChanged
+    nameWithType: DependencyObject.OnPropertyChanged
+    fullName: System.Windows.DependencyObject.OnPropertyChanged
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyPropertyChangedEventArgs
+    name: DependencyPropertyChangedEventArgs
+    nameWithType: DependencyPropertyChangedEventArgs
+    fullName: System.Windows.DependencyPropertyChangedEventArgs
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.DependencyObject.OnPropertyChanged(System.Windows.DependencyPropertyChangedEventArgs)
+    name: OnPropertyChanged
+    nameWithType: DependencyObject.OnPropertyChanged
+    fullName: System.Windows.DependencyObject.OnPropertyChanged
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyPropertyChangedEventArgs
+    name: DependencyPropertyChangedEventArgs
+    nameWithType: DependencyPropertyChangedEventArgs
+    fullName: System.Windows.DependencyPropertyChangedEventArgs
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.DependencyObject.ShouldSerializeProperty(System.Windows.DependencyProperty)
+  commentId: M:System.Windows.DependencyObject.ShouldSerializeProperty(System.Windows.DependencyProperty)
+  parent: System.Windows.DependencyObject
+  isExternal: true
+  name: ShouldSerializeProperty(DependencyProperty)
+  nameWithType: DependencyObject.ShouldSerializeProperty(DependencyProperty)
+  fullName: System.Windows.DependencyObject.ShouldSerializeProperty(System.Windows.DependencyProperty)
+  spec.csharp:
+  - uid: System.Windows.DependencyObject.ShouldSerializeProperty(System.Windows.DependencyProperty)
+    name: ShouldSerializeProperty
+    nameWithType: DependencyObject.ShouldSerializeProperty
+    fullName: System.Windows.DependencyObject.ShouldSerializeProperty
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.DependencyObject.ShouldSerializeProperty(System.Windows.DependencyProperty)
+    name: ShouldSerializeProperty
+    nameWithType: DependencyObject.ShouldSerializeProperty
+    fullName: System.Windows.DependencyObject.ShouldSerializeProperty
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.DependencyObject.ReadLocalValue(System.Windows.DependencyProperty)
+  commentId: M:System.Windows.DependencyObject.ReadLocalValue(System.Windows.DependencyProperty)
+  parent: System.Windows.DependencyObject
+  isExternal: true
+  name: ReadLocalValue(DependencyProperty)
+  nameWithType: DependencyObject.ReadLocalValue(DependencyProperty)
+  fullName: System.Windows.DependencyObject.ReadLocalValue(System.Windows.DependencyProperty)
+  spec.csharp:
+  - uid: System.Windows.DependencyObject.ReadLocalValue(System.Windows.DependencyProperty)
+    name: ReadLocalValue
+    nameWithType: DependencyObject.ReadLocalValue
+    fullName: System.Windows.DependencyObject.ReadLocalValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.DependencyObject.ReadLocalValue(System.Windows.DependencyProperty)
+    name: ReadLocalValue
+    nameWithType: DependencyObject.ReadLocalValue
+    fullName: System.Windows.DependencyObject.ReadLocalValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.DependencyObject.GetLocalValueEnumerator
+  commentId: M:System.Windows.DependencyObject.GetLocalValueEnumerator
+  parent: System.Windows.DependencyObject
+  isExternal: true
+  name: GetLocalValueEnumerator()
+  nameWithType: DependencyObject.GetLocalValueEnumerator()
+  fullName: System.Windows.DependencyObject.GetLocalValueEnumerator()
+  spec.csharp:
+  - uid: System.Windows.DependencyObject.GetLocalValueEnumerator
+    name: GetLocalValueEnumerator
+    nameWithType: DependencyObject.GetLocalValueEnumerator
+    fullName: System.Windows.DependencyObject.GetLocalValueEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.DependencyObject.GetLocalValueEnumerator
+    name: GetLocalValueEnumerator
+    nameWithType: DependencyObject.GetLocalValueEnumerator
+    fullName: System.Windows.DependencyObject.GetLocalValueEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.DependencyObject.DependencyObjectType
+  commentId: P:System.Windows.DependencyObject.DependencyObjectType
+  parent: System.Windows.DependencyObject
+  isExternal: true
+  name: DependencyObjectType
+  nameWithType: DependencyObject.DependencyObjectType
+  fullName: System.Windows.DependencyObject.DependencyObjectType
+- uid: System.Windows.DependencyObject.IsSealed
+  commentId: P:System.Windows.DependencyObject.IsSealed
+  parent: System.Windows.DependencyObject
+  isExternal: true
+  name: IsSealed
+  nameWithType: DependencyObject.IsSealed
+  fullName: System.Windows.DependencyObject.IsSealed
+- uid: System.Windows.Threading.DispatcherObject.Dispatcher
+  commentId: P:System.Windows.Threading.DispatcherObject.Dispatcher
+  parent: System.Windows.Threading.DispatcherObject
+  isExternal: true
+  name: Dispatcher
+  nameWithType: DispatcherObject.Dispatcher
+  fullName: System.Windows.Threading.DispatcherObject.Dispatcher
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.DependencyObject.Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor(System.Windows.DependencyObject)
+  commentId: M:Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor(System.Windows.DependencyObject,System.Windows.DependencyObject)
+  parent: Celestial.UIToolkit.Extensions.DependencyObjectExtensions
+  definition: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor(System.Windows.DependencyObject,System.Windows.DependencyObject)
+  name: HasVisualAncestor(DependencyObject)
+  nameWithType: DependencyObjectExtensions.HasVisualAncestor(DependencyObject)
+  fullName: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor(System.Windows.DependencyObject)
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor(System.Windows.DependencyObject)
+    name: HasVisualAncestor
+    nameWithType: DependencyObjectExtensions.HasVisualAncestor
+    fullName: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyObject
+    name: DependencyObject
+    nameWithType: DependencyObject
+    fullName: System.Windows.DependencyObject
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor(System.Windows.DependencyObject)
+    name: HasVisualAncestor
+    nameWithType: DependencyObjectExtensions.HasVisualAncestor
+    fullName: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyObject
+    name: DependencyObject
+    nameWithType: DependencyObject
+    fullName: System.Windows.DependencyObject
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.DependencyObject.Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild(System.Windows.UIElement)
+  commentId: M:Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild(System.Windows.DependencyObject,System.Windows.UIElement)
+  parent: Celestial.UIToolkit.Extensions.DependencyObjectExtensions
+  definition: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild(System.Windows.DependencyObject,System.Windows.UIElement)
+  name: RemoveLogicalChild(UIElement)
+  nameWithType: DependencyObjectExtensions.RemoveLogicalChild(UIElement)
+  fullName: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild(System.Windows.UIElement)
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild(System.Windows.UIElement)
+    name: RemoveLogicalChild
+    nameWithType: DependencyObjectExtensions.RemoveLogicalChild
+    fullName: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.UIElement
+    name: UIElement
+    nameWithType: UIElement
+    fullName: System.Windows.UIElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild(System.Windows.UIElement)
+    name: RemoveLogicalChild
+    nameWithType: DependencyObjectExtensions.RemoveLogicalChild
+    fullName: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.UIElement
+    name: UIElement
+    nameWithType: UIElement
+    fullName: System.Windows.UIElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.DependencyObject.Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.IsDependencyPropertySet(System.Windows.DependencyProperty)
+  commentId: M:Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.IsDependencyPropertySet(System.Windows.DependencyObject,System.Windows.DependencyProperty)
+  parent: Celestial.UIToolkit.Extensions.DependencyPropertyExtensions
+  definition: Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.IsDependencyPropertySet(System.Windows.DependencyObject,System.Windows.DependencyProperty)
+  name: IsDependencyPropertySet(DependencyProperty)
+  nameWithType: DependencyPropertyExtensions.IsDependencyPropertySet(DependencyProperty)
+  fullName: Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.IsDependencyPropertySet(System.Windows.DependencyProperty)
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.IsDependencyPropertySet(System.Windows.DependencyProperty)
+    name: IsDependencyPropertySet
+    nameWithType: DependencyPropertyExtensions.IsDependencyPropertySet
+    fullName: Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.IsDependencyPropertySet
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.IsDependencyPropertySet(System.Windows.DependencyProperty)
+    name: IsDependencyPropertySet
+    nameWithType: DependencyPropertyExtensions.IsDependencyPropertySet
+    fullName: Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.IsDependencyPropertySet
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows
+  commentId: N:System.Windows
+  isExternal: true
+  name: System.Windows
+  nameWithType: System.Windows
+  fullName: System.Windows
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Windows.Threading
+  commentId: N:System.Windows.Threading
+  isExternal: true
+  name: System.Windows.Threading
+  nameWithType: System.Windows.Threading
+  fullName: System.Windows.Threading
+- uid: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor(System.Windows.DependencyObject,System.Windows.DependencyObject)
+  commentId: M:Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor(System.Windows.DependencyObject,System.Windows.DependencyObject)
+  isExternal: true
+  name: HasVisualAncestor(DependencyObject, DependencyObject)
+  nameWithType: DependencyObjectExtensions.HasVisualAncestor(DependencyObject, DependencyObject)
+  fullName: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor(System.Windows.DependencyObject, System.Windows.DependencyObject)
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor(System.Windows.DependencyObject,System.Windows.DependencyObject)
+    name: HasVisualAncestor
+    nameWithType: DependencyObjectExtensions.HasVisualAncestor
+    fullName: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyObject
+    name: DependencyObject
+    nameWithType: DependencyObject
+    fullName: System.Windows.DependencyObject
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.DependencyObject
+    name: DependencyObject
+    nameWithType: DependencyObject
+    fullName: System.Windows.DependencyObject
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor(System.Windows.DependencyObject,System.Windows.DependencyObject)
+    name: HasVisualAncestor
+    nameWithType: DependencyObjectExtensions.HasVisualAncestor
+    fullName: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyObject
+    name: DependencyObject
+    nameWithType: DependencyObject
+    fullName: System.Windows.DependencyObject
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.DependencyObject
+    name: DependencyObject
+    nameWithType: DependencyObject
+    fullName: System.Windows.DependencyObject
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Celestial.UIToolkit.Extensions.DependencyObjectExtensions
+  commentId: T:Celestial.UIToolkit.Extensions.DependencyObjectExtensions
+  parent: Celestial.UIToolkit.Extensions
+  name: DependencyObjectExtensions
+  nameWithType: DependencyObjectExtensions
+  fullName: Celestial.UIToolkit.Extensions.DependencyObjectExtensions
+- uid: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild(System.Windows.DependencyObject,System.Windows.UIElement)
+  commentId: M:Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild(System.Windows.DependencyObject,System.Windows.UIElement)
+  isExternal: true
+  name: RemoveLogicalChild(DependencyObject, UIElement)
+  nameWithType: DependencyObjectExtensions.RemoveLogicalChild(DependencyObject, UIElement)
+  fullName: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild(System.Windows.DependencyObject, System.Windows.UIElement)
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild(System.Windows.DependencyObject,System.Windows.UIElement)
+    name: RemoveLogicalChild
+    nameWithType: DependencyObjectExtensions.RemoveLogicalChild
+    fullName: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyObject
+    name: DependencyObject
+    nameWithType: DependencyObject
+    fullName: System.Windows.DependencyObject
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.UIElement
+    name: UIElement
+    nameWithType: UIElement
+    fullName: System.Windows.UIElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild(System.Windows.DependencyObject,System.Windows.UIElement)
+    name: RemoveLogicalChild
+    nameWithType: DependencyObjectExtensions.RemoveLogicalChild
+    fullName: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyObject
+    name: DependencyObject
+    nameWithType: DependencyObject
+    fullName: System.Windows.DependencyObject
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.UIElement
+    name: UIElement
+    nameWithType: UIElement
+    fullName: System.Windows.UIElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.IsDependencyPropertySet(System.Windows.DependencyObject,System.Windows.DependencyProperty)
+  commentId: M:Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.IsDependencyPropertySet(System.Windows.DependencyObject,System.Windows.DependencyProperty)
+  isExternal: true
+  name: IsDependencyPropertySet(DependencyObject, DependencyProperty)
+  nameWithType: DependencyPropertyExtensions.IsDependencyPropertySet(DependencyObject, DependencyProperty)
+  fullName: Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.IsDependencyPropertySet(System.Windows.DependencyObject, System.Windows.DependencyProperty)
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.IsDependencyPropertySet(System.Windows.DependencyObject,System.Windows.DependencyProperty)
+    name: IsDependencyPropertySet
+    nameWithType: DependencyPropertyExtensions.IsDependencyPropertySet
+    fullName: Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.IsDependencyPropertySet
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyObject
+    name: DependencyObject
+    nameWithType: DependencyObject
+    fullName: System.Windows.DependencyObject
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.IsDependencyPropertySet(System.Windows.DependencyObject,System.Windows.DependencyProperty)
+    name: IsDependencyPropertySet
+    nameWithType: DependencyPropertyExtensions.IsDependencyPropertySet
+    fullName: Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.IsDependencyPropertySet
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyObject
+    name: DependencyObject
+    nameWithType: DependencyObject
+    fullName: System.Windows.DependencyObject
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Celestial.UIToolkit.Extensions.DependencyPropertyExtensions
+  commentId: T:Celestial.UIToolkit.Extensions.DependencyPropertyExtensions
+  parent: Celestial.UIToolkit.Extensions
+  name: DependencyPropertyExtensions
+  nameWithType: DependencyPropertyExtensions
+  fullName: Celestial.UIToolkit.Extensions.DependencyPropertyExtensions
+- uid: Celestial.UIToolkit.Extensions
+  commentId: N:Celestial.UIToolkit.Extensions
+  name: Celestial.UIToolkit.Extensions
+  nameWithType: Celestial.UIToolkit.Extensions
+  fullName: Celestial.UIToolkit.Extensions
+- uid: Celestial.UIToolkit.Xaml.ExtendedVisualStateManager
+  commentId: T:Celestial.UIToolkit.Xaml.ExtendedVisualStateManager
+  parent: Celestial.UIToolkit.Xaml
+  name: ExtendedVisualStateManager
+  nameWithType: ExtendedVisualStateManager
+  fullName: Celestial.UIToolkit.Xaml.ExtendedVisualStateManager
+- uid: Celestial.UIToolkit.Xaml.ExtendedVisualStateManager.Default*
+  commentId: Overload:Celestial.UIToolkit.Xaml.ExtendedVisualStateManager.Default
+  name: Default
+  nameWithType: ExtendedVisualStateManager.Default
+  fullName: Celestial.UIToolkit.Xaml.ExtendedVisualStateManager.Default
+- uid: Celestial.UIToolkit.Xaml.VisualStateSwitcher
+  commentId: T:Celestial.UIToolkit.Xaml.VisualStateSwitcher
+  isExternal: true
+- uid: System.Windows.VisualStateGroup
+  commentId: T:System.Windows.VisualStateGroup
+  parent: System.Windows
+  isExternal: true
+  name: VisualStateGroup
+  nameWithType: VisualStateGroup
+  fullName: System.Windows.VisualStateGroup
+- uid: System.Windows.VisualTransition
+  commentId: T:System.Windows.VisualTransition
+  isExternal: true
+- uid: System.Windows.VisualStateManager.GoToStateCore(System.Windows.FrameworkElement,System.Windows.FrameworkElement,System.String,System.Windows.VisualStateGroup,System.Windows.VisualState,System.Boolean)
+  commentId: M:System.Windows.VisualStateManager.GoToStateCore(System.Windows.FrameworkElement,System.Windows.FrameworkElement,System.String,System.Windows.VisualStateGroup,System.Windows.VisualState,System.Boolean)
+  parent: System.Windows.VisualStateManager
+  isExternal: true
+  name: GoToStateCore(FrameworkElement, FrameworkElement, String, VisualStateGroup, VisualState, Boolean)
+  nameWithType: VisualStateManager.GoToStateCore(FrameworkElement, FrameworkElement, String, VisualStateGroup, VisualState, Boolean)
+  fullName: System.Windows.VisualStateManager.GoToStateCore(System.Windows.FrameworkElement, System.Windows.FrameworkElement, System.String, System.Windows.VisualStateGroup, System.Windows.VisualState, System.Boolean)
+  spec.csharp:
+  - uid: System.Windows.VisualStateManager.GoToStateCore(System.Windows.FrameworkElement,System.Windows.FrameworkElement,System.String,System.Windows.VisualStateGroup,System.Windows.VisualState,System.Boolean)
+    name: GoToStateCore
+    nameWithType: VisualStateManager.GoToStateCore
+    fullName: System.Windows.VisualStateManager.GoToStateCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.FrameworkElement
+    name: FrameworkElement
+    nameWithType: FrameworkElement
+    fullName: System.Windows.FrameworkElement
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.FrameworkElement
+    name: FrameworkElement
+    nameWithType: FrameworkElement
+    fullName: System.Windows.FrameworkElement
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.VisualStateGroup
+    name: VisualStateGroup
+    nameWithType: VisualStateGroup
+    fullName: System.Windows.VisualStateGroup
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.VisualState
+    name: VisualState
+    nameWithType: VisualState
+    fullName: System.Windows.VisualState
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.VisualStateManager.GoToStateCore(System.Windows.FrameworkElement,System.Windows.FrameworkElement,System.String,System.Windows.VisualStateGroup,System.Windows.VisualState,System.Boolean)
+    name: GoToStateCore
+    nameWithType: VisualStateManager.GoToStateCore
+    fullName: System.Windows.VisualStateManager.GoToStateCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.FrameworkElement
+    name: FrameworkElement
+    nameWithType: FrameworkElement
+    fullName: System.Windows.FrameworkElement
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.FrameworkElement
+    name: FrameworkElement
+    nameWithType: FrameworkElement
+    fullName: System.Windows.FrameworkElement
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.VisualStateGroup
+    name: VisualStateGroup
+    nameWithType: VisualStateGroup
+    fullName: System.Windows.VisualStateGroup
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.VisualState
+    name: VisualState
+    nameWithType: VisualState
+    fullName: System.Windows.VisualState
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Celestial.UIToolkit.Xaml.ExtendedVisualStateManager.GoToStateCore*
+  commentId: Overload:Celestial.UIToolkit.Xaml.ExtendedVisualStateManager.GoToStateCore
+  name: GoToStateCore
+  nameWithType: ExtendedVisualStateManager.GoToStateCore
+  fullName: Celestial.UIToolkit.Xaml.ExtendedVisualStateManager.GoToStateCore
+- uid: System.Windows.FrameworkElement
+  commentId: T:System.Windows.FrameworkElement
+  parent: System.Windows
+  isExternal: true
+  name: FrameworkElement
+  nameWithType: FrameworkElement
+  fullName: System.Windows.FrameworkElement
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Windows.VisualState
+  commentId: T:System.Windows.VisualState
+  parent: System.Windows
+  isExternal: true
+  name: VisualState
+  nameWithType: VisualState
+  fullName: System.Windows.VisualState
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean

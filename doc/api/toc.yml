@@ -1,0 +1,234 @@
+### YamlMime:TableOfContent
+- uid: Celestial.UIToolkit
+  name: Celestial.UIToolkit
+  items:
+  - uid: Celestial.UIToolkit.DesignMode
+    name: DesignMode
+  - uid: Celestial.UIToolkit.DesignTimeOnlyResourceDictionary
+    name: DesignTimeOnlyResourceDictionary
+  - uid: Celestial.UIToolkit.ItemsSourceCollection
+    name: ItemsSourceCollection
+  - uid: Celestial.UIToolkit.SharedResourceDictionary
+    name: SharedResourceDictionary
+  - uid: Celestial.UIToolkit.TraceSources
+    name: TraceSources
+- uid: Celestial.UIToolkit.Common
+  name: Celestial.UIToolkit.Common
+  items:
+  - uid: Celestial.UIToolkit.Common.Singleton`1
+    name: Singleton<T>
+    name.vb: Singleton(Of T)
+- uid: Celestial.UIToolkit.Controls
+  name: Celestial.UIToolkit.Controls
+  items:
+  - uid: Celestial.UIToolkit.Controls.Card
+    name: Card
+  - uid: Celestial.UIToolkit.Controls.ClippingBorder
+    name: ClippingBorder
+  - uid: Celestial.UIToolkit.Controls.CommonVisualStatesControl
+    name: CommonVisualStatesControl
+  - uid: Celestial.UIToolkit.Controls.ConstructedFrameworkElement
+    name: ConstructedFrameworkElement
+  - uid: Celestial.UIToolkit.Controls.DirectionalThemeShadow
+    name: DirectionalThemeShadow
+  - uid: Celestial.UIToolkit.Controls.DropShadowDecorator
+    name: DropShadowDecorator
+  - uid: Celestial.UIToolkit.Controls.ExtendedListView
+    name: ExtendedListView
+  - uid: Celestial.UIToolkit.Controls.IconElement
+    name: IconElement
+  - uid: Celestial.UIToolkit.Controls.ListViewItemInvokedEventArgs
+    name: ListViewItemInvokedEventArgs
+  - uid: Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl
+    name: ManipulationBoundaryFeedbackAwareContentControl
+  - uid: Celestial.UIToolkit.Controls.NavigationView
+    name: NavigationView
+  - uid: Celestial.UIToolkit.Controls.NavigationViewDisplayMode
+    name: NavigationViewDisplayMode
+  - uid: Celestial.UIToolkit.Controls.NavigationViewDisplayModeChangedEventArgs
+    name: NavigationViewDisplayModeChangedEventArgs
+  - uid: Celestial.UIToolkit.Controls.NavigationViewItem
+    name: NavigationViewItem
+  - uid: Celestial.UIToolkit.Controls.NavigationViewItemEventArgs
+    name: NavigationViewItemEventArgs
+  - uid: Celestial.UIToolkit.Controls.NavigationViewListView
+    name: NavigationViewListView
+  - uid: Celestial.UIToolkit.Controls.PathIcon
+    name: PathIcon
+  - uid: Celestial.UIToolkit.Controls.PlaceholderDisplayType
+    name: PlaceholderDisplayType
+  - uid: Celestial.UIToolkit.Controls.PlaceholderOverlay
+    name: PlaceholderOverlay
+  - uid: Celestial.UIToolkit.Controls.RelativeCanvas
+    name: RelativeCanvas
+  - uid: Celestial.UIToolkit.Controls.RippleOrigin
+    name: RippleOrigin
+  - uid: Celestial.UIToolkit.Controls.RippleOverlay
+    name: RippleOverlay
+  - uid: Celestial.UIToolkit.Controls.SelectionIndicator
+    name: SelectionIndicator
+  - uid: Celestial.UIToolkit.Controls.SplitView
+    name: SplitView
+  - uid: Celestial.UIToolkit.Controls.SplitViewDisplayMode
+    name: SplitViewDisplayMode
+  - uid: Celestial.UIToolkit.Controls.SplitViewPanePlacement
+    name: SplitViewPanePlacement
+  - uid: Celestial.UIToolkit.Controls.ThemeShadow
+    name: ThemeShadow
+  - uid: Celestial.UIToolkit.Controls.ThemeShadowPresenter
+    name: ThemeShadowPresenter
+  - uid: Celestial.UIToolkit.Controls.ToggleSwitch
+    name: ToggleSwitch
+  - uid: Celestial.UIToolkit.Controls.WindowCommands
+    name: WindowCommands
+- uid: Celestial.UIToolkit.Converters
+  name: Celestial.UIToolkit.Converters
+  items:
+  - uid: Celestial.UIToolkit.Converters.BooleanToVisibilityConverter
+    name: BooleanToVisibilityConverter
+  - uid: Celestial.UIToolkit.Converters.ColorToSolidColorBrushConverter
+    name: ColorToSolidColorBrushConverter
+  - uid: Celestial.UIToolkit.Converters.DoubleToCornerRadiusConverter
+    name: DoubleToCornerRadiusConverter
+  - uid: Celestial.UIToolkit.Converters.GetTypeConverter
+    name: GetTypeConverter
+  - uid: Celestial.UIToolkit.Converters.GroupConverter
+    name: GroupConverter
+  - uid: Celestial.UIToolkit.Converters.InvertBooleanConverter
+    name: InvertBooleanConverter
+  - uid: Celestial.UIToolkit.Converters.InvertingConverter
+    name: InvertingConverter
+  - uid: Celestial.UIToolkit.Converters.MathOperationConverter
+    name: MathOperationConverter
+  - uid: Celestial.UIToolkit.Converters.MathOperator
+    name: MathOperator
+  - uid: Celestial.UIToolkit.Converters.NegateValueConverter
+    name: NegateValueConverter
+  - uid: Celestial.UIToolkit.Converters.NullToVisibilityConverter
+    name: NullToVisibilityConverter
+  - uid: Celestial.UIToolkit.Converters.StringToVisibilityConverter
+    name: StringToVisibilityConverter
+  - uid: Celestial.UIToolkit.Converters.ThicknessSidePickerConverter
+    name: ThicknessSidePickerConverter
+  - uid: Celestial.UIToolkit.Converters.ValueConverter`2
+    name: ValueConverter<TValue, TTarget>
+    name.vb: ValueConverter(Of TValue, TTarget)
+- uid: Celestial.UIToolkit.Extensions
+  name: Celestial.UIToolkit.Extensions
+  items:
+  - uid: Celestial.UIToolkit.Extensions.ArrayExtensions
+    name: ArrayExtensions
+  - uid: Celestial.UIToolkit.Extensions.ArraySegmentExtensions
+    name: ArraySegmentExtensions
+  - uid: Celestial.UIToolkit.Extensions.DependencyObjectExtensions
+    name: DependencyObjectExtensions
+  - uid: Celestial.UIToolkit.Extensions.DependencyPropertyExtensions
+    name: DependencyPropertyExtensions
+  - uid: Celestial.UIToolkit.Extensions.EnumerableExtensions
+    name: EnumerableExtensions
+  - uid: Celestial.UIToolkit.Extensions.FrameworkElementExtensions
+    name: FrameworkElementExtensions
+- uid: Celestial.UIToolkit.Media.Animations
+  name: Celestial.UIToolkit.Media.Animations
+  items:
+  - uid: Celestial.UIToolkit.Media.Animations.AnimationBase`1
+    name: AnimationBase<T>
+    name.vb: AnimationBase(Of T)
+  - uid: Celestial.UIToolkit.Media.Animations.AnimationUsingKeyFramesBase`3
+    name: AnimationUsingKeyFramesBase<T, TKeyFrame, TKeyFrameCollection>
+    name.vb: AnimationUsingKeyFramesBase(Of T, TKeyFrame, TKeyFrameCollection)
+  - uid: Celestial.UIToolkit.Media.Animations.BrushAnimation
+    name: BrushAnimation
+  - uid: Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames
+    name: BrushAnimationUsingKeyFrames
+  - uid: Celestial.UIToolkit.Media.Animations.BrushKeyFrameCollection
+    name: BrushKeyFrameCollection
+  - uid: Celestial.UIToolkit.Media.Animations.DiscreteBrushKeyFrame
+    name: DiscreteBrushKeyFrame
+  - uid: Celestial.UIToolkit.Media.Animations.DiscreteKeyFrameBase`1
+    name: DiscreteKeyFrameBase<T>
+    name.vb: DiscreteKeyFrameBase(Of T)
+  - uid: Celestial.UIToolkit.Media.Animations.EasingBrushKeyFrame
+    name: EasingBrushKeyFrame
+  - uid: Celestial.UIToolkit.Media.Animations.EasingFromToByAnimationBase`1
+    name: EasingFromToByAnimationBase<T>
+    name.vb: EasingFromToByAnimationBase(Of T)
+  - uid: Celestial.UIToolkit.Media.Animations.EasingKeyFrameBase`1
+    name: EasingKeyFrameBase<T>
+    name.vb: EasingKeyFrameBase(Of T)
+  - uid: Celestial.UIToolkit.Media.Animations.FromToByAnimationBase`1
+    name: FromToByAnimationBase<T>
+    name.vb: FromToByAnimationBase(Of T)
+  - uid: Celestial.UIToolkit.Media.Animations.IAnimationClock
+    name: IAnimationClock
+  - uid: Celestial.UIToolkit.Media.Animations.IClock
+    name: IClock
+  - uid: Celestial.UIToolkit.Media.Animations.IClockController
+    name: IClockController
+  - uid: Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame`1
+    name: IInterpolateKeyFrame<T>
+    name.vb: IInterpolateKeyFrame(Of T)
+  - uid: Celestial.UIToolkit.Media.Animations.KeyFrameBase`1
+    name: KeyFrameBase<T>
+    name.vb: KeyFrameBase(Of T)
+  - uid: Celestial.UIToolkit.Media.Animations.LinearBrushKeyFrame
+    name: LinearBrushKeyFrame
+  - uid: Celestial.UIToolkit.Media.Animations.SplineBrushKeyFrame
+    name: SplineBrushKeyFrame
+  - uid: Celestial.UIToolkit.Media.Animations.SplineKeyFrameBase`1
+    name: SplineKeyFrameBase<T>
+    name.vb: SplineKeyFrameBase(Of T)
+- uid: Celestial.UIToolkit.Theming
+  name: Celestial.UIToolkit.Theming
+  items:
+  - uid: Celestial.UIToolkit.Theming.ActiveProperties
+    name: ActiveProperties
+  - uid: Celestial.UIToolkit.Theming.ControlProperties
+    name: ControlProperties
+  - uid: Celestial.UIToolkit.Theming.DisabledProperties
+    name: DisabledProperties
+  - uid: Celestial.UIToolkit.Theming.MouseOverActiveProperties
+    name: MouseOverActiveProperties
+  - uid: Celestial.UIToolkit.Theming.MouseOverProperties
+    name: MouseOverProperties
+  - uid: Celestial.UIToolkit.Theming.PopupProperties
+    name: PopupProperties
+  - uid: Celestial.UIToolkit.Theming.PressedProperties
+    name: PressedProperties
+  - uid: Celestial.UIToolkit.Theming.RippleProperties
+    name: RippleProperties
+  - uid: Celestial.UIToolkit.Theming.SelectionProperties
+    name: SelectionProperties
+  - uid: Celestial.UIToolkit.Theming.ShadowProperties
+    name: ShadowProperties
+  - uid: Celestial.UIToolkit.Theming.TabItemProperties
+    name: TabItemProperties
+  - uid: Celestial.UIToolkit.Theming.TextBoxProperties
+    name: TextBoxProperties
+  - uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+    name: WindowTitlebarProperties
+- uid: Celestial.UIToolkit.Xaml
+  name: Celestial.UIToolkit.Xaml
+  items:
+  - uid: Celestial.UIToolkit.Xaml.BindingProxy
+    name: BindingProxy
+  - uid: Celestial.UIToolkit.Xaml.EnumBindingSourceExtension
+    name: EnumBindingSourceExtension
+  - uid: Celestial.UIToolkit.Xaml.ExtendedVisualState
+    name: ExtendedVisualState
+  - uid: Celestial.UIToolkit.Xaml.ExtendedVisualStateManager
+    name: ExtendedVisualStateManager
+  - uid: Celestial.UIToolkit.Xaml.GridUnitExtension
+    name: GridUnitExtension
+  - uid: Celestial.UIToolkit.Xaml.IVisualTransitionProvider
+    name: IVisualTransitionProvider
+  - uid: Celestial.UIToolkit.Xaml.MarginHelper
+    name: MarginHelper
+  - uid: Celestial.UIToolkit.Xaml.MultiStyleExtension
+    name: MultiStyleExtension
+  - uid: Celestial.UIToolkit.Xaml.SelfBindingExtension
+    name: SelfBindingExtension
+  - uid: Celestial.UIToolkit.Xaml.TemplatedParentBindingExtension
+    name: TemplatedParentBindingExtension
+  - uid: Celestial.UIToolkit.Xaml.VisualTransitionProvider
+    name: VisualTransitionProvider

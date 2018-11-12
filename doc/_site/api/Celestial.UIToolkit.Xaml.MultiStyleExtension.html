@@ -1,0 +1,321 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class MultiStyleExtension
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class MultiStyleExtension
+   ">
+    <meta name="generator" content="docfx 2.40.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Celestial.UIToolkit.Xaml.MultiStyleExtension">
+  
+  
+  <h1 id="Celestial_UIToolkit_Xaml_MultiStyleExtension" data-uid="Celestial.UIToolkit.Xaml.MultiStyleExtension" class="text-break">Class MultiStyleExtension
+  </h1>
+  <div class="markdown level0 summary"><p>A custom markup extension which merges multiple styles
+into one single style.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.markup.markupextension">MarkupExtension</a></div>
+    <div class="level2"><span class="xref">MultiStyleExtension</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Celestial.UIToolkit.Xaml.html">Celestial.UIToolkit.Xaml</a></h6>
+  <h6><strong>Assembly</strong>: Celestial.UIToolkit.Core.dll</h6>
+  <h5 id="Celestial_UIToolkit_Xaml_MultiStyleExtension_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class MultiStyleExtension : MarkupExtension</code></pre>
+  </div>
+  <h5 id="Celestial_UIToolkit_Xaml_MultiStyleExtension_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>Be aware that this markup extension is very resource intensive.
+When merging two styles, every single property will have to be copied,
+each and every time when this extension is being used.</p>
+<p>Take care of the following points:</p>
+<ul>
+<li>Use the extension on small styles with few setters/triggers.</li>
+<li>Avoid using it on styles which are based on other styles,
+as these base styles will have to be merged aswell.</li>
+</ul>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Xaml_MultiStyleExtension__ctor.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Xaml.MultiStyleExtension.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit.Core/Xaml/MultiStyleExtension.cs/#L68">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Xaml_MultiStyleExtension__ctor_" data-uid="Celestial.UIToolkit.Xaml.MultiStyleExtension.#ctor*"></a>
+  <h4 id="Celestial_UIToolkit_Xaml_MultiStyleExtension__ctor" data-uid="Celestial.UIToolkit.Xaml.MultiStyleExtension.#ctor">MultiStyleExtension()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Celestial.UIToolkit.Xaml.MultiStyleExtension.html">MultiStyleExtension</a>
+with the <a class="xref" href="Celestial.UIToolkit.Xaml.MultiStyleExtension.html#Celestial_UIToolkit_Xaml_MultiStyleExtension_StyleKeys">StyleKeys</a> property being an empty string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MultiStyleExtension()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Xaml_MultiStyleExtension__ctor_System_String_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Xaml.MultiStyleExtension.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit.Core/Xaml/MultiStyleExtension.cs/#L79">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Xaml_MultiStyleExtension__ctor_" data-uid="Celestial.UIToolkit.Xaml.MultiStyleExtension.#ctor*"></a>
+  <h4 id="Celestial_UIToolkit_Xaml_MultiStyleExtension__ctor_System_String_" data-uid="Celestial.UIToolkit.Xaml.MultiStyleExtension.#ctor(System.String)">MultiStyleExtension(String)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Celestial.UIToolkit.Xaml.MultiStyleExtension.html">MultiStyleExtension</a> class
+with the specified <code data-dev-comment-type="paramref" class="paramref">styleKeys</code> string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MultiStyleExtension(string styleKeys)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">styleKeys</span></td>
+        <td><p>A string which defines the keys of the style resources which are supposed
+to be merged.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Xaml_MultiStyleExtension_StyleKeys.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Xaml.MultiStyleExtension.StyleKeys%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit.Core/Xaml/MultiStyleExtension.cs/#L53">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Xaml_MultiStyleExtension_StyleKeys_" data-uid="Celestial.UIToolkit.Xaml.MultiStyleExtension.StyleKeys*"></a>
+  <h4 id="Celestial_UIToolkit_Xaml_MultiStyleExtension_StyleKeys" data-uid="Celestial.UIToolkit.Xaml.MultiStyleExtension.StyleKeys">StyleKeys</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a string which defines the keys of the style resources
+which are supposed to be merged.
+The string must contain the name of at least one style resource.
+Multiple keys must be separated via one of the following chars:</p>
+<ul><li>(Whitespace)</li><li>,</li><li>;</li></ul>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ConstructorArgument(&quot;styleKeys&quot;)]
+public string StyleKeys { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Celestial_UIToolkit_Xaml_MultiStyleExtension_StyleKeys_examples">Examples</h5>
+  <p>The following is a valid string which references two style resources:
+&quot;StyleKey1 StyleKey2&quot;</p>
+
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Xaml_MultiStyleExtension_ProvideValue_System_IServiceProvider_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Xaml.MultiStyleExtension.ProvideValue(System.IServiceProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit.Core/Xaml/MultiStyleExtension.cs/#L105">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Xaml_MultiStyleExtension_ProvideValue_" data-uid="Celestial.UIToolkit.Xaml.MultiStyleExtension.ProvideValue*"></a>
+  <h4 id="Celestial_UIToolkit_Xaml_MultiStyleExtension_ProvideValue_System_IServiceProvider_" data-uid="Celestial.UIToolkit.Xaml.MultiStyleExtension.ProvideValue(System.IServiceProvider)">ProvideValue(IServiceProvider)</h4>
+  <div class="markdown level1 summary"><p>Locates and merges the styles which are declared via the
+<a class="xref" href="Celestial.UIToolkit.Xaml.MultiStyleExtension.html#Celestial_UIToolkit_Xaml_MultiStyleExtension_StyleKeys">StyleKeys</a> property and returns the resulting style.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override object ProvideValue(IServiceProvider serviceProvider)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iserviceprovider">IServiceProvider</a></td>
+        <td><span class="parametername">serviceProvider</span></td>
+        <td><p>A service provider to be used by the markup extension.
+Can be null.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.style">Style</a> which is the result of the merge operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.markup.markupextension.providevalue#System_Windows_Markup_MarkupExtension_ProvideValue_System_IServiceProvider_">MarkupExtension.ProvideValue(IServiceProvider)</a></div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Xaml_MultiStyleExtension.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Xaml.MultiStyleExtension%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit.Core/Xaml/MultiStyleExtension.cs/#L25" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+### YamlMime:ManagedReference
+items:
+- uid: Celestial.UIToolkit.Controls.SplitViewPanePlacement
+  commentId: T:Celestial.UIToolkit.Controls.SplitViewPanePlacement
+  id: SplitViewPanePlacement
+  parent: Celestial.UIToolkit.Controls
+  children:
+  - Celestial.UIToolkit.Controls.SplitViewPanePlacement.Left
+  - Celestial.UIToolkit.Controls.SplitViewPanePlacement.Right
+  langs:
+  - csharp
+  - vb
+  name: SplitViewPanePlacement
+  nameWithType: SplitViewPanePlacement
+  fullName: Celestial.UIToolkit.Controls.SplitViewPanePlacement
+  type: Enum
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Controls/SplitView/SplitViewPanePlacement.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: SplitViewPanePlacement
+    path: ../src/Celestial.UIToolkit/Controls/SplitView/SplitViewPanePlacement.cs
+    startLine: 6
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Controls
+  summary: "\nDefines on which side the pane of a <xref href=\"Celestial.UIToolkit.Controls.SplitView\" data-throw-if-not-resolved=\"false\"></xref> control is placed.\n"
+  example: []
+  syntax:
+    content: public enum SplitViewPanePlacement
+    content.vb: Public Enum SplitViewPanePlacement
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: Celestial.UIToolkit.Controls.SplitViewPanePlacement.Left
+  commentId: F:Celestial.UIToolkit.Controls.SplitViewPanePlacement.Left
+  id: Left
+  parent: Celestial.UIToolkit.Controls.SplitViewPanePlacement
+  langs:
+  - csharp
+  - vb
+  name: Left
+  nameWithType: SplitViewPanePlacement.Left
+  fullName: Celestial.UIToolkit.Controls.SplitViewPanePlacement.Left
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Controls/SplitView/SplitViewPanePlacement.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: Left
+    path: ../src/Celestial.UIToolkit/Controls/SplitView/SplitViewPanePlacement.cs
+    startLine: 12
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Controls
+  summary: "\nThe pane is placed on the left.\n"
+  example: []
+  syntax:
+    content: Left = 0
+    return:
+      type: Celestial.UIToolkit.Controls.SplitViewPanePlacement
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Celestial.UIToolkit.Controls.SplitViewPanePlacement.Right
+  commentId: F:Celestial.UIToolkit.Controls.SplitViewPanePlacement.Right
+  id: Right
+  parent: Celestial.UIToolkit.Controls.SplitViewPanePlacement
+  langs:
+  - csharp
+  - vb
+  name: Right
+  nameWithType: SplitViewPanePlacement.Right
+  fullName: Celestial.UIToolkit.Controls.SplitViewPanePlacement.Right
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Controls/SplitView/SplitViewPanePlacement.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: Right
+    path: ../src/Celestial.UIToolkit/Controls/SplitView/SplitViewPanePlacement.cs
+    startLine: 17
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Controls
+  summary: "\nThe pane is placed on the right.\n"
+  example: []
+  syntax:
+    content: Right = 1
+    return:
+      type: Celestial.UIToolkit.Controls.SplitViewPanePlacement
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: Celestial.UIToolkit.Controls.SplitView
+  commentId: T:Celestial.UIToolkit.Controls.SplitView
+  name: SplitView
+  nameWithType: SplitView
+  fullName: Celestial.UIToolkit.Controls.SplitView
+- uid: Celestial.UIToolkit.Controls
+  commentId: N:Celestial.UIToolkit.Controls
+  name: Celestial.UIToolkit.Controls
+  nameWithType: Celestial.UIToolkit.Controls
+  fullName: Celestial.UIToolkit.Controls
+- uid: Celestial.UIToolkit.Controls.SplitViewPanePlacement
+  commentId: T:Celestial.UIToolkit.Controls.SplitViewPanePlacement
+  parent: Celestial.UIToolkit.Controls
+  name: SplitViewPanePlacement
+  nameWithType: SplitViewPanePlacement
+  fullName: Celestial.UIToolkit.Controls.SplitViewPanePlacement

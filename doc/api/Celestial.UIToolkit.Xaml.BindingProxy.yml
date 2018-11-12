@@ -1,0 +1,2291 @@
+### YamlMime:ManagedReference
+items:
+- uid: Celestial.UIToolkit.Xaml.BindingProxy
+  commentId: T:Celestial.UIToolkit.Xaml.BindingProxy
+  id: BindingProxy
+  parent: Celestial.UIToolkit.Xaml
+  children:
+  - Celestial.UIToolkit.Xaml.BindingProxy.#ctor
+  - Celestial.UIToolkit.Xaml.BindingProxy.#ctor(System.Object)
+  - Celestial.UIToolkit.Xaml.BindingProxy.CreateInstanceCore
+  - Celestial.UIToolkit.Xaml.BindingProxy.Data
+  - Celestial.UIToolkit.Xaml.BindingProxy.DataProperty
+  - Celestial.UIToolkit.Xaml.BindingProxy.ToString
+  langs:
+  - csharp
+  - vb
+  name: BindingProxy
+  nameWithType: BindingProxy
+  fullName: Celestial.UIToolkit.Xaml.BindingProxy
+  type: Class
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Xaml/BindingProxy.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: BindingProxy
+    path: src/Celestial.UIToolkit.Core/Xaml/BindingProxy.cs
+    startLine: 15
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Xaml
+  summary: "\nA class which is used to allow bindings in places where they wouldn&apos;t normally be possible,\nby creating a proxy between the two parties.\n"
+  example: []
+  syntax:
+    content: 'public class BindingProxy : Freezable, ISealable'
+    content.vb: >-
+      Public Class BindingProxy
+
+          Inherits Freezable
+
+          Implements ISealable
+  inheritance:
+  - System.Object
+  - System.Windows.Threading.DispatcherObject
+  - System.Windows.DependencyObject
+  - System.Windows.Freezable
+  inheritedMembers:
+  - System.Windows.Freezable.Clone
+  - System.Windows.Freezable.CloneCurrentValue
+  - System.Windows.Freezable.GetAsFrozen
+  - System.Windows.Freezable.GetCurrentValueAsFrozen
+  - System.Windows.Freezable.Freeze
+  - System.Windows.Freezable.OnPropertyChanged(System.Windows.DependencyPropertyChangedEventArgs)
+  - System.Windows.Freezable.CreateInstance
+  - System.Windows.Freezable.CloneCore(System.Windows.Freezable)
+  - System.Windows.Freezable.CloneCurrentValueCore(System.Windows.Freezable)
+  - System.Windows.Freezable.GetAsFrozenCore(System.Windows.Freezable)
+  - System.Windows.Freezable.GetCurrentValueAsFrozenCore(System.Windows.Freezable)
+  - System.Windows.Freezable.FreezeCore(System.Boolean)
+  - System.Windows.Freezable.OnChanged
+  - System.Windows.Freezable.ReadPreamble
+  - System.Windows.Freezable.WritePreamble
+  - System.Windows.Freezable.WritePostscript
+  - System.Windows.Freezable.OnFreezablePropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyObject)
+  - System.Windows.Freezable.OnFreezablePropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyObject,System.Windows.DependencyProperty)
+  - System.Windows.Freezable.Freeze(System.Windows.Freezable,System.Boolean)
+  - System.Windows.Freezable.CanFreeze
+  - System.Windows.Freezable.IsFrozen
+  - System.Windows.Freezable.Changed
+  - System.Windows.DependencyObject.Equals(System.Object)
+  - System.Windows.DependencyObject.GetHashCode
+  - System.Windows.DependencyObject.GetValue(System.Windows.DependencyProperty)
+  - System.Windows.DependencyObject.SetValue(System.Windows.DependencyProperty,System.Object)
+  - System.Windows.DependencyObject.SetCurrentValue(System.Windows.DependencyProperty,System.Object)
+  - System.Windows.DependencyObject.SetValue(System.Windows.DependencyPropertyKey,System.Object)
+  - System.Windows.DependencyObject.ClearValue(System.Windows.DependencyProperty)
+  - System.Windows.DependencyObject.ClearValue(System.Windows.DependencyPropertyKey)
+  - System.Windows.DependencyObject.CoerceValue(System.Windows.DependencyProperty)
+  - System.Windows.DependencyObject.InvalidateProperty(System.Windows.DependencyProperty)
+  - System.Windows.DependencyObject.ShouldSerializeProperty(System.Windows.DependencyProperty)
+  - System.Windows.DependencyObject.ReadLocalValue(System.Windows.DependencyProperty)
+  - System.Windows.DependencyObject.GetLocalValueEnumerator
+  - System.Windows.DependencyObject.DependencyObjectType
+  - System.Windows.DependencyObject.IsSealed
+  - System.Windows.Threading.DispatcherObject.Dispatcher
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - System.Windows.DependencyObject.Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor(System.Windows.DependencyObject)
+  - System.Windows.DependencyObject.Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild(System.Windows.UIElement)
+  - System.Windows.DependencyObject.Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.IsDependencyPropertySet(System.Windows.DependencyProperty)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Celestial.UIToolkit.Xaml.BindingProxy.DataProperty
+  commentId: F:Celestial.UIToolkit.Xaml.BindingProxy.DataProperty
+  id: DataProperty
+  parent: Celestial.UIToolkit.Xaml.BindingProxy
+  langs:
+  - csharp
+  - vb
+  name: DataProperty
+  nameWithType: BindingProxy.DataProperty
+  fullName: Celestial.UIToolkit.Xaml.BindingProxy.DataProperty
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Xaml/BindingProxy.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: DataProperty
+    path: src/Celestial.UIToolkit.Core/Xaml/BindingProxy.cs
+    startLine: 23
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Xaml
+  summary: "\nIdentifies the <xref href=\"Celestial.UIToolkit.Xaml.BindingProxy.Data\" data-throw-if-not-resolved=\"false\"></xref> dependency property. \n"
+  example: []
+  syntax:
+    content: public static readonly DependencyProperty DataProperty
+    return:
+      type: System.Windows.DependencyProperty
+    content.vb: Public Shared ReadOnly DataProperty As DependencyProperty
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Xaml.BindingProxy.Data
+  commentId: P:Celestial.UIToolkit.Xaml.BindingProxy.Data
+  id: Data
+  parent: Celestial.UIToolkit.Xaml.BindingProxy
+  langs:
+  - csharp
+  - vb
+  name: Data
+  nameWithType: BindingProxy.Data
+  fullName: Celestial.UIToolkit.Xaml.BindingProxy.Data
+  type: Property
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Xaml/BindingProxy.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: Data
+    path: src/Celestial.UIToolkit.Core/Xaml/BindingProxy.cs
+    startLine: 29
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Xaml
+  summary: "\nGets or sets the data which this object is proxying.\n"
+  example: []
+  syntax:
+    content: public object Data { get; set; }
+    parameters: []
+    return:
+      type: System.Object
+    content.vb: Public Property Data As Object
+  overload: Celestial.UIToolkit.Xaml.BindingProxy.Data*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Celestial.UIToolkit.Xaml.BindingProxy.#ctor
+  commentId: M:Celestial.UIToolkit.Xaml.BindingProxy.#ctor
+  id: '#ctor'
+  parent: Celestial.UIToolkit.Xaml.BindingProxy
+  langs:
+  - csharp
+  - vb
+  name: BindingProxy()
+  nameWithType: BindingProxy.BindingProxy()
+  fullName: Celestial.UIToolkit.Xaml.BindingProxy.BindingProxy()
+  type: Constructor
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Xaml/BindingProxy.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: .ctor
+    path: src/Celestial.UIToolkit.Core/Xaml/BindingProxy.cs
+    startLine: 38
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Xaml
+  summary: "\nInitializes a new instance of the <xref href=\"Celestial.UIToolkit.Xaml.BindingProxy\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: public BindingProxy()
+    content.vb: Public Sub New
+  overload: Celestial.UIToolkit.Xaml.BindingProxy.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Celestial.UIToolkit.Xaml.BindingProxy.#ctor(System.Object)
+  commentId: M:Celestial.UIToolkit.Xaml.BindingProxy.#ctor(System.Object)
+  id: '#ctor(System.Object)'
+  parent: Celestial.UIToolkit.Xaml.BindingProxy
+  langs:
+  - csharp
+  - vb
+  name: BindingProxy(Object)
+  nameWithType: BindingProxy.BindingProxy(Object)
+  fullName: Celestial.UIToolkit.Xaml.BindingProxy.BindingProxy(System.Object)
+  type: Constructor
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Xaml/BindingProxy.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: .ctor
+    path: src/Celestial.UIToolkit.Core/Xaml/BindingProxy.cs
+    startLine: 45
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Xaml
+  summary: "\nInitializes a new instance of the <xref href=\"Celestial.UIToolkit.Xaml.BindingProxy\" data-throw-if-not-resolved=\"false\"></xref> class with the\nspecified <code data-dev-comment-type=\"paramref\" class=\"paramref\">data</code>.\n"
+  example: []
+  syntax:
+    content: public BindingProxy(object data)
+    parameters:
+    - id: data
+      type: System.Object
+      description: The data which this object is proxying.
+    content.vb: Public Sub New(data As Object)
+  overload: Celestial.UIToolkit.Xaml.BindingProxy.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Celestial.UIToolkit.Xaml.BindingProxy.CreateInstanceCore
+  commentId: M:Celestial.UIToolkit.Xaml.BindingProxy.CreateInstanceCore
+  id: CreateInstanceCore
+  parent: Celestial.UIToolkit.Xaml.BindingProxy
+  langs:
+  - csharp
+  - vb
+  name: CreateInstanceCore()
+  nameWithType: BindingProxy.CreateInstanceCore()
+  fullName: Celestial.UIToolkit.Xaml.BindingProxy.CreateInstanceCore()
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Xaml/BindingProxy.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: CreateInstanceCore
+    path: src/Celestial.UIToolkit.Core/Xaml/BindingProxy.cs
+    startLine: 54
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Xaml
+  summary: "\nCreates a new instance of the <xref href=\"Celestial.UIToolkit.Xaml.BindingProxy\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: protected override Freezable CreateInstanceCore()
+    return:
+      type: System.Windows.Freezable
+      description: A new instance of the <xref href="Celestial.UIToolkit.Xaml.BindingProxy" data-throw-if-not-resolved="false"></xref> class.
+    content.vb: Protected Overrides Function CreateInstanceCore As Freezable
+  overridden: System.Windows.Freezable.CreateInstanceCore
+  overload: Celestial.UIToolkit.Xaml.BindingProxy.CreateInstanceCore*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: Celestial.UIToolkit.Xaml.BindingProxy.ToString
+  commentId: M:Celestial.UIToolkit.Xaml.BindingProxy.ToString
+  id: ToString
+  parent: Celestial.UIToolkit.Xaml.BindingProxy
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: BindingProxy.ToString()
+  fullName: Celestial.UIToolkit.Xaml.BindingProxy.ToString()
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Xaml/BindingProxy.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: ToString
+    path: src/Celestial.UIToolkit.Core/Xaml/BindingProxy.cs
+    startLine: 60
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Xaml
+  summary: "\nReturns a string representation of the proxy&apos;s <xref href=\"Celestial.UIToolkit.Xaml.BindingProxy.Data\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: A <xref href="System.String" data-throw-if-not-resolved="false"></xref> representing the proxy&apos;s data.
+    content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
+  overload: Celestial.UIToolkit.Xaml.BindingProxy.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: Celestial.UIToolkit.Xaml
+  commentId: N:Celestial.UIToolkit.Xaml
+  name: Celestial.UIToolkit.Xaml
+  nameWithType: Celestial.UIToolkit.Xaml
+  fullName: Celestial.UIToolkit.Xaml
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Windows.Threading.DispatcherObject
+  commentId: T:System.Windows.Threading.DispatcherObject
+  parent: System.Windows.Threading
+  isExternal: true
+  name: DispatcherObject
+  nameWithType: DispatcherObject
+  fullName: System.Windows.Threading.DispatcherObject
+- uid: System.Windows.DependencyObject
+  commentId: T:System.Windows.DependencyObject
+  parent: System.Windows
+  isExternal: true
+  name: DependencyObject
+  nameWithType: DependencyObject
+  fullName: System.Windows.DependencyObject
+- uid: System.Windows.Freezable
+  commentId: T:System.Windows.Freezable
+  parent: System.Windows
+  isExternal: true
+  name: Freezable
+  nameWithType: Freezable
+  fullName: System.Windows.Freezable
+- uid: System.Windows.Freezable.Clone
+  commentId: M:System.Windows.Freezable.Clone
+  parent: System.Windows.Freezable
+  isExternal: true
+  name: Clone()
+  nameWithType: Freezable.Clone()
+  fullName: System.Windows.Freezable.Clone()
+  spec.csharp:
+  - uid: System.Windows.Freezable.Clone
+    name: Clone
+    nameWithType: Freezable.Clone
+    fullName: System.Windows.Freezable.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.Freezable.Clone
+    name: Clone
+    nameWithType: Freezable.Clone
+    fullName: System.Windows.Freezable.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.Freezable.CloneCurrentValue
+  commentId: M:System.Windows.Freezable.CloneCurrentValue
+  parent: System.Windows.Freezable
+  isExternal: true
+  name: CloneCurrentValue()
+  nameWithType: Freezable.CloneCurrentValue()
+  fullName: System.Windows.Freezable.CloneCurrentValue()
+  spec.csharp:
+  - uid: System.Windows.Freezable.CloneCurrentValue
+    name: CloneCurrentValue
+    nameWithType: Freezable.CloneCurrentValue
+    fullName: System.Windows.Freezable.CloneCurrentValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.Freezable.CloneCurrentValue
+    name: CloneCurrentValue
+    nameWithType: Freezable.CloneCurrentValue
+    fullName: System.Windows.Freezable.CloneCurrentValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.Freezable.GetAsFrozen
+  commentId: M:System.Windows.Freezable.GetAsFrozen
+  parent: System.Windows.Freezable
+  isExternal: true
+  name: GetAsFrozen()
+  nameWithType: Freezable.GetAsFrozen()
+  fullName: System.Windows.Freezable.GetAsFrozen()
+  spec.csharp:
+  - uid: System.Windows.Freezable.GetAsFrozen
+    name: GetAsFrozen
+    nameWithType: Freezable.GetAsFrozen
+    fullName: System.Windows.Freezable.GetAsFrozen
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.Freezable.GetAsFrozen
+    name: GetAsFrozen
+    nameWithType: Freezable.GetAsFrozen
+    fullName: System.Windows.Freezable.GetAsFrozen
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.Freezable.GetCurrentValueAsFrozen
+  commentId: M:System.Windows.Freezable.GetCurrentValueAsFrozen
+  parent: System.Windows.Freezable
+  isExternal: true
+  name: GetCurrentValueAsFrozen()
+  nameWithType: Freezable.GetCurrentValueAsFrozen()
+  fullName: System.Windows.Freezable.GetCurrentValueAsFrozen()
+  spec.csharp:
+  - uid: System.Windows.Freezable.GetCurrentValueAsFrozen
+    name: GetCurrentValueAsFrozen
+    nameWithType: Freezable.GetCurrentValueAsFrozen
+    fullName: System.Windows.Freezable.GetCurrentValueAsFrozen
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.Freezable.GetCurrentValueAsFrozen
+    name: GetCurrentValueAsFrozen
+    nameWithType: Freezable.GetCurrentValueAsFrozen
+    fullName: System.Windows.Freezable.GetCurrentValueAsFrozen
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.Freezable.Freeze
+  commentId: M:System.Windows.Freezable.Freeze
+  parent: System.Windows.Freezable
+  isExternal: true
+  name: Freeze()
+  nameWithType: Freezable.Freeze()
+  fullName: System.Windows.Freezable.Freeze()
+  spec.csharp:
+  - uid: System.Windows.Freezable.Freeze
+    name: Freeze
+    nameWithType: Freezable.Freeze
+    fullName: System.Windows.Freezable.Freeze
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.Freezable.Freeze
+    name: Freeze
+    nameWithType: Freezable.Freeze
+    fullName: System.Windows.Freezable.Freeze
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.Freezable.OnPropertyChanged(System.Windows.DependencyPropertyChangedEventArgs)
+  commentId: M:System.Windows.Freezable.OnPropertyChanged(System.Windows.DependencyPropertyChangedEventArgs)
+  parent: System.Windows.Freezable
+  isExternal: true
+  name: OnPropertyChanged(DependencyPropertyChangedEventArgs)
+  nameWithType: Freezable.OnPropertyChanged(DependencyPropertyChangedEventArgs)
+  fullName: System.Windows.Freezable.OnPropertyChanged(System.Windows.DependencyPropertyChangedEventArgs)
+  spec.csharp:
+  - uid: System.Windows.Freezable.OnPropertyChanged(System.Windows.DependencyPropertyChangedEventArgs)
+    name: OnPropertyChanged
+    nameWithType: Freezable.OnPropertyChanged
+    fullName: System.Windows.Freezable.OnPropertyChanged
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyPropertyChangedEventArgs
+    name: DependencyPropertyChangedEventArgs
+    nameWithType: DependencyPropertyChangedEventArgs
+    fullName: System.Windows.DependencyPropertyChangedEventArgs
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.Freezable.OnPropertyChanged(System.Windows.DependencyPropertyChangedEventArgs)
+    name: OnPropertyChanged
+    nameWithType: Freezable.OnPropertyChanged
+    fullName: System.Windows.Freezable.OnPropertyChanged
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyPropertyChangedEventArgs
+    name: DependencyPropertyChangedEventArgs
+    nameWithType: DependencyPropertyChangedEventArgs
+    fullName: System.Windows.DependencyPropertyChangedEventArgs
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.Freezable.CreateInstance
+  commentId: M:System.Windows.Freezable.CreateInstance
+  parent: System.Windows.Freezable
+  isExternal: true
+  name: CreateInstance()
+  nameWithType: Freezable.CreateInstance()
+  fullName: System.Windows.Freezable.CreateInstance()
+  spec.csharp:
+  - uid: System.Windows.Freezable.CreateInstance
+    name: CreateInstance
+    nameWithType: Freezable.CreateInstance
+    fullName: System.Windows.Freezable.CreateInstance
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.Freezable.CreateInstance
+    name: CreateInstance
+    nameWithType: Freezable.CreateInstance
+    fullName: System.Windows.Freezable.CreateInstance
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.Freezable.CloneCore(System.Windows.Freezable)
+  commentId: M:System.Windows.Freezable.CloneCore(System.Windows.Freezable)
+  parent: System.Windows.Freezable
+  isExternal: true
+  name: CloneCore(Freezable)
+  nameWithType: Freezable.CloneCore(Freezable)
+  fullName: System.Windows.Freezable.CloneCore(System.Windows.Freezable)
+  spec.csharp:
+  - uid: System.Windows.Freezable.CloneCore(System.Windows.Freezable)
+    name: CloneCore
+    nameWithType: Freezable.CloneCore
+    fullName: System.Windows.Freezable.CloneCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.Freezable
+    name: Freezable
+    nameWithType: Freezable
+    fullName: System.Windows.Freezable
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.Freezable.CloneCore(System.Windows.Freezable)
+    name: CloneCore
+    nameWithType: Freezable.CloneCore
+    fullName: System.Windows.Freezable.CloneCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.Freezable
+    name: Freezable
+    nameWithType: Freezable
+    fullName: System.Windows.Freezable
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.Freezable.CloneCurrentValueCore(System.Windows.Freezable)
+  commentId: M:System.Windows.Freezable.CloneCurrentValueCore(System.Windows.Freezable)
+  parent: System.Windows.Freezable
+  isExternal: true
+  name: CloneCurrentValueCore(Freezable)
+  nameWithType: Freezable.CloneCurrentValueCore(Freezable)
+  fullName: System.Windows.Freezable.CloneCurrentValueCore(System.Windows.Freezable)
+  spec.csharp:
+  - uid: System.Windows.Freezable.CloneCurrentValueCore(System.Windows.Freezable)
+    name: CloneCurrentValueCore
+    nameWithType: Freezable.CloneCurrentValueCore
+    fullName: System.Windows.Freezable.CloneCurrentValueCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.Freezable
+    name: Freezable
+    nameWithType: Freezable
+    fullName: System.Windows.Freezable
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.Freezable.CloneCurrentValueCore(System.Windows.Freezable)
+    name: CloneCurrentValueCore
+    nameWithType: Freezable.CloneCurrentValueCore
+    fullName: System.Windows.Freezable.CloneCurrentValueCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.Freezable
+    name: Freezable
+    nameWithType: Freezable
+    fullName: System.Windows.Freezable
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.Freezable.GetAsFrozenCore(System.Windows.Freezable)
+  commentId: M:System.Windows.Freezable.GetAsFrozenCore(System.Windows.Freezable)
+  parent: System.Windows.Freezable
+  isExternal: true
+  name: GetAsFrozenCore(Freezable)
+  nameWithType: Freezable.GetAsFrozenCore(Freezable)
+  fullName: System.Windows.Freezable.GetAsFrozenCore(System.Windows.Freezable)
+  spec.csharp:
+  - uid: System.Windows.Freezable.GetAsFrozenCore(System.Windows.Freezable)
+    name: GetAsFrozenCore
+    nameWithType: Freezable.GetAsFrozenCore
+    fullName: System.Windows.Freezable.GetAsFrozenCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.Freezable
+    name: Freezable
+    nameWithType: Freezable
+    fullName: System.Windows.Freezable
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.Freezable.GetAsFrozenCore(System.Windows.Freezable)
+    name: GetAsFrozenCore
+    nameWithType: Freezable.GetAsFrozenCore
+    fullName: System.Windows.Freezable.GetAsFrozenCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.Freezable
+    name: Freezable
+    nameWithType: Freezable
+    fullName: System.Windows.Freezable
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.Freezable.GetCurrentValueAsFrozenCore(System.Windows.Freezable)
+  commentId: M:System.Windows.Freezable.GetCurrentValueAsFrozenCore(System.Windows.Freezable)
+  parent: System.Windows.Freezable
+  isExternal: true
+  name: GetCurrentValueAsFrozenCore(Freezable)
+  nameWithType: Freezable.GetCurrentValueAsFrozenCore(Freezable)
+  fullName: System.Windows.Freezable.GetCurrentValueAsFrozenCore(System.Windows.Freezable)
+  spec.csharp:
+  - uid: System.Windows.Freezable.GetCurrentValueAsFrozenCore(System.Windows.Freezable)
+    name: GetCurrentValueAsFrozenCore
+    nameWithType: Freezable.GetCurrentValueAsFrozenCore
+    fullName: System.Windows.Freezable.GetCurrentValueAsFrozenCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.Freezable
+    name: Freezable
+    nameWithType: Freezable
+    fullName: System.Windows.Freezable
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.Freezable.GetCurrentValueAsFrozenCore(System.Windows.Freezable)
+    name: GetCurrentValueAsFrozenCore
+    nameWithType: Freezable.GetCurrentValueAsFrozenCore
+    fullName: System.Windows.Freezable.GetCurrentValueAsFrozenCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.Freezable
+    name: Freezable
+    nameWithType: Freezable
+    fullName: System.Windows.Freezable
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.Freezable.FreezeCore(System.Boolean)
+  commentId: M:System.Windows.Freezable.FreezeCore(System.Boolean)
+  parent: System.Windows.Freezable
+  isExternal: true
+  name: FreezeCore(Boolean)
+  nameWithType: Freezable.FreezeCore(Boolean)
+  fullName: System.Windows.Freezable.FreezeCore(System.Boolean)
+  spec.csharp:
+  - uid: System.Windows.Freezable.FreezeCore(System.Boolean)
+    name: FreezeCore
+    nameWithType: Freezable.FreezeCore
+    fullName: System.Windows.Freezable.FreezeCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.Freezable.FreezeCore(System.Boolean)
+    name: FreezeCore
+    nameWithType: Freezable.FreezeCore
+    fullName: System.Windows.Freezable.FreezeCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.Freezable.OnChanged
+  commentId: M:System.Windows.Freezable.OnChanged
+  parent: System.Windows.Freezable
+  isExternal: true
+  name: OnChanged()
+  nameWithType: Freezable.OnChanged()
+  fullName: System.Windows.Freezable.OnChanged()
+  spec.csharp:
+  - uid: System.Windows.Freezable.OnChanged
+    name: OnChanged
+    nameWithType: Freezable.OnChanged
+    fullName: System.Windows.Freezable.OnChanged
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.Freezable.OnChanged
+    name: OnChanged
+    nameWithType: Freezable.OnChanged
+    fullName: System.Windows.Freezable.OnChanged
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.Freezable.ReadPreamble
+  commentId: M:System.Windows.Freezable.ReadPreamble
+  parent: System.Windows.Freezable
+  isExternal: true
+  name: ReadPreamble()
+  nameWithType: Freezable.ReadPreamble()
+  fullName: System.Windows.Freezable.ReadPreamble()
+  spec.csharp:
+  - uid: System.Windows.Freezable.ReadPreamble
+    name: ReadPreamble
+    nameWithType: Freezable.ReadPreamble
+    fullName: System.Windows.Freezable.ReadPreamble
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.Freezable.ReadPreamble
+    name: ReadPreamble
+    nameWithType: Freezable.ReadPreamble
+    fullName: System.Windows.Freezable.ReadPreamble
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.Freezable.WritePreamble
+  commentId: M:System.Windows.Freezable.WritePreamble
+  parent: System.Windows.Freezable
+  isExternal: true
+  name: WritePreamble()
+  nameWithType: Freezable.WritePreamble()
+  fullName: System.Windows.Freezable.WritePreamble()
+  spec.csharp:
+  - uid: System.Windows.Freezable.WritePreamble
+    name: WritePreamble
+    nameWithType: Freezable.WritePreamble
+    fullName: System.Windows.Freezable.WritePreamble
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.Freezable.WritePreamble
+    name: WritePreamble
+    nameWithType: Freezable.WritePreamble
+    fullName: System.Windows.Freezable.WritePreamble
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.Freezable.WritePostscript
+  commentId: M:System.Windows.Freezable.WritePostscript
+  parent: System.Windows.Freezable
+  isExternal: true
+  name: WritePostscript()
+  nameWithType: Freezable.WritePostscript()
+  fullName: System.Windows.Freezable.WritePostscript()
+  spec.csharp:
+  - uid: System.Windows.Freezable.WritePostscript
+    name: WritePostscript
+    nameWithType: Freezable.WritePostscript
+    fullName: System.Windows.Freezable.WritePostscript
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.Freezable.WritePostscript
+    name: WritePostscript
+    nameWithType: Freezable.WritePostscript
+    fullName: System.Windows.Freezable.WritePostscript
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.Freezable.OnFreezablePropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyObject)
+  commentId: M:System.Windows.Freezable.OnFreezablePropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyObject)
+  parent: System.Windows.Freezable
+  isExternal: true
+  name: OnFreezablePropertyChanged(DependencyObject, DependencyObject)
+  nameWithType: Freezable.OnFreezablePropertyChanged(DependencyObject, DependencyObject)
+  fullName: System.Windows.Freezable.OnFreezablePropertyChanged(System.Windows.DependencyObject, System.Windows.DependencyObject)
+  spec.csharp:
+  - uid: System.Windows.Freezable.OnFreezablePropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyObject)
+    name: OnFreezablePropertyChanged
+    nameWithType: Freezable.OnFreezablePropertyChanged
+    fullName: System.Windows.Freezable.OnFreezablePropertyChanged
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyObject
+    name: DependencyObject
+    nameWithType: DependencyObject
+    fullName: System.Windows.DependencyObject
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.DependencyObject
+    name: DependencyObject
+    nameWithType: DependencyObject
+    fullName: System.Windows.DependencyObject
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.Freezable.OnFreezablePropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyObject)
+    name: OnFreezablePropertyChanged
+    nameWithType: Freezable.OnFreezablePropertyChanged
+    fullName: System.Windows.Freezable.OnFreezablePropertyChanged
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyObject
+    name: DependencyObject
+    nameWithType: DependencyObject
+    fullName: System.Windows.DependencyObject
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.DependencyObject
+    name: DependencyObject
+    nameWithType: DependencyObject
+    fullName: System.Windows.DependencyObject
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.Freezable.OnFreezablePropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyObject,System.Windows.DependencyProperty)
+  commentId: M:System.Windows.Freezable.OnFreezablePropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyObject,System.Windows.DependencyProperty)
+  parent: System.Windows.Freezable
+  isExternal: true
+  name: OnFreezablePropertyChanged(DependencyObject, DependencyObject, DependencyProperty)
+  nameWithType: Freezable.OnFreezablePropertyChanged(DependencyObject, DependencyObject, DependencyProperty)
+  fullName: System.Windows.Freezable.OnFreezablePropertyChanged(System.Windows.DependencyObject, System.Windows.DependencyObject, System.Windows.DependencyProperty)
+  spec.csharp:
+  - uid: System.Windows.Freezable.OnFreezablePropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyObject,System.Windows.DependencyProperty)
+    name: OnFreezablePropertyChanged
+    nameWithType: Freezable.OnFreezablePropertyChanged
+    fullName: System.Windows.Freezable.OnFreezablePropertyChanged
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyObject
+    name: DependencyObject
+    nameWithType: DependencyObject
+    fullName: System.Windows.DependencyObject
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.DependencyObject
+    name: DependencyObject
+    nameWithType: DependencyObject
+    fullName: System.Windows.DependencyObject
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.Freezable.OnFreezablePropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyObject,System.Windows.DependencyProperty)
+    name: OnFreezablePropertyChanged
+    nameWithType: Freezable.OnFreezablePropertyChanged
+    fullName: System.Windows.Freezable.OnFreezablePropertyChanged
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyObject
+    name: DependencyObject
+    nameWithType: DependencyObject
+    fullName: System.Windows.DependencyObject
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.DependencyObject
+    name: DependencyObject
+    nameWithType: DependencyObject
+    fullName: System.Windows.DependencyObject
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.Freezable.Freeze(System.Windows.Freezable,System.Boolean)
+  commentId: M:System.Windows.Freezable.Freeze(System.Windows.Freezable,System.Boolean)
+  parent: System.Windows.Freezable
+  isExternal: true
+  name: Freeze(Freezable, Boolean)
+  nameWithType: Freezable.Freeze(Freezable, Boolean)
+  fullName: System.Windows.Freezable.Freeze(System.Windows.Freezable, System.Boolean)
+  spec.csharp:
+  - uid: System.Windows.Freezable.Freeze(System.Windows.Freezable,System.Boolean)
+    name: Freeze
+    nameWithType: Freezable.Freeze
+    fullName: System.Windows.Freezable.Freeze
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.Freezable
+    name: Freezable
+    nameWithType: Freezable
+    fullName: System.Windows.Freezable
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.Freezable.Freeze(System.Windows.Freezable,System.Boolean)
+    name: Freeze
+    nameWithType: Freezable.Freeze
+    fullName: System.Windows.Freezable.Freeze
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.Freezable
+    name: Freezable
+    nameWithType: Freezable
+    fullName: System.Windows.Freezable
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.Freezable.CanFreeze
+  commentId: P:System.Windows.Freezable.CanFreeze
+  parent: System.Windows.Freezable
+  isExternal: true
+  name: CanFreeze
+  nameWithType: Freezable.CanFreeze
+  fullName: System.Windows.Freezable.CanFreeze
+- uid: System.Windows.Freezable.IsFrozen
+  commentId: P:System.Windows.Freezable.IsFrozen
+  parent: System.Windows.Freezable
+  isExternal: true
+  name: IsFrozen
+  nameWithType: Freezable.IsFrozen
+  fullName: System.Windows.Freezable.IsFrozen
+- uid: System.Windows.Freezable.Changed
+  commentId: E:System.Windows.Freezable.Changed
+  parent: System.Windows.Freezable
+  isExternal: true
+  name: Changed
+  nameWithType: Freezable.Changed
+  fullName: System.Windows.Freezable.Changed
+- uid: System.Windows.DependencyObject.Equals(System.Object)
+  commentId: M:System.Windows.DependencyObject.Equals(System.Object)
+  parent: System.Windows.DependencyObject
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: DependencyObject.Equals(Object)
+  fullName: System.Windows.DependencyObject.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Windows.DependencyObject.Equals(System.Object)
+    name: Equals
+    nameWithType: DependencyObject.Equals
+    fullName: System.Windows.DependencyObject.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.DependencyObject.Equals(System.Object)
+    name: Equals
+    nameWithType: DependencyObject.Equals
+    fullName: System.Windows.DependencyObject.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.DependencyObject.GetHashCode
+  commentId: M:System.Windows.DependencyObject.GetHashCode
+  parent: System.Windows.DependencyObject
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: DependencyObject.GetHashCode()
+  fullName: System.Windows.DependencyObject.GetHashCode()
+  spec.csharp:
+  - uid: System.Windows.DependencyObject.GetHashCode
+    name: GetHashCode
+    nameWithType: DependencyObject.GetHashCode
+    fullName: System.Windows.DependencyObject.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.DependencyObject.GetHashCode
+    name: GetHashCode
+    nameWithType: DependencyObject.GetHashCode
+    fullName: System.Windows.DependencyObject.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.DependencyObject.GetValue(System.Windows.DependencyProperty)
+  commentId: M:System.Windows.DependencyObject.GetValue(System.Windows.DependencyProperty)
+  parent: System.Windows.DependencyObject
+  isExternal: true
+  name: GetValue(DependencyProperty)
+  nameWithType: DependencyObject.GetValue(DependencyProperty)
+  fullName: System.Windows.DependencyObject.GetValue(System.Windows.DependencyProperty)
+  spec.csharp:
+  - uid: System.Windows.DependencyObject.GetValue(System.Windows.DependencyProperty)
+    name: GetValue
+    nameWithType: DependencyObject.GetValue
+    fullName: System.Windows.DependencyObject.GetValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.DependencyObject.GetValue(System.Windows.DependencyProperty)
+    name: GetValue
+    nameWithType: DependencyObject.GetValue
+    fullName: System.Windows.DependencyObject.GetValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.DependencyObject.SetValue(System.Windows.DependencyProperty,System.Object)
+  commentId: M:System.Windows.DependencyObject.SetValue(System.Windows.DependencyProperty,System.Object)
+  parent: System.Windows.DependencyObject
+  isExternal: true
+  name: SetValue(DependencyProperty, Object)
+  nameWithType: DependencyObject.SetValue(DependencyProperty, Object)
+  fullName: System.Windows.DependencyObject.SetValue(System.Windows.DependencyProperty, System.Object)
+  spec.csharp:
+  - uid: System.Windows.DependencyObject.SetValue(System.Windows.DependencyProperty,System.Object)
+    name: SetValue
+    nameWithType: DependencyObject.SetValue
+    fullName: System.Windows.DependencyObject.SetValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.DependencyObject.SetValue(System.Windows.DependencyProperty,System.Object)
+    name: SetValue
+    nameWithType: DependencyObject.SetValue
+    fullName: System.Windows.DependencyObject.SetValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.DependencyObject.SetCurrentValue(System.Windows.DependencyProperty,System.Object)
+  commentId: M:System.Windows.DependencyObject.SetCurrentValue(System.Windows.DependencyProperty,System.Object)
+  parent: System.Windows.DependencyObject
+  isExternal: true
+  name: SetCurrentValue(DependencyProperty, Object)
+  nameWithType: DependencyObject.SetCurrentValue(DependencyProperty, Object)
+  fullName: System.Windows.DependencyObject.SetCurrentValue(System.Windows.DependencyProperty, System.Object)
+  spec.csharp:
+  - uid: System.Windows.DependencyObject.SetCurrentValue(System.Windows.DependencyProperty,System.Object)
+    name: SetCurrentValue
+    nameWithType: DependencyObject.SetCurrentValue
+    fullName: System.Windows.DependencyObject.SetCurrentValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.DependencyObject.SetCurrentValue(System.Windows.DependencyProperty,System.Object)
+    name: SetCurrentValue
+    nameWithType: DependencyObject.SetCurrentValue
+    fullName: System.Windows.DependencyObject.SetCurrentValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.DependencyObject.SetValue(System.Windows.DependencyPropertyKey,System.Object)
+  commentId: M:System.Windows.DependencyObject.SetValue(System.Windows.DependencyPropertyKey,System.Object)
+  parent: System.Windows.DependencyObject
+  isExternal: true
+  name: SetValue(DependencyPropertyKey, Object)
+  nameWithType: DependencyObject.SetValue(DependencyPropertyKey, Object)
+  fullName: System.Windows.DependencyObject.SetValue(System.Windows.DependencyPropertyKey, System.Object)
+  spec.csharp:
+  - uid: System.Windows.DependencyObject.SetValue(System.Windows.DependencyPropertyKey,System.Object)
+    name: SetValue
+    nameWithType: DependencyObject.SetValue
+    fullName: System.Windows.DependencyObject.SetValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyPropertyKey
+    name: DependencyPropertyKey
+    nameWithType: DependencyPropertyKey
+    fullName: System.Windows.DependencyPropertyKey
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.DependencyObject.SetValue(System.Windows.DependencyPropertyKey,System.Object)
+    name: SetValue
+    nameWithType: DependencyObject.SetValue
+    fullName: System.Windows.DependencyObject.SetValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyPropertyKey
+    name: DependencyPropertyKey
+    nameWithType: DependencyPropertyKey
+    fullName: System.Windows.DependencyPropertyKey
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.DependencyObject.ClearValue(System.Windows.DependencyProperty)
+  commentId: M:System.Windows.DependencyObject.ClearValue(System.Windows.DependencyProperty)
+  parent: System.Windows.DependencyObject
+  isExternal: true
+  name: ClearValue(DependencyProperty)
+  nameWithType: DependencyObject.ClearValue(DependencyProperty)
+  fullName: System.Windows.DependencyObject.ClearValue(System.Windows.DependencyProperty)
+  spec.csharp:
+  - uid: System.Windows.DependencyObject.ClearValue(System.Windows.DependencyProperty)
+    name: ClearValue
+    nameWithType: DependencyObject.ClearValue
+    fullName: System.Windows.DependencyObject.ClearValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.DependencyObject.ClearValue(System.Windows.DependencyProperty)
+    name: ClearValue
+    nameWithType: DependencyObject.ClearValue
+    fullName: System.Windows.DependencyObject.ClearValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.DependencyObject.ClearValue(System.Windows.DependencyPropertyKey)
+  commentId: M:System.Windows.DependencyObject.ClearValue(System.Windows.DependencyPropertyKey)
+  parent: System.Windows.DependencyObject
+  isExternal: true
+  name: ClearValue(DependencyPropertyKey)
+  nameWithType: DependencyObject.ClearValue(DependencyPropertyKey)
+  fullName: System.Windows.DependencyObject.ClearValue(System.Windows.DependencyPropertyKey)
+  spec.csharp:
+  - uid: System.Windows.DependencyObject.ClearValue(System.Windows.DependencyPropertyKey)
+    name: ClearValue
+    nameWithType: DependencyObject.ClearValue
+    fullName: System.Windows.DependencyObject.ClearValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyPropertyKey
+    name: DependencyPropertyKey
+    nameWithType: DependencyPropertyKey
+    fullName: System.Windows.DependencyPropertyKey
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.DependencyObject.ClearValue(System.Windows.DependencyPropertyKey)
+    name: ClearValue
+    nameWithType: DependencyObject.ClearValue
+    fullName: System.Windows.DependencyObject.ClearValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyPropertyKey
+    name: DependencyPropertyKey
+    nameWithType: DependencyPropertyKey
+    fullName: System.Windows.DependencyPropertyKey
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.DependencyObject.CoerceValue(System.Windows.DependencyProperty)
+  commentId: M:System.Windows.DependencyObject.CoerceValue(System.Windows.DependencyProperty)
+  parent: System.Windows.DependencyObject
+  isExternal: true
+  name: CoerceValue(DependencyProperty)
+  nameWithType: DependencyObject.CoerceValue(DependencyProperty)
+  fullName: System.Windows.DependencyObject.CoerceValue(System.Windows.DependencyProperty)
+  spec.csharp:
+  - uid: System.Windows.DependencyObject.CoerceValue(System.Windows.DependencyProperty)
+    name: CoerceValue
+    nameWithType: DependencyObject.CoerceValue
+    fullName: System.Windows.DependencyObject.CoerceValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.DependencyObject.CoerceValue(System.Windows.DependencyProperty)
+    name: CoerceValue
+    nameWithType: DependencyObject.CoerceValue
+    fullName: System.Windows.DependencyObject.CoerceValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.DependencyObject.InvalidateProperty(System.Windows.DependencyProperty)
+  commentId: M:System.Windows.DependencyObject.InvalidateProperty(System.Windows.DependencyProperty)
+  parent: System.Windows.DependencyObject
+  isExternal: true
+  name: InvalidateProperty(DependencyProperty)
+  nameWithType: DependencyObject.InvalidateProperty(DependencyProperty)
+  fullName: System.Windows.DependencyObject.InvalidateProperty(System.Windows.DependencyProperty)
+  spec.csharp:
+  - uid: System.Windows.DependencyObject.InvalidateProperty(System.Windows.DependencyProperty)
+    name: InvalidateProperty
+    nameWithType: DependencyObject.InvalidateProperty
+    fullName: System.Windows.DependencyObject.InvalidateProperty
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.DependencyObject.InvalidateProperty(System.Windows.DependencyProperty)
+    name: InvalidateProperty
+    nameWithType: DependencyObject.InvalidateProperty
+    fullName: System.Windows.DependencyObject.InvalidateProperty
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.DependencyObject.ShouldSerializeProperty(System.Windows.DependencyProperty)
+  commentId: M:System.Windows.DependencyObject.ShouldSerializeProperty(System.Windows.DependencyProperty)
+  parent: System.Windows.DependencyObject
+  isExternal: true
+  name: ShouldSerializeProperty(DependencyProperty)
+  nameWithType: DependencyObject.ShouldSerializeProperty(DependencyProperty)
+  fullName: System.Windows.DependencyObject.ShouldSerializeProperty(System.Windows.DependencyProperty)
+  spec.csharp:
+  - uid: System.Windows.DependencyObject.ShouldSerializeProperty(System.Windows.DependencyProperty)
+    name: ShouldSerializeProperty
+    nameWithType: DependencyObject.ShouldSerializeProperty
+    fullName: System.Windows.DependencyObject.ShouldSerializeProperty
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.DependencyObject.ShouldSerializeProperty(System.Windows.DependencyProperty)
+    name: ShouldSerializeProperty
+    nameWithType: DependencyObject.ShouldSerializeProperty
+    fullName: System.Windows.DependencyObject.ShouldSerializeProperty
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.DependencyObject.ReadLocalValue(System.Windows.DependencyProperty)
+  commentId: M:System.Windows.DependencyObject.ReadLocalValue(System.Windows.DependencyProperty)
+  parent: System.Windows.DependencyObject
+  isExternal: true
+  name: ReadLocalValue(DependencyProperty)
+  nameWithType: DependencyObject.ReadLocalValue(DependencyProperty)
+  fullName: System.Windows.DependencyObject.ReadLocalValue(System.Windows.DependencyProperty)
+  spec.csharp:
+  - uid: System.Windows.DependencyObject.ReadLocalValue(System.Windows.DependencyProperty)
+    name: ReadLocalValue
+    nameWithType: DependencyObject.ReadLocalValue
+    fullName: System.Windows.DependencyObject.ReadLocalValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.DependencyObject.ReadLocalValue(System.Windows.DependencyProperty)
+    name: ReadLocalValue
+    nameWithType: DependencyObject.ReadLocalValue
+    fullName: System.Windows.DependencyObject.ReadLocalValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.DependencyObject.GetLocalValueEnumerator
+  commentId: M:System.Windows.DependencyObject.GetLocalValueEnumerator
+  parent: System.Windows.DependencyObject
+  isExternal: true
+  name: GetLocalValueEnumerator()
+  nameWithType: DependencyObject.GetLocalValueEnumerator()
+  fullName: System.Windows.DependencyObject.GetLocalValueEnumerator()
+  spec.csharp:
+  - uid: System.Windows.DependencyObject.GetLocalValueEnumerator
+    name: GetLocalValueEnumerator
+    nameWithType: DependencyObject.GetLocalValueEnumerator
+    fullName: System.Windows.DependencyObject.GetLocalValueEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.DependencyObject.GetLocalValueEnumerator
+    name: GetLocalValueEnumerator
+    nameWithType: DependencyObject.GetLocalValueEnumerator
+    fullName: System.Windows.DependencyObject.GetLocalValueEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.DependencyObject.DependencyObjectType
+  commentId: P:System.Windows.DependencyObject.DependencyObjectType
+  parent: System.Windows.DependencyObject
+  isExternal: true
+  name: DependencyObjectType
+  nameWithType: DependencyObject.DependencyObjectType
+  fullName: System.Windows.DependencyObject.DependencyObjectType
+- uid: System.Windows.DependencyObject.IsSealed
+  commentId: P:System.Windows.DependencyObject.IsSealed
+  parent: System.Windows.DependencyObject
+  isExternal: true
+  name: IsSealed
+  nameWithType: DependencyObject.IsSealed
+  fullName: System.Windows.DependencyObject.IsSealed
+- uid: System.Windows.Threading.DispatcherObject.Dispatcher
+  commentId: P:System.Windows.Threading.DispatcherObject.Dispatcher
+  parent: System.Windows.Threading.DispatcherObject
+  isExternal: true
+  name: Dispatcher
+  nameWithType: DispatcherObject.Dispatcher
+  fullName: System.Windows.Threading.DispatcherObject.Dispatcher
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.DependencyObject.Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor(System.Windows.DependencyObject)
+  commentId: M:Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor(System.Windows.DependencyObject,System.Windows.DependencyObject)
+  parent: Celestial.UIToolkit.Extensions.DependencyObjectExtensions
+  definition: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor(System.Windows.DependencyObject,System.Windows.DependencyObject)
+  name: HasVisualAncestor(DependencyObject)
+  nameWithType: DependencyObjectExtensions.HasVisualAncestor(DependencyObject)
+  fullName: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor(System.Windows.DependencyObject)
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor(System.Windows.DependencyObject)
+    name: HasVisualAncestor
+    nameWithType: DependencyObjectExtensions.HasVisualAncestor
+    fullName: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyObject
+    name: DependencyObject
+    nameWithType: DependencyObject
+    fullName: System.Windows.DependencyObject
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor(System.Windows.DependencyObject)
+    name: HasVisualAncestor
+    nameWithType: DependencyObjectExtensions.HasVisualAncestor
+    fullName: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyObject
+    name: DependencyObject
+    nameWithType: DependencyObject
+    fullName: System.Windows.DependencyObject
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.DependencyObject.Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild(System.Windows.UIElement)
+  commentId: M:Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild(System.Windows.DependencyObject,System.Windows.UIElement)
+  parent: Celestial.UIToolkit.Extensions.DependencyObjectExtensions
+  definition: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild(System.Windows.DependencyObject,System.Windows.UIElement)
+  name: RemoveLogicalChild(UIElement)
+  nameWithType: DependencyObjectExtensions.RemoveLogicalChild(UIElement)
+  fullName: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild(System.Windows.UIElement)
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild(System.Windows.UIElement)
+    name: RemoveLogicalChild
+    nameWithType: DependencyObjectExtensions.RemoveLogicalChild
+    fullName: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.UIElement
+    name: UIElement
+    nameWithType: UIElement
+    fullName: System.Windows.UIElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild(System.Windows.UIElement)
+    name: RemoveLogicalChild
+    nameWithType: DependencyObjectExtensions.RemoveLogicalChild
+    fullName: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.UIElement
+    name: UIElement
+    nameWithType: UIElement
+    fullName: System.Windows.UIElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.DependencyObject.Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.IsDependencyPropertySet(System.Windows.DependencyProperty)
+  commentId: M:Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.IsDependencyPropertySet(System.Windows.DependencyObject,System.Windows.DependencyProperty)
+  parent: Celestial.UIToolkit.Extensions.DependencyPropertyExtensions
+  definition: Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.IsDependencyPropertySet(System.Windows.DependencyObject,System.Windows.DependencyProperty)
+  name: IsDependencyPropertySet(DependencyProperty)
+  nameWithType: DependencyPropertyExtensions.IsDependencyPropertySet(DependencyProperty)
+  fullName: Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.IsDependencyPropertySet(System.Windows.DependencyProperty)
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.IsDependencyPropertySet(System.Windows.DependencyProperty)
+    name: IsDependencyPropertySet
+    nameWithType: DependencyPropertyExtensions.IsDependencyPropertySet
+    fullName: Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.IsDependencyPropertySet
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.IsDependencyPropertySet(System.Windows.DependencyProperty)
+    name: IsDependencyPropertySet
+    nameWithType: DependencyPropertyExtensions.IsDependencyPropertySet
+    fullName: Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.IsDependencyPropertySet
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Windows.Threading
+  commentId: N:System.Windows.Threading
+  isExternal: true
+  name: System.Windows.Threading
+  nameWithType: System.Windows.Threading
+  fullName: System.Windows.Threading
+- uid: System.Windows
+  commentId: N:System.Windows
+  isExternal: true
+  name: System.Windows
+  nameWithType: System.Windows
+  fullName: System.Windows
+- uid: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor(System.Windows.DependencyObject,System.Windows.DependencyObject)
+  commentId: M:Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor(System.Windows.DependencyObject,System.Windows.DependencyObject)
+  isExternal: true
+  name: HasVisualAncestor(DependencyObject, DependencyObject)
+  nameWithType: DependencyObjectExtensions.HasVisualAncestor(DependencyObject, DependencyObject)
+  fullName: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor(System.Windows.DependencyObject, System.Windows.DependencyObject)
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor(System.Windows.DependencyObject,System.Windows.DependencyObject)
+    name: HasVisualAncestor
+    nameWithType: DependencyObjectExtensions.HasVisualAncestor
+    fullName: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyObject
+    name: DependencyObject
+    nameWithType: DependencyObject
+    fullName: System.Windows.DependencyObject
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.DependencyObject
+    name: DependencyObject
+    nameWithType: DependencyObject
+    fullName: System.Windows.DependencyObject
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor(System.Windows.DependencyObject,System.Windows.DependencyObject)
+    name: HasVisualAncestor
+    nameWithType: DependencyObjectExtensions.HasVisualAncestor
+    fullName: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.HasVisualAncestor
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyObject
+    name: DependencyObject
+    nameWithType: DependencyObject
+    fullName: System.Windows.DependencyObject
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.DependencyObject
+    name: DependencyObject
+    nameWithType: DependencyObject
+    fullName: System.Windows.DependencyObject
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Celestial.UIToolkit.Extensions.DependencyObjectExtensions
+  commentId: T:Celestial.UIToolkit.Extensions.DependencyObjectExtensions
+  parent: Celestial.UIToolkit.Extensions
+  name: DependencyObjectExtensions
+  nameWithType: DependencyObjectExtensions
+  fullName: Celestial.UIToolkit.Extensions.DependencyObjectExtensions
+- uid: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild(System.Windows.DependencyObject,System.Windows.UIElement)
+  commentId: M:Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild(System.Windows.DependencyObject,System.Windows.UIElement)
+  isExternal: true
+  name: RemoveLogicalChild(DependencyObject, UIElement)
+  nameWithType: DependencyObjectExtensions.RemoveLogicalChild(DependencyObject, UIElement)
+  fullName: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild(System.Windows.DependencyObject, System.Windows.UIElement)
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild(System.Windows.DependencyObject,System.Windows.UIElement)
+    name: RemoveLogicalChild
+    nameWithType: DependencyObjectExtensions.RemoveLogicalChild
+    fullName: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyObject
+    name: DependencyObject
+    nameWithType: DependencyObject
+    fullName: System.Windows.DependencyObject
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.UIElement
+    name: UIElement
+    nameWithType: UIElement
+    fullName: System.Windows.UIElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild(System.Windows.DependencyObject,System.Windows.UIElement)
+    name: RemoveLogicalChild
+    nameWithType: DependencyObjectExtensions.RemoveLogicalChild
+    fullName: Celestial.UIToolkit.Extensions.DependencyObjectExtensions.RemoveLogicalChild
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyObject
+    name: DependencyObject
+    nameWithType: DependencyObject
+    fullName: System.Windows.DependencyObject
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.UIElement
+    name: UIElement
+    nameWithType: UIElement
+    fullName: System.Windows.UIElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.IsDependencyPropertySet(System.Windows.DependencyObject,System.Windows.DependencyProperty)
+  commentId: M:Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.IsDependencyPropertySet(System.Windows.DependencyObject,System.Windows.DependencyProperty)
+  isExternal: true
+  name: IsDependencyPropertySet(DependencyObject, DependencyProperty)
+  nameWithType: DependencyPropertyExtensions.IsDependencyPropertySet(DependencyObject, DependencyProperty)
+  fullName: Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.IsDependencyPropertySet(System.Windows.DependencyObject, System.Windows.DependencyProperty)
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.IsDependencyPropertySet(System.Windows.DependencyObject,System.Windows.DependencyProperty)
+    name: IsDependencyPropertySet
+    nameWithType: DependencyPropertyExtensions.IsDependencyPropertySet
+    fullName: Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.IsDependencyPropertySet
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyObject
+    name: DependencyObject
+    nameWithType: DependencyObject
+    fullName: System.Windows.DependencyObject
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.IsDependencyPropertySet(System.Windows.DependencyObject,System.Windows.DependencyProperty)
+    name: IsDependencyPropertySet
+    nameWithType: DependencyPropertyExtensions.IsDependencyPropertySet
+    fullName: Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.IsDependencyPropertySet
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.DependencyObject
+    name: DependencyObject
+    nameWithType: DependencyObject
+    fullName: System.Windows.DependencyObject
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.DependencyProperty
+    name: DependencyProperty
+    nameWithType: DependencyProperty
+    fullName: System.Windows.DependencyProperty
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Celestial.UIToolkit.Extensions.DependencyPropertyExtensions
+  commentId: T:Celestial.UIToolkit.Extensions.DependencyPropertyExtensions
+  parent: Celestial.UIToolkit.Extensions
+  name: DependencyPropertyExtensions
+  nameWithType: DependencyPropertyExtensions
+  fullName: Celestial.UIToolkit.Extensions.DependencyPropertyExtensions
+- uid: Celestial.UIToolkit.Extensions
+  commentId: N:Celestial.UIToolkit.Extensions
+  name: Celestial.UIToolkit.Extensions
+  nameWithType: Celestial.UIToolkit.Extensions
+  fullName: Celestial.UIToolkit.Extensions
+- uid: Celestial.UIToolkit.Xaml.BindingProxy.Data
+  commentId: P:Celestial.UIToolkit.Xaml.BindingProxy.Data
+  isExternal: true
+- uid: System.Windows.DependencyProperty
+  commentId: T:System.Windows.DependencyProperty
+  parent: System.Windows
+  isExternal: true
+  name: DependencyProperty
+  nameWithType: DependencyProperty
+  fullName: System.Windows.DependencyProperty
+- uid: Celestial.UIToolkit.Xaml.BindingProxy.Data*
+  commentId: Overload:Celestial.UIToolkit.Xaml.BindingProxy.Data
+  name: Data
+  nameWithType: BindingProxy.Data
+  fullName: Celestial.UIToolkit.Xaml.BindingProxy.Data
+- uid: Celestial.UIToolkit.Xaml.BindingProxy
+  commentId: T:Celestial.UIToolkit.Xaml.BindingProxy
+  name: BindingProxy
+  nameWithType: BindingProxy
+  fullName: Celestial.UIToolkit.Xaml.BindingProxy
+- uid: Celestial.UIToolkit.Xaml.BindingProxy.#ctor*
+  commentId: Overload:Celestial.UIToolkit.Xaml.BindingProxy.#ctor
+  name: BindingProxy
+  nameWithType: BindingProxy.BindingProxy
+  fullName: Celestial.UIToolkit.Xaml.BindingProxy.BindingProxy
+- uid: System.Windows.Freezable.CreateInstanceCore
+  commentId: M:System.Windows.Freezable.CreateInstanceCore
+  parent: System.Windows.Freezable
+  isExternal: true
+  name: CreateInstanceCore()
+  nameWithType: Freezable.CreateInstanceCore()
+  fullName: System.Windows.Freezable.CreateInstanceCore()
+  spec.csharp:
+  - uid: System.Windows.Freezable.CreateInstanceCore
+    name: CreateInstanceCore
+    nameWithType: Freezable.CreateInstanceCore
+    fullName: System.Windows.Freezable.CreateInstanceCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.Freezable.CreateInstanceCore
+    name: CreateInstanceCore
+    nameWithType: Freezable.CreateInstanceCore
+    fullName: System.Windows.Freezable.CreateInstanceCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Celestial.UIToolkit.Xaml.BindingProxy.CreateInstanceCore*
+  commentId: Overload:Celestial.UIToolkit.Xaml.BindingProxy.CreateInstanceCore
+  name: CreateInstanceCore
+  nameWithType: BindingProxy.CreateInstanceCore
+  fullName: Celestial.UIToolkit.Xaml.BindingProxy.CreateInstanceCore
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Celestial.UIToolkit.Xaml.BindingProxy.ToString*
+  commentId: Overload:Celestial.UIToolkit.Xaml.BindingProxy.ToString
+  name: ToString
+  nameWithType: BindingProxy.ToString
+  fullName: Celestial.UIToolkit.Xaml.BindingProxy.ToString

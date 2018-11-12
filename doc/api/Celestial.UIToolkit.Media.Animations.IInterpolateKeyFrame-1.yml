@@ -1,0 +1,152 @@
+### YamlMime:ManagedReference
+items:
+- uid: Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame`1
+  commentId: T:Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame`1
+  id: IInterpolateKeyFrame`1
+  parent: Celestial.UIToolkit.Media.Animations
+  children:
+  - Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame`1.InterpolateValue(`0,System.Double)
+  langs:
+  - csharp
+  - vb
+  name: IInterpolateKeyFrame<T>
+  nameWithType: IInterpolateKeyFrame<T>
+  fullName: Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame<T>
+  type: Interface
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Media/Animations/AnimationUsingKeyFramesBase/IInterpolateKeyFrame.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: IInterpolateKeyFrame
+    path: src/Celestial.UIToolkit.Core/Media/Animations/AnimationUsingKeyFramesBase/IInterpolateKeyFrame.cs
+    startLine: 11
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Media.Animations
+  summary: "\nAn extension of the <xref href=\"System.Windows.Media.Animation.IKeyFrame\" data-throw-if-not-resolved=\"false\"></xref> interface,\nwhich defines a key frame which has the ability to interpolate\nits value, depending on a progress factor.\n"
+  example: []
+  syntax:
+    content: 'public interface IInterpolateKeyFrame<T> : IKeyFrame'
+    typeParameters:
+    - id: T
+      description: The type of the key frame&apos;s <xref href="System.Windows.Media.Animation.IKeyFrame.Value" data-throw-if-not-resolved="false"></xref> property.
+    content.vb: >-
+      Public Interface IInterpolateKeyFrame(Of T)
+
+          Inherits IKeyFrame
+  inheritedMembers:
+  - System.Windows.Media.Animation.IKeyFrame.KeyTime
+  - System.Windows.Media.Animation.IKeyFrame.Value
+  nameWithType.vb: IInterpolateKeyFrame(Of T)
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+  fullName.vb: Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame(Of T)
+  name.vb: IInterpolateKeyFrame(Of T)
+- uid: Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame`1.InterpolateValue(`0,System.Double)
+  commentId: M:Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame`1.InterpolateValue(`0,System.Double)
+  id: InterpolateValue(`0,System.Double)
+  parent: Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame`1
+  langs:
+  - csharp
+  - vb
+  name: InterpolateValue(T, Double)
+  nameWithType: IInterpolateKeyFrame<T>.InterpolateValue(T, Double)
+  fullName: Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame<T>.InterpolateValue(T, System.Double)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Media/Animations/AnimationUsingKeyFramesBase/IInterpolateKeyFrame.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: InterpolateValue
+    path: src/Celestial.UIToolkit.Core/Media/Animations/AnimationUsingKeyFramesBase/IInterpolateKeyFrame.cs
+    startLine: 23
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Media.Animations
+  summary: "\nReturns the interpolated value of this key frame at the provided progress increment.\n"
+  example: []
+  syntax:
+    content: T InterpolateValue(T baseValue, double keyFrameProgress)
+    parameters:
+    - id: baseValue
+      type: '{T}'
+      description: The value to animate from.
+    - id: keyFrameProgress
+      type: System.Double
+      description: "\nA value between 0.0 and 1.0, inclusive, that specifies the percentage of time\nthat has elapsed for this key frame.\n"
+    return:
+      type: '{T}'
+      description: The output value of this key frame given the specified base value and progress.
+    content.vb: Function InterpolateValue(baseValue As T, keyFrameProgress As Double) As T
+  overload: Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame`1.InterpolateValue*
+  nameWithType.vb: IInterpolateKeyFrame(Of T).InterpolateValue(T, Double)
+  fullName.vb: Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame(Of T).InterpolateValue(T, System.Double)
+references:
+- uid: System.Windows.Media.Animation.IKeyFrame
+  commentId: T:System.Windows.Media.Animation.IKeyFrame
+  parent: System.Windows.Media.Animation
+  isExternal: true
+  name: IKeyFrame
+  nameWithType: IKeyFrame
+  fullName: System.Windows.Media.Animation.IKeyFrame
+- uid: System.Windows.Media.Animation.IKeyFrame.Value
+  commentId: P:System.Windows.Media.Animation.IKeyFrame.Value
+  parent: System.Windows.Media.Animation.IKeyFrame
+  isExternal: true
+  name: Value
+  nameWithType: IKeyFrame.Value
+  fullName: System.Windows.Media.Animation.IKeyFrame.Value
+- uid: Celestial.UIToolkit.Media.Animations
+  commentId: N:Celestial.UIToolkit.Media.Animations
+  name: Celestial.UIToolkit.Media.Animations
+  nameWithType: Celestial.UIToolkit.Media.Animations
+  fullName: Celestial.UIToolkit.Media.Animations
+- uid: System.Windows.Media.Animation.IKeyFrame.KeyTime
+  commentId: P:System.Windows.Media.Animation.IKeyFrame.KeyTime
+  parent: System.Windows.Media.Animation.IKeyFrame
+  isExternal: true
+  name: KeyTime
+  nameWithType: IKeyFrame.KeyTime
+  fullName: System.Windows.Media.Animation.IKeyFrame.KeyTime
+- uid: System.Windows.Media.Animation
+  commentId: N:System.Windows.Media.Animation
+  isExternal: true
+  name: System.Windows.Media.Animation
+  nameWithType: System.Windows.Media.Animation
+  fullName: System.Windows.Media.Animation
+- uid: Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame`1.InterpolateValue*
+  commentId: Overload:Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame`1.InterpolateValue
+  name: InterpolateValue
+  nameWithType: IInterpolateKeyFrame<T>.InterpolateValue
+  fullName: Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame<T>.InterpolateValue
+  nameWithType.vb: IInterpolateKeyFrame(Of T).InterpolateValue
+  fullName.vb: Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame(Of T).InterpolateValue
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  name: Double
+  nameWithType: Double
+  fullName: System.Double
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System

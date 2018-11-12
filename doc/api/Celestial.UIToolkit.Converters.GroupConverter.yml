@@ -1,0 +1,4514 @@
+### YamlMime:ManagedReference
+items:
+- uid: Celestial.UIToolkit.Converters.GroupConverter
+  commentId: T:Celestial.UIToolkit.Converters.GroupConverter
+  id: GroupConverter
+  parent: Celestial.UIToolkit.Converters
+  children:
+  - Celestial.UIToolkit.Converters.GroupConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  - Celestial.UIToolkit.Converters.GroupConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  langs:
+  - csharp
+  - vb
+  name: GroupConverter
+  nameWithType: GroupConverter
+  fullName: Celestial.UIToolkit.Converters.GroupConverter
+  type: Class
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Converters/GroupConverter.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: GroupConverter
+    path: src/Celestial.UIToolkit.Core/Converters/GroupConverter.cs
+    startLine: 13
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Converters
+  summary: "\nAn implementation of the <xref href=\"System.Windows.Data.IValueConverter\" data-throw-if-not-resolved=\"false\"></xref> interface which\nbundles other <xref href=\"System.Windows.Data.IValueConverter\" data-throw-if-not-resolved=\"false\"></xref> instances and uses these\nin order to convert an object.\n"
+  example: []
+  syntax:
+    content: 'public class GroupConverter : Collection<IValueConverter>, IList<IValueConverter>, ICollection<IValueConverter>, IList, ICollection, IReadOnlyList<IValueConverter>, IReadOnlyCollection<IValueConverter>, IEnumerable<IValueConverter>, IEnumerable, IValueConverter'
+    content.vb: >-
+      Public Class GroupConverter
+
+          Inherits Collection(Of IValueConverter)
+
+          Implements IList(Of IValueConverter), ICollection(Of IValueConverter), IList, ICollection, IReadOnlyList(Of IValueConverter), IReadOnlyCollection(Of IValueConverter), IEnumerable(Of IValueConverter), IEnumerable, IValueConverter
+  inheritance:
+  - System.Object
+  - System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}
+  implements:
+  - System.Collections.Generic.IList{System.Windows.Data.IValueConverter}
+  - System.Collections.Generic.ICollection{System.Windows.Data.IValueConverter}
+  - System.Collections.IList
+  - System.Collections.ICollection
+  - System.Collections.Generic.IReadOnlyList{System.Windows.Data.IValueConverter}
+  - System.Collections.Generic.IReadOnlyCollection{System.Windows.Data.IValueConverter}
+  - System.Collections.Generic.IEnumerable{System.Windows.Data.IValueConverter}
+  - System.Collections.IEnumerable
+  - System.Windows.Data.IValueConverter
+  inheritedMembers:
+  - System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.Add(System.Windows.Data.IValueConverter)
+  - System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.Clear
+  - System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.CopyTo(System.Windows.Data.IValueConverter[],System.Int32)
+  - System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.Contains(System.Windows.Data.IValueConverter)
+  - System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.GetEnumerator
+  - System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.IndexOf(System.Windows.Data.IValueConverter)
+  - System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.Insert(System.Int32,System.Windows.Data.IValueConverter)
+  - System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.Remove(System.Windows.Data.IValueConverter)
+  - System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.RemoveAt(System.Int32)
+  - System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.ClearItems
+  - System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.InsertItem(System.Int32,System.Windows.Data.IValueConverter)
+  - System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.RemoveItem(System.Int32)
+  - System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.SetItem(System.Int32,System.Windows.Data.IValueConverter)
+  - System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#IEnumerable#GetEnumerator
+  - System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+  - System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#IList#get_Item(System.Int32)
+  - System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#IList#set_Item(System.Int32,System.Object)
+  - System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#IList#Add(System.Object)
+  - System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#IList#Contains(System.Object)
+  - System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#IList#IndexOf(System.Object)
+  - System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#IList#Insert(System.Int32,System.Object)
+  - System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#IList#Remove(System.Object)
+  - System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.Count
+  - System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.Items
+  - System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.Item(System.Int32)
+  - System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#Generic#ICollection{T}#IsReadOnly
+  - System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#ICollection#IsSynchronized
+  - System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#ICollection#SyncRoot
+  - System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#IList#Item(System.Int32)
+  - System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#IList#IsReadOnly
+  - System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#IList#IsFixedSize
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - System.Collections.Generic.IEnumerable{System.Windows.Data.IValueConverter}.Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfter``1(System.Int32)
+  - System.Collections.Generic.IEnumerable{System.Windows.Data.IValueConverter}.Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfterOrDefault``1(System.Int32)
+  - System.Collections.Generic.IEnumerable{System.Windows.Data.IValueConverter}.Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBefore``1(System.Int32)
+  - System.Collections.Generic.IEnumerable{System.Windows.Data.IValueConverter}.Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBeforeOrDefault``1(System.Int32)
+  - System.Collections.Generic.IEnumerable{System.Windows.Data.IValueConverter}.Celestial.UIToolkit.Extensions.EnumerableExtensions.IndexOf``1(System.Windows.Data.IValueConverter)
+  - System.Collections.Generic.ICollection{System.Windows.Data.IValueConverter}.Celestial.UIToolkit.Extensions.EnumerableExtensions.AddRange``1(System.Collections.Generic.IEnumerable{System.Windows.Data.IValueConverter})
+  - System.Collections.Generic.IList{System.Windows.Data.IValueConverter}.Celestial.UIToolkit.Extensions.EnumerableExtensions.RemoveAll``1(System.Func{System.Windows.Data.IValueConverter,System.Boolean})
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Celestial.UIToolkit.Converters.GroupConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  commentId: M:Celestial.UIToolkit.Converters.GroupConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  id: Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  parent: Celestial.UIToolkit.Converters.GroupConverter
+  langs:
+  - csharp
+  - vb
+  name: Convert(Object, Type, Object, CultureInfo)
+  nameWithType: GroupConverter.Convert(Object, Type, Object, CultureInfo)
+  fullName: Celestial.UIToolkit.Converters.GroupConverter.Convert(System.Object, System.Type, System.Object, System.Globalization.CultureInfo)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Converters/GroupConverter.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: Convert
+    path: src/Celestial.UIToolkit.Core/Converters/GroupConverter.cs
+    startLine: 25
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Converters
+  summary: "\nGoes through the list of converters and uses these, in order,\nto convert the specified <code data-dev-comment-type=\"paramref\" class=\"paramref\">value</code>.\n"
+  example: []
+  syntax:
+    content: public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    parameters:
+    - id: value
+      type: System.Object
+      description: The value produced by the binding source.
+    - id: targetType
+      type: System.Type
+      description: The type of the binding target property.
+    - id: parameter
+      type: System.Object
+      description: The converter parameter to use.
+    - id: culture
+      type: System.Globalization.CultureInfo
+      description: The culture to use in the converter.
+    return:
+      type: System.Object
+      description: A converted value. If the method returns null, the valid null value is used.
+    content.vb: Public Function Convert(value As Object, targetType As Type, parameter As Object, culture As CultureInfo) As Object
+  overload: Celestial.UIToolkit.Converters.GroupConverter.Convert*
+  implements:
+  - System.Windows.Data.IValueConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Celestial.UIToolkit.Converters.GroupConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  commentId: M:Celestial.UIToolkit.Converters.GroupConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  id: ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  parent: Celestial.UIToolkit.Converters.GroupConverter
+  langs:
+  - csharp
+  - vb
+  name: ConvertBack(Object, Type, Object, CultureInfo)
+  nameWithType: GroupConverter.ConvertBack(Object, Type, Object, CultureInfo)
+  fullName: Celestial.UIToolkit.Converters.GroupConverter.ConvertBack(System.Object, System.Type, System.Object, System.Globalization.CultureInfo)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Converters/GroupConverter.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: ConvertBack
+    path: src/Celestial.UIToolkit.Core/Converters/GroupConverter.cs
+    startLine: 42
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Converters
+  summary: "\nNot supported.\n"
+  example: []
+  syntax:
+    content: public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    parameters:
+    - id: value
+      type: System.Object
+      description: Not supported.
+    - id: targetType
+      type: System.Type
+      description: Not supported.
+    - id: parameter
+      type: System.Object
+      description: Not supported.
+    - id: culture
+      type: System.Globalization.CultureInfo
+      description: Not supported.
+    return:
+      type: System.Object
+      description: Not supported.
+    content.vb: Public Function ConvertBack(value As Object, targetType As Type, parameter As Object, culture As CultureInfo) As Object
+  overload: Celestial.UIToolkit.Converters.GroupConverter.ConvertBack*
+  implements:
+  - System.Windows.Data.IValueConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: System.Windows.Data.IValueConverter
+  commentId: T:System.Windows.Data.IValueConverter
+  parent: System.Windows.Data
+  isExternal: true
+  name: IValueConverter
+  nameWithType: IValueConverter
+  fullName: System.Windows.Data.IValueConverter
+- uid: Celestial.UIToolkit.Converters
+  commentId: N:Celestial.UIToolkit.Converters
+  name: Celestial.UIToolkit.Converters
+  nameWithType: Celestial.UIToolkit.Converters
+  fullName: Celestial.UIToolkit.Converters
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}
+  commentId: T:System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}
+  parent: System.Collections.ObjectModel
+  definition: System.Collections.ObjectModel.Collection`1
+  name: Collection<IValueConverter>
+  nameWithType: Collection<IValueConverter>
+  fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>
+  nameWithType.vb: Collection(Of IValueConverter)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter)
+  name.vb: Collection(Of IValueConverter)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Windows.Data.IValueConverter
+    name: IValueConverter
+    nameWithType: IValueConverter
+    fullName: System.Windows.Data.IValueConverter
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Windows.Data.IValueConverter
+    name: IValueConverter
+    nameWithType: IValueConverter
+    fullName: System.Windows.Data.IValueConverter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IList{System.Windows.Data.IValueConverter}
+  commentId: T:System.Collections.Generic.IList{System.Windows.Data.IValueConverter}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IList`1
+  name: IList<IValueConverter>
+  nameWithType: IList<IValueConverter>
+  fullName: System.Collections.Generic.IList<System.Windows.Data.IValueConverter>
+  nameWithType.vb: IList(Of IValueConverter)
+  fullName.vb: System.Collections.Generic.IList(Of System.Windows.Data.IValueConverter)
+  name.vb: IList(Of IValueConverter)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Windows.Data.IValueConverter
+    name: IValueConverter
+    nameWithType: IValueConverter
+    fullName: System.Windows.Data.IValueConverter
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Windows.Data.IValueConverter
+    name: IValueConverter
+    nameWithType: IValueConverter
+    fullName: System.Windows.Data.IValueConverter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection{System.Windows.Data.IValueConverter}
+  commentId: T:System.Collections.Generic.ICollection{System.Windows.Data.IValueConverter}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.ICollection`1
+  name: ICollection<IValueConverter>
+  nameWithType: ICollection<IValueConverter>
+  fullName: System.Collections.Generic.ICollection<System.Windows.Data.IValueConverter>
+  nameWithType.vb: ICollection(Of IValueConverter)
+  fullName.vb: System.Collections.Generic.ICollection(Of System.Windows.Data.IValueConverter)
+  name.vb: ICollection(Of IValueConverter)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Windows.Data.IValueConverter
+    name: IValueConverter
+    nameWithType: IValueConverter
+    fullName: System.Windows.Data.IValueConverter
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Windows.Data.IValueConverter
+    name: IValueConverter
+    nameWithType: IValueConverter
+    fullName: System.Windows.Data.IValueConverter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.IList
+  commentId: T:System.Collections.IList
+  parent: System.Collections
+  isExternal: true
+  name: IList
+  nameWithType: IList
+  fullName: System.Collections.IList
+- uid: System.Collections.ICollection
+  commentId: T:System.Collections.ICollection
+  parent: System.Collections
+  isExternal: true
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+- uid: System.Collections.Generic.IReadOnlyList{System.Windows.Data.IValueConverter}
+  commentId: T:System.Collections.Generic.IReadOnlyList{System.Windows.Data.IValueConverter}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  name: IReadOnlyList<IValueConverter>
+  nameWithType: IReadOnlyList<IValueConverter>
+  fullName: System.Collections.Generic.IReadOnlyList<System.Windows.Data.IValueConverter>
+  nameWithType.vb: IReadOnlyList(Of IValueConverter)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of System.Windows.Data.IValueConverter)
+  name.vb: IReadOnlyList(Of IValueConverter)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    nameWithType: IReadOnlyList
+    fullName: System.Collections.Generic.IReadOnlyList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Windows.Data.IValueConverter
+    name: IValueConverter
+    nameWithType: IValueConverter
+    fullName: System.Windows.Data.IValueConverter
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    nameWithType: IReadOnlyList
+    fullName: System.Collections.Generic.IReadOnlyList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Windows.Data.IValueConverter
+    name: IValueConverter
+    nameWithType: IValueConverter
+    fullName: System.Windows.Data.IValueConverter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IReadOnlyCollection{System.Windows.Data.IValueConverter}
+  commentId: T:System.Collections.Generic.IReadOnlyCollection{System.Windows.Data.IValueConverter}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyCollection`1
+  name: IReadOnlyCollection<IValueConverter>
+  nameWithType: IReadOnlyCollection<IValueConverter>
+  fullName: System.Collections.Generic.IReadOnlyCollection<System.Windows.Data.IValueConverter>
+  nameWithType.vb: IReadOnlyCollection(Of IValueConverter)
+  fullName.vb: System.Collections.Generic.IReadOnlyCollection(Of System.Windows.Data.IValueConverter)
+  name.vb: IReadOnlyCollection(Of IValueConverter)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Windows.Data.IValueConverter
+    name: IValueConverter
+    nameWithType: IValueConverter
+    fullName: System.Windows.Data.IValueConverter
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Windows.Data.IValueConverter
+    name: IValueConverter
+    nameWithType: IValueConverter
+    fullName: System.Windows.Data.IValueConverter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable{System.Windows.Data.IValueConverter}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Windows.Data.IValueConverter}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<IValueConverter>
+  nameWithType: IEnumerable<IValueConverter>
+  fullName: System.Collections.Generic.IEnumerable<System.Windows.Data.IValueConverter>
+  nameWithType.vb: IEnumerable(Of IValueConverter)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Windows.Data.IValueConverter)
+  name.vb: IEnumerable(Of IValueConverter)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Windows.Data.IValueConverter
+    name: IValueConverter
+    nameWithType: IValueConverter
+    fullName: System.Windows.Data.IValueConverter
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Windows.Data.IValueConverter
+    name: IValueConverter
+    nameWithType: IValueConverter
+    fullName: System.Windows.Data.IValueConverter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.IEnumerable
+  commentId: T:System.Collections.IEnumerable
+  parent: System.Collections
+  isExternal: true
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+- uid: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.Add(System.Windows.Data.IValueConverter)
+  commentId: M:System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.Add(System.Windows.Data.IValueConverter)
+  parent: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}
+  definition: System.Collections.ObjectModel.Collection`1.Add(`0)
+  name: Add(IValueConverter)
+  nameWithType: Collection<IValueConverter>.Add(IValueConverter)
+  fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.Add(System.Windows.Data.IValueConverter)
+  nameWithType.vb: Collection(Of IValueConverter).Add(IValueConverter)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).Add(System.Windows.Data.IValueConverter)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.Add(`0)
+    name: Add
+    nameWithType: Collection<IValueConverter>.Add
+    fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.Data.IValueConverter
+    name: IValueConverter
+    nameWithType: IValueConverter
+    fullName: System.Windows.Data.IValueConverter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.Add(`0)
+    name: Add
+    nameWithType: Collection(Of IValueConverter).Add
+    fullName: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.Data.IValueConverter
+    name: IValueConverter
+    nameWithType: IValueConverter
+    fullName: System.Windows.Data.IValueConverter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.Clear
+  commentId: M:System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.Clear
+  parent: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}
+  definition: System.Collections.ObjectModel.Collection`1.Clear
+  name: Clear()
+  nameWithType: Collection<IValueConverter>.Clear()
+  fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.Clear()
+  nameWithType.vb: Collection(Of IValueConverter).Clear()
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).Clear()
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.Clear
+    name: Clear
+    nameWithType: Collection<IValueConverter>.Clear
+    fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.Clear
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.Clear
+    name: Clear
+    nameWithType: Collection(Of IValueConverter).Clear
+    fullName: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).Clear
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.CopyTo(System.Windows.Data.IValueConverter[],System.Int32)
+  commentId: M:System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.CopyTo(System.Windows.Data.IValueConverter[],System.Int32)
+  parent: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}
+  definition: System.Collections.ObjectModel.Collection`1.CopyTo(`0[],System.Int32)
+  name: CopyTo(IValueConverter[], Int32)
+  nameWithType: Collection<IValueConverter>.CopyTo(IValueConverter[], Int32)
+  fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.CopyTo(System.Windows.Data.IValueConverter[], System.Int32)
+  nameWithType.vb: Collection(Of IValueConverter).CopyTo(IValueConverter(), Int32)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).CopyTo(System.Windows.Data.IValueConverter(), System.Int32)
+  name.vb: CopyTo(IValueConverter(), Int32)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    nameWithType: Collection<IValueConverter>.CopyTo
+    fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.Data.IValueConverter
+    name: IValueConverter
+    nameWithType: IValueConverter
+    fullName: System.Windows.Data.IValueConverter
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    nameWithType: Collection(Of IValueConverter).CopyTo
+    fullName: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.Data.IValueConverter
+    name: IValueConverter
+    nameWithType: IValueConverter
+    fullName: System.Windows.Data.IValueConverter
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.Contains(System.Windows.Data.IValueConverter)
+  commentId: M:System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.Contains(System.Windows.Data.IValueConverter)
+  parent: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}
+  definition: System.Collections.ObjectModel.Collection`1.Contains(`0)
+  name: Contains(IValueConverter)
+  nameWithType: Collection<IValueConverter>.Contains(IValueConverter)
+  fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.Contains(System.Windows.Data.IValueConverter)
+  nameWithType.vb: Collection(Of IValueConverter).Contains(IValueConverter)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).Contains(System.Windows.Data.IValueConverter)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.Contains(`0)
+    name: Contains
+    nameWithType: Collection<IValueConverter>.Contains
+    fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.Data.IValueConverter
+    name: IValueConverter
+    nameWithType: IValueConverter
+    fullName: System.Windows.Data.IValueConverter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.Contains(`0)
+    name: Contains
+    nameWithType: Collection(Of IValueConverter).Contains
+    fullName: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.Data.IValueConverter
+    name: IValueConverter
+    nameWithType: IValueConverter
+    fullName: System.Windows.Data.IValueConverter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.GetEnumerator
+  commentId: M:System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.GetEnumerator
+  parent: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}
+  definition: System.Collections.ObjectModel.Collection`1.GetEnumerator
+  name: GetEnumerator()
+  nameWithType: Collection<IValueConverter>.GetEnumerator()
+  fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.GetEnumerator()
+  nameWithType.vb: Collection(Of IValueConverter).GetEnumerator()
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: Collection<IValueConverter>.GetEnumerator
+    fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: Collection(Of IValueConverter).GetEnumerator
+    fullName: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.IndexOf(System.Windows.Data.IValueConverter)
+  commentId: M:System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.IndexOf(System.Windows.Data.IValueConverter)
+  parent: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}
+  definition: System.Collections.ObjectModel.Collection`1.IndexOf(`0)
+  name: IndexOf(IValueConverter)
+  nameWithType: Collection<IValueConverter>.IndexOf(IValueConverter)
+  fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.IndexOf(System.Windows.Data.IValueConverter)
+  nameWithType.vb: Collection(Of IValueConverter).IndexOf(IValueConverter)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).IndexOf(System.Windows.Data.IValueConverter)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.IndexOf(`0)
+    name: IndexOf
+    nameWithType: Collection<IValueConverter>.IndexOf
+    fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.IndexOf
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.Data.IValueConverter
+    name: IValueConverter
+    nameWithType: IValueConverter
+    fullName: System.Windows.Data.IValueConverter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.IndexOf(`0)
+    name: IndexOf
+    nameWithType: Collection(Of IValueConverter).IndexOf
+    fullName: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).IndexOf
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.Data.IValueConverter
+    name: IValueConverter
+    nameWithType: IValueConverter
+    fullName: System.Windows.Data.IValueConverter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.Insert(System.Int32,System.Windows.Data.IValueConverter)
+  commentId: M:System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.Insert(System.Int32,System.Windows.Data.IValueConverter)
+  parent: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}
+  definition: System.Collections.ObjectModel.Collection`1.Insert(System.Int32,`0)
+  name: Insert(Int32, IValueConverter)
+  nameWithType: Collection<IValueConverter>.Insert(Int32, IValueConverter)
+  fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.Insert(System.Int32, System.Windows.Data.IValueConverter)
+  nameWithType.vb: Collection(Of IValueConverter).Insert(Int32, IValueConverter)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).Insert(System.Int32, System.Windows.Data.IValueConverter)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.Insert(System.Int32,`0)
+    name: Insert
+    nameWithType: Collection<IValueConverter>.Insert
+    fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.Insert
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.Data.IValueConverter
+    name: IValueConverter
+    nameWithType: IValueConverter
+    fullName: System.Windows.Data.IValueConverter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.Insert(System.Int32,`0)
+    name: Insert
+    nameWithType: Collection(Of IValueConverter).Insert
+    fullName: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).Insert
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.Data.IValueConverter
+    name: IValueConverter
+    nameWithType: IValueConverter
+    fullName: System.Windows.Data.IValueConverter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.Remove(System.Windows.Data.IValueConverter)
+  commentId: M:System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.Remove(System.Windows.Data.IValueConverter)
+  parent: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}
+  definition: System.Collections.ObjectModel.Collection`1.Remove(`0)
+  name: Remove(IValueConverter)
+  nameWithType: Collection<IValueConverter>.Remove(IValueConverter)
+  fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.Remove(System.Windows.Data.IValueConverter)
+  nameWithType.vb: Collection(Of IValueConverter).Remove(IValueConverter)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).Remove(System.Windows.Data.IValueConverter)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.Remove(`0)
+    name: Remove
+    nameWithType: Collection<IValueConverter>.Remove
+    fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.Data.IValueConverter
+    name: IValueConverter
+    nameWithType: IValueConverter
+    fullName: System.Windows.Data.IValueConverter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.Remove(`0)
+    name: Remove
+    nameWithType: Collection(Of IValueConverter).Remove
+    fullName: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.Data.IValueConverter
+    name: IValueConverter
+    nameWithType: IValueConverter
+    fullName: System.Windows.Data.IValueConverter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.RemoveAt(System.Int32)
+  commentId: M:System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.RemoveAt(System.Int32)
+  parent: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}
+  definition: System.Collections.ObjectModel.Collection`1.RemoveAt(System.Int32)
+  name: RemoveAt(Int32)
+  nameWithType: Collection<IValueConverter>.RemoveAt(Int32)
+  fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.RemoveAt(System.Int32)
+  nameWithType.vb: Collection(Of IValueConverter).RemoveAt(Int32)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).RemoveAt(System.Int32)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.RemoveAt(System.Int32)
+    name: RemoveAt
+    nameWithType: Collection<IValueConverter>.RemoveAt
+    fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.RemoveAt
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.RemoveAt(System.Int32)
+    name: RemoveAt
+    nameWithType: Collection(Of IValueConverter).RemoveAt
+    fullName: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).RemoveAt
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.ClearItems
+  commentId: M:System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.ClearItems
+  parent: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}
+  definition: System.Collections.ObjectModel.Collection`1.ClearItems
+  name: ClearItems()
+  nameWithType: Collection<IValueConverter>.ClearItems()
+  fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.ClearItems()
+  nameWithType.vb: Collection(Of IValueConverter).ClearItems()
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).ClearItems()
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.ClearItems
+    name: ClearItems
+    nameWithType: Collection<IValueConverter>.ClearItems
+    fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.ClearItems
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.ClearItems
+    name: ClearItems
+    nameWithType: Collection(Of IValueConverter).ClearItems
+    fullName: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).ClearItems
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.InsertItem(System.Int32,System.Windows.Data.IValueConverter)
+  commentId: M:System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.InsertItem(System.Int32,System.Windows.Data.IValueConverter)
+  parent: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}
+  definition: System.Collections.ObjectModel.Collection`1.InsertItem(System.Int32,`0)
+  name: InsertItem(Int32, IValueConverter)
+  nameWithType: Collection<IValueConverter>.InsertItem(Int32, IValueConverter)
+  fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.InsertItem(System.Int32, System.Windows.Data.IValueConverter)
+  nameWithType.vb: Collection(Of IValueConverter).InsertItem(Int32, IValueConverter)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).InsertItem(System.Int32, System.Windows.Data.IValueConverter)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.InsertItem(System.Int32,`0)
+    name: InsertItem
+    nameWithType: Collection<IValueConverter>.InsertItem
+    fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.InsertItem
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.Data.IValueConverter
+    name: IValueConverter
+    nameWithType: IValueConverter
+    fullName: System.Windows.Data.IValueConverter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.InsertItem(System.Int32,`0)
+    name: InsertItem
+    nameWithType: Collection(Of IValueConverter).InsertItem
+    fullName: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).InsertItem
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.Data.IValueConverter
+    name: IValueConverter
+    nameWithType: IValueConverter
+    fullName: System.Windows.Data.IValueConverter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.RemoveItem(System.Int32)
+  commentId: M:System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.RemoveItem(System.Int32)
+  parent: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}
+  definition: System.Collections.ObjectModel.Collection`1.RemoveItem(System.Int32)
+  name: RemoveItem(Int32)
+  nameWithType: Collection<IValueConverter>.RemoveItem(Int32)
+  fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.RemoveItem(System.Int32)
+  nameWithType.vb: Collection(Of IValueConverter).RemoveItem(Int32)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).RemoveItem(System.Int32)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.RemoveItem(System.Int32)
+    name: RemoveItem
+    nameWithType: Collection<IValueConverter>.RemoveItem
+    fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.RemoveItem
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.RemoveItem(System.Int32)
+    name: RemoveItem
+    nameWithType: Collection(Of IValueConverter).RemoveItem
+    fullName: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).RemoveItem
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.SetItem(System.Int32,System.Windows.Data.IValueConverter)
+  commentId: M:System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.SetItem(System.Int32,System.Windows.Data.IValueConverter)
+  parent: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}
+  definition: System.Collections.ObjectModel.Collection`1.SetItem(System.Int32,`0)
+  name: SetItem(Int32, IValueConverter)
+  nameWithType: Collection<IValueConverter>.SetItem(Int32, IValueConverter)
+  fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.SetItem(System.Int32, System.Windows.Data.IValueConverter)
+  nameWithType.vb: Collection(Of IValueConverter).SetItem(Int32, IValueConverter)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).SetItem(System.Int32, System.Windows.Data.IValueConverter)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.SetItem(System.Int32,`0)
+    name: SetItem
+    nameWithType: Collection<IValueConverter>.SetItem
+    fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.SetItem
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.Data.IValueConverter
+    name: IValueConverter
+    nameWithType: IValueConverter
+    fullName: System.Windows.Data.IValueConverter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.SetItem(System.Int32,`0)
+    name: SetItem
+    nameWithType: Collection(Of IValueConverter).SetItem
+    fullName: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).SetItem
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Windows.Data.IValueConverter
+    name: IValueConverter
+    nameWithType: IValueConverter
+    fullName: System.Windows.Data.IValueConverter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#IEnumerable#GetEnumerator
+  commentId: M:System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#IEnumerable#GetEnumerator
+  parent: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}
+  definition: System.Collections.ObjectModel.Collection`1.System#Collections#IEnumerable#GetEnumerator
+  name: IEnumerable.GetEnumerator()
+  nameWithType: Collection<IValueConverter>.IEnumerable.GetEnumerator()
+  fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.System.Collections.IEnumerable.GetEnumerator()
+  nameWithType.vb: Collection(Of IValueConverter).System.Collections.IEnumerable.GetEnumerator()
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).System.Collections.IEnumerable.GetEnumerator()
+  name.vb: System.Collections.IEnumerable.GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IEnumerable#GetEnumerator
+    name: IEnumerable.GetEnumerator
+    nameWithType: Collection<IValueConverter>.IEnumerable.GetEnumerator
+    fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.System.Collections.IEnumerable.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IEnumerable#GetEnumerator
+    name: System.Collections.IEnumerable.GetEnumerator
+    nameWithType: Collection(Of IValueConverter).System.Collections.IEnumerable.GetEnumerator
+    fullName: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).System.Collections.IEnumerable.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+  commentId: M:System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+  parent: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}
+  definition: System.Collections.ObjectModel.Collection`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+  name: ICollection.CopyTo(Array, Int32)
+  nameWithType: Collection<IValueConverter>.ICollection.CopyTo(Array, Int32)
+  fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.System.Collections.ICollection.CopyTo(System.Array, System.Int32)
+  nameWithType.vb: Collection(Of IValueConverter).System.Collections.ICollection.CopyTo(Array, Int32)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).System.Collections.ICollection.CopyTo(System.Array, System.Int32)
+  name.vb: System.Collections.ICollection.CopyTo(Array, Int32)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+    name: ICollection.CopyTo
+    nameWithType: Collection<IValueConverter>.ICollection.CopyTo
+    fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.System.Collections.ICollection.CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Array
+    name: Array
+    nameWithType: Array
+    fullName: System.Array
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+    name: System.Collections.ICollection.CopyTo
+    nameWithType: Collection(Of IValueConverter).System.Collections.ICollection.CopyTo
+    fullName: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).System.Collections.ICollection.CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Array
+    name: Array
+    nameWithType: Array
+    fullName: System.Array
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#IList#get_Item(System.Int32)
+  commentId: M:System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#IList#get_Item(System.Int32)
+  parent: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}
+  definition: System.Collections.ObjectModel.Collection`1.System#Collections#IList#get_Item(System.Int32)
+  name: IList.get_Item(Int32)
+  nameWithType: Collection<IValueConverter>.IList.get_Item(Int32)
+  fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.System.Collections.IList.get_Item(System.Int32)
+  nameWithType.vb: Collection(Of IValueConverter).System.Collections.IList.get_Item(Int32)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).System.Collections.IList.get_Item(System.Int32)
+  name.vb: System.Collections.IList.get_Item(Int32)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#get_Item(System.Int32)
+    name: IList.get_Item
+    nameWithType: Collection<IValueConverter>.IList.get_Item
+    fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.System.Collections.IList.get_Item
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#get_Item(System.Int32)
+    name: System.Collections.IList.get_Item
+    nameWithType: Collection(Of IValueConverter).System.Collections.IList.get_Item
+    fullName: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).System.Collections.IList.get_Item
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#IList#set_Item(System.Int32,System.Object)
+  commentId: M:System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#IList#set_Item(System.Int32,System.Object)
+  parent: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}
+  definition: System.Collections.ObjectModel.Collection`1.System#Collections#IList#set_Item(System.Int32,System.Object)
+  name: IList.set_Item(Int32, Object)
+  nameWithType: Collection<IValueConverter>.IList.set_Item(Int32, Object)
+  fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.System.Collections.IList.set_Item(System.Int32, System.Object)
+  nameWithType.vb: Collection(Of IValueConverter).System.Collections.IList.set_Item(Int32, Object)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).System.Collections.IList.set_Item(System.Int32, System.Object)
+  name.vb: System.Collections.IList.set_Item(Int32, Object)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#set_Item(System.Int32,System.Object)
+    name: IList.set_Item
+    nameWithType: Collection<IValueConverter>.IList.set_Item
+    fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.System.Collections.IList.set_Item
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#set_Item(System.Int32,System.Object)
+    name: System.Collections.IList.set_Item
+    nameWithType: Collection(Of IValueConverter).System.Collections.IList.set_Item
+    fullName: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).System.Collections.IList.set_Item
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#IList#Add(System.Object)
+  commentId: M:System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#IList#Add(System.Object)
+  parent: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}
+  definition: System.Collections.ObjectModel.Collection`1.System#Collections#IList#Add(System.Object)
+  name: IList.Add(Object)
+  nameWithType: Collection<IValueConverter>.IList.Add(Object)
+  fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.System.Collections.IList.Add(System.Object)
+  nameWithType.vb: Collection(Of IValueConverter).System.Collections.IList.Add(Object)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).System.Collections.IList.Add(System.Object)
+  name.vb: System.Collections.IList.Add(Object)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#Add(System.Object)
+    name: IList.Add
+    nameWithType: Collection<IValueConverter>.IList.Add
+    fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.System.Collections.IList.Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#Add(System.Object)
+    name: System.Collections.IList.Add
+    nameWithType: Collection(Of IValueConverter).System.Collections.IList.Add
+    fullName: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).System.Collections.IList.Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#IList#Contains(System.Object)
+  commentId: M:System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#IList#Contains(System.Object)
+  parent: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}
+  definition: System.Collections.ObjectModel.Collection`1.System#Collections#IList#Contains(System.Object)
+  name: IList.Contains(Object)
+  nameWithType: Collection<IValueConverter>.IList.Contains(Object)
+  fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.System.Collections.IList.Contains(System.Object)
+  nameWithType.vb: Collection(Of IValueConverter).System.Collections.IList.Contains(Object)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).System.Collections.IList.Contains(System.Object)
+  name.vb: System.Collections.IList.Contains(Object)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#Contains(System.Object)
+    name: IList.Contains
+    nameWithType: Collection<IValueConverter>.IList.Contains
+    fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.System.Collections.IList.Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#Contains(System.Object)
+    name: System.Collections.IList.Contains
+    nameWithType: Collection(Of IValueConverter).System.Collections.IList.Contains
+    fullName: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).System.Collections.IList.Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#IList#IndexOf(System.Object)
+  commentId: M:System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#IList#IndexOf(System.Object)
+  parent: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}
+  definition: System.Collections.ObjectModel.Collection`1.System#Collections#IList#IndexOf(System.Object)
+  name: IList.IndexOf(Object)
+  nameWithType: Collection<IValueConverter>.IList.IndexOf(Object)
+  fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.System.Collections.IList.IndexOf(System.Object)
+  nameWithType.vb: Collection(Of IValueConverter).System.Collections.IList.IndexOf(Object)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).System.Collections.IList.IndexOf(System.Object)
+  name.vb: System.Collections.IList.IndexOf(Object)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#IndexOf(System.Object)
+    name: IList.IndexOf
+    nameWithType: Collection<IValueConverter>.IList.IndexOf
+    fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.System.Collections.IList.IndexOf
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#IndexOf(System.Object)
+    name: System.Collections.IList.IndexOf
+    nameWithType: Collection(Of IValueConverter).System.Collections.IList.IndexOf
+    fullName: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).System.Collections.IList.IndexOf
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#IList#Insert(System.Int32,System.Object)
+  commentId: M:System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#IList#Insert(System.Int32,System.Object)
+  parent: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}
+  definition: System.Collections.ObjectModel.Collection`1.System#Collections#IList#Insert(System.Int32,System.Object)
+  name: IList.Insert(Int32, Object)
+  nameWithType: Collection<IValueConverter>.IList.Insert(Int32, Object)
+  fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.System.Collections.IList.Insert(System.Int32, System.Object)
+  nameWithType.vb: Collection(Of IValueConverter).System.Collections.IList.Insert(Int32, Object)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).System.Collections.IList.Insert(System.Int32, System.Object)
+  name.vb: System.Collections.IList.Insert(Int32, Object)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#Insert(System.Int32,System.Object)
+    name: IList.Insert
+    nameWithType: Collection<IValueConverter>.IList.Insert
+    fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.System.Collections.IList.Insert
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#Insert(System.Int32,System.Object)
+    name: System.Collections.IList.Insert
+    nameWithType: Collection(Of IValueConverter).System.Collections.IList.Insert
+    fullName: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).System.Collections.IList.Insert
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#IList#Remove(System.Object)
+  commentId: M:System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#IList#Remove(System.Object)
+  parent: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}
+  definition: System.Collections.ObjectModel.Collection`1.System#Collections#IList#Remove(System.Object)
+  name: IList.Remove(Object)
+  nameWithType: Collection<IValueConverter>.IList.Remove(Object)
+  fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.System.Collections.IList.Remove(System.Object)
+  nameWithType.vb: Collection(Of IValueConverter).System.Collections.IList.Remove(Object)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).System.Collections.IList.Remove(System.Object)
+  name.vb: System.Collections.IList.Remove(Object)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#Remove(System.Object)
+    name: IList.Remove
+    nameWithType: Collection<IValueConverter>.IList.Remove
+    fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.System.Collections.IList.Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#Remove(System.Object)
+    name: System.Collections.IList.Remove
+    nameWithType: Collection(Of IValueConverter).System.Collections.IList.Remove
+    fullName: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).System.Collections.IList.Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.Count
+  commentId: P:System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.Count
+  parent: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}
+  definition: System.Collections.ObjectModel.Collection`1.Count
+  name: Count
+  nameWithType: Collection<IValueConverter>.Count
+  fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.Count
+  nameWithType.vb: Collection(Of IValueConverter).Count
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).Count
+- uid: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.Items
+  commentId: P:System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.Items
+  parent: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}
+  definition: System.Collections.ObjectModel.Collection`1.Items
+  name: Items
+  nameWithType: Collection<IValueConverter>.Items
+  fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.Items
+  nameWithType.vb: Collection(Of IValueConverter).Items
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).Items
+- uid: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.Item(System.Int32)
+  commentId: P:System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.Item(System.Int32)
+  parent: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}
+  definition: System.Collections.ObjectModel.Collection`1.Item(System.Int32)
+  name: Item[Int32]
+  nameWithType: Collection<IValueConverter>.Item[Int32]
+  fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.Item[System.Int32]
+  nameWithType.vb: Collection(Of IValueConverter).Item(Int32)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).Item(System.Int32)
+  name.vb: Item(Int32)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.Item(System.Int32)
+    name: Item
+    nameWithType: Collection<IValueConverter>.Item
+    fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.Item
+    isExternal: true
+  - name: '['
+    nameWithType: '['
+    fullName: '['
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ']'
+    nameWithType: ']'
+    fullName: ']'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.Item(System.Int32)
+    name: Item
+    nameWithType: Collection(Of IValueConverter).Item
+    fullName: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).Item
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#Generic#ICollection{T}#IsReadOnly
+  commentId: P:System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#Generic#ICollection{T}#IsReadOnly
+  parent: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}
+  definition: System.Collections.ObjectModel.Collection`1.System#Collections#Generic#ICollection{T}#IsReadOnly
+  name: ICollection<IValueConverter>.IsReadOnly
+  nameWithType: Collection<IValueConverter>.ICollection<IValueConverter>.IsReadOnly
+  fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.System.Collections.Generic.ICollection<System.Windows.Data.IValueConverter>.IsReadOnly
+  nameWithType.vb: Collection(Of IValueConverter).System.Collections.Generic.ICollection<T>.IsReadOnly
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).System.Collections.Generic.ICollection<T>.IsReadOnly
+  name.vb: System.Collections.Generic.ICollection<T>.IsReadOnly
+- uid: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#ICollection#IsSynchronized
+  commentId: P:System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#ICollection#IsSynchronized
+  parent: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}
+  definition: System.Collections.ObjectModel.Collection`1.System#Collections#ICollection#IsSynchronized
+  name: ICollection.IsSynchronized
+  nameWithType: Collection<IValueConverter>.ICollection.IsSynchronized
+  fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.System.Collections.ICollection.IsSynchronized
+  nameWithType.vb: Collection(Of IValueConverter).System.Collections.ICollection.IsSynchronized
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).System.Collections.ICollection.IsSynchronized
+  name.vb: System.Collections.ICollection.IsSynchronized
+- uid: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#ICollection#SyncRoot
+  commentId: P:System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#ICollection#SyncRoot
+  parent: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}
+  definition: System.Collections.ObjectModel.Collection`1.System#Collections#ICollection#SyncRoot
+  name: ICollection.SyncRoot
+  nameWithType: Collection<IValueConverter>.ICollection.SyncRoot
+  fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.System.Collections.ICollection.SyncRoot
+  nameWithType.vb: Collection(Of IValueConverter).System.Collections.ICollection.SyncRoot
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).System.Collections.ICollection.SyncRoot
+  name.vb: System.Collections.ICollection.SyncRoot
+- uid: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#IList#Item(System.Int32)
+  commentId: P:System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#IList#Item(System.Int32)
+  parent: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}
+  definition: System.Collections.ObjectModel.Collection`1.System#Collections#IList#Item(System.Int32)
+  name: IList.Item[Int32]
+  nameWithType: Collection<IValueConverter>.IList.Item[Int32]
+  fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.System.Collections.IList.Item[System.Int32]
+  nameWithType.vb: Collection(Of IValueConverter).System.Collections.IList.Item(Int32)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).System.Collections.IList.Item(System.Int32)
+  name.vb: System.Collections.IList.Item(Int32)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#Item(System.Int32)
+    name: IList.Item
+    nameWithType: Collection<IValueConverter>.IList.Item
+    fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.System.Collections.IList.Item
+    isExternal: true
+  - name: '['
+    nameWithType: '['
+    fullName: '['
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ']'
+    nameWithType: ']'
+    fullName: ']'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#Item(System.Int32)
+    name: System.Collections.IList.Item
+    nameWithType: Collection(Of IValueConverter).System.Collections.IList.Item
+    fullName: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).System.Collections.IList.Item
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#IList#IsReadOnly
+  commentId: P:System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#IList#IsReadOnly
+  parent: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}
+  definition: System.Collections.ObjectModel.Collection`1.System#Collections#IList#IsReadOnly
+  name: IList.IsReadOnly
+  nameWithType: Collection<IValueConverter>.IList.IsReadOnly
+  fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.System.Collections.IList.IsReadOnly
+  nameWithType.vb: Collection(Of IValueConverter).System.Collections.IList.IsReadOnly
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).System.Collections.IList.IsReadOnly
+  name.vb: System.Collections.IList.IsReadOnly
+- uid: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#IList#IsFixedSize
+  commentId: P:System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}.System#Collections#IList#IsFixedSize
+  parent: System.Collections.ObjectModel.Collection{System.Windows.Data.IValueConverter}
+  definition: System.Collections.ObjectModel.Collection`1.System#Collections#IList#IsFixedSize
+  name: IList.IsFixedSize
+  nameWithType: Collection<IValueConverter>.IList.IsFixedSize
+  fullName: System.Collections.ObjectModel.Collection<System.Windows.Data.IValueConverter>.System.Collections.IList.IsFixedSize
+  nameWithType.vb: Collection(Of IValueConverter).System.Collections.IList.IsFixedSize
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Windows.Data.IValueConverter).System.Collections.IList.IsFixedSize
+  name.vb: System.Collections.IList.IsFixedSize
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable{System.Windows.Data.IValueConverter}.Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfter``1(System.Int32)
+  commentId: M:Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfter``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+  parent: Celestial.UIToolkit.Extensions.EnumerableExtensions
+  definition: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfter``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+  name: ElementAfter<IValueConverter>(Int32)
+  nameWithType: EnumerableExtensions.ElementAfter<IValueConverter>(Int32)
+  fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfter<System.Windows.Data.IValueConverter>(System.Int32)
+  nameWithType.vb: EnumerableExtensions.ElementAfter(Of IValueConverter)(Int32)
+  fullName.vb: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfter(Of System.Windows.Data.IValueConverter)(System.Int32)
+  name.vb: ElementAfter(Of IValueConverter)(Int32)
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfter``1(System.Int32)
+    name: ElementAfter<IValueConverter>
+    nameWithType: EnumerableExtensions.ElementAfter<IValueConverter>
+    fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfter<System.Windows.Data.IValueConverter>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfter``1(System.Int32)
+    name: ElementAfter(Of IValueConverter)
+    nameWithType: EnumerableExtensions.ElementAfter(Of IValueConverter)
+    fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfter(Of System.Windows.Data.IValueConverter)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable{System.Windows.Data.IValueConverter}.Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfterOrDefault``1(System.Int32)
+  commentId: M:Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfterOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+  parent: Celestial.UIToolkit.Extensions.EnumerableExtensions
+  definition: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfterOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+  name: ElementAfterOrDefault<IValueConverter>(Int32)
+  nameWithType: EnumerableExtensions.ElementAfterOrDefault<IValueConverter>(Int32)
+  fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfterOrDefault<System.Windows.Data.IValueConverter>(System.Int32)
+  nameWithType.vb: EnumerableExtensions.ElementAfterOrDefault(Of IValueConverter)(Int32)
+  fullName.vb: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfterOrDefault(Of System.Windows.Data.IValueConverter)(System.Int32)
+  name.vb: ElementAfterOrDefault(Of IValueConverter)(Int32)
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfterOrDefault``1(System.Int32)
+    name: ElementAfterOrDefault<IValueConverter>
+    nameWithType: EnumerableExtensions.ElementAfterOrDefault<IValueConverter>
+    fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfterOrDefault<System.Windows.Data.IValueConverter>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfterOrDefault``1(System.Int32)
+    name: ElementAfterOrDefault(Of IValueConverter)
+    nameWithType: EnumerableExtensions.ElementAfterOrDefault(Of IValueConverter)
+    fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfterOrDefault(Of System.Windows.Data.IValueConverter)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable{System.Windows.Data.IValueConverter}.Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBefore``1(System.Int32)
+  commentId: M:Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBefore``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+  parent: Celestial.UIToolkit.Extensions.EnumerableExtensions
+  definition: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBefore``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+  name: ElementBefore<IValueConverter>(Int32)
+  nameWithType: EnumerableExtensions.ElementBefore<IValueConverter>(Int32)
+  fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBefore<System.Windows.Data.IValueConverter>(System.Int32)
+  nameWithType.vb: EnumerableExtensions.ElementBefore(Of IValueConverter)(Int32)
+  fullName.vb: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBefore(Of System.Windows.Data.IValueConverter)(System.Int32)
+  name.vb: ElementBefore(Of IValueConverter)(Int32)
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBefore``1(System.Int32)
+    name: ElementBefore<IValueConverter>
+    nameWithType: EnumerableExtensions.ElementBefore<IValueConverter>
+    fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBefore<System.Windows.Data.IValueConverter>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBefore``1(System.Int32)
+    name: ElementBefore(Of IValueConverter)
+    nameWithType: EnumerableExtensions.ElementBefore(Of IValueConverter)
+    fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBefore(Of System.Windows.Data.IValueConverter)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable{System.Windows.Data.IValueConverter}.Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBeforeOrDefault``1(System.Int32)
+  commentId: M:Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBeforeOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+  parent: Celestial.UIToolkit.Extensions.EnumerableExtensions
+  definition: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBeforeOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+  name: ElementBeforeOrDefault<IValueConverter>(Int32)
+  nameWithType: EnumerableExtensions.ElementBeforeOrDefault<IValueConverter>(Int32)
+  fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBeforeOrDefault<System.Windows.Data.IValueConverter>(System.Int32)
+  nameWithType.vb: EnumerableExtensions.ElementBeforeOrDefault(Of IValueConverter)(Int32)
+  fullName.vb: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBeforeOrDefault(Of System.Windows.Data.IValueConverter)(System.Int32)
+  name.vb: ElementBeforeOrDefault(Of IValueConverter)(Int32)
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBeforeOrDefault``1(System.Int32)
+    name: ElementBeforeOrDefault<IValueConverter>
+    nameWithType: EnumerableExtensions.ElementBeforeOrDefault<IValueConverter>
+    fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBeforeOrDefault<System.Windows.Data.IValueConverter>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBeforeOrDefault``1(System.Int32)
+    name: ElementBeforeOrDefault(Of IValueConverter)
+    nameWithType: EnumerableExtensions.ElementBeforeOrDefault(Of IValueConverter)
+    fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBeforeOrDefault(Of System.Windows.Data.IValueConverter)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable{System.Windows.Data.IValueConverter}.Celestial.UIToolkit.Extensions.EnumerableExtensions.IndexOf``1(System.Windows.Data.IValueConverter)
+  commentId: M:Celestial.UIToolkit.Extensions.EnumerableExtensions.IndexOf``1(System.Collections.Generic.IEnumerable{``0},``0)
+  parent: Celestial.UIToolkit.Extensions.EnumerableExtensions
+  definition: Celestial.UIToolkit.Extensions.EnumerableExtensions.IndexOf``1(System.Collections.Generic.IEnumerable{``0},``0)
+  name: IndexOf<IValueConverter>(IValueConverter)
+  nameWithType: EnumerableExtensions.IndexOf<IValueConverter>(IValueConverter)
+  fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.IndexOf<System.Windows.Data.IValueConverter>(System.Windows.Data.IValueConverter)
+  nameWithType.vb: EnumerableExtensions.IndexOf(Of IValueConverter)(IValueConverter)
+  fullName.vb: Celestial.UIToolkit.Extensions.EnumerableExtensions.IndexOf(Of System.Windows.Data.IValueConverter)(System.Windows.Data.IValueConverter)
+  name.vb: IndexOf(Of IValueConverter)(IValueConverter)
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.IndexOf``1(``0)
+    name: IndexOf<IValueConverter>
+    nameWithType: EnumerableExtensions.IndexOf<IValueConverter>
+    fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.IndexOf<System.Windows.Data.IValueConverter>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.Data.IValueConverter
+    name: IValueConverter
+    nameWithType: IValueConverter
+    fullName: System.Windows.Data.IValueConverter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.IndexOf``1(``0)
+    name: IndexOf(Of IValueConverter)
+    nameWithType: EnumerableExtensions.IndexOf(Of IValueConverter)
+    fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.IndexOf(Of System.Windows.Data.IValueConverter)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Windows.Data.IValueConverter
+    name: IValueConverter
+    nameWithType: IValueConverter
+    fullName: System.Windows.Data.IValueConverter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection{System.Windows.Data.IValueConverter}.Celestial.UIToolkit.Extensions.EnumerableExtensions.AddRange``1(System.Collections.Generic.IEnumerable{System.Windows.Data.IValueConverter})
+  commentId: M:Celestial.UIToolkit.Extensions.EnumerableExtensions.AddRange``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})
+  parent: Celestial.UIToolkit.Extensions.EnumerableExtensions
+  definition: Celestial.UIToolkit.Extensions.EnumerableExtensions.AddRange``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})
+  name: AddRange<IValueConverter>(IEnumerable<IValueConverter>)
+  nameWithType: EnumerableExtensions.AddRange<IValueConverter>(IEnumerable<IValueConverter>)
+  fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.AddRange<System.Windows.Data.IValueConverter>(System.Collections.Generic.IEnumerable<System.Windows.Data.IValueConverter>)
+  nameWithType.vb: EnumerableExtensions.AddRange(Of IValueConverter)(IEnumerable(Of IValueConverter))
+  fullName.vb: Celestial.UIToolkit.Extensions.EnumerableExtensions.AddRange(Of System.Windows.Data.IValueConverter)(System.Collections.Generic.IEnumerable(Of System.Windows.Data.IValueConverter))
+  name.vb: AddRange(Of IValueConverter)(IEnumerable(Of IValueConverter))
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.AddRange``1(System.Collections.Generic.IEnumerable{``0})
+    name: AddRange<IValueConverter>
+    nameWithType: EnumerableExtensions.AddRange<IValueConverter>
+    fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.AddRange<System.Windows.Data.IValueConverter>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Windows.Data.IValueConverter
+    name: IValueConverter
+    nameWithType: IValueConverter
+    fullName: System.Windows.Data.IValueConverter
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.AddRange``1(System.Collections.Generic.IEnumerable{``0})
+    name: AddRange(Of IValueConverter)
+    nameWithType: EnumerableExtensions.AddRange(Of IValueConverter)
+    fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.AddRange(Of System.Windows.Data.IValueConverter)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Windows.Data.IValueConverter
+    name: IValueConverter
+    nameWithType: IValueConverter
+    fullName: System.Windows.Data.IValueConverter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IList{System.Windows.Data.IValueConverter}.Celestial.UIToolkit.Extensions.EnumerableExtensions.RemoveAll``1(System.Func{System.Windows.Data.IValueConverter,System.Boolean})
+  commentId: M:Celestial.UIToolkit.Extensions.EnumerableExtensions.RemoveAll``1(System.Collections.Generic.IList{``0},System.Func{``0,System.Boolean})
+  parent: Celestial.UIToolkit.Extensions.EnumerableExtensions
+  definition: Celestial.UIToolkit.Extensions.EnumerableExtensions.RemoveAll``1(System.Collections.Generic.IList{``0},System.Func{``0,System.Boolean})
+  name: RemoveAll<IValueConverter>(Func<IValueConverter, Boolean>)
+  nameWithType: EnumerableExtensions.RemoveAll<IValueConverter>(Func<IValueConverter, Boolean>)
+  fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.RemoveAll<System.Windows.Data.IValueConverter>(System.Func<System.Windows.Data.IValueConverter, System.Boolean>)
+  nameWithType.vb: EnumerableExtensions.RemoveAll(Of IValueConverter)(Func(Of IValueConverter, Boolean))
+  fullName.vb: Celestial.UIToolkit.Extensions.EnumerableExtensions.RemoveAll(Of System.Windows.Data.IValueConverter)(System.Func(Of System.Windows.Data.IValueConverter, System.Boolean))
+  name.vb: RemoveAll(Of IValueConverter)(Func(Of IValueConverter, Boolean))
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.RemoveAll``1(System.Func{``0,System.Boolean})
+    name: RemoveAll<IValueConverter>
+    nameWithType: EnumerableExtensions.RemoveAll<IValueConverter>
+    fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.RemoveAll<System.Windows.Data.IValueConverter>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Windows.Data.IValueConverter
+    name: IValueConverter
+    nameWithType: IValueConverter
+    fullName: System.Windows.Data.IValueConverter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.RemoveAll``1(System.Func{``0,System.Boolean})
+    name: RemoveAll(Of IValueConverter)
+    nameWithType: EnumerableExtensions.RemoveAll(Of IValueConverter)
+    fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.RemoveAll(Of System.Windows.Data.IValueConverter)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Windows.Data.IValueConverter
+    name: IValueConverter
+    nameWithType: IValueConverter
+    fullName: System.Windows.Data.IValueConverter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.Data
+  commentId: N:System.Windows.Data
+  isExternal: true
+  name: System.Windows.Data
+  nameWithType: System.Windows.Data
+  fullName: System.Windows.Data
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Collections.ObjectModel.Collection`1
+  commentId: T:System.Collections.ObjectModel.Collection`1
+  isExternal: true
+  name: Collection<T>
+  nameWithType: Collection<T>
+  fullName: System.Collections.ObjectModel.Collection<T>
+  nameWithType.vb: Collection(Of T)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T)
+  name.vb: Collection(Of T)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel
+  commentId: N:System.Collections.ObjectModel
+  isExternal: true
+  name: System.Collections.ObjectModel
+  nameWithType: System.Collections.ObjectModel
+  fullName: System.Collections.ObjectModel
+- uid: System.Collections.Generic.IList`1
+  commentId: T:System.Collections.Generic.IList`1
+  isExternal: true
+  name: IList<T>
+  nameWithType: IList<T>
+  fullName: System.Collections.Generic.IList<T>
+  nameWithType.vb: IList(Of T)
+  fullName.vb: System.Collections.Generic.IList(Of T)
+  name.vb: IList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: System.Collections.Generic.ICollection`1
+  commentId: T:System.Collections.Generic.ICollection`1
+  isExternal: true
+  name: ICollection<T>
+  nameWithType: ICollection<T>
+  fullName: System.Collections.Generic.ICollection<T>
+  nameWithType.vb: ICollection(Of T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T)
+  name.vb: ICollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: true
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+- uid: System.Collections.Generic.IReadOnlyList`1
+  commentId: T:System.Collections.Generic.IReadOnlyList`1
+  isExternal: true
+  name: IReadOnlyList<T>
+  nameWithType: IReadOnlyList<T>
+  fullName: System.Collections.Generic.IReadOnlyList<T>
+  nameWithType.vb: IReadOnlyList(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of T)
+  name.vb: IReadOnlyList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    nameWithType: IReadOnlyList
+    fullName: System.Collections.Generic.IReadOnlyList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    nameWithType: IReadOnlyList
+    fullName: System.Collections.Generic.IReadOnlyList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IReadOnlyCollection`1
+  commentId: T:System.Collections.Generic.IReadOnlyCollection`1
+  isExternal: true
+  name: IReadOnlyCollection<T>
+  nameWithType: IReadOnlyCollection<T>
+  fullName: System.Collections.Generic.IReadOnlyCollection<T>
+  nameWithType.vb: IReadOnlyCollection(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyCollection(Of T)
+  name.vb: IReadOnlyCollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1.Add(`0)
+  commentId: M:System.Collections.ObjectModel.Collection`1.Add(`0)
+  isExternal: true
+  name: Add(T)
+  nameWithType: Collection<T>.Add(T)
+  fullName: System.Collections.ObjectModel.Collection<T>.Add(T)
+  nameWithType.vb: Collection(Of T).Add(T)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T).Add(T)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.Add(`0)
+    name: Add
+    nameWithType: Collection<T>.Add
+    fullName: System.Collections.ObjectModel.Collection<T>.Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.Add(`0)
+    name: Add
+    nameWithType: Collection(Of T).Add
+    fullName: System.Collections.ObjectModel.Collection(Of T).Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1.Clear
+  commentId: M:System.Collections.ObjectModel.Collection`1.Clear
+  isExternal: true
+  name: Clear()
+  nameWithType: Collection<T>.Clear()
+  fullName: System.Collections.ObjectModel.Collection<T>.Clear()
+  nameWithType.vb: Collection(Of T).Clear()
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T).Clear()
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.Clear
+    name: Clear
+    nameWithType: Collection<T>.Clear
+    fullName: System.Collections.ObjectModel.Collection<T>.Clear
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.Clear
+    name: Clear
+    nameWithType: Collection(Of T).Clear
+    fullName: System.Collections.ObjectModel.Collection(Of T).Clear
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1.CopyTo(`0[],System.Int32)
+  commentId: M:System.Collections.ObjectModel.Collection`1.CopyTo(`0[],System.Int32)
+  isExternal: true
+  name: CopyTo(T[], Int32)
+  nameWithType: Collection<T>.CopyTo(T[], Int32)
+  fullName: System.Collections.ObjectModel.Collection<T>.CopyTo(T[], System.Int32)
+  nameWithType.vb: Collection(Of T).CopyTo(T(), Int32)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T).CopyTo(T(), System.Int32)
+  name.vb: CopyTo(T(), Int32)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    nameWithType: Collection<T>.CopyTo
+    fullName: System.Collections.ObjectModel.Collection<T>.CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    nameWithType: Collection(Of T).CopyTo
+    fullName: System.Collections.ObjectModel.Collection(Of T).CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1.Contains(`0)
+  commentId: M:System.Collections.ObjectModel.Collection`1.Contains(`0)
+  isExternal: true
+  name: Contains(T)
+  nameWithType: Collection<T>.Contains(T)
+  fullName: System.Collections.ObjectModel.Collection<T>.Contains(T)
+  nameWithType.vb: Collection(Of T).Contains(T)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T).Contains(T)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.Contains(`0)
+    name: Contains
+    nameWithType: Collection<T>.Contains
+    fullName: System.Collections.ObjectModel.Collection<T>.Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.Contains(`0)
+    name: Contains
+    nameWithType: Collection(Of T).Contains
+    fullName: System.Collections.ObjectModel.Collection(Of T).Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1.GetEnumerator
+  commentId: M:System.Collections.ObjectModel.Collection`1.GetEnumerator
+  isExternal: true
+  name: GetEnumerator()
+  nameWithType: Collection<T>.GetEnumerator()
+  fullName: System.Collections.ObjectModel.Collection<T>.GetEnumerator()
+  nameWithType.vb: Collection(Of T).GetEnumerator()
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: Collection<T>.GetEnumerator
+    fullName: System.Collections.ObjectModel.Collection<T>.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: Collection(Of T).GetEnumerator
+    fullName: System.Collections.ObjectModel.Collection(Of T).GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1.IndexOf(`0)
+  commentId: M:System.Collections.ObjectModel.Collection`1.IndexOf(`0)
+  isExternal: true
+  name: IndexOf(T)
+  nameWithType: Collection<T>.IndexOf(T)
+  fullName: System.Collections.ObjectModel.Collection<T>.IndexOf(T)
+  nameWithType.vb: Collection(Of T).IndexOf(T)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T).IndexOf(T)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.IndexOf(`0)
+    name: IndexOf
+    nameWithType: Collection<T>.IndexOf
+    fullName: System.Collections.ObjectModel.Collection<T>.IndexOf
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.IndexOf(`0)
+    name: IndexOf
+    nameWithType: Collection(Of T).IndexOf
+    fullName: System.Collections.ObjectModel.Collection(Of T).IndexOf
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1.Insert(System.Int32,`0)
+  commentId: M:System.Collections.ObjectModel.Collection`1.Insert(System.Int32,`0)
+  isExternal: true
+  name: Insert(Int32, T)
+  nameWithType: Collection<T>.Insert(Int32, T)
+  fullName: System.Collections.ObjectModel.Collection<T>.Insert(System.Int32, T)
+  nameWithType.vb: Collection(Of T).Insert(Int32, T)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T).Insert(System.Int32, T)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.Insert(System.Int32,`0)
+    name: Insert
+    nameWithType: Collection<T>.Insert
+    fullName: System.Collections.ObjectModel.Collection<T>.Insert
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.Insert(System.Int32,`0)
+    name: Insert
+    nameWithType: Collection(Of T).Insert
+    fullName: System.Collections.ObjectModel.Collection(Of T).Insert
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1.Remove(`0)
+  commentId: M:System.Collections.ObjectModel.Collection`1.Remove(`0)
+  isExternal: true
+  name: Remove(T)
+  nameWithType: Collection<T>.Remove(T)
+  fullName: System.Collections.ObjectModel.Collection<T>.Remove(T)
+  nameWithType.vb: Collection(Of T).Remove(T)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T).Remove(T)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.Remove(`0)
+    name: Remove
+    nameWithType: Collection<T>.Remove
+    fullName: System.Collections.ObjectModel.Collection<T>.Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.Remove(`0)
+    name: Remove
+    nameWithType: Collection(Of T).Remove
+    fullName: System.Collections.ObjectModel.Collection(Of T).Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1.RemoveAt(System.Int32)
+  commentId: M:System.Collections.ObjectModel.Collection`1.RemoveAt(System.Int32)
+  isExternal: true
+  name: RemoveAt(Int32)
+  nameWithType: Collection<T>.RemoveAt(Int32)
+  fullName: System.Collections.ObjectModel.Collection<T>.RemoveAt(System.Int32)
+  nameWithType.vb: Collection(Of T).RemoveAt(Int32)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T).RemoveAt(System.Int32)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.RemoveAt(System.Int32)
+    name: RemoveAt
+    nameWithType: Collection<T>.RemoveAt
+    fullName: System.Collections.ObjectModel.Collection<T>.RemoveAt
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.RemoveAt(System.Int32)
+    name: RemoveAt
+    nameWithType: Collection(Of T).RemoveAt
+    fullName: System.Collections.ObjectModel.Collection(Of T).RemoveAt
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1.ClearItems
+  commentId: M:System.Collections.ObjectModel.Collection`1.ClearItems
+  isExternal: true
+  name: ClearItems()
+  nameWithType: Collection<T>.ClearItems()
+  fullName: System.Collections.ObjectModel.Collection<T>.ClearItems()
+  nameWithType.vb: Collection(Of T).ClearItems()
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T).ClearItems()
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.ClearItems
+    name: ClearItems
+    nameWithType: Collection<T>.ClearItems
+    fullName: System.Collections.ObjectModel.Collection<T>.ClearItems
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.ClearItems
+    name: ClearItems
+    nameWithType: Collection(Of T).ClearItems
+    fullName: System.Collections.ObjectModel.Collection(Of T).ClearItems
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1.InsertItem(System.Int32,`0)
+  commentId: M:System.Collections.ObjectModel.Collection`1.InsertItem(System.Int32,`0)
+  isExternal: true
+  name: InsertItem(Int32, T)
+  nameWithType: Collection<T>.InsertItem(Int32, T)
+  fullName: System.Collections.ObjectModel.Collection<T>.InsertItem(System.Int32, T)
+  nameWithType.vb: Collection(Of T).InsertItem(Int32, T)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T).InsertItem(System.Int32, T)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.InsertItem(System.Int32,`0)
+    name: InsertItem
+    nameWithType: Collection<T>.InsertItem
+    fullName: System.Collections.ObjectModel.Collection<T>.InsertItem
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.InsertItem(System.Int32,`0)
+    name: InsertItem
+    nameWithType: Collection(Of T).InsertItem
+    fullName: System.Collections.ObjectModel.Collection(Of T).InsertItem
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1.RemoveItem(System.Int32)
+  commentId: M:System.Collections.ObjectModel.Collection`1.RemoveItem(System.Int32)
+  isExternal: true
+  name: RemoveItem(Int32)
+  nameWithType: Collection<T>.RemoveItem(Int32)
+  fullName: System.Collections.ObjectModel.Collection<T>.RemoveItem(System.Int32)
+  nameWithType.vb: Collection(Of T).RemoveItem(Int32)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T).RemoveItem(System.Int32)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.RemoveItem(System.Int32)
+    name: RemoveItem
+    nameWithType: Collection<T>.RemoveItem
+    fullName: System.Collections.ObjectModel.Collection<T>.RemoveItem
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.RemoveItem(System.Int32)
+    name: RemoveItem
+    nameWithType: Collection(Of T).RemoveItem
+    fullName: System.Collections.ObjectModel.Collection(Of T).RemoveItem
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1.SetItem(System.Int32,`0)
+  commentId: M:System.Collections.ObjectModel.Collection`1.SetItem(System.Int32,`0)
+  isExternal: true
+  name: SetItem(Int32, T)
+  nameWithType: Collection<T>.SetItem(Int32, T)
+  fullName: System.Collections.ObjectModel.Collection<T>.SetItem(System.Int32, T)
+  nameWithType.vb: Collection(Of T).SetItem(Int32, T)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T).SetItem(System.Int32, T)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.SetItem(System.Int32,`0)
+    name: SetItem
+    nameWithType: Collection<T>.SetItem
+    fullName: System.Collections.ObjectModel.Collection<T>.SetItem
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.SetItem(System.Int32,`0)
+    name: SetItem
+    nameWithType: Collection(Of T).SetItem
+    fullName: System.Collections.ObjectModel.Collection(Of T).SetItem
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1.System#Collections#IEnumerable#GetEnumerator
+  commentId: M:System.Collections.ObjectModel.Collection`1.System#Collections#IEnumerable#GetEnumerator
+  isExternal: true
+  name: IEnumerable.GetEnumerator()
+  nameWithType: Collection<T>.IEnumerable.GetEnumerator()
+  fullName: System.Collections.ObjectModel.Collection<T>.System.Collections.IEnumerable.GetEnumerator()
+  nameWithType.vb: Collection(Of T).System.Collections.IEnumerable.GetEnumerator()
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T).System.Collections.IEnumerable.GetEnumerator()
+  name.vb: System.Collections.IEnumerable.GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IEnumerable#GetEnumerator
+    name: IEnumerable.GetEnumerator
+    nameWithType: Collection<T>.IEnumerable.GetEnumerator
+    fullName: System.Collections.ObjectModel.Collection<T>.System.Collections.IEnumerable.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IEnumerable#GetEnumerator
+    name: System.Collections.IEnumerable.GetEnumerator
+    nameWithType: Collection(Of T).System.Collections.IEnumerable.GetEnumerator
+    fullName: System.Collections.ObjectModel.Collection(Of T).System.Collections.IEnumerable.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+  commentId: M:System.Collections.ObjectModel.Collection`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+  isExternal: true
+  name: ICollection.CopyTo(Array, Int32)
+  nameWithType: Collection<T>.ICollection.CopyTo(Array, Int32)
+  fullName: System.Collections.ObjectModel.Collection<T>.System.Collections.ICollection.CopyTo(System.Array, System.Int32)
+  nameWithType.vb: Collection(Of T).System.Collections.ICollection.CopyTo(Array, Int32)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T).System.Collections.ICollection.CopyTo(System.Array, System.Int32)
+  name.vb: System.Collections.ICollection.CopyTo(Array, Int32)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+    name: ICollection.CopyTo
+    nameWithType: Collection<T>.ICollection.CopyTo
+    fullName: System.Collections.ObjectModel.Collection<T>.System.Collections.ICollection.CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Array
+    name: Array
+    nameWithType: Array
+    fullName: System.Array
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+    name: System.Collections.ICollection.CopyTo
+    nameWithType: Collection(Of T).System.Collections.ICollection.CopyTo
+    fullName: System.Collections.ObjectModel.Collection(Of T).System.Collections.ICollection.CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Array
+    name: Array
+    nameWithType: Array
+    fullName: System.Array
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#get_Item(System.Int32)
+  commentId: M:System.Collections.ObjectModel.Collection`1.System#Collections#IList#get_Item(System.Int32)
+  isExternal: true
+  name: IList.get_Item(Int32)
+  nameWithType: Collection<T>.IList.get_Item(Int32)
+  fullName: System.Collections.ObjectModel.Collection<T>.System.Collections.IList.get_Item(System.Int32)
+  nameWithType.vb: Collection(Of T).System.Collections.IList.get_Item(Int32)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T).System.Collections.IList.get_Item(System.Int32)
+  name.vb: System.Collections.IList.get_Item(Int32)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#get_Item(System.Int32)
+    name: IList.get_Item
+    nameWithType: Collection<T>.IList.get_Item
+    fullName: System.Collections.ObjectModel.Collection<T>.System.Collections.IList.get_Item
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#get_Item(System.Int32)
+    name: System.Collections.IList.get_Item
+    nameWithType: Collection(Of T).System.Collections.IList.get_Item
+    fullName: System.Collections.ObjectModel.Collection(Of T).System.Collections.IList.get_Item
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#set_Item(System.Int32,System.Object)
+  commentId: M:System.Collections.ObjectModel.Collection`1.System#Collections#IList#set_Item(System.Int32,System.Object)
+  isExternal: true
+  name: IList.set_Item(Int32, Object)
+  nameWithType: Collection<T>.IList.set_Item(Int32, Object)
+  fullName: System.Collections.ObjectModel.Collection<T>.System.Collections.IList.set_Item(System.Int32, System.Object)
+  nameWithType.vb: Collection(Of T).System.Collections.IList.set_Item(Int32, Object)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T).System.Collections.IList.set_Item(System.Int32, System.Object)
+  name.vb: System.Collections.IList.set_Item(Int32, Object)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#set_Item(System.Int32,System.Object)
+    name: IList.set_Item
+    nameWithType: Collection<T>.IList.set_Item
+    fullName: System.Collections.ObjectModel.Collection<T>.System.Collections.IList.set_Item
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#set_Item(System.Int32,System.Object)
+    name: System.Collections.IList.set_Item
+    nameWithType: Collection(Of T).System.Collections.IList.set_Item
+    fullName: System.Collections.ObjectModel.Collection(Of T).System.Collections.IList.set_Item
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#Add(System.Object)
+  commentId: M:System.Collections.ObjectModel.Collection`1.System#Collections#IList#Add(System.Object)
+  isExternal: true
+  name: IList.Add(Object)
+  nameWithType: Collection<T>.IList.Add(Object)
+  fullName: System.Collections.ObjectModel.Collection<T>.System.Collections.IList.Add(System.Object)
+  nameWithType.vb: Collection(Of T).System.Collections.IList.Add(Object)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T).System.Collections.IList.Add(System.Object)
+  name.vb: System.Collections.IList.Add(Object)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#Add(System.Object)
+    name: IList.Add
+    nameWithType: Collection<T>.IList.Add
+    fullName: System.Collections.ObjectModel.Collection<T>.System.Collections.IList.Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#Add(System.Object)
+    name: System.Collections.IList.Add
+    nameWithType: Collection(Of T).System.Collections.IList.Add
+    fullName: System.Collections.ObjectModel.Collection(Of T).System.Collections.IList.Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#Contains(System.Object)
+  commentId: M:System.Collections.ObjectModel.Collection`1.System#Collections#IList#Contains(System.Object)
+  isExternal: true
+  name: IList.Contains(Object)
+  nameWithType: Collection<T>.IList.Contains(Object)
+  fullName: System.Collections.ObjectModel.Collection<T>.System.Collections.IList.Contains(System.Object)
+  nameWithType.vb: Collection(Of T).System.Collections.IList.Contains(Object)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T).System.Collections.IList.Contains(System.Object)
+  name.vb: System.Collections.IList.Contains(Object)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#Contains(System.Object)
+    name: IList.Contains
+    nameWithType: Collection<T>.IList.Contains
+    fullName: System.Collections.ObjectModel.Collection<T>.System.Collections.IList.Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#Contains(System.Object)
+    name: System.Collections.IList.Contains
+    nameWithType: Collection(Of T).System.Collections.IList.Contains
+    fullName: System.Collections.ObjectModel.Collection(Of T).System.Collections.IList.Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#IndexOf(System.Object)
+  commentId: M:System.Collections.ObjectModel.Collection`1.System#Collections#IList#IndexOf(System.Object)
+  isExternal: true
+  name: IList.IndexOf(Object)
+  nameWithType: Collection<T>.IList.IndexOf(Object)
+  fullName: System.Collections.ObjectModel.Collection<T>.System.Collections.IList.IndexOf(System.Object)
+  nameWithType.vb: Collection(Of T).System.Collections.IList.IndexOf(Object)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T).System.Collections.IList.IndexOf(System.Object)
+  name.vb: System.Collections.IList.IndexOf(Object)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#IndexOf(System.Object)
+    name: IList.IndexOf
+    nameWithType: Collection<T>.IList.IndexOf
+    fullName: System.Collections.ObjectModel.Collection<T>.System.Collections.IList.IndexOf
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#IndexOf(System.Object)
+    name: System.Collections.IList.IndexOf
+    nameWithType: Collection(Of T).System.Collections.IList.IndexOf
+    fullName: System.Collections.ObjectModel.Collection(Of T).System.Collections.IList.IndexOf
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#Insert(System.Int32,System.Object)
+  commentId: M:System.Collections.ObjectModel.Collection`1.System#Collections#IList#Insert(System.Int32,System.Object)
+  isExternal: true
+  name: IList.Insert(Int32, Object)
+  nameWithType: Collection<T>.IList.Insert(Int32, Object)
+  fullName: System.Collections.ObjectModel.Collection<T>.System.Collections.IList.Insert(System.Int32, System.Object)
+  nameWithType.vb: Collection(Of T).System.Collections.IList.Insert(Int32, Object)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T).System.Collections.IList.Insert(System.Int32, System.Object)
+  name.vb: System.Collections.IList.Insert(Int32, Object)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#Insert(System.Int32,System.Object)
+    name: IList.Insert
+    nameWithType: Collection<T>.IList.Insert
+    fullName: System.Collections.ObjectModel.Collection<T>.System.Collections.IList.Insert
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#Insert(System.Int32,System.Object)
+    name: System.Collections.IList.Insert
+    nameWithType: Collection(Of T).System.Collections.IList.Insert
+    fullName: System.Collections.ObjectModel.Collection(Of T).System.Collections.IList.Insert
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#Remove(System.Object)
+  commentId: M:System.Collections.ObjectModel.Collection`1.System#Collections#IList#Remove(System.Object)
+  isExternal: true
+  name: IList.Remove(Object)
+  nameWithType: Collection<T>.IList.Remove(Object)
+  fullName: System.Collections.ObjectModel.Collection<T>.System.Collections.IList.Remove(System.Object)
+  nameWithType.vb: Collection(Of T).System.Collections.IList.Remove(Object)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T).System.Collections.IList.Remove(System.Object)
+  name.vb: System.Collections.IList.Remove(Object)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#Remove(System.Object)
+    name: IList.Remove
+    nameWithType: Collection<T>.IList.Remove
+    fullName: System.Collections.ObjectModel.Collection<T>.System.Collections.IList.Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#Remove(System.Object)
+    name: System.Collections.IList.Remove
+    nameWithType: Collection(Of T).System.Collections.IList.Remove
+    fullName: System.Collections.ObjectModel.Collection(Of T).System.Collections.IList.Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1.Count
+  commentId: P:System.Collections.ObjectModel.Collection`1.Count
+  isExternal: true
+  name: Count
+  nameWithType: Collection<T>.Count
+  fullName: System.Collections.ObjectModel.Collection<T>.Count
+  nameWithType.vb: Collection(Of T).Count
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T).Count
+- uid: System.Collections.ObjectModel.Collection`1.Items
+  commentId: P:System.Collections.ObjectModel.Collection`1.Items
+  isExternal: true
+  name: Items
+  nameWithType: Collection<T>.Items
+  fullName: System.Collections.ObjectModel.Collection<T>.Items
+  nameWithType.vb: Collection(Of T).Items
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T).Items
+- uid: System.Collections.ObjectModel.Collection`1.Item(System.Int32)
+  commentId: P:System.Collections.ObjectModel.Collection`1.Item(System.Int32)
+  isExternal: true
+  name: Item[Int32]
+  nameWithType: Collection<T>.Item[Int32]
+  fullName: System.Collections.ObjectModel.Collection<T>.Item[System.Int32]
+  nameWithType.vb: Collection(Of T).Item(Int32)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T).Item(System.Int32)
+  name.vb: Item(Int32)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.Item(System.Int32)
+    name: Item
+    nameWithType: Collection<T>.Item
+    fullName: System.Collections.ObjectModel.Collection<T>.Item
+    isExternal: true
+  - name: '['
+    nameWithType: '['
+    fullName: '['
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ']'
+    nameWithType: ']'
+    fullName: ']'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.Item(System.Int32)
+    name: Item
+    nameWithType: Collection(Of T).Item
+    fullName: System.Collections.ObjectModel.Collection(Of T).Item
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1.System#Collections#Generic#ICollection{T}#IsReadOnly
+  commentId: P:System.Collections.ObjectModel.Collection`1.System#Collections#Generic#ICollection{T}#IsReadOnly
+  isExternal: true
+  name: ICollection<T>.IsReadOnly
+  nameWithType: Collection<T>.ICollection<T>.IsReadOnly
+  fullName: System.Collections.ObjectModel.Collection<T>.System.Collections.Generic.ICollection<T>.IsReadOnly
+  nameWithType.vb: Collection(Of T).System.Collections.Generic.ICollection<T>.IsReadOnly
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T).System.Collections.Generic.ICollection<T>.IsReadOnly
+  name.vb: System.Collections.Generic.ICollection<T>.IsReadOnly
+- uid: System.Collections.ObjectModel.Collection`1.System#Collections#ICollection#IsSynchronized
+  commentId: P:System.Collections.ObjectModel.Collection`1.System#Collections#ICollection#IsSynchronized
+  isExternal: true
+  name: ICollection.IsSynchronized
+  nameWithType: Collection<T>.ICollection.IsSynchronized
+  fullName: System.Collections.ObjectModel.Collection<T>.System.Collections.ICollection.IsSynchronized
+  nameWithType.vb: Collection(Of T).System.Collections.ICollection.IsSynchronized
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T).System.Collections.ICollection.IsSynchronized
+  name.vb: System.Collections.ICollection.IsSynchronized
+- uid: System.Collections.ObjectModel.Collection`1.System#Collections#ICollection#SyncRoot
+  commentId: P:System.Collections.ObjectModel.Collection`1.System#Collections#ICollection#SyncRoot
+  isExternal: true
+  name: ICollection.SyncRoot
+  nameWithType: Collection<T>.ICollection.SyncRoot
+  fullName: System.Collections.ObjectModel.Collection<T>.System.Collections.ICollection.SyncRoot
+  nameWithType.vb: Collection(Of T).System.Collections.ICollection.SyncRoot
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T).System.Collections.ICollection.SyncRoot
+  name.vb: System.Collections.ICollection.SyncRoot
+- uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#Item(System.Int32)
+  commentId: P:System.Collections.ObjectModel.Collection`1.System#Collections#IList#Item(System.Int32)
+  isExternal: true
+  name: IList.Item[Int32]
+  nameWithType: Collection<T>.IList.Item[Int32]
+  fullName: System.Collections.ObjectModel.Collection<T>.System.Collections.IList.Item[System.Int32]
+  nameWithType.vb: Collection(Of T).System.Collections.IList.Item(Int32)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T).System.Collections.IList.Item(System.Int32)
+  name.vb: System.Collections.IList.Item(Int32)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#Item(System.Int32)
+    name: IList.Item
+    nameWithType: Collection<T>.IList.Item
+    fullName: System.Collections.ObjectModel.Collection<T>.System.Collections.IList.Item
+    isExternal: true
+  - name: '['
+    nameWithType: '['
+    fullName: '['
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ']'
+    nameWithType: ']'
+    fullName: ']'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#Item(System.Int32)
+    name: System.Collections.IList.Item
+    nameWithType: Collection(Of T).System.Collections.IList.Item
+    fullName: System.Collections.ObjectModel.Collection(Of T).System.Collections.IList.Item
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#IsReadOnly
+  commentId: P:System.Collections.ObjectModel.Collection`1.System#Collections#IList#IsReadOnly
+  isExternal: true
+  name: IList.IsReadOnly
+  nameWithType: Collection<T>.IList.IsReadOnly
+  fullName: System.Collections.ObjectModel.Collection<T>.System.Collections.IList.IsReadOnly
+  nameWithType.vb: Collection(Of T).System.Collections.IList.IsReadOnly
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T).System.Collections.IList.IsReadOnly
+  name.vb: System.Collections.IList.IsReadOnly
+- uid: System.Collections.ObjectModel.Collection`1.System#Collections#IList#IsFixedSize
+  commentId: P:System.Collections.ObjectModel.Collection`1.System#Collections#IList#IsFixedSize
+  isExternal: true
+  name: IList.IsFixedSize
+  nameWithType: Collection<T>.IList.IsFixedSize
+  fullName: System.Collections.ObjectModel.Collection<T>.System.Collections.IList.IsFixedSize
+  nameWithType.vb: Collection(Of T).System.Collections.IList.IsFixedSize
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T).System.Collections.IList.IsFixedSize
+  name.vb: System.Collections.IList.IsFixedSize
+- uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfter``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+  commentId: M:Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfter``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+  isExternal: true
+  name: ElementAfter<T>(IEnumerable<T>, Int32)
+  nameWithType: EnumerableExtensions.ElementAfter<T>(IEnumerable<T>, Int32)
+  fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfter<T>(System.Collections.Generic.IEnumerable<T>, System.Int32)
+  nameWithType.vb: EnumerableExtensions.ElementAfter(Of T)(IEnumerable(Of T), Int32)
+  fullName.vb: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfter(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Int32)
+  name.vb: ElementAfter(Of T)(IEnumerable(Of T), Int32)
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfter``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+    name: ElementAfter<T>
+    nameWithType: EnumerableExtensions.ElementAfter<T>
+    fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfter<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfter``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+    name: ElementAfter(Of T)
+    nameWithType: EnumerableExtensions.ElementAfter(Of T)
+    fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfter(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Celestial.UIToolkit.Extensions.EnumerableExtensions
+  commentId: T:Celestial.UIToolkit.Extensions.EnumerableExtensions
+  parent: Celestial.UIToolkit.Extensions
+  name: EnumerableExtensions
+  nameWithType: EnumerableExtensions
+  fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions
+- uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfterOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+  commentId: M:Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfterOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+  isExternal: true
+  name: ElementAfterOrDefault<T>(IEnumerable<T>, Int32)
+  nameWithType: EnumerableExtensions.ElementAfterOrDefault<T>(IEnumerable<T>, Int32)
+  fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfterOrDefault<T>(System.Collections.Generic.IEnumerable<T>, System.Int32)
+  nameWithType.vb: EnumerableExtensions.ElementAfterOrDefault(Of T)(IEnumerable(Of T), Int32)
+  fullName.vb: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfterOrDefault(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Int32)
+  name.vb: ElementAfterOrDefault(Of T)(IEnumerable(Of T), Int32)
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfterOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+    name: ElementAfterOrDefault<T>
+    nameWithType: EnumerableExtensions.ElementAfterOrDefault<T>
+    fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfterOrDefault<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfterOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+    name: ElementAfterOrDefault(Of T)
+    nameWithType: EnumerableExtensions.ElementAfterOrDefault(Of T)
+    fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfterOrDefault(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBefore``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+  commentId: M:Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBefore``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+  isExternal: true
+  name: ElementBefore<T>(IEnumerable<T>, Int32)
+  nameWithType: EnumerableExtensions.ElementBefore<T>(IEnumerable<T>, Int32)
+  fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBefore<T>(System.Collections.Generic.IEnumerable<T>, System.Int32)
+  nameWithType.vb: EnumerableExtensions.ElementBefore(Of T)(IEnumerable(Of T), Int32)
+  fullName.vb: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBefore(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Int32)
+  name.vb: ElementBefore(Of T)(IEnumerable(Of T), Int32)
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBefore``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+    name: ElementBefore<T>
+    nameWithType: EnumerableExtensions.ElementBefore<T>
+    fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBefore<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBefore``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+    name: ElementBefore(Of T)
+    nameWithType: EnumerableExtensions.ElementBefore(Of T)
+    fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBefore(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBeforeOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+  commentId: M:Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBeforeOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+  isExternal: true
+  name: ElementBeforeOrDefault<T>(IEnumerable<T>, Int32)
+  nameWithType: EnumerableExtensions.ElementBeforeOrDefault<T>(IEnumerable<T>, Int32)
+  fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBeforeOrDefault<T>(System.Collections.Generic.IEnumerable<T>, System.Int32)
+  nameWithType.vb: EnumerableExtensions.ElementBeforeOrDefault(Of T)(IEnumerable(Of T), Int32)
+  fullName.vb: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBeforeOrDefault(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Int32)
+  name.vb: ElementBeforeOrDefault(Of T)(IEnumerable(Of T), Int32)
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBeforeOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+    name: ElementBeforeOrDefault<T>
+    nameWithType: EnumerableExtensions.ElementBeforeOrDefault<T>
+    fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBeforeOrDefault<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBeforeOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+    name: ElementBeforeOrDefault(Of T)
+    nameWithType: EnumerableExtensions.ElementBeforeOrDefault(Of T)
+    fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBeforeOrDefault(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.IndexOf``1(System.Collections.Generic.IEnumerable{``0},``0)
+  commentId: M:Celestial.UIToolkit.Extensions.EnumerableExtensions.IndexOf``1(System.Collections.Generic.IEnumerable{``0},``0)
+  isExternal: true
+  name: IndexOf<T>(IEnumerable<T>, T)
+  nameWithType: EnumerableExtensions.IndexOf<T>(IEnumerable<T>, T)
+  fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.IndexOf<T>(System.Collections.Generic.IEnumerable<T>, T)
+  nameWithType.vb: EnumerableExtensions.IndexOf(Of T)(IEnumerable(Of T), T)
+  fullName.vb: Celestial.UIToolkit.Extensions.EnumerableExtensions.IndexOf(Of T)(System.Collections.Generic.IEnumerable(Of T), T)
+  name.vb: IndexOf(Of T)(IEnumerable(Of T), T)
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.IndexOf``1(System.Collections.Generic.IEnumerable{``0},``0)
+    name: IndexOf<T>
+    nameWithType: EnumerableExtensions.IndexOf<T>
+    fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.IndexOf<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.IndexOf``1(System.Collections.Generic.IEnumerable{``0},``0)
+    name: IndexOf(Of T)
+    nameWithType: EnumerableExtensions.IndexOf(Of T)
+    fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.IndexOf(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.AddRange``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})
+  commentId: M:Celestial.UIToolkit.Extensions.EnumerableExtensions.AddRange``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})
+  isExternal: true
+  name: AddRange<T>(ICollection<T>, IEnumerable<T>)
+  nameWithType: EnumerableExtensions.AddRange<T>(ICollection<T>, IEnumerable<T>)
+  fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.AddRange<T>(System.Collections.Generic.ICollection<T>, System.Collections.Generic.IEnumerable<T>)
+  nameWithType.vb: EnumerableExtensions.AddRange(Of T)(ICollection(Of T), IEnumerable(Of T))
+  fullName.vb: Celestial.UIToolkit.Extensions.EnumerableExtensions.AddRange(Of T)(System.Collections.Generic.ICollection(Of T), System.Collections.Generic.IEnumerable(Of T))
+  name.vb: AddRange(Of T)(ICollection(Of T), IEnumerable(Of T))
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.AddRange``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})
+    name: AddRange<T>
+    nameWithType: EnumerableExtensions.AddRange<T>
+    fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.AddRange<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.AddRange``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})
+    name: AddRange(Of T)
+    nameWithType: EnumerableExtensions.AddRange(Of T)
+    fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.AddRange(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.RemoveAll``1(System.Collections.Generic.IList{``0},System.Func{``0,System.Boolean})
+  commentId: M:Celestial.UIToolkit.Extensions.EnumerableExtensions.RemoveAll``1(System.Collections.Generic.IList{``0},System.Func{``0,System.Boolean})
+  isExternal: true
+  name: RemoveAll<T>(IList<T>, Func<T, Boolean>)
+  nameWithType: EnumerableExtensions.RemoveAll<T>(IList<T>, Func<T, Boolean>)
+  fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.RemoveAll<T>(System.Collections.Generic.IList<T>, System.Func<T, System.Boolean>)
+  nameWithType.vb: EnumerableExtensions.RemoveAll(Of T)(IList(Of T), Func(Of T, Boolean))
+  fullName.vb: Celestial.UIToolkit.Extensions.EnumerableExtensions.RemoveAll(Of T)(System.Collections.Generic.IList(Of T), System.Func(Of T, System.Boolean))
+  name.vb: RemoveAll(Of T)(IList(Of T), Func(Of T, Boolean))
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.RemoveAll``1(System.Collections.Generic.IList{``0},System.Func{``0,System.Boolean})
+    name: RemoveAll<T>
+    nameWithType: EnumerableExtensions.RemoveAll<T>
+    fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.RemoveAll<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.RemoveAll``1(System.Collections.Generic.IList{``0},System.Func{``0,System.Boolean})
+    name: RemoveAll(Of T)
+    nameWithType: EnumerableExtensions.RemoveAll(Of T)
+    fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.RemoveAll(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Celestial.UIToolkit.Extensions
+  commentId: N:Celestial.UIToolkit.Extensions
+  name: Celestial.UIToolkit.Extensions
+  nameWithType: Celestial.UIToolkit.Extensions
+  fullName: Celestial.UIToolkit.Extensions
+- uid: Celestial.UIToolkit.Converters.GroupConverter.Convert*
+  commentId: Overload:Celestial.UIToolkit.Converters.GroupConverter.Convert
+  name: Convert
+  nameWithType: GroupConverter.Convert
+  fullName: Celestial.UIToolkit.Converters.GroupConverter.Convert
+- uid: System.Windows.Data.IValueConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  commentId: M:System.Windows.Data.IValueConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  parent: System.Windows.Data.IValueConverter
+  isExternal: true
+  name: Convert(Object, Type, Object, CultureInfo)
+  nameWithType: IValueConverter.Convert(Object, Type, Object, CultureInfo)
+  fullName: System.Windows.Data.IValueConverter.Convert(System.Object, System.Type, System.Object, System.Globalization.CultureInfo)
+  spec.csharp:
+  - uid: System.Windows.Data.IValueConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+    name: Convert
+    nameWithType: IValueConverter.Convert
+    fullName: System.Windows.Data.IValueConverter.Convert
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Globalization.CultureInfo
+    name: CultureInfo
+    nameWithType: CultureInfo
+    fullName: System.Globalization.CultureInfo
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.Data.IValueConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+    name: Convert
+    nameWithType: IValueConverter.Convert
+    fullName: System.Windows.Data.IValueConverter.Convert
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Globalization.CultureInfo
+    name: CultureInfo
+    nameWithType: CultureInfo
+    fullName: System.Globalization.CultureInfo
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: System.Globalization.CultureInfo
+  commentId: T:System.Globalization.CultureInfo
+  parent: System.Globalization
+  isExternal: true
+  name: CultureInfo
+  nameWithType: CultureInfo
+  fullName: System.Globalization.CultureInfo
+- uid: System.Globalization
+  commentId: N:System.Globalization
+  isExternal: true
+  name: System.Globalization
+  nameWithType: System.Globalization
+  fullName: System.Globalization
+- uid: Celestial.UIToolkit.Converters.GroupConverter.ConvertBack*
+  commentId: Overload:Celestial.UIToolkit.Converters.GroupConverter.ConvertBack
+  name: ConvertBack
+  nameWithType: GroupConverter.ConvertBack
+  fullName: Celestial.UIToolkit.Converters.GroupConverter.ConvertBack
+- uid: System.Windows.Data.IValueConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  commentId: M:System.Windows.Data.IValueConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  parent: System.Windows.Data.IValueConverter
+  isExternal: true
+  name: ConvertBack(Object, Type, Object, CultureInfo)
+  nameWithType: IValueConverter.ConvertBack(Object, Type, Object, CultureInfo)
+  fullName: System.Windows.Data.IValueConverter.ConvertBack(System.Object, System.Type, System.Object, System.Globalization.CultureInfo)
+  spec.csharp:
+  - uid: System.Windows.Data.IValueConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+    name: ConvertBack
+    nameWithType: IValueConverter.ConvertBack
+    fullName: System.Windows.Data.IValueConverter.ConvertBack
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Globalization.CultureInfo
+    name: CultureInfo
+    nameWithType: CultureInfo
+    fullName: System.Globalization.CultureInfo
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.Data.IValueConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+    name: ConvertBack
+    nameWithType: IValueConverter.ConvertBack
+    fullName: System.Windows.Data.IValueConverter.ConvertBack
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Globalization.CultureInfo
+    name: CultureInfo
+    nameWithType: CultureInfo
+    fullName: System.Globalization.CultureInfo
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )

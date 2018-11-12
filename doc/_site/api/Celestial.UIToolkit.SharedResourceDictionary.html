@@ -1,0 +1,356 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class SharedResourceDictionary
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class SharedResourceDictionary
+   ">
+    <meta name="generator" content="docfx 2.40.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Celestial.UIToolkit.SharedResourceDictionary">
+  
+  
+  <h1 id="Celestial_UIToolkit_SharedResourceDictionary" data-uid="Celestial.UIToolkit.SharedResourceDictionary" class="text-break">Class SharedResourceDictionary
+  </h1>
+  <div class="markdown level0 summary"><p>An extension of the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary">ResourceDictionary</a> class which shadows
+the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.source#System_Windows_ResourceDictionary_Source">Source</a> property.
+The difference to a normal resource dictionary is that when this class'
+<a class="xref" href="Celestial.UIToolkit.SharedResourceDictionary.html#Celestial_UIToolkit_SharedResourceDictionary_Source">Source</a> property is set, the dictionary from that source gets
+loaded via the <span class="xref">Celestial.UIToolkit.SharedResourceDictionaryManager</span>, which allows
+caching of the resource dictionaries.
+The loaded resource dictionary set by the <a class="xref" href="Celestial.UIToolkit.SharedResourceDictionary.html#Celestial_UIToolkit_SharedResourceDictionary_Source">Source</a> property is then
+accessible via the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.mergeddictionaries#System_Windows_ResourceDictionary_MergedDictionaries">MergedDictionaries</a> property.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary">ResourceDictionary</a></div>
+    <div class="level2"><span class="xref">SharedResourceDictionary</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.idictionary">IDictionary</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.icollection">ICollection</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.componentmodel.isupportinitialize">ISupportInitialize</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.markup.iuricontext">IUriContext</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.markup.inamescope">INameScope</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.copyto#System_Windows_ResourceDictionary_CopyTo_System_Collections_DictionaryEntry___System_Int32_">ResourceDictionary.CopyTo(DictionaryEntry[], Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.registername#System_Windows_ResourceDictionary_RegisterName_System_String_System_Object_">ResourceDictionary.RegisterName(String, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.unregistername#System_Windows_ResourceDictionary_UnregisterName_System_String_">ResourceDictionary.UnregisterName(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.findname#System_Windows_ResourceDictionary_FindName_System_String_">ResourceDictionary.FindName(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.add#System_Windows_ResourceDictionary_Add_System_Object_System_Object_">ResourceDictionary.Add(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.clear#System_Windows_ResourceDictionary_Clear">ResourceDictionary.Clear()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.contains#System_Windows_ResourceDictionary_Contains_System_Object_">ResourceDictionary.Contains(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.getenumerator#System_Windows_ResourceDictionary_GetEnumerator">ResourceDictionary.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.remove#System_Windows_ResourceDictionary_Remove_System_Object_">ResourceDictionary.Remove(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.system-collections-icollection-copyto#System_Windows_ResourceDictionary_System_Collections_ICollection_CopyTo_System_Array_System_Int32_">ResourceDictionary.ICollection.CopyTo(Array, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.system-collections-ienumerable-getenumerator#System_Windows_ResourceDictionary_System_Collections_IEnumerable_GetEnumerator">ResourceDictionary.IEnumerable.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.begininit#System_Windows_ResourceDictionary_BeginInit">ResourceDictionary.BeginInit()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.endinit#System_Windows_ResourceDictionary_EndInit">ResourceDictionary.EndInit()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.ongettingvalue#System_Windows_ResourceDictionary_OnGettingValue_System_Object_System_Object__System_Boolean__">ResourceDictionary.OnGettingValue(Object, Object, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.mergeddictionaries#System_Windows_ResourceDictionary_MergedDictionaries">ResourceDictionary.MergedDictionaries</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.system-windows-markup-iuricontext-baseuri#System_Windows_ResourceDictionary_System_Windows_Markup_IUriContext_BaseUri">ResourceDictionary.IUriContext.BaseUri</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.isfixedsize#System_Windows_ResourceDictionary_IsFixedSize">ResourceDictionary.IsFixedSize</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.isreadonly#System_Windows_ResourceDictionary_IsReadOnly">ResourceDictionary.IsReadOnly</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.item#System_Windows_ResourceDictionary_Item_System_Object_">ResourceDictionary.Item[Object]</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.deferrablecontent#System_Windows_ResourceDictionary_DeferrableContent">ResourceDictionary.DeferrableContent</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.keys#System_Windows_ResourceDictionary_Keys">ResourceDictionary.Keys</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.values#System_Windows_ResourceDictionary_Values">ResourceDictionary.Values</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.count#System_Windows_ResourceDictionary_Count">ResourceDictionary.Count</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.system-collections-icollection-issynchronized#System_Windows_ResourceDictionary_System_Collections_ICollection_IsSynchronized">ResourceDictionary.ICollection.IsSynchronized</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.system-collections-icollection-syncroot#System_Windows_ResourceDictionary_System_Collections_ICollection_SyncRoot">ResourceDictionary.ICollection.SyncRoot</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_">Object.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gethashcode#System_Object_GetHashCode">Object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Celestial.UIToolkit.html">Celestial.UIToolkit</a></h6>
+  <h6><strong>Assembly</strong>: Celestial.UIToolkit.Core.dll</h6>
+  <h5 id="Celestial_UIToolkit_SharedResourceDictionary_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class SharedResourceDictionary : ResourceDictionary, IDictionary, ICollection, IEnumerable, ISupportInitialize, IUriContext, INameScope</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_SharedResourceDictionary__ctor.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.SharedResourceDictionary.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit.Core/SharedResourceDictionary.cs/#L26">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_SharedResourceDictionary__ctor_" data-uid="Celestial.UIToolkit.SharedResourceDictionary.#ctor*"></a>
+  <h4 id="Celestial_UIToolkit_SharedResourceDictionary__ctor" data-uid="Celestial.UIToolkit.SharedResourceDictionary.#ctor">SharedResourceDictionary()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Celestial.UIToolkit.SharedResourceDictionary.html">SharedResourceDictionary</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SharedResourceDictionary()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_SharedResourceDictionary__ctor_System_Uri_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.SharedResourceDictionary.%23ctor(System.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit.Core/SharedResourceDictionary.cs/#L35">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_SharedResourceDictionary__ctor_" data-uid="Celestial.UIToolkit.SharedResourceDictionary.#ctor*"></a>
+  <h4 id="Celestial_UIToolkit_SharedResourceDictionary__ctor_System_Uri_" data-uid="Celestial.UIToolkit.SharedResourceDictionary.#ctor(System.Uri)">SharedResourceDictionary(Uri)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Celestial.UIToolkit.SharedResourceDictionary.html">SharedResourceDictionary</a> class
+with the specified <code data-dev-comment-type="paramref" class="paramref">source</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SharedResourceDictionary(Uri source)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uri">Uri</a></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The dictionary's source <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uri">Uri</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_SharedResourceDictionary_Source.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.SharedResourceDictionary.Source%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit.Core/SharedResourceDictionary.cs/#L48">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_SharedResourceDictionary_Source_" data-uid="Celestial.UIToolkit.SharedResourceDictionary.Source*"></a>
+  <h4 id="Celestial_UIToolkit_SharedResourceDictionary_Source" data-uid="Celestial.UIToolkit.SharedResourceDictionary.Source">Source</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the dictionary's source <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uri">Uri</a>.
+When set, the <a class="xref" href="Celestial.UIToolkit.SharedResourceDictionary.html">SharedResourceDictionary</a> tries to load
+the dictionary by using the <span class="xref">Celestial.UIToolkit.SharedResourceDictionaryManager.GetDictionary(System.Uri)</span>
+method and adds the result to the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.mergeddictionaries#System_Windows_ResourceDictionary_MergedDictionaries">MergedDictionaries</a>
+collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Uri Source { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uri">Uri</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.idictionary">System.Collections.IDictionary</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.icollection">System.Collections.ICollection</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">System.Collections.IEnumerable</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.componentmodel.isupportinitialize">System.ComponentModel.ISupportInitialize</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.markup.iuricontext">System.Windows.Markup.IUriContext</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.markup.inamescope">System.Windows.Markup.INameScope</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_SharedResourceDictionary.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.SharedResourceDictionary%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit.Core/SharedResourceDictionary.cs/#L20" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

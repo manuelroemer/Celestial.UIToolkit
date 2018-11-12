@@ -1,0 +1,2731 @@
+### YamlMime:ManagedReference
+items:
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  commentId: T:Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  id: WindowTitlebarProperties
+  parent: Celestial.UIToolkit.Theming
+  children:
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.BackgroundBrushProperty
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.BorderBrushProperty
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.BorderThicknessProperty
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.CloseButtonStyleProperty
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.ExtendContentIntoTitlebarProperty
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.ForegroundBrushProperty
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetBackgroundBrush(System.Windows.DependencyObject)
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetBorderBrush(System.Windows.DependencyObject)
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetBorderThickness(System.Windows.DependencyObject)
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetCloseButtonStyle(System.Windows.DependencyObject)
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetExtendContentIntoTitlebar(System.Windows.DependencyObject)
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetForegroundBrush(System.Windows.DependencyObject)
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetHeight(System.Windows.DependencyObject)
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetInactiveBackgroundBrush(System.Windows.DependencyObject)
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetInactiveBorderBrush(System.Windows.DependencyObject)
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetInactiveForegroundBrush(System.Windows.DependencyObject)
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetMaximizeButtonStyle(System.Windows.DependencyObject)
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetMinimizeButtonStyle(System.Windows.DependencyObject)
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontFamily(System.Windows.DependencyObject)
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontSize(System.Windows.DependencyObject)
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontStretch(System.Windows.DependencyObject)
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontStyle(System.Windows.DependencyObject)
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontWeight(System.Windows.DependencyObject)
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.HeightProperty
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.InactiveBackgroundBrushProperty
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.InactiveBorderBrushProperty
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.InactiveForegroundBrushProperty
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.MaximizeButtonStyleProperty
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.MinimizeButtonStyleProperty
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetBackgroundBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetBorderBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetBorderThickness(System.Windows.DependencyObject,System.Windows.Thickness)
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetCloseButtonStyle(System.Windows.DependencyObject,System.Windows.Style)
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetExtendContentIntoTitlebar(System.Windows.DependencyObject,System.Boolean)
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetForegroundBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetHeight(System.Windows.DependencyObject,System.Double)
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetInactiveBackgroundBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetInactiveBorderBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetInactiveForegroundBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetMaximizeButtonStyle(System.Windows.DependencyObject,System.Windows.Style)
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetMinimizeButtonStyle(System.Windows.DependencyObject,System.Windows.Style)
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontFamily(System.Windows.DependencyObject,System.Windows.Media.FontFamily)
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontSize(System.Windows.DependencyObject,System.Double)
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontStretch(System.Windows.DependencyObject,System.Windows.FontStretch)
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontStyle(System.Windows.DependencyObject,System.Windows.FontStyle)
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontWeight(System.Windows.DependencyObject,System.Windows.FontWeight)
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontFamilyProperty
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontSizeProperty
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontStretchProperty
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontStyleProperty
+  - Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontWeightProperty
+  langs:
+  - csharp
+  - vb
+  name: WindowTitlebarProperties
+  nameWithType: WindowTitlebarProperties
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  type: Class
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: WindowTitlebarProperties
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 10
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nProvides static, attached dependency properties which are used for styling\nthe title bar of a <xref href=\"System.Windows.Window\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public class WindowTitlebarProperties
+    content.vb: Public Class WindowTitlebarProperties
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.ExtendContentIntoTitlebarProperty
+  commentId: F:Celestial.UIToolkit.Theming.WindowTitlebarProperties.ExtendContentIntoTitlebarProperty
+  id: ExtendContentIntoTitlebarProperty
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: ExtendContentIntoTitlebarProperty
+  nameWithType: WindowTitlebarProperties.ExtendContentIntoTitlebarProperty
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.ExtendContentIntoTitlebarProperty
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: ExtendContentIntoTitlebarProperty
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 18
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nIdentifies the ExtendContentIntoTitlebar attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static readonly DependencyProperty ExtendContentIntoTitlebarProperty
+    return:
+      type: System.Windows.DependencyProperty
+    content.vb: Public Shared ReadOnly ExtendContentIntoTitlebarProperty As DependencyProperty
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetExtendContentIntoTitlebar(System.Windows.DependencyObject)
+  commentId: M:Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetExtendContentIntoTitlebar(System.Windows.DependencyObject)
+  id: GetExtendContentIntoTitlebar(System.Windows.DependencyObject)
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: GetExtendContentIntoTitlebar(DependencyObject)
+  nameWithType: WindowTitlebarProperties.GetExtendContentIntoTitlebar(DependencyObject)
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetExtendContentIntoTitlebar(System.Windows.DependencyObject)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: GetExtendContentIntoTitlebar
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 36
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nGets the value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.ExtendContentIntoTitlebarProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static bool GetExtendContentIntoTitlebar(DependencyObject obj)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.ExtendContentIntoTitlebarProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be retrieved.\n"
+    return:
+      type: System.Boolean
+      description: "\nThe local value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.ExtendContentIntoTitlebarProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+    content.vb: Public Shared Function GetExtendContentIntoTitlebar(obj As DependencyObject) As Boolean
+  overload: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetExtendContentIntoTitlebar*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetExtendContentIntoTitlebar(System.Windows.DependencyObject,System.Boolean)
+  commentId: M:Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetExtendContentIntoTitlebar(System.Windows.DependencyObject,System.Boolean)
+  id: SetExtendContentIntoTitlebar(System.Windows.DependencyObject,System.Boolean)
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: SetExtendContentIntoTitlebar(DependencyObject, Boolean)
+  nameWithType: WindowTitlebarProperties.SetExtendContentIntoTitlebar(DependencyObject, Boolean)
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetExtendContentIntoTitlebar(System.Windows.DependencyObject, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: SetExtendContentIntoTitlebar
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 50
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nSets the value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.ExtendContentIntoTitlebarProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static void SetExtendContentIntoTitlebar(DependencyObject obj, bool value)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.ExtendContentIntoTitlebarProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be set.\n"
+    - id: value
+      type: System.Boolean
+      description: "\nThe new value for the dependency property.\n"
+    content.vb: Public Shared Sub SetExtendContentIntoTitlebar(obj As DependencyObject, value As Boolean)
+  overload: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetExtendContentIntoTitlebar*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.HeightProperty
+  commentId: F:Celestial.UIToolkit.Theming.WindowTitlebarProperties.HeightProperty
+  id: HeightProperty
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: HeightProperty
+  nameWithType: WindowTitlebarProperties.HeightProperty
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.HeightProperty
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: HeightProperty
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 60
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nIdentifies the Height attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static readonly DependencyProperty HeightProperty
+    return:
+      type: System.Windows.DependencyProperty
+    content.vb: Public Shared ReadOnly HeightProperty As DependencyProperty
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetHeight(System.Windows.DependencyObject)
+  commentId: M:Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetHeight(System.Windows.DependencyObject)
+  id: GetHeight(System.Windows.DependencyObject)
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: GetHeight(DependencyObject)
+  nameWithType: WindowTitlebarProperties.GetHeight(DependencyObject)
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetHeight(System.Windows.DependencyObject)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: GetHeight
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 78
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nGets the value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.HeightProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static double GetHeight(DependencyObject obj)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.HeightProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be retrieved.\n"
+    return:
+      type: System.Double
+      description: "\nThe local value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.HeightProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+    content.vb: Public Shared Function GetHeight(obj As DependencyObject) As Double
+  overload: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetHeight*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetHeight(System.Windows.DependencyObject,System.Double)
+  commentId: M:Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetHeight(System.Windows.DependencyObject,System.Double)
+  id: SetHeight(System.Windows.DependencyObject,System.Double)
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: SetHeight(DependencyObject, Double)
+  nameWithType: WindowTitlebarProperties.SetHeight(DependencyObject, Double)
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetHeight(System.Windows.DependencyObject, System.Double)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: SetHeight
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 92
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nSets the value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.HeightProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static void SetHeight(DependencyObject obj, double value)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.HeightProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be set.\n"
+    - id: value
+      type: System.Double
+      description: "\nThe new value for the dependency property.\n"
+    content.vb: Public Shared Sub SetHeight(obj As DependencyObject, value As Double)
+  overload: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetHeight*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.BorderThicknessProperty
+  commentId: F:Celestial.UIToolkit.Theming.WindowTitlebarProperties.BorderThicknessProperty
+  id: BorderThicknessProperty
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: BorderThicknessProperty
+  nameWithType: WindowTitlebarProperties.BorderThicknessProperty
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.BorderThicknessProperty
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: BorderThicknessProperty
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 102
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nIdentifies the BorderThickness attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static readonly DependencyProperty BorderThicknessProperty
+    return:
+      type: System.Windows.DependencyProperty
+    content.vb: Public Shared ReadOnly BorderThicknessProperty As DependencyProperty
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetBorderThickness(System.Windows.DependencyObject)
+  commentId: M:Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetBorderThickness(System.Windows.DependencyObject)
+  id: GetBorderThickness(System.Windows.DependencyObject)
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: GetBorderThickness(DependencyObject)
+  nameWithType: WindowTitlebarProperties.GetBorderThickness(DependencyObject)
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetBorderThickness(System.Windows.DependencyObject)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: GetBorderThickness
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 120
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nGets the value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.BorderThicknessProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static Thickness GetBorderThickness(DependencyObject obj)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.BorderThicknessProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be retrieved.\n"
+    return:
+      type: System.Windows.Thickness
+      description: "\nThe local value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.BorderThicknessProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+    content.vb: Public Shared Function GetBorderThickness(obj As DependencyObject) As Thickness
+  overload: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetBorderThickness*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetBorderThickness(System.Windows.DependencyObject,System.Windows.Thickness)
+  commentId: M:Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetBorderThickness(System.Windows.DependencyObject,System.Windows.Thickness)
+  id: SetBorderThickness(System.Windows.DependencyObject,System.Windows.Thickness)
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: SetBorderThickness(DependencyObject, Thickness)
+  nameWithType: WindowTitlebarProperties.SetBorderThickness(DependencyObject, Thickness)
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetBorderThickness(System.Windows.DependencyObject, System.Windows.Thickness)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: SetBorderThickness
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 134
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nSets the value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.BorderThicknessProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static void SetBorderThickness(DependencyObject obj, Thickness value)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.BorderThicknessProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be set.\n"
+    - id: value
+      type: System.Windows.Thickness
+      description: "\nThe new value for the dependency property.\n"
+    content.vb: Public Shared Sub SetBorderThickness(obj As DependencyObject, value As Thickness)
+  overload: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetBorderThickness*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.BackgroundBrushProperty
+  commentId: F:Celestial.UIToolkit.Theming.WindowTitlebarProperties.BackgroundBrushProperty
+  id: BackgroundBrushProperty
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: BackgroundBrushProperty
+  nameWithType: WindowTitlebarProperties.BackgroundBrushProperty
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.BackgroundBrushProperty
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: BackgroundBrushProperty
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 144
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nIdentifies the BackgroundBrush attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static readonly DependencyProperty BackgroundBrushProperty
+    return:
+      type: System.Windows.DependencyProperty
+    content.vb: Public Shared ReadOnly BackgroundBrushProperty As DependencyProperty
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetBackgroundBrush(System.Windows.DependencyObject)
+  commentId: M:Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetBackgroundBrush(System.Windows.DependencyObject)
+  id: GetBackgroundBrush(System.Windows.DependencyObject)
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: GetBackgroundBrush(DependencyObject)
+  nameWithType: WindowTitlebarProperties.GetBackgroundBrush(DependencyObject)
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetBackgroundBrush(System.Windows.DependencyObject)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: GetBackgroundBrush
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 162
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nGets the value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.BackgroundBrushProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static Brush GetBackgroundBrush(DependencyObject obj)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.BackgroundBrushProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be retrieved.\n"
+    return:
+      type: System.Windows.Media.Brush
+      description: "\nThe local value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.BackgroundBrushProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+    content.vb: Public Shared Function GetBackgroundBrush(obj As DependencyObject) As Brush
+  overload: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetBackgroundBrush*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetBackgroundBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  commentId: M:Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetBackgroundBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  id: SetBackgroundBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: SetBackgroundBrush(DependencyObject, Brush)
+  nameWithType: WindowTitlebarProperties.SetBackgroundBrush(DependencyObject, Brush)
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetBackgroundBrush(System.Windows.DependencyObject, System.Windows.Media.Brush)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: SetBackgroundBrush
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 176
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nSets the value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.BackgroundBrushProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static void SetBackgroundBrush(DependencyObject obj, Brush value)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.BackgroundBrushProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be set.\n"
+    - id: value
+      type: System.Windows.Media.Brush
+      description: "\nThe new value for the dependency property.\n"
+    content.vb: Public Shared Sub SetBackgroundBrush(obj As DependencyObject, value As Brush)
+  overload: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetBackgroundBrush*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.InactiveBackgroundBrushProperty
+  commentId: F:Celestial.UIToolkit.Theming.WindowTitlebarProperties.InactiveBackgroundBrushProperty
+  id: InactiveBackgroundBrushProperty
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: InactiveBackgroundBrushProperty
+  nameWithType: WindowTitlebarProperties.InactiveBackgroundBrushProperty
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.InactiveBackgroundBrushProperty
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: InactiveBackgroundBrushProperty
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 186
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nIdentifies the InactiveBackgroundBrush attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static readonly DependencyProperty InactiveBackgroundBrushProperty
+    return:
+      type: System.Windows.DependencyProperty
+    content.vb: Public Shared ReadOnly InactiveBackgroundBrushProperty As DependencyProperty
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetInactiveBackgroundBrush(System.Windows.DependencyObject)
+  commentId: M:Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetInactiveBackgroundBrush(System.Windows.DependencyObject)
+  id: GetInactiveBackgroundBrush(System.Windows.DependencyObject)
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: GetInactiveBackgroundBrush(DependencyObject)
+  nameWithType: WindowTitlebarProperties.GetInactiveBackgroundBrush(DependencyObject)
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetInactiveBackgroundBrush(System.Windows.DependencyObject)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: GetInactiveBackgroundBrush
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 204
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nGets the value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.InactiveBackgroundBrushProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static Brush GetInactiveBackgroundBrush(DependencyObject obj)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.InactiveBackgroundBrushProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be retrieved.\n"
+    return:
+      type: System.Windows.Media.Brush
+      description: "\nThe local value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.InactiveBackgroundBrushProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+    content.vb: Public Shared Function GetInactiveBackgroundBrush(obj As DependencyObject) As Brush
+  overload: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetInactiveBackgroundBrush*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetInactiveBackgroundBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  commentId: M:Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetInactiveBackgroundBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  id: SetInactiveBackgroundBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: SetInactiveBackgroundBrush(DependencyObject, Brush)
+  nameWithType: WindowTitlebarProperties.SetInactiveBackgroundBrush(DependencyObject, Brush)
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetInactiveBackgroundBrush(System.Windows.DependencyObject, System.Windows.Media.Brush)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: SetInactiveBackgroundBrush
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 218
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nSets the value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.InactiveBackgroundBrushProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static void SetInactiveBackgroundBrush(DependencyObject obj, Brush value)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.InactiveBackgroundBrushProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be set.\n"
+    - id: value
+      type: System.Windows.Media.Brush
+      description: "\nThe new value for the dependency property.\n"
+    content.vb: Public Shared Sub SetInactiveBackgroundBrush(obj As DependencyObject, value As Brush)
+  overload: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetInactiveBackgroundBrush*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.BorderBrushProperty
+  commentId: F:Celestial.UIToolkit.Theming.WindowTitlebarProperties.BorderBrushProperty
+  id: BorderBrushProperty
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: BorderBrushProperty
+  nameWithType: WindowTitlebarProperties.BorderBrushProperty
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.BorderBrushProperty
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: BorderBrushProperty
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 228
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nIdentifies the BorderBrush attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static readonly DependencyProperty BorderBrushProperty
+    return:
+      type: System.Windows.DependencyProperty
+    content.vb: Public Shared ReadOnly BorderBrushProperty As DependencyProperty
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetBorderBrush(System.Windows.DependencyObject)
+  commentId: M:Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetBorderBrush(System.Windows.DependencyObject)
+  id: GetBorderBrush(System.Windows.DependencyObject)
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: GetBorderBrush(DependencyObject)
+  nameWithType: WindowTitlebarProperties.GetBorderBrush(DependencyObject)
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetBorderBrush(System.Windows.DependencyObject)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: GetBorderBrush
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 246
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nGets the value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.BorderBrushProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static Brush GetBorderBrush(DependencyObject obj)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.BorderBrushProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be retrieved.\n"
+    return:
+      type: System.Windows.Media.Brush
+      description: "\nThe local value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.BorderBrushProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+    content.vb: Public Shared Function GetBorderBrush(obj As DependencyObject) As Brush
+  overload: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetBorderBrush*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetBorderBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  commentId: M:Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetBorderBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  id: SetBorderBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: SetBorderBrush(DependencyObject, Brush)
+  nameWithType: WindowTitlebarProperties.SetBorderBrush(DependencyObject, Brush)
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetBorderBrush(System.Windows.DependencyObject, System.Windows.Media.Brush)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: SetBorderBrush
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 260
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nSets the value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.BorderBrushProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static void SetBorderBrush(DependencyObject obj, Brush value)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.BorderBrushProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be set.\n"
+    - id: value
+      type: System.Windows.Media.Brush
+      description: "\nThe new value for the dependency property.\n"
+    content.vb: Public Shared Sub SetBorderBrush(obj As DependencyObject, value As Brush)
+  overload: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetBorderBrush*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.InactiveBorderBrushProperty
+  commentId: F:Celestial.UIToolkit.Theming.WindowTitlebarProperties.InactiveBorderBrushProperty
+  id: InactiveBorderBrushProperty
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: InactiveBorderBrushProperty
+  nameWithType: WindowTitlebarProperties.InactiveBorderBrushProperty
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.InactiveBorderBrushProperty
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: InactiveBorderBrushProperty
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 270
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nIdentifies the InactiveBorderBrush attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static readonly DependencyProperty InactiveBorderBrushProperty
+    return:
+      type: System.Windows.DependencyProperty
+    content.vb: Public Shared ReadOnly InactiveBorderBrushProperty As DependencyProperty
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetInactiveBorderBrush(System.Windows.DependencyObject)
+  commentId: M:Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetInactiveBorderBrush(System.Windows.DependencyObject)
+  id: GetInactiveBorderBrush(System.Windows.DependencyObject)
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: GetInactiveBorderBrush(DependencyObject)
+  nameWithType: WindowTitlebarProperties.GetInactiveBorderBrush(DependencyObject)
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetInactiveBorderBrush(System.Windows.DependencyObject)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: GetInactiveBorderBrush
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 288
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nGets the value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.InactiveBorderBrushProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static Brush GetInactiveBorderBrush(DependencyObject obj)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.InactiveBorderBrushProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be retrieved.\n"
+    return:
+      type: System.Windows.Media.Brush
+      description: "\nThe local value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.InactiveBorderBrushProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+    content.vb: Public Shared Function GetInactiveBorderBrush(obj As DependencyObject) As Brush
+  overload: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetInactiveBorderBrush*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetInactiveBorderBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  commentId: M:Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetInactiveBorderBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  id: SetInactiveBorderBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: SetInactiveBorderBrush(DependencyObject, Brush)
+  nameWithType: WindowTitlebarProperties.SetInactiveBorderBrush(DependencyObject, Brush)
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetInactiveBorderBrush(System.Windows.DependencyObject, System.Windows.Media.Brush)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: SetInactiveBorderBrush
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 302
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nSets the value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.InactiveBorderBrushProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static void SetInactiveBorderBrush(DependencyObject obj, Brush value)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.InactiveBorderBrushProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be set.\n"
+    - id: value
+      type: System.Windows.Media.Brush
+      description: "\nThe new value for the dependency property.\n"
+    content.vb: Public Shared Sub SetInactiveBorderBrush(obj As DependencyObject, value As Brush)
+  overload: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetInactiveBorderBrush*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.ForegroundBrushProperty
+  commentId: F:Celestial.UIToolkit.Theming.WindowTitlebarProperties.ForegroundBrushProperty
+  id: ForegroundBrushProperty
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: ForegroundBrushProperty
+  nameWithType: WindowTitlebarProperties.ForegroundBrushProperty
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.ForegroundBrushProperty
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: ForegroundBrushProperty
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 312
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nIdentifies the ForegroundBrush attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static readonly DependencyProperty ForegroundBrushProperty
+    return:
+      type: System.Windows.DependencyProperty
+    content.vb: Public Shared ReadOnly ForegroundBrushProperty As DependencyProperty
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetForegroundBrush(System.Windows.DependencyObject)
+  commentId: M:Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetForegroundBrush(System.Windows.DependencyObject)
+  id: GetForegroundBrush(System.Windows.DependencyObject)
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: GetForegroundBrush(DependencyObject)
+  nameWithType: WindowTitlebarProperties.GetForegroundBrush(DependencyObject)
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetForegroundBrush(System.Windows.DependencyObject)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: GetForegroundBrush
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 330
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nGets the value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.ForegroundBrushProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static Brush GetForegroundBrush(DependencyObject obj)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.ForegroundBrushProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be retrieved.\n"
+    return:
+      type: System.Windows.Media.Brush
+      description: "\nThe local value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.ForegroundBrushProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+    content.vb: Public Shared Function GetForegroundBrush(obj As DependencyObject) As Brush
+  overload: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetForegroundBrush*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetForegroundBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  commentId: M:Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetForegroundBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  id: SetForegroundBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: SetForegroundBrush(DependencyObject, Brush)
+  nameWithType: WindowTitlebarProperties.SetForegroundBrush(DependencyObject, Brush)
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetForegroundBrush(System.Windows.DependencyObject, System.Windows.Media.Brush)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: SetForegroundBrush
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 344
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nSets the value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.ForegroundBrushProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static void SetForegroundBrush(DependencyObject obj, Brush value)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.ForegroundBrushProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be set.\n"
+    - id: value
+      type: System.Windows.Media.Brush
+      description: "\nThe new value for the dependency property.\n"
+    content.vb: Public Shared Sub SetForegroundBrush(obj As DependencyObject, value As Brush)
+  overload: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetForegroundBrush*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.InactiveForegroundBrushProperty
+  commentId: F:Celestial.UIToolkit.Theming.WindowTitlebarProperties.InactiveForegroundBrushProperty
+  id: InactiveForegroundBrushProperty
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: InactiveForegroundBrushProperty
+  nameWithType: WindowTitlebarProperties.InactiveForegroundBrushProperty
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.InactiveForegroundBrushProperty
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: InactiveForegroundBrushProperty
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 354
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nIdentifies the InactiveForegroundBrush attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static readonly DependencyProperty InactiveForegroundBrushProperty
+    return:
+      type: System.Windows.DependencyProperty
+    content.vb: Public Shared ReadOnly InactiveForegroundBrushProperty As DependencyProperty
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetInactiveForegroundBrush(System.Windows.DependencyObject)
+  commentId: M:Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetInactiveForegroundBrush(System.Windows.DependencyObject)
+  id: GetInactiveForegroundBrush(System.Windows.DependencyObject)
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: GetInactiveForegroundBrush(DependencyObject)
+  nameWithType: WindowTitlebarProperties.GetInactiveForegroundBrush(DependencyObject)
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetInactiveForegroundBrush(System.Windows.DependencyObject)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: GetInactiveForegroundBrush
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 372
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nGets the value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.InactiveForegroundBrushProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static Brush GetInactiveForegroundBrush(DependencyObject obj)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.InactiveForegroundBrushProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be retrieved.\n"
+    return:
+      type: System.Windows.Media.Brush
+      description: "\nThe local value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.InactiveForegroundBrushProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+    content.vb: Public Shared Function GetInactiveForegroundBrush(obj As DependencyObject) As Brush
+  overload: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetInactiveForegroundBrush*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetInactiveForegroundBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  commentId: M:Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetInactiveForegroundBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  id: SetInactiveForegroundBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: SetInactiveForegroundBrush(DependencyObject, Brush)
+  nameWithType: WindowTitlebarProperties.SetInactiveForegroundBrush(DependencyObject, Brush)
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetInactiveForegroundBrush(System.Windows.DependencyObject, System.Windows.Media.Brush)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: SetInactiveForegroundBrush
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 386
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nSets the value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.InactiveForegroundBrushProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static void SetInactiveForegroundBrush(DependencyObject obj, Brush value)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.InactiveForegroundBrushProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be set.\n"
+    - id: value
+      type: System.Windows.Media.Brush
+      description: "\nThe new value for the dependency property.\n"
+    content.vb: Public Shared Sub SetInactiveForegroundBrush(obj As DependencyObject, value As Brush)
+  overload: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetInactiveForegroundBrush*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.MinimizeButtonStyleProperty
+  commentId: F:Celestial.UIToolkit.Theming.WindowTitlebarProperties.MinimizeButtonStyleProperty
+  id: MinimizeButtonStyleProperty
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: MinimizeButtonStyleProperty
+  nameWithType: WindowTitlebarProperties.MinimizeButtonStyleProperty
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.MinimizeButtonStyleProperty
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: MinimizeButtonStyleProperty
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 396
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nIdentifies the MinimizeButtonStyle attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static readonly DependencyProperty MinimizeButtonStyleProperty
+    return:
+      type: System.Windows.DependencyProperty
+    content.vb: Public Shared ReadOnly MinimizeButtonStyleProperty As DependencyProperty
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetMinimizeButtonStyle(System.Windows.DependencyObject)
+  commentId: M:Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetMinimizeButtonStyle(System.Windows.DependencyObject)
+  id: GetMinimizeButtonStyle(System.Windows.DependencyObject)
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: GetMinimizeButtonStyle(DependencyObject)
+  nameWithType: WindowTitlebarProperties.GetMinimizeButtonStyle(DependencyObject)
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetMinimizeButtonStyle(System.Windows.DependencyObject)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: GetMinimizeButtonStyle
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 414
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nGets the value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.MinimizeButtonStyleProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static Style GetMinimizeButtonStyle(DependencyObject obj)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.MinimizeButtonStyleProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be retrieved.\n"
+    return:
+      type: System.Windows.Style
+      description: "\nThe local value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.MinimizeButtonStyleProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+    content.vb: Public Shared Function GetMinimizeButtonStyle(obj As DependencyObject) As Style
+  overload: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetMinimizeButtonStyle*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetMinimizeButtonStyle(System.Windows.DependencyObject,System.Windows.Style)
+  commentId: M:Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetMinimizeButtonStyle(System.Windows.DependencyObject,System.Windows.Style)
+  id: SetMinimizeButtonStyle(System.Windows.DependencyObject,System.Windows.Style)
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: SetMinimizeButtonStyle(DependencyObject, Style)
+  nameWithType: WindowTitlebarProperties.SetMinimizeButtonStyle(DependencyObject, Style)
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetMinimizeButtonStyle(System.Windows.DependencyObject, System.Windows.Style)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: SetMinimizeButtonStyle
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 428
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nSets the value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.MinimizeButtonStyleProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static void SetMinimizeButtonStyle(DependencyObject obj, Style value)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.MinimizeButtonStyleProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be set.\n"
+    - id: value
+      type: System.Windows.Style
+      description: "\nThe new value for the dependency property.\n"
+    content.vb: Public Shared Sub SetMinimizeButtonStyle(obj As DependencyObject, value As Style)
+  overload: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetMinimizeButtonStyle*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.MaximizeButtonStyleProperty
+  commentId: F:Celestial.UIToolkit.Theming.WindowTitlebarProperties.MaximizeButtonStyleProperty
+  id: MaximizeButtonStyleProperty
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: MaximizeButtonStyleProperty
+  nameWithType: WindowTitlebarProperties.MaximizeButtonStyleProperty
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.MaximizeButtonStyleProperty
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: MaximizeButtonStyleProperty
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 438
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nIdentifies the MaximizeButtonStyle attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static readonly DependencyProperty MaximizeButtonStyleProperty
+    return:
+      type: System.Windows.DependencyProperty
+    content.vb: Public Shared ReadOnly MaximizeButtonStyleProperty As DependencyProperty
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetMaximizeButtonStyle(System.Windows.DependencyObject)
+  commentId: M:Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetMaximizeButtonStyle(System.Windows.DependencyObject)
+  id: GetMaximizeButtonStyle(System.Windows.DependencyObject)
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: GetMaximizeButtonStyle(DependencyObject)
+  nameWithType: WindowTitlebarProperties.GetMaximizeButtonStyle(DependencyObject)
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetMaximizeButtonStyle(System.Windows.DependencyObject)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: GetMaximizeButtonStyle
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 456
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nGets the value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.MaximizeButtonStyleProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static Style GetMaximizeButtonStyle(DependencyObject obj)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.MaximizeButtonStyleProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be retrieved.\n"
+    return:
+      type: System.Windows.Style
+      description: "\nThe local value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.MaximizeButtonStyleProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+    content.vb: Public Shared Function GetMaximizeButtonStyle(obj As DependencyObject) As Style
+  overload: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetMaximizeButtonStyle*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetMaximizeButtonStyle(System.Windows.DependencyObject,System.Windows.Style)
+  commentId: M:Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetMaximizeButtonStyle(System.Windows.DependencyObject,System.Windows.Style)
+  id: SetMaximizeButtonStyle(System.Windows.DependencyObject,System.Windows.Style)
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: SetMaximizeButtonStyle(DependencyObject, Style)
+  nameWithType: WindowTitlebarProperties.SetMaximizeButtonStyle(DependencyObject, Style)
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetMaximizeButtonStyle(System.Windows.DependencyObject, System.Windows.Style)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: SetMaximizeButtonStyle
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 470
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nSets the value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.MaximizeButtonStyleProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static void SetMaximizeButtonStyle(DependencyObject obj, Style value)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.MaximizeButtonStyleProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be set.\n"
+    - id: value
+      type: System.Windows.Style
+      description: "\nThe new value for the dependency property.\n"
+    content.vb: Public Shared Sub SetMaximizeButtonStyle(obj As DependencyObject, value As Style)
+  overload: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetMaximizeButtonStyle*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.CloseButtonStyleProperty
+  commentId: F:Celestial.UIToolkit.Theming.WindowTitlebarProperties.CloseButtonStyleProperty
+  id: CloseButtonStyleProperty
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: CloseButtonStyleProperty
+  nameWithType: WindowTitlebarProperties.CloseButtonStyleProperty
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.CloseButtonStyleProperty
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: CloseButtonStyleProperty
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 480
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nIdentifies the CloseButtonStyle attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static readonly DependencyProperty CloseButtonStyleProperty
+    return:
+      type: System.Windows.DependencyProperty
+    content.vb: Public Shared ReadOnly CloseButtonStyleProperty As DependencyProperty
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetCloseButtonStyle(System.Windows.DependencyObject)
+  commentId: M:Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetCloseButtonStyle(System.Windows.DependencyObject)
+  id: GetCloseButtonStyle(System.Windows.DependencyObject)
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: GetCloseButtonStyle(DependencyObject)
+  nameWithType: WindowTitlebarProperties.GetCloseButtonStyle(DependencyObject)
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetCloseButtonStyle(System.Windows.DependencyObject)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: GetCloseButtonStyle
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 498
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nGets the value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.CloseButtonStyleProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static Style GetCloseButtonStyle(DependencyObject obj)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.CloseButtonStyleProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be retrieved.\n"
+    return:
+      type: System.Windows.Style
+      description: "\nThe local value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.CloseButtonStyleProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+    content.vb: Public Shared Function GetCloseButtonStyle(obj As DependencyObject) As Style
+  overload: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetCloseButtonStyle*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetCloseButtonStyle(System.Windows.DependencyObject,System.Windows.Style)
+  commentId: M:Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetCloseButtonStyle(System.Windows.DependencyObject,System.Windows.Style)
+  id: SetCloseButtonStyle(System.Windows.DependencyObject,System.Windows.Style)
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: SetCloseButtonStyle(DependencyObject, Style)
+  nameWithType: WindowTitlebarProperties.SetCloseButtonStyle(DependencyObject, Style)
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetCloseButtonStyle(System.Windows.DependencyObject, System.Windows.Style)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: SetCloseButtonStyle
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 512
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nSets the value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.CloseButtonStyleProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static void SetCloseButtonStyle(DependencyObject obj, Style value)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.CloseButtonStyleProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be set.\n"
+    - id: value
+      type: System.Windows.Style
+      description: "\nThe new value for the dependency property.\n"
+    content.vb: Public Shared Sub SetCloseButtonStyle(obj As DependencyObject, value As Style)
+  overload: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetCloseButtonStyle*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontSizeProperty
+  commentId: F:Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontSizeProperty
+  id: TitleFontSizeProperty
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: TitleFontSizeProperty
+  nameWithType: WindowTitlebarProperties.TitleFontSizeProperty
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontSizeProperty
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: TitleFontSizeProperty
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 522
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nIdentifies the TitleFontSize attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static readonly DependencyProperty TitleFontSizeProperty
+    return:
+      type: System.Windows.DependencyProperty
+    content.vb: Public Shared ReadOnly TitleFontSizeProperty As DependencyProperty
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontSize(System.Windows.DependencyObject)
+  commentId: M:Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontSize(System.Windows.DependencyObject)
+  id: GetTitleFontSize(System.Windows.DependencyObject)
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: GetTitleFontSize(DependencyObject)
+  nameWithType: WindowTitlebarProperties.GetTitleFontSize(DependencyObject)
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontSize(System.Windows.DependencyObject)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: GetTitleFontSize
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 540
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nGets the value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontSizeProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static double GetTitleFontSize(DependencyObject obj)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontSizeProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be retrieved.\n"
+    return:
+      type: System.Double
+      description: "\nThe local value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontSizeProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+    content.vb: Public Shared Function GetTitleFontSize(obj As DependencyObject) As Double
+  overload: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontSize*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontSize(System.Windows.DependencyObject,System.Double)
+  commentId: M:Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontSize(System.Windows.DependencyObject,System.Double)
+  id: SetTitleFontSize(System.Windows.DependencyObject,System.Double)
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: SetTitleFontSize(DependencyObject, Double)
+  nameWithType: WindowTitlebarProperties.SetTitleFontSize(DependencyObject, Double)
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontSize(System.Windows.DependencyObject, System.Double)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: SetTitleFontSize
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 554
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nSets the value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontSizeProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static void SetTitleFontSize(DependencyObject obj, double value)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontSizeProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be set.\n"
+    - id: value
+      type: System.Double
+      description: "\nThe new value for the dependency property.\n"
+    content.vb: Public Shared Sub SetTitleFontSize(obj As DependencyObject, value As Double)
+  overload: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontSize*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontFamilyProperty
+  commentId: F:Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontFamilyProperty
+  id: TitleFontFamilyProperty
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: TitleFontFamilyProperty
+  nameWithType: WindowTitlebarProperties.TitleFontFamilyProperty
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontFamilyProperty
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: TitleFontFamilyProperty
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 564
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nIdentifies the TitleFontFamily attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static readonly DependencyProperty TitleFontFamilyProperty
+    return:
+      type: System.Windows.DependencyProperty
+    content.vb: Public Shared ReadOnly TitleFontFamilyProperty As DependencyProperty
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontFamily(System.Windows.DependencyObject)
+  commentId: M:Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontFamily(System.Windows.DependencyObject)
+  id: GetTitleFontFamily(System.Windows.DependencyObject)
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: GetTitleFontFamily(DependencyObject)
+  nameWithType: WindowTitlebarProperties.GetTitleFontFamily(DependencyObject)
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontFamily(System.Windows.DependencyObject)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: GetTitleFontFamily
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 582
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nGets the value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontFamilyProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static FontFamily GetTitleFontFamily(DependencyObject obj)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontFamilyProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be retrieved.\n"
+    return:
+      type: System.Windows.Media.FontFamily
+      description: "\nThe local value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontFamilyProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+    content.vb: Public Shared Function GetTitleFontFamily(obj As DependencyObject) As FontFamily
+  overload: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontFamily*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontFamily(System.Windows.DependencyObject,System.Windows.Media.FontFamily)
+  commentId: M:Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontFamily(System.Windows.DependencyObject,System.Windows.Media.FontFamily)
+  id: SetTitleFontFamily(System.Windows.DependencyObject,System.Windows.Media.FontFamily)
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: SetTitleFontFamily(DependencyObject, FontFamily)
+  nameWithType: WindowTitlebarProperties.SetTitleFontFamily(DependencyObject, FontFamily)
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontFamily(System.Windows.DependencyObject, System.Windows.Media.FontFamily)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: SetTitleFontFamily
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 596
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nSets the value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontFamilyProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static void SetTitleFontFamily(DependencyObject obj, FontFamily value)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontFamilyProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be set.\n"
+    - id: value
+      type: System.Windows.Media.FontFamily
+      description: "\nThe new value for the dependency property.\n"
+    content.vb: Public Shared Sub SetTitleFontFamily(obj As DependencyObject, value As FontFamily)
+  overload: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontFamily*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontStretchProperty
+  commentId: F:Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontStretchProperty
+  id: TitleFontStretchProperty
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: TitleFontStretchProperty
+  nameWithType: WindowTitlebarProperties.TitleFontStretchProperty
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontStretchProperty
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: TitleFontStretchProperty
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 606
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nIdentifies the FontStretch attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static readonly DependencyProperty TitleFontStretchProperty
+    return:
+      type: System.Windows.DependencyProperty
+    content.vb: Public Shared ReadOnly TitleFontStretchProperty As DependencyProperty
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontStretch(System.Windows.DependencyObject)
+  commentId: M:Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontStretch(System.Windows.DependencyObject)
+  id: GetTitleFontStretch(System.Windows.DependencyObject)
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: GetTitleFontStretch(DependencyObject)
+  nameWithType: WindowTitlebarProperties.GetTitleFontStretch(DependencyObject)
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontStretch(System.Windows.DependencyObject)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: GetTitleFontStretch
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 624
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nGets the value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontStretchProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static FontStretch GetTitleFontStretch(DependencyObject obj)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontStretchProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be retrieved.\n"
+    return:
+      type: System.Windows.FontStretch
+      description: "\nThe local value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontStretchProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+    content.vb: Public Shared Function GetTitleFontStretch(obj As DependencyObject) As FontStretch
+  overload: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontStretch*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontStretch(System.Windows.DependencyObject,System.Windows.FontStretch)
+  commentId: M:Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontStretch(System.Windows.DependencyObject,System.Windows.FontStretch)
+  id: SetTitleFontStretch(System.Windows.DependencyObject,System.Windows.FontStretch)
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: SetTitleFontStretch(DependencyObject, FontStretch)
+  nameWithType: WindowTitlebarProperties.SetTitleFontStretch(DependencyObject, FontStretch)
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontStretch(System.Windows.DependencyObject, System.Windows.FontStretch)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: SetTitleFontStretch
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 638
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nSets the value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontStretchProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static void SetTitleFontStretch(DependencyObject obj, FontStretch value)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontStretchProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be set.\n"
+    - id: value
+      type: System.Windows.FontStretch
+      description: "\nThe new value for the dependency property.\n"
+    content.vb: Public Shared Sub SetTitleFontStretch(obj As DependencyObject, value As FontStretch)
+  overload: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontStretch*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontStyleProperty
+  commentId: F:Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontStyleProperty
+  id: TitleFontStyleProperty
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: TitleFontStyleProperty
+  nameWithType: WindowTitlebarProperties.TitleFontStyleProperty
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontStyleProperty
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: TitleFontStyleProperty
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 648
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nIdentifies the TitleFontStyle attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static readonly DependencyProperty TitleFontStyleProperty
+    return:
+      type: System.Windows.DependencyProperty
+    content.vb: Public Shared ReadOnly TitleFontStyleProperty As DependencyProperty
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontStyle(System.Windows.DependencyObject)
+  commentId: M:Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontStyle(System.Windows.DependencyObject)
+  id: GetTitleFontStyle(System.Windows.DependencyObject)
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: GetTitleFontStyle(DependencyObject)
+  nameWithType: WindowTitlebarProperties.GetTitleFontStyle(DependencyObject)
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontStyle(System.Windows.DependencyObject)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: GetTitleFontStyle
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 666
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nGets the value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontStyleProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static FontStyle GetTitleFontStyle(DependencyObject obj)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontStyleProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be retrieved.\n"
+    return:
+      type: System.Windows.FontStyle
+      description: "\nThe local value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontStyleProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+    content.vb: Public Shared Function GetTitleFontStyle(obj As DependencyObject) As FontStyle
+  overload: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontStyle*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontStyle(System.Windows.DependencyObject,System.Windows.FontStyle)
+  commentId: M:Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontStyle(System.Windows.DependencyObject,System.Windows.FontStyle)
+  id: SetTitleFontStyle(System.Windows.DependencyObject,System.Windows.FontStyle)
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: SetTitleFontStyle(DependencyObject, FontStyle)
+  nameWithType: WindowTitlebarProperties.SetTitleFontStyle(DependencyObject, FontStyle)
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontStyle(System.Windows.DependencyObject, System.Windows.FontStyle)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: SetTitleFontStyle
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 680
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nSets the value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontStyleProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static void SetTitleFontStyle(DependencyObject obj, FontStyle value)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontStyleProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be set.\n"
+    - id: value
+      type: System.Windows.FontStyle
+      description: "\nThe new value for the dependency property.\n"
+    content.vb: Public Shared Sub SetTitleFontStyle(obj As DependencyObject, value As FontStyle)
+  overload: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontStyle*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontWeightProperty
+  commentId: F:Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontWeightProperty
+  id: TitleFontWeightProperty
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: TitleFontWeightProperty
+  nameWithType: WindowTitlebarProperties.TitleFontWeightProperty
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontWeightProperty
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: TitleFontWeightProperty
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 690
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nIdentifies the TitleFontWeight attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static readonly DependencyProperty TitleFontWeightProperty
+    return:
+      type: System.Windows.DependencyProperty
+    content.vb: Public Shared ReadOnly TitleFontWeightProperty As DependencyProperty
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontWeight(System.Windows.DependencyObject)
+  commentId: M:Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontWeight(System.Windows.DependencyObject)
+  id: GetTitleFontWeight(System.Windows.DependencyObject)
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: GetTitleFontWeight(DependencyObject)
+  nameWithType: WindowTitlebarProperties.GetTitleFontWeight(DependencyObject)
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontWeight(System.Windows.DependencyObject)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: GetTitleFontWeight
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 708
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nGets the value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontWeightProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static FontWeight GetTitleFontWeight(DependencyObject obj)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontWeightProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be retrieved.\n"
+    return:
+      type: System.Windows.FontWeight
+      description: "\nThe local value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontWeightProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+    content.vb: Public Shared Function GetTitleFontWeight(obj As DependencyObject) As FontWeight
+  overload: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontWeight*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontWeight(System.Windows.DependencyObject,System.Windows.FontWeight)
+  commentId: M:Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontWeight(System.Windows.DependencyObject,System.Windows.FontWeight)
+  id: SetTitleFontWeight(System.Windows.DependencyObject,System.Windows.FontWeight)
+  parent: Celestial.UIToolkit.Theming.WindowTitlebarProperties
+  langs:
+  - csharp
+  - vb
+  name: SetTitleFontWeight(DependencyObject, FontWeight)
+  nameWithType: WindowTitlebarProperties.SetTitleFontWeight(DependencyObject, FontWeight)
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontWeight(System.Windows.DependencyObject, System.Windows.FontWeight)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: SetTitleFontWeight
+    path: ../src/Celestial.UIToolkit/Theming/WindowTitlebarProperties.cs
+    startLine: 722
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nSets the value of the <xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontWeightProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static void SetTitleFontWeight(DependencyObject obj, FontWeight value)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontWeightProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be set.\n"
+    - id: value
+      type: System.Windows.FontWeight
+      description: "\nThe new value for the dependency property.\n"
+    content.vb: Public Shared Sub SetTitleFontWeight(obj As DependencyObject, value As FontWeight)
+  overload: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontWeight*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: System.Windows.Window
+  commentId: T:System.Windows.Window
+  isExternal: true
+- uid: Celestial.UIToolkit.Theming
+  commentId: N:Celestial.UIToolkit.Theming
+  name: Celestial.UIToolkit.Theming
+  nameWithType: Celestial.UIToolkit.Theming
+  fullName: Celestial.UIToolkit.Theming
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Windows.DependencyProperty
+  commentId: T:System.Windows.DependencyProperty
+  parent: System.Windows
+  isExternal: true
+  name: DependencyProperty
+  nameWithType: DependencyProperty
+  fullName: System.Windows.DependencyProperty
+- uid: System.Windows
+  commentId: N:System.Windows
+  isExternal: true
+  name: System.Windows
+  nameWithType: System.Windows
+  fullName: System.Windows
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.ExtendContentIntoTitlebarProperty
+  commentId: F:Celestial.UIToolkit.Theming.WindowTitlebarProperties.ExtendContentIntoTitlebarProperty
+  isExternal: true
+- uid: System.Windows.DependencyObject
+  commentId: T:System.Windows.DependencyObject
+  parent: System.Windows
+  isExternal: true
+  name: DependencyObject
+  nameWithType: DependencyObject
+  fullName: System.Windows.DependencyObject
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetExtendContentIntoTitlebar*
+  commentId: Overload:Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetExtendContentIntoTitlebar
+  name: GetExtendContentIntoTitlebar
+  nameWithType: WindowTitlebarProperties.GetExtendContentIntoTitlebar
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetExtendContentIntoTitlebar
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetExtendContentIntoTitlebar*
+  commentId: Overload:Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetExtendContentIntoTitlebar
+  name: SetExtendContentIntoTitlebar
+  nameWithType: WindowTitlebarProperties.SetExtendContentIntoTitlebar
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetExtendContentIntoTitlebar
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.HeightProperty
+  commentId: F:Celestial.UIToolkit.Theming.WindowTitlebarProperties.HeightProperty
+  isExternal: true
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetHeight*
+  commentId: Overload:Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetHeight
+  name: GetHeight
+  nameWithType: WindowTitlebarProperties.GetHeight
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetHeight
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  name: Double
+  nameWithType: Double
+  fullName: System.Double
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetHeight*
+  commentId: Overload:Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetHeight
+  name: SetHeight
+  nameWithType: WindowTitlebarProperties.SetHeight
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetHeight
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.BorderThicknessProperty
+  commentId: F:Celestial.UIToolkit.Theming.WindowTitlebarProperties.BorderThicknessProperty
+  isExternal: true
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetBorderThickness*
+  commentId: Overload:Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetBorderThickness
+  name: GetBorderThickness
+  nameWithType: WindowTitlebarProperties.GetBorderThickness
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetBorderThickness
+- uid: System.Windows.Thickness
+  commentId: T:System.Windows.Thickness
+  parent: System.Windows
+  isExternal: true
+  name: Thickness
+  nameWithType: Thickness
+  fullName: System.Windows.Thickness
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetBorderThickness*
+  commentId: Overload:Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetBorderThickness
+  name: SetBorderThickness
+  nameWithType: WindowTitlebarProperties.SetBorderThickness
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetBorderThickness
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.BackgroundBrushProperty
+  commentId: F:Celestial.UIToolkit.Theming.WindowTitlebarProperties.BackgroundBrushProperty
+  isExternal: true
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetBackgroundBrush*
+  commentId: Overload:Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetBackgroundBrush
+  name: GetBackgroundBrush
+  nameWithType: WindowTitlebarProperties.GetBackgroundBrush
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetBackgroundBrush
+- uid: System.Windows.Media.Brush
+  commentId: T:System.Windows.Media.Brush
+  parent: System.Windows.Media
+  isExternal: true
+  name: Brush
+  nameWithType: Brush
+  fullName: System.Windows.Media.Brush
+- uid: System.Windows.Media
+  commentId: N:System.Windows.Media
+  isExternal: true
+  name: System.Windows.Media
+  nameWithType: System.Windows.Media
+  fullName: System.Windows.Media
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetBackgroundBrush*
+  commentId: Overload:Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetBackgroundBrush
+  name: SetBackgroundBrush
+  nameWithType: WindowTitlebarProperties.SetBackgroundBrush
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetBackgroundBrush
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.InactiveBackgroundBrushProperty
+  commentId: F:Celestial.UIToolkit.Theming.WindowTitlebarProperties.InactiveBackgroundBrushProperty
+  isExternal: true
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetInactiveBackgroundBrush*
+  commentId: Overload:Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetInactiveBackgroundBrush
+  name: GetInactiveBackgroundBrush
+  nameWithType: WindowTitlebarProperties.GetInactiveBackgroundBrush
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetInactiveBackgroundBrush
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetInactiveBackgroundBrush*
+  commentId: Overload:Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetInactiveBackgroundBrush
+  name: SetInactiveBackgroundBrush
+  nameWithType: WindowTitlebarProperties.SetInactiveBackgroundBrush
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetInactiveBackgroundBrush
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.BorderBrushProperty
+  commentId: F:Celestial.UIToolkit.Theming.WindowTitlebarProperties.BorderBrushProperty
+  isExternal: true
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetBorderBrush*
+  commentId: Overload:Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetBorderBrush
+  name: GetBorderBrush
+  nameWithType: WindowTitlebarProperties.GetBorderBrush
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetBorderBrush
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetBorderBrush*
+  commentId: Overload:Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetBorderBrush
+  name: SetBorderBrush
+  nameWithType: WindowTitlebarProperties.SetBorderBrush
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetBorderBrush
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.InactiveBorderBrushProperty
+  commentId: F:Celestial.UIToolkit.Theming.WindowTitlebarProperties.InactiveBorderBrushProperty
+  isExternal: true
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetInactiveBorderBrush*
+  commentId: Overload:Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetInactiveBorderBrush
+  name: GetInactiveBorderBrush
+  nameWithType: WindowTitlebarProperties.GetInactiveBorderBrush
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetInactiveBorderBrush
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetInactiveBorderBrush*
+  commentId: Overload:Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetInactiveBorderBrush
+  name: SetInactiveBorderBrush
+  nameWithType: WindowTitlebarProperties.SetInactiveBorderBrush
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetInactiveBorderBrush
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.ForegroundBrushProperty
+  commentId: F:Celestial.UIToolkit.Theming.WindowTitlebarProperties.ForegroundBrushProperty
+  isExternal: true
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetForegroundBrush*
+  commentId: Overload:Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetForegroundBrush
+  name: GetForegroundBrush
+  nameWithType: WindowTitlebarProperties.GetForegroundBrush
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetForegroundBrush
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetForegroundBrush*
+  commentId: Overload:Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetForegroundBrush
+  name: SetForegroundBrush
+  nameWithType: WindowTitlebarProperties.SetForegroundBrush
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetForegroundBrush
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.InactiveForegroundBrushProperty
+  commentId: F:Celestial.UIToolkit.Theming.WindowTitlebarProperties.InactiveForegroundBrushProperty
+  isExternal: true
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetInactiveForegroundBrush*
+  commentId: Overload:Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetInactiveForegroundBrush
+  name: GetInactiveForegroundBrush
+  nameWithType: WindowTitlebarProperties.GetInactiveForegroundBrush
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetInactiveForegroundBrush
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetInactiveForegroundBrush*
+  commentId: Overload:Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetInactiveForegroundBrush
+  name: SetInactiveForegroundBrush
+  nameWithType: WindowTitlebarProperties.SetInactiveForegroundBrush
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetInactiveForegroundBrush
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.MinimizeButtonStyleProperty
+  commentId: F:Celestial.UIToolkit.Theming.WindowTitlebarProperties.MinimizeButtonStyleProperty
+  isExternal: true
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetMinimizeButtonStyle*
+  commentId: Overload:Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetMinimizeButtonStyle
+  name: GetMinimizeButtonStyle
+  nameWithType: WindowTitlebarProperties.GetMinimizeButtonStyle
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetMinimizeButtonStyle
+- uid: System.Windows.Style
+  commentId: T:System.Windows.Style
+  parent: System.Windows
+  isExternal: true
+  name: Style
+  nameWithType: Style
+  fullName: System.Windows.Style
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetMinimizeButtonStyle*
+  commentId: Overload:Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetMinimizeButtonStyle
+  name: SetMinimizeButtonStyle
+  nameWithType: WindowTitlebarProperties.SetMinimizeButtonStyle
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetMinimizeButtonStyle
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.MaximizeButtonStyleProperty
+  commentId: F:Celestial.UIToolkit.Theming.WindowTitlebarProperties.MaximizeButtonStyleProperty
+  isExternal: true
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetMaximizeButtonStyle*
+  commentId: Overload:Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetMaximizeButtonStyle
+  name: GetMaximizeButtonStyle
+  nameWithType: WindowTitlebarProperties.GetMaximizeButtonStyle
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetMaximizeButtonStyle
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetMaximizeButtonStyle*
+  commentId: Overload:Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetMaximizeButtonStyle
+  name: SetMaximizeButtonStyle
+  nameWithType: WindowTitlebarProperties.SetMaximizeButtonStyle
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetMaximizeButtonStyle
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.CloseButtonStyleProperty
+  commentId: F:Celestial.UIToolkit.Theming.WindowTitlebarProperties.CloseButtonStyleProperty
+  isExternal: true
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetCloseButtonStyle*
+  commentId: Overload:Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetCloseButtonStyle
+  name: GetCloseButtonStyle
+  nameWithType: WindowTitlebarProperties.GetCloseButtonStyle
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetCloseButtonStyle
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetCloseButtonStyle*
+  commentId: Overload:Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetCloseButtonStyle
+  name: SetCloseButtonStyle
+  nameWithType: WindowTitlebarProperties.SetCloseButtonStyle
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetCloseButtonStyle
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontSizeProperty
+  commentId: F:Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontSizeProperty
+  isExternal: true
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontSize*
+  commentId: Overload:Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontSize
+  name: GetTitleFontSize
+  nameWithType: WindowTitlebarProperties.GetTitleFontSize
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontSize
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontSize*
+  commentId: Overload:Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontSize
+  name: SetTitleFontSize
+  nameWithType: WindowTitlebarProperties.SetTitleFontSize
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontSize
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontFamilyProperty
+  commentId: F:Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontFamilyProperty
+  isExternal: true
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontFamily*
+  commentId: Overload:Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontFamily
+  name: GetTitleFontFamily
+  nameWithType: WindowTitlebarProperties.GetTitleFontFamily
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontFamily
+- uid: System.Windows.Media.FontFamily
+  commentId: T:System.Windows.Media.FontFamily
+  parent: System.Windows.Media
+  isExternal: true
+  name: FontFamily
+  nameWithType: FontFamily
+  fullName: System.Windows.Media.FontFamily
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontFamily*
+  commentId: Overload:Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontFamily
+  name: SetTitleFontFamily
+  nameWithType: WindowTitlebarProperties.SetTitleFontFamily
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontFamily
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontStretchProperty
+  commentId: F:Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontStretchProperty
+  isExternal: true
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontStretch*
+  commentId: Overload:Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontStretch
+  name: GetTitleFontStretch
+  nameWithType: WindowTitlebarProperties.GetTitleFontStretch
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontStretch
+- uid: System.Windows.FontStretch
+  commentId: T:System.Windows.FontStretch
+  parent: System.Windows
+  isExternal: true
+  name: FontStretch
+  nameWithType: FontStretch
+  fullName: System.Windows.FontStretch
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontStretch*
+  commentId: Overload:Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontStretch
+  name: SetTitleFontStretch
+  nameWithType: WindowTitlebarProperties.SetTitleFontStretch
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontStretch
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontStyleProperty
+  commentId: F:Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontStyleProperty
+  isExternal: true
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontStyle*
+  commentId: Overload:Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontStyle
+  name: GetTitleFontStyle
+  nameWithType: WindowTitlebarProperties.GetTitleFontStyle
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontStyle
+- uid: System.Windows.FontStyle
+  commentId: T:System.Windows.FontStyle
+  parent: System.Windows
+  isExternal: true
+  name: FontStyle
+  nameWithType: FontStyle
+  fullName: System.Windows.FontStyle
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontStyle*
+  commentId: Overload:Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontStyle
+  name: SetTitleFontStyle
+  nameWithType: WindowTitlebarProperties.SetTitleFontStyle
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontStyle
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontWeightProperty
+  commentId: F:Celestial.UIToolkit.Theming.WindowTitlebarProperties.TitleFontWeightProperty
+  isExternal: true
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontWeight*
+  commentId: Overload:Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontWeight
+  name: GetTitleFontWeight
+  nameWithType: WindowTitlebarProperties.GetTitleFontWeight
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.GetTitleFontWeight
+- uid: System.Windows.FontWeight
+  commentId: T:System.Windows.FontWeight
+  parent: System.Windows
+  isExternal: true
+  name: FontWeight
+  nameWithType: FontWeight
+  fullName: System.Windows.FontWeight
+- uid: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontWeight*
+  commentId: Overload:Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontWeight
+  name: SetTitleFontWeight
+  nameWithType: WindowTitlebarProperties.SetTitleFontWeight
+  fullName: Celestial.UIToolkit.Theming.WindowTitlebarProperties.SetTitleFontWeight

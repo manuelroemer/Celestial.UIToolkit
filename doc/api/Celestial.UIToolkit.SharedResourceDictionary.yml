@@ -1,0 +1,1350 @@
+### YamlMime:ManagedReference
+items:
+- uid: Celestial.UIToolkit.SharedResourceDictionary
+  commentId: T:Celestial.UIToolkit.SharedResourceDictionary
+  id: SharedResourceDictionary
+  parent: Celestial.UIToolkit
+  children:
+  - Celestial.UIToolkit.SharedResourceDictionary.#ctor
+  - Celestial.UIToolkit.SharedResourceDictionary.#ctor(System.Uri)
+  - Celestial.UIToolkit.SharedResourceDictionary.Source
+  langs:
+  - csharp
+  - vb
+  name: SharedResourceDictionary
+  nameWithType: SharedResourceDictionary
+  fullName: Celestial.UIToolkit.SharedResourceDictionary
+  type: Class
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/SharedResourceDictionary.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: SharedResourceDictionary
+    path: src/Celestial.UIToolkit.Core/SharedResourceDictionary.cs
+    startLine: 19
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit
+  summary: "\nAn extension of the <xref href=\"System.Windows.ResourceDictionary\" data-throw-if-not-resolved=\"false\"></xref> class which shadows\nthe <xref href=\"System.Windows.ResourceDictionary.Source\" data-throw-if-not-resolved=\"false\"></xref> property.\nThe difference to a normal resource dictionary is that when this class&apos;\n<xref href=\"Celestial.UIToolkit.SharedResourceDictionary.Source\" data-throw-if-not-resolved=\"false\"></xref> property is set, the dictionary from that source gets\nloaded via the <xref href=\"Celestial.UIToolkit.SharedResourceDictionaryManager\" data-throw-if-not-resolved=\"false\"></xref>, which allows\ncaching of the resource dictionaries.\nThe loaded resource dictionary set by the <xref href=\"Celestial.UIToolkit.SharedResourceDictionary.Source\" data-throw-if-not-resolved=\"false\"></xref> property is then\naccessible via the <xref href=\"System.Windows.ResourceDictionary.MergedDictionaries\" data-throw-if-not-resolved=\"false\"></xref> property.\n"
+  example: []
+  syntax:
+    content: 'public class SharedResourceDictionary : ResourceDictionary, IDictionary, ICollection, IEnumerable, ISupportInitialize, IUriContext, INameScope'
+    content.vb: >-
+      Public Class SharedResourceDictionary
+
+          Inherits ResourceDictionary
+
+          Implements IDictionary, ICollection, IEnumerable, ISupportInitialize, IUriContext, INameScope
+  inheritance:
+  - System.Object
+  - System.Windows.ResourceDictionary
+  implements:
+  - System.Collections.IDictionary
+  - System.Collections.ICollection
+  - System.Collections.IEnumerable
+  - System.ComponentModel.ISupportInitialize
+  - System.Windows.Markup.IUriContext
+  - System.Windows.Markup.INameScope
+  inheritedMembers:
+  - System.Windows.ResourceDictionary.CopyTo(System.Collections.DictionaryEntry[],System.Int32)
+  - System.Windows.ResourceDictionary.RegisterName(System.String,System.Object)
+  - System.Windows.ResourceDictionary.UnregisterName(System.String)
+  - System.Windows.ResourceDictionary.FindName(System.String)
+  - System.Windows.ResourceDictionary.Add(System.Object,System.Object)
+  - System.Windows.ResourceDictionary.Clear
+  - System.Windows.ResourceDictionary.Contains(System.Object)
+  - System.Windows.ResourceDictionary.GetEnumerator
+  - System.Windows.ResourceDictionary.Remove(System.Object)
+  - System.Windows.ResourceDictionary.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+  - System.Windows.ResourceDictionary.System#Collections#IEnumerable#GetEnumerator
+  - System.Windows.ResourceDictionary.BeginInit
+  - System.Windows.ResourceDictionary.EndInit
+  - System.Windows.ResourceDictionary.OnGettingValue(System.Object,System.Object@,System.Boolean@)
+  - System.Windows.ResourceDictionary.MergedDictionaries
+  - System.Windows.ResourceDictionary.System#Windows#Markup#IUriContext#BaseUri
+  - System.Windows.ResourceDictionary.IsFixedSize
+  - System.Windows.ResourceDictionary.IsReadOnly
+  - System.Windows.ResourceDictionary.Item(System.Object)
+  - System.Windows.ResourceDictionary.DeferrableContent
+  - System.Windows.ResourceDictionary.Keys
+  - System.Windows.ResourceDictionary.Values
+  - System.Windows.ResourceDictionary.Count
+  - System.Windows.ResourceDictionary.System#Collections#ICollection#IsSynchronized
+  - System.Windows.ResourceDictionary.System#Collections#ICollection#SyncRoot
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Celestial.UIToolkit.SharedResourceDictionary.#ctor
+  commentId: M:Celestial.UIToolkit.SharedResourceDictionary.#ctor
+  id: '#ctor'
+  parent: Celestial.UIToolkit.SharedResourceDictionary
+  langs:
+  - csharp
+  - vb
+  name: SharedResourceDictionary()
+  nameWithType: SharedResourceDictionary.SharedResourceDictionary()
+  fullName: Celestial.UIToolkit.SharedResourceDictionary.SharedResourceDictionary()
+  type: Constructor
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/SharedResourceDictionary.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: .ctor
+    path: src/Celestial.UIToolkit.Core/SharedResourceDictionary.cs
+    startLine: 25
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit
+  summary: "\nInitializes a new instance of the <xref href=\"Celestial.UIToolkit.SharedResourceDictionary\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: public SharedResourceDictionary()
+    content.vb: Public Sub New
+  overload: Celestial.UIToolkit.SharedResourceDictionary.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Celestial.UIToolkit.SharedResourceDictionary.#ctor(System.Uri)
+  commentId: M:Celestial.UIToolkit.SharedResourceDictionary.#ctor(System.Uri)
+  id: '#ctor(System.Uri)'
+  parent: Celestial.UIToolkit.SharedResourceDictionary
+  langs:
+  - csharp
+  - vb
+  name: SharedResourceDictionary(Uri)
+  nameWithType: SharedResourceDictionary.SharedResourceDictionary(Uri)
+  fullName: Celestial.UIToolkit.SharedResourceDictionary.SharedResourceDictionary(System.Uri)
+  type: Constructor
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/SharedResourceDictionary.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: .ctor
+    path: src/Celestial.UIToolkit.Core/SharedResourceDictionary.cs
+    startLine: 34
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit
+  summary: "\nInitializes a new instance of the <xref href=\"Celestial.UIToolkit.SharedResourceDictionary\" data-throw-if-not-resolved=\"false\"></xref> class\nwith the specified <code data-dev-comment-type=\"paramref\" class=\"paramref\">source</code>.\n"
+  example: []
+  syntax:
+    content: public SharedResourceDictionary(Uri source)
+    parameters:
+    - id: source
+      type: System.Uri
+      description: "\nThe dictionary&apos;s source <xref href=\"System.Uri\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+    content.vb: Public Sub New(source As Uri)
+  overload: Celestial.UIToolkit.SharedResourceDictionary.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Celestial.UIToolkit.SharedResourceDictionary.Source
+  commentId: P:Celestial.UIToolkit.SharedResourceDictionary.Source
+  id: Source
+  parent: Celestial.UIToolkit.SharedResourceDictionary
+  langs:
+  - csharp
+  - vb
+  name: Source
+  nameWithType: SharedResourceDictionary.Source
+  fullName: Celestial.UIToolkit.SharedResourceDictionary.Source
+  type: Property
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/SharedResourceDictionary.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: Source
+    path: src/Celestial.UIToolkit.Core/SharedResourceDictionary.cs
+    startLine: 47
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit
+  summary: "\nGets or sets the dictionary&apos;s source <xref href=\"System.Uri\" data-throw-if-not-resolved=\"false\"></xref>.\nWhen set, the <xref href=\"Celestial.UIToolkit.SharedResourceDictionary\" data-throw-if-not-resolved=\"false\"></xref> tries to load\nthe dictionary by using the <xref href=\"Celestial.UIToolkit.SharedResourceDictionaryManager.GetDictionary(System.Uri)\" data-throw-if-not-resolved=\"false\"></xref>\nmethod and adds the result to the <xref href=\"System.Windows.ResourceDictionary.MergedDictionaries\" data-throw-if-not-resolved=\"false\"></xref>\ncollection.\n"
+  example: []
+  syntax:
+    content: public Uri Source { get; set; }
+    parameters: []
+    return:
+      type: System.Uri
+    content.vb: Public Property Source As Uri
+  overload: Celestial.UIToolkit.SharedResourceDictionary.Source*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: System.Windows.ResourceDictionary
+  commentId: T:System.Windows.ResourceDictionary
+  parent: System.Windows
+  isExternal: true
+  name: ResourceDictionary
+  nameWithType: ResourceDictionary
+  fullName: System.Windows.ResourceDictionary
+- uid: System.Windows.ResourceDictionary.Source
+  commentId: P:System.Windows.ResourceDictionary.Source
+  isExternal: true
+- uid: Celestial.UIToolkit.SharedResourceDictionary.Source
+  commentId: P:Celestial.UIToolkit.SharedResourceDictionary.Source
+  isExternal: true
+- uid: Celestial.UIToolkit.SharedResourceDictionaryManager
+  commentId: T:Celestial.UIToolkit.SharedResourceDictionaryManager
+  isExternal: true
+- uid: System.Windows.ResourceDictionary.MergedDictionaries
+  commentId: P:System.Windows.ResourceDictionary.MergedDictionaries
+  parent: System.Windows.ResourceDictionary
+  isExternal: true
+  name: MergedDictionaries
+  nameWithType: ResourceDictionary.MergedDictionaries
+  fullName: System.Windows.ResourceDictionary.MergedDictionaries
+- uid: Celestial.UIToolkit
+  commentId: N:Celestial.UIToolkit
+  name: Celestial.UIToolkit
+  nameWithType: Celestial.UIToolkit
+  fullName: Celestial.UIToolkit
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Collections.IDictionary
+  commentId: T:System.Collections.IDictionary
+  parent: System.Collections
+  isExternal: true
+  name: IDictionary
+  nameWithType: IDictionary
+  fullName: System.Collections.IDictionary
+- uid: System.Collections.ICollection
+  commentId: T:System.Collections.ICollection
+  parent: System.Collections
+  isExternal: true
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+- uid: System.Collections.IEnumerable
+  commentId: T:System.Collections.IEnumerable
+  parent: System.Collections
+  isExternal: true
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+- uid: System.ComponentModel.ISupportInitialize
+  commentId: T:System.ComponentModel.ISupportInitialize
+  parent: System.ComponentModel
+  isExternal: true
+  name: ISupportInitialize
+  nameWithType: ISupportInitialize
+  fullName: System.ComponentModel.ISupportInitialize
+- uid: System.Windows.Markup.IUriContext
+  commentId: T:System.Windows.Markup.IUriContext
+  parent: System.Windows.Markup
+  isExternal: true
+  name: IUriContext
+  nameWithType: IUriContext
+  fullName: System.Windows.Markup.IUriContext
+- uid: System.Windows.Markup.INameScope
+  commentId: T:System.Windows.Markup.INameScope
+  parent: System.Windows.Markup
+  isExternal: true
+  name: INameScope
+  nameWithType: INameScope
+  fullName: System.Windows.Markup.INameScope
+- uid: System.Windows.ResourceDictionary.CopyTo(System.Collections.DictionaryEntry[],System.Int32)
+  commentId: M:System.Windows.ResourceDictionary.CopyTo(System.Collections.DictionaryEntry[],System.Int32)
+  parent: System.Windows.ResourceDictionary
+  isExternal: true
+  name: CopyTo(DictionaryEntry[], Int32)
+  nameWithType: ResourceDictionary.CopyTo(DictionaryEntry[], Int32)
+  fullName: System.Windows.ResourceDictionary.CopyTo(System.Collections.DictionaryEntry[], System.Int32)
+  nameWithType.vb: ResourceDictionary.CopyTo(DictionaryEntry(), Int32)
+  fullName.vb: System.Windows.ResourceDictionary.CopyTo(System.Collections.DictionaryEntry(), System.Int32)
+  name.vb: CopyTo(DictionaryEntry(), Int32)
+  spec.csharp:
+  - uid: System.Windows.ResourceDictionary.CopyTo(System.Collections.DictionaryEntry[],System.Int32)
+    name: CopyTo
+    nameWithType: ResourceDictionary.CopyTo
+    fullName: System.Windows.ResourceDictionary.CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.DictionaryEntry
+    name: DictionaryEntry
+    nameWithType: DictionaryEntry
+    fullName: System.Collections.DictionaryEntry
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.ResourceDictionary.CopyTo(System.Collections.DictionaryEntry[],System.Int32)
+    name: CopyTo
+    nameWithType: ResourceDictionary.CopyTo
+    fullName: System.Windows.ResourceDictionary.CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.DictionaryEntry
+    name: DictionaryEntry
+    nameWithType: DictionaryEntry
+    fullName: System.Collections.DictionaryEntry
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.ResourceDictionary.RegisterName(System.String,System.Object)
+  commentId: M:System.Windows.ResourceDictionary.RegisterName(System.String,System.Object)
+  parent: System.Windows.ResourceDictionary
+  isExternal: true
+  name: RegisterName(String, Object)
+  nameWithType: ResourceDictionary.RegisterName(String, Object)
+  fullName: System.Windows.ResourceDictionary.RegisterName(System.String, System.Object)
+  spec.csharp:
+  - uid: System.Windows.ResourceDictionary.RegisterName(System.String,System.Object)
+    name: RegisterName
+    nameWithType: ResourceDictionary.RegisterName
+    fullName: System.Windows.ResourceDictionary.RegisterName
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.ResourceDictionary.RegisterName(System.String,System.Object)
+    name: RegisterName
+    nameWithType: ResourceDictionary.RegisterName
+    fullName: System.Windows.ResourceDictionary.RegisterName
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.ResourceDictionary.UnregisterName(System.String)
+  commentId: M:System.Windows.ResourceDictionary.UnregisterName(System.String)
+  parent: System.Windows.ResourceDictionary
+  isExternal: true
+  name: UnregisterName(String)
+  nameWithType: ResourceDictionary.UnregisterName(String)
+  fullName: System.Windows.ResourceDictionary.UnregisterName(System.String)
+  spec.csharp:
+  - uid: System.Windows.ResourceDictionary.UnregisterName(System.String)
+    name: UnregisterName
+    nameWithType: ResourceDictionary.UnregisterName
+    fullName: System.Windows.ResourceDictionary.UnregisterName
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.ResourceDictionary.UnregisterName(System.String)
+    name: UnregisterName
+    nameWithType: ResourceDictionary.UnregisterName
+    fullName: System.Windows.ResourceDictionary.UnregisterName
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.ResourceDictionary.FindName(System.String)
+  commentId: M:System.Windows.ResourceDictionary.FindName(System.String)
+  parent: System.Windows.ResourceDictionary
+  isExternal: true
+  name: FindName(String)
+  nameWithType: ResourceDictionary.FindName(String)
+  fullName: System.Windows.ResourceDictionary.FindName(System.String)
+  spec.csharp:
+  - uid: System.Windows.ResourceDictionary.FindName(System.String)
+    name: FindName
+    nameWithType: ResourceDictionary.FindName
+    fullName: System.Windows.ResourceDictionary.FindName
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.ResourceDictionary.FindName(System.String)
+    name: FindName
+    nameWithType: ResourceDictionary.FindName
+    fullName: System.Windows.ResourceDictionary.FindName
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.ResourceDictionary.Add(System.Object,System.Object)
+  commentId: M:System.Windows.ResourceDictionary.Add(System.Object,System.Object)
+  parent: System.Windows.ResourceDictionary
+  isExternal: true
+  name: Add(Object, Object)
+  nameWithType: ResourceDictionary.Add(Object, Object)
+  fullName: System.Windows.ResourceDictionary.Add(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Windows.ResourceDictionary.Add(System.Object,System.Object)
+    name: Add
+    nameWithType: ResourceDictionary.Add
+    fullName: System.Windows.ResourceDictionary.Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.ResourceDictionary.Add(System.Object,System.Object)
+    name: Add
+    nameWithType: ResourceDictionary.Add
+    fullName: System.Windows.ResourceDictionary.Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.ResourceDictionary.Clear
+  commentId: M:System.Windows.ResourceDictionary.Clear
+  parent: System.Windows.ResourceDictionary
+  isExternal: true
+  name: Clear()
+  nameWithType: ResourceDictionary.Clear()
+  fullName: System.Windows.ResourceDictionary.Clear()
+  spec.csharp:
+  - uid: System.Windows.ResourceDictionary.Clear
+    name: Clear
+    nameWithType: ResourceDictionary.Clear
+    fullName: System.Windows.ResourceDictionary.Clear
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.ResourceDictionary.Clear
+    name: Clear
+    nameWithType: ResourceDictionary.Clear
+    fullName: System.Windows.ResourceDictionary.Clear
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.ResourceDictionary.Contains(System.Object)
+  commentId: M:System.Windows.ResourceDictionary.Contains(System.Object)
+  parent: System.Windows.ResourceDictionary
+  isExternal: true
+  name: Contains(Object)
+  nameWithType: ResourceDictionary.Contains(Object)
+  fullName: System.Windows.ResourceDictionary.Contains(System.Object)
+  spec.csharp:
+  - uid: System.Windows.ResourceDictionary.Contains(System.Object)
+    name: Contains
+    nameWithType: ResourceDictionary.Contains
+    fullName: System.Windows.ResourceDictionary.Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.ResourceDictionary.Contains(System.Object)
+    name: Contains
+    nameWithType: ResourceDictionary.Contains
+    fullName: System.Windows.ResourceDictionary.Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.ResourceDictionary.GetEnumerator
+  commentId: M:System.Windows.ResourceDictionary.GetEnumerator
+  parent: System.Windows.ResourceDictionary
+  isExternal: true
+  name: GetEnumerator()
+  nameWithType: ResourceDictionary.GetEnumerator()
+  fullName: System.Windows.ResourceDictionary.GetEnumerator()
+  spec.csharp:
+  - uid: System.Windows.ResourceDictionary.GetEnumerator
+    name: GetEnumerator
+    nameWithType: ResourceDictionary.GetEnumerator
+    fullName: System.Windows.ResourceDictionary.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.ResourceDictionary.GetEnumerator
+    name: GetEnumerator
+    nameWithType: ResourceDictionary.GetEnumerator
+    fullName: System.Windows.ResourceDictionary.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.ResourceDictionary.Remove(System.Object)
+  commentId: M:System.Windows.ResourceDictionary.Remove(System.Object)
+  parent: System.Windows.ResourceDictionary
+  isExternal: true
+  name: Remove(Object)
+  nameWithType: ResourceDictionary.Remove(Object)
+  fullName: System.Windows.ResourceDictionary.Remove(System.Object)
+  spec.csharp:
+  - uid: System.Windows.ResourceDictionary.Remove(System.Object)
+    name: Remove
+    nameWithType: ResourceDictionary.Remove
+    fullName: System.Windows.ResourceDictionary.Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.ResourceDictionary.Remove(System.Object)
+    name: Remove
+    nameWithType: ResourceDictionary.Remove
+    fullName: System.Windows.ResourceDictionary.Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.ResourceDictionary.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+  commentId: M:System.Windows.ResourceDictionary.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+  parent: System.Windows.ResourceDictionary
+  isExternal: true
+  name: ICollection.CopyTo(Array, Int32)
+  nameWithType: ResourceDictionary.ICollection.CopyTo(Array, Int32)
+  fullName: System.Windows.ResourceDictionary.System.Collections.ICollection.CopyTo(System.Array, System.Int32)
+  nameWithType.vb: ResourceDictionary.System.Collections.ICollection.CopyTo(Array, Int32)
+  name.vb: System.Collections.ICollection.CopyTo(Array, Int32)
+  spec.csharp:
+  - uid: System.Windows.ResourceDictionary.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+    name: ICollection.CopyTo
+    nameWithType: ResourceDictionary.ICollection.CopyTo
+    fullName: System.Windows.ResourceDictionary.System.Collections.ICollection.CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Array
+    name: Array
+    nameWithType: Array
+    fullName: System.Array
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.ResourceDictionary.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+    name: System.Collections.ICollection.CopyTo
+    nameWithType: ResourceDictionary.System.Collections.ICollection.CopyTo
+    fullName: System.Windows.ResourceDictionary.System.Collections.ICollection.CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Array
+    name: Array
+    nameWithType: Array
+    fullName: System.Array
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.ResourceDictionary.System#Collections#IEnumerable#GetEnumerator
+  commentId: M:System.Windows.ResourceDictionary.System#Collections#IEnumerable#GetEnumerator
+  parent: System.Windows.ResourceDictionary
+  isExternal: true
+  name: IEnumerable.GetEnumerator()
+  nameWithType: ResourceDictionary.IEnumerable.GetEnumerator()
+  fullName: System.Windows.ResourceDictionary.System.Collections.IEnumerable.GetEnumerator()
+  nameWithType.vb: ResourceDictionary.System.Collections.IEnumerable.GetEnumerator()
+  name.vb: System.Collections.IEnumerable.GetEnumerator()
+  spec.csharp:
+  - uid: System.Windows.ResourceDictionary.System#Collections#IEnumerable#GetEnumerator
+    name: IEnumerable.GetEnumerator
+    nameWithType: ResourceDictionary.IEnumerable.GetEnumerator
+    fullName: System.Windows.ResourceDictionary.System.Collections.IEnumerable.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.ResourceDictionary.System#Collections#IEnumerable#GetEnumerator
+    name: System.Collections.IEnumerable.GetEnumerator
+    nameWithType: ResourceDictionary.System.Collections.IEnumerable.GetEnumerator
+    fullName: System.Windows.ResourceDictionary.System.Collections.IEnumerable.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.ResourceDictionary.BeginInit
+  commentId: M:System.Windows.ResourceDictionary.BeginInit
+  parent: System.Windows.ResourceDictionary
+  isExternal: true
+  name: BeginInit()
+  nameWithType: ResourceDictionary.BeginInit()
+  fullName: System.Windows.ResourceDictionary.BeginInit()
+  spec.csharp:
+  - uid: System.Windows.ResourceDictionary.BeginInit
+    name: BeginInit
+    nameWithType: ResourceDictionary.BeginInit
+    fullName: System.Windows.ResourceDictionary.BeginInit
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.ResourceDictionary.BeginInit
+    name: BeginInit
+    nameWithType: ResourceDictionary.BeginInit
+    fullName: System.Windows.ResourceDictionary.BeginInit
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.ResourceDictionary.EndInit
+  commentId: M:System.Windows.ResourceDictionary.EndInit
+  parent: System.Windows.ResourceDictionary
+  isExternal: true
+  name: EndInit()
+  nameWithType: ResourceDictionary.EndInit()
+  fullName: System.Windows.ResourceDictionary.EndInit()
+  spec.csharp:
+  - uid: System.Windows.ResourceDictionary.EndInit
+    name: EndInit
+    nameWithType: ResourceDictionary.EndInit
+    fullName: System.Windows.ResourceDictionary.EndInit
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.ResourceDictionary.EndInit
+    name: EndInit
+    nameWithType: ResourceDictionary.EndInit
+    fullName: System.Windows.ResourceDictionary.EndInit
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.ResourceDictionary.OnGettingValue(System.Object,System.Object@,System.Boolean@)
+  commentId: M:System.Windows.ResourceDictionary.OnGettingValue(System.Object,System.Object@,System.Boolean@)
+  parent: System.Windows.ResourceDictionary
+  isExternal: true
+  name: OnGettingValue(Object, Object, Boolean)
+  nameWithType: ResourceDictionary.OnGettingValue(Object, Object, Boolean)
+  fullName: System.Windows.ResourceDictionary.OnGettingValue(System.Object, System.Object, System.Boolean)
+  spec.csharp:
+  - uid: System.Windows.ResourceDictionary.OnGettingValue(System.Object,System.Object@,System.Boolean@)
+    name: OnGettingValue
+    nameWithType: ResourceDictionary.OnGettingValue
+    fullName: System.Windows.ResourceDictionary.OnGettingValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Windows.ResourceDictionary.OnGettingValue(System.Object,System.Object@,System.Boolean@)
+    name: OnGettingValue
+    nameWithType: ResourceDictionary.OnGettingValue
+    fullName: System.Windows.ResourceDictionary.OnGettingValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.ResourceDictionary.System#Windows#Markup#IUriContext#BaseUri
+  commentId: P:System.Windows.ResourceDictionary.System#Windows#Markup#IUriContext#BaseUri
+  parent: System.Windows.ResourceDictionary
+  isExternal: true
+  name: IUriContext.BaseUri
+  nameWithType: ResourceDictionary.IUriContext.BaseUri
+  fullName: System.Windows.ResourceDictionary.System.Windows.Markup.IUriContext.BaseUri
+  nameWithType.vb: ResourceDictionary.System.Windows.Markup.IUriContext.BaseUri
+  name.vb: System.Windows.Markup.IUriContext.BaseUri
+- uid: System.Windows.ResourceDictionary.IsFixedSize
+  commentId: P:System.Windows.ResourceDictionary.IsFixedSize
+  parent: System.Windows.ResourceDictionary
+  isExternal: true
+  name: IsFixedSize
+  nameWithType: ResourceDictionary.IsFixedSize
+  fullName: System.Windows.ResourceDictionary.IsFixedSize
+- uid: System.Windows.ResourceDictionary.IsReadOnly
+  commentId: P:System.Windows.ResourceDictionary.IsReadOnly
+  parent: System.Windows.ResourceDictionary
+  isExternal: true
+  name: IsReadOnly
+  nameWithType: ResourceDictionary.IsReadOnly
+  fullName: System.Windows.ResourceDictionary.IsReadOnly
+- uid: System.Windows.ResourceDictionary.Item(System.Object)
+  commentId: P:System.Windows.ResourceDictionary.Item(System.Object)
+  parent: System.Windows.ResourceDictionary
+  isExternal: true
+  name: Item[Object]
+  nameWithType: ResourceDictionary.Item[Object]
+  fullName: System.Windows.ResourceDictionary.Item[System.Object]
+  nameWithType.vb: ResourceDictionary.Item(Object)
+  fullName.vb: System.Windows.ResourceDictionary.Item(System.Object)
+  name.vb: Item(Object)
+  spec.csharp:
+  - uid: System.Windows.ResourceDictionary.Item(System.Object)
+    name: Item
+    nameWithType: ResourceDictionary.Item
+    fullName: System.Windows.ResourceDictionary.Item
+    isExternal: true
+  - name: '['
+    nameWithType: '['
+    fullName: '['
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ']'
+    nameWithType: ']'
+    fullName: ']'
+  spec.vb:
+  - uid: System.Windows.ResourceDictionary.Item(System.Object)
+    name: Item
+    nameWithType: ResourceDictionary.Item
+    fullName: System.Windows.ResourceDictionary.Item
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.ResourceDictionary.DeferrableContent
+  commentId: P:System.Windows.ResourceDictionary.DeferrableContent
+  parent: System.Windows.ResourceDictionary
+  isExternal: true
+  name: DeferrableContent
+  nameWithType: ResourceDictionary.DeferrableContent
+  fullName: System.Windows.ResourceDictionary.DeferrableContent
+- uid: System.Windows.ResourceDictionary.Keys
+  commentId: P:System.Windows.ResourceDictionary.Keys
+  parent: System.Windows.ResourceDictionary
+  isExternal: true
+  name: Keys
+  nameWithType: ResourceDictionary.Keys
+  fullName: System.Windows.ResourceDictionary.Keys
+- uid: System.Windows.ResourceDictionary.Values
+  commentId: P:System.Windows.ResourceDictionary.Values
+  parent: System.Windows.ResourceDictionary
+  isExternal: true
+  name: Values
+  nameWithType: ResourceDictionary.Values
+  fullName: System.Windows.ResourceDictionary.Values
+- uid: System.Windows.ResourceDictionary.Count
+  commentId: P:System.Windows.ResourceDictionary.Count
+  parent: System.Windows.ResourceDictionary
+  isExternal: true
+  name: Count
+  nameWithType: ResourceDictionary.Count
+  fullName: System.Windows.ResourceDictionary.Count
+- uid: System.Windows.ResourceDictionary.System#Collections#ICollection#IsSynchronized
+  commentId: P:System.Windows.ResourceDictionary.System#Collections#ICollection#IsSynchronized
+  parent: System.Windows.ResourceDictionary
+  isExternal: true
+  name: ICollection.IsSynchronized
+  nameWithType: ResourceDictionary.ICollection.IsSynchronized
+  fullName: System.Windows.ResourceDictionary.System.Collections.ICollection.IsSynchronized
+  nameWithType.vb: ResourceDictionary.System.Collections.ICollection.IsSynchronized
+  name.vb: System.Collections.ICollection.IsSynchronized
+- uid: System.Windows.ResourceDictionary.System#Collections#ICollection#SyncRoot
+  commentId: P:System.Windows.ResourceDictionary.System#Collections#ICollection#SyncRoot
+  parent: System.Windows.ResourceDictionary
+  isExternal: true
+  name: ICollection.SyncRoot
+  nameWithType: ResourceDictionary.ICollection.SyncRoot
+  fullName: System.Windows.ResourceDictionary.System.Collections.ICollection.SyncRoot
+  nameWithType.vb: ResourceDictionary.System.Collections.ICollection.SyncRoot
+  name.vb: System.Collections.ICollection.SyncRoot
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows
+  commentId: N:System.Windows
+  isExternal: true
+  name: System.Windows
+  nameWithType: System.Windows
+  fullName: System.Windows
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: true
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+- uid: System.ComponentModel
+  commentId: N:System.ComponentModel
+  isExternal: true
+  name: System.ComponentModel
+  nameWithType: System.ComponentModel
+  fullName: System.ComponentModel
+- uid: System.Windows.Markup
+  commentId: N:System.Windows.Markup
+  isExternal: true
+  name: System.Windows.Markup
+  nameWithType: System.Windows.Markup
+  fullName: System.Windows.Markup
+- uid: Celestial.UIToolkit.SharedResourceDictionary
+  commentId: T:Celestial.UIToolkit.SharedResourceDictionary
+  name: SharedResourceDictionary
+  nameWithType: SharedResourceDictionary
+  fullName: Celestial.UIToolkit.SharedResourceDictionary
+- uid: Celestial.UIToolkit.SharedResourceDictionary.#ctor*
+  commentId: Overload:Celestial.UIToolkit.SharedResourceDictionary.#ctor
+  name: SharedResourceDictionary
+  nameWithType: SharedResourceDictionary.SharedResourceDictionary
+  fullName: Celestial.UIToolkit.SharedResourceDictionary.SharedResourceDictionary
+- uid: System.Uri
+  commentId: T:System.Uri
+  parent: System
+  isExternal: true
+  name: Uri
+  nameWithType: Uri
+  fullName: System.Uri
+- uid: Celestial.UIToolkit.SharedResourceDictionaryManager.GetDictionary(System.Uri)
+  commentId: M:Celestial.UIToolkit.SharedResourceDictionaryManager.GetDictionary(System.Uri)
+  isExternal: true
+- uid: Celestial.UIToolkit.SharedResourceDictionary.Source*
+  commentId: Overload:Celestial.UIToolkit.SharedResourceDictionary.Source
+  name: Source
+  nameWithType: SharedResourceDictionary.Source
+  fullName: Celestial.UIToolkit.SharedResourceDictionary.Source

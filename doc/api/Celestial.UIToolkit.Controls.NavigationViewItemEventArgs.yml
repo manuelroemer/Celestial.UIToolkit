@@ -1,0 +1,601 @@
+### YamlMime:ManagedReference
+items:
+- uid: Celestial.UIToolkit.Controls.NavigationViewItemEventArgs
+  commentId: T:Celestial.UIToolkit.Controls.NavigationViewItemEventArgs
+  id: NavigationViewItemEventArgs
+  parent: Celestial.UIToolkit.Controls
+  children:
+  - Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.#ctor(System.Object)
+  - Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.#ctor(System.Object,System.Boolean)
+  - Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.IsSettingsItem
+  - Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.Item
+  - Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.ToString
+  langs:
+  - csharp
+  - vb
+  name: NavigationViewItemEventArgs
+  nameWithType: NavigationViewItemEventArgs
+  fullName: Celestial.UIToolkit.Controls.NavigationViewItemEventArgs
+  type: Class
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Controls/NavigationView/NavigationViewItemEventArgs.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: NavigationViewItemEventArgs
+    path: ../src/Celestial.UIToolkit/Controls/NavigationView/NavigationViewItemEventArgs.cs
+    startLine: 9
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Controls
+  summary: "\nProvides generic event data regarding a single item\nwhich is hosted by a <xref href=\"Celestial.UIToolkit.Controls.NavigationView\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: 'public class NavigationViewItemEventArgs : EventArgs'
+    content.vb: >-
+      Public Class NavigationViewItemEventArgs
+          Inherits EventArgs
+  inheritance:
+  - System.Object
+  - System.EventArgs
+  inheritedMembers:
+  - System.EventArgs.Empty
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.Item
+  commentId: P:Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.Item
+  id: Item
+  parent: Celestial.UIToolkit.Controls.NavigationViewItemEventArgs
+  langs:
+  - csharp
+  - vb
+  name: Item
+  nameWithType: NavigationViewItemEventArgs.Item
+  fullName: Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.Item
+  type: Property
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Controls/NavigationView/NavigationViewItemEventArgs.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: Item
+    path: ../src/Celestial.UIToolkit/Controls/NavigationView/NavigationViewItemEventArgs.cs
+    startLine: 15
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Controls
+  summary: "\nGets the item to which this event data object refers.\n"
+  example: []
+  syntax:
+    content: public object Item { get; }
+    parameters: []
+    return:
+      type: System.Object
+    content.vb: Public ReadOnly Property Item As Object
+  overload: Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.Item*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.IsSettingsItem
+  commentId: P:Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.IsSettingsItem
+  id: IsSettingsItem
+  parent: Celestial.UIToolkit.Controls.NavigationViewItemEventArgs
+  langs:
+  - csharp
+  - vb
+  name: IsSettingsItem
+  nameWithType: NavigationViewItemEventArgs.IsSettingsItem
+  fullName: Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.IsSettingsItem
+  type: Property
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Controls/NavigationView/NavigationViewItemEventArgs.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: IsSettingsItem
+    path: ../src/Celestial.UIToolkit/Controls/NavigationView/NavigationViewItemEventArgs.cs
+    startLine: 21
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Controls
+  summary: "\nGets a value indicating whether the <xref href=\"Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.Item\" data-throw-if-not-resolved=\"false\"></xref> is the special\nsettings navigation item.\n"
+  example: []
+  syntax:
+    content: public bool IsSettingsItem { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsSettingsItem As Boolean
+  overload: Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.IsSettingsItem*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.#ctor(System.Object)
+  commentId: M:Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.#ctor(System.Object)
+  id: '#ctor(System.Object)'
+  parent: Celestial.UIToolkit.Controls.NavigationViewItemEventArgs
+  langs:
+  - csharp
+  - vb
+  name: NavigationViewItemEventArgs(Object)
+  nameWithType: NavigationViewItemEventArgs.NavigationViewItemEventArgs(Object)
+  fullName: Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.NavigationViewItemEventArgs(System.Object)
+  type: Constructor
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Controls/NavigationView/NavigationViewItemEventArgs.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: .ctor
+    path: ../src/Celestial.UIToolkit/Controls/NavigationView/NavigationViewItemEventArgs.cs
+    startLine: 27
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Controls
+  summary: "\nInitializes a new instance of the <xref href=\"Celestial.UIToolkit.Controls.NavigationViewItemEventArgs\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: public NavigationViewItemEventArgs(object item)
+    parameters:
+    - id: item
+      type: System.Object
+      description: The item to which this event data object refers.
+    content.vb: Public Sub New(item As Object)
+  overload: Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.#ctor(System.Object,System.Boolean)
+  commentId: M:Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.#ctor(System.Object,System.Boolean)
+  id: '#ctor(System.Object,System.Boolean)'
+  parent: Celestial.UIToolkit.Controls.NavigationViewItemEventArgs
+  langs:
+  - csharp
+  - vb
+  name: NavigationViewItemEventArgs(Object, Boolean)
+  nameWithType: NavigationViewItemEventArgs.NavigationViewItemEventArgs(Object, Boolean)
+  fullName: Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.NavigationViewItemEventArgs(System.Object, System.Boolean)
+  type: Constructor
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Controls/NavigationView/NavigationViewItemEventArgs.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: .ctor
+    path: ../src/Celestial.UIToolkit/Controls/NavigationView/NavigationViewItemEventArgs.cs
+    startLine: 38
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Controls
+  summary: "\nInitializes a new instance of the <xref href=\"Celestial.UIToolkit.Controls.NavigationViewItemEventArgs\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: public NavigationViewItemEventArgs(object item, bool isSettingsItem)
+    parameters:
+    - id: item
+      type: System.Object
+      description: The item to which this event data object refers.
+    - id: isSettingsItem
+      type: System.Boolean
+      description: "\nA value indicating whether the <xref href=\"Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.Item\" data-throw-if-not-resolved=\"false\"></xref> is the special settings\nnavigation item.\n"
+    content.vb: Public Sub New(item As Object, isSettingsItem As Boolean)
+  overload: Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.ToString
+  commentId: M:Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.ToString
+  id: ToString
+  parent: Celestial.UIToolkit.Controls.NavigationViewItemEventArgs
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: NavigationViewItemEventArgs.ToString()
+  fullName: Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.ToString()
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Controls/NavigationView/NavigationViewItemEventArgs.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: ToString
+    path: ../src/Celestial.UIToolkit/Controls/NavigationView/NavigationViewItemEventArgs.cs
+    startLine: 48
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Controls
+  summary: "\nReturns a string representation of this event data object.\n"
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: A string representing this object.
+    content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
+  overload: Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: Celestial.UIToolkit.Controls.NavigationView
+  commentId: T:Celestial.UIToolkit.Controls.NavigationView
+  name: NavigationView
+  nameWithType: NavigationView
+  fullName: Celestial.UIToolkit.Controls.NavigationView
+- uid: Celestial.UIToolkit.Controls
+  commentId: N:Celestial.UIToolkit.Controls
+  name: Celestial.UIToolkit.Controls
+  nameWithType: Celestial.UIToolkit.Controls
+  fullName: Celestial.UIToolkit.Controls
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.EventArgs
+  commentId: T:System.EventArgs
+  parent: System
+  isExternal: true
+  name: EventArgs
+  nameWithType: EventArgs
+  fullName: System.EventArgs
+- uid: System.EventArgs.Empty
+  commentId: F:System.EventArgs.Empty
+  parent: System.EventArgs
+  isExternal: true
+  name: Empty
+  nameWithType: EventArgs.Empty
+  fullName: System.EventArgs.Empty
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.Item*
+  commentId: Overload:Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.Item
+  name: Item
+  nameWithType: NavigationViewItemEventArgs.Item
+  fullName: Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.Item
+- uid: Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.Item
+  commentId: P:Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.Item
+  isExternal: true
+- uid: Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.IsSettingsItem*
+  commentId: Overload:Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.IsSettingsItem
+  name: IsSettingsItem
+  nameWithType: NavigationViewItemEventArgs.IsSettingsItem
+  fullName: Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.IsSettingsItem
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: Celestial.UIToolkit.Controls.NavigationViewItemEventArgs
+  commentId: T:Celestial.UIToolkit.Controls.NavigationViewItemEventArgs
+  parent: Celestial.UIToolkit.Controls
+  name: NavigationViewItemEventArgs
+  nameWithType: NavigationViewItemEventArgs
+  fullName: Celestial.UIToolkit.Controls.NavigationViewItemEventArgs
+- uid: Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.#ctor*
+  commentId: Overload:Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.#ctor
+  name: NavigationViewItemEventArgs
+  nameWithType: NavigationViewItemEventArgs.NavigationViewItemEventArgs
+  fullName: Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.NavigationViewItemEventArgs
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.ToString*
+  commentId: Overload:Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.ToString
+  name: ToString
+  nameWithType: NavigationViewItemEventArgs.ToString
+  fullName: Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String

@@ -1,0 +1,61 @@
+### YamlMime:ManagedReference
+items:
+- uid: Celestial.UIToolkit.Extensions
+  commentId: N:Celestial.UIToolkit.Extensions
+  id: Celestial.UIToolkit.Extensions
+  children:
+  - Celestial.UIToolkit.Extensions.ArrayExtensions
+  - Celestial.UIToolkit.Extensions.ArraySegmentExtensions
+  - Celestial.UIToolkit.Extensions.DependencyObjectExtensions
+  - Celestial.UIToolkit.Extensions.DependencyPropertyExtensions
+  - Celestial.UIToolkit.Extensions.EnumerableExtensions
+  - Celestial.UIToolkit.Extensions.FrameworkElementExtensions
+  langs:
+  - csharp
+  - vb
+  name: Celestial.UIToolkit.Extensions
+  nameWithType: Celestial.UIToolkit.Extensions
+  fullName: Celestial.UIToolkit.Extensions
+  type: Namespace
+  assemblies:
+  - Celestial.UIToolkit.Core
+references:
+- uid: Celestial.UIToolkit.Extensions.ArrayExtensions
+  commentId: T:Celestial.UIToolkit.Extensions.ArrayExtensions
+  name: ArrayExtensions
+  nameWithType: ArrayExtensions
+  fullName: Celestial.UIToolkit.Extensions.ArrayExtensions
+- uid: Celestial.UIToolkit.Extensions.ArraySegmentExtensions
+  commentId: T:Celestial.UIToolkit.Extensions.ArraySegmentExtensions
+  name: ArraySegmentExtensions
+  nameWithType: ArraySegmentExtensions
+  fullName: Celestial.UIToolkit.Extensions.ArraySegmentExtensions
+- uid: Celestial.UIToolkit.Extensions.DependencyObjectExtensions
+  commentId: T:Celestial.UIToolkit.Extensions.DependencyObjectExtensions
+  parent: Celestial.UIToolkit.Extensions
+  name: DependencyObjectExtensions
+  nameWithType: DependencyObjectExtensions
+  fullName: Celestial.UIToolkit.Extensions.DependencyObjectExtensions
+- uid: Celestial.UIToolkit.Extensions.DependencyPropertyExtensions
+  commentId: T:Celestial.UIToolkit.Extensions.DependencyPropertyExtensions
+  parent: Celestial.UIToolkit.Extensions
+  name: DependencyPropertyExtensions
+  nameWithType: DependencyPropertyExtensions
+  fullName: Celestial.UIToolkit.Extensions.DependencyPropertyExtensions
+- uid: Celestial.UIToolkit.Extensions.EnumerableExtensions
+  commentId: T:Celestial.UIToolkit.Extensions.EnumerableExtensions
+  parent: Celestial.UIToolkit.Extensions
+  name: EnumerableExtensions
+  nameWithType: EnumerableExtensions
+  fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions
+- uid: Celestial.UIToolkit.Extensions.FrameworkElementExtensions
+  commentId: T:Celestial.UIToolkit.Extensions.FrameworkElementExtensions
+  parent: Celestial.UIToolkit.Extensions
+  name: FrameworkElementExtensions
+  nameWithType: FrameworkElementExtensions
+  fullName: Celestial.UIToolkit.Extensions.FrameworkElementExtensions
+- uid: Celestial.UIToolkit.Extensions
+  commentId: N:Celestial.UIToolkit.Extensions
+  name: Celestial.UIToolkit.Extensions
+  nameWithType: Celestial.UIToolkit.Extensions
+  fullName: Celestial.UIToolkit.Extensions

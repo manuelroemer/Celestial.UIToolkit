@@ -1,0 +1,1132 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ThemeShadow
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ThemeShadow
+   ">
+    <meta name="generator" content="docfx 2.40.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Celestial.UIToolkit.Controls.ThemeShadow">
+  
+  
+  <h1 id="Celestial_UIToolkit_Controls_ThemeShadow" data-uid="Celestial.UIToolkit.Controls.ThemeShadow" class="text-break">Class ThemeShadow
+  </h1>
+  <div class="markdown level0 summary"><p>A special type of shadow which aids in creating a unified shadow experience across the
+whole application by providing an elevation API to create layering and depth effects.</p>
+<p>It can be attached to any type of controls via the <a class="xref" href="Celestial.UIToolkit.Controls.ThemeShadow.html#Celestial_UIToolkit_Controls_ThemeShadow_ShadowProperty">ShadowProperty</a>.
+For the shadow to be displayed, control template authors are required to display the
+<a class="xref" href="Celestial.UIToolkit.Controls.ThemeShadow.html">ThemeShadow</a> provided via the attached <a class="xref" href="Celestial.UIToolkit.Controls.ThemeShadow.html#Celestial_UIToolkit_Controls_ThemeShadow_ShadowProperty">ShadowProperty</a>.
+The easiest way to do this is by simply adding a <a class="xref" href="Celestial.UIToolkit.Controls.ThemeShadowPresenter.html">ThemeShadowPresenter</a> to the
+control template.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.threading.dispatcherobject">DispatcherObject</a></div>
+    <div class="level2"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a></div>
+    <div class="level3"><span class="xref">ThemeShadow</span></div>
+      <div class="level4"><a class="xref" href="Celestial.UIToolkit.Controls.DirectionalThemeShadow.html">DirectionalThemeShadow</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject.equals#System_Windows_DependencyObject_Equals_System_Object_">DependencyObject.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject.gethashcode#System_Windows_DependencyObject_GetHashCode">DependencyObject.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject.getvalue#System_Windows_DependencyObject_GetValue_System_Windows_DependencyProperty_">DependencyObject.GetValue(DependencyProperty)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject.setvalue#System_Windows_DependencyObject_SetValue_System_Windows_DependencyProperty_System_Object_">DependencyObject.SetValue(DependencyProperty, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject.setcurrentvalue#System_Windows_DependencyObject_SetCurrentValue_System_Windows_DependencyProperty_System_Object_">DependencyObject.SetCurrentValue(DependencyProperty, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject.setvalue#System_Windows_DependencyObject_SetValue_System_Windows_DependencyPropertyKey_System_Object_">DependencyObject.SetValue(DependencyPropertyKey, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject.clearvalue#System_Windows_DependencyObject_ClearValue_System_Windows_DependencyProperty_">DependencyObject.ClearValue(DependencyProperty)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject.clearvalue#System_Windows_DependencyObject_ClearValue_System_Windows_DependencyPropertyKey_">DependencyObject.ClearValue(DependencyPropertyKey)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject.coercevalue#System_Windows_DependencyObject_CoerceValue_System_Windows_DependencyProperty_">DependencyObject.CoerceValue(DependencyProperty)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject.invalidateproperty#System_Windows_DependencyObject_InvalidateProperty_System_Windows_DependencyProperty_">DependencyObject.InvalidateProperty(DependencyProperty)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject.onpropertychanged#System_Windows_DependencyObject_OnPropertyChanged_System_Windows_DependencyPropertyChangedEventArgs_">DependencyObject.OnPropertyChanged(DependencyPropertyChangedEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject.shouldserializeproperty#System_Windows_DependencyObject_ShouldSerializeProperty_System_Windows_DependencyProperty_">DependencyObject.ShouldSerializeProperty(DependencyProperty)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject.readlocalvalue#System_Windows_DependencyObject_ReadLocalValue_System_Windows_DependencyProperty_">DependencyObject.ReadLocalValue(DependencyProperty)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject.getlocalvalueenumerator#System_Windows_DependencyObject_GetLocalValueEnumerator">DependencyObject.GetLocalValueEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject.dependencyobjecttype#System_Windows_DependencyObject_DependencyObjectType">DependencyObject.DependencyObjectType</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject.issealed#System_Windows_DependencyObject_IsSealed">DependencyObject.IsSealed</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.threading.dispatcherobject.dispatcher#System_Windows_Threading_DispatcherObject_Dispatcher">DispatcherObject.Dispatcher</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Celestial.UIToolkit.Controls.html">Celestial.UIToolkit.Controls</a></h6>
+  <h6><strong>Assembly</strong>: Celestial.UIToolkit.dll</h6>
+  <h5 id="Celestial_UIToolkit_Controls_ThemeShadow_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ThemeShadow : DependencyObject</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Controls_ThemeShadow__ctor.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ThemeShadow.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit/Controls/ShadowControls/ThemeShadow.cs/#L32">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ThemeShadow__ctor_" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.#ctor*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ThemeShadow__ctor" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.#ctor">ThemeShadow()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Celestial.UIToolkit.Controls.ThemeShadow.html">ThemeShadow</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ThemeShadow()</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Controls_ThemeShadow_BlurRadiusProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ThemeShadow.BlurRadiusProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit/Controls/ShadowControls/ThemeShadow.Properties.cs/#L92">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ThemeShadow_BlurRadiusProperty" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.BlurRadiusProperty">BlurRadiusProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the BlurRadius attached dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty BlurRadiusProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Controls_ThemeShadow_ElevationProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ThemeShadow.ElevationProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit/Controls/ShadowControls/ThemeShadow.Properties.cs/#L27">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ThemeShadow_ElevationProperty" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.ElevationProperty">ElevationProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the Elevation attached dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty ElevationProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Controls_ThemeShadow_IsShadowEnabledProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ThemeShadow.IsShadowEnabledProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit/Controls/ShadowControls/ThemeShadow.Properties.cs/#L72">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ThemeShadow_IsShadowEnabledProperty" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.IsShadowEnabledProperty">IsShadowEnabledProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ThemeShadow.html#Celestial_UIToolkit_Controls_ThemeShadow_IsShadowEnabled">IsShadowEnabled</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty IsShadowEnabledProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Controls_ThemeShadow_OffsetXProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ThemeShadow.OffsetXProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit/Controls/ShadowControls/ThemeShadow.Properties.cs/#L107">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ThemeShadow_OffsetXProperty" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.OffsetXProperty">OffsetXProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the OffsetX attached dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty OffsetXProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Controls_ThemeShadow_OffsetYProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ThemeShadow.OffsetYProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit/Controls/ShadowControls/ThemeShadow.Properties.cs/#L122">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ThemeShadow_OffsetYProperty" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.OffsetYProperty">OffsetYProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the OffsetY attached dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty OffsetYProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Controls_ThemeShadow_RenderingBiasProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ThemeShadow.RenderingBiasProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit/Controls/ShadowControls/ThemeShadow.Properties.cs/#L39">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ThemeShadow_RenderingBiasProperty" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.RenderingBiasProperty">RenderingBiasProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ThemeShadow.html#Celestial_UIToolkit_Controls_ThemeShadow_RenderingBias">RenderingBias</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty RenderingBiasProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Controls_ThemeShadow_ShadowColorProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ThemeShadow.ShadowColorProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit/Controls/ShadowControls/ThemeShadow.Properties.cs/#L50">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ThemeShadow_ShadowColorProperty" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.ShadowColorProperty">ShadowColorProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ThemeShadow.html#Celestial_UIToolkit_Controls_ThemeShadow_ShadowColor">ShadowColor</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty ShadowColorProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Controls_ThemeShadow_ShadowOpacityProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ThemeShadow.ShadowOpacityProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit/Controls/ShadowControls/ThemeShadow.Properties.cs/#L61">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ThemeShadow_ShadowOpacityProperty" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.ShadowOpacityProperty">ShadowOpacityProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ThemeShadow.html#Celestial_UIToolkit_Controls_ThemeShadow_ShadowOpacity">ShadowOpacity</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty ShadowOpacityProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Controls_ThemeShadow_ShadowProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ThemeShadow.ShadowProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit/Controls/ShadowControls/ThemeShadow.Properties.cs/#L15">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ThemeShadow_ShadowProperty" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.ShadowProperty">ShadowProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the Shadow attached dependency property.
+When attached to an object, the specified shadow will be rendered on the control.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty ShadowProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Controls_ThemeShadow_ElevationShadowLengthMultiplier.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ThemeShadow.ElevationShadowLengthMultiplier%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit/Controls/ShadowControls/ThemeShadow.cs/#L23">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ThemeShadow_ElevationShadowLengthMultiplier_" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.ElevationShadowLengthMultiplier*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ThemeShadow_ElevationShadowLengthMultiplier" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.ElevationShadowLengthMultiplier">ElevationShadowLengthMultiplier</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a value with which the <a class="xref" href="Celestial.UIToolkit.Controls.ThemeShadow.html#Celestial_UIToolkit_Controls_ThemeShadow_ElevationProperty">ElevationProperty</a>
+is multiplied, before the shadow's final length is calculated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double ElevationShadowLengthMultiplier { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Controls_ThemeShadow_IsShadowEnabled.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ThemeShadow.IsShadowEnabled%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit/Controls/ShadowControls/ThemeShadow.Properties.cs/#L159">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ThemeShadow_IsShadowEnabled_" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.IsShadowEnabled*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ThemeShadow_IsShadowEnabled" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.IsShadowEnabled">IsShadowEnabled</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a value indicating whether the drop shadow effect is enabled at the
+moment.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsShadowEnabled { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Controls_ThemeShadow_RenderingBias.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ThemeShadow.RenderingBias%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit/Controls/ShadowControls/ThemeShadow.Properties.cs/#L131">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ThemeShadow_RenderingBias_" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.RenderingBias*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ThemeShadow_RenderingBias" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.RenderingBias">RenderingBias</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.effects.renderingbias">RenderingBias</a>
+to be used with the drop shadow effect.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RenderingBias RenderingBias { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.effects.renderingbias">RenderingBias</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Controls_ThemeShadow_ShadowColor.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ThemeShadow.ShadowColor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit/Controls/ShadowControls/ThemeShadow.Properties.cs/#L140">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ThemeShadow_ShadowColor_" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.ShadowColor*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ThemeShadow_ShadowColor" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.ShadowColor">ShadowColor</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the shadow's color.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color ShadowColor { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.color">Color</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Controls_ThemeShadow_ShadowOpacity.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ThemeShadow.ShadowOpacity%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit/Controls/ShadowControls/ThemeShadow.Properties.cs/#L149">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ThemeShadow_ShadowOpacity_" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.ShadowOpacity*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ThemeShadow_ShadowOpacity" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.ShadowOpacity">ShadowOpacity</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the opacity of the drop shadow.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double ShadowOpacity { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Controls_ThemeShadow_CalculateCurrentBlurRadius_System_Windows_DependencyObject_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ThemeShadow.CalculateCurrentBlurRadius(System.Windows.DependencyObject)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit/Controls/ShadowControls/ThemeShadow.cs/#L72">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ThemeShadow_CalculateCurrentBlurRadius_" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.CalculateCurrentBlurRadius*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ThemeShadow_CalculateCurrentBlurRadius_System_Windows_DependencyObject_" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.CalculateCurrentBlurRadius(System.Windows.DependencyObject)">CalculateCurrentBlurRadius(DependencyObject)</h4>
+  <div class="markdown level1 summary"><p>Calculates a drop shadow's blur radius, based on the <a class="xref" href="Celestial.UIToolkit.Controls.ThemeShadow.html">ThemeShadow</a>'s
+current <a class="xref" href="Celestial.UIToolkit.Controls.ThemeShadow.html#Celestial_UIToolkit_Controls_ThemeShadow_ElevationShadowLengthMultiplier">ElevationShadowLengthMultiplier</a> and the
+<code data-dev-comment-type="paramref" class="paramref">element</code>'s current elevation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual double CalculateCurrentBlurRadius(DependencyObject element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element whose drop shadow values should be calculated.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td><p>The blur radius of a drop shadow.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Controls_ThemeShadow_CalculateCurrentShadowOffset_System_Windows_DependencyObject_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ThemeShadow.CalculateCurrentShadowOffset(System.Windows.DependencyObject)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit/Controls/ShadowControls/ThemeShadow.cs/#L89">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ThemeShadow_CalculateCurrentShadowOffset_" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.CalculateCurrentShadowOffset*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ThemeShadow_CalculateCurrentShadowOffset_System_Windows_DependencyObject_" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.CalculateCurrentShadowOffset(System.Windows.DependencyObject)">CalculateCurrentShadowOffset(DependencyObject)</h4>
+  <div class="markdown level1 summary"><p>Calculates a drop shadow's offset in relation to the shadow-casting element.
+An offset of (0;0) means that the shadow is directly under the shadow-casting element.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual Vector CalculateCurrentShadowOffset(DependencyObject element)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a></td>
+        <td><span class="parametername">element</span></td>
+        <td><p>The element whose drop shadow values should be calculated.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.vector">Vector</a></td>
+        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.vector">Vector</a> which represents the drop shadow's offset.
+By default, this returns (0;0).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Controls_ThemeShadow_GetBlurRadius_System_Windows_DependencyObject_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ThemeShadow.GetBlurRadius(System.Windows.DependencyObject)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit/Controls/ShadowControls/ThemeShadow.Properties.cs/#L246">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ThemeShadow_GetBlurRadius_" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.GetBlurRadius*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ThemeShadow_GetBlurRadius_System_Windows_DependencyObject_" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.GetBlurRadius(System.Windows.DependencyObject)">GetBlurRadius(DependencyObject)</h4>
+  <div class="markdown level1 summary"><p>Gets the value of the <a class="xref" href="Celestial.UIToolkit.Controls.ThemeShadow.html#Celestial_UIToolkit_Controls_ThemeShadow_BlurRadiusProperty">BlurRadiusProperty</a> attached dependency property
+for a given <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double GetBlurRadius(DependencyObject obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a> for which the local value of the
+<a class="xref" href="Celestial.UIToolkit.Controls.ThemeShadow.html#Celestial_UIToolkit_Controls_ThemeShadow_BlurRadiusProperty">BlurRadiusProperty</a> attached dependency property
+should be retrieved.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td><p>The local value of the <a class="xref" href="Celestial.UIToolkit.Controls.ThemeShadow.html#Celestial_UIToolkit_Controls_ThemeShadow_BlurRadiusProperty">BlurRadiusProperty</a> attached dependency property,
+which is of type <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Controls_ThemeShadow_GetElevation_System_Windows_DependencyObject_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ThemeShadow.GetElevation(System.Windows.DependencyObject)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit/Controls/ShadowControls/ThemeShadow.Properties.cs/#L213">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ThemeShadow_GetElevation_" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.GetElevation*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ThemeShadow_GetElevation_System_Windows_DependencyObject_" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.GetElevation(System.Windows.DependencyObject)">GetElevation(DependencyObject)</h4>
+  <div class="markdown level1 summary"><p>Gets the value of the <a class="xref" href="Celestial.UIToolkit.Controls.ThemeShadow.html#Celestial_UIToolkit_Controls_ThemeShadow_ElevationProperty">ElevationProperty</a> attached dependency property
+for a given <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double GetElevation(DependencyObject obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a> for which the local value of the
+<a class="xref" href="Celestial.UIToolkit.Controls.ThemeShadow.html#Celestial_UIToolkit_Controls_ThemeShadow_ElevationProperty">ElevationProperty</a> attached dependency property
+should be retrieved.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td><p>The local value of the <a class="xref" href="Celestial.UIToolkit.Controls.ThemeShadow.html#Celestial_UIToolkit_Controls_ThemeShadow_ElevationProperty">ElevationProperty</a> attached dependency property,
+which is of type <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Controls_ThemeShadow_GetOffsetX_System_Windows_DependencyObject_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ThemeShadow.GetOffsetX(System.Windows.DependencyObject)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit/Controls/ShadowControls/ThemeShadow.Properties.cs/#L267">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ThemeShadow_GetOffsetX_" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.GetOffsetX*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ThemeShadow_GetOffsetX_System_Windows_DependencyObject_" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.GetOffsetX(System.Windows.DependencyObject)">GetOffsetX(DependencyObject)</h4>
+  <div class="markdown level1 summary"><p>Gets the value of the <a class="xref" href="Celestial.UIToolkit.Controls.ThemeShadow.html#Celestial_UIToolkit_Controls_ThemeShadow_OffsetXProperty">OffsetXProperty</a> attached dependency property
+for a given <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double GetOffsetX(DependencyObject obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a> for which the local value of the
+<a class="xref" href="Celestial.UIToolkit.Controls.ThemeShadow.html#Celestial_UIToolkit_Controls_ThemeShadow_OffsetXProperty">OffsetXProperty</a> attached dependency property
+should be retrieved.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td><p>The local value of the <a class="xref" href="Celestial.UIToolkit.Controls.ThemeShadow.html#Celestial_UIToolkit_Controls_ThemeShadow_OffsetXProperty">OffsetXProperty</a> attached dependency property,
+which is of type <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Controls_ThemeShadow_GetOffsetY_System_Windows_DependencyObject_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ThemeShadow.GetOffsetY(System.Windows.DependencyObject)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit/Controls/ShadowControls/ThemeShadow.Properties.cs/#L288">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ThemeShadow_GetOffsetY_" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.GetOffsetY*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ThemeShadow_GetOffsetY_System_Windows_DependencyObject_" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.GetOffsetY(System.Windows.DependencyObject)">GetOffsetY(DependencyObject)</h4>
+  <div class="markdown level1 summary"><p>Gets the value of the <a class="xref" href="Celestial.UIToolkit.Controls.ThemeShadow.html#Celestial_UIToolkit_Controls_ThemeShadow_OffsetYProperty">OffsetYProperty</a> attached dependency property
+for a given <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double GetOffsetY(DependencyObject obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a> for which the local value of the
+<a class="xref" href="Celestial.UIToolkit.Controls.ThemeShadow.html#Celestial_UIToolkit_Controls_ThemeShadow_OffsetYProperty">OffsetYProperty</a> attached dependency property
+should be retrieved.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td><p>The local value of the <a class="xref" href="Celestial.UIToolkit.Controls.ThemeShadow.html#Celestial_UIToolkit_Controls_ThemeShadow_OffsetYProperty">OffsetYProperty</a> attached dependency property,
+which is of type <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Controls_ThemeShadow_GetShadow_System_Windows_DependencyObject_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ThemeShadow.GetShadow(System.Windows.DependencyObject)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit/Controls/ShadowControls/ThemeShadow.Properties.cs/#L180">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ThemeShadow_GetShadow_" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.GetShadow*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ThemeShadow_GetShadow_System_Windows_DependencyObject_" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.GetShadow(System.Windows.DependencyObject)">GetShadow(DependencyObject)</h4>
+  <div class="markdown level1 summary"><p>Gets the value of the <a class="xref" href="Celestial.UIToolkit.Controls.ThemeShadow.html#Celestial_UIToolkit_Controls_ThemeShadow_ShadowProperty">ShadowProperty</a> attached dependency property
+for a given <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ThemeShadow GetShadow(DependencyObject obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a> for which the local value of the
+<a class="xref" href="Celestial.UIToolkit.Controls.ThemeShadow.html#Celestial_UIToolkit_Controls_ThemeShadow_ShadowProperty">ShadowProperty</a> attached dependency property
+should be retrieved.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Celestial.UIToolkit.Controls.ThemeShadow.html">ThemeShadow</a></td>
+        <td><p>The local value of the <a class="xref" href="Celestial.UIToolkit.Controls.ThemeShadow.html#Celestial_UIToolkit_Controls_ThemeShadow_ShadowProperty">ShadowProperty</a> attached dependency property,
+which is of type <a class="xref" href="Celestial.UIToolkit.Controls.ThemeShadow.html">ThemeShadow</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Controls_ThemeShadow_SetElevation_System_Windows_DependencyObject_System_Double_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ThemeShadow.SetElevation(System.Windows.DependencyObject%2CSystem.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit/Controls/ShadowControls/ThemeShadow.Properties.cs/#L228">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ThemeShadow_SetElevation_" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.SetElevation*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ThemeShadow_SetElevation_System_Windows_DependencyObject_System_Double_" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.SetElevation(System.Windows.DependencyObject,System.Double)">SetElevation(DependencyObject, Double)</h4>
+  <div class="markdown level1 summary"><p>Sets the value of the <a class="xref" href="Celestial.UIToolkit.Controls.ThemeShadow.html#Celestial_UIToolkit_Controls_ThemeShadow_ElevationProperty">ElevationProperty</a> attached dependency property
+for a given <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetElevation(DependencyObject obj, double value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a> for which the local value of the
+<a class="xref" href="Celestial.UIToolkit.Controls.ThemeShadow.html#Celestial_UIToolkit_Controls_ThemeShadow_ElevationProperty">ElevationProperty</a> attached dependency property
+should be set.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The new value for the dependency property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Controls_ThemeShadow_SetShadow_System_Windows_DependencyObject_Celestial_UIToolkit_Controls_ThemeShadow_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ThemeShadow.SetShadow(System.Windows.DependencyObject%2CCelestial.UIToolkit.Controls.ThemeShadow)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit/Controls/ShadowControls/ThemeShadow.Properties.cs/#L195">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ThemeShadow_SetShadow_" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.SetShadow*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ThemeShadow_SetShadow_System_Windows_DependencyObject_Celestial_UIToolkit_Controls_ThemeShadow_" data-uid="Celestial.UIToolkit.Controls.ThemeShadow.SetShadow(System.Windows.DependencyObject,Celestial.UIToolkit.Controls.ThemeShadow)">SetShadow(DependencyObject, ThemeShadow)</h4>
+  <div class="markdown level1 summary"><p>Sets the value of the <a class="xref" href="Celestial.UIToolkit.Controls.ThemeShadow.html#Celestial_UIToolkit_Controls_ThemeShadow_ShadowProperty">ShadowProperty</a> attached dependency property
+for a given <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetShadow(DependencyObject obj, ThemeShadow value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a> for which the local value of the
+<a class="xref" href="Celestial.UIToolkit.Controls.ThemeShadow.html#Celestial_UIToolkit_Controls_ThemeShadow_ShadowProperty">ShadowProperty</a> attached dependency property
+should be set.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Celestial.UIToolkit.Controls.ThemeShadow.html">ThemeShadow</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The new value for the dependency property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.DependencyObjectExtensions.html#Celestial_UIToolkit_Extensions_DependencyObjectExtensions_HasVisualAncestor_System_Windows_DependencyObject_System_Windows_DependencyObject_">DependencyObjectExtensions.HasVisualAncestor(DependencyObject, DependencyObject)</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.DependencyObjectExtensions.html#Celestial_UIToolkit_Extensions_DependencyObjectExtensions_RemoveLogicalChild_System_Windows_DependencyObject_System_Windows_UIElement_">DependencyObjectExtensions.RemoveLogicalChild(DependencyObject, UIElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.html#Celestial_UIToolkit_Extensions_DependencyPropertyExtensions_IsDependencyPropertySet_System_Windows_DependencyObject_System_Windows_DependencyProperty_">DependencyPropertyExtensions.IsDependencyPropertySet(DependencyObject, DependencyProperty)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Controls_ThemeShadow.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ThemeShadow%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit/Controls/ShadowControls/ThemeShadow.Properties.cs/#L8" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

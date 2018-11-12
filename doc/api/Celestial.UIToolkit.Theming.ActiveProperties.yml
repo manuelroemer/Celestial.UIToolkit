@@ -1,0 +1,871 @@
+### YamlMime:ManagedReference
+items:
+- uid: Celestial.UIToolkit.Theming.ActiveProperties
+  commentId: T:Celestial.UIToolkit.Theming.ActiveProperties
+  id: ActiveProperties
+  parent: Celestial.UIToolkit.Theming
+  children:
+  - Celestial.UIToolkit.Theming.ActiveProperties.BackgroundBrushProperty
+  - Celestial.UIToolkit.Theming.ActiveProperties.BorderBrushProperty
+  - Celestial.UIToolkit.Theming.ActiveProperties.ForegroundBrushProperty
+  - Celestial.UIToolkit.Theming.ActiveProperties.GetBackgroundBrush(System.Windows.DependencyObject)
+  - Celestial.UIToolkit.Theming.ActiveProperties.GetBorderBrush(System.Windows.DependencyObject)
+  - Celestial.UIToolkit.Theming.ActiveProperties.GetForegroundBrush(System.Windows.DependencyObject)
+  - Celestial.UIToolkit.Theming.ActiveProperties.GetShadowElevation(System.Windows.DependencyObject)
+  - Celestial.UIToolkit.Theming.ActiveProperties.SetBackgroundBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  - Celestial.UIToolkit.Theming.ActiveProperties.SetBorderBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  - Celestial.UIToolkit.Theming.ActiveProperties.SetForegroundBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  - Celestial.UIToolkit.Theming.ActiveProperties.SetShadowElevation(System.Windows.DependencyObject,System.Double)
+  - Celestial.UIToolkit.Theming.ActiveProperties.ShadowElevationProperty
+  langs:
+  - csharp
+  - vb
+  name: ActiveProperties
+  nameWithType: ActiveProperties
+  fullName: Celestial.UIToolkit.Theming.ActiveProperties
+  type: Class
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/VisualStateProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: ActiveProperties
+    path: ../src/Celestial.UIToolkit/Theming/VisualStateProperties.cs
+    startLine: 158
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  syntax:
+    content: public static class ActiveProperties
+    content.vb: Public Module ActiveProperties
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: Celestial.UIToolkit.Theming.ActiveProperties.BorderBrushProperty
+  commentId: F:Celestial.UIToolkit.Theming.ActiveProperties.BorderBrushProperty
+  id: BorderBrushProperty
+  parent: Celestial.UIToolkit.Theming.ActiveProperties
+  langs:
+  - csharp
+  - vb
+  name: BorderBrushProperty
+  nameWithType: ActiveProperties.BorderBrushProperty
+  fullName: Celestial.UIToolkit.Theming.ActiveProperties.BorderBrushProperty
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/VisualStateProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: BorderBrushProperty
+    path: ../src/Celestial.UIToolkit/Theming/VisualStateProperties.cs
+    startLine: 161
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  syntax:
+    content: public static readonly DependencyProperty BorderBrushProperty
+    return:
+      type: System.Windows.DependencyProperty
+    content.vb: Public Shared ReadOnly BorderBrushProperty As DependencyProperty
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Theming.ActiveProperties.GetBorderBrush(System.Windows.DependencyObject)
+  commentId: M:Celestial.UIToolkit.Theming.ActiveProperties.GetBorderBrush(System.Windows.DependencyObject)
+  id: GetBorderBrush(System.Windows.DependencyObject)
+  parent: Celestial.UIToolkit.Theming.ActiveProperties
+  langs:
+  - csharp
+  - vb
+  name: GetBorderBrush(DependencyObject)
+  nameWithType: ActiveProperties.GetBorderBrush(DependencyObject)
+  fullName: Celestial.UIToolkit.Theming.ActiveProperties.GetBorderBrush(System.Windows.DependencyObject)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/VisualStateProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: GetBorderBrush
+    path: ../src/Celestial.UIToolkit/Theming/VisualStateProperties.cs
+    startLine: 168
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  syntax:
+    content: public static Brush GetBorderBrush(DependencyObject obj)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+    return:
+      type: System.Windows.Media.Brush
+    content.vb: Public Shared Function GetBorderBrush(obj As DependencyObject) As Brush
+  overload: Celestial.UIToolkit.Theming.ActiveProperties.GetBorderBrush*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.ActiveProperties.SetBorderBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  commentId: M:Celestial.UIToolkit.Theming.ActiveProperties.SetBorderBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  id: SetBorderBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  parent: Celestial.UIToolkit.Theming.ActiveProperties
+  langs:
+  - csharp
+  - vb
+  name: SetBorderBrush(DependencyObject, Brush)
+  nameWithType: ActiveProperties.SetBorderBrush(DependencyObject, Brush)
+  fullName: Celestial.UIToolkit.Theming.ActiveProperties.SetBorderBrush(System.Windows.DependencyObject, System.Windows.Media.Brush)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/VisualStateProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: SetBorderBrush
+    path: ../src/Celestial.UIToolkit/Theming/VisualStateProperties.cs
+    startLine: 173
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  syntax:
+    content: public static void SetBorderBrush(DependencyObject obj, Brush value)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+    - id: value
+      type: System.Windows.Media.Brush
+    content.vb: Public Shared Sub SetBorderBrush(obj As DependencyObject, value As Brush)
+  overload: Celestial.UIToolkit.Theming.ActiveProperties.SetBorderBrush*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.ActiveProperties.BackgroundBrushProperty
+  commentId: F:Celestial.UIToolkit.Theming.ActiveProperties.BackgroundBrushProperty
+  id: BackgroundBrushProperty
+  parent: Celestial.UIToolkit.Theming.ActiveProperties
+  langs:
+  - csharp
+  - vb
+  name: BackgroundBrushProperty
+  nameWithType: ActiveProperties.BackgroundBrushProperty
+  fullName: Celestial.UIToolkit.Theming.ActiveProperties.BackgroundBrushProperty
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/VisualStateProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: BackgroundBrushProperty
+    path: ../src/Celestial.UIToolkit/Theming/VisualStateProperties.cs
+    startLine: 178
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  syntax:
+    content: public static readonly DependencyProperty BackgroundBrushProperty
+    return:
+      type: System.Windows.DependencyProperty
+    content.vb: Public Shared ReadOnly BackgroundBrushProperty As DependencyProperty
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Theming.ActiveProperties.GetBackgroundBrush(System.Windows.DependencyObject)
+  commentId: M:Celestial.UIToolkit.Theming.ActiveProperties.GetBackgroundBrush(System.Windows.DependencyObject)
+  id: GetBackgroundBrush(System.Windows.DependencyObject)
+  parent: Celestial.UIToolkit.Theming.ActiveProperties
+  langs:
+  - csharp
+  - vb
+  name: GetBackgroundBrush(DependencyObject)
+  nameWithType: ActiveProperties.GetBackgroundBrush(DependencyObject)
+  fullName: Celestial.UIToolkit.Theming.ActiveProperties.GetBackgroundBrush(System.Windows.DependencyObject)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/VisualStateProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: GetBackgroundBrush
+    path: ../src/Celestial.UIToolkit/Theming/VisualStateProperties.cs
+    startLine: 185
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  syntax:
+    content: public static Brush GetBackgroundBrush(DependencyObject obj)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+    return:
+      type: System.Windows.Media.Brush
+    content.vb: Public Shared Function GetBackgroundBrush(obj As DependencyObject) As Brush
+  overload: Celestial.UIToolkit.Theming.ActiveProperties.GetBackgroundBrush*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.ActiveProperties.SetBackgroundBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  commentId: M:Celestial.UIToolkit.Theming.ActiveProperties.SetBackgroundBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  id: SetBackgroundBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  parent: Celestial.UIToolkit.Theming.ActiveProperties
+  langs:
+  - csharp
+  - vb
+  name: SetBackgroundBrush(DependencyObject, Brush)
+  nameWithType: ActiveProperties.SetBackgroundBrush(DependencyObject, Brush)
+  fullName: Celestial.UIToolkit.Theming.ActiveProperties.SetBackgroundBrush(System.Windows.DependencyObject, System.Windows.Media.Brush)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/VisualStateProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: SetBackgroundBrush
+    path: ../src/Celestial.UIToolkit/Theming/VisualStateProperties.cs
+    startLine: 190
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  syntax:
+    content: public static void SetBackgroundBrush(DependencyObject obj, Brush value)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+    - id: value
+      type: System.Windows.Media.Brush
+    content.vb: Public Shared Sub SetBackgroundBrush(obj As DependencyObject, value As Brush)
+  overload: Celestial.UIToolkit.Theming.ActiveProperties.SetBackgroundBrush*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.ActiveProperties.ForegroundBrushProperty
+  commentId: F:Celestial.UIToolkit.Theming.ActiveProperties.ForegroundBrushProperty
+  id: ForegroundBrushProperty
+  parent: Celestial.UIToolkit.Theming.ActiveProperties
+  langs:
+  - csharp
+  - vb
+  name: ForegroundBrushProperty
+  nameWithType: ActiveProperties.ForegroundBrushProperty
+  fullName: Celestial.UIToolkit.Theming.ActiveProperties.ForegroundBrushProperty
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/VisualStateProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: ForegroundBrushProperty
+    path: ../src/Celestial.UIToolkit/Theming/VisualStateProperties.cs
+    startLine: 195
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  syntax:
+    content: public static readonly DependencyProperty ForegroundBrushProperty
+    return:
+      type: System.Windows.DependencyProperty
+    content.vb: Public Shared ReadOnly ForegroundBrushProperty As DependencyProperty
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Theming.ActiveProperties.GetForegroundBrush(System.Windows.DependencyObject)
+  commentId: M:Celestial.UIToolkit.Theming.ActiveProperties.GetForegroundBrush(System.Windows.DependencyObject)
+  id: GetForegroundBrush(System.Windows.DependencyObject)
+  parent: Celestial.UIToolkit.Theming.ActiveProperties
+  langs:
+  - csharp
+  - vb
+  name: GetForegroundBrush(DependencyObject)
+  nameWithType: ActiveProperties.GetForegroundBrush(DependencyObject)
+  fullName: Celestial.UIToolkit.Theming.ActiveProperties.GetForegroundBrush(System.Windows.DependencyObject)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/VisualStateProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: GetForegroundBrush
+    path: ../src/Celestial.UIToolkit/Theming/VisualStateProperties.cs
+    startLine: 202
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  syntax:
+    content: public static Brush GetForegroundBrush(DependencyObject obj)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+    return:
+      type: System.Windows.Media.Brush
+    content.vb: Public Shared Function GetForegroundBrush(obj As DependencyObject) As Brush
+  overload: Celestial.UIToolkit.Theming.ActiveProperties.GetForegroundBrush*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.ActiveProperties.SetForegroundBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  commentId: M:Celestial.UIToolkit.Theming.ActiveProperties.SetForegroundBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  id: SetForegroundBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)
+  parent: Celestial.UIToolkit.Theming.ActiveProperties
+  langs:
+  - csharp
+  - vb
+  name: SetForegroundBrush(DependencyObject, Brush)
+  nameWithType: ActiveProperties.SetForegroundBrush(DependencyObject, Brush)
+  fullName: Celestial.UIToolkit.Theming.ActiveProperties.SetForegroundBrush(System.Windows.DependencyObject, System.Windows.Media.Brush)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/VisualStateProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: SetForegroundBrush
+    path: ../src/Celestial.UIToolkit/Theming/VisualStateProperties.cs
+    startLine: 207
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  syntax:
+    content: public static void SetForegroundBrush(DependencyObject obj, Brush value)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+    - id: value
+      type: System.Windows.Media.Brush
+    content.vb: Public Shared Sub SetForegroundBrush(obj As DependencyObject, value As Brush)
+  overload: Celestial.UIToolkit.Theming.ActiveProperties.SetForegroundBrush*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.ActiveProperties.ShadowElevationProperty
+  commentId: F:Celestial.UIToolkit.Theming.ActiveProperties.ShadowElevationProperty
+  id: ShadowElevationProperty
+  parent: Celestial.UIToolkit.Theming.ActiveProperties
+  langs:
+  - csharp
+  - vb
+  name: ShadowElevationProperty
+  nameWithType: ActiveProperties.ShadowElevationProperty
+  fullName: Celestial.UIToolkit.Theming.ActiveProperties.ShadowElevationProperty
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/VisualStateProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: ShadowElevationProperty
+    path: ../src/Celestial.UIToolkit/Theming/VisualStateProperties.cs
+    startLine: 212
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  syntax:
+    content: public static readonly DependencyProperty ShadowElevationProperty
+    return:
+      type: System.Windows.DependencyProperty
+    content.vb: Public Shared ReadOnly ShadowElevationProperty As DependencyProperty
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Theming.ActiveProperties.GetShadowElevation(System.Windows.DependencyObject)
+  commentId: M:Celestial.UIToolkit.Theming.ActiveProperties.GetShadowElevation(System.Windows.DependencyObject)
+  id: GetShadowElevation(System.Windows.DependencyObject)
+  parent: Celestial.UIToolkit.Theming.ActiveProperties
+  langs:
+  - csharp
+  - vb
+  name: GetShadowElevation(DependencyObject)
+  nameWithType: ActiveProperties.GetShadowElevation(DependencyObject)
+  fullName: Celestial.UIToolkit.Theming.ActiveProperties.GetShadowElevation(System.Windows.DependencyObject)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/VisualStateProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: GetShadowElevation
+    path: ../src/Celestial.UIToolkit/Theming/VisualStateProperties.cs
+    startLine: 219
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  syntax:
+    content: public static double GetShadowElevation(DependencyObject obj)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+    return:
+      type: System.Double
+    content.vb: Public Shared Function GetShadowElevation(obj As DependencyObject) As Double
+  overload: Celestial.UIToolkit.Theming.ActiveProperties.GetShadowElevation*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.ActiveProperties.SetShadowElevation(System.Windows.DependencyObject,System.Double)
+  commentId: M:Celestial.UIToolkit.Theming.ActiveProperties.SetShadowElevation(System.Windows.DependencyObject,System.Double)
+  id: SetShadowElevation(System.Windows.DependencyObject,System.Double)
+  parent: Celestial.UIToolkit.Theming.ActiveProperties
+  langs:
+  - csharp
+  - vb
+  name: SetShadowElevation(DependencyObject, Double)
+  nameWithType: ActiveProperties.SetShadowElevation(DependencyObject, Double)
+  fullName: Celestial.UIToolkit.Theming.ActiveProperties.SetShadowElevation(System.Windows.DependencyObject, System.Double)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/VisualStateProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: SetShadowElevation
+    path: ../src/Celestial.UIToolkit/Theming/VisualStateProperties.cs
+    startLine: 224
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  syntax:
+    content: public static void SetShadowElevation(DependencyObject obj, double value)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+    - id: value
+      type: System.Double
+    content.vb: Public Shared Sub SetShadowElevation(obj As DependencyObject, value As Double)
+  overload: Celestial.UIToolkit.Theming.ActiveProperties.SetShadowElevation*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: Celestial.UIToolkit.Theming
+  commentId: N:Celestial.UIToolkit.Theming
+  name: Celestial.UIToolkit.Theming
+  nameWithType: Celestial.UIToolkit.Theming
+  fullName: Celestial.UIToolkit.Theming
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Windows.DependencyProperty
+  commentId: T:System.Windows.DependencyProperty
+  parent: System.Windows
+  isExternal: true
+  name: DependencyProperty
+  nameWithType: DependencyProperty
+  fullName: System.Windows.DependencyProperty
+- uid: System.Windows
+  commentId: N:System.Windows
+  isExternal: true
+  name: System.Windows
+  nameWithType: System.Windows
+  fullName: System.Windows
+- uid: Celestial.UIToolkit.Theming.ActiveProperties.GetBorderBrush*
+  commentId: Overload:Celestial.UIToolkit.Theming.ActiveProperties.GetBorderBrush
+  name: GetBorderBrush
+  nameWithType: ActiveProperties.GetBorderBrush
+  fullName: Celestial.UIToolkit.Theming.ActiveProperties.GetBorderBrush
+- uid: System.Windows.DependencyObject
+  commentId: T:System.Windows.DependencyObject
+  parent: System.Windows
+  isExternal: true
+  name: DependencyObject
+  nameWithType: DependencyObject
+  fullName: System.Windows.DependencyObject
+- uid: System.Windows.Media.Brush
+  commentId: T:System.Windows.Media.Brush
+  parent: System.Windows.Media
+  isExternal: true
+  name: Brush
+  nameWithType: Brush
+  fullName: System.Windows.Media.Brush
+- uid: System.Windows.Media
+  commentId: N:System.Windows.Media
+  isExternal: true
+  name: System.Windows.Media
+  nameWithType: System.Windows.Media
+  fullName: System.Windows.Media
+- uid: Celestial.UIToolkit.Theming.ActiveProperties.SetBorderBrush*
+  commentId: Overload:Celestial.UIToolkit.Theming.ActiveProperties.SetBorderBrush
+  name: SetBorderBrush
+  nameWithType: ActiveProperties.SetBorderBrush
+  fullName: Celestial.UIToolkit.Theming.ActiveProperties.SetBorderBrush
+- uid: Celestial.UIToolkit.Theming.ActiveProperties.GetBackgroundBrush*
+  commentId: Overload:Celestial.UIToolkit.Theming.ActiveProperties.GetBackgroundBrush
+  name: GetBackgroundBrush
+  nameWithType: ActiveProperties.GetBackgroundBrush
+  fullName: Celestial.UIToolkit.Theming.ActiveProperties.GetBackgroundBrush
+- uid: Celestial.UIToolkit.Theming.ActiveProperties.SetBackgroundBrush*
+  commentId: Overload:Celestial.UIToolkit.Theming.ActiveProperties.SetBackgroundBrush
+  name: SetBackgroundBrush
+  nameWithType: ActiveProperties.SetBackgroundBrush
+  fullName: Celestial.UIToolkit.Theming.ActiveProperties.SetBackgroundBrush
+- uid: Celestial.UIToolkit.Theming.ActiveProperties.GetForegroundBrush*
+  commentId: Overload:Celestial.UIToolkit.Theming.ActiveProperties.GetForegroundBrush
+  name: GetForegroundBrush
+  nameWithType: ActiveProperties.GetForegroundBrush
+  fullName: Celestial.UIToolkit.Theming.ActiveProperties.GetForegroundBrush
+- uid: Celestial.UIToolkit.Theming.ActiveProperties.SetForegroundBrush*
+  commentId: Overload:Celestial.UIToolkit.Theming.ActiveProperties.SetForegroundBrush
+  name: SetForegroundBrush
+  nameWithType: ActiveProperties.SetForegroundBrush
+  fullName: Celestial.UIToolkit.Theming.ActiveProperties.SetForegroundBrush
+- uid: Celestial.UIToolkit.Theming.ActiveProperties.GetShadowElevation*
+  commentId: Overload:Celestial.UIToolkit.Theming.ActiveProperties.GetShadowElevation
+  name: GetShadowElevation
+  nameWithType: ActiveProperties.GetShadowElevation
+  fullName: Celestial.UIToolkit.Theming.ActiveProperties.GetShadowElevation
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  name: Double
+  nameWithType: Double
+  fullName: System.Double
+- uid: Celestial.UIToolkit.Theming.ActiveProperties.SetShadowElevation*
+  commentId: Overload:Celestial.UIToolkit.Theming.ActiveProperties.SetShadowElevation
+  name: SetShadowElevation
+  nameWithType: ActiveProperties.SetShadowElevation
+  fullName: Celestial.UIToolkit.Theming.ActiveProperties.SetShadowElevation

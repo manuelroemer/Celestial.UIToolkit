@@ -1,0 +1,1159 @@
+### YamlMime:ManagedReference
+items:
+- uid: Celestial.UIToolkit.Extensions.EnumerableExtensions
+  commentId: T:Celestial.UIToolkit.Extensions.EnumerableExtensions
+  id: EnumerableExtensions
+  parent: Celestial.UIToolkit.Extensions
+  children:
+  - Celestial.UIToolkit.Extensions.EnumerableExtensions.AddRange``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})
+  - Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfter``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+  - Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfterOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+  - Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBefore``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+  - Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBeforeOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+  - Celestial.UIToolkit.Extensions.EnumerableExtensions.IndexOf``1(System.Collections.Generic.IEnumerable{``0},``0)
+  - Celestial.UIToolkit.Extensions.EnumerableExtensions.RemoveAll``1(System.Collections.Generic.IList{``0},System.Func{``0,System.Boolean})
+  langs:
+  - csharp
+  - vb
+  name: EnumerableExtensions
+  nameWithType: EnumerableExtensions
+  fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions
+  type: Class
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Extensions/EnumerableExtensions.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: EnumerableExtensions
+    path: src/Celestial.UIToolkit.Core/Extensions/EnumerableExtensions.cs
+    startLine: 11
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Extensions
+  summary: "\nProvides extension methods for the <xref href=\"System.Collections.Generic.IEnumerable%601\" data-throw-if-not-resolved=\"false\"></xref> interface.\n"
+  example: []
+  syntax:
+    content: public static class EnumerableExtensions
+    content.vb: Public Module EnumerableExtensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfter``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+  commentId: M:Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfter``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+  id: ElementAfter``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+  isExtensionMethod: true
+  parent: Celestial.UIToolkit.Extensions.EnumerableExtensions
+  langs:
+  - csharp
+  - vb
+  name: ElementAfter<T>(IEnumerable<T>, Int32)
+  nameWithType: EnumerableExtensions.ElementAfter<T>(IEnumerable<T>, Int32)
+  fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfter<T>(System.Collections.Generic.IEnumerable<T>, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Extensions/EnumerableExtensions.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: ElementAfter
+    path: src/Celestial.UIToolkit.Core/Extensions/EnumerableExtensions.cs
+    startLine: 29
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Extensions
+  summary: "\nReturns the element after the specified <code data-dev-comment-type=\"paramref\" class=\"paramref\">index</code>.\n"
+  example: []
+  syntax:
+    content: public static T ElementAfter<T>(this IEnumerable<T> enumerable, int index)
+    parameters:
+    - id: enumerable
+      type: System.Collections.Generic.IEnumerable{{T}}
+      description: The enumerable.
+    - id: index
+      type: System.Int32
+      description: The index which will be used to find the next element.
+    typeParameters:
+    - id: T
+      description: The type of elements in the enumerable.
+    return:
+      type: '{T}'
+      description: "\nThe element after the element at the specified <code data-dev-comment-type=\"paramref\" class=\"paramref\">index</code>.\n"
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function ElementAfter(Of T)(enumerable As IEnumerable(Of T), index As Integer) As T
+  overload: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfter*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: "\nThrown if <code data-dev-comment-type=\"paramref\" class=\"paramref\">index</code> is not in the enumerable&apos;s range, or if\nthe element at the specified <code data-dev-comment-type=\"paramref\" class=\"paramref\">index</code> is the last element in the\nsequence.\n"
+  nameWithType.vb: EnumerableExtensions.ElementAfter(Of T)(IEnumerable(Of T), Int32)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfter(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Int32)
+  name.vb: ElementAfter(Of T)(IEnumerable(Of T), Int32)
+- uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfterOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+  commentId: M:Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfterOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+  id: ElementAfterOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+  isExtensionMethod: true
+  parent: Celestial.UIToolkit.Extensions.EnumerableExtensions
+  langs:
+  - csharp
+  - vb
+  name: ElementAfterOrDefault<T>(IEnumerable<T>, Int32)
+  nameWithType: EnumerableExtensions.ElementAfterOrDefault<T>(IEnumerable<T>, Int32)
+  fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfterOrDefault<T>(System.Collections.Generic.IEnumerable<T>, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Extensions/EnumerableExtensions.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: ElementAfterOrDefault
+    path: src/Celestial.UIToolkit.Core/Extensions/EnumerableExtensions.cs
+    startLine: 51
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Extensions
+  summary: "\nReturns the element after the specified <code data-dev-comment-type=\"paramref\" class=\"paramref\">index</code>\nor a default value, if the element at the specified <code data-dev-comment-type=\"paramref\" class=\"paramref\">index</code>\nis the last element in the sequence.\n"
+  example: []
+  syntax:
+    content: public static T ElementAfterOrDefault<T>(this IEnumerable<T> enumerable, int index)
+    parameters:
+    - id: enumerable
+      type: System.Collections.Generic.IEnumerable{{T}}
+      description: The enumerable.
+    - id: index
+      type: System.Int32
+      description: The index which will be used to find the next element.
+    typeParameters:
+    - id: T
+      description: The type of elements in the enumerable.
+    return:
+      type: '{T}'
+      description: "\nThe element after the element at the specified <code data-dev-comment-type=\"paramref\" class=\"paramref\">index</code>\nor a default value.\n"
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function ElementAfterOrDefault(Of T)(enumerable As IEnumerable(Of T), index As Integer) As T
+  overload: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfterOrDefault*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: "\nThrown if <code data-dev-comment-type=\"paramref\" class=\"paramref\">index</code> is not in the enumerable&apos;s range.\n"
+  nameWithType.vb: EnumerableExtensions.ElementAfterOrDefault(Of T)(IEnumerable(Of T), Int32)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfterOrDefault(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Int32)
+  name.vb: ElementAfterOrDefault(Of T)(IEnumerable(Of T), Int32)
+- uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBefore``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+  commentId: M:Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBefore``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+  id: ElementBefore``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+  isExtensionMethod: true
+  parent: Celestial.UIToolkit.Extensions.EnumerableExtensions
+  langs:
+  - csharp
+  - vb
+  name: ElementBefore<T>(IEnumerable<T>, Int32)
+  nameWithType: EnumerableExtensions.ElementBefore<T>(IEnumerable<T>, Int32)
+  fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBefore<T>(System.Collections.Generic.IEnumerable<T>, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Extensions/EnumerableExtensions.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: ElementBefore
+    path: src/Celestial.UIToolkit.Core/Extensions/EnumerableExtensions.cs
+    startLine: 72
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Extensions
+  summary: "\nReturns the element which comes before the specified <code data-dev-comment-type=\"paramref\" class=\"paramref\">index</code>.\n"
+  example: []
+  syntax:
+    content: public static T ElementBefore<T>(this IEnumerable<T> enumerable, int index)
+    parameters:
+    - id: enumerable
+      type: System.Collections.Generic.IEnumerable{{T}}
+      description: The enumerable.
+    - id: index
+      type: System.Int32
+      description: The index which will be used to find the previous element.
+    typeParameters:
+    - id: T
+      description: The type of elements in the enumerable.
+    return:
+      type: '{T}'
+      description: "\nThe element which comes before the element at the specified <code data-dev-comment-type=\"paramref\" class=\"paramref\">index</code>.\n"
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function ElementBefore(Of T)(enumerable As IEnumerable(Of T), index As Integer) As T
+  overload: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBefore*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: "\nThrown if <code data-dev-comment-type=\"paramref\" class=\"paramref\">index</code> is not in the enumerable&apos;s range, or if\nthe element at the specified <code data-dev-comment-type=\"paramref\" class=\"paramref\">index</code> is the first element in the\nsequence.\n"
+  nameWithType.vb: EnumerableExtensions.ElementBefore(Of T)(IEnumerable(Of T), Int32)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBefore(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Int32)
+  name.vb: ElementBefore(Of T)(IEnumerable(Of T), Int32)
+- uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBeforeOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+  commentId: M:Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBeforeOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+  id: ElementBeforeOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Int32)
+  isExtensionMethod: true
+  parent: Celestial.UIToolkit.Extensions.EnumerableExtensions
+  langs:
+  - csharp
+  - vb
+  name: ElementBeforeOrDefault<T>(IEnumerable<T>, Int32)
+  nameWithType: EnumerableExtensions.ElementBeforeOrDefault<T>(IEnumerable<T>, Int32)
+  fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBeforeOrDefault<T>(System.Collections.Generic.IEnumerable<T>, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Extensions/EnumerableExtensions.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: ElementBeforeOrDefault
+    path: src/Celestial.UIToolkit.Core/Extensions/EnumerableExtensions.cs
+    startLine: 94
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Extensions
+  summary: "\nReturns the element which comes before the specified <code data-dev-comment-type=\"paramref\" class=\"paramref\">index</code>\nor a default value, if the element at the specified <code data-dev-comment-type=\"paramref\" class=\"paramref\">index</code>\nis the first element in the sequence.\n"
+  example: []
+  syntax:
+    content: public static T ElementBeforeOrDefault<T>(this IEnumerable<T> enumerable, int index)
+    parameters:
+    - id: enumerable
+      type: System.Collections.Generic.IEnumerable{{T}}
+      description: The enumerable.
+    - id: index
+      type: System.Int32
+      description: The index which will be used to find the previous element.
+    typeParameters:
+    - id: T
+      description: The type of elements in the enumerable.
+    return:
+      type: '{T}'
+      description: "\nThe element which comes before the element at the specified <code data-dev-comment-type=\"paramref\" class=\"paramref\">index</code>\nor a default value.\n"
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function ElementBeforeOrDefault(Of T)(enumerable As IEnumerable(Of T), index As Integer) As T
+  overload: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBeforeOrDefault*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: "\nThrown if <code data-dev-comment-type=\"paramref\" class=\"paramref\">index</code> is not in the enumerable&apos;s range.\n"
+  nameWithType.vb: EnumerableExtensions.ElementBeforeOrDefault(Of T)(IEnumerable(Of T), Int32)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBeforeOrDefault(Of T)(System.Collections.Generic.IEnumerable(Of T), System.Int32)
+  name.vb: ElementBeforeOrDefault(Of T)(IEnumerable(Of T), Int32)
+- uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.IndexOf``1(System.Collections.Generic.IEnumerable{``0},``0)
+  commentId: M:Celestial.UIToolkit.Extensions.EnumerableExtensions.IndexOf``1(System.Collections.Generic.IEnumerable{``0},``0)
+  id: IndexOf``1(System.Collections.Generic.IEnumerable{``0},``0)
+  isExtensionMethod: true
+  parent: Celestial.UIToolkit.Extensions.EnumerableExtensions
+  langs:
+  - csharp
+  - vb
+  name: IndexOf<T>(IEnumerable<T>, T)
+  nameWithType: EnumerableExtensions.IndexOf<T>(IEnumerable<T>, T)
+  fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.IndexOf<T>(System.Collections.Generic.IEnumerable<T>, T)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Extensions/EnumerableExtensions.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: IndexOf
+    path: src/Celestial.UIToolkit.Core/Extensions/EnumerableExtensions.cs
+    startLine: 109
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Extensions
+  summary: "\nReturns the index of the specified <code data-dev-comment-type=\"paramref\" class=\"paramref\">value</code> in the sequence.\n"
+  example: []
+  syntax:
+    content: public static int IndexOf<T>(this IEnumerable<T> enumerable, T value)
+    parameters:
+    - id: enumerable
+      type: System.Collections.Generic.IEnumerable{{T}}
+      description: The enumerable.
+    - id: value
+      type: '{T}'
+      description: The value to be found.
+    typeParameters:
+    - id: T
+      description: The type of elements in the sequence.
+    return:
+      type: System.Int32
+      description: "\nThe index of the found element; -1 if nothing was found.\n"
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function IndexOf(Of T)(enumerable As IEnumerable(Of T), value As T) As Integer
+  overload: Celestial.UIToolkit.Extensions.EnumerableExtensions.IndexOf*
+  nameWithType.vb: EnumerableExtensions.IndexOf(Of T)(IEnumerable(Of T), T)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Celestial.UIToolkit.Extensions.EnumerableExtensions.IndexOf(Of T)(System.Collections.Generic.IEnumerable(Of T), T)
+  name.vb: IndexOf(Of T)(IEnumerable(Of T), T)
+- uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.AddRange``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})
+  commentId: M:Celestial.UIToolkit.Extensions.EnumerableExtensions.AddRange``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})
+  id: AddRange``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})
+  isExtensionMethod: true
+  parent: Celestial.UIToolkit.Extensions.EnumerableExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddRange<T>(ICollection<T>, IEnumerable<T>)
+  nameWithType: EnumerableExtensions.AddRange<T>(ICollection<T>, IEnumerable<T>)
+  fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.AddRange<T>(System.Collections.Generic.ICollection<T>, System.Collections.Generic.IEnumerable<T>)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Extensions/EnumerableExtensions.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: AddRange
+    path: src/Celestial.UIToolkit.Core/Extensions/EnumerableExtensions.cs
+    startLine: 132
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Extensions
+  summary: "\nAdds the specified sequence to the <code data-dev-comment-type=\"paramref\" class=\"paramref\">collection</code>.\n"
+  example: []
+  syntax:
+    content: public static void AddRange<T>(this ICollection<T> collection, IEnumerable<T> items)
+    parameters:
+    - id: collection
+      type: System.Collections.Generic.ICollection{{T}}
+      description: The collection.
+    - id: items
+      type: System.Collections.Generic.IEnumerable{{T}}
+      description: The items to be added to the collection.
+    typeParameters:
+    - id: T
+      description: The type of elements in the collection.
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Sub AddRange(Of T)(collection As ICollection(Of T), items As IEnumerable(Of T))
+  overload: Celestial.UIToolkit.Extensions.EnumerableExtensions.AddRange*
+  nameWithType.vb: EnumerableExtensions.AddRange(Of T)(ICollection(Of T), IEnumerable(Of T))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Celestial.UIToolkit.Extensions.EnumerableExtensions.AddRange(Of T)(System.Collections.Generic.ICollection(Of T), System.Collections.Generic.IEnumerable(Of T))
+  name.vb: AddRange(Of T)(ICollection(Of T), IEnumerable(Of T))
+- uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.RemoveAll``1(System.Collections.Generic.IList{``0},System.Func{``0,System.Boolean})
+  commentId: M:Celestial.UIToolkit.Extensions.EnumerableExtensions.RemoveAll``1(System.Collections.Generic.IList{``0},System.Func{``0,System.Boolean})
+  id: RemoveAll``1(System.Collections.Generic.IList{``0},System.Func{``0,System.Boolean})
+  isExtensionMethod: true
+  parent: Celestial.UIToolkit.Extensions.EnumerableExtensions
+  langs:
+  - csharp
+  - vb
+  name: RemoveAll<T>(IList<T>, Func<T, Boolean>)
+  nameWithType: EnumerableExtensions.RemoveAll<T>(IList<T>, Func<T, Boolean>)
+  fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.RemoveAll<T>(System.Collections.Generic.IList<T>, System.Func<T, System.Boolean>)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Extensions/EnumerableExtensions.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: RemoveAll
+    path: src/Celestial.UIToolkit.Core/Extensions/EnumerableExtensions.cs
+    startLine: 160
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Extensions
+  summary: "\nRemoves all elements from the list (in place, the input list will be changed) \nwhich satisfy the given <code data-dev-comment-type=\"paramref\" class=\"paramref\">predicate</code>.\n"
+  example: []
+  syntax:
+    content: public static IList<T> RemoveAll<T>(this IList<T> list, Func<T, bool> predicate)
+    parameters:
+    - id: list
+      type: System.Collections.Generic.IList{{T}}
+      description: The list.
+    - id: predicate
+      type: System.Func{{T},System.Boolean}
+      description: A predicate to be fulfilled for an item to be removed.
+    typeParameters:
+    - id: T
+      description: The type of elements in the list.
+    return:
+      type: System.Collections.Generic.IList{{T}}
+      description: "\nThe same <code data-dev-comment-type=\"paramref\" class=\"paramref\">list</code> instance.\n"
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function RemoveAll(Of T)(list As IList(Of T), predicate As Func(Of T, Boolean)) As IList(Of T)
+  overload: Celestial.UIToolkit.Extensions.EnumerableExtensions.RemoveAll*
+  nameWithType.vb: EnumerableExtensions.RemoveAll(Of T)(IList(Of T), Func(Of T, Boolean))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Celestial.UIToolkit.Extensions.EnumerableExtensions.RemoveAll(Of T)(System.Collections.Generic.IList(Of T), System.Func(Of T, System.Boolean))
+  name.vb: RemoveAll(Of T)(IList(Of T), Func(Of T, Boolean))
+references:
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Celestial.UIToolkit.Extensions
+  commentId: N:Celestial.UIToolkit.Extensions
+  name: Celestial.UIToolkit.Extensions
+  nameWithType: Celestial.UIToolkit.Extensions
+  fullName: Celestial.UIToolkit.Extensions
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+- uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfter*
+  commentId: Overload:Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfter
+  name: ElementAfter
+  nameWithType: EnumerableExtensions.ElementAfter
+  fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfter
+- uid: System.Collections.Generic.IEnumerable{{T}}
+  commentId: T:System.Collections.Generic.IEnumerable{``0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfterOrDefault*
+  commentId: Overload:Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfterOrDefault
+  name: ElementAfterOrDefault
+  nameWithType: EnumerableExtensions.ElementAfterOrDefault
+  fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementAfterOrDefault
+- uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBefore*
+  commentId: Overload:Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBefore
+  name: ElementBefore
+  nameWithType: EnumerableExtensions.ElementBefore
+  fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBefore
+- uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBeforeOrDefault*
+  commentId: Overload:Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBeforeOrDefault
+  name: ElementBeforeOrDefault
+  nameWithType: EnumerableExtensions.ElementBeforeOrDefault
+  fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.ElementBeforeOrDefault
+- uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.IndexOf*
+  commentId: Overload:Celestial.UIToolkit.Extensions.EnumerableExtensions.IndexOf
+  name: IndexOf
+  nameWithType: EnumerableExtensions.IndexOf
+  fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.IndexOf
+- uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.AddRange*
+  commentId: Overload:Celestial.UIToolkit.Extensions.EnumerableExtensions.AddRange
+  name: AddRange
+  nameWithType: EnumerableExtensions.AddRange
+  fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.AddRange
+- uid: System.Collections.Generic.ICollection{{T}}
+  commentId: T:System.Collections.Generic.ICollection{``0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.ICollection`1
+  name: ICollection<T>
+  nameWithType: ICollection<T>
+  fullName: System.Collections.Generic.ICollection<T>
+  nameWithType.vb: ICollection(Of T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T)
+  name.vb: ICollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection`1
+  commentId: T:System.Collections.Generic.ICollection`1
+  isExternal: true
+  name: ICollection<T>
+  nameWithType: ICollection<T>
+  fullName: System.Collections.Generic.ICollection<T>
+  nameWithType.vb: ICollection(Of T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T)
+  name.vb: ICollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Celestial.UIToolkit.Extensions.EnumerableExtensions.RemoveAll*
+  commentId: Overload:Celestial.UIToolkit.Extensions.EnumerableExtensions.RemoveAll
+  name: RemoveAll
+  nameWithType: EnumerableExtensions.RemoveAll
+  fullName: Celestial.UIToolkit.Extensions.EnumerableExtensions.RemoveAll
+- uid: System.Collections.Generic.IList{{T}}
+  commentId: T:System.Collections.Generic.IList{``0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IList`1
+  name: IList<T>
+  nameWithType: IList<T>
+  fullName: System.Collections.Generic.IList<T>
+  nameWithType.vb: IList(Of T)
+  fullName.vb: System.Collections.Generic.IList(Of T)
+  name.vb: IList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func{{T},System.Boolean}
+  commentId: T:System.Func{``0,System.Boolean}
+  parent: System
+  definition: System.Func`2
+  name: Func<T, Boolean>
+  nameWithType: Func<T, Boolean>
+  fullName: System.Func<T, System.Boolean>
+  nameWithType.vb: Func(Of T, Boolean)
+  fullName.vb: System.Func(Of T, System.Boolean)
+  name.vb: Func(Of T, Boolean)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IList`1
+  commentId: T:System.Collections.Generic.IList`1
+  isExternal: true
+  name: IList<T>
+  nameWithType: IList<T>
+  fullName: System.Collections.Generic.IList<T>
+  nameWithType.vb: IList(Of T)
+  fullName.vb: System.Collections.Generic.IList(Of T)
+  name.vb: IList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )

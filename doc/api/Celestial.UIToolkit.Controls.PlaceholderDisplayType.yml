@@ -1,0 +1,118 @@
+### YamlMime:ManagedReference
+items:
+- uid: Celestial.UIToolkit.Controls.PlaceholderDisplayType
+  commentId: T:Celestial.UIToolkit.Controls.PlaceholderDisplayType
+  id: PlaceholderDisplayType
+  parent: Celestial.UIToolkit.Controls
+  children:
+  - Celestial.UIToolkit.Controls.PlaceholderDisplayType.Disappearing
+  - Celestial.UIToolkit.Controls.PlaceholderDisplayType.Floating
+  langs:
+  - csharp
+  - vb
+  name: PlaceholderDisplayType
+  nameWithType: PlaceholderDisplayType
+  fullName: Celestial.UIToolkit.Controls.PlaceholderDisplayType
+  type: Enum
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Controls/PlaceholderOverlay/PlaceholderDisplayType.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: PlaceholderDisplayType
+    path: ../src/Celestial.UIToolkit/Controls/PlaceholderOverlay/PlaceholderDisplayType.cs
+    startLine: 6
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Controls
+  summary: "\nDefines the different display types of a placeholder.\n"
+  example: []
+  syntax:
+    content: public enum PlaceholderDisplayType
+    content.vb: Public Enum PlaceholderDisplayType
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: Celestial.UIToolkit.Controls.PlaceholderDisplayType.Floating
+  commentId: F:Celestial.UIToolkit.Controls.PlaceholderDisplayType.Floating
+  id: Floating
+  parent: Celestial.UIToolkit.Controls.PlaceholderDisplayType
+  langs:
+  - csharp
+  - vb
+  name: Floating
+  nameWithType: PlaceholderDisplayType.Floating
+  fullName: Celestial.UIToolkit.Controls.PlaceholderDisplayType.Floating
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Controls/PlaceholderOverlay/PlaceholderDisplayType.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: Floating
+    path: ../src/Celestial.UIToolkit/Controls/PlaceholderOverlay/PlaceholderDisplayType.cs
+    startLine: 14
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Controls
+  summary: "\nThe placeholder is always visible.\nIf space is required, the placeholder moves to a place where it doesn&apos;t use up\nthe content&apos;s space.\n"
+  example: []
+  syntax:
+    content: Floating = 0
+    return:
+      type: Celestial.UIToolkit.Controls.PlaceholderDisplayType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Celestial.UIToolkit.Controls.PlaceholderDisplayType.Disappearing
+  commentId: F:Celestial.UIToolkit.Controls.PlaceholderDisplayType.Disappearing
+  id: Disappearing
+  parent: Celestial.UIToolkit.Controls.PlaceholderDisplayType
+  langs:
+  - csharp
+  - vb
+  name: Disappearing
+  nameWithType: PlaceholderDisplayType.Disappearing
+  fullName: Celestial.UIToolkit.Controls.PlaceholderDisplayType.Disappearing
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Controls/PlaceholderOverlay/PlaceholderDisplayType.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: Disappearing
+    path: ../src/Celestial.UIToolkit/Controls/PlaceholderOverlay/PlaceholderDisplayType.cs
+    startLine: 19
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Controls
+  summary: "\nWhen the content requires space, the placeholder disappears.\n"
+  example: []
+  syntax:
+    content: Disappearing = 1
+    return:
+      type: Celestial.UIToolkit.Controls.PlaceholderDisplayType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: Celestial.UIToolkit.Controls
+  commentId: N:Celestial.UIToolkit.Controls
+  name: Celestial.UIToolkit.Controls
+  nameWithType: Celestial.UIToolkit.Controls
+  fullName: Celestial.UIToolkit.Controls
+- uid: Celestial.UIToolkit.Controls.PlaceholderDisplayType
+  commentId: T:Celestial.UIToolkit.Controls.PlaceholderDisplayType
+  parent: Celestial.UIToolkit.Controls
+  name: PlaceholderDisplayType
+  nameWithType: PlaceholderDisplayType
+  fullName: Celestial.UIToolkit.Controls.PlaceholderDisplayType

@@ -1,0 +1,123 @@
+### YamlMime:ManagedReference
+items:
+- uid: Celestial.UIToolkit.Controls.RippleOrigin
+  commentId: T:Celestial.UIToolkit.Controls.RippleOrigin
+  id: RippleOrigin
+  parent: Celestial.UIToolkit.Controls
+  children:
+  - Celestial.UIToolkit.Controls.RippleOrigin.Center
+  - Celestial.UIToolkit.Controls.RippleOrigin.MouseLocation
+  langs:
+  - csharp
+  - vb
+  name: RippleOrigin
+  nameWithType: RippleOrigin
+  fullName: Celestial.UIToolkit.Controls.RippleOrigin
+  type: Enum
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Controls/RippleOverlay.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: RippleOrigin
+    path: ../src/Celestial.UIToolkit/Controls/RippleOverlay.cs
+    startLine: 514
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Controls
+  summary: "\nDefines the available origin point types for a ripple animation.\n"
+  example: []
+  syntax:
+    content: public enum RippleOrigin
+    content.vb: Public Enum RippleOrigin
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: Celestial.UIToolkit.Controls.RippleOrigin.MouseLocation
+  commentId: F:Celestial.UIToolkit.Controls.RippleOrigin.MouseLocation
+  id: MouseLocation
+  parent: Celestial.UIToolkit.Controls.RippleOrigin
+  langs:
+  - csharp
+  - vb
+  name: MouseLocation
+  nameWithType: RippleOrigin.MouseLocation
+  fullName: Celestial.UIToolkit.Controls.RippleOrigin.MouseLocation
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Controls/RippleOverlay.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: MouseLocation
+    path: ../src/Celestial.UIToolkit/Controls/RippleOverlay.cs
+    startLine: 520
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Controls
+  summary: "\nThe location of the mouse pointer, when the animation is started.\n"
+  example: []
+  syntax:
+    content: MouseLocation = 0
+    return:
+      type: Celestial.UIToolkit.Controls.RippleOrigin
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Celestial.UIToolkit.Controls.RippleOrigin.Center
+  commentId: F:Celestial.UIToolkit.Controls.RippleOrigin.Center
+  id: Center
+  parent: Celestial.UIToolkit.Controls.RippleOrigin
+  langs:
+  - csharp
+  - vb
+  name: Center
+  nameWithType: RippleOrigin.Center
+  fullName: Celestial.UIToolkit.Controls.RippleOrigin.Center
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Controls/RippleOverlay.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: Center
+    path: ../src/Celestial.UIToolkit/Controls/RippleOverlay.cs
+    startLine: 525
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Controls
+  summary: "\nThe animation starts from the center of the <xref href=\"Celestial.UIToolkit.Controls.RippleOverlay\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: Center = 1
+    return:
+      type: Celestial.UIToolkit.Controls.RippleOrigin
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: Celestial.UIToolkit.Controls
+  commentId: N:Celestial.UIToolkit.Controls
+  name: Celestial.UIToolkit.Controls
+  nameWithType: Celestial.UIToolkit.Controls
+  fullName: Celestial.UIToolkit.Controls
+- uid: Celestial.UIToolkit.Controls.RippleOrigin
+  commentId: T:Celestial.UIToolkit.Controls.RippleOrigin
+  parent: Celestial.UIToolkit.Controls
+  name: RippleOrigin
+  nameWithType: RippleOrigin
+  fullName: Celestial.UIToolkit.Controls.RippleOrigin
+- uid: Celestial.UIToolkit.Controls.RippleOverlay
+  commentId: T:Celestial.UIToolkit.Controls.RippleOverlay
+  name: RippleOverlay
+  nameWithType: RippleOverlay
+  fullName: Celestial.UIToolkit.Controls.RippleOverlay

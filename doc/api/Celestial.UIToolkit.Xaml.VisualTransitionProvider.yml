@@ -1,0 +1,528 @@
+### YamlMime:ManagedReference
+items:
+- uid: Celestial.UIToolkit.Xaml.VisualTransitionProvider
+  commentId: T:Celestial.UIToolkit.Xaml.VisualTransitionProvider
+  id: VisualTransitionProvider
+  parent: Celestial.UIToolkit.Xaml
+  children:
+  - Celestial.UIToolkit.Xaml.VisualTransitionProvider.AddProvider(Celestial.UIToolkit.Xaml.IVisualTransitionProvider)
+  - Celestial.UIToolkit.Xaml.VisualTransitionProvider.GetProviderForTimeline(System.Windows.Media.Animation.Timeline)
+  - Celestial.UIToolkit.Xaml.VisualTransitionProvider.TryGetProviderForTimeline(System.Windows.Media.Animation.Timeline,Celestial.UIToolkit.Xaml.IVisualTransitionProvider@)
+  langs:
+  - csharp
+  - vb
+  name: VisualTransitionProvider
+  nameWithType: VisualTransitionProvider
+  fullName: Celestial.UIToolkit.Xaml.VisualTransitionProvider
+  type: Class
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Xaml/ExtendedVisualStateManager/VisualTransitionProvider.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: VisualTransitionProvider
+    path: src/Celestial.UIToolkit.Core/Xaml/ExtendedVisualStateManager/VisualTransitionProvider.cs
+    startLine: 13
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Xaml
+  summary: "\nA class which provides the <xref href=\"Celestial.UIToolkit.Xaml.ExtendedVisualStateManager\" data-throw-if-not-resolved=\"false\"></xref>\nwith transition timelines between states.\n"
+  example: []
+  syntax:
+    content: public static class VisualTransitionProvider
+    content.vb: Public Module VisualTransitionProvider
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: Celestial.UIToolkit.Xaml.VisualTransitionProvider.AddProvider(Celestial.UIToolkit.Xaml.IVisualTransitionProvider)
+  commentId: M:Celestial.UIToolkit.Xaml.VisualTransitionProvider.AddProvider(Celestial.UIToolkit.Xaml.IVisualTransitionProvider)
+  id: AddProvider(Celestial.UIToolkit.Xaml.IVisualTransitionProvider)
+  parent: Celestial.UIToolkit.Xaml.VisualTransitionProvider
+  langs:
+  - csharp
+  - vb
+  name: AddProvider(IVisualTransitionProvider)
+  nameWithType: VisualTransitionProvider.AddProvider(IVisualTransitionProvider)
+  fullName: Celestial.UIToolkit.Xaml.VisualTransitionProvider.AddProvider(Celestial.UIToolkit.Xaml.IVisualTransitionProvider)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Xaml/ExtendedVisualStateManager/VisualTransitionProvider.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: AddProvider
+    path: src/Celestial.UIToolkit.Core/Xaml/ExtendedVisualStateManager/VisualTransitionProvider.cs
+    startLine: 35
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Xaml
+  summary: "\nAdds the specified transition provider to the supported ones.\n"
+  example: []
+  syntax:
+    content: public static void AddProvider(IVisualTransitionProvider provider)
+    parameters:
+    - id: provider
+      type: Celestial.UIToolkit.Xaml.IVisualTransitionProvider
+      description: "\nThe <xref href=\"Celestial.UIToolkit.Xaml.IVisualTransitionProvider\" data-throw-if-not-resolved=\"false\"></xref> to be added to the providers\nwhich are used by the <xref href=\"Celestial.UIToolkit.Xaml.ExtendedVisualStateManager\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+    content.vb: Public Shared Sub AddProvider(provider As IVisualTransitionProvider)
+  overload: Celestial.UIToolkit.Xaml.VisualTransitionProvider.AddProvider*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Xaml.VisualTransitionProvider.GetProviderForTimeline(System.Windows.Media.Animation.Timeline)
+  commentId: M:Celestial.UIToolkit.Xaml.VisualTransitionProvider.GetProviderForTimeline(System.Windows.Media.Animation.Timeline)
+  id: GetProviderForTimeline(System.Windows.Media.Animation.Timeline)
+  parent: Celestial.UIToolkit.Xaml.VisualTransitionProvider
+  langs:
+  - csharp
+  - vb
+  name: GetProviderForTimeline(Timeline)
+  nameWithType: VisualTransitionProvider.GetProviderForTimeline(Timeline)
+  fullName: Celestial.UIToolkit.Xaml.VisualTransitionProvider.GetProviderForTimeline(System.Windows.Media.Animation.Timeline)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Xaml/ExtendedVisualStateManager/VisualTransitionProvider.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: GetProviderForTimeline
+    path: src/Celestial.UIToolkit.Core/Xaml/ExtendedVisualStateManager/VisualTransitionProvider.cs
+    startLine: 56
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Xaml
+  summary: "\nReturns a registered <xref href=\"Celestial.UIToolkit.Xaml.IVisualTransitionProvider\" data-throw-if-not-resolved=\"false\"></xref> which supports\nthe specified <code data-dev-comment-type=\"paramref\" class=\"paramref\">timeline</code>.\n"
+  example: []
+  syntax:
+    content: public static IVisualTransitionProvider GetProviderForTimeline(Timeline timeline)
+    parameters:
+    - id: timeline
+      type: System.Windows.Media.Animation.Timeline
+      description: "\nThe <xref href=\"System.Windows.Media.Animation.Timeline\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+    return:
+      type: Celestial.UIToolkit.Xaml.IVisualTransitionProvider
+      description: "\nA <xref href=\"Celestial.UIToolkit.Xaml.IVisualTransitionProvider\" data-throw-if-not-resolved=\"false\"></xref> or <code>null</code>, if none was found.\n"
+    content.vb: Public Shared Function GetProviderForTimeline(timeline As Timeline) As IVisualTransitionProvider
+  overload: Celestial.UIToolkit.Xaml.VisualTransitionProvider.GetProviderForTimeline*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: "\nThrown if no added provider supports the <code data-dev-comment-type=\"paramref\" class=\"paramref\">timeline</code>.\n"
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Xaml.VisualTransitionProvider.TryGetProviderForTimeline(System.Windows.Media.Animation.Timeline,Celestial.UIToolkit.Xaml.IVisualTransitionProvider@)
+  commentId: M:Celestial.UIToolkit.Xaml.VisualTransitionProvider.TryGetProviderForTimeline(System.Windows.Media.Animation.Timeline,Celestial.UIToolkit.Xaml.IVisualTransitionProvider@)
+  id: TryGetProviderForTimeline(System.Windows.Media.Animation.Timeline,Celestial.UIToolkit.Xaml.IVisualTransitionProvider@)
+  parent: Celestial.UIToolkit.Xaml.VisualTransitionProvider
+  langs:
+  - csharp
+  - vb
+  name: TryGetProviderForTimeline(Timeline, out IVisualTransitionProvider)
+  nameWithType: VisualTransitionProvider.TryGetProviderForTimeline(Timeline, out IVisualTransitionProvider)
+  fullName: Celestial.UIToolkit.Xaml.VisualTransitionProvider.TryGetProviderForTimeline(System.Windows.Media.Animation.Timeline, out Celestial.UIToolkit.Xaml.IVisualTransitionProvider)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Xaml/ExtendedVisualStateManager/VisualTransitionProvider.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: TryGetProviderForTimeline
+    path: src/Celestial.UIToolkit.Core/Xaml/ExtendedVisualStateManager/VisualTransitionProvider.cs
+    startLine: 86
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Xaml
+  summary: "\nTries to return a registered <xref href=\"Celestial.UIToolkit.Xaml.IVisualTransitionProvider\" data-throw-if-not-resolved=\"false\"></xref> which supports\nthe specified <code data-dev-comment-type=\"paramref\" class=\"paramref\">timeline</code>.\nIf a provider was found, this method returns <code>true</code> and stores the provider\nin the <code data-dev-comment-type=\"paramref\" class=\"paramref\">result</code> parameter.\nIf none was found, this method returns <code>false</code> and <code data-dev-comment-type=\"paramref\" class=\"paramref\">result</code>\nis set to <code>null</code>.\n"
+  example: []
+  syntax:
+    content: public static bool TryGetProviderForTimeline(Timeline timeline, out IVisualTransitionProvider result)
+    parameters:
+    - id: timeline
+      type: System.Windows.Media.Animation.Timeline
+      description: "\nThe <xref href=\"System.Windows.Media.Animation.Timeline\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+    - id: result
+      type: Celestial.UIToolkit.Xaml.IVisualTransitionProvider
+      description: "\nAn <xref href=\"Celestial.UIToolkit.Xaml.IVisualTransitionProvider\" data-throw-if-not-resolved=\"false\"></xref> which will hold the result of this method.\n"
+    return:
+      type: System.Boolean
+      description: "\nA <xref href=\"System.Boolean\" data-throw-if-not-resolved=\"false\"></xref> indicating whether getting a provider succeeded;\n"
+    content.vb: Public Shared Function TryGetProviderForTimeline(timeline As Timeline, ByRef result As IVisualTransitionProvider) As Boolean
+  overload: Celestial.UIToolkit.Xaml.VisualTransitionProvider.TryGetProviderForTimeline*
+  nameWithType.vb: VisualTransitionProvider.TryGetProviderForTimeline(Timeline, ByRef IVisualTransitionProvider)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Celestial.UIToolkit.Xaml.VisualTransitionProvider.TryGetProviderForTimeline(System.Windows.Media.Animation.Timeline, ByRef Celestial.UIToolkit.Xaml.IVisualTransitionProvider)
+  name.vb: TryGetProviderForTimeline(Timeline, ByRef IVisualTransitionProvider)
+references:
+- uid: Celestial.UIToolkit.Xaml.ExtendedVisualStateManager
+  commentId: T:Celestial.UIToolkit.Xaml.ExtendedVisualStateManager
+  parent: Celestial.UIToolkit.Xaml
+  name: ExtendedVisualStateManager
+  nameWithType: ExtendedVisualStateManager
+  fullName: Celestial.UIToolkit.Xaml.ExtendedVisualStateManager
+- uid: Celestial.UIToolkit.Xaml
+  commentId: N:Celestial.UIToolkit.Xaml
+  name: Celestial.UIToolkit.Xaml
+  nameWithType: Celestial.UIToolkit.Xaml
+  fullName: Celestial.UIToolkit.Xaml
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Celestial.UIToolkit.Xaml.IVisualTransitionProvider
+  commentId: T:Celestial.UIToolkit.Xaml.IVisualTransitionProvider
+  parent: Celestial.UIToolkit.Xaml
+  name: IVisualTransitionProvider
+  nameWithType: IVisualTransitionProvider
+  fullName: Celestial.UIToolkit.Xaml.IVisualTransitionProvider
+- uid: Celestial.UIToolkit.Xaml.VisualTransitionProvider.AddProvider*
+  commentId: Overload:Celestial.UIToolkit.Xaml.VisualTransitionProvider.AddProvider
+  name: AddProvider
+  nameWithType: VisualTransitionProvider.AddProvider
+  fullName: Celestial.UIToolkit.Xaml.VisualTransitionProvider.AddProvider
+- uid: System.Windows.Media.Animation.Timeline
+  commentId: T:System.Windows.Media.Animation.Timeline
+  parent: System.Windows.Media.Animation
+  isExternal: true
+  name: Timeline
+  nameWithType: Timeline
+  fullName: System.Windows.Media.Animation.Timeline
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+  isExternal: true
+- uid: Celestial.UIToolkit.Xaml.VisualTransitionProvider.GetProviderForTimeline*
+  commentId: Overload:Celestial.UIToolkit.Xaml.VisualTransitionProvider.GetProviderForTimeline
+  name: GetProviderForTimeline
+  nameWithType: VisualTransitionProvider.GetProviderForTimeline
+  fullName: Celestial.UIToolkit.Xaml.VisualTransitionProvider.GetProviderForTimeline
+- uid: System.Windows.Media.Animation
+  commentId: N:System.Windows.Media.Animation
+  isExternal: true
+  name: System.Windows.Media.Animation
+  nameWithType: System.Windows.Media.Animation
+  fullName: System.Windows.Media.Animation
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: Celestial.UIToolkit.Xaml.VisualTransitionProvider.TryGetProviderForTimeline*
+  commentId: Overload:Celestial.UIToolkit.Xaml.VisualTransitionProvider.TryGetProviderForTimeline
+  name: TryGetProviderForTimeline
+  nameWithType: VisualTransitionProvider.TryGetProviderForTimeline
+  fullName: Celestial.UIToolkit.Xaml.VisualTransitionProvider.TryGetProviderForTimeline

@@ -1,0 +1,507 @@
+### YamlMime:ManagedReference
+items:
+- uid: Celestial.UIToolkit.Theming.ControlProperties
+  commentId: T:Celestial.UIToolkit.Theming.ControlProperties
+  id: ControlProperties
+  parent: Celestial.UIToolkit.Theming
+  children:
+  - Celestial.UIToolkit.Theming.ControlProperties.CornerRadiusProperty
+  - Celestial.UIToolkit.Theming.ControlProperties.GetCornerRadius(System.Windows.DependencyObject)
+  - Celestial.UIToolkit.Theming.ControlProperties.SetCornerRadius(System.Windows.DependencyObject,System.Windows.CornerRadius)
+  langs:
+  - csharp
+  - vb
+  name: ControlProperties
+  nameWithType: ControlProperties
+  fullName: Celestial.UIToolkit.Theming.ControlProperties
+  type: Class
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/ControlProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: ControlProperties
+    path: ../src/Celestial.UIToolkit/Theming/ControlProperties.cs
+    startLine: 9
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nProvides attached dependency properties for generic control properties \nwhich can be used by styles.\n"
+  example: []
+  syntax:
+    content: public static class ControlProperties
+    content.vb: Public Module ControlProperties
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: Celestial.UIToolkit.Theming.ControlProperties.CornerRadiusProperty
+  commentId: F:Celestial.UIToolkit.Theming.ControlProperties.CornerRadiusProperty
+  id: CornerRadiusProperty
+  parent: Celestial.UIToolkit.Theming.ControlProperties
+  langs:
+  - csharp
+  - vb
+  name: CornerRadiusProperty
+  nameWithType: ControlProperties.CornerRadiusProperty
+  fullName: Celestial.UIToolkit.Theming.ControlProperties.CornerRadiusProperty
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/ControlProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: CornerRadiusProperty
+    path: ../src/Celestial.UIToolkit/Theming/ControlProperties.cs
+    startLine: 15
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nIdentifies the CornerRadius attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static readonly DependencyProperty CornerRadiusProperty
+    return:
+      type: System.Windows.DependencyProperty
+    content.vb: Public Shared ReadOnly CornerRadiusProperty As DependencyProperty
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Theming.ControlProperties.GetCornerRadius(System.Windows.DependencyObject)
+  commentId: M:Celestial.UIToolkit.Theming.ControlProperties.GetCornerRadius(System.Windows.DependencyObject)
+  id: GetCornerRadius(System.Windows.DependencyObject)
+  parent: Celestial.UIToolkit.Theming.ControlProperties
+  langs:
+  - csharp
+  - vb
+  name: GetCornerRadius(DependencyObject)
+  nameWithType: ControlProperties.GetCornerRadius(DependencyObject)
+  fullName: Celestial.UIToolkit.Theming.ControlProperties.GetCornerRadius(System.Windows.DependencyObject)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/ControlProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: GetCornerRadius
+    path: ../src/Celestial.UIToolkit/Theming/ControlProperties.cs
+    startLine: 31
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nGets the value of the <xref href=\"Celestial.UIToolkit.Theming.ControlProperties.CornerRadiusProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nfor a given <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public static CornerRadius GetCornerRadius(DependencyObject obj)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.ControlProperties.CornerRadiusProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be retrieved.\n"
+    return:
+      type: System.Windows.CornerRadius
+      description: "\nThe local value of the <xref href=\"Celestial.UIToolkit.Theming.ControlProperties.CornerRadiusProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property,\nwhich is of type <xref href=\"System.Windows.CornerRadius\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+    content.vb: Public Shared Function GetCornerRadius(obj As DependencyObject) As CornerRadius
+  overload: Celestial.UIToolkit.Theming.ControlProperties.GetCornerRadius*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.ControlProperties.SetCornerRadius(System.Windows.DependencyObject,System.Windows.CornerRadius)
+  commentId: M:Celestial.UIToolkit.Theming.ControlProperties.SetCornerRadius(System.Windows.DependencyObject,System.Windows.CornerRadius)
+  id: SetCornerRadius(System.Windows.DependencyObject,System.Windows.CornerRadius)
+  parent: Celestial.UIToolkit.Theming.ControlProperties
+  langs:
+  - csharp
+  - vb
+  name: SetCornerRadius(DependencyObject, CornerRadius)
+  nameWithType: ControlProperties.SetCornerRadius(DependencyObject, CornerRadius)
+  fullName: Celestial.UIToolkit.Theming.ControlProperties.SetCornerRadius(System.Windows.DependencyObject, System.Windows.CornerRadius)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/ControlProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: SetCornerRadius
+    path: ../src/Celestial.UIToolkit/Theming/ControlProperties.cs
+    startLine: 48
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nSets the value of the <xref href=\"Celestial.UIToolkit.Theming.ControlProperties.CornerRadiusProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nfor a given <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public static void SetCornerRadius(DependencyObject obj, CornerRadius value)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.ControlProperties.CornerRadiusProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be set.\n"
+    - id: value
+      type: System.Windows.CornerRadius
+      description: "\nThe new value for the dependency property.\n"
+    content.vb: Public Shared Sub SetCornerRadius(obj As DependencyObject, value As CornerRadius)
+  overload: Celestial.UIToolkit.Theming.ControlProperties.SetCornerRadius*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: Celestial.UIToolkit.Theming
+  commentId: N:Celestial.UIToolkit.Theming
+  name: Celestial.UIToolkit.Theming
+  nameWithType: Celestial.UIToolkit.Theming
+  fullName: Celestial.UIToolkit.Theming
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Windows.DependencyProperty
+  commentId: T:System.Windows.DependencyProperty
+  parent: System.Windows
+  isExternal: true
+  name: DependencyProperty
+  nameWithType: DependencyProperty
+  fullName: System.Windows.DependencyProperty
+- uid: System.Windows
+  commentId: N:System.Windows
+  isExternal: true
+  name: System.Windows
+  nameWithType: System.Windows
+  fullName: System.Windows
+- uid: Celestial.UIToolkit.Theming.ControlProperties.CornerRadiusProperty
+  commentId: F:Celestial.UIToolkit.Theming.ControlProperties.CornerRadiusProperty
+  isExternal: true
+- uid: System.Windows.DependencyObject
+  commentId: T:System.Windows.DependencyObject
+  parent: System.Windows
+  isExternal: true
+  name: DependencyObject
+  nameWithType: DependencyObject
+  fullName: System.Windows.DependencyObject
+- uid: System.Windows.CornerRadius
+  commentId: T:System.Windows.CornerRadius
+  parent: System.Windows
+  isExternal: true
+  name: CornerRadius
+  nameWithType: CornerRadius
+  fullName: System.Windows.CornerRadius
+- uid: Celestial.UIToolkit.Theming.ControlProperties.GetCornerRadius*
+  commentId: Overload:Celestial.UIToolkit.Theming.ControlProperties.GetCornerRadius
+  name: GetCornerRadius
+  nameWithType: ControlProperties.GetCornerRadius
+  fullName: Celestial.UIToolkit.Theming.ControlProperties.GetCornerRadius
+- uid: Celestial.UIToolkit.Theming.ControlProperties.SetCornerRadius*
+  commentId: Overload:Celestial.UIToolkit.Theming.ControlProperties.SetCornerRadius
+  name: SetCornerRadius
+  nameWithType: ControlProperties.SetCornerRadius
+  fullName: Celestial.UIToolkit.Theming.ControlProperties.SetCornerRadius

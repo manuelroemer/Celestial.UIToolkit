@@ -1,0 +1,631 @@
+### YamlMime:ManagedReference
+items:
+- uid: Celestial.UIToolkit.Controls.WindowCommands
+  commentId: T:Celestial.UIToolkit.Controls.WindowCommands
+  id: WindowCommands
+  parent: Celestial.UIToolkit.Controls
+  children:
+  - Celestial.UIToolkit.Controls.WindowCommands.CloseCommand
+  - Celestial.UIToolkit.Controls.WindowCommands.MaximizeCommand
+  - Celestial.UIToolkit.Controls.WindowCommands.MinimizeCommand
+  - Celestial.UIToolkit.Controls.WindowCommands.ShowCommand
+  - Celestial.UIToolkit.Controls.WindowCommands.ShowDialogCommand
+  - Celestial.UIToolkit.Controls.WindowCommands.ShowSystemMenuCommand
+  langs:
+  - csharp
+  - vb
+  name: WindowCommands
+  nameWithType: WindowCommands
+  fullName: Celestial.UIToolkit.Controls.WindowCommands
+  type: Class
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Controls/WindowCommands.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: WindowCommands
+    path: ../src/Celestial.UIToolkit/Controls/WindowCommands.cs
+    startLine: 11
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Controls
+  summary: "\nProvides static <xref href=\"System.Windows.Input.ICommand\" data-throw-if-not-resolved=\"false\"></xref> implementations which can be used to add\nMinimize, Maximize, Restore and Close handlers to custom window caption buttons.\n"
+  example: []
+  syntax:
+    content: public static class WindowCommands
+    content.vb: Public Module WindowCommands
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: Celestial.UIToolkit.Controls.WindowCommands.MinimizeCommand
+  commentId: P:Celestial.UIToolkit.Controls.WindowCommands.MinimizeCommand
+  id: MinimizeCommand
+  parent: Celestial.UIToolkit.Controls.WindowCommands
+  langs:
+  - csharp
+  - vb
+  name: MinimizeCommand
+  nameWithType: WindowCommands.MinimizeCommand
+  fullName: Celestial.UIToolkit.Controls.WindowCommands.MinimizeCommand
+  type: Property
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Controls/WindowCommands.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: MinimizeCommand
+    path: ../src/Celestial.UIToolkit/Controls/WindowCommands.cs
+    startLine: 19
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Controls
+  summary: "\nGets a command which can be used to minimize or restore a window.\nFor this command to work, you need to bind the CommandParameter to a\n<xref href=\"System.Windows.Window\" data-throw-if-not-resolved=\"false\"></xref> instance.\n"
+  example: []
+  syntax:
+    content: public static ICommand MinimizeCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public Shared ReadOnly Property MinimizeCommand As ICommand
+  overload: Celestial.UIToolkit.Controls.WindowCommands.MinimizeCommand*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Controls.WindowCommands.MaximizeCommand
+  commentId: P:Celestial.UIToolkit.Controls.WindowCommands.MaximizeCommand
+  id: MaximizeCommand
+  parent: Celestial.UIToolkit.Controls.WindowCommands
+  langs:
+  - csharp
+  - vb
+  name: MaximizeCommand
+  nameWithType: WindowCommands.MaximizeCommand
+  fullName: Celestial.UIToolkit.Controls.WindowCommands.MaximizeCommand
+  type: Property
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Controls/WindowCommands.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: MaximizeCommand
+    path: ../src/Celestial.UIToolkit/Controls/WindowCommands.cs
+    startLine: 26
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Controls
+  summary: "\nGets a command which can be used to maximize or restore a window.\nFor this command to work, you need to bind the CommandParameter to a\n<xref href=\"System.Windows.Window\" data-throw-if-not-resolved=\"false\"></xref> instance.\n"
+  example: []
+  syntax:
+    content: public static ICommand MaximizeCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public Shared ReadOnly Property MaximizeCommand As ICommand
+  overload: Celestial.UIToolkit.Controls.WindowCommands.MaximizeCommand*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Controls.WindowCommands.CloseCommand
+  commentId: P:Celestial.UIToolkit.Controls.WindowCommands.CloseCommand
+  id: CloseCommand
+  parent: Celestial.UIToolkit.Controls.WindowCommands
+  langs:
+  - csharp
+  - vb
+  name: CloseCommand
+  nameWithType: WindowCommands.CloseCommand
+  fullName: Celestial.UIToolkit.Controls.WindowCommands.CloseCommand
+  type: Property
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Controls/WindowCommands.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: CloseCommand
+    path: ../src/Celestial.UIToolkit/Controls/WindowCommands.cs
+    startLine: 33
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Controls
+  summary: "\nGets a command which can be used to close a window.\nFor this command to work, you need to bind the CommandParameter to a\n<xref href=\"System.Windows.Window\" data-throw-if-not-resolved=\"false\"></xref> instance.\n"
+  example: []
+  syntax:
+    content: public static ICommand CloseCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public Shared ReadOnly Property CloseCommand As ICommand
+  overload: Celestial.UIToolkit.Controls.WindowCommands.CloseCommand*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Controls.WindowCommands.ShowSystemMenuCommand
+  commentId: P:Celestial.UIToolkit.Controls.WindowCommands.ShowSystemMenuCommand
+  id: ShowSystemMenuCommand
+  parent: Celestial.UIToolkit.Controls.WindowCommands
+  langs:
+  - csharp
+  - vb
+  name: ShowSystemMenuCommand
+  nameWithType: WindowCommands.ShowSystemMenuCommand
+  fullName: Celestial.UIToolkit.Controls.WindowCommands.ShowSystemMenuCommand
+  type: Property
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Controls/WindowCommands.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: ShowSystemMenuCommand
+    path: ../src/Celestial.UIToolkit/Controls/WindowCommands.cs
+    startLine: 40
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Controls
+  summary: "\nGets a command which can be used to show a window&apos;s system menu.\nFor this command to work, you need to bind the CommandParameter to a\n<xref href=\"System.Windows.Window\" data-throw-if-not-resolved=\"false\"></xref> instance.\n"
+  example: []
+  syntax:
+    content: public static ICommand ShowSystemMenuCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public Shared ReadOnly Property ShowSystemMenuCommand As ICommand
+  overload: Celestial.UIToolkit.Controls.WindowCommands.ShowSystemMenuCommand*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Controls.WindowCommands.ShowCommand
+  commentId: P:Celestial.UIToolkit.Controls.WindowCommands.ShowCommand
+  id: ShowCommand
+  parent: Celestial.UIToolkit.Controls.WindowCommands
+  langs:
+  - csharp
+  - vb
+  name: ShowCommand
+  nameWithType: WindowCommands.ShowCommand
+  fullName: Celestial.UIToolkit.Controls.WindowCommands.ShowCommand
+  type: Property
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Controls/WindowCommands.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: ShowCommand
+    path: ../src/Celestial.UIToolkit/Controls/WindowCommands.cs
+    startLine: 47
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Controls
+  summary: "\nGets a command which can be used to show a window.\nFor this command to work, you need to bind the CommandParameter to a\n<xref href=\"System.Windows.Window\" data-throw-if-not-resolved=\"false\"></xref> instance.\n"
+  example: []
+  syntax:
+    content: public static ICommand ShowCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public Shared ReadOnly Property ShowCommand As ICommand
+  overload: Celestial.UIToolkit.Controls.WindowCommands.ShowCommand*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Controls.WindowCommands.ShowDialogCommand
+  commentId: P:Celestial.UIToolkit.Controls.WindowCommands.ShowDialogCommand
+  id: ShowDialogCommand
+  parent: Celestial.UIToolkit.Controls.WindowCommands
+  langs:
+  - csharp
+  - vb
+  name: ShowDialogCommand
+  nameWithType: WindowCommands.ShowDialogCommand
+  fullName: Celestial.UIToolkit.Controls.WindowCommands.ShowDialogCommand
+  type: Property
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Controls/WindowCommands.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: ShowDialogCommand
+    path: ../src/Celestial.UIToolkit/Controls/WindowCommands.cs
+    startLine: 54
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Controls
+  summary: "\nGets a command which can be used to show a window as a dialog.\nFor this command to work, you need to bind the CommandParameter to a\n<xref href=\"System.Windows.Window\" data-throw-if-not-resolved=\"false\"></xref> instance.\n"
+  example: []
+  syntax:
+    content: public static ICommand ShowDialogCommand { get; }
+    parameters: []
+    return:
+      type: System.Windows.Input.ICommand
+    content.vb: Public Shared ReadOnly Property ShowDialogCommand As ICommand
+  overload: Celestial.UIToolkit.Controls.WindowCommands.ShowDialogCommand*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+references:
+- uid: System.Windows.Input.ICommand
+  commentId: T:System.Windows.Input.ICommand
+  parent: System.Windows.Input
+  isExternal: true
+  name: ICommand
+  nameWithType: ICommand
+  fullName: System.Windows.Input.ICommand
+- uid: Celestial.UIToolkit.Controls
+  commentId: N:Celestial.UIToolkit.Controls
+  name: Celestial.UIToolkit.Controls
+  nameWithType: Celestial.UIToolkit.Controls
+  fullName: Celestial.UIToolkit.Controls
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.Input
+  commentId: N:System.Windows.Input
+  isExternal: true
+  name: System.Windows.Input
+  nameWithType: System.Windows.Input
+  fullName: System.Windows.Input
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Windows.Window
+  commentId: T:System.Windows.Window
+  isExternal: true
+- uid: Celestial.UIToolkit.Controls.WindowCommands.MinimizeCommand*
+  commentId: Overload:Celestial.UIToolkit.Controls.WindowCommands.MinimizeCommand
+  name: MinimizeCommand
+  nameWithType: WindowCommands.MinimizeCommand
+  fullName: Celestial.UIToolkit.Controls.WindowCommands.MinimizeCommand
+- uid: Celestial.UIToolkit.Controls.WindowCommands.MaximizeCommand*
+  commentId: Overload:Celestial.UIToolkit.Controls.WindowCommands.MaximizeCommand
+  name: MaximizeCommand
+  nameWithType: WindowCommands.MaximizeCommand
+  fullName: Celestial.UIToolkit.Controls.WindowCommands.MaximizeCommand
+- uid: Celestial.UIToolkit.Controls.WindowCommands.CloseCommand*
+  commentId: Overload:Celestial.UIToolkit.Controls.WindowCommands.CloseCommand
+  name: CloseCommand
+  nameWithType: WindowCommands.CloseCommand
+  fullName: Celestial.UIToolkit.Controls.WindowCommands.CloseCommand
+- uid: Celestial.UIToolkit.Controls.WindowCommands.ShowSystemMenuCommand*
+  commentId: Overload:Celestial.UIToolkit.Controls.WindowCommands.ShowSystemMenuCommand
+  name: ShowSystemMenuCommand
+  nameWithType: WindowCommands.ShowSystemMenuCommand
+  fullName: Celestial.UIToolkit.Controls.WindowCommands.ShowSystemMenuCommand
+- uid: Celestial.UIToolkit.Controls.WindowCommands.ShowCommand*
+  commentId: Overload:Celestial.UIToolkit.Controls.WindowCommands.ShowCommand
+  name: ShowCommand
+  nameWithType: WindowCommands.ShowCommand
+  fullName: Celestial.UIToolkit.Controls.WindowCommands.ShowCommand
+- uid: Celestial.UIToolkit.Controls.WindowCommands.ShowDialogCommand*
+  commentId: Overload:Celestial.UIToolkit.Controls.WindowCommands.ShowDialogCommand
+  name: ShowDialogCommand
+  nameWithType: WindowCommands.ShowDialogCommand
+  fullName: Celestial.UIToolkit.Controls.WindowCommands.ShowDialogCommand

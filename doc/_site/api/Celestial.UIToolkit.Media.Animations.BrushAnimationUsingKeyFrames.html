@@ -1,0 +1,920 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class BrushAnimationUsingKeyFrames
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class BrushAnimationUsingKeyFrames
+   ">
+    <meta name="generator" content="docfx 2.40.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames">
+  
+  
+  <h1 id="Celestial_UIToolkit_Media_Animations_BrushAnimationUsingKeyFrames" data-uid="Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames" class="text-break">Class BrushAnimationUsingKeyFrames
+  </h1>
+  <div class="markdown level0 summary"><p>Animates the value of a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.brush">Brush</a> property along a set of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.ikeyframeanimation.keyframes#System_Windows_Media_Animation_IKeyFrameAnimation_KeyFrames">KeyFrames</a>.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.threading.dispatcherobject">DispatcherObject</a></div>
+    <div class="level2"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a></div>
+    <div class="level3"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.freezable">Freezable</a></div>
+    <div class="level4"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.animatable">Animatable</a></div>
+    <div class="level5"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline">Timeline</a></div>
+    <div class="level6"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.animationtimeline">AnimationTimeline</a></div>
+    <div class="level7"><a class="xref" href="Celestial.UIToolkit.Media.Animations.AnimationBase-1.html">AnimationBase</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.brush">Brush</a>&gt;</div>
+    <div class="level8"><a class="xref" href="Celestial.UIToolkit.Media.Animations.AnimationUsingKeyFramesBase-3.html">AnimationUsingKeyFramesBase</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.brush">Brush</a>, <a class="xref" href="Celestial.UIToolkit.Media.Animations.KeyFrameBase-1.html">KeyFrameBase</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.brush">Brush</a>&gt;, <a class="xref" href="Celestial.UIToolkit.Media.Animations.BrushKeyFrameCollection.html">BrushKeyFrameCollection</a>&gt;</div>
+    <div class="level9"><span class="xref">BrushAnimationUsingKeyFrames</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.ianimatable">IAnimatable</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.markup.iaddchild">IAddChild</a></div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.ikeyframeanimation">IKeyFrameAnimation</a></div>
+    <div><a class="xref" href="Celestial.UIToolkit.Xaml.IVisualTransitionProvider.html">IVisualTransitionProvider</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Media.Animations.AnimationUsingKeyFramesBase-3.html#Celestial_UIToolkit_Media_Animations_AnimationUsingKeyFramesBase_3_KeyFrames">AnimationUsingKeyFramesBase&lt;Brush, KeyFrameBase&lt;Brush&gt;, BrushKeyFrameCollection&gt;.KeyFrames</a>
+    </div>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Media.Animations.AnimationUsingKeyFramesBase-3.html#Celestial_UIToolkit_Media_Animations_AnimationUsingKeyFramesBase_3_System_Windows_Media_Animation_IKeyFrameAnimation_KeyFrames">AnimationUsingKeyFramesBase&lt;Brush, KeyFrameBase&lt;Brush&gt;, BrushKeyFrameCollection&gt;.IKeyFrameAnimation.KeyFrames</a>
+    </div>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Media.Animations.AnimationUsingKeyFramesBase-3.html#Celestial_UIToolkit_Media_Animations_AnimationUsingKeyFramesBase_3_IsAdditive">AnimationUsingKeyFramesBase&lt;Brush, KeyFrameBase&lt;Brush&gt;, BrushKeyFrameCollection&gt;.IsAdditive</a>
+    </div>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Media.Animations.AnimationUsingKeyFramesBase-3.html#Celestial_UIToolkit_Media_Animations_AnimationUsingKeyFramesBase_3_IsCumulative">AnimationUsingKeyFramesBase&lt;Brush, KeyFrameBase&lt;Brush&gt;, BrushKeyFrameCollection&gt;.IsCumulative</a>
+    </div>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Media.Animations.AnimationUsingKeyFramesBase-3.html#Celestial_UIToolkit_Media_Animations_AnimationUsingKeyFramesBase_3_FreezeCore_System_Boolean_">AnimationUsingKeyFramesBase&lt;Brush, KeyFrameBase&lt;Brush&gt;, BrushKeyFrameCollection&gt;.FreezeCore(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Media.Animations.AnimationUsingKeyFramesBase-3.html#Celestial_UIToolkit_Media_Animations_AnimationUsingKeyFramesBase_3_CloneCore_System_Windows_Freezable_">AnimationUsingKeyFramesBase&lt;Brush, KeyFrameBase&lt;Brush&gt;, BrushKeyFrameCollection&gt;.CloneCore(Freezable)</a>
+    </div>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Media.Animations.AnimationUsingKeyFramesBase-3.html#Celestial_UIToolkit_Media_Animations_AnimationUsingKeyFramesBase_3_CloneCurrentValueCore_System_Windows_Freezable_">AnimationUsingKeyFramesBase&lt;Brush, KeyFrameBase&lt;Brush&gt;, BrushKeyFrameCollection&gt;.CloneCurrentValueCore(Freezable)</a>
+    </div>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Media.Animations.AnimationUsingKeyFramesBase-3.html#Celestial_UIToolkit_Media_Animations_AnimationUsingKeyFramesBase_3_GetAsFrozenCore_System_Windows_Freezable_">AnimationUsingKeyFramesBase&lt;Brush, KeyFrameBase&lt;Brush&gt;, BrushKeyFrameCollection&gt;.GetAsFrozenCore(Freezable)</a>
+    </div>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Media.Animations.AnimationUsingKeyFramesBase-3.html#Celestial_UIToolkit_Media_Animations_AnimationUsingKeyFramesBase_3_GetCurrentValueAsFrozenCore_System_Windows_Freezable_">AnimationUsingKeyFramesBase&lt;Brush, KeyFrameBase&lt;Brush&gt;, BrushKeyFrameCollection&gt;.GetCurrentValueAsFrozenCore(Freezable)</a>
+    </div>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Media.Animations.AnimationUsingKeyFramesBase-3.html#Celestial_UIToolkit_Media_Animations_AnimationUsingKeyFramesBase_3_OnChanged">AnimationUsingKeyFramesBase&lt;Brush, KeyFrameBase&lt;Brush&gt;, BrushKeyFrameCollection&gt;.OnChanged()</a>
+    </div>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Media.Animations.AnimationUsingKeyFramesBase-3.html#Celestial_UIToolkit_Media_Animations_AnimationUsingKeyFramesBase_3_ShouldSerializeKeyFrames">AnimationUsingKeyFramesBase&lt;Brush, KeyFrameBase&lt;Brush&gt;, BrushKeyFrameCollection&gt;.ShouldSerializeKeyFrames()</a>
+    </div>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Media.Animations.AnimationUsingKeyFramesBase-3.html#Celestial_UIToolkit_Media_Animations_AnimationUsingKeyFramesBase_3_System_Windows_Markup_IAddChild_AddChild_System_Object_">AnimationUsingKeyFramesBase&lt;Brush, KeyFrameBase&lt;Brush&gt;, BrushKeyFrameCollection&gt;.IAddChild.AddChild(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Media.Animations.AnimationUsingKeyFramesBase-3.html#Celestial_UIToolkit_Media_Animations_AnimationUsingKeyFramesBase_3_System_Windows_Markup_IAddChild_AddText_System_String_">AnimationUsingKeyFramesBase&lt;Brush, KeyFrameBase&lt;Brush&gt;, BrushKeyFrameCollection&gt;.IAddChild.AddText(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Media.Animations.AnimationUsingKeyFramesBase-3.html#Celestial_UIToolkit_Media_Animations_AnimationUsingKeyFramesBase_3_AddChild_System_Object_">AnimationUsingKeyFramesBase&lt;Brush, KeyFrameBase&lt;Brush&gt;, BrushKeyFrameCollection&gt;.AddChild(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Media.Animations.AnimationUsingKeyFramesBase-3.html#Celestial_UIToolkit_Media_Animations_AnimationUsingKeyFramesBase_3_AddText_System_String_">AnimationUsingKeyFramesBase&lt;Brush, KeyFrameBase&lt;Brush&gt;, BrushKeyFrameCollection&gt;.AddText(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Media.Animations.AnimationUsingKeyFramesBase-3.html#Celestial_UIToolkit_Media_Animations_AnimationUsingKeyFramesBase_3_GetNaturalDurationCore_System_Windows_Media_Animation_Clock_">AnimationUsingKeyFramesBase&lt;Brush, KeyFrameBase&lt;Brush&gt;, BrushKeyFrameCollection&gt;.GetNaturalDurationCore(Clock)</a>
+    </div>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Media.Animations.AnimationUsingKeyFramesBase-3.html#Celestial_UIToolkit_Media_Animations_AnimationUsingKeyFramesBase_3_GetCurrentValueCore__0__0_Celestial_UIToolkit_Media_Animations_IAnimationClock_">AnimationUsingKeyFramesBase&lt;Brush, KeyFrameBase&lt;Brush&gt;, BrushKeyFrameCollection&gt;.GetCurrentValueCore(Brush, Brush, IAnimationClock)</a>
+    </div>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Media.Animations.AnimationUsingKeyFramesBase-3.html#Celestial_UIToolkit_Media_Animations_AnimationUsingKeyFramesBase_3_GetZeroValue">AnimationUsingKeyFramesBase&lt;Brush, KeyFrameBase&lt;Brush&gt;, BrushKeyFrameCollection&gt;.GetZeroValue()</a>
+    </div>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Media.Animations.AnimationUsingKeyFramesBase-3.html#Celestial_UIToolkit_Media_Animations_AnimationUsingKeyFramesBase_3_AddValues__0__0_">AnimationUsingKeyFramesBase&lt;Brush, KeyFrameBase&lt;Brush&gt;, BrushKeyFrameCollection&gt;.AddValues(Brush, Brush)</a>
+    </div>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Media.Animations.AnimationUsingKeyFramesBase-3.html#Celestial_UIToolkit_Media_Animations_AnimationUsingKeyFramesBase_3_ScaleValue__0_System_Double_">AnimationUsingKeyFramesBase&lt;Brush, KeyFrameBase&lt;Brush&gt;, BrushKeyFrameCollection&gt;.ScaleValue(Brush, Double)</a>
+    </div>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Media.Animations.AnimationUsingKeyFramesBase-3.html#Celestial_UIToolkit_Media_Animations_AnimationUsingKeyFramesBase_3_GetDistanceBetween_System_Object_System_Object_">AnimationUsingKeyFramesBase&lt;Brush, KeyFrameBase&lt;Brush&gt;, BrushKeyFrameCollection&gt;.GetDistanceBetween(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Media.Animations.AnimationUsingKeyFramesBase-3.html#Celestial_UIToolkit_Media_Animations_AnimationUsingKeyFramesBase_3_GetDistanceBetweenCore__0__0_">AnimationUsingKeyFramesBase&lt;Brush, KeyFrameBase&lt;Brush&gt;, BrushKeyFrameCollection&gt;.GetDistanceBetweenCore(Brush, Brush)</a>
+    </div>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Media.Animations.AnimationBase-1.html#Celestial_UIToolkit_Media_Animations_AnimationBase_1_TargetPropertyType">AnimationBase&lt;Brush&gt;.TargetPropertyType</a>
+    </div>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Media.Animations.AnimationBase-1.html#Celestial_UIToolkit_Media_Animations_AnimationBase_1_GetCurrentValue_System_Object_System_Object_System_Windows_Media_Animation_AnimationClock_">AnimationBase&lt;Brush&gt;.GetCurrentValue(Object, Object, AnimationClock)</a>
+    </div>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Media.Animations.AnimationBase-1.html#Celestial_UIToolkit_Media_Animations_AnimationBase_1_GetCurrentValue_System_Object_System_Object_Celestial_UIToolkit_Media_Animations_IAnimationClock_">AnimationBase&lt;Brush&gt;.GetCurrentValue(Object, Object, IAnimationClock)</a>
+    </div>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Media.Animations.AnimationBase-1.html#Celestial_UIToolkit_Media_Animations_AnimationBase_1_GetCurrentValueCore__0__0_Celestial_UIToolkit_Media_Animations_IAnimationClock_">AnimationBase&lt;Brush&gt;.GetCurrentValueCore(Brush, Brush, IAnimationClock)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.animationtimeline.isadditiveproperty">AnimationTimeline.IsAdditiveProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.animationtimeline.iscumulativeproperty">AnimationTimeline.IsCumulativeProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.animationtimeline.clone#System_Windows_Media_Animation_AnimationTimeline_Clone">AnimationTimeline.Clone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.animationtimeline.allocateclock#System_Windows_Media_Animation_AnimationTimeline_AllocateClock">AnimationTimeline.AllocateClock()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.animationtimeline.createclock#System_Windows_Media_Animation_AnimationTimeline_CreateClock">AnimationTimeline.CreateClock()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.animationtimeline.getnaturaldurationcore#System_Windows_Media_Animation_AnimationTimeline_GetNaturalDurationCore_System_Windows_Media_Animation_Clock_">AnimationTimeline.GetNaturalDurationCore(Clock)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.animationtimeline.isdestinationdefault#System_Windows_Media_Animation_AnimationTimeline_IsDestinationDefault">AnimationTimeline.IsDestinationDefault</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline.accelerationratioproperty">Timeline.AccelerationRatioProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline.autoreverseproperty">Timeline.AutoReverseProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline.begintimeproperty">Timeline.BeginTimeProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline.decelerationratioproperty">Timeline.DecelerationRatioProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline.desiredframerateproperty">Timeline.DesiredFrameRateProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline.durationproperty">Timeline.DurationProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline.fillbehaviorproperty">Timeline.FillBehaviorProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline.nameproperty">Timeline.NameProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline.repeatbehaviorproperty">Timeline.RepeatBehaviorProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline.speedratioproperty">Timeline.SpeedRatioProperty</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline.clonecurrentvalue#System_Windows_Media_Animation_Timeline_CloneCurrentValue">Timeline.CloneCurrentValue()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline.freezecore#System_Windows_Media_Animation_Timeline_FreezeCore_System_Boolean_">Timeline.FreezeCore(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline.getasfrozencore#System_Windows_Media_Animation_Timeline_GetAsFrozenCore_System_Windows_Freezable_">Timeline.GetAsFrozenCore(Freezable)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline.getcurrentvalueasfrozencore#System_Windows_Media_Animation_Timeline_GetCurrentValueAsFrozenCore_System_Windows_Freezable_">Timeline.GetCurrentValueAsFrozenCore(Freezable)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline.getdesiredframerate#System_Windows_Media_Animation_Timeline_GetDesiredFrameRate_System_Windows_Media_Animation_Timeline_">Timeline.GetDesiredFrameRate(Timeline)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline.setdesiredframerate#System_Windows_Media_Animation_Timeline_SetDesiredFrameRate_System_Windows_Media_Animation_Timeline_System_Nullable_System_Int32__">Timeline.SetDesiredFrameRate(Timeline, Nullable&lt;Int32&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline.createclock#System_Windows_Media_Animation_Timeline_CreateClock_System_Boolean_">Timeline.CreateClock(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline.getnaturalduration#System_Windows_Media_Animation_Timeline_GetNaturalDuration_System_Windows_Media_Animation_Clock_">Timeline.GetNaturalDuration(Clock)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline.accelerationratio#System_Windows_Media_Animation_Timeline_AccelerationRatio">Timeline.AccelerationRatio</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline.autoreverse#System_Windows_Media_Animation_Timeline_AutoReverse">Timeline.AutoReverse</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline.begintime#System_Windows_Media_Animation_Timeline_BeginTime">Timeline.BeginTime</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline.decelerationratio#System_Windows_Media_Animation_Timeline_DecelerationRatio">Timeline.DecelerationRatio</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline.duration#System_Windows_Media_Animation_Timeline_Duration">Timeline.Duration</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline.fillbehavior#System_Windows_Media_Animation_Timeline_FillBehavior">Timeline.FillBehavior</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline.name#System_Windows_Media_Animation_Timeline_Name">Timeline.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline.repeatbehavior#System_Windows_Media_Animation_Timeline_RepeatBehavior">Timeline.RepeatBehavior</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline.speedratio#System_Windows_Media_Animation_Timeline_SpeedRatio">Timeline.SpeedRatio</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline.currentstateinvalidated">Timeline.CurrentStateInvalidated</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline.currenttimeinvalidated">Timeline.CurrentTimeInvalidated</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline.currentglobalspeedinvalidated">Timeline.CurrentGlobalSpeedInvalidated</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline.completed">Timeline.Completed</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline.removerequested">Timeline.RemoveRequested</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.animatable.applyanimationclock#System_Windows_Media_Animation_Animatable_ApplyAnimationClock_System_Windows_DependencyProperty_System_Windows_Media_Animation_AnimationClock_">Animatable.ApplyAnimationClock(DependencyProperty, AnimationClock)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.animatable.applyanimationclock#System_Windows_Media_Animation_Animatable_ApplyAnimationClock_System_Windows_DependencyProperty_System_Windows_Media_Animation_AnimationClock_System_Windows_Media_Animation_HandoffBehavior_">Animatable.ApplyAnimationClock(DependencyProperty, AnimationClock, HandoffBehavior)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.animatable.beginanimation#System_Windows_Media_Animation_Animatable_BeginAnimation_System_Windows_DependencyProperty_System_Windows_Media_Animation_AnimationTimeline_">Animatable.BeginAnimation(DependencyProperty, AnimationTimeline)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.animatable.beginanimation#System_Windows_Media_Animation_Animatable_BeginAnimation_System_Windows_DependencyProperty_System_Windows_Media_Animation_AnimationTimeline_System_Windows_Media_Animation_HandoffBehavior_">Animatable.BeginAnimation(DependencyProperty, AnimationTimeline, HandoffBehavior)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.animatable.getanimationbasevalue#System_Windows_Media_Animation_Animatable_GetAnimationBaseValue_System_Windows_DependencyProperty_">Animatable.GetAnimationBaseValue(DependencyProperty)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.animatable.hasanimatedproperties#System_Windows_Media_Animation_Animatable_HasAnimatedProperties">Animatable.HasAnimatedProperties</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.freezable.getasfrozen#System_Windows_Freezable_GetAsFrozen">Freezable.GetAsFrozen()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.freezable.getcurrentvalueasfrozen#System_Windows_Freezable_GetCurrentValueAsFrozen">Freezable.GetCurrentValueAsFrozen()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.freezable.freeze#System_Windows_Freezable_Freeze">Freezable.Freeze()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.freezable.onpropertychanged#System_Windows_Freezable_OnPropertyChanged_System_Windows_DependencyPropertyChangedEventArgs_">Freezable.OnPropertyChanged(DependencyPropertyChangedEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.freezable.createinstance#System_Windows_Freezable_CreateInstance">Freezable.CreateInstance()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.freezable.clonecore#System_Windows_Freezable_CloneCore_System_Windows_Freezable_">Freezable.CloneCore(Freezable)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.freezable.clonecurrentvaluecore#System_Windows_Freezable_CloneCurrentValueCore_System_Windows_Freezable_">Freezable.CloneCurrentValueCore(Freezable)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.freezable.onchanged#System_Windows_Freezable_OnChanged">Freezable.OnChanged()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.freezable.readpreamble#System_Windows_Freezable_ReadPreamble">Freezable.ReadPreamble()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.freezable.writepreamble#System_Windows_Freezable_WritePreamble">Freezable.WritePreamble()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.freezable.writepostscript#System_Windows_Freezable_WritePostscript">Freezable.WritePostscript()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.freezable.onfreezablepropertychanged#System_Windows_Freezable_OnFreezablePropertyChanged_System_Windows_DependencyObject_System_Windows_DependencyObject_">Freezable.OnFreezablePropertyChanged(DependencyObject, DependencyObject)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.freezable.onfreezablepropertychanged#System_Windows_Freezable_OnFreezablePropertyChanged_System_Windows_DependencyObject_System_Windows_DependencyObject_System_Windows_DependencyProperty_">Freezable.OnFreezablePropertyChanged(DependencyObject, DependencyObject, DependencyProperty)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.freezable.freeze#System_Windows_Freezable_Freeze_System_Windows_Freezable_System_Boolean_">Freezable.Freeze(Freezable, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.freezable.canfreeze#System_Windows_Freezable_CanFreeze">Freezable.CanFreeze</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.freezable.isfrozen#System_Windows_Freezable_IsFrozen">Freezable.IsFrozen</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.freezable.changed">Freezable.Changed</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject.equals#System_Windows_DependencyObject_Equals_System_Object_">DependencyObject.Equals(Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject.gethashcode#System_Windows_DependencyObject_GetHashCode">DependencyObject.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject.getvalue#System_Windows_DependencyObject_GetValue_System_Windows_DependencyProperty_">DependencyObject.GetValue(DependencyProperty)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject.setvalue#System_Windows_DependencyObject_SetValue_System_Windows_DependencyProperty_System_Object_">DependencyObject.SetValue(DependencyProperty, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject.setcurrentvalue#System_Windows_DependencyObject_SetCurrentValue_System_Windows_DependencyProperty_System_Object_">DependencyObject.SetCurrentValue(DependencyProperty, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject.setvalue#System_Windows_DependencyObject_SetValue_System_Windows_DependencyPropertyKey_System_Object_">DependencyObject.SetValue(DependencyPropertyKey, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject.clearvalue#System_Windows_DependencyObject_ClearValue_System_Windows_DependencyProperty_">DependencyObject.ClearValue(DependencyProperty)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject.clearvalue#System_Windows_DependencyObject_ClearValue_System_Windows_DependencyPropertyKey_">DependencyObject.ClearValue(DependencyPropertyKey)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject.coercevalue#System_Windows_DependencyObject_CoerceValue_System_Windows_DependencyProperty_">DependencyObject.CoerceValue(DependencyProperty)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject.invalidateproperty#System_Windows_DependencyObject_InvalidateProperty_System_Windows_DependencyProperty_">DependencyObject.InvalidateProperty(DependencyProperty)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject.shouldserializeproperty#System_Windows_DependencyObject_ShouldSerializeProperty_System_Windows_DependencyProperty_">DependencyObject.ShouldSerializeProperty(DependencyProperty)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject.readlocalvalue#System_Windows_DependencyObject_ReadLocalValue_System_Windows_DependencyProperty_">DependencyObject.ReadLocalValue(DependencyProperty)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject.getlocalvalueenumerator#System_Windows_DependencyObject_GetLocalValueEnumerator">DependencyObject.GetLocalValueEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject.dependencyobjecttype#System_Windows_DependencyObject_DependencyObjectType">DependencyObject.DependencyObjectType</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject.issealed#System_Windows_DependencyObject_IsSealed">DependencyObject.IsSealed</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.threading.dispatcherobject.dispatcher#System_Windows_Threading_DispatcherObject_Dispatcher">DispatcherObject.Dispatcher</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString">Object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.equals#System_Object_Equals_System_Object_System_Object_">Object.Equals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.referenceequals#System_Object_ReferenceEquals_System_Object_System_Object_">Object.ReferenceEquals(Object, Object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.gettype#System_Object_GetType">Object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object.memberwiseclone#System_Object_MemberwiseClone">Object.MemberwiseClone()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Celestial.UIToolkit.Media.Animations.html">Celestial.UIToolkit.Media.Animations</a></h6>
+  <h6><strong>Assembly</strong>: Celestial.UIToolkit.Core.dll</h6>
+  <h5 id="Celestial_UIToolkit_Media_Animations_BrushAnimationUsingKeyFrames_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class BrushAnimationUsingKeyFrames : AnimationUsingKeyFramesBase&lt;Brush, KeyFrameBase&lt;Brush&gt;, BrushKeyFrameCollection&gt;, ISealable, IAnimatable, DUCE.IResource, IAddChild, IKeyFrameAnimation, ISegmentLengthProvider, IVisualTransitionProvider</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Media_Animations_BrushAnimationUsingKeyFrames_AddValues_System_Windows_Media_Brush_System_Windows_Media_Brush_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames.AddValues(System.Windows.Media.Brush%2CSystem.Windows.Media.Brush)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit.Core/Media/Animations/BrushAnimation/BrushAnimationUsingKeyFrames.cs/#L51">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Media_Animations_BrushAnimationUsingKeyFrames_AddValues_" data-uid="Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames.AddValues*"></a>
+  <h4 id="Celestial_UIToolkit_Media_Animations_BrushAnimationUsingKeyFrames_AddValues_System_Windows_Media_Brush_System_Windows_Media_Brush_" data-uid="Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames.AddValues(System.Windows.Media.Brush,System.Windows.Media.Brush)">AddValues(Brush, Brush)</h4>
+  <div class="markdown level1 summary"><p>Adds the values of the two specified brushes
+and returns a new brush, which represents the addition's
+result.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override sealed Brush AddValues(Brush a, Brush b)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.brush">Brush</a></td>
+        <td><span class="parametername">a</span></td>
+        <td><p>the first brush.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.brush">Brush</a></td>
+        <td><span class="parametername">b</span></td>
+        <td><p>The second brush.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.brush">Brush</a></td>
+        <td><p>The result of the addition.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Celestial.UIToolkit.Media.Animations.AnimationUsingKeyFramesBase&lt;System.Windows.Media.Brush, Celestial.UIToolkit.Media.Animations.KeyFrameBase&lt;System.Windows.Media.Brush&gt;, Celestial.UIToolkit.Media.Animations.BrushKeyFrameCollection&gt;.AddValues(System.Windows.Media.Brush, System.Windows.Media.Brush)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Media_Animations_BrushAnimationUsingKeyFrames_CreateFromTransitionTimeline_System_Windows_Media_Animation_Timeline_System_Windows_Media_Animation_IEasingFunction_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames.CreateFromTransitionTimeline(System.Windows.Media.Animation.Timeline%2CSystem.Windows.Media.Animation.IEasingFunction)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit.Core/Media/Animations/BrushAnimation/BrushAnimationUsingKeyFrames.cs/#L115">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Media_Animations_BrushAnimationUsingKeyFrames_CreateFromTransitionTimeline_" data-uid="Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames.CreateFromTransitionTimeline*"></a>
+  <h4 id="Celestial_UIToolkit_Media_Animations_BrushAnimationUsingKeyFrames_CreateFromTransitionTimeline_System_Windows_Media_Animation_Timeline_System_Windows_Media_Animation_IEasingFunction_" data-uid="Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames.CreateFromTransitionTimeline(System.Windows.Media.Animation.Timeline,System.Windows.Media.Animation.IEasingFunction)">CreateFromTransitionTimeline(Timeline, IEasingFunction)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Xaml.ExtendedVisualStateManager.html">ExtendedVisualStateManager</a> transitions away from
+the element.
+The timeline which gets returned by this method is then used as a transitioning
+animation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Timeline CreateFromTransitionTimeline(Timeline fromTimeline, IEasingFunction easingFunction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline">Timeline</a></td>
+        <td><span class="parametername">fromTimeline</span></td>
+        <td><p>The input timeline, for which a visual transition timeline should be generated.
+The VisualStateManager wants to transition away from this timeline.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.ieasingfunction">IEasingFunction</a></td>
+        <td><span class="parametername">easingFunction</span></td>
+        <td><p>An easing function to be applied to the resulting timeline.
+Can be null.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline">Timeline</a></td>
+        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline">Timeline</a> which displays a visual transition away from this element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Media_Animations_BrushAnimationUsingKeyFrames_CreateInstanceCore.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames.CreateInstanceCore%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit.Core/Media/Animations/BrushAnimation/BrushAnimationUsingKeyFrames.cs/#L23">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Media_Animations_BrushAnimationUsingKeyFrames_CreateInstanceCore_" data-uid="Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames.CreateInstanceCore*"></a>
+  <h4 id="Celestial_UIToolkit_Media_Animations_BrushAnimationUsingKeyFrames_CreateInstanceCore" data-uid="Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames.CreateInstanceCore">CreateInstanceCore()</h4>
+  <div class="markdown level1 summary"><p>Creates a new instance of the <a class="xref" href="Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames.html">BrushAnimationUsingKeyFrames</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Freezable CreateInstanceCore()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.freezable">Freezable</a></td>
+        <td><p>A new <a class="xref" href="Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames.html">BrushAnimationUsingKeyFrames</a> instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.freezable.createinstancecore#System_Windows_Freezable_CreateInstanceCore">Freezable.CreateInstanceCore()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Media_Animations_BrushAnimationUsingKeyFrames_CreateToTransitionTimeline_System_Windows_Media_Animation_Timeline_System_Windows_Media_Animation_IEasingFunction_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames.CreateToTransitionTimeline(System.Windows.Media.Animation.Timeline%2CSystem.Windows.Media.Animation.IEasingFunction)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit.Core/Media/Animations/BrushAnimation/BrushAnimationUsingKeyFrames.cs/#L139">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Media_Animations_BrushAnimationUsingKeyFrames_CreateToTransitionTimeline_" data-uid="Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames.CreateToTransitionTimeline*"></a>
+  <h4 id="Celestial_UIToolkit_Media_Animations_BrushAnimationUsingKeyFrames_CreateToTransitionTimeline_System_Windows_Media_Animation_Timeline_System_Windows_Media_Animation_IEasingFunction_" data-uid="Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames.CreateToTransitionTimeline(System.Windows.Media.Animation.Timeline,System.Windows.Media.Animation.IEasingFunction)">CreateToTransitionTimeline(Timeline, IEasingFunction)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Xaml.ExtendedVisualStateManager.html">ExtendedVisualStateManager</a> transitions to the element.
+The timeline which gets returned by this method is then used as a transitioning animation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Timeline CreateToTransitionTimeline(Timeline toTimeline, IEasingFunction easingFunction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline">Timeline</a></td>
+        <td><span class="parametername">toTimeline</span></td>
+        <td><p>The input timeline, for which a visual transition timeline should be generated.
+The VisualStateManager wants to transition to this timeline.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.ieasingfunction">IEasingFunction</a></td>
+        <td><span class="parametername">easingFunction</span></td>
+        <td><p>An easing function to be applied to the resulting timeline.
+Can be null.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline">Timeline</a></td>
+        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline">Timeline</a> which displays a visual transition to this element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Media_Animations_BrushAnimationUsingKeyFrames_GetDistanceBetweenCore_System_Windows_Media_Brush_System_Windows_Media_Brush_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames.GetDistanceBetweenCore(System.Windows.Media.Brush%2CSystem.Windows.Media.Brush)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit.Core/Media/Animations/BrushAnimation/BrushAnimationUsingKeyFrames.cs/#L79">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Media_Animations_BrushAnimationUsingKeyFrames_GetDistanceBetweenCore_" data-uid="Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames.GetDistanceBetweenCore*"></a>
+  <h4 id="Celestial_UIToolkit_Media_Animations_BrushAnimationUsingKeyFrames_GetDistanceBetweenCore_System_Windows_Media_Brush_System_Windows_Media_Brush_" data-uid="Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames.GetDistanceBetweenCore(System.Windows.Media.Brush,System.Windows.Media.Brush)">GetDistanceBetweenCore(Brush, Brush)</h4>
+  <div class="markdown level1 summary"><p>Returns 1.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override sealed double GetDistanceBetweenCore(Brush from, Brush to)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.brush">Brush</a></td>
+        <td><span class="parametername">from</span></td>
+        <td><p>Not used.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.brush">Brush</a></td>
+        <td><span class="parametername">to</span></td>
+        <td><p>Not used.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td><ol>
+<li></li>
+</ol>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Celestial.UIToolkit.Media.Animations.AnimationUsingKeyFramesBase&lt;System.Windows.Media.Brush, Celestial.UIToolkit.Media.Animations.KeyFrameBase&lt;System.Windows.Media.Brush&gt;, Celestial.UIToolkit.Media.Animations.BrushKeyFrameCollection&gt;.GetDistanceBetweenCore(System.Windows.Media.Brush, System.Windows.Media.Brush)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Media_Animations_BrushAnimationUsingKeyFrames_GetZeroValue.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames.GetZeroValue%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit.Core/Media/Animations/BrushAnimation/BrushAnimationUsingKeyFrames.cs/#L30">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Media_Animations_BrushAnimationUsingKeyFrames_GetZeroValue_" data-uid="Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames.GetZeroValue*"></a>
+  <h4 id="Celestial_UIToolkit_Media_Animations_BrushAnimationUsingKeyFrames_GetZeroValue" data-uid="Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames.GetZeroValue">GetZeroValue()</h4>
+  <div class="markdown level1 summary"><p>Returns a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.brush">Brush</a> which serves as a zero-value for an additive animation.
+The exact type of the brush is dependent on the first key frame in the animation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override sealed Brush GetZeroValue()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.brush">Brush</a></td>
+        <td><p>A new <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.brush">Brush</a> which serves as a zero-value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Celestial.UIToolkit.Media.Animations.AnimationUsingKeyFramesBase&lt;System.Windows.Media.Brush, Celestial.UIToolkit.Media.Animations.KeyFrameBase&lt;System.Windows.Media.Brush&gt;, Celestial.UIToolkit.Media.Animations.BrushKeyFrameCollection&gt;.GetZeroValue()</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Media_Animations_BrushAnimationUsingKeyFrames_ScaleValue_System_Windows_Media_Brush_System_Double_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames.ScaleValue(System.Windows.Media.Brush%2CSystem.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit.Core/Media/Animations/BrushAnimation/BrushAnimationUsingKeyFrames.cs/#L67">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Media_Animations_BrushAnimationUsingKeyFrames_ScaleValue_" data-uid="Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames.ScaleValue*"></a>
+  <h4 id="Celestial_UIToolkit_Media_Animations_BrushAnimationUsingKeyFrames_ScaleValue_System_Windows_Media_Brush_System_Double_" data-uid="Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames.ScaleValue(System.Windows.Media.Brush,System.Double)">ScaleValue(Brush, Double)</h4>
+  <div class="markdown level1 summary"><p>Scales the specified <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.brush">Brush</a> by the specified <code data-dev-comment-type="paramref" class="paramref">factor</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override sealed Brush ScaleValue(Brush value, double factor)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.brush">Brush</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.brush">Brush</a> to be scaled.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td><span class="parametername">factor</span></td>
+        <td><p>The factor by which the brush should be scaled.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.brush">Brush</a></td>
+        <td><p>A new <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.brush">Brush</a>, which represents the scaling's result.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Celestial.UIToolkit.Media.Animations.AnimationUsingKeyFramesBase&lt;System.Windows.Media.Brush, Celestial.UIToolkit.Media.Animations.KeyFrameBase&lt;System.Windows.Media.Brush&gt;, Celestial.UIToolkit.Media.Animations.BrushKeyFrameCollection&gt;.ScaleValue(System.Windows.Media.Brush, System.Double)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Media_Animations_BrushAnimationUsingKeyFrames_SupportsTimeline_System_Windows_Media_Animation_Timeline_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames.SupportsTimeline(System.Windows.Media.Animation.Timeline)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit.Core/Media/Animations/BrushAnimation/BrushAnimationUsingKeyFrames.cs/#L95">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Media_Animations_BrushAnimationUsingKeyFrames_SupportsTimeline_" data-uid="Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames.SupportsTimeline*"></a>
+  <h4 id="Celestial_UIToolkit_Media_Animations_BrushAnimationUsingKeyFrames_SupportsTimeline_System_Windows_Media_Animation_Timeline_" data-uid="Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames.SupportsTimeline(System.Windows.Media.Animation.Timeline)">SupportsTimeline(Timeline)</h4>
+  <div class="markdown level1 summary"><p>Returns <code>true</code> if the <code data-dev-comment-type="paramref" class="paramref">timeline</code> is of type
+<a class="xref" href="Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames.html">BrushAnimationUsingKeyFrames</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SupportsTimeline(Timeline timeline)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline">Timeline</a></td>
+        <td><span class="parametername">timeline</span></td>
+        <td><p>The timeline to be checked.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><code>true</code> if the <code data-dev-comment-type="paramref" class="paramref">timeline</code> is of type
+<a class="xref" href="Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames.html">BrushAnimationUsingKeyFrames</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.ianimatable">System.Windows.Media.Animation.IAnimatable</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.markup.iaddchild">System.Windows.Markup.IAddChild</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.ikeyframeanimation">System.Windows.Media.Animation.IKeyFrameAnimation</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Xaml.IVisualTransitionProvider.html">IVisualTransitionProvider</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.DependencyObjectExtensions.html#Celestial_UIToolkit_Extensions_DependencyObjectExtensions_HasVisualAncestor_System_Windows_DependencyObject_System_Windows_DependencyObject_">DependencyObjectExtensions.HasVisualAncestor(DependencyObject, DependencyObject)</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.DependencyObjectExtensions.html#Celestial_UIToolkit_Extensions_DependencyObjectExtensions_RemoveLogicalChild_System_Windows_DependencyObject_System_Windows_UIElement_">DependencyObjectExtensions.RemoveLogicalChild(DependencyObject, UIElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.html#Celestial_UIToolkit_Extensions_DependencyPropertyExtensions_IsDependencyPropertySet_System_Windows_DependencyObject_System_Windows_DependencyProperty_">DependencyPropertyExtensions.IsDependencyPropertySet(DependencyObject, DependencyProperty)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/docfx/apiSpec/new?filename=Celestial_UIToolkit_Media_Animations_BrushAnimationUsingKeyFrames.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/docfx/src/Celestial.UIToolkit.Core/Media/Animations/BrushAnimation/BrushAnimationUsingKeyFrames.cs/#L14" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

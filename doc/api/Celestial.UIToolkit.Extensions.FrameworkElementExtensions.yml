@@ -1,0 +1,477 @@
+### YamlMime:ManagedReference
+items:
+- uid: Celestial.UIToolkit.Extensions.FrameworkElementExtensions
+  commentId: T:Celestial.UIToolkit.Extensions.FrameworkElementExtensions
+  id: FrameworkElementExtensions
+  parent: Celestial.UIToolkit.Extensions
+  children:
+  - Celestial.UIToolkit.Extensions.FrameworkElementExtensions.GetCenter(System.Windows.FrameworkElement)
+  - Celestial.UIToolkit.Extensions.FrameworkElementExtensions.IsPointInControlBounds(System.Windows.FrameworkElement,System.Windows.Point)
+  langs:
+  - csharp
+  - vb
+  name: FrameworkElementExtensions
+  nameWithType: FrameworkElementExtensions
+  fullName: Celestial.UIToolkit.Extensions.FrameworkElementExtensions
+  type: Class
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Extensions/FrameworkElementExtensions.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: FrameworkElementExtensions
+    path: src/Celestial.UIToolkit.Core/Extensions/FrameworkElementExtensions.cs
+    startLine: 9
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Extensions
+  summary: "\nProvides extension methods for the <xref href=\"System.Windows.FrameworkElement\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: public static class FrameworkElementExtensions
+    content.vb: Public Module FrameworkElementExtensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: Celestial.UIToolkit.Extensions.FrameworkElementExtensions.GetCenter(System.Windows.FrameworkElement)
+  commentId: M:Celestial.UIToolkit.Extensions.FrameworkElementExtensions.GetCenter(System.Windows.FrameworkElement)
+  id: GetCenter(System.Windows.FrameworkElement)
+  isExtensionMethod: true
+  parent: Celestial.UIToolkit.Extensions.FrameworkElementExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetCenter(FrameworkElement)
+  nameWithType: FrameworkElementExtensions.GetCenter(FrameworkElement)
+  fullName: Celestial.UIToolkit.Extensions.FrameworkElementExtensions.GetCenter(System.Windows.FrameworkElement)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Extensions/FrameworkElementExtensions.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: GetCenter
+    path: src/Celestial.UIToolkit.Core/Extensions/FrameworkElementExtensions.cs
+    startLine: 19
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Extensions
+  summary: "\nReturns a <xref href=\"System.Windows.Point\" data-throw-if-not-resolved=\"false\"></xref> which represents the element&apos;s center.\n"
+  example: []
+  syntax:
+    content: public static Point GetCenter(this FrameworkElement frameworkElement)
+    parameters:
+    - id: frameworkElement
+      type: System.Windows.FrameworkElement
+      description: The <xref href="System.Windows.FrameworkElement" data-throw-if-not-resolved="false"></xref>.
+    return:
+      type: System.Windows.Point
+      description: "\nA <xref href=\"System.Windows.Point\" data-throw-if-not-resolved=\"false\"></xref> instance, pointing to the element&apos;s center.\n"
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function GetCenter(frameworkElement As FrameworkElement) As Point
+  overload: Celestial.UIToolkit.Extensions.FrameworkElementExtensions.GetCenter*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Extensions.FrameworkElementExtensions.IsPointInControlBounds(System.Windows.FrameworkElement,System.Windows.Point)
+  commentId: M:Celestial.UIToolkit.Extensions.FrameworkElementExtensions.IsPointInControlBounds(System.Windows.FrameworkElement,System.Windows.Point)
+  id: IsPointInControlBounds(System.Windows.FrameworkElement,System.Windows.Point)
+  isExtensionMethod: true
+  parent: Celestial.UIToolkit.Extensions.FrameworkElementExtensions
+  langs:
+  - csharp
+  - vb
+  name: IsPointInControlBounds(FrameworkElement, Point)
+  nameWithType: FrameworkElementExtensions.IsPointInControlBounds(FrameworkElement, Point)
+  fullName: Celestial.UIToolkit.Extensions.FrameworkElementExtensions.IsPointInControlBounds(System.Windows.FrameworkElement, System.Windows.Point)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Extensions/FrameworkElementExtensions.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: IsPointInControlBounds
+    path: src/Celestial.UIToolkit.Core/Extensions/FrameworkElementExtensions.cs
+    startLine: 41
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Extensions
+  summary: "\nReturns a value indicating whether the specified point is inside the\nelement&apos;s bounds.\n"
+  example: []
+  syntax:
+    content: public static bool IsPointInControlBounds(this FrameworkElement frameworkElement, Point point)
+    parameters:
+    - id: frameworkElement
+      type: System.Windows.FrameworkElement
+      description: The <xref href="System.Windows.FrameworkElement" data-throw-if-not-resolved="false"></xref>.
+    - id: point
+      type: System.Windows.Point
+      description: "\nA point which may or may not be inside the bounds of the element.\nThe point is expected to be relative to the element, meaning that (0; 0) \npoints to the element&apos;s top-left corner.\n"
+    return:
+      type: System.Boolean
+      description: "\n<code>true</code> if the <code data-dev-comment-type=\"paramref\" class=\"paramref\">point</code> is inside the element&apos;s bounds;\n<code>false</code> if not.\n"
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function IsPointInControlBounds(frameworkElement As FrameworkElement, point As Point) As Boolean
+  overload: Celestial.UIToolkit.Extensions.FrameworkElementExtensions.IsPointInControlBounds*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: System.Windows.FrameworkElement
+  commentId: T:System.Windows.FrameworkElement
+  parent: System.Windows
+  isExternal: true
+  name: FrameworkElement
+  nameWithType: FrameworkElement
+  fullName: System.Windows.FrameworkElement
+- uid: Celestial.UIToolkit.Extensions
+  commentId: N:Celestial.UIToolkit.Extensions
+  name: Celestial.UIToolkit.Extensions
+  nameWithType: Celestial.UIToolkit.Extensions
+  fullName: Celestial.UIToolkit.Extensions
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows
+  commentId: N:System.Windows
+  isExternal: true
+  name: System.Windows
+  nameWithType: System.Windows
+  fullName: System.Windows
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Windows.Point
+  commentId: T:System.Windows.Point
+  parent: System.Windows
+  isExternal: true
+  name: Point
+  nameWithType: Point
+  fullName: System.Windows.Point
+- uid: Celestial.UIToolkit.Extensions.FrameworkElementExtensions.GetCenter*
+  commentId: Overload:Celestial.UIToolkit.Extensions.FrameworkElementExtensions.GetCenter
+  name: GetCenter
+  nameWithType: FrameworkElementExtensions.GetCenter
+  fullName: Celestial.UIToolkit.Extensions.FrameworkElementExtensions.GetCenter
+- uid: Celestial.UIToolkit.Extensions.FrameworkElementExtensions.IsPointInControlBounds*
+  commentId: Overload:Celestial.UIToolkit.Extensions.FrameworkElementExtensions.IsPointInControlBounds
+  name: IsPointInControlBounds
+  nameWithType: FrameworkElementExtensions.IsPointInControlBounds
+  fullName: Celestial.UIToolkit.Extensions.FrameworkElementExtensions.IsPointInControlBounds
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean

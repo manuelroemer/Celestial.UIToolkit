@@ -1,0 +1,1303 @@
+### YamlMime:ManagedReference
+items:
+- uid: Celestial.UIToolkit.Converters.InvertBooleanConverter
+  commentId: T:Celestial.UIToolkit.Converters.InvertBooleanConverter
+  id: InvertBooleanConverter
+  parent: Celestial.UIToolkit.Converters
+  children:
+  - Celestial.UIToolkit.Converters.InvertBooleanConverter.Convert(System.Boolean,System.Object,System.Globalization.CultureInfo)
+  - Celestial.UIToolkit.Converters.InvertBooleanConverter.ConvertBack(System.Boolean,System.Object,System.Globalization.CultureInfo)
+  - Celestial.UIToolkit.Converters.InvertBooleanConverter.Default
+  langs:
+  - csharp
+  - vb
+  name: InvertBooleanConverter
+  nameWithType: InvertBooleanConverter
+  fullName: Celestial.UIToolkit.Converters.InvertBooleanConverter
+  type: Class
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Converters/InvertBooleanConverter.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: InvertBooleanConverter
+    path: src/Celestial.UIToolkit.Core/Converters/InvertBooleanConverter.cs
+    startLine: 10
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Converters
+  summary: "\nA value converter which inverts a given <xref href=\"System.Boolean\" data-throw-if-not-resolved=\"false\"></xref> value.\n"
+  example: []
+  syntax:
+    content: >-
+      [ValueConversion(typeof(bool), typeof(bool))]
+
+      public class InvertBooleanConverter : ValueConverter<bool, bool>, IValueConverter
+    content.vb: >-
+      <ValueConversion(GetType(Boolean), GetType(Boolean))>
+
+      Public Class InvertBooleanConverter
+
+          Inherits ValueConverter(Of Boolean, Boolean)
+
+          Implements IValueConverter
+  inheritance:
+  - System.Object
+  - Celestial.UIToolkit.Converters.ValueConverter{System.Boolean,System.Boolean}
+  implements:
+  - System.Windows.Data.IValueConverter
+  inheritedMembers:
+  - Celestial.UIToolkit.Converters.ValueConverter{System.Boolean,System.Boolean}.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  - Celestial.UIToolkit.Converters.ValueConverter{System.Boolean,System.Boolean}.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  - Celestial.UIToolkit.Converters.ValueConverter{System.Boolean,System.Boolean}.Convert(System.Boolean,System.Object,System.Globalization.CultureInfo)
+  - Celestial.UIToolkit.Converters.ValueConverter{System.Boolean,System.Boolean}.ConvertBack(System.Boolean,System.Object,System.Globalization.CultureInfo)
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  attributes:
+  - type: System.Windows.Data.ValueConversionAttribute
+    ctor: System.Windows.Data.ValueConversionAttribute.#ctor(System.Type,System.Type)
+    arguments:
+    - type: System.Type
+      value: System.Boolean
+    - type: System.Type
+      value: System.Boolean
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Celestial.UIToolkit.Converters.InvertBooleanConverter.Default
+  commentId: P:Celestial.UIToolkit.Converters.InvertBooleanConverter.Default
+  id: Default
+  parent: Celestial.UIToolkit.Converters.InvertBooleanConverter
+  langs:
+  - csharp
+  - vb
+  name: Default
+  nameWithType: InvertBooleanConverter.Default
+  fullName: Celestial.UIToolkit.Converters.InvertBooleanConverter.Default
+  type: Property
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Converters/InvertBooleanConverter.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: Default
+    path: src/Celestial.UIToolkit.Core/Converters/InvertBooleanConverter.cs
+    startLine: 17
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Converters
+  summary: "\nGets a default instance of the <xref href=\"Celestial.UIToolkit.Converters.InvertBooleanConverter\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: public static InvertBooleanConverter Default { get; }
+    parameters: []
+    return:
+      type: Celestial.UIToolkit.Converters.InvertBooleanConverter
+    content.vb: Public Shared ReadOnly Property Default As InvertBooleanConverter
+  overload: Celestial.UIToolkit.Converters.InvertBooleanConverter.Default*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Converters.InvertBooleanConverter.Convert(System.Boolean,System.Object,System.Globalization.CultureInfo)
+  commentId: M:Celestial.UIToolkit.Converters.InvertBooleanConverter.Convert(System.Boolean,System.Object,System.Globalization.CultureInfo)
+  id: Convert(System.Boolean,System.Object,System.Globalization.CultureInfo)
+  parent: Celestial.UIToolkit.Converters.InvertBooleanConverter
+  langs:
+  - csharp
+  - vb
+  name: Convert(Boolean, Object, CultureInfo)
+  nameWithType: InvertBooleanConverter.Convert(Boolean, Object, CultureInfo)
+  fullName: Celestial.UIToolkit.Converters.InvertBooleanConverter.Convert(System.Boolean, System.Object, System.Globalization.CultureInfo)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Converters/InvertBooleanConverter.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: Convert
+    path: src/Celestial.UIToolkit.Core/Converters/InvertBooleanConverter.cs
+    startLine: 26
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Converters
+  summary: "\nInverts and returns the specified <code data-dev-comment-type=\"paramref\" class=\"paramref\">value</code>.\n"
+  example: []
+  syntax:
+    content: public override bool Convert(bool value, object parameter, CultureInfo culture)
+    parameters:
+    - id: value
+      type: System.Boolean
+      description: The <xref href="System.Boolean" data-throw-if-not-resolved="false"></xref> value to be inverted.
+    - id: parameter
+      type: System.Object
+      description: Not used.
+    - id: culture
+      type: System.Globalization.CultureInfo
+      description: Not used.
+    return:
+      type: System.Boolean
+      description: The inverted <xref href="System.Boolean" data-throw-if-not-resolved="false"></xref> value.
+    content.vb: Public Overrides Function Convert(value As Boolean, parameter As Object, culture As CultureInfo) As Boolean
+  overridden: Celestial.UIToolkit.Converters.ValueConverter{System.Boolean,System.Boolean}.Convert(System.Boolean,System.Object,System.Globalization.CultureInfo)
+  overload: Celestial.UIToolkit.Converters.InvertBooleanConverter.Convert*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Celestial.UIToolkit.Converters.InvertBooleanConverter.ConvertBack(System.Boolean,System.Object,System.Globalization.CultureInfo)
+  commentId: M:Celestial.UIToolkit.Converters.InvertBooleanConverter.ConvertBack(System.Boolean,System.Object,System.Globalization.CultureInfo)
+  id: ConvertBack(System.Boolean,System.Object,System.Globalization.CultureInfo)
+  parent: Celestial.UIToolkit.Converters.InvertBooleanConverter
+  langs:
+  - csharp
+  - vb
+  name: ConvertBack(Boolean, Object, CultureInfo)
+  nameWithType: InvertBooleanConverter.ConvertBack(Boolean, Object, CultureInfo)
+  fullName: Celestial.UIToolkit.Converters.InvertBooleanConverter.ConvertBack(System.Boolean, System.Object, System.Globalization.CultureInfo)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit.Core/Converters/InvertBooleanConverter.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: ConvertBack
+    path: src/Celestial.UIToolkit.Core/Converters/InvertBooleanConverter.cs
+    startLine: 38
+  assemblies:
+  - Celestial.UIToolkit.Core
+  namespace: Celestial.UIToolkit.Converters
+  summary: "\nInverts and returns the specified <code data-dev-comment-type=\"paramref\" class=\"paramref\">value</code>.\n"
+  example: []
+  syntax:
+    content: public override bool ConvertBack(bool value, object parameter, CultureInfo culture)
+    parameters:
+    - id: value
+      type: System.Boolean
+      description: The <xref href="System.Boolean" data-throw-if-not-resolved="false"></xref> value to be inverted.
+    - id: parameter
+      type: System.Object
+      description: Not used.
+    - id: culture
+      type: System.Globalization.CultureInfo
+      description: Not used.
+    return:
+      type: System.Boolean
+      description: The inverted <xref href="System.Boolean" data-throw-if-not-resolved="false"></xref> value.
+    content.vb: Public Overrides Function ConvertBack(value As Boolean, parameter As Object, culture As CultureInfo) As Boolean
+  overridden: Celestial.UIToolkit.Converters.ValueConverter{System.Boolean,System.Boolean}.ConvertBack(System.Boolean,System.Object,System.Globalization.CultureInfo)
+  overload: Celestial.UIToolkit.Converters.InvertBooleanConverter.ConvertBack*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: Celestial.UIToolkit.Converters
+  commentId: N:Celestial.UIToolkit.Converters
+  name: Celestial.UIToolkit.Converters
+  nameWithType: Celestial.UIToolkit.Converters
+  fullName: Celestial.UIToolkit.Converters
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Celestial.UIToolkit.Converters.ValueConverter{System.Boolean,System.Boolean}
+  commentId: T:Celestial.UIToolkit.Converters.ValueConverter{System.Boolean,System.Boolean}
+  parent: Celestial.UIToolkit.Converters
+  definition: Celestial.UIToolkit.Converters.ValueConverter`2
+  name: ValueConverter<Boolean, Boolean>
+  nameWithType: ValueConverter<Boolean, Boolean>
+  fullName: Celestial.UIToolkit.Converters.ValueConverter<System.Boolean, System.Boolean>
+  nameWithType.vb: ValueConverter(Of Boolean, Boolean)
+  fullName.vb: Celestial.UIToolkit.Converters.ValueConverter(Of System.Boolean, System.Boolean)
+  name.vb: ValueConverter(Of Boolean, Boolean)
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Converters.ValueConverter`2
+    name: ValueConverter
+    nameWithType: ValueConverter
+    fullName: Celestial.UIToolkit.Converters.ValueConverter
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Celestial.UIToolkit.Converters.ValueConverter`2
+    name: ValueConverter
+    nameWithType: ValueConverter
+    fullName: Celestial.UIToolkit.Converters.ValueConverter
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.Data.IValueConverter
+  commentId: T:System.Windows.Data.IValueConverter
+  parent: System.Windows.Data
+  isExternal: true
+  name: IValueConverter
+  nameWithType: IValueConverter
+  fullName: System.Windows.Data.IValueConverter
+- uid: Celestial.UIToolkit.Converters.ValueConverter{System.Boolean,System.Boolean}.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  commentId: M:Celestial.UIToolkit.Converters.ValueConverter{System.Boolean,System.Boolean}.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  parent: Celestial.UIToolkit.Converters.ValueConverter{System.Boolean,System.Boolean}
+  definition: Celestial.UIToolkit.Converters.ValueConverter`2.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  name: Convert(Object, Type, Object, CultureInfo)
+  nameWithType: ValueConverter<Boolean, Boolean>.Convert(Object, Type, Object, CultureInfo)
+  fullName: Celestial.UIToolkit.Converters.ValueConverter<System.Boolean, System.Boolean>.Convert(System.Object, System.Type, System.Object, System.Globalization.CultureInfo)
+  nameWithType.vb: ValueConverter(Of Boolean, Boolean).Convert(Object, Type, Object, CultureInfo)
+  fullName.vb: Celestial.UIToolkit.Converters.ValueConverter(Of System.Boolean, System.Boolean).Convert(System.Object, System.Type, System.Object, System.Globalization.CultureInfo)
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Converters.ValueConverter`2.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+    name: Convert
+    nameWithType: ValueConverter<Boolean, Boolean>.Convert
+    fullName: Celestial.UIToolkit.Converters.ValueConverter<System.Boolean, System.Boolean>.Convert
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Globalization.CultureInfo
+    name: CultureInfo
+    nameWithType: CultureInfo
+    fullName: System.Globalization.CultureInfo
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Celestial.UIToolkit.Converters.ValueConverter`2.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+    name: Convert
+    nameWithType: ValueConverter(Of Boolean, Boolean).Convert
+    fullName: Celestial.UIToolkit.Converters.ValueConverter(Of System.Boolean, System.Boolean).Convert
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Globalization.CultureInfo
+    name: CultureInfo
+    nameWithType: CultureInfo
+    fullName: System.Globalization.CultureInfo
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Celestial.UIToolkit.Converters.ValueConverter{System.Boolean,System.Boolean}.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  commentId: M:Celestial.UIToolkit.Converters.ValueConverter{System.Boolean,System.Boolean}.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  parent: Celestial.UIToolkit.Converters.ValueConverter{System.Boolean,System.Boolean}
+  definition: Celestial.UIToolkit.Converters.ValueConverter`2.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  name: ConvertBack(Object, Type, Object, CultureInfo)
+  nameWithType: ValueConverter<Boolean, Boolean>.ConvertBack(Object, Type, Object, CultureInfo)
+  fullName: Celestial.UIToolkit.Converters.ValueConverter<System.Boolean, System.Boolean>.ConvertBack(System.Object, System.Type, System.Object, System.Globalization.CultureInfo)
+  nameWithType.vb: ValueConverter(Of Boolean, Boolean).ConvertBack(Object, Type, Object, CultureInfo)
+  fullName.vb: Celestial.UIToolkit.Converters.ValueConverter(Of System.Boolean, System.Boolean).ConvertBack(System.Object, System.Type, System.Object, System.Globalization.CultureInfo)
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Converters.ValueConverter`2.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+    name: ConvertBack
+    nameWithType: ValueConverter<Boolean, Boolean>.ConvertBack
+    fullName: Celestial.UIToolkit.Converters.ValueConverter<System.Boolean, System.Boolean>.ConvertBack
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Globalization.CultureInfo
+    name: CultureInfo
+    nameWithType: CultureInfo
+    fullName: System.Globalization.CultureInfo
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Celestial.UIToolkit.Converters.ValueConverter`2.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+    name: ConvertBack
+    nameWithType: ValueConverter(Of Boolean, Boolean).ConvertBack
+    fullName: Celestial.UIToolkit.Converters.ValueConverter(Of System.Boolean, System.Boolean).ConvertBack
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Globalization.CultureInfo
+    name: CultureInfo
+    nameWithType: CultureInfo
+    fullName: System.Globalization.CultureInfo
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Celestial.UIToolkit.Converters.ValueConverter{System.Boolean,System.Boolean}.Convert(System.Boolean,System.Object,System.Globalization.CultureInfo)
+  commentId: M:Celestial.UIToolkit.Converters.ValueConverter{System.Boolean,System.Boolean}.Convert(System.Boolean,System.Object,System.Globalization.CultureInfo)
+  parent: Celestial.UIToolkit.Converters.ValueConverter{System.Boolean,System.Boolean}
+  definition: Celestial.UIToolkit.Converters.ValueConverter`2.Convert(`0,System.Object,System.Globalization.CultureInfo)
+  name: Convert(Boolean, Object, CultureInfo)
+  nameWithType: ValueConverter<Boolean, Boolean>.Convert(Boolean, Object, CultureInfo)
+  fullName: Celestial.UIToolkit.Converters.ValueConverter<System.Boolean, System.Boolean>.Convert(System.Boolean, System.Object, System.Globalization.CultureInfo)
+  nameWithType.vb: ValueConverter(Of Boolean, Boolean).Convert(Boolean, Object, CultureInfo)
+  fullName.vb: Celestial.UIToolkit.Converters.ValueConverter(Of System.Boolean, System.Boolean).Convert(System.Boolean, System.Object, System.Globalization.CultureInfo)
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Converters.ValueConverter`2.Convert(`0,System.Object,System.Globalization.CultureInfo)
+    name: Convert
+    nameWithType: ValueConverter<Boolean, Boolean>.Convert
+    fullName: Celestial.UIToolkit.Converters.ValueConverter<System.Boolean, System.Boolean>.Convert
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Globalization.CultureInfo
+    name: CultureInfo
+    nameWithType: CultureInfo
+    fullName: System.Globalization.CultureInfo
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Celestial.UIToolkit.Converters.ValueConverter`2.Convert(`0,System.Object,System.Globalization.CultureInfo)
+    name: Convert
+    nameWithType: ValueConverter(Of Boolean, Boolean).Convert
+    fullName: Celestial.UIToolkit.Converters.ValueConverter(Of System.Boolean, System.Boolean).Convert
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Globalization.CultureInfo
+    name: CultureInfo
+    nameWithType: CultureInfo
+    fullName: System.Globalization.CultureInfo
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Celestial.UIToolkit.Converters.ValueConverter{System.Boolean,System.Boolean}.ConvertBack(System.Boolean,System.Object,System.Globalization.CultureInfo)
+  commentId: M:Celestial.UIToolkit.Converters.ValueConverter{System.Boolean,System.Boolean}.ConvertBack(System.Boolean,System.Object,System.Globalization.CultureInfo)
+  parent: Celestial.UIToolkit.Converters.ValueConverter{System.Boolean,System.Boolean}
+  definition: Celestial.UIToolkit.Converters.ValueConverter`2.ConvertBack(`1,System.Object,System.Globalization.CultureInfo)
+  name: ConvertBack(Boolean, Object, CultureInfo)
+  nameWithType: ValueConverter<Boolean, Boolean>.ConvertBack(Boolean, Object, CultureInfo)
+  fullName: Celestial.UIToolkit.Converters.ValueConverter<System.Boolean, System.Boolean>.ConvertBack(System.Boolean, System.Object, System.Globalization.CultureInfo)
+  nameWithType.vb: ValueConverter(Of Boolean, Boolean).ConvertBack(Boolean, Object, CultureInfo)
+  fullName.vb: Celestial.UIToolkit.Converters.ValueConverter(Of System.Boolean, System.Boolean).ConvertBack(System.Boolean, System.Object, System.Globalization.CultureInfo)
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Converters.ValueConverter`2.ConvertBack(`1,System.Object,System.Globalization.CultureInfo)
+    name: ConvertBack
+    nameWithType: ValueConverter<Boolean, Boolean>.ConvertBack
+    fullName: Celestial.UIToolkit.Converters.ValueConverter<System.Boolean, System.Boolean>.ConvertBack
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Globalization.CultureInfo
+    name: CultureInfo
+    nameWithType: CultureInfo
+    fullName: System.Globalization.CultureInfo
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Celestial.UIToolkit.Converters.ValueConverter`2.ConvertBack(`1,System.Object,System.Globalization.CultureInfo)
+    name: ConvertBack
+    nameWithType: ValueConverter(Of Boolean, Boolean).ConvertBack
+    fullName: Celestial.UIToolkit.Converters.ValueConverter(Of System.Boolean, System.Boolean).ConvertBack
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Globalization.CultureInfo
+    name: CultureInfo
+    nameWithType: CultureInfo
+    fullName: System.Globalization.CultureInfo
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Celestial.UIToolkit.Converters.ValueConverter`2
+  commentId: T:Celestial.UIToolkit.Converters.ValueConverter`2
+  name: ValueConverter<TValue, TTarget>
+  nameWithType: ValueConverter<TValue, TTarget>
+  fullName: Celestial.UIToolkit.Converters.ValueConverter<TValue, TTarget>
+  nameWithType.vb: ValueConverter(Of TValue, TTarget)
+  fullName.vb: Celestial.UIToolkit.Converters.ValueConverter(Of TValue, TTarget)
+  name.vb: ValueConverter(Of TValue, TTarget)
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Converters.ValueConverter`2
+    name: ValueConverter
+    nameWithType: ValueConverter
+    fullName: Celestial.UIToolkit.Converters.ValueConverter
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TTarget
+    nameWithType: TTarget
+    fullName: TTarget
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Celestial.UIToolkit.Converters.ValueConverter`2
+    name: ValueConverter
+    nameWithType: ValueConverter
+    fullName: Celestial.UIToolkit.Converters.ValueConverter
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TTarget
+    nameWithType: TTarget
+    fullName: TTarget
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Windows.Data
+  commentId: N:System.Windows.Data
+  isExternal: true
+  name: System.Windows.Data
+  nameWithType: System.Windows.Data
+  fullName: System.Windows.Data
+- uid: Celestial.UIToolkit.Converters.ValueConverter`2.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  commentId: M:Celestial.UIToolkit.Converters.ValueConverter`2.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  isExternal: true
+  name: Convert(Object, Type, Object, CultureInfo)
+  nameWithType: ValueConverter<TValue, TTarget>.Convert(Object, Type, Object, CultureInfo)
+  fullName: Celestial.UIToolkit.Converters.ValueConverter<TValue, TTarget>.Convert(System.Object, System.Type, System.Object, System.Globalization.CultureInfo)
+  nameWithType.vb: ValueConverter(Of TValue, TTarget).Convert(Object, Type, Object, CultureInfo)
+  fullName.vb: Celestial.UIToolkit.Converters.ValueConverter(Of TValue, TTarget).Convert(System.Object, System.Type, System.Object, System.Globalization.CultureInfo)
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Converters.ValueConverter`2.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+    name: Convert
+    nameWithType: ValueConverter<TValue, TTarget>.Convert
+    fullName: Celestial.UIToolkit.Converters.ValueConverter<TValue, TTarget>.Convert
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Globalization.CultureInfo
+    name: CultureInfo
+    nameWithType: CultureInfo
+    fullName: System.Globalization.CultureInfo
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Celestial.UIToolkit.Converters.ValueConverter`2.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+    name: Convert
+    nameWithType: ValueConverter(Of TValue, TTarget).Convert
+    fullName: Celestial.UIToolkit.Converters.ValueConverter(Of TValue, TTarget).Convert
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Globalization.CultureInfo
+    name: CultureInfo
+    nameWithType: CultureInfo
+    fullName: System.Globalization.CultureInfo
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Celestial.UIToolkit.Converters.ValueConverter`2.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  commentId: M:Celestial.UIToolkit.Converters.ValueConverter`2.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+  isExternal: true
+  name: ConvertBack(Object, Type, Object, CultureInfo)
+  nameWithType: ValueConverter<TValue, TTarget>.ConvertBack(Object, Type, Object, CultureInfo)
+  fullName: Celestial.UIToolkit.Converters.ValueConverter<TValue, TTarget>.ConvertBack(System.Object, System.Type, System.Object, System.Globalization.CultureInfo)
+  nameWithType.vb: ValueConverter(Of TValue, TTarget).ConvertBack(Object, Type, Object, CultureInfo)
+  fullName.vb: Celestial.UIToolkit.Converters.ValueConverter(Of TValue, TTarget).ConvertBack(System.Object, System.Type, System.Object, System.Globalization.CultureInfo)
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Converters.ValueConverter`2.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+    name: ConvertBack
+    nameWithType: ValueConverter<TValue, TTarget>.ConvertBack
+    fullName: Celestial.UIToolkit.Converters.ValueConverter<TValue, TTarget>.ConvertBack
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Globalization.CultureInfo
+    name: CultureInfo
+    nameWithType: CultureInfo
+    fullName: System.Globalization.CultureInfo
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Celestial.UIToolkit.Converters.ValueConverter`2.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)
+    name: ConvertBack
+    nameWithType: ValueConverter(Of TValue, TTarget).ConvertBack
+    fullName: Celestial.UIToolkit.Converters.ValueConverter(Of TValue, TTarget).ConvertBack
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Globalization.CultureInfo
+    name: CultureInfo
+    nameWithType: CultureInfo
+    fullName: System.Globalization.CultureInfo
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Celestial.UIToolkit.Converters.ValueConverter`2.Convert(`0,System.Object,System.Globalization.CultureInfo)
+  commentId: M:Celestial.UIToolkit.Converters.ValueConverter`2.Convert(`0,System.Object,System.Globalization.CultureInfo)
+  isExternal: true
+  name: Convert(TValue, Object, CultureInfo)
+  nameWithType: ValueConverter<TValue, TTarget>.Convert(TValue, Object, CultureInfo)
+  fullName: Celestial.UIToolkit.Converters.ValueConverter<TValue, TTarget>.Convert(TValue, System.Object, System.Globalization.CultureInfo)
+  nameWithType.vb: ValueConverter(Of TValue, TTarget).Convert(TValue, Object, CultureInfo)
+  fullName.vb: Celestial.UIToolkit.Converters.ValueConverter(Of TValue, TTarget).Convert(TValue, System.Object, System.Globalization.CultureInfo)
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Converters.ValueConverter`2.Convert(`0,System.Object,System.Globalization.CultureInfo)
+    name: Convert
+    nameWithType: ValueConverter<TValue, TTarget>.Convert
+    fullName: Celestial.UIToolkit.Converters.ValueConverter<TValue, TTarget>.Convert
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Globalization.CultureInfo
+    name: CultureInfo
+    nameWithType: CultureInfo
+    fullName: System.Globalization.CultureInfo
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Celestial.UIToolkit.Converters.ValueConverter`2.Convert(`0,System.Object,System.Globalization.CultureInfo)
+    name: Convert
+    nameWithType: ValueConverter(Of TValue, TTarget).Convert
+    fullName: Celestial.UIToolkit.Converters.ValueConverter(Of TValue, TTarget).Convert
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Globalization.CultureInfo
+    name: CultureInfo
+    nameWithType: CultureInfo
+    fullName: System.Globalization.CultureInfo
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Celestial.UIToolkit.Converters.ValueConverter`2.ConvertBack(`1,System.Object,System.Globalization.CultureInfo)
+  commentId: M:Celestial.UIToolkit.Converters.ValueConverter`2.ConvertBack(`1,System.Object,System.Globalization.CultureInfo)
+  isExternal: true
+  name: ConvertBack(TTarget, Object, CultureInfo)
+  nameWithType: ValueConverter<TValue, TTarget>.ConvertBack(TTarget, Object, CultureInfo)
+  fullName: Celestial.UIToolkit.Converters.ValueConverter<TValue, TTarget>.ConvertBack(TTarget, System.Object, System.Globalization.CultureInfo)
+  nameWithType.vb: ValueConverter(Of TValue, TTarget).ConvertBack(TTarget, Object, CultureInfo)
+  fullName.vb: Celestial.UIToolkit.Converters.ValueConverter(Of TValue, TTarget).ConvertBack(TTarget, System.Object, System.Globalization.CultureInfo)
+  spec.csharp:
+  - uid: Celestial.UIToolkit.Converters.ValueConverter`2.ConvertBack(`1,System.Object,System.Globalization.CultureInfo)
+    name: ConvertBack
+    nameWithType: ValueConverter<TValue, TTarget>.ConvertBack
+    fullName: Celestial.UIToolkit.Converters.ValueConverter<TValue, TTarget>.ConvertBack
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TTarget
+    nameWithType: TTarget
+    fullName: TTarget
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Globalization.CultureInfo
+    name: CultureInfo
+    nameWithType: CultureInfo
+    fullName: System.Globalization.CultureInfo
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Celestial.UIToolkit.Converters.ValueConverter`2.ConvertBack(`1,System.Object,System.Globalization.CultureInfo)
+    name: ConvertBack
+    nameWithType: ValueConverter(Of TValue, TTarget).ConvertBack
+    fullName: Celestial.UIToolkit.Converters.ValueConverter(Of TValue, TTarget).ConvertBack
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TTarget
+    nameWithType: TTarget
+    fullName: TTarget
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Globalization.CultureInfo
+    name: CultureInfo
+    nameWithType: CultureInfo
+    fullName: System.Globalization.CultureInfo
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Celestial.UIToolkit.Converters.InvertBooleanConverter
+  commentId: T:Celestial.UIToolkit.Converters.InvertBooleanConverter
+  parent: Celestial.UIToolkit.Converters
+  name: InvertBooleanConverter
+  nameWithType: InvertBooleanConverter
+  fullName: Celestial.UIToolkit.Converters.InvertBooleanConverter
+- uid: Celestial.UIToolkit.Converters.InvertBooleanConverter.Default*
+  commentId: Overload:Celestial.UIToolkit.Converters.InvertBooleanConverter.Default
+  name: Default
+  nameWithType: InvertBooleanConverter.Default
+  fullName: Celestial.UIToolkit.Converters.InvertBooleanConverter.Default
+- uid: Celestial.UIToolkit.Converters.InvertBooleanConverter.Convert*
+  commentId: Overload:Celestial.UIToolkit.Converters.InvertBooleanConverter.Convert
+  name: Convert
+  nameWithType: InvertBooleanConverter.Convert
+  fullName: Celestial.UIToolkit.Converters.InvertBooleanConverter.Convert
+- uid: System.Globalization.CultureInfo
+  commentId: T:System.Globalization.CultureInfo
+  parent: System.Globalization
+  isExternal: true
+  name: CultureInfo
+  nameWithType: CultureInfo
+  fullName: System.Globalization.CultureInfo
+- uid: System.Globalization
+  commentId: N:System.Globalization
+  isExternal: true
+  name: System.Globalization
+  nameWithType: System.Globalization
+  fullName: System.Globalization
+- uid: Celestial.UIToolkit.Converters.InvertBooleanConverter.ConvertBack*
+  commentId: Overload:Celestial.UIToolkit.Converters.InvertBooleanConverter.ConvertBack
+  name: ConvertBack
+  nameWithType: InvertBooleanConverter.ConvertBack
+  fullName: Celestial.UIToolkit.Converters.InvertBooleanConverter.ConvertBack

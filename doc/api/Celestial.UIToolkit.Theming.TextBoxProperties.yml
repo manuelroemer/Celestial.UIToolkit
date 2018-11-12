@@ -1,0 +1,791 @@
+### YamlMime:ManagedReference
+items:
+- uid: Celestial.UIToolkit.Theming.TextBoxProperties
+  commentId: T:Celestial.UIToolkit.Theming.TextBoxProperties
+  id: TextBoxProperties
+  parent: Celestial.UIToolkit.Theming
+  children:
+  - Celestial.UIToolkit.Theming.TextBoxProperties.AssistiveTextProperty
+  - Celestial.UIToolkit.Theming.TextBoxProperties.GetAssistiveText(System.Windows.DependencyObject)
+  - Celestial.UIToolkit.Theming.TextBoxProperties.GetPlaceholder(System.Windows.DependencyObject)
+  - Celestial.UIToolkit.Theming.TextBoxProperties.GetPlaceholderType(System.Windows.DependencyObject)
+  - Celestial.UIToolkit.Theming.TextBoxProperties.PlaceholderProperty
+  - Celestial.UIToolkit.Theming.TextBoxProperties.PlaceholderTypeProperty
+  - Celestial.UIToolkit.Theming.TextBoxProperties.SetAssistiveText(System.Windows.DependencyObject,System.String)
+  - Celestial.UIToolkit.Theming.TextBoxProperties.SetPlaceholder(System.Windows.DependencyObject,System.Object)
+  - Celestial.UIToolkit.Theming.TextBoxProperties.SetPlaceholderType(System.Windows.DependencyObject,Celestial.UIToolkit.Controls.PlaceholderDisplayType)
+  langs:
+  - csharp
+  - vb
+  name: TextBoxProperties
+  nameWithType: TextBoxProperties
+  fullName: Celestial.UIToolkit.Theming.TextBoxProperties
+  type: Class
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/TextBoxProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: TextBoxProperties
+    path: ../src/Celestial.UIToolkit/Theming/TextBoxProperties.cs
+    startLine: 12
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nProvides static members used by <xref href=\"System.Windows.Controls.TextBox\" data-throw-if-not-resolved=\"false\"></xref> control.\nThese properties enhance the default functionality of the <xref href=\"System.Windows.Controls.TextBox\" data-throw-if-not-resolved=\"false\"></xref>,\nif the corresponding control template adds support for them.\n"
+  example: []
+  syntax:
+    content: public static class TextBoxProperties
+    content.vb: Public Module TextBoxProperties
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: Celestial.UIToolkit.Theming.TextBoxProperties.PlaceholderProperty
+  commentId: F:Celestial.UIToolkit.Theming.TextBoxProperties.PlaceholderProperty
+  id: PlaceholderProperty
+  parent: Celestial.UIToolkit.Theming.TextBoxProperties
+  langs:
+  - csharp
+  - vb
+  name: PlaceholderProperty
+  nameWithType: TextBoxProperties.PlaceholderProperty
+  fullName: Celestial.UIToolkit.Theming.TextBoxProperties.PlaceholderProperty
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/TextBoxProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: PlaceholderProperty
+    path: ../src/Celestial.UIToolkit/Theming/TextBoxProperties.cs
+    startLine: 19
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nIdentifies an attached dependency property which defines a placeholder object which\ngets displayed by the <xref href=\"System.Windows.Controls.TextBox\" data-throw-if-not-resolved=\"false\"></xref>, when no other text is entered.\n"
+  example: []
+  syntax:
+    content: public static readonly DependencyProperty PlaceholderProperty
+    return:
+      type: System.Windows.DependencyProperty
+    content.vb: Public Shared ReadOnly PlaceholderProperty As DependencyProperty
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Theming.TextBoxProperties.GetPlaceholder(System.Windows.DependencyObject)
+  commentId: M:Celestial.UIToolkit.Theming.TextBoxProperties.GetPlaceholder(System.Windows.DependencyObject)
+  id: GetPlaceholder(System.Windows.DependencyObject)
+  parent: Celestial.UIToolkit.Theming.TextBoxProperties
+  langs:
+  - csharp
+  - vb
+  name: GetPlaceholder(DependencyObject)
+  nameWithType: TextBoxProperties.GetPlaceholder(DependencyObject)
+  fullName: Celestial.UIToolkit.Theming.TextBoxProperties.GetPlaceholder(System.Windows.DependencyObject)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/TextBoxProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: GetPlaceholder
+    path: ../src/Celestial.UIToolkit/Theming/TextBoxProperties.cs
+    startLine: 37
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nGets the value of the <xref href=\"Celestial.UIToolkit.Theming.TextBoxProperties.PlaceholderProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static object GetPlaceholder(DependencyObject obj)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.TextBoxProperties.PlaceholderProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be retrieved.\n"
+    return:
+      type: System.Object
+      description: "\nThe local value of the <xref href=\"Celestial.UIToolkit.Theming.TextBoxProperties.PlaceholderProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+    content.vb: Public Shared Function GetPlaceholder(obj As DependencyObject) As Object
+  overload: Celestial.UIToolkit.Theming.TextBoxProperties.GetPlaceholder*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.TextBoxProperties.SetPlaceholder(System.Windows.DependencyObject,System.Object)
+  commentId: M:Celestial.UIToolkit.Theming.TextBoxProperties.SetPlaceholder(System.Windows.DependencyObject,System.Object)
+  id: SetPlaceholder(System.Windows.DependencyObject,System.Object)
+  parent: Celestial.UIToolkit.Theming.TextBoxProperties
+  langs:
+  - csharp
+  - vb
+  name: SetPlaceholder(DependencyObject, Object)
+  nameWithType: TextBoxProperties.SetPlaceholder(DependencyObject, Object)
+  fullName: Celestial.UIToolkit.Theming.TextBoxProperties.SetPlaceholder(System.Windows.DependencyObject, System.Object)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/TextBoxProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: SetPlaceholder
+    path: ../src/Celestial.UIToolkit/Theming/TextBoxProperties.cs
+    startLine: 51
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nSets the value of the <xref href=\"Celestial.UIToolkit.Theming.TextBoxProperties.PlaceholderProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static void SetPlaceholder(DependencyObject obj, object value)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.TextBoxProperties.PlaceholderProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be set.\n"
+    - id: value
+      type: System.Object
+      description: "\nThe new value for the dependency property.\n"
+    content.vb: Public Shared Sub SetPlaceholder(obj As DependencyObject, value As Object)
+  overload: Celestial.UIToolkit.Theming.TextBoxProperties.SetPlaceholder*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.TextBoxProperties.PlaceholderTypeProperty
+  commentId: F:Celestial.UIToolkit.Theming.TextBoxProperties.PlaceholderTypeProperty
+  id: PlaceholderTypeProperty
+  parent: Celestial.UIToolkit.Theming.TextBoxProperties
+  langs:
+  - csharp
+  - vb
+  name: PlaceholderTypeProperty
+  nameWithType: TextBoxProperties.PlaceholderTypeProperty
+  fullName: Celestial.UIToolkit.Theming.TextBoxProperties.PlaceholderTypeProperty
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/TextBoxProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: PlaceholderTypeProperty
+    path: ../src/Celestial.UIToolkit/Theming/TextBoxProperties.cs
+    startLine: 60
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nIdentifies an attached dependency property which defines the placeholder&apos;s display\ntype.\n"
+  example: []
+  syntax:
+    content: public static readonly DependencyProperty PlaceholderTypeProperty
+    return:
+      type: System.Windows.DependencyProperty
+    content.vb: Public Shared ReadOnly PlaceholderTypeProperty As DependencyProperty
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Theming.TextBoxProperties.GetPlaceholderType(System.Windows.DependencyObject)
+  commentId: M:Celestial.UIToolkit.Theming.TextBoxProperties.GetPlaceholderType(System.Windows.DependencyObject)
+  id: GetPlaceholderType(System.Windows.DependencyObject)
+  parent: Celestial.UIToolkit.Theming.TextBoxProperties
+  langs:
+  - csharp
+  - vb
+  name: GetPlaceholderType(DependencyObject)
+  nameWithType: TextBoxProperties.GetPlaceholderType(DependencyObject)
+  fullName: Celestial.UIToolkit.Theming.TextBoxProperties.GetPlaceholderType(System.Windows.DependencyObject)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/TextBoxProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: GetPlaceholderType
+    path: ../src/Celestial.UIToolkit/Theming/TextBoxProperties.cs
+    startLine: 78
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nGets the value of the <xref href=\"Celestial.UIToolkit.Theming.TextBoxProperties.PlaceholderTypeProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static PlaceholderDisplayType GetPlaceholderType(DependencyObject obj)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.TextBoxProperties.PlaceholderTypeProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be retrieved.\n"
+    return:
+      type: Celestial.UIToolkit.Controls.PlaceholderDisplayType
+      description: "\nThe local value of the <xref href=\"Celestial.UIToolkit.Theming.TextBoxProperties.PlaceholderTypeProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+    content.vb: Public Shared Function GetPlaceholderType(obj As DependencyObject) As PlaceholderDisplayType
+  overload: Celestial.UIToolkit.Theming.TextBoxProperties.GetPlaceholderType*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.TextBoxProperties.SetPlaceholderType(System.Windows.DependencyObject,Celestial.UIToolkit.Controls.PlaceholderDisplayType)
+  commentId: M:Celestial.UIToolkit.Theming.TextBoxProperties.SetPlaceholderType(System.Windows.DependencyObject,Celestial.UIToolkit.Controls.PlaceholderDisplayType)
+  id: SetPlaceholderType(System.Windows.DependencyObject,Celestial.UIToolkit.Controls.PlaceholderDisplayType)
+  parent: Celestial.UIToolkit.Theming.TextBoxProperties
+  langs:
+  - csharp
+  - vb
+  name: SetPlaceholderType(DependencyObject, PlaceholderDisplayType)
+  nameWithType: TextBoxProperties.SetPlaceholderType(DependencyObject, PlaceholderDisplayType)
+  fullName: Celestial.UIToolkit.Theming.TextBoxProperties.SetPlaceholderType(System.Windows.DependencyObject, Celestial.UIToolkit.Controls.PlaceholderDisplayType)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/TextBoxProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: SetPlaceholderType
+    path: ../src/Celestial.UIToolkit/Theming/TextBoxProperties.cs
+    startLine: 92
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nSets the value of the <xref href=\"Celestial.UIToolkit.Theming.TextBoxProperties.PlaceholderTypeProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static void SetPlaceholderType(DependencyObject obj, PlaceholderDisplayType value)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.TextBoxProperties.PlaceholderTypeProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be set.\n"
+    - id: value
+      type: Celestial.UIToolkit.Controls.PlaceholderDisplayType
+      description: "\nThe new value for the dependency property.\n"
+    content.vb: Public Shared Sub SetPlaceholderType(obj As DependencyObject, value As PlaceholderDisplayType)
+  overload: Celestial.UIToolkit.Theming.TextBoxProperties.SetPlaceholderType*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.TextBoxProperties.AssistiveTextProperty
+  commentId: F:Celestial.UIToolkit.Theming.TextBoxProperties.AssistiveTextProperty
+  id: AssistiveTextProperty
+  parent: Celestial.UIToolkit.Theming.TextBoxProperties
+  langs:
+  - csharp
+  - vb
+  name: AssistiveTextProperty
+  nameWithType: TextBoxProperties.AssistiveTextProperty
+  fullName: Celestial.UIToolkit.Theming.TextBoxProperties.AssistiveTextProperty
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/TextBoxProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: AssistiveTextProperty
+    path: ../src/Celestial.UIToolkit/Theming/TextBoxProperties.cs
+    startLine: 102
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nIdentifies an attached dependency property which defines an assistive text which helps\nthe user enter the correct data into the <xref href=\"System.Windows.Controls.TextBox\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public static readonly DependencyProperty AssistiveTextProperty
+    return:
+      type: System.Windows.DependencyProperty
+    content.vb: Public Shared ReadOnly AssistiveTextProperty As DependencyProperty
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Theming.TextBoxProperties.GetAssistiveText(System.Windows.DependencyObject)
+  commentId: M:Celestial.UIToolkit.Theming.TextBoxProperties.GetAssistiveText(System.Windows.DependencyObject)
+  id: GetAssistiveText(System.Windows.DependencyObject)
+  parent: Celestial.UIToolkit.Theming.TextBoxProperties
+  langs:
+  - csharp
+  - vb
+  name: GetAssistiveText(DependencyObject)
+  nameWithType: TextBoxProperties.GetAssistiveText(DependencyObject)
+  fullName: Celestial.UIToolkit.Theming.TextBoxProperties.GetAssistiveText(System.Windows.DependencyObject)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/TextBoxProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: GetAssistiveText
+    path: ../src/Celestial.UIToolkit/Theming/TextBoxProperties.cs
+    startLine: 120
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nGets the value of the <xref href=\"Celestial.UIToolkit.Theming.TextBoxProperties.AssistiveTextProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static string GetAssistiveText(DependencyObject obj)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.TextBoxProperties.AssistiveTextProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be retrieved.\n"
+    return:
+      type: System.String
+      description: "\nThe local value of the <xref href=\"Celestial.UIToolkit.Theming.TextBoxProperties.AssistiveTextProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+    content.vb: Public Shared Function GetAssistiveText(obj As DependencyObject) As String
+  overload: Celestial.UIToolkit.Theming.TextBoxProperties.GetAssistiveText*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.TextBoxProperties.SetAssistiveText(System.Windows.DependencyObject,System.String)
+  commentId: M:Celestial.UIToolkit.Theming.TextBoxProperties.SetAssistiveText(System.Windows.DependencyObject,System.String)
+  id: SetAssistiveText(System.Windows.DependencyObject,System.String)
+  parent: Celestial.UIToolkit.Theming.TextBoxProperties
+  langs:
+  - csharp
+  - vb
+  name: SetAssistiveText(DependencyObject, String)
+  nameWithType: TextBoxProperties.SetAssistiveText(DependencyObject, String)
+  fullName: Celestial.UIToolkit.Theming.TextBoxProperties.SetAssistiveText(System.Windows.DependencyObject, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/TextBoxProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: SetAssistiveText
+    path: ../src/Celestial.UIToolkit/Theming/TextBoxProperties.cs
+    startLine: 134
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nSets the value of the <xref href=\"Celestial.UIToolkit.Theming.TextBoxProperties.AssistiveTextProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static void SetAssistiveText(DependencyObject obj, string value)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.TextBoxProperties.AssistiveTextProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be set.\n"
+    - id: value
+      type: System.String
+      description: "\nThe new value for the dependency property.\n"
+    content.vb: Public Shared Sub SetAssistiveText(obj As DependencyObject, value As String)
+  overload: Celestial.UIToolkit.Theming.TextBoxProperties.SetAssistiveText*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: System.Windows.Controls.TextBox
+  commentId: T:System.Windows.Controls.TextBox
+  isExternal: true
+- uid: Celestial.UIToolkit.Theming
+  commentId: N:Celestial.UIToolkit.Theming
+  name: Celestial.UIToolkit.Theming
+  nameWithType: Celestial.UIToolkit.Theming
+  fullName: Celestial.UIToolkit.Theming
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Windows.DependencyProperty
+  commentId: T:System.Windows.DependencyProperty
+  parent: System.Windows
+  isExternal: true
+  name: DependencyProperty
+  nameWithType: DependencyProperty
+  fullName: System.Windows.DependencyProperty
+- uid: System.Windows
+  commentId: N:System.Windows
+  isExternal: true
+  name: System.Windows
+  nameWithType: System.Windows
+  fullName: System.Windows
+- uid: Celestial.UIToolkit.Theming.TextBoxProperties.PlaceholderProperty
+  commentId: F:Celestial.UIToolkit.Theming.TextBoxProperties.PlaceholderProperty
+  isExternal: true
+- uid: System.Windows.DependencyObject
+  commentId: T:System.Windows.DependencyObject
+  parent: System.Windows
+  isExternal: true
+  name: DependencyObject
+  nameWithType: DependencyObject
+  fullName: System.Windows.DependencyObject
+- uid: Celestial.UIToolkit.Theming.TextBoxProperties.GetPlaceholder*
+  commentId: Overload:Celestial.UIToolkit.Theming.TextBoxProperties.GetPlaceholder
+  name: GetPlaceholder
+  nameWithType: TextBoxProperties.GetPlaceholder
+  fullName: Celestial.UIToolkit.Theming.TextBoxProperties.GetPlaceholder
+- uid: Celestial.UIToolkit.Theming.TextBoxProperties.SetPlaceholder*
+  commentId: Overload:Celestial.UIToolkit.Theming.TextBoxProperties.SetPlaceholder
+  name: SetPlaceholder
+  nameWithType: TextBoxProperties.SetPlaceholder
+  fullName: Celestial.UIToolkit.Theming.TextBoxProperties.SetPlaceholder
+- uid: Celestial.UIToolkit.Theming.TextBoxProperties.PlaceholderTypeProperty
+  commentId: F:Celestial.UIToolkit.Theming.TextBoxProperties.PlaceholderTypeProperty
+  isExternal: true
+- uid: Celestial.UIToolkit.Theming.TextBoxProperties.GetPlaceholderType*
+  commentId: Overload:Celestial.UIToolkit.Theming.TextBoxProperties.GetPlaceholderType
+  name: GetPlaceholderType
+  nameWithType: TextBoxProperties.GetPlaceholderType
+  fullName: Celestial.UIToolkit.Theming.TextBoxProperties.GetPlaceholderType
+- uid: Celestial.UIToolkit.Controls.PlaceholderDisplayType
+  commentId: T:Celestial.UIToolkit.Controls.PlaceholderDisplayType
+  parent: Celestial.UIToolkit.Controls
+  name: PlaceholderDisplayType
+  nameWithType: PlaceholderDisplayType
+  fullName: Celestial.UIToolkit.Controls.PlaceholderDisplayType
+- uid: Celestial.UIToolkit.Controls
+  commentId: N:Celestial.UIToolkit.Controls
+  name: Celestial.UIToolkit.Controls
+  nameWithType: Celestial.UIToolkit.Controls
+  fullName: Celestial.UIToolkit.Controls
+- uid: Celestial.UIToolkit.Theming.TextBoxProperties.SetPlaceholderType*
+  commentId: Overload:Celestial.UIToolkit.Theming.TextBoxProperties.SetPlaceholderType
+  name: SetPlaceholderType
+  nameWithType: TextBoxProperties.SetPlaceholderType
+  fullName: Celestial.UIToolkit.Theming.TextBoxProperties.SetPlaceholderType
+- uid: Celestial.UIToolkit.Theming.TextBoxProperties.AssistiveTextProperty
+  commentId: F:Celestial.UIToolkit.Theming.TextBoxProperties.AssistiveTextProperty
+  isExternal: true
+- uid: Celestial.UIToolkit.Theming.TextBoxProperties.GetAssistiveText*
+  commentId: Overload:Celestial.UIToolkit.Theming.TextBoxProperties.GetAssistiveText
+  name: GetAssistiveText
+  nameWithType: TextBoxProperties.GetAssistiveText
+  fullName: Celestial.UIToolkit.Theming.TextBoxProperties.GetAssistiveText
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Celestial.UIToolkit.Theming.TextBoxProperties.SetAssistiveText*
+  commentId: Overload:Celestial.UIToolkit.Theming.TextBoxProperties.SetAssistiveText
+  name: SetAssistiveText
+  nameWithType: TextBoxProperties.SetAssistiveText
+  fullName: Celestial.UIToolkit.Theming.TextBoxProperties.SetAssistiveText

@@ -1,0 +1,649 @@
+### YamlMime:ManagedReference
+items:
+- uid: Celestial.UIToolkit.Theming.SelectionProperties
+  commentId: T:Celestial.UIToolkit.Theming.SelectionProperties
+  id: SelectionProperties
+  parent: Celestial.UIToolkit.Theming
+  children:
+  - Celestial.UIToolkit.Theming.SelectionProperties.GetSelectionIndicatorSize(System.Windows.DependencyObject)
+  - Celestial.UIToolkit.Theming.SelectionProperties.GetShowSelectionIndicator(System.Windows.DependencyObject)
+  - Celestial.UIToolkit.Theming.SelectionProperties.SelectionIndicatorSizeProperty
+  - Celestial.UIToolkit.Theming.SelectionProperties.SetSelectionIndicatorSize(System.Windows.DependencyObject,System.Double)
+  - Celestial.UIToolkit.Theming.SelectionProperties.SetShowSelectionIndicator(System.Windows.DependencyObject,System.Boolean)
+  - Celestial.UIToolkit.Theming.SelectionProperties.ShowSelectionIndicatorProperty
+  langs:
+  - csharp
+  - vb
+  name: SelectionProperties
+  nameWithType: SelectionProperties
+  fullName: Celestial.UIToolkit.Theming.SelectionProperties
+  type: Class
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/SelectionProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: SelectionProperties
+    path: ../src/Celestial.UIToolkit/Theming/SelectionProperties.cs
+    startLine: 8
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nProvides static theming properties regarding selection states.\n"
+  example: []
+  syntax:
+    content: public static class SelectionProperties
+    content.vb: Public Module SelectionProperties
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: Celestial.UIToolkit.Theming.SelectionProperties.ShowSelectionIndicatorProperty
+  commentId: F:Celestial.UIToolkit.Theming.SelectionProperties.ShowSelectionIndicatorProperty
+  id: ShowSelectionIndicatorProperty
+  parent: Celestial.UIToolkit.Theming.SelectionProperties
+  langs:
+  - csharp
+  - vb
+  name: ShowSelectionIndicatorProperty
+  nameWithType: SelectionProperties.ShowSelectionIndicatorProperty
+  fullName: Celestial.UIToolkit.Theming.SelectionProperties.ShowSelectionIndicatorProperty
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/SelectionProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: ShowSelectionIndicatorProperty
+    path: ../src/Celestial.UIToolkit/Theming/SelectionProperties.cs
+    startLine: 15
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nIdentifies an attached dependency property which determines whether the control\ndisplays another control which indicates a selection.\n"
+  example: []
+  syntax:
+    content: public static readonly DependencyProperty ShowSelectionIndicatorProperty
+    return:
+      type: System.Windows.DependencyProperty
+    content.vb: Public Shared ReadOnly ShowSelectionIndicatorProperty As DependencyProperty
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Theming.SelectionProperties.GetShowSelectionIndicator(System.Windows.DependencyObject)
+  commentId: M:Celestial.UIToolkit.Theming.SelectionProperties.GetShowSelectionIndicator(System.Windows.DependencyObject)
+  id: GetShowSelectionIndicator(System.Windows.DependencyObject)
+  parent: Celestial.UIToolkit.Theming.SelectionProperties
+  langs:
+  - csharp
+  - vb
+  name: GetShowSelectionIndicator(DependencyObject)
+  nameWithType: SelectionProperties.GetShowSelectionIndicator(DependencyObject)
+  fullName: Celestial.UIToolkit.Theming.SelectionProperties.GetShowSelectionIndicator(System.Windows.DependencyObject)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/SelectionProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: GetShowSelectionIndicator
+    path: ../src/Celestial.UIToolkit/Theming/SelectionProperties.cs
+    startLine: 33
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nGets the value of the <xref href=\"Celestial.UIToolkit.Theming.SelectionProperties.ShowSelectionIndicatorProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static bool GetShowSelectionIndicator(DependencyObject obj)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.SelectionProperties.ShowSelectionIndicatorProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be retrieved.\n"
+    return:
+      type: System.Boolean
+      description: "\nThe local value of the <xref href=\"Celestial.UIToolkit.Theming.SelectionProperties.ShowSelectionIndicatorProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+    content.vb: Public Shared Function GetShowSelectionIndicator(obj As DependencyObject) As Boolean
+  overload: Celestial.UIToolkit.Theming.SelectionProperties.GetShowSelectionIndicator*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.SelectionProperties.SetShowSelectionIndicator(System.Windows.DependencyObject,System.Boolean)
+  commentId: M:Celestial.UIToolkit.Theming.SelectionProperties.SetShowSelectionIndicator(System.Windows.DependencyObject,System.Boolean)
+  id: SetShowSelectionIndicator(System.Windows.DependencyObject,System.Boolean)
+  parent: Celestial.UIToolkit.Theming.SelectionProperties
+  langs:
+  - csharp
+  - vb
+  name: SetShowSelectionIndicator(DependencyObject, Boolean)
+  nameWithType: SelectionProperties.SetShowSelectionIndicator(DependencyObject, Boolean)
+  fullName: Celestial.UIToolkit.Theming.SelectionProperties.SetShowSelectionIndicator(System.Windows.DependencyObject, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/SelectionProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: SetShowSelectionIndicator
+    path: ../src/Celestial.UIToolkit/Theming/SelectionProperties.cs
+    startLine: 47
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nSets the value of the <xref href=\"Celestial.UIToolkit.Theming.SelectionProperties.ShowSelectionIndicatorProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static void SetShowSelectionIndicator(DependencyObject obj, bool value)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.SelectionProperties.ShowSelectionIndicatorProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be set.\n"
+    - id: value
+      type: System.Boolean
+      description: "\nThe new value for the dependency property.\n"
+    content.vb: Public Shared Sub SetShowSelectionIndicator(obj As DependencyObject, value As Boolean)
+  overload: Celestial.UIToolkit.Theming.SelectionProperties.SetShowSelectionIndicator*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.SelectionProperties.SelectionIndicatorSizeProperty
+  commentId: F:Celestial.UIToolkit.Theming.SelectionProperties.SelectionIndicatorSizeProperty
+  id: SelectionIndicatorSizeProperty
+  parent: Celestial.UIToolkit.Theming.SelectionProperties
+  langs:
+  - csharp
+  - vb
+  name: SelectionIndicatorSizeProperty
+  nameWithType: SelectionProperties.SelectionIndicatorSizeProperty
+  fullName: Celestial.UIToolkit.Theming.SelectionProperties.SelectionIndicatorSizeProperty
+  type: Field
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/SelectionProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: SelectionIndicatorSizeProperty
+    path: ../src/Celestial.UIToolkit/Theming/SelectionProperties.cs
+    startLine: 56
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nIdentifies an attached dependency property which determines the size (width or height)\nof the selection indicator which is displayed.\n"
+  example: []
+  syntax:
+    content: public static readonly DependencyProperty SelectionIndicatorSizeProperty
+    return:
+      type: System.Windows.DependencyProperty
+    content.vb: Public Shared ReadOnly SelectionIndicatorSizeProperty As DependencyProperty
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Celestial.UIToolkit.Theming.SelectionProperties.GetSelectionIndicatorSize(System.Windows.DependencyObject)
+  commentId: M:Celestial.UIToolkit.Theming.SelectionProperties.GetSelectionIndicatorSize(System.Windows.DependencyObject)
+  id: GetSelectionIndicatorSize(System.Windows.DependencyObject)
+  parent: Celestial.UIToolkit.Theming.SelectionProperties
+  langs:
+  - csharp
+  - vb
+  name: GetSelectionIndicatorSize(DependencyObject)
+  nameWithType: SelectionProperties.GetSelectionIndicatorSize(DependencyObject)
+  fullName: Celestial.UIToolkit.Theming.SelectionProperties.GetSelectionIndicatorSize(System.Windows.DependencyObject)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/SelectionProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: GetSelectionIndicatorSize
+    path: ../src/Celestial.UIToolkit/Theming/SelectionProperties.cs
+    startLine: 74
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nGets the value of the <xref href=\"Celestial.UIToolkit.Theming.SelectionProperties.SelectionIndicatorSizeProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static double GetSelectionIndicatorSize(DependencyObject obj)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.SelectionProperties.SelectionIndicatorSizeProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be retrieved.\n"
+    return:
+      type: System.Double
+      description: "\nThe local value of the <xref href=\"Celestial.UIToolkit.Theming.SelectionProperties.SelectionIndicatorSizeProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+    content.vb: Public Shared Function GetSelectionIndicatorSize(obj As DependencyObject) As Double
+  overload: Celestial.UIToolkit.Theming.SelectionProperties.GetSelectionIndicatorSize*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Celestial.UIToolkit.Theming.SelectionProperties.SetSelectionIndicatorSize(System.Windows.DependencyObject,System.Double)
+  commentId: M:Celestial.UIToolkit.Theming.SelectionProperties.SetSelectionIndicatorSize(System.Windows.DependencyObject,System.Double)
+  id: SetSelectionIndicatorSize(System.Windows.DependencyObject,System.Double)
+  parent: Celestial.UIToolkit.Theming.SelectionProperties
+  langs:
+  - csharp
+  - vb
+  name: SetSelectionIndicatorSize(DependencyObject, Double)
+  nameWithType: SelectionProperties.SetSelectionIndicatorSize(DependencyObject, Double)
+  fullName: Celestial.UIToolkit.Theming.SelectionProperties.SetSelectionIndicatorSize(System.Windows.DependencyObject, System.Double)
+  type: Method
+  source:
+    remote:
+      path: src/Celestial.UIToolkit/Theming/SelectionProperties.cs
+      branch: docfx
+      repo: https://github.com/manuelroemer/Celestial.UIToolkit.git
+    id: SetSelectionIndicatorSize
+    path: ../src/Celestial.UIToolkit/Theming/SelectionProperties.cs
+    startLine: 88
+  assemblies:
+  - Celestial.UIToolkit
+  namespace: Celestial.UIToolkit.Theming
+  summary: "\nSets the value of the <xref href=\"Celestial.UIToolkit.Theming.SelectionProperties.SelectionIndicatorSizeProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property.\n"
+  example: []
+  syntax:
+    content: public static void SetSelectionIndicatorSize(DependencyObject obj, double value)
+    parameters:
+    - id: obj
+      type: System.Windows.DependencyObject
+      description: "\nThe <xref href=\"System.Windows.DependencyObject\" data-throw-if-not-resolved=\"false\"></xref> for which the local value of the\n<xref href=\"Celestial.UIToolkit.Theming.SelectionProperties.SelectionIndicatorSizeProperty\" data-throw-if-not-resolved=\"false\"></xref> attached dependency property\nshould be set.\n"
+    - id: value
+      type: System.Double
+      description: "\nThe new value for the dependency property.\n"
+    content.vb: Public Shared Sub SetSelectionIndicatorSize(obj As DependencyObject, value As Double)
+  overload: Celestial.UIToolkit.Theming.SelectionProperties.SetSelectionIndicatorSize*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: Celestial.UIToolkit.Theming
+  commentId: N:Celestial.UIToolkit.Theming
+  name: Celestial.UIToolkit.Theming
+  nameWithType: Celestial.UIToolkit.Theming
+  fullName: Celestial.UIToolkit.Theming
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Windows.DependencyProperty
+  commentId: T:System.Windows.DependencyProperty
+  parent: System.Windows
+  isExternal: true
+  name: DependencyProperty
+  nameWithType: DependencyProperty
+  fullName: System.Windows.DependencyProperty
+- uid: System.Windows
+  commentId: N:System.Windows
+  isExternal: true
+  name: System.Windows
+  nameWithType: System.Windows
+  fullName: System.Windows
+- uid: Celestial.UIToolkit.Theming.SelectionProperties.ShowSelectionIndicatorProperty
+  commentId: F:Celestial.UIToolkit.Theming.SelectionProperties.ShowSelectionIndicatorProperty
+  isExternal: true
+- uid: System.Windows.DependencyObject
+  commentId: T:System.Windows.DependencyObject
+  parent: System.Windows
+  isExternal: true
+  name: DependencyObject
+  nameWithType: DependencyObject
+  fullName: System.Windows.DependencyObject
+- uid: Celestial.UIToolkit.Theming.SelectionProperties.GetShowSelectionIndicator*
+  commentId: Overload:Celestial.UIToolkit.Theming.SelectionProperties.GetShowSelectionIndicator
+  name: GetShowSelectionIndicator
+  nameWithType: SelectionProperties.GetShowSelectionIndicator
+  fullName: Celestial.UIToolkit.Theming.SelectionProperties.GetShowSelectionIndicator
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: Celestial.UIToolkit.Theming.SelectionProperties.SetShowSelectionIndicator*
+  commentId: Overload:Celestial.UIToolkit.Theming.SelectionProperties.SetShowSelectionIndicator
+  name: SetShowSelectionIndicator
+  nameWithType: SelectionProperties.SetShowSelectionIndicator
+  fullName: Celestial.UIToolkit.Theming.SelectionProperties.SetShowSelectionIndicator
+- uid: Celestial.UIToolkit.Theming.SelectionProperties.SelectionIndicatorSizeProperty
+  commentId: F:Celestial.UIToolkit.Theming.SelectionProperties.SelectionIndicatorSizeProperty
+  isExternal: true
+- uid: Celestial.UIToolkit.Theming.SelectionProperties.GetSelectionIndicatorSize*
+  commentId: Overload:Celestial.UIToolkit.Theming.SelectionProperties.GetSelectionIndicatorSize
+  name: GetSelectionIndicatorSize
+  nameWithType: SelectionProperties.GetSelectionIndicatorSize
+  fullName: Celestial.UIToolkit.Theming.SelectionProperties.GetSelectionIndicatorSize
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  name: Double
+  nameWithType: Double
+  fullName: System.Double
+- uid: Celestial.UIToolkit.Theming.SelectionProperties.SetSelectionIndicatorSize*
+  commentId: Overload:Celestial.UIToolkit.Theming.SelectionProperties.SetSelectionIndicatorSize
+  name: SetSelectionIndicatorSize
+  nameWithType: SelectionProperties.SetSelectionIndicatorSize
+  fullName: Celestial.UIToolkit.Theming.SelectionProperties.SetSelectionIndicatorSize
