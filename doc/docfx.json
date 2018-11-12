@@ -16,6 +16,7 @@
         }
       ],
       "dest": "api",
+      "filter": "filterConfig.yml",
       "properties": {
         "TargetFramework": "net45"
       }
@@ -70,6 +71,15 @@
     "noLangKeyword": false,
     "keepFileLink": false,
     "cleanupCacheHistory": false,
-    "disableGitFeatures": false
+    "disableGitFeatures": false,
+    "globalMetadata": {
+      "_appTitle": "Celestial.UIToolkit",
+      "_appFooter": "Copyright &copy; 2018 Celestial.UIToolkit",
+      "_gitContribute": {
+        "repo": "https://github.com/manuelroemer/Celestial.UIToolkit",
+        "branch": "master"
+      },
+      "_gitUrlPattern": "github"
+    }
   }
 }
