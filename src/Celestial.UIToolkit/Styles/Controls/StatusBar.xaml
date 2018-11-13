@@ -17,12 +17,12 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardStatusBar" TargetType="StatusBar" BasedOn="{c:MergeStyles 'PaneBackground PaneBorder StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="PrimaryStatusBar" TargetType="StatusBar" BasedOn="{c:MergeStyles 'PaneBackground PaneBorder PrimaryForeground PrimaryFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource PrimaryCornerRadius}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
         <Setter Property="Template">
             <Setter.Value>
@@ -66,11 +66,11 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style TargetType="StatusBar" BasedOn="{StaticResource StandardStatusBar}" />
+    <Style TargetType="StatusBar" BasedOn="{StaticResource PrimaryStatusBar}" />
 
     
     
-    <Style x:Key="Accent1StatusBar" TargetType="StatusBar" BasedOn="{c:MergeStyles 'StandardStatusBar'}">
+    <Style x:Key="Accent1StatusBar" TargetType="StatusBar" BasedOn="{c:MergeStyles 'PrimaryStatusBar'}">
         <Setter Property="Background" Value="{StaticResource Accent1ControlBackgroundBrush}" />
         <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource Accent1ControlBackgroundBrush}" />
         <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource Accent1ControlBackgroundBrush}" />
@@ -83,16 +83,16 @@
         <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource OnDarkerAccent1TextBrush}" />
         <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource OnDarkerAccent1TextBrush}" />
         <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnDarkerAccent1TextBrush}" />
-        <!-- Disabled values are inherited from StandardStatusBar. -->
+        <!-- Disabled values are inherited from PrimaryStatusBar. -->
 
         <Style.Resources>
             <!-- Override some typical styles to match the Accent1 Background.
                  This may need to be updated, depending on typical controls that may exist in a StatusBar. -->
-            <Style x:Key="{x:Static StatusBar.SeparatorStyleKey}" TargetType="Separator" BasedOn="{StaticResource StandardVerticalSeparator}">
+            <Style x:Key="{x:Static StatusBar.SeparatorStyleKey}" TargetType="Separator" BasedOn="{StaticResource PrimaryVerticalSeparator}">
                 <Setter Property="Background" Value="{StaticResource OnAccent1DisabledTextBrush}" />
             </Style>
 
-            <Style TargetType="ProgressBar" BasedOn="{StaticResource StandardProgressBar}">
+            <Style TargetType="ProgressBar" BasedOn="{StaticResource PrimaryProgressBar}">
                 <Setter Property="Background" Value="Transparent" />
                 <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource OnDarkerAccent1TextBrush}" />
                 <Setter Property="BorderBrush" Value="{StaticResource OnDarkerAccent1TextBrush}" />
@@ -112,7 +112,7 @@
         </Style.Resources>
     </Style>
 
-    <Style x:Key="Accent2StatusBar" TargetType="StatusBar" BasedOn="{c:MergeStyles 'StandardStatusBar'}">
+    <Style x:Key="Accent2StatusBar" TargetType="StatusBar" BasedOn="{c:MergeStyles 'PrimaryStatusBar'}">
         <Setter Property="Background" Value="{StaticResource Accent2ControlBackgroundBrush}" />
         <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource Accent2ControlBackgroundBrush}" />
         <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource Accent2ControlBackgroundBrush}" />
@@ -125,16 +125,16 @@
         <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource OnDarkerAccent2TextBrush}" />
         <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource OnDarkerAccent2TextBrush}" />
         <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnDarkerAccent2TextBrush}" />
-        <!-- Disabled values are inherited from StandardStatusBar. -->
+        <!-- Disabled values are inherited from PrimaryStatusBar. -->
 
         <Style.Resources>
             <!-- Override some typical styles to match the Accent2 Background.
                  This may need to be updated, depending on typical controls that may exist in a StatusBar. -->
-            <Style x:Key="{x:Static StatusBar.SeparatorStyleKey}" TargetType="Separator" BasedOn="{StaticResource StandardVerticalSeparator}">
+            <Style x:Key="{x:Static StatusBar.SeparatorStyleKey}" TargetType="Separator" BasedOn="{StaticResource PrimaryVerticalSeparator}">
                 <Setter Property="Background" Value="{StaticResource OnAccent2DisabledTextBrush}" />
             </Style>
 
-            <Style TargetType="ProgressBar" BasedOn="{StaticResource StandardProgressBar}">
+            <Style TargetType="ProgressBar" BasedOn="{StaticResource PrimaryProgressBar}">
                 <Setter Property="Background" Value="Transparent" />
                 <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource OnDarkerAccent2TextBrush}" />
                 <Setter Property="BorderBrush" Value="{StaticResource OnDarkerAccent2TextBrush}" />
@@ -156,7 +156,7 @@
 
     
     
-    <Style x:Key="StandardStatusBarItem" TargetType="StatusBarItem" BasedOn="{c:MergeStyles 'TransparentBorder TransparentBackground Shadow0'}">
+    <Style x:Key="PrimaryStatusBarItem" TargetType="StatusBarItem" BasedOn="{c:MergeStyles 'TransparentBorder TransparentBackground Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -164,7 +164,7 @@
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Padding" Value="{c:GridUnit '1'}" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource PrimaryCornerRadius}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
         <Setter Property="Template">
             <Setter.Value>
@@ -207,6 +207,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style TargetType="StatusBarItem" BasedOn="{StaticResource StandardStatusBarItem}" />
+    <Style TargetType="StatusBarItem" BasedOn="{StaticResource PrimaryStatusBarItem}" />
 
 </ResourceDictionary>

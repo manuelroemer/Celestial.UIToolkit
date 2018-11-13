@@ -26,7 +26,7 @@
     
     <!-- A button which only displays the content.
          The Foreground is animated though. -->
-    <Style x:Key="TransparentButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'TransparentBorder TransparentBackground StandardForeground StandardFontProperties'}">
+    <Style x:Key="TransparentButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'TransparentBorder TransparentBackground PrimaryForeground PrimaryFontProperties'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="Focusable" Value="False" />
         <Setter Property="IsTabStop" Value="False" />
@@ -105,11 +105,11 @@
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="StandardForegroundOnlyButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'TransparentButton StandardForegroundPrimaryStates'}" />
-    <Style x:Key="Accent1ForegroundOnlyButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'TransparentButton StandardForegroundAccent1States'}" />
-    <Style x:Key="Accent2ForegroundOnlyButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'TransparentButton StandardForegroundAccent2States'}" />
+    <Style x:Key="PrimaryForegroundOnlyButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'TransparentButton PrimaryForegroundControlStates'}" />
+    <Style x:Key="Accent1ForegroundOnlyButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'TransparentButton PrimaryForegroundAccent1States'}" />
+    <Style x:Key="Accent2ForegroundOnlyButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'TransparentButton PrimaryForegroundAccent2States'}" />
     
-    <!-- An otherwise invisible button, which shows a standard ripple animation when pressed. -->
+    <!-- An otherwise invisible button, which shows a Primary ripple animation when pressed. -->
     <Style x:Key="InvisibleRippleButton" TargetType="ButtonBase" BasedOn="{StaticResource TransparentButton}">
         <Setter Property="Focusable" Value="True" />
         <Setter Property="Template">

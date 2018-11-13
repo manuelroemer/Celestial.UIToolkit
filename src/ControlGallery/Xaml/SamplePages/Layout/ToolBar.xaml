@@ -12,7 +12,7 @@
 
     <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,4,0,12'}">
 
-        <controls:ControlPresenter Header="A standard ToolBar control."
+        <controls:ControlPresenter Header="A Primary ToolBar control."
                                    Xaml="{Binding Xaml, ElementName=ToolBarEx1}"
                                    VerticalAlignment="Top">
             <smtx:XamlDisplay x:Name="ToolBarEx1" Key="ToolBarEx1">

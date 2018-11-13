@@ -13,7 +13,7 @@
     <Color x:Key="TextLowColor">#66000000</Color>
 
     <!--
-    Alt Colors are inverted versions of the standard text colors.
+    Alt Colors are inverted versions of the Primary text colors.
     -->
     <Color x:Key="AltTextPrimaryColor">#FFFFFFFF</Color>    
     <Color x:Key="AltTextHighColor">#CCFFFFFF</Color>
@@ -199,57 +199,57 @@
     <!--
     Alias resource names for the Text resources to allow an easier distinction of the resource's use-case.
     -->
-    <SolidColorBrush x:Key="StandardForegroundBrush" Color="{StaticResource TextPrimaryColor}" />
+    <SolidColorBrush x:Key="PrimaryForegroundBrush" Color="{StaticResource TextPrimaryColor}" />
     <SolidColorBrush x:Key="SubtleForegroundBrush" Color="{StaticResource TextHighColor}" />
     <SolidColorBrush x:Key="SecondaryForegroundBrush" Color="{StaticResource TextMediumColor}" />
     <SolidColorBrush x:Key="DisabledForegroundBrush" Color="{StaticResource TextLowColor}" />
 
-    <SolidColorBrush x:Key="StandardAltForegroundBrush" Color="{StaticResource AltTextPrimaryColor}" />
+    <SolidColorBrush x:Key="PrimaryAltForegroundBrush" Color="{StaticResource AltTextPrimaryColor}" />
     <SolidColorBrush x:Key="SubtleAltForegroundBrush" Color="{StaticResource AltTextHighColor}" />
     <SolidColorBrush x:Key="SecondaryAltForegroundBrush" Color="{StaticResource AltTextMediumColor}" />
     <SolidColorBrush x:Key="DisabledAltForegroundBrush" Color="{StaticResource AltTextLowColor}" />
 
 
 
-    <Color x:Key="StandardDropShadowColor">#60404040</Color>
-    <sys:Double x:Key="StandardDropShadowOpacity">0.3</sys:Double>
+    <Color x:Key="PrimaryDropShadowColor">#60404040</Color>
+    <sys:Double x:Key="PrimaryDropShadowOpacity">0.3</sys:Double>
 
     <controls:ThemeShadow x:Key="DisabledThemeShadow"
                           IsShadowEnabled="False" />
 
     <controls:ThemeShadow x:Key="AmbientControlThemeShadow"
-                          ShadowColor="{StaticResource StandardDropShadowColor}"
-                          ShadowOpacity="{StaticResource StandardDropShadowOpacity}"
+                          ShadowColor="{StaticResource PrimaryDropShadowColor}"
+                          ShadowOpacity="{StaticResource PrimaryDropShadowOpacity}"
                           ElevationShadowLengthMultiplier="1"
                           IsShadowEnabled="{Binding Path=(theming:ShadowProperties.AreShadowsEnabled)}" />
 
     <controls:DirectionalThemeShadow x:Key="TopControlThemeShadow"
-                                     ShadowColor="{StaticResource StandardDropShadowColor}"
-                                     ShadowOpacity="{StaticResource StandardDropShadowOpacity}"
+                                     ShadowColor="{StaticResource PrimaryDropShadowColor}"
+                                     ShadowOpacity="{StaticResource PrimaryDropShadowOpacity}"
                                      ElevationShadowLengthMultiplier="1"
                                      IsShadowEnabled="{Binding Path=(theming:ShadowProperties.AreShadowsEnabled)}" 
                                      ShadowDirection="Top" 
                                      DirectionOffsetMultiplier="0.25" />
 
     <controls:DirectionalThemeShadow x:Key="BottomControlThemeShadow"
-                                     ShadowColor="{StaticResource StandardDropShadowColor}"
-                                     ShadowOpacity="{StaticResource StandardDropShadowOpacity}"
+                                     ShadowColor="{StaticResource PrimaryDropShadowColor}"
+                                     ShadowOpacity="{StaticResource PrimaryDropShadowOpacity}"
                                      ElevationShadowLengthMultiplier="1"
                                      IsShadowEnabled="{Binding Path=(theming:ShadowProperties.AreShadowsEnabled)}" 
                                      ShadowDirection="Bottom" 
                                      DirectionOffsetMultiplier="0.25" />
 
     <controls:DirectionalThemeShadow x:Key="LeftControlThemeShadow"
-                                     ShadowColor="{StaticResource StandardDropShadowColor}"
-                                     ShadowOpacity="{StaticResource StandardDropShadowOpacity}"
+                                     ShadowColor="{StaticResource PrimaryDropShadowColor}"
+                                     ShadowOpacity="{StaticResource PrimaryDropShadowOpacity}"
                                      ElevationShadowLengthMultiplier="1"
                                      IsShadowEnabled="{Binding Path=(theming:ShadowProperties.AreShadowsEnabled)}" 
                                      ShadowDirection="Left"
                                      DirectionOffsetMultiplier="0.25"  />
 
     <controls:DirectionalThemeShadow x:Key="RightControlThemeShadow"
-                                     ShadowColor="{StaticResource StandardDropShadowColor}"
-                                     ShadowOpacity="{StaticResource StandardDropShadowOpacity}"
+                                     ShadowColor="{StaticResource PrimaryDropShadowColor}"
+                                     ShadowOpacity="{StaticResource PrimaryDropShadowOpacity}"
                                      ElevationShadowLengthMultiplier="1"
                                      IsShadowEnabled="{Binding Path=(theming:ShadowProperties.AreShadowsEnabled)}" 
                                      ShadowDirection="Right"

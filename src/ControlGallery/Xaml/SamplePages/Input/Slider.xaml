@@ -12,13 +12,13 @@
 
     <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,4,0,12'}">
 
-        <controls:ControlPresenter Header="A standard Slider."
+        <controls:ControlPresenter Header="A Primary Slider."
                                    Xaml="{Binding Xaml, ElementName=SliderEx1}"
                                    VerticalAlignment="Top">
             <smtx:XamlDisplay x:Name="SliderEx1" Key="SliderEx1">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledSliderEx1}">
-                    <Slider Style="{StaticResource StandardSlider}"
+                    <Slider Style="{StaticResource PrimarySlider}"
                             Width="{c:GridUnit 80}" 
                             Minimum="0" 
                             Maximum="100" />
@@ -48,7 +48,7 @@
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,4,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledSliderEx2}"
                             Orientation="Horizontal">
-                    <Slider Style="{StaticResource StandardSlider}"
+                    <Slider Style="{StaticResource PrimarySlider}"
                             Orientation="Vertical"
                             Height="{c:GridUnit 80}" 
                             Minimum="0" 

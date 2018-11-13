@@ -519,15 +519,15 @@
     <!--
     - Background: -
     - Border:     -
-    - Foreground: StandardForegroundBrush / DisabledForegroundBrush
+    - Foreground: PrimaryForegroundBrush / DisabledForegroundBrush
     -->
-    <Style x:Key="StandardForeground" TargetType="FrameworkElement">
-        <Setter Property="TextElement.Foreground" Value="{StaticResource StandardForegroundBrush}" />
-        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
-        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
+    <Style x:Key="PrimaryForeground" TargetType="FrameworkElement">
+        <Setter Property="TextElement.Foreground" Value="{StaticResource PrimaryForegroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource PrimaryForegroundBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource PrimaryForegroundBrush}" />
         <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
-        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource PrimaryForegroundBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource PrimaryForegroundBrush}" />
     </Style>
     
     <!--
@@ -547,9 +547,9 @@
     <!--
     - Background: -
     - Border:     -
-    - Foreground: Primary color variations
+    - Foreground: Control color variations
     -->
-    <Style x:Key="PrimaryForeground" TargetType="FrameworkElement">
+    <Style x:Key="ControlForeground" TargetType="FrameworkElement">
         <Setter Property="Control.Foreground" Value="{StaticResource ControlBorderBrush}" />
         <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource ControlHoverBorderBrush}" />
         <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource ControlPressedBorderBrush}" />
@@ -589,18 +589,18 @@
     <!--
     - Background: -
     - Border:     -
-    - Foreground: Standard Foreground; States primary/accent1/accent2.
+    - Foreground: Primary Foreground; States Control/accent1/accent2.
     -->
-    <Style x:Key="StandardForegroundPrimaryStates" TargetType="FrameworkElement" BasedOn="{StaticResource PrimaryForeground}">
-        <Setter Property="Control.Foreground" Value="{StaticResource StandardForegroundBrush}" />
+    <Style x:Key="PrimaryForegroundControlStates" TargetType="FrameworkElement" BasedOn="{StaticResource ControlForeground}">
+        <Setter Property="Control.Foreground" Value="{StaticResource PrimaryForegroundBrush}" />
     </Style>
     
-    <Style x:Key="StandardForegroundAccent1States" TargetType="FrameworkElement" BasedOn="{StaticResource Accent1Foreground}">
-        <Setter Property="Control.Foreground" Value="{StaticResource StandardForegroundBrush}" />
+    <Style x:Key="PrimaryForegroundAccent1States" TargetType="FrameworkElement" BasedOn="{StaticResource Accent1Foreground}">
+        <Setter Property="Control.Foreground" Value="{StaticResource PrimaryForegroundBrush}" />
     </Style>
     
-    <Style x:Key="StandardForegroundAccent2States" TargetType="FrameworkElement" BasedOn="{StaticResource Accent2Foreground}">
-        <Setter Property="Control.Foreground" Value="{StaticResource StandardForegroundBrush}" />
+    <Style x:Key="PrimaryForegroundAccent2States" TargetType="FrameworkElement" BasedOn="{StaticResource Accent2Foreground}">
+        <Setter Property="Control.Foreground" Value="{StaticResource PrimaryForegroundBrush}" />
     </Style>
     
     <!--
@@ -692,7 +692,7 @@
     - Border:     -
     - Foreground: OnListAccent1
     -->
-    <Style x:Key="OnListAccent1Foreground" TargetType="FrameworkElement" BasedOn="{StaticResource StandardForeground}">
+    <Style x:Key="OnListAccent1Foreground" TargetType="FrameworkElement" BasedOn="{StaticResource PrimaryForeground}">
         <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnListAccent1TextBrush}" />
     </Style>
     
@@ -701,22 +701,22 @@
     - Border:     -
     - Foreground: OnListAccent2
     -->
-    <Style x:Key="OnListAccent2Foreground" TargetType="FrameworkElement" BasedOn="{StaticResource StandardForeground}">
+    <Style x:Key="OnListAccent2Foreground" TargetType="FrameworkElement" BasedOn="{StaticResource PrimaryForeground}">
         <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnListAccent2TextBrush}" />
     </Style>
     
     
 
     <!--
-    - Foreground: Primary List Brushes
+    - Foreground: Primary Foreground List Brushes
     -->
     <Style x:Key="ListForeground" TargetType="FrameworkElement">
-        <Setter Property="Control.Foreground" Value="{StaticResource StandardForegroundBrush}" />
-        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
-        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
+        <Setter Property="Control.Foreground" Value="{StaticResource PrimaryForegroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource PrimaryForegroundBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource PrimaryForegroundBrush}" />
         <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
-        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource PrimaryForegroundBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource PrimaryForegroundBrush}" />
     </Style>
 
 
@@ -745,40 +745,40 @@
     </Style>
 
     <!--
-    - Foreground: Standard Foreground; States Accent1 List/Accent2 List Brushes.
+    - Foreground: Primary Foreground; States Accent1 List/Accent2 List Brushes.
                   For List Items that only display foreground and have a transparent border/background.
     -->
-    <Style x:Key="StandardForegroundListStates" TargetType="FrameworkElement" BasedOn="{StaticResource ListForeground}">
-        <Setter Property="Control.Foreground" Value="{StaticResource StandardForegroundBrush}" />
+    <Style x:Key="PrimaryForegroundListStates" TargetType="FrameworkElement" BasedOn="{StaticResource ListForeground}">
+        <Setter Property="Control.Foreground" Value="{StaticResource PrimaryForegroundBrush}" />
     </Style>
     
-    <Style x:Key="StandardForegroundAccent1ListStates" TargetType="FrameworkElement" BasedOn="{StaticResource Accent1ListForeground}">
-        <Setter Property="Control.Foreground" Value="{StaticResource StandardForegroundBrush}" />
+    <Style x:Key="PrimaryForegroundAccent1ListStates" TargetType="FrameworkElement" BasedOn="{StaticResource Accent1ListForeground}">
+        <Setter Property="Control.Foreground" Value="{StaticResource PrimaryForegroundBrush}" />
     </Style>
 
-    <Style x:Key="StandardForegroundAccent2ListStates" TargetType="FrameworkElement" BasedOn="{StaticResource Accent2ListForeground}">
-        <Setter Property="Control.Foreground" Value="{StaticResource StandardForegroundBrush}" />
+    <Style x:Key="PrimaryForegroundAccent2ListStates" TargetType="FrameworkElement" BasedOn="{StaticResource Accent2ListForeground}">
+        <Setter Property="Control.Foreground" Value="{StaticResource PrimaryForegroundBrush}" />
     </Style>
     
     <!--
     Only the Active state is colored in the List Brushes brushes.
     -->
-    <Style x:Key="StandardForegroundActiveListStates" TargetType="FrameworkElement" BasedOn="{StaticResource StandardForegroundListStates}">
-        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
-        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
-        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
+    <Style x:Key="PrimaryForegroundActiveListStates" TargetType="FrameworkElement" BasedOn="{StaticResource PrimaryForegroundListStates}">
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource PrimaryForegroundBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource PrimaryForegroundBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource PrimaryForegroundBrush}" />
     </Style>
 
-    <Style x:Key="StandardForegroundActiveAccent1ListStates" TargetType="FrameworkElement" BasedOn="{StaticResource StandardForegroundAccent1ListStates}">
-        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
-        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
-        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
+    <Style x:Key="PrimaryForegroundActiveAccent1ListStates" TargetType="FrameworkElement" BasedOn="{StaticResource PrimaryForegroundAccent1ListStates}">
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource PrimaryForegroundBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource PrimaryForegroundBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource PrimaryForegroundBrush}" />
     </Style>
 
-    <Style x:Key="StandardForegroundActiveAccent2ListStates" TargetType="FrameworkElement" BasedOn="{StaticResource StandardForegroundAccent2ListStates}">
-        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
-        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
-        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
+    <Style x:Key="PrimaryForegroundActiveAccent2ListStates" TargetType="FrameworkElement" BasedOn="{StaticResource PrimaryForegroundAccent2ListStates}">
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource PrimaryForegroundBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource PrimaryForegroundBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource PrimaryForegroundBrush}" />
     </Style>
     
     <!--
@@ -787,7 +787,7 @@
     - Foreground: Dynamically bound to the control's Foreground property.
     -->
     <Style x:Key="DynamicallyBoundForeground" TargetType="FrameworkElement">
-        <Setter Property="Control.Foreground" Value="{StaticResource StandardForegroundBrush}" />
+        <Setter Property="Control.Foreground" Value="{StaticResource PrimaryForegroundBrush}" />
         <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{c:SelfBinding Foreground}" />
         <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{c:SelfBinding Foreground}" />
         <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{c:SelfBinding Foreground}" />
@@ -799,22 +799,22 @@
     
 
     <!--
-    Standard Font Properties.
+    Primary Font Properties.
     -->
-    <Style x:Key="StandardFontProperties" TargetType="Control">
-        <Setter Property="FontFamily" Value="{StaticResource StandardFontFamily}" />
-        <Setter Property="FontSize" Value="{StaticResource StandardFontSize}" />
-        <Setter Property="FontWeight" Value="{StaticResource StandardFontWeight}" />
-        <Setter Property="FontStretch" Value="{StaticResource StandardFontStretch}" />
-        <Setter Property="FontStyle" Value="{StaticResource StandardFontStyle}" />
+    <Style x:Key="PrimaryFontProperties" TargetType="Control">
+        <Setter Property="FontFamily" Value="{StaticResource PrimaryFontFamily}" />
+        <Setter Property="FontSize" Value="{StaticResource PrimaryFontSize}" />
+        <Setter Property="FontWeight" Value="{StaticResource PrimaryFontWeight}" />
+        <Setter Property="FontStretch" Value="{StaticResource PrimaryFontStretch}" />
+        <Setter Property="FontStyle" Value="{StaticResource PrimaryFontStyle}" />
     </Style>
     
     <!--
     Base Font Properties.
     -->
     <Style x:Key="BaseFontProperties" TargetType="Control">
-        <Setter Property="FontFamily" Value="{StaticResource StandardFontFamily}" />
-        <Setter Property="FontSize" Value="{StaticResource StandardFontSize}" />
+        <Setter Property="FontFamily" Value="{StaticResource PrimaryFontFamily}" />
+        <Setter Property="FontSize" Value="{StaticResource PrimaryFontSize}" />
         <Setter Property="FontWeight" Value="{StaticResource BaseFontWeight}" />
         <Setter Property="FontStretch" Value="{StaticResource BaseFontStretch}" />
         <Setter Property="FontStyle" Value="{StaticResource BaseFontStyle}" />
@@ -824,8 +824,8 @@
     Hint Font Properties.
     -->
     <Style x:Key="HintFontProperties" TargetType="Control">
-        <Setter Property="FontFamily" Value="{StaticResource StandardFontFamily}" />
-        <Setter Property="FontSize" Value="{StaticResource StandardFontSize}" />
+        <Setter Property="FontFamily" Value="{StaticResource PrimaryFontFamily}" />
+        <Setter Property="FontSize" Value="{StaticResource PrimaryFontSize}" />
         <Setter Property="FontWeight" Value="{StaticResource HintFontWeight}" />
         <Setter Property="FontStyle" Value="{StaticResource HintFontStyle}" />
         <Setter Property="FontStretch" Value="{StaticResource HintFontStretch}" />
@@ -891,14 +891,14 @@
     
     
     <!--
-    Standard Popup properties.
+    Primary Popup properties.
     -->
-    <Style x:Key="StandardPopup">
+    <Style x:Key="PrimaryPopup">
         <Setter Property="theming:PopupProperties.BackgroundBrush" Value="{StaticResource PopupBackground}" />
         <Setter Property="theming:PopupProperties.BorderBrush" Value="{StaticResource PopupBorder}" />
         <Setter Property="theming:PopupProperties.BorderThickness" Value="{StaticResource SlimBorderThickness}" />
         <Setter Property="theming:PopupProperties.Padding" Value="0" />
-        <Setter Property="theming:PopupProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
+        <Setter Property="theming:PopupProperties.CornerRadius" Value="{StaticResource PrimaryCornerRadius}" />
     </Style>
 
 

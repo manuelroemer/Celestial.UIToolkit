@@ -24,8 +24,8 @@
          
          The TabItem Style also animates the Foreground property of these TemplateProperties, not the
          TabItem.Foreground property. -->
-    <Style x:Key="StandardTabItemHeader" TargetType="TabItem">
-        <Setter Property="theming:TabItemProperties.HeaderForeground" Value="{StaticResource StandardForegroundBrush}" />
+    <Style x:Key="PrimaryTabItemHeader" TargetType="TabItem">
+        <Setter Property="theming:TabItemProperties.HeaderForeground" Value="{StaticResource PrimaryForegroundBrush}" />
         <Setter Property="theming:TabItemProperties.HeaderFontSize" Value="{StaticResource TitleFontSize}" />
         <Setter Property="theming:TabItemProperties.HeaderFontFamily" Value="{StaticResource TitleFontFamily}" />
         <Setter Property="theming:TabItemProperties.HeaderFontStyle" Value="{StaticResource TitleFontStyle}" />
@@ -35,7 +35,7 @@
 
 
 
-    <Style x:Key="StandardTabItem" TargetType="TabItem" BasedOn="{c:MergeStyles 'StandardTabItemHeader TransparentBackground TransparentBorder StandardForegroundPrimaryStates StandardFontProperties ElevationZIndex Shadow0'}">
+    <Style x:Key="PrimaryTabItem" TargetType="TabItem" BasedOn="{c:MergeStyles 'PrimaryTabItemHeader TransparentBackground TransparentBorder PrimaryForegroundControlStates PrimaryFontProperties ElevationZIndex Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
@@ -222,12 +222,12 @@
         </Setter>
     </Style>
 
-    <Style x:Key="Accent1TabItem" TargetType="TabItem" BasedOn="{c:MergeStyles 'StandardTabItem StandardForegroundAccent1States'}" />
-    <Style x:Key="Accent2TabItem" TargetType="TabItem" BasedOn="{c:MergeStyles 'StandardTabItem StandardForegroundAccent2States'}" />
+    <Style x:Key="Accent1TabItem" TargetType="TabItem" BasedOn="{c:MergeStyles 'PrimaryTabItem PrimaryForegroundAccent1States'}" />
+    <Style x:Key="Accent2TabItem" TargetType="TabItem" BasedOn="{c:MergeStyles 'PrimaryTabItem PrimaryForegroundAccent2States'}" />
 
     <Style TargetType="TabItem" BasedOn="{StaticResource Accent2TabItem}" />
 
-    <Style x:Key="StandardTabControl" TargetType="TabControl" BasedOn="{c:MergeStyles 'TransparentBackground TransparentBorder StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="PrimaryTabControl" TargetType="TabControl" BasedOn="{c:MergeStyles 'TransparentBackground TransparentBorder PrimaryForeground PrimaryFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -236,7 +236,7 @@
         <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource DisabledThemeShadow}" />
-        <Setter Property="ItemContainerStyle" Value="{StaticResource StandardTabItem}" />
+        <Setter Property="ItemContainerStyle" Value="{StaticResource PrimaryTabItem}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TabControl">
@@ -319,11 +319,11 @@
         </Setter>
     </Style>
 
-    <Style x:Key="Accent1TabControl" TargetType="TabControl" BasedOn="{StaticResource StandardTabControl}">
+    <Style x:Key="Accent1TabControl" TargetType="TabControl" BasedOn="{StaticResource PrimaryTabControl}">
         <Setter Property="ItemContainerStyle" Value="{StaticResource Accent1TabItem}" />
     </Style>
     
-    <Style x:Key="Accent2TabControl" TargetType="TabControl" BasedOn="{StaticResource StandardTabControl}">
+    <Style x:Key="Accent2TabControl" TargetType="TabControl" BasedOn="{StaticResource PrimaryTabControl}">
         <Setter Property="ItemContainerStyle" Value="{StaticResource Accent2TabItem}" />
     </Style>
     

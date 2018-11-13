@@ -100,7 +100,7 @@
     
 
     <!-- A Thumb which displays a sequence of small rectangles. -->
-    <Style x:Key="RectanglePatternThumb" TargetType="Thumb" BasedOn="{c:MergeStyles 'TransparentBackground TransparentBorder StandardForeground SecondaryForeground'}">
+    <Style x:Key="RectanglePatternThumb" TargetType="Thumb" BasedOn="{c:MergeStyles 'TransparentBackground TransparentBorder PrimaryForeground SecondaryForeground'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Cursor" Value="SizeAll" />

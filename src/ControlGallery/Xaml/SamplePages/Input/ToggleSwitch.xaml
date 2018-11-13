@@ -19,7 +19,7 @@
 
     <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,4,0,12'}">
 
-        <controls:ControlPresenter Header="The Standard ToggleSwitch in different colors."
+        <controls:ControlPresenter Header="The Primary ToggleSwitch in different colors."
                                    Xaml="{Binding Xaml, ElementName=ToggleSwitchEx1}"
                                    VerticalAlignment="Top">
             <controls:ControlPresenter.Description>
@@ -28,8 +28,8 @@
             <smtx:XamlDisplay x:Name="ToggleSwitchEx1" Key="ToggleSwitchEx1">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx1}">
-                    <c:ToggleSwitch Style="{DynamicResource StandardToggleSwitch}"
-                                    Header="StandardToggleSwitch"
+                    <c:ToggleSwitch Style="{DynamicResource PrimaryToggleSwitch}"
+                                    Header="PrimaryToggleSwitch"
                                     OnContent="On"
                                     OffContent="Off" />
                     <c:ToggleSwitch Style="{DynamicResource Accent1ToggleSwitch}"
@@ -110,7 +110,7 @@
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx4}">
                     <StackPanel.Resources>
-                        <Style x:Key="MyToggleSwitch" TargetType="c:ToggleSwitch" BasedOn="{StaticResource StandardToggleSwitch}">
+                        <Style x:Key="MyToggleSwitch" TargetType="c:ToggleSwitch" BasedOn="{StaticResource PrimaryToggleSwitch}">
                             <!-- The ToggleSwitch uses the Background and BorderBrush for the knob container. -->
                             <!-- We will leave the Background as the default (Primary-Brushes). -->
                             <Setter Property="BorderBrush" Value="{DynamicResource AltPrimaryMediumBrush}" />

@@ -21,7 +21,7 @@
     <!-- Use TargetType="Control", so that the PasswordBox can use the style too.
          Slightly problematic, since this allows setting this style on any type of control.
          To anyone reading this: Don't do that. -->
-    <Style x:Key="StandardTextBox" TargetType="Control" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="PrimaryTextBox" TargetType="Control" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder PrimaryForeground PrimaryFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -31,7 +31,7 @@
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
         <Setter Property="BorderThickness" Value="0,0,0,1" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource PrimaryCornerRadius}" />
         <Setter Property="PasswordBox.PasswordChar" Value="&#x2022;" />
         <Setter Property="KeyboardNavigation.TabNavigation" Value="None" />
         <Setter Property="AllowDrop" Value="True" />
@@ -242,20 +242,20 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    <Style x:Key="Accent1TextBox" TargetType="Control" BasedOn="{c:MergeStyles 'StandardTextBox ControlBorderAccent1States'}" />
-    <Style x:Key="Accent2TextBox" TargetType="Control" BasedOn="{c:MergeStyles 'StandardTextBox ControlBorderAccent2States'}" />
+    <Style x:Key="Accent1TextBox" TargetType="Control" BasedOn="{c:MergeStyles 'PrimaryTextBox ControlBorderAccent1States'}" />
+    <Style x:Key="Accent2TextBox" TargetType="Control" BasedOn="{c:MergeStyles 'PrimaryTextBox ControlBorderAccent2States'}" />
     
     <Style TargetType="TextBox" BasedOn="{StaticResource Accent2TextBox}" />
     <Style TargetType="RichTextBox" BasedOn="{StaticResource Accent2TextBox}" />
     <Style TargetType="PasswordBox" BasedOn="{StaticResource Accent2TextBox}" />
 
 
-    <Style x:Key="StandardOutlinedTextBox" TargetType="Control" BasedOn="{StaticResource StandardTextBox}">
+    <Style x:Key="PrimaryOutlinedTextBox" TargetType="Control" BasedOn="{StaticResource PrimaryTextBox}">
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="theming:SelectionProperties.ShowSelectionIndicator" Value="False" />
     </Style>
 
-    <Style x:Key="Accent1OutlinedTextBox" TargetType="Control" BasedOn="{c:MergeStyles 'StandardOutlinedTextBox ControlBorderAccent1States'}" />
-    <Style x:Key="Accent2OutlinedTextBox" TargetType="Control" BasedOn="{c:MergeStyles 'StandardOutlinedTextBox ControlBorderAccent2States'}" />
+    <Style x:Key="Accent1OutlinedTextBox" TargetType="Control" BasedOn="{c:MergeStyles 'PrimaryOutlinedTextBox ControlBorderAccent1States'}" />
+    <Style x:Key="Accent2OutlinedTextBox" TargetType="Control" BasedOn="{c:MergeStyles 'PrimaryOutlinedTextBox ControlBorderAccent2States'}" />
 
 </ResourceDictionary>

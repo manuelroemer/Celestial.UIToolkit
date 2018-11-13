@@ -15,7 +15,7 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="PrimaryButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'ControlBackground ControlBorder StandardForeground BaseFontProperties ElevationZIndex Shadow0 InteractiveShadow4'}">
+    <Style x:Key="PrimaryButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'ControlBackground ControlBorder PrimaryForeground BaseFontProperties ElevationZIndex Shadow0 InteractiveShadow4'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
@@ -223,7 +223,7 @@
     <Style x:Key="Accent1OutlinedButton" TargetType="ButtonBase" BasedOn="{StaticResource Accent1Button}">
         <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Foreground" Value="{StaticResource StandardForegroundBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource PrimaryForegroundBrush}" />
         <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource Accent1ControlHoverBackgroundBrush}" />
         <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource Accent1ControlPressedBackgroundBrush}" />
         <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource Accent1ControlActiveBackgroundBrush}" />
@@ -238,7 +238,7 @@
     <Style x:Key="Accent2OutlinedButton" TargetType="ButtonBase" BasedOn="{StaticResource Accent2Button}">
         <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Foreground" Value="{StaticResource StandardForegroundBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource PrimaryForegroundBrush}" />
         <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource Accent2ControlHoverBackgroundBrush}" />
         <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource Accent2ControlPressedBackgroundBrush}" />
         <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource Accent2ControlActiveBackgroundBrush}" />
@@ -311,7 +311,7 @@
     <!--
     Hyperlink Buttons don't provide any support for Background/BorderBrush by design.
     -->
-    <Style x:Key="PrimaryHyperlinkButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'TransparentBackground TransparentBorder PrimaryForeground'}">
+    <Style x:Key="PrimaryHyperlinkButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'TransparentBackground TransparentBorder ControlForeground'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource PrimaryButtonFocusVisual}" />
         <Setter Property="Cursor" Value="Hand" />

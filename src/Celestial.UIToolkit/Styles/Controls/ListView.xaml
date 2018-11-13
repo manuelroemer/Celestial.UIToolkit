@@ -18,7 +18,7 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardGridViewScrollViewer" TargetType="ScrollViewer" BasedOn="{StaticResource StandardScrollViewer}">
+    <Style x:Key="PrimaryGridViewScrollViewer" TargetType="ScrollViewer" BasedOn="{StaticResource PrimaryScrollViewer}">
         <Setter Property="Focusable" Value="False" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Template">
@@ -105,19 +105,19 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style x:Key="{x:Static GridView.GridViewScrollViewerStyleKey}" TargetType="ScrollViewer" BasedOn="{StaticResource StandardGridViewScrollViewer}" />
+    <Style x:Key="{x:Static GridView.GridViewScrollViewerStyleKey}" TargetType="ScrollViewer" BasedOn="{StaticResource PrimaryGridViewScrollViewer}" />
 
 
     
     
 
-    <Style x:Key="StandardGridViewColumnHeader" TargetType="GridViewColumnHeader" BasedOn="{c:MergeStyles 'OnPaneControlBackground OnPaneControlBorder StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="PrimaryGridViewColumnHeader" TargetType="GridViewColumnHeader" BasedOn="{c:MergeStyles 'OnPaneControlBackground OnPaneControlBorder PrimaryForeground PrimaryFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
-        <Setter Property="Padding" Value="{StaticResource StandardListItemPadding}" />
+        <Setter Property="Padding" Value="{StaticResource PrimaryListItemPadding}" />
         <Setter Property="MinWidth" Value="{c:GridUnit 1}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource BottomControlThemeShadow}" />
         <Setter Property="FontWeight" Value="SemiBold" />
@@ -260,18 +260,18 @@
 
     <Style x:Key="Accent1GridViewColumnHeader" 
            TargetType="GridViewColumnHeader" 
-           BasedOn="{c:MergeStyles 'StandardGridViewColumnHeader Accent1Background Accent1Border OnDarkerAccent1Foreground'}" />
+           BasedOn="{c:MergeStyles 'PrimaryGridViewColumnHeader Accent1Background Accent1Border OnDarkerAccent1Foreground'}" />
     
     <Style x:Key="Accent2GridViewColumnHeader" 
            TargetType="GridViewColumnHeader" 
-           BasedOn="{c:MergeStyles 'StandardGridViewColumnHeader Accent2Background Accent2Border OnDarkerAccent2Foreground'}" />
+           BasedOn="{c:MergeStyles 'PrimaryGridViewColumnHeader Accent2Background Accent2Border OnDarkerAccent2Foreground'}" />
     
     <Style x:Key="{x:Type GridViewColumnHeader}" 
            TargetType="GridViewColumnHeader" 
-           BasedOn="{StaticResource StandardGridViewColumnHeader}" />
+           BasedOn="{StaticResource PrimaryGridViewColumnHeader}" />
     
     <!-- Compact Column Headers. -->
-    <Style x:Key="CompactStandardGridViewColumnHeader" TargetType="GridViewColumnHeader" BasedOn="{StaticResource StandardGridViewColumnHeader}">
+    <Style x:Key="CompactPrimaryGridViewColumnHeader" TargetType="GridViewColumnHeader" BasedOn="{StaticResource PrimaryGridViewColumnHeader}">
         <Setter Property="Padding" Value="{StaticResource CompactListItemPadding}" />
     </Style>
 
@@ -284,7 +284,7 @@
     </Style>
 
     <!-- Large Column Headers. -->
-    <Style x:Key="LargeStandardGridViewColumnHeader" TargetType="GridViewColumnHeader" BasedOn="{StaticResource StandardGridViewColumnHeader}">
+    <Style x:Key="LargePrimaryGridViewColumnHeader" TargetType="GridViewColumnHeader" BasedOn="{StaticResource PrimaryGridViewColumnHeader}">
         <Setter Property="Padding" Value="{StaticResource LargeListItemPadding}" />
     </Style>
 
@@ -300,14 +300,14 @@
 
     
     
-    <Style x:Key="StandardListViewItem" TargetType="ListViewItem" BasedOn="{c:MergeStyles 'ListBackground ListBorder StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="PrimaryListViewItem" TargetType="ListViewItem" BasedOn="{c:MergeStyles 'ListBackground ListBorder PrimaryForeground PrimaryFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
-        <Setter Property="Padding" Value="{StaticResource StandardListItemPadding}" />
+        <Setter Property="Padding" Value="{StaticResource PrimaryListItemPadding}" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource PrimaryCornerRadius}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
         <Setter Property="Template">
             <Setter.Value>
@@ -330,7 +330,7 @@
                                                       Margin="-6,0"
                                                       HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                                       VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-                                <ContentPresenter x:Name="StandardContentSite"
+                                <ContentPresenter x:Name="PrimaryContentSite"
                                                   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                                   Visibility="Collapsed" />
@@ -341,7 +341,7 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="GridView.ColumnCollection" Value="{x:Null}">
                             <Setter TargetName="RowContentSite" Property="Visibility" Value="Collapsed" />
-                            <Setter TargetName="StandardContentSite" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="PrimaryContentSite" Property="Visibility" Value="Visible" />
                         </Trigger>
                         
                         <Trigger Property="ItemsControl.AlternationIndex" Value="1">
@@ -384,12 +384,12 @@
         </Setter>
     </Style>
 
-    <Style x:Key="Accent1ListViewItem" TargetType="ListViewItem" BasedOn="{c:MergeStyles 'StandardListViewItem Accent1ListBackground Accent1ListBorder OnListAccent1Foreground'}" />
-    <Style x:Key="Accent2ListViewItem" TargetType="ListViewItem" BasedOn="{c:MergeStyles 'StandardListViewItem Accent2ListBackground Accent2ListBorder OnListAccent2Foreground'}" />
+    <Style x:Key="Accent1ListViewItem" TargetType="ListViewItem" BasedOn="{c:MergeStyles 'PrimaryListViewItem Accent1ListBackground Accent1ListBorder OnListAccent1Foreground'}" />
+    <Style x:Key="Accent2ListViewItem" TargetType="ListViewItem" BasedOn="{c:MergeStyles 'PrimaryListViewItem Accent2ListBackground Accent2ListBorder OnListAccent2Foreground'}" />
     <Style TargetType="ListViewItem" BasedOn="{StaticResource Accent2ListViewItem}" />
     
     <!-- Compact ListViewItems. -->
-    <Style x:Key="CompactStandardListViewItem" TargetType="ListViewItem" BasedOn="{StaticResource StandardListViewItem}">
+    <Style x:Key="CompactPrimaryListViewItem" TargetType="ListViewItem" BasedOn="{StaticResource PrimaryListViewItem}">
         <Setter Property="Padding" Value="{StaticResource CompactListItemPadding}" />
     </Style>
     
@@ -402,7 +402,7 @@
     </Style>
     
     <!-- Large ListViewItems. -->
-    <Style x:Key="LargeStandardListViewItem" TargetType="ListViewItem" BasedOn="{StaticResource StandardListViewItem}">
+    <Style x:Key="LargePrimaryListViewItem" TargetType="ListViewItem" BasedOn="{StaticResource PrimaryListViewItem}">
         <Setter Property="Padding" Value="{StaticResource LargeListItemPadding}" />
     </Style>
     
@@ -418,7 +418,7 @@
     
     
 
-    <Style x:Key="StandardListView" TargetType="ListView" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="PrimaryListView" TargetType="ListView" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder PrimaryForeground PrimaryFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -430,9 +430,9 @@
         <Setter Property="ScrollViewer.PanningMode" Value="Both" />
         <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
         <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource PrimaryCornerRadius}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
-        <Setter Property="ItemContainerStyle" Value="{StaticResource StandardListViewItem}" />
+        <Setter Property="ItemContainerStyle" Value="{StaticResource PrimaryListViewItem}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ListView">
@@ -470,11 +470,11 @@
         </Setter>
     </Style>
 
-    <Style x:Key="Accent1ListView" TargetType="ListView" BasedOn="{StaticResource StandardListView}">
+    <Style x:Key="Accent1ListView" TargetType="ListView" BasedOn="{StaticResource PrimaryListView}">
         <Setter Property="ItemContainerStyle" Value="{StaticResource Accent1ListViewItem}" />
     </Style>
 
-    <Style x:Key="Accent2ListView" TargetType="ListView" BasedOn="{StaticResource StandardListView}">
+    <Style x:Key="Accent2ListView" TargetType="ListView" BasedOn="{StaticResource PrimaryListView}">
         <Setter Property="ItemContainerStyle" Value="{StaticResource Accent2ListViewItem}" />
     </Style>
 
@@ -482,8 +482,8 @@
 
     
     <!-- Compact ListViews. -->
-    <Style x:Key="CompactStandardListView" TargetType="ListView" BasedOn="{StaticResource StandardListView}">
-        <Setter Property="ItemContainerStyle" Value="{StaticResource CompactStandardListViewItem}" />
+    <Style x:Key="CompactPrimaryListView" TargetType="ListView" BasedOn="{StaticResource PrimaryListView}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource CompactPrimaryListViewItem}" />
     </Style>
 
     <Style x:Key="CompactAccent1ListView" TargetType="ListView" BasedOn="{StaticResource Accent1ListView}">
@@ -495,8 +495,8 @@
     </Style>
 
     <!-- Large ListViews. -->
-    <Style x:Key="LargeStandardListView" TargetType="ListView" BasedOn="{StaticResource StandardListView}">
-        <Setter Property="ItemContainerStyle" Value="{StaticResource LargeStandardListViewItem}" />
+    <Style x:Key="LargePrimaryListView" TargetType="ListView" BasedOn="{StaticResource PrimaryListView}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource LargePrimaryListViewItem}" />
     </Style>
 
     <Style x:Key="LargeAccent1ListView" TargetType="ListView" BasedOn="{StaticResource Accent1ListView}">

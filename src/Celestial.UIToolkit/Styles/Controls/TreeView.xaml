@@ -17,12 +17,12 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardTreeViewItem" TargetType="TreeViewItem" BasedOn="{c:MergeStyles 'ListBackground ListBorder StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="PrimaryTreeViewItem" TargetType="TreeViewItem" BasedOn="{c:MergeStyles 'ListBackground ListBorder PrimaryForeground PrimaryFontProperties Shadow0'}">
         <Style.Resources>
             <!-- The ExpanderButton should have Active States matching the TreeViewItem Style.
                  It can't use the TreeViewItem's theming properties though, because they are used for the Header.
                  -> We must define the style per TreeViewItem. -->
-            <Style x:Key="ExpanderButtonStyle" TargetType="ToggleButton" BasedOn="{c:MergeStyles 'TransparentButton StandardForeground'}">
+            <Style x:Key="ExpanderButtonStyle" TargetType="ToggleButton" BasedOn="{c:MergeStyles 'TransparentButton PrimaryForeground'}">
                 <Setter Property="Foreground" Value="{c:TemplatedParentBinding Foreground}" />
             </Style>
         </Style.Resources>
@@ -32,9 +32,9 @@
         <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType=TreeView}}" />
         <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType=TreeView}}" />
         <Setter Property="ItemContainerStyle" Value="{Binding ItemContainerStyle, RelativeSource={RelativeSource AncestorType=TreeView}}" />
-        <Setter Property="Padding" Value="{StaticResource StandardListItemPadding}" />
+        <Setter Property="Padding" Value="{StaticResource PrimaryListItemPadding}" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource PrimaryCornerRadius}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource DisabledThemeShadow}" />
         
         <!-- We need to manually set the current depth level of the TreeViewItem for the template.
@@ -207,17 +207,17 @@
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="Accent1TreeViewItem" TargetType="TreeViewItem" BasedOn="{c:MergeStyles 'StandardTreeViewItem Accent1ListBackground Accent1ListBorder OnListAccent1Foreground'}">
+    <Style x:Key="Accent1TreeViewItem" TargetType="TreeViewItem" BasedOn="{c:MergeStyles 'PrimaryTreeViewItem Accent1ListBackground Accent1ListBorder OnListAccent1Foreground'}">
         <Style.Resources>
-            <Style x:Key="ExpanderButtonStyle" TargetType="ToggleButton" BasedOn="{c:MergeStyles 'TransparentButton StandardForegroundAccent1States'}">
+            <Style x:Key="ExpanderButtonStyle" TargetType="ToggleButton" BasedOn="{c:MergeStyles 'TransparentButton PrimaryForegroundAccent1States'}">
                 <Setter Property="Foreground" Value="{c:TemplatedParentBinding Foreground}" />
             </Style>
         </Style.Resources>
     </Style>
 
-    <Style x:Key="Accent2TreeViewItem" TargetType="TreeViewItem" BasedOn="{c:MergeStyles 'StandardTreeViewItem Accent2ListBackground Accent2ListBorder OnListAccent2Foreground'}">
+    <Style x:Key="Accent2TreeViewItem" TargetType="TreeViewItem" BasedOn="{c:MergeStyles 'PrimaryTreeViewItem Accent2ListBackground Accent2ListBorder OnListAccent2Foreground'}">
         <Style.Resources>
-            <Style x:Key="ExpanderButtonStyle" TargetType="ToggleButton" BasedOn="{c:MergeStyles 'TransparentButton StandardForegroundAccent2States'}">
+            <Style x:Key="ExpanderButtonStyle" TargetType="ToggleButton" BasedOn="{c:MergeStyles 'TransparentButton PrimaryForegroundAccent2States'}">
                 <Setter Property="Foreground" Value="{c:TemplatedParentBinding Foreground}" />
             </Style>
         </Style.Resources>
@@ -226,7 +226,7 @@
     <Style TargetType="TreeViewItem" BasedOn="{StaticResource Accent2TreeViewItem}" />
 
     <!-- Compact Styles. -->
-    <Style x:Key="CompactStandardTreeViewItem" TargetType="TreeViewItem" BasedOn="{StaticResource StandardTreeViewItem}">
+    <Style x:Key="CompactPrimaryTreeViewItem" TargetType="TreeViewItem" BasedOn="{StaticResource PrimaryTreeViewItem}">
         <Setter Property="Padding" Value="{StaticResource CompactListItemPadding}" />
     </Style>
 
@@ -239,7 +239,7 @@
     </Style>
 
     <!-- Large Styles. -->
-    <Style x:Key="LargeStandardTreeViewItem" TargetType="TreeViewItem" BasedOn="{StaticResource StandardTreeViewItem}">
+    <Style x:Key="LargePrimaryTreeViewItem" TargetType="TreeViewItem" BasedOn="{StaticResource PrimaryTreeViewItem}">
         <Setter Property="Padding" Value="{StaticResource LargeListItemPadding}" />
     </Style>
 
@@ -253,7 +253,7 @@
 
     
 
-    <Style x:Key="StandardTreeView" TargetType="TreeView" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="PrimaryTreeView" TargetType="TreeView" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder PrimaryForeground PrimaryFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -265,9 +265,9 @@
         <Setter Property="ScrollViewer.CanContentScroll" Value="False" />
         <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
         <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource PrimaryCornerRadius}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
-        <Setter Property="ItemContainerStyle" Value="{StaticResource StandardTreeViewItem}" />
+        <Setter Property="ItemContainerStyle" Value="{StaticResource PrimaryTreeViewItem}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TreeView">
@@ -308,19 +308,19 @@
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="Accent1TreeView" TargetType="TreeView" BasedOn="{c:MergeStyles 'StandardTreeView'}">
+    <Style x:Key="Accent1TreeView" TargetType="TreeView" BasedOn="{c:MergeStyles 'PrimaryTreeView'}">
         <Setter Property="ItemContainerStyle" Value="{StaticResource Accent1TreeViewItem}" />
     </Style>
     
-    <Style x:Key="Accent2TreeView" TargetType="TreeView" BasedOn="{c:MergeStyles 'StandardTreeView'}">
+    <Style x:Key="Accent2TreeView" TargetType="TreeView" BasedOn="{c:MergeStyles 'PrimaryTreeView'}">
         <Setter Property="ItemContainerStyle" Value="{StaticResource Accent2TreeViewItem}" />
     </Style>
 
     <Style TargetType="TreeView" BasedOn="{StaticResource Accent2TreeView}" />
 
     <!-- Compact Styles. -->
-    <Style x:Key="CompactStandardTreeView" TargetType="TreeView" BasedOn="{StaticResource StandardTreeView}">
-        <Setter Property="ItemContainerStyle" Value="{StaticResource CompactStandardTreeViewItem}" />
+    <Style x:Key="CompactPrimaryTreeView" TargetType="TreeView" BasedOn="{StaticResource PrimaryTreeView}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource CompactPrimaryTreeViewItem}" />
     </Style>
     
     <Style x:Key="CompactAccent1TreeView" TargetType="TreeView" BasedOn="{StaticResource Accent1TreeView}">
@@ -332,8 +332,8 @@
     </Style>
     
     <!-- Large Styles. -->
-    <Style x:Key="LargeStandardTreeView" TargetType="TreeView" BasedOn="{StaticResource StandardTreeView}">
-        <Setter Property="ItemContainerStyle" Value="{StaticResource LargeStandardTreeViewItem}" />
+    <Style x:Key="LargePrimaryTreeView" TargetType="TreeView" BasedOn="{StaticResource PrimaryTreeView}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource LargePrimaryTreeViewItem}" />
     </Style>
     
     <Style x:Key="LargeAccent1TreeView" TargetType="TreeView" BasedOn="{StaticResource Accent1TreeView}">

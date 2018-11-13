@@ -17,7 +17,7 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardNavigationViewItem" TargetType="controls:NavigationViewItem" BasedOn="{c:MergeStyles 'OnPaneControlBackground OnPaneControlBorder StandardForegroundActiveAccent2ListStates StandardFontProperties ElevationZIndex Shadow0'}">
+    <Style x:Key="PrimaryNavigationViewItem" TargetType="controls:NavigationViewItem" BasedOn="{c:MergeStyles 'OnPaneControlBackground OnPaneControlBorder PrimaryForegroundActiveAccent2ListStates PrimaryFontProperties ElevationZIndex Shadow0'}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
@@ -199,7 +199,7 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    <Style TargetType="controls:NavigationViewItem" BasedOn="{StaticResource StandardNavigationViewItem}" />
+    <Style TargetType="controls:NavigationViewItem" BasedOn="{StaticResource PrimaryNavigationViewItem}" />
 
     <Style x:Key="NavigationViewPaneButton" TargetType="Button" BasedOn="{c:MergeStyles 'PrimaryButton OnPaneControlBackground OnPaneControlBorder'}">
         <Setter Property="MinWidth" Value="0" />

@@ -14,12 +14,12 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardListBoxItem" TargetType="ListBoxItem" BasedOn="{c:MergeStyles 'ListBackground ListBorder StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="PrimaryListBoxItem" TargetType="ListBoxItem" BasedOn="{c:MergeStyles 'ListBackground ListBorder PrimaryForeground PrimaryFontProperties Shadow0'}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
-        <Setter Property="Padding" Value="{StaticResource StandardListItemPadding}" />
+        <Setter Property="Padding" Value="{StaticResource PrimaryListItemPadding}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Template">
@@ -83,12 +83,12 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style x:Key="Accent1ListBoxItem" TargetType="ListBoxItem" BasedOn="{c:MergeStyles 'StandardListBoxItem Accent1ListBackground Accent1ListBorder OnListAccent1Foreground'}" />
-    <Style x:Key="Accent2ListBoxItem" TargetType="ListBoxItem" BasedOn="{c:MergeStyles 'StandardListBoxItem Accent2ListBackground Accent2ListBorder OnListAccent2Foreground'}" />
+    <Style x:Key="Accent1ListBoxItem" TargetType="ListBoxItem" BasedOn="{c:MergeStyles 'PrimaryListBoxItem Accent1ListBackground Accent1ListBorder OnListAccent1Foreground'}" />
+    <Style x:Key="Accent2ListBoxItem" TargetType="ListBoxItem" BasedOn="{c:MergeStyles 'PrimaryListBoxItem Accent2ListBackground Accent2ListBorder OnListAccent2Foreground'}" />
     <Style TargetType="ListBoxItem" BasedOn="{StaticResource Accent2ListBoxItem}" />
 
     <!-- Compact ListBoxItems. -->
-    <Style x:Key="CompactStandardListBoxItem" TargetType="ListBoxItem" BasedOn="{StaticResource StandardListBoxItem}">
+    <Style x:Key="CompactPrimaryListBoxItem" TargetType="ListBoxItem" BasedOn="{StaticResource PrimaryListBoxItem}">
         <Setter Property="Padding" Value="{StaticResource CompactListItemPadding}" />
     </Style>
 
@@ -101,7 +101,7 @@
     </Style>
 
     <!-- Large ListBoxItems. -->
-    <Style x:Key="LargeStandardListBoxItem" TargetType="ListBoxItem" BasedOn="{StaticResource StandardListBoxItem}">
+    <Style x:Key="LargePrimaryListBoxItem" TargetType="ListBoxItem" BasedOn="{StaticResource PrimaryListBoxItem}">
         <Setter Property="Padding" Value="{StaticResource LargeListItemPadding}" />
     </Style>
 
@@ -115,7 +115,7 @@
     
     
 
-    <Style x:Key="StandardListBox" TargetType="ListBox" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="PrimaryListBox" TargetType="ListBox" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder PrimaryForeground PrimaryFontProperties Shadow0'}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
@@ -125,7 +125,7 @@
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
-        <Setter Property="ItemContainerStyle" Value="{StaticResource StandardListBoxItem}" />
+        <Setter Property="ItemContainerStyle" Value="{StaticResource PrimaryListBoxItem}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ListBox">
@@ -159,19 +159,19 @@
         </Setter>
     </Style>
     
-    <Style x:Key="Accent1ListBox" TargetType="ListBox" BasedOn="{StaticResource StandardListBox}">
+    <Style x:Key="Accent1ListBox" TargetType="ListBox" BasedOn="{StaticResource PrimaryListBox}">
         <Setter Property="ItemContainerStyle" Value="{StaticResource Accent1ListBoxItem}" />
     </Style>
     
-    <Style x:Key="Accent2ListBox" TargetType="ListBox" BasedOn="{StaticResource StandardListBox}">
+    <Style x:Key="Accent2ListBox" TargetType="ListBox" BasedOn="{StaticResource PrimaryListBox}">
         <Setter Property="ItemContainerStyle" Value="{StaticResource Accent2ListBoxItem}" />
     </Style>
     
     <Style TargetType="ListBox" BasedOn="{StaticResource Accent2ListBox}" />
 
     <!-- ListBoxes with compact ItemContainerStyles. -->
-    <Style x:Key="CompactStandardListBox" TargetType="ListBox" BasedOn="{StaticResource StandardListBox}">
-        <Setter Property="ItemContainerStyle" Value="{StaticResource CompactStandardListBoxItem}" />
+    <Style x:Key="CompactPrimaryListBox" TargetType="ListBox" BasedOn="{StaticResource PrimaryListBox}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource CompactPrimaryListBoxItem}" />
     </Style>
     
     <Style x:Key="CompactAccent1ListBox" TargetType="ListBox" BasedOn="{StaticResource Accent1ListBox}">
@@ -183,8 +183,8 @@
     </Style>
     
     <!-- ListBoxes with large ItemContainerStyles. -->
-    <Style x:Key="LargeStandardListBox" TargetType="ListBox" BasedOn="{StaticResource StandardListBox}">
-        <Setter Property="ItemContainerStyle" Value="{StaticResource LargeStandardListBoxItem}" />
+    <Style x:Key="LargePrimaryListBox" TargetType="ListBox" BasedOn="{StaticResource PrimaryListBox}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource LargePrimaryListBoxItem}" />
     </Style>
     
     <Style x:Key="LargeAccent1ListBox" TargetType="ListBox" BasedOn="{StaticResource Accent1ListBox}">

@@ -12,13 +12,13 @@
     
     <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,4,0,12'}">
         
-        <controls:ControlPresenter Header="The Standard Button in different colors."
+        <controls:ControlPresenter Header="The Primary Button in different colors."
                                    Xaml="{Binding Xaml, ElementName=ButtonEx1}"
                                    VerticalAlignment="Top">
             <smtx:XamlDisplay x:Name="ButtonEx1" Key="ButtonEx1">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx1}">
-                    <Button Width="{c:GridUnit 40}">Standard Button</Button>
+                    <Button Width="{c:GridUnit 40}">Primary Button</Button>
                     <Button Style="{StaticResource Accent1Button}" Width="{c:GridUnit 40}">Accent1 Button</Button>
                     <Button Style="{StaticResource Accent2Button}" Width="{c:GridUnit 40}">Accent2 Button</Button>
                 </StackPanel>
