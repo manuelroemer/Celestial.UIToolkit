@@ -314,14 +314,6 @@ namespace Celestial.UIToolkit.Controls
             return acceptsNewItem ? newSelectedItem : null;
         }
      
-        private DependencyObject ContainerFromItem(object item)
-        {
-            var listView = new ListView();
-            var containerGenerator = listView.ItemContainerGenerator;
-
-            return containerGenerator.ContainerFromItem(item);
-        }
-
     }
 
 }

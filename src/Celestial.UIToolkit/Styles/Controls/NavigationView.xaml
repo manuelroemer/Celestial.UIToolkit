@@ -17,15 +17,13 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="PrimaryNavigationViewItem" TargetType="controls:NavigationViewItem" BasedOn="{c:MergeStyles 'OnPaneControlBackground OnPaneControlBorder ListForeground StandardFontProperties ElevationZIndex Shadow0'}">
+    <Style x:Key="PrimaryNavigationViewItem" TargetType="controls:NavigationViewItem" BasedOn="{c:MergeStyles 'OnPaneControlBackground OnPaneControlBorder ControlForeground StandardFontProperties ElevationZIndex Shadow0'}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Padding" Value="{c:GridUnit '0,2'}" />
         <Setter Property="MinHeight" Value="{c:GridUnit 10}" />
-        <Setter Property="Foreground" Value="{DynamicResource StandardForegroundBrush}" />
-        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{DynamicResource DisabledForegroundBrush}" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
         <Setter Property="theming:SelectionProperties.SelectionIndicatorSize" Value="{c:GridUnit 1}" />
@@ -202,14 +200,12 @@
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="Accent1NavigationViewItem" TargetType="controls:NavigationViewItem" BasedOn="{c:MergeStyles 'PrimaryNavigationViewItem Accent1ListForeground'}">
-        <Setter Property="Foreground" Value="{DynamicResource StandardForegroundBrush}" />
-        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{DynamicResource DisabledForegroundBrush}" />
+    <Style x:Key="Accent1NavigationViewItem" TargetType="controls:NavigationViewItem" BasedOn="{c:MergeStyles 'PrimaryNavigationViewItem'}">
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{DynamicResource ListAccent1HighBrush}" />
     </Style>
 
-    <Style x:Key="Accent2NavigationViewItem" TargetType="controls:NavigationViewItem" BasedOn="{c:MergeStyles 'PrimaryNavigationViewItem Accent2ListForeground'}">
-        <Setter Property="Foreground" Value="{DynamicResource StandardForegroundBrush}" />
-        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{DynamicResource DisabledForegroundBrush}" />
+    <Style x:Key="Accent2NavigationViewItem" TargetType="controls:NavigationViewItem" BasedOn="{c:MergeStyles 'PrimaryNavigationViewItem'}">
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{DynamicResource ListAccent2HighBrush}" />
     </Style>
 
     <Style TargetType="controls:NavigationViewItem" BasedOn="{StaticResource Accent2NavigationViewItem}" />
@@ -402,6 +398,7 @@
                                             <controls:NavigationViewListView x:Name="PART_SettingsItemListView"
                                                                              Grid.Row="3"
                                                                              IsSynchronizedWithCurrentItem="False"
+                                                                             ItemContainerStyle="{TemplateBinding MenuItemContainerStyle}"
                                                                              SelectedValue="{c:TemplatedParentBinding SelectedItem, Mode=TwoWay}"
                                                                              Padding="{c:GridUnit '0,3,0,2'}">
                                                 <controls:NavigationViewItem x:Name="PART_SettingsItem"
