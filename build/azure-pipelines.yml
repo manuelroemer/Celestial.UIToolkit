@@ -42,6 +42,8 @@ steps:
   displayName: 'Generate Documentation'
   inputs:
     filePath: './build/generate-docs.ps1'
+  env:
+    BUILD_SOURCEBRANCHNAME: master
 
 # Publish Dlls, ControlGallery, NuGet Packages and Documentation files.
 - task: PublishBuildArtifacts@1
