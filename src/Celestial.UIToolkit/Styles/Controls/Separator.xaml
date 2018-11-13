@@ -33,9 +33,16 @@
     <Style TargetType="Separator" BasedOn="{StaticResource StandardSeparator}" />
 
     <Style x:Key="StandardVerticalSeparator" TargetType="Separator" BasedOn="{StaticResource StandardSeparator}">
-        <Setter Property="LayoutTransform">
+        <Setter Property="Margin" Value="{c:GridUnit '0.5,0'}" />
+        <Setter Property="Template">
             <Setter.Value>
-                <RotateTransform Angle="90" />
+                <ControlTemplate TargetType="Separator">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Width="1"
+                            SnapsToDevicePixels="True" />
+                </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
