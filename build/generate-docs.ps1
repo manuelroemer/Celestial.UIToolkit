@@ -18,5 +18,8 @@ Write-Host "DocFx installed."
 
 Write-Host "Generating documentation..."
 Set-Location doc
+$prevBuildSourceBranchName = $env:BUILD_SOURCEBRANCHNAME
+$env:BUILD_SOURCEBRANCHNAME = "master"
 docfx -o "$targetDir"
+$env:BUILD_SOURCEBRANCHNAME = $prevBuildSourceBranchName
 Write-Host "Generated documentation."
