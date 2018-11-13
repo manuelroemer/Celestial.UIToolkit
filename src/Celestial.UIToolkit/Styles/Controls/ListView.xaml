@@ -111,7 +111,7 @@
     
     
 
-    <Style x:Key="PrimaryGridViewColumnHeader" TargetType="GridViewColumnHeader" BasedOn="{c:MergeStyles 'OnPaneControlBackground OnPaneControlBorder StandardForeground PrimaryFontProperties Shadow0'}">
+    <Style x:Key="PrimaryGridViewColumnHeader" TargetType="GridViewColumnHeader" BasedOn="{c:MergeStyles 'OnPaneControlBackground OnPaneControlBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -300,7 +300,7 @@
 
     
     
-    <Style x:Key="PrimaryListViewItem" TargetType="ListViewItem" BasedOn="{c:MergeStyles 'ListBackground ListBorder StandardForeground PrimaryFontProperties Shadow0'}">
+    <Style x:Key="PrimaryListViewItem" TargetType="ListViewItem" BasedOn="{c:MergeStyles 'ListBackground ListBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
@@ -418,7 +418,7 @@
     
     
 
-    <Style x:Key="PrimaryListView" TargetType="ListView" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder StandardForeground PrimaryFontProperties Shadow0'}">
+    <Style x:Key="PrimaryListView" TargetType="ListView" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />

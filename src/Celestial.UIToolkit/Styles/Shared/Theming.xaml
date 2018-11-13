@@ -784,7 +784,7 @@
     
     <!--#region TextElement Font Properties-->
 
-    <Style x:Key="PrimaryFontProperties">
+    <Style x:Key="StandardFontProperties">
         <Setter Property="TextElement.FontFamily" Value="{StaticResource PrimaryFontFamily}" />
         <Setter Property="TextElement.FontSize" Value="{StaticResource PrimaryFontSize}" />
         <Setter Property="TextElement.FontWeight" Value="{StaticResource PrimaryFontWeight}" />

@@ -35,7 +35,7 @@
 
 
 
-    <Style x:Key="PrimaryTabItem" TargetType="TabItem" BasedOn="{c:MergeStyles 'PrimaryTabItemHeader TransparentBackground TransparentBorder StandardForegroundControlStates PrimaryFontProperties ElevationZIndex Shadow0'}">
+    <Style x:Key="PrimaryTabItem" TargetType="TabItem" BasedOn="{c:MergeStyles 'PrimaryTabItemHeader TransparentBackground TransparentBorder StandardForegroundControlStates StandardFontProperties ElevationZIndex Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
@@ -227,7 +227,7 @@
 
     <Style TargetType="TabItem" BasedOn="{StaticResource Accent2TabItem}" />
 
-    <Style x:Key="PrimaryTabControl" TargetType="TabControl" BasedOn="{c:MergeStyles 'TransparentBackground TransparentBorder StandardForeground PrimaryFontProperties Shadow0'}">
+    <Style x:Key="PrimaryTabControl" TargetType="TabControl" BasedOn="{c:MergeStyles 'TransparentBackground TransparentBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />

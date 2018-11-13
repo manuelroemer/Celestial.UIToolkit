@@ -21,7 +21,7 @@
     <c:ThicknessSidePickerConverter x:Key="TopBottomPicker" Left="0" Right="0" />
     <c:MathOperationConverter x:Key="ElevationAddConverter" Operator="Add" />
 
-    <Style x:Key="PrimaryMenuItem" TargetType="MenuItem" BasedOn="{c:MergeStyles 'TransparentBorder OnPaneControlBackground StandardForeground PrimaryFontProperties StandardPopup'}">
+    <Style x:Key="PrimaryMenuItem" TargetType="MenuItem" BasedOn="{c:MergeStyles 'TransparentBorder OnPaneControlBackground StandardForeground StandardFontProperties StandardPopup'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
@@ -234,7 +234,7 @@
     
     
     
-    <Style x:Key="PrimaryContextMenu" TargetType="ContextMenu" BasedOn="{c:MergeStyles 'StandardForeground PrimaryFontProperties Shadow16'}">
+    <Style x:Key="PrimaryContextMenu" TargetType="ContextMenu" BasedOn="{c:MergeStyles 'StandardForeground StandardFontProperties Shadow16'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Background" Value="{StaticResource PopupBackground}" />
@@ -292,7 +292,7 @@
     
     
 
-    <Style x:Key="PrimaryMenu" TargetType="Menu" BasedOn="{c:MergeStyles 'PaneBackground PaneBorder StandardForeground PrimaryFontProperties Shadow0'}">
+    <Style x:Key="PrimaryMenu" TargetType="Menu" BasedOn="{c:MergeStyles 'PaneBackground PaneBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="BorderThickness" Value="0" />

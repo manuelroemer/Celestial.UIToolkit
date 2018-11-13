@@ -26,7 +26,7 @@
     
     <!-- A button which only displays the content.
          The Foreground is animated though. -->
-    <Style x:Key="TransparentButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'TransparentBorder TransparentBackground StandardForeground PrimaryFontProperties'}">
+    <Style x:Key="TransparentButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'TransparentBorder TransparentBackground StandardForeground StandardFontProperties'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="Focusable" Value="False" />
         <Setter Property="IsTabStop" Value="False" />

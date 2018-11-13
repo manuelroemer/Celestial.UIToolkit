@@ -17,7 +17,7 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="PrimaryTreeViewItem" TargetType="TreeViewItem" BasedOn="{c:MergeStyles 'ListBackground ListBorder StandardForeground PrimaryFontProperties Shadow0'}">
+    <Style x:Key="PrimaryTreeViewItem" TargetType="TreeViewItem" BasedOn="{c:MergeStyles 'ListBackground ListBorder StandardForeground StandardFontProperties Shadow0'}">
         <Style.Resources>
             <!-- The ExpanderButton should have Active States matching the TreeViewItem Style.
                  It can't use the TreeViewItem's theming properties though, because they are used for the Header.
@@ -253,7 +253,7 @@
 
     
 
-    <Style x:Key="PrimaryTreeView" TargetType="TreeView" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder StandardForeground PrimaryFontProperties Shadow0'}">
+    <Style x:Key="PrimaryTreeView" TargetType="TreeView" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />

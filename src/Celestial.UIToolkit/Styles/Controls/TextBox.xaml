@@ -21,7 +21,7 @@
     <!-- Use TargetType="Control", so that the PasswordBox can use the style too.
          Slightly problematic, since this allows setting this style on any type of control.
          To anyone reading this: Don't do that. -->
-    <Style x:Key="PrimaryTextBox" TargetType="Control" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder StandardForeground PrimaryFontProperties Shadow0'}">
+    <Style x:Key="PrimaryTextBox" TargetType="Control" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />

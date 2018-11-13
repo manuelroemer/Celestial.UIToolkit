@@ -16,7 +16,7 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="PrimaryToggleSwitch" TargetType="controls:ToggleSwitch" BasedOn="{c:MergeStyles 'PrimaryBackground StandardForeground PrimaryFontProperties Shadow0'}">
+    <Style x:Key="PrimaryToggleSwitch" TargetType="controls:ToggleSwitch" BasedOn="{c:MergeStyles 'PrimaryBackground StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />

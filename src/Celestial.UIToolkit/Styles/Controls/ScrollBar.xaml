@@ -18,7 +18,7 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="PrimaryScrollBar" TargetType="ScrollBar" BasedOn="{c:MergeStyles 'PaneBackground PaneBorder StandardForeground PrimaryFontProperties Shadow0'}">
+    <Style x:Key="PrimaryScrollBar" TargetType="ScrollBar" BasedOn="{c:MergeStyles 'PaneBackground PaneBorder StandardForeground StandardFontProperties Shadow0'}">
         <Style.Resources>
 
             <!-- Controls on the ScrollBar use special colors. In comparison to most others, they

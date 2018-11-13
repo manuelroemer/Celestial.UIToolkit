@@ -16,7 +16,7 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="PrimaryControl" TargetType="Control" BasedOn="{c:MergeStyles 'StandardForeground PrimaryFontProperties Shadow0'}">
+    <Style x:Key="PrimaryControl" TargetType="Control" BasedOn="{c:MergeStyles 'StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />

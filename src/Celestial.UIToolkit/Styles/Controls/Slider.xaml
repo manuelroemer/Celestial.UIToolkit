@@ -314,7 +314,7 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
-    <Style x:Key="PrimarySlider" TargetType="Slider" BasedOn="{c:MergeStyles 'ControlBackground ControlBorder SecondaryForeground PrimaryFontProperties Shadow0'}">
+    <Style x:Key="PrimarySlider" TargetType="Slider" BasedOn="{c:MergeStyles 'ControlBackground ControlBorder SecondaryForeground StandardFontProperties Shadow0'}">
         <Style.Resources>
             <Style x:Key="SliderThumbStyle" TargetType="Thumb" BasedOn="{StaticResource PrimarySliderThumb}" />
         </Style.Resources>

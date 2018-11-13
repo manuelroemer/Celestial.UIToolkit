@@ -20,7 +20,7 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="PrimaryComboBoxItem" TargetType="ComboBoxItem" BasedOn="{c:MergeStyles 'ListBackground ListBorder StandardForeground PrimaryFontProperties Shadow0'}">
+    <Style x:Key="PrimaryComboBoxItem" TargetType="ComboBoxItem" BasedOn="{c:MergeStyles 'ListBackground ListBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="BorderThickness" Value="0" />
@@ -96,7 +96,7 @@
 
     
     
-    <Style x:Key="PrimaryComboBox" TargetType="ComboBox" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder StandardForeground PrimaryFontProperties StandardPopup Shadow16'}">
+    <Style x:Key="PrimaryComboBox" TargetType="ComboBox" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder StandardForeground StandardFontProperties StandardPopup Shadow16'}">
         <Style.Resources>
             <Style x:Key="ComboBoxTextBox" TargetType="TextBox">
                 <Setter Property="HorizontalAlignment" Value="Stretch" />

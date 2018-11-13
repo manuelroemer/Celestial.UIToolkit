@@ -21,14 +21,14 @@
          Since windows are the root of everything else, they must set all inheriting
          properties (like Foreground, FontSize, ...). 
          This style must always be applied to any Window!-->
-    <Style x:Key="DefaultWindow" TargetType="Window" BasedOn="{c:MergeStyles 'PrimaryBackground StandardForeground PrimaryFontProperties'}">
+    <Style x:Key="DefaultWindow" TargetType="Window" BasedOn="{c:MergeStyles 'PrimaryBackground StandardForeground StandardFontProperties'}">
     </Style>
 
 
     
     
     
-    <Style x:Key="PrimaryWindowCaptionButton" TargetType="Button" BasedOn="{c:MergeStyles 'OnPaneControlBackground OnPaneControlBorder StandardForeground PrimaryFontProperties Shadow0'}">
+    <Style x:Key="PrimaryWindowCaptionButton" TargetType="Button" BasedOn="{c:MergeStyles 'OnPaneControlBackground OnPaneControlBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
