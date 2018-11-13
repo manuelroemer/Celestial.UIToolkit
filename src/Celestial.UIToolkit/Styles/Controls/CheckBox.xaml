@@ -16,7 +16,7 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardCheckBox" TargetType="CheckBox" BasedOn="{c:MergeStyles 'ControlBorder PrimaryBackground StandardForeground StandardFontProperties'}">
+    <Style x:Key="PrimaryCheckBox" TargetType="CheckBox" BasedOn="{c:MergeStyles 'ControlBorder PrimaryBackground StandardForeground StandardFontProperties'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
@@ -162,7 +162,7 @@
                                                        Data="{StaticResource Checkmark}"
                                                        Width="{c:GridUnit 3}"
                                                        Height="{c:GridUnit 3}"
-                                                       Foreground="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
+                                                       Foreground="White"
                                                        StrokeThickness="1"
                                                        RenderTransformOrigin="0.5,0.5">
                                         <controls:PathIcon.RenderTransform>
@@ -175,7 +175,7 @@
                                                        Data="{StaticResource IndeterminateCheckmark}"
                                                        Width="{c:GridUnit 3}"
                                                        Height="{c:GridUnit 3}"
-                                                       Foreground="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
+                                                       Foreground="White"
                                                        StrokeThickness="1"
                                                        RenderTransformOrigin="0.5,0.5">
                                         <controls:PathIcon.RenderTransform>
@@ -286,10 +286,10 @@
 
     <Style x:Key="Accent1CheckBox" 
            TargetType="CheckBox" 
-           BasedOn="{c:MergeStyles 'StandardCheckBox ControlBorderAccent1States'}" />
+           BasedOn="{c:MergeStyles 'PrimaryCheckBox ControlBorder Accent1ControlBorderStates'}" />
     <Style x:Key="Accent2CheckBox" 
            TargetType="CheckBox" 
-           BasedOn="{c:MergeStyles 'StandardCheckBox ControlBorderAccent2States'}" />
+           BasedOn="{c:MergeStyles 'PrimaryCheckBox ControlBorder Accent2ControlBorderStates'}" />
     
     <Style TargetType="CheckBox" BasedOn="{StaticResource Accent2CheckBox}" />
 

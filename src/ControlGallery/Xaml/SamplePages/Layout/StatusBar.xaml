@@ -12,7 +12,7 @@
 
     <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,4,0,12'}">
 
-        <controls:ControlPresenter Header="A standard StatusBar control."
+        <controls:ControlPresenter Header="A Primary StatusBar control."
                                    Xaml="{Binding Xaml, ElementName=StatusBarEx1}"
                                    VerticalAlignment="Top">
             <smtx:XamlDisplay x:Name="StatusBarEx1" Key="StatusBarEx1">

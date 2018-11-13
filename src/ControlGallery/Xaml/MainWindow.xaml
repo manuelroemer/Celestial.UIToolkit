@@ -12,7 +12,7 @@
         WindowStartupLocation="CenterScreen"
         Width="1200"
         Height="800"
-        Style="{StaticResource StandardWindow}"
+        Style="{StaticResource PrimaryWindow}"
         prism:ViewModelLocator.AutoWireViewModel="True"
         c:WindowTitlebarProperties.ExtendContentIntoTitlebar="True">
 
@@ -43,7 +43,7 @@
 
         <!-- By default, the NavViewItem has a padding for the icons.
              Since we provide our own template, override that padding. -->
-        <Style x:Key="CustomMenuItemStyle" TargetType="c:NavigationViewItem" BasedOn="{StaticResource StandardNavigationViewItem}">
+        <Style x:Key="CustomMenuItemStyle" TargetType="c:NavigationViewItem" BasedOn="{StaticResource Accent2NavigationViewItem}">
             <!--<Setter Property="Padding" Value="0" />-->
         </Style>
         

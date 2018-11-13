@@ -16,7 +16,7 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardToggleSwitch" TargetType="controls:ToggleSwitch" BasedOn="{c:MergeStyles 'PrimaryBackground StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="PrimaryToggleSwitch" TargetType="controls:ToggleSwitch" BasedOn="{c:MergeStyles 'PrimaryBackground StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
@@ -26,13 +26,17 @@
         <Setter Property="OffKnobOffset" Value="0" />
         <Setter Property="OnKnobOffset" Value="{c:GridUnit 6, TargetType=sys:Double}" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{c:GridUnit 2.5}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource DisabledThemeShadow}" />
         <Setter Property="BorderBrush" Value="{DynamicResource AltPrimaryMediumBrush}" />
         <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{DynamicResource AltPrimaryLowBrush}" />
         <Setter Property="theming:PressedProperties.BorderBrush" Value="{DynamicResource ControlActiveBorderBrush}" />
         <Setter Property="theming:MouseOverActiveProperties.BorderBrush" Value="{DynamicResource ControlHoverBorderBrush}" />
         <Setter Property="theming:ActiveProperties.BorderBrush" Value="{DynamicResource ControlBorderBrush}" />
         <Setter Property="theming:DisabledProperties.BorderBrush" Value="{DynamicResource ControlDisabledBorderBrush}" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource DisabledThemeShadow}" />
+        <!-- When active, re-color the knob so that the Dark theme looks good. -->
+        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="White" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="White" />
+        <Setter Property="theming:MouseOverActiveProperties.BackgroundBrush" Value="White" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:ToggleSwitch">
@@ -280,12 +284,12 @@
         </Setter>
     </Style>
 
-    <Style x:Key="Accent1ToggleSwitch" TargetType="controls:ToggleSwitch" BasedOn="{StaticResource StandardToggleSwitch}">
+    <Style x:Key="Accent1ToggleSwitch" TargetType="controls:ToggleSwitch" BasedOn="{StaticResource PrimaryToggleSwitch}">
         <Setter Property="theming:MouseOverActiveProperties.BorderBrush" Value="{DynamicResource Accent1ControlHoverBorderBrush}" />
         <Setter Property="theming:ActiveProperties.BorderBrush" Value="{DynamicResource Accent1ControlBorderBrush}" />
     </Style>
 
-    <Style x:Key="Accent2ToggleSwitch" TargetType="controls:ToggleSwitch" BasedOn="{StaticResource StandardToggleSwitch}">
+    <Style x:Key="Accent2ToggleSwitch" TargetType="controls:ToggleSwitch" BasedOn="{StaticResource PrimaryToggleSwitch}">
         <Setter Property="theming:MouseOverActiveProperties.BorderBrush" Value="{DynamicResource Accent2ControlHoverBorderBrush}" />
         <Setter Property="theming:ActiveProperties.BorderBrush" Value="{DynamicResource Accent2ControlBorderBrush}" />
     </Style>

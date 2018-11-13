@@ -26,19 +26,19 @@
     
     
     
-    <Style x:Key="StandardToolBar" TargetType="ToolBar" BasedOn="{c:MergeStyles 'PaneBackground PaneBorder StandardForeground StandardFontProperties StandardPopup Shadow8'}">
+    <Style x:Key="PrimaryToolBar" TargetType="ToolBar" BasedOn="{c:MergeStyles 'PaneBackground PaneBorder StandardForeground StandardFontProperties StandardPopup Shadow8'}">
         <Style.Resources>
-            <Style x:Key="StandardToolBarButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'StandardButton OnPaneControlBackground OnPaneControlBorder StandardForeground StandardFontProperties Shadow0'}">
+            <Style x:Key="PrimaryToolBarButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'PrimaryButton OnPaneControlBackground OnPaneControlBorder StandardForeground StandardFontProperties Shadow0'}">
                 <Setter Property="Padding" Value="{c:GridUnit 2}" />
                 <Setter Property="MinHeight" Value="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=ToolBar}, FallbackValue=0}" />
                 <Setter Property="MinWidth" Value="{c:SelfBinding MinHeight}" />
             </Style>
 
-            <Style x:Key="ToolBarOverflowToggleButton" TargetType="ToggleButton" BasedOn="{StaticResource StandardToolBarButton}" />
+            <Style x:Key="ToolBarOverflowToggleButton" TargetType="ToggleButton" BasedOn="{StaticResource PrimaryToolBarButton}" />
 
             <Style x:Key="{x:Static ToolBar.ButtonStyleKey}" 
                    TargetType="Button" 
-                   BasedOn="{StaticResource StandardToolBarButton}" />
+                   BasedOn="{StaticResource PrimaryToolBarButton}" />
 
             <Style x:Key="{x:Static ToolBar.ComboBoxStyleKey}"
                    TargetType="ComboBox"
@@ -64,7 +64,7 @@
                 <Setter Property="theming:RippleProperties.ShowRippleAnimation" Value="False" />
             </Style>
 
-            <Style x:Key="StandardToolBarThumb" TargetType="Thumb" BasedOn="{StaticResource RectanglePatternThumb}">
+            <Style x:Key="PrimaryToolBarThumb" TargetType="Thumb" BasedOn="{StaticResource RectanglePatternThumb}">
                 <Setter Property="Padding" Value="{c:GridUnit '1'}" />
                 <Setter Property="Width" Value="{c:GridUnit 3}" />
             </Style>
@@ -74,7 +74,7 @@
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource PrimaryCornerRadius}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
         <Setter Property="Template">
             <Setter.Value>
@@ -95,7 +95,7 @@
                                 </Grid.ColumnDefinitions>
 
                                 <Thumb x:Name="Thumb"
-                                       Style="{StaticResource StandardToolBarThumb}" 
+                                       Style="{StaticResource PrimaryToolBarThumb}" 
                                        Visibility="Collapsed" />
 
                                 <ToolBarPanel x:Name="PART_ToolBarPanel"
@@ -188,30 +188,30 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style TargetType="ToolBar" BasedOn="{StaticResource StandardToolBar}" />
+    <Style TargetType="ToolBar" BasedOn="{StaticResource PrimaryToolBar}" />
 
 
     
-    <Style x:Key="TransparentToolBar" TargetType="ToolBar" BasedOn="{c:MergeStyles 'StandardToolBar TransparentBackground TransparentBorder'}">
+    <Style x:Key="TransparentToolBar" TargetType="ToolBar" BasedOn="{c:MergeStyles 'PrimaryToolBar TransparentBackground TransparentBorder'}">
         <Style.Resources>
-            <Style x:Key="StandardToolBarButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'StandardButton'}">
+            <Style x:Key="PrimaryToolBarButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'PrimaryButton'}">
                 <Setter Property="MinHeight" Value="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=ToolBar}, FallbackValue=0}" />
                 <Setter Property="MinWidth" Value="{c:SelfBinding MinHeight}" />
             </Style>
 
-            <Style x:Key="ToolBarOverflowToggleButton" TargetType="ToggleButton" BasedOn="{StaticResource StandardSquareButton}">
+            <Style x:Key="ToolBarOverflowToggleButton" TargetType="ToggleButton" BasedOn="{StaticResource PrimarySquareButton}">
                 <Setter Property="MinHeight" Value="0" />
                 <Setter Property="MinWidth" Value="0" />
             </Style>
 
             <Style x:Key="{x:Static ToolBar.ButtonStyleKey}"
                    TargetType="Button" 
-                   BasedOn="{StaticResource StandardToolBarButton}" />
+                   BasedOn="{StaticResource PrimaryToolBarButton}" />
         </Style.Resources>
     </Style>
 
 
-    <Style x:Name="StandardToolBarTray" TargetType="ToolBarTray">
+    <Style x:Name="PrimaryToolBarTray" TargetType="ToolBarTray">
         <Setter Property="Background" Value="Transparent" />
     </Style>
     

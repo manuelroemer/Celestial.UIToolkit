@@ -12,11 +12,11 @@
 
     <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,4,0,12'}">
 
-        <controls:ControlPresenter Header="The Standard TextBox in different colors."
+        <controls:ControlPresenter Header="The Primary TextBox in different colors."
                                    Xaml="{Binding Xaml, ElementName=TextBoxEx1}"
                                    VerticalAlignment="Top">
             <controls:ControlPresenter.Description>
-                As you can see, there are styles for the Standard colors, aswell as for the two accents.
+                As you can see, there are styles for the Primary colors, aswell as for the two accents.
                 Even though all of these are provided, the intended color range is the Accent2-set,
                 which is why that style is the default, implicit one.
             </controls:ControlPresenter.Description>
@@ -24,7 +24,7 @@
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx1}">
                     <TextBox Width="{c:GridUnit 60}" />
-                    <TextBox Style="{StaticResource StandardTextBox}" Width="{c:GridUnit 60}" />
+                    <TextBox Style="{StaticResource PrimaryTextBox}" Width="{c:GridUnit 60}" />
                     <TextBox Style="{StaticResource Accent1TextBox}" Width="{c:GridUnit 60}" />
                 </StackPanel>
             </smtx:XamlDisplay>

@@ -16,14 +16,14 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardSliderThumb" TargetType="Thumb" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder Shadow0'}">
+    <Style x:Key="PrimarySliderThumb" TargetType="Thumb" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder Shadow0'}">
         <Style.Resources>
             <!-- The default ToolTip Style has a Margin for the Shadows.
                  The Slider uses the Thumb's ToolTip for displaying the current value.
                  It also uses a custom ToolTipPlacement method, which doesn't take the margin into account.
                  Thus, the ToolTip gets moved to the down-right.
                  We can override this by removing the margin (and thus disabling shadows). -->
-            <Style TargetType="ToolTip" BasedOn="{StaticResource StandardToolTip}">
+            <Style TargetType="ToolTip" BasedOn="{StaticResource PrimaryToolTip}">
                 <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource DisabledThemeShadow}" />
                 <Setter Property="Margin" Value="0" />
                 <Style.Triggers>
@@ -45,6 +45,7 @@
         <Setter Property="SnapsToDevicePixels" Value="False" />
         <Setter Property="Width" Value="{c:GridUnit 4}" />
         <Setter Property="Height" Value="{c:GridUnit 4}" />
+        <Setter Property="Background" Value="White" />
         <Setter Property="BorderThickness" Value="{StaticResource WideBorderThickness}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource DisabledThemeShadow}" />
         <Setter Property="Template">
@@ -144,8 +145,8 @@
         </Setter>
     </Style>
 
-    <Style x:Key="Accent1SliderThumb" TargetType="Thumb" BasedOn="{c:MergeStyles 'StandardSliderThumb Accent1Border'}" />
-    <Style x:Key="Accent2SliderThumb" TargetType="Thumb" BasedOn="{c:MergeStyles 'StandardSliderThumb Accent2Border'}" />
+    <Style x:Key="Accent1SliderThumb" TargetType="Thumb" BasedOn="{c:MergeStyles 'PrimarySliderThumb Accent1ControlBorder'}" />
+    <Style x:Key="Accent2SliderThumb" TargetType="Thumb" BasedOn="{c:MergeStyles 'PrimarySliderThumb Accent2ControlBorder'}" />
 
     <ControlTemplate x:Key="HorizontalSliderTemplate" TargetType="Slider">
         <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"
@@ -314,16 +315,16 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
-    <Style x:Key="StandardSlider" TargetType="Slider" BasedOn="{c:MergeStyles 'ControlBackground ControlBorder SecondaryForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="PrimarySlider" TargetType="Slider" BasedOn="{c:MergeStyles 'ControlBackground ControlBorder SecondaryForeground StandardFontProperties Shadow0'}">
         <Style.Resources>
-            <Style x:Key="SliderThumbStyle" TargetType="Thumb" BasedOn="{StaticResource StandardSliderThumb}" />
+            <Style x:Key="SliderThumbStyle" TargetType="Thumb" BasedOn="{StaticResource PrimarySliderThumb}" />
         </Style.Resources>
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="AutoToolTipPlacement" Value="TopLeft" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource PrimaryCornerRadius}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource DisabledThemeShadow}" />
         <Setter Property="Template" Value="{StaticResource HorizontalSliderTemplate}" />
         
@@ -343,13 +344,13 @@
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="Accent1Slider" TargetType="Slider" BasedOn="{c:MergeStyles 'StandardSlider ControlBackgroundAccent1States ControlBorderAccent1States'}">
+    <Style x:Key="Accent1Slider" TargetType="Slider" BasedOn="{c:MergeStyles 'PrimarySlider ControlBackground Accent1ControlBackgroundStates ControlBorder Accent1ControlBorderStates'}">
         <Style.Resources>
             <Style x:Key="SliderThumbStyle" TargetType="Thumb" BasedOn="{StaticResource Accent1SliderThumb}" />
         </Style.Resources>
     </Style>
 
-    <Style x:Key="Accent2Slider" TargetType="Slider" BasedOn="{c:MergeStyles 'StandardSlider ControlBackgroundAccent2States ControlBorderAccent2States'}">
+    <Style x:Key="Accent2Slider" TargetType="Slider" BasedOn="{c:MergeStyles 'PrimarySlider ControlBackground Accent2ControlBackgroundStates ControlBorder Accent2ControlBorderStates'}">
         <Style.Resources>
             <Style x:Key="SliderThumbStyle" TargetType="Thumb" BasedOn="{StaticResource Accent2SliderThumb}" />
         </Style.Resources>

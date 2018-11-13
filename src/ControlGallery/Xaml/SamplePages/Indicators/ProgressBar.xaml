@@ -18,7 +18,7 @@
             <smtx:XamlDisplay x:Name="ProgressBarEx1" Key="ProgressBarEx1">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledProgressBarEx1}">
-                    <ProgressBar Style="{StaticResource StandardProgressBar}"
+                    <ProgressBar Style="{StaticResource PrimaryProgressBar}"
                                  Width="{c:GridUnit 50}"
                                  Minimum="{Binding Minimum, ElementName=ValueProgressBarEx1}"
                                  MaxHeight="{Binding Maximum, ElementName=ValueProgressBarEx1}"
@@ -55,7 +55,7 @@
             <smtx:XamlDisplay x:Name="ProgressBarEx2" Key="ProgressBarEx2">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledProgressBarEx2}">
-                    <ProgressBar Style="{StaticResource StandardProgressBar}"
+                    <ProgressBar Style="{StaticResource PrimaryProgressBar}"
                                  Width="{c:GridUnit 50}"
                                  Value="50"
                                  IsIndeterminate="{Binding IsChecked, ElementName=IsIndeterminateProgressBarEx2, Mode=TwoWay}" />
@@ -88,8 +88,8 @@
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledProgressBarEx3}">
                     <StackPanel.Resources>
-                        <Style TargetType="ProgressBar" BasedOn="{StaticResource StandardProgressBar}">
-                            <!-- The Standard Properties change the Track. This also includes BorderBrush and BorderThickness. -->
+                        <Style TargetType="ProgressBar" BasedOn="{StaticResource PrimaryProgressBar}">
+                            <!-- The standard WPF Properties change the Track. This also includes BorderBrush and BorderThickness. -->
                             <Setter Property="Background" Value="LightPink" />
                             
                             <!-- The ActiveProperties from the Theming namespace set the appearance of the other states. -->

@@ -17,7 +17,7 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardNavigationViewItem" TargetType="controls:NavigationViewItem" BasedOn="{c:MergeStyles 'OnPaneControlBackground OnPaneControlBorder StandardForegroundActiveAccent2ListStates StandardFontProperties ElevationZIndex Shadow0'}">
+    <Style x:Key="PrimaryNavigationViewItem" TargetType="controls:NavigationViewItem" BasedOn="{c:MergeStyles 'OnPaneControlBackground OnPaneControlBorder StandardForeground StandardFontProperties ElevationZIndex Shadow0'}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
@@ -199,9 +199,20 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    <Style TargetType="controls:NavigationViewItem" BasedOn="{StaticResource StandardNavigationViewItem}" />
 
-    <Style x:Key="NavigationViewPaneButton" TargetType="Button" BasedOn="{c:MergeStyles 'StandardButton OnPaneControlBackground OnPaneControlBorder'}">
+    <Style x:Key="Accent1NavigationViewItem" TargetType="controls:NavigationViewItem" BasedOn="{c:MergeStyles 'PrimaryNavigationViewItem'}">
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{DynamicResource ListAccent1HighBrush}" />
+    </Style>
+
+    <Style x:Key="Accent2NavigationViewItem" TargetType="controls:NavigationViewItem" BasedOn="{c:MergeStyles 'PrimaryNavigationViewItem'}">
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{DynamicResource ListAccent2HighBrush}" />
+    </Style>
+
+    <Style TargetType="controls:NavigationViewItem" BasedOn="{StaticResource Accent2NavigationViewItem}" />
+
+    
+    
+    <Style x:Key="NavigationViewPaneButton" TargetType="Button" BasedOn="{c:MergeStyles 'PrimaryButton OnPaneControlBackground OnPaneControlBorder'}">
         <Setter Property="MinWidth" Value="0" />
         <Setter Property="MinHeight" Value="0" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
@@ -255,7 +266,7 @@
         </Setter>
     </Style>
     
-    <Style TargetType="controls:NavigationView" BasedOn="{c:MergeStyles 'Shadow0 InteractiveShadow8'}">
+    <Style x:Key="PrimaryNavigationView" TargetType="controls:NavigationView" BasedOn="{c:MergeStyles 'Shadow0 InteractiveShadow8'}">
         <Setter Property="Focusable" Value="False" />
         <Setter Property="IsTabStop" Value="False" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
@@ -268,6 +279,7 @@
         <Setter Property="PaneToggleButtonStyle" Value="{StaticResource NavigationViewToggleButton}" />
         <Setter Property="PaneBackground" Value="{StaticResource PaneBackgroundBrush}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource RightControlThemeShadow}" />
+        <Setter Property="MenuItemContainerStyle" Value="{StaticResource PrimaryNavigationViewItem}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:NavigationView">
@@ -386,6 +398,7 @@
                                             <controls:NavigationViewListView x:Name="PART_SettingsItemListView"
                                                                              Grid.Row="3"
                                                                              IsSynchronizedWithCurrentItem="False"
+                                                                             ItemContainerStyle="{TemplateBinding MenuItemContainerStyle}"
                                                                              SelectedValue="{c:TemplatedParentBinding SelectedItem, Mode=TwoWay}"
                                                                              Padding="{c:GridUnit '0,3,0,2'}">
                                                 <controls:NavigationViewItem x:Name="PART_SettingsItem"
@@ -527,5 +540,15 @@
             </MultiTrigger>
         </Style.Triggers>
     </Style>
+
+    <Style x:Key="Accent1NavigationView" TargetType="controls:NavigationView" BasedOn="{StaticResource PrimaryNavigationView}">
+        <Setter Property="MenuItemContainerStyle" Value="{StaticResource Accent1NavigationViewItem}" />
+    </Style>
     
+    <Style x:Key="Accent2NavigationView" TargetType="controls:NavigationView" BasedOn="{StaticResource PrimaryNavigationView}">
+        <Setter Property="MenuItemContainerStyle" Value="{StaticResource Accent2NavigationViewItem}" />
+    </Style>
+
+    <Style TargetType="controls:NavigationView" BasedOn="{StaticResource Accent2NavigationView}" />
+
 </ResourceDictionary>

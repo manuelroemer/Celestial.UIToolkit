@@ -11,29 +11,29 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardTextBlock" TargetType="TextBlock" BasedOn="{StaticResource ForegroundBasedThemingProperties}">
+    <Style x:Key="PrimaryTextBlock" TargetType="TextBlock" BasedOn="{StaticResource ForegroundBasedThemingProperties}">
         <Style.Triggers>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="Foreground" Value="{c:SelfBinding Path=(theming:DisabledProperties.ForegroundBrush)}" />
             </Trigger>
         </Style.Triggers>
     </Style>
-    <Style TargetType="TextBlock" BasedOn="{StaticResource StandardTextBlock}" />
+    <Style TargetType="TextBlock" BasedOn="{StaticResource PrimaryTextBlock}" />
 
-    <Style x:Key="BaseTextBlock" TargetType="TextBlock" BasedOn="{StaticResource StandardTextBlock}">
+    <Style x:Key="BaseTextBlock" TargetType="TextBlock" BasedOn="{StaticResource PrimaryTextBlock}">
         <Setter Property="FontWeight" Value="{StaticResource BaseFontWeight}" />
         <Setter Property="FontStyle" Value="{StaticResource BaseFontStyle}" />
         <Setter Property="FontStretch" Value="{StaticResource BaseFontStretch}" />
     </Style>
 
-    <Style x:Key="HintTextBlock" TargetType="TextBlock" BasedOn="{StaticResource StandardTextBlock}">
+    <Style x:Key="HintTextBlock" TargetType="TextBlock" BasedOn="{StaticResource PrimaryTextBlock}">
         <Setter Property="Foreground" Value="{StaticResource SecondaryForegroundBrush}" />
         <Setter Property="FontWeight" Value="{StaticResource HintFontWeight}" />
         <Setter Property="FontStyle" Value="{StaticResource HintFontStyle}" />
         <Setter Property="FontStretch" Value="{StaticResource HintFontStretch}" />
     </Style>
 
-    <Style x:Key="HeaderTextBlock" TargetType="TextBlock" BasedOn="{StaticResource StandardTextBlock}">
+    <Style x:Key="HeaderTextBlock" TargetType="TextBlock" BasedOn="{StaticResource PrimaryTextBlock}">
         <Setter Property="FontSize" Value="{StaticResource HeaderFontSize}" />
         <Setter Property="FontWeight" Value="{StaticResource HeaderFontWeight}" />
         <Setter Property="FontStyle" Value="{StaticResource HeaderFontStyle}" />
@@ -41,7 +41,7 @@
         <Setter Property="FontFamily" Value="{StaticResource HeaderFontFamily}" />
     </Style>
 
-    <Style x:Key="SubHeaderTextBlock" TargetType="TextBlock" BasedOn="{StaticResource StandardTextBlock}">
+    <Style x:Key="SubHeaderTextBlock" TargetType="TextBlock" BasedOn="{StaticResource PrimaryTextBlock}">
         <Setter Property="FontSize" Value="{StaticResource SubHeaderFontSize}" />
         <Setter Property="FontWeight" Value="{StaticResource SubHeaderFontWeight}" />
         <Setter Property="FontStyle" Value="{StaticResource SubHeaderFontStyle}" />
@@ -49,7 +49,7 @@
         <Setter Property="FontFamily" Value="{StaticResource SubHeaderFontFamily}" />
     </Style>
 
-    <Style x:Key="TitleTextBlock" TargetType="TextBlock" BasedOn="{StaticResource StandardTextBlock}">
+    <Style x:Key="TitleTextBlock" TargetType="TextBlock" BasedOn="{StaticResource PrimaryTextBlock}">
         <Setter Property="FontSize" Value="{StaticResource TitleFontSize}" />
         <Setter Property="FontWeight" Value="{StaticResource TitleFontWeight}" />
         <Setter Property="FontStyle" Value="{StaticResource TitleFontStyle}" />
@@ -57,7 +57,7 @@
         <Setter Property="FontFamily" Value="{StaticResource TitleFontFamily}" />
     </Style>
 
-    <Style x:Key="SubTitleTextBlock" TargetType="TextBlock" BasedOn="{StaticResource StandardTextBlock}">
+    <Style x:Key="SubTitleTextBlock" TargetType="TextBlock" BasedOn="{StaticResource PrimaryTextBlock}">
         <Setter Property="FontSize" Value="{StaticResource SubTitleFontSize}" />
         <Setter Property="FontWeight" Value="{StaticResource SubTitleFontWeight}" />
         <Setter Property="FontStyle" Value="{StaticResource SubTitleFontStyle}" />
@@ -65,7 +65,7 @@
         <Setter Property="FontFamily" Value="{StaticResource SubTitleFontFamily}" />
     </Style>
 
-    <Style x:Key="CaptionTextBlock" TargetType="TextBlock" BasedOn="{StaticResource StandardTextBlock}">
+    <Style x:Key="CaptionTextBlock" TargetType="TextBlock" BasedOn="{StaticResource PrimaryTextBlock}">
         <Setter Property="FontSize" Value="{StaticResource CaptionFontSize}" />
         <Setter Property="FontWeight" Value="{StaticResource CaptionFontWeight}" />
         <Setter Property="FontStyle" Value="{StaticResource CaptionFontStyle}" />

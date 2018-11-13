@@ -12,7 +12,7 @@
 
     <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,4,0,12'}">
 
-        <controls:ControlPresenter Header="A standard Menu control."
+        <controls:ControlPresenter Header="A Primary Menu control."
                                    Xaml="{Binding Xaml, ElementName=MenuEx1}"
                                    VerticalAlignment="Top">
             <smtx:XamlDisplay x:Name="MenuEx1" Key="MenuEx1">
@@ -62,7 +62,7 @@
             <smtx:XamlDisplay x:Name="MenuEx2" Key="MenuEx2">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledMenuEx2}">
-                    <Menu Style="{StaticResource CompactStandardMenu}">
+                    <Menu Style="{StaticResource CompactPrimaryMenu}">
                         <MenuItem Header="_File" Icon="{icon:Modern Kind=Acorn}">
                             <MenuItem Header="Open" />
                             <MenuItem Header="Save" />
@@ -106,7 +106,7 @@
             <smtx:XamlDisplay x:Name="MenuEx3" Key="MenuEx3">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledMenuEx3}">
-                    <Menu Style="{StaticResource LargeStandardMenu}">
+                    <Menu Style="{StaticResource LargePrimaryMenu}">
                         <MenuItem Header="_File" Icon="{icon:Modern Kind=Acorn}">
                             <MenuItem Header="Open" />
                             <MenuItem Header="Save" />
@@ -146,7 +146,7 @@
 
         
         
-        <controls:ControlPresenter Header="A standard ContextMenu."
+        <controls:ControlPresenter Header="A Primary ContextMenu."
                                    Xaml="{Binding Xaml, ElementName=ContextMenuEx1}"
                                    VerticalAlignment="Top">
             <smtx:XamlDisplay x:Name="ContextMenuEx1" Key="ContextMenuEx1">
@@ -189,7 +189,7 @@
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledContextMenuEx2}">
                     <TextBlock Text="Right-Click me to see a Context Menu!">
                         <TextBlock.ContextMenu>
-                            <ContextMenu Style="{StaticResource CompactStandardContextMenu}">
+                            <ContextMenu Style="{StaticResource CompactPrimaryContextMenu}">
                                 <MenuItem Header="Item 1" />
                                 <MenuItem Header="Item 2" />
                                 <MenuItem Header="Item 3"
@@ -224,7 +224,7 @@
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledContextMenuEx3}">
                     <TextBlock Text="Right-Click me to see a Context Menu!">
                         <TextBlock.ContextMenu>
-                            <ContextMenu Style="{StaticResource LargeStandardContextMenu}">
+                            <ContextMenu Style="{StaticResource LargePrimaryContextMenu}">
                                 <MenuItem Header="Item 1" />
                                 <MenuItem Header="Item 2" />
                                 <MenuItem Header="Item 3"

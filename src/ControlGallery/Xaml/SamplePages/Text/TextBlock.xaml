@@ -12,7 +12,7 @@
 
     <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,4,0,12'}">
 
-        <controls:ControlPresenter Header="A standard TextBlock control."
+        <controls:ControlPresenter Header="A Primary TextBlock control."
                                    Xaml="{Binding Xaml, ElementName=TextBlockEx1}"
                                    VerticalAlignment="Top">
             <smtx:XamlDisplay x:Name="TextBlockEx1" Key="TextBlockEx1">
@@ -22,7 +22,7 @@
                     <TextBlock Style="{StaticResource SubHeaderTextBlock}" Text="SubHeader TextBlock" />
                     <TextBlock Style="{StaticResource TitleTextBlock}" Text="Title TextBlock" />
                     <TextBlock Style="{StaticResource SubTitleTextBlock}" Text="SubTitle TextBlock" />
-                    <TextBlock Text="Standard TextBlock" />
+                    <TextBlock Text="Primary TextBlock" />
                     <TextBlock Style="{StaticResource BaseTextBlock}" Text="Base TextBlock" />
                     <TextBlock Style="{StaticResource HintTextBlock}" Text="Hint TextBlock" />
                     <TextBlock Style="{StaticResource CaptionTextBlock}" Text="Caption TextBlock" />

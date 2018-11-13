@@ -18,13 +18,13 @@
 
     <!-- The default GroupBox simply displays the Header as a Bold Strings.
          This allows categorization of the following elements, similar to a Label. -->
-    <Style x:Key="StandardGroupBox" TargetType="GroupBox" BasedOn="{c:MergeStyles 'TransparentBackground TransparentBorder StandardForeground BaseFontProperties Shadow0'}">
+    <Style x:Key="PrimaryGroupBox" TargetType="GroupBox" BasedOn="{c:MergeStyles 'TransparentBackground TransparentBorder StandardForeground BaseFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
         <Setter Property="Padding" Value="{c:GridUnit '0,2,0,0'}" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource PrimaryCornerRadius}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
         <Setter Property="Template">
             <Setter.Value>
@@ -76,6 +76,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style TargetType="GroupBox" BasedOn="{StaticResource StandardGroupBox}" />
+    <Style TargetType="GroupBox" BasedOn="{StaticResource PrimaryGroupBox}" />
 
 </ResourceDictionary>

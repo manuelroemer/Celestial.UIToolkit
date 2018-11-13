@@ -15,11 +15,11 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardProgressBar" TargetType="ProgressBar" BasedOn="{c:MergeStyles 'ControlBackground ControlBorder StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="PrimaryProgressBar" TargetType="ProgressBar" BasedOn="{c:MergeStyles 'ControlBackground ControlBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="False" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource PrimaryCornerRadius}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource DisabledThemeShadow}" />
         <Setter Property="MinHeight" Value="{c:GridUnit 1}" />
         <Setter Property="Template">
@@ -261,8 +261,8 @@
         </Setter>
     </Style>
 
-    <Style x:Key="Accent1ProgressBar" TargetType="ProgressBar" BasedOn="{c:MergeStyles 'StandardProgressBar ControlBackgroundAccent1States ControlBorderAccent1States'}" />
-    <Style x:Key="Accent2ProgressBar" TargetType="ProgressBar" BasedOn="{c:MergeStyles 'StandardProgressBar ControlBackgroundAccent2States ControlBorderAccent2States'}" />
+    <Style x:Key="Accent1ProgressBar" TargetType="ProgressBar" BasedOn="{c:MergeStyles 'PrimaryProgressBar ControlBackground Accent1ControlBackgroundStates ControlBorder Accent1ControlBorderStates'}" />
+    <Style x:Key="Accent2ProgressBar" TargetType="ProgressBar" BasedOn="{c:MergeStyles 'PrimaryProgressBar ControlBackground Accent2ControlBackgroundStates ControlBorder Accent2ControlBorderStates'}" />
 
     <Style TargetType="ProgressBar" BasedOn="{StaticResource Accent2ProgressBar}" />
 
