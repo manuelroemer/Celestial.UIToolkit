@@ -218,38 +218,22 @@ namespace Celestial.UIToolkit.Controls
         }
         
         /// <summary>
-        /// Raises the <see cref="SelectedItemChanged"/> event and
-        /// calls the <see cref="OnSelectedItemChanged"/> method afterwards.
+        /// Raises the <see cref="SelectedItemChanged"/> event.
         /// </summary>
         /// <param name="e">Event data for the event.</param>
-        protected void RaiseSelectedItemChanged(NavigationViewItemEventArgs e)
+        protected virtual void OnSelectedItemChanged(NavigationViewItemEventArgs e)
         {
-            OnSelectedItemChanged(e);
             SelectedItemChanged?.Invoke(this, e);
         }
-
+        
         /// <summary>
-        /// Called before the <see cref="SelectedItemChanged"/> event occurs.
+        /// Raises the <see cref="ItemInvoked"/> event
         /// </summary>
         /// <param name="e">Event data for the event.</param>
-        protected virtual void OnSelectedItemChanged(NavigationViewItemEventArgs e) { }
-
-        /// <summary>
-        /// Raises the <see cref="ItemInvoked"/> event and
-        /// calls the <see cref="OnItemInvoked"/> method afterwards.
-        /// </summary>
-        /// <param name="e">Event data for the event.</param>
-        protected void RaiseItemInvoked(NavigationViewItemEventArgs e)
+        protected virtual void OnItemInvoked(NavigationViewItemEventArgs e)
         {
-            OnItemInvoked(e);
             ItemInvoked?.Invoke(this, e);
         }
-
-        /// <summary>
-        /// Called before the <see cref="ItemInvoked"/> event occurs.
-        /// </summary>
-        /// <param name="e">Event data for the event.</param>
-        protected virtual void OnItemInvoked(NavigationViewItemEventArgs e) { }
 
     }
 

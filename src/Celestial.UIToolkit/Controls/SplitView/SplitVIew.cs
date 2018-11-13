@@ -61,16 +61,16 @@ namespace Celestial.UIToolkit.Controls
         
         private void OpenPane()
         {
-            RaisePaneOpening();
+            OnPaneOpening();
             EnterCurrentDisplayModeVisualState();
-            RaisePaneOpened();
+            OnPaneOpened();
         }
 
         private void ClosePane()
         {
-            RaisePaneClosing();
+            OnPaneClosing();
             EnterCurrentDisplayModeVisualState();
-            RaisePaneClosed();
+            OnPaneClosed();
         }
         
     }
