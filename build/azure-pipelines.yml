@@ -37,7 +37,13 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-# Publish Dlls, Packages and ControlGallery.
+# Generate documentation files.
+- task: PowerShell@2
+  displayName: 'Generate Documentation'
+  inputs:
+    filePath: './generate-docs.ps1'
+
+# Publish Dlls, ControlGallery, NuGet Packages and Documentation files.
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Dll Artifacts'
   inputs:
@@ -57,4 +63,11 @@ steps:
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)/NuGet'
     ArtifactName: 'NuGet-Packages'
+  condition: and(succeeded(), eq(variables['system.pullrequest.isfork'], false))
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Documentation'
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/Documentation/_site'
+    ArtifactName: 'Documentation'
   condition: and(succeeded(), eq(variables['system.pullrequest.isfork'], false))
