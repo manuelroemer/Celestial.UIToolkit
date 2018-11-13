@@ -6,6 +6,7 @@ Microsoft's Fluent Design and Google's Material Design.
 [![NuGet - Celestial.UIToolkit.Core](https://img.shields.io/nuget/v/Celestial.UIToolkit.Core.svg?label=Celestial.UIToolkit.Core)](https://www.nuget.org/packages/Celestial.UIToolkit.Core/)
 [![NuGet - Celestial.UIToolkit](https://img.shields.io/nuget/v/Celestial.UIToolkit.svg?label=Celestial.UIToolkit)](https://www.nuget.org/packages/Celestial.UIToolkit/)
 
+![Example Image](./.github/images/MainExample.png)
 
 ## Table of Contents
 * [1. Getting started](#1-getting-started)
@@ -15,6 +16,7 @@ Microsoft's Fluent Design and Google's Material Design.
   * [1.4 Which DLL do I need?](#14-which-dll-do-i-need)
   * [1.5 The Control Gallery](#15-the-control-gallery)
 * [2. Documentation](#2-documentation)
+* [3. Contributing](#3-contributing)
 
 ## 1. Getting Started
 ### 1.1 What is Celestial.UIToolkit?
@@ -34,7 +36,7 @@ The libraries can be installed via NuGet (preferred way), or via
 
 *Unsure about what to install? See [Section 1.4](#14-which-dll-do-i-need) for details.*
 
-*Done with installing, but unsure how to use the toolkit? Head over to the 
+*Done with installing, but unsure about how to use the toolkit? Head over to the 
 [Guides](https://manuelroemer.github.io/Celestial.UIToolkit/doc/articles/introduction.html) 
 for a tutorial*.
 
@@ -89,29 +91,6 @@ Here are some screenshots of the application:
 ![Control Gallery Screenshot 2](./.github/Images/ControlGalleryExample2.png)
 ![Control Gallery Screenshot 3](./.github/Images/ControlGalleryExample3.png)
 
-## Style Naming Format
-The styles in the toolkit follow the following naming convention:
-
-```
-StyleName := [SizeModifier]<ColorTheme>[Specialization]<ControlName>
-
-where:
-
-SizeModifier   := "Large" | "Compact"
-ColorTheme     := "Standard" | "Accent1" | "Accent2"
-Specialization := "[Any possible string. Up to the Style Author.]"
-ControlName    := "[The .NET type name of the Control.]"
-```
-
-There are some exceptions to the `ControlName` rule.
-Sometimes, a single style is used for multiple Controls.
-This can happen when the controls have a shared base class from which they inherit, 
-e.g. `Button` and `ToggleButton`.
-
-In this case, the styles have a generalized control name.
-For buttons, the styles are called `...Button`.
-
-
 
 ## 2. Documentation
 There are three sources of documentation available:
@@ -121,48 +100,3 @@ There are three sources of documentation available:
 | [ControlGallery](https://github.com/manuelroemer/Celestial.UIToolkit/releases/latest) | The ControlGallery application is your information source for controls and examples on how to use them. [More info on what the ControlGallery provides.](#15-the-control-gallery) |
 | [Guides](https://manuelroemer.github.io/Celestial.UIToolkit/doc/articles/introduction.html) | There are several guides available, ranging from topics on getting started, up to more specific concepts and details of the toolkit. |
 | [API Reference](https://manuelroemer.github.io/Celestial.UIToolkit/doc/api/Celestial.UIToolkit.html) | A list of all current API members, like MSDN. |
-
-### Examples
-
-**The simplest Style names:**
-
-```
-StandardTextBox
-Accent1ComboBox
-Accent2Button
-
-== <ColorTheme><ControlName>
-```
-
-
-**Specialized Style names:**
-
-```
-StandardFlatButton
-Accent1CircleButton
-Accent1OutlinedComboBox
-Accent2OutlinedTextBox
-
-== <ColorTheme>[Specialization]<ControlName>
-```
-
-
-**Size variations:**
-
-```
-LargeStandardListBox
-CompactAccent1ListView
-LargeAccent2ListView
-
-== [SizeModifier]<ColorTheme><ControlName>
-```
-
-
-**All together:**
-*(Note: This style doesn't exist - it is just an example.)*
-
-```
-CompactAccent1SpecializedButton
-
-== [SizeModifier]<ColorTheme>[Specialization]<ControlName>
-```
