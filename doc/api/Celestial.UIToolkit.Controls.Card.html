@@ -1,0 +1,2134 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Card
+   | Celestial.UIToolkit </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Card
+   | Celestial.UIToolkit ">
+    <meta name="generator" content="docfx 2.40.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Celestial.UIToolkit.Controls.Card">
+  
+  
+  <h1 id="Celestial_UIToolkit_Controls_Card" data-uid="Celestial.UIToolkit.Controls.Card" class="text-break">Class Card
+  </h1>
+  <div class="markdown level0 summary"><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.contentcontrol">ContentControl</a> which depicts a card.
+In addition to the the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.contentcontrol.content#System_Windows_Controls_ContentControl_Content">Content</a>,
+the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html">Card</a> provides a set of additional content properties
+like <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_Title">Title</a> and <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_MediaContent">MediaContent</a> to organize the
+content into structured parts.
+This allows control templates to change the arrangement of the card's
+different elements, while giving the user full control over what the
+content looks like.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.threading.dispatcherobject">DispatcherObject</a></div>
+    <div class="level2"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a></div>
+    <div class="level3"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.visual">Visual</a></div>
+    <div class="level4"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.uielement">UIElement</a></div>
+    <div class="level5"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement">FrameworkElement</a></div>
+    <div class="level6"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.control">Control</a></div>
+    <div class="level7"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.contentcontrol">ContentControl</a></div>
+    <div class="level8"><span class="xref">Card</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Celestial.UIToolkit.Controls.html">Celestial.UIToolkit.Controls</a></h6>
+  <h6><strong>Assembly</strong>: Celestial.UIToolkit.dll</h6>
+  <h5 id="Celestial_UIToolkit_Controls_Card_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Card : ContentControl, DUCE.IResource, IAnimatable, IFrameworkInputElement, IInputElement, ISupportInitialize, IHaveResources, IQueryAmbient, IAddChild</code></pre>
+  </div>
+  <h5 id="Celestial_UIToolkit_Controls_Card_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>At its core, a card is nothing else but a glorified border which hosts
+content.
+In terms of design language, a card is a contained, independent unit
+which displays and organizes content.
+Learn more about cards at:
+<a href="https://material.io/design/components/cards.html#anatomy">https://material.io/design/components/cards.html#anatomy</a></p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card__ctor.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.cs/#L40">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card__ctor_" data-uid="Celestial.UIToolkit.Controls.Card.#ctor*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card__ctor" data-uid="Celestial.UIToolkit.Controls.Card.#ctor">Card()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html">Card</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Card()</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_HasMediaContentProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.HasMediaContentProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L630">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_Card_HasMediaContentProperty" data-uid="Celestial.UIToolkit.Controls.Card.HasMediaContentProperty">HasMediaContentProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_HasMediaContent">HasMediaContent</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty HasMediaContentProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_HasSubTitleProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.HasSubTitleProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L244">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_Card_HasSubTitleProperty" data-uid="Celestial.UIToolkit.Controls.Card.HasSubTitleProperty">HasSubTitleProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_HasSubTitle">HasSubTitle</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty HasSubTitleProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_HasThumbnailProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.HasThumbnailProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L437">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_Card_HasThumbnailProperty" data-uid="Celestial.UIToolkit.Controls.Card.HasThumbnailProperty">HasThumbnailProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_HasThumbnail">HasThumbnail</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty HasThumbnailProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_HasTitleProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.HasTitleProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L51">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_Card_HasTitleProperty" data-uid="Celestial.UIToolkit.Controls.Card.HasTitleProperty">HasTitleProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_HasTitle">HasTitle</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty HasTitleProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_MediaContentProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.MediaContentProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L636">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_Card_MediaContentProperty" data-uid="Celestial.UIToolkit.Controls.Card.MediaContentProperty">MediaContentProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_MediaContent">MediaContent</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty MediaContentProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_MediaContentStringFormatProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.MediaContentStringFormatProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L672">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_Card_MediaContentStringFormatProperty" data-uid="Celestial.UIToolkit.Controls.Card.MediaContentStringFormatProperty">MediaContentStringFormatProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_MediaContentStringFormat">MediaContentStringFormat</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty MediaContentStringFormatProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_MediaContentTemplateProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.MediaContentTemplateProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L648">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_Card_MediaContentTemplateProperty" data-uid="Celestial.UIToolkit.Controls.Card.MediaContentTemplateProperty">MediaContentTemplateProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_MediaContentTemplate">MediaContentTemplate</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty MediaContentTemplateProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_MediaContentTemplateSelectorProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.MediaContentTemplateSelectorProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L660">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_Card_MediaContentTemplateSelectorProperty" data-uid="Celestial.UIToolkit.Controls.Card.MediaContentTemplateSelectorProperty">MediaContentTemplateSelectorProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_MediaContentTemplateSelector">MediaContentTemplateSelector</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty MediaContentTemplateSelectorProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_SubTitleProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.SubTitleProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L250">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_Card_SubTitleProperty" data-uid="Celestial.UIToolkit.Controls.Card.SubTitleProperty">SubTitleProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_SubTitle">SubTitle</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty SubTitleProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_SubTitleStringFormatProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.SubTitleStringFormatProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L286">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_Card_SubTitleStringFormatProperty" data-uid="Celestial.UIToolkit.Controls.Card.SubTitleStringFormatProperty">SubTitleStringFormatProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_SubTitleStringFormat">SubTitleStringFormat</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty SubTitleStringFormatProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_SubTitleTemplateProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.SubTitleTemplateProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L262">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_Card_SubTitleTemplateProperty" data-uid="Celestial.UIToolkit.Controls.Card.SubTitleTemplateProperty">SubTitleTemplateProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_SubTitleTemplate">SubTitleTemplate</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty SubTitleTemplateProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_SubTitleTemplateSelectorProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.SubTitleTemplateSelectorProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L274">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_Card_SubTitleTemplateSelectorProperty" data-uid="Celestial.UIToolkit.Controls.Card.SubTitleTemplateSelectorProperty">SubTitleTemplateSelectorProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_SubTitleTemplateSelector">SubTitleTemplateSelector</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty SubTitleTemplateSelectorProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_ThumbnailProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.ThumbnailProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L443">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_Card_ThumbnailProperty" data-uid="Celestial.UIToolkit.Controls.Card.ThumbnailProperty">ThumbnailProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_Thumbnail">Thumbnail</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty ThumbnailProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_ThumbnailStringFormatProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.ThumbnailStringFormatProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L479">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_Card_ThumbnailStringFormatProperty" data-uid="Celestial.UIToolkit.Controls.Card.ThumbnailStringFormatProperty">ThumbnailStringFormatProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_ThumbnailStringFormat">ThumbnailStringFormat</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty ThumbnailStringFormatProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_ThumbnailTemplateProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.ThumbnailTemplateProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L455">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_Card_ThumbnailTemplateProperty" data-uid="Celestial.UIToolkit.Controls.Card.ThumbnailTemplateProperty">ThumbnailTemplateProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_ThumbnailTemplate">ThumbnailTemplate</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty ThumbnailTemplateProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_ThumbnailTemplateSelectorProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.ThumbnailTemplateSelectorProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L467">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_Card_ThumbnailTemplateSelectorProperty" data-uid="Celestial.UIToolkit.Controls.Card.ThumbnailTemplateSelectorProperty">ThumbnailTemplateSelectorProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_ThumbnailTemplateSelector">ThumbnailTemplateSelector</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty ThumbnailTemplateSelectorProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_TitleProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.TitleProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L57">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_Card_TitleProperty" data-uid="Celestial.UIToolkit.Controls.Card.TitleProperty">TitleProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_Title">Title</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty TitleProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_TitleStringFormatProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.TitleStringFormatProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L93">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_Card_TitleStringFormatProperty" data-uid="Celestial.UIToolkit.Controls.Card.TitleStringFormatProperty">TitleStringFormatProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_TitleStringFormat">TitleStringFormat</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty TitleStringFormatProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_TitleTemplateProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.TitleTemplateProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L69">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_Card_TitleTemplateProperty" data-uid="Celestial.UIToolkit.Controls.Card.TitleTemplateProperty">TitleTemplateProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_TitleTemplate">TitleTemplate</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty TitleTemplateProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_TitleTemplateSelectorProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.TitleTemplateSelectorProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L81">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_Card_TitleTemplateSelectorProperty" data-uid="Celestial.UIToolkit.Controls.Card.TitleTemplateSelectorProperty">TitleTemplateSelectorProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_TitleTemplateSelector">TitleTemplateSelector</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty TitleTemplateSelectorProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_HasMediaContent.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.HasMediaContent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L685">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_HasMediaContent_" data-uid="Celestial.UIToolkit.Controls.Card.HasMediaContent*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_HasMediaContent" data-uid="Celestial.UIToolkit.Controls.Card.HasMediaContent">HasMediaContent</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_MediaContent">MediaContent</a> property of this
+<a class="xref" href="Celestial.UIToolkit.Controls.Card.html">Card</a> holds any content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(false)]
+[Browsable(false)]
+public bool HasMediaContent { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_HasSubTitle.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.HasSubTitle%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L299">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_HasSubTitle_" data-uid="Celestial.UIToolkit.Controls.Card.HasSubTitle*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_HasSubTitle" data-uid="Celestial.UIToolkit.Controls.Card.HasSubTitle">HasSubTitle</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_SubTitle">SubTitle</a> property of this
+<a class="xref" href="Celestial.UIToolkit.Controls.Card.html">Card</a> holds any content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(false)]
+[Browsable(false)]
+public bool HasSubTitle { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_HasThumbnail.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.HasThumbnail%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L492">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_HasThumbnail_" data-uid="Celestial.UIToolkit.Controls.Card.HasThumbnail*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_HasThumbnail" data-uid="Celestial.UIToolkit.Controls.Card.HasThumbnail">HasThumbnail</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_Thumbnail">Thumbnail</a> property of this
+<a class="xref" href="Celestial.UIToolkit.Controls.Card.html">Card</a> holds any content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(false)]
+[Browsable(false)]
+public bool HasThumbnail { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_HasTitle.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.HasTitle%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L106">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_HasTitle_" data-uid="Celestial.UIToolkit.Controls.Card.HasTitle*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_HasTitle" data-uid="Celestial.UIToolkit.Controls.Card.HasTitle">HasTitle</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_Title">Title</a> property of this
+<a class="xref" href="Celestial.UIToolkit.Controls.Card.html">Card</a> holds any content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(false)]
+[Browsable(false)]
+public bool HasTitle { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_LogicalChildren.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.LogicalChildren%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L23">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_LogicalChildren_" data-uid="Celestial.UIToolkit.Controls.Card.LogicalChildren*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_LogicalChildren" data-uid="Celestial.UIToolkit.Controls.Card.LogicalChildren">LogicalChildren</h4>
+  <div class="markdown level1 summary"><p>Gets an enumerator on the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html">Card</a>'s logical children.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IEnumerator LogicalChildren { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.contentcontrol.logicalchildren#System_Windows_Controls_ContentControl_LogicalChildren">ContentControl.LogicalChildren</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_MediaContent.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.MediaContent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L696">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_MediaContent_" data-uid="Celestial.UIToolkit.Controls.Card.MediaContent*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_MediaContent" data-uid="Celestial.UIToolkit.Controls.Card.MediaContent">MediaContent</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the content which is being displayed in the MediaContent of the
+<a class="xref" href="Celestial.UIToolkit.Controls.Card.html">Card</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+[Localizability(LocalizationCategory.Label)]
+public object MediaContent { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_MediaContentStringFormat.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.MediaContentStringFormat%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L730">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_MediaContentStringFormat_" data-uid="Celestial.UIToolkit.Controls.Card.MediaContentStringFormat*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_MediaContentStringFormat" data-uid="Celestial.UIToolkit.Controls.Card.MediaContentStringFormat">MediaContentStringFormat</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a composite string that specifies how to format the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_MediaContent">MediaContent</a>
+content property, if it is displayed as a string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+public string MediaContentStringFormat { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_MediaContentTemplate.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.MediaContentTemplate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L708">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_MediaContentTemplate_" data-uid="Celestial.UIToolkit.Controls.Card.MediaContentTemplate*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_MediaContentTemplate" data-uid="Celestial.UIToolkit.Controls.Card.MediaContentTemplate">MediaContentTemplate</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a> to be used for displaying the
+<a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_MediaContent">MediaContent</a> content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+public DataTemplate MediaContentTemplate { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_MediaContentTemplateSelector.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.MediaContentTemplateSelector%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L719">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_MediaContentTemplateSelector_" data-uid="Celestial.UIToolkit.Controls.Card.MediaContentTemplateSelector*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_MediaContentTemplateSelector" data-uid="Celestial.UIToolkit.Controls.Card.MediaContentTemplateSelector">MediaContentTemplateSelector</h4>
+  <div class="markdown level1 summary"><p>Gets or sets <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a> which enables an application writer
+to provide custom template-selection logic for the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_MediaContent">MediaContent</a> content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+public DataTemplateSelector MediaContentTemplateSelector { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_SubTitle.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.SubTitle%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L310">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_SubTitle_" data-uid="Celestial.UIToolkit.Controls.Card.SubTitle*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_SubTitle" data-uid="Celestial.UIToolkit.Controls.Card.SubTitle">SubTitle</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the content which is being displayed in the SubTitle of the
+<a class="xref" href="Celestial.UIToolkit.Controls.Card.html">Card</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+[Localizability(LocalizationCategory.Label)]
+public object SubTitle { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_SubTitleStringFormat.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.SubTitleStringFormat%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L344">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_SubTitleStringFormat_" data-uid="Celestial.UIToolkit.Controls.Card.SubTitleStringFormat*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_SubTitleStringFormat" data-uid="Celestial.UIToolkit.Controls.Card.SubTitleStringFormat">SubTitleStringFormat</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a composite string that specifies how to format the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_SubTitle">SubTitle</a>
+content property, if it is displayed as a string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+public string SubTitleStringFormat { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_SubTitleTemplate.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.SubTitleTemplate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L322">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_SubTitleTemplate_" data-uid="Celestial.UIToolkit.Controls.Card.SubTitleTemplate*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_SubTitleTemplate" data-uid="Celestial.UIToolkit.Controls.Card.SubTitleTemplate">SubTitleTemplate</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a> to be used for displaying the
+<a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_SubTitle">SubTitle</a> content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+public DataTemplate SubTitleTemplate { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_SubTitleTemplateSelector.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.SubTitleTemplateSelector%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L333">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_SubTitleTemplateSelector_" data-uid="Celestial.UIToolkit.Controls.Card.SubTitleTemplateSelector*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_SubTitleTemplateSelector" data-uid="Celestial.UIToolkit.Controls.Card.SubTitleTemplateSelector">SubTitleTemplateSelector</h4>
+  <div class="markdown level1 summary"><p>Gets or sets <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a> which enables an application writer
+to provide custom template-selection logic for the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_SubTitle">SubTitle</a> content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+public DataTemplateSelector SubTitleTemplateSelector { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_Thumbnail.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.Thumbnail%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L503">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_Thumbnail_" data-uid="Celestial.UIToolkit.Controls.Card.Thumbnail*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_Thumbnail" data-uid="Celestial.UIToolkit.Controls.Card.Thumbnail">Thumbnail</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the content which is being displayed in the Thumbnail of the
+<a class="xref" href="Celestial.UIToolkit.Controls.Card.html">Card</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+[Localizability(LocalizationCategory.Label)]
+public object Thumbnail { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_ThumbnailStringFormat.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.ThumbnailStringFormat%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L537">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_ThumbnailStringFormat_" data-uid="Celestial.UIToolkit.Controls.Card.ThumbnailStringFormat*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_ThumbnailStringFormat" data-uid="Celestial.UIToolkit.Controls.Card.ThumbnailStringFormat">ThumbnailStringFormat</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a composite string that specifies how to format the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_Thumbnail">Thumbnail</a>
+content property, if it is displayed as a string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+public string ThumbnailStringFormat { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_ThumbnailTemplate.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.ThumbnailTemplate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L515">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_ThumbnailTemplate_" data-uid="Celestial.UIToolkit.Controls.Card.ThumbnailTemplate*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_ThumbnailTemplate" data-uid="Celestial.UIToolkit.Controls.Card.ThumbnailTemplate">ThumbnailTemplate</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a> to be used for displaying the
+<a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_Thumbnail">Thumbnail</a> content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+public DataTemplate ThumbnailTemplate { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_ThumbnailTemplateSelector.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.ThumbnailTemplateSelector%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L526">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_ThumbnailTemplateSelector_" data-uid="Celestial.UIToolkit.Controls.Card.ThumbnailTemplateSelector*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_ThumbnailTemplateSelector" data-uid="Celestial.UIToolkit.Controls.Card.ThumbnailTemplateSelector">ThumbnailTemplateSelector</h4>
+  <div class="markdown level1 summary"><p>Gets or sets <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a> which enables an application writer
+to provide custom template-selection logic for the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_Thumbnail">Thumbnail</a> content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+public DataTemplateSelector ThumbnailTemplateSelector { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_Title.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.Title%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L117">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_Title_" data-uid="Celestial.UIToolkit.Controls.Card.Title*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_Title" data-uid="Celestial.UIToolkit.Controls.Card.Title">Title</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the content which is being displayed in the Title of the
+<a class="xref" href="Celestial.UIToolkit.Controls.Card.html">Card</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+[Localizability(LocalizationCategory.Label)]
+public object Title { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_TitleStringFormat.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.TitleStringFormat%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L151">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_TitleStringFormat_" data-uid="Celestial.UIToolkit.Controls.Card.TitleStringFormat*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_TitleStringFormat" data-uid="Celestial.UIToolkit.Controls.Card.TitleStringFormat">TitleStringFormat</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a composite string that specifies how to format the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_Title">Title</a>
+content property, if it is displayed as a string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+public string TitleStringFormat { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_TitleTemplate.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.TitleTemplate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L129">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_TitleTemplate_" data-uid="Celestial.UIToolkit.Controls.Card.TitleTemplate*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_TitleTemplate" data-uid="Celestial.UIToolkit.Controls.Card.TitleTemplate">TitleTemplate</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a> to be used for displaying the
+<a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_Title">Title</a> content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+public DataTemplate TitleTemplate { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_TitleTemplateSelector.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.TitleTemplateSelector%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L140">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_TitleTemplateSelector_" data-uid="Celestial.UIToolkit.Controls.Card.TitleTemplateSelector*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_TitleTemplateSelector" data-uid="Celestial.UIToolkit.Controls.Card.TitleTemplateSelector">TitleTemplateSelector</h4>
+  <div class="markdown level1 summary"><p>Gets or sets <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a> which enables an application writer
+to provide custom template-selection logic for the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_Title">Title</a> content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+public DataTemplateSelector TitleTemplateSelector { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_OnMediaContentChanged_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.OnMediaContentChanged(System.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L772">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_OnMediaContentChanged_" data-uid="Celestial.UIToolkit.Controls.Card.OnMediaContentChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_OnMediaContentChanged_System_Object_System_Object_" data-uid="Celestial.UIToolkit.Controls.Card.OnMediaContentChanged(System.Object,System.Object)">OnMediaContentChanged(Object, Object)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_MediaContent">MediaContent</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnMediaContentChanged(object oldValue, object newValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">oldValue</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_MediaContent">MediaContent</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">newValue</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_MediaContent">MediaContent</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_OnMediaContentStringFormatChanged_System_String_System_String_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.OnMediaContentStringFormatChanged(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L809">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_OnMediaContentStringFormatChanged_" data-uid="Celestial.UIToolkit.Controls.Card.OnMediaContentStringFormatChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_OnMediaContentStringFormatChanged_System_String_System_String_" data-uid="Celestial.UIToolkit.Controls.Card.OnMediaContentStringFormatChanged(System.String,System.String)">OnMediaContentStringFormatChanged(String, String)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_MediaContentStringFormat">MediaContentStringFormat</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnMediaContentStringFormatChanged(string oldStringFormat, string newStringFormat)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">oldStringFormat</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_MediaContentStringFormat">MediaContentStringFormat</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">newStringFormat</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_MediaContentStringFormat">MediaContentStringFormat</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_OnMediaContentTemplateChanged_System_Windows_DataTemplate_System_Windows_DataTemplate_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.OnMediaContentTemplateChanged(System.Windows.DataTemplate%2CSystem.Windows.DataTemplate)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L783">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_OnMediaContentTemplateChanged_" data-uid="Celestial.UIToolkit.Controls.Card.OnMediaContentTemplateChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_OnMediaContentTemplateChanged_System_Windows_DataTemplate_System_Windows_DataTemplate_" data-uid="Celestial.UIToolkit.Controls.Card.OnMediaContentTemplateChanged(System.Windows.DataTemplate,System.Windows.DataTemplate)">OnMediaContentTemplateChanged(DataTemplate, DataTemplate)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_MediaContentTemplate">MediaContentTemplate</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnMediaContentTemplateChanged(DataTemplate oldTemplate, DataTemplate newTemplate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a></td>
+        <td><span class="parametername">oldTemplate</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_MediaContentTemplate">MediaContentTemplate</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a></td>
+        <td><span class="parametername">newTemplate</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_MediaContentTemplate">MediaContentTemplate</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_OnMediaContentTemplateSelectorChanged_System_Windows_Controls_DataTemplateSelector_System_Windows_Controls_DataTemplateSelector_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.OnMediaContentTemplateSelectorChanged(System.Windows.Controls.DataTemplateSelector%2CSystem.Windows.Controls.DataTemplateSelector)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L796">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_OnMediaContentTemplateSelectorChanged_" data-uid="Celestial.UIToolkit.Controls.Card.OnMediaContentTemplateSelectorChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_OnMediaContentTemplateSelectorChanged_System_Windows_Controls_DataTemplateSelector_System_Windows_Controls_DataTemplateSelector_" data-uid="Celestial.UIToolkit.Controls.Card.OnMediaContentTemplateSelectorChanged(System.Windows.Controls.DataTemplateSelector,System.Windows.Controls.DataTemplateSelector)">OnMediaContentTemplateSelectorChanged(DataTemplateSelector, DataTemplateSelector)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_MediaContentTemplateSelector">MediaContentTemplateSelector</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnMediaContentTemplateSelectorChanged(DataTemplateSelector oldSelector, DataTemplateSelector newSelector)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a></td>
+        <td><span class="parametername">oldSelector</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_MediaContentTemplateSelector">MediaContentTemplateSelector</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a></td>
+        <td><span class="parametername">newSelector</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_MediaContentTemplateSelector">MediaContentTemplateSelector</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_OnSubTitleChanged_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.OnSubTitleChanged(System.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L386">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_OnSubTitleChanged_" data-uid="Celestial.UIToolkit.Controls.Card.OnSubTitleChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_OnSubTitleChanged_System_Object_System_Object_" data-uid="Celestial.UIToolkit.Controls.Card.OnSubTitleChanged(System.Object,System.Object)">OnSubTitleChanged(Object, Object)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_SubTitle">SubTitle</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnSubTitleChanged(object oldValue, object newValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">oldValue</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_SubTitle">SubTitle</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">newValue</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_SubTitle">SubTitle</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_OnSubTitleStringFormatChanged_System_String_System_String_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.OnSubTitleStringFormatChanged(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L423">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_OnSubTitleStringFormatChanged_" data-uid="Celestial.UIToolkit.Controls.Card.OnSubTitleStringFormatChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_OnSubTitleStringFormatChanged_System_String_System_String_" data-uid="Celestial.UIToolkit.Controls.Card.OnSubTitleStringFormatChanged(System.String,System.String)">OnSubTitleStringFormatChanged(String, String)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_SubTitleStringFormat">SubTitleStringFormat</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnSubTitleStringFormatChanged(string oldStringFormat, string newStringFormat)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">oldStringFormat</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_SubTitleStringFormat">SubTitleStringFormat</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">newStringFormat</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_SubTitleStringFormat">SubTitleStringFormat</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_OnSubTitleTemplateChanged_System_Windows_DataTemplate_System_Windows_DataTemplate_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.OnSubTitleTemplateChanged(System.Windows.DataTemplate%2CSystem.Windows.DataTemplate)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L397">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_OnSubTitleTemplateChanged_" data-uid="Celestial.UIToolkit.Controls.Card.OnSubTitleTemplateChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_OnSubTitleTemplateChanged_System_Windows_DataTemplate_System_Windows_DataTemplate_" data-uid="Celestial.UIToolkit.Controls.Card.OnSubTitleTemplateChanged(System.Windows.DataTemplate,System.Windows.DataTemplate)">OnSubTitleTemplateChanged(DataTemplate, DataTemplate)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_SubTitleTemplate">SubTitleTemplate</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnSubTitleTemplateChanged(DataTemplate oldTemplate, DataTemplate newTemplate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a></td>
+        <td><span class="parametername">oldTemplate</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_SubTitleTemplate">SubTitleTemplate</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a></td>
+        <td><span class="parametername">newTemplate</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_SubTitleTemplate">SubTitleTemplate</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_OnSubTitleTemplateSelectorChanged_System_Windows_Controls_DataTemplateSelector_System_Windows_Controls_DataTemplateSelector_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.OnSubTitleTemplateSelectorChanged(System.Windows.Controls.DataTemplateSelector%2CSystem.Windows.Controls.DataTemplateSelector)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L410">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_OnSubTitleTemplateSelectorChanged_" data-uid="Celestial.UIToolkit.Controls.Card.OnSubTitleTemplateSelectorChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_OnSubTitleTemplateSelectorChanged_System_Windows_Controls_DataTemplateSelector_System_Windows_Controls_DataTemplateSelector_" data-uid="Celestial.UIToolkit.Controls.Card.OnSubTitleTemplateSelectorChanged(System.Windows.Controls.DataTemplateSelector,System.Windows.Controls.DataTemplateSelector)">OnSubTitleTemplateSelectorChanged(DataTemplateSelector, DataTemplateSelector)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_SubTitleTemplateSelector">SubTitleTemplateSelector</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnSubTitleTemplateSelectorChanged(DataTemplateSelector oldSelector, DataTemplateSelector newSelector)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a></td>
+        <td><span class="parametername">oldSelector</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_SubTitleTemplateSelector">SubTitleTemplateSelector</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a></td>
+        <td><span class="parametername">newSelector</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_SubTitleTemplateSelector">SubTitleTemplateSelector</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_OnThumbnailChanged_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.OnThumbnailChanged(System.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L579">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_OnThumbnailChanged_" data-uid="Celestial.UIToolkit.Controls.Card.OnThumbnailChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_OnThumbnailChanged_System_Object_System_Object_" data-uid="Celestial.UIToolkit.Controls.Card.OnThumbnailChanged(System.Object,System.Object)">OnThumbnailChanged(Object, Object)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_Thumbnail">Thumbnail</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnThumbnailChanged(object oldValue, object newValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">oldValue</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_Thumbnail">Thumbnail</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">newValue</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_Thumbnail">Thumbnail</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_OnThumbnailStringFormatChanged_System_String_System_String_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.OnThumbnailStringFormatChanged(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L616">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_OnThumbnailStringFormatChanged_" data-uid="Celestial.UIToolkit.Controls.Card.OnThumbnailStringFormatChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_OnThumbnailStringFormatChanged_System_String_System_String_" data-uid="Celestial.UIToolkit.Controls.Card.OnThumbnailStringFormatChanged(System.String,System.String)">OnThumbnailStringFormatChanged(String, String)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_ThumbnailStringFormat">ThumbnailStringFormat</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnThumbnailStringFormatChanged(string oldStringFormat, string newStringFormat)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">oldStringFormat</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_ThumbnailStringFormat">ThumbnailStringFormat</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">newStringFormat</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_ThumbnailStringFormat">ThumbnailStringFormat</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_OnThumbnailTemplateChanged_System_Windows_DataTemplate_System_Windows_DataTemplate_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.OnThumbnailTemplateChanged(System.Windows.DataTemplate%2CSystem.Windows.DataTemplate)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L590">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_OnThumbnailTemplateChanged_" data-uid="Celestial.UIToolkit.Controls.Card.OnThumbnailTemplateChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_OnThumbnailTemplateChanged_System_Windows_DataTemplate_System_Windows_DataTemplate_" data-uid="Celestial.UIToolkit.Controls.Card.OnThumbnailTemplateChanged(System.Windows.DataTemplate,System.Windows.DataTemplate)">OnThumbnailTemplateChanged(DataTemplate, DataTemplate)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_ThumbnailTemplate">ThumbnailTemplate</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnThumbnailTemplateChanged(DataTemplate oldTemplate, DataTemplate newTemplate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a></td>
+        <td><span class="parametername">oldTemplate</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_ThumbnailTemplate">ThumbnailTemplate</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a></td>
+        <td><span class="parametername">newTemplate</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_ThumbnailTemplate">ThumbnailTemplate</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_OnThumbnailTemplateSelectorChanged_System_Windows_Controls_DataTemplateSelector_System_Windows_Controls_DataTemplateSelector_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.OnThumbnailTemplateSelectorChanged(System.Windows.Controls.DataTemplateSelector%2CSystem.Windows.Controls.DataTemplateSelector)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L603">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_OnThumbnailTemplateSelectorChanged_" data-uid="Celestial.UIToolkit.Controls.Card.OnThumbnailTemplateSelectorChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_OnThumbnailTemplateSelectorChanged_System_Windows_Controls_DataTemplateSelector_System_Windows_Controls_DataTemplateSelector_" data-uid="Celestial.UIToolkit.Controls.Card.OnThumbnailTemplateSelectorChanged(System.Windows.Controls.DataTemplateSelector,System.Windows.Controls.DataTemplateSelector)">OnThumbnailTemplateSelectorChanged(DataTemplateSelector, DataTemplateSelector)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_ThumbnailTemplateSelector">ThumbnailTemplateSelector</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnThumbnailTemplateSelectorChanged(DataTemplateSelector oldSelector, DataTemplateSelector newSelector)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a></td>
+        <td><span class="parametername">oldSelector</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_ThumbnailTemplateSelector">ThumbnailTemplateSelector</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a></td>
+        <td><span class="parametername">newSelector</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_ThumbnailTemplateSelector">ThumbnailTemplateSelector</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_OnTitleChanged_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.OnTitleChanged(System.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L193">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_OnTitleChanged_" data-uid="Celestial.UIToolkit.Controls.Card.OnTitleChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_OnTitleChanged_System_Object_System_Object_" data-uid="Celestial.UIToolkit.Controls.Card.OnTitleChanged(System.Object,System.Object)">OnTitleChanged(Object, Object)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_Title">Title</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnTitleChanged(object oldValue, object newValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">oldValue</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_Title">Title</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">newValue</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_Title">Title</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_OnTitleStringFormatChanged_System_String_System_String_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.OnTitleStringFormatChanged(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L230">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_OnTitleStringFormatChanged_" data-uid="Celestial.UIToolkit.Controls.Card.OnTitleStringFormatChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_OnTitleStringFormatChanged_System_String_System_String_" data-uid="Celestial.UIToolkit.Controls.Card.OnTitleStringFormatChanged(System.String,System.String)">OnTitleStringFormatChanged(String, String)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_TitleStringFormat">TitleStringFormat</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnTitleStringFormatChanged(string oldStringFormat, string newStringFormat)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">oldStringFormat</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_TitleStringFormat">TitleStringFormat</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">newStringFormat</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_TitleStringFormat">TitleStringFormat</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_OnTitleTemplateChanged_System_Windows_DataTemplate_System_Windows_DataTemplate_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.OnTitleTemplateChanged(System.Windows.DataTemplate%2CSystem.Windows.DataTemplate)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L204">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_OnTitleTemplateChanged_" data-uid="Celestial.UIToolkit.Controls.Card.OnTitleTemplateChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_OnTitleTemplateChanged_System_Windows_DataTemplate_System_Windows_DataTemplate_" data-uid="Celestial.UIToolkit.Controls.Card.OnTitleTemplateChanged(System.Windows.DataTemplate,System.Windows.DataTemplate)">OnTitleTemplateChanged(DataTemplate, DataTemplate)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_TitleTemplate">TitleTemplate</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnTitleTemplateChanged(DataTemplate oldTemplate, DataTemplate newTemplate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a></td>
+        <td><span class="parametername">oldTemplate</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_TitleTemplate">TitleTemplate</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a></td>
+        <td><span class="parametername">newTemplate</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_TitleTemplate">TitleTemplate</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card_OnTitleTemplateSelectorChanged_System_Windows_Controls_DataTemplateSelector_System_Windows_Controls_DataTemplateSelector_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card.OnTitleTemplateSelectorChanged(System.Windows.Controls.DataTemplateSelector%2CSystem.Windows.Controls.DataTemplateSelector)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L217">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_Card_OnTitleTemplateSelectorChanged_" data-uid="Celestial.UIToolkit.Controls.Card.OnTitleTemplateSelectorChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_Card_OnTitleTemplateSelectorChanged_System_Windows_Controls_DataTemplateSelector_System_Windows_Controls_DataTemplateSelector_" data-uid="Celestial.UIToolkit.Controls.Card.OnTitleTemplateSelectorChanged(System.Windows.Controls.DataTemplateSelector,System.Windows.Controls.DataTemplateSelector)">OnTitleTemplateSelectorChanged(DataTemplateSelector, DataTemplateSelector)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_TitleTemplateSelector">TitleTemplateSelector</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnTitleTemplateSelectorChanged(DataTemplateSelector oldSelector, DataTemplateSelector newSelector)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a></td>
+        <td><span class="parametername">oldSelector</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_TitleTemplateSelector">TitleTemplateSelector</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a></td>
+        <td><span class="parametername">newSelector</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.Card.html#Celestial_UIToolkit_Controls_Card_TitleTemplateSelector">TitleTemplateSelector</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.DependencyObjectExtensions.html#Celestial_UIToolkit_Extensions_DependencyObjectExtensions_HasVisualAncestor_System_Windows_DependencyObject_System_Windows_DependencyObject_">DependencyObjectExtensions.HasVisualAncestor(DependencyObject, DependencyObject)</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.DependencyObjectExtensions.html#Celestial_UIToolkit_Extensions_DependencyObjectExtensions_RemoveLogicalChild_System_Windows_DependencyObject_System_Windows_UIElement_">DependencyObjectExtensions.RemoveLogicalChild(DependencyObject, UIElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.html#Celestial_UIToolkit_Extensions_DependencyPropertyExtensions_IsDependencyPropertySet_System_Windows_DependencyObject_System_Windows_DependencyProperty_">DependencyPropertyExtensions.IsDependencyPropertySet(DependencyObject, DependencyProperty)</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.FrameworkElementExtensions.html#Celestial_UIToolkit_Extensions_FrameworkElementExtensions_GetCenter_System_Windows_FrameworkElement_">FrameworkElementExtensions.GetCenter(FrameworkElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.FrameworkElementExtensions.html#Celestial_UIToolkit_Extensions_FrameworkElementExtensions_IsPointInControlBounds_System_Windows_FrameworkElement_System_Windows_Point_">FrameworkElementExtensions.IsPointInControlBounds(FrameworkElement, Point)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_Card.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.Card%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/Card/Card.GeneratedProperties.cs/#L17" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright &copy; 2018 Celestial.UIToolkit
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

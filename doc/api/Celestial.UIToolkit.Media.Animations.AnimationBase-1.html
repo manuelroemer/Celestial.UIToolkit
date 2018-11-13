@@ -1,0 +1,413 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class AnimationBase&lt;T&gt;
+   | Celestial.UIToolkit </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class AnimationBase&lt;T&gt;
+   | Celestial.UIToolkit ">
+    <meta name="generator" content="docfx 2.40.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Celestial.UIToolkit.Media.Animations.AnimationBase`1">
+  
+  
+  <h1 id="Celestial_UIToolkit_Media_Animations_AnimationBase_1" data-uid="Celestial.UIToolkit.Media.Animations.AnimationBase`1" class="text-break">Class AnimationBase&lt;T&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Defines a base class for a custom <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.animationtimeline">AnimationTimeline</a>,
+following the pattern in the .NET Framework (see remarks).</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.threading.dispatcherobject">DispatcherObject</a></div>
+    <div class="level2"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a></div>
+    <div class="level3"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.freezable">Freezable</a></div>
+    <div class="level4"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.animatable">Animatable</a></div>
+    <div class="level5"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.timeline">Timeline</a></div>
+    <div class="level6"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.animationtimeline">AnimationTimeline</a></div>
+    <div class="level7"><span class="xref">AnimationBase&lt;T&gt;</span></div>
+      <div class="level8"><a class="xref" href="Celestial.UIToolkit.Media.Animations.AnimationUsingKeyFramesBase-3.html">AnimationUsingKeyFramesBase&lt;T, TKeyFrame, TKeyFrameCollection&gt;</a></div>
+      <div class="level8"><a class="xref" href="Celestial.UIToolkit.Media.Animations.FromToByAnimationBase-1.html">FromToByAnimationBase&lt;T&gt;</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Celestial.UIToolkit.Media.Animations.html">Celestial.UIToolkit.Media.Animations</a></h6>
+  <h6><strong>Assembly</strong>: Celestial.UIToolkit.Core.dll</h6>
+  <h5 id="Celestial_UIToolkit_Media_Animations_AnimationBase_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class AnimationBase&lt;T&gt; : AnimationTimeline, ISealable, IAnimatable, DUCE.IResource</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type which is being animated by the animation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Celestial_UIToolkit_Media_Animations_AnimationBase_1_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>For more information about the intended design of animation classes,
+see the following information:
+<a href="https://docs.microsoft.com/de-de/dotnet/framework/wpf/graphics-multimedia/custom-animations-overview#derive-from-animationtimeline">https://docs.microsoft.com/de-de/dotnet/framework/wpf/graphics-multimedia/custom-animations-overview#derive-from-animationtimeline</a></p>
+</div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Media_Animations_AnimationBase_1_TargetPropertyType.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Media.Animations.AnimationBase%601.TargetPropertyType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/Media/Animations/AnimationBase/AnimationBase.cs/#L25">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Media_Animations_AnimationBase_1_TargetPropertyType_" data-uid="Celestial.UIToolkit.Media.Animations.AnimationBase`1.TargetPropertyType*"></a>
+  <h4 id="Celestial_UIToolkit_Media_Animations_AnimationBase_1_TargetPropertyType" data-uid="Celestial.UIToolkit.Media.Animations.AnimationBase`1.TargetPropertyType">TargetPropertyType</h4>
+  <div class="markdown level1 summary"><p>Gets the target type of the animation..</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Type TargetPropertyType { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.animationtimeline.targetpropertytype#System_Windows_Media_Animation_AnimationTimeline_TargetPropertyType">AnimationTimeline.TargetPropertyType</a></div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Media_Animations_AnimationBase_1_GetCurrentValue_System_Object_System_Object_Celestial_UIToolkit_Media_Animations_IAnimationClock_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Media.Animations.AnimationBase%601.GetCurrentValue(System.Object%2CSystem.Object%2CCelestial.UIToolkit.Media.Animations.IAnimationClock)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/Media/Animations/AnimationBase/AnimationBase.cs/#L88">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Media_Animations_AnimationBase_1_GetCurrentValue_" data-uid="Celestial.UIToolkit.Media.Animations.AnimationBase`1.GetCurrentValue*"></a>
+  <h4 id="Celestial_UIToolkit_Media_Animations_AnimationBase_1_GetCurrentValue_System_Object_System_Object_Celestial_UIToolkit_Media_Animations_IAnimationClock_" data-uid="Celestial.UIToolkit.Media.Animations.AnimationBase`1.GetCurrentValue(System.Object,System.Object,Celestial.UIToolkit.Media.Animations.IAnimationClock)">GetCurrentValue(Object, Object, IAnimationClock)</h4>
+  <div class="markdown level1 summary"><p>Returns the current value of the animation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual T GetCurrentValue(object defaultOriginValue, object defaultDestinationValue, IAnimationClock animationClock)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">defaultOriginValue</span></td>
+        <td><p>The origin value provided to the animation if the animation does not have its
+own start value. If this animation is the first in a composition chain it will
+be the base value of the property being animated; otherwise it will be the value
+returned by the previous animation in the chain.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">defaultDestinationValue</span></td>
+        <td><p>The destination value provided to the animation if the animation does not have
+its own destination value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Celestial.UIToolkit.Media.Animations.IAnimationClock.html">IAnimationClock</a></td>
+        <td><span class="parametername">animationClock</span></td>
+        <td><p>A non-specific <a class="xref" href="Celestial.UIToolkit.Media.Animations.IAnimationClock.html">IAnimationClock</a> which can generate the <a class="xref" href="Celestial.UIToolkit.Media.Animations.IClock.html#Celestial_UIToolkit_Media_Animations_IClock_CurrentTime">CurrentTime</a>
+or <a class="xref" href="Celestial.UIToolkit.Media.Animations.IClock.html#Celestial_UIToolkit_Media_Animations_IClock_CurrentProgress">CurrentProgress</a> value to be used by the
+animation to generate its output value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>The value this animation believes should be the current value for the property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Media_Animations_AnimationBase_1_GetCurrentValue_System_Object_System_Object_System_Windows_Media_Animation_AnimationClock_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Media.Animations.AnimationBase%601.GetCurrentValue(System.Object%2CSystem.Object%2CSystem.Windows.Media.Animation.AnimationClock)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/Media/Animations/AnimationBase/AnimationBase.cs/#L53">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Media_Animations_AnimationBase_1_GetCurrentValue_" data-uid="Celestial.UIToolkit.Media.Animations.AnimationBase`1.GetCurrentValue*"></a>
+  <h4 id="Celestial_UIToolkit_Media_Animations_AnimationBase_1_GetCurrentValue_System_Object_System_Object_System_Windows_Media_Animation_AnimationClock_" data-uid="Celestial.UIToolkit.Media.Animations.AnimationBase`1.GetCurrentValue(System.Object,System.Object,System.Windows.Media.Animation.AnimationClock)">GetCurrentValue(Object, Object, AnimationClock)</h4>
+  <div class="markdown level1 summary"><p>Returns the current value of the animation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override sealed object GetCurrentValue(object defaultOriginValue, object defaultDestinationValue, AnimationClock animationClock)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">defaultOriginValue</span></td>
+        <td><p>The origin value provided to the animation if the animation does not have its
+own start value. If this animation is the first in a composition chain it will
+be the base value of the property being animated; otherwise it will be the value
+returned by the previous animation in the chain.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">defaultDestinationValue</span></td>
+        <td><p>The destination value provided to the animation if the animation does not have
+its own destination value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.animationclock">AnimationClock</a></td>
+        <td><span class="parametername">animationClock</span></td>
+        <td><p>A non-specific <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.animationclock">AnimationClock</a> which can generate the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.clock.currenttime#System_Windows_Media_Animation_Clock_CurrentTime">CurrentTime</a>
+or <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.clock.currentprogress#System_Windows_Media_Animation_Clock_CurrentProgress">CurrentProgress</a> value to be used by the
+animation to generate its output value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><p>The value this animation believes should be the current value for the property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.animation.animationtimeline.getcurrentvalue#System_Windows_Media_Animation_AnimationTimeline_GetCurrentValue_System_Object_System_Object_System_Windows_Media_Animation_AnimationClock_">AnimationTimeline.GetCurrentValue(Object, Object, AnimationClock)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Media_Animations_AnimationBase_1_GetCurrentValueCore__0__0_Celestial_UIToolkit_Media_Animations_IAnimationClock_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Media.Animations.AnimationBase%601.GetCurrentValueCore(%600%2C%600%2CCelestial.UIToolkit.Media.Animations.IAnimationClock)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/Media/Animations/AnimationBase/AnimationBase.cs/#L121">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Media_Animations_AnimationBase_1_GetCurrentValueCore_" data-uid="Celestial.UIToolkit.Media.Animations.AnimationBase`1.GetCurrentValueCore*"></a>
+  <h4 id="Celestial_UIToolkit_Media_Animations_AnimationBase_1_GetCurrentValueCore__0__0_Celestial_UIToolkit_Media_Animations_IAnimationClock_" data-uid="Celestial.UIToolkit.Media.Animations.AnimationBase`1.GetCurrentValueCore(`0,`0,Celestial.UIToolkit.Media.Animations.IAnimationClock)">GetCurrentValueCore(T, T, IAnimationClock)</h4>
+  <div class="markdown level1 summary"><p>Calculates a value that represents the current value of the property being animated,
+as determined by the host animation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract T GetCurrentValueCore(T defaultOriginValue, T defaultDestinationValue, IAnimationClock animationClock)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">defaultOriginValue</span></td>
+        <td><p>The suggested origin value, used if the animation
+does not have its own explicitly set start value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">defaultDestinationValue</span></td>
+        <td><p>The suggested destination value, used if the animation
+does not have its own explicitly set end value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Celestial.UIToolkit.Media.Animations.IAnimationClock.html">IAnimationClock</a></td>
+        <td><span class="parametername">animationClock</span></td>
+        <td><p>An <a class="xref" href="Celestial.UIToolkit.Media.Animations.IAnimationClock.html">IAnimationClock</a> which can generate the <a class="xref" href="Celestial.UIToolkit.Media.Animations.IClock.html#Celestial_UIToolkit_Media_Animations_IClock_CurrentTime">CurrentTime</a>
+or <a class="xref" href="Celestial.UIToolkit.Media.Animations.IClock.html#Celestial_UIToolkit_Media_Animations_IClock_CurrentProgress">CurrentProgress</a> value to be used by the
+animation to generate its output value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>The value this animation believes should be the current value for the property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.DependencyObjectExtensions.html#Celestial_UIToolkit_Extensions_DependencyObjectExtensions_HasVisualAncestor_System_Windows_DependencyObject_System_Windows_DependencyObject_">DependencyObjectExtensions.HasVisualAncestor(DependencyObject, DependencyObject)</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.DependencyObjectExtensions.html#Celestial_UIToolkit_Extensions_DependencyObjectExtensions_RemoveLogicalChild_System_Windows_DependencyObject_System_Windows_UIElement_">DependencyObjectExtensions.RemoveLogicalChild(DependencyObject, UIElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.html#Celestial_UIToolkit_Extensions_DependencyPropertyExtensions_IsDependencyPropertySet_System_Windows_DependencyObject_System_Windows_DependencyProperty_">DependencyPropertyExtensions.IsDependencyPropertySet(DependencyObject, DependencyProperty)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Media_Animations_AnimationBase_1.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Media.Animations.AnimationBase%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/Media/Animations/AnimationBase/AnimationBase.cs/#L19" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright &copy; 2018 Celestial.UIToolkit
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

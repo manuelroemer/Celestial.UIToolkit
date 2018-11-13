@@ -1,0 +1,324 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ExtendedListView
+   | Celestial.UIToolkit </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ExtendedListView
+   | Celestial.UIToolkit ">
+    <meta name="generator" content="docfx 2.40.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Celestial.UIToolkit.Controls.ExtendedListView">
+  
+  
+  <h1 id="Celestial_UIToolkit_Controls_ExtendedListView" data-uid="Celestial.UIToolkit.Controls.ExtendedListView" class="text-break">Class ExtendedListView
+  </h1>
+  <div class="markdown level0 summary"><p>An extension of the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.listview">ListView</a> control which provides events and methods
+dealing with its Item-Containers.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.threading.dispatcherobject">DispatcherObject</a></div>
+    <div class="level2"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a></div>
+    <div class="level3"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.visual">Visual</a></div>
+    <div class="level4"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.uielement">UIElement</a></div>
+    <div class="level5"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement">FrameworkElement</a></div>
+    <div class="level6"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.control">Control</a></div>
+    <div class="level7"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.itemscontrol">ItemsControl</a></div>
+    <div class="level8"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.primitives.selector">Selector</a></div>
+    <div class="level9"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.listbox">ListBox</a></div>
+    <div class="level10"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.listview">ListView</a></div>
+    <div class="level11"><span class="xref">ExtendedListView</span></div>
+      <div class="level12"><a class="xref" href="Celestial.UIToolkit.Controls.NavigationViewListView.html">NavigationViewListView</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Celestial.UIToolkit.Controls.html">Celestial.UIToolkit.Controls</a></h6>
+  <h6><strong>Assembly</strong>: Celestial.UIToolkit.dll</h6>
+  <h5 id="Celestial_UIToolkit_Controls_ExtendedListView_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ExtendedListView : ListView, DUCE.IResource, IAnimatable, IFrameworkInputElement, IInputElement, ISupportInitialize, IHaveResources, IQueryAmbient, IAddChild, IGeneratorHost, IContainItemStorage</code></pre>
+  </div>
+  <h5 id="Celestial_UIToolkit_Controls_ExtendedListView_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This custom list view is mainly intended to be used by the <a class="xref" href="Celestial.UIToolkit.Controls.NavigationView.html">NavigationView</a>.
+Since the functionality here is universal and not specific to the
+<a class="xref" href="Celestial.UIToolkit.Controls.NavigationView.html">NavigationView</a>, it is provided as a publicly available class.</p>
+<p>Note that it is not designed to work performantly with a large amount of items.
+The normal ListView does a better job at that.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ExtendedListView__ctor.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ExtendedListView.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ExtendedListView.cs/#L69">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ExtendedListView__ctor_" data-uid="Celestial.UIToolkit.Controls.ExtendedListView.#ctor*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ExtendedListView__ctor" data-uid="Celestial.UIToolkit.Controls.ExtendedListView.#ctor">ExtendedListView()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Celestial.UIToolkit.Controls.ExtendedListView.html">ExtendedListView</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ExtendedListView()</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ExtendedListView_OnItemContainerInvoked_Celestial_UIToolkit_Controls_ListViewItemInvokedEventArgs_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ExtendedListView.OnItemContainerInvoked(Celestial.UIToolkit.Controls.ListViewItemInvokedEventArgs)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ExtendedListView.cs/#L225">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ExtendedListView_OnItemContainerInvoked_" data-uid="Celestial.UIToolkit.Controls.ExtendedListView.OnItemContainerInvoked*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ExtendedListView_OnItemContainerInvoked_Celestial_UIToolkit_Controls_ListViewItemInvokedEventArgs_" data-uid="Celestial.UIToolkit.Controls.ExtendedListView.OnItemContainerInvoked(Celestial.UIToolkit.Controls.ListViewItemInvokedEventArgs)">OnItemContainerInvoked(ListViewItemInvokedEventArgs)</h4>
+  <div class="markdown level1 summary"><p>Called before the <a class="xref" href="Celestial.UIToolkit.Controls.ExtendedListView.html#Celestial_UIToolkit_Controls_ExtendedListView_ItemContainerInvoked">ItemContainerInvoked</a> event occurs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnItemContainerInvoked(ListViewItemInvokedEventArgs e)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Celestial.UIToolkit.Controls.ListViewItemInvokedEventArgs.html">ListViewItemInvokedEventArgs</a></td>
+        <td><span class="parametername">e</span></td>
+        <td><p>Event data for the event.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ExtendedListView_OnItemsChanged_System_Collections_Specialized_NotifyCollectionChangedEventArgs_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ExtendedListView.OnItemsChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ExtendedListView.cs/#L79">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ExtendedListView_OnItemsChanged_" data-uid="Celestial.UIToolkit.Controls.ExtendedListView.OnItemsChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ExtendedListView_OnItemsChanged_System_Collections_Specialized_NotifyCollectionChangedEventArgs_" data-uid="Celestial.UIToolkit.Controls.ExtendedListView.OnItemsChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)">OnItemsChanged(NotifyCollectionChangedEventArgs)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.itemscontrol.items#System_Windows_Controls_ItemsControl_Items">Items</a> collection changes.
+Attaches <a class="xref" href="Celestial.UIToolkit.Controls.ExtendedListView.html#Celestial_UIToolkit_Controls_ExtendedListView_ItemContainerInvoked">ItemContainerInvoked</a> handlers to new items.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnItemsChanged(NotifyCollectionChangedEventArgs e)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.specialized.notifycollectionchangedeventargs">NotifyCollectionChangedEventArgs</a></td>
+        <td><span class="parametername">e</span></td>
+        <td><p>Event data about the collection change.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.listview.onitemschanged#System_Windows_Controls_ListView_OnItemsChanged_System_Collections_Specialized_NotifyCollectionChangedEventArgs_">ListView.OnItemsChanged(NotifyCollectionChangedEventArgs)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ExtendedListView_RaiseItemContainerInvoked_Celestial_UIToolkit_Controls_ListViewItemInvokedEventArgs_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ExtendedListView.RaiseItemContainerInvoked(Celestial.UIToolkit.Controls.ListViewItemInvokedEventArgs)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ExtendedListView.cs/#L215">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ExtendedListView_RaiseItemContainerInvoked_" data-uid="Celestial.UIToolkit.Controls.ExtendedListView.RaiseItemContainerInvoked*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ExtendedListView_RaiseItemContainerInvoked_Celestial_UIToolkit_Controls_ListViewItemInvokedEventArgs_" data-uid="Celestial.UIToolkit.Controls.ExtendedListView.RaiseItemContainerInvoked(Celestial.UIToolkit.Controls.ListViewItemInvokedEventArgs)">RaiseItemContainerInvoked(ListViewItemInvokedEventArgs)</h4>
+  <div class="markdown level1 summary"><p>Raises the <a class="xref" href="Celestial.UIToolkit.Controls.ExtendedListView.html#Celestial_UIToolkit_Controls_ExtendedListView_ItemContainerInvoked">ItemContainerInvoked</a> event and
+calls the <a class="xref" href="Celestial.UIToolkit.Controls.ExtendedListView.html#Celestial_UIToolkit_Controls_ExtendedListView_OnItemContainerInvoked_Celestial_UIToolkit_Controls_ListViewItemInvokedEventArgs_">OnItemContainerInvoked(ListViewItemInvokedEventArgs)</a> method afterwards.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void RaiseItemContainerInvoked(ListViewItemInvokedEventArgs e)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Celestial.UIToolkit.Controls.ListViewItemInvokedEventArgs.html">ListViewItemInvokedEventArgs</a></td>
+        <td><span class="parametername">e</span></td>
+        <td><p>Event data for the event.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="events">Events
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ExtendedListView_ItemContainerInvoked.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ExtendedListView.ItemContainerInvoked%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ExtendedListView.cs/#L64">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ExtendedListView_ItemContainerInvoked" data-uid="Celestial.UIToolkit.Controls.ExtendedListView.ItemContainerInvoked">ItemContainerInvoked</h4>
+  <div class="markdown level1 summary"><p>Occurs when one of the items in the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.listview">ListView</a> is invoked.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;ListViewItemInvokedEventArgs&gt; ItemContainerInvoked</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventhandler-1">EventHandler</a>&lt;<a class="xref" href="Celestial.UIToolkit.Controls.ListViewItemInvokedEventArgs.html">ListViewItemInvokedEventArgs</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.DependencyObjectExtensions.html#Celestial_UIToolkit_Extensions_DependencyObjectExtensions_HasVisualAncestor_System_Windows_DependencyObject_System_Windows_DependencyObject_">DependencyObjectExtensions.HasVisualAncestor(DependencyObject, DependencyObject)</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.DependencyObjectExtensions.html#Celestial_UIToolkit_Extensions_DependencyObjectExtensions_RemoveLogicalChild_System_Windows_DependencyObject_System_Windows_UIElement_">DependencyObjectExtensions.RemoveLogicalChild(DependencyObject, UIElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.html#Celestial_UIToolkit_Extensions_DependencyPropertyExtensions_IsDependencyPropertySet_System_Windows_DependencyObject_System_Windows_DependencyProperty_">DependencyPropertyExtensions.IsDependencyPropertySet(DependencyObject, DependencyProperty)</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.FrameworkElementExtensions.html#Celestial_UIToolkit_Extensions_FrameworkElementExtensions_GetCenter_System_Windows_FrameworkElement_">FrameworkElementExtensions.GetCenter(FrameworkElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.FrameworkElementExtensions.html#Celestial_UIToolkit_Extensions_FrameworkElementExtensions_IsPointInControlBounds_System_Windows_FrameworkElement_System_Windows_Point_">FrameworkElementExtensions.IsPointInControlBounds(FrameworkElement, Point)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ExtendedListView.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ExtendedListView%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ExtendedListView.cs/#L56" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright &copy; 2018 Celestial.UIToolkit
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,529 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class GridUnitExtension
+   | Celestial.UIToolkit </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class GridUnitExtension
+   | Celestial.UIToolkit ">
+    <meta name="generator" content="docfx 2.40.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Celestial.UIToolkit.Xaml.GridUnitExtension">
+  
+  
+  <h1 id="Celestial_UIToolkit_Xaml_GridUnitExtension" data-uid="Celestial.UIToolkit.Xaml.GridUnitExtension" class="text-break">Class GridUnitExtension
+  </h1>
+  <div class="markdown level0 summary"><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.markup.markupextension">MarkupExtension</a> which is being used by the toolkit to align
+visual elements in a grid-like fashion.
+The idea is that each control uses margins, paddings, sizes, etc. which can be fit
+into grid cells. Thus, when positioned correctly, all controls will have a unified appearance.</p>
+<p>This extension provides unified values, multiplied with the bounds of a single grid cell.
+See the example for details.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.markup.markupextension">MarkupExtension</a></div>
+    <div class="level2"><span class="xref">GridUnitExtension</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Celestial.UIToolkit.Xaml.html">Celestial.UIToolkit.Xaml</a></h6>
+  <h6><strong>Assembly</strong>: Celestial.UIToolkit.Core.dll</h6>
+  <h5 id="Celestial_UIToolkit_Xaml_GridUnitExtension_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class GridUnitExtension : MarkupExtension</code></pre>
+  </div>
+  <h5 id="Celestial_UIToolkit_Xaml_GridUnitExtension_examples"><strong>Examples</strong></h5>
+  <p>1gu = 1 grid unit(s) -&gt; Multiplier = 1
+2gu = 2 grid unit(s) -&gt; Multiplier = 2</p>
+<p>Thus, for a <a class="xref" href="Celestial.UIToolkit.Xaml.GridUnitExtension.html#Celestial_UIToolkit_Xaml_GridUnitExtension_GridCellSize">GridCellSize</a> of 4:</p>
+<p>1gu = 4 * 1 = 4
+2gu = 4 * 2 = 8
+3gu = 4 * 3 = 12
+...</p>
+<p>In XAML, the extension can be used like this:
+Width=&quot;{c:GridUnit 1.0}&quot;
+Margin=&quot;{c:GridUnit 3}&quot;
+Margin=&quot;{c:GridUnit '3,0'}&quot;
+Margin=&quot;{c:GridUnit '3,0,2,0'}&quot;</p>
+
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Xaml_GridUnitExtension__ctor.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Xaml.GridUnitExtension.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/Xaml/GridUnitExtension.cs/#L112">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Xaml_GridUnitExtension__ctor_" data-uid="Celestial.UIToolkit.Xaml.GridUnitExtension.#ctor*"></a>
+  <h4 id="Celestial_UIToolkit_Xaml_GridUnitExtension__ctor" data-uid="Celestial.UIToolkit.Xaml.GridUnitExtension.#ctor">GridUnitExtension()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Celestial.UIToolkit.Xaml.GridUnitExtension.html">GridUnitExtension</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GridUnitExtension()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Xaml_GridUnitExtension__ctor_System_String_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Xaml.GridUnitExtension.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/Xaml/GridUnitExtension.cs/#L123">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Xaml_GridUnitExtension__ctor_" data-uid="Celestial.UIToolkit.Xaml.GridUnitExtension.#ctor*"></a>
+  <h4 id="Celestial_UIToolkit_Xaml_GridUnitExtension__ctor_System_String_" data-uid="Celestial.UIToolkit.Xaml.GridUnitExtension.#ctor(System.String)">GridUnitExtension(String)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Celestial.UIToolkit.Xaml.GridUnitExtension.html">GridUnitExtension</a> class
+with the specified <code data-dev-comment-type="paramref" class="paramref">multiplierString</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GridUnitExtension(string multiplierString)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">multiplierString</span></td>
+        <td><p>The value with which the <a class="xref" href="Celestial.UIToolkit.Xaml.GridUnitExtension.html#Celestial_UIToolkit_Xaml_GridUnitExtension_GridCellSize">GridCellSize</a>
+will be multiplied.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Xaml_GridUnitExtension__ctor_System_String_System_Type_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Xaml.GridUnitExtension.%23ctor(System.String%2CSystem.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/Xaml/GridUnitExtension.cs/#L148">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Xaml_GridUnitExtension__ctor_" data-uid="Celestial.UIToolkit.Xaml.GridUnitExtension.#ctor*"></a>
+  <h4 id="Celestial_UIToolkit_Xaml_GridUnitExtension__ctor_System_String_System_Type_" data-uid="Celestial.UIToolkit.Xaml.GridUnitExtension.#ctor(System.String,System.Type)">GridUnitExtension(String, Type)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Celestial.UIToolkit.Xaml.GridUnitExtension.html">GridUnitExtension</a> class
+with the specified <code data-dev-comment-type="paramref" class="paramref">multiplierString</code> and
+<code data-dev-comment-type="paramref" class="paramref">targetType</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GridUnitExtension(string multiplierString, Type targetType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">multiplierString</span></td>
+        <td><p>The value with which the <a class="xref" href="Celestial.UIToolkit.Xaml.GridUnitExtension.html#Celestial_UIToolkit_Xaml_GridUnitExtension_GridCellSize">GridCellSize</a>
+will be multiplied.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td><span class="parametername">targetType</span></td>
+        <td><p>A type to which the unit will be converted, if possible.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Xaml_GridUnitExtension__ctor_System_Type_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Xaml.GridUnitExtension.%23ctor(System.Type)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/Xaml/GridUnitExtension.cs/#L133">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Xaml_GridUnitExtension__ctor_" data-uid="Celestial.UIToolkit.Xaml.GridUnitExtension.#ctor*"></a>
+  <h4 id="Celestial_UIToolkit_Xaml_GridUnitExtension__ctor_System_Type_" data-uid="Celestial.UIToolkit.Xaml.GridUnitExtension.#ctor(System.Type)">GridUnitExtension(Type)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Celestial.UIToolkit.Xaml.GridUnitExtension.html">GridUnitExtension</a> class
+with the specified <code data-dev-comment-type="paramref" class="paramref">targetType</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GridUnitExtension(Type targetType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td><span class="parametername">targetType</span></td>
+        <td><p>A type to which the unit will be converted, if possible.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Xaml_GridUnitExtension_DefaultGridCellSize.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Xaml.GridUnitExtension.DefaultGridCellSize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/Xaml/GridUnitExtension.cs/#L57">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Xaml_GridUnitExtension_DefaultGridCellSize_" data-uid="Celestial.UIToolkit.Xaml.GridUnitExtension.DefaultGridCellSize*"></a>
+  <h4 id="Celestial_UIToolkit_Xaml_GridUnitExtension_DefaultGridCellSize" data-uid="Celestial.UIToolkit.Xaml.GridUnitExtension.DefaultGridCellSize">DefaultGridCellSize</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the default value of a single grid unit.
+This value equals the width and height of a single cell
+in the fictional grid.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double DefaultGridCellSize { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Xaml_GridUnitExtension_GridCellSize.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Xaml.GridUnitExtension.GridCellSize%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/Xaml/GridUnitExtension.cs/#L103">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Xaml_GridUnitExtension_GridCellSize_" data-uid="Celestial.UIToolkit.Xaml.GridUnitExtension.GridCellSize*"></a>
+  <h4 id="Celestial_UIToolkit_Xaml_GridUnitExtension_GridCellSize" data-uid="Celestial.UIToolkit.Xaml.GridUnitExtension.GridCellSize">GridCellSize</h4>
+  <div class="markdown level1 summary"><p>Gets the value of a single grid unit.
+This value equals the width and height of a single cell
+in the fictional grid.
+By default, this returns the value of the static <a class="xref" href="Celestial.UIToolkit.Xaml.GridUnitExtension.html#Celestial_UIToolkit_Xaml_GridUnitExtension_DefaultGridCellSize">DefaultGridCellSize</a> property.
+By setting this property, you can override this default value for specific cases.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double GridCellSize { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Xaml_GridUnitExtension_MultiplierString.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Xaml.GridUnitExtension.MultiplierString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/Xaml/GridUnitExtension.cs/#L70">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Xaml_GridUnitExtension_MultiplierString_" data-uid="Celestial.UIToolkit.Xaml.GridUnitExtension.MultiplierString*"></a>
+  <h4 id="Celestial_UIToolkit_Xaml_GridUnitExtension_MultiplierString" data-uid="Celestial.UIToolkit.Xaml.GridUnitExtension.MultiplierString">MultiplierString</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the value with which the <a class="xref" href="Celestial.UIToolkit.Xaml.GridUnitExtension.html#Celestial_UIToolkit_Xaml_GridUnitExtension_GridCellSize">GridCellSize</a>
+will be multiplied, as string.
+Depending on the target property type, different formats will be allowed.</p>
+<p>For numeric targets (<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a>, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a>, ...),
+a numeric string is valid, e.g. <code>&quot;0&quot;</code>, <code>&quot;1.3&quot;</code>, ...</p>
+<p>For 4-way targets like <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.thickness">Thickness</a>, the above is allowed, in addition to the following example formats:
+<code>&quot;1 2&quot;</code>, <code>&quot;4.4 1 2 0&quot;</code>, ...</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ConstructorArgument(&quot;multiplierString&quot;)]
+public string MultiplierString { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Xaml_GridUnitExtension_MultiplyWithDip.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Xaml.GridUnitExtension.MultiplyWithDip%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/Xaml/GridUnitExtension.cs/#L94">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Xaml_GridUnitExtension_MultiplyWithDip_" data-uid="Celestial.UIToolkit.Xaml.GridUnitExtension.MultiplyWithDip*"></a>
+  <h4 id="Celestial_UIToolkit_Xaml_GridUnitExtension_MultiplyWithDip" data-uid="Celestial.UIToolkit.Xaml.GridUnitExtension.MultiplyWithDip">MultiplyWithDip</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a value indicating whether the
+calculation of the final value should include a multiplication
+with the device independent pixel multiplier.
+This is <code>false</code>, by default, since most conversion targets (like <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.thickness">Thickness</a>)
+do the calculation by themselves.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool MultiplyWithDip { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Xaml_GridUnitExtension_TargetType.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Xaml.GridUnitExtension.TargetType%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/Xaml/GridUnitExtension.cs/#L85">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Xaml_GridUnitExtension_TargetType_" data-uid="Celestial.UIToolkit.Xaml.GridUnitExtension.TargetType*"></a>
+  <h4 id="Celestial_UIToolkit_Xaml_GridUnitExtension_TargetType" data-uid="Celestial.UIToolkit.Xaml.GridUnitExtension.TargetType">TargetType</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a type to which the unit will be converted,
+if possible.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Type TargetType { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Xaml_GridUnitExtension_ProvideValue_System_IServiceProvider_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Xaml.GridUnitExtension.ProvideValue(System.IServiceProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/Xaml/GridUnitExtension.cs/#L185">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Xaml_GridUnitExtension_ProvideValue_" data-uid="Celestial.UIToolkit.Xaml.GridUnitExtension.ProvideValue*"></a>
+  <h4 id="Celestial_UIToolkit_Xaml_GridUnitExtension_ProvideValue_System_IServiceProvider_" data-uid="Celestial.UIToolkit.Xaml.GridUnitExtension.ProvideValue(System.IServiceProvider)">ProvideValue(IServiceProvider)</h4>
+  <div class="markdown level1 summary"><p>Multiplies the <a class="xref" href="Celestial.UIToolkit.Xaml.GridUnitExtension.html#Celestial_UIToolkit_Xaml_GridUnitExtension_MultiplierString">MultiplierString</a> with the <a class="xref" href="Celestial.UIToolkit.Xaml.GridUnitExtension.html#Celestial_UIToolkit_Xaml_GridUnitExtension_GridCellSize">GridCellSize</a>,
+converts it to device independent pixels and finally returns that result.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override object ProvideValue(IServiceProvider serviceProvider)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iserviceprovider">IServiceProvider</a></td>
+        <td><span class="parametername">serviceProvider</span></td>
+        <td><p>An <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iserviceprovider">IServiceProvider</a> to be used.
+Can be null.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a> which is the result of the grid unit multiplication.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.markup.markupextension.providevalue#System_Windows_Markup_MarkupExtension_ProvideValue_System_IServiceProvider_">MarkupExtension.ProvideValue(IServiceProvider)</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Xaml_GridUnitExtension.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Xaml.GridUnitExtension%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/Xaml/GridUnitExtension.cs/#L37" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright &copy; 2018 Celestial.UIToolkit
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

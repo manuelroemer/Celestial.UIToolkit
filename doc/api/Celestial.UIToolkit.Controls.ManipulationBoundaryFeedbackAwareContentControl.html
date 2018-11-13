@@ -1,0 +1,808 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ManipulationBoundaryFeedbackAwareContentControl
+   | Celestial.UIToolkit </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ManipulationBoundaryFeedbackAwareContentControl
+   | Celestial.UIToolkit ">
+    <meta name="generator" content="docfx 2.40.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl">
+  
+  
+  <h1 id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl" class="text-break">Class ManipulationBoundaryFeedbackAwareContentControl
+  </h1>
+  <div class="markdown level0 summary"><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.contentcontrol">ContentControl</a> which reacts to the
+<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.uielement.manipulationboundaryfeedback">ManipulationBoundaryFeedback</a> event of either the content,
+and/or an element directly specified via the <a class="xref" href="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.html#Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_FeedbackProvider">FeedbackProvider</a> property.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.threading.dispatcherobject">DispatcherObject</a></div>
+    <div class="level2"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a></div>
+    <div class="level3"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.visual">Visual</a></div>
+    <div class="level4"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.uielement">UIElement</a></div>
+    <div class="level5"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement">FrameworkElement</a></div>
+    <div class="level6"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.control">Control</a></div>
+    <div class="level7"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.contentcontrol">ContentControl</a></div>
+    <div class="level8"><span class="xref">ManipulationBoundaryFeedbackAwareContentControl</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Celestial.UIToolkit.Controls.html">Celestial.UIToolkit.Controls</a></h6>
+  <h6><strong>Assembly</strong>: Celestial.UIToolkit.dll</h6>
+  <h5 id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ManipulationBoundaryFeedbackAwareContentControl : ContentControl, DUCE.IResource, IAnimatable, IFrameworkInputElement, IInputElement, ISupportInitialize, IHaveResources, IQueryAmbient, IAddChild</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl__ctor.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ManipulationBoundaryFeedbackAwareContentControl.cs/#L207">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl__ctor_" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.#ctor*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl__ctor" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.#ctor">ManipulationBoundaryFeedbackAwareContentControl()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the
+<a class="xref" href="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.html">ManipulationBoundaryFeedbackAwareContentControl</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ManipulationBoundaryFeedbackAwareContentControl()</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_ExpansionDeltaXProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.ExpansionDeltaXProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ManipulationBoundaryFeedbackAwareContentControl.cs/#L92">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_ExpansionDeltaXProperty" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.ExpansionDeltaXProperty">ExpansionDeltaXProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.html#Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_ExpansionDeltaX">ExpansionDeltaX</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty ExpansionDeltaXProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_ExpansionDeltaYProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.ExpansionDeltaYProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ManipulationBoundaryFeedbackAwareContentControl.cs/#L102">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_ExpansionDeltaYProperty" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.ExpansionDeltaYProperty">ExpansionDeltaYProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.html#Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_ExpansionDeltaY">ExpansionDeltaY</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty ExpansionDeltaYProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_FeedbackProviderProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.FeedbackProviderProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ManipulationBoundaryFeedbackAwareContentControl.cs/#L22">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_FeedbackProviderProperty" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.FeedbackProviderProperty">FeedbackProviderProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.html#Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_FeedbackProvider">FeedbackProvider</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty FeedbackProviderProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_PreventBubblingProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.PreventBubblingProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ManipulationBoundaryFeedbackAwareContentControl.cs/#L32">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_PreventBubblingProperty" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.PreventBubblingProperty">PreventBubblingProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.html#Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_PreventBubbling">PreventBubbling</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty PreventBubblingProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_RotationProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.RotationProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ManipulationBoundaryFeedbackAwareContentControl.cs/#L62">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_RotationProperty" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.RotationProperty">RotationProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.html#Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_Rotation">Rotation</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty RotationProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_ScaleDeltaXProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.ScaleDeltaXProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ManipulationBoundaryFeedbackAwareContentControl.cs/#L72">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_ScaleDeltaXProperty" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.ScaleDeltaXProperty">ScaleDeltaXProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.html#Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_ScaleDeltaX">ScaleDeltaX</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty ScaleDeltaXProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_ScaleDeltaYProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.ScaleDeltaYProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ManipulationBoundaryFeedbackAwareContentControl.cs/#L82">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_ScaleDeltaYProperty" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.ScaleDeltaYProperty">ScaleDeltaYProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.html#Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_ScaleDeltaY">ScaleDeltaY</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty ScaleDeltaYProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_TranslationDeltaXProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.TranslationDeltaXProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ManipulationBoundaryFeedbackAwareContentControl.cs/#L42">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_TranslationDeltaXProperty" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.TranslationDeltaXProperty">TranslationDeltaXProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.html#Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_TranslationDeltaX">TranslationDeltaX</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty TranslationDeltaXProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_TranslationDeltaYProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.TranslationDeltaYProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ManipulationBoundaryFeedbackAwareContentControl.cs/#L52">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_TranslationDeltaYProperty" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.TranslationDeltaYProperty">TranslationDeltaYProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.html#Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_TranslationDeltaY">TranslationDeltaY</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty TranslationDeltaYProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_ExpansionDeltaX.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.ExpansionDeltaX%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ManipulationBoundaryFeedbackAwareContentControl.cs/#L180">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_ExpansionDeltaX_" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.ExpansionDeltaX*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_ExpansionDeltaX" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.ExpansionDeltaX">ExpansionDeltaX</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the x-coordinate of the most recent manipulation's expansion delta.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double ExpansionDeltaX { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_ExpansionDeltaY.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.ExpansionDeltaY%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ManipulationBoundaryFeedbackAwareContentControl.cs/#L189">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_ExpansionDeltaY_" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.ExpansionDeltaY*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_ExpansionDeltaY" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.ExpansionDeltaY">ExpansionDeltaY</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the y-coordinate of the most recent manipulation's expansion delta.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double ExpansionDeltaY { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_FeedbackProvider.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.FeedbackProvider%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ManipulationBoundaryFeedbackAwareContentControl.cs/#L114">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_FeedbackProvider_" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.FeedbackProvider*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_FeedbackProvider" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.FeedbackProvider">FeedbackProvider</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.uielement">UIElement</a> which provides manipulation boundary
+feedback via the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.uielement.manipulationboundaryfeedback">ManipulationBoundaryFeedback</a> event
+to which this control listens.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UIElement FeedbackProvider { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.uielement">UIElement</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_PreventBubbling.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.PreventBubbling%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ManipulationBoundaryFeedbackAwareContentControl.cs/#L126">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_PreventBubbling_" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.PreventBubbling*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_PreventBubbling" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.PreventBubbling">PreventBubbling</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a value indicating whether the
+<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.routedeventargs.handled#System_Windows_RoutedEventArgs_Handled">Handled</a> property of the received
+<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.input.manipulationboundaryfeedbackeventargs">ManipulationBoundaryFeedbackEventArgs</a> will be set to true,
+when such an event is received.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool PreventBubbling { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_Rotation.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.Rotation%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ManipulationBoundaryFeedbackAwareContentControl.cs/#L153">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_Rotation_" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.Rotation*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_Rotation" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.Rotation">Rotation</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the rotation of the most recent manipulation in degrees.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Rotation { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_ScaleDeltaX.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.ScaleDeltaX%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ManipulationBoundaryFeedbackAwareContentControl.cs/#L162">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_ScaleDeltaX_" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.ScaleDeltaX*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_ScaleDeltaX" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.ScaleDeltaX">ScaleDeltaX</h4>
+  <div class="markdown level1 summary"><p>Gets the x-coordinate of the most recent manipulation's delta scale.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double ScaleDeltaX { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_ScaleDeltaY.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.ScaleDeltaY%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ManipulationBoundaryFeedbackAwareContentControl.cs/#L171">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_ScaleDeltaY_" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.ScaleDeltaY*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_ScaleDeltaY" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.ScaleDeltaY">ScaleDeltaY</h4>
+  <div class="markdown level1 summary"><p>Gets the y-coordinate of the most recent manipulation's delta scale.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double ScaleDeltaY { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_TranslationDeltaX.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.TranslationDeltaX%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ManipulationBoundaryFeedbackAwareContentControl.cs/#L135">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_TranslationDeltaX_" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.TranslationDeltaX*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_TranslationDeltaX" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.TranslationDeltaX">TranslationDeltaX</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the x-coordinate of the most recent manipulation's delta translation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double TranslationDeltaX { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_TranslationDeltaY.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.TranslationDeltaY%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ManipulationBoundaryFeedbackAwareContentControl.cs/#L144">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_TranslationDeltaY_" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.TranslationDeltaY*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_TranslationDeltaY" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.TranslationDeltaY">TranslationDeltaY</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the y-coordinate of the most recent manipulation's delta translation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double TranslationDeltaY { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_OnManipulationBoundaryFeedback_System_Windows_Input_ManipulationBoundaryFeedbackEventArgs_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.OnManipulationBoundaryFeedback(System.Windows.Input.ManipulationBoundaryFeedbackEventArgs)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ManipulationBoundaryFeedbackAwareContentControl.cs/#L249">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_OnManipulationBoundaryFeedback_" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.OnManipulationBoundaryFeedback*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_OnManipulationBoundaryFeedback_System_Windows_Input_ManipulationBoundaryFeedbackEventArgs_" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.OnManipulationBoundaryFeedback(System.Windows.Input.ManipulationBoundaryFeedbackEventArgs)">OnManipulationBoundaryFeedback(ManipulationBoundaryFeedbackEventArgs)</h4>
+  <div class="markdown level1 summary"><p>Called when the control's content emits the
+<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.uielement.manipulationboundaryfeedback">ManipulationBoundaryFeedback</a> event.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnManipulationBoundaryFeedback(ManipulationBoundaryFeedbackEventArgs e)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.input.manipulationboundaryfeedbackeventargs">ManipulationBoundaryFeedbackEventArgs</a></td>
+        <td><span class="parametername">e</span></td>
+        <td><p>The event args which define the manipulation boundary feedback.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.uielement.onmanipulationboundaryfeedback#System_Windows_UIElement_OnManipulationBoundaryFeedback_System_Windows_Input_ManipulationBoundaryFeedbackEventArgs_">UIElement.OnManipulationBoundaryFeedback(ManipulationBoundaryFeedbackEventArgs)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_OnManipulationBoundaryFeedbackReceived_System_Windows_Input_ManipulationBoundaryFeedbackEventArgs_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.OnManipulationBoundaryFeedbackReceived(System.Windows.Input.ManipulationBoundaryFeedbackEventArgs)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ManipulationBoundaryFeedbackAwareContentControl.cs/#L262">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_OnManipulationBoundaryFeedbackReceived_" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.OnManipulationBoundaryFeedbackReceived*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_OnManipulationBoundaryFeedbackReceived_System_Windows_Input_ManipulationBoundaryFeedbackEventArgs_" data-uid="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.OnManipulationBoundaryFeedbackReceived(System.Windows.Input.ManipulationBoundaryFeedbackEventArgs)">OnManipulationBoundaryFeedbackReceived(ManipulationBoundaryFeedbackEventArgs)</h4>
+  <div class="markdown level1 summary"><p>Called when either the control's content or the <a class="xref" href="Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.html#Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl_FeedbackProvider">FeedbackProvider</a>
+emits the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.uielement.manipulationboundaryfeedback">ManipulationBoundaryFeedback</a> event.
+This method handles the event from either source.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnManipulationBoundaryFeedbackReceived(ManipulationBoundaryFeedbackEventArgs e)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.input.manipulationboundaryfeedbackeventargs">ManipulationBoundaryFeedbackEventArgs</a></td>
+        <td><span class="parametername">e</span></td>
+        <td><p>The event args which define the manipulation boundary feedback.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.DependencyObjectExtensions.html#Celestial_UIToolkit_Extensions_DependencyObjectExtensions_HasVisualAncestor_System_Windows_DependencyObject_System_Windows_DependencyObject_">DependencyObjectExtensions.HasVisualAncestor(DependencyObject, DependencyObject)</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.DependencyObjectExtensions.html#Celestial_UIToolkit_Extensions_DependencyObjectExtensions_RemoveLogicalChild_System_Windows_DependencyObject_System_Windows_UIElement_">DependencyObjectExtensions.RemoveLogicalChild(DependencyObject, UIElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.html#Celestial_UIToolkit_Extensions_DependencyPropertyExtensions_IsDependencyPropertySet_System_Windows_DependencyObject_System_Windows_DependencyProperty_">DependencyPropertyExtensions.IsDependencyPropertySet(DependencyObject, DependencyProperty)</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.FrameworkElementExtensions.html#Celestial_UIToolkit_Extensions_FrameworkElementExtensions_GetCenter_System_Windows_FrameworkElement_">FrameworkElementExtensions.GetCenter(FrameworkElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.FrameworkElementExtensions.html#Celestial_UIToolkit_Extensions_FrameworkElementExtensions_IsPointInControlBounds_System_Windows_FrameworkElement_System_Windows_Point_">FrameworkElementExtensions.IsPointInControlBounds(FrameworkElement, Point)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ManipulationBoundaryFeedbackAwareContentControl.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ManipulationBoundaryFeedbackAwareContentControl.cs/#L16" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright &copy; 2018 Celestial.UIToolkit
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,832 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class RelativeCanvas
+   | Celestial.UIToolkit </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class RelativeCanvas
+   | Celestial.UIToolkit ">
+    <meta name="generator" content="docfx 2.40.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Celestial.UIToolkit.Controls.RelativeCanvas">
+  
+  
+  <h1 id="Celestial_UIToolkit_Controls_RelativeCanvas" data-uid="Celestial.UIToolkit.Controls.RelativeCanvas" class="text-break">Class RelativeCanvas
+  </h1>
+  <div class="markdown level0 summary"><p>Defines an area within which you can position children based on coordinates,
+relative to the canvas element itself.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.threading.dispatcherobject">DispatcherObject</a></div>
+    <div class="level2"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a></div>
+    <div class="level3"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.visual">Visual</a></div>
+    <div class="level4"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.uielement">UIElement</a></div>
+    <div class="level5"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement">FrameworkElement</a></div>
+    <div class="level6"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.panel">Panel</a></div>
+    <div class="level7"><span class="xref">RelativeCanvas</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Celestial.UIToolkit.Controls.html">Celestial.UIToolkit.Controls</a></h6>
+  <h6><strong>Assembly</strong>: Celestial.UIToolkit.dll</h6>
+  <h5 id="Celestial_UIToolkit_Controls_RelativeCanvas_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class RelativeCanvas : Panel, DUCE.IResource, IAnimatable, IFrameworkInputElement, IInputElement, ISupportInitialize, IHaveResources, IQueryAmbient, IAddChild</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_RelativeCanvas__ctor.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.RelativeCanvas.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/RelativeCanvas.cs/#L174">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_RelativeCanvas__ctor_" data-uid="Celestial.UIToolkit.Controls.RelativeCanvas.#ctor*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_RelativeCanvas__ctor" data-uid="Celestial.UIToolkit.Controls.RelativeCanvas.#ctor">RelativeCanvas()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Celestial.UIToolkit.Controls.RelativeCanvas.html">RelativeCanvas</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RelativeCanvas()</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_RelativeCanvas_BottomProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.RelativeCanvas.BottomProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/RelativeCanvas.cs/#L51">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_RelativeCanvas_BottomProperty" data-uid="Celestial.UIToolkit.Controls.RelativeCanvas.BottomProperty">BottomProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the Bottom attached dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty BottomProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_RelativeCanvas_LeftProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.RelativeCanvas.LeftProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/RelativeCanvas.cs/#L18">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_RelativeCanvas_LeftProperty" data-uid="Celestial.UIToolkit.Controls.RelativeCanvas.LeftProperty">LeftProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the Left attached dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty LeftProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_RelativeCanvas_RightProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.RelativeCanvas.RightProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/RelativeCanvas.cs/#L40">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_RelativeCanvas_RightProperty" data-uid="Celestial.UIToolkit.Controls.RelativeCanvas.RightProperty">RightProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the Right attached dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty RightProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_RelativeCanvas_TopProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.RelativeCanvas.TopProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/RelativeCanvas.cs/#L29">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_RelativeCanvas_TopProperty" data-uid="Celestial.UIToolkit.Controls.RelativeCanvas.TopProperty">TopProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the Top attached dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty TopProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_RelativeCanvas_ArrangeOverride_System_Windows_Size_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.RelativeCanvas.ArrangeOverride(System.Windows.Size)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/RelativeCanvas.cs/#L235">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_RelativeCanvas_ArrangeOverride_" data-uid="Celestial.UIToolkit.Controls.RelativeCanvas.ArrangeOverride*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_RelativeCanvas_ArrangeOverride_System_Windows_Size_" data-uid="Celestial.UIToolkit.Controls.RelativeCanvas.ArrangeOverride(System.Windows.Size)">ArrangeOverride(Size)</h4>
+  <div class="markdown level1 summary"><p>Positions the canvas' children at their effective positions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Size ArrangeOverride(Size finalSize)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.size">Size</a></td>
+        <td><span class="parametername">finalSize</span></td>
+        <td><p>The final size of the canvas.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.size">Size</a></td>
+        <td><p>The final size which was used.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.arrangeoverride#System_Windows_FrameworkElement_ArrangeOverride_System_Windows_Size_">FrameworkElement.ArrangeOverride(Size)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_RelativeCanvas_GetBottom_System_Windows_DependencyObject_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.RelativeCanvas.GetBottom(System.Windows.DependencyObject)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/RelativeCanvas.cs/#L154">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_RelativeCanvas_GetBottom_" data-uid="Celestial.UIToolkit.Controls.RelativeCanvas.GetBottom*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_RelativeCanvas_GetBottom_System_Windows_DependencyObject_" data-uid="Celestial.UIToolkit.Controls.RelativeCanvas.GetBottom(System.Windows.DependencyObject)">GetBottom(DependencyObject)</h4>
+  <div class="markdown level1 summary"><p>Gets the value of the <a class="xref" href="Celestial.UIToolkit.Controls.RelativeCanvas.html#Celestial_UIToolkit_Controls_RelativeCanvas_BottomProperty">BottomProperty</a> attached dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double GetBottom(DependencyObject obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a> for which the local value of the
+<a class="xref" href="Celestial.UIToolkit.Controls.RelativeCanvas.html#Celestial_UIToolkit_Controls_RelativeCanvas_BottomProperty">BottomProperty</a> attached dependency property
+should be retrieved.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td><p>The local value of the <a class="xref" href="Celestial.UIToolkit.Controls.RelativeCanvas.html#Celestial_UIToolkit_Controls_RelativeCanvas_BottomProperty">BottomProperty</a> attached dependency property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_RelativeCanvas_GetLayoutClip_System_Windows_Size_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.RelativeCanvas.GetLayoutClip(System.Windows.Size)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/RelativeCanvas.cs/#L301">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_RelativeCanvas_GetLayoutClip_" data-uid="Celestial.UIToolkit.Controls.RelativeCanvas.GetLayoutClip*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_RelativeCanvas_GetLayoutClip_System_Windows_Size_" data-uid="Celestial.UIToolkit.Controls.RelativeCanvas.GetLayoutClip(System.Windows.Size)">GetLayoutClip(Size)</h4>
+  <div class="markdown level1 summary"><p>Depending on <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.uielement.cliptobounds#System_Windows_UIElement_ClipToBounds">ClipToBounds</a>, this method returns
+null or a clipping geometry for child elements.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Geometry GetLayoutClip(Size layoutSlotSize)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.size">Size</a></td>
+        <td><span class="parametername">layoutSlotSize</span></td>
+        <td><p>Not used.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.geometry">Geometry</a></td>
+        <td><p>If <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.uielement.cliptobounds#System_Windows_UIElement_ClipToBounds">ClipToBounds</a> is true, this returns a
+<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.rectanglegeometry">RectangleGeometry</a> which represents the canvas' size.
+Otherwise, this returns null.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.getlayoutclip#System_Windows_FrameworkElement_GetLayoutClip_System_Windows_Size_">FrameworkElement.GetLayoutClip(Size)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_RelativeCanvas_GetLeft_System_Windows_DependencyObject_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.RelativeCanvas.GetLeft(System.Windows.DependencyObject)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/RelativeCanvas.cs/#L70">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_RelativeCanvas_GetLeft_" data-uid="Celestial.UIToolkit.Controls.RelativeCanvas.GetLeft*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_RelativeCanvas_GetLeft_System_Windows_DependencyObject_" data-uid="Celestial.UIToolkit.Controls.RelativeCanvas.GetLeft(System.Windows.DependencyObject)">GetLeft(DependencyObject)</h4>
+  <div class="markdown level1 summary"><p>Gets the value of the <a class="xref" href="Celestial.UIToolkit.Controls.RelativeCanvas.html#Celestial_UIToolkit_Controls_RelativeCanvas_LeftProperty">LeftProperty</a> attached dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double GetLeft(DependencyObject obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a> for which the local value of the
+<a class="xref" href="Celestial.UIToolkit.Controls.RelativeCanvas.html#Celestial_UIToolkit_Controls_RelativeCanvas_LeftProperty">LeftProperty</a> attached dependency property
+should be retrieved.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td><p>The local value of the <a class="xref" href="Celestial.UIToolkit.Controls.RelativeCanvas.html#Celestial_UIToolkit_Controls_RelativeCanvas_LeftProperty">LeftProperty</a> attached dependency property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_RelativeCanvas_GetRight_System_Windows_DependencyObject_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.RelativeCanvas.GetRight(System.Windows.DependencyObject)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/RelativeCanvas.cs/#L126">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_RelativeCanvas_GetRight_" data-uid="Celestial.UIToolkit.Controls.RelativeCanvas.GetRight*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_RelativeCanvas_GetRight_System_Windows_DependencyObject_" data-uid="Celestial.UIToolkit.Controls.RelativeCanvas.GetRight(System.Windows.DependencyObject)">GetRight(DependencyObject)</h4>
+  <div class="markdown level1 summary"><p>Gets the value of the <a class="xref" href="Celestial.UIToolkit.Controls.RelativeCanvas.html#Celestial_UIToolkit_Controls_RelativeCanvas_RightProperty">RightProperty</a> attached dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double GetRight(DependencyObject obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a> for which the local value of the
+<a class="xref" href="Celestial.UIToolkit.Controls.RelativeCanvas.html#Celestial_UIToolkit_Controls_RelativeCanvas_RightProperty">RightProperty</a> attached dependency property
+should be retrieved.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td><p>The local value of the <a class="xref" href="Celestial.UIToolkit.Controls.RelativeCanvas.html#Celestial_UIToolkit_Controls_RelativeCanvas_RightProperty">RightProperty</a> attached dependency property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_RelativeCanvas_GetTop_System_Windows_DependencyObject_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.RelativeCanvas.GetTop(System.Windows.DependencyObject)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/RelativeCanvas.cs/#L98">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_RelativeCanvas_GetTop_" data-uid="Celestial.UIToolkit.Controls.RelativeCanvas.GetTop*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_RelativeCanvas_GetTop_System_Windows_DependencyObject_" data-uid="Celestial.UIToolkit.Controls.RelativeCanvas.GetTop(System.Windows.DependencyObject)">GetTop(DependencyObject)</h4>
+  <div class="markdown level1 summary"><p>Gets the value of the <a class="xref" href="Celestial.UIToolkit.Controls.RelativeCanvas.html#Celestial_UIToolkit_Controls_RelativeCanvas_TopProperty">TopProperty</a> attached dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double GetTop(DependencyObject obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a> for which the local value of the
+<a class="xref" href="Celestial.UIToolkit.Controls.RelativeCanvas.html#Celestial_UIToolkit_Controls_RelativeCanvas_TopProperty">TopProperty</a> attached dependency property
+should be retrieved.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td><p>The local value of the <a class="xref" href="Celestial.UIToolkit.Controls.RelativeCanvas.html#Celestial_UIToolkit_Controls_RelativeCanvas_TopProperty">TopProperty</a> attached dependency property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_RelativeCanvas_MeasureOverride_System_Windows_Size_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.RelativeCanvas.MeasureOverride(System.Windows.Size)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/RelativeCanvas.cs/#L213">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_RelativeCanvas_MeasureOverride_" data-uid="Celestial.UIToolkit.Controls.RelativeCanvas.MeasureOverride*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_RelativeCanvas_MeasureOverride_System_Windows_Size_" data-uid="Celestial.UIToolkit.Controls.RelativeCanvas.MeasureOverride(System.Windows.Size)">MeasureOverride(Size)</h4>
+  <div class="markdown level1 summary"><p>Measures the size of the panel's children.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Size MeasureOverride(Size availableSize)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.size">Size</a></td>
+        <td><span class="parametername">availableSize</span></td>
+        <td><p>The size which is available to the canvas.
+This value gets overwritten and thus doesn't get used.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.size">Size</a></td>
+        <td><p>An empty size (0;0).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.measureoverride#System_Windows_FrameworkElement_MeasureOverride_System_Windows_Size_">FrameworkElement.MeasureOverride(Size)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_RelativeCanvas_SetBottom_System_Windows_DependencyObject_System_Double_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.RelativeCanvas.SetBottom(System.Windows.DependencyObject%2CSystem.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/RelativeCanvas.cs/#L168">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_RelativeCanvas_SetBottom_" data-uid="Celestial.UIToolkit.Controls.RelativeCanvas.SetBottom*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_RelativeCanvas_SetBottom_System_Windows_DependencyObject_System_Double_" data-uid="Celestial.UIToolkit.Controls.RelativeCanvas.SetBottom(System.Windows.DependencyObject,System.Double)">SetBottom(DependencyObject, Double)</h4>
+  <div class="markdown level1 summary"><p>Sets the value of the <a class="xref" href="Celestial.UIToolkit.Controls.RelativeCanvas.html#Celestial_UIToolkit_Controls_RelativeCanvas_BottomProperty">BottomProperty</a> attached dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetBottom(DependencyObject obj, double value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a> for which the local value of the
+<a class="xref" href="Celestial.UIToolkit.Controls.RelativeCanvas.html#Celestial_UIToolkit_Controls_RelativeCanvas_BottomProperty">BottomProperty</a> attached dependency property
+should be set.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The new value for the dependency property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_RelativeCanvas_SetLeft_System_Windows_DependencyObject_System_Double_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.RelativeCanvas.SetLeft(System.Windows.DependencyObject%2CSystem.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/RelativeCanvas.cs/#L84">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_RelativeCanvas_SetLeft_" data-uid="Celestial.UIToolkit.Controls.RelativeCanvas.SetLeft*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_RelativeCanvas_SetLeft_System_Windows_DependencyObject_System_Double_" data-uid="Celestial.UIToolkit.Controls.RelativeCanvas.SetLeft(System.Windows.DependencyObject,System.Double)">SetLeft(DependencyObject, Double)</h4>
+  <div class="markdown level1 summary"><p>Sets the value of the <a class="xref" href="Celestial.UIToolkit.Controls.RelativeCanvas.html#Celestial_UIToolkit_Controls_RelativeCanvas_LeftProperty">LeftProperty</a> attached dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetLeft(DependencyObject obj, double value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a> for which the local value of the
+<a class="xref" href="Celestial.UIToolkit.Controls.RelativeCanvas.html#Celestial_UIToolkit_Controls_RelativeCanvas_LeftProperty">LeftProperty</a> attached dependency property
+should be set.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The new value for the dependency property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_RelativeCanvas_SetRight_System_Windows_DependencyObject_System_Double_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.RelativeCanvas.SetRight(System.Windows.DependencyObject%2CSystem.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/RelativeCanvas.cs/#L140">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_RelativeCanvas_SetRight_" data-uid="Celestial.UIToolkit.Controls.RelativeCanvas.SetRight*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_RelativeCanvas_SetRight_System_Windows_DependencyObject_System_Double_" data-uid="Celestial.UIToolkit.Controls.RelativeCanvas.SetRight(System.Windows.DependencyObject,System.Double)">SetRight(DependencyObject, Double)</h4>
+  <div class="markdown level1 summary"><p>Sets the value of the <a class="xref" href="Celestial.UIToolkit.Controls.RelativeCanvas.html#Celestial_UIToolkit_Controls_RelativeCanvas_RightProperty">RightProperty</a> attached dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetRight(DependencyObject obj, double value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a> for which the local value of the
+<a class="xref" href="Celestial.UIToolkit.Controls.RelativeCanvas.html#Celestial_UIToolkit_Controls_RelativeCanvas_RightProperty">RightProperty</a> attached dependency property
+should be set.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The new value for the dependency property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_RelativeCanvas_SetTop_System_Windows_DependencyObject_System_Double_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.RelativeCanvas.SetTop(System.Windows.DependencyObject%2CSystem.Double)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/RelativeCanvas.cs/#L112">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_RelativeCanvas_SetTop_" data-uid="Celestial.UIToolkit.Controls.RelativeCanvas.SetTop*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_RelativeCanvas_SetTop_System_Windows_DependencyObject_System_Double_" data-uid="Celestial.UIToolkit.Controls.RelativeCanvas.SetTop(System.Windows.DependencyObject,System.Double)">SetTop(DependencyObject, Double)</h4>
+  <div class="markdown level1 summary"><p>Sets the value of the <a class="xref" href="Celestial.UIToolkit.Controls.RelativeCanvas.html#Celestial_UIToolkit_Controls_RelativeCanvas_TopProperty">TopProperty</a> attached dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetTop(DependencyObject obj, double value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a> for which the local value of the
+<a class="xref" href="Celestial.UIToolkit.Controls.RelativeCanvas.html#Celestial_UIToolkit_Controls_RelativeCanvas_TopProperty">TopProperty</a> attached dependency property
+should be set.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The new value for the dependency property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.DependencyObjectExtensions.html#Celestial_UIToolkit_Extensions_DependencyObjectExtensions_HasVisualAncestor_System_Windows_DependencyObject_System_Windows_DependencyObject_">DependencyObjectExtensions.HasVisualAncestor(DependencyObject, DependencyObject)</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.DependencyObjectExtensions.html#Celestial_UIToolkit_Extensions_DependencyObjectExtensions_RemoveLogicalChild_System_Windows_DependencyObject_System_Windows_UIElement_">DependencyObjectExtensions.RemoveLogicalChild(DependencyObject, UIElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.html#Celestial_UIToolkit_Extensions_DependencyPropertyExtensions_IsDependencyPropertySet_System_Windows_DependencyObject_System_Windows_DependencyProperty_">DependencyPropertyExtensions.IsDependencyPropertySet(DependencyObject, DependencyProperty)</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.FrameworkElementExtensions.html#Celestial_UIToolkit_Extensions_FrameworkElementExtensions_GetCenter_System_Windows_FrameworkElement_">FrameworkElementExtensions.GetCenter(FrameworkElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.FrameworkElementExtensions.html#Celestial_UIToolkit_Extensions_FrameworkElementExtensions_IsPointInControlBounds_System_Windows_FrameworkElement_System_Windows_Point_">FrameworkElementExtensions.IsPointInControlBounds(FrameworkElement, Point)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_RelativeCanvas.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.RelativeCanvas%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/RelativeCanvas.cs/#L12" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright &copy; 2018 Celestial.UIToolkit
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

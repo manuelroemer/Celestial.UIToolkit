@@ -1,0 +1,1377 @@
+{
+  "homepages": [],
+  "source_base_path": "D:/a/1/s/doc",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Common.Singleton-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Common.Singleton-1.html",
+          "hash": "ZO8xImQ04xQ2EwubMppGVw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Common.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Common.html",
+          "hash": "tUxriz+JSzthGcrNyfJRIw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Controls.Card.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Controls.Card.html",
+          "hash": "hzHHh/0f2JRpzUNYDG392g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Controls.ClippingBorder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Controls.ClippingBorder.html",
+          "hash": "bROPD2G0+fYea3ZWCRdcxw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Controls.CommonVisualStatesControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Controls.CommonVisualStatesControl.html",
+          "hash": "jZt8A9ntMv6I0C5SrX1Fww=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Controls.ConstructedFrameworkElement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Controls.ConstructedFrameworkElement.html",
+          "hash": "XOyusmRkyJluB3j1Kb5n0g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Controls.DirectionalThemeShadow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Controls.DirectionalThemeShadow.html",
+          "hash": "ucLdHPTlDon+7w3aCWQU8A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Controls.DropShadowDecorator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Controls.DropShadowDecorator.html",
+          "hash": "fKW/4NBrDF3ZfZCx0ELOcA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Controls.ExtendedListView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Controls.ExtendedListView.html",
+          "hash": "f+Bw+UM6IQMRRZz3gnn4jA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Controls.IconElement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Controls.IconElement.html",
+          "hash": "5vM3358KA/e8hBiCt80gxA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Controls.ListViewItemInvokedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Controls.ListViewItemInvokedEventArgs.html",
+          "hash": "5jQmWXVAV9UC3TIdygf7Ag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.html",
+          "hash": "/6sJJzzfSkGP9pfTdxkb4g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Controls.NavigationView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Controls.NavigationView.html",
+          "hash": "x4bu9Qel93hYDVlVaT+qMA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Controls.NavigationViewDisplayMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Controls.NavigationViewDisplayMode.html",
+          "hash": "8V4xjIQjxatVIkUgFgMGMQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Controls.NavigationViewDisplayModeChangedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Controls.NavigationViewDisplayModeChangedEventArgs.html",
+          "hash": "HatbdUWb3UiPaw26xe5quA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Controls.NavigationViewItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Controls.NavigationViewItem.html",
+          "hash": "l3Ytzeo/Vqz8SPiFaHxffA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.html",
+          "hash": "XhLKiqhT33SiL/tIm5WR6Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Controls.NavigationViewListView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Controls.NavigationViewListView.html",
+          "hash": "2+1xTmzp8NgAlzsC93pWtQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Controls.PathIcon.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Controls.PathIcon.html",
+          "hash": "m3l7so4fdLaLFaiEGnr7sg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Controls.PlaceholderDisplayType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Controls.PlaceholderDisplayType.html",
+          "hash": "SsesouLF/CAKqejqxZFofw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Controls.PlaceholderOverlay.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Controls.PlaceholderOverlay.html",
+          "hash": "vV+pcbYoA7CasFrKp3pstw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Controls.RelativeCanvas.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Controls.RelativeCanvas.html",
+          "hash": "qKRRZi7FPRI4RGX6mB2DUQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Controls.RippleOrigin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Controls.RippleOrigin.html",
+          "hash": "FmI1hldKtQ0g4+ZWy74kFQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Controls.RippleOverlay.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Controls.RippleOverlay.html",
+          "hash": "tVRc3PcLZJmSbGjYeTA7GA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Controls.SelectionIndicator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Controls.SelectionIndicator.html",
+          "hash": "OFNF8Qe3nIdFrWFixD0I5g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Controls.SplitView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Controls.SplitView.html",
+          "hash": "a8+TlqT2D4ZYLOswuA5XVA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Controls.SplitViewDisplayMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Controls.SplitViewDisplayMode.html",
+          "hash": "g13c69dp4EgvQ1a0QEb+0Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Controls.SplitViewPanePlacement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Controls.SplitViewPanePlacement.html",
+          "hash": "75wb1CnKeOnx1IWqhAxQ3g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Controls.ThemeShadow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Controls.ThemeShadow.html",
+          "hash": "IC1X3mazjPHGaeGuv7r2kw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Controls.ThemeShadowPresenter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Controls.ThemeShadowPresenter.html",
+          "hash": "ONv7/TXE31EhGc3hwN+eQA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Controls.ToggleSwitch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Controls.ToggleSwitch.html",
+          "hash": "8ZQqYPaiy4zv6/QrVK4RpA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Controls.WindowCommands.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Controls.WindowCommands.html",
+          "hash": "HT63yYkXoJZ0YKYK/Q8ZQA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Controls.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Controls.html",
+          "hash": "yF63aoshlIGxD8UCqDfnuw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Converters.BooleanToVisibilityConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Converters.BooleanToVisibilityConverter.html",
+          "hash": "Kxo0XM2yiU/gotc+gIVXRw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Converters.ColorToSolidColorBrushConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Converters.ColorToSolidColorBrushConverter.html",
+          "hash": "muM7346rUZDgbLdDmYgxOQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Converters.DoubleToCornerRadiusConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Converters.DoubleToCornerRadiusConverter.html",
+          "hash": "+h2VHu5fp58/h8aST1uYYA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Converters.GetTypeConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Converters.GetTypeConverter.html",
+          "hash": "R1GYPcR4gjdcQY8CMB29cg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Converters.GroupConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Converters.GroupConverter.html",
+          "hash": "xn1RCkb9ajWo/ZTlwnmUXw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Converters.InvertBooleanConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Converters.InvertBooleanConverter.html",
+          "hash": "RhiZ4m54YhIUcubFysLNng=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Converters.InvertingConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Converters.InvertingConverter.html",
+          "hash": "eSFrcpCOiiqGguhpoWRIlQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Converters.MathOperationConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Converters.MathOperationConverter.html",
+          "hash": "R89ZLs0ld40RlRihNsmKFw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Converters.MathOperator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Converters.MathOperator.html",
+          "hash": "/tZDl0lgZ9YhnT+Tk3RjRw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Converters.NegateValueConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Converters.NegateValueConverter.html",
+          "hash": "r79fK1YJ6MMKJHTKy8KqEg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Converters.NullToVisibilityConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Converters.NullToVisibilityConverter.html",
+          "hash": "OrDuQBY6bJ9njpcU6ywImA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Converters.StringToVisibilityConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Converters.StringToVisibilityConverter.html",
+          "hash": "Aw7dOc/wo0aCtTiaWkvr0Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Converters.ThicknessSidePickerConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Converters.ThicknessSidePickerConverter.html",
+          "hash": "D2erAwaKm69R1kVD3qPpyQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Converters.ValueConverter-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Converters.ValueConverter-2.html",
+          "hash": "RHX14qDSttI+5XsBOLVWNg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Converters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Converters.html",
+          "hash": "x8rOMHwQqiSOaQy5jS/hvQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.DesignMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.DesignMode.html",
+          "hash": "DTM4jWBSWhRotqgdXPsFoA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.html",
+          "hash": "CJG4zQp5tcFZ0LzZZoBGxw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Extensions.ArrayExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Extensions.ArrayExtensions.html",
+          "hash": "Rxebm/km/7wGjt/5tAzUFg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Extensions.ArraySegmentExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Extensions.ArraySegmentExtensions.html",
+          "hash": "Ony+zJK1y+59olOhJ2wbjw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Extensions.DependencyObjectExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Extensions.DependencyObjectExtensions.html",
+          "hash": "DnnQqXlLgDCoJ6Cj6bfOzw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.html",
+          "hash": "R2nsZ/XiQbhP+TjUbVFywA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Extensions.EnumerableExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Extensions.EnumerableExtensions.html",
+          "hash": "jobevWva857ZkZCJXqYUsw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Extensions.FrameworkElementExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Extensions.FrameworkElementExtensions.html",
+          "hash": "ogAj8C+NReK96sxDerBaCw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Extensions.html",
+          "hash": "L7ibQZtK3caRuR5T6XTzpA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.ItemsSourceCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.ItemsSourceCollection.html",
+          "hash": "KmbUpuyUsr6nVOeiBAJa5Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Media.Animations.AnimationBase-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Media.Animations.AnimationBase-1.html",
+          "hash": "jgLHu02nQvKaceAxpdgwhQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Media.Animations.AnimationUsingKeyFramesBase-3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Media.Animations.AnimationUsingKeyFramesBase-3.html",
+          "hash": "jA4VLsjVNsJ3fDA+ybQInw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Media.Animations.BrushAnimation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Media.Animations.BrushAnimation.html",
+          "hash": "+5cy4ne6NBHDylZm8CUi/A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames.html",
+          "hash": "BVi6+H/CB7e2l5gQC19a6w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Media.Animations.BrushKeyFrameCollection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Media.Animations.BrushKeyFrameCollection.html",
+          "hash": "4pg2fPNB2DUCF1ZYzFNfgg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Media.Animations.DiscreteBrushKeyFrame.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Media.Animations.DiscreteBrushKeyFrame.html",
+          "hash": "FsiG3Czf4aPHwyyvfu54Hw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Media.Animations.DiscreteKeyFrameBase-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Media.Animations.DiscreteKeyFrameBase-1.html",
+          "hash": "DDfQGqENd5ajkzNLUQmqeQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Media.Animations.EasingBrushKeyFrame.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Media.Animations.EasingBrushKeyFrame.html",
+          "hash": "62kDt/93Gx5LToEPfJb5rw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Media.Animations.EasingFromToByAnimationBase-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Media.Animations.EasingFromToByAnimationBase-1.html",
+          "hash": "4zG7EbIbv8Fq0QSpm7m2Lg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Media.Animations.EasingKeyFrameBase-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Media.Animations.EasingKeyFrameBase-1.html",
+          "hash": "7gIgyhgV4PU/0QwX6NL2Yg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Media.Animations.FromToByAnimationBase-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Media.Animations.FromToByAnimationBase-1.html",
+          "hash": "0RIVKnIUV8sOqp4GTkkQcQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Media.Animations.IAnimationClock.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Media.Animations.IAnimationClock.html",
+          "hash": "sTqWphTjweTWL699uthKGQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Media.Animations.IClock.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Media.Animations.IClock.html",
+          "hash": "QE1+unr2Kl30UAilj90M+Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Media.Animations.IClockController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Media.Animations.IClockController.html",
+          "hash": "CNKR6a+7TNcmEWXe3E4onQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame-1.html",
+          "hash": "hgzHtHFbiYGn6Nj0BVsUjQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Media.Animations.KeyFrameBase-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Media.Animations.KeyFrameBase-1.html",
+          "hash": "UAIAecFY2pzniookx1fljw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Media.Animations.LinearBrushKeyFrame.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Media.Animations.LinearBrushKeyFrame.html",
+          "hash": "k6U/3F+mEYgHtXR5YRbwCA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Media.Animations.SplineBrushKeyFrame.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Media.Animations.SplineBrushKeyFrame.html",
+          "hash": "X6POKjwQFjfyPzgdBZJpRQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Media.Animations.SplineKeyFrameBase-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Media.Animations.SplineKeyFrameBase-1.html",
+          "hash": "4w0b9h61LXssXA+qog1LSA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Media.Animations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Media.Animations.html",
+          "hash": "WqN0NxsY8JzuZno/e69f9g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.SharedResourceDictionary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.SharedResourceDictionary.html",
+          "hash": "BBhY6mTOx+Q4nmHLxO4xwQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Theming.ActiveProperties.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Theming.ActiveProperties.html",
+          "hash": "36f/tkgRF6g4G5znIDbsvQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Theming.ControlProperties.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Theming.ControlProperties.html",
+          "hash": "pZB/V/nTCCljgt/6cPqkgw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Theming.DisabledProperties.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Theming.DisabledProperties.html",
+          "hash": "OOR1lR/R/ubo5zFZru5wPw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Theming.MouseOverActiveProperties.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Theming.MouseOverActiveProperties.html",
+          "hash": "iGSU5OK2vnwlQIA9OK2T3g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Theming.MouseOverProperties.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Theming.MouseOverProperties.html",
+          "hash": "Cw+E7GRKxMdq+gZInNFUSQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Theming.PopupProperties.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Theming.PopupProperties.html",
+          "hash": "bmyngwB5o7zKWHRFVpj4eg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Theming.PressedProperties.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Theming.PressedProperties.html",
+          "hash": "7rgSSaqtS0EKq+nMqVRBaQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Theming.RippleProperties.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Theming.RippleProperties.html",
+          "hash": "W/liT50GMMN6fYrkpWZgPw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Theming.SelectionProperties.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Theming.SelectionProperties.html",
+          "hash": "jY9He/yoO0Ivny17mRHQtA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Theming.ShadowProperties.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Theming.ShadowProperties.html",
+          "hash": "Xc98dHOa8H8MLg/XWKnaCw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Theming.TabItemProperties.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Theming.TabItemProperties.html",
+          "hash": "aX0RBREWZpRpCob493+7Uw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Theming.TextBoxProperties.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Theming.TextBoxProperties.html",
+          "hash": "C6P3t1CJpi0aT/d/ZGqSQA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Theming.WindowTitlebarProperties.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Theming.WindowTitlebarProperties.html",
+          "hash": "LJn/fmeHyHVxIdNFS8nY5A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Theming.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Theming.html",
+          "hash": "toVNasPn6JlQxfe3mI9B6w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.TraceSources.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.TraceSources.html",
+          "hash": "LSiQBw0v49bGrOtjwO4BVg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Xaml.BindingProxy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Xaml.BindingProxy.html",
+          "hash": "dcIeTGLkHEvIUrsxsGQblQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Xaml.EnumBindingSourceExtension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Xaml.EnumBindingSourceExtension.html",
+          "hash": "kt1/NER00629mcVRtSjIzQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Xaml.ExtendedVisualState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Xaml.ExtendedVisualState.html",
+          "hash": "yckDS6C6obMQk8Y949Ig2g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Xaml.ExtendedVisualStateManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Xaml.ExtendedVisualStateManager.html",
+          "hash": "GqeSr66/nKTUZzRzMrb0/Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Xaml.GridUnitExtension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Xaml.GridUnitExtension.html",
+          "hash": "djG0Of72bGuC3lgHaQt98g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Xaml.IVisualTransitionProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Xaml.IVisualTransitionProvider.html",
+          "hash": "RXk/jvR8J5Kf/+Jzqu3P7Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Xaml.MarginHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Xaml.MarginHelper.html",
+          "hash": "5R+cPUx5P1mCyM/HsryE+A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Xaml.MultiStyleExtension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Xaml.MultiStyleExtension.html",
+          "hash": "EFC8mQjDyZ0fc+YO3aYJeQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Xaml.SelfBindingExtension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Xaml.SelfBindingExtension.html",
+          "hash": "b8JrDVxqj2ZS7jHI3nzOBQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Xaml.TemplatedParentBindingExtension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Xaml.TemplatedParentBindingExtension.html",
+          "hash": "6Hl4oBDV1aPN/fbv7hWeGQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Xaml.VisualTransitionProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Xaml.VisualTransitionProvider.html",
+          "hash": "GW8XFvfCfCTyO/q2DWOESQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Xaml.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Xaml.html",
+          "hash": "sBZnco15xmAUgoAwsNodXA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.html",
+          "hash": "7mBEg7Aya/1TsoQrWFsPKQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "6kiT5EeXadx9dYk43oFY2Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/getting-started/installation.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/getting-started/installation.html",
+          "hash": "KBE9VM0t9tSBTByYhCcOIA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/introduction.html",
+          "hash": "qFrxISRaaKv1NCNeoKknpg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "3YUv54OyqOTiikSciOTJGw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build"
+      },
+      "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "incrementalPhase": "postProcessing"
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

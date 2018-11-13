@@ -1,0 +1,2555 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ToggleSwitch
+   | Celestial.UIToolkit </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ToggleSwitch
+   | Celestial.UIToolkit ">
+    <meta name="generator" content="docfx 2.40.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch">
+  
+  
+  <h1 id="Celestial_UIToolkit_Controls_ToggleSwitch" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch" class="text-break">Class ToggleSwitch
+  </h1>
+  <div class="markdown level0 summary"><p>Represents a switch which allows users to turn something on or off.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.threading.dispatcherobject">DispatcherObject</a></div>
+    <div class="level2"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a></div>
+    <div class="level3"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.visual">Visual</a></div>
+    <div class="level4"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.uielement">UIElement</a></div>
+    <div class="level5"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement">FrameworkElement</a></div>
+    <div class="level6"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.control">Control</a></div>
+    <div class="level7"><a class="xref" href="Celestial.UIToolkit.Controls.CommonVisualStatesControl.html">CommonVisualStatesControl</a></div>
+    <div class="level8"><span class="xref">ToggleSwitch</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Controls.CommonVisualStatesControl.html#Celestial_UIToolkit_Controls_CommonVisualStatesControl_CommonStatesVisualStateGroup">CommonVisualStatesControl.CommonStatesVisualStateGroup</a>
+    </div>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Controls.CommonVisualStatesControl.html#Celestial_UIToolkit_Controls_CommonVisualStatesControl_NormalVisualState">CommonVisualStatesControl.NormalVisualState</a>
+    </div>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Controls.CommonVisualStatesControl.html#Celestial_UIToolkit_Controls_CommonVisualStatesControl_MouseOverVisualState">CommonVisualStatesControl.MouseOverVisualState</a>
+    </div>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Controls.CommonVisualStatesControl.html#Celestial_UIToolkit_Controls_CommonVisualStatesControl_DisabledVisualState">CommonVisualStatesControl.DisabledVisualState</a>
+    </div>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Controls.CommonVisualStatesControl.html#Celestial_UIToolkit_Controls_CommonVisualStatesControl_EnterCurrentCommonStatesVisualState">CommonVisualStatesControl.EnterCurrentCommonStatesVisualState()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Celestial.UIToolkit.Controls.html">Celestial.UIToolkit.Controls</a></h6>
+  <h6><strong>Assembly</strong>: Celestial.UIToolkit.dll</h6>
+  <h5 id="Celestial_UIToolkit_Controls_ToggleSwitch_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TemplateVisualState(Name = &quot;Active&quot;, GroupName = &quot;CommonStates&quot;)]
+[TemplateVisualState(Name = &quot;MouseOverActive&quot;, GroupName = &quot;CommonStates&quot;)]
+[TemplateVisualState(Name = &quot;Pressed&quot;, GroupName = &quot;CommonStates&quot;)]
+[TemplateVisualState(Name = &quot;On&quot;, GroupName = &quot;ToggledStates&quot;)]
+[TemplateVisualState(Name = &quot;Off&quot;, GroupName = &quot;ToggledStates&quot;)]
+[TemplateVisualState(Name = &quot;Dragging&quot;, GroupName = &quot;ToggledStates&quot;)]
+[TemplateVisualState(Name = &quot;OnContent&quot;, GroupName = &quot;ContentDisplayStates&quot;)]
+[TemplateVisualState(Name = &quot;OffContent&quot;, GroupName = &quot;ContentDisplayStates&quot;)]
+[TemplatePart(Name = &quot;PART_DraggableArea&quot;, Type = typeof(Thumb))]
+public class ToggleSwitch : CommonVisualStatesControl, DUCE.IResource, IAnimatable, IFrameworkInputElement, IInputElement, ISupportInitialize, IHaveResources, IQueryAmbient</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch__ctor.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.cs/#L92">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch__ctor_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.#ctor*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch__ctor" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.#ctor">ToggleSwitch()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html">ToggleSwitch</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ToggleSwitch()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch__ctor_System_Boolean_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.%23ctor(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.cs/#L101">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch__ctor_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.#ctor*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch__ctor_System_Boolean_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.#ctor(System.Boolean)">ToggleSwitch(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html">ToggleSwitch</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ToggleSwitch(bool isOn)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">isOn</span></td>
+        <td><p>A value indicating whether the switch is currently &quot;On&quot;.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_DragOrientationProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.DragOrientationProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L166">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_DragOrientationProperty" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.DragOrientationProperty">DragOrientationProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_DragOrientation">DragOrientation</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty DragOrientationProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_HasHeaderProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.HasHeaderProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L287">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_HasHeaderProperty" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.HasHeaderProperty">HasHeaderProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_HasHeader">HasHeader</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty HasHeaderProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_HasOffContentProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.HasOffContentProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L681">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_HasOffContentProperty" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.HasOffContentProperty">HasOffContentProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_HasOffContent">HasOffContent</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty HasOffContentProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_HasOnContentProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.HasOnContentProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L484">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_HasOnContentProperty" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.HasOnContentProperty">HasOnContentProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_HasOnContent">HasOnContent</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty HasOnContentProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_HeaderProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.HeaderProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L293">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_HeaderProperty" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.HeaderProperty">HeaderProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_Header">Header</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty HeaderProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_HeaderStringFormatProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.HeaderStringFormatProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L329">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_HeaderStringFormatProperty" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.HeaderStringFormatProperty">HeaderStringFormatProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_HeaderStringFormat">HeaderStringFormat</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty HeaderStringFormatProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_HeaderTemplateProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.HeaderTemplateProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L305">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_HeaderTemplateProperty" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.HeaderTemplateProperty">HeaderTemplateProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_HeaderTemplate">HeaderTemplate</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty HeaderTemplateProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_HeaderTemplateSelectorProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.HeaderTemplateSelectorProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L317">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_HeaderTemplateSelectorProperty" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.HeaderTemplateSelectorProperty">HeaderTemplateSelectorProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_HeaderTemplateSelector">HeaderTemplateSelector</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty HeaderTemplateSelectorProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_IsDraggingProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.IsDraggingProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L88">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_IsDraggingProperty" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.IsDraggingProperty">IsDraggingProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_IsDragging">IsDragging</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty IsDraggingProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_IsOnProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.IsOnProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L19">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_IsOnProperty" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.IsOnProperty">IsOnProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_IsOn">IsOn</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty IsOnProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_KnobOffsetProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.KnobOffsetProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L186">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_KnobOffsetProperty" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.KnobOffsetProperty">KnobOffsetProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_KnobOffset">KnobOffset</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty KnobOffsetProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OffCommandParameterProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OffCommandParameterProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L61">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OffCommandParameterProperty" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OffCommandParameterProperty">OffCommandParameterProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OffCommandParameter">OffCommandParameter</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty OffCommandParameterProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OffCommandProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OffCommandProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L41">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OffCommandProperty" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OffCommandProperty">OffCommandProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OffCommand">OffCommand</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty OffCommandProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OffContentProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OffContentProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L687">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OffContentProperty" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OffContentProperty">OffContentProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OffContent">OffContent</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty OffContentProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OffContentStringFormatProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OffContentStringFormatProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L723">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OffContentStringFormatProperty" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OffContentStringFormatProperty">OffContentStringFormatProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OffContentStringFormat">OffContentStringFormat</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty OffContentStringFormatProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OffContentTemplateProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OffContentTemplateProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L699">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OffContentTemplateProperty" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OffContentTemplateProperty">OffContentTemplateProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OffContentTemplate">OffContentTemplate</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty OffContentTemplateProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OffContentTemplateSelectorProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OffContentTemplateSelectorProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L711">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OffContentTemplateSelectorProperty" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OffContentTemplateSelectorProperty">OffContentTemplateSelectorProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OffContentTemplateSelector">OffContentTemplateSelector</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty OffContentTemplateSelectorProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OffKnobOffsetProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OffKnobOffsetProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L202">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OffKnobOffsetProperty" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OffKnobOffsetProperty">OffKnobOffsetProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OffKnobOffset">OffKnobOffset</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty OffKnobOffsetProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OnCommandParameterProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OnCommandParameterProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L51">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OnCommandParameterProperty" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnCommandParameterProperty">OnCommandParameterProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OnCommandParameter">OnCommandParameter</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty OnCommandParameterProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OnCommandProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OnCommandProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L31">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OnCommandProperty" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnCommandProperty">OnCommandProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OnCommand">OnCommand</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty OnCommandProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OnContentProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OnContentProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L490">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OnContentProperty" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnContentProperty">OnContentProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OnContent">OnContent</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty OnContentProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OnContentStringFormatProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OnContentStringFormatProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L526">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OnContentStringFormatProperty" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnContentStringFormatProperty">OnContentStringFormatProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OnContentStringFormat">OnContentStringFormat</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty OnContentStringFormatProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OnContentTemplateProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OnContentTemplateProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L502">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OnContentTemplateProperty" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnContentTemplateProperty">OnContentTemplateProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OnContentTemplate">OnContentTemplate</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty OnContentTemplateProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OnContentTemplateSelectorProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OnContentTemplateSelectorProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L514">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OnContentTemplateSelectorProperty" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnContentTemplateSelectorProperty">OnContentTemplateSelectorProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OnContentTemplateSelector">OnContentTemplateSelector</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty OnContentTemplateSelectorProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OnKnobOffsetProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OnKnobOffsetProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L192">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OnKnobOffsetProperty" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnKnobOffsetProperty">OnKnobOffsetProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OnKnobOffset">OnKnobOffset</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty OnKnobOffsetProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_ReplaceOnOffContentWithHeaderProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.ReplaceOnOffContentWithHeaderProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L71">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_ReplaceOnOffContentWithHeaderProperty" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.ReplaceOnOffContentWithHeaderProperty">ReplaceOnOffContentWithHeaderProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_ReplaceOnOffContentWithHeader">ReplaceOnOffContentWithHeader</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty ReplaceOnOffContentWithHeaderProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_ToggledEvent.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.ToggledEvent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.cs/#L64">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_ToggledEvent" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.ToggledEvent">ToggledEvent</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_Toggled">Toggled</a> routed event.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly RoutedEvent ToggledEvent</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.routedevent">RoutedEvent</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_DragOrientation.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.DragOrientation%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L213">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_DragOrientation_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.DragOrientation*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_DragOrientation" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.DragOrientation">DragOrientation</h4>
+  <div class="markdown level1 summary"><p>Gets or sets whether x or y coordinates are captured when the user drags the
+<a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html">ToggleSwitch</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Orientation DragOrientation { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.orientation">Orientation</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_HasHeader.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.HasHeader%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L342">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_HasHeader_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.HasHeader*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_HasHeader" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.HasHeader">HasHeader</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_Header">Header</a> property of this
+<a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html">ToggleSwitch</a> holds any content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(false)]
+[Browsable(false)]
+public bool HasHeader { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_HasOffContent.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.HasOffContent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L736">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_HasOffContent_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.HasOffContent*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_HasOffContent" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.HasOffContent">HasOffContent</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OffContent">OffContent</a> property of this
+<a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html">ToggleSwitch</a> holds any content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(false)]
+[Browsable(false)]
+public bool HasOffContent { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_HasOnContent.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.HasOnContent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L539">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_HasOnContent_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.HasOnContent*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_HasOnContent" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.HasOnContent">HasOnContent</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OnContent">OnContent</a> property of this
+<a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html">ToggleSwitch</a> holds any content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(false)]
+[Browsable(false)]
+public bool HasOnContent { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_Header.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.Header%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L353">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_Header_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.Header*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_Header" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.Header">Header</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the content which is being displayed in the Header of the
+<a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html">ToggleSwitch</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+[Localizability(LocalizationCategory.Label)]
+public object Header { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_HeaderStringFormat.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.HeaderStringFormat%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L387">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_HeaderStringFormat_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.HeaderStringFormat*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_HeaderStringFormat" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.HeaderStringFormat">HeaderStringFormat</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a composite string that specifies how to format the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_Header">Header</a>
+content property, if it is displayed as a string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+public string HeaderStringFormat { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_HeaderTemplate.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.HeaderTemplate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L365">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_HeaderTemplate_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.HeaderTemplate*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_HeaderTemplate" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.HeaderTemplate">HeaderTemplate</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a> to be used for displaying the
+<a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_Header">Header</a> content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+public DataTemplate HeaderTemplate { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_HeaderTemplateSelector.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.HeaderTemplateSelector%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L376">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_HeaderTemplateSelector_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.HeaderTemplateSelector*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_HeaderTemplateSelector" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.HeaderTemplateSelector">HeaderTemplateSelector</h4>
+  <div class="markdown level1 summary"><p>Gets or sets <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a> which enables an application writer
+to provide custom template-selection logic for the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_Header">Header</a> content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+public DataTemplateSelector HeaderTemplateSelector { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_IsDragging.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.IsDragging%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L153">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_IsDragging_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.IsDragging*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_IsDragging" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.IsDragging">IsDragging</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether the user is currently dragging the
+<a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html">ToggleSwitch</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsDragging { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_IsOn.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.IsOn%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L95">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_IsOn_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.IsOn*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_IsOn" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.IsOn">IsOn</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a value indicating whether the switch is currently &quot;On&quot;, meaning that
+it is toggled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsOn { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_KnobOffset.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.KnobOffset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L224">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_KnobOffset_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.KnobOffset*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_KnobOffset" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.KnobOffset">KnobOffset</h4>
+  <div class="markdown level1 summary"><p>Gets the offset of the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html">ToggleSwitch</a>'s knob.
+This value is calculated when the user drags the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html">ToggleSwitch</a>.
+This is intended to be used by templates.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double KnobOffset { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_LogicalChildren.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.LogicalChildren%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L261">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_LogicalChildren_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.LogicalChildren*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_LogicalChildren" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.LogicalChildren">LogicalChildren</h4>
+  <div class="markdown level1 summary"><p>Gets an enumerator on the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html">ToggleSwitch</a>'s logical children.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IEnumerator LogicalChildren { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.logicalchildren#System_Windows_FrameworkElement_LogicalChildren">FrameworkElement.LogicalChildren</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OffCommand.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OffCommand%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L115">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_OffCommand_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OffCommand*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OffCommand" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OffCommand">OffCommand</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a command which gets executed if the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html">ToggleSwitch</a> gets
+switched off.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ICommand OffCommand { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.input.icommand">ICommand</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OffCommandParameter.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OffCommandParameter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L133">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_OffCommandParameter_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OffCommandParameter*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OffCommandParameter" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OffCommandParameter">OffCommandParameter</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a parameter which gets passed to the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OffCommand">OffCommand</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object OffCommandParameter { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OffContent.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OffContent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L747">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_OffContent_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OffContent*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OffContent" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OffContent">OffContent</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the content which is being displayed in the OffContent of the
+<a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html">ToggleSwitch</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+[Localizability(LocalizationCategory.Label)]
+public object OffContent { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OffContentStringFormat.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OffContentStringFormat%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L781">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_OffContentStringFormat_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OffContentStringFormat*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OffContentStringFormat" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OffContentStringFormat">OffContentStringFormat</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a composite string that specifies how to format the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OffContent">OffContent</a>
+content property, if it is displayed as a string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+public string OffContentStringFormat { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OffContentTemplate.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OffContentTemplate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L759">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_OffContentTemplate_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OffContentTemplate*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OffContentTemplate" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OffContentTemplate">OffContentTemplate</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a> to be used for displaying the
+<a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OffContent">OffContent</a> content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+public DataTemplate OffContentTemplate { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OffContentTemplateSelector.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OffContentTemplateSelector%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L770">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_OffContentTemplateSelector_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OffContentTemplateSelector*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OffContentTemplateSelector" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OffContentTemplateSelector">OffContentTemplateSelector</h4>
+  <div class="markdown level1 summary"><p>Gets or sets <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a> which enables an application writer
+to provide custom template-selection logic for the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OffContent">OffContent</a> content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+public DataTemplateSelector OffContentTemplateSelector { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OffKnobOffset.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OffKnobOffset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L248">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_OffKnobOffset_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OffKnobOffset*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OffKnobOffset" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OffKnobOffset">OffKnobOffset</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the value of the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_KnobOffset">KnobOffset</a>, when <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_IsOn">IsOn</a>
+is true.
+This is intended to be used by templates and must explicitly be set in a style to have
+an effect.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double? OffKnobOffset { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OnCommand.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OnCommand%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L105">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_OnCommand_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnCommand*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OnCommand" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnCommand">OnCommand</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a command which gets executed if the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html">ToggleSwitch</a> gets
+switched on.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ICommand OnCommand { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.input.icommand">ICommand</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OnCommandParameter.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OnCommandParameter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L124">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_OnCommandParameter_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnCommandParameter*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OnCommandParameter" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnCommandParameter">OnCommandParameter</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a parameter which gets passed to the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OnCommand">OnCommand</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object OnCommandParameter { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OnContent.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OnContent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L550">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_OnContent_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnContent*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OnContent" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnContent">OnContent</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the content which is being displayed in the OnContent of the
+<a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html">ToggleSwitch</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+[Localizability(LocalizationCategory.Label)]
+public object OnContent { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OnContentStringFormat.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OnContentStringFormat%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L584">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_OnContentStringFormat_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnContentStringFormat*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OnContentStringFormat" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnContentStringFormat">OnContentStringFormat</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a composite string that specifies how to format the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OnContent">OnContent</a>
+content property, if it is displayed as a string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+public string OnContentStringFormat { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OnContentTemplate.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OnContentTemplate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L562">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_OnContentTemplate_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnContentTemplate*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OnContentTemplate" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnContentTemplate">OnContentTemplate</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a> to be used for displaying the
+<a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OnContent">OnContent</a> content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+public DataTemplate OnContentTemplate { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OnContentTemplateSelector.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OnContentTemplateSelector%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L573">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_OnContentTemplateSelector_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnContentTemplateSelector*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OnContentTemplateSelector" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnContentTemplateSelector">OnContentTemplateSelector</h4>
+  <div class="markdown level1 summary"><p>Gets or sets <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a> which enables an application writer
+to provide custom template-selection logic for the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OnContent">OnContent</a> content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+public DataTemplateSelector OnContentTemplateSelector { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OnKnobOffset.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OnKnobOffset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L236">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_OnKnobOffset_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnKnobOffset*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OnKnobOffset" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnKnobOffset">OnKnobOffset</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the value of the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_KnobOffset">KnobOffset</a>, when <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_IsOn">IsOn</a>
+is false.
+This is intended to be used by templates and must explicitly be set in a style to have
+an effect.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double? OnKnobOffset { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_ReplaceOnOffContentWithHeader.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.ReplaceOnOffContentWithHeader%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L143">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_ReplaceOnOffContentWithHeader_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.ReplaceOnOffContentWithHeader*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_ReplaceOnOffContentWithHeader" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.ReplaceOnOffContentWithHeader">ReplaceOnOffContentWithHeader</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a value indicating whether the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OnContent">OnContent</a> and
+<a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OffContent">OffContent</a> get replaced with the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_Header">Header</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ReplaceOnOffContentWithHeader { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_EnterCurrentCommonStatesVisualState_System_Boolean_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.EnterCurrentCommonStatesVisualState(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.cs/#L421">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_EnterCurrentCommonStatesVisualState_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.EnterCurrentCommonStatesVisualState*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_EnterCurrentCommonStatesVisualState_System_Boolean_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.EnterCurrentCommonStatesVisualState(System.Boolean)">EnterCurrentCommonStatesVisualState(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Enters the current common visual state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void EnterCurrentCommonStatesVisualState(bool useTransitions)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">useTransitions</span></td>
+        <td><p>A value indicating whether visual transitions should be used.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Celestial.UIToolkit.Controls.CommonVisualStatesControl.html#Celestial_UIToolkit_Controls_CommonVisualStatesControl_EnterCurrentCommonStatesVisualState_System_Boolean_">CommonVisualStatesControl.EnterCurrentCommonStatesVisualState(Boolean)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OnApplyTemplate.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OnApplyTemplate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.cs/#L120">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_OnApplyTemplate_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnApplyTemplate*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OnApplyTemplate" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnApplyTemplate">OnApplyTemplate()</h4>
+  <div class="markdown level1 summary"><p>Invoked when the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html">ToggleSwitch</a>'s template is applied.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnApplyTemplate()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Celestial.UIToolkit.Controls.CommonVisualStatesControl.html#Celestial_UIToolkit_Controls_CommonVisualStatesControl_OnApplyTemplate">CommonVisualStatesControl.OnApplyTemplate()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OnHeaderChanged_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OnHeaderChanged(System.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L429">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_OnHeaderChanged_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnHeaderChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OnHeaderChanged_System_Object_System_Object_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnHeaderChanged(System.Object,System.Object)">OnHeaderChanged(Object, Object)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_Header">Header</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnHeaderChanged(object oldValue, object newValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">oldValue</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_Header">Header</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">newValue</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_Header">Header</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OnHeaderStringFormatChanged_System_String_System_String_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OnHeaderStringFormatChanged(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L466">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_OnHeaderStringFormatChanged_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnHeaderStringFormatChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OnHeaderStringFormatChanged_System_String_System_String_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnHeaderStringFormatChanged(System.String,System.String)">OnHeaderStringFormatChanged(String, String)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_HeaderStringFormat">HeaderStringFormat</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnHeaderStringFormatChanged(string oldStringFormat, string newStringFormat)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">oldStringFormat</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_HeaderStringFormat">HeaderStringFormat</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">newStringFormat</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_HeaderStringFormat">HeaderStringFormat</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OnHeaderTemplateChanged_System_Windows_DataTemplate_System_Windows_DataTemplate_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OnHeaderTemplateChanged(System.Windows.DataTemplate%2CSystem.Windows.DataTemplate)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L440">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_OnHeaderTemplateChanged_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnHeaderTemplateChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OnHeaderTemplateChanged_System_Windows_DataTemplate_System_Windows_DataTemplate_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnHeaderTemplateChanged(System.Windows.DataTemplate,System.Windows.DataTemplate)">OnHeaderTemplateChanged(DataTemplate, DataTemplate)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_HeaderTemplate">HeaderTemplate</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnHeaderTemplateChanged(DataTemplate oldTemplate, DataTemplate newTemplate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a></td>
+        <td><span class="parametername">oldTemplate</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_HeaderTemplate">HeaderTemplate</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a></td>
+        <td><span class="parametername">newTemplate</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_HeaderTemplate">HeaderTemplate</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OnHeaderTemplateSelectorChanged_System_Windows_Controls_DataTemplateSelector_System_Windows_Controls_DataTemplateSelector_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OnHeaderTemplateSelectorChanged(System.Windows.Controls.DataTemplateSelector%2CSystem.Windows.Controls.DataTemplateSelector)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L453">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_OnHeaderTemplateSelectorChanged_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnHeaderTemplateSelectorChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OnHeaderTemplateSelectorChanged_System_Windows_Controls_DataTemplateSelector_System_Windows_Controls_DataTemplateSelector_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnHeaderTemplateSelectorChanged(System.Windows.Controls.DataTemplateSelector,System.Windows.Controls.DataTemplateSelector)">OnHeaderTemplateSelectorChanged(DataTemplateSelector, DataTemplateSelector)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_HeaderTemplateSelector">HeaderTemplateSelector</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnHeaderTemplateSelectorChanged(DataTemplateSelector oldSelector, DataTemplateSelector newSelector)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a></td>
+        <td><span class="parametername">oldSelector</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_HeaderTemplateSelector">HeaderTemplateSelector</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a></td>
+        <td><span class="parametername">newSelector</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_HeaderTemplateSelector">HeaderTemplateSelector</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OnOffContentChanged_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OnOffContentChanged(System.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L823">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_OnOffContentChanged_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnOffContentChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OnOffContentChanged_System_Object_System_Object_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnOffContentChanged(System.Object,System.Object)">OnOffContentChanged(Object, Object)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OffContent">OffContent</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnOffContentChanged(object oldValue, object newValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">oldValue</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OffContent">OffContent</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">newValue</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OffContent">OffContent</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OnOffContentStringFormatChanged_System_String_System_String_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OnOffContentStringFormatChanged(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L860">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_OnOffContentStringFormatChanged_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnOffContentStringFormatChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OnOffContentStringFormatChanged_System_String_System_String_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnOffContentStringFormatChanged(System.String,System.String)">OnOffContentStringFormatChanged(String, String)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OffContentStringFormat">OffContentStringFormat</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnOffContentStringFormatChanged(string oldStringFormat, string newStringFormat)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">oldStringFormat</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OffContentStringFormat">OffContentStringFormat</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">newStringFormat</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OffContentStringFormat">OffContentStringFormat</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OnOffContentTemplateChanged_System_Windows_DataTemplate_System_Windows_DataTemplate_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OnOffContentTemplateChanged(System.Windows.DataTemplate%2CSystem.Windows.DataTemplate)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L834">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_OnOffContentTemplateChanged_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnOffContentTemplateChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OnOffContentTemplateChanged_System_Windows_DataTemplate_System_Windows_DataTemplate_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnOffContentTemplateChanged(System.Windows.DataTemplate,System.Windows.DataTemplate)">OnOffContentTemplateChanged(DataTemplate, DataTemplate)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OffContentTemplate">OffContentTemplate</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnOffContentTemplateChanged(DataTemplate oldTemplate, DataTemplate newTemplate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a></td>
+        <td><span class="parametername">oldTemplate</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OffContentTemplate">OffContentTemplate</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a></td>
+        <td><span class="parametername">newTemplate</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OffContentTemplate">OffContentTemplate</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OnOffContentTemplateSelectorChanged_System_Windows_Controls_DataTemplateSelector_System_Windows_Controls_DataTemplateSelector_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OnOffContentTemplateSelectorChanged(System.Windows.Controls.DataTemplateSelector%2CSystem.Windows.Controls.DataTemplateSelector)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L847">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_OnOffContentTemplateSelectorChanged_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnOffContentTemplateSelectorChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OnOffContentTemplateSelectorChanged_System_Windows_Controls_DataTemplateSelector_System_Windows_Controls_DataTemplateSelector_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnOffContentTemplateSelectorChanged(System.Windows.Controls.DataTemplateSelector,System.Windows.Controls.DataTemplateSelector)">OnOffContentTemplateSelectorChanged(DataTemplateSelector, DataTemplateSelector)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OffContentTemplateSelector">OffContentTemplateSelector</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnOffContentTemplateSelectorChanged(DataTemplateSelector oldSelector, DataTemplateSelector newSelector)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a></td>
+        <td><span class="parametername">oldSelector</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OffContentTemplateSelector">OffContentTemplateSelector</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a></td>
+        <td><span class="parametername">newSelector</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OffContentTemplateSelector">OffContentTemplateSelector</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OnOnContentChanged_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OnOnContentChanged(System.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L626">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_OnOnContentChanged_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnOnContentChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OnOnContentChanged_System_Object_System_Object_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnOnContentChanged(System.Object,System.Object)">OnOnContentChanged(Object, Object)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OnContent">OnContent</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnOnContentChanged(object oldValue, object newValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">oldValue</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OnContent">OnContent</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">newValue</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OnContent">OnContent</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OnOnContentStringFormatChanged_System_String_System_String_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OnOnContentStringFormatChanged(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L663">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_OnOnContentStringFormatChanged_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnOnContentStringFormatChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OnOnContentStringFormatChanged_System_String_System_String_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnOnContentStringFormatChanged(System.String,System.String)">OnOnContentStringFormatChanged(String, String)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OnContentStringFormat">OnContentStringFormat</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnOnContentStringFormatChanged(string oldStringFormat, string newStringFormat)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">oldStringFormat</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OnContentStringFormat">OnContentStringFormat</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">newStringFormat</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OnContentStringFormat">OnContentStringFormat</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OnOnContentTemplateChanged_System_Windows_DataTemplate_System_Windows_DataTemplate_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OnOnContentTemplateChanged(System.Windows.DataTemplate%2CSystem.Windows.DataTemplate)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L637">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_OnOnContentTemplateChanged_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnOnContentTemplateChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OnOnContentTemplateChanged_System_Windows_DataTemplate_System_Windows_DataTemplate_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnOnContentTemplateChanged(System.Windows.DataTemplate,System.Windows.DataTemplate)">OnOnContentTemplateChanged(DataTemplate, DataTemplate)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OnContentTemplate">OnContentTemplate</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnOnContentTemplateChanged(DataTemplate oldTemplate, DataTemplate newTemplate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a></td>
+        <td><span class="parametername">oldTemplate</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OnContentTemplate">OnContentTemplate</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a></td>
+        <td><span class="parametername">newTemplate</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OnContentTemplate">OnContentTemplate</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OnOnContentTemplateSelectorChanged_System_Windows_Controls_DataTemplateSelector_System_Windows_Controls_DataTemplateSelector_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OnOnContentTemplateSelectorChanged(System.Windows.Controls.DataTemplateSelector%2CSystem.Windows.Controls.DataTemplateSelector)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L650">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_OnOnContentTemplateSelectorChanged_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnOnContentTemplateSelectorChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OnOnContentTemplateSelectorChanged_System_Windows_Controls_DataTemplateSelector_System_Windows_Controls_DataTemplateSelector_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnOnContentTemplateSelectorChanged(System.Windows.Controls.DataTemplateSelector,System.Windows.Controls.DataTemplateSelector)">OnOnContentTemplateSelectorChanged(DataTemplateSelector, DataTemplateSelector)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OnContentTemplateSelector">OnContentTemplateSelector</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnOnContentTemplateSelectorChanged(DataTemplateSelector oldSelector, DataTemplateSelector newSelector)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a></td>
+        <td><span class="parametername">oldSelector</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OnContentTemplateSelector">OnContentTemplateSelector</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a></td>
+        <td><span class="parametername">newSelector</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OnContentTemplateSelector">OnContentTemplateSelector</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_OnToggled.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.OnToggled%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.cs/#L365">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_OnToggled_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnToggled*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_OnToggled" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.OnToggled">OnToggled()</h4>
+  <div class="markdown level1 summary"><p>Called whenever the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_IsOnProperty">IsOnProperty</a> dependency property changes.
+If not overridden, raises the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_Toggled">Toggled</a> event.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnToggled()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_ToString.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.cs/#L449">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_ToggleSwitch_ToString_" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.ToString*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_ToString" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.ToString">ToString()</h4>
+  <div class="markdown level1 summary"><p>Returns a string representation of the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html">ToggleSwitch</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>A string representing the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html">ToggleSwitch</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.control.tostring#System_Windows_Controls_Control_ToString">Control.ToString()</a></div>
+  <h3 id="events">Events
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch_Toggled.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch.Toggled%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.cs/#L74">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_ToggleSwitch_Toggled" data-uid="Celestial.UIToolkit.Controls.ToggleSwitch.Toggled">Toggled</h4>
+  <div class="markdown level1 summary"><p>Occurs when the <a class="xref" href="Celestial.UIToolkit.Controls.ToggleSwitch.html">ToggleSwitch</a> is toggled on or off.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event RoutedEventHandler Toggled</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.routedeventhandler">RoutedEventHandler</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.DependencyObjectExtensions.html#Celestial_UIToolkit_Extensions_DependencyObjectExtensions_HasVisualAncestor_System_Windows_DependencyObject_System_Windows_DependencyObject_">DependencyObjectExtensions.HasVisualAncestor(DependencyObject, DependencyObject)</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.DependencyObjectExtensions.html#Celestial_UIToolkit_Extensions_DependencyObjectExtensions_RemoveLogicalChild_System_Windows_DependencyObject_System_Windows_UIElement_">DependencyObjectExtensions.RemoveLogicalChild(DependencyObject, UIElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.html#Celestial_UIToolkit_Extensions_DependencyPropertyExtensions_IsDependencyPropertySet_System_Windows_DependencyObject_System_Windows_DependencyProperty_">DependencyPropertyExtensions.IsDependencyPropertySet(DependencyObject, DependencyProperty)</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.FrameworkElementExtensions.html#Celestial_UIToolkit_Extensions_FrameworkElementExtensions_GetCenter_System_Windows_FrameworkElement_">FrameworkElementExtensions.GetCenter(FrameworkElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.FrameworkElementExtensions.html#Celestial_UIToolkit_Extensions_FrameworkElementExtensions_IsPointInControlBounds_System_Windows_FrameworkElement_System_Windows_Point_">FrameworkElementExtensions.IsPointInControlBounds(FrameworkElement, Point)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ToggleSwitch.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ToggleSwitch%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ToggleSwitch/ToggleSwitch.Properties.cs/#L11" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright &copy; 2018 Celestial.UIToolkit
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

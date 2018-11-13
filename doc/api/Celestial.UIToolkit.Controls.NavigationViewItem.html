@@ -1,0 +1,806 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class NavigationViewItem
+   | Celestial.UIToolkit </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class NavigationViewItem
+   | Celestial.UIToolkit ">
+    <meta name="generator" content="docfx 2.40.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem">
+  
+  
+  <h1 id="Celestial_UIToolkit_Controls_NavigationViewItem" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem" class="text-break">Class NavigationViewItem
+  </h1>
+  <div class="markdown level0 summary"><p>Represents the container for a generic navigation item in a <a class="xref" href="Celestial.UIToolkit.Controls.NavigationView.html">NavigationView</a>.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.threading.dispatcherobject">DispatcherObject</a></div>
+    <div class="level2"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a></div>
+    <div class="level3"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.visual">Visual</a></div>
+    <div class="level4"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.uielement">UIElement</a></div>
+    <div class="level5"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement">FrameworkElement</a></div>
+    <div class="level6"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.control">Control</a></div>
+    <div class="level7"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.contentcontrol">ContentControl</a></div>
+    <div class="level8"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.listboxitem">ListBoxItem</a></div>
+    <div class="level9"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.listviewitem">ListViewItem</a></div>
+    <div class="level10"><span class="xref">NavigationViewItem</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Celestial.UIToolkit.Controls.html">Celestial.UIToolkit.Controls</a></h6>
+  <h6><strong>Assembly</strong>: Celestial.UIToolkit.dll</h6>
+  <h5 id="Celestial_UIToolkit_Controls_NavigationViewItem_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class NavigationViewItem : ListViewItem, DUCE.IResource, IAnimatable, IFrameworkInputElement, IInputElement, ISupportInitialize, IHaveResources, IQueryAmbient, IAddChild</code></pre>
+  </div>
+  <h5 id="Celestial_UIToolkit_Controls_NavigationViewItem_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This class is inheriting from <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.listviewitem">ListViewItem</a> since the
+<a class="xref" href="Celestial.UIToolkit.Controls.NavigationView.html">NavigationView</a> is using a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.listview">ListView</a> to display its menu items.
+To ensure that a custom template will still display these items correctly, it should use
+a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.listview">ListView</a> aswell.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_NavigationViewItem__ctor.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.NavigationViewItem.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/NavigationView/Items/NavigationViewItem.cs/#L161">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_NavigationViewItem__ctor_" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem.#ctor*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_NavigationViewItem__ctor" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem.#ctor">NavigationViewItem()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Celestial.UIToolkit.Controls.NavigationViewItem.html">NavigationViewItem</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NavigationViewItem()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_NavigationViewItem__ctor_System_Object_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.NavigationViewItem.%23ctor(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/NavigationView/Items/NavigationViewItem.cs/#L170">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_NavigationViewItem__ctor_" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem.#ctor*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_NavigationViewItem__ctor_System_Object_" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem.#ctor(System.Object)">NavigationViewItem(Object)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Celestial.UIToolkit.Controls.NavigationViewItem.html">NavigationViewItem</a> class
+with the specified <code data-dev-comment-type="paramref" class="paramref">content</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NavigationViewItem(object content)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">content</span></td>
+        <td><p>The item's content.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_NavigationViewItem__ctor_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.NavigationViewItem.%23ctor(System.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/NavigationView/Items/NavigationViewItem.cs/#L179">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_NavigationViewItem__ctor_" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem.#ctor*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_NavigationViewItem__ctor_System_Object_System_Object_" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem.#ctor(System.Object,System.Object)">NavigationViewItem(Object, Object)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Celestial.UIToolkit.Controls.NavigationViewItem.html">NavigationViewItem</a> class
+with the specified <code data-dev-comment-type="paramref" class="paramref">content</code> and <code data-dev-comment-type="paramref" class="paramref">icon</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NavigationViewItem(object content, object icon)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">content</span></td>
+        <td><p>The item's content.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">icon</span></td>
+        <td><p>The item's icon.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_NavigationViewItem_HasIconProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.NavigationViewItem.HasIconProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/NavigationView/Items/NavigationViewItem.cs/#L31">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_NavigationViewItem_HasIconProperty" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem.HasIconProperty">HasIconProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.NavigationViewItem.html#Celestial_UIToolkit_Controls_NavigationViewItem_HasIcon">HasIcon</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty HasIconProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_NavigationViewItem_IconProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.NavigationViewItem.IconProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/NavigationView/Items/NavigationViewItem.cs/#L37">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_NavigationViewItem_IconProperty" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem.IconProperty">IconProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.NavigationViewItem.html#Celestial_UIToolkit_Controls_NavigationViewItem_Icon">Icon</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty IconProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_NavigationViewItem_IconStringFormatProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.NavigationViewItem.IconStringFormatProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/NavigationView/Items/NavigationViewItem.cs/#L73">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_NavigationViewItem_IconStringFormatProperty" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem.IconStringFormatProperty">IconStringFormatProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.NavigationViewItem.html#Celestial_UIToolkit_Controls_NavigationViewItem_IconStringFormat">IconStringFormat</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty IconStringFormatProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_NavigationViewItem_IconTemplateProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.NavigationViewItem.IconTemplateProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/NavigationView/Items/NavigationViewItem.cs/#L49">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_NavigationViewItem_IconTemplateProperty" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem.IconTemplateProperty">IconTemplateProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.NavigationViewItem.html#Celestial_UIToolkit_Controls_NavigationViewItem_IconTemplate">IconTemplate</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty IconTemplateProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_NavigationViewItem_IconTemplateSelectorProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.NavigationViewItem.IconTemplateSelectorProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/NavigationView/Items/NavigationViewItem.cs/#L61">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_NavigationViewItem_IconTemplateSelectorProperty" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem.IconTemplateSelectorProperty">IconTemplateSelectorProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.NavigationViewItem.html#Celestial_UIToolkit_Controls_NavigationViewItem_IconTemplateSelector">IconTemplateSelector</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty IconTemplateSelectorProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_NavigationViewItem_HasIcon.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.NavigationViewItem.HasIcon%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/NavigationView/Items/NavigationViewItem.cs/#L86">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_NavigationViewItem_HasIcon_" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem.HasIcon*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_NavigationViewItem_HasIcon" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem.HasIcon">HasIcon</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether the <a class="xref" href="Celestial.UIToolkit.Controls.NavigationViewItem.html#Celestial_UIToolkit_Controls_NavigationViewItem_Icon">Icon</a> property of this
+<a class="xref" href="Celestial.UIToolkit.Controls.NavigationViewItem.html">NavigationViewItem</a> holds any content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(false)]
+[Browsable(false)]
+public bool HasIcon { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_NavigationViewItem_Icon.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.NavigationViewItem.Icon%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/NavigationView/Items/NavigationViewItem.cs/#L97">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_NavigationViewItem_Icon_" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem.Icon*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_NavigationViewItem_Icon" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem.Icon">Icon</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the content which is being displayed in the Icon of the
+<a class="xref" href="Celestial.UIToolkit.Controls.NavigationViewItem.html">NavigationViewItem</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+[Localizability(LocalizationCategory.Label)]
+public object Icon { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_NavigationViewItem_IconStringFormat.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.NavigationViewItem.IconStringFormat%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/NavigationView/Items/NavigationViewItem.cs/#L131">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_NavigationViewItem_IconStringFormat_" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem.IconStringFormat*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_NavigationViewItem_IconStringFormat" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem.IconStringFormat">IconStringFormat</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a composite string that specifies how to format the <a class="xref" href="Celestial.UIToolkit.Controls.NavigationViewItem.html#Celestial_UIToolkit_Controls_NavigationViewItem_Icon">Icon</a>
+content property, if it is displayed as a string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+public string IconStringFormat { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_NavigationViewItem_IconTemplate.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.NavigationViewItem.IconTemplate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/NavigationView/Items/NavigationViewItem.cs/#L109">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_NavigationViewItem_IconTemplate_" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem.IconTemplate*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_NavigationViewItem_IconTemplate" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem.IconTemplate">IconTemplate</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a> to be used for displaying the
+<a class="xref" href="Celestial.UIToolkit.Controls.NavigationViewItem.html#Celestial_UIToolkit_Controls_NavigationViewItem_Icon">Icon</a> content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+public DataTemplate IconTemplate { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_NavigationViewItem_IconTemplateSelector.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.NavigationViewItem.IconTemplateSelector%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/NavigationView/Items/NavigationViewItem.cs/#L120">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_NavigationViewItem_IconTemplateSelector_" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem.IconTemplateSelector*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_NavigationViewItem_IconTemplateSelector" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem.IconTemplateSelector">IconTemplateSelector</h4>
+  <div class="markdown level1 summary"><p>Gets or sets <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a> which enables an application writer
+to provide custom template-selection logic for the <a class="xref" href="Celestial.UIToolkit.Controls.NavigationViewItem.html#Celestial_UIToolkit_Controls_NavigationViewItem_Icon">Icon</a> content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+public DataTemplateSelector IconTemplateSelector { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_NavigationViewItem_LogicalChildren.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.NavigationViewItem.LogicalChildren%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/NavigationView/Items/NavigationViewItem.cs/#L141">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_NavigationViewItem_LogicalChildren_" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem.LogicalChildren*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_NavigationViewItem_LogicalChildren" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem.LogicalChildren">LogicalChildren</h4>
+  <div class="markdown level1 summary"><p>Gets an enumerator on the <a class="xref" href="Celestial.UIToolkit.Controls.NavigationViewItem.html">NavigationViewItem</a>'s logical children.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IEnumerator LogicalChildren { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.contentcontrol.logicalchildren#System_Windows_Controls_ContentControl_LogicalChildren">ContentControl.LogicalChildren</a></div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_NavigationViewItem_OnIconChanged_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.NavigationViewItem.OnIconChanged(System.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/NavigationView/Items/NavigationViewItem.cs/#L220">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_NavigationViewItem_OnIconChanged_" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem.OnIconChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_NavigationViewItem_OnIconChanged_System_Object_System_Object_" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem.OnIconChanged(System.Object,System.Object)">OnIconChanged(Object, Object)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.NavigationViewItem.html#Celestial_UIToolkit_Controls_NavigationViewItem_Icon">Icon</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnIconChanged(object oldValue, object newValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">oldValue</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.NavigationViewItem.html#Celestial_UIToolkit_Controls_NavigationViewItem_Icon">Icon</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">newValue</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.NavigationViewItem.html#Celestial_UIToolkit_Controls_NavigationViewItem_Icon">Icon</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_NavigationViewItem_OnIconStringFormatChanged_System_String_System_String_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.NavigationViewItem.OnIconStringFormatChanged(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/NavigationView/Items/NavigationViewItem.cs/#L257">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_NavigationViewItem_OnIconStringFormatChanged_" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem.OnIconStringFormatChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_NavigationViewItem_OnIconStringFormatChanged_System_String_System_String_" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem.OnIconStringFormatChanged(System.String,System.String)">OnIconStringFormatChanged(String, String)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.NavigationViewItem.html#Celestial_UIToolkit_Controls_NavigationViewItem_IconStringFormat">IconStringFormat</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnIconStringFormatChanged(string oldStringFormat, string newStringFormat)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">oldStringFormat</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.NavigationViewItem.html#Celestial_UIToolkit_Controls_NavigationViewItem_IconStringFormat">IconStringFormat</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">newStringFormat</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.NavigationViewItem.html#Celestial_UIToolkit_Controls_NavigationViewItem_IconStringFormat">IconStringFormat</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_NavigationViewItem_OnIconTemplateChanged_System_Windows_DataTemplate_System_Windows_DataTemplate_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.NavigationViewItem.OnIconTemplateChanged(System.Windows.DataTemplate%2CSystem.Windows.DataTemplate)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/NavigationView/Items/NavigationViewItem.cs/#L231">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_NavigationViewItem_OnIconTemplateChanged_" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem.OnIconTemplateChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_NavigationViewItem_OnIconTemplateChanged_System_Windows_DataTemplate_System_Windows_DataTemplate_" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem.OnIconTemplateChanged(System.Windows.DataTemplate,System.Windows.DataTemplate)">OnIconTemplateChanged(DataTemplate, DataTemplate)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.NavigationViewItem.html#Celestial_UIToolkit_Controls_NavigationViewItem_IconTemplate">IconTemplate</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnIconTemplateChanged(DataTemplate oldTemplate, DataTemplate newTemplate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a></td>
+        <td><span class="parametername">oldTemplate</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.NavigationViewItem.html#Celestial_UIToolkit_Controls_NavigationViewItem_IconTemplate">IconTemplate</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a></td>
+        <td><span class="parametername">newTemplate</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.NavigationViewItem.html#Celestial_UIToolkit_Controls_NavigationViewItem_IconTemplate">IconTemplate</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_NavigationViewItem_OnIconTemplateSelectorChanged_System_Windows_Controls_DataTemplateSelector_System_Windows_Controls_DataTemplateSelector_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.NavigationViewItem.OnIconTemplateSelectorChanged(System.Windows.Controls.DataTemplateSelector%2CSystem.Windows.Controls.DataTemplateSelector)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/NavigationView/Items/NavigationViewItem.cs/#L244">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_NavigationViewItem_OnIconTemplateSelectorChanged_" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem.OnIconTemplateSelectorChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_NavigationViewItem_OnIconTemplateSelectorChanged_System_Windows_Controls_DataTemplateSelector_System_Windows_Controls_DataTemplateSelector_" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem.OnIconTemplateSelectorChanged(System.Windows.Controls.DataTemplateSelector,System.Windows.Controls.DataTemplateSelector)">OnIconTemplateSelectorChanged(DataTemplateSelector, DataTemplateSelector)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.NavigationViewItem.html#Celestial_UIToolkit_Controls_NavigationViewItem_IconTemplateSelector">IconTemplateSelector</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnIconTemplateSelectorChanged(DataTemplateSelector oldSelector, DataTemplateSelector newSelector)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a></td>
+        <td><span class="parametername">oldSelector</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.NavigationViewItem.html#Celestial_UIToolkit_Controls_NavigationViewItem_IconTemplateSelector">IconTemplateSelector</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a></td>
+        <td><span class="parametername">newSelector</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.NavigationViewItem.html#Celestial_UIToolkit_Controls_NavigationViewItem_IconTemplateSelector">IconTemplateSelector</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_NavigationViewItem_ToString.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.NavigationViewItem.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/NavigationView/Items/NavigationViewItem.cs/#L267">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_NavigationViewItem_ToString_" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem.ToString*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_NavigationViewItem_ToString" data-uid="Celestial.UIToolkit.Controls.NavigationViewItem.ToString">ToString()</h4>
+  <div class="markdown level1 summary"><p>Returns a string representation of this <a class="xref" href="Celestial.UIToolkit.Controls.NavigationViewItem.html">NavigationViewItem</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>A string representing this <a class="xref" href="Celestial.UIToolkit.Controls.NavigationViewItem.html">NavigationViewItem</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.control.tostring#System_Windows_Controls_Control_ToString">Control.ToString()</a></div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.DependencyObjectExtensions.html#Celestial_UIToolkit_Extensions_DependencyObjectExtensions_HasVisualAncestor_System_Windows_DependencyObject_System_Windows_DependencyObject_">DependencyObjectExtensions.HasVisualAncestor(DependencyObject, DependencyObject)</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.DependencyObjectExtensions.html#Celestial_UIToolkit_Extensions_DependencyObjectExtensions_RemoveLogicalChild_System_Windows_DependencyObject_System_Windows_UIElement_">DependencyObjectExtensions.RemoveLogicalChild(DependencyObject, UIElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.html#Celestial_UIToolkit_Extensions_DependencyPropertyExtensions_IsDependencyPropertySet_System_Windows_DependencyObject_System_Windows_DependencyProperty_">DependencyPropertyExtensions.IsDependencyPropertySet(DependencyObject, DependencyProperty)</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.FrameworkElementExtensions.html#Celestial_UIToolkit_Extensions_FrameworkElementExtensions_GetCenter_System_Windows_FrameworkElement_">FrameworkElementExtensions.GetCenter(FrameworkElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.FrameworkElementExtensions.html#Celestial_UIToolkit_Extensions_FrameworkElementExtensions_IsPointInControlBounds_System_Windows_FrameworkElement_System_Windows_Point_">FrameworkElementExtensions.IsPointInControlBounds(FrameworkElement, Point)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_NavigationViewItem.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.NavigationViewItem%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/NavigationView/Items/NavigationViewItem.cs/#L18" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright &copy; 2018 Celestial.UIToolkit
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

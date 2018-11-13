@@ -1,0 +1,1327 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class SplitView
+   | Celestial.UIToolkit </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class SplitView
+   | Celestial.UIToolkit ">
+    <meta name="generator" content="docfx 2.40.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Celestial.UIToolkit.Controls.SplitView">
+  
+  
+  <h1 id="Celestial_UIToolkit_Controls_SplitView" data-uid="Celestial.UIToolkit.Controls.SplitView" class="text-break">Class SplitView
+  </h1>
+  <div class="markdown level0 summary"><p>Represents a container with two areas.
+One area is a pane which typically displays navigation elements or popup-content.
+The other area displays the main content which typically relates to the elements in the
+pane.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.threading.dispatcherobject">DispatcherObject</a></div>
+    <div class="level2"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyobject">DependencyObject</a></div>
+    <div class="level3"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.visual">Visual</a></div>
+    <div class="level4"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.uielement">UIElement</a></div>
+    <div class="level5"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement">FrameworkElement</a></div>
+    <div class="level6"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.control">Control</a></div>
+    <div class="level7"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.contentcontrol">ContentControl</a></div>
+    <div class="level8"><span class="xref">SplitView</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Celestial.UIToolkit.Controls.html">Celestial.UIToolkit.Controls</a></h6>
+  <h6><strong>Assembly</strong>: Celestial.UIToolkit.dll</h6>
+  <h5 id="Celestial_UIToolkit_Controls_SplitView_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[TemplateVisualState(Name = &quot;Default&quot;, GroupName = &quot;DisplayModeStates&quot;)]
+[TemplateVisualState(Name = &quot;Closed&quot;, GroupName = &quot;DisplayModeStates&quot;)]
+[TemplateVisualState(Name = &quot;ClosedCompactLeft&quot;, GroupName = &quot;DisplayModeStates&quot;)]
+[TemplateVisualState(Name = &quot;ClosedCompactRight&quot;, GroupName = &quot;DisplayModeStates&quot;)]
+[TemplateVisualState(Name = &quot;OpenOverlayLeft&quot;, GroupName = &quot;DisplayModeStates&quot;)]
+[TemplateVisualState(Name = &quot;OpenOverlayRight&quot;, GroupName = &quot;DisplayModeStates&quot;)]
+[TemplateVisualState(Name = &quot;OpenInlineLeft&quot;, GroupName = &quot;DisplayModeStates&quot;)]
+[TemplateVisualState(Name = &quot;OpenInlineRight&quot;, GroupName = &quot;DisplayModeStates&quot;)]
+[TemplateVisualState(Name = &quot;OpenCompactOverlayLeft&quot;, GroupName = &quot;DisplayModeStates&quot;)]
+[TemplateVisualState(Name = &quot;OpenCompactOverlayRight&quot;, GroupName = &quot;DisplayModeStates&quot;)]
+[TemplateVisualState(Name = &quot;OpenCompactInlineLeft&quot;, GroupName = &quot;DisplayModeStates&quot;)]
+[TemplateVisualState(Name = &quot;OpenCompactInlineRight&quot;, GroupName = &quot;DisplayModeStates&quot;)]
+public class SplitView : ContentControl, DUCE.IResource, IAnimatable, IFrameworkInputElement, IInputElement, ISupportInitialize, IHaveResources, IQueryAmbient, IAddChild</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView__ctor.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitVIew.cs/#L25">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_SplitView__ctor_" data-uid="Celestial.UIToolkit.Controls.SplitView.#ctor*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView__ctor" data-uid="Celestial.UIToolkit.Controls.SplitView.#ctor">SplitView()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html">SplitView</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SplitView()</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_CompactPaneLengthProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.CompactPaneLengthProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Properties.cs/#L52">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_CompactPaneLengthProperty" data-uid="Celestial.UIToolkit.Controls.SplitView.CompactPaneLengthProperty">CompactPaneLengthProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_CompactPaneLength">CompactPaneLength</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty CompactPaneLengthProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_DisplayModeProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.DisplayModeProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Properties.cs/#L28">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_DisplayModeProperty" data-uid="Celestial.UIToolkit.Controls.SplitView.DisplayModeProperty">DisplayModeProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_DisplayMode">DisplayMode</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty DisplayModeProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_HasPaneProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.HasPaneProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Properties.cs/#L89">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_HasPaneProperty" data-uid="Celestial.UIToolkit.Controls.SplitView.HasPaneProperty">HasPaneProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_HasPane">HasPane</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty HasPaneProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_IsPaneOpenProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.IsPaneOpenProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Properties.cs/#L40">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_IsPaneOpenProperty" data-uid="Celestial.UIToolkit.Controls.SplitView.IsPaneOpenProperty">IsPaneOpenProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_IsPaneOpen">IsPaneOpen</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty IsPaneOpenProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_OpenPaneLengthProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.OpenPaneLengthProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Properties.cs/#L62">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_OpenPaneLengthProperty" data-uid="Celestial.UIToolkit.Controls.SplitView.OpenPaneLengthProperty">OpenPaneLengthProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_OpenPaneLength">OpenPaneLength</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty OpenPaneLengthProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_PaneBackgroundProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.PaneBackgroundProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Properties.cs/#L72">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_PaneBackgroundProperty" data-uid="Celestial.UIToolkit.Controls.SplitView.PaneBackgroundProperty">PaneBackgroundProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_PaneBackground">PaneBackground</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty PaneBackgroundProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_PanePlacementProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.PanePlacementProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Properties.cs/#L16">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_PanePlacementProperty" data-uid="Celestial.UIToolkit.Controls.SplitView.PanePlacementProperty">PanePlacementProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_PanePlacement">PanePlacement</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty PanePlacementProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_PaneProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.PaneProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Properties.cs/#L95">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_PaneProperty" data-uid="Celestial.UIToolkit.Controls.SplitView.PaneProperty">PaneProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_Pane">Pane</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty PaneProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_PaneStringFormatProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.PaneStringFormatProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Properties.cs/#L131">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_PaneStringFormatProperty" data-uid="Celestial.UIToolkit.Controls.SplitView.PaneStringFormatProperty">PaneStringFormatProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_PaneStringFormat">PaneStringFormat</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty PaneStringFormatProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_PaneTemplateProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.PaneTemplateProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Properties.cs/#L107">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_PaneTemplateProperty" data-uid="Celestial.UIToolkit.Controls.SplitView.PaneTemplateProperty">PaneTemplateProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_PaneTemplate">PaneTemplate</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty PaneTemplateProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_PaneTemplateSelectorProperty.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.PaneTemplateSelectorProperty%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Properties.cs/#L119">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_PaneTemplateSelectorProperty" data-uid="Celestial.UIToolkit.Controls.SplitView.PaneTemplateSelectorProperty">PaneTemplateSelectorProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_PaneTemplateSelector">PaneTemplateSelector</a> dependency property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly DependencyProperty PaneTemplateSelectorProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.dependencyproperty">DependencyProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_CompactPaneLength.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.CompactPaneLength%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Properties.cs/#L174">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_SplitView_CompactPaneLength_" data-uid="Celestial.UIToolkit.Controls.SplitView.CompactPaneLength*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_CompactPaneLength" data-uid="Celestial.UIToolkit.Controls.SplitView.CompactPaneLength">CompactPaneLength</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the length of the pane when it is closed and when it's
+<a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_DisplayMode">DisplayMode</a> is set to <a class="xref" href="Celestial.UIToolkit.Controls.SplitViewDisplayMode.html#Celestial_UIToolkit_Controls_SplitViewDisplayMode_CompactOverlay">CompactOverlay</a>
+or <a class="xref" href="Celestial.UIToolkit.Controls.SplitViewDisplayMode.html#Celestial_UIToolkit_Controls_SplitViewDisplayMode_CompactInline">CompactInline</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double CompactPaneLength { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_DisplayMode.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.DisplayMode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Properties.cs/#L154">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_SplitView_DisplayMode_" data-uid="Celestial.UIToolkit.Controls.SplitView.DisplayMode*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_DisplayMode" data-uid="Celestial.UIToolkit.Controls.SplitView.DisplayMode">DisplayMode</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the current display mode of the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html">SplitView</a>,
+defining how the pane and content are layed out.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SplitViewDisplayMode DisplayMode { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Celestial.UIToolkit.Controls.SplitViewDisplayMode.html">SplitViewDisplayMode</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_HasPane.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.HasPane%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Properties.cs/#L202">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_SplitView_HasPane_" data-uid="Celestial.UIToolkit.Controls.SplitView.HasPane*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_HasPane" data-uid="Celestial.UIToolkit.Controls.SplitView.HasPane">HasPane</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_Pane">Pane</a> property of this
+<a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html">SplitView</a> holds any content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(false)]
+[Browsable(false)]
+public bool HasPane { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_IsPaneOpen.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.IsPaneOpen%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Properties.cs/#L163">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_SplitView_IsPaneOpen_" data-uid="Celestial.UIToolkit.Controls.SplitView.IsPaneOpen*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_IsPaneOpen" data-uid="Celestial.UIToolkit.Controls.SplitView.IsPaneOpen">IsPaneOpen</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a value indicating whether the pane is currently opened.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsPaneOpen { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_LogicalChildren.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.LogicalChildren%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Properties.cs/#L256">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_SplitView_LogicalChildren_" data-uid="Celestial.UIToolkit.Controls.SplitView.LogicalChildren*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_LogicalChildren" data-uid="Celestial.UIToolkit.Controls.SplitView.LogicalChildren">LogicalChildren</h4>
+  <div class="markdown level1 summary"><p>Gets an enumerator on the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html">SplitView</a>'s logical children.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IEnumerator LogicalChildren { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.contentcontrol.logicalchildren#System_Windows_Controls_ContentControl_LogicalChildren">ContentControl.LogicalChildren</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_OpenPaneLength.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.OpenPaneLength%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Properties.cs/#L183">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_SplitView_OpenPaneLength_" data-uid="Celestial.UIToolkit.Controls.SplitView.OpenPaneLength*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_OpenPaneLength" data-uid="Celestial.UIToolkit.Controls.SplitView.OpenPaneLength">OpenPaneLength</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the length of the pane when it is opened.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double OpenPaneLength { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_Pane.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.Pane%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Properties.cs/#L213">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_SplitView_Pane_" data-uid="Celestial.UIToolkit.Controls.SplitView.Pane*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_Pane" data-uid="Celestial.UIToolkit.Controls.SplitView.Pane">Pane</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the content which is being displayed in the pane of the
+<a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html">SplitView</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+public object Pane { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_PaneBackground.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.PaneBackground%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Properties.cs/#L192">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_SplitView_PaneBackground_" data-uid="Celestial.UIToolkit.Controls.SplitView.PaneBackground*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_PaneBackground" data-uid="Celestial.UIToolkit.Controls.SplitView.PaneBackground">PaneBackground</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the background brush of the pane.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Brush PaneBackground { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.media.brush">Brush</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_PanePlacement.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.PanePlacement%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Properties.cs/#L144">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_SplitView_PanePlacement_" data-uid="Celestial.UIToolkit.Controls.SplitView.PanePlacement*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_PanePlacement" data-uid="Celestial.UIToolkit.Controls.SplitView.PanePlacement">PanePlacement</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the position at which the pane is placed inside the
+<a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html">SplitView</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SplitViewPanePlacement PanePlacement { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Celestial.UIToolkit.Controls.SplitViewPanePlacement.html">SplitViewPanePlacement</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_PaneStringFormat.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.PaneStringFormat%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Properties.cs/#L246">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_SplitView_PaneStringFormat_" data-uid="Celestial.UIToolkit.Controls.SplitView.PaneStringFormat*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_PaneStringFormat" data-uid="Celestial.UIToolkit.Controls.SplitView.PaneStringFormat">PaneStringFormat</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a composite string that specifies how to format the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_Pane">Pane</a>
+content property, if it is displayed as a string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+public string PaneStringFormat { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_PaneTemplate.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.PaneTemplate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Properties.cs/#L224">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_SplitView_PaneTemplate_" data-uid="Celestial.UIToolkit.Controls.SplitView.PaneTemplate*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_PaneTemplate" data-uid="Celestial.UIToolkit.Controls.SplitView.PaneTemplate">PaneTemplate</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a> to be used for displaying the
+<a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_Pane">Pane</a> content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+public DataTemplate PaneTemplate { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_PaneTemplateSelector.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.PaneTemplateSelector%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Properties.cs/#L235">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_SplitView_PaneTemplateSelector_" data-uid="Celestial.UIToolkit.Controls.SplitView.PaneTemplateSelector*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_PaneTemplateSelector" data-uid="Celestial.UIToolkit.Controls.SplitView.PaneTemplateSelector">PaneTemplateSelector</h4>
+  <div class="markdown level1 summary"><p>Gets or sets <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a> which enables an application writer
+to provide custom template-selection logic for the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_Pane">Pane</a> content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Bindable(true)]
+public DataTemplateSelector PaneTemplateSelector { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_OnPaneChanged_System_Object_System_Object_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.OnPaneChanged(System.Object%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Properties.cs/#L301">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_SplitView_OnPaneChanged_" data-uid="Celestial.UIToolkit.Controls.SplitView.OnPaneChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_OnPaneChanged_System_Object_System_Object_" data-uid="Celestial.UIToolkit.Controls.SplitView.OnPaneChanged(System.Object,System.Object)">OnPaneChanged(Object, Object)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_Pane">Pane</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnPaneChanged(object oldValue, object newValue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">oldValue</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_Pane">Pane</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">newValue</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_Pane">Pane</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_OnPaneClosed.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.OnPaneClosed%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Events.cs/#L77">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_SplitView_OnPaneClosed_" data-uid="Celestial.UIToolkit.Controls.SplitView.OnPaneClosed*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_OnPaneClosed" data-uid="Celestial.UIToolkit.Controls.SplitView.OnPaneClosed">OnPaneClosed()</h4>
+  <div class="markdown level1 summary"><p>Called before the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_PaneClosed">PaneClosed</a> event occurs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnPaneClosed()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_OnPaneClosing.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.OnPaneClosing%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Events.cs/#L72">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_SplitView_OnPaneClosing_" data-uid="Celestial.UIToolkit.Controls.SplitView.OnPaneClosing*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_OnPaneClosing" data-uid="Celestial.UIToolkit.Controls.SplitView.OnPaneClosing">OnPaneClosing()</h4>
+  <div class="markdown level1 summary"><p>Called before the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_PaneClosing">PaneClosing</a> event occurs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnPaneClosing()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_OnPaneOpened.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.OnPaneOpened%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Events.cs/#L87">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_SplitView_OnPaneOpened_" data-uid="Celestial.UIToolkit.Controls.SplitView.OnPaneOpened*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_OnPaneOpened" data-uid="Celestial.UIToolkit.Controls.SplitView.OnPaneOpened">OnPaneOpened()</h4>
+  <div class="markdown level1 summary"><p>Called before the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_PaneOpened">PaneOpened</a> event occurs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnPaneOpened()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_OnPaneOpening.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.OnPaneOpening%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Events.cs/#L82">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_SplitView_OnPaneOpening_" data-uid="Celestial.UIToolkit.Controls.SplitView.OnPaneOpening*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_OnPaneOpening" data-uid="Celestial.UIToolkit.Controls.SplitView.OnPaneOpening">OnPaneOpening()</h4>
+  <div class="markdown level1 summary"><p>Called before the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_PaneOpening">PaneOpening</a> event occurs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnPaneOpening()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_OnPaneStringFormatChanged_System_String_System_String_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.OnPaneStringFormatChanged(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Properties.cs/#L338">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_SplitView_OnPaneStringFormatChanged_" data-uid="Celestial.UIToolkit.Controls.SplitView.OnPaneStringFormatChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_OnPaneStringFormatChanged_System_String_System_String_" data-uid="Celestial.UIToolkit.Controls.SplitView.OnPaneStringFormatChanged(System.String,System.String)">OnPaneStringFormatChanged(String, String)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_PaneStringFormat">PaneStringFormat</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnPaneStringFormatChanged(string oldStringFormat, string newStringFormat)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">oldStringFormat</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_PaneStringFormat">PaneStringFormat</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">newStringFormat</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_PaneStringFormat">PaneStringFormat</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_OnPaneTemplateChanged_System_Windows_DataTemplate_System_Windows_DataTemplate_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.OnPaneTemplateChanged(System.Windows.DataTemplate%2CSystem.Windows.DataTemplate)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Properties.cs/#L312">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_SplitView_OnPaneTemplateChanged_" data-uid="Celestial.UIToolkit.Controls.SplitView.OnPaneTemplateChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_OnPaneTemplateChanged_System_Windows_DataTemplate_System_Windows_DataTemplate_" data-uid="Celestial.UIToolkit.Controls.SplitView.OnPaneTemplateChanged(System.Windows.DataTemplate,System.Windows.DataTemplate)">OnPaneTemplateChanged(DataTemplate, DataTemplate)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_PaneTemplate">PaneTemplate</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnPaneTemplateChanged(DataTemplate oldTemplate, DataTemplate newTemplate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a></td>
+        <td><span class="parametername">oldTemplate</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_PaneTemplate">PaneTemplate</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.datatemplate">DataTemplate</a></td>
+        <td><span class="parametername">newTemplate</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_PaneTemplate">PaneTemplate</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_OnPaneTemplateSelectorChanged_System_Windows_Controls_DataTemplateSelector_System_Windows_Controls_DataTemplateSelector_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.OnPaneTemplateSelectorChanged(System.Windows.Controls.DataTemplateSelector%2CSystem.Windows.Controls.DataTemplateSelector)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Properties.cs/#L325">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_SplitView_OnPaneTemplateSelectorChanged_" data-uid="Celestial.UIToolkit.Controls.SplitView.OnPaneTemplateSelectorChanged*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_OnPaneTemplateSelectorChanged_System_Windows_Controls_DataTemplateSelector_System_Windows_Controls_DataTemplateSelector_" data-uid="Celestial.UIToolkit.Controls.SplitView.OnPaneTemplateSelectorChanged(System.Windows.Controls.DataTemplateSelector,System.Windows.Controls.DataTemplateSelector)">OnPaneTemplateSelectorChanged(DataTemplateSelector, DataTemplateSelector)</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_PaneTemplateSelector">PaneTemplateSelector</a> property was changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnPaneTemplateSelectorChanged(DataTemplateSelector oldSelector, DataTemplateSelector newSelector)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a></td>
+        <td><span class="parametername">oldSelector</span></td>
+        <td><p>The old value of the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_PaneTemplateSelector">PaneTemplateSelector</a> property.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.datatemplateselector">DataTemplateSelector</a></td>
+        <td><span class="parametername">newSelector</span></td>
+        <td><p>The new value of the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_PaneTemplateSelector">PaneTemplateSelector</a> property.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_RaisePaneClosed.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.RaisePaneClosed%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Events.cs/#L43">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_SplitView_RaisePaneClosed_" data-uid="Celestial.UIToolkit.Controls.SplitView.RaisePaneClosed*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_RaisePaneClosed" data-uid="Celestial.UIToolkit.Controls.SplitView.RaisePaneClosed">RaisePaneClosed()</h4>
+  <div class="markdown level1 summary"><p>Raises the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_PaneClosed">PaneClosed</a> event and
+calls the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_OnPaneClosed">OnPaneClosed()</a> method afterwards.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void RaisePaneClosed()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_RaisePaneClosing.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.RaisePaneClosing%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Events.cs/#L33">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_SplitView_RaisePaneClosing_" data-uid="Celestial.UIToolkit.Controls.SplitView.RaisePaneClosing*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_RaisePaneClosing" data-uid="Celestial.UIToolkit.Controls.SplitView.RaisePaneClosing">RaisePaneClosing()</h4>
+  <div class="markdown level1 summary"><p>Raises the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_PaneClosing">PaneClosing</a> event and
+calls the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_OnPaneClosing">OnPaneClosing()</a> method afterwards.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void RaisePaneClosing()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_RaisePaneOpened.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.RaisePaneOpened%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Events.cs/#L63">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_SplitView_RaisePaneOpened_" data-uid="Celestial.UIToolkit.Controls.SplitView.RaisePaneOpened*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_RaisePaneOpened" data-uid="Celestial.UIToolkit.Controls.SplitView.RaisePaneOpened">RaisePaneOpened()</h4>
+  <div class="markdown level1 summary"><p>Raises the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_PaneOpened">PaneOpened</a> event and
+calls the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_OnPaneOpened">OnPaneOpened()</a> method afterwards.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void RaisePaneOpened()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_RaisePaneOpening.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.RaisePaneOpening%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Events.cs/#L53">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Controls_SplitView_RaisePaneOpening_" data-uid="Celestial.UIToolkit.Controls.SplitView.RaisePaneOpening*"></a>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_RaisePaneOpening" data-uid="Celestial.UIToolkit.Controls.SplitView.RaisePaneOpening">RaisePaneOpening()</h4>
+  <div class="markdown level1 summary"><p>Raises the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_PaneOpening">PaneOpening</a> event and
+calls the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_OnPaneOpening">OnPaneOpening()</a> method afterwards.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void RaisePaneOpening()</code></pre>
+  </div>
+  <h3 id="events">Events
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_PaneClosed.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.PaneClosed%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Events.cs/#L17">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_PaneClosed" data-uid="Celestial.UIToolkit.Controls.SplitView.PaneClosed">PaneClosed</h4>
+  <div class="markdown level1 summary"><p>Occurs when the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html">SplitView</a> pane is closed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler PaneClosed</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventhandler">EventHandler</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_PaneClosing.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.PaneClosing%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Events.cs/#L12">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_PaneClosing" data-uid="Celestial.UIToolkit.Controls.SplitView.PaneClosing">PaneClosing</h4>
+  <div class="markdown level1 summary"><p>Occurs when the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html">SplitView</a> pane is closing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler PaneClosing</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventhandler">EventHandler</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_PaneOpened.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.PaneOpened%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Events.cs/#L27">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_PaneOpened" data-uid="Celestial.UIToolkit.Controls.SplitView.PaneOpened">PaneOpened</h4>
+  <div class="markdown level1 summary"><p>the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html">SplitView</a> pane is opened.
+Occurs when</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler PaneOpened</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventhandler">EventHandler</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView_PaneOpening.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView.PaneOpening%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.Events.cs/#L22">View Source</a>
+  </span>
+  <h4 id="Celestial_UIToolkit_Controls_SplitView_PaneOpening" data-uid="Celestial.UIToolkit.Controls.SplitView.PaneOpening">PaneOpening</h4>
+  <div class="markdown level1 summary"><p>Occurs when the <a class="xref" href="Celestial.UIToolkit.Controls.SplitView.html">SplitView</a> pane is opening.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler PaneOpening</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventhandler">EventHandler</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.DependencyObjectExtensions.html#Celestial_UIToolkit_Extensions_DependencyObjectExtensions_HasVisualAncestor_System_Windows_DependencyObject_System_Windows_DependencyObject_">DependencyObjectExtensions.HasVisualAncestor(DependencyObject, DependencyObject)</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.DependencyObjectExtensions.html#Celestial_UIToolkit_Extensions_DependencyObjectExtensions_RemoveLogicalChild_System_Windows_DependencyObject_System_Windows_UIElement_">DependencyObjectExtensions.RemoveLogicalChild(DependencyObject, UIElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.html#Celestial_UIToolkit_Extensions_DependencyPropertyExtensions_IsDependencyPropertySet_System_Windows_DependencyObject_System_Windows_DependencyProperty_">DependencyPropertyExtensions.IsDependencyPropertySet(DependencyObject, DependencyProperty)</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.FrameworkElementExtensions.html#Celestial_UIToolkit_Extensions_FrameworkElementExtensions_GetCenter_System_Windows_FrameworkElement_">FrameworkElementExtensions.GetCenter(FrameworkElement)</a>
+  </div>
+  <div>
+      <a class="xref" href="Celestial.UIToolkit.Extensions.FrameworkElementExtensions.html#Celestial_UIToolkit_Extensions_FrameworkElementExtensions_IsPointInControlBounds_System_Windows_FrameworkElement_System_Windows_Point_">FrameworkElementExtensions.IsPointInControlBounds(FrameworkElement, Point)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_SplitView.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.SplitView%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/SplitView/SplitView.VisualStates.cs/#L7" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright &copy; 2018 Celestial.UIToolkit
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

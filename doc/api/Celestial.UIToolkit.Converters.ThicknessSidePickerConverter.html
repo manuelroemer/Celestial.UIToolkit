@@ -1,0 +1,369 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ThicknessSidePickerConverter
+   | Celestial.UIToolkit </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ThicknessSidePickerConverter
+   | Celestial.UIToolkit ">
+    <meta name="generator" content="docfx 2.40.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Celestial.UIToolkit.Converters.ThicknessSidePickerConverter">
+  
+  
+  <h1 id="Celestial_UIToolkit_Converters_ThicknessSidePickerConverter" data-uid="Celestial.UIToolkit.Converters.ThicknessSidePickerConverter" class="text-break">Class ThicknessSidePickerConverter
+  </h1>
+  <div class="markdown level0 summary"><p>An implementation of the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.data.ivalueconverter">IValueConverter</a> interface
+which expects a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.thickness">Thickness</a>, sets certain edge
+properties to a desired value and then returns the result.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="Celestial.UIToolkit.Converters.ValueConverter-2.html">ValueConverter</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.thickness">Thickness</a>, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.thickness">Thickness</a>&gt;</div>
+    <div class="level2"><span class="xref">ThicknessSidePickerConverter</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Converters.ValueConverter-2.html#Celestial_UIToolkit_Converters_ValueConverter_2_Convert_System_Object_System_Type_System_Object_System_Globalization_CultureInfo_">ValueConverter&lt;Thickness, Thickness&gt;.Convert(Object, Type, Object, CultureInfo)</a>
+    </div>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Converters.ValueConverter-2.html#Celestial_UIToolkit_Converters_ValueConverter_2_ConvertBack_System_Object_System_Type_System_Object_System_Globalization_CultureInfo_">ValueConverter&lt;Thickness, Thickness&gt;.ConvertBack(Object, Type, Object, CultureInfo)</a>
+    </div>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Converters.ValueConverter-2.html#Celestial_UIToolkit_Converters_ValueConverter_2_Convert__0_System_Object_System_Globalization_CultureInfo_">ValueConverter&lt;Thickness, Thickness&gt;.Convert(Thickness, Object, CultureInfo)</a>
+    </div>
+    <div>
+      <a class="xref" href="Celestial.UIToolkit.Converters.ValueConverter-2.html#Celestial_UIToolkit_Converters_ValueConverter_2_ConvertBack__1_System_Object_System_Globalization_CultureInfo_">ValueConverter&lt;Thickness, Thickness&gt;.ConvertBack(Thickness, Object, CultureInfo)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Celestial.UIToolkit.Converters.html">Celestial.UIToolkit.Converters</a></h6>
+  <h6><strong>Assembly</strong>: Celestial.UIToolkit.Core.dll</h6>
+  <h5 id="Celestial_UIToolkit_Converters_ThicknessSidePickerConverter_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ValueConversion(typeof(Thickness), typeof(Thickness))]
+public class ThicknessSidePickerConverter : ValueConverter&lt;Thickness, Thickness&gt;, IValueConverter</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Converters_ThicknessSidePickerConverter__ctor.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Converters.ThicknessSidePickerConverter.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/Converters/ThicknessSidePickerConverter.cs/#L48">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Converters_ThicknessSidePickerConverter__ctor_" data-uid="Celestial.UIToolkit.Converters.ThicknessSidePickerConverter.#ctor*"></a>
+  <h4 id="Celestial_UIToolkit_Converters_ThicknessSidePickerConverter__ctor" data-uid="Celestial.UIToolkit.Converters.ThicknessSidePickerConverter.#ctor">ThicknessSidePickerConverter()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Celestial.UIToolkit.Converters.ThicknessSidePickerConverter.html">ThicknessSidePickerConverter</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ThicknessSidePickerConverter()</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Converters_ThicknessSidePickerConverter_Bottom.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Converters.ThicknessSidePickerConverter.Bottom%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/Converters/ThicknessSidePickerConverter.cs/#L43">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Converters_ThicknessSidePickerConverter_Bottom_" data-uid="Celestial.UIToolkit.Converters.ThicknessSidePickerConverter.Bottom*"></a>
+  <h4 id="Celestial_UIToolkit_Converters_ThicknessSidePickerConverter_Bottom" data-uid="Celestial.UIToolkit.Converters.ThicknessSidePickerConverter.Bottom">Bottom</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a value to which the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.thickness.bottom#System_Windows_Thickness_Bottom">Bottom</a>
+value will be set.
+If this is <code>null</code>, the original value is retained.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double? Bottom { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Converters_ThicknessSidePickerConverter_Left.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Converters.ThicknessSidePickerConverter.Left%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/Converters/ThicknessSidePickerConverter.cs/#L22">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Converters_ThicknessSidePickerConverter_Left_" data-uid="Celestial.UIToolkit.Converters.ThicknessSidePickerConverter.Left*"></a>
+  <h4 id="Celestial_UIToolkit_Converters_ThicknessSidePickerConverter_Left" data-uid="Celestial.UIToolkit.Converters.ThicknessSidePickerConverter.Left">Left</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a value to which the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.thickness.left#System_Windows_Thickness_Left">Left</a>
+value will be set.
+If this is <code>null</code>, the original value is retained.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double? Left { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Converters_ThicknessSidePickerConverter_Right.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Converters.ThicknessSidePickerConverter.Right%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/Converters/ThicknessSidePickerConverter.cs/#L36">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Converters_ThicknessSidePickerConverter_Right_" data-uid="Celestial.UIToolkit.Converters.ThicknessSidePickerConverter.Right*"></a>
+  <h4 id="Celestial_UIToolkit_Converters_ThicknessSidePickerConverter_Right" data-uid="Celestial.UIToolkit.Converters.ThicknessSidePickerConverter.Right">Right</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a value to which the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.thickness.right#System_Windows_Thickness_Right">Right</a>
+value will be set.
+If this is <code>null</code>, the original value is retained.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double? Right { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Converters_ThicknessSidePickerConverter_Top.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Converters.ThicknessSidePickerConverter.Top%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/Converters/ThicknessSidePickerConverter.cs/#L29">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Converters_ThicknessSidePickerConverter_Top_" data-uid="Celestial.UIToolkit.Converters.ThicknessSidePickerConverter.Top*"></a>
+  <h4 id="Celestial_UIToolkit_Converters_ThicknessSidePickerConverter_Top" data-uid="Celestial.UIToolkit.Converters.ThicknessSidePickerConverter.Top">Top</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a value to which the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.thickness.top#System_Windows_Thickness_Top">Top</a>
+value will be set.
+If this is <code>null</code>, the original value is retained.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double? Top { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Converters_ThicknessSidePickerConverter_Convert_System_Windows_Thickness_System_Object_System_Globalization_CultureInfo_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Converters.ThicknessSidePickerConverter.Convert(System.Windows.Thickness%2CSystem.Object%2CSystem.Globalization.CultureInfo)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/Converters/ThicknessSidePickerConverter.cs/#L58">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Converters_ThicknessSidePickerConverter_Convert_" data-uid="Celestial.UIToolkit.Converters.ThicknessSidePickerConverter.Convert*"></a>
+  <h4 id="Celestial_UIToolkit_Converters_ThicknessSidePickerConverter_Convert_System_Windows_Thickness_System_Object_System_Globalization_CultureInfo_" data-uid="Celestial.UIToolkit.Converters.ThicknessSidePickerConverter.Convert(System.Windows.Thickness,System.Object,System.Globalization.CultureInfo)">Convert(Thickness, Object, CultureInfo)</h4>
+  <div class="markdown level1 summary"><p>Changes the values of the input thickness to the values set in this
+converter's properties.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Thickness Convert(Thickness value, object parameter, CultureInfo culture)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.thickness">Thickness</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The thickness whose values will be altered.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">parameter</span></td>
+        <td><p>Not used.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.globalization.cultureinfo">CultureInfo</a></td>
+        <td><span class="parametername">culture</span></td>
+        <td><p>Not used.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.thickness">Thickness</a></td>
+        <td><p>The altered <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.thickness">Thickness</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Celestial.UIToolkit.Converters.ValueConverter&lt;System.Windows.Thickness, System.Windows.Thickness&gt;.Convert(System.Windows.Thickness, System.Object, System.Globalization.CultureInfo)</span></div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Converters_ThicknessSidePickerConverter.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Converters.ThicknessSidePickerConverter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/Converters/ThicknessSidePickerConverter.cs/#L13" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright &copy; 2018 Celestial.UIToolkit
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
