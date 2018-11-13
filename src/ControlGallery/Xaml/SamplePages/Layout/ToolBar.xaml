@@ -113,12 +113,12 @@
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledToolBarEx4}">
                     <ToolBar Style="{StaticResource TransparentToolBar}"
                              c:MarginHelper.ChildrenMargin="{c:GridUnit '2,0'}">
-                        <Button Style="{StaticResource StandardSquareButton}" Content="{icon:Modern Kind=ArrowLeft}" ToolTip="Go back" />
-                        <Button Style="{StaticResource StandardSquareButton}" Content="{icon:Modern Kind=ArrowRight}" ToolTip="Go forward" />
+                        <Button Style="{StaticResource PrimarySquareButton}" Content="{icon:Modern Kind=ArrowLeft}" ToolTip="Go back" />
+                        <Button Style="{StaticResource PrimarySquareButton}" Content="{icon:Modern Kind=ArrowRight}" ToolTip="Go forward" />
                         <Separator />
-                        <Button Style="{StaticResource StandardSquareButton}" Content="{icon:Modern Kind=PageNew}" ToolTip="New file..." />
-                        <Button Style="{StaticResource StandardSquareButton}" Content="{icon:Modern Kind=Folder}" ToolTip="Open file..." />
-                        <Button Style="{StaticResource StandardSquareButton}" Content="{icon:Modern Kind=Save}" ToolTip="Save..." />
+                        <Button Style="{StaticResource PrimarySquareButton}" Content="{icon:Modern Kind=PageNew}" ToolTip="New file..." />
+                        <Button Style="{StaticResource PrimarySquareButton}" Content="{icon:Modern Kind=Folder}" ToolTip="Open file..." />
+                        <Button Style="{StaticResource PrimarySquareButton}" Content="{icon:Modern Kind=Save}" ToolTip="Save..." />
                         <Separator />
                         <Button Style="{StaticResource Accent1SquareButton}" Content="{icon:Modern Kind=Delete}" ToolTip="Delete" />
                     </ToolBar>

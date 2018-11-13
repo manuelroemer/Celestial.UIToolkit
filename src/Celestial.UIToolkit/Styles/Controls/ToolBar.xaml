@@ -28,7 +28,7 @@
     
     <Style x:Key="StandardToolBar" TargetType="ToolBar" BasedOn="{c:MergeStyles 'PaneBackground PaneBorder StandardForeground StandardFontProperties StandardPopup Shadow8'}">
         <Style.Resources>
-            <Style x:Key="StandardToolBarButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'StandardButton OnPaneControlBackground OnPaneControlBorder StandardForeground StandardFontProperties Shadow0'}">
+            <Style x:Key="StandardToolBarButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'PrimaryButton OnPaneControlBackground OnPaneControlBorder StandardForeground StandardFontProperties Shadow0'}">
                 <Setter Property="Padding" Value="{c:GridUnit 2}" />
                 <Setter Property="MinHeight" Value="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=ToolBar}, FallbackValue=0}" />
                 <Setter Property="MinWidth" Value="{c:SelfBinding MinHeight}" />
@@ -194,12 +194,12 @@
     
     <Style x:Key="TransparentToolBar" TargetType="ToolBar" BasedOn="{c:MergeStyles 'StandardToolBar TransparentBackground TransparentBorder'}">
         <Style.Resources>
-            <Style x:Key="StandardToolBarButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'StandardButton'}">
+            <Style x:Key="StandardToolBarButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'PrimaryButton'}">
                 <Setter Property="MinHeight" Value="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=ToolBar}, FallbackValue=0}" />
                 <Setter Property="MinWidth" Value="{c:SelfBinding MinHeight}" />
             </Style>
 
-            <Style x:Key="ToolBarOverflowToggleButton" TargetType="ToggleButton" BasedOn="{StaticResource StandardSquareButton}">
+            <Style x:Key="ToolBarOverflowToggleButton" TargetType="ToggleButton" BasedOn="{StaticResource PrimarySquareButton}">
                 <Setter Property="MinHeight" Value="0" />
                 <Setter Property="MinWidth" Value="0" />
             </Style>

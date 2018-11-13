@@ -38,7 +38,7 @@
             </Style>
             
             <!-- The Style for the outer ScrollBar Buttons (with the Arrow Icons). -->
-            <Style x:Key="ScrollBarLineButton" TargetType="RepeatButton" BasedOn="{c:MergeStyles 'StandardButton OnScrollBarControl Shadow0'}">
+            <Style x:Key="ScrollBarLineButton" TargetType="RepeatButton" BasedOn="{c:MergeStyles 'PrimaryButton OnScrollBarControl Shadow0'}">
                 <Setter Property="Focusable" Value="False" />
                 <Setter Property="MinWidth" Value="0" />
                 <Setter Property="MinHeight" Value="0" />

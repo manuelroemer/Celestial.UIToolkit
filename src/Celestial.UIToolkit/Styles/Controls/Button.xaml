@@ -15,7 +15,7 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'ControlBackground ControlBorder StandardForeground BaseFontProperties ElevationZIndex Shadow0 InteractiveShadow4'}">
+    <Style x:Key="PrimaryButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'ControlBackground ControlBorder StandardForeground BaseFontProperties ElevationZIndex Shadow0 InteractiveShadow4'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
@@ -156,16 +156,16 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style TargetType="Button" BasedOn="{StaticResource StandardButton}" />
-    <Style TargetType="ToggleButton" BasedOn="{StaticResource StandardButton}" />
-    <Style TargetType="RepeatButton" BasedOn="{StaticResource StandardButton}" />
+    <Style TargetType="Button" BasedOn="{StaticResource PrimaryButton}" />
+    <Style TargetType="ToggleButton" BasedOn="{StaticResource PrimaryButton}" />
+    <Style TargetType="RepeatButton" BasedOn="{StaticResource PrimaryButton}" />
 
     <Style x:Key="Accent1Button" 
            TargetType="ButtonBase" 
-           BasedOn="{c:MergeStyles 'StandardButton Accent1Background Accent1Border OnDarkerAccent1Foreground'}" />
+           BasedOn="{c:MergeStyles 'PrimaryButton Accent1Background Accent1Border OnDarkerAccent1Foreground'}" />
     <Style x:Key="Accent2Button" 
            TargetType="ButtonBase" 
-           BasedOn="{c:MergeStyles 'StandardButton Accent2Background Accent2Border OnDarkerAccent2Foreground'}" />
+           BasedOn="{c:MergeStyles 'PrimaryButton Accent2Background Accent2Border OnDarkerAccent2Foreground'}" />
 
     
 
@@ -175,7 +175,7 @@
     When hovered/clicked, it will behave normally though.
     -->
 
-    <Style x:Key="StandardFlatButton" TargetType="ButtonBase" BasedOn="{StaticResource StandardButton}">
+    <Style x:Key="PrimaryFlatButton" TargetType="ButtonBase" BasedOn="{StaticResource PrimaryButton}">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource ControlHoverBackgroundBrush}" />
@@ -184,14 +184,14 @@
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
     </Style>
 
-    <Style x:Key="Accent1FlatButton" TargetType="ButtonBase" BasedOn="{StaticResource StandardFlatButton}">
+    <Style x:Key="Accent1FlatButton" TargetType="ButtonBase" BasedOn="{StaticResource PrimaryFlatButton}">
         <Setter Property="Foreground" Value="{StaticResource Accent1Brush}" />
         <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource Accent1Brush}" />
         <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource Accent1Brush}" />
         <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource Accent1Brush}" />
     </Style>
 
-    <Style x:Key="Accent2FlatButton" TargetType="ButtonBase" BasedOn="{StaticResource StandardFlatButton}">
+    <Style x:Key="Accent2FlatButton" TargetType="ButtonBase" BasedOn="{StaticResource PrimaryFlatButton}">
         <Setter Property="Foreground" Value="{StaticResource Accent2Brush}" />
         <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource Accent2Brush}" />
         <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource Accent2Brush}" />
@@ -205,7 +205,7 @@
     An otherwise normal button with a border and transparent background in its default state.
     -->
 
-    <Style x:Key="StandardOutlinedButton" TargetType="ButtonBase" BasedOn="{StaticResource StandardButton}">
+    <Style x:Key="PrimaryOutlinedButton" TargetType="ButtonBase" BasedOn="{StaticResource PrimaryButton}">
         <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
         <Setter Property="BorderBrush" Value="{StaticResource ControlBackgroundBrush}" />
         <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource ControlHoverBackgroundBrush}" />
@@ -258,7 +258,7 @@
     It is supposed to be used in conjunction with symbols. 
     -->
 
-    <Style x:Key="StandardSquareButton" TargetType="ButtonBase" BasedOn="{StaticResource StandardButton}">
+    <Style x:Key="PrimarySquareButton" TargetType="ButtonBase" BasedOn="{StaticResource PrimaryButton}">
         <Setter Property="MinWidth" Value="{c:GridUnit 8}" />
         <Setter Property="MinHeight" Value="{c:GridUnit 8}" />
         <Setter Property="Width" Value="{c:GridUnit 8}" />
@@ -274,14 +274,14 @@
 
     <Style x:Key="Accent1SquareButton" 
            TargetType="ButtonBase" 
-           BasedOn="{c:MergeStyles 'StandardSquareButton Accent1Border Accent1Background OnDarkerAccent1Foreground'}">
+           BasedOn="{c:MergeStyles 'PrimarySquareButton Accent1Border Accent1Background OnDarkerAccent1Foreground'}">
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
     </Style>
 
     <Style x:Key="Accent2SquareButton" 
            TargetType="ButtonBase"
-           BasedOn="{c:MergeStyles 'StandardSquareButton Accent2Border Accent2Background OnDarkerAccent2Foreground'}">
+           BasedOn="{c:MergeStyles 'PrimarySquareButton Accent2Border Accent2Background OnDarkerAccent2Foreground'}">
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />        
     </Style>
@@ -293,10 +293,10 @@
     A variation of the Square Button, which is, as expected, a circle.
     -->
 
-    <Style x:Key="CircleButtonBase" TargetType="ButtonBase" BasedOn="{StaticResource StandardSquareButton}">
+    <Style x:Key="CircleButtonBase" TargetType="ButtonBase" BasedOn="{StaticResource PrimarySquareButton}">
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{c:SelfBinding ActualWidth}" />
     </Style>
-    <Style x:Key="StandardCircleButton" TargetType="ButtonBase" BasedOn="{StaticResource CircleButtonBase}" />
+    <Style x:Key="PrimaryCircleButton" TargetType="ButtonBase" BasedOn="{StaticResource CircleButtonBase}" />
 
     <Style x:Key="Accent1CircleButton" TargetType="ButtonBase" BasedOn="{StaticResource Accent1SquareButton}">
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{c:SelfBinding ActualWidth}" />
@@ -311,9 +311,9 @@
     <!--
     Hyperlink Buttons don't provide any support for Background/BorderBrush by design.
     -->
-    <Style x:Key="StandardHyperlinkButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'TransparentBackground TransparentBorder PrimaryForeground'}">
+    <Style x:Key="PrimaryHyperlinkButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'TransparentBackground TransparentBorder PrimaryForeground'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
-        <Setter Property="FocusVisualStyle" Value="{StaticResource StandardButtonFocusVisual}" />
+        <Setter Property="FocusVisualStyle" Value="{StaticResource PrimaryButtonFocusVisual}" />
         <Setter Property="Cursor" Value="Hand" />
         <Setter Property="Template">
             <Setter.Value>
@@ -380,7 +380,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style x:Key="Accent1HyperlinkButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'StandardHyperlinkButton Accent1Foreground'}" />
-    <Style x:Key="Accent2HyperlinkButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'StandardHyperlinkButton Accent2Foreground'}" />
+    <Style x:Key="Accent1HyperlinkButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'PrimaryHyperlinkButton Accent1Foreground'}" />
+    <Style x:Key="Accent2HyperlinkButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'PrimaryHyperlinkButton Accent2Foreground'}" />
 
 </ResourceDictionary>
