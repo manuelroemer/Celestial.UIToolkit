@@ -14,7 +14,7 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style TargetType="controls:SplitView" BasedOn="{c:MultiStyle 'TransparentBorder TransparentBackground StandardForeground StandardFontProperties Shadow0'}">
+    <Style TargetType="controls:SplitView" BasedOn="{c:MergeStyles 'TransparentBorder TransparentBackground StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
         <Setter Property="PaneBackground" Value="{StaticResource PaneBackgroundBrush}" />

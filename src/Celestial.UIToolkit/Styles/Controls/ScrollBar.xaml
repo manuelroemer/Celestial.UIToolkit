@@ -18,7 +18,7 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardScrollBar" TargetType="ScrollBar" BasedOn="{c:MultiStyle 'PaneBackground PaneBorder StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="StandardScrollBar" TargetType="ScrollBar" BasedOn="{c:MergeStyles 'PaneBackground PaneBorder StandardForeground StandardFontProperties Shadow0'}">
         <Style.Resources>
 
             <!-- Controls on the ScrollBar use special colors. In comparison to most others, they
@@ -38,7 +38,7 @@
             </Style>
             
             <!-- The Style for the outer ScrollBar Buttons (with the Arrow Icons). -->
-            <Style x:Key="ScrollBarLineButton" TargetType="RepeatButton" BasedOn="{c:MultiStyle 'StandardButton OnScrollBarControl Shadow0'}">
+            <Style x:Key="ScrollBarLineButton" TargetType="RepeatButton" BasedOn="{c:MergeStyles 'StandardButton OnScrollBarControl Shadow0'}">
                 <Setter Property="Focusable" Value="False" />
                 <Setter Property="MinWidth" Value="0" />
                 <Setter Property="MinHeight" Value="0" />
@@ -47,13 +47,13 @@
             </Style>
 
             <!-- A transparent button on the track (between the Line buttons and the thumb). -->
-            <Style x:Key="ScrollBarPageButton" TargetType="RepeatButton" BasedOn="{c:MultiStyle 'TransparentButton'}">
+            <Style x:Key="ScrollBarPageButton" TargetType="RepeatButton" BasedOn="{c:MergeStyles 'TransparentButton'}">
                 <Setter Property="IsTabStop" Value="False" />
                 <Setter Property="Focusable" Value="False" />
             </Style>
 
             <!-- The ScrollBar's Thumb which is can be dragged for scrolling. -->
-            <Style x:Key="ScrollBarThumb" TargetType="Thumb" BasedOn="{c:MultiStyle 'MonochromeThumb OnScrollBarControl'}">
+            <Style x:Key="ScrollBarThumb" TargetType="Thumb" BasedOn="{c:MergeStyles 'MonochromeThumb OnScrollBarControl'}">
             </Style>
             
         </Style.Resources>

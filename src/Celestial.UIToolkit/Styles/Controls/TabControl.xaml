@@ -35,7 +35,7 @@
 
 
 
-    <Style x:Key="StandardTabItem" TargetType="TabItem" BasedOn="{c:MultiStyle 'StandardTabItemHeader TransparentBackground TransparentBorder StandardForegroundPrimaryStates StandardFontProperties ElevationZIndex Shadow0'}">
+    <Style x:Key="StandardTabItem" TargetType="TabItem" BasedOn="{c:MergeStyles 'StandardTabItemHeader TransparentBackground TransparentBorder StandardForegroundPrimaryStates StandardFontProperties ElevationZIndex Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
@@ -222,12 +222,12 @@
         </Setter>
     </Style>
 
-    <Style x:Key="Accent1TabItem" TargetType="TabItem" BasedOn="{c:MultiStyle 'StandardTabItem StandardForegroundAccent1States'}" />
-    <Style x:Key="Accent2TabItem" TargetType="TabItem" BasedOn="{c:MultiStyle 'StandardTabItem StandardForegroundAccent2States'}" />
+    <Style x:Key="Accent1TabItem" TargetType="TabItem" BasedOn="{c:MergeStyles 'StandardTabItem StandardForegroundAccent1States'}" />
+    <Style x:Key="Accent2TabItem" TargetType="TabItem" BasedOn="{c:MergeStyles 'StandardTabItem StandardForegroundAccent2States'}" />
 
     <Style TargetType="TabItem" BasedOn="{StaticResource Accent2TabItem}" />
 
-    <Style x:Key="StandardTabControl" TargetType="TabControl" BasedOn="{c:MultiStyle 'TransparentBackground TransparentBorder StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="StandardTabControl" TargetType="TabControl" BasedOn="{c:MergeStyles 'TransparentBackground TransparentBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
