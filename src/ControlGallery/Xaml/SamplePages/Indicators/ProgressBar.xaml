@@ -89,7 +89,7 @@
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledProgressBarEx3}">
                     <StackPanel.Resources>
                         <Style TargetType="ProgressBar" BasedOn="{StaticResource PrimaryProgressBar}">
-                            <!-- The Primary Properties change the Track. This also includes BorderBrush and BorderThickness. -->
+                            <!-- The standard WPF Properties change the Track. This also includes BorderBrush and BorderThickness. -->
                             <Setter Property="Background" Value="LightPink" />
                             
                             <!-- The ActiveProperties from the Theming namespace set the appearance of the other states. -->

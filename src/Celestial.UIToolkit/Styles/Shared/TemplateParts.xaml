@@ -109,7 +109,7 @@
     <Style x:Key="Accent1ForegroundOnlyButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'TransparentButton PrimaryForegroundAccent1States'}" />
     <Style x:Key="Accent2ForegroundOnlyButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'TransparentButton PrimaryForegroundAccent2States'}" />
     
-    <!-- An otherwise invisible button, which shows a Primary ripple animation when pressed. -->
+    <!-- An otherwise invisible button, which shows a standard ripple animation when pressed. -->
     <Style x:Key="InvisibleRippleButton" TargetType="ButtonBase" BasedOn="{StaticResource TransparentButton}">
         <Setter Property="Focusable" Value="True" />
         <Setter Property="Template">
