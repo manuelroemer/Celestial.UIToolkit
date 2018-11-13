@@ -96,7 +96,7 @@
 
     
     
-    <Style x:Key="PrimaryComboBox" TargetType="ComboBox" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder PrimaryForeground PrimaryFontProperties PrimaryPopup Shadow16'}">
+    <Style x:Key="PrimaryComboBox" TargetType="ComboBox" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder PrimaryForeground PrimaryFontProperties StandardPopup Shadow16'}">
         <Style.Resources>
             <Style x:Key="ComboBoxTextBox" TargetType="TextBox">
                 <Setter Property="HorizontalAlignment" Value="Stretch" />

@@ -60,6 +60,8 @@
     -->
     <Color x:Key="ListLowColor">#EAEAEA</Color>
     <Color x:Key="ListHighColor">#C8C8C8</Color>
+    <Color x:Key="AltListLowColor">#2D2D2D</Color>
+    <Color x:Key="AltListHighColor">#4F4F4F</Color>
 
 
 
@@ -186,13 +188,20 @@
     <!-- List brushes. -->
     <SolidColorBrush x:Key="ListLowBrush" Color="{StaticResource ListLowColor}" />
     <SolidColorBrush x:Key="ListHighBrush" Color="{StaticResource ListHighColor}" />
+    <SolidColorBrush x:Key="AltListLowBrush" Color="{StaticResource AltListLowColor}" />
+    <SolidColorBrush x:Key="AltListHighBrush" Color="{StaticResource AltListHighColor}" />
     
     <SolidColorBrush x:Key="ListActiveDisabledBrush" Color="{StaticResource ListLowColor}" />
+    <SolidColorBrush x:Key="AltListActiveDisabledBrush" Color="{StaticResource AltListLowColor}" />
 
     <SolidColorBrush x:Key="ListAlternationIndex0BackgroundBrush" Color="Transparent" />
     <SolidColorBrush x:Key="ListAlternationIndex0BorderBrush" Color="Transparent" />
     <SolidColorBrush x:Key="ListAlternationIndex1BackgroundBrush" Color="{StaticResource PrimaryLowColor}" />
     <SolidColorBrush x:Key="ListAlternationIndex1BorderBrush" Color="{StaticResource PrimaryLowColor}" />
+    <SolidColorBrush x:Key="AltListAlternationIndex0BackgroundBrush" Color="Transparent" />
+    <SolidColorBrush x:Key="AltListAlternationIndex0BorderBrush" Color="Transparent" />
+    <SolidColorBrush x:Key="AltListAlternationIndex1BackgroundBrush" Color="{StaticResource AltPrimaryLowColor}" />
+    <SolidColorBrush x:Key="AltListAlternationIndex1BorderBrush" Color="{StaticResource AltPrimaryLowColor}" />
 
 
 

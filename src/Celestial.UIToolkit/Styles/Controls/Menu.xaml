@@ -21,7 +21,7 @@
     <c:ThicknessSidePickerConverter x:Key="TopBottomPicker" Left="0" Right="0" />
     <c:MathOperationConverter x:Key="ElevationAddConverter" Operator="Add" />
 
-    <Style x:Key="PrimaryMenuItem" TargetType="MenuItem" BasedOn="{c:MergeStyles 'TransparentBorder OnPaneControlBackground PrimaryForeground PrimaryFontProperties PrimaryPopup'}">
+    <Style x:Key="PrimaryMenuItem" TargetType="MenuItem" BasedOn="{c:MergeStyles 'TransparentBorder OnPaneControlBackground PrimaryForeground PrimaryFontProperties StandardPopup'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
