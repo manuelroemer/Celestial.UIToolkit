@@ -65,7 +65,7 @@ steps:
     ArtifactName: 'NuGet-Packages'
   condition: and(succeeded(), eq(variables['system.pullrequest.isfork'], false))
 
-- task: PublissBuildArtifacts@1
+- task: PublishBuildArtifacts@1
   displayName: 'Publish Documentation'
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)/Documentation/_site'
