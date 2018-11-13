@@ -16,7 +16,6 @@ Microsoft's Fluent Design and Google's Material Design.
   * [1.4 Which DLL do I need?](#14-which-dll-do-i-need)
   * [1.5 The Control Gallery](#15-the-control-gallery)
 * [2. Documentation](#2-documentation)
-* [3. Contributing](#3-contributing)
 
 ## 1. Getting Started
 ### 1.1 What is Celestial.UIToolkit?
