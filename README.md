@@ -1,5 +1,6 @@
 # Celestial.UIToolkit
-A custom WPF toolkit which is inspired by a lot of the current design languages, including Microsoft's Fluent Design and Google's Material Design.
+A custom WPF toolkit which is inspired by a lot of the current design languages, including 
+Microsoft's Fluent Design and Google's Material Design.
 
 [![Build Status](https://dev.azure.com/ManuelRoemer/Celestial%20UIToolkit/_apis/build/status/Celestial.UIToolkit)](https://dev.azure.com/ManuelRoemer/Celestial%20UIToolkit/_build/latest?definitionId=2)
 [![NuGet - Celestial.UIToolkit.Core](https://img.shields.io/nuget/v/Celestial.UIToolkit.Core.svg?label=Celestial.UIToolkit.Core)](https://www.nuget.org/packages/Celestial.UIToolkit.Core/)
@@ -13,7 +14,7 @@ A custom WPF toolkit which is inspired by a lot of the current design languages,
   * [1.3 Minimum System Requirements](#13-minimum-system-requirements)
   * [1.4 Which DLL do I need?](#14-which-dll-do-i-need)
   * [1.5 The Control Gallery](#15-the-control-gallery)
-
+* [2. Documentation](#2-documentation)
 
 ## 1. Getting Started
 ### 1.1 What is Celestial.UIToolkit?
@@ -32,6 +33,10 @@ The libraries can be installed via NuGet (preferred way), or via
 [GitHub Releases](https://github.com/manuelroemer/Celestial.UIToolkit/releases/latest).
 
 *Unsure about what to install? See [Section 1.4](#14-which-dll-do-i-need) for details.*
+
+*Done with installing, but unsure how to use the toolkit? Head over to the 
+[Guides](https://manuelroemer.github.io/Celestial.UIToolkit/doc/articles/introduction.html) 
+for a tutorial*.
 
 #### Install the whole toolkit:
 ```
@@ -106,6 +111,16 @@ e.g. `Button` and `ToggleButton`.
 In this case, the styles have a generalized control name.
 For buttons, the styles are called `...Button`.
 
+
+
+## 2. Documentation
+There are three sources of documentation available:
+
+| Documentation type | Description |
+| --- | --- |
+| [ControlGallery](https://github.com/manuelroemer/Celestial.UIToolkit/releases/latest) | The ControlGallery application is your information source for controls and examples on how to use them. [More info on what the ControlGallery provides.](#15-the-control-gallery) |
+| [Guides](https://manuelroemer.github.io/Celestial.UIToolkit/doc/articles/introduction.html) | There are several guides available, ranging from topics on getting started, up to more specific concepts and details of the toolkit. |
+| [API Reference](https://manuelroemer.github.io/Celestial.UIToolkit/doc/api/Celestial.UIToolkit.html) | A list of all current API members, like MSDN. |
 
 ### Examples
 
