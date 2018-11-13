@@ -31,6 +31,7 @@
                                       IsBackButtonEnabled="{Binding IsChecked, ElementName=IsBackButtonEnabledEx1, Mode=TwoWay}"
                                       IsToggleButtonVisible="{Binding IsChecked, ElementName=IsToggleButtonVisibleEx1, Mode=TwoWay}"
                                       IsToggleButtonEnabled="{Binding IsChecked, ElementName=IsToggleButtonEnabledEx1, Mode=TwoWay}"
+                                      AutoCloseOverlayingPane="{Binding IsChecked, ElementName=AutoCloseOverlayingPaneEx1, Mode=TwoWay}"
                                       CompactModeThresholdWidth="{Binding Value, ElementName=CompactModeThresholdWidthEx1, Mode=TwoWay}"
                                       ExpandedModeThresholdWidth="{Binding Value, ElementName=ExpandedModeThresholdWidthEx1, Mode=TwoWay}"
                                       CompactPaneLength="{Binding Value, ElementName=CompactPaneLengthEx1, Mode=TwoWay}"
@@ -81,6 +82,9 @@
                     <CheckBox x:Name="IsToggleButtonEnabledEx1"
                               IsChecked="True"
                               Content="IsToggleButtonEnabled" />
+                    <CheckBox x:Name="AutoCloseOverlayingPaneEx1"
+                              IsChecked="True"
+                              Content="AutoCloseOverlayingPane" />
                     <Label Content="CompactModeThresholdWidth:" />
                     <Slider x:Name="CompactModeThresholdWidthEx1"
                             Value="200"

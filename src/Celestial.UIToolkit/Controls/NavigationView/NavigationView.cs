@@ -132,7 +132,15 @@ namespace Celestial.UIToolkit.Controls
         private void ToggleButton_Click(object sender, RoutedEventArgs e)
         {
             this.TraceInfo("Toggle Button clicked.");
-            _isExplicitlyClosed = IsPaneOpen;
+
+            // If the user changes the Pane's state while expanded, he most likely wants it to
+            // remain like this.
+            // -> Remember the choice and respect it while adapting the sizes.
+            if (DisplayMode == NavigationViewDisplayMode.Expanded)
+            {
+                _isExplicitlyClosed = IsPaneOpen;
+            }
+
             IsPaneOpen = !IsPaneOpen;
         }
 
@@ -163,8 +171,15 @@ namespace Celestial.UIToolkit.Controls
             this.TraceInfo("Menu Item Invoked. Item: {0}", item);
             var eventData = new NavigationViewItemEventArgs(item, isSettingsItem);
             OnItemInvoked(eventData);
-        }
 
+            // If the NavigationView is on Overlay-mode, we want to automatically close it.
+            if (IsInOverlayMode && AutoCloseOverlayingPane)
+            {
+                this.TraceVerbose("Collapsing NavigationView, since user invoked item while in Overlay mode.");
+                IsPaneOpen = false;
+            }
+        }
+        
         private void AdaptiveLayoutProperty_Changed(object sender, object e)
         {
             // Called when something size-related changed.
@@ -224,7 +239,7 @@ namespace Celestial.UIToolkit.Controls
         /// <param name="clickedElement">The element that was clicked.</param>
         private void ClosePaneOnOutsideClick(DependencyObject clickedElement)
         {
-            if (clickedElement != null && IsInOverlayMode)
+            if (clickedElement != null && IsInOverlayMode && AutoCloseOverlayingPane)
             {
                 // We need to close the pane if the user clicks outside of the pane.
                 // -> Check if the clicked element is inside the pane. If not, close the pane.
