@@ -122,11 +122,11 @@
                                         BorderThickness="{TemplateBinding BorderThickness}"
                                         CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}" 
                                         Visibility="Collapsed" />
-                                <controls:RippleOverlay x:Name="Ripple"
-                                                        IsEnabled="{TemplateBinding theming:RippleProperties.ShowRippleAnimation}"
-                                                        Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
-                                                        BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}" 
-                                                        IsActiveTrigger="{TemplateBinding IsSelected}" />
+                                <controls:Ripple x:Name="Ripple"
+                                                 IsEnabled="{TemplateBinding theming:RippleProperties.ShowRippleAnimation}"
+                                                 Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
+                                                 BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}" 
+                                                 IsActiveTrigger="{TemplateBinding IsSelected}" />
                             </Grid>
                         </controls:ThemeShadowPresenter>
 

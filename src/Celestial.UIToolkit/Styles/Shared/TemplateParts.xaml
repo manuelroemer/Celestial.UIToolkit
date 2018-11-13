@@ -7,7 +7,7 @@
   
     <!-- A ripple animation which is being played in the background of a control.
          Example: CheckBox, RadioButton -->
-    <Style x:Key="SmallBackgroundRippleAnimation" x:Shared="False"  TargetType="controls:RippleOverlay">
+    <Style x:Key="SmallBackgroundRippleAnimation" x:Shared="False"  TargetType="controls:Ripple">
         <Setter Property="Width" Value="{c:GridUnit 5}" />
         <Setter Property="Height" Value="{c:GridUnit 5}" />
         <Setter Property="Background" Value="{StaticResource PrimaryMediumLowBrush}" />
@@ -120,8 +120,8 @@
                             BorderThickness="{TemplateBinding BorderThickness}"
                             Padding="{TemplateBinding Padding}">
                         <Grid>
-                            <controls:RippleOverlay Style="{StaticResource SmallBackgroundRippleAnimation}"
-                                                    IsActiveTrigger="{TemplateBinding IsPressed}" />
+                            <controls:Ripple Style="{StaticResource SmallBackgroundRippleAnimation}"
+                                             IsActiveTrigger="{TemplateBinding IsPressed}" />
                             <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                         </Grid>

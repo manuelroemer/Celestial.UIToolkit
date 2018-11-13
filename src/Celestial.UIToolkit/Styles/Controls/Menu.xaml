@@ -58,7 +58,7 @@
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 SnapsToDevicePixels="False" />
-                        <controls:RippleOverlay x:Name="Ripple"
+                        <controls:Ripple x:Name="Ripple"
                                                 Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
                                                 BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}"
                                                 Margin="{TemplateBinding BorderThickness}"
