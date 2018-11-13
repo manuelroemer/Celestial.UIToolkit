@@ -20,7 +20,7 @@ namespace Celestial.UIToolkit.Media.Animations
     [ContentProperty(nameof(KeyFrames))]
     public abstract class AnimationUsingKeyFramesBase<T, TKeyFrame, TKeyFrameCollection>
         : AnimationBase<T>, IAddChild, IKeyFrameAnimation, ISegmentLengthProvider
-        where TKeyFrame : IInterpolateKeyFrame<T>
+        where TKeyFrame : IInterpolatingKeyFrame<T>
         where TKeyFrameCollection : Freezable, IList, IList<TKeyFrame>, new()
     {
 
