@@ -12,14 +12,20 @@ $targetDir = [System.IO.Path]::Combine(
     "Documentation"
 )
 
+# DocFx uses this environment variable for fetching the sources.
+# We want to always generate doc from the master branch.
+# -> Temporarily set this env variable to master.
+$prevBuildSourceBranchName = $env:BUILD_SOURCEBRANCHNAME
+$env:BUILD_SOURCEBRANCHNAME = "master"
+
 Write-Host "Installing DocFx..."
 choco install docfx -y
 Write-Host "DocFx installed."
 
 Write-Host "Generating documentation..."
 Set-Location doc
-$prevBuildSourceBranchName = $env:BUILD_SOURCEBRANCHNAME
-$env:BUILD_SOURCEBRANCHNAME = "master"
 docfx -o "$targetDir"
-$env:BUILD_SOURCEBRANCHNAME = $prevBuildSourceBranchName
 Write-Host "Generated documentation."
+
+# Reset env var (see above). Perhaps unnecessary?
+$env:BUILD_SOURCEBRANCHNAME = $prevBuildSourceBranchName
