@@ -28,7 +28,7 @@ namespace Celestial.UIToolkit.Controls
 
         internal const string DraggableAreaTemplatePart = "PART_DraggableArea";
 
-        // These three states are introduced for styling only.
+        // The following three states are introduced for styling only.
         // The On/Off/Dragging states are meant for moving the knob around.
         // For color manipulation, these "CommonStates" exist.
         // Together with the base class' states, the following mapping exists:
@@ -37,18 +37,56 @@ namespace Celestial.UIToolkit.Controls
         // - Dragging      <>  Pressed
         // - MouseOverOn   <>  MouseOverActive
         // - On            <>  Active
-        internal const string ActiveVisualState = "Active";
-        internal const string MouseOverActiveVisualState = "MouseOverActive";
-        internal const string PressedVisualState = "Pressed";
 
-        internal const string ToggledStatesVisualStateGroup = "ToggledStates";
-        internal const string OnVisualState = "On";
-        internal const string OffVisualState = "Off";
-        internal const string DraggingVisualState = "Dragging";
+        /// <summary>
+        /// Defines the name of the "Active" Visual State.
+        /// </summary>
+        public const string ActiveVisualState = "Active";
 
-        internal const string ContentDisplayStatesVisualStateGroup = "ContentDisplayStates";
-        internal const string OnContentVisualState = "OnContent";
-        internal const string OffContentVisualState = "OffContent";
+        /// <summary>
+        /// Defines the name of the "MouseOverActive" Visual State.
+        /// </summary>
+        public const string MouseOverActiveVisualState = "MouseOverActive";
+
+        /// <summary>
+        /// Defines the name of the "Pressed" Visual State.
+        /// </summary>
+        public const string PressedVisualState = "Pressed";
+
+        /// <summary>
+        /// Defines the name of the "ToggledStates" Visual State Group.
+        /// </summary>
+        public const string ToggledStatesVisualStateGroup = "ToggledStates";
+
+        /// <summary>
+        /// Defines the name of the "On" Visual State.
+        /// </summary>
+        public const string OnVisualState = "On";
+
+        /// <summary>
+        /// Defines the name of the "Off" Visual State.
+        /// </summary>
+        public const string OffVisualState = "Off";
+
+        /// <summary>
+        /// Defines the name of the "Dragging" Visual State.
+        /// </summary>
+        public const string DraggingVisualState = "Dragging";
+
+        /// <summary>
+        /// Defines the name of the "ContentDisplayStates" Visual State Group.
+        /// </summary>
+        public const string ContentDisplayStatesVisualStateGroup = "ContentDisplayStates";
+
+        /// <summary>
+        /// Defines the name of the "OnContent" Visual State.
+        /// </summary>
+        public const string OnContentVisualState = "OnContent";
+
+        /// <summary>
+        /// Defines the name of the "OffContent" Visual State.
+        /// </summary>
+        public const string OffContentVisualState = "OffContent";
 
         private Thumb _draggableArea;
         private bool _isDraggingViaKey;

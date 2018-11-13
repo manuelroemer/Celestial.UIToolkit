@@ -9,11 +9,26 @@ namespace Celestial.UIToolkit.Controls
     [TemplateVisualState(Name = ExpandedVisualState, GroupName = DisplayModeStatesVisualStateGroup)]
     public partial class NavigationView
     {
-        
-        internal const string DisplayModeStatesVisualStateGroup = "DisplayModeStates";
-        internal const string MinimalVisualState = "Minimal";
-        internal const string CompactVisualState = "Compact";
-        internal const string ExpandedVisualState = "Expanded";
+
+        /// <summary>
+        /// Defines the name of the "DisplayModeStates" Visual State Group.
+        /// </summary>
+        public const string DisplayModeStatesVisualStateGroup = "DisplayModeStates";
+
+        /// <summary>
+        /// Defines the name of the "Minimal" Visual State.
+        /// </summary>
+        public const string MinimalVisualState = "Minimal";
+
+        /// <summary>
+        /// Defines the name of the "Compact" Visual State.
+        /// </summary>
+        public const string CompactVisualState = "Compact";
+
+        /// <summary>
+        /// Defines the name of the "Expanded" Visual State.
+        /// </summary>
+        public const string ExpandedVisualState = "Expanded";
 
         private void EnterCurrentDisplayModeVisualState()
         {

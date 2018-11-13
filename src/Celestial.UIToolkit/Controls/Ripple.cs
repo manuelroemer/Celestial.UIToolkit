@@ -19,12 +19,31 @@ namespace Celestial.UIToolkit.Controls
     [TemplateVisualState(GroupName = AnimationStatesVisualStateGroup, Name = FadingVisualState)]
     public class Ripple : Control
     {
-        
-        internal const string AnimationStatesVisualStateGroup = "AnimationStates";
-        internal const string NormalVisualState = "Normal";
-        internal const string ExpandingVisualState = "Expanding";
-        internal const string ExpandedVisualState = "Expanded";
-        internal const string FadingVisualState = "Fading";
+
+        /// <summary>
+        /// Defines the name of the "AnimationStates" Visual State Group.
+        /// </summary>
+        public const string AnimationStatesVisualStateGroup = "AnimationStates";
+
+        /// <summary>
+        /// Defines the name of the "Normal" Visual State.
+        /// </summary>
+        public const string NormalVisualState = "Normal";
+
+        /// <summary>
+        /// Defines the name of the "Expanding" Visual State.
+        /// </summary>
+        public const string ExpandingVisualState = "Expanding";
+
+        /// <summary>
+        /// Defines the name of the "Expanded" Visual State.
+        /// </summary>
+        public const string ExpandedVisualState = "Expanded";
+
+        /// <summary>
+        /// Defines the name of the "Fading" Visual State.
+        /// </summary>
+        public const string FadingVisualState = "Fading";
         
         private static readonly DependencyPropertyKey AnimationOriginXPropertyKey = DependencyProperty.RegisterReadOnly(
             nameof(AnimationOriginX), typeof(double), typeof(Ripple), new PropertyMetadata(0d));
