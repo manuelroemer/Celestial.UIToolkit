@@ -1313,6 +1313,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "articles/getting-started/style-naming-format.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/getting-started/style-naming-format.html",
+          "hash": "FQxMwqdkSgZkwzbOkmg/fg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "articles/introduction.md",
       "output": {
         ".html": {
