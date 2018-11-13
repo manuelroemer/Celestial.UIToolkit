@@ -74,7 +74,7 @@
     "disableGitFeatures": false,
     "globalMetadata": {
       "_appTitle": "Celestial.UIToolkit",
-      "_appFooter": "Copyright &copy; 2018 Celestial.UIToolkit - <a href=\"/doc/impressum.html\">Impressum</a>",
+      "_appFooter": "Copyright &copy; 2018 Celestial.UIToolkit - <a href=\"/Celestial.UIToolkit/doc/impressum.html\">Impressum</a>",
       "_gitContribute": {
         "repo": "https://github.com/manuelroemer/Celestial.UIToolkit",
         "branch": "master"
