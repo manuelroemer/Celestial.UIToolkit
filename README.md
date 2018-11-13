@@ -6,7 +6,7 @@ Microsoft's Fluent Design and Google's Material Design.
 [![NuGet - Celestial.UIToolkit.Core](https://img.shields.io/nuget/v/Celestial.UIToolkit.Core.svg?label=Celestial.UIToolkit.Core)](https://www.nuget.org/packages/Celestial.UIToolkit.Core/)
 [![NuGet - Celestial.UIToolkit](https://img.shields.io/nuget/v/Celestial.UIToolkit.svg?label=Celestial.UIToolkit)](https://www.nuget.org/packages/Celestial.UIToolkit/)
 
-![Example Image](./.github/images/MainExample.png)
+![Example Image](./.github/Images/MainExample.png)
 
 ## Table of Contents
 * [1. Getting started](#1-getting-started)
