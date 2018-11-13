@@ -14,7 +14,7 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="PrimaryCard" TargetType="controls:Card" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder PrimaryForeground PrimaryFontProperties Shadow8'}">
+    <Style x:Key="PrimaryCard" TargetType="controls:Card" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder StandardForeground PrimaryFontProperties Shadow8'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />

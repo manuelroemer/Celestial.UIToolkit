@@ -25,7 +25,7 @@
          The TabItem Style also animates the Foreground property of these TemplateProperties, not the
          TabItem.Foreground property. -->
     <Style x:Key="PrimaryTabItemHeader" TargetType="TabItem">
-        <Setter Property="theming:TabItemProperties.HeaderForeground" Value="{StaticResource PrimaryForegroundBrush}" />
+        <Setter Property="theming:TabItemProperties.HeaderForeground" Value="{StaticResource StandardForegroundBrush}" />
         <Setter Property="theming:TabItemProperties.HeaderFontSize" Value="{StaticResource TitleFontSize}" />
         <Setter Property="theming:TabItemProperties.HeaderFontFamily" Value="{StaticResource TitleFontFamily}" />
         <Setter Property="theming:TabItemProperties.HeaderFontStyle" Value="{StaticResource TitleFontStyle}" />
@@ -35,7 +35,7 @@
 
 
 
-    <Style x:Key="PrimaryTabItem" TargetType="TabItem" BasedOn="{c:MergeStyles 'PrimaryTabItemHeader TransparentBackground TransparentBorder PrimaryForegroundControlStates PrimaryFontProperties ElevationZIndex Shadow0'}">
+    <Style x:Key="PrimaryTabItem" TargetType="TabItem" BasedOn="{c:MergeStyles 'PrimaryTabItemHeader TransparentBackground TransparentBorder StandardForegroundControlStates PrimaryFontProperties ElevationZIndex Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
@@ -222,12 +222,12 @@
         </Setter>
     </Style>
 
-    <Style x:Key="Accent1TabItem" TargetType="TabItem" BasedOn="{c:MergeStyles 'PrimaryTabItem PrimaryForegroundAccent1States'}" />
-    <Style x:Key="Accent2TabItem" TargetType="TabItem" BasedOn="{c:MergeStyles 'PrimaryTabItem PrimaryForegroundAccent2States'}" />
+    <Style x:Key="Accent1TabItem" TargetType="TabItem" BasedOn="{c:MergeStyles 'PrimaryTabItem StandardForegroundAccent1States'}" />
+    <Style x:Key="Accent2TabItem" TargetType="TabItem" BasedOn="{c:MergeStyles 'PrimaryTabItem StandardForegroundAccent2States'}" />
 
     <Style TargetType="TabItem" BasedOn="{StaticResource Accent2TabItem}" />
 
-    <Style x:Key="PrimaryTabControl" TargetType="TabControl" BasedOn="{c:MergeStyles 'TransparentBackground TransparentBorder PrimaryForeground PrimaryFontProperties Shadow0'}">
+    <Style x:Key="PrimaryTabControl" TargetType="TabControl" BasedOn="{c:MergeStyles 'TransparentBackground TransparentBorder StandardForeground PrimaryFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />

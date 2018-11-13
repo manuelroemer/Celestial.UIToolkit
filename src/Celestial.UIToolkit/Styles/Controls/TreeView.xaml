@@ -17,12 +17,12 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="PrimaryTreeViewItem" TargetType="TreeViewItem" BasedOn="{c:MergeStyles 'ListBackground ListBorder PrimaryForeground PrimaryFontProperties Shadow0'}">
+    <Style x:Key="PrimaryTreeViewItem" TargetType="TreeViewItem" BasedOn="{c:MergeStyles 'ListBackground ListBorder StandardForeground PrimaryFontProperties Shadow0'}">
         <Style.Resources>
             <!-- The ExpanderButton should have Active States matching the TreeViewItem Style.
                  It can't use the TreeViewItem's theming properties though, because they are used for the Header.
                  -> We must define the style per TreeViewItem. -->
-            <Style x:Key="ExpanderButtonStyle" TargetType="ToggleButton" BasedOn="{c:MergeStyles 'TransparentButton PrimaryForeground'}">
+            <Style x:Key="ExpanderButtonStyle" TargetType="ToggleButton" BasedOn="{c:MergeStyles 'TransparentButton StandardForeground'}">
                 <Setter Property="Foreground" Value="{c:TemplatedParentBinding Foreground}" />
             </Style>
         </Style.Resources>
@@ -209,7 +209,7 @@
 
     <Style x:Key="Accent1TreeViewItem" TargetType="TreeViewItem" BasedOn="{c:MergeStyles 'PrimaryTreeViewItem Accent1ListBackground Accent1ListBorder OnListAccent1Foreground'}">
         <Style.Resources>
-            <Style x:Key="ExpanderButtonStyle" TargetType="ToggleButton" BasedOn="{c:MergeStyles 'TransparentButton PrimaryForegroundAccent1States'}">
+            <Style x:Key="ExpanderButtonStyle" TargetType="ToggleButton" BasedOn="{c:MergeStyles 'TransparentButton StandardForegroundAccent1States'}">
                 <Setter Property="Foreground" Value="{c:TemplatedParentBinding Foreground}" />
             </Style>
         </Style.Resources>
@@ -217,7 +217,7 @@
 
     <Style x:Key="Accent2TreeViewItem" TargetType="TreeViewItem" BasedOn="{c:MergeStyles 'PrimaryTreeViewItem Accent2ListBackground Accent2ListBorder OnListAccent2Foreground'}">
         <Style.Resources>
-            <Style x:Key="ExpanderButtonStyle" TargetType="ToggleButton" BasedOn="{c:MergeStyles 'TransparentButton PrimaryForegroundAccent2States'}">
+            <Style x:Key="ExpanderButtonStyle" TargetType="ToggleButton" BasedOn="{c:MergeStyles 'TransparentButton StandardForegroundAccent2States'}">
                 <Setter Property="Foreground" Value="{c:TemplatedParentBinding Foreground}" />
             </Style>
         </Style.Resources>
@@ -253,7 +253,7 @@
 
     
 
-    <Style x:Key="PrimaryTreeView" TargetType="TreeView" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder PrimaryForeground PrimaryFontProperties Shadow0'}">
+    <Style x:Key="PrimaryTreeView" TargetType="TreeView" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder StandardForeground PrimaryFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />

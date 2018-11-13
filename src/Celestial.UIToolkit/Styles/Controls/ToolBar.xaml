@@ -26,9 +26,9 @@
     
     
     
-    <Style x:Key="PrimaryToolBar" TargetType="ToolBar" BasedOn="{c:MergeStyles 'PaneBackground PaneBorder PrimaryForeground PrimaryFontProperties StandardPopup Shadow8'}">
+    <Style x:Key="PrimaryToolBar" TargetType="ToolBar" BasedOn="{c:MergeStyles 'PaneBackground PaneBorder StandardForeground PrimaryFontProperties StandardPopup Shadow8'}">
         <Style.Resources>
-            <Style x:Key="PrimaryToolBarButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'PrimaryButton OnPaneControlBackground OnPaneControlBorder PrimaryForeground PrimaryFontProperties Shadow0'}">
+            <Style x:Key="PrimaryToolBarButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'PrimaryButton OnPaneControlBackground OnPaneControlBorder StandardForeground PrimaryFontProperties Shadow0'}">
                 <Setter Property="Padding" Value="{c:GridUnit 2}" />
                 <Setter Property="MinHeight" Value="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=ToolBar}, FallbackValue=0}" />
                 <Setter Property="MinWidth" Value="{c:SelfBinding MinHeight}" />

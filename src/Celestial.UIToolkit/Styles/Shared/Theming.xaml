@@ -49,7 +49,7 @@
     <!--#endregion-->
 
     <!--#region Primary Styles-->
-    
+
     <Style x:Key="PrimaryBackground">
         <Setter Property="Control.Background" Value="{StaticResource PrimaryBrush}" />
         <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource PrimaryBrush}" />
@@ -78,7 +78,7 @@
     </Style>
 
     <!--#endregion-->
-    
+
     <!--#region AltPrimary Styles-->
     
     <Style x:Key="AltPrimaryBackground">
@@ -99,7 +99,7 @@
         <Setter Property="theming:MouseOverActiveProperties.BorderBrush" Value="{StaticResource AltPrimaryBrush}" />
     </Style>
 
-    <Style x:Key="AltPrimaryForeground">
+    <Style x:Key="AltStandardForeground">
         <Setter Property="TextElement.Foreground" Value="{StaticResource AltPrimaryBrush}" />
         <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource AltPrimaryBrush}" />
         <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource AltPrimaryBrush}" />
@@ -474,7 +474,16 @@
         <Setter Property="theming:DisabledProperties.BorderBrush" Value="Transparent" />
         <Setter Property="theming:MouseOverActiveProperties.BorderBrush" Value="{StaticResource ListLowBrush}" />
     </Style>
-    
+
+    <Style x:Key="ListForeground">
+        <Setter Property="TextElement.Foreground" Value="{StaticResource StandardForegroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
+        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
+    </Style>
+
     <!--#endregion-->
     
     <!--#region AltList Styles-->
@@ -493,6 +502,15 @@
         <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource AltListHighBrush}" />
         <Setter Property="theming:DisabledProperties.BorderBrush" Value="Transparent" />
         <Setter Property="theming:MouseOverActiveProperties.BorderBrush" Value="{StaticResource AltListLowBrush}" />
+    </Style>
+
+    <Style x:Key="AltListForeground">
+        <Setter Property="TextElement.Foreground" Value="{StaticResource PrimaryAltForegroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource PrimaryAltForegroundBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource PrimaryAltForegroundBrush}" />
+        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledAltForegroundBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource PrimaryAltForegroundBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource PrimaryAltForegroundBrush}" />
     </Style>
 
     <!--#endregion-->
@@ -515,6 +533,15 @@
         <Setter Property="theming:MouseOverActiveProperties.BorderBrush" Value="{StaticResource ListHighBrush}" />
     </Style>
 
+    <Style x:Key="Accent1ListForeground">
+        <Setter Property="TextElement.Foreground" Value="{StaticResource ListAccent1MediumBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource ListAccent1LowBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource ListAccent1HighBrush}" />
+        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource ListAccent1HighBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource ListAccent1LowBrush}" />
+    </Style>
+
     <!--#endregion-->
     
     <!--#region Accent2List Styles-->
@@ -533,6 +560,15 @@
         <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource ListAccent2MediumBrush}" />
         <Setter Property="theming:DisabledProperties.BorderBrush" Value="Transparent" />
         <Setter Property="theming:MouseOverActiveProperties.BorderBrush" Value="{StaticResource ListHighBrush}" />
+    </Style>
+
+    <Style x:Key="Accent2ListForeground">
+        <Setter Property="TextElement.Foreground" Value="{StaticResource ListAccent2MediumBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource ListAccent2LowBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource ListAccent2HighBrush}" />
+        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource ListAccent2HighBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource ListAccent2LowBrush}" />
     </Style>
 
     <!--#endregion-->
@@ -555,6 +591,15 @@
         <Setter Property="theming:MouseOverActiveProperties.BorderBrush" Value="{StaticResource AltListHighBrush}" />
     </Style>
 
+    <Style x:Key="Accent1AltListForeground">
+        <Setter Property="TextElement.Foreground" Value="{StaticResource ListAccent1MediumBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource ListAccent1LowBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource ListAccent1HighBrush}" />
+        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledAltForegroundBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource ListAccent1HighBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource ListAccent1LowBrush}" />
+    </Style>
+
     <!--#endregion-->
     
     <!--#region Accent2AltList Styles-->
@@ -573,6 +618,15 @@
         <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource ListAccent2MediumBrush}" />
         <Setter Property="theming:DisabledProperties.BorderBrush" Value="Transparent" />
         <Setter Property="theming:MouseOverActiveProperties.BorderBrush" Value="{StaticResource AltListHighBrush}" />
+    </Style>
+
+    <Style x:Key="Accent2AltListForeground">
+        <Setter Property="TextElement.Foreground" Value="{StaticResource ListAccent2MediumBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource ListAccent2LowBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource ListAccent2HighBrush}" />
+        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledAltForegroundBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource ListAccent2HighBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource ListAccent2LowBrush}" />
     </Style>
 
     <!--#endregion-->
@@ -638,18 +692,18 @@
     </Style>
 
     <!--#endregion-->
-
-        
+    
+    
     
     <!--#region Special Foreground Styles -->
 
     <Style x:Key="StandardForeground">
-        <Setter Property="TextElement.Foreground" Value="{StaticResource PrimaryForegroundBrush}" />
-        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource PrimaryForegroundBrush}" />
-        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource PrimaryForegroundBrush}" />
+        <Setter Property="TextElement.Foreground" Value="{StaticResource StandardForegroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
         <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource PrimaryForegroundBrush}" />
-        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource PrimaryForegroundBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
     </Style>
     
     <Style x:Key="SecondaryForeground">
@@ -724,47 +778,7 @@
     </Style>
     
     <!--#endregion-->
-        
-    <!--#region List Foreground Styles -->
-
-    <Style x:Key="ListForeground">
-        <Setter Property="TextElement.Foreground" Value="{StaticResource PrimaryForegroundBrush}" />
-        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource PrimaryForegroundBrush}" />
-        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource PrimaryForegroundBrush}" />
-        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource PrimaryForegroundBrush}" />
-        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource PrimaryForegroundBrush}" />
-    </Style>
-
-    <Style x:Key="AltListForeground">
-        <Setter Property="TextElement.Foreground" Value="{StaticResource PrimaryAltForegroundBrush}" />
-        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource PrimaryAltForegroundBrush}" />
-        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource PrimaryAltForegroundBrush}" />
-        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledAltForegroundBrush}" />
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource PrimaryAltForegroundBrush}" />
-        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource PrimaryAltForegroundBrush}" />
-    </Style>
-
-    <Style x:Key="Accent1ListForeground">
-        <Setter Property="TextElement.Foreground" Value="{StaticResource ListAccent1MediumBrush}" />
-        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource ListAccent1LowBrush}" />
-        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource ListAccent1HighBrush}" />
-        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource ListAccent1HighBrush}" />
-        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource ListAccent1LowBrush}" />
-    </Style>
-
-    <Style x:Key="Accent2ListForeground">
-        <Setter Property="TextElement.Foreground" Value="{StaticResource ListAccent2MediumBrush}" />
-        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource ListAccent2LowBrush}" />
-        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource ListAccent2HighBrush}" />
-        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource ListAccent2HighBrush}" />
-        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{StaticResource ListAccent2LowBrush}" />
-    </Style>
-
-    <!--#endregion-->
-
+    
     
     
     

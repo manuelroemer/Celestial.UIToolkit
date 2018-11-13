@@ -168,7 +168,7 @@
                         <Style x:Key="MyTabItem" TargetType="TabItem" BasedOn="{StaticResource Accent2TabItem}">
                             <Setter Property="c:SelectionProperties.ShowSelectionIndicator" Value="True" />
                             <Setter Property="c:SelectionProperties.SelectionIndicatorSize" Value="{c:GridUnit 1}" />
-                            <Setter Property="c:TabItemProperties.HeaderForeground" Value="{StaticResource PrimaryForegroundBrush}" />
+                            <Setter Property="c:TabItemProperties.HeaderForeground" Value="{StaticResource StandardForegroundBrush}" />
                             <Setter Property="c:TabItemProperties.HeaderFontSize" Value="{StaticResource PrimaryFontSize}" />
                             <Setter Property="c:TabItemProperties.HeaderFontFamily" Value="{StaticResource PrimaryFontFamily}" />
                             <Setter Property="c:TabItemProperties.HeaderFontStyle" Value="{StaticResource BaseFontStyle}" />

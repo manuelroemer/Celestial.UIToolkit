@@ -208,7 +208,7 @@
     <!--
     Alias resource names for the Text resources to allow an easier distinction of the resource's use-case.
     -->
-    <SolidColorBrush x:Key="PrimaryForegroundBrush" Color="{StaticResource TextPrimaryColor}" />
+    <SolidColorBrush x:Key="StandardForegroundBrush" Color="{StaticResource TextPrimaryColor}" />
     <SolidColorBrush x:Key="SubtleForegroundBrush" Color="{StaticResource TextHighColor}" />
     <SolidColorBrush x:Key="SecondaryForegroundBrush" Color="{StaticResource TextMediumColor}" />
     <SolidColorBrush x:Key="DisabledForegroundBrush" Color="{StaticResource TextLowColor}" />

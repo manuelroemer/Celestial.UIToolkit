@@ -18,7 +18,7 @@
 
     <!-- The default GroupBox simply displays the Header as a Bold Strings.
          This allows categorization of the following elements, similar to a Label. -->
-    <Style x:Key="PrimaryGroupBox" TargetType="GroupBox" BasedOn="{c:MergeStyles 'TransparentBackground TransparentBorder PrimaryForeground BaseFontProperties Shadow0'}">
+    <Style x:Key="PrimaryGroupBox" TargetType="GroupBox" BasedOn="{c:MergeStyles 'TransparentBackground TransparentBorder StandardForeground BaseFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
