@@ -169,21 +169,14 @@ namespace Celestial.UIToolkit.Controls
             get { return (object)GetValue(BackButtonCommandParameterProperty); }
             set { SetValue(BackButtonCommandParameterProperty, value); }
         }
-
+        
         /// <summary>
-        /// Raises the <see cref="BackRequested"/> event and
-        /// calls the <see cref="OnBackRequested"/> method afterwards.
+        /// Raises the <see cref="BackRequested"/> event.
         /// </summary>
-        protected void RaiseBackRequested()
+        protected virtual void OnBackRequested()
         {
-            OnBackRequested();
             BackRequested?.Invoke(this, EventArgs.Empty);
         }
-
-        /// <summary>
-        /// Called before the <see cref="BackRequested"/> event occurs.
-        /// </summary>
-        protected virtual void OnBackRequested() { }
 
     }
 

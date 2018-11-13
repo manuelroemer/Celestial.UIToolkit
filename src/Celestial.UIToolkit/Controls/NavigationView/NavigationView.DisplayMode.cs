@@ -86,18 +86,15 @@ namespace Celestial.UIToolkit.Controls
             get { return (double)GetValue(ExpandedModeThresholdWidthProperty); }
             set { SetValue(ExpandedModeThresholdWidthProperty, value); }
         }
-
-        private void RaiseDisplayModeChanged(NavigationViewDisplayModeChangedEventArgs e)
-        {
-            OnDisplayModeChanged(e);
-            DisplayModeChanged?.Invoke(this, e);
-        }
-
+        
         /// <summary>
-        /// Called before the <see cref="DisplayModeChanged"/> event occurs.
+        /// Raises the <see cref="DisplayModeChanged"/> event.
         /// </summary>
         /// <param name="e">Event data for the changed event.</param>
-        protected virtual void OnDisplayModeChanged(NavigationViewDisplayModeChangedEventArgs e) { }
+        protected virtual void OnDisplayModeChanged(NavigationViewDisplayModeChangedEventArgs e)
+        {
+            DisplayModeChanged?.Invoke(this, e);
+        }
 
     }
 

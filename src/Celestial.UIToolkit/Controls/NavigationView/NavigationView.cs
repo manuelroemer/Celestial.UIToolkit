@@ -5,7 +5,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
-using static Celestial.UIToolkit.TraceSources;
 
 namespace Celestial.UIToolkit.Controls
 {
@@ -127,7 +126,7 @@ namespace Celestial.UIToolkit.Controls
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             this.TraceInfo("Back Button clicked.");
-            RaiseBackRequested();
+            OnBackRequested();
         }
 
         private void ToggleButton_Click(object sender, RoutedEventArgs e)
@@ -163,7 +162,7 @@ namespace Celestial.UIToolkit.Controls
 
             this.TraceInfo("Menu Item Invoked. Item: {0}", item);
             var eventData = new NavigationViewItemEventArgs(item, isSettingsItem);
-            RaiseItemInvoked(eventData);
+            OnItemInvoked(eventData);
         }
 
         private void AdaptiveLayoutProperty_Changed(object sender, object e)
@@ -249,7 +248,7 @@ namespace Celestial.UIToolkit.Controls
             var eventData = new NavigationViewDisplayModeChangedEventArgs(
                 (NavigationViewDisplayMode)e.OldValue,
                 (NavigationViewDisplayMode)e.NewValue);
-            self.RaiseDisplayModeChanged(eventData);
+            self.OnDisplayModeChanged(eventData);
         }
         
         private static void MenuItemsSource_Changed(
@@ -284,7 +283,7 @@ namespace Celestial.UIToolkit.Controls
                                   e.NewValue == self.SettingsItem;
             var itemChangedArgs = new NavigationViewItemEventArgs(e.NewValue, isSettingsItem);
 
-            self.RaiseSelectedItemChanged(itemChangedArgs);
+            self.OnSelectedItemChanged(itemChangedArgs);
         }
 
         private static object CoerceSelectedItem(DependencyObject d, object newSelectedItem)
