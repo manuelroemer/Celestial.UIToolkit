@@ -260,11 +260,11 @@
 
     <Style x:Key="Accent1GridViewColumnHeader" 
            TargetType="GridViewColumnHeader" 
-           BasedOn="{c:MergeStyles 'PrimaryGridViewColumnHeader Accent1Background Accent1Border OnDarkerAccent1Foreground'}" />
+           BasedOn="{c:MergeStyles 'PrimaryGridViewColumnHeader Accent1ControlBackground Accent1ControlBorder OnDarkerAccent1Foreground'}" />
     
     <Style x:Key="Accent2GridViewColumnHeader" 
            TargetType="GridViewColumnHeader" 
-           BasedOn="{c:MergeStyles 'PrimaryGridViewColumnHeader Accent2Background Accent2Border OnDarkerAccent2Foreground'}" />
+           BasedOn="{c:MergeStyles 'PrimaryGridViewColumnHeader Accent2ControlBackground Accent2ControlBorder OnDarkerAccent2Foreground'}" />
     
     <Style x:Key="{x:Type GridViewColumnHeader}" 
            TargetType="GridViewColumnHeader" 

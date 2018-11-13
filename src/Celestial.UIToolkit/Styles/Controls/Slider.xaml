@@ -144,8 +144,8 @@
         </Setter>
     </Style>
 
-    <Style x:Key="Accent1SliderThumb" TargetType="Thumb" BasedOn="{c:MergeStyles 'PrimarySliderThumb Accent1Border'}" />
-    <Style x:Key="Accent2SliderThumb" TargetType="Thumb" BasedOn="{c:MergeStyles 'PrimarySliderThumb Accent2Border'}" />
+    <Style x:Key="Accent1SliderThumb" TargetType="Thumb" BasedOn="{c:MergeStyles 'PrimarySliderThumb Accent1ControlBorder'}" />
+    <Style x:Key="Accent2SliderThumb" TargetType="Thumb" BasedOn="{c:MergeStyles 'PrimarySliderThumb Accent2ControlBorder'}" />
 
     <ControlTemplate x:Key="HorizontalSliderTemplate" TargetType="Slider">
         <Grid VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}"

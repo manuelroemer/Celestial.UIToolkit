@@ -162,10 +162,10 @@
 
     <Style x:Key="Accent1Button" 
            TargetType="ButtonBase" 
-           BasedOn="{c:MergeStyles 'PrimaryButton Accent1Background Accent1Border OnDarkerAccent1Foreground'}" />
+           BasedOn="{c:MergeStyles 'PrimaryButton Accent1ControlBackground Accent1ControlBorder OnDarkerAccent1Foreground'}" />
     <Style x:Key="Accent2Button" 
            TargetType="ButtonBase" 
-           BasedOn="{c:MergeStyles 'PrimaryButton Accent2Background Accent2Border OnDarkerAccent2Foreground'}" />
+           BasedOn="{c:MergeStyles 'PrimaryButton Accent2ControlBackground Accent2ControlBorder OnDarkerAccent2Foreground'}" />
 
     
 
@@ -274,14 +274,14 @@
 
     <Style x:Key="Accent1SquareButton" 
            TargetType="ButtonBase" 
-           BasedOn="{c:MergeStyles 'PrimarySquareButton Accent1Border Accent1Background OnDarkerAccent1Foreground'}">
+           BasedOn="{c:MergeStyles 'PrimarySquareButton Accent1ControlBackground Accent1ControlBorder OnDarkerAccent1Foreground'}">
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
     </Style>
 
     <Style x:Key="Accent2SquareButton" 
            TargetType="ButtonBase"
-           BasedOn="{c:MergeStyles 'PrimarySquareButton Accent2Border Accent2Background OnDarkerAccent2Foreground'}">
+           BasedOn="{c:MergeStyles 'PrimarySquareButton Accent2ControlBackground Accent2ControlBorder OnDarkerAccent2Foreground'}">
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />        
     </Style>
