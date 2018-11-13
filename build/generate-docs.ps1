@@ -24,7 +24,8 @@ Write-Host "DocFx installed."
 
 Write-Host "Generating documentation..."
 Set-Location doc
-docfx -o "$targetDir"
+docfx metadata --logLevel Verbose
+docfx build -o "$targetDir" --logLevel Verbose
 Write-Host "Generated documentation."
 
 # Reset env var (see above). Perhaps unnecessary?
