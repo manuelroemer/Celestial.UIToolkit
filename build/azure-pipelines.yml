@@ -17,7 +17,7 @@ steps:
 - task: NuGetToolInstaller@0
   displayName: 'Use latest NuGet version'
 
-#- task: NuGetCommand@2
+- task: NuGetCommand@2
   displayName: 'NuGet Restore'
   inputs:
     restoreSolution: '$(solution)'
@@ -31,7 +31,7 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-#- task: VSTest@2
+- task: VSTest@2
   displayName: 'Run tests'
   inputs:
     platform: '$(buildPlatform)'
@@ -52,7 +52,7 @@ steps:
   condition: and(succeeded(), eq(variables['system.pullrequest.isfork'], false))
 
 - task: PublishBuildArtifacts@1
-  displayName: 'Publish ControlGallery'
+  displayName: 'Publish ControlGallery Artifacts'
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)/ControlGallery'
     ArtifactName: 'ControlGallery'
@@ -66,7 +66,7 @@ steps:
   condition: and(succeeded(), eq(variables['system.pullrequest.isfork'], false))
 
 - task: PublishBuildArtifacts@1
-  displayName: 'Publish Documentation'
+  displayName: 'Publish Documentation Artifacts'
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)/Documentation/_site'
     ArtifactName: 'Documentation'
