@@ -213,7 +213,7 @@ namespace Celestial.UIToolkit.Controls
         /// <param name="e">Event data for the event.</param>
         protected virtual void OnItemContainerInvoked(ListViewItemInvokedEventArgs e)
         {
-            OnItemContainerInvoked(e);
+            ItemContainerInvoked?.Invoke(this, e);
         }
         
     }
