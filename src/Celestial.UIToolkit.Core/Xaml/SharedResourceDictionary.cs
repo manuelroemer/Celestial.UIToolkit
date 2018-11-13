@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Windows;
 using System.Windows.Markup;
 
-namespace Celestial.UIToolkit
+namespace Celestial.UIToolkit.Xaml
 {
 
     /// <summary>
