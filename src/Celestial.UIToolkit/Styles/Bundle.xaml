@@ -13,7 +13,7 @@
         <c:SharedResourceDictionary Source="Controls/ManipulationBoundaryFeedbackAwareContentControl.xaml" />
         <c:SharedResourceDictionary Source="Controls/SelectionIndicator.xaml" />
         <c:SharedResourceDictionary Source="Controls/PlaceholderOverlay.xaml" />
-        <c:SharedResourceDictionary Source="Controls/RippleOverlay.xaml" />
+        <c:SharedResourceDictionary Source="Controls/Ripple.xaml" />
         <c:SharedResourceDictionary Source="Controls/SplitView.xaml" />
         <c:SharedResourceDictionary Source="Controls/NavigationView.xaml" />
         <c:SharedResourceDictionary Source="Controls/ToggleSwitch.xaml" />

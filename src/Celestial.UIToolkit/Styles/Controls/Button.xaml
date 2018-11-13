@@ -111,7 +111,7 @@
                                     Background="{TemplateBinding Background}" />
                         </controls:ThemeShadowPresenter>
 
-                        <controls:RippleOverlay x:Name="Ripple"
+                        <controls:Ripple x:Name="Ripple"
                                                 theming:ControlProperties.CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}"
                                                 Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
                                                 BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}"

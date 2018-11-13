@@ -137,7 +137,7 @@
                                             <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
                                         </Style>
                                     </Grid.Resources>
-                                    <controls:RippleOverlay IsActiveTrigger="{c:TemplatedParentBinding IsPressed}" 
+                                    <controls:Ripple IsActiveTrigger="{c:TemplatedParentBinding IsPressed}" 
                                                             Style="{StaticResource SmallBackgroundRippleAnimation}"
                                                             IsEnabled="{TemplateBinding theming:RippleProperties.ShowRippleAnimation}" />
                                     <Border x:Name="CheckedBorder"
