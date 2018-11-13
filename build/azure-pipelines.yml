@@ -14,28 +14,28 @@ variables:
 
 steps:
 # Install NuGet packages and do a nuget restore.
-- task: NuGetToolInstaller@0
-  displayName: 'Use latest NuGet version'
+#- task: NuGetToolInstaller@0
+#  displayName: 'Use latest NuGet version'
 
-- task: NuGetCommand@2
-  displayName: 'NuGet Restore'
-  inputs:
-    restoreSolution: '$(solution)'
-    noCache: true
+#- task: NuGetCommand@2
+#  displayName: 'NuGet Restore'
+#  inputs:
+#    restoreSolution: '$(solution)'
+#    noCache: true
 
 # Build and test.
-- task: MSBuild@1
-  displayName: 'Build solutions'
-  inputs:
-    solution: '$(solution)'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+#- task: MSBuild@1
+#  displayName: 'Build solutions'
+#  inputs:
+#    solution: '$(solution)'
+#    platform: '$(buildPlatform)'
+#    configuration: '$(buildConfiguration)'
 
-- task: VSTest@2
-  displayName: 'Run tests'
-  inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+#- task: VSTest@2
+#  displayName: 'Run tests'
+#  inputs:
+#    platform: '$(buildPlatform)'
+#    configuration: '$(buildConfiguration)'
 
 # Generate documentation files.
 - task: PowerShell@2
