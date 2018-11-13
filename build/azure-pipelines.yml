@@ -41,7 +41,7 @@ steps:
 - task: PowerShell@2
   displayName: 'Generate Documentation'
   inputs:
-    filePath: './generate-docs.ps1'
+    filePath: './build/generate-docs.ps1'
 
 # Publish Dlls, ControlGallery, NuGet Packages and Documentation files.
 - task: PublishBuildArtifacts@1
