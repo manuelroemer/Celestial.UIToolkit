@@ -21,14 +21,14 @@
          Since windows are the root of everything else, they must set all inheriting
          properties (like Foreground, FontSize, ...). 
          This style must always be applied to any Window!-->
-    <Style x:Key="DefaultWindow" TargetType="Window" BasedOn="{c:MultiStyle 'PrimaryBackground StandardForeground StandardFontProperties'}">
+    <Style x:Key="DefaultWindow" TargetType="Window" BasedOn="{c:MergeStyles 'PrimaryBackground StandardForeground StandardFontProperties'}">
     </Style>
 
 
     
     
     
-    <Style x:Key="StandardWindowCaptionButton" TargetType="Button" BasedOn="{c:MultiStyle 'OnPaneControlBackground OnPaneControlBorder StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="StandardWindowCaptionButton" TargetType="Button" BasedOn="{c:MergeStyles 'OnPaneControlBackground OnPaneControlBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
@@ -293,7 +293,7 @@
 
     
     
-    <Style x:Key="StandardWindow" TargetType="Window" BasedOn="{c:MultiStyle 'DefaultWindow Shadow0'}">
+    <Style x:Key="StandardWindow" TargetType="Window" BasedOn="{c:MergeStyles 'DefaultWindow Shadow0'}">
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
                 <WindowChrome GlassFrameThickness="0,0,0,1"

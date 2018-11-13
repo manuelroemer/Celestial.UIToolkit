@@ -16,7 +16,7 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardCheckBox" TargetType="CheckBox" BasedOn="{c:MultiStyle 'ControlBorder PrimaryBackground StandardForeground StandardFontProperties'}">
+    <Style x:Key="StandardCheckBox" TargetType="CheckBox" BasedOn="{c:MergeStyles 'ControlBorder PrimaryBackground StandardForeground StandardFontProperties'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
@@ -286,10 +286,10 @@
 
     <Style x:Key="Accent1CheckBox" 
            TargetType="CheckBox" 
-           BasedOn="{c:MultiStyle 'StandardCheckBox ControlBorderAccent1States'}" />
+           BasedOn="{c:MergeStyles 'StandardCheckBox ControlBorderAccent1States'}" />
     <Style x:Key="Accent2CheckBox" 
            TargetType="CheckBox" 
-           BasedOn="{c:MultiStyle 'StandardCheckBox ControlBorderAccent2States'}" />
+           BasedOn="{c:MergeStyles 'StandardCheckBox ControlBorderAccent2States'}" />
     
     <Style TargetType="CheckBox" BasedOn="{StaticResource Accent2CheckBox}" />
 

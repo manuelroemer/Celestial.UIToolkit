@@ -14,7 +14,7 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardListBoxItem" TargetType="ListBoxItem" BasedOn="{c:MultiStyle 'ListBackground ListBorder StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="StandardListBoxItem" TargetType="ListBoxItem" BasedOn="{c:MergeStyles 'ListBackground ListBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="BorderThickness" Value="0" />
@@ -83,8 +83,8 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style x:Key="Accent1ListBoxItem" TargetType="ListBoxItem" BasedOn="{c:MultiStyle 'StandardListBoxItem Accent1ListBackground Accent1ListBorder OnListAccent1Foreground'}" />
-    <Style x:Key="Accent2ListBoxItem" TargetType="ListBoxItem" BasedOn="{c:MultiStyle 'StandardListBoxItem Accent2ListBackground Accent2ListBorder OnListAccent2Foreground'}" />
+    <Style x:Key="Accent1ListBoxItem" TargetType="ListBoxItem" BasedOn="{c:MergeStyles 'StandardListBoxItem Accent1ListBackground Accent1ListBorder OnListAccent1Foreground'}" />
+    <Style x:Key="Accent2ListBoxItem" TargetType="ListBoxItem" BasedOn="{c:MergeStyles 'StandardListBoxItem Accent2ListBackground Accent2ListBorder OnListAccent2Foreground'}" />
     <Style TargetType="ListBoxItem" BasedOn="{StaticResource Accent2ListBoxItem}" />
 
     <!-- Compact ListBoxItems. -->
@@ -115,7 +115,7 @@
     
     
 
-    <Style x:Key="StandardListBox" TargetType="ListBox" BasedOn="{c:MultiStyle 'PrimaryBackground ControlBorder StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="StandardListBox" TargetType="ListBox" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />

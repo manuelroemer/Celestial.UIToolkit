@@ -111,7 +111,7 @@
     
     
 
-    <Style x:Key="StandardGridViewColumnHeader" TargetType="GridViewColumnHeader" BasedOn="{c:MultiStyle 'OnPaneControlBackground OnPaneControlBorder StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="StandardGridViewColumnHeader" TargetType="GridViewColumnHeader" BasedOn="{c:MergeStyles 'OnPaneControlBackground OnPaneControlBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -203,7 +203,7 @@
                         </Border>
 
                         <Thumb x:Name="PART_HeaderGripper"
-                               Style="{c:MultiStyle 'MonochromeThumb TransparentBackground TransparentBorder'}"
+                               Style="{c:MergeStyles 'MonochromeThumb TransparentBackground TransparentBorder'}"
                                Width="{c:GridUnit 1}"
                                HorizontalAlignment="Right" />
 
@@ -260,11 +260,11 @@
 
     <Style x:Key="Accent1GridViewColumnHeader" 
            TargetType="GridViewColumnHeader" 
-           BasedOn="{c:MultiStyle 'StandardGridViewColumnHeader Accent1Background Accent1Border OnDarkerAccent1Foreground'}" />
+           BasedOn="{c:MergeStyles 'StandardGridViewColumnHeader Accent1Background Accent1Border OnDarkerAccent1Foreground'}" />
     
     <Style x:Key="Accent2GridViewColumnHeader" 
            TargetType="GridViewColumnHeader" 
-           BasedOn="{c:MultiStyle 'StandardGridViewColumnHeader Accent2Background Accent2Border OnDarkerAccent2Foreground'}" />
+           BasedOn="{c:MergeStyles 'StandardGridViewColumnHeader Accent2Background Accent2Border OnDarkerAccent2Foreground'}" />
     
     <Style x:Key="{x:Type GridViewColumnHeader}" 
            TargetType="GridViewColumnHeader" 
@@ -300,7 +300,7 @@
 
     
     
-    <Style x:Key="StandardListViewItem" TargetType="ListViewItem" BasedOn="{c:MultiStyle 'ListBackground ListBorder StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="StandardListViewItem" TargetType="ListViewItem" BasedOn="{c:MergeStyles 'ListBackground ListBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
@@ -384,8 +384,8 @@
         </Setter>
     </Style>
 
-    <Style x:Key="Accent1ListViewItem" TargetType="ListViewItem" BasedOn="{c:MultiStyle 'StandardListViewItem Accent1ListBackground Accent1ListBorder OnListAccent1Foreground'}" />
-    <Style x:Key="Accent2ListViewItem" TargetType="ListViewItem" BasedOn="{c:MultiStyle 'StandardListViewItem Accent2ListBackground Accent2ListBorder OnListAccent2Foreground'}" />
+    <Style x:Key="Accent1ListViewItem" TargetType="ListViewItem" BasedOn="{c:MergeStyles 'StandardListViewItem Accent1ListBackground Accent1ListBorder OnListAccent1Foreground'}" />
+    <Style x:Key="Accent2ListViewItem" TargetType="ListViewItem" BasedOn="{c:MergeStyles 'StandardListViewItem Accent2ListBackground Accent2ListBorder OnListAccent2Foreground'}" />
     <Style TargetType="ListViewItem" BasedOn="{StaticResource Accent2ListViewItem}" />
     
     <!-- Compact ListViewItems. -->
@@ -418,7 +418,7 @@
     
     
 
-    <Style x:Key="StandardListView" TargetType="ListView" BasedOn="{c:MultiStyle 'PrimaryBackground ControlBorder StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="StandardListView" TargetType="ListView" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />

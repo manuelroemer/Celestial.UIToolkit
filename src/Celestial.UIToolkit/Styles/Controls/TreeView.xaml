@@ -17,12 +17,12 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardTreeViewItem" TargetType="TreeViewItem" BasedOn="{c:MultiStyle 'ListBackground ListBorder StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="StandardTreeViewItem" TargetType="TreeViewItem" BasedOn="{c:MergeStyles 'ListBackground ListBorder StandardForeground StandardFontProperties Shadow0'}">
         <Style.Resources>
             <!-- The ExpanderButton should have Active States matching the TreeViewItem Style.
                  It can't use the TreeViewItem's theming properties though, because they are used for the Header.
                  -> We must define the style per TreeViewItem. -->
-            <Style x:Key="ExpanderButtonStyle" TargetType="ToggleButton" BasedOn="{c:MultiStyle 'TransparentButton StandardForeground'}">
+            <Style x:Key="ExpanderButtonStyle" TargetType="ToggleButton" BasedOn="{c:MergeStyles 'TransparentButton StandardForeground'}">
                 <Setter Property="Foreground" Value="{c:TemplatedParentBinding Foreground}" />
             </Style>
         </Style.Resources>
@@ -207,17 +207,17 @@
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="Accent1TreeViewItem" TargetType="TreeViewItem" BasedOn="{c:MultiStyle 'StandardTreeViewItem Accent1ListBackground Accent1ListBorder OnListAccent1Foreground'}">
+    <Style x:Key="Accent1TreeViewItem" TargetType="TreeViewItem" BasedOn="{c:MergeStyles 'StandardTreeViewItem Accent1ListBackground Accent1ListBorder OnListAccent1Foreground'}">
         <Style.Resources>
-            <Style x:Key="ExpanderButtonStyle" TargetType="ToggleButton" BasedOn="{c:MultiStyle 'TransparentButton StandardForegroundAccent1States'}">
+            <Style x:Key="ExpanderButtonStyle" TargetType="ToggleButton" BasedOn="{c:MergeStyles 'TransparentButton StandardForegroundAccent1States'}">
                 <Setter Property="Foreground" Value="{c:TemplatedParentBinding Foreground}" />
             </Style>
         </Style.Resources>
     </Style>
 
-    <Style x:Key="Accent2TreeViewItem" TargetType="TreeViewItem" BasedOn="{c:MultiStyle 'StandardTreeViewItem Accent2ListBackground Accent2ListBorder OnListAccent2Foreground'}">
+    <Style x:Key="Accent2TreeViewItem" TargetType="TreeViewItem" BasedOn="{c:MergeStyles 'StandardTreeViewItem Accent2ListBackground Accent2ListBorder OnListAccent2Foreground'}">
         <Style.Resources>
-            <Style x:Key="ExpanderButtonStyle" TargetType="ToggleButton" BasedOn="{c:MultiStyle 'TransparentButton StandardForegroundAccent2States'}">
+            <Style x:Key="ExpanderButtonStyle" TargetType="ToggleButton" BasedOn="{c:MergeStyles 'TransparentButton StandardForegroundAccent2States'}">
                 <Setter Property="Foreground" Value="{c:TemplatedParentBinding Foreground}" />
             </Style>
         </Style.Resources>
@@ -253,7 +253,7 @@
 
     
 
-    <Style x:Key="StandardTreeView" TargetType="TreeView" BasedOn="{c:MultiStyle 'PrimaryBackground ControlBorder StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="StandardTreeView" TargetType="TreeView" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -308,11 +308,11 @@
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="Accent1TreeView" TargetType="TreeView" BasedOn="{c:MultiStyle 'StandardTreeView'}">
+    <Style x:Key="Accent1TreeView" TargetType="TreeView" BasedOn="{c:MergeStyles 'StandardTreeView'}">
         <Setter Property="ItemContainerStyle" Value="{StaticResource Accent1TreeViewItem}" />
     </Style>
     
-    <Style x:Key="Accent2TreeView" TargetType="TreeView" BasedOn="{c:MultiStyle 'StandardTreeView'}">
+    <Style x:Key="Accent2TreeView" TargetType="TreeView" BasedOn="{c:MergeStyles 'StandardTreeView'}">
         <Setter Property="ItemContainerStyle" Value="{StaticResource Accent2TreeViewItem}" />
     </Style>
 

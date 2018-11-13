@@ -17,7 +17,7 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardStatusBar" TargetType="StatusBar" BasedOn="{c:MultiStyle 'PaneBackground PaneBorder StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="StandardStatusBar" TargetType="StatusBar" BasedOn="{c:MergeStyles 'PaneBackground PaneBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -70,7 +70,7 @@
 
     
     
-    <Style x:Key="Accent1StatusBar" TargetType="StatusBar" BasedOn="{c:MultiStyle 'StandardStatusBar'}">
+    <Style x:Key="Accent1StatusBar" TargetType="StatusBar" BasedOn="{c:MergeStyles 'StandardStatusBar'}">
         <Setter Property="Background" Value="{StaticResource Accent1ControlBackgroundBrush}" />
         <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource Accent1ControlBackgroundBrush}" />
         <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource Accent1ControlBackgroundBrush}" />
@@ -112,7 +112,7 @@
         </Style.Resources>
     </Style>
 
-    <Style x:Key="Accent2StatusBar" TargetType="StatusBar" BasedOn="{c:MultiStyle 'StandardStatusBar'}">
+    <Style x:Key="Accent2StatusBar" TargetType="StatusBar" BasedOn="{c:MergeStyles 'StandardStatusBar'}">
         <Setter Property="Background" Value="{StaticResource Accent2ControlBackgroundBrush}" />
         <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource Accent2ControlBackgroundBrush}" />
         <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource Accent2ControlBackgroundBrush}" />
@@ -156,7 +156,7 @@
 
     
     
-    <Style x:Key="StandardStatusBarItem" TargetType="StatusBarItem" BasedOn="{c:MultiStyle 'TransparentBorder TransparentBackground Shadow0'}">
+    <Style x:Key="StandardStatusBarItem" TargetType="StatusBarItem" BasedOn="{c:MergeStyles 'TransparentBorder TransparentBackground Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />

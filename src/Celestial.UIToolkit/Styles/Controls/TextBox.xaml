@@ -21,7 +21,7 @@
     <!-- Use TargetType="Control", so that the PasswordBox can use the style too.
          Slightly problematic, since this allows setting this style on any type of control.
          To anyone reading this: Don't do that. -->
-    <Style x:Key="StandardTextBox" TargetType="Control" BasedOn="{c:MultiStyle 'PrimaryBackground ControlBorder StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="StandardTextBox" TargetType="Control" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -242,8 +242,8 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    <Style x:Key="Accent1TextBox" TargetType="Control" BasedOn="{c:MultiStyle 'StandardTextBox ControlBorderAccent1States'}" />
-    <Style x:Key="Accent2TextBox" TargetType="Control" BasedOn="{c:MultiStyle 'StandardTextBox ControlBorderAccent2States'}" />
+    <Style x:Key="Accent1TextBox" TargetType="Control" BasedOn="{c:MergeStyles 'StandardTextBox ControlBorderAccent1States'}" />
+    <Style x:Key="Accent2TextBox" TargetType="Control" BasedOn="{c:MergeStyles 'StandardTextBox ControlBorderAccent2States'}" />
     
     <Style TargetType="TextBox" BasedOn="{StaticResource Accent2TextBox}" />
     <Style TargetType="RichTextBox" BasedOn="{StaticResource Accent2TextBox}" />
@@ -255,7 +255,7 @@
         <Setter Property="theming:SelectionProperties.ShowSelectionIndicator" Value="False" />
     </Style>
 
-    <Style x:Key="Accent1OutlinedTextBox" TargetType="Control" BasedOn="{c:MultiStyle 'StandardOutlinedTextBox ControlBorderAccent1States'}" />
-    <Style x:Key="Accent2OutlinedTextBox" TargetType="Control" BasedOn="{c:MultiStyle 'StandardOutlinedTextBox ControlBorderAccent2States'}" />
+    <Style x:Key="Accent1OutlinedTextBox" TargetType="Control" BasedOn="{c:MergeStyles 'StandardOutlinedTextBox ControlBorderAccent1States'}" />
+    <Style x:Key="Accent2OutlinedTextBox" TargetType="Control" BasedOn="{c:MergeStyles 'StandardOutlinedTextBox ControlBorderAccent2States'}" />
 
 </ResourceDictionary>

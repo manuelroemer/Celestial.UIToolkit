@@ -6,7 +6,7 @@
     This dictionary exists for tests which rely on loading data from a resource dictionary.
     For example:
     - SharedResourceDictionary
-    - MultiStyleExtension
+    - MergeStyleExtension
     
     The resources in here are just "random" ones - they only exist, so that there is something
     to load.

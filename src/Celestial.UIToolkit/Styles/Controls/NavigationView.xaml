@@ -17,7 +17,7 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardNavigationViewItem" TargetType="controls:NavigationViewItem" BasedOn="{c:MultiStyle 'OnPaneControlBackground OnPaneControlBorder StandardForegroundActiveAccent2ListStates StandardFontProperties ElevationZIndex Shadow0'}">
+    <Style x:Key="StandardNavigationViewItem" TargetType="controls:NavigationViewItem" BasedOn="{c:MergeStyles 'OnPaneControlBackground OnPaneControlBorder StandardForegroundActiveAccent2ListStates StandardFontProperties ElevationZIndex Shadow0'}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
@@ -201,7 +201,7 @@
     </Style>
     <Style TargetType="controls:NavigationViewItem" BasedOn="{StaticResource StandardNavigationViewItem}" />
 
-    <Style x:Key="NavigationViewPaneButton" TargetType="Button" BasedOn="{c:MultiStyle 'StandardButton OnPaneControlBackground OnPaneControlBorder'}">
+    <Style x:Key="NavigationViewPaneButton" TargetType="Button" BasedOn="{c:MergeStyles 'StandardButton OnPaneControlBackground OnPaneControlBorder'}">
         <Setter Property="MinWidth" Value="0" />
         <Setter Property="MinHeight" Value="0" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
@@ -255,7 +255,7 @@
         </Setter>
     </Style>
     
-    <Style TargetType="controls:NavigationView" BasedOn="{c:MultiStyle 'Shadow0 InteractiveShadow8'}">
+    <Style TargetType="controls:NavigationView" BasedOn="{c:MergeStyles 'Shadow0 InteractiveShadow8'}">
         <Setter Property="Focusable" Value="False" />
         <Setter Property="IsTabStop" Value="False" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
