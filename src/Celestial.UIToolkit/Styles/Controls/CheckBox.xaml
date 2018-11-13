@@ -162,7 +162,7 @@
                                                        Data="{StaticResource Checkmark}"
                                                        Width="{c:GridUnit 3}"
                                                        Height="{c:GridUnit 3}"
-                                                       Foreground="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
+                                                       Foreground="White"
                                                        StrokeThickness="1"
                                                        RenderTransformOrigin="0.5,0.5">
                                         <controls:PathIcon.RenderTransform>
@@ -175,7 +175,7 @@
                                                        Data="{StaticResource IndeterminateCheckmark}"
                                                        Width="{c:GridUnit 3}"
                                                        Height="{c:GridUnit 3}"
-                                                       Foreground="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
+                                                       Foreground="White"
                                                        StrokeThickness="1"
                                                        RenderTransformOrigin="0.5,0.5">
                                         <controls:PathIcon.RenderTransform>

@@ -45,6 +45,7 @@
         <Setter Property="SnapsToDevicePixels" Value="False" />
         <Setter Property="Width" Value="{c:GridUnit 4}" />
         <Setter Property="Height" Value="{c:GridUnit 4}" />
+        <Setter Property="Background" Value="White" />
         <Setter Property="BorderThickness" Value="{StaticResource WideBorderThickness}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource DisabledThemeShadow}" />
         <Setter Property="Template">
