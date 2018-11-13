@@ -9,7 +9,7 @@ namespace Celestial.UIToolkit.Media.Animations
     /// its value, depending on a progress factor.
     /// </summary>
     /// <typeparam name="T">The type of the key frame's <see cref="IKeyFrame.Value"/> property.</typeparam>
-    public interface IInterpolateKeyFrame<T> : IKeyFrame
+    public interface IInterpolatingKeyFrame<T> : IKeyFrame
     {
 
         /// <summary>
