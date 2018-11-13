@@ -18,9 +18,20 @@ namespace Celestial.UIToolkit.Controls
     public class SelectionIndicator : Control
     {
 
-        internal const string SelectionStatesVisualStateGroup = "SelectionStates";
-        internal const string SelectedVisualState = "Selected";
-        internal const string UnselectedVisualState = "Unselected";
+        /// <summary>
+        /// Defines the name of the "SelectionStates" Visual State Group.
+        /// </summary>
+        public const string SelectionStatesVisualStateGroup = "SelectionStates";
+
+        /// <summary>
+        /// Defines the name of the "Selected" Visual State.
+        /// </summary>
+        public const string SelectedVisualState = "Selected";
+
+        /// <summary>
+        /// Defines the name of the "Unselected" Visual State.
+        /// </summary>
+        public const string UnselectedVisualState = "Unselected";
 
         /// <summary>
         /// Identifies the <see cref="Orientation"/> dependency property.
