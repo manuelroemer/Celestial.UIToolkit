@@ -83,8 +83,15 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style x:Key="Accent1ListBoxItem" TargetType="ListBoxItem" BasedOn="{c:MergeStyles 'PrimaryListBoxItem Accent1ListBackground Accent1ListBorder OnListAccent1Foreground'}" />
-    <Style x:Key="Accent2ListBoxItem" TargetType="ListBoxItem" BasedOn="{c:MergeStyles 'PrimaryListBoxItem Accent2ListBackground Accent2ListBorder OnListAccent2Foreground'}" />
+    
+    <Style x:Key="Accent1ListBoxItem" TargetType="ListBoxItem" BasedOn="{c:MergeStyles 'PrimaryListBoxItem Accent1ListBackground Accent1ListBorder'}">
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnListAccent1TextBrush}" />
+    </Style>
+
+    <Style x:Key="Accent2ListBoxItem" TargetType="ListBoxItem" BasedOn="{c:MergeStyles 'PrimaryListBoxItem Accent2ListBackground Accent2ListBorder'}">
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnListAccent2TextBrush}" />
+    </Style>
+    
     <Style TargetType="ListBoxItem" BasedOn="{StaticResource Accent2ListBoxItem}" />
 
     <!-- Compact ListBoxItems. -->

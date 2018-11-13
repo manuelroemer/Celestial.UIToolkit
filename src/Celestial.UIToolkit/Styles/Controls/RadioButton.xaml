@@ -251,10 +251,10 @@
 
     <Style x:Key="Accent1RadioButton" 
            TargetType="RadioButton" 
-           BasedOn="{c:MergeStyles 'PrimaryRadioButton ControlBorderAccent1States'}" />
+           BasedOn="{c:MergeStyles 'PrimaryRadioButton ControlBorder Accent1ControlBorderStates'}" />
     <Style x:Key="Accent2RadioButton" 
            TargetType="RadioButton" 
-           BasedOn="{c:MergeStyles 'PrimaryRadioButton ControlBorderAccent2States'}" />
+           BasedOn="{c:MergeStyles 'PrimaryRadioButton ControlBorder Accent2ControlBorderStates'}" />
 
     <Style TargetType="RadioButton" BasedOn="{StaticResource Accent2RadioButton}" />
 

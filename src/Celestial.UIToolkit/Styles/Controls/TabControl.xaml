@@ -35,7 +35,7 @@
 
 
 
-    <Style x:Key="PrimaryTabItem" TargetType="TabItem" BasedOn="{c:MergeStyles 'PrimaryTabItemHeader TransparentBackground TransparentBorder StandardForegroundControlStates StandardFontProperties ElevationZIndex Shadow0'}">
+    <Style x:Key="PrimaryTabItem" TargetType="TabItem" BasedOn="{c:MergeStyles 'PrimaryTabItemHeader TransparentBackground TransparentBorder ControlForeground StandardFontProperties ElevationZIndex Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
@@ -46,6 +46,7 @@
         <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType=TabControl}}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
         <Setter Property="theming:SelectionProperties.SelectionIndicatorSize" Value="{c:GridUnit 0.5}" />
+        <Setter Property="Foreground" Value="{DynamicResource StandardForegroundBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TabItem">
@@ -222,8 +223,13 @@
         </Setter>
     </Style>
 
-    <Style x:Key="Accent1TabItem" TargetType="TabItem" BasedOn="{c:MergeStyles 'PrimaryTabItem StandardForegroundAccent1States'}" />
-    <Style x:Key="Accent2TabItem" TargetType="TabItem" BasedOn="{c:MergeStyles 'PrimaryTabItem StandardForegroundAccent2States'}" />
+    <Style x:Key="Accent1TabItem" TargetType="TabItem" BasedOn="{c:MergeStyles 'PrimaryTabItem Accent1ControlForeground'}">
+        <Setter Property="Foreground" Value="{DynamicResource StandardForegroundBrush}" />
+    </Style>
+
+    <Style x:Key="Accent2TabItem" TargetType="TabItem" BasedOn="{c:MergeStyles 'PrimaryTabItem Accent2ControlForeground'}">
+        <Setter Property="Foreground" Value="{DynamicResource StandardForegroundBrush}" />
+    </Style>
 
     <Style TargetType="TabItem" BasedOn="{StaticResource Accent2TabItem}" />
 

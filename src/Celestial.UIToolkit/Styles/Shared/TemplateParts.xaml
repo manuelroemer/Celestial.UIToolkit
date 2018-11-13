@@ -105,9 +105,17 @@
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="StandardForegroundOnlyButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'TransparentButton StandardForegroundControlStates'}" />
-    <Style x:Key="Accent1ForegroundOnlyButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'TransparentButton StandardForegroundAccent1States'}" />
-    <Style x:Key="Accent2ForegroundOnlyButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'TransparentButton StandardForegroundAccent2States'}" />
+    <Style x:Key="StandardForegroundOnlyButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'TransparentButton ControlForeground'}">
+        <Setter Property="Foreground" Value="{DynamicResource StandardForegroundBrush}" />
+    </Style>
+
+    <Style x:Key="Accent1ForegroundOnlyButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'TransparentButton Accent1ControlForeground'}">
+        <Setter Property="Foreground" Value="{DynamicResource StandardForegroundBrush}" />
+    </Style>
+
+    <Style x:Key="Accent2ForegroundOnlyButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'TransparentButton Accent2ControlForeground'}">
+        <Setter Property="Foreground" Value="{DynamicResource StandardForegroundBrush}" />
+    </Style>
     
     <!-- An otherwise invisible button, which shows a standard ripple animation when pressed. -->
     <Style x:Key="InvisibleRippleButton" TargetType="ButtonBase" BasedOn="{StaticResource TransparentButton}">

@@ -343,13 +343,13 @@
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="Accent1Slider" TargetType="Slider" BasedOn="{c:MergeStyles 'PrimarySlider ControlBackgroundAccent1States ControlBorderAccent1States'}">
+    <Style x:Key="Accent1Slider" TargetType="Slider" BasedOn="{c:MergeStyles 'PrimarySlider ControlBackground Accent1ControlBackgroundStates ControlBorder Accent1ControlBorderStates'}">
         <Style.Resources>
             <Style x:Key="SliderThumbStyle" TargetType="Thumb" BasedOn="{StaticResource Accent1SliderThumb}" />
         </Style.Resources>
     </Style>
 
-    <Style x:Key="Accent2Slider" TargetType="Slider" BasedOn="{c:MergeStyles 'PrimarySlider ControlBackgroundAccent2States ControlBorderAccent2States'}">
+    <Style x:Key="Accent2Slider" TargetType="Slider" BasedOn="{c:MergeStyles 'PrimarySlider ControlBackground Accent2ControlBackgroundStates ControlBorder Accent2ControlBorderStates'}">
         <Style.Resources>
             <Style x:Key="SliderThumbStyle" TargetType="Thumb" BasedOn="{StaticResource Accent2SliderThumb}" />
         </Style.Resources>

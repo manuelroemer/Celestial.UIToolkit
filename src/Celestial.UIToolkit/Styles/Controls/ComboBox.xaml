@@ -90,8 +90,14 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style x:Key="Accent1ComboBoxItem" TargetType="ComboBoxItem" BasedOn="{c:MergeStyles 'PrimaryComboBoxItem Accent1ListBackground Accent1ListBorder OnListAccent1Foreground'}" />
-    <Style x:Key="Accent2ComboBoxItem" TargetType="ComboBoxItem" BasedOn="{c:MergeStyles 'PrimaryComboBoxItem Accent2ListBackground Accent2ListBorder OnListAccent2Foreground'}" />
+
+    <Style x:Key="Accent1ComboBoxItem" TargetType="ComboBoxItem" BasedOn="{c:MergeStyles 'PrimaryComboBoxItem Accent1ListBackground Accent1ListBorder'}">
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnListAccent1TextBrush}" />
+    </Style>
+
+    <Style x:Key="Accent2ComboBoxItem" TargetType="ComboBoxItem" BasedOn="{c:MergeStyles 'PrimaryComboBoxItem Accent2ListBackground Accent2ListBorder'}">
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnListAccent2TextBrush}" />
+    </Style>
     <Style TargetType="ComboBoxItem" BasedOn="{StaticResource Accent2ComboBoxItem}" />
 
     
@@ -463,11 +469,11 @@
         </Setter>
     </Style>
     
-    <Style x:Key="Accent1ComboBox" TargetType="ComboBox" BasedOn="{c:MergeStyles 'PrimaryComboBox ControlBorderAccent1States'}">
+    <Style x:Key="Accent1ComboBox" TargetType="ComboBox" BasedOn="{c:MergeStyles 'PrimaryComboBox ControlBorder Accent1ControlBorderStates'}">
         <Setter Property="ItemContainerStyle" Value="{StaticResource Accent1ComboBoxItem}" />
     </Style>
     
-    <Style x:Key="Accent2ComboBox" TargetType="ComboBox" BasedOn="{c:MergeStyles 'PrimaryComboBox ControlBorderAccent2States'}">
+    <Style x:Key="Accent2ComboBox" TargetType="ComboBox" BasedOn="{c:MergeStyles 'PrimaryComboBox ControlBorder Accent2ControlBorderStates'}">
         <Setter Property="ItemContainerStyle" Value="{StaticResource Accent2ComboBoxItem}" />
     </Style>
     
@@ -479,10 +485,10 @@
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="theming:SelectionProperties.ShowSelectionIndicator" Value="False" />
     </Style>
-    <Style x:Key="Accent1OutlinedComboBox" TargetType="ComboBox" BasedOn="{c:MergeStyles 'PrimaryOutlinedComboBox ControlBorderAccent1States'}">
+    <Style x:Key="Accent1OutlinedComboBox" TargetType="ComboBox" BasedOn="{c:MergeStyles 'PrimaryOutlinedComboBox ControlBorder Accent1ControlBorderStates'}">
         <Setter Property="ItemContainerStyle" Value="{StaticResource Accent1ComboBoxItem}" />
     </Style>
-    <Style x:Key="Accent2OutlinedComboBox" TargetType="ComboBox" BasedOn="{c:MergeStyles 'PrimaryOutlinedComboBox ControlBorderAccent2States'}">
+    <Style x:Key="Accent2OutlinedComboBox" TargetType="ComboBox" BasedOn="{c:MergeStyles 'PrimaryOutlinedComboBox ControlBorder Accent2ControlBorderStates'}">
         <Setter Property="ItemContainerStyle" Value="{StaticResource Accent2ComboBoxItem}" />
     </Style>
 

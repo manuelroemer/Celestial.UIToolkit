@@ -242,8 +242,8 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    <Style x:Key="Accent1TextBox" TargetType="Control" BasedOn="{c:MergeStyles 'PrimaryTextBox ControlBorderAccent1States'}" />
-    <Style x:Key="Accent2TextBox" TargetType="Control" BasedOn="{c:MergeStyles 'PrimaryTextBox ControlBorderAccent2States'}" />
+    <Style x:Key="Accent1TextBox" TargetType="Control" BasedOn="{c:MergeStyles 'PrimaryTextBox ControlBorder Accent1ControlBorderStates'}" />
+    <Style x:Key="Accent2TextBox" TargetType="Control" BasedOn="{c:MergeStyles 'PrimaryTextBox ControlBorder Accent2ControlBorderStates'}" />
     
     <Style TargetType="TextBox" BasedOn="{StaticResource Accent2TextBox}" />
     <Style TargetType="RichTextBox" BasedOn="{StaticResource Accent2TextBox}" />
@@ -255,7 +255,7 @@
         <Setter Property="theming:SelectionProperties.ShowSelectionIndicator" Value="False" />
     </Style>
 
-    <Style x:Key="Accent1OutlinedTextBox" TargetType="Control" BasedOn="{c:MergeStyles 'PrimaryOutlinedTextBox ControlBorderAccent1States'}" />
-    <Style x:Key="Accent2OutlinedTextBox" TargetType="Control" BasedOn="{c:MergeStyles 'PrimaryOutlinedTextBox ControlBorderAccent2States'}" />
+    <Style x:Key="Accent1OutlinedTextBox" TargetType="Control" BasedOn="{c:MergeStyles 'PrimaryOutlinedTextBox ControlBorder Accent1ControlBorderStates'}" />
+    <Style x:Key="Accent2OutlinedTextBox" TargetType="Control" BasedOn="{c:MergeStyles 'PrimaryOutlinedTextBox ControlBorder Accent2ControlBorderStates'}" />
 
 </ResourceDictionary>

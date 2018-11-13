@@ -384,8 +384,14 @@
         </Setter>
     </Style>
 
-    <Style x:Key="Accent1ListViewItem" TargetType="ListViewItem" BasedOn="{c:MergeStyles 'PrimaryListViewItem Accent1ListBackground Accent1ListBorder OnListAccent1Foreground'}" />
-    <Style x:Key="Accent2ListViewItem" TargetType="ListViewItem" BasedOn="{c:MergeStyles 'PrimaryListViewItem Accent2ListBackground Accent2ListBorder OnListAccent2Foreground'}" />
+    <Style x:Key="Accent1ListViewItem" TargetType="ListViewItem" BasedOn="{c:MergeStyles 'PrimaryListViewItem Accent1ListBackground Accent1ListBorder'}">
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnListAccent1TextBrush}" />
+    </Style>
+
+    <Style x:Key="Accent2ListViewItem" TargetType="ListViewItem" BasedOn="{c:MergeStyles 'PrimaryListViewItem Accent2ListBackground Accent2ListBorder'}">
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnListAccent2TextBrush}" />
+    </Style>
+    
     <Style TargetType="ListViewItem" BasedOn="{StaticResource Accent2ListViewItem}" />
     
     <!-- Compact ListViewItems. -->

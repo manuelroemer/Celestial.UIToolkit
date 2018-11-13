@@ -206,21 +206,23 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-
-    <Style x:Key="Accent1TreeViewItem" TargetType="TreeViewItem" BasedOn="{c:MergeStyles 'PrimaryTreeViewItem Accent1ListBackground Accent1ListBorder OnListAccent1Foreground'}">
+    
+    <Style x:Key="Accent1TreeViewItem" TargetType="TreeViewItem" BasedOn="{c:MergeStyles 'PrimaryTreeViewItem Accent1ListBackground Accent1ListBorder'}">
         <Style.Resources>
-            <Style x:Key="ExpanderButtonStyle" TargetType="ToggleButton" BasedOn="{c:MergeStyles 'TransparentButton StandardForegroundAccent1States'}">
+            <Style x:Key="ExpanderButtonStyle" TargetType="ToggleButton" BasedOn="{c:MergeStyles 'TransparentButton Accent1ControlForeground'}">
                 <Setter Property="Foreground" Value="{c:TemplatedParentBinding Foreground}" />
             </Style>
         </Style.Resources>
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnListAccent1TextBrush}" />
     </Style>
 
-    <Style x:Key="Accent2TreeViewItem" TargetType="TreeViewItem" BasedOn="{c:MergeStyles 'PrimaryTreeViewItem Accent2ListBackground Accent2ListBorder OnListAccent2Foreground'}">
+    <Style x:Key="Accent2TreeViewItem" TargetType="TreeViewItem" BasedOn="{c:MergeStyles 'PrimaryTreeViewItem Accent2ListBackground Accent2ListBorder'}">
         <Style.Resources>
-            <Style x:Key="ExpanderButtonStyle" TargetType="ToggleButton" BasedOn="{c:MergeStyles 'TransparentButton StandardForegroundAccent2States'}">
+            <Style x:Key="ExpanderButtonStyle" TargetType="ToggleButton" BasedOn="{c:MergeStyles 'TransparentButton Accent2ControlForeground'}">
                 <Setter Property="Foreground" Value="{c:TemplatedParentBinding Foreground}" />
             </Style>
         </Style.Resources>
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnListAccent2TextBrush}" />
     </Style>
 
     <Style TargetType="TreeViewItem" BasedOn="{StaticResource Accent2TreeViewItem}" />
