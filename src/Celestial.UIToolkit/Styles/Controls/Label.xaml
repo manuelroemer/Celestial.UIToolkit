@@ -4,15 +4,6 @@
                     xmlns:c="http://celestial-ui.com"
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming">
 
-    <ResourceDictionary.MergedDictionaries>
-        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
     <Style x:Key="PrimaryLabel" TargetType="Label" BasedOn="{c:MergeStyles 'ForegroundBasedThemingProperties'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
@@ -45,17 +36,10 @@
     </Style>
     <Style TargetType="Label" BasedOn="{StaticResource PrimaryLabel}" />
 
-    <Style x:Key="BaseLabel" TargetType="Label" BasedOn="{StaticResource PrimaryLabel}">
-        <Setter Property="FontWeight" Value="{DynamicResource BaseFontWeight}" />
-        <Setter Property="FontStyle" Value="{DynamicResource BaseFontStyle}" />
-        <Setter Property="FontStretch" Value="{DynamicResource BaseFontStretch}" />
-    </Style>
+    <Style x:Key="BaseLabel" TargetType="Label" BasedOn="{c:MergeStyles 'PrimaryLabel BaseFontProperties'}" />
 
-    <Style x:Key="HintLabel" TargetType="Label" BasedOn="{StaticResource PrimaryLabel}">
+    <Style x:Key="HintLabel" TargetType="Label" BasedOn="{c:MergeStyles 'PrimaryLabel HintFontProperties'}">
         <Setter Property="Foreground" Value="{DynamicResource SecondaryForegroundBrush}" />
-        <Setter Property="FontWeight" Value="{DynamicResource HintFontWeight}" />
-        <Setter Property="FontStyle" Value="{DynamicResource HintFontStyle}" />
-        <Setter Property="FontStretch" Value="{DynamicResource HintFontStretch}" />
     </Style>
 
 </ResourceDictionary>

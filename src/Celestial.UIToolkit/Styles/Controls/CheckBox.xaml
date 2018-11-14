@@ -5,17 +5,6 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
-    <ResourceDictionary.MergedDictionaries>
-        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-        <c:SharedResourceDictionary Source="../../Icons/ControlParts.xaml" />
-
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
     <Style x:Key="PrimaryCheckBox" TargetType="CheckBox" BasedOn="{c:MergeStyles 'ControlBorder PrimaryBackground StandardForeground StandardFontProperties'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
@@ -138,7 +127,7 @@
                                         </Style>
                                     </Grid.Resources>
                                     <controls:Ripple IsActiveTrigger="{c:TemplatedParentBinding IsPressed}" 
-                                                            Style="{StaticResource SmallBackgroundRippleAnimation}"
+                                                            Style="{DynamicResource SmallBackgroundRippleAnimation}"
                                                             IsEnabled="{TemplateBinding theming:RippleProperties.ShowRippleAnimation}" />
                                     <Border x:Name="CheckedBorder"
                                             BorderBrush="{c:TemplatedParentBinding Path=(theming:ActiveProperties.BorderBrush)}"

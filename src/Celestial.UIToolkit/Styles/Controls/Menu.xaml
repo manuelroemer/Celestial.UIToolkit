@@ -5,19 +5,6 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
-    <ResourceDictionary.MergedDictionaries>
-        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-        <c:SharedResourceDictionary Source="./TextBlock.xaml" />
-        <c:SharedResourceDictionary Source="./IconElements.xaml" />
-        <c:SharedResourceDictionary Source="../../Icons/ControlParts.xaml" />
-
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
     <c:ThicknessSidePickerConverter x:Key="TopBottomPicker" Left="0" Right="0" />
     <c:MathOperationConverter x:Key="ElevationAddConverter" Operator="Add" />
 
@@ -85,7 +72,7 @@
                                                       ContentSource="Icon" />
 
                                     <controls:PathIcon x:Name="CheckedIcon"
-                                                       Style="{StaticResource SmallIconElement}"
+                                                       Style="{DynamicResource SmallIconElement}"
                                                        HorizontalAlignment="Center"
                                                        VerticalAlignment="Center"
                                                        Foreground="{TemplateBinding Foreground}"
@@ -109,7 +96,7 @@
 
                                 <controls:PathIcon x:Name="ExpandArrowIcon"
                                                    Grid.Column="3"
-                                                   Style="{StaticResource SmallIconElement}"
+                                                   Style="{DynamicResource SmallIconElement}"
                                                    HorizontalAlignment="Center"
                                                    VerticalAlignment="Center"
                                                    Margin="{c:GridUnit '4,0,0,0'}"

@@ -5,18 +5,6 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
-    <ResourceDictionary.MergedDictionaries>
-        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-        <c:SharedResourceDictionary Source="./Separator.xaml" />
-        <c:SharedResourceDictionary Source="./ProgressBar.xaml" />
-
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
     <Style x:Key="PrimaryStatusBar" TargetType="StatusBar" BasedOn="{c:MergeStyles 'PaneBackground PaneBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />

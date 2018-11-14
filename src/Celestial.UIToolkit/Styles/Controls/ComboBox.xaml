@@ -424,16 +424,20 @@
                         <Trigger Property="IsGrouping" Value="True">
                             <Setter Property="ScrollViewer.CanContentScroll" Value="False" />
                         </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{c:SelfBinding Path=(theming:DisabledProperties.ForegroundBrush)}" />
+                        </Trigger>
                         
                         <!-- Rotate DropDown icon when the popup is shown. -->
-                        <!--<Trigger Property="IsDropDownOpen" Value="True">
+                        <Trigger Property="IsDropDownOpen" Value="True">
                             <Trigger.EnterActions>
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <DoubleAnimation Storyboard.TargetName="ToggleButtonArrowIcon"
                                                          Storyboard.TargetProperty="RenderTransform.(RotateTransform.Angle)"
-                                                         Duration="{DynamicResource InnerPartialAnimationDuration}"
-                                                         EasingFunction="{DynamicResource InnerPartialAnimationEase}"
+                                                         Duration="{StaticResource InnerPartialAnimationDuration}"
+                                                         EasingFunction="{StaticResource InnerPartialAnimationEase}"
                                                          To="180" />
                                     </Storyboard>
                                 </BeginStoryboard>
@@ -443,13 +447,13 @@
                                     <Storyboard>
                                         <DoubleAnimation Storyboard.TargetName="ToggleButtonArrowIcon"
                                                          Storyboard.TargetProperty="RenderTransform.(RotateTransform.Angle)"
-                                                         Duration="{DynamicResource InnerPartialAnimationDuration}"
-                                                         EasingFunction="{DynamicResource InnerPartialAnimationEase}"
+                                                         Duration="{StaticResource InnerPartialAnimationDuration}"
+                                                         EasingFunction="{StaticResource InnerPartialAnimationEase}"
                                                          To="0" />
                                     </Storyboard>
                                 </BeginStoryboard>
                             </Trigger.ExitActions>
-                        </Trigger>-->
+                        </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>

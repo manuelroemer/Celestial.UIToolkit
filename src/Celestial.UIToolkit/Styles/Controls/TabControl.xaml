@@ -5,17 +5,6 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
-    <ResourceDictionary.MergedDictionaries>
-        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-        <c:SharedResourceDictionary Source="./TextBlock.xaml" />
-
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
     <!-- The TabItem's "default" Font-Properties get shared between the Title and the Content
          which gets displayed as the TabPage.
          This means that the Header's Font-Properties also get applied to the content, which

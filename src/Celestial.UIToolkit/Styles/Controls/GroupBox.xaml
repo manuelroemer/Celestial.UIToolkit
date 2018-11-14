@@ -5,17 +5,6 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
-    <ResourceDictionary.MergedDictionaries>
-        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-        <c:SharedResourceDictionary Source="./TextBlock.xaml" />
-
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
     <!-- The default GroupBox simply displays the Header as a Bold Strings.
          This allows categorization of the following elements, similar to a Label. -->
     <Style x:Key="PrimaryGroupBox" TargetType="GroupBox" BasedOn="{c:MergeStyles 'TransparentBackground TransparentBorder StandardForeground BaseFontProperties Shadow0'}">

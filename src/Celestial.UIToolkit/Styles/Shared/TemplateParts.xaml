@@ -118,7 +118,7 @@
     </Style>
     
     <!-- An otherwise invisible button, which shows a standard ripple animation when pressed. -->
-    <Style x:Key="InvisibleRippleButton" TargetType="ButtonBase" BasedOn="{StaticResource TransparentButton}">
+    <Style x:Key="InvisibleRippleButton" TargetType="ButtonBase" BasedOn="{DynamicResource TransparentButton}">
         <Setter Property="Focusable" Value="True" />
         <Setter Property="Template">
             <Setter.Value>
@@ -128,7 +128,7 @@
                             BorderThickness="{TemplateBinding BorderThickness}"
                             Padding="{TemplateBinding Padding}">
                         <Grid>
-                            <controls:Ripple Style="{StaticResource SmallBackgroundRippleAnimation}"
+                            <controls:Ripple Style="{DynamicResource SmallBackgroundRippleAnimation}"
                                              IsActiveTrigger="{TemplateBinding IsPressed}" />
                             <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />

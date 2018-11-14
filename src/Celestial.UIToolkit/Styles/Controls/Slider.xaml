@@ -5,11 +5,6 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
-    <ResourceDictionary.MergedDictionaries>
-        <c:SharedResourceDictionary Source="./ToolTip.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-    
     <Style x:Key="PrimarySliderThumb" TargetType="Thumb" BasedOn="{c:MergeStyles 'ChromeWhiteBackground ControlBorder Shadow0'}">
         <Style.Resources>
             <!-- The default ToolTip Style has a Margin for the Shadows.
@@ -17,7 +12,7 @@
                  It also uses a custom ToolTipPlacement method, which doesn't take the margin into account.
                  Thus, the ToolTip gets moved to the down-right.
                  We can override this by removing the margin (and thus disabling shadows). -->
-            <Style TargetType="ToolTip" BasedOn="{StaticResource PrimaryToolTip}">
+            <Style TargetType="ToolTip" BasedOn="{c:MergeStyles PrimaryToolTip}">
                 <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource DisabledThemeShadow}" />
                 <Setter Property="Margin" Value="0" />
                 <Style.Triggers>
@@ -277,11 +272,11 @@
                                    HorizontalAlignment="Center" />
                         </Track.Thumb>
                         <Track.IncreaseRepeatButton>
-                            <RepeatButton Style="{StaticResource TransparentButton}"
+                            <RepeatButton Style="{DynamicResource TransparentButton}"
                                           Command="{x:Static Slider.IncreaseLarge}" />
                         </Track.IncreaseRepeatButton>
                         <Track.DecreaseRepeatButton>
-                            <RepeatButton Style="{StaticResource TransparentButton}"
+                            <RepeatButton Style="{DynamicResource TransparentButton}"
                                           Command="{x:Static Slider.DecreaseLarge}" />
                         </Track.DecreaseRepeatButton>
                     </Track>

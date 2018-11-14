@@ -5,18 +5,6 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
-    <ResourceDictionary.MergedDictionaries>
-        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-        <c:SharedResourceDictionary Source="./IconElements.xaml" />
-        <c:SharedResourceDictionary Source="../../Icons/ControlParts.xaml" />
-
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
     <Style x:Key="PrimaryTreeViewItem" TargetType="TreeViewItem" BasedOn="{c:MergeStyles 'ListBackground ListBorder StandardForeground StandardFontProperties Shadow0'}">
         <Style.Resources>
             <!-- The ExpanderButton should have Active States matching the TreeViewItem Style.
@@ -101,7 +89,7 @@
                                               Style="{DynamicResource ExpanderButtonStyle}"
                                               Visibility="Hidden">
                                     <controls:PathIcon x:Name="ExpanderIcon"
-                                                       Style="{StaticResource SmallIconElement}"
+                                                       Style="{DynamicResource SmallIconElement}"
                                                        Data="{DynamicResource SimpleArrowRight}"
                                                        RenderTransformOrigin="0.5,0.5"
                                                        Margin="{c:GridUnit '2,0'}">

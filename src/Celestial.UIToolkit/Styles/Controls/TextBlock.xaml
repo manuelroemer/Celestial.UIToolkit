@@ -13,12 +13,15 @@
     <Style TargetType="TextBlock" BasedOn="{StaticResource PrimaryTextBlock}" />
 
     <Style x:Key="BaseTextBlock" TargetType="TextBlock" BasedOn="{c:MergeStyles 'PrimaryTextBlock BaseFontProperties'}" />
-    <Style x:Key="HintTextBlock" TargetType="TextBlock" BasedOn="{c:MergeStyles 'PrimaryTextBlock HintFontProperties'}" />
     <Style x:Key="HeaderTextBlock" TargetType="TextBlock" BasedOn="{c:MergeStyles 'PrimaryTextBlock HeaderFontProperties'}" />
     <Style x:Key="SubHeaderTextBlock" TargetType="TextBlock" BasedOn="{c:MergeStyles 'PrimaryTextBlock SubHeaderFontProperties'}" />
     <Style x:Key="TitleTextBlock" TargetType="TextBlock" BasedOn="{c:MergeStyles 'PrimaryTextBlock TitleFontProperties'}" />
     <Style x:Key="SubTitleTextBlock" TargetType="TextBlock" BasedOn="{c:MergeStyles 'PrimaryTextBlock SubTitleFontProperties'}" />
     <Style x:Key="CaptionTextBlock" TargetType="TextBlock" BasedOn="{c:MergeStyles 'PrimaryTextBlock CaptionFontProperties'}" />
+    
+    <Style x:Key="HintTextBlock" TargetType="TextBlock" BasedOn="{c:MergeStyles 'PrimaryTextBlock HintFontProperties'}">
+        <Setter Property="Foreground" Value="{DynamicResource SecondaryForegroundBrush}" />
+    </Style>
     
     <Style x:Key="CaptionHintTextBlock" TargetType="TextBlock" BasedOn="{StaticResource CaptionTextBlock}">
         <Setter Property="Foreground" Value="{DynamicResource SecondaryForegroundBrush}" />

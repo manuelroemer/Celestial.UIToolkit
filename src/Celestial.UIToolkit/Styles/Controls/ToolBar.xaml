@@ -5,27 +5,6 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
-    <ResourceDictionary.MergedDictionaries>
-        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-        <c:SharedResourceDictionary Source="../../Icons/ControlParts.xaml" />
-        <c:SharedResourceDictionary Source="./Thumb.xaml" />
-        <c:SharedResourceDictionary Source="./TextBox.xaml" />
-        <c:SharedResourceDictionary Source="./Button.xaml" />
-        <c:SharedResourceDictionary Source="./CheckBox.xaml" />
-        <c:SharedResourceDictionary Source="./RadioButton.xaml" />
-        <c:SharedResourceDictionary Source="./ComboBox.xaml" />
-
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
-
-    
-    
-    
     <Style x:Key="PrimaryToolBar" TargetType="ToolBar" BasedOn="{c:MergeStyles 'PaneBackground PaneBorder StandardForeground StandardFontProperties StandardPopup Shadow8'}">
         <Style.Resources>
             <Style x:Key="PrimaryToolBarButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'PrimaryButton OnPaneControlBackground OnPaneControlBorder StandardForeground StandardFontProperties Shadow0'}">

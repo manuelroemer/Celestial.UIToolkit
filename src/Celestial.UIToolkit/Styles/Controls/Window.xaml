@@ -5,18 +5,6 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
-    <ResourceDictionary.MergedDictionaries>
-        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-        <c:SharedResourceDictionary Source="./IconElements.xaml" />
-        <c:SharedResourceDictionary Source="../../Icons/ControlParts.xaml" />
-
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
     <!-- This is the absolute minimum style for a Window.
          Since windows are the root of everything else, they must set all inheriting
          properties (like Foreground, FontSize, ...). 
@@ -176,7 +164,7 @@
                                 </Grid.ColumnDefinitions>
 
                                 <Button x:Name="ShowSystemMenuButton"
-                                        Style="{StaticResource TransparentButton}"
+                                        Style="{DynamicResource TransparentButton}"
                                         Command="{x:Static controls:WindowCommands.ShowSystemMenuCommand}"
                                         CommandParameter="{c:TemplatedParentBinding}"
                                         WindowChrome.IsHitTestVisibleInChrome="True">

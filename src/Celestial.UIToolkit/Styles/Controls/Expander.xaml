@@ -5,18 +5,6 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
-    <ResourceDictionary.MergedDictionaries>
-        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-        <c:SharedResourceDictionary Source="../../Icons/ControlParts.xaml" />
-        <c:SharedResourceDictionary Source="./TextBlock.xaml" />
-
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
     <Style x:Key="PrimaryExpander" TargetType="Expander" BasedOn="{c:MergeStyles 'TransparentBackground TransparentBorder StandardForeground StandardFontProperties'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
@@ -68,7 +56,7 @@
                                 </Border>
                             </ToggleButton>
                             <ToggleButton IsChecked="{c:TemplatedParentBinding IsExpanded, Mode=TwoWay}"
-                                          Style="{StaticResource TransparentButton}"
+                                          Style="{DynamicResource TransparentButton}"
                                           Focusable="False"
                                           IsTabStop="False">
                                 <ContentPresenter x:Name="HeaderContentSite"
