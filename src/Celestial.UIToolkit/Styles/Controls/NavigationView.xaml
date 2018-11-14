@@ -225,7 +225,7 @@
     <Style x:Key="NavigationViewBackButton" x:Shared="False" TargetType="Button" BasedOn="{StaticResource NavigationViewPaneButton}">
         <Setter Property="Content">
             <Setter.Value>
-                <controls:PathIcon Data="{StaticResource Back}" />
+                <controls:PathIcon Data="{DynamicResource Back}" />
             </Setter.Value>
         </Setter>
     </Style>
@@ -233,7 +233,7 @@
     <Style x:Key="NavigationViewToggleButton" x:Shared="False" TargetType="Button" BasedOn="{StaticResource NavigationViewPaneButton}">
         <Setter Property="Content">
             <Setter.Value>
-                <controls:PathIcon Data="{StaticResource GlobalNavigationButton}" />
+                <controls:PathIcon Data="{DynamicResource GlobalNavigationButton}" />
             </Setter.Value>
         </Setter>
     </Style>
@@ -399,7 +399,7 @@
                                                                              Content="Settings"
                                                                              Visibility="{c:TemplatedParentBinding IsSettingsVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
                                                     <controls:NavigationViewItem.Icon>
-                                                        <controls:PathIcon Data="{StaticResource Settings}" />
+                                                        <controls:PathIcon Data="{DynamicResource Settings}" />
                                                     </controls:NavigationViewItem.Icon>
                                                 </controls:NavigationViewItem>
                                             </controls:NavigationViewListView>

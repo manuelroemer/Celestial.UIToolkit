@@ -159,7 +159,7 @@
                                             Background="{TemplateBinding Background}"
                                             CornerRadius="{c:TemplatedParentBinding Path=(theming:ControlProperties.CornerRadius)}" />
                                     <Path x:Name="Checkmark"
-                                          Data="{StaticResource CheckedGeometry}"
+                                          Data="{DynamicResource CheckedGeometry}"
                                           Fill="{c:TemplatedParentBinding Path=(theming:ActiveProperties.BorderBrush)}">
                                         <Path.RenderTransform>
                                             <ScaleTransform x:Name="CheckmarkScaleTransform"
@@ -169,7 +169,7 @@
                                     </Path>
                                     <Path x:Name="IndeterminateCheckmark"
                                           Stroke="{c:TemplatedParentBinding Path=(theming:ActiveProperties.BorderBrush)}"
-                                          Data="{StaticResource IndeterminateGeometry}">
+                                          Data="{DynamicResource IndeterminateGeometry}">
                                         <Path.RenderTransform>
                                             <ScaleTransform x:Name="IndeterminateCheckmarkScaleTransform"
                                                             ScaleX="0"

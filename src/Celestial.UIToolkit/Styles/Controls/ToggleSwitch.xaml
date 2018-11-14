@@ -34,9 +34,9 @@
         <Setter Property="theming:ActiveProperties.BorderBrush" Value="{DynamicResource ControlBorderBrush}" />
         <Setter Property="theming:DisabledProperties.BorderBrush" Value="{DynamicResource ControlDisabledBorderBrush}" />
         <!-- When active, re-color the knob so that the Dark theme looks good. -->
-        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="White" />
-        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="White" />
-        <Setter Property="theming:MouseOverActiveProperties.BackgroundBrush" Value="White" />
+        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{DynamicResource ChromeWhiteBrush}" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{DynamicResource ChromeWhiteBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.BackgroundBrush" Value="{DynamicResource ChromeWhiteBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:ToggleSwitch">

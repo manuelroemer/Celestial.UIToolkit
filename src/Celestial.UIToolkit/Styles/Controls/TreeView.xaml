@@ -102,7 +102,7 @@
                                               Visibility="Hidden">
                                     <controls:PathIcon x:Name="ExpanderIcon"
                                                        Style="{StaticResource SmallIconElement}"
-                                                       Data="{StaticResource SimpleArrowRight}"
+                                                       Data="{DynamicResource SimpleArrowRight}"
                                                        RenderTransformOrigin="0.5,0.5"
                                                        Margin="{c:GridUnit '2,0'}">
                                         <controls:PathIcon.RenderTransform>

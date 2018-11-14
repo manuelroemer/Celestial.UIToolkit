@@ -7,6 +7,11 @@
     -->
     
     <ResourceDictionary.MergedDictionaries>
+        <!--
+        Automatically include icons, since some controls rely on them.
+        -->
+        <c:SharedResourceDictionary Source="../Icons/All.xaml" />
+
         <c:SharedResourceDictionary Source="Shared/FocusVisuals.xaml" />
         
         <c:SharedResourceDictionary Source="Controls/IconElements.xaml" />

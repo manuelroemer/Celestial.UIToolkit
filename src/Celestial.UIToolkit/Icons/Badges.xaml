@@ -1,7 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
 
-    <GeometryGroup x:Key="Error">
+    <GeometryGroup x:Key="Error" po:Freeze="True">
         <GeometryCollection>
             <EllipseGeometry RadiusX="10" RadiusY="10" Center="10,10" />
             <LineGeometry StartPoint="10,4" EndPoint="10,12" />

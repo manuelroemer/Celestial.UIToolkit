@@ -143,7 +143,7 @@
                                                        Margin="{c:GridUnit '1,0,0,0'}"
                                                        Visibility="Collapsed"
                                                        Foreground="{DynamicResource ErrorBrush}"
-                                                       Data="{StaticResource Error}" />
+                                                       Data="{DynamicResource Error}" />
                                 </StackPanel>
                                 
                             </Grid>

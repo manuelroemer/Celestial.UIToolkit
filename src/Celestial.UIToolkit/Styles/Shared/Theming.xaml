@@ -43,31 +43,31 @@
 
     <!--#region White Styles-->
     
-    <Style x:Key="WhiteBackground">
-        <Setter Property="Control.Background" Value="White" />
-        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="White" />
-        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="White" />
-        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="White" />
-        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="White" />
-        <Setter Property="theming:MouseOverActiveProperties.BackgroundBrush" Value="White" />
-    </Style>
-    
-    <Style x:Key="WhiteBorder">
-        <Setter Property="Control.BorderBrush" Value="White" />
-        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="White" />
-        <Setter Property="theming:PressedProperties.BorderBrush" Value="White" />
-        <Setter Property="theming:DisabledProperties.BorderBrush" Value="White" />
-        <Setter Property="theming:ActiveProperties.BorderBrush" Value="White" />
-        <Setter Property="theming:MouseOverActiveProperties.BorderBrush" Value="White" />
+    <Style x:Key="ChromeWhiteBackground">
+        <Setter Property="Control.Background" Value="{DynamicResource ChromeWhiteBrush}" />
+        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{DynamicResource ChromeWhiteBrush}" />
+        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{DynamicResource ChromeWhiteBrush}" />
+        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{DynamicResource ChromeWhiteBrush}" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{DynamicResource ChromeWhiteBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.BackgroundBrush" Value="{DynamicResource ChromeWhiteBrush}" />
     </Style>
 
-    <Style x:Key="WhiteForeground">
-        <Setter Property="TextElement.Foreground" Value="White" />
-        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="White" />
-        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="White" />
-        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="White" />
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="White" />
-        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="White" />
+    <Style x:Key="ChromeWhiteBorder">
+        <Setter Property="Control.BorderBrush" Value="{DynamicResource ChromeWhiteBrush}" />
+        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{DynamicResource ChromeWhiteBrush}" />
+        <Setter Property="theming:PressedProperties.BorderBrush" Value="{DynamicResource ChromeWhiteBrush}" />
+        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{DynamicResource ChromeWhiteBrush}" />
+        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{DynamicResource ChromeWhiteBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.BorderBrush" Value="{DynamicResource ChromeWhiteBrush}" />
+    </Style>
+
+    <Style x:Key="ChromeWhiteForeground">
+        <Setter Property="TextElement.Foreground" Value="{DynamicResource ChromeWhiteBrush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{DynamicResource ChromeWhiteBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{DynamicResource ChromeWhiteBrush}" />
+        <Setter Property="theming:DisabledProperties.ForegroundBrush" Value="{DynamicResource ChromeWhiteBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{DynamicResource ChromeWhiteBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.ForegroundBrush" Value="{DynamicResource ChromeWhiteBrush}" />
     </Style>
 
     <!--#endregion-->

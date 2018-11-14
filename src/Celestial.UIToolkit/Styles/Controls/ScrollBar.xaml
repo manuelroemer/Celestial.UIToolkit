@@ -101,7 +101,7 @@
                                               Style="{StaticResource ScrollBarLineButton}" 
                                               Command="ScrollBar.PageUpCommand">
                                     <controls:PathIcon x:Name="UpIcon"
-                                                       Data="{StaticResource SimpleArrowUp}"
+                                                       Data="{DynamicResource SimpleArrowUp}"
                                                        Style="{StaticResource SmallIconElement}"
                                                        RenderTransformOrigin="0.5,0.5" />
                                 </RepeatButton>
@@ -131,7 +131,7 @@
                                               Style="{StaticResource ScrollBarLineButton}"
                                               Command="ScrollBar.PageDownCommand">
                                     <controls:PathIcon x:Name="DownIcon"
-                                                       Data="{StaticResource SimpleArrowDown}"
+                                                       Data="{DynamicResource SimpleArrowDown}"
                                                        Style="{StaticResource SmallIconElement}"
                                                        RenderTransformOrigin="0.5,0.5" />
                                 </RepeatButton>

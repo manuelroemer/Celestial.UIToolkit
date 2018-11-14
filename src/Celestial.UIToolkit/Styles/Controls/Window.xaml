@@ -130,8 +130,8 @@
     <Style x:Key="PrimaryCloseWindowCaptionButton" TargetType="Button" BasedOn="{StaticResource PrimaryWindowCaptionButton}">
         <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="#E81123" />
         <Setter Property="theming:PressedProperties.BackgroundBrush" Value="#8B2647" />
-        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="White" />
-        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="White" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{DynamicResource ChromeWhiteBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{DynamicResource ChromeWhiteBrush}" />
     </Style>
     
     <ControlTemplate x:Key="PrimaryWindowTemplate" TargetType="Window">
@@ -209,7 +209,7 @@
                                     Command="{x:Static controls:WindowCommands.MinimizeCommand}"
                                     CommandParameter="{c:TemplatedParentBinding}">
                                 <controls:PathIcon x:Name="MinimizeIcon"
-                                                   Data="{StaticResource WindowMinimize}"
+                                                   Data="{DynamicResource WindowMinimize}"
                                                    Width="10" 
                                                    Height="10" />
                             </Button>
@@ -219,11 +219,11 @@
                                     CommandParameter="{c:TemplatedParentBinding}">
                                 <Grid>
                                     <controls:PathIcon x:Name="MaximizeIcon"
-                                                       Data="{StaticResource WindowMaximize}"
+                                                       Data="{DynamicResource WindowMaximize}"
                                                        Width="10" 
                                                        Height="10" />
                                     <controls:PathIcon x:Name="RestoreIcon"
-                                                       Data="{StaticResource WindowRestore}"
+                                                       Data="{DynamicResource WindowRestore}"
                                                        Width="10"
                                                        Height="10" 
                                                        Visibility="Collapsed" />
@@ -234,7 +234,7 @@
                                     Command="{x:Static controls:WindowCommands.CloseCommand}"
                                     CommandParameter="{c:TemplatedParentBinding}">
                                 <controls:PathIcon x:Name="CloseIcon"
-                                                   Data="{StaticResource WindowClose}"
+                                                   Data="{DynamicResource WindowClose}"
                                                    Width="10" 
                                                    Height="10" />
                             </Button>

@@ -61,7 +61,7 @@
                                             <RotateTransform x:Name="ExpandDirectionRotateTransform" Angle="0" />
                                         </Border.RenderTransform>
                                         <controls:PathIcon x:Name="ToggleExpandedIcon"
-                                                           Data="{StaticResource SimpleArrowDown}"
+                                                           Data="{DynamicResource SimpleArrowDown}"
                                                            Width="{c:GridUnit 5}"
                                                            Height="{c:GridUnit 5}" />
                                     </Border>

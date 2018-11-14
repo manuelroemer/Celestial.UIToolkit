@@ -109,7 +109,7 @@
                                               Grid.Column="2"
                                               IsChecked="{c:TemplatedParentBinding IsOverflowOpen, Mode=TwoWay}"
                                               Visibility="Collapsed">
-                                    <controls:PathIcon Data="{StaticResource More}" />
+                                    <controls:PathIcon Data="{DynamicResource More}" />
                                 </ToggleButton>
 
                                 <Popup x:Name="OverflowPopup"

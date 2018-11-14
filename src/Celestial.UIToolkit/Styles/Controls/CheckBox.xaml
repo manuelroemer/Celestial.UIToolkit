@@ -159,10 +159,10 @@
                                         </Border.RenderTransform>
                                     </Border>
                                     <controls:PathIcon x:Name="Checkmark"
-                                                       Data="{StaticResource Checkmark}"
+                                                       Data="{DynamicResource Checkmark}"
                                                        Width="{c:GridUnit 3}"
                                                        Height="{c:GridUnit 3}"
-                                                       Foreground="White"
+                                                       Foreground="{DynamicResource ChromeWhiteBrush}"
                                                        StrokeThickness="1"
                                                        RenderTransformOrigin="0.5,0.5">
                                         <controls:PathIcon.RenderTransform>
@@ -172,10 +172,10 @@
                                         </controls:PathIcon.RenderTransform>
                                     </controls:PathIcon>
                                     <controls:PathIcon x:Name="IndeterminateCheckmark"
-                                                       Data="{StaticResource IndeterminateCheckmark}"
+                                                       Data="{DynamicResource IndeterminateCheckmark}"
                                                        Width="{c:GridUnit 3}"
                                                        Height="{c:GridUnit 3}"
-                                                       Foreground="White"
+                                                       Foreground="{DynamicResource ChromeWhiteBrush}"
                                                        StrokeThickness="1"
                                                        RenderTransformOrigin="0.5,0.5">
                                         <controls:PathIcon.RenderTransform>
