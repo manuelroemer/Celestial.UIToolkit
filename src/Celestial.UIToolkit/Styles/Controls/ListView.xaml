@@ -117,7 +117,7 @@
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
-        <Setter Property="Padding" Value="{StaticResource PrimaryListItemPadding}" />
+        <Setter Property="Padding" Value="{StaticResource StandardListItemPadding}" />
         <Setter Property="MinWidth" Value="{c:GridUnit 1}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource BottomControlThemeShadow}" />
         <Setter Property="FontWeight" Value="SemiBold" />
@@ -305,7 +305,7 @@
         <Setter Property="FocusVisualStyle" Value="{DynamicResource RectangleFocusVisual}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
-        <Setter Property="Padding" Value="{StaticResource PrimaryListItemPadding}" />
+        <Setter Property="Padding" Value="{StaticResource StandardListItemPadding}" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource StandardCornerRadius}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource AmbientControlThemeShadow}" />
@@ -385,11 +385,11 @@
     </Style>
 
     <Style x:Key="Accent1ListViewItem" TargetType="ListViewItem" BasedOn="{c:MergeStyles 'PrimaryListViewItem Accent1ListBackground Accent1ListBorder'}">
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnListAccent1TextBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{DynamicResource OnListAccent1TextBrush}" />
     </Style>
 
     <Style x:Key="Accent2ListViewItem" TargetType="ListViewItem" BasedOn="{c:MergeStyles 'PrimaryListViewItem Accent2ListBackground Accent2ListBorder'}">
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnListAccent2TextBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{DynamicResource OnListAccent2TextBrush}" />
     </Style>
     
     <Style TargetType="ListViewItem" BasedOn="{StaticResource Accent2ListViewItem}" />

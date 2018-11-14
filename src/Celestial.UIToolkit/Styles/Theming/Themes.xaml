@@ -147,8 +147,8 @@
             Brushes for Popup-Controls or control parts.
             Examples are ToolTips, ComboBox-DropDowns and the ContextMenu.
             -->
-            <SolidColorBrush x:Key="PopupBackground" Color="{StaticResource PrimaryColor}" />
-            <SolidColorBrush x:Key="PopupBorder" Color="{StaticResource PrimaryMediumHighColor}" />
+            <SolidColorBrush x:Key="PopupBackgroundBrush" Color="{StaticResource PrimaryColor}" />
+            <SolidColorBrush x:Key="PopupBorderBrush" Color="{StaticResource PrimaryMediumHighColor}" />
 
 
 
@@ -357,8 +357,8 @@
             Brushes for Popup-Controls or control parts.
             Examples are ToolTips, ComboBox-DropDowns and the ContextMenu.
             -->
-            <SolidColorBrush x:Key="PopupBackground" Color="{StaticResource PrimaryColor}" />
-            <SolidColorBrush x:Key="PopupBorder" Color="{StaticResource PrimaryMediumHighColor}" />
+            <SolidColorBrush x:Key="PopupBackgroundBrush" Color="{StaticResource PrimaryColor}" />
+            <SolidColorBrush x:Key="PopupBorderBrush" Color="{StaticResource PrimaryMediumHighColor}" />
 
 
 

@@ -2,10 +2,6 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:c="http://celestial-ui.com">
 
-    <ResourceDictionary.MergedDictionaries>
-        <c:DesignTimeOnlyResourceDictionary Source="../Themes/Light.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-    
     <!--
     The first accent is supposed to be rarely used inside an application.
     As a result, it is expected to be a flashy, attention-raising color.

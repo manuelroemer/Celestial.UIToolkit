@@ -3,15 +3,7 @@
                     xmlns:c="http://celestial-ui.com"
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming">
 
-    <ResourceDictionary.MergedDictionaries>
-        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
-    <Style x:Key="PrimaryTextBlock" TargetType="TextBlock" BasedOn="{StaticResource ForegroundBasedThemingProperties}">
+    <Style x:Key="PrimaryTextBlock" TargetType="TextBlock" BasedOn="{c:MergeStyles ForegroundBasedThemingProperties}">
         <Style.Triggers>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="Foreground" Value="{c:SelfBinding Path=(theming:DisabledProperties.ForegroundBrush)}" />
@@ -20,59 +12,14 @@
     </Style>
     <Style TargetType="TextBlock" BasedOn="{StaticResource PrimaryTextBlock}" />
 
-    <Style x:Key="BaseTextBlock" TargetType="TextBlock" BasedOn="{StaticResource PrimaryTextBlock}">
-        <Setter Property="FontWeight" Value="{DynamicResource BaseFontWeight}" />
-        <Setter Property="FontStyle" Value="{DynamicResource BaseFontStyle}" />
-        <Setter Property="FontStretch" Value="{DynamicResource BaseFontStretch}" />
-    </Style>
-
-    <Style x:Key="HintTextBlock" TargetType="TextBlock" BasedOn="{StaticResource PrimaryTextBlock}">
-        <Setter Property="Foreground" Value="{DynamicResource SecondaryForegroundBrush}" />
-        <Setter Property="FontWeight" Value="{DynamicResource HintFontWeight}" />
-        <Setter Property="FontStyle" Value="{DynamicResource HintFontStyle}" />
-        <Setter Property="FontStretch" Value="{DynamicResource HintFontStretch}" />
-    </Style>
-
-    <Style x:Key="HeaderTextBlock" TargetType="TextBlock" BasedOn="{StaticResource PrimaryTextBlock}">
-        <Setter Property="FontSize" Value="{DynamicResource HeaderFontSize}" />
-        <Setter Property="FontWeight" Value="{DynamicResource HeaderFontWeight}" />
-        <Setter Property="FontStyle" Value="{DynamicResource HeaderFontStyle}" />
-        <Setter Property="FontStretch" Value="{DynamicResource HeaderFontStretch}" />
-        <Setter Property="FontFamily" Value="{DynamicResource HeaderFontFamily}" />
-    </Style>
-
-    <Style x:Key="SubHeaderTextBlock" TargetType="TextBlock" BasedOn="{StaticResource PrimaryTextBlock}">
-        <Setter Property="FontSize" Value="{DynamicResource SubHeaderFontSize}" />
-        <Setter Property="FontWeight" Value="{DynamicResource SubHeaderFontWeight}" />
-        <Setter Property="FontStyle" Value="{DynamicResource SubHeaderFontStyle}" />
-        <Setter Property="FontStretch" Value="{DynamicResource SubHeaderFontStretch}" />
-        <Setter Property="FontFamily" Value="{DynamicResource SubHeaderFontFamily}" />
-    </Style>
-
-    <Style x:Key="TitleTextBlock" TargetType="TextBlock" BasedOn="{StaticResource PrimaryTextBlock}">
-        <Setter Property="FontSize" Value="{DynamicResource TitleFontSize}" />
-        <Setter Property="FontWeight" Value="{DynamicResource TitleFontWeight}" />
-        <Setter Property="FontStyle" Value="{DynamicResource TitleFontStyle}" />
-        <Setter Property="FontStretch" Value="{DynamicResource TitleFontStretch}" />
-        <Setter Property="FontFamily" Value="{DynamicResource TitleFontFamily}" />
-    </Style>
-
-    <Style x:Key="SubTitleTextBlock" TargetType="TextBlock" BasedOn="{StaticResource PrimaryTextBlock}">
-        <Setter Property="FontSize" Value="{DynamicResource SubTitleFontSize}" />
-        <Setter Property="FontWeight" Value="{DynamicResource SubTitleFontWeight}" />
-        <Setter Property="FontStyle" Value="{DynamicResource SubTitleFontStyle}" />
-        <Setter Property="FontStretch" Value="{DynamicResource SubTitleFontStretch}" />
-        <Setter Property="FontFamily" Value="{DynamicResource SubTitleFontFamily}" />
-    </Style>
-
-    <Style x:Key="CaptionTextBlock" TargetType="TextBlock" BasedOn="{StaticResource PrimaryTextBlock}">
-        <Setter Property="FontSize" Value="{DynamicResource CaptionFontSize}" />
-        <Setter Property="FontWeight" Value="{DynamicResource CaptionFontWeight}" />
-        <Setter Property="FontStyle" Value="{DynamicResource CaptionFontStyle}" />
-        <Setter Property="FontStretch" Value="{DynamicResource CaptionFontStretch}" />
-        <Setter Property="FontFamily" Value="{DynamicResource CaptionFontFamily}" />
-    </Style>
-
+    <Style x:Key="BaseTextBlock" TargetType="TextBlock" BasedOn="{c:MergeStyles 'PrimaryTextBlock BaseFontProperties'}" />
+    <Style x:Key="HintTextBlock" TargetType="TextBlock" BasedOn="{c:MergeStyles 'PrimaryTextBlock HintFontProperties'}" />
+    <Style x:Key="HeaderTextBlock" TargetType="TextBlock" BasedOn="{c:MergeStyles 'PrimaryTextBlock HeaderFontProperties'}" />
+    <Style x:Key="SubHeaderTextBlock" TargetType="TextBlock" BasedOn="{c:MergeStyles 'PrimaryTextBlock SubHeaderFontProperties'}" />
+    <Style x:Key="TitleTextBlock" TargetType="TextBlock" BasedOn="{c:MergeStyles 'PrimaryTextBlock TitleFontProperties'}" />
+    <Style x:Key="SubTitleTextBlock" TargetType="TextBlock" BasedOn="{c:MergeStyles 'PrimaryTextBlock SubTitleFontProperties'}" />
+    <Style x:Key="CaptionTextBlock" TargetType="TextBlock" BasedOn="{c:MergeStyles 'PrimaryTextBlock CaptionFontProperties'}" />
+    
     <Style x:Key="CaptionHintTextBlock" TargetType="TextBlock" BasedOn="{StaticResource CaptionTextBlock}">
         <Setter Property="Foreground" Value="{DynamicResource SecondaryForegroundBrush}" />
     </Style>

@@ -169,8 +169,8 @@
                             <Setter Property="c:SelectionProperties.ShowSelectionIndicator" Value="True" />
                             <Setter Property="c:SelectionProperties.SelectionIndicatorSize" Value="{c:GridUnit 1}" />
                             <Setter Property="c:TabItemProperties.HeaderForeground" Value="{DynamicResource StandardForegroundBrush}" />
-                            <Setter Property="c:TabItemProperties.HeaderFontSize" Value="{DynamicResource PrimaryFontSize}" />
-                            <Setter Property="c:TabItemProperties.HeaderFontFamily" Value="{DynamicResource PrimaryFontFamily}" />
+                            <Setter Property="c:TabItemProperties.HeaderFontSize" Value="{DynamicResource StandardFontSize}" />
+                            <Setter Property="c:TabItemProperties.HeaderFontFamily" Value="{DynamicResource StandardFontFamily}" />
                             <Setter Property="c:TabItemProperties.HeaderFontStyle" Value="{DynamicResource BaseFontStyle}" />
                             <Setter Property="c:TabItemProperties.HeaderFontWeight" Value="{DynamicResource BaseFontWeight}" />
                             <Setter Property="c:TabItemProperties.HeaderFontStretch" Value="{DynamicResource BaseFontStretch}" />

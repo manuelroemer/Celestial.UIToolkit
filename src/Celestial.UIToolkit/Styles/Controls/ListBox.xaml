@@ -19,7 +19,7 @@
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
-        <Setter Property="Padding" Value="{StaticResource PrimaryListItemPadding}" />
+        <Setter Property="Padding" Value="{StaticResource StandardListItemPadding}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Template">
@@ -85,11 +85,11 @@
     </Style>
     
     <Style x:Key="Accent1ListBoxItem" TargetType="ListBoxItem" BasedOn="{c:MergeStyles 'PrimaryListBoxItem Accent1ListBackground Accent1ListBorder'}">
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnListAccent1TextBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{DynamicResource OnListAccent1TextBrush}" />
     </Style>
 
     <Style x:Key="Accent2ListBoxItem" TargetType="ListBoxItem" BasedOn="{c:MergeStyles 'PrimaryListBoxItem Accent2ListBackground Accent2ListBorder'}">
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnListAccent2TextBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{DynamicResource OnListAccent2TextBrush}" />
     </Style>
     
     <Style TargetType="ListBoxItem" BasedOn="{StaticResource Accent2ListBoxItem}" />

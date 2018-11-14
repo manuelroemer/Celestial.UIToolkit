@@ -46,16 +46,16 @@
     <Style TargetType="Label" BasedOn="{StaticResource PrimaryLabel}" />
 
     <Style x:Key="BaseLabel" TargetType="Label" BasedOn="{StaticResource PrimaryLabel}">
-        <Setter Property="FontWeight" Value="{StaticResource BaseFontWeight}" />
-        <Setter Property="FontStyle" Value="{StaticResource BaseFontStyle}" />
-        <Setter Property="FontStretch" Value="{StaticResource BaseFontStretch}" />
+        <Setter Property="FontWeight" Value="{DynamicResource BaseFontWeight}" />
+        <Setter Property="FontStyle" Value="{DynamicResource BaseFontStyle}" />
+        <Setter Property="FontStretch" Value="{DynamicResource BaseFontStretch}" />
     </Style>
 
     <Style x:Key="HintLabel" TargetType="Label" BasedOn="{StaticResource PrimaryLabel}">
         <Setter Property="Foreground" Value="{DynamicResource SecondaryForegroundBrush}" />
-        <Setter Property="FontWeight" Value="{StaticResource HintFontWeight}" />
-        <Setter Property="FontStyle" Value="{StaticResource HintFontStyle}" />
-        <Setter Property="FontStretch" Value="{StaticResource HintFontStretch}" />
+        <Setter Property="FontWeight" Value="{DynamicResource HintFontWeight}" />
+        <Setter Property="FontStyle" Value="{DynamicResource HintFontStyle}" />
+        <Setter Property="FontStretch" Value="{DynamicResource HintFontStretch}" />
     </Style>
 
 </ResourceDictionary>

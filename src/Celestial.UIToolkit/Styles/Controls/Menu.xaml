@@ -26,7 +26,7 @@
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="Padding" Value="{StaticResource PrimaryListItemPadding}" />
+        <Setter Property="Padding" Value="{StaticResource StandardListItemPadding}" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource BottomControlThemeShadow}" />
@@ -237,10 +237,10 @@
     <Style x:Key="PrimaryContextMenu" TargetType="ContextMenu" BasedOn="{c:MergeStyles 'StandardForeground StandardFontProperties Shadow16'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="Background" Value="{StaticResource PopupBackground}" />
-        <Setter Property="BorderBrush" Value="{StaticResource PopupBorder}" />
+        <Setter Property="Background" Value="{DynamicResource PopupBackgroundBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource PopupBorderBrush}" />
         <Setter Property="BorderThickness" Value="{DynamicResource SlimBorderThickness}" />
-        <Setter Property="Padding" Value="{Binding Source={StaticResource PrimaryListItemPadding}, Converter={StaticResource TopBottomPicker}}" />
+        <Setter Property="Padding" Value="{Binding Source={StaticResource StandardListItemPadding}, Converter={StaticResource TopBottomPicker}}" />
         <Setter Property="HasDropShadow" Value="True" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource BottomControlThemeShadow}" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource StandardCornerRadius}" />

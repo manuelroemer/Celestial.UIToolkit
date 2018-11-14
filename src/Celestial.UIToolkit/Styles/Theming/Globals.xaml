@@ -46,7 +46,7 @@
 
 
 
-    <CornerRadius x:Key="PrimaryCornerRadius">0</CornerRadius>
+    <CornerRadius x:Key="StandardCornerRadius">0</CornerRadius>
 
 
 
@@ -55,7 +55,7 @@
 
     <Thickness x:Key="PopupShadowSpacerMargin">50</Thickness>
 
-    <c:GridUnit x:Key="PrimaryListItemPadding" 
+    <c:GridUnit x:Key="StandardListItemPadding" 
                 TargetType="{x:Type Thickness}" 
                 MultiplierString="2,1" />
 
@@ -71,11 +71,11 @@
 
 
 
-    <FontFamily x:Key="PrimaryFontFamily">Segoe UI</FontFamily>
-    <sys:Double x:Key="PrimaryFontSize">15</sys:Double>
-    <FontWeight x:Key="PrimaryFontWeight">Normal</FontWeight>
-    <FontStyle x:Key="PrimaryFontStyle">Normal</FontStyle>
-    <FontStretch x:Key="PrimaryFontStretch">Normal</FontStretch>
+    <FontFamily x:Key="StandardFontFamily">Segoe UI</FontFamily>
+    <sys:Double x:Key="StandardFontSize">15</sys:Double>
+    <FontWeight x:Key="StandardFontWeight">Normal</FontWeight>
+    <FontStyle x:Key="StandardFontStyle">Normal</FontStyle>
+    <FontStretch x:Key="StandardFontStretch">Normal</FontStretch>
 
     <FontFamily x:Key="HeaderFontFamily">Segoe UI</FontFamily>
     <sys:Double x:Key="HeaderFontSize">46</sys:Double>

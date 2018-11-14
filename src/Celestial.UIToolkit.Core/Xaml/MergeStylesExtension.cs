@@ -129,7 +129,12 @@ namespace Celestial.UIToolkit.Xaml
         private Style RetrieveStyleFromResources(object resourceKey, IServiceProvider serviceProvider)
         {
             Style style = null;
-            style = Application.Current.TryFindResource(resourceKey) as Style;
+
+            try
+            {
+                style = Application.Current.TryFindResource(resourceKey) as Style;
+            }
+            catch { }
 
             if (style == null)
             {
@@ -140,7 +145,7 @@ namespace Celestial.UIToolkit.Xaml
                     var staticResource = new StaticResourceExtension(resourceKey);
                     style = staticResource.ProvideValue(serviceProvider) as Style;
                 }
-                catch { } // Doesn't matter if it fails - we will throw an exception anyways.
+                catch { }
             }
 
             if (style == null)

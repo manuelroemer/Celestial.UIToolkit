@@ -310,11 +310,11 @@
         <Setter Property="theming:WindowTitlebarProperties.ExtendContentIntoTitlebar" Value="False" />
         <Setter Property="theming:WindowTitlebarProperties.Height" Value="{c:GridUnit 8}" />
         <Setter Property="theming:WindowTitlebarProperties.BorderThickness" Value="0" />
-        <Setter Property="theming:WindowTitlebarProperties.TitleFontFamily" Value="{StaticResource CaptionFontFamily}" />
-        <Setter Property="theming:WindowTitlebarProperties.TitleFontSize" Value="{StaticResource CaptionFontSize}" />
-        <Setter Property="theming:WindowTitlebarProperties.TitleFontStyle" Value="{StaticResource CaptionFontStyle}" />
-        <Setter Property="theming:WindowTitlebarProperties.TitleFontStretch" Value="{StaticResource CaptionFontStretch}" />
-        <Setter Property="theming:WindowTitlebarProperties.TitleFontWeight" Value="{StaticResource CaptionFontWeight}" />
+        <Setter Property="theming:WindowTitlebarProperties.TitleFontFamily" Value="{DynamicResource CaptionFontFamily}" />
+        <Setter Property="theming:WindowTitlebarProperties.TitleFontSize" Value="{DynamicResource CaptionFontSize}" />
+        <Setter Property="theming:WindowTitlebarProperties.TitleFontStyle" Value="{DynamicResource CaptionFontStyle}" />
+        <Setter Property="theming:WindowTitlebarProperties.TitleFontStretch" Value="{DynamicResource CaptionFontStretch}" />
+        <Setter Property="theming:WindowTitlebarProperties.TitleFontWeight" Value="{DynamicResource CaptionFontWeight}" />
 
 
         <Setter Property="theming:WindowTitlebarProperties.BackgroundBrush" Value="{DynamicResource PaneBackgroundBrush}" />

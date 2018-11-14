@@ -121,14 +121,14 @@
                                        PopupAnimation="Fade">
                                     <Grid Margin="{StaticResource PopupShadowSpacerMargin}">
                                         <controls:ThemeShadowPresenter SnapsToDevicePixels="False">
-                                            <Border x:Name="PopupBorder"
+                                            <Border x:Name="PopupBorderBrush"
                                                     CornerRadius="{TemplateBinding theming:PopupProperties.CornerRadius}"
                                                     BorderThickness="{TemplateBinding theming:PopupProperties.BorderThickness}"
                                                     Background="{TemplateBinding theming:PopupProperties.BackgroundBrush}"
                                                     BorderBrush="{TemplateBinding theming:PopupProperties.BorderBrush}" />
                                         </controls:ThemeShadowPresenter>
 
-                                        <Border BorderThickness="{Binding BorderThickness, ElementName=PopupBorder}"
+                                        <Border BorderThickness="{Binding BorderThickness, ElementName=PopupBorderBrush}"
                                                 Margin="{Binding BorderThickness, ElementName=DropDownBorder}" 
                                                 Padding="{TemplateBinding theming:PopupProperties.Padding}"
                                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
