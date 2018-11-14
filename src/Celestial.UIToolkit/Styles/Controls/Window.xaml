@@ -28,7 +28,7 @@
     
     
     
-    <Style x:Key="StandardWindowCaptionButton" TargetType="Button" BasedOn="{c:MergeStyles 'OnPaneControlBackground OnPaneControlBorder StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="PrimaryWindowCaptionButton" TargetType="Button" BasedOn="{c:MergeStyles 'OnPaneControlBackground OnPaneControlBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
@@ -127,14 +127,14 @@
         </Setter>
     </Style>
 
-    <Style x:Key="StandardCloseWindowCaptionButton" TargetType="Button" BasedOn="{StaticResource StandardWindowCaptionButton}">
+    <Style x:Key="PrimaryCloseWindowCaptionButton" TargetType="Button" BasedOn="{StaticResource PrimaryWindowCaptionButton}">
         <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="#E81123" />
         <Setter Property="theming:PressedProperties.BackgroundBrush" Value="#8B2647" />
         <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="White" />
         <Setter Property="theming:PressedProperties.ForegroundBrush" Value="White" />
     </Style>
     
-    <ControlTemplate x:Key="StandardWindowTemplate" TargetType="Window">
+    <ControlTemplate x:Key="PrimaryWindowTemplate" TargetType="Window">
         <Grid x:Name="RootGrid"
               VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
 
@@ -293,7 +293,7 @@
 
     
     
-    <Style x:Key="StandardWindow" TargetType="Window" BasedOn="{c:MergeStyles 'DefaultWindow Shadow0'}">
+    <Style x:Key="PrimaryWindow" TargetType="Window" BasedOn="{c:MergeStyles 'DefaultWindow Shadow0'}">
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
                 <WindowChrome GlassFrameThickness="0,0,0,1"
@@ -324,9 +324,9 @@
         <Setter Property="theming:WindowTitlebarProperties.ForegroundBrush" Value="{DynamicResource StandardForegroundBrush}" />
         <Setter Property="theming:WindowTitlebarProperties.InactiveForegroundBrush" Value="{DynamicResource DisabledForegroundBrush}" />
 
-        <Setter Property="theming:WindowTitlebarProperties.MinimizeButtonStyle" Value="{StaticResource StandardWindowCaptionButton}" />
-        <Setter Property="theming:WindowTitlebarProperties.MaximizeButtonStyle" Value="{StaticResource StandardWindowCaptionButton}" />
-        <Setter Property="theming:WindowTitlebarProperties.CloseButtonStyle" Value="{StaticResource StandardCloseWindowCaptionButton}" />
+        <Setter Property="theming:WindowTitlebarProperties.MinimizeButtonStyle" Value="{StaticResource PrimaryWindowCaptionButton}" />
+        <Setter Property="theming:WindowTitlebarProperties.MaximizeButtonStyle" Value="{StaticResource PrimaryWindowCaptionButton}" />
+        <Setter Property="theming:WindowTitlebarProperties.CloseButtonStyle" Value="{StaticResource PrimaryCloseWindowCaptionButton}" />
 
         <!-- Client area properties. -->
         <Setter Property="Background" Value="{DynamicResource PrimaryBrush}" />
@@ -335,7 +335,7 @@
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
 
-        <Setter Property="Template" Value="{StaticResource StandardWindowTemplate}" />
+        <Setter Property="Template" Value="{StaticResource PrimaryWindowTemplate}" />
     </Style>
     
 </ResourceDictionary>

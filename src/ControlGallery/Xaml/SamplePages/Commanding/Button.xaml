@@ -12,13 +12,13 @@
     
     <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,4,0,12'}">
         
-        <controls:ControlPresenter Header="The Standard Button in different colors."
+        <controls:ControlPresenter Header="The Primary Button in different colors."
                                    Xaml="{Binding Xaml, ElementName=ButtonEx1}"
                                    VerticalAlignment="Top">
             <smtx:XamlDisplay x:Name="ButtonEx1" Key="ButtonEx1">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx1}">
-                    <Button Width="{c:GridUnit 40}">Standard Button</Button>
+                    <Button Width="{c:GridUnit 40}">Primary Button</Button>
                     <Button Style="{StaticResource Accent1Button}" Width="{c:GridUnit 40}">Accent1 Button</Button>
                     <Button Style="{StaticResource Accent2Button}" Width="{c:GridUnit 40}">Accent2 Button</Button>
                 </StackPanel>
@@ -36,7 +36,7 @@
             <smtx:XamlDisplay x:Name="ButtonEx2" Key="ButtonEx2">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx2}">
-                    <Button Style="{StaticResource StandardOutlinedButton}" Width="{c:GridUnit 40}">Outlined Button</Button>
+                    <Button Style="{StaticResource PrimaryOutlinedButton}" Width="{c:GridUnit 40}">Outlined Button</Button>
                     <Button Style="{StaticResource Accent1OutlinedButton}" Width="{c:GridUnit 40}">Accent1 Button</Button>
                     <Button Style="{StaticResource Accent2OutlinedButton}" Width="{c:GridUnit 40}">Accent2 Button</Button>
                 </StackPanel>
@@ -54,7 +54,7 @@
             <smtx:XamlDisplay x:Name="ButtonEx3" Key="ButtonEx3">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx3}">
-                    <Button Style="{StaticResource StandardFlatButton}" Width="{c:GridUnit 40}">Flat Button</Button>
+                    <Button Style="{StaticResource PrimaryFlatButton}" Width="{c:GridUnit 40}">Flat Button</Button>
                     <Button Style="{StaticResource Accent1FlatButton}" Width="{c:GridUnit 40}">Accent1 Button</Button>
                     <Button Style="{StaticResource Accent2FlatButton}" Width="{c:GridUnit 40}">Accent2 Button</Button>
                 </StackPanel>
@@ -79,7 +79,7 @@
                     <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,4,4'}"
                                 IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx4}"
                                 Orientation="Horizontal">
-                        <Button Style="{StaticResource StandardCircleButton}"
+                        <Button Style="{StaticResource PrimaryCircleButton}"
                                 Content="{icon:Modern Kind=Question}" />
                         <Button Style="{StaticResource Accent1CircleButton}"
                                 Content="{icon:Modern Kind=Question}" />
@@ -89,7 +89,7 @@
                     <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,4,4'}"
                                 IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx4}"
                                 Orientation="Horizontal">
-                        <Button Style="{StaticResource StandardSquareButton}"
+                        <Button Style="{StaticResource PrimarySquareButton}"
                                 Content="{icon:Modern Kind=Save}" />
                         <Button Style="{StaticResource Accent1SquareButton}"
                                 Content="{icon:Modern Kind=Delete}" />
@@ -111,7 +111,7 @@
             <smtx:XamlDisplay x:Name="ButtonEx5" Key="ButtonEx5">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx5}">
-                    <ToggleButton Style="{StaticResource StandardButton}" Width="{c:GridUnit 60}">ToggleButton</ToggleButton>
+                    <ToggleButton Style="{StaticResource PrimaryButton}" Width="{c:GridUnit 60}">ToggleButton</ToggleButton>
                     <ToggleButton Style="{StaticResource Accent1OutlinedButton}" Width="{c:GridUnit 60}">ToggleButton</ToggleButton>
                     <ToggleButton Style="{StaticResource Accent2FlatButton}" Width="{c:GridUnit 60}">ToggleButton</ToggleButton>
                 </StackPanel>
@@ -162,7 +162,7 @@
             <smtx:XamlDisplay x:Name="ButtonEx7" Key="ButtonEx7">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx7}">
-                    <Button Style="{StaticResource StandardHyperlinkButton}"
+                    <Button Style="{StaticResource PrimaryHyperlinkButton}"
                             Content="Primary Colors" />
                     <Button Style="{StaticResource Accent1HyperlinkButton}"
                             Content="Accent1 Colors" />

@@ -16,7 +16,7 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardToolTip" TargetType="ToolTip" BasedOn="{c:MergeStyles 'StandardForeground StandardFontProperties Shadow8'}">
+    <Style x:Key="PrimaryToolTip" TargetType="ToolTip" BasedOn="{c:MergeStyles 'StandardForeground StandardFontProperties Shadow8'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="HasDropShadow" Value="True" />
@@ -50,6 +50,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style TargetType="ToolTip" BasedOn="{StaticResource StandardToolTip}" />
+    <Style TargetType="ToolTip" BasedOn="{StaticResource PrimaryToolTip}" />
     
 </ResourceDictionary>

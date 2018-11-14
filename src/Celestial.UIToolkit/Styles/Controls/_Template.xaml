@@ -5,7 +5,7 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
-    <Style x:Key="StandardControl" TargetType="Control" BasedOn="{c:MergeStyles 'StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="PrimaryControl" TargetType="Control" BasedOn="{c:MergeStyles 'StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{DynamicResource RectangleFocusVisual}" />

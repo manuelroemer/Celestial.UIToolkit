@@ -12,20 +12,20 @@
 
     <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,4,0,12'}">
 
-        <controls:ControlPresenter Header="A standard TextBlock control."
+        <controls:ControlPresenter Header="A Primary TextBlock control."
                                    Xaml="{Binding Xaml, ElementName=TextBlockEx1}"
                                    VerticalAlignment="Top">
             <smtx:XamlDisplay x:Name="TextBlockEx1" Key="TextBlockEx1">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledTextBlockEx1}">
-                    <TextBlock Style="{DynamicResource HeaderTextBlock}" Text="Header TextBlock" />
-                    <TextBlock Style="{DynamicResource SubHeaderTextBlock}" Text="SubHeader TextBlock" />
-                    <TextBlock Style="{DynamicResource TitleTextBlock}" Text="Title TextBlock" />
-                    <TextBlock Style="{DynamicResource SubTitleTextBlock}" Text="SubTitle TextBlock" />
-                    <TextBlock Text="Standard TextBlock" />
-                    <TextBlock Style="{DynamicResource BaseTextBlock}" Text="Base TextBlock" />
-                    <TextBlock Style="{DynamicResource HintTextBlock}" Text="Hint TextBlock" />
-                    <TextBlock Style="{DynamicResource CaptionTextBlock}" Text="Caption TextBlock" />
+                    <TextBlock Style="{StaticResource HeaderTextBlock}" Text="Header TextBlock" />
+                    <TextBlock Style="{StaticResource SubHeaderTextBlock}" Text="SubHeader TextBlock" />
+                    <TextBlock Style="{StaticResource TitleTextBlock}" Text="Title TextBlock" />
+                    <TextBlock Style="{StaticResource SubTitleTextBlock}" Text="SubTitle TextBlock" />
+                    <TextBlock Text="Primary TextBlock" />
+                    <TextBlock Style="{StaticResource BaseTextBlock}" Text="Base TextBlock" />
+                    <TextBlock Style="{StaticResource HintTextBlock}" Text="Hint TextBlock" />
+                    <TextBlock Style="{StaticResource CaptionTextBlock}" Text="Caption TextBlock" />
                 </StackPanel>
             </smtx:XamlDisplay>
             <controls:ControlPresenter.Options>

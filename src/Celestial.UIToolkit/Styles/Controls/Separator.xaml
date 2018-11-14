@@ -12,7 +12,7 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardSeparator" TargetType="Separator">
+    <Style x:Key="PrimarySeparator" TargetType="Separator">
         <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderBrush}" />
         <Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}" />
         <Setter Property="Focusable" Value="False" />
@@ -30,9 +30,9 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style TargetType="Separator" BasedOn="{StaticResource StandardSeparator}" />
+    <Style TargetType="Separator" BasedOn="{StaticResource PrimarySeparator}" />
 
-    <Style x:Key="StandardVerticalSeparator" TargetType="Separator" BasedOn="{StaticResource StandardSeparator}">
+    <Style x:Key="PrimaryVerticalSeparator" TargetType="Separator" BasedOn="{StaticResource PrimarySeparator}">
         <Setter Property="Margin" Value="{c:GridUnit '0.5,0'}" />
         <Setter Property="Template">
             <Setter.Value>
@@ -47,8 +47,8 @@
         </Setter>
     </Style>
     
-    <!-- Define this alias to be consistent with "StandardVerticalSeparator". -->
-    <Style x:Key="StandardHorizontalSeparator" TargetType="Separator" BasedOn="{StaticResource StandardSeparator}" />
+    <!-- Define this alias to be consistent with "PrimaryVerticalSeparator". -->
+    <Style x:Key="PrimaryHorizontalSeparator" TargetType="Separator" BasedOn="{StaticResource PrimarySeparator}" />
 
     
     
@@ -58,15 +58,15 @@
     Specific separator styles for other controls.
     -->
     
-    <Style x:Key="{x:Static MenuItem.SeparatorStyleKey}" TargetType="Separator" BasedOn="{StaticResource StandardHorizontalSeparator}">
+    <Style x:Key="{x:Static MenuItem.SeparatorStyleKey}" TargetType="Separator" BasedOn="{StaticResource PrimaryHorizontalSeparator}">
         <Setter Property="Margin" Value="{c:GridUnit '0,1'}" />
     </Style>
 
-    <Style x:Key="{x:Static ToolBar.SeparatorStyleKey}" TargetType="Separator" BasedOn="{StaticResource StandardVerticalSeparator}">
+    <Style x:Key="{x:Static ToolBar.SeparatorStyleKey}" TargetType="Separator" BasedOn="{StaticResource PrimaryVerticalSeparator}">
         <Setter Property="Background" Value="{DynamicResource PrimaryMediumHighBrush}" />
     </Style>
 
-    <Style x:Key="{x:Static StatusBar.SeparatorStyleKey}" TargetType="Separator" BasedOn="{StaticResource StandardVerticalSeparator}">
+    <Style x:Key="{x:Static StatusBar.SeparatorStyleKey}" TargetType="Separator" BasedOn="{StaticResource PrimaryVerticalSeparator}">
         <Setter Property="Background" Value="{DynamicResource PrimaryMediumHighBrush}" />
     </Style>
 

@@ -18,7 +18,7 @@
             <smtx:XamlDisplay x:Name="CheckBoxEx1" Key="CheckBoxEx1">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx1}">
-                    <CheckBox Style="{StaticResource StandardCheckBox}"
+                    <CheckBox Style="{StaticResource PrimaryCheckBox}"
                               Content="Primary Colors" />
                     <CheckBox Style="{StaticResource Accent1CheckBox}"
                               Content="Accent1 Colors" />
@@ -41,7 +41,7 @@
             <smtx:XamlDisplay x:Name="CheckBoxEx2" Key="CheckBoxEx2">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx2}">
-                    <CheckBox Style="{StaticResource StandardCheckBox}"
+                    <CheckBox Style="{StaticResource PrimaryCheckBox}"
                               IsChecked="{x:Null}"
                               IsThreeState="True"
                               Content="Primary Colors" />

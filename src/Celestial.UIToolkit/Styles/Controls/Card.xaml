@@ -4,7 +4,7 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
-    <Style x:Key="StandardCard" TargetType="controls:Card" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder StandardForeground StandardFontProperties Shadow8'}">
+    <Style x:Key="PrimaryCard" TargetType="controls:Card" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder StandardForeground StandardFontProperties Shadow8'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -212,6 +212,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style TargetType="controls:Card" BasedOn="{StaticResource StandardCard}" />
+    <Style TargetType="controls:Card" BasedOn="{StaticResource PrimaryCard}" />
 
 </ResourceDictionary>

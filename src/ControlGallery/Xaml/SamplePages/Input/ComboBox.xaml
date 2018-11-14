@@ -19,13 +19,13 @@
     
     <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,4,0,12'}">
 
-        <controls:ControlPresenter Header="The Standard ComboBox in different colors."
+        <controls:ControlPresenter Header="The Primary ComboBox in different colors."
                                    Xaml="{Binding Xaml, ElementName=ComboBoxEx1}"
                                    VerticalAlignment="Top">
             <smtx:XamlDisplay x:Name="ComboBoxEx1" Key="ComboBoxEx1">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx1}">
-                    <ComboBox Style="{StaticResource StandardComboBox}" 
+                    <ComboBox Style="{StaticResource PrimaryComboBox}" 
                               IsEditable="{Binding IsChecked, ElementName=IsEditableCheckBoxEx1}"
                               IsReadOnly="{Binding IsChecked, ElementName=IsReadOnlyCheckBoxEx1}"
                               Width="{c:GridUnit 60}"

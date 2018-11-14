@@ -7,49 +7,49 @@
     <!--
     These values define the application's text colors.
     -->
-    <Color x:Key="TextPrimaryColor">#FF000000</Color>
-    <Color x:Key="TextHighColor">#CC000000</Color>
-    <Color x:Key="TextMediumColor">#99000000</Color>
-    <Color x:Key="TextLowColor">#66000000</Color>
+    <Color x:Key="TextPrimaryColor">#FFFFFFFF</Color>
+    <Color x:Key="TextHighColor">#CCFFFFFF</Color>
+    <Color x:Key="TextMediumColor">#99FFFFFF</Color>
+    <Color x:Key="TextLowColor">#66FFFFFF</Color>
 
     <!--
     Alt Colors are inverted versions of the Primary text colors.
     -->
-    <Color x:Key="AltTextPrimaryColor">#FFFFFFFF</Color>    
-    <Color x:Key="AltTextHighColor">#CCFFFFFF</Color>
-    <Color x:Key="AltTextMediumColor">#99FFFFFF</Color>
-    <Color x:Key="AltTextLowColor">#66FFFFFF</Color>
+    <Color x:Key="AltTextPrimaryColor">#FF000000</Color>
+    <Color x:Key="AltTextHighColor">#CC000000</Color>
+    <Color x:Key="AltTextMediumColor">#99000000</Color>
+    <Color x:Key="AltTextLowColor">#66000000</Color>
 
     
     
     <!--
     The primary color is the identity of the theme.
     -->
-    <Color x:Key="PrimaryColor">#FFFFFF</Color>
-    <Color x:Key="PrimaryLowColor">#F5F5F5</Color>
-    <Color x:Key="PrimaryMediumLowColor">#EAEAEA</Color>
-    <Color x:Key="PrimaryMediumColor">#D8D8D8</Color>
-    <Color x:Key="PrimaryMediumHighColor">#A6A6A6</Color>
-    <Color x:Key="PrimaryHighColor">#848484</Color>
+    <Color x:Key="PrimaryColor">#000000</Color>
+    <Color x:Key="PrimaryLowColor">#0B0B0B</Color>
+    <Color x:Key="PrimaryMediumLowColor">#2D2D2D</Color>
+    <Color x:Key="PrimaryMediumColor">#4F4F4F</Color>
+    <Color x:Key="PrimaryMediumHighColor">#717171</Color>
+    <Color x:Key="PrimaryHighColor">#939393</Color>
 
     <!--
     The alt primary color is the inverted primary color.
     Again, it is used for creating contrasts.
     -->
-    <Color x:Key="AltPrimaryColor">#000000</Color>    
-    <Color x:Key="AltPrimaryLowColor">#0B0B0B</Color>
-    <Color x:Key="AltPrimaryMediumLowColor">#2D2D2D</Color>
-    <Color x:Key="AltPrimaryMediumColor">#4F4F4F</Color>
-    <Color x:Key="AltPrimaryMediumHighColor">#717171</Color>
-    <Color x:Key="AltPrimaryHighColor">#939393</Color>
+    <Color x:Key="AltPrimaryColor">#FFFFFF</Color>
+    <Color x:Key="AltPrimaryLowColor">#F5F5F5</Color>
+    <Color x:Key="AltPrimaryMediumLowColor">#EAEAEA</Color>
+    <Color x:Key="AltPrimaryMediumColor">#D8D8D8</Color>
+    <Color x:Key="AltPrimaryMediumHighColor">#A6A6A6</Color>
+    <Color x:Key="AltPrimaryHighColor">#848484</Color>
 
-    
-    
+
+
     <!--
     Disabled colors define how a disabled control looks.
     -->
-    <Color x:Key="DisabledLowColor">#33000000</Color>
-    <Color x:Key="DisabledHighColor">#44000000</Color>
+    <Color x:Key="DisabledLowColor">#33FFFFFF</Color>
+    <Color x:Key="DisabledHighColor">#44FFFFFF</Color>
     
     
 
@@ -58,10 +58,10 @@
     This is not the whole set of colors for lists.
     The Accent defines additional ones.
     -->
-    <Color x:Key="ListLowColor">#EAEAEA</Color>
-    <Color x:Key="ListHighColor">#C8C8C8</Color>
-    <Color x:Key="AltListLowColor">#2D2D2D</Color>
-    <Color x:Key="AltListHighColor">#4F4F4F</Color>
+    <Color x:Key="ListLowColor">#2D2D2D</Color>
+    <Color x:Key="ListHighColor">#4F4F4F</Color>
+    <Color x:Key="AltListLowColor">#EAEAEA</Color>
+    <Color x:Key="AltListHighColor">#C8C8C8</Color>
 
 
 

@@ -15,7 +15,7 @@
         <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="StandardRadioButton" TargetType="RadioButton" BasedOn="{c:MergeStyles 'ControlBorder PrimaryBackground StandardForeground StandardFontProperties'}">
+    <Style x:Key="PrimaryRadioButton" TargetType="RadioButton" BasedOn="{c:MergeStyles 'ControlBorder PrimaryBackground StandardForeground StandardFontProperties'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{DynamicResource RectangleFocusVisual}" />
@@ -251,10 +251,10 @@
 
     <Style x:Key="Accent1RadioButton" 
            TargetType="RadioButton" 
-           BasedOn="{c:MergeStyles 'StandardRadioButton ControlBorderAccent1States'}" />
+           BasedOn="{c:MergeStyles 'PrimaryRadioButton ControlBorder Accent1ControlBorderStates'}" />
     <Style x:Key="Accent2RadioButton" 
            TargetType="RadioButton" 
-           BasedOn="{c:MergeStyles 'StandardRadioButton ControlBorderAccent2States'}" />
+           BasedOn="{c:MergeStyles 'PrimaryRadioButton ControlBorder Accent2ControlBorderStates'}" />
 
     <Style TargetType="RadioButton" BasedOn="{StaticResource Accent2RadioButton}" />
 

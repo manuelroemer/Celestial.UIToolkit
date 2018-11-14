@@ -12,7 +12,7 @@
 
     <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,4,0,12'}">
 
-        <controls:ControlPresenter Header="A standard ToolBar control."
+        <controls:ControlPresenter Header="A Primary ToolBar control."
                                    Xaml="{Binding Xaml, ElementName=ToolBarEx1}"
                                    VerticalAlignment="Top">
             <smtx:XamlDisplay x:Name="ToolBarEx1" Key="ToolBarEx1">
@@ -113,12 +113,12 @@
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledToolBarEx4}">
                     <ToolBar Style="{StaticResource TransparentToolBar}"
                              c:MarginHelper.ChildrenMargin="{c:GridUnit '2,0'}">
-                        <Button Style="{StaticResource StandardSquareButton}" Content="{icon:Modern Kind=ArrowLeft}" ToolTip="Go back" />
-                        <Button Style="{StaticResource StandardSquareButton}" Content="{icon:Modern Kind=ArrowRight}" ToolTip="Go forward" />
+                        <Button Style="{StaticResource PrimarySquareButton}" Content="{icon:Modern Kind=ArrowLeft}" ToolTip="Go back" />
+                        <Button Style="{StaticResource PrimarySquareButton}" Content="{icon:Modern Kind=ArrowRight}" ToolTip="Go forward" />
                         <Separator />
-                        <Button Style="{StaticResource StandardSquareButton}" Content="{icon:Modern Kind=PageNew}" ToolTip="New file..." />
-                        <Button Style="{StaticResource StandardSquareButton}" Content="{icon:Modern Kind=Folder}" ToolTip="Open file..." />
-                        <Button Style="{StaticResource StandardSquareButton}" Content="{icon:Modern Kind=Save}" ToolTip="Save..." />
+                        <Button Style="{StaticResource PrimarySquareButton}" Content="{icon:Modern Kind=PageNew}" ToolTip="New file..." />
+                        <Button Style="{StaticResource PrimarySquareButton}" Content="{icon:Modern Kind=Folder}" ToolTip="Open file..." />
+                        <Button Style="{StaticResource PrimarySquareButton}" Content="{icon:Modern Kind=Save}" ToolTip="Save..." />
                         <Separator />
                         <Button Style="{StaticResource Accent1SquareButton}" Content="{icon:Modern Kind=Delete}" ToolTip="Delete" />
                     </ToolBar>

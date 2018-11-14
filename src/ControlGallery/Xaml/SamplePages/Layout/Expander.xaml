@@ -12,7 +12,7 @@
 
     <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,4,0,12'}">
 
-        <controls:ControlPresenter Header="A standard Expander control."
+        <controls:ControlPresenter Header="A Primary Expander control."
                                    Xaml="{Binding Xaml, ElementName=ExpanderEx1}"
                                    VerticalAlignment="Top">
             <smtx:XamlDisplay x:Name="ExpanderEx1" Key="ExpanderEx1">
