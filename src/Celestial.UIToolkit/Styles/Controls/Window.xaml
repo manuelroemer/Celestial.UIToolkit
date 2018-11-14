@@ -294,6 +294,7 @@
     
     
     <Style x:Key="PrimaryWindow" TargetType="Window" BasedOn="{c:MergeStyles 'DefaultWindow Shadow0'}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
                 <WindowChrome GlassFrameThickness="0,0,0,1"
@@ -303,7 +304,7 @@
             </Setter.Value>
         </Setter>
 
-        <Setter Property="Margin" Value="{StaticResource PopupShadowSpacerMargin}" />
+        <Setter Property="Margin" Value="{DynamicResource PopupShadowSpacerMargin}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource AmbientControlThemeShadow}" />
 
         <!-- Non-client area properties. -->

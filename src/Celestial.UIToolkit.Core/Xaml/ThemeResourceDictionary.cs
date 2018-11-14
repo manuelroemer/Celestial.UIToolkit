@@ -61,7 +61,7 @@ namespace Celestial.UIToolkit.Xaml
             if (_activeThemeDictionary != null)
             {
                 ResourcesSource.Verbose("Removing previous active theme dictionary..");
-                MergedDictionaries.Remove(_activeThemeDictionary);
+                Application.Current.Resources.MergedDictionaries.Remove(_activeThemeDictionary);
             }
         }
 

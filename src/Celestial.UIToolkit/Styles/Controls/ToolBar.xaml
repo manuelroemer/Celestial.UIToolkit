@@ -119,7 +119,7 @@
                                        AllowsTransparency="True"
                                        Focusable="True"
                                        PopupAnimation="Fade">
-                                    <Grid Margin="{StaticResource PopupShadowSpacerMargin}">
+                                    <Grid Margin="{DynamicResource PopupShadowSpacerMargin}">
                                         <controls:ThemeShadowPresenter SnapsToDevicePixels="False">
                                             <Border x:Name="PopupBorderBrush"
                                                     CornerRadius="{TemplateBinding theming:PopupProperties.CornerRadius}"

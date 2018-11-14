@@ -26,7 +26,7 @@
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="Padding" Value="{StaticResource StandardListItemPadding}" />
+        <Setter Property="Padding" Value="{DynamicResource StandardListItemPadding}" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource BottomControlThemeShadow}" />
@@ -124,7 +124,7 @@
                                        AllowsTransparency="True"
                                        Focusable="False"
                                        PopupAnimation="Fade">
-                                    <Grid Margin="{StaticResource PopupShadowSpacerMargin}">
+                                    <Grid Margin="{DynamicResource PopupShadowSpacerMargin}">
                                         <controls:ThemeShadowPresenter>
                                             <Border x:Name="SubmenuBorder"
                                                     CornerRadius="{TemplateBinding theming:PopupProperties.CornerRadius}"
@@ -244,7 +244,7 @@
         <Setter Property="HasDropShadow" Value="True" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource BottomControlThemeShadow}" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource StandardCornerRadius}" />
-        <Setter Property="Margin" Value="{StaticResource PopupShadowSpacerMargin}" />
+        <Setter Property="Margin" Value="{DynamicResource PopupShadowSpacerMargin}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ContextMenu">

@@ -5,18 +5,6 @@
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls"
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming">
 
-    <ResourceDictionary.MergedDictionaries>
-        <c:SharedResourceDictionary Source="./Button.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-        <c:SharedResourceDictionary Source="../../Icons/ControlParts.xaml" />
-
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
     <Style x:Key="PrimaryNavigationViewItem" TargetType="controls:NavigationViewItem" BasedOn="{c:MergeStyles 'OnPaneControlBackground OnPaneControlBorder StandardForeground StandardFontProperties ElevationZIndex Shadow0'}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{DynamicResource RectangleFocusVisual}" />
@@ -212,7 +200,7 @@
 
     
     
-    <Style x:Key="NavigationViewPaneButton" TargetType="Button" BasedOn="{c:MergeStyles 'PrimaryButton OnPaneControlBackground OnPaneControlBorder'}">
+    <Style x:Key="NavigationViewPaneButton" TargetType="Button" BasedOn="{c:MergeStyles 'PrimaryButton OnPaneControlBackground OnPaneControlBorder StandardForeground'}">
         <Setter Property="MinWidth" Value="0" />
         <Setter Property="MinHeight" Value="0" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource AmbientControlThemeShadow}" />
@@ -242,7 +230,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="NavigationViewToggleButton" x:Shared="False"  TargetType="Button" BasedOn="{StaticResource NavigationViewPaneButton}">
+    <Style x:Key="NavigationViewToggleButton" x:Shared="False" TargetType="Button" BasedOn="{StaticResource NavigationViewPaneButton}">
         <Setter Property="Content">
             <Setter.Value>
                 <controls:PathIcon Data="{StaticResource GlobalNavigationButton}" />
@@ -250,7 +238,7 @@
         </Setter>
     </Style>
 
-    <Style TargetType="controls:NavigationViewListView">
+    <Style TargetType="controls:NavigationViewListView" BasedOn="{c:MergeStyles 'StandardForeground'}">
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
         <Setter Property="SelectionMode" Value="Single" />
@@ -266,7 +254,7 @@
         </Setter>
     </Style>
     
-    <Style x:Key="PrimaryNavigationView" TargetType="controls:NavigationView" BasedOn="{c:MergeStyles 'Shadow0 InteractiveShadow8'}">
+    <Style x:Key="PrimaryNavigationView" TargetType="controls:NavigationView" BasedOn="{c:MergeStyles 'StandardForeground Shadow0 InteractiveShadow8'}">
         <Setter Property="Focusable" Value="False" />
         <Setter Property="IsTabStop" Value="False" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
@@ -295,6 +283,12 @@
                                                 BorderBrush="{TemplateBinding BorderBrush}"
                                                 BorderThickness="{TemplateBinding BorderThickness}"
                                                 PaneBackground="{TemplateBinding PaneBackground}"
+                                                Foreground="{c:TemplatedParentBinding Foreground}"
+                                                theming:MouseOverProperties.ForegroundBrush="{TemplateBinding theming:MouseOverProperties.ForegroundBrush}"
+                                                theming:PressedProperties.ForegroundBrush="{TemplateBinding theming:PressedProperties.ForegroundBrush}"
+                                                theming:ActiveProperties.ForegroundBrush="{TemplateBinding theming:ActiveProperties.ForegroundBrush}"
+                                                theming:MouseOverActiveProperties.ForegroundBrush="{TemplateBinding theming:MouseOverActiveProperties.ForegroundBrush}"
+                                                theming:DisabledProperties.ForegroundBrush="{TemplateBinding theming:DisabledProperties.ForegroundBrush}"
                                                 theming:ControlProperties.CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}"
                                                 controls:ThemeShadow.Elevation="{TemplateBinding controls:ThemeShadow.Elevation}"
                                                 controls:ThemeShadow.Shadow="{TemplateBinding controls:ThemeShadow.Shadow}"
@@ -429,11 +423,12 @@
                                                      fixed height. Align it with the CompactPaneLength, so that everything looks
                                                      symmetrical. -->
                                                 <TextBlock Style="{DynamicResource TitleTextBlock}"
-                                                            HorizontalAlignment="Left"
-                                                            VerticalAlignment="Center"
-                                                            Padding="{c:GridUnit '3,0'}"
-                                                            TextTrimming="CharacterEllipsis"
-                                                            Text="{Binding}" />
+                                                           Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=controls:NavigationView}}"
+                                                           HorizontalAlignment="Left"
+                                                           VerticalAlignment="Center"
+                                                           Padding="{c:GridUnit '3,0'}"
+                                                           TextTrimming="CharacterEllipsis"
+                                                           Text="{Binding}" />
                                             </DataTemplate>
                                         </StackPanel.Resources>
 

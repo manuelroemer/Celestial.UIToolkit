@@ -32,7 +32,7 @@
         <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType=TreeView}}" />
         <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType=TreeView}}" />
         <Setter Property="ItemContainerStyle" Value="{Binding ItemContainerStyle, RelativeSource={RelativeSource AncestorType=TreeView}}" />
-        <Setter Property="Padding" Value="{StaticResource StandardListItemPadding}" />
+        <Setter Property="Padding" Value="{DynamicResource StandardListItemPadding}" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource StandardCornerRadius}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource DisabledThemeShadow}" />

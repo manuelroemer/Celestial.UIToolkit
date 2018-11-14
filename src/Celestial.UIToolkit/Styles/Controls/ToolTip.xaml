@@ -5,7 +5,7 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
-    <Style x:Key="PrimaryToolTip" TargetType="ToolTip" BasedOn="{c:MergeStyles 'StandardPopup StandardForeground StandardFontProperties Shadow8'}">
+    <Style x:Key="PrimaryToolTip" TargetType="ToolTip" BasedOn="{c:MergeStyles 'StandardForeground StandardFontProperties Shadow8'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="HasDropShadow" Value="True" />
@@ -15,7 +15,7 @@
         <Setter Property="Padding" Value="{c:GridUnit 1}" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource StandardCornerRadius}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource AmbientControlThemeShadow}" />
-        <Setter Property="Margin" Value="{StaticResource PopupShadowSpacerMargin}" />
+        <Setter Property="Margin" Value="{DynamicResource PopupShadowSpacerMargin}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ToolTip">

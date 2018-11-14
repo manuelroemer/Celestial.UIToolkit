@@ -5,21 +5,21 @@
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
-    <ResourceDictionary.MergedDictionaries>
-        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-        <c:SharedResourceDictionary Source="../../Icons/ControlParts.xaml" />
-        <c:SharedResourceDictionary Source="../../Icons/Badges.xaml" />
-        <c:SharedResourceDictionary Source="./TextBlock.xaml" />
-        <c:SharedResourceDictionary Source="./Button.xaml" />
-        <c:SharedResourceDictionary Source="./IconElements.xaml" />
-
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
+    <Style x:Key="ComboBoxTextBox" TargetType="TextBox" BasedOn="{c:MergeStyles 'PrimaryTextBox'}">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <ScrollViewer x:Name="PART_ContentHost"
+                                  Focusable="False"
+                                  IsTabStop="False"
+                                  Padding="{TemplateBinding Padding}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
     <Style x:Key="PrimaryComboBoxItem" TargetType="ComboBoxItem" BasedOn="{c:MergeStyles 'ListBackground ListBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="OverridesDefaultStyle" Value="True" />
@@ -100,27 +100,9 @@
     </Style>
     <Style TargetType="ComboBoxItem" BasedOn="{StaticResource Accent2ComboBoxItem}" />
 
-    
-    
-    <Style x:Key="PrimaryComboBox" TargetType="ComboBox" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder StandardForeground StandardFontProperties StandardPopup Shadow16'}">
-        <Style.Resources>
-            <Style x:Key="ComboBoxTextBox" TargetType="TextBox">
-                <Setter Property="HorizontalAlignment" Value="Stretch" />
-                <Setter Property="VerticalAlignment" Value="Stretch" />
-                <Setter Property="CaretBrush" Value="{DynamicResource CaretBrush}" />
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="TextBox">
-                            <ScrollViewer x:Name="PART_ContentHost"
-                                          Focusable="False"
-                                          IsTabStop="False"
-                                          Padding="{TemplateBinding Padding}" />
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-        </Style.Resources>
 
+
+    <Style x:Key="PrimaryComboBox" TargetType="ComboBox" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder StandardForeground StandardFontProperties StandardPopup Shadow16'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -233,7 +215,7 @@
                                      or a ContentPresenter which displays the current item. -->
                                 <Grid x:Name="EditStateElementsContainer">
                                     <TextBox x:Name="PART_EditableTextBox"
-                                             Style="{StaticResource ComboBoxTextBox}"
+                                             Style="{DynamicResource ComboBoxTextBox}"
                                              Margin="-2,0,0,0"
                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
