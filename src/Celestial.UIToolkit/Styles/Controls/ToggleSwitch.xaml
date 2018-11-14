@@ -20,7 +20,7 @@
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{DynamicResource RectangleFocusVisual}" />
-        <Setter Property="BorderThickness" Value="{StaticResource WideBorderThickness}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource WideBorderThickness}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
         <Setter Property="OffKnobOffset" Value="0" />

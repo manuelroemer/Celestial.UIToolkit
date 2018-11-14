@@ -45,7 +45,7 @@
         <Setter Property="SnapsToDevicePixels" Value="False" />
         <Setter Property="Width" Value="{c:GridUnit 4}" />
         <Setter Property="Height" Value="{c:GridUnit 4}" />
-        <Setter Property="BorderThickness" Value="{StaticResource WideBorderThickness}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource WideBorderThickness}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource DisabledThemeShadow}" />
         <Setter Property="Template">
             <Setter.Value>

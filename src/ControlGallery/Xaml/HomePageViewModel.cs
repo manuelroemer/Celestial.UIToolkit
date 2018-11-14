@@ -1,4 +1,6 @@
-﻿using ControlGallery.Common;
+﻿using Celestial.UIToolkit.Xaml;
+using ControlGallery.Common;
+using Prism.Commands;
 using Prism.Regions;
 using System;
 using System.Collections.Generic;
