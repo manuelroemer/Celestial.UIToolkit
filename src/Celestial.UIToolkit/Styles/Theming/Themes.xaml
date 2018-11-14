@@ -121,15 +121,15 @@
             <SolidColorBrush x:Key="ControlDisabledBorderBrush" Color="{StaticResource DisabledHighColor}"  po:Freeze="True" />
 
             <SolidColorBrush x:Key="AltControlBackgroundBrush" Color="{StaticResource AltPrimaryMediumColor}"  po:Freeze="True" />
-            <SolidColorBrush x:Key="AltControlHoverBackgroundBrush" Color="{StaticResource AltPrimaryMediumLowColor}"  po:Freeze="True" />
-            <SolidColorBrush x:Key="AltControlPressedBackgroundBrush" Color="{StaticResource AltPrimaryMediumHighColor}"  po:Freeze="True" />
-            <SolidColorBrush x:Key="AltControlActiveBackgroundBrush" Color="{StaticResource AltPrimaryMediumHighColor}"  po:Freeze="True" />
-            <SolidColorBrush x:Key="AltControlDisabledBackgroundBrush" Color="{StaticResource DisabledLowColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="AltControlHoverBackgroundBrush" Color="{StaticResource AltPrimaryMediumHighColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="AltControlPressedBackgroundBrush" Color="{StaticResource AltPrimaryMediumLowColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="AltControlActiveBackgroundBrush" Color="{StaticResource AltPrimaryMediumLowColor}"  po:Freeze="True" />
 
             <SolidColorBrush x:Key="AltControlBorderBrush" Color="{StaticResource AltPrimaryMediumHighColor}"  po:Freeze="True" />
-            <SolidColorBrush x:Key="AltControlHoverBorderBrush" Color="{StaticResource AltPrimaryMediumColor}"  po:Freeze="True" />
-            <SolidColorBrush x:Key="AltControlActiveBorderBrush" Color="{StaticResource AltPrimaryHighColor}"  po:Freeze="True" />
-            <SolidColorBrush x:Key="AltControlDisabledBorderBrush" Color="{StaticResource DisabledHighColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="AltControlHoverBorderBrush" Color="{StaticResource AltPrimaryHighColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="AltControlPressedBorderBrush" Color="{StaticResource AltPrimaryMediumColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="AltControlActiveBorderBrush" Color="{StaticResource AltPrimaryMediumColor}"  po:Freeze="True" />
+
 
 
 
@@ -155,9 +155,9 @@
             <SolidColorBrush x:Key="OnPaneControlBackgroundDisabledBrush" Color="{StaticResource PrimaryMediumLowColor}"  po:Freeze="True" />
 
             <SolidColorBrush x:Key="AltOnPaneControlBackgroundBrush" Color="{StaticResource AltPrimaryMediumLowColor}"  po:Freeze="True" />
-            <SolidColorBrush x:Key="AltOnPaneControlBackgroundHoverBrush" Color="{StaticResource AltPrimaryLowColor}"  po:Freeze="True" />
-            <SolidColorBrush x:Key="AltOnPaneControlBackgroundPressedBrush" Color="{StaticResource AltPrimaryMediumColor}"  po:Freeze="True" />
-            <SolidColorBrush x:Key="AltOnPaneControlBackgroundActiveBrush" Color="{StaticResource AltPrimaryMediumColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="AltOnPaneControlBackgroundHoverBrush" Color="{StaticResource AltPrimaryMediumColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="AltOnPaneControlBackgroundPressedBrush" Color="{StaticResource AltPrimaryLowColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="AltOnPaneControlBackgroundActiveBrush" Color="{StaticResource AltPrimaryLowColor}"  po:Freeze="True" />
             <SolidColorBrush x:Key="AltOnPaneControlBackgroundDisabledBrush" Color="{StaticResource AltPrimaryMediumLowColor}"  po:Freeze="True" />
 
             <SolidColorBrush x:Key="OnPaneControlBorderBrush" Color="{StaticResource PrimaryMediumLowColor}"  po:Freeze="True" />
@@ -167,9 +167,9 @@
             <SolidColorBrush x:Key="OnPaneControlBorderDisabledBrush" Color="{StaticResource PrimaryMediumLowColor}"  po:Freeze="True" />
 
             <SolidColorBrush x:Key="AltOnPaneControlBorderBrush" Color="{StaticResource AltPrimaryMediumLowColor}"  po:Freeze="True" />
-            <SolidColorBrush x:Key="AltOnPaneControlBorderHoverBrush" Color="{StaticResource AltPrimaryLowColor}"  po:Freeze="True" />
-            <SolidColorBrush x:Key="AltOnPaneControlBorderPressedBrush" Color="{StaticResource AltPrimaryMediumColor}"  po:Freeze="True" />
-            <SolidColorBrush x:Key="AltOnPaneControlBorderActiveBrush" Color="{StaticResource AltPrimaryMediumColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="AltOnPaneControlBorderHoverBrush" Color="{StaticResource AltPrimaryMediumColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="AltOnPaneControlBorderPressedBrush" Color="{StaticResource AltPrimaryLowColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="AltOnPaneControlBorderActiveBrush" Color="{StaticResource AltPrimaryLowColor}"  po:Freeze="True" />
             <SolidColorBrush x:Key="AltOnPaneControlBorderDisabledBrush" Color="{StaticResource AltPrimaryMediumLowColor}"  po:Freeze="True" />
 
 
@@ -272,11 +272,11 @@
             <!--
             The primary color is the identity of the theme.
             -->
-            <Color x:Key="PrimaryColor">#000000</Color>
-            <Color x:Key="PrimaryLowColor">#0B0B0B</Color>
-            <Color x:Key="PrimaryMediumLowColor">#2D2D2D</Color>
-            <Color x:Key="PrimaryMediumColor">#4F4F4F</Color>
-            <Color x:Key="PrimaryMediumHighColor">#717171</Color>
+            <Color x:Key="PrimaryColor">#201F1E</Color>
+            <Color x:Key="PrimaryLowColor">#252423</Color>
+            <Color x:Key="PrimaryMediumLowColor">#313130</Color>
+            <Color x:Key="PrimaryMediumColor">#3D3D3C</Color>
+            <Color x:Key="PrimaryMediumHighColor">#4A4A49</Color>
             <Color x:Key="PrimaryHighColor">#939393</Color>
 
             <!--
@@ -324,8 +324,8 @@
             <!--
             DropShadows appear under controls like the ToolTip or a Popup.
             -->
-            <Color x:Key="StandardDropShadowColor">#90000000</Color>
-            <sys:Double x:Key="StandardDropShadowOpacity">0.3</sys:Double>
+            <Color x:Key="StandardDropShadowColor">#00000000</Color>
+            <sys:Double x:Key="StandardDropShadowOpacity">1</sys:Double>
                 
 
 
@@ -334,31 +334,28 @@
             These should be modified, depending on your theme.
             -->
 
-            <!--
-            Brushes for the appearance of a control using the theme's primary colors.
-            -->
+            <!-- In comparison to Light, Hover/Pressed are switched in Dark mode. -->
             <SolidColorBrush x:Key="ControlBackgroundBrush" Color="{StaticResource PrimaryMediumColor}"  po:Freeze="True" />
-            <SolidColorBrush x:Key="ControlHoverBackgroundBrush" Color="{StaticResource PrimaryMediumLowColor}"  po:Freeze="True" />
-            <SolidColorBrush x:Key="ControlPressedBackgroundBrush" Color="{StaticResource PrimaryMediumHighColor}"  po:Freeze="True" />
-            <SolidColorBrush x:Key="ControlActiveBackgroundBrush" Color="{StaticResource PrimaryMediumHighColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="ControlHoverBackgroundBrush" Color="{StaticResource PrimaryMediumHighColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="ControlPressedBackgroundBrush" Color="{StaticResource PrimaryMediumLowColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="ControlActiveBackgroundBrush" Color="{StaticResource PrimaryMediumLowColor}"  po:Freeze="True" />
             <SolidColorBrush x:Key="ControlDisabledBackgroundBrush" Color="{StaticResource DisabledLowColor}"  po:Freeze="True" />
 
             <SolidColorBrush x:Key="ControlBorderBrush" Color="{StaticResource PrimaryMediumHighColor}"  po:Freeze="True" />
-            <SolidColorBrush x:Key="ControlHoverBorderBrush" Color="{StaticResource PrimaryMediumColor}"  po:Freeze="True" />
-            <SolidColorBrush x:Key="ControlPressedBorderBrush" Color="{StaticResource PrimaryHighColor}"  po:Freeze="True" />
-            <SolidColorBrush x:Key="ControlActiveBorderBrush" Color="{StaticResource PrimaryHighColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="ControlHoverBorderBrush" Color="{StaticResource PrimaryHighColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="ControlPressedBorderBrush" Color="{StaticResource PrimaryMediumColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="ControlActiveBorderBrush" Color="{StaticResource PrimaryMediumColor}"  po:Freeze="True" />
             <SolidColorBrush x:Key="ControlDisabledBorderBrush" Color="{StaticResource DisabledHighColor}"  po:Freeze="True" />
 
             <SolidColorBrush x:Key="AltControlBackgroundBrush" Color="{StaticResource AltPrimaryMediumColor}"  po:Freeze="True" />
             <SolidColorBrush x:Key="AltControlHoverBackgroundBrush" Color="{StaticResource AltPrimaryMediumLowColor}"  po:Freeze="True" />
             <SolidColorBrush x:Key="AltControlPressedBackgroundBrush" Color="{StaticResource AltPrimaryMediumHighColor}"  po:Freeze="True" />
             <SolidColorBrush x:Key="AltControlActiveBackgroundBrush" Color="{StaticResource AltPrimaryMediumHighColor}"  po:Freeze="True" />
-            <SolidColorBrush x:Key="AltControlDisabledBackgroundBrush" Color="{StaticResource DisabledLowColor}"  po:Freeze="True" />
 
             <SolidColorBrush x:Key="AltControlBorderBrush" Color="{StaticResource AltPrimaryMediumHighColor}"  po:Freeze="True" />
             <SolidColorBrush x:Key="AltControlHoverBorderBrush" Color="{StaticResource AltPrimaryMediumColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="AltControlPressedBorderBrush" Color="{StaticResource AltPrimaryHighColor}"  po:Freeze="True" />
             <SolidColorBrush x:Key="AltControlActiveBorderBrush" Color="{StaticResource AltPrimaryHighColor}"  po:Freeze="True" />
-            <SolidColorBrush x:Key="AltControlDisabledBorderBrush" Color="{StaticResource DisabledHighColor}"  po:Freeze="True" />
 
 
 
@@ -378,9 +375,9 @@
             when interacted with.
             -->
             <SolidColorBrush x:Key="OnPaneControlBackgroundBrush" Color="{StaticResource PrimaryMediumLowColor}"  po:Freeze="True" />
-            <SolidColorBrush x:Key="OnPaneControlBackgroundHoverBrush" Color="{StaticResource PrimaryLowColor}"  po:Freeze="True" />
-            <SolidColorBrush x:Key="OnPaneControlBackgroundPressedBrush" Color="{StaticResource PrimaryMediumColor}"  po:Freeze="True" />
-            <SolidColorBrush x:Key="OnPaneControlBackgroundActiveBrush" Color="{StaticResource PrimaryMediumColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="OnPaneControlBackgroundHoverBrush" Color="{StaticResource PrimaryMediumColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="OnPaneControlBackgroundPressedBrush" Color="{StaticResource PrimaryLowColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="OnPaneControlBackgroundActiveBrush" Color="{StaticResource PrimaryLowColor}"  po:Freeze="True" />
             <SolidColorBrush x:Key="OnPaneControlBackgroundDisabledBrush" Color="{StaticResource PrimaryMediumLowColor}"  po:Freeze="True" />
 
             <SolidColorBrush x:Key="AltOnPaneControlBackgroundBrush" Color="{StaticResource AltPrimaryMediumLowColor}"  po:Freeze="True" />
@@ -390,9 +387,9 @@
             <SolidColorBrush x:Key="AltOnPaneControlBackgroundDisabledBrush" Color="{StaticResource AltPrimaryMediumLowColor}"  po:Freeze="True" />
 
             <SolidColorBrush x:Key="OnPaneControlBorderBrush" Color="{StaticResource PrimaryMediumLowColor}"  po:Freeze="True" />
-            <SolidColorBrush x:Key="OnPaneControlBorderHoverBrush" Color="{StaticResource PrimaryMediumColor}"  po:Freeze="True" />
-            <SolidColorBrush x:Key="OnPaneControlBorderPressedBrush" Color="{StaticResource PrimaryMediumHighColor}"  po:Freeze="True" />
-            <SolidColorBrush x:Key="OnPaneControlBorderActiveBrush" Color="{StaticResource PrimaryMediumHighColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="OnPaneControlBorderHoverBrush" Color="{StaticResource PrimaryMediumHighColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="OnPaneControlBorderPressedBrush" Color="{StaticResource PrimaryMediumColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="OnPaneControlBorderActiveBrush" Color="{StaticResource PrimaryMediumColor}"  po:Freeze="True" />
             <SolidColorBrush x:Key="OnPaneControlBorderDisabledBrush" Color="{StaticResource PrimaryMediumLowColor}"  po:Freeze="True" />
 
             <SolidColorBrush x:Key="AltOnPaneControlBorderBrush" Color="{StaticResource AltPrimaryMediumLowColor}"  po:Freeze="True" />

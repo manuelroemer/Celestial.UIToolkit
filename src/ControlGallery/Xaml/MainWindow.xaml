@@ -14,7 +14,7 @@
         Width="1200"
         Height="800"
         Style="{StaticResource PrimaryWindow}"
-        prism:ViewModelLocator.AutoWireViewModel="True" Foreground="Green"
+        prism:ViewModelLocator.AutoWireViewModel="True"
         c:WindowTitlebarProperties.ExtendContentIntoTitlebar="True">
 
     <Window.InputBindings>
