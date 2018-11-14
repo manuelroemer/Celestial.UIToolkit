@@ -76,11 +76,11 @@
         <Style.Resources>
             <!-- Override some typical styles to match the Accent1 Background.
                  This may need to be updated, depending on typical controls that may exist in a StatusBar. -->
-            <Style x:Key="{x:Static StatusBar.SeparatorStyleKey}" TargetType="Separator" BasedOn="{StaticResource PrimaryVerticalSeparator}">
+            <Style x:Key="{x:Static StatusBar.SeparatorStyleKey}" TargetType="Separator" BasedOn="{c:MergeStyles PrimaryVerticalSeparator}">
                 <Setter Property="Background" Value="{DynamicResource OnAccent1DisabledTextBrush}" />
             </Style>
 
-            <Style TargetType="ProgressBar" BasedOn="{StaticResource PrimaryProgressBar}">
+            <Style TargetType="ProgressBar" BasedOn="{c:MergeStyles PrimaryProgressBar}">
                 <Setter Property="Background" Value="Transparent" />
                 <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{DynamicResource OnDarkerAccent1TextBrush}" />
                 <Setter Property="BorderBrush" Value="{DynamicResource OnDarkerAccent1TextBrush}" />
@@ -118,11 +118,11 @@
         <Style.Resources>
             <!-- Override some typical styles to match the Accent2 Background.
                  This may need to be updated, depending on typical controls that may exist in a StatusBar. -->
-            <Style x:Key="{x:Static StatusBar.SeparatorStyleKey}" TargetType="Separator" BasedOn="{StaticResource PrimaryVerticalSeparator}">
+            <Style x:Key="{x:Static StatusBar.SeparatorStyleKey}" TargetType="Separator" BasedOn="{c:MergeStyles PrimaryVerticalSeparator}">
                 <Setter Property="Background" Value="{DynamicResource OnAccent2DisabledTextBrush}" />
             </Style>
 
-            <Style TargetType="ProgressBar" BasedOn="{StaticResource PrimaryProgressBar}">
+            <Style TargetType="ProgressBar" BasedOn="{c:MergeStyles PrimaryProgressBar}">
                 <Setter Property="Background" Value="Transparent" />
                 <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{DynamicResource OnDarkerAccent2TextBrush}" />
                 <Setter Property="BorderBrush" Value="{DynamicResource OnDarkerAccent2TextBrush}" />

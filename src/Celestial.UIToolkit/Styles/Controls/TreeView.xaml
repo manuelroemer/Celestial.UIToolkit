@@ -123,7 +123,7 @@
                                     <Storyboard>
                                         <DoubleAnimation Storyboard.TargetName="ExpanderIcon"
                                                          Storyboard.TargetProperty="RenderTransform.(RotateTransform.Angle)"
-                                                         Duration="{DynamicResource FastEnterAnimationDuration}"
+                                                         Duration="{StaticResource FastEnterAnimationDuration}"
                                                          To="90" />
                                     </Storyboard>
                                 </BeginStoryboard>
@@ -133,7 +133,7 @@
                                     <Storyboard>
                                         <DoubleAnimation Storyboard.TargetName="ExpanderIcon"
                                                          Storyboard.TargetProperty="RenderTransform.(RotateTransform.Angle)"
-                                                         Duration="{DynamicResource FastEnterAnimationDuration}"
+                                                         Duration="{StaticResource FastEnterAnimationDuration}"
                                                          To="0" />
                                     </Storyboard>
                                 </BeginStoryboard>

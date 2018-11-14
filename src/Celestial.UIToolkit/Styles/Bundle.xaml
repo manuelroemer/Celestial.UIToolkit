@@ -18,6 +18,7 @@
         <c:SharedResourceDictionary Source="Controls/PlaceholderOverlay.xaml" />
         <c:SharedResourceDictionary Source="Controls/Ripple.xaml" />
         <c:SharedResourceDictionary Source="Controls/ToolTip.xaml" />
+        <c:SharedResourceDictionary Source="Controls/Separator.xaml" />
 
         <c:SharedResourceDictionary Source="Controls/ContentControl.xaml" />
         <c:SharedResourceDictionary Source="Controls/Thumb.xaml" />
@@ -26,7 +27,6 @@
         <c:SharedResourceDictionary Source="Controls/Button.xaml" />
         <c:SharedResourceDictionary Source="Controls/CheckBox.xaml" />
         <c:SharedResourceDictionary Source="Controls/RadioButton.xaml" />
-        <c:SharedResourceDictionary Source="Controls/Separator.xaml" />
         <c:SharedResourceDictionary Source="Controls/ScrollBar.xaml" />
         <c:SharedResourceDictionary Source="Controls/ScrollViewer.xaml" />
         <c:SharedResourceDictionary Source="Controls/Card.xaml" />

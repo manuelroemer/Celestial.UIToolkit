@@ -17,33 +17,33 @@
 
             <Style x:Key="{x:Static ToolBar.ButtonStyleKey}" 
                    TargetType="Button" 
-                   BasedOn="{StaticResource PrimaryToolBarButton}" />
+                   BasedOn="{c:MergeStyles PrimaryToolBarButton}" />
 
             <Style x:Key="{x:Static ToolBar.ComboBoxStyleKey}"
                    TargetType="ComboBox"
-                   BasedOn="{StaticResource Accent2OutlinedComboBox}">
+                   BasedOn="{c:MergeStyles Accent2OutlinedComboBox}">
                 <Setter Property="theming:TextBoxProperties.PlaceholderType" Value="Disappearing" />
             </Style>
 
             <Style x:Key="{x:Static ToolBar.TextBoxStyleKey}"
                    TargetType="TextBox"
-                   BasedOn="{StaticResource Accent2OutlinedTextBox}">
+                   BasedOn="{c:MergeStyles Accent2OutlinedTextBox}">
                 <Setter Property="theming:TextBoxProperties.PlaceholderType" Value="Disappearing" />
             </Style>
 
             <Style x:Key="{x:Static ToolBar.CheckBoxStyleKey}"
                    TargetType="CheckBox"
-                   BasedOn="{StaticResource Accent2CheckBox}">
+                   BasedOn="{c:MergeStyles Accent2CheckBox}">
                 <Setter Property="theming:RippleProperties.ShowRippleAnimation" Value="False" />
             </Style>
 
             <Style x:Key="{x:Static ToolBar.RadioButtonStyleKey}"
                    TargetType="RadioButton"
-                   BasedOn="{StaticResource Accent2RadioButton}">
+                   BasedOn="{c:MergeStyles Accent2RadioButton}">
                 <Setter Property="theming:RippleProperties.ShowRippleAnimation" Value="False" />
             </Style>
 
-            <Style x:Key="PrimaryToolBarThumb" TargetType="Thumb" BasedOn="{StaticResource RectanglePatternThumb}">
+            <Style x:Key="PrimaryToolBarThumb" TargetType="Thumb" BasedOn="{c:MergeStyles RectanglePatternThumb}">
                 <Setter Property="Padding" Value="{c:GridUnit '1'}" />
                 <Setter Property="Width" Value="{c:GridUnit 3}" />
             </Style>
@@ -74,7 +74,7 @@
                                 </Grid.ColumnDefinitions>
 
                                 <Thumb x:Name="Thumb"
-                                       Style="{StaticResource PrimaryToolBarThumb}" 
+                                       Style="{DynamicResource PrimaryToolBarThumb}" 
                                        Visibility="Collapsed" />
 
                                 <ToolBarPanel x:Name="PART_ToolBarPanel"
@@ -178,7 +178,7 @@
                 <Setter Property="MinWidth" Value="{c:SelfBinding MinHeight}" />
             </Style>
 
-            <Style x:Key="ToolBarOverflowToggleButton" TargetType="ToggleButton" BasedOn="{StaticResource PrimarySquareButton}">
+            <Style x:Key="ToolBarOverflowToggleButton" TargetType="ToggleButton" BasedOn="{c:MergeStyles PrimarySquareButton}">
                 <Setter Property="MinHeight" Value="0" />
                 <Setter Property="MinWidth" Value="0" />
             </Style>

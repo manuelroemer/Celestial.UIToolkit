@@ -5,7 +5,7 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
-    <Style x:Key="PrimaryGridViewScrollViewer" TargetType="ScrollViewer" BasedOn="{StaticResource PrimaryScrollViewer}">
+    <Style x:Key="PrimaryGridViewScrollViewer" TargetType="ScrollViewer" BasedOn="{c:MergeStyles PrimaryScrollViewer}">
         <Setter Property="Focusable" Value="False" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Template">
@@ -75,7 +75,7 @@
 
 
                                     <controls:ManipulationBoundaryFeedbackAwareContentControl 
-                                        Style="{StaticResource BouncingManipulationBoundaryFeedbackAwareContentControl}"
+                                        Style="{DynamicResource BouncingManipulationBoundaryFeedbackAwareContentControl}"
                                         FeedbackProvider="{c:TemplatedParentBinding}">
                                         <ScrollContentPresenter x:Name="PART_ScrollContentPresenter"
                                                                 Margin="{TemplateBinding Padding}"

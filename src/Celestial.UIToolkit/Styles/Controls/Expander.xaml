@@ -33,7 +33,7 @@
                             <ToggleButton x:Name="VisibleToggleButton"
                                           DockPanel.Dock="Right"
                                           IsChecked="{c:TemplatedParentBinding IsExpanded, Mode=TwoWay}"
-                                          Style="{StaticResource InvisibleRippleButton}"
+                                          Style="{DynamicResource InvisibleRippleButton}"
                                           Foreground="{TemplateBinding Foreground}"
                                           theming:MouseOverProperties.ForegroundBrush="{TemplateBinding theming:MouseOverProperties.ForegroundBrush}"
                                           theming:PressedProperties.ForegroundBrush="{TemplateBinding theming:PressedProperties.ForegroundBrush}"
