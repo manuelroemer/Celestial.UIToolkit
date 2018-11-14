@@ -12,7 +12,7 @@
              prism:ViewModelLocator.AutoWireViewModel="True">
 
     <Grid Margin="20">
-        <ComboBox />
+        
     </Grid>
 
 </UserControl>

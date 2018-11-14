@@ -153,7 +153,7 @@
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualStateGroup.Transitions>
-                                    <VisualTransition GeneratedDuration="{StaticResource ColorAnimationDuration}"
+                                    <VisualTransition GeneratedDuration="0"
                                                       GeneratedEasingFunction="{StaticResource ColorAnimationEase}" />
                                     <VisualTransition To="Disabled" GeneratedDuration="0" />
                                 </VisualStateGroup.Transitions>
