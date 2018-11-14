@@ -5,7 +5,7 @@
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
-    <Style x:Key="ComboBoxTextBox" TargetType="TextBox" BasedOn="{c:MergeStyles 'PrimaryTextBox'}">
+    <Style x:Key="ComboBoxTextBox" TargetType="TextBox" BasedOn="{c:MergeStyles 'StandardForeground StandardFontProperties'}">
         <Setter Property="HorizontalAlignment" Value="Stretch" />
         <Setter Property="VerticalAlignment" Value="Stretch" />
         <Setter Property="Template">
@@ -15,6 +15,11 @@
                                   Focusable="False"
                                   IsTabStop="False"
                                   Padding="{TemplateBinding Padding}" />
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{c:TemplatedParentBinding Path=(theming:DisabledProperties.ForegroundBrush)}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -421,7 +426,7 @@
                         </Trigger>
                         
                         <!-- Rotate DropDown icon when the popup is shown. -->
-                        <Trigger Property="IsDropDownOpen" Value="True">
+                        <!--<Trigger Property="IsDropDownOpen" Value="True">
                             <Trigger.EnterActions>
                                 <BeginStoryboard>
                                     <Storyboard>
@@ -444,7 +449,7 @@
                                     </Storyboard>
                                 </BeginStoryboard>
                             </Trigger.ExitActions>
-                        </Trigger>
+                        </Trigger>-->
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>

@@ -5,19 +5,7 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
-    <ResourceDictionary.MergedDictionaries>
-        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-        <c:SharedResourceDictionary Source="./ManipulationBoundaryFeedbackAwareContentControl.xaml" />
-        <c:SharedResourceDictionary Source="./TextBlock.xaml" />
-
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
-    <Style x:Key="PrimaryScrollViewer" TargetType="ScrollViewer" BasedOn="{c:MergeStyles 'TransparentBorder TransparentBackground  Shadow0'}">
+    <Style x:Key="PrimaryScrollViewer" TargetType="ScrollViewer" BasedOn="{c:MergeStyles 'TransparentBorder TransparentBackground StandardForeground Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -75,8 +63,9 @@
                                            Value="{TemplateBinding HorizontalOffset}" />
 
                                 <controls:ManipulationBoundaryFeedbackAwareContentControl
+                                    Foreground="{TemplateBinding Foreground}"
                                     Padding="{TemplateBinding Padding}"
-                                    Style="{StaticResource BouncingManipulationBoundaryFeedbackAwareContentControl}"
+                                    Style="{DynamicResource BouncingManipulationBoundaryFeedbackAwareContentControl}"
                                     FeedbackProvider="{c:TemplatedParentBinding}">
                                     <ScrollContentPresenter x:Name="PART_ScrollContentPresenter"
                                                             CanContentScroll="{TemplateBinding CanContentScroll}"

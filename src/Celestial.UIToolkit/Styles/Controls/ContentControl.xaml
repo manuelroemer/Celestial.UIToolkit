@@ -5,8 +5,11 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
-    <Style TargetType="ContentControl" BasedOn="{c:MergeStyles 'StandardForeground StandardFontProperties'}">
-        <!-- This simply sets/fixes the ContentControl's foreground. -->
+    <Style x:Key="StandardContentControl" TargetType="ContentControl" BasedOn="{c:MergeStyles 'StandardForeground StandardFontProperties'}">
+        <!-- This simply sets/fixes the ContentControl's foreground. 
+             Since no other properties are set, this receives the prefix "Standard". -->
     </Style>
-    
+
+    <Style TargetType="ContentControl" BasedOn="{StaticResource StandardContentControl}" />
+
 </ResourceDictionary>
