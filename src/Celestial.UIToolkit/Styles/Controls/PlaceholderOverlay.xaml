@@ -102,7 +102,7 @@
                                   VerticalAlignment="Top">
                                 <Grid.Resources>
                                     <DataTemplate DataType="{x:Type sys:String}">
-                                        <TextBlock Style="{StaticResource HintTextBlock}" Text="{Binding}" />
+                                        <TextBlock Style="{DynamicResource HintTextBlock}" Text="{Binding}" />
                                     </DataTemplate>
                                 </Grid.Resources>
                                 <Grid.RowDefinitions>

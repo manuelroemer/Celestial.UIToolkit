@@ -15,19 +15,25 @@ namespace Celestial.UIToolkit.Xaml
 
         private ResourceDictionary _activeThemeDictionary;
         
-        public IDictionary<object, ResourceDictionary> ThemeDictionaries { get; }
+        public Dictionary<object, ResourceDictionary> ThemeDictionaries { get; }
 
         public ThemeResourceDictionary()
         {
             ThemeDictionaries = new Dictionary<object, ResourceDictionary>();
             ThemeManager.Current.ThemeChanged += ThemeManager_ThemeChanged;
+
+            SwapActiveThemeDictionary(ThemeManager.Current.CurrentTheme);
         }
         
         private void ThemeManager_ThemeChanged(object sender, ThemeChangedEventArgs e)
         {
-            RemoveActiveThemeDictionary();
+            SwapActiveThemeDictionary(e.ThemeName);
+        }
 
-            if (TryGetDictionaryForTheme(e.ThemeName, out var themeDictionary))
+        private void SwapActiveThemeDictionary(string themeName)
+        {
+            RemoveActiveThemeDictionary();
+            if (TryGetDictionaryForTheme(themeName, out var themeDictionary))
             {
                 SetActiveThemeDictionary(themeDictionary);
             }
@@ -35,19 +41,19 @@ namespace Celestial.UIToolkit.Xaml
 
         private bool TryGetDictionaryForTheme(string themeName, out ResourceDictionary dictionary)
         {
-            // We simply want to find the first dictionary whose key exactly matches the the 
-            // theme name.
-            foreach (var themeDictPair in ThemeDictionaries)
+            if (themeName != null)
             {
-                if (themeDictPair.Key is string key && themeName == key)
-                {
-                    dictionary = themeDictPair.Value;
-                    return true;
-                }
+                // We simply want to find the first dictionary whose key exactly matches the the 
+                // theme name.
+                var wasSuccessful = ThemeDictionaries.TryGetValue(themeName, out var result);
+                dictionary = result;
+                return wasSuccessful;
             }
-
-            dictionary = null;
-            return false;
+            else
+            {
+                dictionary = null;
+                return false;
+            }
         }
 
         private void RemoveActiveThemeDictionary()
@@ -65,7 +71,8 @@ namespace Celestial.UIToolkit.Xaml
             {
                 ResourcesSource.Verbose("Adding active theme dictionary.");
                 _activeThemeDictionary = dictionary;
-                MergedDictionaries.Add(_activeThemeDictionary);
+                
+                Application.Current.Resources.MergedDictionaries.Add(_activeThemeDictionary);
             }
         }
         

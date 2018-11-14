@@ -108,7 +108,7 @@
                     <TextBlock x:Name="ControlName"
                                Grid.Column="1"
                                Margin="{c:GridUnit '2,0,0,0'}"
-                               Style="{StaticResource SubTitleTextBlock}" 
+                               Style="{DynamicResource SubTitleTextBlock}" 
                                Text="{Binding Name}"
                                VerticalAlignment="Center" />
                     
@@ -116,7 +116,7 @@
                                Grid.Row="1"
                                Grid.ColumnSpan="2"
                                Margin="{c:GridUnit '0,2,0,0'}"
-                               Style="{StaticResource HintTextBlock}"
+                               Style="{DynamicResource HintTextBlock}"
                                Text="{Binding Description}" 
                                TextWrapping="Wrap"
                                TextTrimming="CharacterEllipsis" />

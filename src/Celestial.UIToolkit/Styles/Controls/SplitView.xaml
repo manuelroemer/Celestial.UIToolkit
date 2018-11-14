@@ -17,11 +17,11 @@
     <Style TargetType="controls:SplitView" BasedOn="{c:MergeStyles 'TransparentBorder TransparentBackground StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
-        <Setter Property="PaneBackground" Value="{StaticResource PaneBackgroundBrush}" />
+        <Setter Property="PaneBackground" Value="{DynamicResource PaneBackgroundBrush}" />
         <Setter Property="Focusable" Value="False" />
         <Setter Property="IsTabStop" Value="False" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource AmbientControlThemeShadow}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:SplitView">

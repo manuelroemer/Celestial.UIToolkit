@@ -104,7 +104,7 @@
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Cursor" Value="SizeAll" />
-        <Setter Property="Foreground" Value="{StaticResource SecondaryForegroundBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource SecondaryForegroundBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Thumb">

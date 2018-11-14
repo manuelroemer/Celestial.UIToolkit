@@ -119,7 +119,7 @@
                         <DataTrigger Binding="{Binding IsActive, RelativeSource={RelativeSource AncestorType=Window}}" Value="False">
                             <Setter Property="Background" Value="Transparent" />
                             <Setter Property="BorderBrush" Value="Transparent" />
-                            <Setter Property="Foreground" Value="{StaticResource DisabledForegroundBrush}" />
+                            <Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}" />
                         </DataTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -304,7 +304,7 @@
         </Setter>
 
         <Setter Property="Margin" Value="{StaticResource PopupShadowSpacerMargin}" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource AmbientControlThemeShadow}" />
 
         <!-- Non-client area properties. -->
         <Setter Property="theming:WindowTitlebarProperties.ExtendContentIntoTitlebar" Value="False" />
@@ -317,21 +317,21 @@
         <Setter Property="theming:WindowTitlebarProperties.TitleFontWeight" Value="{StaticResource CaptionFontWeight}" />
 
 
-        <Setter Property="theming:WindowTitlebarProperties.BackgroundBrush" Value="{StaticResource PaneBackgroundBrush}" />
-        <Setter Property="theming:WindowTitlebarProperties.InactiveBackgroundBrush" Value="{StaticResource PrimaryBrush}" />
-        <Setter Property="theming:WindowTitlebarProperties.BorderBrush" Value="{StaticResource PaneBorderBrush}" />
-        <Setter Property="theming:WindowTitlebarProperties.InactiveBorderBrush" Value="{StaticResource ControlDisabledBorderBrush}" />
-        <Setter Property="theming:WindowTitlebarProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
-        <Setter Property="theming:WindowTitlebarProperties.InactiveForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
+        <Setter Property="theming:WindowTitlebarProperties.BackgroundBrush" Value="{DynamicResource PaneBackgroundBrush}" />
+        <Setter Property="theming:WindowTitlebarProperties.InactiveBackgroundBrush" Value="{DynamicResource PrimaryBrush}" />
+        <Setter Property="theming:WindowTitlebarProperties.BorderBrush" Value="{DynamicResource PaneBorderBrush}" />
+        <Setter Property="theming:WindowTitlebarProperties.InactiveBorderBrush" Value="{DynamicResource ControlDisabledBorderBrush}" />
+        <Setter Property="theming:WindowTitlebarProperties.ForegroundBrush" Value="{DynamicResource StandardForegroundBrush}" />
+        <Setter Property="theming:WindowTitlebarProperties.InactiveForegroundBrush" Value="{DynamicResource DisabledForegroundBrush}" />
 
         <Setter Property="theming:WindowTitlebarProperties.MinimizeButtonStyle" Value="{StaticResource StandardWindowCaptionButton}" />
         <Setter Property="theming:WindowTitlebarProperties.MaximizeButtonStyle" Value="{StaticResource StandardWindowCaptionButton}" />
         <Setter Property="theming:WindowTitlebarProperties.CloseButtonStyle" Value="{StaticResource StandardCloseWindowCaptionButton}" />
 
         <!-- Client area properties. -->
-        <Setter Property="Background" Value="{StaticResource PrimaryBrush}" />
-        <Setter Property="BorderBrush" Value="{StaticResource ControlBorderBrush}" />
-        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
+        <Setter Property="Background" Value="{DynamicResource PrimaryBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderBrush}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource SlimBorderThickness}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
 

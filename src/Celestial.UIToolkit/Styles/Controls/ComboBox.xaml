@@ -52,8 +52,8 @@
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="ItemsControl.AlternationIndex" Value="1">
-                            <Setter Property="Background" Value="{StaticResource ListAlternationIndex1BackgroundBrush}" />
-                            <Setter Property="Background" Value="{StaticResource ListAlternationIndex1BorderBrush}" />
+                            <Setter Property="Background" Value="{DynamicResource ListAlternationIndex1BackgroundBrush}" />
+                            <Setter Property="Background" Value="{DynamicResource ListAlternationIndex1BorderBrush}" />
                         </Trigger>
 
                         <Trigger Property="IsMouseOver" Value="True">
@@ -82,8 +82,8 @@
                                 <Condition Property="IsSelected" Value="True" />
                                 <Condition Property="IsEnabled" Value="False" />
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" Value="{StaticResource ListActiveDisabledBrush}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource ListActiveDisabledBrush}" />
+                            <Setter Property="Background" Value="{DynamicResource ListActiveDisabledBrush}" />
+                            <Setter Property="BorderBrush" Value="{DynamicResource ListActiveDisabledBrush}" />
                         </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -101,7 +101,7 @@
             <Style x:Key="ComboBoxTextBox" TargetType="TextBox">
                 <Setter Property="HorizontalAlignment" Value="Stretch" />
                 <Setter Property="VerticalAlignment" Value="Stretch" />
-                <Setter Property="CaretBrush" Value="{StaticResource CaretBrush}" />
+                <Setter Property="CaretBrush" Value="{DynamicResource CaretBrush}" />
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="TextBox">
@@ -124,14 +124,14 @@
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="BorderThickness" Value="0,0,0,1" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource StandardCornerRadius}" />
         <Setter Property="AllowDrop" Value="True" />
-        <Setter Property="Background" Value="{StaticResource PrimaryLowBrush}" />
+        <Setter Property="Background" Value="{DynamicResource PrimaryLowBrush}" />
         <Setter Property="ItemContainerStyle" Value="{StaticResource StandardComboBoxItem}" />
         <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{c:SelfBinding Background}" />
         <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{c:SelfBinding Background}" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{c:SelfBinding Background}" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource BottomControlThemeShadow}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource BottomControlThemeShadow}" />
         <Setter Property="theming:PopupProperties.BorderThickness" Value="1,0,1,1" />
         <Setter Property="theming:SelectionProperties.SelectionIndicatorSize" Value="{c:GridUnit 0.377}" />
         <Setter Property="Template">
@@ -248,7 +248,7 @@
                                     <controls:PathIcon x:Name="ValidationErrorIcon"
                                                        Margin="{c:GridUnit '1,0,0,0'}"
                                                        Visibility="Collapsed"
-                                                       Foreground="{StaticResource ErrorBrush}"
+                                                       Foreground="{DynamicResource ErrorBrush}"
                                                        Data="{StaticResource Error}" />
                                 </StackPanel>
                             </Grid>
@@ -288,14 +288,14 @@
                                 Padding="{c:TemplatedParentBinding Padding, Converter={StaticResource ThicknessLeftPickerConverter}}">
                             <Grid>
                                 <TextBlock x:Name="AssistiveText"
-                                           Style="{StaticResource CaptionHintTextBlock}"
+                                           Style="{DynamicResource CaptionHintTextBlock}"
                                            Text="{TemplateBinding theming:TextBoxProperties.AssistiveText}"
                                            TextTrimming="CharacterEllipsis"
                                            Margin="{c:GridUnit '0,0.5,0,0'}"
                                            Visibility="{c:TemplatedParentBinding Path=(theming:TextBoxProperties.AssistiveText), Converter={StaticResource StringToVisibilityConverter}}" />
                                 <TextBlock x:Name="ValidationErrorText"
-                                           Style="{StaticResource CaptionHintTextBlock}"
-                                           Foreground="{StaticResource ErrorBrush}"
+                                           Style="{DynamicResource CaptionHintTextBlock}"
+                                           Foreground="{DynamicResource ErrorBrush}"
                                            Text="{c:TemplatedParentBinding Path=(Validation.Errors)[0].ErrorContent}"
                                            TextTrimming="CharacterEllipsis"
                                            Margin="{c:GridUnit '0,0.5,0,0'}"
@@ -388,16 +388,16 @@
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsReadOnly" Value="True">
-                            <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource ControlBorderBrush}" />
-                            <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource ControlBorderBrush}" />
+                            <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{DynamicResource ControlBorderBrush}" />
+                            <Setter Property="theming:ActiveProperties.BorderBrush" Value="{DynamicResource ControlBorderBrush}" />
                         </Trigger>
                         <Trigger Property="Validation.HasError" Value="True">
                             <Setter TargetName="ValidationErrorIcon" Property="Visibility" Value="Visible" />
                             <Setter TargetName="ValidationErrorText" Property="Visibility" Value="Visible" />
                             <Setter TargetName="AssistiveText" Property="Visibility" Value="Collapsed" />
-                            <Setter Property="BorderBrush" Value="{StaticResource ErrorControlBorderBrush}" />
-                            <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource ErrorControlHoverBorderBrush}" />
-                            <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource ErrorControlActiveBorderBrush}" />
+                            <Setter Property="BorderBrush" Value="{DynamicResource ErrorControlBorderBrush}" />
+                            <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{DynamicResource ErrorControlHoverBorderBrush}" />
+                            <Setter Property="theming:ActiveProperties.BorderBrush" Value="{DynamicResource ErrorControlActiveBorderBrush}" />
                         </Trigger>
                         
                         <!-- Show Placeholder when nothing is selected/entered. -->
@@ -439,8 +439,8 @@
                                     <Storyboard>
                                         <DoubleAnimation Storyboard.TargetName="ToggleButtonArrowIcon"
                                                          Storyboard.TargetProperty="RenderTransform.(RotateTransform.Angle)"
-                                                         Duration="{StaticResource InnerPartialAnimationDuration}"
-                                                         EasingFunction="{StaticResource InnerPartialAnimationEase}"
+                                                         Duration="{DynamicResource InnerPartialAnimationDuration}"
+                                                         EasingFunction="{DynamicResource InnerPartialAnimationEase}"
                                                          To="180" />
                                     </Storyboard>
                                 </BeginStoryboard>
@@ -450,8 +450,8 @@
                                     <Storyboard>
                                         <DoubleAnimation Storyboard.TargetName="ToggleButtonArrowIcon"
                                                          Storyboard.TargetProperty="RenderTransform.(RotateTransform.Angle)"
-                                                         Duration="{StaticResource InnerPartialAnimationDuration}"
-                                                         EasingFunction="{StaticResource InnerPartialAnimationEase}"
+                                                         Duration="{DynamicResource InnerPartialAnimationDuration}"
+                                                         EasingFunction="{DynamicResource InnerPartialAnimationEase}"
                                                          To="0" />
                                     </Storyboard>
                                 </BeginStoryboard>

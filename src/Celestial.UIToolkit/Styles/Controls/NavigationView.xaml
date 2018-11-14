@@ -19,13 +19,13 @@
 
     <Style x:Key="StandardNavigationViewItem" TargetType="controls:NavigationViewItem" BasedOn="{c:MergeStyles 'OnPaneControlBackground OnPaneControlBorder StandardForegroundActiveAccent2ListStates StandardFontProperties ElevationZIndex Shadow0'}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource RectangleFocusVisual}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Padding" Value="{c:GridUnit '0,2'}" />
         <Setter Property="MinHeight" Value="{c:GridUnit 10}" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource AmbientControlThemeShadow}" />
         <Setter Property="theming:SelectionProperties.SelectionIndicatorSize" Value="{c:GridUnit 1}" />
         <Setter Property="Template">
             <Setter.Value>
@@ -204,7 +204,7 @@
     <Style x:Key="NavigationViewPaneButton" TargetType="Button" BasedOn="{c:MergeStyles 'StandardButton OnPaneControlBackground OnPaneControlBorder'}">
         <Setter Property="MinWidth" Value="0" />
         <Setter Property="MinHeight" Value="0" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource AmbientControlThemeShadow}" />
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
         <Setter Property="theming:DisabledProperties.BorderBrush" Value="Transparent" />
@@ -266,8 +266,8 @@
         <Setter Property="OpenPaneLength" Value="{c:GridUnit 80}" />
         <Setter Property="PaneBackButtonStyle" Value="{StaticResource NavigationViewBackButton}" />
         <Setter Property="PaneToggleButtonStyle" Value="{StaticResource NavigationViewToggleButton}" />
-        <Setter Property="PaneBackground" Value="{StaticResource PaneBackgroundBrush}" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource RightControlThemeShadow}" />
+        <Setter Property="PaneBackground" Value="{DynamicResource PaneBackgroundBrush}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource RightControlThemeShadow}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:NavigationView">

@@ -6,7 +6,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
-                    <Rectangle Stroke="{StaticResource AltPrimaryMediumBrush}"
+                    <Rectangle Stroke="{DynamicResource AltPrimaryMediumBrush}"
                                StrokeThickness="1"
                                StrokeDashArray="2 2" />
                 </ControlTemplate>

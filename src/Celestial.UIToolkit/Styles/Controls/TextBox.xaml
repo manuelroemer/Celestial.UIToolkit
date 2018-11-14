@@ -31,14 +31,14 @@
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
         <Setter Property="BorderThickness" Value="0,0,0,1" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource StandardCornerRadius}" />
         <Setter Property="PasswordBox.PasswordChar" Value="&#x2022;" />
         <Setter Property="KeyboardNavigation.TabNavigation" Value="None" />
         <Setter Property="AllowDrop" Value="True" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource BottomControlThemeShadow}" />
-        <Setter Property="TextBoxBase.CaretBrush" Value="{StaticResource CaretBrush}" />
-        <Setter Property="PasswordBox.CaretBrush" Value="{StaticResource CaretBrush}" />
-        <Setter Property="Background" Value="{StaticResource PrimaryLowBrush}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource BottomControlThemeShadow}" />
+        <Setter Property="TextBoxBase.CaretBrush" Value="{DynamicResource CaretBrush}" />
+        <Setter Property="PasswordBox.CaretBrush" Value="{DynamicResource CaretBrush}" />
+        <Setter Property="Background" Value="{DynamicResource PrimaryLowBrush}" />
         <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{c:SelfBinding Background}" />
         <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{c:SelfBinding Background}" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{c:SelfBinding Background}" />
@@ -155,7 +155,7 @@
                                     <controls:PathIcon x:Name="ValidationErrorIcon"
                                                        Margin="{c:GridUnit '1,0,0,0'}"
                                                        Visibility="Collapsed"
-                                                       Foreground="{StaticResource ErrorBrush}"
+                                                       Foreground="{DynamicResource ErrorBrush}"
                                                        Data="{StaticResource Error}" />
                                 </StackPanel>
                                 
@@ -168,14 +168,14 @@
                                 Padding="{c:TemplatedParentBinding Padding, Converter={StaticResource ThicknessLeftPickerConverter}}">
                             <Grid>
                                 <TextBlock x:Name="AssistiveText"
-                                           Style="{StaticResource CaptionHintTextBlock}"
+                                           Style="{DynamicResource CaptionHintTextBlock}"
                                            Text="{TemplateBinding theming:TextBoxProperties.AssistiveText}"
                                            TextTrimming="CharacterEllipsis"
                                            Margin="{c:GridUnit '0,0.5,0,0'}"
                                            Visibility="{c:TemplatedParentBinding Path=(theming:TextBoxProperties.AssistiveText), Converter={StaticResource StringToVisibilityConverter}}" />
                                 <TextBlock x:Name="ValidationErrorText"
-                                           Style="{StaticResource CaptionHintTextBlock}"
-                                           Foreground="{StaticResource ErrorBrush}"
+                                           Style="{DynamicResource CaptionHintTextBlock}"
+                                           Foreground="{DynamicResource ErrorBrush}"
                                            Text="{c:TemplatedParentBinding Path=(Validation.Errors)[0].ErrorContent}"
                                            TextTrimming="CharacterEllipsis"
                                            Margin="{c:GridUnit '0,0.5,0,0'}"
@@ -204,16 +204,16 @@
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="TextBoxBase.IsReadOnly" Value="True">
-                            <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource ControlBorderBrush}" />
-                            <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource ControlBorderBrush}" />
+                            <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{DynamicResource ControlBorderBrush}" />
+                            <Setter Property="theming:ActiveProperties.BorderBrush" Value="{DynamicResource ControlBorderBrush}" />
                         </Trigger>
                         <Trigger Property="Validation.HasError" Value="True">
                             <Setter TargetName="ValidationErrorIcon" Property="Visibility" Value="Visible" />
                             <Setter TargetName="ValidationErrorText" Property="Visibility" Value="Visible" />
                             <Setter TargetName="AssistiveText" Property="Visibility" Value="Collapsed" />
-                            <Setter Property="BorderBrush" Value="{StaticResource ErrorControlBorderBrush}" />
-                            <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource ErrorControlHoverBorderBrush}" />
-                            <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource ErrorControlActiveBorderBrush}" />
+                            <Setter Property="BorderBrush" Value="{DynamicResource ErrorControlBorderBrush}" />
+                            <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{DynamicResource ErrorControlHoverBorderBrush}" />
+                            <Setter Property="theming:ActiveProperties.BorderBrush" Value="{DynamicResource ErrorControlActiveBorderBrush}" />
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>

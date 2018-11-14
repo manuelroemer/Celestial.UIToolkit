@@ -25,7 +25,7 @@
          The TabItem Style also animates the Foreground property of these TemplateProperties, not the
          TabItem.Foreground property. -->
     <Style x:Key="StandardTabItemHeader" TargetType="TabItem">
-        <Setter Property="theming:TabItemProperties.HeaderForeground" Value="{StaticResource StandardForegroundBrush}" />
+        <Setter Property="theming:TabItemProperties.HeaderForeground" Value="{DynamicResource StandardForegroundBrush}" />
         <Setter Property="theming:TabItemProperties.HeaderFontSize" Value="{StaticResource TitleFontSize}" />
         <Setter Property="theming:TabItemProperties.HeaderFontFamily" Value="{StaticResource TitleFontFamily}" />
         <Setter Property="theming:TabItemProperties.HeaderFontStyle" Value="{StaticResource TitleFontStyle}" />
@@ -38,13 +38,13 @@
     <Style x:Key="StandardTabItem" TargetType="TabItem" BasedOn="{c:MergeStyles 'StandardTabItemHeader TransparentBackground TransparentBorder StandardForegroundPrimaryStates StandardFontProperties ElevationZIndex Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource RectangleFocusVisual}" />
         <Setter Property="Padding" Value="{c:GridUnit '2,0,2,1'}" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
         <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType=TabControl}}" />
         <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType=TabControl}}" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource AmbientControlThemeShadow}" />
         <Setter Property="theming:SelectionProperties.SelectionIndicatorSize" Value="{c:GridUnit 0.5}" />
         <Setter Property="Template">
             <Setter.Value>
@@ -233,9 +233,9 @@
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
-        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource SlimBorderThickness}" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource DisabledThemeShadow}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource DisabledThemeShadow}" />
         <Setter Property="ItemContainerStyle" Value="{StaticResource StandardTabItem}" />
         <Setter Property="Template">
             <Setter.Value>

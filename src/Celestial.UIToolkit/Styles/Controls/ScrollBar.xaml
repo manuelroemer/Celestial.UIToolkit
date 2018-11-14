@@ -24,17 +24,17 @@
             <!-- Controls on the ScrollBar use special colors. In comparison to most others, they
                  darken when the user hovers over them. -->
             <Style x:Key="OnScrollBarControl" TargetType="Control">
-                <Setter Property="Background" Value="{StaticResource PrimaryMediumBrush}" />
-                <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource PrimaryMediumHighBrush}" />
-                <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource PrimaryHighBrush}" />
-                <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource PrimaryHighBrush}" />
-                <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{StaticResource ControlDisabledBackgroundBrush}" />
+                <Setter Property="Background" Value="{DynamicResource PrimaryMediumBrush}" />
+                <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{DynamicResource PrimaryMediumHighBrush}" />
+                <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{DynamicResource PrimaryHighBrush}" />
+                <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{DynamicResource PrimaryHighBrush}" />
+                <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{DynamicResource ControlDisabledBackgroundBrush}" />
                 
-                <Setter Property="BorderBrush" Value="{StaticResource PrimaryMediumHighBrush}" />
-                <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource PrimaryHighBrush}" />
-                <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource PrimaryHighBrush}" />
-                <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource AltPrimaryHighBrush}" />
-                <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource ControlDisabledBorderBrush}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource PrimaryMediumHighBrush}" />
+                <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{DynamicResource PrimaryHighBrush}" />
+                <Setter Property="theming:PressedProperties.BorderBrush" Value="{DynamicResource PrimaryHighBrush}" />
+                <Setter Property="theming:ActiveProperties.BorderBrush" Value="{DynamicResource AltPrimaryHighBrush}" />
+                <Setter Property="theming:DisabledProperties.BorderBrush" Value="{DynamicResource ControlDisabledBorderBrush}" />
             </Style>
             
             <!-- The Style for the outer ScrollBar Buttons (with the Arrow Icons). -->
@@ -67,7 +67,7 @@
         <Setter Property="Width" Value="{c:GridUnit 4.5}" />
         <Setter Property="Height" Value="Auto" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource AmbientControlThemeShadow}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ScrollBar">

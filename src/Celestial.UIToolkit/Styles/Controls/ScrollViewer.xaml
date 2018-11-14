@@ -25,7 +25,7 @@
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource DisabledThemeShadow}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource DisabledThemeShadow}" />
         <Setter Property="PanningMode" Value="Both" />
         <Setter Property="Template">
             <Setter.Value>

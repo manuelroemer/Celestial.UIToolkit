@@ -49,7 +49,7 @@
                             <TextBlock Margin="{c:GridUnit 1}" Text="Free Pane content" />
                         </c:NavigationView.PaneCustomContent>
                         <TextBlock Text="Hello from the Content!"
-                                   Style="{StaticResource TitleTextBlock}"
+                                   Style="{DynamicResource TitleTextBlock}"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center" />
                     </c:NavigationView>

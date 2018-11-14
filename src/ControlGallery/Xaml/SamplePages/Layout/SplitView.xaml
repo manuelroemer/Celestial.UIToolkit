@@ -27,12 +27,12 @@
                     <c:SplitView IsPaneOpen="{Binding IsChecked, ElementName=IsPaneOpenEx1}"
                                  DisplayMode="{Binding SelectedValue, ElementName=DisplayModeEx1, Mode=TwoWay}"
                                  PanePlacement="{Binding SelectedValue, ElementName=PanePlacementEx1, Mode=TwoWay}"
-                                 BorderBrush="{StaticResource PrimaryMediumLowBrush}"
+                                 BorderBrush="{DynamicResource PrimaryMediumLowBrush}"
                                  BorderThickness="1"
                                  Width="{c:GridUnit 125}"
                                  Height="{c:GridUnit 50}">
                         <c:SplitView.Pane>
-                            <TextBlock Style="{StaticResource TitleTextBlock}"
+                            <TextBlock Style="{DynamicResource TitleTextBlock}"
                                        Text="Hello from the Pane!" />
                         </c:SplitView.Pane>
                         <TextBlock Text="Hello from the Content!" />
@@ -80,12 +80,12 @@
                                  PanePlacement="{Binding SelectedValue, ElementName=PanePlacementEx2, Mode=TwoWay}"
                                  OpenPaneLength="200"
                                  CompactPaneLength="100"
-                                 BorderBrush="{StaticResource PrimaryMediumLowBrush}"
+                                 BorderBrush="{DynamicResource PrimaryMediumLowBrush}"
                                  BorderThickness="1"
                                  Width="{c:GridUnit 125}"
                                  Height="{c:GridUnit 50}">
                         <c:SplitView.Pane>
-                            <TextBlock Style="{StaticResource TitleTextBlock}"
+                            <TextBlock Style="{DynamicResource TitleTextBlock}"
                                        Text="Hello from the Pane!" />
                         </c:SplitView.Pane>
                         <TextBlock Text="Hello from the Content!" />

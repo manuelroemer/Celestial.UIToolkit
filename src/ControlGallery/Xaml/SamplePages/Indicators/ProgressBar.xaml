@@ -96,7 +96,7 @@
                             <Setter Property="c:ActiveProperties.BackgroundBrush" Value="HotPink" />
                             
                             <!-- DisabledProperties can be used, as always. -->
-                            <Setter Property="c:DisabledProperties.BackgroundBrush" Value="{StaticResource ControlDisabledBackgroundBrush}" />
+                            <Setter Property="c:DisabledProperties.BackgroundBrush" Value="{DynamicResource ControlDisabledBackgroundBrush}" />
                         </Style>
                     </StackPanel.Resources>
 

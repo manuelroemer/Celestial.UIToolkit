@@ -29,7 +29,7 @@
         <Setter Property="Padding" Value="{StaticResource StandardListItemPadding}" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource BottomControlThemeShadow}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource BottomControlThemeShadow}" />
         <Setter Property="controls:ThemeShadow.Elevation">
             <Setter.Value>
                 <!-- This increases the shadow elevation, the further down we go into a menu-item tree. -->
@@ -102,7 +102,7 @@
 
                                 <TextBlock x:Name="InputGestureText"
                                            Grid.Column="2"
-                                           Style="{StaticResource HintTextBlock}"
+                                           Style="{DynamicResource HintTextBlock}"
                                            Margin="{c:GridUnit '4,0,0,0'}"
                                            Text="{TemplateBinding InputGestureText}"
                                            Visibility="{c:TemplatedParentBinding InputGestureText, Converter={StaticResource StringToVisibilityConverter}}" />
@@ -156,15 +156,15 @@
                             <Setter TargetName="Popup" Property="Placement" Value="Right" />
                             <Setter TargetName="ExpandArrowIcon" Property="Visibility" Value="Visible" />
                             <Setter Property="Background" Value="Transparent" />
-                            <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource ListLowBrush}" />
-                            <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource ListHighBrush}" />
+                            <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{DynamicResource ListLowBrush}" />
+                            <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{DynamicResource ListHighBrush}" />
                             <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
                             <Setter Property="theming:DisabledProperties.BorderBrush" Value="Transparent" />
                         </Trigger>
                         <Trigger Property="Role" Value="SubmenuItem">
                             <Setter Property="Background" Value="Transparent" />
-                            <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource ListLowBrush}" />
-                            <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource ListHighBrush}" />
+                            <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{DynamicResource ListLowBrush}" />
+                            <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{DynamicResource ListHighBrush}" />
                             <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
                             <Setter Property="theming:DisabledProperties.BorderBrush" Value="Transparent" />
                         </Trigger>
@@ -239,11 +239,11 @@
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Background" Value="{StaticResource PopupBackground}" />
         <Setter Property="BorderBrush" Value="{StaticResource PopupBorder}" />
-        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource SlimBorderThickness}" />
         <Setter Property="Padding" Value="{Binding Source={StaticResource StandardListItemPadding}, Converter={StaticResource TopBottomPicker}}" />
         <Setter Property="HasDropShadow" Value="True" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource BottomControlThemeShadow}" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource BottomControlThemeShadow}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource StandardCornerRadius}" />
         <Setter Property="Margin" Value="{StaticResource PopupShadowSpacerMargin}" />
         <Setter Property="Template">
             <Setter.Value>

@@ -19,9 +19,10 @@ namespace Celestial.UIToolkit.Xaml
         /// </summary>
         public event EventHandler<ThemeChangedEventArgs> ThemeChanged;
 
-        private static Lazy<ThemeManager> _current = new Lazy<ThemeManager>(true);
+        private static Lazy<ThemeManager> _current 
+            = new Lazy<ThemeManager>(() => new ThemeManager(), true);
+
         private Application _application;
-        private string _currentTheme;
 
         /// <summary>
         /// Gets an instance of the <see cref="ThemeManager"/> for the current application.
@@ -31,13 +32,19 @@ namespace Celestial.UIToolkit.Xaml
             get { return _current.Value; }
         }
 
+        /// <summary>
+        /// Gets the name of the theme that is currently active.
+        /// This can be null.
+        /// </summary>
+        public string CurrentTheme { get; private set; }
+
         private ThemeManager()
             : this(Application.Current) { }
 
         private ThemeManager(Application application)
         {
-            if (_application is null)
-                throw new ArgumentNullException(nameof(_application));
+            if (application is null)
+                throw new ArgumentNullException(nameof(application));
             _application = application;
         }
 
@@ -52,10 +59,10 @@ namespace Celestial.UIToolkit.Xaml
         {
             VerifyAccess();
 
-            if (_currentTheme != themeName)
+            if (CurrentTheme != themeName)
             {
                 ResourcesSource.TraceInformation("Changing application theme to {0}.");
-                _currentTheme = themeName;
+                CurrentTheme = themeName;
 
                 var themeEventArgs = new ThemeChangedEventArgs(themeName);
                 RaiseThemeChanged(themeEventArgs);

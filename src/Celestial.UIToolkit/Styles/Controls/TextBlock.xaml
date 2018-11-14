@@ -27,7 +27,7 @@
     </Style>
 
     <Style x:Key="HintTextBlock" TargetType="TextBlock" BasedOn="{StaticResource StandardTextBlock}">
-        <Setter Property="Foreground" Value="{StaticResource SecondaryForegroundBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource SecondaryForegroundBrush}" />
         <Setter Property="FontWeight" Value="{StaticResource HintFontWeight}" />
         <Setter Property="FontStyle" Value="{StaticResource HintFontStyle}" />
         <Setter Property="FontStretch" Value="{StaticResource HintFontStretch}" />
@@ -74,7 +74,7 @@
     </Style>
 
     <Style x:Key="CaptionHintTextBlock" TargetType="TextBlock" BasedOn="{StaticResource CaptionTextBlock}">
-        <Setter Property="Foreground" Value="{StaticResource SecondaryForegroundBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource SecondaryForegroundBrush}" />
     </Style>
 
 </ResourceDictionary>

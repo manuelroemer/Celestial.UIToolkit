@@ -11,7 +11,7 @@
                 <ResourceDictionary Source="Themes/XamlDisplay.xaml" />
                 
                 <!-- UI Toolkit resources. -->
-                <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Theming/Themes/Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Theming/Themes.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Theming/Accents/Default.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Theming/Globals.xaml" />
 

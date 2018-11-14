@@ -19,7 +19,7 @@
     <Style x:Key="StandardToggleSwitch" TargetType="controls:ToggleSwitch" BasedOn="{c:MergeStyles 'PrimaryBackground StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource RectangleFocusVisual}" />
         <Setter Property="BorderThickness" Value="{StaticResource WideBorderThickness}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
@@ -32,7 +32,7 @@
         <Setter Property="theming:MouseOverActiveProperties.BorderBrush" Value="{DynamicResource ControlHoverBorderBrush}" />
         <Setter Property="theming:ActiveProperties.BorderBrush" Value="{DynamicResource ControlBorderBrush}" />
         <Setter Property="theming:DisabledProperties.BorderBrush" Value="{DynamicResource ControlDisabledBorderBrush}" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource DisabledThemeShadow}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource DisabledThemeShadow}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:ToggleSwitch">

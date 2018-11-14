@@ -45,8 +45,8 @@
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="ItemsControl.AlternationIndex" Value="1">
-                            <Setter Property="Background" Value="{StaticResource ListAlternationIndex1BackgroundBrush}" />
-                            <Setter Property="Background" Value="{StaticResource ListAlternationIndex1BorderBrush}" />
+                            <Setter Property="Background" Value="{DynamicResource ListAlternationIndex1BackgroundBrush}" />
+                            <Setter Property="Background" Value="{DynamicResource ListAlternationIndex1BorderBrush}" />
                         </Trigger>
 
                         <Trigger Property="IsMouseOver" Value="True">
@@ -75,8 +75,8 @@
                                 <Condition Property="IsSelected" Value="True" />
                                 <Condition Property="IsEnabled" Value="False" />
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" Value="{StaticResource ListActiveDisabledBrush}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource ListActiveDisabledBrush}" />
+                            <Setter Property="Background" Value="{DynamicResource ListActiveDisabledBrush}" />
+                            <Setter Property="BorderBrush" Value="{DynamicResource ListActiveDisabledBrush}" />
                         </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -118,13 +118,13 @@
     <Style x:Key="StandardListBox" TargetType="ListBox" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="OverridesDefaultStyle" Value="True" />
-        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource SlimBorderThickness}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
         <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource AmbientControlThemeShadow}" />
         <Setter Property="ItemContainerStyle" Value="{StaticResource StandardListBoxItem}" />
         <Setter Property="Template">
             <Setter.Value>

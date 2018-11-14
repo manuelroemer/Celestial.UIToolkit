@@ -22,10 +22,10 @@
         <Setter Property="HasDropShadow" Value="True" />
         <Setter Property="Background" Value="{StaticResource PopupBackground}" />
         <Setter Property="BorderBrush" Value="{StaticResource PopupBorder}" />
-        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource SlimBorderThickness}" />
         <Setter Property="Padding" Value="{c:GridUnit 1}" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource StandardCornerRadius}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource AmbientControlThemeShadow}" />
         <Setter Property="Margin" Value="{StaticResource PopupShadowSpacerMargin}" />
         <Setter Property="Template">
             <Setter.Value>
