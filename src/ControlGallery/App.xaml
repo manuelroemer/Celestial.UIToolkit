@@ -9,6 +9,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <!-- Custom XAML display style. -->
                 <ResourceDictionary Source="Themes/XamlDisplay.xaml" />
+                <ResourceDictionary Source="Themes/AvalonEdit.xaml" />
                 
                 <!-- UI Toolkit resources. -->
                 <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Theming/Themes.xaml" />

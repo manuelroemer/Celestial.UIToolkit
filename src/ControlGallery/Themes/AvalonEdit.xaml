@@ -1,0 +1,24 @@
+﻿<c:ThemeResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                           xmlns:c="http://celestial-ui.com"
+                           xmlns:smtx="clr-namespace:ShowMeTheXAML;assembly=ShowMeTheXAML"
+                           xmlns:ics="http://icsharpcode.net/sharpdevelop/avalonedit"
+                           xmlns:converters="clr-namespace:ControlGallery.Converters">
+
+    <c:ThemeResourceDictionary.ThemeDictionaries>
+
+        <ResourceDictionary x:Key="Light">
+            <Style x:Key="XmlAvalonEditor" TargetType="ics:TextEditor">
+                <Setter Property="SyntaxHighlighting" Value="XML" />
+            </Style>
+        </ResourceDictionary>
+
+        <ResourceDictionary x:Key="Dark">
+            <Style x:Key="XmlAvalonEditor" TargetType="ics:TextEditor">
+                <Setter Property="SyntaxHighlighting" Value="XML-Dark" />
+            </Style>
+        </ResourceDictionary>
+
+    </c:ThemeResourceDictionary.ThemeDictionaries>
+
+</c:ThemeResourceDictionary>

@@ -1,11 +1,11 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:c="http://celestial-ui.com"
-                    xmlns:smtx="clr-namespace:ShowMeTheXAML;assembly=ShowMeTheXAML"
-                    xmlns:controls="clr-namespace:ControlGallery.Controls"
-                    xmlns:converters="clr-namespace:ControlGallery.Converters"
-                    xmlns:ics="http://icsharpcode.net/sharpdevelop/avalonedit"
-                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+﻿<c:ThemeResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                           xmlns:c="http://celestial-ui.com"
+                           xmlns:smtx="clr-namespace:ShowMeTheXAML;assembly=ShowMeTheXAML"
+                           xmlns:controls="clr-namespace:ControlGallery.Controls"
+                           xmlns:converters="clr-namespace:ControlGallery.Converters"
+                           xmlns:ics="http://icsharpcode.net/sharpdevelop/avalonedit"
+                           xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
     <c:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
     <c:StringToVisibilityConverter x:Key="StringToVisibilityConverter" />
@@ -106,17 +106,20 @@
                                                    Text="XAML:" />
                                         <ics:TextEditor Grid.Row="1"
                                                         Document="{c:TemplatedParentBinding Xaml, Converter={x:Static converters:StringToTextDocumentConverter.Default}}"
+                                                        Style="{DynamicResource XmlAvalonEditor}"
                                                         Background="Transparent"
-                                                        SyntaxHighlighting="XML"
                                                         FontSize="12pt"
                                                         FontFamily="Consolas"
                                                         IsReadOnly="True"
                                                         ScrollViewer.PanningMode="Both"
                                                         MaxHeight="{c:GridUnit 250}"
                                                         HorizontalScrollBarVisibility="Auto"
-                                                        VerticalScrollBarVisibility="Auto" />
+                                                        VerticalScrollBarVisibility="Auto">
+                                            <ics:TextEditor.Options>
+                                                <ics:TextEditorOptions EnableHyperlinks="False" />
+                                            </ics:TextEditor.Options>
+                                        </ics:TextEditor>
                                     </Grid>
-                                    
                                 </Border>
                             </Grid>
                         </Border>
@@ -126,4 +129,4 @@
         </Setter>
     </Style>
     
-</ResourceDictionary>
+</c:ThemeResourceDictionary>
