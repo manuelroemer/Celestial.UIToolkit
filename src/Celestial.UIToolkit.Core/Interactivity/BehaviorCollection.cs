@@ -239,7 +239,7 @@ namespace Celestial.UIToolkit.Interactivity
         ///     <see cref="BehaviorCollection"/> using base (non-animated) property values.
         /// </summary>
         /// <param name="source">
-        /// The <see cref="BehaviorCollection"/> to copy.
+        ///     The <see cref="BehaviorCollection"/> to copy.
         /// </param>
         protected override void CloneCore(Freezable source)
         {
@@ -254,7 +254,7 @@ namespace Celestial.UIToolkit.Interactivity
         ///     <see cref="BehaviorCollection"/> using current property values.
         /// </summary>
         /// <param name="source">
-        /// The <see cref="BehaviorCollection"/> to copy.
+        ///     The <see cref="BehaviorCollection"/> to copy.
         /// </param>
         protected override void CloneCurrentValueCore(Freezable source)
         {
@@ -263,7 +263,14 @@ namespace Celestial.UIToolkit.Interactivity
             collection._validAddedBehaviors = _validAddedBehaviors.CloneCurrentValue();
             collection._associatedObject = _associatedObject;
         }
-        
+
+        /// <summary>
+        ///     Makes this instance a frozen clone of the specified <see cref="BehaviorCollection"/>
+        ///     using base (non-animated) property values.
+        /// </summary>
+        /// <param name="source">
+        ///     The <see cref="BehaviorCollection"/> to copy.
+        /// </param>
         protected override void GetAsFrozenCore(Freezable source)
         {
             base.GetAsFrozenCore(source);
@@ -272,6 +279,13 @@ namespace Celestial.UIToolkit.Interactivity
             collection._associatedObject = _associatedObject;
         }
 
+        /// <summary>
+        ///     Makes this instance a frozen clone of the specified <see cref="BehaviorCollection"/>
+        ///     using current property values.
+        /// </summary>
+        /// <param name="source">
+        ///     The <see cref="BehaviorCollection"/> to copy.
+        /// </param>
         protected override void GetCurrentValueAsFrozenCore(Freezable source)
         {
             base.GetCurrentValueAsFrozenCore(source);
