@@ -5,20 +5,10 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
-    <ResourceDictionary.MergedDictionaries>
-        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
     <Style x:Key="PrimaryButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'ControlBackground ControlBorder StandardForeground BaseFontProperties ElevationZIndex Shadow0 InteractiveShadow4'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource RectangleFocusVisual}" />
         <Setter Property="MinWidth" Value="{c:GridUnit 15}" />
         <Setter Property="MinHeight" Value="{c:GridUnit 8}" />
         <Setter Property="Padding" Value="{c:GridUnit '2,0'}" />
@@ -28,7 +18,7 @@
         <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{c:SelfBinding Path=(theming:MouseOverProperties.BackgroundBrush)}" />
         <Setter Property="theming:PressedProperties.BorderBrush" Value="{c:SelfBinding Path=(theming:MouseOverProperties.BorderBrush)}" />
         <Setter Property="theming:ActiveProperties.ShadowElevation" Value="0" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource BottomControlThemeShadow}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource BottomControlThemeShadow}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ButtonBase">
@@ -178,24 +168,24 @@
     <Style x:Key="PrimaryFlatButton" TargetType="ButtonBase" BasedOn="{StaticResource PrimaryButton}">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource ControlHoverBackgroundBrush}" />
-        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{StaticResource ControlPressedBackgroundBrush}" />
-        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource ControlActiveBackgroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{DynamicResource ControlHoverBackgroundBrush}" />
+        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{DynamicResource ControlPressedBackgroundBrush}" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{DynamicResource ControlActiveBackgroundBrush}" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
     </Style>
 
     <Style x:Key="Accent1FlatButton" TargetType="ButtonBase" BasedOn="{StaticResource PrimaryFlatButton}">
-        <Setter Property="Foreground" Value="{StaticResource Accent1Brush}" />
-        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource Accent1Brush}" />
-        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource Accent1Brush}" />
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource Accent1Brush}" />
+        <Setter Property="Foreground" Value="{DynamicResource Accent1Brush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{DynamicResource Accent1Brush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{DynamicResource Accent1Brush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{DynamicResource Accent1Brush}" />
     </Style>
 
     <Style x:Key="Accent2FlatButton" TargetType="ButtonBase" BasedOn="{StaticResource PrimaryFlatButton}">
-        <Setter Property="Foreground" Value="{StaticResource Accent2Brush}" />
-        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{StaticResource Accent2Brush}" />
-        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{StaticResource Accent2Brush}" />
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource Accent2Brush}" />
+        <Setter Property="Foreground" Value="{DynamicResource Accent2Brush}" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{DynamicResource Accent2Brush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{DynamicResource Accent2Brush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{DynamicResource Accent2Brush}" />
     </Style>
 
 
@@ -206,12 +196,12 @@
     -->
 
     <Style x:Key="PrimaryOutlinedButton" TargetType="ButtonBase" BasedOn="{StaticResource PrimaryButton}">
-        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
-        <Setter Property="BorderBrush" Value="{StaticResource ControlBackgroundBrush}" />
-        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource ControlHoverBackgroundBrush}" />
-        <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource ControlPressedBackgroundBrush}" />
-        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource ControlActiveBackgroundBrush}" />
-        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource ControlDisabledBackgroundBrush}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource SlimBorderThickness}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ControlBackgroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{DynamicResource ControlHoverBackgroundBrush}" />
+        <Setter Property="theming:PressedProperties.BorderBrush" Value="{DynamicResource ControlPressedBackgroundBrush}" />
+        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{DynamicResource ControlActiveBackgroundBrush}" />
+        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{DynamicResource ControlDisabledBackgroundBrush}" />
         <Setter Property="Background" Value="Transparent" />
         <Style.Triggers>
             <Trigger Property="IsEnabled" Value="False">
@@ -221,13 +211,13 @@
     </Style>
 
     <Style x:Key="Accent1OutlinedButton" TargetType="ButtonBase" BasedOn="{StaticResource Accent1Button}">
-        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource SlimBorderThickness}" />
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Foreground" Value="{StaticResource StandardForegroundBrush}" />
-        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource Accent1ControlHoverBackgroundBrush}" />
-        <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource Accent1ControlPressedBackgroundBrush}" />
-        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource Accent1ControlActiveBackgroundBrush}" />
-        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource ControlDisabledBackgroundBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource StandardForegroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{DynamicResource Accent1ControlHoverBackgroundBrush}" />
+        <Setter Property="theming:PressedProperties.BorderBrush" Value="{DynamicResource Accent1ControlPressedBackgroundBrush}" />
+        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{DynamicResource Accent1ControlActiveBackgroundBrush}" />
+        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{DynamicResource ControlDisabledBackgroundBrush}" />
         <Style.Triggers>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="BorderThickness" Value="0" />
@@ -236,13 +226,13 @@
     </Style>
     
     <Style x:Key="Accent2OutlinedButton" TargetType="ButtonBase" BasedOn="{StaticResource Accent2Button}">
-        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource SlimBorderThickness}" />
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Foreground" Value="{StaticResource StandardForegroundBrush}" />
-        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource Accent2ControlHoverBackgroundBrush}" />
-        <Setter Property="theming:PressedProperties.BorderBrush" Value="{StaticResource Accent2ControlPressedBackgroundBrush}" />
-        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource Accent2ControlActiveBackgroundBrush}" />
-        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{StaticResource ControlDisabledBackgroundBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource StandardForegroundBrush}" />
+        <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{DynamicResource Accent2ControlHoverBackgroundBrush}" />
+        <Setter Property="theming:PressedProperties.BorderBrush" Value="{DynamicResource Accent2ControlPressedBackgroundBrush}" />
+        <Setter Property="theming:ActiveProperties.BorderBrush" Value="{DynamicResource Accent2ControlActiveBackgroundBrush}" />
+        <Setter Property="theming:DisabledProperties.BorderBrush" Value="{DynamicResource ControlDisabledBackgroundBrush}" />
         <Style.Triggers>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="BorderThickness" Value="0" />
@@ -267,7 +257,7 @@
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
         <Style.Triggers>
             <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
+                <Setter Property="BorderThickness" Value="{DynamicResource SlimBorderThickness}" />
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -313,7 +303,7 @@
     -->
     <Style x:Key="PrimaryHyperlinkButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'TransparentBackground TransparentBorder ControlForeground'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
-        <Setter Property="FocusVisualStyle" Value="{StaticResource PrimaryButtonFocusVisual}" />
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource RectangleFocusVisual}" />
         <Setter Property="Cursor" Value="Hand" />
         <Setter Property="Template">
             <Setter.Value>

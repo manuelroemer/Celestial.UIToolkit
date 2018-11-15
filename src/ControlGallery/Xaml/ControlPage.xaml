@@ -34,13 +34,13 @@
                     c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,10', TargetType=Thickness}">
 
             <StackPanel>
-                <TextBlock Style="{StaticResource SubTitleTextBlock}"
+                <TextBlock Style="{DynamicResource SubTitleTextBlock}"
                            TextWrapping="Wrap"
                            Text="Related Controls" />
             </StackPanel>
 
             <StackPanel>
-                <TextBlock Style="{StaticResource SubTitleTextBlock}"
+                <TextBlock Style="{DynamicResource SubTitleTextBlock}"
                            Text="Readings" />
                 <ItemsControl ItemsSource="{Binding ControlInformation.DocumentationLinks}">
                     <ItemsControl.ItemTemplate>

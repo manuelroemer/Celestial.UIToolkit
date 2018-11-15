@@ -5,22 +5,11 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
-    <ResourceDictionary.MergedDictionaries>
-        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-        <c:SharedResourceDictionary Source="./TextBlock.xaml" />
-
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
     <Style x:Key="PrimaryToggleSwitch" TargetType="controls:ToggleSwitch" BasedOn="{c:MergeStyles 'PrimaryBackground StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
-        <Setter Property="BorderThickness" Value="{StaticResource WideBorderThickness}" />
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource RectangleFocusVisual}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource WideBorderThickness}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
         <Setter Property="OffKnobOffset" Value="0" />
@@ -34,9 +23,9 @@
         <Setter Property="theming:ActiveProperties.BorderBrush" Value="{DynamicResource ControlBorderBrush}" />
         <Setter Property="theming:DisabledProperties.BorderBrush" Value="{DynamicResource ControlDisabledBorderBrush}" />
         <!-- When active, re-color the knob so that the Dark theme looks good. -->
-        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="White" />
-        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="White" />
-        <Setter Property="theming:MouseOverActiveProperties.BackgroundBrush" Value="White" />
+        <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{DynamicResource ChromeWhiteBrush}" />
+        <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{DynamicResource ChromeWhiteBrush}" />
+        <Setter Property="theming:MouseOverActiveProperties.BackgroundBrush" Value="{DynamicResource ChromeWhiteBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:ToggleSwitch">

@@ -5,25 +5,14 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
-    <ResourceDictionary.MergedDictionaries>
-        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-        <c:SharedResourceDictionary Source="../../Icons/ControlParts.xaml" />
-
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
     <Style x:Key="PrimaryCheckBox" TargetType="CheckBox" BasedOn="{c:MergeStyles 'ControlBorder PrimaryBackground StandardForeground StandardFontProperties'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource RectangleFocusVisual}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Padding" Value="{c:GridUnit '2,0,0,0'}" />
-        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource SlimBorderThickness}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="CheckBox">
@@ -138,7 +127,7 @@
                                         </Style>
                                     </Grid.Resources>
                                     <controls:Ripple IsActiveTrigger="{c:TemplatedParentBinding IsPressed}" 
-                                                            Style="{StaticResource SmallBackgroundRippleAnimation}"
+                                                            Style="{DynamicResource SmallBackgroundRippleAnimation}"
                                                             IsEnabled="{TemplateBinding theming:RippleProperties.ShowRippleAnimation}" />
                                     <Border x:Name="CheckedBorder"
                                             BorderBrush="{c:TemplatedParentBinding Path=(theming:ActiveProperties.BorderBrush)}"
@@ -159,10 +148,10 @@
                                         </Border.RenderTransform>
                                     </Border>
                                     <controls:PathIcon x:Name="Checkmark"
-                                                       Data="{StaticResource Checkmark}"
+                                                       Data="{DynamicResource Checkmark}"
                                                        Width="{c:GridUnit 3}"
                                                        Height="{c:GridUnit 3}"
-                                                       Foreground="White"
+                                                       Foreground="{DynamicResource ChromeWhiteBrush}"
                                                        StrokeThickness="1"
                                                        RenderTransformOrigin="0.5,0.5">
                                         <controls:PathIcon.RenderTransform>
@@ -172,10 +161,10 @@
                                         </controls:PathIcon.RenderTransform>
                                     </controls:PathIcon>
                                     <controls:PathIcon x:Name="IndeterminateCheckmark"
-                                                       Data="{StaticResource IndeterminateCheckmark}"
+                                                       Data="{DynamicResource IndeterminateCheckmark}"
                                                        Width="{c:GridUnit 3}"
                                                        Height="{c:GridUnit 3}"
-                                                       Foreground="White"
+                                                       Foreground="{DynamicResource ChromeWhiteBrush}"
                                                        StrokeThickness="1"
                                                        RenderTransformOrigin="0.5,0.5">
                                         <controls:PathIcon.RenderTransform>
@@ -207,19 +196,19 @@
                                     <Storyboard>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="CheckmarkScaleTransform"
                                                                        Storyboard.TargetProperty="ScaleX">
-                                            <EasingDoubleKeyFrame KeyTime="{StaticResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="1" />
+                                            <EasingDoubleKeyFrame KeyTime="{DynamicResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="CheckmarkScaleTransform"
                                                                        Storyboard.TargetProperty="ScaleY">
-                                            <EasingDoubleKeyFrame KeyTime="{StaticResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="1" />
+                                            <EasingDoubleKeyFrame KeyTime="{DynamicResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="FillingBorderScaleTransform"
                                                                        Storyboard.TargetProperty="ScaleX">
-                                            <EasingDoubleKeyFrame KeyTime="{StaticResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="1" />
+                                            <EasingDoubleKeyFrame KeyTime="{DynamicResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="FillingBorderScaleTransform"
                                                                        Storyboard.TargetProperty="ScaleY">
-                                            <EasingDoubleKeyFrame KeyTime="{StaticResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="1" />
+                                            <EasingDoubleKeyFrame KeyTime="{DynamicResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                        Storyboard.TargetProperty="(UIElement.Visibility)">
@@ -235,11 +224,11 @@
                                     <Storyboard>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="FillingBorderScaleTransform"
                                                                        Storyboard.TargetProperty="ScaleX">
-                                            <EasingDoubleKeyFrame KeyTime="{StaticResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="0" />
+                                            <EasingDoubleKeyFrame KeyTime="{DynamicResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="0" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="FillingBorderScaleTransform"
                                                                        Storyboard.TargetProperty="ScaleY">
-                                            <EasingDoubleKeyFrame KeyTime="{StaticResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="0" />
+                                            <EasingDoubleKeyFrame KeyTime="{DynamicResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="0" />
                                         </DoubleAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -247,19 +236,19 @@
                                     <Storyboard>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="IndeterminateCheckmarkScaleTransform"
                                                                        Storyboard.TargetProperty="ScaleX">
-                                            <EasingDoubleKeyFrame KeyTime="{StaticResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="1" />
+                                            <EasingDoubleKeyFrame KeyTime="{DynamicResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="IndeterminateCheckmarkScaleTransform"
                                                                        Storyboard.TargetProperty="ScaleY">
-                                            <EasingDoubleKeyFrame KeyTime="{StaticResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="1" />
+                                            <EasingDoubleKeyFrame KeyTime="{DynamicResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="FillingBorderScaleTransform"
                                                                        Storyboard.TargetProperty="ScaleX">
-                                            <EasingDoubleKeyFrame KeyTime="{StaticResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="1" />
+                                            <EasingDoubleKeyFrame KeyTime="{DynamicResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="FillingBorderScaleTransform"
                                                                        Storyboard.TargetProperty="ScaleY">
-                                            <EasingDoubleKeyFrame KeyTime="{StaticResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="1" />
+                                            <EasingDoubleKeyFrame KeyTime="{DynamicResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                        Storyboard.TargetProperty="(UIElement.Visibility)">

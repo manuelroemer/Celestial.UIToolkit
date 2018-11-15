@@ -168,12 +168,12 @@
                         <Style x:Key="MyTabItem" TargetType="TabItem" BasedOn="{StaticResource Accent2TabItem}">
                             <Setter Property="c:SelectionProperties.ShowSelectionIndicator" Value="True" />
                             <Setter Property="c:SelectionProperties.SelectionIndicatorSize" Value="{c:GridUnit 1}" />
-                            <Setter Property="c:TabItemProperties.HeaderForeground" Value="{StaticResource StandardForegroundBrush}" />
-                            <Setter Property="c:TabItemProperties.HeaderFontSize" Value="{StaticResource PrimaryFontSize}" />
-                            <Setter Property="c:TabItemProperties.HeaderFontFamily" Value="{StaticResource PrimaryFontFamily}" />
-                            <Setter Property="c:TabItemProperties.HeaderFontStyle" Value="{StaticResource BaseFontStyle}" />
-                            <Setter Property="c:TabItemProperties.HeaderFontWeight" Value="{StaticResource BaseFontWeight}" />
-                            <Setter Property="c:TabItemProperties.HeaderFontStretch" Value="{StaticResource BaseFontStretch}" />
+                            <Setter Property="c:TabItemProperties.HeaderForeground" Value="{DynamicResource StandardForegroundBrush}" />
+                            <Setter Property="c:TabItemProperties.HeaderFontSize" Value="{DynamicResource StandardFontSize}" />
+                            <Setter Property="c:TabItemProperties.HeaderFontFamily" Value="{DynamicResource StandardFontFamily}" />
+                            <Setter Property="c:TabItemProperties.HeaderFontStyle" Value="{DynamicResource BaseFontStyle}" />
+                            <Setter Property="c:TabItemProperties.HeaderFontWeight" Value="{DynamicResource BaseFontWeight}" />
+                            <Setter Property="c:TabItemProperties.HeaderFontStretch" Value="{DynamicResource BaseFontStretch}" />
                         </Style>
                     </StackPanel.Resources>
                     

@@ -5,20 +5,7 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
-    <ResourceDictionary.MergedDictionaries>
-        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-        <c:SharedResourceDictionary Source="./ScrollViewer.xaml" />
-        <c:SharedResourceDictionary Source="./Thumb.xaml" />
-        <c:SharedResourceDictionary Source="./ManipulationBoundaryFeedbackAwareContentControl.xaml" />
-
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
-    <Style x:Key="PrimaryGridViewScrollViewer" TargetType="ScrollViewer" BasedOn="{StaticResource PrimaryScrollViewer}">
+    <Style x:Key="PrimaryGridViewScrollViewer" TargetType="ScrollViewer" BasedOn="{c:MergeStyles PrimaryScrollViewer}">
         <Setter Property="Focusable" Value="False" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Template">
@@ -88,7 +75,7 @@
 
 
                                     <controls:ManipulationBoundaryFeedbackAwareContentControl 
-                                        Style="{StaticResource BouncingManipulationBoundaryFeedbackAwareContentControl}"
+                                        Style="{DynamicResource BouncingManipulationBoundaryFeedbackAwareContentControl}"
                                         FeedbackProvider="{c:TemplatedParentBinding}">
                                         <ScrollContentPresenter x:Name="PART_ScrollContentPresenter"
                                                                 Margin="{TemplateBinding Padding}"
@@ -117,9 +104,9 @@
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
-        <Setter Property="Padding" Value="{StaticResource PrimaryListItemPadding}" />
+        <Setter Property="Padding" Value="{DynamicResource StandardListItemPadding}" />
         <Setter Property="MinWidth" Value="{c:GridUnit 1}" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource BottomControlThemeShadow}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource BottomControlThemeShadow}" />
         <Setter Property="FontWeight" Value="SemiBold" />
         <Setter Property="Template">
             <Setter.Value>
@@ -302,13 +289,13 @@
     
     <Style x:Key="PrimaryListViewItem" TargetType="ListViewItem" BasedOn="{c:MergeStyles 'ListBackground ListBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
-        <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource RectangleFocusVisual}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
-        <Setter Property="Padding" Value="{StaticResource PrimaryListItemPadding}" />
+        <Setter Property="Padding" Value="{DynamicResource StandardListItemPadding}" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource PrimaryCornerRadius}" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource StandardCornerRadius}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource AmbientControlThemeShadow}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ListViewItem">
@@ -345,8 +332,8 @@
                         </Trigger>
                         
                         <Trigger Property="ItemsControl.AlternationIndex" Value="1">
-                            <Setter Property="Background" Value="{StaticResource ListAlternationIndex1BackgroundBrush}" />
-                            <Setter Property="Background" Value="{StaticResource ListAlternationIndex1BorderBrush}" />
+                            <Setter Property="Background" Value="{DynamicResource ListAlternationIndex1BackgroundBrush}" />
+                            <Setter Property="Background" Value="{DynamicResource ListAlternationIndex1BorderBrush}" />
                         </Trigger>
                         
                         <Trigger Property="IsMouseOver" Value="True">
@@ -375,8 +362,8 @@
                                 <Condition Property="IsSelected" Value="True" />
                                 <Condition Property="IsEnabled" Value="False" />
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" Value="{StaticResource ListActiveDisabledBrush}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource ListActiveDisabledBrush}" />
+                            <Setter Property="Background" Value="{DynamicResource ListActiveDisabledBrush}" />
+                            <Setter Property="BorderBrush" Value="{DynamicResource ListActiveDisabledBrush}" />
                         </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -385,11 +372,11 @@
     </Style>
 
     <Style x:Key="Accent1ListViewItem" TargetType="ListViewItem" BasedOn="{c:MergeStyles 'PrimaryListViewItem Accent1ListBackground Accent1ListBorder'}">
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnListAccent1TextBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{DynamicResource OnListAccent1TextBrush}" />
     </Style>
 
     <Style x:Key="Accent2ListViewItem" TargetType="ListViewItem" BasedOn="{c:MergeStyles 'PrimaryListViewItem Accent2ListBackground Accent2ListBorder'}">
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnListAccent2TextBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{DynamicResource OnListAccent2TextBrush}" />
     </Style>
     
     <Style TargetType="ListViewItem" BasedOn="{StaticResource Accent2ListViewItem}" />
@@ -435,9 +422,9 @@
         <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
         <Setter Property="ScrollViewer.PanningMode" Value="Both" />
         <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
-        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource PrimaryCornerRadius}" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource SlimBorderThickness}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource StandardCornerRadius}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource AmbientControlThemeShadow}" />
         <Setter Property="ItemContainerStyle" Value="{StaticResource PrimaryListViewItem}" />
         <Setter Property="Template">
             <Setter.Value>

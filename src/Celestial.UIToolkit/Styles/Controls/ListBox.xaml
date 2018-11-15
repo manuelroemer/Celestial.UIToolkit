@@ -4,22 +4,12 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
-    <ResourceDictionary.MergedDictionaries>
-        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
     <Style x:Key="PrimaryListBoxItem" TargetType="ListBoxItem" BasedOn="{c:MergeStyles 'ListBackground ListBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
-        <Setter Property="Padding" Value="{StaticResource PrimaryListItemPadding}" />
+        <Setter Property="Padding" Value="{DynamicResource StandardListItemPadding}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Template">
@@ -45,8 +35,8 @@
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="ItemsControl.AlternationIndex" Value="1">
-                            <Setter Property="Background" Value="{StaticResource ListAlternationIndex1BackgroundBrush}" />
-                            <Setter Property="Background" Value="{StaticResource ListAlternationIndex1BorderBrush}" />
+                            <Setter Property="Background" Value="{DynamicResource ListAlternationIndex1BackgroundBrush}" />
+                            <Setter Property="Background" Value="{DynamicResource ListAlternationIndex1BorderBrush}" />
                         </Trigger>
 
                         <Trigger Property="IsMouseOver" Value="True">
@@ -75,8 +65,8 @@
                                 <Condition Property="IsSelected" Value="True" />
                                 <Condition Property="IsEnabled" Value="False" />
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" Value="{StaticResource ListActiveDisabledBrush}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource ListActiveDisabledBrush}" />
+                            <Setter Property="Background" Value="{DynamicResource ListActiveDisabledBrush}" />
+                            <Setter Property="BorderBrush" Value="{DynamicResource ListActiveDisabledBrush}" />
                         </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -85,11 +75,11 @@
     </Style>
     
     <Style x:Key="Accent1ListBoxItem" TargetType="ListBoxItem" BasedOn="{c:MergeStyles 'PrimaryListBoxItem Accent1ListBackground Accent1ListBorder'}">
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnListAccent1TextBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{DynamicResource OnListAccent1TextBrush}" />
     </Style>
 
     <Style x:Key="Accent2ListBoxItem" TargetType="ListBoxItem" BasedOn="{c:MergeStyles 'PrimaryListBoxItem Accent2ListBackground Accent2ListBorder'}">
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnListAccent2TextBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{DynamicResource OnListAccent2TextBrush}" />
     </Style>
     
     <Style TargetType="ListBoxItem" BasedOn="{StaticResource Accent2ListBoxItem}" />
@@ -125,13 +115,13 @@
     <Style x:Key="PrimaryListBox" TargetType="ListBox" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="OverridesDefaultStyle" Value="True" />
-        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource SlimBorderThickness}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
         <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource AmbientControlThemeShadow}" />
         <Setter Property="ItemContainerStyle" Value="{StaticResource PrimaryListBoxItem}" />
         <Setter Property="Template">
             <Setter.Value>

@@ -5,27 +5,32 @@
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
-    <ResourceDictionary.MergedDictionaries>
-        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-        <c:SharedResourceDictionary Source="../../Icons/ControlParts.xaml" />
-        <c:SharedResourceDictionary Source="../../Icons/Badges.xaml" />
-        <c:SharedResourceDictionary Source="./TextBlock.xaml" />
-        <c:SharedResourceDictionary Source="./Button.xaml" />
-        <c:SharedResourceDictionary Source="./IconElements.xaml" />
-
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
+    <Style x:Key="ComboBoxTextBox" TargetType="TextBox" BasedOn="{c:MergeStyles 'StandardForeground StandardFontProperties'}">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <ScrollViewer x:Name="PART_ContentHost"
+                                  Focusable="False"
+                                  IsTabStop="False"
+                                  Padding="{TemplateBinding Padding}" />
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{c:TemplatedParentBinding Path=(theming:DisabledProperties.ForegroundBrush)}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
     <Style x:Key="PrimaryComboBoxItem" TargetType="ComboBoxItem" BasedOn="{c:MergeStyles 'ListBackground ListBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
-        <Setter Property="Padding" Value="{StaticResource PrimaryListItemPadding}" />
+        <Setter Property="Padding" Value="{DynamicResource StandardListItemPadding}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Template">
@@ -52,8 +57,8 @@
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="ItemsControl.AlternationIndex" Value="1">
-                            <Setter Property="Background" Value="{StaticResource ListAlternationIndex1BackgroundBrush}" />
-                            <Setter Property="Background" Value="{StaticResource ListAlternationIndex1BorderBrush}" />
+                            <Setter Property="Background" Value="{DynamicResource ListAlternationIndex1BackgroundBrush}" />
+                            <Setter Property="Background" Value="{DynamicResource ListAlternationIndex1BorderBrush}" />
                         </Trigger>
 
                         <Trigger Property="IsMouseOver" Value="True">
@@ -82,8 +87,8 @@
                                 <Condition Property="IsSelected" Value="True" />
                                 <Condition Property="IsEnabled" Value="False" />
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" Value="{StaticResource ListActiveDisabledBrush}" />
-                            <Setter Property="BorderBrush" Value="{StaticResource ListActiveDisabledBrush}" />
+                            <Setter Property="Background" Value="{DynamicResource ListActiveDisabledBrush}" />
+                            <Setter Property="BorderBrush" Value="{DynamicResource ListActiveDisabledBrush}" />
                         </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -92,35 +97,17 @@
     </Style>
 
     <Style x:Key="Accent1ComboBoxItem" TargetType="ComboBoxItem" BasedOn="{c:MergeStyles 'PrimaryComboBoxItem Accent1ListBackground Accent1ListBorder'}">
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnListAccent1TextBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{DynamicResource OnListAccent1TextBrush}" />
     </Style>
 
     <Style x:Key="Accent2ComboBoxItem" TargetType="ComboBoxItem" BasedOn="{c:MergeStyles 'PrimaryComboBoxItem Accent2ListBackground Accent2ListBorder'}">
-        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{StaticResource OnListAccent2TextBrush}" />
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{DynamicResource OnListAccent2TextBrush}" />
     </Style>
     <Style TargetType="ComboBoxItem" BasedOn="{StaticResource Accent2ComboBoxItem}" />
 
-    
-    
-    <Style x:Key="PrimaryComboBox" TargetType="ComboBox" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder StandardForeground StandardFontProperties StandardPopup Shadow16'}">
-        <Style.Resources>
-            <Style x:Key="ComboBoxTextBox" TargetType="TextBox">
-                <Setter Property="HorizontalAlignment" Value="Stretch" />
-                <Setter Property="VerticalAlignment" Value="Stretch" />
-                <Setter Property="CaretBrush" Value="{StaticResource CaretBrush}" />
-                <Setter Property="Template">
-                    <Setter.Value>
-                        <ControlTemplate TargetType="TextBox">
-                            <ScrollViewer x:Name="PART_ContentHost"
-                                          Focusable="False"
-                                          IsTabStop="False"
-                                          Padding="{TemplateBinding Padding}" />
-                        </ControlTemplate>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-        </Style.Resources>
 
+
+    <Style x:Key="PrimaryComboBox" TargetType="ComboBox" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder StandardForeground StandardFontProperties StandardPopup Shadow16'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -130,14 +117,14 @@
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="BorderThickness" Value="0,0,0,1" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource PrimaryCornerRadius}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource StandardCornerRadius}" />
         <Setter Property="AllowDrop" Value="True" />
-        <Setter Property="Background" Value="{StaticResource PrimaryLowBrush}" />
+        <Setter Property="Background" Value="{DynamicResource PrimaryLowBrush}" />
         <Setter Property="ItemContainerStyle" Value="{StaticResource PrimaryComboBoxItem}" />
         <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{c:SelfBinding Background}" />
         <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{c:SelfBinding Background}" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{c:SelfBinding Background}" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource BottomControlThemeShadow}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource BottomControlThemeShadow}" />
         <Setter Property="theming:PopupProperties.BorderThickness" Value="1,0,1,1" />
         <Setter Property="theming:SelectionProperties.SelectionIndicatorSize" Value="{c:GridUnit 0.377}" />
         <Setter Property="Template">
@@ -233,7 +220,7 @@
                                      or a ContentPresenter which displays the current item. -->
                                 <Grid x:Name="EditStateElementsContainer">
                                     <TextBox x:Name="PART_EditableTextBox"
-                                             Style="{StaticResource ComboBoxTextBox}"
+                                             Style="{DynamicResource ComboBoxTextBox}"
                                              Margin="-2,0,0,0"
                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
@@ -254,8 +241,8 @@
                                     <controls:PathIcon x:Name="ValidationErrorIcon"
                                                        Margin="{c:GridUnit '1,0,0,0'}"
                                                        Visibility="Collapsed"
-                                                       Foreground="{StaticResource ErrorBrush}"
-                                                       Data="{StaticResource Error}" />
+                                                       Foreground="{DynamicResource ErrorBrush}"
+                                                       Data="{DynamicResource Error}" />
                                 </StackPanel>
                             </Grid>
                         </controls:PlaceholderOverlay>
@@ -265,7 +252,7 @@
                             <!-- This Button gets fully expanded across the whole control when IsEditable=false.
                                  By default, it's docked to the right. -->
                             <ToggleButton x:Name="ToggleButton"
-                                          Style="{StaticResource TransparentButton}"
+                                          Style="{DynamicResource TransparentButton}"
                                           Foreground="{TemplateBinding BorderBrush}"
                                           theming:MouseOverProperties.ForegroundBrush="{TemplateBinding theming:MouseOverProperties.BorderBrush}"
                                           theming:PressedProperties.ForegroundBrush="{TemplateBinding theming:PressedProperties.BorderBrush}"
@@ -278,8 +265,8 @@
                                           VerticalContentAlignment="Center"
                                           Padding="{c:GridUnit '1,0'}">
                                 <controls:PathIcon x:Name="ToggleButtonArrowIcon"
-                                                   Style="{StaticResource SmallIconElement}"
-                                                   Data="{StaticResource SimpleArrowDown}"
+                                                   Style="{DynamicResource SmallIconElement}"
+                                                   Data="{DynamicResource SimpleArrowDown}"
                                                    RenderTransformOrigin="0.5,0.5">
                                     <controls:PathIcon.RenderTransform>
                                         <RotateTransform Angle="0" />
@@ -294,14 +281,14 @@
                                 Padding="{c:TemplatedParentBinding Padding, Converter={StaticResource ThicknessLeftPickerConverter}}">
                             <Grid>
                                 <TextBlock x:Name="AssistiveText"
-                                           Style="{StaticResource CaptionHintTextBlock}"
+                                           Style="{DynamicResource CaptionHintTextBlock}"
                                            Text="{TemplateBinding theming:TextBoxProperties.AssistiveText}"
                                            TextTrimming="CharacterEllipsis"
                                            Margin="{c:GridUnit '0,0.5,0,0'}"
                                            Visibility="{c:TemplatedParentBinding Path=(theming:TextBoxProperties.AssistiveText), Converter={StaticResource StringToVisibilityConverter}}" />
                                 <TextBlock x:Name="ValidationErrorText"
-                                           Style="{StaticResource CaptionHintTextBlock}"
-                                           Foreground="{StaticResource ErrorBrush}"
+                                           Style="{DynamicResource CaptionHintTextBlock}"
+                                           Foreground="{DynamicResource ErrorBrush}"
                                            Text="{c:TemplatedParentBinding Path=(Validation.Errors)[0].ErrorContent}"
                                            TextTrimming="CharacterEllipsis"
                                            Margin="{c:GridUnit '0,0.5,0,0'}"
@@ -323,7 +310,7 @@
                                   SnapsToDevicePixels="True"
                                   MinWidth="{TemplateBinding ActualWidth}"
                                   MaxHeight="{TemplateBinding MaxDropDownHeight}"
-                                  Margin="{StaticResource PopupShadowSpacerMargin}">
+                                  Margin="{DynamicResource PopupShadowSpacerMargin}">
                                 <controls:ThemeShadowPresenter>
                                     <Border x:Name="DropDownBorder"
                                             CornerRadius="{TemplateBinding theming:PopupProperties.CornerRadius}"
@@ -394,16 +381,16 @@
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsReadOnly" Value="True">
-                            <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource ControlBorderBrush}" />
-                            <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource ControlBorderBrush}" />
+                            <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{DynamicResource ControlBorderBrush}" />
+                            <Setter Property="theming:ActiveProperties.BorderBrush" Value="{DynamicResource ControlBorderBrush}" />
                         </Trigger>
                         <Trigger Property="Validation.HasError" Value="True">
                             <Setter TargetName="ValidationErrorIcon" Property="Visibility" Value="Visible" />
                             <Setter TargetName="ValidationErrorText" Property="Visibility" Value="Visible" />
                             <Setter TargetName="AssistiveText" Property="Visibility" Value="Collapsed" />
-                            <Setter Property="BorderBrush" Value="{StaticResource ErrorControlBorderBrush}" />
-                            <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{StaticResource ErrorControlHoverBorderBrush}" />
-                            <Setter Property="theming:ActiveProperties.BorderBrush" Value="{StaticResource ErrorControlActiveBorderBrush}" />
+                            <Setter Property="BorderBrush" Value="{DynamicResource ErrorControlBorderBrush}" />
+                            <Setter Property="theming:MouseOverProperties.BorderBrush" Value="{DynamicResource ErrorControlHoverBorderBrush}" />
+                            <Setter Property="theming:ActiveProperties.BorderBrush" Value="{DynamicResource ErrorControlActiveBorderBrush}" />
                         </Trigger>
                         
                         <!-- Show Placeholder when nothing is selected/entered. -->
@@ -436,6 +423,10 @@
                         </Trigger>
                         <Trigger Property="IsGrouping" Value="True">
                             <Setter Property="ScrollViewer.CanContentScroll" Value="False" />
+                        </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{c:SelfBinding Path=(theming:DisabledProperties.ForegroundBrush)}" />
                         </Trigger>
                         
                         <!-- Rotate DropDown icon when the popup is shown. -->
@@ -481,13 +472,15 @@
 
 
 
-    <Style x:Key="PrimaryOutlinedComboBox" TargetType="ComboBox" BasedOn="{StaticResource PrimaryComboBox}">
+    <Style x:Key="PrimaryOutlinedComboBox" TargetType="ComboBox" BasedOn="{c:MergeStyles 'PrimaryComboBox'}">
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="theming:SelectionProperties.ShowSelectionIndicator" Value="False" />
     </Style>
+    
     <Style x:Key="Accent1OutlinedComboBox" TargetType="ComboBox" BasedOn="{c:MergeStyles 'PrimaryOutlinedComboBox ControlBorder Accent1ControlBorderStates'}">
         <Setter Property="ItemContainerStyle" Value="{StaticResource Accent1ComboBoxItem}" />
     </Style>
+    
     <Style x:Key="Accent2OutlinedComboBox" TargetType="ComboBox" BasedOn="{c:MergeStyles 'PrimaryOutlinedComboBox ControlBorder Accent2ControlBorderStates'}">
         <Setter Property="ItemContainerStyle" Value="{StaticResource Accent2ComboBoxItem}" />
     </Style>

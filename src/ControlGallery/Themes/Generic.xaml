@@ -1,11 +1,11 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:c="http://celestial-ui.com"
-                    xmlns:smtx="clr-namespace:ShowMeTheXAML;assembly=ShowMeTheXAML"
-                    xmlns:controls="clr-namespace:ControlGallery.Controls"
-                    xmlns:converters="clr-namespace:ControlGallery.Converters"
-                    xmlns:ics="http://icsharpcode.net/sharpdevelop/avalonedit"
-                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+﻿<c:ThemeResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                           xmlns:c="http://celestial-ui.com"
+                           xmlns:smtx="clr-namespace:ShowMeTheXAML;assembly=ShowMeTheXAML"
+                           xmlns:controls="clr-namespace:ControlGallery.Controls"
+                           xmlns:converters="clr-namespace:ControlGallery.Converters"
+                           xmlns:ics="http://icsharpcode.net/sharpdevelop/avalonedit"
+                           xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
     <c:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
     <c:StringToVisibilityConverter x:Key="StringToVisibilityConverter" />
@@ -13,18 +13,18 @@
     <Style TargetType="controls:ControlPresenter">
         <!-- ControlPresenter is of type ContentControl, which doesn't inherit DepProperties. 
              => Set these Primary properties manually.-->
-        <Setter Property="FontFamily" Value="{DynamicResource PrimaryFontFamily}" />
-        <Setter Property="FontSize" Value="{DynamicResource PrimaryFontSize}" />
-        <Setter Property="FontWeight" Value="{DynamicResource PrimaryFontWeight}" />
-        <Setter Property="FontStretch" Value="{DynamicResource PrimaryFontStretch}" />
-        <Setter Property="FontStyle" Value="{DynamicResource PrimaryFontStyle}" />
+        <Setter Property="FontFamily" Value="{DynamicResource StandardFontFamily}" />
+        <Setter Property="FontSize" Value="{DynamicResource StandardFontSize}" />
+        <Setter Property="FontWeight" Value="{DynamicResource StandardFontWeight}" />
+        <Setter Property="FontStretch" Value="{DynamicResource StandardFontStretch}" />
+        <Setter Property="FontStyle" Value="{DynamicResource StandardFontStyle}" />
         <Setter Property="Foreground" Value="{DynamicResource StandardForegroundBrush}" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderBrush" Value="{DynamicResource PrimaryMediumLowBrush}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
-        <Setter Property="FontSize" Value="{StaticResource PrimaryFontSize}" />
+        <Setter Property="FontSize" Value="{DynamicResource StandardFontSize}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:ControlPresenter">
@@ -106,17 +106,20 @@
                                                    Text="XAML:" />
                                         <ics:TextEditor Grid.Row="1"
                                                         Document="{c:TemplatedParentBinding Xaml, Converter={x:Static converters:StringToTextDocumentConverter.Default}}"
+                                                        Style="{DynamicResource XmlAvalonEditor}"
                                                         Background="Transparent"
-                                                        SyntaxHighlighting="XML"
                                                         FontSize="12pt"
                                                         FontFamily="Consolas"
                                                         IsReadOnly="True"
                                                         ScrollViewer.PanningMode="Both"
                                                         MaxHeight="{c:GridUnit 250}"
                                                         HorizontalScrollBarVisibility="Auto"
-                                                        VerticalScrollBarVisibility="Auto" />
+                                                        VerticalScrollBarVisibility="Auto">
+                                            <ics:TextEditor.Options>
+                                                <ics:TextEditorOptions EnableHyperlinks="False" />
+                                            </ics:TextEditor.Options>
+                                        </ics:TextEditor>
                                     </Grid>
-                                    
                                 </Border>
                             </Grid>
                         </Border>
@@ -126,4 +129,4 @@
         </Setter>
     </Style>
     
-</ResourceDictionary>
+</c:ThemeResourceDictionary>

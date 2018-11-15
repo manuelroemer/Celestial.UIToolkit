@@ -10,7 +10,7 @@
     <Style x:Key="SmallBackgroundRippleAnimation" x:Shared="False"  TargetType="controls:Ripple">
         <Setter Property="Width" Value="{c:GridUnit 5}" />
         <Setter Property="Height" Value="{c:GridUnit 5}" />
-        <Setter Property="Background" Value="{StaticResource PrimaryMediumLowBrush}" />
+        <Setter Property="Background" Value="{DynamicResource PrimaryMediumLowBrush}" />
         <Setter Property="IsEnabled" Value="{c:TemplatedParentBinding Path=(theming:RippleProperties.ShowRippleAnimation)}" />
         <Setter Property="RippleOrigin" Value="Center" />
         <Setter Property="ClipToBounds" Value="False" />
@@ -128,7 +128,7 @@
                             BorderThickness="{TemplateBinding BorderThickness}"
                             Padding="{TemplateBinding Padding}">
                         <Grid>
-                            <controls:Ripple Style="{StaticResource SmallBackgroundRippleAnimation}"
+                            <controls:Ripple Style="{DynamicResource SmallBackgroundRippleAnimation}"
                                              IsActiveTrigger="{TemplateBinding IsPressed}" />
                             <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />

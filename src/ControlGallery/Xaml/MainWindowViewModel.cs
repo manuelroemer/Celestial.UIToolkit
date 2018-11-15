@@ -1,6 +1,8 @@
-﻿using ControlGallery.Common;
+﻿using Celestial.UIToolkit.Xaml;
+using ControlGallery.Common;
 using ControlGallery.Data;
 using MahApps.Metro.IconPacks;
+using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
 using System;
@@ -19,6 +21,16 @@ namespace ControlGallery.Xaml
 
         private IRegionManager _regionManager;
         private IControlDataSource _controlDataSource;
+
+        public DelegateCommand ChangeToLightThemeCommand { get; } = new DelegateCommand(() =>
+        {
+            ThemeManager.Current.ChangeTheme("Light");
+        });
+
+        public DelegateCommand ChangeToDarkThemeCommand { get; } = new DelegateCommand(() =>
+        {
+            ThemeManager.Current.ChangeTheme("Dark");
+        });
 
         public ObservableCollection<NavigationMenuItemInfo> MenuItems { get; }
 

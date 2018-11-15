@@ -5,26 +5,15 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
-    <ResourceDictionary.MergedDictionaries>
-        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-        <c:SharedResourceDictionary Source="./ToolTip.xaml" />
-
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
-    <Style x:Key="PrimarySliderThumb" TargetType="Thumb" BasedOn="{c:MergeStyles 'PrimaryBackground ControlBorder Shadow0'}">
+    <Style x:Key="PrimarySliderThumb" TargetType="Thumb" BasedOn="{c:MergeStyles 'ChromeWhiteBackground ControlBorder Shadow0'}">
         <Style.Resources>
             <!-- The default ToolTip Style has a Margin for the Shadows.
                  The Slider uses the Thumb's ToolTip for displaying the current value.
                  It also uses a custom ToolTipPlacement method, which doesn't take the margin into account.
                  Thus, the ToolTip gets moved to the down-right.
                  We can override this by removing the margin (and thus disabling shadows). -->
-            <Style TargetType="ToolTip" BasedOn="{StaticResource PrimaryToolTip}">
-                <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource DisabledThemeShadow}" />
+            <Style TargetType="ToolTip" BasedOn="{c:MergeStyles PrimaryToolTip}">
+                <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource DisabledThemeShadow}" />
                 <Setter Property="Margin" Value="0" />
                 <Style.Triggers>
                     <!-- While we are fixing Popups:
@@ -45,9 +34,9 @@
         <Setter Property="SnapsToDevicePixels" Value="False" />
         <Setter Property="Width" Value="{c:GridUnit 4}" />
         <Setter Property="Height" Value="{c:GridUnit 4}" />
-        <Setter Property="Background" Value="White" />
-        <Setter Property="BorderThickness" Value="{StaticResource WideBorderThickness}" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource DisabledThemeShadow}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource WideBorderThickness}" />
+        <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="{DynamicResource PaneBackgroundBrush}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource DisabledThemeShadow}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Thumb">
@@ -199,11 +188,11 @@
                                    VerticalAlignment="Center" />
                         </Track.Thumb>
                         <Track.IncreaseRepeatButton>
-                            <RepeatButton Style="{StaticResource TransparentButton}"
+                            <RepeatButton Style="{DynamicResource TransparentButton}"
                                           Command="{x:Static Slider.IncreaseLarge}" />
                         </Track.IncreaseRepeatButton>
                         <Track.DecreaseRepeatButton>
-                            <RepeatButton Style="{StaticResource TransparentButton}"
+                            <RepeatButton Style="{DynamicResource TransparentButton}"
                                           Command="{x:Static Slider.DecreaseLarge}" />
                         </Track.DecreaseRepeatButton>
                     </Track>
@@ -283,11 +272,11 @@
                                    HorizontalAlignment="Center" />
                         </Track.Thumb>
                         <Track.IncreaseRepeatButton>
-                            <RepeatButton Style="{StaticResource TransparentButton}"
+                            <RepeatButton Style="{DynamicResource TransparentButton}"
                                           Command="{x:Static Slider.IncreaseLarge}" />
                         </Track.IncreaseRepeatButton>
                         <Track.DecreaseRepeatButton>
-                            <RepeatButton Style="{StaticResource TransparentButton}"
+                            <RepeatButton Style="{DynamicResource TransparentButton}"
                                           Command="{x:Static Slider.DecreaseLarge}" />
                         </Track.DecreaseRepeatButton>
                     </Track>
@@ -322,10 +311,10 @@
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="AutoToolTipPlacement" Value="TopLeft" />
-        <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource RectangleFocusVisual}" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource PrimaryCornerRadius}" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource DisabledThemeShadow}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource StandardCornerRadius}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource DisabledThemeShadow}" />
         <Setter Property="Template" Value="{StaticResource HorizontalSliderTemplate}" />
         
         <!-- This makes the SelectionRange line follow the Thumb. -->

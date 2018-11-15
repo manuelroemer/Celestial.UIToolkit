@@ -5,18 +5,6 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
-    <ResourceDictionary.MergedDictionaries>
-        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-        <c:SharedResourceDictionary Source="./IconElements.xaml" />
-        <c:SharedResourceDictionary Source="../../Icons/ControlParts.xaml" />
-
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
     <!-- This is the absolute minimum style for a Window.
          Since windows are the root of everything else, they must set all inheriting
          properties (like Foreground, FontSize, ...). 
@@ -119,7 +107,7 @@
                         <DataTrigger Binding="{Binding IsActive, RelativeSource={RelativeSource AncestorType=Window}}" Value="False">
                             <Setter Property="Background" Value="Transparent" />
                             <Setter Property="BorderBrush" Value="Transparent" />
-                            <Setter Property="Foreground" Value="{StaticResource DisabledForegroundBrush}" />
+                            <Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}" />
                         </DataTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -130,8 +118,8 @@
     <Style x:Key="PrimaryCloseWindowCaptionButton" TargetType="Button" BasedOn="{StaticResource PrimaryWindowCaptionButton}">
         <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="#E81123" />
         <Setter Property="theming:PressedProperties.BackgroundBrush" Value="#8B2647" />
-        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="White" />
-        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="White" />
+        <Setter Property="theming:MouseOverProperties.ForegroundBrush" Value="{DynamicResource ChromeWhiteBrush}" />
+        <Setter Property="theming:PressedProperties.ForegroundBrush" Value="{DynamicResource ChromeWhiteBrush}" />
     </Style>
     
     <ControlTemplate x:Key="PrimaryWindowTemplate" TargetType="Window">
@@ -176,7 +164,7 @@
                                 </Grid.ColumnDefinitions>
 
                                 <Button x:Name="ShowSystemMenuButton"
-                                        Style="{StaticResource TransparentButton}"
+                                        Style="{DynamicResource TransparentButton}"
                                         Command="{x:Static controls:WindowCommands.ShowSystemMenuCommand}"
                                         CommandParameter="{c:TemplatedParentBinding}"
                                         WindowChrome.IsHitTestVisibleInChrome="True">
@@ -209,7 +197,7 @@
                                     Command="{x:Static controls:WindowCommands.MinimizeCommand}"
                                     CommandParameter="{c:TemplatedParentBinding}">
                                 <controls:PathIcon x:Name="MinimizeIcon"
-                                                   Data="{StaticResource WindowMinimize}"
+                                                   Data="{DynamicResource WindowMinimize}"
                                                    Width="10" 
                                                    Height="10" />
                             </Button>
@@ -219,11 +207,11 @@
                                     CommandParameter="{c:TemplatedParentBinding}">
                                 <Grid>
                                     <controls:PathIcon x:Name="MaximizeIcon"
-                                                       Data="{StaticResource WindowMaximize}"
+                                                       Data="{DynamicResource WindowMaximize}"
                                                        Width="10" 
                                                        Height="10" />
                                     <controls:PathIcon x:Name="RestoreIcon"
-                                                       Data="{StaticResource WindowRestore}"
+                                                       Data="{DynamicResource WindowRestore}"
                                                        Width="10"
                                                        Height="10" 
                                                        Visibility="Collapsed" />
@@ -234,7 +222,7 @@
                                     Command="{x:Static controls:WindowCommands.CloseCommand}"
                                     CommandParameter="{c:TemplatedParentBinding}">
                                 <controls:PathIcon x:Name="CloseIcon"
-                                                   Data="{StaticResource WindowClose}"
+                                                   Data="{DynamicResource WindowClose}"
                                                    Width="10" 
                                                    Height="10" />
                             </Button>
@@ -294,6 +282,7 @@
     
     
     <Style x:Key="PrimaryWindow" TargetType="Window" BasedOn="{c:MergeStyles 'DefaultWindow Shadow0'}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
                 <WindowChrome GlassFrameThickness="0,0,0,1"
@@ -303,35 +292,35 @@
             </Setter.Value>
         </Setter>
 
-        <Setter Property="Margin" Value="{StaticResource PopupShadowSpacerMargin}" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
+        <Setter Property="Margin" Value="{DynamicResource PopupShadowSpacerMargin}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource AmbientControlThemeShadow}" />
 
         <!-- Non-client area properties. -->
         <Setter Property="theming:WindowTitlebarProperties.ExtendContentIntoTitlebar" Value="False" />
         <Setter Property="theming:WindowTitlebarProperties.Height" Value="{c:GridUnit 8}" />
         <Setter Property="theming:WindowTitlebarProperties.BorderThickness" Value="0" />
-        <Setter Property="theming:WindowTitlebarProperties.TitleFontFamily" Value="{StaticResource CaptionFontFamily}" />
-        <Setter Property="theming:WindowTitlebarProperties.TitleFontSize" Value="{StaticResource CaptionFontSize}" />
-        <Setter Property="theming:WindowTitlebarProperties.TitleFontStyle" Value="{StaticResource CaptionFontStyle}" />
-        <Setter Property="theming:WindowTitlebarProperties.TitleFontStretch" Value="{StaticResource CaptionFontStretch}" />
-        <Setter Property="theming:WindowTitlebarProperties.TitleFontWeight" Value="{StaticResource CaptionFontWeight}" />
+        <Setter Property="theming:WindowTitlebarProperties.TitleFontFamily" Value="{DynamicResource CaptionFontFamily}" />
+        <Setter Property="theming:WindowTitlebarProperties.TitleFontSize" Value="{DynamicResource CaptionFontSize}" />
+        <Setter Property="theming:WindowTitlebarProperties.TitleFontStyle" Value="{DynamicResource CaptionFontStyle}" />
+        <Setter Property="theming:WindowTitlebarProperties.TitleFontStretch" Value="{DynamicResource CaptionFontStretch}" />
+        <Setter Property="theming:WindowTitlebarProperties.TitleFontWeight" Value="{DynamicResource CaptionFontWeight}" />
 
 
-        <Setter Property="theming:WindowTitlebarProperties.BackgroundBrush" Value="{StaticResource PaneBackgroundBrush}" />
-        <Setter Property="theming:WindowTitlebarProperties.InactiveBackgroundBrush" Value="{StaticResource PrimaryBrush}" />
-        <Setter Property="theming:WindowTitlebarProperties.BorderBrush" Value="{StaticResource PaneBorderBrush}" />
-        <Setter Property="theming:WindowTitlebarProperties.InactiveBorderBrush" Value="{StaticResource ControlDisabledBorderBrush}" />
-        <Setter Property="theming:WindowTitlebarProperties.ForegroundBrush" Value="{StaticResource StandardForegroundBrush}" />
-        <Setter Property="theming:WindowTitlebarProperties.InactiveForegroundBrush" Value="{StaticResource DisabledForegroundBrush}" />
+        <Setter Property="theming:WindowTitlebarProperties.BackgroundBrush" Value="{DynamicResource PaneBackgroundBrush}" />
+        <Setter Property="theming:WindowTitlebarProperties.InactiveBackgroundBrush" Value="{DynamicResource PrimaryBrush}" />
+        <Setter Property="theming:WindowTitlebarProperties.BorderBrush" Value="{DynamicResource PaneBorderBrush}" />
+        <Setter Property="theming:WindowTitlebarProperties.InactiveBorderBrush" Value="{DynamicResource ControlDisabledBorderBrush}" />
+        <Setter Property="theming:WindowTitlebarProperties.ForegroundBrush" Value="{DynamicResource StandardForegroundBrush}" />
+        <Setter Property="theming:WindowTitlebarProperties.InactiveForegroundBrush" Value="{DynamicResource DisabledForegroundBrush}" />
 
         <Setter Property="theming:WindowTitlebarProperties.MinimizeButtonStyle" Value="{StaticResource PrimaryWindowCaptionButton}" />
         <Setter Property="theming:WindowTitlebarProperties.MaximizeButtonStyle" Value="{StaticResource PrimaryWindowCaptionButton}" />
         <Setter Property="theming:WindowTitlebarProperties.CloseButtonStyle" Value="{StaticResource PrimaryCloseWindowCaptionButton}" />
 
         <!-- Client area properties. -->
-        <Setter Property="Background" Value="{StaticResource PrimaryBrush}" />
-        <Setter Property="BorderBrush" Value="{StaticResource ControlBorderBrush}" />
-        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
+        <Setter Property="Background" Value="{DynamicResource PrimaryBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderBrush}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource SlimBorderThickness}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
 

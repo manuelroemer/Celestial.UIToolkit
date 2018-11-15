@@ -136,7 +136,7 @@
                                 c:WindowTitlebarProperties.MinimizeButtonStyle="{StaticResource CustomCaptionButton}"
                                 c:WindowTitlebarProperties.MaximizeButtonStyle="{StaticResource CustomCaptionButton}"
                                 c:WindowTitlebarProperties.CloseButtonStyle="{StaticResource CustomCloseCaptionButton}"
-                                c:WindowTitlebarProperties.TitleFontSize="{StaticResource SubTitleFontSize}"
+                                c:WindowTitlebarProperties.TitleFontSize="{DynamicResource SubTitleFontSize}"
                                 c:WindowTitlebarProperties.Height="{c:GridUnit 10}"
                                 BorderBrush="{DynamicResource Accent2Brush}"
                                 Title="A PrimaryWindow with custom colors"

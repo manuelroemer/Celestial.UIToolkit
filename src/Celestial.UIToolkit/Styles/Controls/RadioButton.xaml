@@ -5,24 +5,14 @@
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls"
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming">
 
-    <ResourceDictionary.MergedDictionaries>
-        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
     <Style x:Key="PrimaryRadioButton" TargetType="RadioButton" BasedOn="{c:MergeStyles 'ControlBorder PrimaryBackground StandardForeground StandardFontProperties'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource RectangleFocusVisual}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Padding" Value="{c:GridUnit '2,0,0,0'}" />
-        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource SlimBorderThickness}" />
         <Setter Property="theming:ControlProperties.CornerRadius" Value="{c:SelfBinding ActualWidth}" />
         <Setter Property="Template">
             <Setter.Value>
@@ -149,7 +139,7 @@
                                         </Style>
                                     </Grid.Resources>
                                     <controls:Ripple IsActiveTrigger="{c:TemplatedParentBinding IsPressed}" 
-                                                            Style="{StaticResource SmallBackgroundRippleAnimation}" />
+                                                            Style="{DynamicResource SmallBackgroundRippleAnimation}" />
                                     <Border x:Name="CheckedBorder"
                                             BorderBrush="{c:TemplatedParentBinding Path=(theming:ActiveProperties.BorderBrush)}"
                                             Background="{c:TemplatedParentBinding Path=(theming:ActiveProperties.BackgroundBrush)}"
@@ -159,7 +149,7 @@
                                             Background="{TemplateBinding Background}"
                                             CornerRadius="{c:TemplatedParentBinding Path=(theming:ControlProperties.CornerRadius)}" />
                                     <Path x:Name="Checkmark"
-                                          Data="{StaticResource CheckedGeometry}"
+                                          Data="{DynamicResource CheckedGeometry}"
                                           Fill="{c:TemplatedParentBinding Path=(theming:ActiveProperties.BorderBrush)}">
                                         <Path.RenderTransform>
                                             <ScaleTransform x:Name="CheckmarkScaleTransform"
@@ -169,7 +159,7 @@
                                     </Path>
                                     <Path x:Name="IndeterminateCheckmark"
                                           Stroke="{c:TemplatedParentBinding Path=(theming:ActiveProperties.BorderBrush)}"
-                                          Data="{StaticResource IndeterminateGeometry}">
+                                          Data="{DynamicResource IndeterminateGeometry}">
                                         <Path.RenderTransform>
                                             <ScaleTransform x:Name="IndeterminateCheckmarkScaleTransform"
                                                             ScaleX="0"
@@ -199,11 +189,11 @@
                                     <Storyboard>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="CheckmarkScaleTransform"
                                                                        Storyboard.TargetProperty="ScaleX">
-                                            <EasingDoubleKeyFrame KeyTime="{StaticResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="1" />
+                                            <EasingDoubleKeyFrame KeyTime="{DynamicResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="CheckmarkScaleTransform"
                                                                        Storyboard.TargetProperty="ScaleY">
-                                            <EasingDoubleKeyFrame KeyTime="{StaticResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="1" />
+                                            <EasingDoubleKeyFrame KeyTime="{DynamicResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                        Storyboard.TargetProperty="(UIElement.Visibility)">
@@ -220,11 +210,11 @@
                                     <Storyboard>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="IndeterminateCheckmarkScaleTransform"
                                                                        Storyboard.TargetProperty="ScaleX">
-                                            <EasingDoubleKeyFrame KeyTime="{StaticResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="1" />
+                                            <EasingDoubleKeyFrame KeyTime="{DynamicResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="IndeterminateCheckmarkScaleTransform"
                                                                        Storyboard.TargetProperty="ScaleY">
-                                            <EasingDoubleKeyFrame KeyTime="{StaticResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="1" />
+                                            <EasingDoubleKeyFrame KeyTime="{DynamicResource InnerPartialAnimationKeyTime}" EasingFunction="{StaticResource InnerPartialAnimationEase}" Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd"
                                                                        Storyboard.TargetProperty="(UIElement.Visibility)">

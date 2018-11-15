@@ -4,15 +4,6 @@
                     xmlns:c="http://celestial-ui.com"
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming">
 
-    <ResourceDictionary.MergedDictionaries>
-        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
     <Style x:Key="PrimaryLabel" TargetType="Label" BasedOn="{c:MergeStyles 'ForegroundBasedThemingProperties'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
@@ -45,17 +36,10 @@
     </Style>
     <Style TargetType="Label" BasedOn="{StaticResource PrimaryLabel}" />
 
-    <Style x:Key="BaseLabel" TargetType="Label" BasedOn="{StaticResource PrimaryLabel}">
-        <Setter Property="FontWeight" Value="{StaticResource BaseFontWeight}" />
-        <Setter Property="FontStyle" Value="{StaticResource BaseFontStyle}" />
-        <Setter Property="FontStretch" Value="{StaticResource BaseFontStretch}" />
-    </Style>
+    <Style x:Key="BaseLabel" TargetType="Label" BasedOn="{c:MergeStyles 'PrimaryLabel BaseFontProperties'}" />
 
-    <Style x:Key="HintLabel" TargetType="Label" BasedOn="{StaticResource PrimaryLabel}">
-        <Setter Property="Foreground" Value="{StaticResource SecondaryForegroundBrush}" />
-        <Setter Property="FontWeight" Value="{StaticResource HintFontWeight}" />
-        <Setter Property="FontStyle" Value="{StaticResource HintFontStyle}" />
-        <Setter Property="FontStretch" Value="{StaticResource HintFontStretch}" />
+    <Style x:Key="HintLabel" TargetType="Label" BasedOn="{c:MergeStyles 'PrimaryLabel HintFontProperties'}">
+        <Setter Property="Foreground" Value="{DynamicResource SecondaryForegroundBrush}" />
     </Style>
 
 </ResourceDictionary>

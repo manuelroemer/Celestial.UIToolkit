@@ -2,7 +2,7 @@
 using System.Windows;
 using static Celestial.UIToolkit.TraceSources;
 
-namespace Celestial.UIToolkit
+namespace Celestial.UIToolkit.Xaml
 {
 
     /// <summary>

@@ -7,15 +7,16 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <!-- Custom XAML display style. -->
-                <ResourceDictionary Source="Themes/XamlDisplay.xaml" />
-                
                 <!-- UI Toolkit resources. -->
-                <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Theming/Themes/Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Theming/Themes.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Theming/Accents/Default.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Theming/Globals.xaml" />
 
                 <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Bundle.xaml" />
+                
+                <!-- Custom XAML display style. -->
+                <ResourceDictionary Source="Themes/XamlDisplay.xaml" />
+                <ResourceDictionary Source="Themes/AvalonEdit.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

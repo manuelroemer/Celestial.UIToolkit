@@ -128,8 +128,35 @@ namespace Celestial.UIToolkit.Xaml
 
         private Style RetrieveStyleFromResources(object resourceKey, IServiceProvider serviceProvider)
         {
-            var staticResource = new StaticResourceExtension(resourceKey);
-            return (Style)staticResource.ProvideValue(serviceProvider);
+            Style style = null;
+
+            try
+            {
+                style = Application.Current.TryFindResource(resourceKey) as Style;
+            }
+            catch { }
+
+            if (style == null)
+            {
+                // If the style couldn't be retrieved by the Application, it may still exist,
+                // for instance in another Style's resources. Use a StaticResource to retrieve it.
+                try
+                {
+                    var staticResource = new StaticResourceExtension(resourceKey);
+                    style = staticResource.ProvideValue(serviceProvider) as Style;
+                }
+                catch { }
+            }
+
+            if (style == null)
+            {
+                throw new ResourceReferenceKeyNotFoundException(
+                    $"Couldn't find a resource with the key \"{resourceKey}\".",
+                    resourceKey
+                );
+            }
+
+            return style;
         }
 
     }
