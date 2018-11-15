@@ -32,9 +32,20 @@ namespace Celestial.UIToolkit.Interactivity
         /// </exception>
         public void Attach(DependencyObject associatedObject)
         {
+            AttachImpl(associatedObject);
+        }
+        
+        // Contains the actual logic for attaching an object to this behavior.
+        // This is virtual, so that the <see cref="Behavior{T}"/> class can
+        // add/override the logic with type-specific logic.
+        // 
+        // By implementing it like this, we don't have to override <see cref="OnAttached"/>,
+        // which allows users of the generic behavior class to not call base.OnAttached().
+        internal virtual void AttachImpl(DependencyObject associatedObject)
+        {
             if (associatedObject is null)
-                throw new ArgumentNullException(nameof(associatedObject)); 
-    
+                throw new ArgumentNullException(nameof(associatedObject));
+
             if (IsAttached)
             {
                 if (associatedObject == AssociatedObject)
