@@ -12,10 +12,25 @@ namespace Celestial.UIToolkit.Interactivity
     public abstract class Behavior : Animatable, IBehavior
     {
 
+        private DependencyObject _associatedObject;
+
         /// <summary>
         /// Gets the object to which this behavior is attached.
         /// </summary>
-        public DependencyObject AssociatedObject { get; private set; }
+        public DependencyObject AssociatedObject
+        {
+            get
+            {
+                ReadPreamble();
+                return _associatedObject;
+            }
+            private set
+            {
+                WritePreamble();
+                _associatedObject = value;
+                WritePostscript();
+            }
+        }
 
         /// <summary>
         /// Gets a value indicating whether this behavior is currently attached to an object.
