@@ -19,16 +19,19 @@ namespace Celestial.UIToolkit.Interactivity
         /// <summary>
         /// Gets a value indicating whether this behavior is currently attached to an object.
         /// </summary>
-        protected internal bool IsAttached => AssociatedObject != null;
+        public bool IsAttached => AssociatedObject != null;
 
         /// <summary>
-        /// Attaches this behavior to the specified <paramref name="associatedObject"/>.
+        ///     Attaches this behavior to the specified <paramref name="associatedObject"/>.
         /// </summary>
         /// <param name="associatedObject">
-        /// A <see cref="DependencyObject"/> to which this behavior will be attached.
+        ///     A <see cref="DependencyObject"/> to which this behavior will be attached.
         /// </param>
         /// <exception cref="ArgumentNullException">
-        /// Thrown if <paramref name="associatedObject"/> is null.
+        ///     Thrown if <paramref name="associatedObject"/> is null.
+        /// </exception>
+        /// <exception cref="InvalidOperationException">
+        ///     Thrown if the behavior is already attached to another element.
         /// </exception>
         public void Attach(DependencyObject associatedObject)
         {
