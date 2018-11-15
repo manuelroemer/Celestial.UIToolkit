@@ -8,9 +8,9 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <!-- UI Toolkit resources. -->
-                <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Theming/Themes.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Theming/Accents/Default.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Theming/Globals.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Themes.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Accents/Default.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Globals.xaml" />
 
                 <ResourceDictionary Source="pack://application:,,,/Celestial.UIToolkit;component/Styles/Bundle.xaml" />
                 
