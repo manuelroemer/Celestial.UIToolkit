@@ -8,7 +8,7 @@ using Celestial.UIToolkit.Interactivity;
 namespace Celestial.UIToolkit.Core.Tests.Interactivity.Mocks
 {
 
-    public class TestableTrigger : Trigger
+    public class TestableTrigger : TriggerBehavior
     {
 
         public void InvokeActions(object parameter = null)

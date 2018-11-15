@@ -28,7 +28,7 @@
         /// Otherwise, nothing happens.
         /// </summary>
         /// <param name="parameter">
-        /// A parameter which is passed to the action by the <see cref="ITrigger"/> which
+        /// A parameter which is passed to the action by the <see cref="ITriggerBehavior"/> which
         /// executed it.
         /// </param>
         public void Execute(object parameter)
@@ -45,7 +45,7 @@
         /// <typeparamref name="TParameter"/> was passed.
         /// </summary>
         /// <param name="parameter">
-        /// A parameter which is passed to the action by the <see cref="ITrigger"/> which
+        /// A parameter which is passed to the action by the <see cref="ITriggerBehavior"/> which
         /// executed it.
         /// </param>
         protected abstract void Execute(TParameter parameter);

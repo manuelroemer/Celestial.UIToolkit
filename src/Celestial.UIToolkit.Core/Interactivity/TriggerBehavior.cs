@@ -9,14 +9,14 @@ namespace Celestial.UIToolkit.Interactivity
     /// a certain condition is met (i.e. the behavior is triggered).
     /// </summary>
     [ContentProperty(nameof(Actions))]
-    public abstract class Trigger : Behavior, ITrigger
+    public abstract class TriggerBehavior : Behavior, ITriggerBehavior
     {
 
         private static readonly DependencyPropertyKey ActionsPropertyKey =
             DependencyProperty.RegisterReadOnly(
                 nameof(Actions),
                 typeof(TriggerActionCollection),
-                typeof(Trigger),
+                typeof(TriggerBehavior),
                 new PropertyMetadata(null));
 
         /// <summary>

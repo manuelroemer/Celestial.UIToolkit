@@ -6,7 +6,7 @@ using Xunit;
 
 namespace Celestial.UIToolkit.Core.Tests.Interactivity
 {
-    public class TriggerOfTTests
+    public class TriggerBehaviorOfTTests
     {
 
         [WpfFact]

@@ -11,7 +11,7 @@ using Xunit;
 namespace Celestial.UIToolkit.Core.Tests.Interactivity
 {
 
-    public class TriggerTests
+    public class TriggerBehaviorTests
     {
 
         [Fact]
