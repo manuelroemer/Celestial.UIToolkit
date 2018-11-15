@@ -83,7 +83,7 @@ namespace Celestial.UIToolkit.Interactivity
         }
         
         // Contains the actual logic for attaching an object to this behavior.
-        // This is virtual, so that the Behavior<T> class can
+        // This is virtual, so that the Behavior<T> (and Trigger<T>) classes can
         // add/override the logic with type-specific logic.
         // 
         // By implementing it like this, Behavior<T> doesn't have to override OnAttached,

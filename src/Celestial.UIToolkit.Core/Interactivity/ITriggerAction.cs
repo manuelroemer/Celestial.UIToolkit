@@ -4,7 +4,7 @@
     /// <summary>
     /// Represents an arbitrary action which gets executed by an <see cref="ITrigger"/>.
     /// </summary>
-    public interface IAction
+    public interface ITriggerAction
     {
 
 

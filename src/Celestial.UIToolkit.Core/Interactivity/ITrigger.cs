@@ -12,7 +12,7 @@
         /// Gets a collection of actions which get executed, once a certain condition of this
         /// behavior is met.
         /// </summary>
-        ActionCollection Actions { get; }
+        TriggerActionCollection Actions { get; }
 
     }
 
