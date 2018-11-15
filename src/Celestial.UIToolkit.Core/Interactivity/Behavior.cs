@@ -38,6 +38,34 @@ namespace Celestial.UIToolkit.Interactivity
         public bool IsAttached => AssociatedObject != null;
 
         /// <summary>
+        ///     Tries to create an instance of the current behavior via the 
+        ///     <see cref="Activator"/> class.
+        ///     If that fails, throws an exception.
+        /// </summary>
+        /// <returns>
+        ///     An instance of the current behavior class.
+        /// </returns>
+        /// <exception cref="InvalidOperationException">
+        ///     Thrown if the deriving class doesn't have a parameterless constructor.
+        /// </exception>
+        protected override Freezable CreateInstanceCore()
+        {
+            try
+            {
+                return (Freezable)Activator.CreateInstance(GetType(), true);
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidOperationException(
+                    $"Cannot automatically create an instance of the {GetType().FullName} class. " +
+                    $"Make sure that your class either has a parameter-less constructor, or that " +
+                    $"it overrides the {nameof(CreateInstanceCore)} method.",
+                    ex
+                );
+            }
+        }
+
+        /// <summary>
         ///     Attaches this behavior to the specified <paramref name="associatedObject"/>.
         /// </summary>
         /// <param name="associatedObject">
@@ -127,7 +155,6 @@ namespace Celestial.UIToolkit.Interactivity
             {
                 result += $", {nameof(AssociatedObject)}: {AssociatedObject}";
             }
-
             return result;
         }
 
