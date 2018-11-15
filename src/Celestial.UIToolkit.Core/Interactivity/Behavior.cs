@@ -8,7 +8,7 @@ namespace Celestial.UIToolkit.Interactivity
     /// An object which can be attached to a <see cref="DependencyObject"/> and thus provide
     /// external behaviors for the associated object.
     /// </summary>
-    public class Behavior : DependencyObject, IBehavior
+    public abstract class Behavior : DependencyObject, IBehavior
     {
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Celestial.UIToolkit.Interactivity
 
             if (IsAttached)
             {
-                result += $" {nameof(AssociatedObject)}: {AssociatedObject}";
+                result += $", {nameof(AssociatedObject)}: {AssociatedObject}";
             }
 
             return result;
