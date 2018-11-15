@@ -13,7 +13,7 @@ namespace Celestial.UIToolkit.Interactivity
 
         /// <summary>
         /// Identifies the Behaviors attached dependency property which defines a set
-        /// of <see cref="IBehavior"/> instances which are currently attached to an object.
+        /// of <see cref="Behavior"/> instances which are currently attached to an object.
         /// </summary>
         public static readonly DependencyProperty BehaviorsProperty =
             DependencyProperty.RegisterAttached(

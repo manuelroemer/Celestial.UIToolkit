@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Media.Animation;
 
 namespace Celestial.UIToolkit.Interactivity
 {
@@ -8,7 +9,7 @@ namespace Celestial.UIToolkit.Interactivity
     /// An object which can be attached to a <see cref="DependencyObject"/> and thus provide
     /// external behaviors for the associated object.
     /// </summary>
-    public abstract class Behavior : DependencyObject, IBehavior
+    public abstract class Behavior : Animatable, IBehavior
     {
 
         /// <summary>
@@ -39,10 +40,10 @@ namespace Celestial.UIToolkit.Interactivity
         }
         
         // Contains the actual logic for attaching an object to this behavior.
-        // This is virtual, so that the <see cref="Behavior{T}"/> class can
+        // This is virtual, so that the Behavior<T> class can
         // add/override the logic with type-specific logic.
         // 
-        // By implementing it like this, we don't have to override <see cref="OnAttached"/>,
+        // By implementing it like this, Behavior<T> doesn't have to override OnAttached,
         // which allows users of the generic behavior class to not call base.OnAttached().
         internal virtual void AttachImpl(DependencyObject associatedObject)
         {
