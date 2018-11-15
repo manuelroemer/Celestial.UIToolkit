@@ -13,7 +13,7 @@ namespace Celestial.UIToolkit.Core.Tests.Interactivity
     /// </summary>
     public class BehaviorTests
     {
-
+        
         [Fact]
         public void ThrowsIfAttachingToNull()
         {

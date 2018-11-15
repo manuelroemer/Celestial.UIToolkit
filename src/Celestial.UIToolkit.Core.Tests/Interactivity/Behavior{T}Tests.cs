@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using Celestial.UIToolkit.Core.Tests.Interactivity.Mocks;
 using Xunit;
 
-namespace Celestial.UIToolkit.Core.Tests.Interactivity.Mocks
+namespace Celestial.UIToolkit.Core.Tests.Interactivity
 {
 
     public class BehaviorOfTTests

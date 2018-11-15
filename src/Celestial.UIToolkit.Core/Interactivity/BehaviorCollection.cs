@@ -19,11 +19,11 @@ namespace Celestial.UIToolkit.Interactivity
     /// When this collection is attached to an object, all items are automatically attached
     /// to the element aswell.
     /// </summary>
-    public sealed class BehaviorCollection<T> : FreezableCollection<T>, IBehavior 
-        where T : DependencyObject, IBehavior
+    public sealed class BehaviorCollection 
+        : FreezableCollection<Behavior>, IBehavior, IBehaviorCollection<Behavior>
     {
 
-        private readonly List<T> _snapshotList = new List<T>();
+        private FreezableCollection<Behavior> _validAddedBehaviors;
         private DependencyObject _associatedObject;
 
         /// <summary>
@@ -58,18 +58,13 @@ namespace Celestial.UIToolkit.Interactivity
         }
 
         /// <summary>
-        /// Initializes a new and empty instance of the <see cref="BehaviorCollection{T}"/> class.
+        /// Initializes a new and empty instance of the <see cref="BehaviorCollection"/> class.
         /// </summary>
         public BehaviorCollection()
         {
+            _validAddedBehaviors = new FreezableCollection<Behavior>();
             ((INotifyCollectionChanged)this).CollectionChanged += OnCollectionChanged;
         }
-
-        /// <summary>
-        /// Creates a new <see cref="BehaviorCollection{T}"/> instance.
-        /// </summary>
-        /// <returns>A new <see cref="BehaviorCollection{T}"/> instance.</returns>
-        protected override Freezable CreateInstanceCore() => new BehaviorCollection<T>();
 
         /// <summary>
         ///     Attaches this behavior collection and all of its items
@@ -111,7 +106,7 @@ namespace Celestial.UIToolkit.Interactivity
                 return;
 
             AssociatedObject = associatedObject;
-            foreach (T behavior in this)
+            foreach (var behavior in _validAddedBehaviors)
             {
                 // This could potentially throw, if the behavior is already attached to something.
                 // This is wanted behavior though.
@@ -128,8 +123,7 @@ namespace Celestial.UIToolkit.Interactivity
             if (!IsAttached)
                 return;
             
-
-            foreach (T behavior in this)
+            foreach (var behavior in _validAddedBehaviors)
             {
                 behavior.Detach();
             }
@@ -138,52 +132,36 @@ namespace Celestial.UIToolkit.Interactivity
 
         private void OnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
+            WritePreamble();
             switch (e.Action)
             {
+                case NotifyCollectionChangedAction.Reset:
+                    OnCollectionReset();
+                    break;
+
                 case NotifyCollectionChangedAction.Add:
-                    OnCollectionItemsAdded(e.NewItems.Cast<T>());
+                    OnCollectionItemsAdded(e.NewItems.Cast<Behavior>());
                     break;
 
                 case NotifyCollectionChangedAction.Remove:
-                    OnCollectionItemsRemoved(e.OldItems.Cast<T>());
+                    OnCollectionItemsRemoved(e.OldItems.Cast<Behavior>());
                     break;
 
                 case NotifyCollectionChangedAction.Replace:
                     if (e.NewItems != null)
                     {
-                        OnCollectionItemsAdded(e.NewItems.Cast<T>());
+                        OnCollectionItemsAdded(e.NewItems.Cast<Behavior>());
                     }
                     if (e.OldItems != null)
                     {
-                        OnCollectionItemsRemoved(e.OldItems.Cast<T>());
+                        OnCollectionItemsRemoved(e.OldItems.Cast<Behavior>());
                     }
-                    break;
-
-                case NotifyCollectionChangedAction.Reset:
-                    OnCollectionReset();
                     break;
 
                 default:
                     break;
             }
-        }
-
-        private void OnCollectionItemsAdded(IEnumerable<T> newItems)
-        {
-            foreach (T addedBehavior in newItems)
-            {
-                OnBehaviorAdded(addedBehavior);
-                _snapshotList.Insert(IndexOf(addedBehavior), addedBehavior);
-            }
-        }
-
-        private void OnCollectionItemsRemoved(IEnumerable<T> oldItems)
-        {
-            foreach (T removedBehavior in oldItems)
-            {
-                OnBehaviorRemoved(removedBehavior);
-                _snapshotList.Remove(removedBehavior);
-            }
+            WritePostscript();
         }
 
         private void OnCollectionReset()
@@ -193,17 +171,46 @@ namespace Celestial.UIToolkit.Interactivity
             // previously added.
             // The problem is that the base collection doesn't provide us with this info.
             // This is why we manually filled the snapshotList.
-            OnCollectionItemsRemoved(_snapshotList);
+            foreach (var oldBehavior in _validAddedBehaviors)
+            {
+                OnBehaviorRemoved(oldBehavior);
+            }
+            _validAddedBehaviors.Clear();
+
             OnCollectionItemsAdded(this);
         }
         
-        private void OnBehaviorAdded(T behavior)
+        private void OnCollectionItemsAdded(IEnumerable<Behavior> newItems)
         {
-            if (_snapshotList.Contains(behavior))
+            foreach (var addedBehavior in newItems)
+            {
+                OnBehaviorAdded(addedBehavior);
+                _validAddedBehaviors.Insert(IndexOf(addedBehavior), addedBehavior);
+            }
+        }
+
+        private void OnCollectionItemsRemoved(IEnumerable<Behavior> oldItems)
+        {
+            foreach (var removedBehavior in oldItems)
+            {
+                OnBehaviorRemoved(removedBehavior);
+                _validAddedBehaviors.Remove(removedBehavior);
+            }
+        }
+
+        private void OnBehaviorAdded(Behavior behavior)
+        {
+            if (_validAddedBehaviors.Contains(behavior))
             {
                 throw new InvalidOperationException(
                     $"The behavior has already been added to the collection."
                 );
+                // We are throwing an exception here, but that doesn't stop the item from
+                // being added to the FreezableCollection.
+                // We also can't call Remove(), since the FreezableCollection then throws an
+                // exception too.
+                // We won't update the internal Behavior list with the new one though,
+                // so all should be good.
             }
 
             // If this collection is already attached to something, we need to make sure that
@@ -214,11 +221,63 @@ namespace Celestial.UIToolkit.Interactivity
             }
         }
 
-        private void OnBehaviorRemoved(T behavior)
+        private void OnBehaviorRemoved(Behavior behavior)
         {
             // When removed from this collection, we lose control over the behavior.
             // => Detach it now, so that no memory leak occurs later on.
             behavior.Detach();
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BehaviorCollection"/> instance.
+        /// </summary>
+        /// <returns>A new <see cref="BehaviorCollection"/> instance.</returns>
+        protected override Freezable CreateInstanceCore() => new BehaviorCollection();
+        
+        /// <summary>
+        ///     Makes this instance a clone (deep copy) of the specified 
+        ///     <see cref="BehaviorCollection"/> using base (non-animated) property values.
+        /// </summary>
+        /// <param name="source">
+        /// The <see cref="BehaviorCollection"/> to copy.
+        /// </param>
+        protected override void CloneCore(Freezable source)
+        {
+            base.CloneCore(source);
+            var collection = (BehaviorCollection)source;
+            collection._validAddedBehaviors = _validAddedBehaviors.Clone();
+            collection._associatedObject = _associatedObject;
+        }
+
+        /// <summary>
+        ///     Makes this instance a clone (deep copy) of the specified 
+        ///     <see cref="BehaviorCollection"/> using current property values.
+        /// </summary>
+        /// <param name="source">
+        /// The <see cref="BehaviorCollection"/> to copy.
+        /// </param>
+        protected override void CloneCurrentValueCore(Freezable source)
+        {
+            base.CloneCurrentValueCore(source);
+            var collection = (BehaviorCollection)source;
+            collection._validAddedBehaviors = _validAddedBehaviors.CloneCurrentValue();
+            collection._associatedObject = _associatedObject;
+        }
+        
+        protected override void GetAsFrozenCore(Freezable source)
+        {
+            base.GetAsFrozenCore(source);
+            var collection = (BehaviorCollection)source;
+            collection._validAddedBehaviors = _validAddedBehaviors.GetAsFrozen() as BehaviorCollection;
+            collection._associatedObject = _associatedObject;
+        }
+
+        protected override void GetCurrentValueAsFrozenCore(Freezable source)
+        {
+            base.GetCurrentValueAsFrozenCore(source);
+            var collection = (BehaviorCollection)source;
+            collection._validAddedBehaviors = _validAddedBehaviors.GetCurrentValueAsFrozen() as BehaviorCollection;
+            collection._associatedObject = _associatedObject;
         }
 
     }
