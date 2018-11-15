@@ -53,7 +53,7 @@
         <Setter Property="Orientation" Value="Vertical" />
         <Setter Property="Width" Value="{c:GridUnit 4.5}" />
         <Setter Property="Height" Value="Auto" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource SharpCornerRadius}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource AmbientControlThemeShadow}" />
         <Setter Property="Template">
             <Setter.Value>

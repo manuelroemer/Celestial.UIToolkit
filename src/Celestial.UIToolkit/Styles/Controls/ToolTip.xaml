@@ -13,7 +13,7 @@
         <Setter Property="BorderBrush" Value="{DynamicResource PopupBorderBrush}" />
         <Setter Property="BorderThickness" Value="{DynamicResource SlimBorderThickness}" />
         <Setter Property="Padding" Value="{c:GridUnit 1}" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource StandardCornerRadius}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource PopupCornerRadius}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource AmbientControlThemeShadow}" />
         <Setter Property="Margin" Value="{DynamicResource PopupShadowSpacerMargin}" />
         <Setter Property="Template">

@@ -313,7 +313,7 @@
         <Setter Property="AutoToolTipPlacement" Value="TopLeft" />
         <Setter Property="FocusVisualStyle" Value="{DynamicResource RectangleFocusVisual}" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource StandardCornerRadius}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource SharpCornerRadius}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource DisabledThemeShadow}" />
         <Setter Property="Template" Value="{StaticResource HorizontalSliderTemplate}" />
         

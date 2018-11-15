@@ -1008,7 +1008,7 @@
         <Setter Property="theming:PopupProperties.BorderBrush" Value="{DynamicResource PopupBorderBrush}" />
         <Setter Property="theming:PopupProperties.BorderThickness" Value="{DynamicResource SlimBorderThickness}" />
         <Setter Property="theming:PopupProperties.Padding" Value="0" />
-        <Setter Property="theming:PopupProperties.CornerRadius" Value="{DynamicResource StandardCornerRadius}" />
+        <Setter Property="theming:PopupProperties.CornerRadius" Value="{DynamicResource PopupCornerRadius}" />
     </Style>
     
  

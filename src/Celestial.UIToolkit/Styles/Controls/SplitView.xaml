@@ -10,7 +10,7 @@
         <Setter Property="PaneBackground" Value="{DynamicResource PaneBackgroundBrush}" />
         <Setter Property="Focusable" Value="False" />
         <Setter Property="IsTabStop" Value="False" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource SharpCornerRadius}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource AmbientControlThemeShadow}" />
         <Setter Property="Template">
             <Setter.Value>

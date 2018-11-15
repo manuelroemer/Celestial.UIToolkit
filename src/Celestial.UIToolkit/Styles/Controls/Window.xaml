@@ -23,7 +23,7 @@
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Width" Value="{c:GridUnit 11.7}" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource SharpCornerRadius}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">

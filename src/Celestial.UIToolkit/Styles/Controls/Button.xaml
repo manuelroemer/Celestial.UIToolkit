@@ -15,6 +15,7 @@
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource StandardCornerRadius}" />
         <Setter Property="theming:PressedProperties.BackgroundBrush" Value="{c:SelfBinding Path=(theming:MouseOverProperties.BackgroundBrush)}" />
         <Setter Property="theming:PressedProperties.BorderBrush" Value="{c:SelfBinding Path=(theming:MouseOverProperties.BorderBrush)}" />
         <Setter Property="theming:ActiveProperties.ShadowElevation" Value="0" />
@@ -255,6 +256,7 @@
         <Setter Property="Height" Value="{c:GridUnit 8}" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource SharpCornerRadius}" />
         <Style.Triggers>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="BorderThickness" Value="{DynamicResource SlimBorderThickness}" />

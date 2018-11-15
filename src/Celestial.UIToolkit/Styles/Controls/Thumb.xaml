@@ -8,6 +8,7 @@
     <Style x:Key="TransparentThumb" TargetType="Thumb">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource SharpCornerRadius}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Thumb">
@@ -21,6 +22,7 @@
     <Style x:Key="MonochromeThumb" TargetType="Thumb" BasedOn="{c:MergeStyles 'ControlBackground ControlBorder'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource SharpCornerRadius}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Thumb">
@@ -93,6 +95,7 @@
     <Style x:Key="RectanglePatternThumb" TargetType="Thumb" BasedOn="{c:MergeStyles 'TransparentBackground TransparentBorder StandardForeground SecondaryForeground'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource SharpCornerRadius}" />
         <Setter Property="Cursor" Value="SizeAll" />
         <Setter Property="Foreground" Value="{DynamicResource SecondaryForegroundBrush}" />
         <Setter Property="Template">

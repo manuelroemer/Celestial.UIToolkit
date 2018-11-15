@@ -22,7 +22,7 @@
         <Setter Property="ItemContainerStyle" Value="{Binding ItemContainerStyle, RelativeSource={RelativeSource AncestorType=TreeView}}" />
         <Setter Property="Padding" Value="{DynamicResource StandardListItemPadding}" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource StandardCornerRadius}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource SharpCornerRadius}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource DisabledThemeShadow}" />
         
         <!-- We need to manually set the current depth level of the TreeViewItem for the template.
@@ -255,7 +255,7 @@
         <Setter Property="ScrollViewer.CanContentScroll" Value="False" />
         <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
         <Setter Property="BorderThickness" Value="{DynamicResource SlimBorderThickness}" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource StandardCornerRadius}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource SharpCornerRadius}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource AmbientControlThemeShadow}" />
         <Setter Property="ItemContainerStyle" Value="{StaticResource PrimaryTreeViewItem}" />
         <Setter Property="Template">

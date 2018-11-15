@@ -11,6 +11,7 @@
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Padding" Value="0" />
         <Setter Property="FocusVisualStyle" Value="{DynamicResource RectangleFocusVisual}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource SharpCornerRadius}" />
         <Setter Property="HeaderTemplate">
             <Setter.Value>
                 <DataTemplate>

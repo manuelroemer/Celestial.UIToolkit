@@ -15,7 +15,7 @@
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Padding" Value="{DynamicResource StandardListItemPadding}" />
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource SharpCornerRadius}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource BottomControlThemeShadow}" />
         <Setter Property="controls:ThemeShadow.Elevation">
             <Setter.Value>
@@ -230,7 +230,7 @@
         <Setter Property="Padding" Value="{Binding Source={StaticResource StandardListItemPadding}, Converter={StaticResource TopBottomPicker}}" />
         <Setter Property="HasDropShadow" Value="True" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource BottomControlThemeShadow}" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource StandardCornerRadius}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource PopupCornerRadius}" />
         <Setter Property="Margin" Value="{DynamicResource PopupShadowSpacerMargin}" />
         <Setter Property="Template">
             <Setter.Value>
@@ -283,7 +283,7 @@
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource SharpCornerRadius}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Menu">

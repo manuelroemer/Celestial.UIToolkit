@@ -8,6 +8,7 @@
     <Style x:Key="PrimaryGridViewScrollViewer" TargetType="ScrollViewer" BasedOn="{c:MergeStyles PrimaryScrollViewer}">
         <Setter Property="Focusable" Value="False" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource SharpCornerRadius}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ScrollViewer">
@@ -107,6 +108,7 @@
         <Setter Property="Padding" Value="{DynamicResource StandardListItemPadding}" />
         <Setter Property="MinWidth" Value="{c:GridUnit 1}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource BottomControlThemeShadow}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource SharpCornerRadius}" />
         <Setter Property="FontWeight" Value="SemiBold" />
         <Setter Property="Template">
             <Setter.Value>
@@ -294,7 +296,7 @@
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
         <Setter Property="Padding" Value="{DynamicResource StandardListItemPadding}" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource StandardCornerRadius}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource SharpCornerRadius}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource AmbientControlThemeShadow}" />
         <Setter Property="Template">
             <Setter.Value>
@@ -423,7 +425,7 @@
         <Setter Property="ScrollViewer.PanningMode" Value="Both" />
         <Setter Property="Stylus.IsFlicksEnabled" Value="False" />
         <Setter Property="BorderThickness" Value="{DynamicResource SlimBorderThickness}" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource StandardCornerRadius}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource SharpCornerRadius}" />
         <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource AmbientControlThemeShadow}" />
         <Setter Property="ItemContainerStyle" Value="{StaticResource PrimaryListViewItem}" />
         <Setter Property="Template">

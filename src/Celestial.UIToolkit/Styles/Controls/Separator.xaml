@@ -7,15 +7,16 @@
         <Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}" />
         <Setter Property="Focusable" Value="False" />
         <Setter Property="IsTabStop" Value="False" />
-        <Setter Property="Margin" Value="{c:GridUnit '0,0.5'}" />
+        <Setter Property="Padding" Value="{c:GridUnit '0,0.5'}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Separator">
                     <Border Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
-                            Height="1"
-                            SnapsToDevicePixels="True" />
+                            Margin="{TemplateBinding Padding}"
+                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                            Height="1" />
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -23,15 +24,16 @@
     <Style TargetType="Separator" BasedOn="{StaticResource PrimarySeparator}" />
 
     <Style x:Key="PrimaryVerticalSeparator" TargetType="Separator" BasedOn="{StaticResource PrimarySeparator}">
-        <Setter Property="Margin" Value="{c:GridUnit '0.5,0'}" />
+        <Setter Property="Padding" Value="{c:GridUnit '0.5,0'}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Separator">
                     <Border Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
-                            Width="1"
-                            SnapsToDevicePixels="True" />
+                            Margin="{TemplateBinding Padding}"
+                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                            Width="1" />
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -49,7 +51,7 @@
     -->
     
     <Style x:Key="{x:Static MenuItem.SeparatorStyleKey}" TargetType="Separator" BasedOn="{c:MergeStyles PrimaryHorizontalSeparator}">
-        <Setter Property="Margin" Value="{c:GridUnit '0,1'}" />
+        <Setter Property="Padding" Value="{c:GridUnit '0,1'}" />
     </Style>
 
     <Style x:Key="{x:Static ToolBar.SeparatorStyleKey}" TargetType="Separator" BasedOn="{c:MergeStyles PrimaryVerticalSeparator}">

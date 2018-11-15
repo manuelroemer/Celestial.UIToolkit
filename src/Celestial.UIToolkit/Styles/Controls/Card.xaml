@@ -225,6 +225,11 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style x:Key="PrimaryRoundedCard" TargetType="controls:Card" BasedOn="{StaticResource PrimaryCard}">
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource RoundCornerRadius}" />
+    </Style>
+    
     <Style TargetType="controls:Card" BasedOn="{StaticResource PrimaryCard}" />
 
 </c:ThemeResourceDictionary>
