@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Markup;
 
 namespace Celestial.UIToolkit.Interactivity
 {
@@ -7,6 +8,7 @@ namespace Celestial.UIToolkit.Interactivity
     /// A specialized type of behavior which executes a set of actions, once
     /// a certain condition is met (i.e. the behavior is triggered).
     /// </summary>
+    [ContentProperty(nameof(Actions))]
     public class Trigger : Behavior, ITrigger
     {
 
