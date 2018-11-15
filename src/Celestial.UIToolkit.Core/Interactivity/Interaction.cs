@@ -17,7 +17,7 @@ namespace Celestial.UIToolkit.Interactivity
         /// </summary>
         public static readonly DependencyProperty BehaviorsProperty =
             DependencyProperty.RegisterAttached(
-                "Behaviors",
+                "BehaviorsInternal",
                 typeof(BehaviorCollection),
                 typeof(Interaction),
                 new PropertyMetadata(null));
