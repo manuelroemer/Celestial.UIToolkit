@@ -84,5 +84,22 @@ namespace Celestial.UIToolkit.Interactivity
         {
         }
 
+        /// <summary>
+        /// Returns a string representation of the current behavior.
+        /// </summary>
+        /// <returns>A string representing this behavior.</returns>
+        public override string ToString()
+        {
+            string result = $"{GetType().Name}: " +
+                            $"{nameof(IsAttached)}: {IsAttached}";
+
+            if (IsAttached)
+            {
+                result += $" {nameof(AssociatedObject)}: {AssociatedObject}";
+            }
+
+            return result;
+        }
+
     }
 }
