@@ -55,11 +55,11 @@
             The alt primary color is the inverted primary color.
             Again, it is used for creating contrasts.
             -->
-            <Color x:Key="AltPrimaryColor">#000000</Color>
-            <Color x:Key="AltPrimaryLowColor">#0B0B0B</Color>
-            <Color x:Key="AltPrimaryMediumLowColor">#2D2D2D</Color>
-            <Color x:Key="AltPrimaryMediumColor">#4F4F4F</Color>
-            <Color x:Key="AltPrimaryMediumHighColor">#717171</Color>
+            <Color x:Key="AltPrimaryColor">#201F1E</Color>
+            <Color x:Key="AltPrimaryLowColor">#343434</Color>
+            <Color x:Key="AltPrimaryMediumLowColor">#474746</Color>
+            <Color x:Key="AltPrimaryMediumColor">#4D4D4C</Color>
+            <Color x:Key="AltPrimaryMediumHighColor">#5A5A59</Color>
             <Color x:Key="AltPrimaryHighColor">#939393</Color>
             
             
@@ -167,10 +167,10 @@
             <SolidColorBrush x:Key="OnPaneControlBorderDisabledBrush" Color="{StaticResource PrimaryMediumLowColor}"  po:Freeze="True" />
 
             <SolidColorBrush x:Key="AltOnPaneControlBorderBrush" Color="{StaticResource AltPrimaryMediumLowColor}"  po:Freeze="True" />
-            <SolidColorBrush x:Key="AltOnPaneControlBorderHoverBrush" Color="{StaticResource AltPrimaryMediumColor}"  po:Freeze="True" />
-            <SolidColorBrush x:Key="AltOnPaneControlBorderPressedBrush" Color="{StaticResource AltPrimaryLowColor}"  po:Freeze="True" />
-            <SolidColorBrush x:Key="AltOnPaneControlBorderActiveBrush" Color="{StaticResource AltPrimaryLowColor}"  po:Freeze="True" />
-            <SolidColorBrush x:Key="AltOnPaneControlBorderDisabledBrush" Color="{StaticResource AltPrimaryMediumLowColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="AltOnPaneControlBorderHoverBrush" Color="{StaticResource AltPrimaryMediumHighColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="AltOnPaneControlBorderPressedBrush" Color="{StaticResource AltPrimaryMediumColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="AltOnPaneControlBorderActiveBrush" Color="{StaticResource AltPrimaryMediumColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="AltAltOnPaneControlBorderDisabledBrush" Color="{StaticResource AltPrimaryMediumLowColor}"  po:Freeze="True" />
 
 
 
@@ -180,6 +180,9 @@
             -->
             <SolidColorBrush x:Key="PopupBackgroundBrush" Color="{StaticResource PrimaryColor}"  po:Freeze="True" />
             <SolidColorBrush x:Key="PopupBorderBrush" Color="{StaticResource PrimaryMediumHighColor}"  po:Freeze="True" />
+            
+            <SolidColorBrush x:Key="AltPopupBackgroundBrush" Color="{StaticResource AltPrimaryMediumLowColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="AltPopupBorderBrush" Color="{StaticResource AltPrimaryMediumHighColor}"  po:Freeze="True" />
 
 
 
@@ -273,10 +276,10 @@
             The primary color is the identity of the theme.
             -->
             <Color x:Key="PrimaryColor">#201F1E</Color>
-            <Color x:Key="PrimaryLowColor">#252423</Color>
-            <Color x:Key="PrimaryMediumLowColor">#313130</Color>
-            <Color x:Key="PrimaryMediumColor">#3D3D3C</Color>
-            <Color x:Key="PrimaryMediumHighColor">#4A4A49</Color>
+            <Color x:Key="PrimaryLowColor">#343434</Color>
+            <Color x:Key="PrimaryMediumLowColor">#474746</Color>
+            <Color x:Key="PrimaryMediumColor">#4D4D4C</Color>
+            <Color x:Key="PrimaryMediumHighColor">#5A5A59</Color>
             <Color x:Key="PrimaryHighColor">#939393</Color>
 
             <!--
@@ -393,9 +396,9 @@
             <SolidColorBrush x:Key="OnPaneControlBorderDisabledBrush" Color="{StaticResource PrimaryMediumLowColor}"  po:Freeze="True" />
 
             <SolidColorBrush x:Key="AltOnPaneControlBorderBrush" Color="{StaticResource AltPrimaryMediumLowColor}"  po:Freeze="True" />
-            <SolidColorBrush x:Key="AltOnPaneControlBorderHoverBrush" Color="{StaticResource AltPrimaryLowColor}"  po:Freeze="True" />
-            <SolidColorBrush x:Key="AltOnPaneControlBorderPressedBrush" Color="{StaticResource AltPrimaryMediumColor}"  po:Freeze="True" />
-            <SolidColorBrush x:Key="AltOnPaneControlBorderActiveBrush" Color="{StaticResource AltPrimaryMediumColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="AltOnPaneControlBorderHoverBrush" Color="{StaticResource AltPrimaryMediumColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="AltOnPaneControlBorderPressedBrush" Color="{StaticResource AltPrimaryMediumHighColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="AltOnPaneControlBorderActiveBrush" Color="{StaticResource AltPrimaryMediumHighColor}"  po:Freeze="True" />
             <SolidColorBrush x:Key="AltOnPaneControlBorderDisabledBrush" Color="{StaticResource AltPrimaryMediumLowColor}"  po:Freeze="True" />
 
 
@@ -404,9 +407,11 @@
             Brushes for Popup-Controls or control parts.
             Examples are ToolTips, ComboBox-DropDowns and the ContextMenu.
             -->
-            <SolidColorBrush x:Key="PopupBackgroundBrush" Color="{StaticResource PrimaryColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="PopupBackgroundBrush" Color="{StaticResource PrimaryMediumLowColor}"  po:Freeze="True" />
             <SolidColorBrush x:Key="PopupBorderBrush" Color="{StaticResource PrimaryMediumHighColor}"  po:Freeze="True" />
 
+            <SolidColorBrush x:Key="AltPopupBackgroundBrush" Color="{StaticResource AltPrimaryColor}"  po:Freeze="True" />
+            <SolidColorBrush x:Key="AltPopupBorderBrush" Color="{StaticResource AltPrimaryMediumHighColor}"  po:Freeze="True" />
 
 
 
