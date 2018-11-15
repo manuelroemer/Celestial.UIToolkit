@@ -9,7 +9,7 @@ namespace Celestial.UIToolkit.Interactivity
     /// a certain condition is met (i.e. the behavior is triggered).
     /// </summary>
     [ContentProperty(nameof(Actions))]
-    public class Trigger : Behavior, ITrigger
+    public abstract class Trigger : Behavior, ITrigger
     {
 
         private static readonly DependencyPropertyKey ActionsPropertyKey =
@@ -42,6 +42,32 @@ namespace Celestial.UIToolkit.Interactivity
                 return collection;
             }
             private set { SetValue(ActionsPropertyKey, value); }
+        }
+
+        /// <summary>
+        /// This method is supposed to be called when the trigger's condition is met.
+        /// When called, this method goes through each registered <see cref="ITriggerAction"/> in
+        /// the <see cref="Actions"/> collection and executes it.
+        /// </summary>
+        protected void OnTriggered()
+        {
+            OnTriggered(null);
+        }
+        
+        /// <summary>
+        /// This method is supposed to be called when the trigger's condition is met.
+        /// When called, this method goes through each registered <see cref="ITriggerAction"/> in
+        /// the <see cref="Actions"/> collection and executes it.
+        /// </summary>
+        /// <param name="parameter">
+        /// A parameter to be passed to each action. This can be null.
+        /// </param>
+        protected void OnTriggered(object parameter)
+        {
+            foreach (var action in Actions)
+            {
+                action.Execute(parameter);
+            }
         }
 
     }
