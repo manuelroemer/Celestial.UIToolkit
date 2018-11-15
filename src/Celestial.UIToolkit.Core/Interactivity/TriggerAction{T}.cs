@@ -20,6 +20,7 @@
         /// The default value is <c>false</c>.
         /// </summary>
         protected virtual bool ExecuteWithNullParameter { get; } = false;
+        // Always keep the above as read-only and virtual, so that deriving classes can seal it off.
 
         /// <summary>
         /// Executes the action, if the specified parameter is of type 
