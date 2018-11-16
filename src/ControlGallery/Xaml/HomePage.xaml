@@ -12,7 +12,11 @@
              prism:ViewModelLocator.AutoWireViewModel="True">
 
     <Grid Margin="20">
-        
+        <c:Interaction.Behaviors>
+            <c:AdaptiveTriggerBehavior MinWindowWidth="1000" MinWindowHeight="1000">
+                
+            </c:AdaptiveTriggerBehavior>
+        </c:Interaction.Behaviors>
     </Grid>
 
 </UserControl>

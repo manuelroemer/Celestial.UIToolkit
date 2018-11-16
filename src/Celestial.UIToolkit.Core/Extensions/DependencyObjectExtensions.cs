@@ -27,14 +27,32 @@ namespace Celestial.UIToolkit.Extensions
         {
             if (depObj == null) throw new ArgumentNullException(nameof(depObj));
             if (ancestor == null) return false;
+
+            return depObj.GetVisualAncestor(obj => obj == ancestor) != null;
+        }
+
+        /// <summary>
+        /// Tries to find an ancestor of the specified <paramref name="depObj"/> which fulfills
+        /// the specified <paramref name="predicate"/> in the visual tree. 
+        /// </summary>
+        /// <param name="depObj">The dependency object.</param>
+        /// <param name="predicate">A predicate to be fullfilled.</param>
+        /// <returns>
+        /// The visual ancestor which fullfills the predicate or null, if none was found.
+        /// </returns>
+        public static DependencyObject GetVisualAncestor(
+            this DependencyObject depObj, Predicate<DependencyObject> predicate)
+        {
+            if (depObj == null) throw new ArgumentNullException(nameof(depObj));
+            if (predicate == null) throw new ArgumentNullException(nameof(predicate));
             var currentAncestor = VisualTreeHelper.GetParent(depObj);
 
             if (currentAncestor == null)
-                return false;
-            else if (currentAncestor == ancestor)
-                return true;
+                return null;
+            else if (predicate(currentAncestor))
+                return currentAncestor;
             else
-                return currentAncestor.HasVisualAncestor(ancestor);
+                return currentAncestor.GetVisualAncestor(predicate);
         }
 
         /// <summary>

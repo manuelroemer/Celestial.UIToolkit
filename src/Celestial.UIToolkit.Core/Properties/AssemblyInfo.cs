@@ -12,6 +12,7 @@ using System.Windows.Markup;
 
 [assembly: XmlnsDefinition("http://celestial-ui.com", "Celestial.UIToolkit")]
 [assembly: XmlnsDefinition("http://celestial-ui.com", "Celestial.UIToolkit.Converters")]
+[assembly: XmlnsDefinition("http://celestial-ui.com", "Celestial.UIToolkit.Interactions")]
 [assembly: XmlnsDefinition("http://celestial-ui.com", "Celestial.UIToolkit.Interactivity")]
 [assembly: XmlnsDefinition("http://celestial-ui.com", "Celestial.UIToolkit.Media")]
 [assembly: XmlnsDefinition("http://celestial-ui.com", "Celestial.UIToolkit.Media.Animations")]
