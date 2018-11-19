@@ -4,14 +4,14 @@ namespace Celestial.UIToolkit.Interactivity
 {
 
     /// <summary>
-    /// An abstract base class for <see cref="ITriggerAction"/> implementers which expects
-    /// a parameter of a specific type in the <see cref="ITriggerAction.Execute(object)"/>
-    /// method.
-    /// Override <see cref="ExecuteWithNullParameter"/> to control null value behavior.
+    ///     An abstract base class for <see cref="ITriggerAction"/> implementers which expects
+    ///     a parameter of a specific type in the <see cref="ITriggerAction.Execute(object)"/>
+    ///     method.
+    ///     Override <see cref="ExecuteWithNullParameter"/> to control null value behavior.
     /// </summary>
     /// <typeparam name="TParameter">
-    /// The expected type of the parameter in the <see cref="ITriggerAction.Execute(object)"/>
-    /// method.
+    ///     The expected type of the parameter in the <see cref="ITriggerAction.Execute(object)"/>
+    ///     method.
     /// </typeparam>
     public abstract class TriggerAction<TParameter> : DependencyObject, ITriggerAction
     {
@@ -25,7 +25,7 @@ namespace Celestial.UIToolkit.Interactivity
         // Always keep the above as read-only and virtual, so that deriving classes can seal it off.
 
         /// <summary>
-        /// Executes the action, if the specified parameter is of type 
+        /// Executes the action, if the specified <paramref name="parameter"/> is of type 
         /// <typeparamref name="TParameter"/>.
         /// Otherwise, nothing happens.
         /// </summary>
