@@ -25,10 +25,9 @@ namespace Celestial.UIToolkit.Interactivity
         /// </summary>
         public static readonly DependencyProperty ActionsProperty =
             ActionsPropertyKey.DependencyProperty;
-
+        
         /// <summary>
-        /// Gets a collection of actions which get executed, once a certain condition of this
-        /// behavior is met.
+        /// Gets a collection of actions which always get executed when the trigger gets triggered.
         /// </summary>
         public TriggerActionCollection Actions
         {

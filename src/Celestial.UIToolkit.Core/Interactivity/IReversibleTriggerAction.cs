@@ -12,6 +12,7 @@
         /// <summary>
         ///     Reverts the effect of a previously called <see cref="ITriggerAction.Execute(object)"/>
         ///     action call.
+        ///     This action does not necessarily get called all the time.
         /// </summary>
         /// <param name="parameter">
         ///     A parameter which is passed to the action by the 

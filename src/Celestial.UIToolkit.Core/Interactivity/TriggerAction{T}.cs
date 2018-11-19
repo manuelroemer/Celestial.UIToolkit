@@ -7,7 +7,7 @@ namespace Celestial.UIToolkit.Interactivity
     ///     An abstract base class for <see cref="ITriggerAction"/> implementers which expects
     ///     a parameter of a specific type in the <see cref="ITriggerAction.Execute(object)"/>
     ///     method.
-    ///     Override <see cref="ExecuteWithNullParameter"/> to control null value behavior.
+    ///     Override <see cref="AllowNullParameter"/> to control null value behavior.
     /// </summary>
     /// <typeparam name="TParameter">
     ///     The expected type of the parameter in the <see cref="ITriggerAction.Execute(object)"/>
@@ -21,7 +21,7 @@ namespace Celestial.UIToolkit.Interactivity
         /// passes null as a parameter.
         /// The default value is <c>false</c>.
         /// </summary>
-        protected virtual bool ExecuteWithNullParameter { get; } = false;
+        protected virtual bool AllowNullParameter { get; } = false;
         // Always keep the above as read-only and virtual, so that deriving classes can seal it off.
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Celestial.UIToolkit.Interactivity
         /// </param>
         public void Execute(object parameter)
         {
-            if (parameter is TParameter || (parameter is null && ExecuteWithNullParameter))
+            if (parameter is TParameter || (parameter is null && AllowNullParameter))
             {
                 Execute((TParameter)parameter);
             }

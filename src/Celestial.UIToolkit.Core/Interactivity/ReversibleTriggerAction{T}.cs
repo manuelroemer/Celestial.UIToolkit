@@ -29,14 +29,14 @@
         /// </param>
         public void Revert(object parameter)
         {
-            if (parameter is TParameter || (parameter is null && ExecuteWithNullParameter))
+            if (parameter is TParameter || (parameter is null && AllowNullParameter))
             {
                 Revert((TParameter)parameter);
             }
         }
 
         /// <summary>
-        /// Executes the action.
+        /// Reverts the action.
         /// Called by <see cref="Revert(object)"/> when a parameter of type
         /// <typeparamref name="TParameter"/> was passed.
         /// </summary>

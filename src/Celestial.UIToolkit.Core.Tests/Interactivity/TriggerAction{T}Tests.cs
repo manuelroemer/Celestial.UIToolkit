@@ -49,7 +49,7 @@ namespace Celestial.UIToolkit.Core.Tests.Interactivity
         public void DisallowsNullParameterIfSet()
         {
             var action = new TestableTriggerAction<object>();
-            action.AllowNullParameter = false;
+            action.AllowNullParam = false;
             action.Executed += Action_Executed;
 
             try
@@ -71,7 +71,7 @@ namespace Celestial.UIToolkit.Core.Tests.Interactivity
         public void AllowsNullParameterIfSet()
         {
             var action = new TestableTriggerAction<object>();
-            action.AllowNullParameter = true;
+            action.AllowNullParam = true;
 
             Assert.Raises<EventArgs<object>>(
                 (handler) => action.Executed += handler,

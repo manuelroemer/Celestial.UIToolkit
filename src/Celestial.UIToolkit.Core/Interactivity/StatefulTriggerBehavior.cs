@@ -131,13 +131,13 @@ namespace Celestial.UIToolkit.Interactivity
 
             if (IsActive)
             {
-                ExecuteAllActions(Actions, parameter);
                 ExecuteAllActions(EnterActions, parameter);
+                ExecuteAllActions(Actions, parameter);
             }
             else
             {
-                RevertAllActions(Actions, parameter);
                 ExecuteAllActions(ExitActions, parameter);
+                RevertAllActions(Actions, parameter);
             }
         }
 
