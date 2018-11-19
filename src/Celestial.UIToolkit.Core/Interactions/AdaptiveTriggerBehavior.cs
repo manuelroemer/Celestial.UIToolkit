@@ -6,7 +6,7 @@ using Celestial.UIToolkit.Interactivity;
 namespace Celestial.UIToolkit.Interactions
 {
 
-    public sealed class AdaptiveTriggerBehavior : TriggerBehavior<FrameworkElement>
+    public sealed class AdaptiveTriggerBehavior : StatefulTriggerBehavior<FrameworkElement>
     {
 
         private Window _window;
@@ -74,11 +74,7 @@ namespace Celestial.UIToolkit.Interactions
         {
             base.OnDetaching();
             AssociatedObject.Loaded -= AssociatedObject_Loaded;
-
-            if (_window != null)
-            {
-                _window.SizeChanged -= Window_SizeChanged;
-            }
+            _window.SizeChanged -= Window_SizeChanged;
         }
 
         private void AssociatedObject_Loaded(object sender, RoutedEventArgs e)
@@ -134,7 +130,11 @@ namespace Celestial.UIToolkit.Interactions
             if (_window.ActualWidth >= MinWindowWidth && 
                 _window.ActualHeight >= MinWindowHeight)
             {
-                OnTriggered();
+                OnTriggered(true, AssociatedObject);
+            }
+            else
+            {
+                OnTriggered(false, AssociatedObject);
             }
         }
 

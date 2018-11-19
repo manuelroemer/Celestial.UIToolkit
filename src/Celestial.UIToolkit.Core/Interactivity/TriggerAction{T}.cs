@@ -1,8 +1,10 @@
-﻿namespace Celestial.UIToolkit.Interactivity
+﻿using System.Windows;
+
+namespace Celestial.UIToolkit.Interactivity
 {
 
     /// <summary>
-    /// An abstract base class for <see cref="ITriggerAction"/> implementers which expect
+    /// An abstract base class for <see cref="ITriggerAction"/> implementers which expects
     /// a parameter of a specific type in the <see cref="ITriggerAction.Execute(object)"/>
     /// method.
     /// Override <see cref="ExecuteWithNullParameter"/> to control null value behavior.
@@ -11,7 +13,7 @@
     /// The expected type of the parameter in the <see cref="ITriggerAction.Execute(object)"/>
     /// method.
     /// </typeparam>
-    public abstract class TriggerAction<TParameter> : ITriggerAction
+    public abstract class TriggerAction<TParameter> : DependencyObject, ITriggerAction
     {
 
         /// <summary>
@@ -49,7 +51,7 @@
         /// executed it.
         /// </param>
         protected abstract void Execute(TParameter parameter);
-
+        
     }
 
 }

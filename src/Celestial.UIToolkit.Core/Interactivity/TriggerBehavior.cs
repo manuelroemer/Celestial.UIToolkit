@@ -1,23 +1,24 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Markup;
 
 namespace Celestial.UIToolkit.Interactivity
 {
 
     /// <summary>
-    /// A specialized type of behavior which executes a set of actions, once
+    /// A specialized type of behavior which executes a set of actions once
     /// a certain condition is met (i.e. the behavior is triggered).
     /// </summary>
     [ContentProperty(nameof(Actions))]
     public abstract class TriggerBehavior : Behavior, ITriggerBehavior
     {
-
+        
         private static readonly DependencyPropertyKey ActionsPropertyKey =
             DependencyProperty.RegisterReadOnly(
                 nameof(Actions),
                 typeof(TriggerActionCollection),
                 typeof(TriggerBehavior),
-                new PropertyMetadata(null));
+                new FrameworkPropertyMetadata(null));
 
         /// <summary>
         /// Identifies the <see cref="Actions"/> dependency property.
@@ -43,28 +44,31 @@ namespace Celestial.UIToolkit.Interactivity
             }
             private set { SetValue(ActionsPropertyKey, value); }
         }
-
-        /// <summary>
-        /// This method is supposed to be called when the trigger's condition is met.
-        /// When called, this method goes through each registered <see cref="ITriggerAction"/> in
-        /// the <see cref="Actions"/> collection and executes it.
-        /// </summary>
-        protected void OnTriggered()
-        {
-            OnTriggered(null);
-        }
         
         /// <summary>
-        /// This method is supposed to be called when the trigger's condition is met.
-        /// When called, this method goes through each registered <see cref="ITriggerAction"/> in
-        /// the <see cref="Actions"/> collection and executes it.
+        ///     When called, activates the trigger and executes the <see cref="Actions"/>.
         /// </summary>
         /// <param name="parameter">
-        /// A parameter to be passed to each action. This can be null.
+        ///     A parameter to be passed to each action. This can be null.
         /// </param>
         protected void OnTriggered(object parameter)
         {
-            foreach (var action in Actions)
+            OnTriggeredImpl(parameter);
+        }
+
+        // This method only exists to allow the StatefulTriggerBehavior to override the
+        // Action execution logic.
+        // See the StatefulTriggerBehavior class for details on why this is required.
+        // 
+        // This is a separate method, because OnTriggered(parameter) should not be virtual.
+        internal virtual void OnTriggeredImpl(object parameter)
+        {
+            ExecuteAllActions(Actions, parameter);
+        }
+
+        internal static void ExecuteAllActions(IList<ITriggerAction> actions, object parameter)
+        {
+            foreach (var action in actions)
             {
                 action.Execute(parameter);
             }

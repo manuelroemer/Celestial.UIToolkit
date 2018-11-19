@@ -9,8 +9,7 @@
     {
 
         /// <summary>
-        /// Gets a collection of actions which get executed, once a certain condition of this
-        /// behavior is met.
+        /// Gets a collection of actions which always get executed when the trigger gets triggered.
         /// </summary>
         TriggerActionCollection Actions { get; }
 

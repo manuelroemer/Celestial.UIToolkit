@@ -20,17 +20,7 @@ namespace Celestial.UIToolkit.Interactivity
         /// </summary>
         public new T AssociatedObject => (T)base.AssociatedObject;
 
-        internal sealed override void AttachImpl(DependencyObject associatedObject)
-        {
-            if (!(associatedObject is null) && !(associatedObject is T))
-            {
-                throw new InvalidOperationException(
-                    $"The behavior can only be attached to objects of type {typeof(T).FullName}, " +
-                    $"but received an object of type {associatedObject.GetType().FullName}."
-                );
-            }
-            base.AttachImpl(associatedObject);
-        }
+        internal override Type RequiredAssociatedObjectType => typeof(T);
 
     }
 

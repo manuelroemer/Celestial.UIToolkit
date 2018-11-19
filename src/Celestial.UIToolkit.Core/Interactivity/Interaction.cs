@@ -20,7 +20,7 @@ namespace Celestial.UIToolkit.Interactivity
                 "BehaviorsInternal",
                 typeof(BehaviorCollection),
                 typeof(Interaction),
-                new PropertyMetadata(null));
+                new FrameworkPropertyMetadata(null));
 
         /// <summary>
         ///     Gets the value of the <see cref="BehaviorsProperty"/> attached dependency property,

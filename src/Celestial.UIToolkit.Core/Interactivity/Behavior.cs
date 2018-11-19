@@ -38,6 +38,17 @@ namespace Celestial.UIToolkit.Interactivity
         public bool IsAttached => AssociatedObject != null;
 
         /// <summary>
+        /// Gets a type of which an object in the <see cref="Attach(DependencyObject)"/>
+        /// must be.
+        /// If the object in the <see cref="Attach(DependencyObject)"/> has a different type,
+        /// an exception is thrown.
+        /// 
+        /// This can be overridden by deriving generic classes which require the 
+        /// <see cref="AssociatedObject"/> to be of a certain type.
+        /// </summary>
+        internal virtual Type RequiredAssociatedObjectType => typeof(object);
+
+        /// <summary>
         ///     Tries to create an instance of the current behavior via the 
         ///     <see cref="Activator"/> class.
         ///     If that fails, throws an exception.
@@ -79,19 +90,17 @@ namespace Celestial.UIToolkit.Interactivity
         /// </exception>
         public void Attach(DependencyObject associatedObject)
         {
-            AttachImpl(associatedObject);
-        }
-        
-        // Contains the actual logic for attaching an object to this behavior.
-        // This is virtual, so that the Behavior<T> (and Trigger<T>) classes can
-        // add/override the logic with type-specific logic.
-        // 
-        // By implementing it like this, Behavior<T> doesn't have to override OnAttached,
-        // which allows users of the generic behavior class to not call base.OnAttached().
-        internal virtual void AttachImpl(DependencyObject associatedObject)
-        {
             if (associatedObject is null)
                 throw new ArgumentNullException(nameof(associatedObject));
+            
+            if (!RequiredAssociatedObjectType.IsAssignableFrom(associatedObject.GetType()))
+            {
+                throw new InvalidOperationException(
+                    $"The behavior can only be attached to objects of type " +
+                    $"{RequiredAssociatedObjectType.FullName}, but received an object of type " +
+                    $"{associatedObject.GetType().FullName}."
+                );
+            }
 
             if (IsAttached)
             {
@@ -110,7 +119,7 @@ namespace Celestial.UIToolkit.Interactivity
             AssociatedObject = associatedObject;
             OnAttached();
         }
-
+        
         /// <summary>
         /// Detaches the behavior from the current associated object.
         /// </summary>
