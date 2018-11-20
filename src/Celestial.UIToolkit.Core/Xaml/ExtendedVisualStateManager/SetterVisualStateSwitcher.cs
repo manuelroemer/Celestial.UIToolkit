@@ -1,5 +1,7 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Data;
+using Celestial.UIToolkit.Extensions;
 using static Celestial.UIToolkit.TraceSources;
 
 namespace Celestial.UIToolkit.Xaml
@@ -45,109 +47,44 @@ namespace Celestial.UIToolkit.Xaml
         {
             if (ExtendedFromState == null) return;
 
-            foreach (SetterBase setterBase in ExtendedFromState.Setters)
+            foreach (var setterBase in ExtendedFromState.Setters)
             {
-                if (IsValidSetter(setterBase))
+                if (setterBase is Setter setter)
                 {
-                    RemoveSetter((Setter)setterBase);
-                }
-            }
-        }
-
-        private void RemoveSetter(Setter setter)
-        {
-            // InvalidateProperty forces the previously changed property to be 
-            // re-evaluated. This resets any previous changes.
-            DependencyObject setterTarget = FindSetterTarget(setter);
-            if (setterTarget != null)
-            {
-                if (setter.Value is Binding)
-                {
-                    BindingOperations.ClearBinding(setterTarget, setter.Property);
+                    setter.ApplyToElement(StateGroupsRoot);
                 }
                 else
                 {
-                    // A normal .NET value can simply be invalidated. The DP remembers the previous
-                    // value.
-                    setterTarget.InvalidateProperty(setter.Property);
+                    ThrowInvalidSetterTypeException();
                 }
-
-                VisualStateSource.Verbose(
-                    "Removed visual state setter for property {0} from element {1}.",
-                    setter.Property.Name,
-                    setterTarget);
             }
         }
-
+        
         private void ApplyCurrentStateSetters()
         {
             if (ExtendedToState == null) return;
 
             foreach (SetterBase setterBase in ExtendedToState.Setters)
             {
-                if (IsValidSetter(setterBase))
+                if (setterBase is Setter setter)
                 {
-                    ApplySetter((Setter)setterBase);
-                }
-            }
-        }
-
-        private void ApplySetter(Setter setter)
-        {
-            DependencyObject setterTarget = FindSetterTarget(setter);
-            if (setterTarget != null)
-            {
-                if (setter.Value is Binding binding)
-                {
-                    BindingOperations.SetBinding(setterTarget, setter.Property, binding);
+                    setter.RemoveFromElement(StateGroupsRoot);
                 }
                 else
                 {
-                    // We are dealing with a "normal" .NET property value.
-                    //
-                    // SetCurrentValue doesn't change the property source, but changes the value until
-                    // reset.
-                    // This is ideal, as long as we reset the property again 
-                    // (which is done in the RemoveSetter method(s)).
-                    setterTarget.SetCurrentValue(setter.Property, setter.Value);
+                    ThrowInvalidSetterTypeException();
                 }
-
-                VisualStateSource.Verbose(
-                    "Setting property {0} to {1} on element {2}.",
-                    setter.Property.Name,
-                    setter.Value,
-                    setterTarget);
             }
         }
 
-        private DependencyObject FindSetterTarget(Setter setter)
+        private void ThrowInvalidSetterTypeException()
         {
-            // If no target name is specified, the setter referes (by convention) to the control.
-            if (string.IsNullOrEmpty(setter.TargetName))
-                return Control;
-
-            // Try to locate the target in the template part, or in the control itself.
-            var target = StateGroupsRoot.FindName(setter.TargetName) as DependencyObject ??
-                         Control.FindName(setter.TargetName) as DependencyObject;
-
-            if (target == null)
-            {
-                VisualStateSource.Warn(
-                    "Couldn't find the visual state setter target \"{0}\".", setter.TargetName);
-            }
-
-            return target;
+            throw new InvalidOperationException(
+                $"The {nameof(ExtendedVisualStateManager)} only supports {typeof(Setter).FullName} " +
+                $"instances."
+            );
         }
-
-        private bool IsValidSetter(SetterBase setterBase)
-        {
-            // We can't enforce that the setter's Property matches the Value (and that's not our 
-            // job), but we must ensure that its TargetName and Property are valid values,
-            // since this class makes use of them.
-            return setterBase is Setter setter &&
-                   setter.Property != null;
-        }
-
+        
     }
 
 }
