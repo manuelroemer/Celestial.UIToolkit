@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows;
 using Celestial.UIToolkit.Extensions;
 using Celestial.UIToolkit.Interactivity;
@@ -141,8 +142,7 @@ namespace Celestial.UIToolkit.Interactions
         
         private void ReevaluateTriggerState()
         {
-            if (_window.ActualWidth >= MinWindowWidth && 
-                _window.ActualHeight >= MinWindowHeight)
+            if (IsTriggeredByWindowSize() && IsStrongestAdaptiveTriggerInGroup())
             {
                 OnTriggered(true, AssociatedObject);
             }
@@ -150,6 +150,31 @@ namespace Celestial.UIToolkit.Interactions
             {
                 OnTriggered(false, AssociatedObject);
             }
+        }
+
+        private bool IsTriggeredByWindowSize()
+        {
+            return _window.ActualWidth >= MinWindowWidth &&
+                   _window.ActualHeight >= MinWindowHeight;
+        }
+
+        private bool IsStrongestAdaptiveTriggerInGroup()
+        {
+            // We need to check if this adaptive trigger is the strongest one in a collection
+            // of behaviors.
+            // We've got the OwningCollection property for that. Now we only need to look for other
+            // adaptive triggers in this collection.
+            if (OwningCollection is null)
+                return true;
+
+            var strongestTrigger = OwningCollection
+                .OfType<AdaptiveTriggerBehavior>()
+                .Where(trigger => trigger.IsTriggeredByWindowSize())
+                .OrderByDescending(trigger => trigger.MinWindowWidth)
+                .ThenByDescending(trigger => trigger.MinWindowHeight)
+                .First();
+
+            return strongestTrigger == this;
         }
 
     }
