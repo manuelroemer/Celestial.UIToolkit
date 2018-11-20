@@ -27,6 +27,11 @@
                         <Setter TargetName="R" Property="Rectangle.Fill" Value="Yellow" />
                     </c:ExtendedVisualState.Setters>
                 </c:ExtendedVisualState>
+                <c:ExtendedVisualState x:Name="Gigantic2">
+                    <c:ExtendedVisualState.Setters>
+                        <Setter TargetName="R" Property="Rectangle.Fill" Value="Orange" />
+                    </c:ExtendedVisualState.Setters>
+                </c:ExtendedVisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         
@@ -34,7 +39,7 @@
             <c:AdaptiveTriggerBehavior>
                 <c:GoToStateAction StateName="Normal" />
             </c:AdaptiveTriggerBehavior>
-            <c:AdaptiveTriggerBehavior MinWindowWidth="1200">
+            <c:AdaptiveTriggerBehavior MinWindowWidth="400">
                 <c:GoToStateAction StateName="Large" />
             </c:AdaptiveTriggerBehavior>
             <c:AdaptiveTriggerBehavior MinWindowWidth="1500">

@@ -99,8 +99,9 @@ namespace Celestial.UIToolkit.Interactions
         {
             FindParentWindow();
             _window.SizeChanged += Window_SizeChanged;
+            EvaluateAllGroupTriggersOnLoad();
         }
-
+        
         /// <summary>
         /// Tries to find a <see cref="Window"/> object in the visual tree, starting from the
         /// associated object.
@@ -126,6 +127,34 @@ namespace Celestial.UIToolkit.Interactions
                     $"The {nameof(AdaptiveTriggerBehavior)} could not find a parent window of the " +
                     $"associated object {AssociatedObject}."
                 );
+            }
+        }
+
+        private void EvaluateAllGroupTriggersOnLoad()
+        {
+            // This is called, when the associated object is loaded.
+            // When the window loads, we want to immediately trigger the right AdaptiveTrigger.
+            if (OwningCollection != null)
+            {
+                // If this trigger is in a collection, we must wait until each AdaptiveTrigger has
+                // been loaded. Otherwise, the ReevaluateTriggerState() method will throw, since
+                // the other trigger's _window field is not loaded yet.
+                // If this is the last trigger in the collection, we can assume that every other
+                // trigger has already been loaded.
+                // We can thus evaluate each AdaptiveTrigger's value.
+                var adaptiveTriggers = OwningCollection.OfType<AdaptiveTriggerBehavior>();
+                if (this == adaptiveTriggers.Last())
+                {
+                    foreach (var adaptiveTrigger in adaptiveTriggers)
+                    {
+                        adaptiveTrigger.ReevaluateTriggerState();
+                    }
+                }
+            }
+            else
+            {
+                // If we aren't in a group, we can simply evaluate the trigger now.
+                ReevaluateTriggerState();
             }
         }
 
@@ -155,7 +184,7 @@ namespace Celestial.UIToolkit.Interactions
         private bool IsTriggeredByWindowSize()
         {
             return _window.ActualWidth >= MinWindowWidth &&
-                   _window.ActualHeight >= MinWindowHeight;
+                    _window.ActualHeight >= MinWindowHeight;
         }
 
         private bool IsStrongestAdaptiveTriggerInGroup()
