@@ -51,7 +51,7 @@ namespace Celestial.UIToolkit.Xaml
             {
                 if (setterBase is Setter setter)
                 {
-                    setter.ApplyToElement(StateGroupsRoot);
+                    setter.RemoveFromElement(StateGroupsRoot);
                 }
                 else
                 {
@@ -64,11 +64,11 @@ namespace Celestial.UIToolkit.Xaml
         {
             if (ExtendedToState == null) return;
 
-            foreach (SetterBase setterBase in ExtendedToState.Setters)
+            foreach (var setterBase in ExtendedToState.Setters)
             {
                 if (setterBase is Setter setter)
                 {
-                    setter.RemoveFromElement(StateGroupsRoot);
+                    setter.ApplyToElement(StateGroupsRoot);
                 }
                 else
                 {
