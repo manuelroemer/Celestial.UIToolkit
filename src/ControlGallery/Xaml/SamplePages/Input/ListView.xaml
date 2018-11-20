@@ -19,13 +19,13 @@
 
     <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,4,0,12'}">
 
-        <controls:ControlPresenter Header="The Standard ListView in different colors."
+        <controls:ControlPresenter Header="The Primary ListView in different colors."
                                    Xaml="{Binding Xaml, ElementName=ListViewEx1}"
                                    VerticalAlignment="Top">
             <smtx:XamlDisplay x:Name="ListViewEx1" Key="ListViewEx1">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx1}">
-                    <ListView Style="{StaticResource StandardListView}"
+                    <ListView Style="{StaticResource PrimaryListView}"
                               Width="{c:GridUnit 100}"
                               Height="{c:GridUnit 40}"
                               ItemsSource="{x:Static data:LoremItems.Lorem50}" />
@@ -169,7 +169,7 @@
             <smtx:XamlDisplay x:Name="ListViewEx5" Key="ListViewEx5">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx5}">
-                    <ListView Style="{StaticResource CompactStandardListView}"
+                    <ListView Style="{StaticResource CompactPrimaryListView}"
                               Width="{c:GridUnit 100}"
                               Height="{c:GridUnit 40}"
                               ItemsSource="{x:Static data:LoremItems.Lorem100}" />
@@ -211,7 +211,7 @@
             <smtx:XamlDisplay x:Name="ListViewEx6" Key="ListViewEx6">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx6}">
-                    <ListView Style="{StaticResource LargeStandardListView}"
+                    <ListView Style="{StaticResource LargePrimaryListView}"
                               Width="{c:GridUnit 100}"
                               Height="{c:GridUnit 40}"
                               ItemsSource="{x:Static data:LoremItems.Lorem100}" />

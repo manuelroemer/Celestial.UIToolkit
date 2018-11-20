@@ -59,6 +59,16 @@ namespace Celestial.UIToolkit.Controls
                 new PropertyMetadata(Brushes.Transparent));
 
         /// <summary>
+        /// Identifies the <see cref="AutoCloseOverlayingPane"/> dependency property.
+        /// </summary>
+        public static readonly DependencyProperty AutoCloseOverlayingPaneProperty =
+            DependencyProperty.Register(
+                nameof(AutoCloseOverlayingPane),
+                typeof(bool),
+                typeof(NavigationView),
+                new PropertyMetadata(true));
+
+        /// <summary>
         /// Gets or sets a value indicating whether the pane is currently expanded to its full 
         /// width.
         /// </summary>
@@ -104,6 +114,26 @@ namespace Celestial.UIToolkit.Controls
         {
             get { return (Brush)GetValue(PaneBackgroundProperty); }
             set { SetValue(PaneBackgroundProperty, value); }
+        }
+
+        /// <summary>
+        ///     Gets or sets a value indicating whether the pane gets automatically closed if the
+        ///     <see cref="NavigationView"/> is currently overlaying the content.
+        /// 
+        ///     If this is true, the pane gets closed when the user presses outside of the pane,
+        ///     or when he invokes an item.
+        /// </summary>
+        /// <remarks>
+        ///     Overlaying means, that the <see cref="NavigationView"/> is either in the
+        ///     <see cref="NavigationViewDisplayMode.Minimal"/> or 
+        ///     <see cref="NavigationViewDisplayMode.Compact"/> <see cref="DisplayMode"/>.
+        ///     
+        ///     If this is the case, the pane overlays the actual content.
+        /// </remarks>
+        public bool AutoCloseOverlayingPane
+        {
+            get { return (bool)GetValue(AutoCloseOverlayingPaneProperty); }
+            set { SetValue(AutoCloseOverlayingPaneProperty, value); }
         }
 
     }

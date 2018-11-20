@@ -17,7 +17,7 @@
                                    VerticalAlignment="Top">
             <smtx:XamlDisplay x:Name="RelativeCanvasEx1" Key="RelativeCanvasEx1">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}">
-                    <Border Background="{StaticResource PrimaryMediumLowBrush}">
+                    <Border Background="{DynamicResource PrimaryMediumLowBrush}">
                         <c:RelativeCanvas Height="400" Width="400">
                             <Rectangle c:RelativeCanvas.Top="0" c:RelativeCanvas.Left="0" Width="100" Height="100" Fill="Red" />
                             <Rectangle c:RelativeCanvas.Top="0.5" c:RelativeCanvas.Left="0.5" Width="100" Height="100" Fill="Green" />
@@ -33,7 +33,7 @@
                                    VerticalAlignment="Top">
             <smtx:XamlDisplay x:Name="RelativeCanvasEx2" Key="RelativeCanvasEx2">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}">
-                    <Border Background="{StaticResource PrimaryMediumLowBrush}">
+                    <Border Background="{DynamicResource PrimaryMediumLowBrush}">
                         <c:RelativeCanvas Height="400" Width="400">
                             <Rectangle c:RelativeCanvas.Left="0.5" c:RelativeCanvas.Top="0.5" Width="100" Height="100" Fill="Green" />
                             <Rectangle c:RelativeCanvas.Right="0.5" c:RelativeCanvas.Bottom="0.5" Width="100" Height="100" Fill="Yellow" />
@@ -51,7 +51,7 @@
             </controls:ControlPresenter.Description>
             <smtx:XamlDisplay x:Name="RelativeCanvasEx3" Key="RelativeCanvasEx3">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}">
-                    <Border Background="{StaticResource PrimaryMediumLowBrush}">
+                    <Border Background="{DynamicResource PrimaryMediumLowBrush}">
                         <c:RelativeCanvas Height="200" Width="200" ClipToBounds="True">
                             <Rectangle c:RelativeCanvas.Left="0.9" c:RelativeCanvas.Top="0.9" Width="100" Height="100" Fill="Green" />
                         </c:RelativeCanvas>

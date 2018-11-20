@@ -3,15 +3,15 @@
                     xmlns:c="http://celestial-ui.com"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
-    <Style x:Key="StandardIconElement" TargetType="controls:IconElement">
+    <Style x:Key="PrimaryIconElement" TargetType="controls:IconElement">
         <Setter Property="SnapsToDevicePixels" Value="False" />
         <Setter Property="UseLayoutRounding" Value="False" />
         <Setter Property="Width" Value="{c:GridUnit 4}" />
         <Setter Property="Width" Value="{c:GridUnit 4}" />
     </Style>
 
-    <Style TargetType="controls:IconElement" BasedOn="{StaticResource StandardIconElement}" />
-    <Style TargetType="controls:PathIcon" BasedOn="{StaticResource StandardIconElement}" />
+    <Style TargetType="controls:IconElement" BasedOn="{StaticResource PrimaryIconElement}" />
+    <Style TargetType="controls:PathIcon" BasedOn="{StaticResource PrimaryIconElement}" />
 
     <Style x:Key="SmallIconElement" TargetType="controls:IconElement">
         <Setter Property="Width" Value="{c:GridUnit 3}" />

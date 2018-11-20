@@ -5,27 +5,16 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
-    <ResourceDictionary.MergedDictionaries>
-        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-        <c:SharedResourceDictionary Source="./TextBlock.xaml" />
-
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
     <!-- The default GroupBox simply displays the Header as a Bold Strings.
          This allows categorization of the following elements, similar to a Label. -->
-    <Style x:Key="StandardGroupBox" TargetType="GroupBox" BasedOn="{c:MultiStyle 'TransparentBackground TransparentBorder StandardForeground BaseFontProperties Shadow0'}">
+    <Style x:Key="PrimaryGroupBox" TargetType="GroupBox" BasedOn="{c:MergeStyles 'TransparentBackground TransparentBorder StandardForeground BaseFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource SlimBorderThickness}" />
         <Setter Property="Padding" Value="{c:GridUnit '0,2,0,0'}" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource SharpCornerRadius}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource AmbientControlThemeShadow}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="GroupBox">
@@ -76,6 +65,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style TargetType="GroupBox" BasedOn="{StaticResource StandardGroupBox}" />
+    <Style TargetType="GroupBox" BasedOn="{StaticResource PrimaryGroupBox}" />
 
 </ResourceDictionary>

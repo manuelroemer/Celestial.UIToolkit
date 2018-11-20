@@ -25,7 +25,7 @@
             <controls:ControlPresenter.Description>
                 Even though the Toolkit provides a custom Window style (see this application),
                 you don't have to use it.
-                The standard Windows/WPF Window can still be used.
+                The Primary Windows/WPF Window can still be used.
                 When doing this, you must apply the "DefaultWindow" style to the window.
                 Otherwise, certain styles will not work correctly (TextElements, for example, will
                 have the wrong Font properties).
@@ -74,7 +74,7 @@
             </smtx:XamlDisplay>
         </controls:ControlPresenter>
 
-        <controls:ControlPresenter Header="The StandardWindow."
+        <controls:ControlPresenter Header="The PrimaryWindow."
                                    Xaml="{Binding Xaml, ElementName=WindowEx2}"
                                    VerticalAlignment="Top">
             <controls:ControlPresenter.Description>
@@ -88,12 +88,12 @@
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}">
                     <StackPanel.Resources>
                         <Window x:Key="Window"
-                                Style="{StaticResource StandardWindow}"
-                                Title="A StandardWindow"
+                                Style="{StaticResource PrimaryWindow}"
+                                Title="A PrimaryWindow"
                                 Width="{c:GridUnit 200}"
                                 Height="{c:GridUnit 120}">
                             <Grid>
-                                <TextBlock TextWrapping="Wrap" Text="A Window with the 'StandardWindow' Style." />
+                                <TextBlock TextWrapping="Wrap" Text="A Window with the 'PrimaryWindow' Style." />
                             </Grid>
                         </Window>
                     </StackPanel.Resources>
@@ -105,17 +105,17 @@
             </smtx:XamlDisplay>
         </controls:ControlPresenter>
 
-        <controls:ControlPresenter Header="Modifying the StandardWindow Style - Changing Colors."
+        <controls:ControlPresenter Header="Modifying the PrimaryWindow Style - Changing Colors."
                                    Xaml="{Binding Xaml, ElementName=WindowEx3}"
                                    VerticalAlignment="Top">
             <controls:ControlPresenter.Description>
-                The advantage of using the StandardWindow is the capability of styling it via
+                The advantage of using the PrimaryWindow is the capability of styling it via
                 Theming properties.
             </controls:ControlPresenter.Description>
             <smtx:XamlDisplay x:Name="WindowEx3" Key="WindowEx3">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}">
                     <StackPanel.Resources>
-                        <Style x:Key="CustomCaptionButton" TargetType="Button" BasedOn="{StaticResource StandardWindowCaptionButton}">
+                        <Style x:Key="CustomCaptionButton" TargetType="Button" BasedOn="{StaticResource PrimaryWindowCaptionButton}">
                             <Setter Property="Background" Value="{DynamicResource Accent2DarkestBrush}" />
                             <Setter Property="Foreground" Value="{DynamicResource OnDarkerAccent2TextBrush}" />
                             <Setter Property="c:MouseOverProperties.BackgroundBrush" Value="{DynamicResource Accent2DarkerBrush}" />
@@ -124,26 +124,26 @@
                             <Setter Property="c:PressedProperties.ForegroundBrush" Value="{DynamicResource OnDarkerAccent2TextBrush}" />
                         </Style>
 
-                        <Style x:Key="CustomCloseCaptionButton" TargetType="Button" BasedOn="{StaticResource StandardCloseWindowCaptionButton}">
+                        <Style x:Key="CustomCloseCaptionButton" TargetType="Button" BasedOn="{StaticResource PrimaryCloseWindowCaptionButton}">
                             <Setter Property="Background" Value="{DynamicResource Accent2DarkestBrush}" />
                             <Setter Property="Foreground" Value="{DynamicResource OnDarkerAccent2TextBrush}" />
                         </Style>
                         
                         <Window x:Key="Window"
-                                Style="{StaticResource StandardWindow}"
+                                Style="{StaticResource PrimaryWindow}"
                                 c:WindowTitlebarProperties.BackgroundBrush="{DynamicResource Accent2DarkestBrush}"
                                 c:WindowTitlebarProperties.ForegroundBrush="{DynamicResource OnDarkerAccent2TextBrush}"
                                 c:WindowTitlebarProperties.MinimizeButtonStyle="{StaticResource CustomCaptionButton}"
                                 c:WindowTitlebarProperties.MaximizeButtonStyle="{StaticResource CustomCaptionButton}"
                                 c:WindowTitlebarProperties.CloseButtonStyle="{StaticResource CustomCloseCaptionButton}"
-                                c:WindowTitlebarProperties.TitleFontSize="{StaticResource SubTitleFontSize}"
+                                c:WindowTitlebarProperties.TitleFontSize="{DynamicResource SubTitleFontSize}"
                                 c:WindowTitlebarProperties.Height="{c:GridUnit 10}"
                                 BorderBrush="{DynamicResource Accent2Brush}"
-                                Title="A StandardWindow with custom colors"
+                                Title="A PrimaryWindow with custom colors"
                                 Width="{c:GridUnit 200}"
                                 Height="{c:GridUnit 120}">
                             <Grid>
-                                <TextBlock TextWrapping="Wrap" Text="A StandardWindow with custom colors. There are more theming properties than shown in this example. Let IntelliSense help you with this." />
+                                <TextBlock TextWrapping="Wrap" Text="A PrimaryWindow with custom colors. There are more theming properties than shown in this example. Let IntelliSense help you with this." />
                             </Grid>
                         </Window>
                     </StackPanel.Resources>
@@ -155,18 +155,18 @@
             </smtx:XamlDisplay>
         </controls:ControlPresenter>
 
-        <controls:ControlPresenter Header="StandardWindow - Extending into the TitleBar."
+        <controls:ControlPresenter Header="PrimaryWindow - Extending into the TitleBar."
                                    Xaml="{Binding Xaml, ElementName=WindowEx4}"
                                    VerticalAlignment="Top">
             <controls:ControlPresenter.Description>
-                Similar to the UWP API, you can extend the StandardWindow's content into the TitleBar.
+                Similar to the UWP API, you can extend the PrimaryWindow's content into the TitleBar.
                 A prime example of what this looks like is this application.
             </controls:ControlPresenter.Description>
             <smtx:XamlDisplay x:Name="WindowEx4" Key="WindowEx4">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}">
                     <StackPanel.Resources>
                         <Window x:Key="Window"
-                                Style="{StaticResource StandardWindow}"
+                                Style="{StaticResource PrimaryWindow}"
                                 c:WindowTitlebarProperties.ExtendContentIntoTitlebar="True"
                                 Width="{c:GridUnit 200}"
                                 Height="{c:GridUnit 120}">
@@ -190,7 +190,7 @@
             </smtx:XamlDisplay>
         </controls:ControlPresenter>
 
-        <controls:ControlPresenter Header="StandardWindow - Extending into the TitleBar."
+        <controls:ControlPresenter Header="PrimaryWindow - Extending into the TitleBar."
                                    Xaml="{Binding Xaml, ElementName=WindowEx5}"
                                    VerticalAlignment="Top">
             <controls:ControlPresenter.Description>
@@ -200,7 +200,7 @@
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,5'}">
                     <StackPanel.Resources>
                         <Window x:Key="Window"
-                                Style="{StaticResource StandardWindow}"
+                                Style="{StaticResource PrimaryWindow}"
                                 c:WindowTitlebarProperties.ExtendContentIntoTitlebar="True"
                                 Width="{c:GridUnit 200}"
                                 Height="{c:GridUnit 120}">
@@ -227,7 +227,7 @@
             </smtx:XamlDisplay>
         </controls:ControlPresenter>
 
-        <controls:ControlPresenter Header="StandardWindow - Extending into the TitleBar."
+        <controls:ControlPresenter Header="PrimaryWindow - Extending into the TitleBar."
                                    Xaml="{Binding Xaml, ElementName=WindowEx6}"
                                    VerticalAlignment="Top">
             <controls:ControlPresenter.Description>
@@ -238,7 +238,7 @@
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,5'}">
                     <StackPanel.Resources>
                         <Window x:Key="Window"
-                                Style="{StaticResource StandardWindow}"
+                                Style="{StaticResource PrimaryWindow}"
                                 c:WindowTitlebarProperties.ExtendContentIntoTitlebar="True"
                                 Width="{c:GridUnit 200}"
                                 Height="{c:GridUnit 120}">

@@ -7,10 +7,10 @@
   
     <!-- A ripple animation which is being played in the background of a control.
          Example: CheckBox, RadioButton -->
-    <Style x:Key="SmallBackgroundRippleAnimation" x:Shared="False"  TargetType="controls:RippleOverlay">
+    <Style x:Key="SmallBackgroundRippleAnimation" x:Shared="False"  TargetType="controls:Ripple">
         <Setter Property="Width" Value="{c:GridUnit 5}" />
         <Setter Property="Height" Value="{c:GridUnit 5}" />
-        <Setter Property="Background" Value="{StaticResource PrimaryMediumLowBrush}" />
+        <Setter Property="Background" Value="{DynamicResource PrimaryMediumLowBrush}" />
         <Setter Property="IsEnabled" Value="{c:TemplatedParentBinding Path=(theming:RippleProperties.ShowRippleAnimation)}" />
         <Setter Property="RippleOrigin" Value="Center" />
         <Setter Property="ClipToBounds" Value="False" />
@@ -26,7 +26,7 @@
     
     <!-- A button which only displays the content.
          The Foreground is animated though. -->
-    <Style x:Key="TransparentButton" TargetType="ButtonBase" BasedOn="{c:MultiStyle 'TransparentBorder TransparentBackground StandardForeground StandardFontProperties'}">
+    <Style x:Key="TransparentButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'TransparentBorder TransparentBackground StandardForeground StandardFontProperties'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="Focusable" Value="False" />
         <Setter Property="IsTabStop" Value="False" />
@@ -105,9 +105,17 @@
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="StandardForegroundOnlyButton" TargetType="ButtonBase" BasedOn="{c:MultiStyle 'TransparentButton StandardForegroundPrimaryStates'}" />
-    <Style x:Key="Accent1ForegroundOnlyButton" TargetType="ButtonBase" BasedOn="{c:MultiStyle 'TransparentButton StandardForegroundAccent1States'}" />
-    <Style x:Key="Accent2ForegroundOnlyButton" TargetType="ButtonBase" BasedOn="{c:MultiStyle 'TransparentButton StandardForegroundAccent2States'}" />
+    <Style x:Key="StandardForegroundOnlyButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'TransparentButton ControlForeground'}">
+        <Setter Property="Foreground" Value="{DynamicResource StandardForegroundBrush}" />
+    </Style>
+
+    <Style x:Key="Accent1ForegroundOnlyButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'TransparentButton Accent1ControlForeground'}">
+        <Setter Property="Foreground" Value="{DynamicResource StandardForegroundBrush}" />
+    </Style>
+
+    <Style x:Key="Accent2ForegroundOnlyButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'TransparentButton Accent2ControlForeground'}">
+        <Setter Property="Foreground" Value="{DynamicResource StandardForegroundBrush}" />
+    </Style>
     
     <!-- An otherwise invisible button, which shows a standard ripple animation when pressed. -->
     <Style x:Key="InvisibleRippleButton" TargetType="ButtonBase" BasedOn="{StaticResource TransparentButton}">
@@ -120,8 +128,8 @@
                             BorderThickness="{TemplateBinding BorderThickness}"
                             Padding="{TemplateBinding Padding}">
                         <Grid>
-                            <controls:RippleOverlay Style="{StaticResource SmallBackgroundRippleAnimation}"
-                                                    IsActiveTrigger="{TemplateBinding IsPressed}" />
+                            <controls:Ripple Style="{DynamicResource SmallBackgroundRippleAnimation}"
+                                             IsActiveTrigger="{TemplateBinding IsPressed}" />
                             <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                         </Grid>

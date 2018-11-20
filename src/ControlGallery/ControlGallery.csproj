@@ -15,6 +15,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Images\Landscape.png" />
+    <None Remove="Assets\Images\ThumbnailAbstract.png" />
+    <None Remove="Assets\Xshd\XML-Dark.xshd" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System.Xaml" />
@@ -33,6 +39,15 @@
     <PackageReference Include="Prism.Unity" Version="6.3.0" />
     <PackageReference Include="Prism.Wpf" Version="6.3.0" />
     <PackageReference Include="ShowMeTheXAML.MSBuild" Version="1.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\Xshd\XML-Dark.xshd" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Images\Landscape.png" />
+    <Resource Include="Assets\Images\ThumbnailAbstract.png" />
   </ItemGroup>
 
 </Project>

@@ -4,24 +4,14 @@
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls"
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming">
 
-    <ResourceDictionary.MergedDictionaries>
-        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
-    <Style TargetType="controls:SplitView" BasedOn="{c:MultiStyle 'TransparentBorder TransparentBackground StandardForeground StandardFontProperties Shadow0'}">
+    <Style TargetType="controls:SplitView" BasedOn="{c:MergeStyles 'TransparentBorder TransparentBackground StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
-        <Setter Property="PaneBackground" Value="{StaticResource PaneBackgroundBrush}" />
+        <Setter Property="PaneBackground" Value="{DynamicResource PaneBackgroundBrush}" />
         <Setter Property="Focusable" Value="False" />
         <Setter Property="IsTabStop" Value="False" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource SharpCornerRadius}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource AmbientControlThemeShadow}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:SplitView">
@@ -139,9 +129,9 @@
                                             CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}" />
                                 </controls:ThemeShadowPresenter>
                                 <ContentPresenter ContentSource="Pane"
-                                                    ContentTemplate="{TemplateBinding PaneTemplate}"
-                                                    ContentTemplateSelector="{TemplateBinding PaneTemplateSelector}"
-                                                    ContentStringFormat="{TemplateBinding PaneStringFormat}" />
+                                                  ContentTemplate="{TemplateBinding PaneTemplate}"
+                                                  ContentTemplateSelector="{TemplateBinding PaneTemplateSelector}"
+                                                  ContentStringFormat="{TemplateBinding PaneStringFormat}" />
                             </Grid>
                         </Grid>
 

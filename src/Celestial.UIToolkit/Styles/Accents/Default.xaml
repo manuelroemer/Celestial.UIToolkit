@@ -1,0 +1,162 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:c="http://celestial-ui.com"
+                    xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
+
+    <!--
+    The first accent is supposed to be rarely used inside an application.
+    As a result, it is expected to be a flashy, attention-raising color.
+    -->
+    <Color x:Key="Accent1LightestColor">#f38baa</Color>
+    <Color x:Key="Accent1LighterColor">#ef648e</Color>
+    <Color x:Key="Accent1LightColor">#eb3d72</Color>
+    <Color x:Key="Accent1Color">#D1154E</Color>
+    <Color x:Key="Accent1DarkColor">#c11348</Color>
+    <Color x:Key="Accent1DarkerColor">#9a0f39</Color>
+    <Color x:Key="Accent1DarkestColor">#730b2b</Color>
+
+    <Color x:Key="OnLighterAccent1TextColor">#000000</Color>
+    <Color x:Key="OnDarkerAccent1TextColor">#FFFFFF</Color>
+    <Color x:Key="OnAccent1DisabledTextColor">#CCCCCC</Color>
+
+
+
+    <!--
+    The second accent is frequently used by Accent1Controls to guide the user's attention towards them.
+    -->
+    <Color x:Key="Accent2LightestColor">#a4caf1</Color>
+    <Color x:Key="Accent2LighterColor">#70a3e3</Color>
+    <Color x:Key="Accent2LightColor">#4d8cdc</Color>
+    <Color x:Key="Accent2Color">#2D78D6</Color>
+    <Color x:Key="Accent2DarkColor">#2262b1</Color>
+    <Color x:Key="Accent2DarkerColor">#1b4e8e</Color>
+    <Color x:Key="Accent2DarkestColor">#143a6a</Color>
+
+    <Color x:Key="OnLighterAccent2TextColor">#000000</Color>
+    <Color x:Key="OnDarkerAccent2TextColor">#FFFFFF</Color>
+    <Color x:Key="OnAccent2DisabledTextColor">#CCCCCC</Color>
+
+
+
+    <!--
+    The Error Color is used for, as the name suggests, error states within the application.
+    A common example is a validation error in a Accent1Control.
+    -->
+    <Color x:Key="ErrorLightestColor">#ff7f87</Color>
+    <Color x:Key="ErrorLighterColor">#fe555f</Color>
+    <Color x:Key="ErrorLightColor">#ff2a37</Color>
+    <Color x:Key="ErrorColor">#E3000E</Color>
+    <Color x:Key="ErrorDarkColor">#d4000d</Color>
+    <Color x:Key="ErrorDarkerColor">#aa000a</Color>
+    <Color x:Key="ErrorDarkestColor">#7f0007</Color>
+
+    <Color x:Key="OnLighterErrorTextColor">#000000</Color>
+    <Color x:Key="OnDarkerErrorTextColor">#FFFFFF</Color>
+    <Color x:Key="OnErrorDisabledTextColor">#CCCCCC</Color>
+
+
+
+    <!--
+    Brushes for the appearance of a control using the theme's accent.
+    -->
+    <SolidColorBrush x:Key="Accent1ControlBackgroundBrush" Color="{StaticResource Accent1Color}" po:Freeze="True" />
+    <SolidColorBrush x:Key="Accent1ControlHoverBackgroundBrush" Color="{StaticResource Accent1LightColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="Accent1ControlPressedBackgroundBrush" Color="{StaticResource Accent1DarkColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="Accent1ControlActiveBackgroundBrush" Color="{StaticResource Accent1DarkColor}" po:Freeze="True" />
+
+    <SolidColorBrush x:Key="Accent1ControlBorderBrush" Color="{StaticResource Accent1DarkColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="Accent1ControlHoverBorderBrush" Color="{StaticResource Accent1Color}" po:Freeze="True" />
+    <SolidColorBrush x:Key="Accent1ControlPressedBorderBrush" Color="{StaticResource Accent1DarkerColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="Accent1ControlActiveBorderBrush" Color="{StaticResource Accent1DarkerColor}" po:Freeze="True" />
+
+    
+    
+    <SolidColorBrush x:Key="Accent2ControlBackgroundBrush" Color="{StaticResource Accent2Color}" po:Freeze="True" />
+    <SolidColorBrush x:Key="Accent2ControlHoverBackgroundBrush" Color="{StaticResource Accent2LightColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="Accent2ControlPressedBackgroundBrush" Color="{StaticResource Accent2DarkColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="Accent2ControlActiveBackgroundBrush" Color="{StaticResource Accent2DarkColor}" po:Freeze="True" />
+
+    <SolidColorBrush x:Key="Accent2ControlBorderBrush" Color="{StaticResource Accent2DarkColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="Accent2ControlHoverBorderBrush" Color="{StaticResource Accent2Color}" po:Freeze="True" />
+    <SolidColorBrush x:Key="Accent2ControlPressedBorderBrush" Color="{StaticResource Accent2DarkerColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="Accent2ControlActiveBorderBrush" Color="{StaticResource Accent2DarkerColor}" po:Freeze="True" />
+
+    
+    
+    <SolidColorBrush x:Key="ErrorControlBackgroundBrush" Color="{StaticResource ErrorColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="ErrorControlHoverBackgroundBrush" Color="{StaticResource ErrorLightColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="ErrorControlPressedBackgroundBrush" Color="{StaticResource ErrorDarkColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="ErrorControlActiveBackgroundBrush" Color="{StaticResource ErrorDarkColor}" po:Freeze="True" />
+
+    <SolidColorBrush x:Key="ErrorControlBorderBrush" Color="{StaticResource ErrorDarkColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="ErrorControlHoverBorderBrush" Color="{StaticResource ErrorColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="ErrorControlPressedBorderBrush" Color="{StaticResource ErrorDarkerColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="ErrorControlActiveBorderBrush" Color="{StaticResource ErrorDarkerColor}" po:Freeze="True" />
+
+    
+
+
+    
+    <!--
+    The theme's default List Colors are extended by the accents.
+    -->
+    <SolidColorBrush x:Key="ListAccent1LowBrush" Color="{StaticResource Accent1LightestColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="ListAccent1MediumBrush" Color="{StaticResource Accent1LighterColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="ListAccent1HighBrush" Color="{StaticResource Accent1LightColor}" po:Freeze="True" />
+
+    <SolidColorBrush x:Key="ListAccent2LowBrush" Color="{StaticResource Accent2LightestColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="ListAccent2MediumBrush" Color="{StaticResource Accent2LighterColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="ListAccent2HighBrush" Color="{StaticResource Accent2LightColor}" po:Freeze="True" />
+
+    <SolidColorBrush x:Key="OnListAccent1TextBrush" Color="{StaticResource OnLighterAccent1TextColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="OnListAccent2TextBrush" Color="{StaticResource OnLighterAccent2TextColor}" po:Freeze="True" />
+
+
+
+
+
+    <!--
+    Brush definitions based on the colors.
+    These should not be changed.
+    -->
+    <SolidColorBrush x:Key="Accent1LightestBrush" Color="{StaticResource Accent1LightestColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="Accent1LighterBrush" Color="{StaticResource Accent1LighterColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="Accent1LightBrush" Color="{StaticResource Accent1LightColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="Accent1Brush" Color="{StaticResource Accent1Color}" po:Freeze="True" />
+    <SolidColorBrush x:Key="Accent1DarkBrush" Color="{StaticResource Accent1DarkColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="Accent1DarkerBrush" Color="{StaticResource Accent1DarkerColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="Accent1DarkestBrush" Color="{StaticResource Accent1DarkestColor}" po:Freeze="True" />
+    
+    <SolidColorBrush x:Key="OnLighterAccent1TextBrush" Color="{StaticResource OnLighterAccent1TextColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="OnDarkerAccent1TextBrush" Color="{StaticResource OnDarkerAccent1TextColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="OnAccent1DisabledTextBrush" Color="{StaticResource OnAccent1DisabledTextColor}" po:Freeze="True" />
+
+
+
+    <SolidColorBrush x:Key="Accent2LightestBrush" Color="{StaticResource Accent2LightestColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="Accent2LighterBrush" Color="{StaticResource Accent2LighterColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="Accent2LightBrush" Color="{StaticResource Accent2LightColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="Accent2Brush" Color="{StaticResource Accent2Color}" po:Freeze="True" />
+    <SolidColorBrush x:Key="Accent2DarkBrush" Color="{StaticResource Accent2DarkColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="Accent2DarkerBrush" Color="{StaticResource Accent2DarkerColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="Accent2DarkestBrush" Color="{StaticResource Accent2DarkestColor}" po:Freeze="True" />
+
+    <SolidColorBrush x:Key="OnLighterAccent2TextBrush" Color="{StaticResource OnLighterAccent2TextColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="OnDarkerAccent2TextBrush" Color="{StaticResource OnDarkerAccent2TextColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="OnAccent2DisabledTextBrush" Color="{StaticResource OnAccent2DisabledTextColor}" po:Freeze="True" />
+
+
+
+    <SolidColorBrush x:Key="ErrorLightestBrush" Color="{StaticResource ErrorLightestColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="ErrorLighterBrush" Color="{StaticResource ErrorLighterColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="ErrorLightBrush" Color="{StaticResource ErrorLightColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="ErrorBrush" Color="{StaticResource ErrorColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="ErrorDarkBrush" Color="{StaticResource ErrorDarkColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="ErrorDarkerBrush" Color="{StaticResource ErrorDarkerColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="ErrorDarkestBrush" Color="{StaticResource ErrorDarkestColor}" po:Freeze="True" />
+
+    <SolidColorBrush x:Key="OnLighterErrorTextBrush" Color="{StaticResource OnLighterErrorTextColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="OnDarkerErrorTextBrush" Color="{StaticResource OnDarkerErrorTextColor}" po:Freeze="True" />
+    <SolidColorBrush x:Key="OnErrorDisabledTextBrush" Color="{StaticResource OnErrorDisabledTextColor}" po:Freeze="True" />
+
+</ResourceDictionary>

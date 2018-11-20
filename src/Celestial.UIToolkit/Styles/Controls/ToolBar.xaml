@@ -5,66 +5,45 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
-    <ResourceDictionary.MergedDictionaries>
-        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-        <c:SharedResourceDictionary Source="../../Icons/ControlParts.xaml" />
-        <c:SharedResourceDictionary Source="./Thumb.xaml" />
-        <c:SharedResourceDictionary Source="./TextBox.xaml" />
-        <c:SharedResourceDictionary Source="./Button.xaml" />
-        <c:SharedResourceDictionary Source="./CheckBox.xaml" />
-        <c:SharedResourceDictionary Source="./RadioButton.xaml" />
-        <c:SharedResourceDictionary Source="./ComboBox.xaml" />
-
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
-
-    
-    
-    
-    <Style x:Key="StandardToolBar" TargetType="ToolBar" BasedOn="{c:MultiStyle 'PaneBackground PaneBorder StandardForeground StandardFontProperties StandardPopup Shadow8'}">
+    <Style x:Key="PrimaryToolBar" TargetType="ToolBar" BasedOn="{c:MergeStyles 'PaneBackground PaneBorder StandardForeground StandardFontProperties StandardPopup Shadow8'}">
         <Style.Resources>
-            <Style x:Key="StandardToolBarButton" TargetType="ButtonBase" BasedOn="{c:MultiStyle 'StandardButton OnPaneControlBackground OnPaneControlBorder StandardForeground StandardFontProperties Shadow0'}">
+            <Style x:Key="PrimaryToolBarButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'PrimaryButton OnPaneControlBackground OnPaneControlBorder StandardForeground StandardFontProperties Shadow0'}">
                 <Setter Property="Padding" Value="{c:GridUnit 2}" />
                 <Setter Property="MinHeight" Value="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=ToolBar}, FallbackValue=0}" />
                 <Setter Property="MinWidth" Value="{c:SelfBinding MinHeight}" />
             </Style>
 
-            <Style x:Key="ToolBarOverflowToggleButton" TargetType="ToggleButton" BasedOn="{StaticResource StandardToolBarButton}" />
+            <Style x:Key="ToolBarOverflowToggleButton" TargetType="ToggleButton" BasedOn="{StaticResource PrimaryToolBarButton}" />
 
             <Style x:Key="{x:Static ToolBar.ButtonStyleKey}" 
                    TargetType="Button" 
-                   BasedOn="{StaticResource StandardToolBarButton}" />
+                   BasedOn="{c:MergeStyles PrimaryToolBarButton}" />
 
             <Style x:Key="{x:Static ToolBar.ComboBoxStyleKey}"
                    TargetType="ComboBox"
-                   BasedOn="{StaticResource Accent2OutlinedComboBox}">
+                   BasedOn="{c:MergeStyles Accent2OutlinedComboBox}">
                 <Setter Property="theming:TextBoxProperties.PlaceholderType" Value="Disappearing" />
             </Style>
 
             <Style x:Key="{x:Static ToolBar.TextBoxStyleKey}"
                    TargetType="TextBox"
-                   BasedOn="{StaticResource Accent2OutlinedTextBox}">
+                   BasedOn="{c:MergeStyles Accent2OutlinedTextBox}">
                 <Setter Property="theming:TextBoxProperties.PlaceholderType" Value="Disappearing" />
             </Style>
 
             <Style x:Key="{x:Static ToolBar.CheckBoxStyleKey}"
                    TargetType="CheckBox"
-                   BasedOn="{StaticResource Accent2CheckBox}">
+                   BasedOn="{c:MergeStyles Accent2CheckBox}">
                 <Setter Property="theming:RippleProperties.ShowRippleAnimation" Value="False" />
             </Style>
 
             <Style x:Key="{x:Static ToolBar.RadioButtonStyleKey}"
                    TargetType="RadioButton"
-                   BasedOn="{StaticResource Accent2RadioButton}">
+                   BasedOn="{c:MergeStyles Accent2RadioButton}">
                 <Setter Property="theming:RippleProperties.ShowRippleAnimation" Value="False" />
             </Style>
 
-            <Style x:Key="StandardToolBarThumb" TargetType="Thumb" BasedOn="{StaticResource RectanglePatternThumb}">
+            <Style x:Key="PrimaryToolBarThumb" TargetType="Thumb" BasedOn="{c:MergeStyles RectanglePatternThumb}">
                 <Setter Property="Padding" Value="{c:GridUnit '1'}" />
                 <Setter Property="Width" Value="{c:GridUnit 3}" />
             </Style>
@@ -74,8 +53,8 @@
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource SharpCornerRadius}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource AmbientControlThemeShadow}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ToolBar">                    
@@ -95,7 +74,7 @@
                                 </Grid.ColumnDefinitions>
 
                                 <Thumb x:Name="Thumb"
-                                       Style="{StaticResource StandardToolBarThumb}" 
+                                       Style="{DynamicResource PrimaryToolBarThumb}" 
                                        Visibility="Collapsed" />
 
                                 <ToolBarPanel x:Name="PART_ToolBarPanel"
@@ -109,7 +88,7 @@
                                               Grid.Column="2"
                                               IsChecked="{c:TemplatedParentBinding IsOverflowOpen, Mode=TwoWay}"
                                               Visibility="Collapsed">
-                                    <controls:PathIcon Data="{StaticResource More}" />
+                                    <controls:PathIcon Data="{DynamicResource More}" />
                                 </ToggleButton>
 
                                 <Popup x:Name="OverflowPopup"
@@ -119,16 +98,16 @@
                                        AllowsTransparency="True"
                                        Focusable="True"
                                        PopupAnimation="Fade">
-                                    <Grid Margin="{StaticResource PopupShadowSpacerMargin}">
+                                    <Grid Margin="{DynamicResource PopupShadowSpacerMargin}">
                                         <controls:ThemeShadowPresenter SnapsToDevicePixels="False">
-                                            <Border x:Name="PopupBorder"
+                                            <Border x:Name="PopupBorderBrush"
                                                     CornerRadius="{TemplateBinding theming:PopupProperties.CornerRadius}"
                                                     BorderThickness="{TemplateBinding theming:PopupProperties.BorderThickness}"
                                                     Background="{TemplateBinding theming:PopupProperties.BackgroundBrush}"
                                                     BorderBrush="{TemplateBinding theming:PopupProperties.BorderBrush}" />
                                         </controls:ThemeShadowPresenter>
 
-                                        <Border BorderThickness="{Binding BorderThickness, ElementName=PopupBorder}"
+                                        <Border BorderThickness="{Binding BorderThickness, ElementName=PopupBorderBrush}"
                                                 Margin="{Binding BorderThickness, ElementName=DropDownBorder}" 
                                                 Padding="{TemplateBinding theming:PopupProperties.Padding}"
                                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
@@ -188,30 +167,30 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style TargetType="ToolBar" BasedOn="{StaticResource StandardToolBar}" />
+    <Style TargetType="ToolBar" BasedOn="{StaticResource PrimaryToolBar}" />
 
 
     
-    <Style x:Key="TransparentToolBar" TargetType="ToolBar" BasedOn="{c:MultiStyle 'StandardToolBar TransparentBackground TransparentBorder'}">
+    <Style x:Key="TransparentToolBar" TargetType="ToolBar" BasedOn="{c:MergeStyles 'PrimaryToolBar TransparentBackground TransparentBorder'}">
         <Style.Resources>
-            <Style x:Key="StandardToolBarButton" TargetType="ButtonBase" BasedOn="{c:MultiStyle 'StandardButton'}">
+            <Style x:Key="PrimaryToolBarButton" TargetType="ButtonBase" BasedOn="{c:MergeStyles 'PrimaryButton'}">
                 <Setter Property="MinHeight" Value="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=ToolBar}, FallbackValue=0}" />
                 <Setter Property="MinWidth" Value="{c:SelfBinding MinHeight}" />
             </Style>
 
-            <Style x:Key="ToolBarOverflowToggleButton" TargetType="ToggleButton" BasedOn="{StaticResource StandardSquareButton}">
+            <Style x:Key="ToolBarOverflowToggleButton" TargetType="ToggleButton" BasedOn="{c:MergeStyles PrimarySquareButton}">
                 <Setter Property="MinHeight" Value="0" />
                 <Setter Property="MinWidth" Value="0" />
             </Style>
 
             <Style x:Key="{x:Static ToolBar.ButtonStyleKey}"
                    TargetType="Button" 
-                   BasedOn="{StaticResource StandardToolBarButton}" />
+                   BasedOn="{StaticResource PrimaryToolBarButton}" />
         </Style.Resources>
     </Style>
 
 
-    <Style x:Name="StandardToolBarTray" TargetType="ToolBarTray">
+    <Style x:Name="PrimaryToolBarTray" TargetType="ToolBarTray">
         <Setter Property="Background" Value="Transparent" />
     </Style>
     

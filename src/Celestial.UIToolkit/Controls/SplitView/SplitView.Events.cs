@@ -25,66 +25,38 @@ namespace Celestial.UIToolkit.Controls
         /// Occurs when 
         /// </summary>
         public event EventHandler PaneOpened;
-
+        
         /// <summary>
-        /// Raises the <see cref="PaneClosing"/> event and
-        /// calls the <see cref="OnPaneClosing"/> method afterwards.
+        /// Raises the <see cref="PaneClosing"/> event.
         /// </summary>
-        protected void RaisePaneClosing()
+        protected virtual void OnPaneClosing()
         {
-            OnPaneClosing();
             PaneClosing?.Invoke(this, EventArgs.Empty);
         }
 
         /// <summary>
-        /// Raises the <see cref="PaneClosed"/> event and
-        /// calls the <see cref="OnPaneClosed"/> method afterwards.
+        /// Raises the <see cref="PaneClosed"/> event.
         /// </summary>
-        protected void RaisePaneClosed()
+        protected virtual void OnPaneClosed()
         {
-            OnPaneClosed();
             PaneClosed?.Invoke(this, EventArgs.Empty);
         }
 
         /// <summary>
-        /// Raises the <see cref="PaneOpening"/> event and
-        /// calls the <see cref="OnPaneOpening"/> method afterwards.
+        /// Raises the <see cref="PaneOpening"/> event.
         /// </summary>
-        protected void RaisePaneOpening()
+        protected virtual void OnPaneOpening()
         {
-            OnPaneOpening();
             PaneOpening?.Invoke(this, EventArgs.Empty);
         }
 
         /// <summary>
-        /// Raises the <see cref="PaneOpened"/> event and
-        /// calls the <see cref="OnPaneOpened"/> method afterwards.
+        /// Raises the <see cref="PaneOpened"/> event.
         /// </summary>
-        protected void RaisePaneOpened()
+        protected virtual void OnPaneOpened()
         {
-            OnPaneOpened();
             PaneOpened?.Invoke(this, EventArgs.Empty);
         }
-
-        /// <summary>
-        /// Called before the <see cref="PaneClosing"/> event occurs.
-        /// </summary>
-        protected virtual void OnPaneClosing() { }
-
-        /// <summary>
-        /// Called before the <see cref="PaneClosed"/> event occurs.
-        /// </summary>
-        protected virtual void OnPaneClosed() { }
-
-        /// <summary>
-        /// Called before the <see cref="PaneOpening"/> event occurs.
-        /// </summary>
-        protected virtual void OnPaneOpening() { }
-
-        /// <summary>
-        /// Called before the <see cref="PaneOpened"/> event occurs.
-        /// </summary>
-        protected virtual void OnPaneOpened() { }
 
     }
 

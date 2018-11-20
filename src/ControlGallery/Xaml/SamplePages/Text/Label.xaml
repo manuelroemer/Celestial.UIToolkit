@@ -12,13 +12,13 @@
 
     <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,4,0,12'}">
 
-        <controls:ControlPresenter Header="A standard Label control."
+        <controls:ControlPresenter Header="A Primary Label control."
                                    Xaml="{Binding Xaml, ElementName=LabelEx1}"
                                    VerticalAlignment="Top">
             <smtx:XamlDisplay x:Name="LabelEx1" Key="LabelEx1">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledLabelEx1}">
-                    <Label Content="Standard Label" />
+                    <Label Content="Primary Label" />
                     <Label Style="{StaticResource BaseLabel}" Content="Base Label" />
                     <Label Style="{StaticResource HintLabel}" Content="Hint Label" />
                 </StackPanel>

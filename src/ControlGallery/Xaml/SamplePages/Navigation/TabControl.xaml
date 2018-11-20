@@ -19,13 +19,13 @@
 
     <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,4,0,12'}">
 
-        <controls:ControlPresenter Header="The Standard TabControl in different colors."
+        <controls:ControlPresenter Header="The Primary TabControl in different colors."
                                    Xaml="{Binding Xaml, ElementName=TabControlEx1}"
                                    VerticalAlignment="Top">
             <smtx:XamlDisplay x:Name="TabControlEx1" Key="TabControlEx1">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx1}">
-                    <TabControl Style="{StaticResource StandardTabControl}"
+                    <TabControl Style="{StaticResource PrimaryTabControl}"
                                 Width="{c:GridUnit 100}" 
                                 Height="{c:GridUnit 20}">
                         <TabItem Header="Page 1">
@@ -168,12 +168,12 @@
                         <Style x:Key="MyTabItem" TargetType="TabItem" BasedOn="{StaticResource Accent2TabItem}">
                             <Setter Property="c:SelectionProperties.ShowSelectionIndicator" Value="True" />
                             <Setter Property="c:SelectionProperties.SelectionIndicatorSize" Value="{c:GridUnit 1}" />
-                            <Setter Property="c:TabItemProperties.HeaderForeground" Value="{StaticResource StandardForegroundBrush}" />
-                            <Setter Property="c:TabItemProperties.HeaderFontSize" Value="{StaticResource StandardFontSize}" />
-                            <Setter Property="c:TabItemProperties.HeaderFontFamily" Value="{StaticResource StandardFontFamily}" />
-                            <Setter Property="c:TabItemProperties.HeaderFontStyle" Value="{StaticResource BaseFontStyle}" />
-                            <Setter Property="c:TabItemProperties.HeaderFontWeight" Value="{StaticResource BaseFontWeight}" />
-                            <Setter Property="c:TabItemProperties.HeaderFontStretch" Value="{StaticResource BaseFontStretch}" />
+                            <Setter Property="c:TabItemProperties.HeaderForeground" Value="{DynamicResource StandardForegroundBrush}" />
+                            <Setter Property="c:TabItemProperties.HeaderFontSize" Value="{DynamicResource StandardFontSize}" />
+                            <Setter Property="c:TabItemProperties.HeaderFontFamily" Value="{DynamicResource StandardFontFamily}" />
+                            <Setter Property="c:TabItemProperties.HeaderFontStyle" Value="{DynamicResource BaseFontStyle}" />
+                            <Setter Property="c:TabItemProperties.HeaderFontWeight" Value="{DynamicResource BaseFontWeight}" />
+                            <Setter Property="c:TabItemProperties.HeaderFontStretch" Value="{DynamicResource BaseFontStretch}" />
                         </Style>
                     </StackPanel.Resources>
                     

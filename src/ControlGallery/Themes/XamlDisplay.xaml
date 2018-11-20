@@ -1,6 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:c="http://celestial-ui.com"
                     xmlns:smtx="clr-namespace:ShowMeTheXAML;assembly=ShowMeTheXAML"
+                    xmlns:controls="clr-namespace:ControlGallery.Controls"
                     xmlns:ics="http://icsharpcode.net/sharpdevelop/avalonedit"
                     xmlns:converters="clr-namespace:ControlGallery.Converters">
 
@@ -10,15 +12,16 @@
          This control is responsible for displaying XAML code in the app,
          and simply binds to the XamlDisplay's Xaml property.
     -->
-    <Style TargetType="smtx:XamlDisplay" BasedOn="{StaticResource {x:Type smtx:XamlDisplay}}">
+    <Style TargetType="smtx:XamlDisplay" BasedOn="{c:MergeStyles 'StandardForeground'}">
         <!-- XamlDisplay is of type ContentControl, which doesn't inherit DepProperties. 
-             => Set these standard properties manually.-->
+             => Set these Primary properties manually.-->
         <Setter Property="FontFamily" Value="{DynamicResource StandardFontFamily}" />
         <Setter Property="FontSize" Value="{DynamicResource StandardFontSize}" />
         <Setter Property="FontWeight" Value="{DynamicResource StandardFontWeight}" />
         <Setter Property="FontStretch" Value="{DynamicResource StandardFontStretch}" />
         <Setter Property="FontStyle" Value="{DynamicResource StandardFontStyle}" />
         <Setter Property="Foreground" Value="{DynamicResource StandardForegroundBrush}" />
+        <Setter Property="Formatter" Value="{x:Static controls:XamlFormatterEx.Instance}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="smtx:XamlDisplay">

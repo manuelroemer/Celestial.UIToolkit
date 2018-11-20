@@ -17,38 +17,57 @@ namespace Celestial.UIToolkit.Controls
     [TemplateVisualState(GroupName = AnimationStatesVisualStateGroup, Name = ExpandingVisualState)]
     [TemplateVisualState(GroupName = AnimationStatesVisualStateGroup, Name = ExpandedVisualState)]
     [TemplateVisualState(GroupName = AnimationStatesVisualStateGroup, Name = FadingVisualState)]
-    public class RippleOverlay : ContentControl
+    public class Ripple : Control
     {
-        
-        internal const string AnimationStatesVisualStateGroup = "AnimationStates";
-        internal const string NormalVisualState = "Normal";
-        internal const string ExpandingVisualState = "Expanding";
-        internal const string ExpandedVisualState = "Expanded";
-        internal const string FadingVisualState = "Fading";
+
+        /// <summary>
+        /// Defines the name of the "AnimationStates" Visual State Group.
+        /// </summary>
+        public const string AnimationStatesVisualStateGroup = "AnimationStates";
+
+        /// <summary>
+        /// Defines the name of the "Normal" Visual State.
+        /// </summary>
+        public const string NormalVisualState = "Normal";
+
+        /// <summary>
+        /// Defines the name of the "Expanding" Visual State.
+        /// </summary>
+        public const string ExpandingVisualState = "Expanding";
+
+        /// <summary>
+        /// Defines the name of the "Expanded" Visual State.
+        /// </summary>
+        public const string ExpandedVisualState = "Expanded";
+
+        /// <summary>
+        /// Defines the name of the "Fading" Visual State.
+        /// </summary>
+        public const string FadingVisualState = "Fading";
         
         private static readonly DependencyPropertyKey AnimationOriginXPropertyKey = DependencyProperty.RegisterReadOnly(
-            nameof(AnimationOriginX), typeof(double), typeof(RippleOverlay), new PropertyMetadata(0d));
+            nameof(AnimationOriginX), typeof(double), typeof(Ripple), new PropertyMetadata(0d));
 
         private static readonly DependencyPropertyKey AnimationOriginYPropertyKey = DependencyProperty.RegisterReadOnly(
-            nameof(AnimationOriginY), typeof(double), typeof(RippleOverlay), new PropertyMetadata(0d));
+            nameof(AnimationOriginY), typeof(double), typeof(Ripple), new PropertyMetadata(0d));
 
         private static readonly DependencyPropertyKey AnimationPositionXPropertyKey = DependencyProperty.RegisterReadOnly(
-            nameof(AnimationPositionX), typeof(double), typeof(RippleOverlay), new PropertyMetadata(0d));
+            nameof(AnimationPositionX), typeof(double), typeof(Ripple), new PropertyMetadata(0d));
 
         private static readonly DependencyPropertyKey AnimationPositionYPropertyKey = DependencyProperty.RegisterReadOnly(
-            nameof(AnimationPositionY), typeof(double), typeof(RippleOverlay), new PropertyMetadata(0d));
+            nameof(AnimationPositionY), typeof(double), typeof(Ripple), new PropertyMetadata(0d));
 
         private static readonly DependencyPropertyKey AnimationDiameterPropertyKey = DependencyProperty.RegisterReadOnly(
-            nameof(AnimationDiameter), typeof(double), typeof(RippleOverlay), new PropertyMetadata(0d));
+            nameof(AnimationDiameter), typeof(double), typeof(Ripple), new PropertyMetadata(0d));
 
         private static readonly DependencyPropertyKey IsExpandingPropertyKey = DependencyProperty.RegisterReadOnly(
-            nameof(IsExpanding), typeof(bool), typeof(RippleOverlay), new PropertyMetadata(false));
+            nameof(IsExpanding), typeof(bool), typeof(Ripple), new PropertyMetadata(false));
 
         private static readonly DependencyPropertyKey IsExpandedPropertyKey = DependencyProperty.RegisterReadOnly(
-            nameof(IsExpanded), typeof(bool), typeof(RippleOverlay), new PropertyMetadata(false));
+            nameof(IsExpanded), typeof(bool), typeof(Ripple), new PropertyMetadata(false));
 
         private static readonly DependencyPropertyKey IsFadingPropertyKey = DependencyProperty.RegisterReadOnly(
-            nameof(IsFading), typeof(bool), typeof(RippleOverlay), new PropertyMetadata(false));
+            nameof(IsFading), typeof(bool), typeof(Ripple), new PropertyMetadata(false));
 
         /// <summary>
         /// Identifies the <see cref="AnimationOriginX"/> dependency property.
@@ -94,37 +113,37 @@ namespace Celestial.UIToolkit.Controls
         /// Identifies the <see cref="AnimationScale"/> dependency property.
         /// </summary>
         public static readonly DependencyProperty AnimationScaleProperty = DependencyProperty.Register(
-            nameof(AnimationScale), typeof(double), typeof(RippleOverlay), new PropertyMetadata(1d));
+            nameof(AnimationScale), typeof(double), typeof(Ripple), new PropertyMetadata(1d));
         
         /// <summary>
         /// Identifies the <see cref="RippleOrigin"/> dependency property.
         /// </summary>
         public static readonly DependencyProperty RippleOriginProperty = DependencyProperty.Register(
-            nameof(RippleOrigin), typeof(RippleOrigin), typeof(RippleOverlay), new PropertyMetadata(RippleOrigin.MouseLocation));
+            nameof(RippleOrigin), typeof(RippleOrigin), typeof(Ripple), new PropertyMetadata(RippleOrigin.MouseLocation));
 
         /// <summary>
         /// Identifies the <see cref="AllowFading"/> dependency property.
         /// </summary>
         public static readonly DependencyProperty AllowFadingProperty = DependencyProperty.Register(
-            nameof(AllowFading), typeof(bool), typeof(RippleOverlay), new PropertyMetadata(true, AllowFading_Changed));
+            nameof(AllowFading), typeof(bool), typeof(Ripple), new PropertyMetadata(true, AllowFading_Changed));
 
         /// <summary>
         /// Identifies the <see cref="IsActiveTrigger"/> dependency property.
         /// </summary>
         public static readonly DependencyProperty IsActiveTriggerProperty = DependencyProperty.Register(
-            nameof(IsActiveTrigger), typeof(bool), typeof(RippleOverlay), new PropertyMetadata(false, IsActiveTrigger_Changed));
+            nameof(IsActiveTrigger), typeof(bool), typeof(Ripple), new PropertyMetadata(false, IsActiveTrigger_Changed));
 
         /// <summary>
         /// Identifies the <see cref="IsAnimationExpanding"/> dependency property.
         /// </summary>
         public static readonly DependencyProperty IsAnimationExpandingProperty = DependencyProperty.Register(
-            nameof(IsAnimationExpanding), typeof(bool), typeof(RippleOverlay), new PropertyMetadata(false, IsAnimationExpanding_Changed));
+            nameof(IsAnimationExpanding), typeof(bool), typeof(Ripple), new PropertyMetadata(false, IsAnimationExpanding_Changed));
 
         /// <summary>
         /// Identifies the <see cref="IsAnimationFading"/> dependency property.
         /// </summary>
         public static readonly DependencyProperty IsAnimationFadingProperty = DependencyProperty.Register(
-            nameof(IsAnimationFading), typeof(bool), typeof(RippleOverlay), new PropertyMetadata(false, IsAnimationFading_Changed));
+            nameof(IsAnimationFading), typeof(bool), typeof(Ripple), new PropertyMetadata(false, IsAnimationFading_Changed));
 
         /// <summary>
         /// Gets the x-coordinate of the animation's origin point.
@@ -218,7 +237,7 @@ namespace Celestial.UIToolkit.Controls
         
         /// <summary>
         /// Gets or sets the <see cref="Celestial.UIToolkit.Controls.RippleOrigin"/> which
-        /// is being used by this <see cref="RippleOverlay"/>.
+        /// is being used by this <see cref="Ripple"/>.
         /// </summary>
         public RippleOrigin RippleOrigin
         {
@@ -283,22 +302,22 @@ namespace Celestial.UIToolkit.Controls
         /// <summary>
         /// Overrides the element's default style.
         /// </summary>
-        static RippleOverlay()
+        static Ripple()
         {
             DefaultStyleKeyProperty.OverrideMetadata(
-                typeof(RippleOverlay),
-                new FrameworkPropertyMetadata(typeof(RippleOverlay)));
+                typeof(Ripple),
+                new FrameworkPropertyMetadata(typeof(Ripple)));
             IsTabStopProperty.OverrideMetadata(
-                typeof(RippleOverlay),
+                typeof(Ripple),
                 new FrameworkPropertyMetadata(false));
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="RippleOverlay"/> class.
+        /// Initializes a new instance of the <see cref="Ripple"/> class.
         /// </summary>
-        public RippleOverlay()
+        public Ripple()
         {
-            SizeChanged += RippleOverlay_SizeChanged;
+            SizeChanged += Ripple_SizeChanged;
         }
 
         /// <summary>
@@ -383,7 +402,7 @@ namespace Celestial.UIToolkit.Controls
             AnimationPositionY = AnimationOriginY - AnimationDiameter / 2;
         }
 
-        private void RippleOverlay_SizeChanged(object sender, SizeChangedEventArgs e)
+        private void Ripple_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             // When the control is resized, while the ripple is visible, we need to re-calculate
             // its animation diameter and bounds.
@@ -398,7 +417,7 @@ namespace Celestial.UIToolkit.Controls
 
         private static void IsActiveTrigger_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var self = (RippleOverlay)d;
+            var self = (Ripple)d;
             bool isActiveTriggered = (bool)e.NewValue;
 
             if (isActiveTriggered)
@@ -413,7 +432,7 @@ namespace Celestial.UIToolkit.Controls
 
         private static void IsAnimationExpanding_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var self = (RippleOverlay)d;
+            var self = (Ripple)d;
             bool isExpanding = (bool)e.NewValue;
 
             if (!isExpanding)
@@ -428,7 +447,7 @@ namespace Celestial.UIToolkit.Controls
 
         private static void IsAnimationFading_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var self = (RippleOverlay)d;
+            var self = (Ripple)d;
             bool isFading = (bool)e.NewValue;
 
             if (!isFading && !self.IsAnimationExpanding)
@@ -441,7 +460,7 @@ namespace Celestial.UIToolkit.Controls
 
         private static void AllowFading_Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var self = (RippleOverlay)d;
+            var self = (Ripple)d;
             bool allowFading = (bool)e.NewValue;
 
             // If the anim is currently fading away and fading gets forbidden during this animation,
@@ -521,7 +540,7 @@ namespace Celestial.UIToolkit.Controls
         MouseLocation,
 
         /// <summary>
-        /// The animation starts from the center of the <see cref="RippleOverlay"/>.
+        /// The animation starts from the center of the <see cref="Ripple"/>.
         /// </summary>
         Center
 

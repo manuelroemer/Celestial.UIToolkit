@@ -5,16 +5,6 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
-    <ResourceDictionary.MergedDictionaries>
-        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
     <!-- The default style behaves like a ContentControl and thus doesn't do anything
          fancy with the manipulation boundary feedback data.
          What it does is swallow the routed event. Thus, WPF's Window doesn't get dragged
@@ -22,7 +12,7 @@
     
          See the following link for details:
          https://stackoverflow.com/questions/6916574/wpf-scrollviewer-panningmode-move-window -->
-    <Style TargetType="controls:ManipulationBoundaryFeedbackAwareContentControl" BasedOn="{StaticResource {x:Type ContentControl}}">
+    <Style TargetType="controls:ManipulationBoundaryFeedbackAwareContentControl" BasedOn="{c:MergeStyles 'StandardContentControl StandardForeground'}">
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
     </Style>
@@ -40,24 +30,20 @@
                     <ControlTemplate.Resources>
                         <c:MathOperationConverter x:Key="DivideConverter" Operator="Divide" />
                     </ControlTemplate.Resources>
-                    
-                    <Grid Background="Transparent"
-                          ClipToBounds="True"
-                          VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
-                        <ContentPresenter Content="{TemplateBinding Content}"
-                                          ContentTemplate="{TemplateBinding ContentTemplate}"
-                                          ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
-                                          ContentStringFormat="{TemplateBinding ContentStringFormat}"
-                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                          Margin="{TemplateBinding Padding}"
-                                          RenderTransformOrigin="0.5,0.5">
-                            <ContentPresenter.RenderTransform>
-                                <TranslateTransform X="{c:TemplatedParentBinding TranslationDeltaX, Converter={StaticResource DivideConverter}, ConverterParameter=10}"
-                                                    Y="{c:TemplatedParentBinding TranslationDeltaY, Converter={StaticResource DivideConverter}, ConverterParameter=10}" />
-                            </ContentPresenter.RenderTransform>
-                        </ContentPresenter>
-                    </Grid>
+
+                    <ContentPresenter Content="{TemplateBinding Content}"
+                                      ContentTemplate="{TemplateBinding ContentTemplate}"
+                                      ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
+                                      ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                                      HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                      Margin="{TemplateBinding Padding}"
+                                      RenderTransformOrigin="0.5,0.5">
+                        <ContentPresenter.RenderTransform>
+                            <TranslateTransform X="{c:TemplatedParentBinding TranslationDeltaX, Converter={StaticResource DivideConverter}, ConverterParameter=10}"
+                                                Y="{c:TemplatedParentBinding TranslationDeltaY, Converter={StaticResource DivideConverter}, ConverterParameter=10}" />
+                        </ContentPresenter.RenderTransform>
+                    </ContentPresenter>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

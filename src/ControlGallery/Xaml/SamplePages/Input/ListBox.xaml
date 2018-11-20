@@ -19,13 +19,13 @@
 
     <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,4,0,12'}">
 
-        <controls:ControlPresenter Header="The Standard ListBox in different colors."
+        <controls:ControlPresenter Header="The Primary ListBox in different colors."
                                    Xaml="{Binding Xaml, ElementName=ListBoxEx1}"
                                    VerticalAlignment="Top">
             <smtx:XamlDisplay x:Name="ListBoxEx1" Key="ListBoxEx1">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx1}">
-                    <ListBox Style="{StaticResource StandardListBox}"
+                    <ListBox Style="{StaticResource PrimaryListBox}"
                              Width="{c:GridUnit 60}"
                              ItemsSource="{x:Static data:FruitItems.Fruits}"/>
                     <ListBox Style="{StaticResource Accent1ListBox}"
@@ -48,7 +48,7 @@
             <smtx:XamlDisplay x:Name="ListBoxEx2" Key="ListBoxEx2">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx2}">
-                    <ListBox Style="{StaticResource CompactStandardListBox}"
+                    <ListBox Style="{StaticResource CompactPrimaryListBox}"
                              Width="{c:GridUnit 60}"
                              ItemsSource="{x:Static data:FruitItems.Fruits}" />
                     <ListBox Style="{StaticResource CompactAccent1ListBox}"
@@ -72,7 +72,7 @@
             <smtx:XamlDisplay x:Name="ListBoxEx3" Key="ListBoxEx3">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledCheckBoxEx3}">
-                    <ListBox Style="{StaticResource LargeStandardListBox}"
+                    <ListBox Style="{StaticResource LargePrimaryListBox}"
                              Width="{c:GridUnit 60}"
                              ItemsSource="{x:Static data:FruitItems.Fruits}" />
                     <ListBox Style="{StaticResource LargeAccent1ListBox}"

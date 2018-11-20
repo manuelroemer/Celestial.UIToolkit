@@ -5,17 +5,6 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
-    <ResourceDictionary.MergedDictionaries>
-        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-        <c:SharedResourceDictionary Source="./TextBlock.xaml" />
-
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
     <!-- The TabItem's "default" Font-Properties get shared between the Title and the Content
          which gets displayed as the TabPage.
          This means that the Header's Font-Properties also get applied to the content, which
@@ -24,28 +13,29 @@
          
          The TabItem Style also animates the Foreground property of these TemplateProperties, not the
          TabItem.Foreground property. -->
-    <Style x:Key="StandardTabItemHeader" TargetType="TabItem">
-        <Setter Property="theming:TabItemProperties.HeaderForeground" Value="{StaticResource StandardForegroundBrush}" />
-        <Setter Property="theming:TabItemProperties.HeaderFontSize" Value="{StaticResource TitleFontSize}" />
-        <Setter Property="theming:TabItemProperties.HeaderFontFamily" Value="{StaticResource TitleFontFamily}" />
-        <Setter Property="theming:TabItemProperties.HeaderFontStyle" Value="{StaticResource TitleFontStyle}" />
-        <Setter Property="theming:TabItemProperties.HeaderFontWeight" Value="{StaticResource TitleFontWeight}" />
-        <Setter Property="theming:TabItemProperties.HeaderFontStretch" Value="{StaticResource TitleFontStretch}" />
+    <Style x:Key="PrimaryTabItemHeader" TargetType="TabItem">
+        <Setter Property="theming:TabItemProperties.HeaderForeground" Value="{DynamicResource StandardForegroundBrush}" />
+        <Setter Property="theming:TabItemProperties.HeaderFontSize" Value="{DynamicResource TitleFontSize}" />
+        <Setter Property="theming:TabItemProperties.HeaderFontFamily" Value="{DynamicResource TitleFontFamily}" />
+        <Setter Property="theming:TabItemProperties.HeaderFontStyle" Value="{DynamicResource TitleFontStyle}" />
+        <Setter Property="theming:TabItemProperties.HeaderFontWeight" Value="{DynamicResource TitleFontWeight}" />
+        <Setter Property="theming:TabItemProperties.HeaderFontStretch" Value="{DynamicResource TitleFontStretch}" />
     </Style>
 
 
 
-    <Style x:Key="StandardTabItem" TargetType="TabItem" BasedOn="{c:MultiStyle 'StandardTabItemHeader TransparentBackground TransparentBorder StandardForegroundPrimaryStates StandardFontProperties ElevationZIndex Shadow0'}">
+    <Style x:Key="PrimaryTabItem" TargetType="TabItem" BasedOn="{c:MergeStyles 'PrimaryTabItemHeader TransparentBackground TransparentBorder ControlForeground StandardFontProperties ElevationZIndex Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource RectangleFocusVisual}" />
         <Setter Property="Padding" Value="{c:GridUnit '2,0,2,1'}" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource SharpCornerRadius}" />
         <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType=TabControl}}" />
         <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType=TabControl}}" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource AmbientControlThemeShadow}" />
         <Setter Property="theming:SelectionProperties.SelectionIndicatorSize" Value="{c:GridUnit 0.5}" />
+        <Setter Property="Foreground" Value="{DynamicResource StandardForegroundBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TabItem">
@@ -222,21 +212,26 @@
         </Setter>
     </Style>
 
-    <Style x:Key="Accent1TabItem" TargetType="TabItem" BasedOn="{c:MultiStyle 'StandardTabItem StandardForegroundAccent1States'}" />
-    <Style x:Key="Accent2TabItem" TargetType="TabItem" BasedOn="{c:MultiStyle 'StandardTabItem StandardForegroundAccent2States'}" />
+    <Style x:Key="Accent1TabItem" TargetType="TabItem" BasedOn="{c:MergeStyles 'PrimaryTabItem Accent1ControlForeground'}">
+        <Setter Property="Foreground" Value="{DynamicResource StandardForegroundBrush}" />
+    </Style>
+
+    <Style x:Key="Accent2TabItem" TargetType="TabItem" BasedOn="{c:MergeStyles 'PrimaryTabItem Accent2ControlForeground'}">
+        <Setter Property="Foreground" Value="{DynamicResource StandardForegroundBrush}" />
+    </Style>
 
     <Style TargetType="TabItem" BasedOn="{StaticResource Accent2TabItem}" />
 
-    <Style x:Key="StandardTabControl" TargetType="TabControl" BasedOn="{c:MultiStyle 'TransparentBackground TransparentBorder StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="PrimaryTabControl" TargetType="TabControl" BasedOn="{c:MergeStyles 'TransparentBackground TransparentBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
-        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource DisabledThemeShadow}" />
-        <Setter Property="ItemContainerStyle" Value="{StaticResource StandardTabItem}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource SlimBorderThickness}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource SharpCornerRadius}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource DisabledThemeShadow}" />
+        <Setter Property="ItemContainerStyle" Value="{DynamicResource PrimaryTabItem}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TabControl">
@@ -319,11 +314,11 @@
         </Setter>
     </Style>
 
-    <Style x:Key="Accent1TabControl" TargetType="TabControl" BasedOn="{StaticResource StandardTabControl}">
+    <Style x:Key="Accent1TabControl" TargetType="TabControl" BasedOn="{StaticResource PrimaryTabControl}">
         <Setter Property="ItemContainerStyle" Value="{StaticResource Accent1TabItem}" />
     </Style>
     
-    <Style x:Key="Accent2TabControl" TargetType="TabControl" BasedOn="{StaticResource StandardTabControl}">
+    <Style x:Key="Accent2TabControl" TargetType="TabControl" BasedOn="{StaticResource PrimaryTabControl}">
         <Setter Property="ItemContainerStyle" Value="{StaticResource Accent2TabItem}" />
     </Style>
     

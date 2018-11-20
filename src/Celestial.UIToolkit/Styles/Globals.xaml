@@ -46,7 +46,21 @@
 
 
 
+    <!--
+    Different CornerRadius values.
+    - SharpCornerRadius is used for controls that typically have no corners (e.g. the SplitView's pane).
+      Instead of simply using CornerRadius="0", it is declared here, so that it can still be changed.
+    - StandardCornerRadius is used by most controls, e.g. the Button.
+      Rounded corners are possible and will look good.
+    - RoundCornerRadius is typically used for large, round corners.
+      It usually only appears on larger panes, like cards.
+    -->
+    <CornerRadius x:Key="SharpCornerRadius">0</CornerRadius>
     <CornerRadius x:Key="StandardCornerRadius">0</CornerRadius>
+    <c:GridUnit x:Key="RoundCornerRadius"
+                TargetType="{x:Type CornerRadius}"
+                MultiplierString="3" />
+    <CornerRadius x:Key="PopupCornerRadius">0</CornerRadius>
 
 
 

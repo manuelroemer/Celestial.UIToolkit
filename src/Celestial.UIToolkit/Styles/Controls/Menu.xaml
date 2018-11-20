@@ -5,31 +5,18 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
-    <ResourceDictionary.MergedDictionaries>
-        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-        <c:SharedResourceDictionary Source="./TextBlock.xaml" />
-        <c:SharedResourceDictionary Source="./IconElements.xaml" />
-        <c:SharedResourceDictionary Source="../../Icons/ControlParts.xaml" />
-
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
     <c:ThicknessSidePickerConverter x:Key="TopBottomPicker" Left="0" Right="0" />
     <c:MathOperationConverter x:Key="ElevationAddConverter" Operator="Add" />
 
-    <Style x:Key="StandardMenuItem" TargetType="MenuItem" BasedOn="{c:MultiStyle 'TransparentBorder OnPaneControlBackground StandardForeground StandardFontProperties StandardPopup'}">
+    <Style x:Key="PrimaryMenuItem" TargetType="MenuItem" BasedOn="{c:MergeStyles 'TransparentBorder OnPaneControlBackground StandardForeground StandardFontProperties StandardPopup'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="Padding" Value="{StaticResource StandardListItemPadding}" />
+        <Setter Property="Padding" Value="{DynamicResource StandardListItemPadding}" />
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource BottomControlThemeShadow}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource SharpCornerRadius}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource BottomControlThemeShadow}" />
         <Setter Property="controls:ThemeShadow.Elevation">
             <Setter.Value>
                 <!-- This increases the shadow elevation, the further down we go into a menu-item tree. -->
@@ -58,7 +45,7 @@
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 SnapsToDevicePixels="False" />
-                        <controls:RippleOverlay x:Name="Ripple"
+                        <controls:Ripple x:Name="Ripple"
                                                 Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
                                                 BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}"
                                                 Margin="{TemplateBinding BorderThickness}"
@@ -85,11 +72,11 @@
                                                       ContentSource="Icon" />
 
                                     <controls:PathIcon x:Name="CheckedIcon"
-                                                       Style="{StaticResource SmallIconElement}"
+                                                       Style="{DynamicResource SmallIconElement}"
                                                        HorizontalAlignment="Center"
                                                        VerticalAlignment="Center"
                                                        Foreground="{TemplateBinding Foreground}"
-                                                       Data="{StaticResource Checkmark}"
+                                                       Data="{DynamicResource Checkmark}"
                                                        Visibility="{c:TemplatedParentBinding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}}"/>
                                 </Grid>
 
@@ -102,19 +89,19 @@
 
                                 <TextBlock x:Name="InputGestureText"
                                            Grid.Column="2"
-                                           Style="{StaticResource HintTextBlock}"
+                                           Style="{DynamicResource HintTextBlock}"
                                            Margin="{c:GridUnit '4,0,0,0'}"
                                            Text="{TemplateBinding InputGestureText}"
                                            Visibility="{c:TemplatedParentBinding InputGestureText, Converter={StaticResource StringToVisibilityConverter}}" />
 
                                 <controls:PathIcon x:Name="ExpandArrowIcon"
                                                    Grid.Column="3"
-                                                   Style="{StaticResource SmallIconElement}"
+                                                   Style="{DynamicResource SmallIconElement}"
                                                    HorizontalAlignment="Center"
                                                    VerticalAlignment="Center"
                                                    Margin="{c:GridUnit '4,0,0,0'}"
                                                    Foreground="{TemplateBinding Foreground}"
-                                                   Data="{StaticResource SimpleArrowRight}"
+                                                   Data="{DynamicResource SimpleArrowRight}"
                                                    Visibility="Collapsed" />
 
                                 <Popup x:Name="Popup"
@@ -124,7 +111,7 @@
                                        AllowsTransparency="True"
                                        Focusable="False"
                                        PopupAnimation="Fade">
-                                    <Grid Margin="{StaticResource PopupShadowSpacerMargin}">
+                                    <Grid Margin="{DynamicResource PopupShadowSpacerMargin}">
                                         <controls:ThemeShadowPresenter>
                                             <Border x:Name="SubmenuBorder"
                                                     CornerRadius="{TemplateBinding theming:PopupProperties.CornerRadius}"
@@ -156,15 +143,15 @@
                             <Setter TargetName="Popup" Property="Placement" Value="Right" />
                             <Setter TargetName="ExpandArrowIcon" Property="Visibility" Value="Visible" />
                             <Setter Property="Background" Value="Transparent" />
-                            <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource ListLowBrush}" />
-                            <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource ListHighBrush}" />
+                            <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{DynamicResource ListLowBrush}" />
+                            <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{DynamicResource ListHighBrush}" />
                             <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
                             <Setter Property="theming:DisabledProperties.BorderBrush" Value="Transparent" />
                         </Trigger>
                         <Trigger Property="Role" Value="SubmenuItem">
                             <Setter Property="Background" Value="Transparent" />
-                            <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{StaticResource ListLowBrush}" />
-                            <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{StaticResource ListHighBrush}" />
+                            <Setter Property="theming:MouseOverProperties.BackgroundBrush" Value="{DynamicResource ListLowBrush}" />
+                            <Setter Property="theming:ActiveProperties.BackgroundBrush" Value="{DynamicResource ListHighBrush}" />
                             <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
                             <Setter Property="theming:DisabledProperties.BorderBrush" Value="Transparent" />
                         </Trigger>
@@ -220,13 +207,13 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style TargetType="MenuItem" BasedOn="{StaticResource StandardMenuItem}" />
+    <Style TargetType="MenuItem" BasedOn="{StaticResource PrimaryMenuItem}" />
 
-    <Style x:Key="CompactStandardMenuItem" TargetType="MenuItem" BasedOn="{StaticResource StandardMenuItem}">
+    <Style x:Key="CompactPrimaryMenuItem" TargetType="MenuItem" BasedOn="{StaticResource PrimaryMenuItem}">
         <Setter Property="Padding" Value="{StaticResource CompactListItemPadding}" />
     </Style>
 
-    <Style x:Key="LargeStandardMenuItem" TargetType="MenuItem" BasedOn="{StaticResource StandardMenuItem}">
+    <Style x:Key="LargePrimaryMenuItem" TargetType="MenuItem" BasedOn="{StaticResource PrimaryMenuItem}">
         <Setter Property="Padding" Value="{StaticResource LargeListItemPadding}" />
     </Style>
 
@@ -234,17 +221,17 @@
     
     
     
-    <Style x:Key="StandardContextMenu" TargetType="ContextMenu" BasedOn="{c:MultiStyle 'StandardForeground StandardFontProperties Shadow16'}">
+    <Style x:Key="PrimaryContextMenu" TargetType="ContextMenu" BasedOn="{c:MergeStyles 'StandardForeground StandardFontProperties Shadow16'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="Background" Value="{StaticResource PopupBackground}" />
-        <Setter Property="BorderBrush" Value="{StaticResource PopupBorder}" />
-        <Setter Property="BorderThickness" Value="{StaticResource SlimBorderThickness}" />
+        <Setter Property="Background" Value="{DynamicResource PopupBackgroundBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource PopupBorderBrush}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource SlimBorderThickness}" />
         <Setter Property="Padding" Value="{Binding Source={StaticResource StandardListItemPadding}, Converter={StaticResource TopBottomPicker}}" />
         <Setter Property="HasDropShadow" Value="True" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource BottomControlThemeShadow}" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="{StaticResource StandardCornerRadius}" />
-        <Setter Property="Margin" Value="{StaticResource PopupShadowSpacerMargin}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource BottomControlThemeShadow}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource PopupCornerRadius}" />
+        <Setter Property="Margin" Value="{DynamicResource PopupShadowSpacerMargin}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ContextMenu">
@@ -272,18 +259,18 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style TargetType="ContextMenu" BasedOn="{StaticResource StandardContextMenu}" />
+    <Style TargetType="ContextMenu" BasedOn="{StaticResource PrimaryContextMenu}" />
 
-    <Style x:Key="CompactStandardContextMenu" TargetType="ContextMenu" BasedOn="{StaticResource StandardContextMenu}">
+    <Style x:Key="CompactPrimaryContextMenu" TargetType="ContextMenu" BasedOn="{StaticResource PrimaryContextMenu}">
         <Style.Resources>
-            <Style TargetType="MenuItem" BasedOn="{StaticResource CompactStandardMenuItem}" />
+            <Style TargetType="MenuItem" BasedOn="{StaticResource CompactPrimaryMenuItem}" />
         </Style.Resources>
         <Setter Property="Padding" Value="{Binding Source={StaticResource CompactListItemPadding}, Converter={StaticResource TopBottomPicker}}" />
     </Style>
 
-    <Style x:Key="LargeStandardContextMenu" TargetType="ContextMenu" BasedOn="{StaticResource StandardContextMenu}">
+    <Style x:Key="LargePrimaryContextMenu" TargetType="ContextMenu" BasedOn="{StaticResource PrimaryContextMenu}">
         <Style.Resources>
-            <Style TargetType="MenuItem" BasedOn="{StaticResource LargeStandardMenuItem}" />
+            <Style TargetType="MenuItem" BasedOn="{StaticResource LargePrimaryMenuItem}" />
         </Style.Resources>
         <Setter Property="Padding" Value="{Binding Source={StaticResource LargeListItemPadding}, Converter={StaticResource TopBottomPicker}}" />
     </Style>
@@ -292,11 +279,11 @@
     
     
 
-    <Style x:Key="StandardMenu" TargetType="Menu" BasedOn="{c:MultiStyle 'PaneBackground PaneBorder StandardForeground StandardFontProperties Shadow0'}">
+    <Style x:Key="PrimaryMenu" TargetType="Menu" BasedOn="{c:MergeStyles 'PaneBackground PaneBorder StandardForeground StandardFontProperties Shadow0'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource SharpCornerRadius}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Menu">
@@ -340,17 +327,17 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style TargetType="Menu" BasedOn="{StaticResource StandardMenu}" />
+    <Style TargetType="Menu" BasedOn="{StaticResource PrimaryMenu}" />
 
-    <Style x:Key="CompactStandardMenu" TargetType="Menu" BasedOn="{StaticResource StandardMenu}">
+    <Style x:Key="CompactPrimaryMenu" TargetType="Menu" BasedOn="{StaticResource PrimaryMenu}">
         <Style.Resources>
-            <Style TargetType="MenuItem" BasedOn="{StaticResource CompactStandardMenuItem}" />
+            <Style TargetType="MenuItem" BasedOn="{StaticResource CompactPrimaryMenuItem}" />
         </Style.Resources>
     </Style>
 
-    <Style x:Key="LargeStandardMenu" TargetType="Menu" BasedOn="{StaticResource StandardMenu}">
+    <Style x:Key="LargePrimaryMenu" TargetType="Menu" BasedOn="{StaticResource PrimaryMenu}">
         <Style.Resources>
-            <Style TargetType="MenuItem" BasedOn="{StaticResource LargeStandardMenuItem}" />
+            <Style TargetType="MenuItem" BasedOn="{StaticResource LargePrimaryMenuItem}" />
         </Style.Resources>
     </Style>
 

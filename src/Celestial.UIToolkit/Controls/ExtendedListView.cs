@@ -195,7 +195,7 @@ namespace Celestial.UIToolkit.Controls
         private void ItemContainer_Clicked(object sender, MouseButtonEventArgs e)
         {
             var invokedContainer = (ListViewItem)sender;
-            RaiseItemContainerInvoked(new ListViewItemInvokedEventArgs(invokedContainer));
+            OnItemContainerInvoked(new ListViewItemInvokedEventArgs(invokedContainer));
         }
 
         private void ItemContainer_KeyDown(object sender, KeyEventArgs e)
@@ -203,27 +203,19 @@ namespace Celestial.UIToolkit.Controls
             if (e.Key == Key.Space)
             {
                 var invokedContainer = (ListViewItem)sender;
-                RaiseItemContainerInvoked(new ListViewItemInvokedEventArgs(invokedContainer));
+                OnItemContainerInvoked(new ListViewItemInvokedEventArgs(invokedContainer));
             }
         }
         
         /// <summary>
-        /// Raises the <see cref="ItemContainerInvoked"/> event and
-        /// calls the <see cref="OnItemContainerInvoked"/> method afterwards.
+        /// Raises the <see cref="ItemContainerInvoked"/> event.
         /// </summary>
         /// <param name="e">Event data for the event.</param>
-        protected void RaiseItemContainerInvoked(ListViewItemInvokedEventArgs e)
+        protected virtual void OnItemContainerInvoked(ListViewItemInvokedEventArgs e)
         {
-            OnItemContainerInvoked(e);
             ItemContainerInvoked?.Invoke(this, e);
         }
-
-        /// <summary>
-        /// Called before the <see cref="ItemContainerInvoked"/> event occurs.
-        /// </summary>
-        /// <param name="e">Event data for the event.</param>
-        protected virtual void OnItemContainerInvoked(ListViewItemInvokedEventArgs e) { }
-
+        
     }
 
 }

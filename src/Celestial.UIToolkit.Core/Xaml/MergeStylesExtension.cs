@@ -23,7 +23,7 @@ namespace Celestial.UIToolkit.Xaml
     ///    as these base styles will have to be merged aswell.
     /// </remarks>
     [ContentProperty(nameof(StyleKeys))]
-    public class MultiStyleExtension : MarkupExtension
+    public class MergeStylesExtension : MarkupExtension
     {
 
         private string _styleKeys;
@@ -62,21 +62,21 @@ namespace Celestial.UIToolkit.Xaml
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MultiStyleExtension"/>
+        /// Initializes a new instance of the <see cref="MergeStylesExtension"/>
         /// with the <see cref="StyleKeys"/> property being an empty string.
         /// </summary>
-        public MultiStyleExtension()
+        public MergeStylesExtension()
             : this("") { }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MultiStyleExtension"/> class
+        /// Initializes a new instance of the <see cref="MergeStylesExtension"/> class
         /// with the specified <paramref name="styleKeys"/> string.
         /// </summary>
         /// <param name="styleKeys">
         /// A string which defines the keys of the style resources which are supposed
         /// to be merged.
         /// </param>
-        public MultiStyleExtension(string styleKeys)
+        public MergeStylesExtension(string styleKeys)
         {
             StyleKeys = styleKeys;
         }
@@ -128,8 +128,35 @@ namespace Celestial.UIToolkit.Xaml
 
         private Style RetrieveStyleFromResources(object resourceKey, IServiceProvider serviceProvider)
         {
-            var staticResource = new StaticResourceExtension(resourceKey);
-            return (Style)staticResource.ProvideValue(serviceProvider);
+            Style style = null;
+
+            try
+            {
+                style = Application.Current.TryFindResource(resourceKey) as Style;
+            }
+            catch { }
+
+            if (style == null)
+            {
+                // If the style couldn't be retrieved by the Application, it may still exist,
+                // for instance in another Style's resources. Use a StaticResource to retrieve it.
+                try
+                {
+                    var staticResource = new StaticResourceExtension(resourceKey);
+                    style = staticResource.ProvideValue(serviceProvider) as Style;
+                }
+                catch { }
+            }
+
+            if (style == null)
+            {
+                throw new ResourceReferenceKeyNotFoundException(
+                    $"Couldn't find a resource with the key \"{resourceKey}\".",
+                    resourceKey
+                );
+            }
+
+            return style;
         }
 
     }

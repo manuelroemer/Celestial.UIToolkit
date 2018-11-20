@@ -10,7 +10,7 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-  releaseVersion: '0.1.2' # This needs to be incremented manually and should follow SemVer 1.0.
+  releaseVersion: '0.2.0' # This needs to be incremented manually and should follow SemVer 1.0.
 
 steps:
 # Install NuGet packages and do a nuget restore.

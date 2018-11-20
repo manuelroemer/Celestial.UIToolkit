@@ -5,28 +5,17 @@
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming"
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls">
 
-    <ResourceDictionary.MergedDictionaries>
-        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-        <c:SharedResourceDictionary Source="../../Icons/ControlParts.xaml" />
-        <c:SharedResourceDictionary Source="./TextBlock.xaml" />
-
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
-    <Style x:Key="StandardExpander" TargetType="Expander" BasedOn="{c:MultiStyle 'TransparentBackground TransparentBorder StandardForeground StandardFontProperties'}">
+    <Style x:Key="PrimaryExpander" TargetType="Expander" BasedOn="{c:MergeStyles 'TransparentBackground TransparentBorder StandardForeground StandardFontProperties'}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Padding" Value="0" />
-        <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource RectangleFocusVisual}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource SharpCornerRadius}" />
         <Setter Property="HeaderTemplate">
             <Setter.Value>
                 <DataTemplate>
-                    <TextBlock Style="{StaticResource TitleTextBlock}" Text="{Binding}" />
+                    <TextBlock Style="{DynamicResource TitleTextBlock}" Text="{Binding}" />
                 </DataTemplate>
             </Setter.Value>
         </Setter>
@@ -45,7 +34,7 @@
                             <ToggleButton x:Name="VisibleToggleButton"
                                           DockPanel.Dock="Right"
                                           IsChecked="{c:TemplatedParentBinding IsExpanded, Mode=TwoWay}"
-                                          Style="{StaticResource InvisibleRippleButton}"
+                                          Style="{DynamicResource InvisibleRippleButton}"
                                           Foreground="{TemplateBinding Foreground}"
                                           theming:MouseOverProperties.ForegroundBrush="{TemplateBinding theming:MouseOverProperties.ForegroundBrush}"
                                           theming:PressedProperties.ForegroundBrush="{TemplateBinding theming:PressedProperties.ForegroundBrush}"
@@ -61,14 +50,14 @@
                                             <RotateTransform x:Name="ExpandDirectionRotateTransform" Angle="0" />
                                         </Border.RenderTransform>
                                         <controls:PathIcon x:Name="ToggleExpandedIcon"
-                                                           Data="{StaticResource SimpleArrowDown}"
+                                                           Data="{DynamicResource SimpleArrowDown}"
                                                            Width="{c:GridUnit 5}"
                                                            Height="{c:GridUnit 5}" />
                                     </Border>
                                 </Border>
                             </ToggleButton>
                             <ToggleButton IsChecked="{c:TemplatedParentBinding IsExpanded, Mode=TwoWay}"
-                                          Style="{StaticResource TransparentButton}"
+                                          Style="{DynamicResource TransparentButton}"
                                           Focusable="False"
                                           IsTabStop="False">
                                 <ContentPresenter x:Name="HeaderContentSite"
@@ -121,11 +110,11 @@
                                         </ObjectAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ContentSite"
                                                                        Storyboard.TargetProperty="Opacity">
-                                            <EasingDoubleKeyFrame KeyTime="{StaticResource EnterAnimationKeyTime}" Value="1" EasingFunction="{StaticResource EnterAnimationEase}" />
+                                            <EasingDoubleKeyFrame KeyTime="{DynamicResource EnterAnimationKeyTime}" Value="1" EasingFunction="{StaticResource EnterAnimationEase}" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="IsExpandedRotateTransform"
                                                                        Storyboard.TargetProperty="Angle">
-                                            <EasingDoubleKeyFrame KeyTime="{StaticResource EnterAnimationKeyTime}" Value="180" EasingFunction="{StaticResource EnterAnimationEase}" />
+                                            <EasingDoubleKeyFrame KeyTime="{DynamicResource EnterAnimationKeyTime}" Value="180" EasingFunction="{StaticResource EnterAnimationEase}" />
                                         </DoubleAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -133,11 +122,11 @@
                                     <Storyboard>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ContentSite"
                                                                        Storyboard.TargetProperty="Opacity">
-                                            <EasingDoubleKeyFrame KeyTime="{StaticResource ExitAnimationKeyTime}" Value="0" EasingFunction="{StaticResource ExitAnimationEase}" />
+                                            <EasingDoubleKeyFrame KeyTime="{DynamicResource ExitAnimationKeyTime}" Value="0" EasingFunction="{StaticResource ExitAnimationEase}" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="IsExpandedRotateTransform"
                                                                        Storyboard.TargetProperty="Angle">
-                                            <EasingDoubleKeyFrame KeyTime="{StaticResource ExitAnimationKeyTime}" Value="0" EasingFunction="{StaticResource ExitAnimationEase}" />
+                                            <EasingDoubleKeyFrame KeyTime="{DynamicResource ExitAnimationKeyTime}" Value="0" EasingFunction="{StaticResource ExitAnimationEase}" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentContainer"
                                                                        Storyboard.TargetProperty="Visibility">
@@ -238,6 +227,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style TargetType="Expander" BasedOn="{StaticResource StandardExpander}" />
+    <Style TargetType="Expander" BasedOn="{StaticResource PrimaryExpander}" />
 
 </ResourceDictionary>

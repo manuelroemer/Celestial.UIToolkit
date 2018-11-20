@@ -8,14 +8,14 @@ using Xunit;
 namespace Celestial.UIToolkit.Tests.Xaml
 {
 
-    public class MultiStyleExtensionTests
+    public class MergeStylesExtensionTests
     {
 
         [Fact]
         public void ReturnsEmptyStyleForNoStyleKeyParts()
         {
-            var multiStyleExtension = new MultiStyleExtension(null);
-            var style = multiStyleExtension.ProvideValue(null);
+            var MergeStyleExtension = new MergeStylesExtension(null);
+            var style = MergeStyleExtension.ProvideValue(null);
             Assert.NotNull(style);
             Assert.IsType<Style>(style);
         }

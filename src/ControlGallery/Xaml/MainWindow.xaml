@@ -1,4 +1,5 @@
 ﻿<Window x:Class="ControlGallery.Xaml.MainWindow"
+        x:Name="Window"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -12,7 +13,7 @@
         WindowStartupLocation="CenterScreen"
         Width="1200"
         Height="800"
-        Style="{StaticResource StandardWindow}"
+        Style="{StaticResource PrimaryWindow}"
         prism:ViewModelLocator.AutoWireViewModel="True"
         c:WindowTitlebarProperties.ExtendContentIntoTitlebar="True">
 
@@ -43,25 +44,58 @@
 
         <!-- By default, the NavViewItem has a padding for the icons.
              Since we provide our own template, override that padding. -->
-        <Style x:Key="CustomMenuItemStyle" TargetType="c:NavigationViewItem" BasedOn="{StaticResource StandardNavigationViewItem}">
+        <Style x:Key="CustomMenuItemStyle" TargetType="c:NavigationViewItem" BasedOn="{StaticResource Accent2NavigationViewItem}">
             <!--<Setter Property="Padding" Value="0" />-->
         </Style>
         
     </Window.Resources>
 
-    <c:NavigationView BackButtonCommand="{Binding GoBackCommand}"
-                      MenuItemsSource="{Binding MenuItems}"
-                      MenuItemContainerStyle="{StaticResource CustomMenuItemStyle}"
-                      SelectedItem="{Binding CurrentMenuItem, Mode=TwoWay}"
-                      PaneHeader="Control Gallery"
-                      Header="{Binding Path=Content.DataContext.Title, ElementName=MainRegionContentSite}">
-        <ScrollViewer HorizontalScrollBarVisibility="Disabled"
-                      VerticalScrollBarVisibility="Auto"
-                      PanningMode="Both"
-                      CanContentScroll="False">
-            <ContentControl x:Name="MainRegionContentSite"
-                            prism:RegionManager.RegionName="{x:Static common:RegionNames.Main}" />
-        </ScrollViewer>
-    </c:NavigationView>
-    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="{c:GridUnit 35.1}" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        
+        <c:NavigationView Grid.RowSpan="2"
+                          Grid.ColumnSpan="3"
+                          BackButtonCommand="{Binding GoBackCommand}"
+                          MenuItemsSource="{Binding MenuItems}"
+                          MenuItemContainerStyle="{StaticResource CustomMenuItemStyle}"
+                          SelectedItem="{Binding CurrentMenuItem, Mode=TwoWay}"
+                          PaneHeader="Control Gallery"
+                          Header="{Binding Path=Content.DataContext.Title, ElementName=MainRegionContentSite}">
+            <ScrollViewer HorizontalScrollBarVisibility="Disabled"
+                          VerticalScrollBarVisibility="Auto"
+                          PanningMode="Both"
+                          CanContentScroll="False">
+                <ContentControl x:Name="MainRegionContentSite"
+                                prism:RegionManager.RegionName="{x:Static common:RegionNames.Main}" />
+            </ScrollViewer>
+        </c:NavigationView>
+
+        <StackPanel x:Name="TitlebarElementContainer"
+                    Grid.Column="1"
+                    Orientation="Horizontal"
+                    c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,4,0'}">
+            <c:ToggleSwitch OnCommand="{Binding ChangeToLightThemeCommand}"
+                            OffCommand="{Binding ChangeToDarkThemeCommand}"
+                            IsOn="True"
+                            VerticalAlignment="Center"
+                            WindowChrome.IsHitTestVisibleInChrome="True">
+                <c:ToggleSwitch.OnContent>
+                    <c:PathIcon Data="{StaticResource Sun}" />
+                </c:ToggleSwitch.OnContent>
+                <c:ToggleSwitch.OffContent>
+                    <c:PathIcon Data="{StaticResource Moon}" />
+                </c:ToggleSwitch.OffContent>
+            </c:ToggleSwitch>
+        </StackPanel>
+
+    </Grid>
+
 </Window>

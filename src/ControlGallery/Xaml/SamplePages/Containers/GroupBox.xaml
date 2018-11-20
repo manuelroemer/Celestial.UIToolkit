@@ -12,7 +12,7 @@
 
     <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,4,0,12'}">
 
-        <controls:ControlPresenter Header="A standard GroupBox."
+        <controls:ControlPresenter Header="A Primary GroupBox."
                                    Xaml="{Binding Xaml, ElementName=GroupBoxEx1}"
                                    VerticalAlignment="Top">
             <controls:ControlPresenter.Description>

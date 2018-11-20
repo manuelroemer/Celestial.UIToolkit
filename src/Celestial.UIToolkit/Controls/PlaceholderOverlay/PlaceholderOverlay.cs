@@ -15,11 +15,30 @@ namespace Celestial.UIToolkit.Controls
     public partial class PlaceholderOverlay : ContentControl
     {
 
-        internal const string PlaceholderStatesVisualStateGroup = "PlaceholderStates";
-        internal const string FloatingVisibleState = "FloatingVisible";
-        internal const string FloatingNotVisibleState = "FloatingNotVisible";
-        internal const string DisappearingVisibleState = "DisappearingVisible";
-        internal const string DisappearingNotVisibleState = "DisappearingNotVisible";
+        /// <summary>
+        /// Defines the name of the "PlaceholderStates" Visual State Group.
+        /// </summary>
+        public const string PlaceholderStatesVisualStateGroup = "PlaceholderStates";
+
+        /// <summary>
+        /// Defines the name of the "FloatingVisible" Visual State.
+        /// </summary>
+        public const string FloatingVisibleState = "FloatingVisible";
+
+        /// <summary>
+        /// Defines the name of the "FloatingNotVisible" Visual State.
+        /// </summary>
+        public const string FloatingNotVisibleState = "FloatingNotVisible";
+
+        /// <summary>
+        /// Defines the name of the "DisappearingVisible" Visual State.
+        /// </summary>
+        public const string DisappearingVisibleState = "DisappearingVisible";
+
+        /// <summary>
+        /// Defines the name of the "DisappearingNotVisible" Visual State.
+        /// </summary>
+        public const string DisappearingNotVisibleState = "DisappearingNotVisible";
 
         static PlaceholderOverlay()
         {

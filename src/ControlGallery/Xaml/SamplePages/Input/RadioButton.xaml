@@ -18,7 +18,7 @@
             <smtx:XamlDisplay x:Name="RadioButtonEx1" Key="RadioButtonEx1">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledRadioButtonEx1}">
-                    <RadioButton Style="{StaticResource StandardRadioButton}"
+                    <RadioButton Style="{StaticResource PrimaryRadioButton}"
                               Content="Primary Colors" />
                     <RadioButton Style="{StaticResource Accent1RadioButton}"
                               Content="Accent1 Colors" />
@@ -41,7 +41,7 @@
             <smtx:XamlDisplay x:Name="RadioButtonEx2" Key="RadioButtonEx2">
                 <StackPanel c:MarginHelper.ChildrenMargin="{c:GridUnit '0,0,0,4'}"
                             IsEnabled="{Binding IsChecked, ElementName=IsEnabledRadioButtonEx2}">
-                    <RadioButton Style="{StaticResource StandardRadioButton}"
+                    <RadioButton Style="{StaticResource PrimaryRadioButton}"
                               IsChecked="{x:Null}"
                               IsThreeState="True"
                               Content="Primary Colors" />

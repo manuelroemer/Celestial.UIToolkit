@@ -12,7 +12,7 @@ namespace Celestial.UIToolkit.Media.Animations
     /// </summary>
     /// <typeparam name="T">The type of this key frame's <see cref="Value"/> property.</typeparam>
     [ContentProperty(nameof(Value))]
-    public abstract class KeyFrameBase<T> : Freezable, IInterpolateKeyFrame<T>
+    public abstract class KeyFrameBase<T> : Freezable, IInterpolatingKeyFrame<T>
     {
         
         /// <summary>

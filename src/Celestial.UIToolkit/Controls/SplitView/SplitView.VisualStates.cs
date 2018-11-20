@@ -31,25 +31,75 @@ namespace Celestial.UIToolkit.Controls
         private const string Inline = "Inline";
         private const string CompactOverlay = Compact + Overlay;
         private const string CompactInline = Compact + Inline;
-        
-        internal const string DisplayModeStatesVisualStateGroup = "DisplayModeStates";
 
-        internal const string DefaultVisualState = "Default";
-        internal const string ClosedVisualState = Closed;
-        internal const string ClosedCompactLeftVisualState =  Closed + Compact + Left;
-        internal const string ClosedCompactRightVisualState = Closed + Compact + Right;
+        /// <summary>
+        /// Defines the name of the "DisplayModeStates" Visual State Group.
+        /// </summary>
+        public const string DisplayModeStatesVisualStateGroup = "DisplayModeStates";
 
-        internal const string OpenOverlayLeftVisualState =  Open + Overlay + Left;
-        internal const string OpenOverlayRightVisualState = Open + Overlay + Right;
+        /// <summary>
+        /// Defines the name of the "Default" Visual State.
+        /// </summary>
+        public const string DefaultVisualState = "Default";
 
-        internal const string OpenInlineLeftVisualState =  Open + Inline + Left;
-        internal const string OpenInlineRightVisualState = Open + Inline + Right;
+        /// <summary>
+        /// Defines the name of the "Closed" Visual State.
+        /// </summary>
+        public const string ClosedVisualState = Closed;
 
-        internal const string OpenCompactOverlayLeftVisualState =  Open + CompactOverlay + Left;
-        internal const string OpenCompactOverlayRightVisualState = Open + CompactOverlay + Right;
+        /// <summary>
+        /// Defines the name of the "ClosedCompactLeft" Visual State.
+        /// </summary>
+        public const string ClosedCompactLeftVisualState =  Closed + Compact + Left;
 
-        internal const string OpenCompactInlineLeftVisualState =  Open + CompactInline + Left;
-        internal const string OpenCompactInlineRightVisualState = Open + CompactInline + Right;
+        /// <summary>
+        /// Defines the name of the "ClosedCompactRight" Visual State.
+        /// </summary>
+        public const string ClosedCompactRightVisualState = Closed + Compact + Right;
+
+
+        /// <summary>
+        /// Defines the name of the "OpenOverlayLeft" Visual State.
+        /// </summary>
+        public const string OpenOverlayLeftVisualState =  Open + Overlay + Left;
+
+        /// <summary>
+        /// Defines the name of the "OpenOverlayRight" Visual State.
+        /// </summary>
+        public const string OpenOverlayRightVisualState = Open + Overlay + Right;
+
+
+        /// <summary>
+        /// Defines the name of the "OpenInlineLeft" Visual State.
+        /// </summary>
+        public const string OpenInlineLeftVisualState =  Open + Inline + Left;
+
+        /// <summary>
+        /// Defines the name of the "OpenInlineRight" Visual State.
+        /// </summary>
+        public const string OpenInlineRightVisualState = Open + Inline + Right;
+
+
+        /// <summary>
+        /// Defines the name of the "OpenCompactOverlayLeft" Visual State.
+        /// </summary>
+        public const string OpenCompactOverlayLeftVisualState =  Open + CompactOverlay + Left;
+
+        /// <summary>
+        /// Defines the name of the "OpenCompactOverlayRight" Visual State.
+        /// </summary>
+        public const string OpenCompactOverlayRightVisualState = Open + CompactOverlay + Right;
+
+
+        /// <summary>
+        /// Defines the name of the "OpenCompactInlineLeft" Visual State.
+        /// </summary>
+        public const string OpenCompactInlineLeftVisualState =  Open + CompactInline + Left;
+
+        /// <summary>
+        /// Defines the name of the "OpenCompactInlineRight" Visual State.
+        /// </summary>
+        public const string OpenCompactInlineRightVisualState = Open + CompactInline + Right;
 
         private void EnterDefaultDisplayModeVisualState()
         {

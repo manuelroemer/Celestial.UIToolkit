@@ -5,27 +5,15 @@
                     xmlns:controls="clr-namespace:Celestial.UIToolkit.Controls"
                     xmlns:theming="clr-namespace:Celestial.UIToolkit.Theming">
 
-    <ResourceDictionary.MergedDictionaries>
-        <c:SharedResourceDictionary Source="./Button.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/Theming.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/FocusVisuals.xaml" />
-        <c:SharedResourceDictionary Source="../Shared/TemplateParts.xaml" />
-        <c:SharedResourceDictionary Source="../../Icons/ControlParts.xaml" />
-
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Themes/Light.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Accents/Default.xaml" />
-        <c:DesignTimeOnlyResourceDictionary Source="../Theming/Globals.xaml" />
-    </ResourceDictionary.MergedDictionaries>
-
-    <Style x:Key="StandardNavigationViewItem" TargetType="controls:NavigationViewItem" BasedOn="{c:MultiStyle 'OnPaneControlBackground OnPaneControlBorder StandardForegroundActiveAccent2ListStates StandardFontProperties ElevationZIndex Shadow0'}">
+    <Style x:Key="PrimaryNavigationViewItem" TargetType="controls:NavigationViewItem" BasedOn="{c:MergeStyles 'OnPaneControlBackground OnPaneControlBorder StandardForeground StandardFontProperties ElevationZIndex Shadow0'}">
         <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="FocusVisualStyle" Value="{StaticResource RectangleFocusVisual}" />
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource RectangleFocusVisual}" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Padding" Value="{c:GridUnit '0,2'}" />
         <Setter Property="MinHeight" Value="{c:GridUnit 10}" />
-        <Setter Property="theming:ControlProperties.CornerRadius" Value="0" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource SharpCornerRadius}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource AmbientControlThemeShadow}" />
         <Setter Property="theming:SelectionProperties.SelectionIndicatorSize" Value="{c:GridUnit 1}" />
         <Setter Property="Template">
             <Setter.Value>
@@ -122,11 +110,11 @@
                                         BorderThickness="{TemplateBinding BorderThickness}"
                                         CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}" 
                                         Visibility="Collapsed" />
-                                <controls:RippleOverlay x:Name="Ripple"
-                                                        IsEnabled="{TemplateBinding theming:RippleProperties.ShowRippleAnimation}"
-                                                        Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
-                                                        BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}" 
-                                                        IsActiveTrigger="{TemplateBinding IsSelected}" />
+                                <controls:Ripple x:Name="Ripple"
+                                                 IsEnabled="{TemplateBinding theming:RippleProperties.ShowRippleAnimation}"
+                                                 Background="{TemplateBinding theming:ActiveProperties.BackgroundBrush}"
+                                                 BorderBrush="{TemplateBinding theming:ActiveProperties.BorderBrush}" 
+                                                 IsActiveTrigger="{TemplateBinding IsSelected}" />
                             </Grid>
                         </controls:ThemeShadowPresenter>
 
@@ -165,7 +153,7 @@
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualStateGroup.Transitions>
-                                    <VisualTransition GeneratedDuration="{StaticResource ColorAnimationDuration}"
+                                    <VisualTransition GeneratedDuration="0"
                                                       GeneratedEasingFunction="{StaticResource ColorAnimationEase}" />
                                     <VisualTransition To="Disabled" GeneratedDuration="0" />
                                 </VisualStateGroup.Transitions>
@@ -199,12 +187,24 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    <Style TargetType="controls:NavigationViewItem" BasedOn="{StaticResource StandardNavigationViewItem}" />
 
-    <Style x:Key="NavigationViewPaneButton" TargetType="Button" BasedOn="{c:MultiStyle 'StandardButton OnPaneControlBackground OnPaneControlBorder'}">
+    <Style x:Key="Accent1NavigationViewItem" TargetType="controls:NavigationViewItem" BasedOn="{c:MergeStyles 'PrimaryNavigationViewItem'}">
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{DynamicResource ListAccent1HighBrush}" />
+    </Style>
+
+    <Style x:Key="Accent2NavigationViewItem" TargetType="controls:NavigationViewItem" BasedOn="{c:MergeStyles 'PrimaryNavigationViewItem'}">
+        <Setter Property="theming:ActiveProperties.ForegroundBrush" Value="{DynamicResource ListAccent2HighBrush}" />
+    </Style>
+
+    <Style TargetType="controls:NavigationViewItem" BasedOn="{StaticResource Accent2NavigationViewItem}" />
+
+    
+    
+    <Style x:Key="NavigationViewPaneButton" TargetType="Button" BasedOn="{c:MergeStyles 'PrimaryButton OnPaneControlBackground OnPaneControlBorder StandardForeground'}">
         <Setter Property="MinWidth" Value="0" />
         <Setter Property="MinHeight" Value="0" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource AmbientControlThemeShadow}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource AmbientControlThemeShadow}" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource SharpCornerRadius}" />
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
         <Setter Property="theming:DisabledProperties.BackgroundBrush" Value="Transparent" />
         <Setter Property="theming:DisabledProperties.BorderBrush" Value="Transparent" />
@@ -226,23 +226,24 @@
     <Style x:Key="NavigationViewBackButton" x:Shared="False" TargetType="Button" BasedOn="{StaticResource NavigationViewPaneButton}">
         <Setter Property="Content">
             <Setter.Value>
-                <controls:PathIcon Data="{StaticResource Back}" />
+                <controls:PathIcon Data="{DynamicResource Back}" />
             </Setter.Value>
         </Setter>
     </Style>
 
-    <Style x:Key="NavigationViewToggleButton" x:Shared="False"  TargetType="Button" BasedOn="{StaticResource NavigationViewPaneButton}">
+    <Style x:Key="NavigationViewToggleButton" x:Shared="False" TargetType="Button" BasedOn="{StaticResource NavigationViewPaneButton}">
         <Setter Property="Content">
             <Setter.Value>
-                <controls:PathIcon Data="{StaticResource GlobalNavigationButton}" />
+                <controls:PathIcon Data="{DynamicResource GlobalNavigationButton}" />
             </Setter.Value>
         </Setter>
     </Style>
 
-    <Style TargetType="controls:NavigationViewListView">
+    <Style TargetType="controls:NavigationViewListView" BasedOn="{c:MergeStyles 'StandardForeground'}">
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
         <Setter Property="SelectionMode" Value="Single" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource SharpCornerRadius}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:NavigationViewListView">
@@ -255,19 +256,21 @@
         </Setter>
     </Style>
     
-    <Style TargetType="controls:NavigationView" BasedOn="{c:MultiStyle 'Shadow0 InteractiveShadow8'}">
+    <Style x:Key="PrimaryNavigationView" TargetType="controls:NavigationView" BasedOn="{c:MergeStyles 'StandardForeground Shadow0 InteractiveShadow8'}">
         <Setter Property="Focusable" Value="False" />
         <Setter Property="IsTabStop" Value="False" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
         <Setter Property="VerticalAlignment" Value="Stretch" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="theming:ControlProperties.CornerRadius" Value="{DynamicResource SharpCornerRadius}" />
         <Setter Property="CompactPaneLength" Value="{c:GridUnit 12}" />
         <Setter Property="OpenPaneLength" Value="{c:GridUnit 80}" />
         <Setter Property="PaneBackButtonStyle" Value="{StaticResource NavigationViewBackButton}" />
         <Setter Property="PaneToggleButtonStyle" Value="{StaticResource NavigationViewToggleButton}" />
-        <Setter Property="PaneBackground" Value="{StaticResource PaneBackgroundBrush}" />
-        <Setter Property="controls:ThemeShadow.Shadow" Value="{StaticResource RightControlThemeShadow}" />
+        <Setter Property="PaneBackground" Value="{DynamicResource PaneBackgroundBrush}" />
+        <Setter Property="controls:ThemeShadow.Shadow" Value="{DynamicResource RightControlThemeShadow}" />
+        <Setter Property="MenuItemContainerStyle" Value="{StaticResource PrimaryNavigationViewItem}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:NavigationView">
@@ -283,6 +286,12 @@
                                                 BorderBrush="{TemplateBinding BorderBrush}"
                                                 BorderThickness="{TemplateBinding BorderThickness}"
                                                 PaneBackground="{TemplateBinding PaneBackground}"
+                                                Foreground="{c:TemplatedParentBinding Foreground}"
+                                                theming:MouseOverProperties.ForegroundBrush="{TemplateBinding theming:MouseOverProperties.ForegroundBrush}"
+                                                theming:PressedProperties.ForegroundBrush="{TemplateBinding theming:PressedProperties.ForegroundBrush}"
+                                                theming:ActiveProperties.ForegroundBrush="{TemplateBinding theming:ActiveProperties.ForegroundBrush}"
+                                                theming:MouseOverActiveProperties.ForegroundBrush="{TemplateBinding theming:MouseOverActiveProperties.ForegroundBrush}"
+                                                theming:DisabledProperties.ForegroundBrush="{TemplateBinding theming:DisabledProperties.ForegroundBrush}"
                                                 theming:ControlProperties.CornerRadius="{TemplateBinding theming:ControlProperties.CornerRadius}"
                                                 controls:ThemeShadow.Elevation="{TemplateBinding controls:ThemeShadow.Elevation}"
                                                 controls:ThemeShadow.Shadow="{TemplateBinding controls:ThemeShadow.Shadow}"
@@ -386,13 +395,14 @@
                                             <controls:NavigationViewListView x:Name="PART_SettingsItemListView"
                                                                              Grid.Row="3"
                                                                              IsSynchronizedWithCurrentItem="False"
+                                                                             ItemContainerStyle="{TemplateBinding MenuItemContainerStyle}"
                                                                              SelectedValue="{c:TemplatedParentBinding SelectedItem, Mode=TwoWay}"
                                                                              Padding="{c:GridUnit '0,3,0,2'}">
                                                 <controls:NavigationViewItem x:Name="PART_SettingsItem"
                                                                              Content="Settings"
                                                                              Visibility="{c:TemplatedParentBinding IsSettingsVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
                                                     <controls:NavigationViewItem.Icon>
-                                                        <controls:PathIcon Data="{StaticResource Settings}" />
+                                                        <controls:PathIcon Data="{DynamicResource Settings}" />
                                                     </controls:NavigationViewItem.Icon>
                                                 </controls:NavigationViewItem>
                                             </controls:NavigationViewListView>
@@ -416,11 +426,12 @@
                                                      fixed height. Align it with the CompactPaneLength, so that everything looks
                                                      symmetrical. -->
                                                 <TextBlock Style="{DynamicResource TitleTextBlock}"
-                                                            HorizontalAlignment="Left"
-                                                            VerticalAlignment="Center"
-                                                            Padding="{c:GridUnit '3,0'}"
-                                                            TextTrimming="CharacterEllipsis"
-                                                            Text="{Binding}" />
+                                                           Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=controls:NavigationView}}"
+                                                           HorizontalAlignment="Left"
+                                                           VerticalAlignment="Center"
+                                                           Padding="{c:GridUnit '3,0'}"
+                                                           TextTrimming="CharacterEllipsis"
+                                                           Text="{Binding}" />
                                             </DataTemplate>
                                         </StackPanel.Resources>
 
@@ -527,5 +538,15 @@
             </MultiTrigger>
         </Style.Triggers>
     </Style>
+
+    <Style x:Key="Accent1NavigationView" TargetType="controls:NavigationView" BasedOn="{StaticResource PrimaryNavigationView}">
+        <Setter Property="MenuItemContainerStyle" Value="{StaticResource Accent1NavigationViewItem}" />
+    </Style>
     
+    <Style x:Key="Accent2NavigationView" TargetType="controls:NavigationView" BasedOn="{StaticResource PrimaryNavigationView}">
+        <Setter Property="MenuItemContainerStyle" Value="{StaticResource Accent2NavigationViewItem}" />
+    </Style>
+
+    <Style TargetType="controls:NavigationView" BasedOn="{StaticResource Accent2NavigationView}" />
+
 </ResourceDictionary>
