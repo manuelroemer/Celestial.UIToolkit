@@ -9,14 +9,40 @@
              xmlns:prism="http://prismlibrary.com/"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
-             prism:ViewModelLocator.AutoWireViewModel="True">
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             x:Name="Home">
 
-    <Grid Margin="20">
+    <Grid Margin="20"
+          VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="Normal" />
+                <c:ExtendedVisualState x:Name="Large">
+                    <c:ExtendedVisualState.Setters>
+                        <Setter TargetName="R" Property="Rectangle.Fill" Value="Green" />
+                    </c:ExtendedVisualState.Setters>
+                </c:ExtendedVisualState>
+                <c:ExtendedVisualState x:Name="Gigantic">
+                    <c:ExtendedVisualState.Setters>
+                        <Setter TargetName="R" Property="Rectangle.Fill" Value="Yellow" />
+                    </c:ExtendedVisualState.Setters>
+                </c:ExtendedVisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        
         <c:Interaction.Behaviors>
-            <c:AdaptiveTriggerBehavior MinWindowWidth="1000" MinWindowHeight="1000">
-                
+            <c:AdaptiveTriggerBehavior>
+                <c:GoToStateAction StateName="Normal" />
+            </c:AdaptiveTriggerBehavior>
+            <c:AdaptiveTriggerBehavior MinWindowWidth="1200">
+                <c:GoToStateAction StateName="Large" />
+            </c:AdaptiveTriggerBehavior>
+            <c:AdaptiveTriggerBehavior MinWindowWidth="1500">
+                <c:GoToStateAction StateName="Gigantic" />
             </c:AdaptiveTriggerBehavior>
         </c:Interaction.Behaviors>
+
+        <Rectangle Width="100" Height="100" x:Name="R" Fill="Red" />
     </Grid>
 
 </UserControl>

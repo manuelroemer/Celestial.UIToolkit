@@ -48,6 +48,13 @@ namespace Celestial.UIToolkit
         /// </summary>
         public static TraceSource AnimationSource { get; } = CreateForToolkit("Animation");
 
+        /// <summary>
+        /// Gets a <see cref="TraceSource"/> which is used for any message which comes from the
+        /// members in the <see cref="Interactivity"/> and <see cref="Interactions"/>
+        /// namespaces.
+        /// </summary>
+        public static TraceSource InteractivitySource { get; } = CreateForToolkit("Interactivity");
+
         internal static TraceSource CreateForToolkit(string sourceNameAddendum)
         {
             // This is the same as Create, with the difference that it adds a shared

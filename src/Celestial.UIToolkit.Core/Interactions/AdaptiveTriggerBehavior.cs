@@ -6,6 +6,13 @@ using Celestial.UIToolkit.Interactivity;
 namespace Celestial.UIToolkit.Interactions
 {
 
+    /// <summary>
+    ///     A behavior which gets triggered when the parent window of its associated object
+    ///     reaches a certain size.
+    ///     
+    ///     This is a stateful trigger and passes the <see cref="Behavior.AssociatedObject"/>
+    ///     to its actions.
+    /// </summary>
     public sealed class AdaptiveTriggerBehavior : StatefulTriggerBehavior<FrameworkElement>
     {
 
@@ -19,9 +26,10 @@ namespace Celestial.UIToolkit.Interactions
                 nameof(MinWindowWidth),
                 typeof(double),
                 typeof(AdaptiveTriggerBehavior),
-                new PropertyMetadata(
+                new FrameworkPropertyMetadata(
                     0d,
-                    (d, e) => ((AdaptiveTriggerBehavior)d).MinSize_Changed(e)));
+                    (d, e) => ((AdaptiveTriggerBehavior)d).MinSize_Changed(e),
+                    CoerceMinSize));
 
         /// <summary>
         /// Identifies the <see cref="MinWindowHeight"/> dependency property.
@@ -31,9 +39,10 @@ namespace Celestial.UIToolkit.Interactions
                 nameof(MinWindowHeight),
                 typeof(double),
                 typeof(AdaptiveTriggerBehavior),
-                new PropertyMetadata(
+                new FrameworkPropertyMetadata(
                     0d,
-                    (d, e) => ((AdaptiveTriggerBehavior)d).MinSize_Changed(e)));
+                    (d, e) => ((AdaptiveTriggerBehavior)d).MinSize_Changed(e),
+                    CoerceMinSize));
 
         /// <summary>
         /// Gets or sets the minimum window width which is required for the trigger to become
@@ -54,7 +63,14 @@ namespace Celestial.UIToolkit.Interactions
             get { return (double)GetValue(MinWindowHeightProperty); }
             set { SetValue(MinWindowHeightProperty, value); }
         }
-        
+
+        private static object CoerceMinSize(DependencyObject d, object baseValue)
+        {
+            // Ensure that the Min-Sizes don't get <= 0.
+            var value = (double)baseValue;
+            return Math.Max(0d, value);
+        }
+
         /// <summary>
         /// When attached to an object, tries to find its parent window and throws an exception,
         /// if none is found.
@@ -75,6 +91,7 @@ namespace Celestial.UIToolkit.Interactions
             base.OnDetaching();
             AssociatedObject.Loaded -= AssociatedObject_Loaded;
             _window.SizeChanged -= Window_SizeChanged;
+            _window = null;
         }
 
         private void AssociatedObject_Loaded(object sender, RoutedEventArgs e)
@@ -121,10 +138,7 @@ namespace Celestial.UIToolkit.Interactions
             if (IsAttached)
                 ReevaluateTriggerState();
         }
-
-        /// <summary>
-        /// Checks if the trigger is active and invokes the actions, if so.
-        /// </summary>
+        
         private void ReevaluateTriggerState()
         {
             if (_window.ActualWidth >= MinWindowWidth && 
