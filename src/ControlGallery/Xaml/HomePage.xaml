@@ -14,36 +14,17 @@
 
     <Grid Margin="20"
           VisualStateManager.CustomVisualStateManager="{x:Static c:ExtendedVisualStateManager.Default}">
-        <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup>
-                <VisualState x:Name="Normal" />
-                <c:ExtendedVisualState x:Name="Large">
-                    <c:ExtendedVisualState.Setters>
-                        <Setter TargetName="R" Property="Rectangle.Fill" Value="Green" />
-                    </c:ExtendedVisualState.Setters>
-                </c:ExtendedVisualState>
-                <c:ExtendedVisualState x:Name="Gigantic">
-                    <c:ExtendedVisualState.Setters>
-                        <Setter TargetName="R" Property="Rectangle.Fill" Value="Yellow" />
-                    </c:ExtendedVisualState.Setters>
-                </c:ExtendedVisualState>
-                <c:ExtendedVisualState x:Name="Gigantic2">
-                    <c:ExtendedVisualState.Setters>
-                        <Setter TargetName="R" Property="Rectangle.Fill" Value="Orange" />
-                    </c:ExtendedVisualState.Setters>
-                </c:ExtendedVisualState>
-            </VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>
-        
+
         <c:Interaction.Behaviors>
-            <c:AdaptiveTriggerBehavior>
-                <c:GoToStateAction StateName="Normal" />
-            </c:AdaptiveTriggerBehavior>
             <c:AdaptiveTriggerBehavior MinWindowWidth="400">
-                <c:GoToStateAction StateName="Large" />
+                <c:SettersAction>
+                    <Setter TargetName="R" Property="Rectangle.Fill" Value="Green" />
+                </c:SettersAction>
             </c:AdaptiveTriggerBehavior>
-            <c:AdaptiveTriggerBehavior MinWindowWidth="1500">
-                <c:GoToStateAction StateName="Gigantic" />
+            <c:AdaptiveTriggerBehavior MinWindowWidth="1000">
+                <c:SettersAction>
+                    <Setter TargetName="R" Property="Rectangle.Fill" Value="Yellow" />
+                </c:SettersAction>
             </c:AdaptiveTriggerBehavior>
         </c:Interaction.Behaviors>
 
