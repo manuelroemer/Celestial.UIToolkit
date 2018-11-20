@@ -169,6 +169,43 @@ namespace Celestial.UIToolkit.Core.Tests.Interactivity
 
         #endregion
 
+        #region Behavior.OwningCollection
+
+        [Fact]
+        public void SetsOwningCollection()
+        {
+            var collection = new BehaviorCollection();
+            var behavior = new TestableBehavior();
+
+            collection.Add(behavior);
+            Assert.NotNull(behavior.OwningCollection);
+            Assert.Contains(behavior, behavior.OwningCollection);
+        }
+
+        [Fact]
+        public void UnsetsOwningCollectionOnRemove()
+        {
+            var collection = new BehaviorCollection();
+            var behavior = new TestableBehavior();
+
+            collection.Add(behavior);
+            collection.Remove(behavior);
+            Assert.Null(behavior.OwningCollection);
+        }
+
+        [Fact]
+        public void UnsetsOwningCollectionOnClear()
+        {
+            var collection = new BehaviorCollection();
+            var behavior = new TestableBehavior();
+
+            collection.Add(behavior);
+            collection.Clear();
+            Assert.Null(behavior.OwningCollection);
+        }
+
+        #endregion
+
     }
 
 }

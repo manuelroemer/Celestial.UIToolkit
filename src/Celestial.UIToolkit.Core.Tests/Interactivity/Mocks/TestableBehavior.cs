@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Celestial.UIToolkit.Interactivity;
 
 namespace Celestial.UIToolkit.Core.Tests.Interactivity.Mocks
@@ -21,6 +22,8 @@ namespace Celestial.UIToolkit.Core.Tests.Interactivity.Mocks
         /// Occurs when <see cref="OnDetaching"/> is called.
         /// </summary>
         public event EventHandler<EventArgs> Detaching;
+
+        public new IReadOnlyCollection<Behavior> OwningCollection => base.OwningCollection;
 
         protected override void OnAttached()
         {

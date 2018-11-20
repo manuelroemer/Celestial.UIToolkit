@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
@@ -226,6 +227,9 @@ namespace Celestial.UIToolkit.Interactivity
                 // so all should be good.
             }
 
+            // This collection now owns the behavior.
+            behavior.OwningBehaviorCollection = this;
+
             // If this collection is already attached to something, we need to make sure that
             // new elements are automatically attached aswell.
             if (IsAttached)
@@ -238,6 +242,7 @@ namespace Celestial.UIToolkit.Interactivity
         {
             // When removed from this collection, we lose control over the behavior.
             // => Detach it now, so that no memory leak occurs later on.
+            behavior.OwningBehaviorCollection = null;
             behavior.Detach();
         }
 

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Media.Animation;
 using static Celestial.UIToolkit.TraceSources;
@@ -14,6 +16,8 @@ namespace Celestial.UIToolkit.Interactivity
     {
 
         private DependencyObject _associatedObject;
+        private BehaviorCollection _owningBehaviorCollection;
+        private IReadOnlyCollection<Behavior> _owningCollectionView;
 
         /// <summary>
         /// Gets the object to which this behavior is attached.
@@ -30,6 +34,58 @@ namespace Celestial.UIToolkit.Interactivity
                 WritePreamble();
                 _associatedObject = value;
                 WritePostscript();
+            }
+        }
+
+        /// <summary>
+        /// Internally used to set the <see cref="BehaviorCollection"/> which owns this behavior.
+        /// Setting this property automatically updates the read-only <see cref="OwningCollection"/>
+        /// property.
+        /// </summary>
+        internal BehaviorCollection OwningBehaviorCollection
+        {
+            get
+            {
+                ReadPreamble();
+                return _owningBehaviorCollection;
+            }
+            set
+            {
+                ReadPreamble();
+                if (_owningBehaviorCollection == value)
+                    return;
+
+                if (_owningBehaviorCollection != null && value != null)
+                {
+                    throw new InvalidOperationException("The behavior is already owned by another collection.");
+                }
+
+                WritePreamble();
+                _owningBehaviorCollection = value;
+                WritePostscript();
+            }
+        }
+
+        /// <summary>
+        /// Gets a read-only view on a <see cref="BehaviorCollection"/> 
+        /// which currently owns this behavior.
+        /// This property gets set whenever this behavior gets added to a
+        /// <see cref="BehaviorCollection"/>.
+        /// This can be null, if this <see cref="Behavior"/> has not been added to a collection yet.
+        /// </summary>
+        protected internal IReadOnlyCollection<Behavior> OwningCollection
+        {
+            get
+            {
+                ReadPreamble();
+                if (_owningCollectionView == null && _owningBehaviorCollection != null)
+                {
+                    WritePreamble();
+                    _owningCollectionView = new ReadOnlyCollection<Behavior>(_owningBehaviorCollection);
+                    WritePostscript();
+                }
+
+                return _owningCollectionView;
             }
         }
 
