@@ -2,6 +2,8 @@
     x:Class="ControlGallery.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:c="http://celestial-ui.com"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
     ShutdownMode="OnMainWindowClose">
     
     <Application.Resources>
@@ -18,6 +20,10 @@
                 <ResourceDictionary Source="Themes/XamlDisplay.xaml" />
                 <ResourceDictionary Source="Themes/AvalonEdit.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
+            <sys:Double x:Key="MinimalWindowTriggerWidth">0</sys:Double>
+            <sys:Double x:Key="NormalWindowTriggerWidth">680</sys:Double>
+            <sys:Double x:Key="LargeWindowTriggerWidth">1380</sys:Double>
         </ResourceDictionary>
     </Application.Resources>
     
