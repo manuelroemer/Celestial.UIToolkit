@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using Celestial.UIToolkit.Core.Tests.Interactivity.Mocks;
 using Celestial.UIToolkit.Interactivity;
@@ -202,6 +199,20 @@ namespace Celestial.UIToolkit.Core.Tests.Interactivity
             collection.Add(behavior);
             collection.Clear();
             Assert.Null(behavior.OwningCollection);
+        }
+
+        [Fact]
+        public void ChangesOwningCollectionOnReplace()
+        {
+            var collection = new BehaviorCollection();
+            var oldBehavior = new TestableBehavior();
+            var newBehavior = new TestableBehavior();
+
+            collection.Add(oldBehavior);
+            collection[0] = newBehavior;
+
+            Assert.Null(oldBehavior.OwningCollection);
+            Assert.NotNull(newBehavior.OwningCollection);
         }
 
         #endregion
