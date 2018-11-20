@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Markup;
+using static Celestial.UIToolkit.TraceSources;
 
 namespace Celestial.UIToolkit.Interactivity
 {
@@ -62,6 +63,11 @@ namespace Celestial.UIToolkit.Interactivity
         // This is a separate method, because OnTriggered(parameter) should not be virtual.
         internal virtual void OnTriggeredImpl(object parameter)
         {
+            InteractivitySource.Info(
+                GetHashCode(),
+                "{0} was triggered.",
+                GetType().FullName
+            );
             ExecuteAllActions(Actions, parameter);
         }
 

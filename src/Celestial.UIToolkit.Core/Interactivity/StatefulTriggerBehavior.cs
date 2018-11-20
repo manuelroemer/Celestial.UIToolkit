@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Windows;
+using static Celestial.UIToolkit.TraceSources;
 
 namespace Celestial.UIToolkit.Interactivity
 {
@@ -128,6 +129,13 @@ namespace Celestial.UIToolkit.Interactivity
             if (IsActive == isActive)
                 return;
             IsActive = isActive;
+
+            InteractivitySource.Info(
+                GetHashCode(),
+                "{0} was triggered. IsActive: {1}",
+                GetType().FullName,
+                IsActive
+            );
 
             if (IsActive)
             {

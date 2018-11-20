@@ -4,6 +4,7 @@ using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows;
+using static Celestial.UIToolkit.TraceSources;
 
 namespace Celestial.UIToolkit.Interactivity
 {
@@ -112,6 +113,13 @@ namespace Celestial.UIToolkit.Interactivity
                 // This is wanted behavior though.
                 behavior.Attach(associatedObject);
             }
+
+            InteractivitySource.Verbose(
+                GetHashCode(),
+                "Attached collection and all of its children to \"{1}\".",
+                GetType().FullName,
+                associatedObject
+            );
         }
 
         /// <summary>
@@ -128,6 +136,11 @@ namespace Celestial.UIToolkit.Interactivity
                 behavior.Detach();
             }
             AssociatedObject = null;
+
+            InteractivitySource.Verbose(
+                GetHashCode(),
+                "Collection and all of its children were detached."
+            );
         }
 
         private void OnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)

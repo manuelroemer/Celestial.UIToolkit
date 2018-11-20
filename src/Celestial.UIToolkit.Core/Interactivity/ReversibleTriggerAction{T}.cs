@@ -1,4 +1,6 @@
-﻿namespace Celestial.UIToolkit.Interactivity
+﻿using static Celestial.UIToolkit.TraceSources;
+
+namespace Celestial.UIToolkit.Interactivity
 {
 
     /// <summary>
@@ -31,7 +33,22 @@
         {
             if (parameter is TParameter || (parameter is null && AllowNullParameter))
             {
+                InteractivitySource.Verbose(
+                    GetHashCode(),
+                    "Reverting trigger action {0} with parameter {1}.",
+                    GetType().FullName,
+                    parameter
+                );
                 Revert((TParameter)parameter);
+            }
+            else
+            {
+                InteractivitySource.Verbose(
+                    GetHashCode(),
+                    "Not reverting trigger action {0} because of invalid parameter: {1}.",
+                    GetType().FullName,
+                    parameter
+                );
             }
         }
 

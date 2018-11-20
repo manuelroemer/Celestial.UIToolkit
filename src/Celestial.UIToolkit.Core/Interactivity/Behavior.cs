@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Media.Animation;
+using static Celestial.UIToolkit.TraceSources;
 
 namespace Celestial.UIToolkit.Interactivity
 {
@@ -118,6 +119,13 @@ namespace Celestial.UIToolkit.Interactivity
 
             AssociatedObject = associatedObject;
             OnAttached();
+
+            InteractivitySource.Verbose(
+                GetHashCode(),
+                "{0} was attached to object \"{1}\".", 
+                GetType().FullName,
+                associatedObject
+            );
         }
         
         /// <summary>
@@ -129,6 +137,12 @@ namespace Celestial.UIToolkit.Interactivity
                 return;
             OnDetaching();
             AssociatedObject = null;
+
+            InteractivitySource.Verbose(
+                GetHashCode(),
+                "{0} was detached.",
+                GetType().FullName
+            );
         }
 
         /// <summary>

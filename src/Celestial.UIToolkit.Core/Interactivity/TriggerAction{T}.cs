@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using static Celestial.UIToolkit.TraceSources;
 
 namespace Celestial.UIToolkit.Interactivity
 {
@@ -37,7 +38,22 @@ namespace Celestial.UIToolkit.Interactivity
         {
             if (parameter is TParameter || (parameter is null && AllowNullParameter))
             {
+                InteractivitySource.Verbose(
+                    GetHashCode(),
+                    "Executing trigger action {0} with parameter {1}.",
+                    GetType().FullName,
+                    parameter
+                );
                 Execute((TParameter)parameter);
+            }
+            else
+            {
+                InteractivitySource.Verbose(
+                    GetHashCode(),
+                    "Not executing trigger action {0} because of invalid parameter: {1}.",
+                    GetType().FullName,
+                    parameter
+                );
             }
         }
 
