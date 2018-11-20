@@ -64,9 +64,7 @@ namespace Celestial.UIToolkit.Interactions
                 }
                 else
                 {
-                    throw new InvalidOperationException(
-                        $"The {nameof(SettersAction)} only supports {typeof(Setter).FullName} objects."
-                    );
+                    ThrowInvalidSetterTypeException();
                 }
             }
         }
@@ -88,13 +86,18 @@ namespace Celestial.UIToolkit.Interactions
                 }
                 else
                 {
-                    throw new InvalidOperationException(
-                        $"The {nameof(SettersAction)} only supports {typeof(Setter).FullName} objects."
-                    );
+                    ThrowInvalidSetterTypeException();
                 }
             }
         }
-        
+
+        private void ThrowInvalidSetterTypeException()
+        {
+            throw new InvalidOperationException(
+                $"The {nameof(SettersAction)} only supports {typeof(Setter).FullName} objects."
+            );
+        }
+
     }
 
 }
