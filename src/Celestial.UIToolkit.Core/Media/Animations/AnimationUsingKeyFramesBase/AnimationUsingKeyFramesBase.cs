@@ -156,7 +156,7 @@ namespace Celestial.UIToolkit.Media.Animations
         protected override void CloneCurrentValueCore(Freezable sourceFreezable)
         {
             var source = (AnimationUsingKeyFramesBase<T, TKeyFrame, TKeyFrameCollection>)sourceFreezable;
-            base.CloneCore(sourceFreezable);
+            base.CloneCurrentValueCore(sourceFreezable);
             CloneMembers(source, true);
         }
 
@@ -168,7 +168,7 @@ namespace Celestial.UIToolkit.Media.Animations
         protected override void GetAsFrozenCore(Freezable sourceFreezable)
         {
             var source = (AnimationUsingKeyFramesBase<T, TKeyFrame, TKeyFrameCollection>)sourceFreezable;
-            base.CloneCore(sourceFreezable);
+            base.GetAsFrozenCore(sourceFreezable);
             CloneMembers(source, false);
         }
 
@@ -180,7 +180,7 @@ namespace Celestial.UIToolkit.Media.Animations
         protected override void GetCurrentValueAsFrozenCore(Freezable sourceFreezable)
         {
             var source = (AnimationUsingKeyFramesBase<T, TKeyFrame, TKeyFrameCollection>)sourceFreezable;
-            base.CloneCore(sourceFreezable);
+            base.GetCurrentValueAsFrozenCore(sourceFreezable);
             CloneMembers(source, true);
         }
 

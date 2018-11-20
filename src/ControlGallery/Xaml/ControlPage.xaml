@@ -13,13 +13,32 @@
              prism:ViewModelLocator.AutoWireViewModel="True">
     
     <Grid Margin="{c:GridUnit '3,0'}">
+        <c:Interaction.Behaviors>
+            <c:AdaptiveTriggerBehavior MinWindowWidth="{DynamicResource MinimalWindowTriggerWidth}">
+                <c:SettersAction>
+                    <Setter TargetName="SidebarContainer" Property="Grid.Row" Value="2" />
+                    <Setter TargetName="SidebarContainer" Property="Grid.Column" Value="0" />
+                    <Setter TargetName="SidebarContainer" Property="Control.Width" Value="Auto" />
+                </c:SettersAction>
+            </c:AdaptiveTriggerBehavior>
+            <c:AdaptiveTriggerBehavior MinWindowWidth="{DynamicResource NormalWindowTriggerWidth}">
+                <c:SettersAction>
+                    <Setter TargetName="SidebarContainer" Property="Grid.Row" Value="2" />
+                    <Setter TargetName="SidebarContainer" Property="Grid.Column" Value="0" />
+                    <Setter TargetName="SidebarContainer" Property="Control.Width" Value="Auto" />
+                </c:SettersAction>
+            </c:AdaptiveTriggerBehavior>
+            <c:AdaptiveTriggerBehavior MinWindowWidth="{DynamicResource LargeWindowTriggerWidth}" />
+        </c:Interaction.Behaviors>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="{c:GridUnit 60}" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
         
         <TextBlock Text="{Binding ControlInformation.Description}" 

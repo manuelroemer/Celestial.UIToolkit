@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
+﻿using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Markup;
 
@@ -14,6 +12,8 @@ using System.Windows.Markup;
 
 [assembly: XmlnsDefinition("http://celestial-ui.com", "Celestial.UIToolkit")]
 [assembly: XmlnsDefinition("http://celestial-ui.com", "Celestial.UIToolkit.Converters")]
+[assembly: XmlnsDefinition("http://celestial-ui.com", "Celestial.UIToolkit.Interactions")]
+[assembly: XmlnsDefinition("http://celestial-ui.com", "Celestial.UIToolkit.Interactivity")]
 [assembly: XmlnsDefinition("http://celestial-ui.com", "Celestial.UIToolkit.Media")]
 [assembly: XmlnsDefinition("http://celestial-ui.com", "Celestial.UIToolkit.Media.Animations")]
 [assembly: XmlnsDefinition("http://celestial-ui.com", "Celestial.UIToolkit.Xaml")]

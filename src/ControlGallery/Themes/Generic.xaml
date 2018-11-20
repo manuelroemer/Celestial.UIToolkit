@@ -29,6 +29,19 @@
             <Setter.Value>
                 <ControlTemplate TargetType="controls:ControlPresenter">
                     <Grid>
+                        <c:Interaction.Behaviors>
+                            <c:AdaptiveTriggerBehavior MinWindowWidth="{DynamicResource MinimalWindowTriggerWidth}">
+                                <c:SettersAction>
+                                    <Setter TargetName="OptionsPane" Property="Grid.Row" Value="2" />
+                                    <Setter TargetName="OptionsPane" Property="Grid.Column" Value="0" />
+                                    <Setter TargetName="OptionsPane" Property="Margin" Value="0" />
+                                    <Setter TargetName="OptionsPane" Property="Padding" Value="0" />
+                                </c:SettersAction>
+                            </c:AdaptiveTriggerBehavior>
+                            <c:AdaptiveTriggerBehavior MinWindowWidth="{DynamicResource NormalWindowTriggerWidth}"  />
+                            <c:AdaptiveTriggerBehavior MinWindowWidth="{DynamicResource LargeWindowTriggerWidth}" />
+                        </c:Interaction.Behaviors>
+                        
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
                             <RowDefinition />
@@ -58,9 +71,10 @@
                                 CornerRadius="{TemplateBinding c:ControlProperties.CornerRadius}">
                             <Grid>
                                 <Grid.RowDefinitions>
-                                    <RowDefinition />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition x:Name="ContentRow" />
+                                    <RowDefinition x:Name="DescriptionRow" Height="Auto" />
+                                    <RowDefinition x:Name="AdaptiveOptionsRow" Height="Auto" />
+                                    <RowDefinition x:Name="XAMLRow"        Height="Auto" />
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition />
@@ -91,7 +105,7 @@
                                            Visibility="{c:TemplatedParentBinding Description, Converter={StaticResource StringToVisibilityConverter}}" />
 
                                 <Border x:Name="XamlContainer"
-                                        Grid.Row="2"
+                                        Grid.Row="3"
                                         Grid.ColumnSpan="2"
                                         Padding="{c:GridUnit 3}"
                                         Background="{DynamicResource PrimaryMediumLowBrush}">
