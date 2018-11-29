@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class ListViewItemInvokedEventArgs
+    <title>Class DesignTimeOnlyResourceDictionary
    | Celestial.UIToolkit </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class ListViewItemInvokedEventArgs
+    <meta name="title" content="Class DesignTimeOnlyResourceDictionary
    | Celestial.UIToolkit ">
     <meta name="generator" content="docfx 2.40.4.0">
     
@@ -68,79 +68,45 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Celestial.UIToolkit.Controls.ListViewItemInvokedEventArgs">
+            <article class="content wrap" id="_content" data-uid="Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary">
   
   
-  <h1 id="Celestial_UIToolkit_Controls_ListViewItemInvokedEventArgs" data-uid="Celestial.UIToolkit.Controls.ListViewItemInvokedEventArgs" class="text-break">Class ListViewItemInvokedEventArgs
+  <h1 id="Celestial_UIToolkit_Xaml_DesignTimeOnlyResourceDictionary" data-uid="Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary" class="text-break">Class DesignTimeOnlyResourceDictionary
   </h1>
-  <div class="markdown level0 summary"><p>Provides event data for when a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.listviewitem">ListViewItem</a> is invoked.</p>
+  <div class="markdown level0 summary"><p>A special resource dictionary which only loads its content, if it is currently in the
+design mode.
+Otherwise, the loading process will simply be ignored.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventargs">EventArgs</a></div>
-    <div class="level2"><span class="xref">ListViewItemInvokedEventArgs</span></div>
+    <div class="level1"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary">ResourceDictionary</a></div>
+    <div class="level2"><span class="xref">DesignTimeOnlyResourceDictionary</span></div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Celestial.UIToolkit.Controls.html">Celestial.UIToolkit.Controls</a></h6>
-  <h6><strong>Assembly</strong>: Celestial.UIToolkit.dll</h6>
-  <h5 id="Celestial_UIToolkit_Controls_ListViewItemInvokedEventArgs_syntax">Syntax</h5>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Celestial.UIToolkit.Xaml.html">Celestial.UIToolkit.Xaml</a></h6>
+  <h6><strong>Assembly</strong>: Celestial.UIToolkit.Core.dll</h6>
+  <h5 id="Celestial_UIToolkit_Xaml_DesignTimeOnlyResourceDictionary_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ListViewItemInvokedEventArgs : EventArgs</code></pre>
+    <pre><code class="lang-csharp hljs">public class DesignTimeOnlyResourceDictionary : ResourceDictionary, IDictionary, ICollection, IEnumerable, ISupportInitialize, IUriContext, INameScope</code></pre>
   </div>
-  <h3 id="constructors">Constructors
-  </h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ListViewItemInvokedEventArgs__ctor_System_Windows_Controls_ListViewItem_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ListViewItemInvokedEventArgs.%23ctor(System.Windows.Controls.ListViewItem)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ExtendedListView.cs/#L28">View Source</a>
-  </span>
-  <a id="Celestial_UIToolkit_Controls_ListViewItemInvokedEventArgs__ctor_" data-uid="Celestial.UIToolkit.Controls.ListViewItemInvokedEventArgs.#ctor*"></a>
-  <h4 id="Celestial_UIToolkit_Controls_ListViewItemInvokedEventArgs__ctor_System_Windows_Controls_ListViewItem_" data-uid="Celestial.UIToolkit.Controls.ListViewItemInvokedEventArgs.#ctor(System.Windows.Controls.ListViewItem)">ListViewItemInvokedEventArgs(ListViewItem)</h4>
-  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Celestial.UIToolkit.Controls.ListViewItemInvokedEventArgs.html">ListViewItemInvokedEventArgs</a> class.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ListViewItemInvokedEventArgs(ListViewItem invokedItem)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.listviewitem">ListViewItem</a></td>
-        <td><span class="parametername">invokedItem</span></td>
-        <td><p>The invoked item.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ListViewItemInvokedEventArgs_InvokedItem.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ListViewItemInvokedEventArgs.InvokedItem%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Xaml_DesignTimeOnlyResourceDictionary_IsLoaded.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.IsLoaded%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ExtendedListView.cs/#L22">View Source</a>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/Xaml/DesignTimeOnlyResourceDictionary.cs/#L21">View Source</a>
   </span>
-  <a id="Celestial_UIToolkit_Controls_ListViewItemInvokedEventArgs_InvokedItem_" data-uid="Celestial.UIToolkit.Controls.ListViewItemInvokedEventArgs.InvokedItem*"></a>
-  <h4 id="Celestial_UIToolkit_Controls_ListViewItemInvokedEventArgs_InvokedItem" data-uid="Celestial.UIToolkit.Controls.ListViewItemInvokedEventArgs.InvokedItem">InvokedItem</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the invoked item.</p>
+  <a id="Celestial_UIToolkit_Xaml_DesignTimeOnlyResourceDictionary_IsLoaded_" data-uid="Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.IsLoaded*"></a>
+  <h4 id="Celestial_UIToolkit_Xaml_DesignTimeOnlyResourceDictionary_IsLoaded" data-uid="Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.IsLoaded">IsLoaded</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether the dictionary has loaded any content.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ListViewItem InvokedItem { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public bool IsLoaded { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -152,7 +118,38 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.controls.listviewitem">ListViewItem</a></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Xaml_DesignTimeOnlyResourceDictionary_Source.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.Source%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/Xaml/DesignTimeOnlyResourceDictionary.cs/#L26">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Xaml_DesignTimeOnlyResourceDictionary_Source_" data-uid="Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.Source*"></a>
+  <h4 id="Celestial_UIToolkit_Xaml_DesignTimeOnlyResourceDictionary_Source" data-uid="Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.Source">Source</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the source <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uri">Uri</a> of the resource dictionary.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Uri Source { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uri">Uri</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -161,14 +158,14 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ListViewItemInvokedEventArgs_ToString.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ListViewItemInvokedEventArgs.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Xaml_DesignTimeOnlyResourceDictionary_ToString.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ExtendedListView.cs/#L37">View Source</a>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/Xaml/DesignTimeOnlyResourceDictionary.cs/#L50">View Source</a>
   </span>
-  <a id="Celestial_UIToolkit_Controls_ListViewItemInvokedEventArgs_ToString_" data-uid="Celestial.UIToolkit.Controls.ListViewItemInvokedEventArgs.ToString*"></a>
-  <h4 id="Celestial_UIToolkit_Controls_ListViewItemInvokedEventArgs_ToString" data-uid="Celestial.UIToolkit.Controls.ListViewItemInvokedEventArgs.ToString">ToString()</h4>
-  <div class="markdown level1 summary"><p>Returns a string representation of this class.</p>
+  <a id="Celestial_UIToolkit_Xaml_DesignTimeOnlyResourceDictionary_ToString_" data-uid="Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.ToString*"></a>
+  <h4 id="Celestial_UIToolkit_Xaml_DesignTimeOnlyResourceDictionary_ToString" data-uid="Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.ToString">ToString()</h4>
+  <div class="markdown level1 summary"><p>Returns a string which represents the current state of the resource dictionary.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -186,7 +183,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><p>A string representing this class.</p>
+        <td><p>A string representing the current state of the resource dictionary.</p>
 </td>
       </tr>
     </tbody>
@@ -201,10 +198,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Controls_ListViewItemInvokedEventArgs.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Controls.ListViewItemInvokedEventArgs%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Xaml_DesignTimeOnlyResourceDictionary.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Controls/ExtendedListView.cs/#L16" class="contribution-link">View Source</a>
+                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/Xaml/DesignTimeOnlyResourceDictionary.cs/#L13" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

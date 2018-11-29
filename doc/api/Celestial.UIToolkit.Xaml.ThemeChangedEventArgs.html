@@ -5,12 +5,12 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class DesignTimeOnlyResourceDictionary
+    <title>Class ThemeChangedEventArgs
    | Celestial.UIToolkit </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class DesignTimeOnlyResourceDictionary
+    <meta name="title" content="Class ThemeChangedEventArgs
    | Celestial.UIToolkit ">
-    <meta name="generator" content="docfx 2.40.1.0">
+    <meta name="generator" content="docfx 2.40.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -68,45 +68,80 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Celestial.UIToolkit.DesignTimeOnlyResourceDictionary">
+            <article class="content wrap" id="_content" data-uid="Celestial.UIToolkit.Xaml.ThemeChangedEventArgs">
   
   
-  <h1 id="Celestial_UIToolkit_DesignTimeOnlyResourceDictionary" data-uid="Celestial.UIToolkit.DesignTimeOnlyResourceDictionary" class="text-break">Class DesignTimeOnlyResourceDictionary
+  <h1 id="Celestial_UIToolkit_Xaml_ThemeChangedEventArgs" data-uid="Celestial.UIToolkit.Xaml.ThemeChangedEventArgs" class="text-break">Class ThemeChangedEventArgs
   </h1>
-  <div class="markdown level0 summary"><p>A special resource dictionary which only loads its content, if it is currently in the
-design mode.
-Otherwise, the loading process will simply be ignored.</p>
+  <div class="markdown level0 summary"><p>Provides event data for the <a class="xref" href="Celestial.UIToolkit.Xaml.ThemeManager.html#Celestial_UIToolkit_Xaml_ThemeManager_ThemeChanged">ThemeChanged</a> changed event.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary">ResourceDictionary</a></div>
-    <div class="level2"><span class="xref">DesignTimeOnlyResourceDictionary</span></div>
+    <div class="level1"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.eventargs">EventArgs</a></div>
+    <div class="level2"><span class="xref">ThemeChangedEventArgs</span></div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Celestial.UIToolkit.html">Celestial.UIToolkit</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Celestial.UIToolkit.Xaml.html">Celestial.UIToolkit.Xaml</a></h6>
   <h6><strong>Assembly</strong>: Celestial.UIToolkit.Core.dll</h6>
-  <h5 id="Celestial_UIToolkit_DesignTimeOnlyResourceDictionary_syntax">Syntax</h5>
+  <h5 id="Celestial_UIToolkit_Xaml_ThemeChangedEventArgs_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class DesignTimeOnlyResourceDictionary : ResourceDictionary, IDictionary, ICollection, IEnumerable, ISupportInitialize, IUriContext, INameScope</code></pre>
+    <pre><code class="lang-csharp hljs">public class ThemeChangedEventArgs : EventArgs</code></pre>
   </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Xaml_ThemeChangedEventArgs__ctor_System_String_.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/Xaml/ThemeChangedEventArgs.cs/#L24">View Source</a>
+  </span>
+  <a id="Celestial_UIToolkit_Xaml_ThemeChangedEventArgs__ctor_" data-uid="Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.#ctor*"></a>
+  <h4 id="Celestial_UIToolkit_Xaml_ThemeChangedEventArgs__ctor_System_String_" data-uid="Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.#ctor(System.String)">ThemeChangedEventArgs(String)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.html">ThemeChangedEventArgs</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ThemeChangedEventArgs(string themeName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">themeName</span></td>
+        <td><p>The name of the new theme. This can be null.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_DesignTimeOnlyResourceDictionary_IsLoaded.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.IsLoaded%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Xaml_ThemeChangedEventArgs_ThemeName.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.ThemeName%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/DesignTimeOnlyResourceDictionary.cs/#L21">View Source</a>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/Xaml/ThemeChangedEventArgs.cs/#L16">View Source</a>
   </span>
-  <a id="Celestial_UIToolkit_DesignTimeOnlyResourceDictionary_IsLoaded_" data-uid="Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.IsLoaded*"></a>
-  <h4 id="Celestial_UIToolkit_DesignTimeOnlyResourceDictionary_IsLoaded" data-uid="Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.IsLoaded">IsLoaded</h4>
-  <div class="markdown level1 summary"><p>Gets a value indicating whether the dictionary has loaded any content.</p>
+  <a id="Celestial_UIToolkit_Xaml_ThemeChangedEventArgs_ThemeName_" data-uid="Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.ThemeName*"></a>
+  <h4 id="Celestial_UIToolkit_Xaml_ThemeChangedEventArgs_ThemeName" data-uid="Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.ThemeName">ThemeName</h4>
+  <div class="markdown level1 summary"><p>Gets the name of the new theme.
+This can be null.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool IsLoaded { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string ThemeName { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -118,38 +153,7 @@ Otherwise, the loading process will simply be ignored.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_DesignTimeOnlyResourceDictionary_Source.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.Source%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/DesignTimeOnlyResourceDictionary.cs/#L26">View Source</a>
-  </span>
-  <a id="Celestial_UIToolkit_DesignTimeOnlyResourceDictionary_Source_" data-uid="Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.Source*"></a>
-  <h4 id="Celestial_UIToolkit_DesignTimeOnlyResourceDictionary_Source" data-uid="Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.Source">Source</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the source <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uri">Uri</a> of the resource dictionary.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Uri Source { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uri">Uri</a></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -158,14 +162,14 @@ Otherwise, the loading process will simply be ignored.</p>
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_DesignTimeOnlyResourceDictionary_ToString.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Xaml_ThemeChangedEventArgs_ToString.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/DesignTimeOnlyResourceDictionary.cs/#L50">View Source</a>
+    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/Xaml/ThemeChangedEventArgs.cs/#L33">View Source</a>
   </span>
-  <a id="Celestial_UIToolkit_DesignTimeOnlyResourceDictionary_ToString_" data-uid="Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.ToString*"></a>
-  <h4 id="Celestial_UIToolkit_DesignTimeOnlyResourceDictionary_ToString" data-uid="Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.ToString">ToString()</h4>
-  <div class="markdown level1 summary"><p>Returns a string which represents the current state of the resource dictionary.</p>
+  <a id="Celestial_UIToolkit_Xaml_ThemeChangedEventArgs_ToString_" data-uid="Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.ToString*"></a>
+  <h4 id="Celestial_UIToolkit_Xaml_ThemeChangedEventArgs_ToString" data-uid="Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.ToString">ToString()</h4>
+  <div class="markdown level1 summary"><p>Returns a string representation of this instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -183,7 +187,7 @@ Otherwise, the loading process will simply be ignored.</p>
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><p>A string representing the current state of the resource dictionary.</p>
+        <td><p>A string representing this instance.</p>
 </td>
       </tr>
     </tbody>
@@ -198,10 +202,10 @@ Otherwise, the loading process will simply be ignored.</p>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_DesignTimeOnlyResourceDictionary.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.DesignTimeOnlyResourceDictionary%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Xaml_ThemeChangedEventArgs.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Xaml.ThemeChangedEventArgs%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/DesignTimeOnlyResourceDictionary.cs/#L13" class="contribution-link">View Source</a>
+                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit.Core/Xaml/ThemeChangedEventArgs.cs/#L9" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

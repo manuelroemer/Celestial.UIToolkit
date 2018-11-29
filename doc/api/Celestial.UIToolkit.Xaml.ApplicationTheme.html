@@ -5,17 +5,19 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Style Naming Format | Celestial.UIToolkit </title>
+    <title>Enum ApplicationTheme
+   | Celestial.UIToolkit </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Style Naming Format | Celestial.UIToolkit ">
+    <meta name="title" content="Enum ApplicationTheme
+   | Celestial.UIToolkit ">
     <meta name="generator" content="docfx 2.40.4.0">
     
-    <link rel="shortcut icon" href="../../favicon.ico">
-    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../styles/docfx.css">
-    <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
     <meta property="docfx:navrel" content="">
-    <meta property="docfx:tocrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
     
     
     
@@ -34,8 +36,8 @@
                 <span class="icon-bar"></span>
               </button>
               
-              <a class="navbar-brand" href="../../index.html">
-                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -66,54 +68,42 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="">
-<h2 id="style-naming-format">Style Naming Format</h2>
-
-<p>The styles in the toolkit follow the following naming convention:</p>
-<pre><code>StyleName := [SizeModifier]&lt;ColorTheme&gt;[Specialization]&lt;ControlName&gt;
-
-where:
-
-SizeModifier   := &quot;Large&quot; | &quot;Compact&quot;
-ColorTheme     := &quot;Standard&quot; | &quot;Accent1&quot; | &quot;Accent2&quot;
-Specialization := &quot;[Any possible string. Up to the Style Author.]&quot;
-ControlName    := &quot;[The .NET type name of the Control.]&quot;
-</code></pre>
-<p>There are some exceptions to the <code>ControlName</code> rule.
-Sometimes, a single style is used for multiple Controls.
-This can happen when the controls have a shared base class from which they inherit,
-e.g. <code>Button</code> and <code>ToggleButton</code>.</p>
-<p>In this case, the styles have a generalized control name.
-For buttons, the styles are called <code>...Button</code>.</p>
-<h3 id="examples">Examples</h3>
-<p><strong>The simplest Style names:</strong></p>
-<pre><code>StandardTextBox
-Accent1ComboBox
-Accent2Button
-
-== &lt;ColorTheme&gt;&lt;ControlName&gt;
-</code></pre>
-<p><strong>Specialized Style names:</strong></p>
-<pre><code>StandardFlatButton
-Accent1CircleButton
-Accent1OutlinedComboBox
-Accent2OutlinedTextBox
-
-== &lt;ColorTheme&gt;[Specialization]&lt;ControlName&gt;
-</code></pre>
-<p><strong>Size variations:</strong></p>
-<pre><code>LargeStandardListBox
-CompactAccent1ListView
-LargeAccent2ListView
-
-== [SizeModifier]&lt;ColorTheme&gt;&lt;ControlName&gt;
-</code></pre>
-<p><strong>All together:</strong>
-<em>(Note: This style doesn't exist - it is just an example.)</em></p>
-<pre><code>CompactAccent1SpecializedButton
-
-== [SizeModifier]&lt;ColorTheme&gt;[Specialization]&lt;ControlName&gt;
-</code></pre>
+            <article class="content wrap" id="_content" data-uid="Celestial.UIToolkit.Xaml.ApplicationTheme">
+  
+  
+  <h1 id="Celestial_UIToolkit_Xaml_ApplicationTheme" data-uid="Celestial.UIToolkit.Xaml.ApplicationTheme" class="text-break">Enum ApplicationTheme
+  </h1>
+  <div class="markdown level0 summary"><p>Defines the application themes which are supported by the toolkit out of the box.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Celestial.UIToolkit.Xaml.html">Celestial.UIToolkit.Xaml</a></h6>
+  <h6><strong>Assembly</strong>: Celestial.UIToolkit.dll</h6>
+  <h5 id="Celestial_UIToolkit_Xaml_ApplicationTheme_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public enum ApplicationTheme</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    <thead>
+    <tbody>
+      <tr>
+        <td id="Celestial_UIToolkit_Xaml_ApplicationTheme_Dark">Dark</td>
+        <td><p>The application uses the Dark theme.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Celestial_UIToolkit_Xaml_ApplicationTheme_Light">Light</td>
+        <td><p>The application uses the Light theme.</p>
+</td>
+      </tr>
+    </tbody>
+  </thead></thead></table>
 </article>
           </div>
           
@@ -122,7 +112,10 @@ LargeAccent2ListView
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/doc/articles/getting-started/style-naming-format.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/new/master/apiSpec/new?filename=Celestial_UIToolkit_Xaml_ApplicationTheme.md&amp;value=---%0Auid%3A%20Celestial.UIToolkit.Xaml.ApplicationTheme%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/manuelroemer/Celestial.UIToolkit/blob/master/src/Celestial.UIToolkit/Xaml/ApplicationTheme.cs/#L7" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
@@ -148,8 +141,8 @@ LargeAccent2ListView
       </footer>
     </div>
     
-    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../styles/main.js"></script>
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
   </body>
 </html>

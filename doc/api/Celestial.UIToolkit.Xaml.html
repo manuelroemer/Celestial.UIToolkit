@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Namespace Celestial.UIToolkit.Xaml
    | Celestial.UIToolkit ">
-    <meta name="generator" content="docfx 2.40.1.0">
+    <meta name="generator" content="docfx 2.40.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -81,6 +81,11 @@
       <section><p>A class which is used to allow bindings in places where they wouldn't normally be possible,
 by creating a proxy between the two parties.</p>
 </section>
+      <h4><a class="xref" href="Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.html">DesignTimeOnlyResourceDictionary</a></h4>
+      <section><p>A special resource dictionary which only loads its content, if it is currently in the
+design mode.
+Otherwise, the loading process will simply be ignored.</p>
+</section>
       <h4><a class="xref" href="Celestial.UIToolkit.Xaml.EnumBindingSourceExtension.html">EnumBindingSourceExtension</a></h4>
       <section><p>A custom markup extension which takes an enum's type and returns
 all of its members as a set of string values.
@@ -107,7 +112,7 @@ See the example for details.</p>
       <section><p>Provides attached dependency properties regarding margins
 which can be helpful when creating layouts.</p>
 </section>
-      <h4><a class="xref" href="Celestial.UIToolkit.Xaml.MultiStyleExtension.html">MultiStyleExtension</a></h4>
+      <h4><a class="xref" href="Celestial.UIToolkit.Xaml.MergeStylesExtension.html">MergeStylesExtension</a></h4>
       <section><p>A custom markup extension which merges multiple styles
 into one single style.</p>
 </section>
@@ -115,9 +120,36 @@ into one single style.</p>
       <section><p>An otherwise normal <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.data.binding">Binding</a> whose <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.data.binding.relativesource#System_Windows_Data_Binding_RelativeSource">RelativeSource</a>
 property is set to <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.data.relativesource.self#System_Windows_Data_RelativeSource_Self">Self</a>.</p>
 </section>
+      <h4><a class="xref" href="Celestial.UIToolkit.Xaml.SharedResourceDictionary.html">SharedResourceDictionary</a></h4>
+      <section><p>An extension of the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary">ResourceDictionary</a> class which shadows
+the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.source#System_Windows_ResourceDictionary_Source">Source</a> property.
+The difference to a normal resource dictionary is that when this class'
+<a class="xref" href="Celestial.UIToolkit.Xaml.SharedResourceDictionary.html#Celestial_UIToolkit_Xaml_SharedResourceDictionary_Source">Source</a> property is set, the dictionary from that source gets
+loaded via the <span class="xref">Celestial.UIToolkit.Xaml.SharedResourceDictionaryManager</span>, which allows
+caching of the resource dictionaries.
+The loaded resource dictionary set by the <a class="xref" href="Celestial.UIToolkit.Xaml.SharedResourceDictionary.html#Celestial_UIToolkit_Xaml_SharedResourceDictionary_Source">Source</a> property is then
+accessible via the <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.resourcedictionary.mergeddictionaries#System_Windows_ResourceDictionary_MergedDictionaries">MergedDictionaries</a> property.</p>
+</section>
       <h4><a class="xref" href="Celestial.UIToolkit.Xaml.TemplatedParentBindingExtension.html">TemplatedParentBindingExtension</a></h4>
       <section><p>An otherwise normal <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.data.binding">Binding</a> whose <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.data.binding.relativesource#System_Windows_Data_Binding_RelativeSource">RelativeSource</a>
 property is set to <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.data.relativesource.templatedparent#System_Windows_Data_RelativeSource_TemplatedParent">TemplatedParent</a>.</p>
+</section>
+      <h4><a class="xref" href="Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.html">ThemeChangedEventArgs</a></h4>
+      <section><p>Provides event data for the <a class="xref" href="Celestial.UIToolkit.Xaml.ThemeManager.html#Celestial_UIToolkit_Xaml_ThemeManager_ThemeChanged">ThemeChanged</a> changed event.</p>
+</section>
+      <h4><a class="xref" href="Celestial.UIToolkit.Xaml.ThemeManager.html">ThemeManager</a></h4>
+      <section><p>Manages an application's active visual theme.
+Use the <a class="xref" href="Celestial.UIToolkit.Xaml.ThemeManager.html#Celestial_UIToolkit_Xaml_ThemeManager_Current">Current</a> property to get an instance of the
+<a class="xref" href="Celestial.UIToolkit.Xaml.ThemeManager.html">ThemeManager</a>.</p>
+</section>
+      <h4><a class="xref" href="Celestial.UIToolkit.Xaml.ThemeManagerExtensions.html">ThemeManagerExtensions</a></h4>
+      <section><p>Provides extension methods to the <a class="xref" href="Celestial.UIToolkit.Xaml.ThemeManager.html">ThemeManager</a> class.</p>
+</section>
+      <h4><a class="xref" href="Celestial.UIToolkit.Xaml.ThemeResourceDictionary.html">ThemeResourceDictionary</a></h4>
+      <section><p>A resource dictionary which provides built-in support for dynamic theme changes
+which come from the <a class="xref" href="Celestial.UIToolkit.Xaml.ThemeManager.html">ThemeManager</a>.
+Use the <a class="xref" href="Celestial.UIToolkit.Xaml.ThemeResourceDictionary.html#Celestial_UIToolkit_Xaml_ThemeResourceDictionary_ThemeDictionaries">ThemeDictionaries</a> property to specify nested, theme specific
+dictionaries.</p>
 </section>
       <h4><a class="xref" href="Celestial.UIToolkit.Xaml.VisualTransitionProvider.html">VisualTransitionProvider</a></h4>
       <section><p>A class which provides the <a class="xref" href="Celestial.UIToolkit.Xaml.ExtendedVisualStateManager.html">ExtendedVisualStateManager</a>
@@ -131,6 +163,11 @@ of <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.windows.me
 This interface is being used by the <a class="xref" href="Celestial.UIToolkit.Xaml.VisualTransitionProvider.html">VisualTransitionProvider</a>
 and <a class="xref" href="Celestial.UIToolkit.Xaml.ExtendedVisualStateManager.html">ExtendedVisualStateManager</a> to create visual transitions
 between animations in different visual states.</p>
+</section>
+    <h3 id="enums">Enums
+  </h3>
+      <h4><a class="xref" href="Celestial.UIToolkit.Xaml.ApplicationTheme.html">ApplicationTheme</a></h4>
+      <section><p>Defines the application themes which are supported by the toolkit out of the box.</p>
 </section>
 </article>
           </div>

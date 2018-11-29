@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Common.Singleton-1.html",
-          "hash": "JmCE/pRPYPNjqFv6G754BA=="
+          "hash": "P3r5vMf19oVosJarW7w7UQ=="
         }
       },
       "is_incremental": false,
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Common.html",
-          "hash": "/Llb0DeFtnsGZ26YMAZ/7Q=="
+          "hash": "2PkvCCDhDHkK9khFot63Bg=="
         }
       },
       "is_incremental": false,
@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Controls.Card.html",
-          "hash": "cYKi3daE2IDR9lleE1Cv5A=="
+          "hash": "8lwCz9lAOkxf2ILuYB08Fg=="
         }
       },
       "is_incremental": false,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Controls.ClippingBorder.html",
-          "hash": "5D8kz8dNRVNpunb4rrXo4Q=="
+          "hash": "o8mglZa2Zam/htlu/CidwQ=="
         }
       },
       "is_incremental": false,
@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Controls.CommonVisualStatesControl.html",
-          "hash": "AIjc6Qu/FS7Ni2si8Sa1jQ=="
+          "hash": "12rQnCoSMh/9vbj60rGAdA=="
         }
       },
       "is_incremental": false,
@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Controls.ConstructedFrameworkElement.html",
-          "hash": "iQxqlXRDV5cSTQRIWs64AA=="
+          "hash": "LEE3xYTQ+KTZgSiCasai1Q=="
         }
       },
       "is_incremental": false,
@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Controls.DirectionalThemeShadow.html",
-          "hash": "UOOb+tnU/S/85bDIfrhsuw=="
+          "hash": "amaDHR7XpdppS+ELHtbG8g=="
         }
       },
       "is_incremental": false,
@@ -93,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Controls.DropShadowDecorator.html",
-          "hash": "lMy4fzU+JzOX0zit1xOFcQ=="
+          "hash": "4iPstCI/wtW7IBK7vdoL/w=="
         }
       },
       "is_incremental": false,
@@ -105,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Controls.ExtendedListView.html",
-          "hash": "YiQo1XvJUZo3AkjN5rJKXQ=="
+          "hash": "Jz1tXTh+8IFxcmc+qZ5fGQ=="
         }
       },
       "is_incremental": false,
@@ -117,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Controls.IconElement.html",
-          "hash": "iJIOA6+F7x+1U1qndaLRHw=="
+          "hash": "Sbm/p7BqeKHPKRvd61zTQQ=="
         }
       },
       "is_incremental": false,
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Controls.ListViewItemInvokedEventArgs.html",
-          "hash": "73LUf/kCj+8p9srZjD40fw=="
+          "hash": "UXh8qVDprtRq4k2iadzWGw=="
         }
       },
       "is_incremental": false,
@@ -141,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Controls.ManipulationBoundaryFeedbackAwareContentControl.html",
-          "hash": "TtLOjhWx+VihznuimlN8Aw=="
+          "hash": "f1as/jNN0Pggh42lsYkFHw=="
         }
       },
       "is_incremental": false,
@@ -153,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Controls.NavigationView.html",
-          "hash": "clC5wcXXg28Kpjf1NexL3g=="
+          "hash": "nBSk70bfKexVkSCgzbFEug=="
         }
       },
       "is_incremental": false,
@@ -165,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Controls.NavigationViewDisplayMode.html",
-          "hash": "7FPWdBxeQ5gsGkUsG8M8KQ=="
+          "hash": "0p3WAVoNJqpV5oUjBFDdbg=="
         }
       },
       "is_incremental": false,
@@ -177,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Controls.NavigationViewDisplayModeChangedEventArgs.html",
-          "hash": "9VCf5PzR4BOQvl6F8BkPLg=="
+          "hash": "2MFx9MquB1TfBIljGe697w=="
         }
       },
       "is_incremental": false,
@@ -189,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Controls.NavigationViewItem.html",
-          "hash": "DtvO+e+iNP7VThMmoVs6Fw=="
+          "hash": "2UpChNYEGA42qO8uGRbyFg=="
         }
       },
       "is_incremental": false,
@@ -201,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Controls.NavigationViewItemEventArgs.html",
-          "hash": "vDoY+ZIdsrxC6phiuGVDew=="
+          "hash": "U0MJda2JthnG7qNuT8uQ5Q=="
         }
       },
       "is_incremental": false,
@@ -213,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Controls.NavigationViewListView.html",
-          "hash": "Ji4+a9UPfTQMfhNpJ6FCIw=="
+          "hash": "+vVA/P0OR+uC12bkyXH6Ww=="
         }
       },
       "is_incremental": false,
@@ -225,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Controls.PathIcon.html",
-          "hash": "+yrZd5qz3tII/vFGPlzhXg=="
+          "hash": "pAoxVTCrkPxiVnpdFWfFvg=="
         }
       },
       "is_incremental": false,
@@ -237,7 +237,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Controls.PlaceholderDisplayType.html",
-          "hash": "jzGEaZWck9+aIncL/zxIZQ=="
+          "hash": "GtIgrgHXCqIx065oW+Od8Q=="
         }
       },
       "is_incremental": false,
@@ -249,7 +249,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Controls.PlaceholderOverlay.html",
-          "hash": "LipDAUZCgG5PdGmdYmA4Cg=="
+          "hash": "6ns2DEgVG/7twEm2wHgDsg=="
         }
       },
       "is_incremental": false,
@@ -261,7 +261,19 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Controls.RelativeCanvas.html",
-          "hash": "firbJD9pOgZWv/GjXFZgOw=="
+          "hash": "nxTCqeKUDeJWG9qygt7X8g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Controls.Ripple.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Controls.Ripple.html",
+          "hash": "lG5/IQcqkwLeLf95CwxCmQ=="
         }
       },
       "is_incremental": false,
@@ -273,19 +285,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Controls.RippleOrigin.html",
-          "hash": "/LsexcWqE1b50+D3H+28iA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Celestial.UIToolkit.Controls.RippleOverlay.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Celestial.UIToolkit.Controls.RippleOverlay.html",
-          "hash": "cafv08MYVQAK7VpmUWzvJg=="
+          "hash": "0mZfNImuodhdDMcJ6qzCLw=="
         }
       },
       "is_incremental": false,
@@ -297,7 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Controls.SelectionIndicator.html",
-          "hash": "d+kHYivziA0fQpYDbF76Lw=="
+          "hash": "RZsSnnr5Mg+1Ci4DJk8NpA=="
         }
       },
       "is_incremental": false,
@@ -309,7 +309,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Controls.SplitView.html",
-          "hash": "d8pnyAYON50D7Th/ll+x/w=="
+          "hash": "dViG9MNMp2j71hpNw436lw=="
         }
       },
       "is_incremental": false,
@@ -321,7 +321,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Controls.SplitViewDisplayMode.html",
-          "hash": "KgJ7hUeO02C5mmkDbb3z4g=="
+          "hash": "5Dp1/1FcJle5zOExoOVTnQ=="
         }
       },
       "is_incremental": false,
@@ -333,7 +333,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Controls.SplitViewPanePlacement.html",
-          "hash": "HuDyrNcR1HBuRTubPcSlZg=="
+          "hash": "b2C1y+6dp4gG/qBVgDV4UA=="
         }
       },
       "is_incremental": false,
@@ -345,7 +345,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Controls.ThemeShadow.html",
-          "hash": "oMmiEoiBujE2BEVnwSa2gQ=="
+          "hash": "TsCZ7Kq5OEpg94MFngrGbA=="
         }
       },
       "is_incremental": false,
@@ -357,7 +357,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Controls.ThemeShadowPresenter.html",
-          "hash": "gJW1NiwKt6RNHvjHtTGTfQ=="
+          "hash": "I/pBjYRSwyU7P8YKypOMYg=="
         }
       },
       "is_incremental": false,
@@ -369,7 +369,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Controls.ToggleSwitch.html",
-          "hash": "w/8shsXBPPe4jyk2J06jpg=="
+          "hash": "NDmc4e9UMAesb4qeEFmmfg=="
         }
       },
       "is_incremental": false,
@@ -381,7 +381,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Controls.WindowCommands.html",
-          "hash": "A7v0gxilVyKT1R/r2USJMg=="
+          "hash": "/CXq1wmmK1hs52xyp8hWTQ=="
         }
       },
       "is_incremental": false,
@@ -393,7 +393,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Controls.html",
-          "hash": "nz1sKAcfaPK6vLayqUkeww=="
+          "hash": "HldgcSj5ztlX3crPk37nuw=="
         }
       },
       "is_incremental": false,
@@ -405,7 +405,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Converters.BooleanToVisibilityConverter.html",
-          "hash": "k21SKIPNxht0DqafAg0+3g=="
+          "hash": "Hy6zChVbYsKH7oDf+uQDEQ=="
         }
       },
       "is_incremental": false,
@@ -417,7 +417,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Converters.ColorToSolidColorBrushConverter.html",
-          "hash": "RYASsGOoRNI5fZL+62u5lQ=="
+          "hash": "QoWJljyVui9H2ZLb5fgNfw=="
         }
       },
       "is_incremental": false,
@@ -429,7 +429,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Converters.DoubleToCornerRadiusConverter.html",
-          "hash": "ODRaqh65zfoY5j8jPg6YTQ=="
+          "hash": "A72KcJOKBQUz4AAWLKKtYQ=="
         }
       },
       "is_incremental": false,
@@ -441,7 +441,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Converters.GetTypeConverter.html",
-          "hash": "Pkg1QMaGOoSvMMbeGDzXmA=="
+          "hash": "x45jJ/XFJODXB31EmSOW3Q=="
         }
       },
       "is_incremental": false,
@@ -453,7 +453,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Converters.GroupConverter.html",
-          "hash": "JDcG0Op4OpTscovEtd+SeQ=="
+          "hash": "8FWbSC2tNw8V8A9Wu56ONg=="
         }
       },
       "is_incremental": false,
@@ -465,7 +465,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Converters.InvertBooleanConverter.html",
-          "hash": "w9FEEjnHYe0s5edXK7AQFQ=="
+          "hash": "I/+pfwe2LDxWgc2algFE/Q=="
         }
       },
       "is_incremental": false,
@@ -477,7 +477,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Converters.InvertingConverter.html",
-          "hash": "Zow52jXwtNSLFg0ZgdSLUQ=="
+          "hash": "xC7g+ZF8+bFVEn9fZa5Puw=="
         }
       },
       "is_incremental": false,
@@ -489,7 +489,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Converters.MathOperationConverter.html",
-          "hash": "ER8Bfd69aWXSJVlyEk3w4Q=="
+          "hash": "+iCtvwmZAqW7o+XIs/N4Lg=="
         }
       },
       "is_incremental": false,
@@ -501,7 +501,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Converters.MathOperator.html",
-          "hash": "D7cmTAa9XAsYcHWNf7YkrA=="
+          "hash": "ghKriPkITJPLjbyUASEj9g=="
         }
       },
       "is_incremental": false,
@@ -513,7 +513,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Converters.NegateValueConverter.html",
-          "hash": "GT61/rofTW7/PIwtRZ6xlQ=="
+          "hash": "1qEjA2U+vzxeSv+usyrZnw=="
         }
       },
       "is_incremental": false,
@@ -525,7 +525,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Converters.NullToVisibilityConverter.html",
-          "hash": "3IMToHAF9+oU+JXEB72jnw=="
+          "hash": "1ac5Xs2JFPsP5G0NipYrcw=="
         }
       },
       "is_incremental": false,
@@ -537,7 +537,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Converters.StringToVisibilityConverter.html",
-          "hash": "IZrS1EXCBx4iEhJCgibOQw=="
+          "hash": "PtF2rVDJvV5XEKHnP7xG/Q=="
         }
       },
       "is_incremental": false,
@@ -549,7 +549,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Converters.ThicknessSidePickerConverter.html",
-          "hash": "P7w/4/GLIMSTncgk9Heusw=="
+          "hash": "c0WZ18rDsYrNZ+ggMZUQBQ=="
         }
       },
       "is_incremental": false,
@@ -561,7 +561,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Converters.ValueConverter-2.html",
-          "hash": "apvDrEnlukAfoJPZpDZ2PA=="
+          "hash": "BRD4ZGOojReMbZxwyCvZYw=="
         }
       },
       "is_incremental": false,
@@ -573,7 +573,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Converters.html",
-          "hash": "82ivtUeteu5Ks5uop6ChHA=="
+          "hash": "Gmtg9xVKxurhJEdP214JHA=="
         }
       },
       "is_incremental": false,
@@ -585,19 +585,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.DesignMode.html",
-          "hash": "NZJs6T6uPawXQWpTwlgqKA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.html",
-          "hash": "OIccJCiV05LAzyrPytoE6Q=="
+          "hash": "Q+9M+tjJzep69M+SWrJpOg=="
         }
       },
       "is_incremental": false,
@@ -609,7 +597,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Extensions.ArrayExtensions.html",
-          "hash": "oSevavrpDMNsX+p1L866fw=="
+          "hash": "li5aZthwiM1QWxUmeHLvTA=="
         }
       },
       "is_incremental": false,
@@ -621,7 +609,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Extensions.ArraySegmentExtensions.html",
-          "hash": "Fow/UjHnV+bOpfoPzzGIMQ=="
+          "hash": "/AQA+adeC1U/U9T50sg12Q=="
         }
       },
       "is_incremental": false,
@@ -633,7 +621,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Extensions.DependencyObjectExtensions.html",
-          "hash": "PX7xT9GzJme6neBTI/Tkbw=="
+          "hash": "QclYk0Pp8VIhltESrAfBDQ=="
         }
       },
       "is_incremental": false,
@@ -645,7 +633,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Extensions.DependencyPropertyExtensions.html",
-          "hash": "hSASM1JIppPj3oKcg6ZnRQ=="
+          "hash": "BmRApG31fIz5ZWUnNo1Fqg=="
         }
       },
       "is_incremental": false,
@@ -657,7 +645,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Extensions.EnumerableExtensions.html",
-          "hash": "DhshHJucDWjv8B9x5FPwHQ=="
+          "hash": "GjX1mmUBMd+qFlwUvGqwLQ=="
         }
       },
       "is_incremental": false,
@@ -669,7 +657,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Extensions.FrameworkElementExtensions.html",
-          "hash": "XWQIzChpUWZDlhpAOrHxQw=="
+          "hash": "sqzL47m8/3I6VYCpHPBGQQ=="
         }
       },
       "is_incremental": false,
@@ -681,7 +669,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Extensions.html",
-          "hash": "t2rHzwcKcx1sH/ifOq10Ow=="
+          "hash": "2rDqxqWjKt8zstf3JIsB6Q=="
         }
       },
       "is_incremental": false,
@@ -693,7 +681,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.ItemsSourceCollection.html",
-          "hash": "/K9ThZe/41ZeZXWjslrBWA=="
+          "hash": "Y7KsqdklthmFySdLYbF7xw=="
         }
       },
       "is_incremental": false,
@@ -705,7 +693,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Media.Animations.AnimationBase-1.html",
-          "hash": "oDP285zZ+pKfVpHpCbfCyQ=="
+          "hash": "TnZ0NObsHAi6IfnIlcRvVQ=="
         }
       },
       "is_incremental": false,
@@ -717,7 +705,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Media.Animations.AnimationUsingKeyFramesBase-3.html",
-          "hash": "KN31SddwEzRLmlul3rkv9A=="
+          "hash": "YJHJb8+K9THhg7jqA5KMIQ=="
         }
       },
       "is_incremental": false,
@@ -729,7 +717,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Media.Animations.BrushAnimation.html",
-          "hash": "dYjp9NsTzQsuxZTB7/pKCg=="
+          "hash": "8jRQoF0/dr8P05CAjseI6w=="
         }
       },
       "is_incremental": false,
@@ -741,7 +729,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Media.Animations.BrushAnimationUsingKeyFrames.html",
-          "hash": "qiBohNmxokC8xuSSopmiUA=="
+          "hash": "i0BytPwZ3tG1I4BjhadNqQ=="
         }
       },
       "is_incremental": false,
@@ -753,7 +741,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Media.Animations.BrushKeyFrameCollection.html",
-          "hash": "wnaUi84Xt1A4BpS7hknh+w=="
+          "hash": "l4pVddSM56wnOvQW7XdOcw=="
         }
       },
       "is_incremental": false,
@@ -765,7 +753,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Media.Animations.DiscreteBrushKeyFrame.html",
-          "hash": "Cmbi2m4JJilBtJqqKA3lDA=="
+          "hash": "R7cTH9LVVVNYtTHPu+hZJw=="
         }
       },
       "is_incremental": false,
@@ -777,7 +765,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Media.Animations.DiscreteKeyFrameBase-1.html",
-          "hash": "9N7U0DCSMOEosDpihJ3X9Q=="
+          "hash": "cPKc0GWQ5+7HeJa6UL8NuA=="
         }
       },
       "is_incremental": false,
@@ -789,7 +777,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Media.Animations.EasingBrushKeyFrame.html",
-          "hash": "xEUgpzsd248m56uR4KNzyg=="
+          "hash": "E0L+MlV96L75/qRSGzIdRQ=="
         }
       },
       "is_incremental": false,
@@ -801,7 +789,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Media.Animations.EasingFromToByAnimationBase-1.html",
-          "hash": "mEmOKkBcqHX4DvC9AEPgkA=="
+          "hash": "+TU8sQAhCg4e+nGhDRmO8w=="
         }
       },
       "is_incremental": false,
@@ -813,7 +801,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Media.Animations.EasingKeyFrameBase-1.html",
-          "hash": "caEhXvSv6xAMNmFKZvm1Cg=="
+          "hash": "sVpBiCR3HYGbnoIabSaKQg=="
         }
       },
       "is_incremental": false,
@@ -825,7 +813,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Media.Animations.FromToByAnimationBase-1.html",
-          "hash": "mvY7uPykRoDJT5ZCA6BCqg=="
+          "hash": "rS4k7nFl9dymQzE0+cZnyg=="
         }
       },
       "is_incremental": false,
@@ -837,7 +825,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Media.Animations.IAnimationClock.html",
-          "hash": "VRFtUCfcMJTb1+F+fh7VLg=="
+          "hash": "RO3YQgH9fQg/Vzwk5fqRQA=="
         }
       },
       "is_incremental": false,
@@ -849,7 +837,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Media.Animations.IClock.html",
-          "hash": "Q7+Ty5C1HLUcxy8o1l7O5w=="
+          "hash": "IibmlAaYlW9a9+Xlau1tyw=="
         }
       },
       "is_incremental": false,
@@ -861,7 +849,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Media.Animations.IClockController.html",
-          "hash": "IVgPnB1ub+rHCSDS6vpjFw=="
+          "hash": "hO9BRFolnVZTbcqLvY3GPg=="
         }
       },
       "is_incremental": false,
@@ -869,11 +857,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame-1.yml",
+      "source_relative_path": "api/Celestial.UIToolkit.Media.Animations.IInterpolatingKeyFrame-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame-1.html",
-          "hash": "nibSCJyimll7p7/s87xEvA=="
+          "relative_path": "api/Celestial.UIToolkit.Media.Animations.IInterpolatingKeyFrame-1.html",
+          "hash": "9rTobdwJ2SKbVAeCyy/ncA=="
         }
       },
       "is_incremental": false,
@@ -885,7 +873,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Media.Animations.KeyFrameBase-1.html",
-          "hash": "0qSgr8k1Gd9IMV+xov+WZw=="
+          "hash": "l7nSGdLqHgcxvOv+WQqQSQ=="
         }
       },
       "is_incremental": false,
@@ -897,7 +885,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Media.Animations.LinearBrushKeyFrame.html",
-          "hash": "4rfC/Lyd9Y830HKSvlFOSw=="
+          "hash": "qFxUBrMkYGZcXJXnQvmOdg=="
         }
       },
       "is_incremental": false,
@@ -909,7 +897,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Media.Animations.SplineBrushKeyFrame.html",
-          "hash": "p1D/LCqgdFuto16EvCB/Yg=="
+          "hash": "Wmhx7bIo7OTKNy7wRtlP5w=="
         }
       },
       "is_incremental": false,
@@ -921,7 +909,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Media.Animations.SplineKeyFrameBase-1.html",
-          "hash": "7ktbY8vDGgiHxfsUCHCzag=="
+          "hash": "ffbMxqXHQylnuXxlzY/xqQ=="
         }
       },
       "is_incremental": false,
@@ -933,19 +921,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Media.Animations.html",
-          "hash": "7PKnGEaL6ohImPDlhUddbg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Celestial.UIToolkit.SharedResourceDictionary.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Celestial.UIToolkit.SharedResourceDictionary.html",
-          "hash": "LSlKFCtLME2SvxrEWSDPJA=="
+          "hash": "4ZZ541KPOb2eNJy/7xKj3w=="
         }
       },
       "is_incremental": false,
@@ -957,7 +933,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Theming.ActiveProperties.html",
-          "hash": "lh+trTj0hTU2XyNw5GaxCg=="
+          "hash": "LHj3ZxpwbUWNDX2ziOqSlw=="
         }
       },
       "is_incremental": false,
@@ -969,7 +945,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Theming.ControlProperties.html",
-          "hash": "XD5GpJvJk/rf/KgHxtD7AQ=="
+          "hash": "iftmnCMO1XzcD9WqM1TS1Q=="
         }
       },
       "is_incremental": false,
@@ -981,7 +957,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Theming.DisabledProperties.html",
-          "hash": "+9r2msC/OwMC6wS2OUB5ag=="
+          "hash": "jmtSsUeTnTumb+tehW0Mpg=="
         }
       },
       "is_incremental": false,
@@ -993,7 +969,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Theming.MouseOverActiveProperties.html",
-          "hash": "8UHh1hmlsSdCMO4d96i2Pg=="
+          "hash": "5epzOBgz5y98FiqoHj+ueg=="
         }
       },
       "is_incremental": false,
@@ -1005,7 +981,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Theming.MouseOverProperties.html",
-          "hash": "r5elTRV+UiuF9QjuAxgbNA=="
+          "hash": "Fg6JHMe0RRgGEcrrMWEhJg=="
         }
       },
       "is_incremental": false,
@@ -1017,7 +993,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Theming.PopupProperties.html",
-          "hash": "OGy4DKTAgnyQZY8TWjYsOw=="
+          "hash": "MevMp/MVquY1z2ZFqpPAsA=="
         }
       },
       "is_incremental": false,
@@ -1029,7 +1005,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Theming.PressedProperties.html",
-          "hash": "r5GRfGJ97vzWb7CJI57Oew=="
+          "hash": "yY1dxsCYjG7LnhqPlh39rg=="
         }
       },
       "is_incremental": false,
@@ -1041,7 +1017,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Theming.RippleProperties.html",
-          "hash": "nzTULHpH+mv958GiYs+WQQ=="
+          "hash": "X1D1XXvyvP2gPUb9xF1/HA=="
         }
       },
       "is_incremental": false,
@@ -1053,7 +1029,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Theming.SelectionProperties.html",
-          "hash": "5mDSmtx1DGLnlsNiqikD+g=="
+          "hash": "R/8aIHFjEbOHIGo123LCFg=="
         }
       },
       "is_incremental": false,
@@ -1065,7 +1041,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Theming.ShadowProperties.html",
-          "hash": "E2u4aO4MCAEZl7mae7mKXQ=="
+          "hash": "ORItO3lgW3fFBuZxo2xnHA=="
         }
       },
       "is_incremental": false,
@@ -1077,7 +1053,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Theming.TabItemProperties.html",
-          "hash": "EqbEVIHS/OXeb5CaXc0JyQ=="
+          "hash": "OcYAhKFCpvv7p0pGJDPChQ=="
         }
       },
       "is_incremental": false,
@@ -1089,7 +1065,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Theming.TextBoxProperties.html",
-          "hash": "3ue2Tl8sJMLcrHZW1QDpkw=="
+          "hash": "H4m073C3KMidnS97pMpnsA=="
         }
       },
       "is_incremental": false,
@@ -1101,7 +1077,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Theming.WindowTitlebarProperties.html",
-          "hash": "XLCDYugLt13wdVb80hPjGg=="
+          "hash": "YNvmOOQ0qsTV8JfF2jBezw=="
         }
       },
       "is_incremental": false,
@@ -1113,7 +1089,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Theming.html",
-          "hash": "FKnSdOD4CFp0RNcnEGWOUA=="
+          "hash": "RwxmFnhyiSp1NS0jGTxJhg=="
         }
       },
       "is_incremental": false,
@@ -1125,7 +1101,19 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.TraceSources.html",
-          "hash": "5HeMxwWFndtnOm0ne1UhSQ=="
+          "hash": "Blpo2CvuG7qCiC7piSzQjw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Xaml.ApplicationTheme.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Xaml.ApplicationTheme.html",
+          "hash": "5m09J9J0Q7h6LJtESVOAyQ=="
         }
       },
       "is_incremental": false,
@@ -1137,7 +1125,19 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Xaml.BindingProxy.html",
-          "hash": "1rEcIl98Mqndg1ZMZxxyjw=="
+          "hash": "ntaFl4i0Czygnr2kSsiA/Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.html",
+          "hash": "IOZFaoq3rMiC4YPhwvy1yA=="
         }
       },
       "is_incremental": false,
@@ -1149,7 +1149,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Xaml.EnumBindingSourceExtension.html",
-          "hash": "XcNSHulZ5ueRJ0g3GBXWxQ=="
+          "hash": "i+pHWWaJ5gGYNvdDmBVBLw=="
         }
       },
       "is_incremental": false,
@@ -1161,7 +1161,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Xaml.ExtendedVisualState.html",
-          "hash": "lNMxXxT84PBsitWf9qzYAg=="
+          "hash": "IQyn5PbLP1AErieqrqwVzQ=="
         }
       },
       "is_incremental": false,
@@ -1173,7 +1173,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Xaml.ExtendedVisualStateManager.html",
-          "hash": "Hfr8faNGosW3AZ8bAOiAKA=="
+          "hash": "CigjXjhlNGAYcCofzPwsKQ=="
         }
       },
       "is_incremental": false,
@@ -1185,7 +1185,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Xaml.GridUnitExtension.html",
-          "hash": "2EzY5LCUJSmJc6DFbmBjOQ=="
+          "hash": "EIyCMAzY2L/vnrYGk3lwig=="
         }
       },
       "is_incremental": false,
@@ -1197,7 +1197,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Xaml.IVisualTransitionProvider.html",
-          "hash": "WvXAU2wLJZYXQYdWa6PMZQ=="
+          "hash": "TUdTKLxpRcCVEPos8P6SMw=="
         }
       },
       "is_incremental": false,
@@ -1209,7 +1209,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Xaml.MarginHelper.html",
-          "hash": "LyWnKCjAyCeRpmTBSq3zZA=="
+          "hash": "Xy+r4zcVsHB4lUCm126q+A=="
         }
       },
       "is_incremental": false,
@@ -1217,11 +1217,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Celestial.UIToolkit.Xaml.MultiStyleExtension.yml",
+      "source_relative_path": "api/Celestial.UIToolkit.Xaml.MergeStylesExtension.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Celestial.UIToolkit.Xaml.MultiStyleExtension.html",
-          "hash": "Ecd/91LDm0rbgfnQh3IPxA=="
+          "relative_path": "api/Celestial.UIToolkit.Xaml.MergeStylesExtension.html",
+          "hash": "akzg6H4YYRcPQes7KvVq9Q=="
         }
       },
       "is_incremental": false,
@@ -1233,7 +1233,19 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Xaml.SelfBindingExtension.html",
-          "hash": "Wsk0TBUHwh0oJqCcIqAMGQ=="
+          "hash": "2ZzfcZwMGREYZlZb2MrNew=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Xaml.SharedResourceDictionary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Xaml.SharedResourceDictionary.html",
+          "hash": "PJsUvAeYn1IVrINDr0MwVg=="
         }
       },
       "is_incremental": false,
@@ -1245,7 +1257,55 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Xaml.TemplatedParentBindingExtension.html",
-          "hash": "lbkoMhBZS2RlLVE+0uXmrg=="
+          "hash": "bTdlCe86ZlPZkdfzLaJ4Jw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.html",
+          "hash": "a07DLAigk6DzRkwUjvhFog=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Xaml.ThemeManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Xaml.ThemeManager.html",
+          "hash": "oHcbFH6lbgnJ5YyOygvyFQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Xaml.ThemeManagerExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Xaml.ThemeManagerExtensions.html",
+          "hash": "0Er/w/SmJRDBbfpu9gZ7OA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Celestial.UIToolkit.Xaml.ThemeResourceDictionary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Celestial.UIToolkit.Xaml.ThemeResourceDictionary.html",
+          "hash": "ANWrFIQan0X/QOuDuCC1zg=="
         }
       },
       "is_incremental": false,
@@ -1257,7 +1317,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Xaml.VisualTransitionProvider.html",
-          "hash": "C+ZMGtNYXxkGsFLOrT9B1Q=="
+          "hash": "2sDtlBPZ1vuatPyvdhAgFg=="
         }
       },
       "is_incremental": false,
@@ -1269,7 +1329,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.Xaml.html",
-          "hash": "uw4u4cY/DHP+UBbhv1uCsg=="
+          "hash": "4u4sMFdTtQlwQdKSHPT6cA=="
         }
       },
       "is_incremental": false,
@@ -1281,7 +1341,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Celestial.UIToolkit.html",
-          "hash": "negwyhEass5Saq1nCU4j6A=="
+          "hash": "NQmwvore/IrVtcYvCgZf8w=="
         }
       },
       "is_incremental": false,
@@ -1293,7 +1353,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "6kiT5EeXadx9dYk43oFY2Q=="
+          "hash": "x1g4ir+ik1xm36HVootRKQ=="
         }
       },
       "is_incremental": false,
@@ -1305,7 +1365,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/getting-started/installation.html",
-          "hash": "F8w0n2hj8S/VhrWdgqz+eg=="
+          "hash": "mDbcR6roJXFoip6LXeLOaQ=="
         }
       },
       "is_incremental": false,
@@ -1317,7 +1377,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/getting-started/style-naming-format.html",
-          "hash": "FQxMwqdkSgZkwzbOkmg/fg=="
+          "hash": "Ax4AovXnso5NbZzItEpEkA=="
         }
       },
       "is_incremental": false,
@@ -1329,7 +1389,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/introduction.html",
-          "hash": "xqe5XTVdzFupdxqiu+9Z/Q=="
+          "hash": "Zn002pbOOJBBSIcdqYBPoA=="
         }
       },
       "is_incremental": false,
@@ -1353,7 +1413,7 @@
       "output": {
         ".html": {
           "relative_path": "impressum.html",
-          "hash": "wQwYp9L08j4uuwKmdxaexw=="
+          "hash": "9SE58erj152FPRhZlfQ4GQ=="
         }
       },
       "is_incremental": false,

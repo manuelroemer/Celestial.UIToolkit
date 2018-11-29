@@ -1169,19 +1169,6 @@ references:
   isSpec: "True"
   fullName: Celestial.UIToolkit.Controls.ExtendedListView.OnItemsChanged
   nameWithType: ExtendedListView.OnItemsChanged
-- uid: Celestial.UIToolkit.Controls.ExtendedListView.RaiseItemContainerInvoked(Celestial.UIToolkit.Controls.ListViewItemInvokedEventArgs)
-  name: RaiseItemContainerInvoked(ListViewItemInvokedEventArgs)
-  href: api/Celestial.UIToolkit.Controls.ExtendedListView.html#Celestial_UIToolkit_Controls_ExtendedListView_RaiseItemContainerInvoked_Celestial_UIToolkit_Controls_ListViewItemInvokedEventArgs_
-  commentId: M:Celestial.UIToolkit.Controls.ExtendedListView.RaiseItemContainerInvoked(Celestial.UIToolkit.Controls.ListViewItemInvokedEventArgs)
-  fullName: Celestial.UIToolkit.Controls.ExtendedListView.RaiseItemContainerInvoked(Celestial.UIToolkit.Controls.ListViewItemInvokedEventArgs)
-  nameWithType: ExtendedListView.RaiseItemContainerInvoked(ListViewItemInvokedEventArgs)
-- uid: Celestial.UIToolkit.Controls.ExtendedListView.RaiseItemContainerInvoked*
-  name: RaiseItemContainerInvoked
-  href: api/Celestial.UIToolkit.Controls.ExtendedListView.html#Celestial_UIToolkit_Controls_ExtendedListView_RaiseItemContainerInvoked_
-  commentId: Overload:Celestial.UIToolkit.Controls.ExtendedListView.RaiseItemContainerInvoked
-  isSpec: "True"
-  fullName: Celestial.UIToolkit.Controls.ExtendedListView.RaiseItemContainerInvoked
-  nameWithType: ExtendedListView.RaiseItemContainerInvoked
 - uid: Celestial.UIToolkit.Controls.IconElement
   name: IconElement
   href: api/Celestial.UIToolkit.Controls.IconElement.html
@@ -1532,6 +1519,25 @@ references:
   commentId: F:Celestial.UIToolkit.Controls.NavigationView.AlwaysShowHeaderProperty
   fullName: Celestial.UIToolkit.Controls.NavigationView.AlwaysShowHeaderProperty
   nameWithType: NavigationView.AlwaysShowHeaderProperty
+- uid: Celestial.UIToolkit.Controls.NavigationView.AutoCloseOverlayingPane
+  name: AutoCloseOverlayingPane
+  href: api/Celestial.UIToolkit.Controls.NavigationView.html#Celestial_UIToolkit_Controls_NavigationView_AutoCloseOverlayingPane
+  commentId: P:Celestial.UIToolkit.Controls.NavigationView.AutoCloseOverlayingPane
+  fullName: Celestial.UIToolkit.Controls.NavigationView.AutoCloseOverlayingPane
+  nameWithType: NavigationView.AutoCloseOverlayingPane
+- uid: Celestial.UIToolkit.Controls.NavigationView.AutoCloseOverlayingPane*
+  name: AutoCloseOverlayingPane
+  href: api/Celestial.UIToolkit.Controls.NavigationView.html#Celestial_UIToolkit_Controls_NavigationView_AutoCloseOverlayingPane_
+  commentId: Overload:Celestial.UIToolkit.Controls.NavigationView.AutoCloseOverlayingPane
+  isSpec: "True"
+  fullName: Celestial.UIToolkit.Controls.NavigationView.AutoCloseOverlayingPane
+  nameWithType: NavigationView.AutoCloseOverlayingPane
+- uid: Celestial.UIToolkit.Controls.NavigationView.AutoCloseOverlayingPaneProperty
+  name: AutoCloseOverlayingPaneProperty
+  href: api/Celestial.UIToolkit.Controls.NavigationView.html#Celestial_UIToolkit_Controls_NavigationView_AutoCloseOverlayingPaneProperty
+  commentId: F:Celestial.UIToolkit.Controls.NavigationView.AutoCloseOverlayingPaneProperty
+  fullName: Celestial.UIToolkit.Controls.NavigationView.AutoCloseOverlayingPaneProperty
+  nameWithType: NavigationView.AutoCloseOverlayingPaneProperty
 - uid: Celestial.UIToolkit.Controls.NavigationView.BackButtonCommand
   name: BackButtonCommand
   href: api/Celestial.UIToolkit.Controls.NavigationView.html#Celestial_UIToolkit_Controls_NavigationView_BackButtonCommand
@@ -1614,6 +1620,12 @@ references:
   commentId: F:Celestial.UIToolkit.Controls.NavigationView.CompactPaneLengthProperty
   fullName: Celestial.UIToolkit.Controls.NavigationView.CompactPaneLengthProperty
   nameWithType: NavigationView.CompactPaneLengthProperty
+- uid: Celestial.UIToolkit.Controls.NavigationView.CompactVisualState
+  name: CompactVisualState
+  href: api/Celestial.UIToolkit.Controls.NavigationView.html#Celestial_UIToolkit_Controls_NavigationView_CompactVisualState
+  commentId: F:Celestial.UIToolkit.Controls.NavigationView.CompactVisualState
+  fullName: Celestial.UIToolkit.Controls.NavigationView.CompactVisualState
+  nameWithType: NavigationView.CompactVisualState
 - uid: Celestial.UIToolkit.Controls.NavigationView.DisplayMode
   name: DisplayMode
   href: api/Celestial.UIToolkit.Controls.NavigationView.html#Celestial_UIToolkit_Controls_NavigationView_DisplayMode
@@ -1639,6 +1651,12 @@ references:
   commentId: F:Celestial.UIToolkit.Controls.NavigationView.DisplayModeProperty
   fullName: Celestial.UIToolkit.Controls.NavigationView.DisplayModeProperty
   nameWithType: NavigationView.DisplayModeProperty
+- uid: Celestial.UIToolkit.Controls.NavigationView.DisplayModeStatesVisualStateGroup
+  name: DisplayModeStatesVisualStateGroup
+  href: api/Celestial.UIToolkit.Controls.NavigationView.html#Celestial_UIToolkit_Controls_NavigationView_DisplayModeStatesVisualStateGroup
+  commentId: F:Celestial.UIToolkit.Controls.NavigationView.DisplayModeStatesVisualStateGroup
+  fullName: Celestial.UIToolkit.Controls.NavigationView.DisplayModeStatesVisualStateGroup
+  nameWithType: NavigationView.DisplayModeStatesVisualStateGroup
 - uid: Celestial.UIToolkit.Controls.NavigationView.ExpandedModeThresholdWidth
   name: ExpandedModeThresholdWidth
   href: api/Celestial.UIToolkit.Controls.NavigationView.html#Celestial_UIToolkit_Controls_NavigationView_ExpandedModeThresholdWidth
@@ -1658,6 +1676,12 @@ references:
   commentId: F:Celestial.UIToolkit.Controls.NavigationView.ExpandedModeThresholdWidthProperty
   fullName: Celestial.UIToolkit.Controls.NavigationView.ExpandedModeThresholdWidthProperty
   nameWithType: NavigationView.ExpandedModeThresholdWidthProperty
+- uid: Celestial.UIToolkit.Controls.NavigationView.ExpandedVisualState
+  name: ExpandedVisualState
+  href: api/Celestial.UIToolkit.Controls.NavigationView.html#Celestial_UIToolkit_Controls_NavigationView_ExpandedVisualState
+  commentId: F:Celestial.UIToolkit.Controls.NavigationView.ExpandedVisualState
+  fullName: Celestial.UIToolkit.Controls.NavigationView.ExpandedVisualState
+  nameWithType: NavigationView.ExpandedVisualState
 - uid: Celestial.UIToolkit.Controls.NavigationView.HasPaneCustomContent
   name: HasPaneCustomContent
   href: api/Celestial.UIToolkit.Controls.NavigationView.html#Celestial_UIToolkit_Controls_NavigationView_HasPaneCustomContent
@@ -1988,6 +2012,12 @@ references:
   commentId: F:Celestial.UIToolkit.Controls.NavigationView.MenuItemTemplateSelectorProperty
   fullName: Celestial.UIToolkit.Controls.NavigationView.MenuItemTemplateSelectorProperty
   nameWithType: NavigationView.MenuItemTemplateSelectorProperty
+- uid: Celestial.UIToolkit.Controls.NavigationView.MinimalVisualState
+  name: MinimalVisualState
+  href: api/Celestial.UIToolkit.Controls.NavigationView.html#Celestial_UIToolkit_Controls_NavigationView_MinimalVisualState
+  commentId: F:Celestial.UIToolkit.Controls.NavigationView.MinimalVisualState
+  fullName: Celestial.UIToolkit.Controls.NavigationView.MinimalVisualState
+  nameWithType: NavigationView.MinimalVisualState
 - uid: Celestial.UIToolkit.Controls.NavigationView.OnApplyTemplate
   name: OnApplyTemplate()
   href: api/Celestial.UIToolkit.Controls.NavigationView.html#Celestial_UIToolkit_Controls_NavigationView_OnApplyTemplate
@@ -2513,45 +2543,6 @@ references:
   commentId: F:Celestial.UIToolkit.Controls.NavigationView.PaneToggleButtonStyleProperty
   fullName: Celestial.UIToolkit.Controls.NavigationView.PaneToggleButtonStyleProperty
   nameWithType: NavigationView.PaneToggleButtonStyleProperty
-- uid: Celestial.UIToolkit.Controls.NavigationView.RaiseBackRequested
-  name: RaiseBackRequested()
-  href: api/Celestial.UIToolkit.Controls.NavigationView.html#Celestial_UIToolkit_Controls_NavigationView_RaiseBackRequested
-  commentId: M:Celestial.UIToolkit.Controls.NavigationView.RaiseBackRequested
-  fullName: Celestial.UIToolkit.Controls.NavigationView.RaiseBackRequested()
-  nameWithType: NavigationView.RaiseBackRequested()
-- uid: Celestial.UIToolkit.Controls.NavigationView.RaiseBackRequested*
-  name: RaiseBackRequested
-  href: api/Celestial.UIToolkit.Controls.NavigationView.html#Celestial_UIToolkit_Controls_NavigationView_RaiseBackRequested_
-  commentId: Overload:Celestial.UIToolkit.Controls.NavigationView.RaiseBackRequested
-  isSpec: "True"
-  fullName: Celestial.UIToolkit.Controls.NavigationView.RaiseBackRequested
-  nameWithType: NavigationView.RaiseBackRequested
-- uid: Celestial.UIToolkit.Controls.NavigationView.RaiseItemInvoked(Celestial.UIToolkit.Controls.NavigationViewItemEventArgs)
-  name: RaiseItemInvoked(NavigationViewItemEventArgs)
-  href: api/Celestial.UIToolkit.Controls.NavigationView.html#Celestial_UIToolkit_Controls_NavigationView_RaiseItemInvoked_Celestial_UIToolkit_Controls_NavigationViewItemEventArgs_
-  commentId: M:Celestial.UIToolkit.Controls.NavigationView.RaiseItemInvoked(Celestial.UIToolkit.Controls.NavigationViewItemEventArgs)
-  fullName: Celestial.UIToolkit.Controls.NavigationView.RaiseItemInvoked(Celestial.UIToolkit.Controls.NavigationViewItemEventArgs)
-  nameWithType: NavigationView.RaiseItemInvoked(NavigationViewItemEventArgs)
-- uid: Celestial.UIToolkit.Controls.NavigationView.RaiseItemInvoked*
-  name: RaiseItemInvoked
-  href: api/Celestial.UIToolkit.Controls.NavigationView.html#Celestial_UIToolkit_Controls_NavigationView_RaiseItemInvoked_
-  commentId: Overload:Celestial.UIToolkit.Controls.NavigationView.RaiseItemInvoked
-  isSpec: "True"
-  fullName: Celestial.UIToolkit.Controls.NavigationView.RaiseItemInvoked
-  nameWithType: NavigationView.RaiseItemInvoked
-- uid: Celestial.UIToolkit.Controls.NavigationView.RaiseSelectedItemChanged(Celestial.UIToolkit.Controls.NavigationViewItemEventArgs)
-  name: RaiseSelectedItemChanged(NavigationViewItemEventArgs)
-  href: api/Celestial.UIToolkit.Controls.NavigationView.html#Celestial_UIToolkit_Controls_NavigationView_RaiseSelectedItemChanged_Celestial_UIToolkit_Controls_NavigationViewItemEventArgs_
-  commentId: M:Celestial.UIToolkit.Controls.NavigationView.RaiseSelectedItemChanged(Celestial.UIToolkit.Controls.NavigationViewItemEventArgs)
-  fullName: Celestial.UIToolkit.Controls.NavigationView.RaiseSelectedItemChanged(Celestial.UIToolkit.Controls.NavigationViewItemEventArgs)
-  nameWithType: NavigationView.RaiseSelectedItemChanged(NavigationViewItemEventArgs)
-- uid: Celestial.UIToolkit.Controls.NavigationView.RaiseSelectedItemChanged*
-  name: RaiseSelectedItemChanged
-  href: api/Celestial.UIToolkit.Controls.NavigationView.html#Celestial_UIToolkit_Controls_NavigationView_RaiseSelectedItemChanged_
-  commentId: Overload:Celestial.UIToolkit.Controls.NavigationView.RaiseSelectedItemChanged
-  isSpec: "True"
-  fullName: Celestial.UIToolkit.Controls.NavigationView.RaiseSelectedItemChanged
-  nameWithType: NavigationView.RaiseSelectedItemChanged
 - uid: Celestial.UIToolkit.Controls.NavigationView.SelectedItem
   name: SelectedItem
   href: api/Celestial.UIToolkit.Controls.NavigationView.html#Celestial_UIToolkit_Controls_NavigationView_SelectedItem
@@ -3059,6 +3050,24 @@ references:
   isSpec: "True"
   fullName: Celestial.UIToolkit.Controls.PlaceholderOverlay.PlaceholderOverlay
   nameWithType: PlaceholderOverlay.PlaceholderOverlay
+- uid: Celestial.UIToolkit.Controls.PlaceholderOverlay.DisappearingNotVisibleState
+  name: DisappearingNotVisibleState
+  href: api/Celestial.UIToolkit.Controls.PlaceholderOverlay.html#Celestial_UIToolkit_Controls_PlaceholderOverlay_DisappearingNotVisibleState
+  commentId: F:Celestial.UIToolkit.Controls.PlaceholderOverlay.DisappearingNotVisibleState
+  fullName: Celestial.UIToolkit.Controls.PlaceholderOverlay.DisappearingNotVisibleState
+  nameWithType: PlaceholderOverlay.DisappearingNotVisibleState
+- uid: Celestial.UIToolkit.Controls.PlaceholderOverlay.DisappearingVisibleState
+  name: DisappearingVisibleState
+  href: api/Celestial.UIToolkit.Controls.PlaceholderOverlay.html#Celestial_UIToolkit_Controls_PlaceholderOverlay_DisappearingVisibleState
+  commentId: F:Celestial.UIToolkit.Controls.PlaceholderOverlay.DisappearingVisibleState
+  fullName: Celestial.UIToolkit.Controls.PlaceholderOverlay.DisappearingVisibleState
+  nameWithType: PlaceholderOverlay.DisappearingVisibleState
+- uid: Celestial.UIToolkit.Controls.PlaceholderOverlay.FloatingNotVisibleState
+  name: FloatingNotVisibleState
+  href: api/Celestial.UIToolkit.Controls.PlaceholderOverlay.html#Celestial_UIToolkit_Controls_PlaceholderOverlay_FloatingNotVisibleState
+  commentId: F:Celestial.UIToolkit.Controls.PlaceholderOverlay.FloatingNotVisibleState
+  fullName: Celestial.UIToolkit.Controls.PlaceholderOverlay.FloatingNotVisibleState
+  nameWithType: PlaceholderOverlay.FloatingNotVisibleState
 - uid: Celestial.UIToolkit.Controls.PlaceholderOverlay.FloatingPlaceholderScale
   name: FloatingPlaceholderScale
   href: api/Celestial.UIToolkit.Controls.PlaceholderOverlay.html#Celestial_UIToolkit_Controls_PlaceholderOverlay_FloatingPlaceholderScale
@@ -3078,6 +3087,12 @@ references:
   commentId: F:Celestial.UIToolkit.Controls.PlaceholderOverlay.FloatingPlaceholderScaleProperty
   fullName: Celestial.UIToolkit.Controls.PlaceholderOverlay.FloatingPlaceholderScaleProperty
   nameWithType: PlaceholderOverlay.FloatingPlaceholderScaleProperty
+- uid: Celestial.UIToolkit.Controls.PlaceholderOverlay.FloatingVisibleState
+  name: FloatingVisibleState
+  href: api/Celestial.UIToolkit.Controls.PlaceholderOverlay.html#Celestial_UIToolkit_Controls_PlaceholderOverlay_FloatingVisibleState
+  commentId: F:Celestial.UIToolkit.Controls.PlaceholderOverlay.FloatingVisibleState
+  fullName: Celestial.UIToolkit.Controls.PlaceholderOverlay.FloatingVisibleState
+  nameWithType: PlaceholderOverlay.FloatingVisibleState
 - uid: Celestial.UIToolkit.Controls.PlaceholderOverlay.IsPlaceholderHitTestVisible
   name: IsPlaceholderHitTestVisible
   href: api/Celestial.UIToolkit.Controls.PlaceholderOverlay.html#Celestial_UIToolkit_Controls_PlaceholderOverlay_IsPlaceholderHitTestVisible
@@ -3154,6 +3169,12 @@ references:
   commentId: F:Celestial.UIToolkit.Controls.PlaceholderOverlay.PlaceholderProperty
   fullName: Celestial.UIToolkit.Controls.PlaceholderOverlay.PlaceholderProperty
   nameWithType: PlaceholderOverlay.PlaceholderProperty
+- uid: Celestial.UIToolkit.Controls.PlaceholderOverlay.PlaceholderStatesVisualStateGroup
+  name: PlaceholderStatesVisualStateGroup
+  href: api/Celestial.UIToolkit.Controls.PlaceholderOverlay.html#Celestial_UIToolkit_Controls_PlaceholderOverlay_PlaceholderStatesVisualStateGroup
+  commentId: F:Celestial.UIToolkit.Controls.PlaceholderOverlay.PlaceholderStatesVisualStateGroup
+  fullName: Celestial.UIToolkit.Controls.PlaceholderOverlay.PlaceholderStatesVisualStateGroup
+  nameWithType: PlaceholderOverlay.PlaceholderStatesVisualStateGroup
 - uid: Celestial.UIToolkit.Controls.PlaceholderOverlay.ToString
   name: ToString()
   href: api/Celestial.UIToolkit.Controls.PlaceholderOverlay.html#Celestial_UIToolkit_Controls_PlaceholderOverlay_ToString
@@ -3353,6 +3374,373 @@ references:
   commentId: F:Celestial.UIToolkit.Controls.RelativeCanvas.TopProperty
   fullName: Celestial.UIToolkit.Controls.RelativeCanvas.TopProperty
   nameWithType: RelativeCanvas.TopProperty
+- uid: Celestial.UIToolkit.Controls.Ripple
+  name: Ripple
+  href: api/Celestial.UIToolkit.Controls.Ripple.html
+  commentId: T:Celestial.UIToolkit.Controls.Ripple
+  fullName: Celestial.UIToolkit.Controls.Ripple
+  nameWithType: Ripple
+- uid: Celestial.UIToolkit.Controls.Ripple.#ctor
+  name: Ripple()
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple__ctor
+  commentId: M:Celestial.UIToolkit.Controls.Ripple.#ctor
+  fullName: Celestial.UIToolkit.Controls.Ripple.Ripple()
+  nameWithType: Ripple.Ripple()
+- uid: Celestial.UIToolkit.Controls.Ripple.#ctor*
+  name: Ripple
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple__ctor_
+  commentId: Overload:Celestial.UIToolkit.Controls.Ripple.#ctor
+  isSpec: "True"
+  fullName: Celestial.UIToolkit.Controls.Ripple.Ripple
+  nameWithType: Ripple.Ripple
+- uid: Celestial.UIToolkit.Controls.Ripple.AllowFading
+  name: AllowFading
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_AllowFading
+  commentId: P:Celestial.UIToolkit.Controls.Ripple.AllowFading
+  fullName: Celestial.UIToolkit.Controls.Ripple.AllowFading
+  nameWithType: Ripple.AllowFading
+- uid: Celestial.UIToolkit.Controls.Ripple.AllowFading*
+  name: AllowFading
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_AllowFading_
+  commentId: Overload:Celestial.UIToolkit.Controls.Ripple.AllowFading
+  isSpec: "True"
+  fullName: Celestial.UIToolkit.Controls.Ripple.AllowFading
+  nameWithType: Ripple.AllowFading
+- uid: Celestial.UIToolkit.Controls.Ripple.AllowFadingProperty
+  name: AllowFadingProperty
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_AllowFadingProperty
+  commentId: F:Celestial.UIToolkit.Controls.Ripple.AllowFadingProperty
+  fullName: Celestial.UIToolkit.Controls.Ripple.AllowFadingProperty
+  nameWithType: Ripple.AllowFadingProperty
+- uid: Celestial.UIToolkit.Controls.Ripple.AnimationDiameter
+  name: AnimationDiameter
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_AnimationDiameter
+  commentId: P:Celestial.UIToolkit.Controls.Ripple.AnimationDiameter
+  fullName: Celestial.UIToolkit.Controls.Ripple.AnimationDiameter
+  nameWithType: Ripple.AnimationDiameter
+- uid: Celestial.UIToolkit.Controls.Ripple.AnimationDiameter*
+  name: AnimationDiameter
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_AnimationDiameter_
+  commentId: Overload:Celestial.UIToolkit.Controls.Ripple.AnimationDiameter
+  isSpec: "True"
+  fullName: Celestial.UIToolkit.Controls.Ripple.AnimationDiameter
+  nameWithType: Ripple.AnimationDiameter
+- uid: Celestial.UIToolkit.Controls.Ripple.AnimationDiameterProperty
+  name: AnimationDiameterProperty
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_AnimationDiameterProperty
+  commentId: F:Celestial.UIToolkit.Controls.Ripple.AnimationDiameterProperty
+  fullName: Celestial.UIToolkit.Controls.Ripple.AnimationDiameterProperty
+  nameWithType: Ripple.AnimationDiameterProperty
+- uid: Celestial.UIToolkit.Controls.Ripple.AnimationOriginX
+  name: AnimationOriginX
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_AnimationOriginX
+  commentId: P:Celestial.UIToolkit.Controls.Ripple.AnimationOriginX
+  fullName: Celestial.UIToolkit.Controls.Ripple.AnimationOriginX
+  nameWithType: Ripple.AnimationOriginX
+- uid: Celestial.UIToolkit.Controls.Ripple.AnimationOriginX*
+  name: AnimationOriginX
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_AnimationOriginX_
+  commentId: Overload:Celestial.UIToolkit.Controls.Ripple.AnimationOriginX
+  isSpec: "True"
+  fullName: Celestial.UIToolkit.Controls.Ripple.AnimationOriginX
+  nameWithType: Ripple.AnimationOriginX
+- uid: Celestial.UIToolkit.Controls.Ripple.AnimationOriginXProperty
+  name: AnimationOriginXProperty
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_AnimationOriginXProperty
+  commentId: F:Celestial.UIToolkit.Controls.Ripple.AnimationOriginXProperty
+  fullName: Celestial.UIToolkit.Controls.Ripple.AnimationOriginXProperty
+  nameWithType: Ripple.AnimationOriginXProperty
+- uid: Celestial.UIToolkit.Controls.Ripple.AnimationOriginY
+  name: AnimationOriginY
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_AnimationOriginY
+  commentId: P:Celestial.UIToolkit.Controls.Ripple.AnimationOriginY
+  fullName: Celestial.UIToolkit.Controls.Ripple.AnimationOriginY
+  nameWithType: Ripple.AnimationOriginY
+- uid: Celestial.UIToolkit.Controls.Ripple.AnimationOriginY*
+  name: AnimationOriginY
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_AnimationOriginY_
+  commentId: Overload:Celestial.UIToolkit.Controls.Ripple.AnimationOriginY
+  isSpec: "True"
+  fullName: Celestial.UIToolkit.Controls.Ripple.AnimationOriginY
+  nameWithType: Ripple.AnimationOriginY
+- uid: Celestial.UIToolkit.Controls.Ripple.AnimationOriginYProperty
+  name: AnimationOriginYProperty
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_AnimationOriginYProperty
+  commentId: F:Celestial.UIToolkit.Controls.Ripple.AnimationOriginYProperty
+  fullName: Celestial.UIToolkit.Controls.Ripple.AnimationOriginYProperty
+  nameWithType: Ripple.AnimationOriginYProperty
+- uid: Celestial.UIToolkit.Controls.Ripple.AnimationPositionX
+  name: AnimationPositionX
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_AnimationPositionX
+  commentId: P:Celestial.UIToolkit.Controls.Ripple.AnimationPositionX
+  fullName: Celestial.UIToolkit.Controls.Ripple.AnimationPositionX
+  nameWithType: Ripple.AnimationPositionX
+- uid: Celestial.UIToolkit.Controls.Ripple.AnimationPositionX*
+  name: AnimationPositionX
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_AnimationPositionX_
+  commentId: Overload:Celestial.UIToolkit.Controls.Ripple.AnimationPositionX
+  isSpec: "True"
+  fullName: Celestial.UIToolkit.Controls.Ripple.AnimationPositionX
+  nameWithType: Ripple.AnimationPositionX
+- uid: Celestial.UIToolkit.Controls.Ripple.AnimationPositionXProperty
+  name: AnimationPositionXProperty
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_AnimationPositionXProperty
+  commentId: F:Celestial.UIToolkit.Controls.Ripple.AnimationPositionXProperty
+  fullName: Celestial.UIToolkit.Controls.Ripple.AnimationPositionXProperty
+  nameWithType: Ripple.AnimationPositionXProperty
+- uid: Celestial.UIToolkit.Controls.Ripple.AnimationPositionY
+  name: AnimationPositionY
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_AnimationPositionY
+  commentId: P:Celestial.UIToolkit.Controls.Ripple.AnimationPositionY
+  fullName: Celestial.UIToolkit.Controls.Ripple.AnimationPositionY
+  nameWithType: Ripple.AnimationPositionY
+- uid: Celestial.UIToolkit.Controls.Ripple.AnimationPositionY*
+  name: AnimationPositionY
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_AnimationPositionY_
+  commentId: Overload:Celestial.UIToolkit.Controls.Ripple.AnimationPositionY
+  isSpec: "True"
+  fullName: Celestial.UIToolkit.Controls.Ripple.AnimationPositionY
+  nameWithType: Ripple.AnimationPositionY
+- uid: Celestial.UIToolkit.Controls.Ripple.AnimationPositionYProperty
+  name: AnimationPositionYProperty
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_AnimationPositionYProperty
+  commentId: F:Celestial.UIToolkit.Controls.Ripple.AnimationPositionYProperty
+  fullName: Celestial.UIToolkit.Controls.Ripple.AnimationPositionYProperty
+  nameWithType: Ripple.AnimationPositionYProperty
+- uid: Celestial.UIToolkit.Controls.Ripple.AnimationScale
+  name: AnimationScale
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_AnimationScale
+  commentId: P:Celestial.UIToolkit.Controls.Ripple.AnimationScale
+  fullName: Celestial.UIToolkit.Controls.Ripple.AnimationScale
+  nameWithType: Ripple.AnimationScale
+- uid: Celestial.UIToolkit.Controls.Ripple.AnimationScale*
+  name: AnimationScale
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_AnimationScale_
+  commentId: Overload:Celestial.UIToolkit.Controls.Ripple.AnimationScale
+  isSpec: "True"
+  fullName: Celestial.UIToolkit.Controls.Ripple.AnimationScale
+  nameWithType: Ripple.AnimationScale
+- uid: Celestial.UIToolkit.Controls.Ripple.AnimationScaleProperty
+  name: AnimationScaleProperty
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_AnimationScaleProperty
+  commentId: F:Celestial.UIToolkit.Controls.Ripple.AnimationScaleProperty
+  fullName: Celestial.UIToolkit.Controls.Ripple.AnimationScaleProperty
+  nameWithType: Ripple.AnimationScaleProperty
+- uid: Celestial.UIToolkit.Controls.Ripple.AnimationStatesVisualStateGroup
+  name: AnimationStatesVisualStateGroup
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_AnimationStatesVisualStateGroup
+  commentId: F:Celestial.UIToolkit.Controls.Ripple.AnimationStatesVisualStateGroup
+  fullName: Celestial.UIToolkit.Controls.Ripple.AnimationStatesVisualStateGroup
+  nameWithType: Ripple.AnimationStatesVisualStateGroup
+- uid: Celestial.UIToolkit.Controls.Ripple.ExpandedVisualState
+  name: ExpandedVisualState
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_ExpandedVisualState
+  commentId: F:Celestial.UIToolkit.Controls.Ripple.ExpandedVisualState
+  fullName: Celestial.UIToolkit.Controls.Ripple.ExpandedVisualState
+  nameWithType: Ripple.ExpandedVisualState
+- uid: Celestial.UIToolkit.Controls.Ripple.ExpandingVisualState
+  name: ExpandingVisualState
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_ExpandingVisualState
+  commentId: F:Celestial.UIToolkit.Controls.Ripple.ExpandingVisualState
+  fullName: Celestial.UIToolkit.Controls.Ripple.ExpandingVisualState
+  nameWithType: Ripple.ExpandingVisualState
+- uid: Celestial.UIToolkit.Controls.Ripple.FadingVisualState
+  name: FadingVisualState
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_FadingVisualState
+  commentId: F:Celestial.UIToolkit.Controls.Ripple.FadingVisualState
+  fullName: Celestial.UIToolkit.Controls.Ripple.FadingVisualState
+  nameWithType: Ripple.FadingVisualState
+- uid: Celestial.UIToolkit.Controls.Ripple.IsActiveTrigger
+  name: IsActiveTrigger
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_IsActiveTrigger
+  commentId: P:Celestial.UIToolkit.Controls.Ripple.IsActiveTrigger
+  fullName: Celestial.UIToolkit.Controls.Ripple.IsActiveTrigger
+  nameWithType: Ripple.IsActiveTrigger
+- uid: Celestial.UIToolkit.Controls.Ripple.IsActiveTrigger*
+  name: IsActiveTrigger
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_IsActiveTrigger_
+  commentId: Overload:Celestial.UIToolkit.Controls.Ripple.IsActiveTrigger
+  isSpec: "True"
+  fullName: Celestial.UIToolkit.Controls.Ripple.IsActiveTrigger
+  nameWithType: Ripple.IsActiveTrigger
+- uid: Celestial.UIToolkit.Controls.Ripple.IsActiveTriggerProperty
+  name: IsActiveTriggerProperty
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_IsActiveTriggerProperty
+  commentId: F:Celestial.UIToolkit.Controls.Ripple.IsActiveTriggerProperty
+  fullName: Celestial.UIToolkit.Controls.Ripple.IsActiveTriggerProperty
+  nameWithType: Ripple.IsActiveTriggerProperty
+- uid: Celestial.UIToolkit.Controls.Ripple.IsAnimationExpanding
+  name: IsAnimationExpanding
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_IsAnimationExpanding
+  commentId: P:Celestial.UIToolkit.Controls.Ripple.IsAnimationExpanding
+  fullName: Celestial.UIToolkit.Controls.Ripple.IsAnimationExpanding
+  nameWithType: Ripple.IsAnimationExpanding
+- uid: Celestial.UIToolkit.Controls.Ripple.IsAnimationExpanding*
+  name: IsAnimationExpanding
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_IsAnimationExpanding_
+  commentId: Overload:Celestial.UIToolkit.Controls.Ripple.IsAnimationExpanding
+  isSpec: "True"
+  fullName: Celestial.UIToolkit.Controls.Ripple.IsAnimationExpanding
+  nameWithType: Ripple.IsAnimationExpanding
+- uid: Celestial.UIToolkit.Controls.Ripple.IsAnimationExpandingProperty
+  name: IsAnimationExpandingProperty
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_IsAnimationExpandingProperty
+  commentId: F:Celestial.UIToolkit.Controls.Ripple.IsAnimationExpandingProperty
+  fullName: Celestial.UIToolkit.Controls.Ripple.IsAnimationExpandingProperty
+  nameWithType: Ripple.IsAnimationExpandingProperty
+- uid: Celestial.UIToolkit.Controls.Ripple.IsAnimationFading
+  name: IsAnimationFading
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_IsAnimationFading
+  commentId: P:Celestial.UIToolkit.Controls.Ripple.IsAnimationFading
+  fullName: Celestial.UIToolkit.Controls.Ripple.IsAnimationFading
+  nameWithType: Ripple.IsAnimationFading
+- uid: Celestial.UIToolkit.Controls.Ripple.IsAnimationFading*
+  name: IsAnimationFading
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_IsAnimationFading_
+  commentId: Overload:Celestial.UIToolkit.Controls.Ripple.IsAnimationFading
+  isSpec: "True"
+  fullName: Celestial.UIToolkit.Controls.Ripple.IsAnimationFading
+  nameWithType: Ripple.IsAnimationFading
+- uid: Celestial.UIToolkit.Controls.Ripple.IsAnimationFadingProperty
+  name: IsAnimationFadingProperty
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_IsAnimationFadingProperty
+  commentId: F:Celestial.UIToolkit.Controls.Ripple.IsAnimationFadingProperty
+  fullName: Celestial.UIToolkit.Controls.Ripple.IsAnimationFadingProperty
+  nameWithType: Ripple.IsAnimationFadingProperty
+- uid: Celestial.UIToolkit.Controls.Ripple.IsExpanded
+  name: IsExpanded
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_IsExpanded
+  commentId: P:Celestial.UIToolkit.Controls.Ripple.IsExpanded
+  fullName: Celestial.UIToolkit.Controls.Ripple.IsExpanded
+  nameWithType: Ripple.IsExpanded
+- uid: Celestial.UIToolkit.Controls.Ripple.IsExpanded*
+  name: IsExpanded
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_IsExpanded_
+  commentId: Overload:Celestial.UIToolkit.Controls.Ripple.IsExpanded
+  isSpec: "True"
+  fullName: Celestial.UIToolkit.Controls.Ripple.IsExpanded
+  nameWithType: Ripple.IsExpanded
+- uid: Celestial.UIToolkit.Controls.Ripple.IsExpandedProperty
+  name: IsExpandedProperty
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_IsExpandedProperty
+  commentId: F:Celestial.UIToolkit.Controls.Ripple.IsExpandedProperty
+  fullName: Celestial.UIToolkit.Controls.Ripple.IsExpandedProperty
+  nameWithType: Ripple.IsExpandedProperty
+- uid: Celestial.UIToolkit.Controls.Ripple.IsExpanding
+  name: IsExpanding
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_IsExpanding
+  commentId: P:Celestial.UIToolkit.Controls.Ripple.IsExpanding
+  fullName: Celestial.UIToolkit.Controls.Ripple.IsExpanding
+  nameWithType: Ripple.IsExpanding
+- uid: Celestial.UIToolkit.Controls.Ripple.IsExpanding*
+  name: IsExpanding
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_IsExpanding_
+  commentId: Overload:Celestial.UIToolkit.Controls.Ripple.IsExpanding
+  isSpec: "True"
+  fullName: Celestial.UIToolkit.Controls.Ripple.IsExpanding
+  nameWithType: Ripple.IsExpanding
+- uid: Celestial.UIToolkit.Controls.Ripple.IsExpandingProperty
+  name: IsExpandingProperty
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_IsExpandingProperty
+  commentId: F:Celestial.UIToolkit.Controls.Ripple.IsExpandingProperty
+  fullName: Celestial.UIToolkit.Controls.Ripple.IsExpandingProperty
+  nameWithType: Ripple.IsExpandingProperty
+- uid: Celestial.UIToolkit.Controls.Ripple.IsFading
+  name: IsFading
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_IsFading
+  commentId: P:Celestial.UIToolkit.Controls.Ripple.IsFading
+  fullName: Celestial.UIToolkit.Controls.Ripple.IsFading
+  nameWithType: Ripple.IsFading
+- uid: Celestial.UIToolkit.Controls.Ripple.IsFading*
+  name: IsFading
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_IsFading_
+  commentId: Overload:Celestial.UIToolkit.Controls.Ripple.IsFading
+  isSpec: "True"
+  fullName: Celestial.UIToolkit.Controls.Ripple.IsFading
+  nameWithType: Ripple.IsFading
+- uid: Celestial.UIToolkit.Controls.Ripple.IsFadingProperty
+  name: IsFadingProperty
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_IsFadingProperty
+  commentId: F:Celestial.UIToolkit.Controls.Ripple.IsFadingProperty
+  fullName: Celestial.UIToolkit.Controls.Ripple.IsFadingProperty
+  nameWithType: Ripple.IsFadingProperty
+- uid: Celestial.UIToolkit.Controls.Ripple.NormalVisualState
+  name: NormalVisualState
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_NormalVisualState
+  commentId: F:Celestial.UIToolkit.Controls.Ripple.NormalVisualState
+  fullName: Celestial.UIToolkit.Controls.Ripple.NormalVisualState
+  nameWithType: Ripple.NormalVisualState
+- uid: Celestial.UIToolkit.Controls.Ripple.OnApplyTemplate
+  name: OnApplyTemplate()
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_OnApplyTemplate
+  commentId: M:Celestial.UIToolkit.Controls.Ripple.OnApplyTemplate
+  fullName: Celestial.UIToolkit.Controls.Ripple.OnApplyTemplate()
+  nameWithType: Ripple.OnApplyTemplate()
+- uid: Celestial.UIToolkit.Controls.Ripple.OnApplyTemplate*
+  name: OnApplyTemplate
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_OnApplyTemplate_
+  commentId: Overload:Celestial.UIToolkit.Controls.Ripple.OnApplyTemplate
+  isSpec: "True"
+  fullName: Celestial.UIToolkit.Controls.Ripple.OnApplyTemplate
+  nameWithType: Ripple.OnApplyTemplate
+- uid: Celestial.UIToolkit.Controls.Ripple.RippleOrigin
+  name: RippleOrigin
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_RippleOrigin
+  commentId: P:Celestial.UIToolkit.Controls.Ripple.RippleOrigin
+  fullName: Celestial.UIToolkit.Controls.Ripple.RippleOrigin
+  nameWithType: Ripple.RippleOrigin
+- uid: Celestial.UIToolkit.Controls.Ripple.RippleOrigin*
+  name: RippleOrigin
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_RippleOrigin_
+  commentId: Overload:Celestial.UIToolkit.Controls.Ripple.RippleOrigin
+  isSpec: "True"
+  fullName: Celestial.UIToolkit.Controls.Ripple.RippleOrigin
+  nameWithType: Ripple.RippleOrigin
+- uid: Celestial.UIToolkit.Controls.Ripple.RippleOriginProperty
+  name: RippleOriginProperty
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_RippleOriginProperty
+  commentId: F:Celestial.UIToolkit.Controls.Ripple.RippleOriginProperty
+  fullName: Celestial.UIToolkit.Controls.Ripple.RippleOriginProperty
+  nameWithType: Ripple.RippleOriginProperty
+- uid: Celestial.UIToolkit.Controls.Ripple.StartAnimation
+  name: StartAnimation()
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_StartAnimation
+  commentId: M:Celestial.UIToolkit.Controls.Ripple.StartAnimation
+  fullName: Celestial.UIToolkit.Controls.Ripple.StartAnimation()
+  nameWithType: Ripple.StartAnimation()
+- uid: Celestial.UIToolkit.Controls.Ripple.StartAnimation*
+  name: StartAnimation
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_StartAnimation_
+  commentId: Overload:Celestial.UIToolkit.Controls.Ripple.StartAnimation
+  isSpec: "True"
+  fullName: Celestial.UIToolkit.Controls.Ripple.StartAnimation
+  nameWithType: Ripple.StartAnimation
+- uid: Celestial.UIToolkit.Controls.Ripple.StartAnimationFromCenter
+  name: StartAnimationFromCenter()
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_StartAnimationFromCenter
+  commentId: M:Celestial.UIToolkit.Controls.Ripple.StartAnimationFromCenter
+  fullName: Celestial.UIToolkit.Controls.Ripple.StartAnimationFromCenter()
+  nameWithType: Ripple.StartAnimationFromCenter()
+- uid: Celestial.UIToolkit.Controls.Ripple.StartAnimationFromCenter*
+  name: StartAnimationFromCenter
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_StartAnimationFromCenter_
+  commentId: Overload:Celestial.UIToolkit.Controls.Ripple.StartAnimationFromCenter
+  isSpec: "True"
+  fullName: Celestial.UIToolkit.Controls.Ripple.StartAnimationFromCenter
+  nameWithType: Ripple.StartAnimationFromCenter
+- uid: Celestial.UIToolkit.Controls.Ripple.StartAnimationFromPoint(System.Windows.Point)
+  name: StartAnimationFromPoint(Point)
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_StartAnimationFromPoint_System_Windows_Point_
+  commentId: M:Celestial.UIToolkit.Controls.Ripple.StartAnimationFromPoint(System.Windows.Point)
+  fullName: Celestial.UIToolkit.Controls.Ripple.StartAnimationFromPoint(System.Windows.Point)
+  nameWithType: Ripple.StartAnimationFromPoint(Point)
+- uid: Celestial.UIToolkit.Controls.Ripple.StartAnimationFromPoint*
+  name: StartAnimationFromPoint
+  href: api/Celestial.UIToolkit.Controls.Ripple.html#Celestial_UIToolkit_Controls_Ripple_StartAnimationFromPoint_
+  commentId: Overload:Celestial.UIToolkit.Controls.Ripple.StartAnimationFromPoint
+  isSpec: "True"
+  fullName: Celestial.UIToolkit.Controls.Ripple.StartAnimationFromPoint
+  nameWithType: Ripple.StartAnimationFromPoint
 - uid: Celestial.UIToolkit.Controls.RippleOrigin
   name: RippleOrigin
   href: api/Celestial.UIToolkit.Controls.RippleOrigin.html
@@ -3371,343 +3759,6 @@ references:
   commentId: F:Celestial.UIToolkit.Controls.RippleOrigin.MouseLocation
   fullName: Celestial.UIToolkit.Controls.RippleOrigin.MouseLocation
   nameWithType: RippleOrigin.MouseLocation
-- uid: Celestial.UIToolkit.Controls.RippleOverlay
-  name: RippleOverlay
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html
-  commentId: T:Celestial.UIToolkit.Controls.RippleOverlay
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay
-  nameWithType: RippleOverlay
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.#ctor
-  name: RippleOverlay()
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay__ctor
-  commentId: M:Celestial.UIToolkit.Controls.RippleOverlay.#ctor
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.RippleOverlay()
-  nameWithType: RippleOverlay.RippleOverlay()
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.#ctor*
-  name: RippleOverlay
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay__ctor_
-  commentId: Overload:Celestial.UIToolkit.Controls.RippleOverlay.#ctor
-  isSpec: "True"
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.RippleOverlay
-  nameWithType: RippleOverlay.RippleOverlay
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.AllowFading
-  name: AllowFading
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_AllowFading
-  commentId: P:Celestial.UIToolkit.Controls.RippleOverlay.AllowFading
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.AllowFading
-  nameWithType: RippleOverlay.AllowFading
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.AllowFading*
-  name: AllowFading
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_AllowFading_
-  commentId: Overload:Celestial.UIToolkit.Controls.RippleOverlay.AllowFading
-  isSpec: "True"
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.AllowFading
-  nameWithType: RippleOverlay.AllowFading
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.AllowFadingProperty
-  name: AllowFadingProperty
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_AllowFadingProperty
-  commentId: F:Celestial.UIToolkit.Controls.RippleOverlay.AllowFadingProperty
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.AllowFadingProperty
-  nameWithType: RippleOverlay.AllowFadingProperty
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.AnimationDiameter
-  name: AnimationDiameter
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_AnimationDiameter
-  commentId: P:Celestial.UIToolkit.Controls.RippleOverlay.AnimationDiameter
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.AnimationDiameter
-  nameWithType: RippleOverlay.AnimationDiameter
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.AnimationDiameter*
-  name: AnimationDiameter
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_AnimationDiameter_
-  commentId: Overload:Celestial.UIToolkit.Controls.RippleOverlay.AnimationDiameter
-  isSpec: "True"
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.AnimationDiameter
-  nameWithType: RippleOverlay.AnimationDiameter
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.AnimationDiameterProperty
-  name: AnimationDiameterProperty
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_AnimationDiameterProperty
-  commentId: F:Celestial.UIToolkit.Controls.RippleOverlay.AnimationDiameterProperty
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.AnimationDiameterProperty
-  nameWithType: RippleOverlay.AnimationDiameterProperty
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.AnimationOriginX
-  name: AnimationOriginX
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_AnimationOriginX
-  commentId: P:Celestial.UIToolkit.Controls.RippleOverlay.AnimationOriginX
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.AnimationOriginX
-  nameWithType: RippleOverlay.AnimationOriginX
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.AnimationOriginX*
-  name: AnimationOriginX
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_AnimationOriginX_
-  commentId: Overload:Celestial.UIToolkit.Controls.RippleOverlay.AnimationOriginX
-  isSpec: "True"
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.AnimationOriginX
-  nameWithType: RippleOverlay.AnimationOriginX
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.AnimationOriginXProperty
-  name: AnimationOriginXProperty
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_AnimationOriginXProperty
-  commentId: F:Celestial.UIToolkit.Controls.RippleOverlay.AnimationOriginXProperty
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.AnimationOriginXProperty
-  nameWithType: RippleOverlay.AnimationOriginXProperty
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.AnimationOriginY
-  name: AnimationOriginY
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_AnimationOriginY
-  commentId: P:Celestial.UIToolkit.Controls.RippleOverlay.AnimationOriginY
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.AnimationOriginY
-  nameWithType: RippleOverlay.AnimationOriginY
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.AnimationOriginY*
-  name: AnimationOriginY
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_AnimationOriginY_
-  commentId: Overload:Celestial.UIToolkit.Controls.RippleOverlay.AnimationOriginY
-  isSpec: "True"
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.AnimationOriginY
-  nameWithType: RippleOverlay.AnimationOriginY
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.AnimationOriginYProperty
-  name: AnimationOriginYProperty
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_AnimationOriginYProperty
-  commentId: F:Celestial.UIToolkit.Controls.RippleOverlay.AnimationOriginYProperty
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.AnimationOriginYProperty
-  nameWithType: RippleOverlay.AnimationOriginYProperty
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.AnimationPositionX
-  name: AnimationPositionX
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_AnimationPositionX
-  commentId: P:Celestial.UIToolkit.Controls.RippleOverlay.AnimationPositionX
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.AnimationPositionX
-  nameWithType: RippleOverlay.AnimationPositionX
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.AnimationPositionX*
-  name: AnimationPositionX
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_AnimationPositionX_
-  commentId: Overload:Celestial.UIToolkit.Controls.RippleOverlay.AnimationPositionX
-  isSpec: "True"
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.AnimationPositionX
-  nameWithType: RippleOverlay.AnimationPositionX
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.AnimationPositionXProperty
-  name: AnimationPositionXProperty
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_AnimationPositionXProperty
-  commentId: F:Celestial.UIToolkit.Controls.RippleOverlay.AnimationPositionXProperty
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.AnimationPositionXProperty
-  nameWithType: RippleOverlay.AnimationPositionXProperty
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.AnimationPositionY
-  name: AnimationPositionY
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_AnimationPositionY
-  commentId: P:Celestial.UIToolkit.Controls.RippleOverlay.AnimationPositionY
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.AnimationPositionY
-  nameWithType: RippleOverlay.AnimationPositionY
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.AnimationPositionY*
-  name: AnimationPositionY
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_AnimationPositionY_
-  commentId: Overload:Celestial.UIToolkit.Controls.RippleOverlay.AnimationPositionY
-  isSpec: "True"
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.AnimationPositionY
-  nameWithType: RippleOverlay.AnimationPositionY
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.AnimationPositionYProperty
-  name: AnimationPositionYProperty
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_AnimationPositionYProperty
-  commentId: F:Celestial.UIToolkit.Controls.RippleOverlay.AnimationPositionYProperty
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.AnimationPositionYProperty
-  nameWithType: RippleOverlay.AnimationPositionYProperty
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.AnimationScale
-  name: AnimationScale
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_AnimationScale
-  commentId: P:Celestial.UIToolkit.Controls.RippleOverlay.AnimationScale
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.AnimationScale
-  nameWithType: RippleOverlay.AnimationScale
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.AnimationScale*
-  name: AnimationScale
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_AnimationScale_
-  commentId: Overload:Celestial.UIToolkit.Controls.RippleOverlay.AnimationScale
-  isSpec: "True"
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.AnimationScale
-  nameWithType: RippleOverlay.AnimationScale
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.AnimationScaleProperty
-  name: AnimationScaleProperty
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_AnimationScaleProperty
-  commentId: F:Celestial.UIToolkit.Controls.RippleOverlay.AnimationScaleProperty
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.AnimationScaleProperty
-  nameWithType: RippleOverlay.AnimationScaleProperty
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.IsActiveTrigger
-  name: IsActiveTrigger
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_IsActiveTrigger
-  commentId: P:Celestial.UIToolkit.Controls.RippleOverlay.IsActiveTrigger
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.IsActiveTrigger
-  nameWithType: RippleOverlay.IsActiveTrigger
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.IsActiveTrigger*
-  name: IsActiveTrigger
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_IsActiveTrigger_
-  commentId: Overload:Celestial.UIToolkit.Controls.RippleOverlay.IsActiveTrigger
-  isSpec: "True"
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.IsActiveTrigger
-  nameWithType: RippleOverlay.IsActiveTrigger
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.IsActiveTriggerProperty
-  name: IsActiveTriggerProperty
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_IsActiveTriggerProperty
-  commentId: F:Celestial.UIToolkit.Controls.RippleOverlay.IsActiveTriggerProperty
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.IsActiveTriggerProperty
-  nameWithType: RippleOverlay.IsActiveTriggerProperty
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.IsAnimationExpanding
-  name: IsAnimationExpanding
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_IsAnimationExpanding
-  commentId: P:Celestial.UIToolkit.Controls.RippleOverlay.IsAnimationExpanding
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.IsAnimationExpanding
-  nameWithType: RippleOverlay.IsAnimationExpanding
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.IsAnimationExpanding*
-  name: IsAnimationExpanding
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_IsAnimationExpanding_
-  commentId: Overload:Celestial.UIToolkit.Controls.RippleOverlay.IsAnimationExpanding
-  isSpec: "True"
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.IsAnimationExpanding
-  nameWithType: RippleOverlay.IsAnimationExpanding
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.IsAnimationExpandingProperty
-  name: IsAnimationExpandingProperty
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_IsAnimationExpandingProperty
-  commentId: F:Celestial.UIToolkit.Controls.RippleOverlay.IsAnimationExpandingProperty
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.IsAnimationExpandingProperty
-  nameWithType: RippleOverlay.IsAnimationExpandingProperty
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.IsAnimationFading
-  name: IsAnimationFading
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_IsAnimationFading
-  commentId: P:Celestial.UIToolkit.Controls.RippleOverlay.IsAnimationFading
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.IsAnimationFading
-  nameWithType: RippleOverlay.IsAnimationFading
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.IsAnimationFading*
-  name: IsAnimationFading
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_IsAnimationFading_
-  commentId: Overload:Celestial.UIToolkit.Controls.RippleOverlay.IsAnimationFading
-  isSpec: "True"
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.IsAnimationFading
-  nameWithType: RippleOverlay.IsAnimationFading
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.IsAnimationFadingProperty
-  name: IsAnimationFadingProperty
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_IsAnimationFadingProperty
-  commentId: F:Celestial.UIToolkit.Controls.RippleOverlay.IsAnimationFadingProperty
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.IsAnimationFadingProperty
-  nameWithType: RippleOverlay.IsAnimationFadingProperty
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.IsExpanded
-  name: IsExpanded
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_IsExpanded
-  commentId: P:Celestial.UIToolkit.Controls.RippleOverlay.IsExpanded
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.IsExpanded
-  nameWithType: RippleOverlay.IsExpanded
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.IsExpanded*
-  name: IsExpanded
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_IsExpanded_
-  commentId: Overload:Celestial.UIToolkit.Controls.RippleOverlay.IsExpanded
-  isSpec: "True"
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.IsExpanded
-  nameWithType: RippleOverlay.IsExpanded
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.IsExpandedProperty
-  name: IsExpandedProperty
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_IsExpandedProperty
-  commentId: F:Celestial.UIToolkit.Controls.RippleOverlay.IsExpandedProperty
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.IsExpandedProperty
-  nameWithType: RippleOverlay.IsExpandedProperty
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.IsExpanding
-  name: IsExpanding
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_IsExpanding
-  commentId: P:Celestial.UIToolkit.Controls.RippleOverlay.IsExpanding
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.IsExpanding
-  nameWithType: RippleOverlay.IsExpanding
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.IsExpanding*
-  name: IsExpanding
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_IsExpanding_
-  commentId: Overload:Celestial.UIToolkit.Controls.RippleOverlay.IsExpanding
-  isSpec: "True"
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.IsExpanding
-  nameWithType: RippleOverlay.IsExpanding
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.IsExpandingProperty
-  name: IsExpandingProperty
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_IsExpandingProperty
-  commentId: F:Celestial.UIToolkit.Controls.RippleOverlay.IsExpandingProperty
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.IsExpandingProperty
-  nameWithType: RippleOverlay.IsExpandingProperty
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.IsFading
-  name: IsFading
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_IsFading
-  commentId: P:Celestial.UIToolkit.Controls.RippleOverlay.IsFading
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.IsFading
-  nameWithType: RippleOverlay.IsFading
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.IsFading*
-  name: IsFading
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_IsFading_
-  commentId: Overload:Celestial.UIToolkit.Controls.RippleOverlay.IsFading
-  isSpec: "True"
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.IsFading
-  nameWithType: RippleOverlay.IsFading
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.IsFadingProperty
-  name: IsFadingProperty
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_IsFadingProperty
-  commentId: F:Celestial.UIToolkit.Controls.RippleOverlay.IsFadingProperty
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.IsFadingProperty
-  nameWithType: RippleOverlay.IsFadingProperty
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.OnApplyTemplate
-  name: OnApplyTemplate()
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_OnApplyTemplate
-  commentId: M:Celestial.UIToolkit.Controls.RippleOverlay.OnApplyTemplate
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.OnApplyTemplate()
-  nameWithType: RippleOverlay.OnApplyTemplate()
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.OnApplyTemplate*
-  name: OnApplyTemplate
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_OnApplyTemplate_
-  commentId: Overload:Celestial.UIToolkit.Controls.RippleOverlay.OnApplyTemplate
-  isSpec: "True"
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.OnApplyTemplate
-  nameWithType: RippleOverlay.OnApplyTemplate
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.RippleOrigin
-  name: RippleOrigin
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_RippleOrigin
-  commentId: P:Celestial.UIToolkit.Controls.RippleOverlay.RippleOrigin
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.RippleOrigin
-  nameWithType: RippleOverlay.RippleOrigin
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.RippleOrigin*
-  name: RippleOrigin
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_RippleOrigin_
-  commentId: Overload:Celestial.UIToolkit.Controls.RippleOverlay.RippleOrigin
-  isSpec: "True"
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.RippleOrigin
-  nameWithType: RippleOverlay.RippleOrigin
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.RippleOriginProperty
-  name: RippleOriginProperty
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_RippleOriginProperty
-  commentId: F:Celestial.UIToolkit.Controls.RippleOverlay.RippleOriginProperty
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.RippleOriginProperty
-  nameWithType: RippleOverlay.RippleOriginProperty
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.StartAnimation
-  name: StartAnimation()
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_StartAnimation
-  commentId: M:Celestial.UIToolkit.Controls.RippleOverlay.StartAnimation
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.StartAnimation()
-  nameWithType: RippleOverlay.StartAnimation()
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.StartAnimation*
-  name: StartAnimation
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_StartAnimation_
-  commentId: Overload:Celestial.UIToolkit.Controls.RippleOverlay.StartAnimation
-  isSpec: "True"
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.StartAnimation
-  nameWithType: RippleOverlay.StartAnimation
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.StartAnimationFromCenter
-  name: StartAnimationFromCenter()
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_StartAnimationFromCenter
-  commentId: M:Celestial.UIToolkit.Controls.RippleOverlay.StartAnimationFromCenter
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.StartAnimationFromCenter()
-  nameWithType: RippleOverlay.StartAnimationFromCenter()
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.StartAnimationFromCenter*
-  name: StartAnimationFromCenter
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_StartAnimationFromCenter_
-  commentId: Overload:Celestial.UIToolkit.Controls.RippleOverlay.StartAnimationFromCenter
-  isSpec: "True"
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.StartAnimationFromCenter
-  nameWithType: RippleOverlay.StartAnimationFromCenter
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.StartAnimationFromPoint(System.Windows.Point)
-  name: StartAnimationFromPoint(Point)
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_StartAnimationFromPoint_System_Windows_Point_
-  commentId: M:Celestial.UIToolkit.Controls.RippleOverlay.StartAnimationFromPoint(System.Windows.Point)
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.StartAnimationFromPoint(System.Windows.Point)
-  nameWithType: RippleOverlay.StartAnimationFromPoint(Point)
-- uid: Celestial.UIToolkit.Controls.RippleOverlay.StartAnimationFromPoint*
-  name: StartAnimationFromPoint
-  href: api/Celestial.UIToolkit.Controls.RippleOverlay.html#Celestial_UIToolkit_Controls_RippleOverlay_StartAnimationFromPoint_
-  commentId: Overload:Celestial.UIToolkit.Controls.RippleOverlay.StartAnimationFromPoint
-  isSpec: "True"
-  fullName: Celestial.UIToolkit.Controls.RippleOverlay.StartAnimationFromPoint
-  nameWithType: RippleOverlay.StartAnimationFromPoint
 - uid: Celestial.UIToolkit.Controls.SelectionIndicator
   name: SelectionIndicator
   href: api/Celestial.UIToolkit.Controls.SelectionIndicator.html
@@ -3778,6 +3829,18 @@ references:
   commentId: F:Celestial.UIToolkit.Controls.SelectionIndicator.OrientationProperty
   fullName: Celestial.UIToolkit.Controls.SelectionIndicator.OrientationProperty
   nameWithType: SelectionIndicator.OrientationProperty
+- uid: Celestial.UIToolkit.Controls.SelectionIndicator.SelectedVisualState
+  name: SelectedVisualState
+  href: api/Celestial.UIToolkit.Controls.SelectionIndicator.html#Celestial_UIToolkit_Controls_SelectionIndicator_SelectedVisualState
+  commentId: F:Celestial.UIToolkit.Controls.SelectionIndicator.SelectedVisualState
+  fullName: Celestial.UIToolkit.Controls.SelectionIndicator.SelectedVisualState
+  nameWithType: SelectionIndicator.SelectedVisualState
+- uid: Celestial.UIToolkit.Controls.SelectionIndicator.SelectionStatesVisualStateGroup
+  name: SelectionStatesVisualStateGroup
+  href: api/Celestial.UIToolkit.Controls.SelectionIndicator.html#Celestial_UIToolkit_Controls_SelectionIndicator_SelectionStatesVisualStateGroup
+  commentId: F:Celestial.UIToolkit.Controls.SelectionIndicator.SelectionStatesVisualStateGroup
+  fullName: Celestial.UIToolkit.Controls.SelectionIndicator.SelectionStatesVisualStateGroup
+  nameWithType: SelectionIndicator.SelectionStatesVisualStateGroup
 - uid: Celestial.UIToolkit.Controls.SelectionIndicator.ToString
   name: ToString()
   href: api/Celestial.UIToolkit.Controls.SelectionIndicator.html#Celestial_UIToolkit_Controls_SelectionIndicator_ToString
@@ -3791,6 +3854,12 @@ references:
   isSpec: "True"
   fullName: Celestial.UIToolkit.Controls.SelectionIndicator.ToString
   nameWithType: SelectionIndicator.ToString
+- uid: Celestial.UIToolkit.Controls.SelectionIndicator.UnselectedVisualState
+  name: UnselectedVisualState
+  href: api/Celestial.UIToolkit.Controls.SelectionIndicator.html#Celestial_UIToolkit_Controls_SelectionIndicator_UnselectedVisualState
+  commentId: F:Celestial.UIToolkit.Controls.SelectionIndicator.UnselectedVisualState
+  fullName: Celestial.UIToolkit.Controls.SelectionIndicator.UnselectedVisualState
+  nameWithType: SelectionIndicator.UnselectedVisualState
 - uid: Celestial.UIToolkit.Controls.SplitView
   name: SplitView
   href: api/Celestial.UIToolkit.Controls.SplitView.html
@@ -3810,6 +3879,24 @@ references:
   isSpec: "True"
   fullName: Celestial.UIToolkit.Controls.SplitView.SplitView
   nameWithType: SplitView.SplitView
+- uid: Celestial.UIToolkit.Controls.SplitView.ClosedCompactLeftVisualState
+  name: ClosedCompactLeftVisualState
+  href: api/Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_ClosedCompactLeftVisualState
+  commentId: F:Celestial.UIToolkit.Controls.SplitView.ClosedCompactLeftVisualState
+  fullName: Celestial.UIToolkit.Controls.SplitView.ClosedCompactLeftVisualState
+  nameWithType: SplitView.ClosedCompactLeftVisualState
+- uid: Celestial.UIToolkit.Controls.SplitView.ClosedCompactRightVisualState
+  name: ClosedCompactRightVisualState
+  href: api/Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_ClosedCompactRightVisualState
+  commentId: F:Celestial.UIToolkit.Controls.SplitView.ClosedCompactRightVisualState
+  fullName: Celestial.UIToolkit.Controls.SplitView.ClosedCompactRightVisualState
+  nameWithType: SplitView.ClosedCompactRightVisualState
+- uid: Celestial.UIToolkit.Controls.SplitView.ClosedVisualState
+  name: ClosedVisualState
+  href: api/Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_ClosedVisualState
+  commentId: F:Celestial.UIToolkit.Controls.SplitView.ClosedVisualState
+  fullName: Celestial.UIToolkit.Controls.SplitView.ClosedVisualState
+  nameWithType: SplitView.ClosedVisualState
 - uid: Celestial.UIToolkit.Controls.SplitView.CompactPaneLength
   name: CompactPaneLength
   href: api/Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_CompactPaneLength
@@ -3829,6 +3916,12 @@ references:
   commentId: F:Celestial.UIToolkit.Controls.SplitView.CompactPaneLengthProperty
   fullName: Celestial.UIToolkit.Controls.SplitView.CompactPaneLengthProperty
   nameWithType: SplitView.CompactPaneLengthProperty
+- uid: Celestial.UIToolkit.Controls.SplitView.DefaultVisualState
+  name: DefaultVisualState
+  href: api/Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_DefaultVisualState
+  commentId: F:Celestial.UIToolkit.Controls.SplitView.DefaultVisualState
+  fullName: Celestial.UIToolkit.Controls.SplitView.DefaultVisualState
+  nameWithType: SplitView.DefaultVisualState
 - uid: Celestial.UIToolkit.Controls.SplitView.DisplayMode
   name: DisplayMode
   href: api/Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_DisplayMode
@@ -3848,6 +3941,12 @@ references:
   commentId: F:Celestial.UIToolkit.Controls.SplitView.DisplayModeProperty
   fullName: Celestial.UIToolkit.Controls.SplitView.DisplayModeProperty
   nameWithType: SplitView.DisplayModeProperty
+- uid: Celestial.UIToolkit.Controls.SplitView.DisplayModeStatesVisualStateGroup
+  name: DisplayModeStatesVisualStateGroup
+  href: api/Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_DisplayModeStatesVisualStateGroup
+  commentId: F:Celestial.UIToolkit.Controls.SplitView.DisplayModeStatesVisualStateGroup
+  fullName: Celestial.UIToolkit.Controls.SplitView.DisplayModeStatesVisualStateGroup
+  nameWithType: SplitView.DisplayModeStatesVisualStateGroup
 - uid: Celestial.UIToolkit.Controls.SplitView.HasPane
   name: HasPane
   href: api/Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_HasPane
@@ -4003,6 +4102,54 @@ references:
   isSpec: "True"
   fullName: Celestial.UIToolkit.Controls.SplitView.OnPaneTemplateSelectorChanged
   nameWithType: SplitView.OnPaneTemplateSelectorChanged
+- uid: Celestial.UIToolkit.Controls.SplitView.OpenCompactInlineLeftVisualState
+  name: OpenCompactInlineLeftVisualState
+  href: api/Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_OpenCompactInlineLeftVisualState
+  commentId: F:Celestial.UIToolkit.Controls.SplitView.OpenCompactInlineLeftVisualState
+  fullName: Celestial.UIToolkit.Controls.SplitView.OpenCompactInlineLeftVisualState
+  nameWithType: SplitView.OpenCompactInlineLeftVisualState
+- uid: Celestial.UIToolkit.Controls.SplitView.OpenCompactInlineRightVisualState
+  name: OpenCompactInlineRightVisualState
+  href: api/Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_OpenCompactInlineRightVisualState
+  commentId: F:Celestial.UIToolkit.Controls.SplitView.OpenCompactInlineRightVisualState
+  fullName: Celestial.UIToolkit.Controls.SplitView.OpenCompactInlineRightVisualState
+  nameWithType: SplitView.OpenCompactInlineRightVisualState
+- uid: Celestial.UIToolkit.Controls.SplitView.OpenCompactOverlayLeftVisualState
+  name: OpenCompactOverlayLeftVisualState
+  href: api/Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_OpenCompactOverlayLeftVisualState
+  commentId: F:Celestial.UIToolkit.Controls.SplitView.OpenCompactOverlayLeftVisualState
+  fullName: Celestial.UIToolkit.Controls.SplitView.OpenCompactOverlayLeftVisualState
+  nameWithType: SplitView.OpenCompactOverlayLeftVisualState
+- uid: Celestial.UIToolkit.Controls.SplitView.OpenCompactOverlayRightVisualState
+  name: OpenCompactOverlayRightVisualState
+  href: api/Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_OpenCompactOverlayRightVisualState
+  commentId: F:Celestial.UIToolkit.Controls.SplitView.OpenCompactOverlayRightVisualState
+  fullName: Celestial.UIToolkit.Controls.SplitView.OpenCompactOverlayRightVisualState
+  nameWithType: SplitView.OpenCompactOverlayRightVisualState
+- uid: Celestial.UIToolkit.Controls.SplitView.OpenInlineLeftVisualState
+  name: OpenInlineLeftVisualState
+  href: api/Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_OpenInlineLeftVisualState
+  commentId: F:Celestial.UIToolkit.Controls.SplitView.OpenInlineLeftVisualState
+  fullName: Celestial.UIToolkit.Controls.SplitView.OpenInlineLeftVisualState
+  nameWithType: SplitView.OpenInlineLeftVisualState
+- uid: Celestial.UIToolkit.Controls.SplitView.OpenInlineRightVisualState
+  name: OpenInlineRightVisualState
+  href: api/Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_OpenInlineRightVisualState
+  commentId: F:Celestial.UIToolkit.Controls.SplitView.OpenInlineRightVisualState
+  fullName: Celestial.UIToolkit.Controls.SplitView.OpenInlineRightVisualState
+  nameWithType: SplitView.OpenInlineRightVisualState
+- uid: Celestial.UIToolkit.Controls.SplitView.OpenOverlayLeftVisualState
+  name: OpenOverlayLeftVisualState
+  href: api/Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_OpenOverlayLeftVisualState
+  commentId: F:Celestial.UIToolkit.Controls.SplitView.OpenOverlayLeftVisualState
+  fullName: Celestial.UIToolkit.Controls.SplitView.OpenOverlayLeftVisualState
+  nameWithType: SplitView.OpenOverlayLeftVisualState
+- uid: Celestial.UIToolkit.Controls.SplitView.OpenOverlayRightVisualState
+  name: OpenOverlayRightVisualState
+  href: api/Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_OpenOverlayRightVisualState
+  commentId: F:Celestial.UIToolkit.Controls.SplitView.OpenOverlayRightVisualState
+  fullName: Celestial.UIToolkit.Controls.SplitView.OpenOverlayRightVisualState
+  nameWithType: SplitView.OpenOverlayRightVisualState
 - uid: Celestial.UIToolkit.Controls.SplitView.OpenPaneLength
   name: OpenPaneLength
   href: api/Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_OpenPaneLength
@@ -4160,58 +4307,6 @@ references:
   commentId: F:Celestial.UIToolkit.Controls.SplitView.PaneTemplateSelectorProperty
   fullName: Celestial.UIToolkit.Controls.SplitView.PaneTemplateSelectorProperty
   nameWithType: SplitView.PaneTemplateSelectorProperty
-- uid: Celestial.UIToolkit.Controls.SplitView.RaisePaneClosed
-  name: RaisePaneClosed()
-  href: api/Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_RaisePaneClosed
-  commentId: M:Celestial.UIToolkit.Controls.SplitView.RaisePaneClosed
-  fullName: Celestial.UIToolkit.Controls.SplitView.RaisePaneClosed()
-  nameWithType: SplitView.RaisePaneClosed()
-- uid: Celestial.UIToolkit.Controls.SplitView.RaisePaneClosed*
-  name: RaisePaneClosed
-  href: api/Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_RaisePaneClosed_
-  commentId: Overload:Celestial.UIToolkit.Controls.SplitView.RaisePaneClosed
-  isSpec: "True"
-  fullName: Celestial.UIToolkit.Controls.SplitView.RaisePaneClosed
-  nameWithType: SplitView.RaisePaneClosed
-- uid: Celestial.UIToolkit.Controls.SplitView.RaisePaneClosing
-  name: RaisePaneClosing()
-  href: api/Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_RaisePaneClosing
-  commentId: M:Celestial.UIToolkit.Controls.SplitView.RaisePaneClosing
-  fullName: Celestial.UIToolkit.Controls.SplitView.RaisePaneClosing()
-  nameWithType: SplitView.RaisePaneClosing()
-- uid: Celestial.UIToolkit.Controls.SplitView.RaisePaneClosing*
-  name: RaisePaneClosing
-  href: api/Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_RaisePaneClosing_
-  commentId: Overload:Celestial.UIToolkit.Controls.SplitView.RaisePaneClosing
-  isSpec: "True"
-  fullName: Celestial.UIToolkit.Controls.SplitView.RaisePaneClosing
-  nameWithType: SplitView.RaisePaneClosing
-- uid: Celestial.UIToolkit.Controls.SplitView.RaisePaneOpened
-  name: RaisePaneOpened()
-  href: api/Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_RaisePaneOpened
-  commentId: M:Celestial.UIToolkit.Controls.SplitView.RaisePaneOpened
-  fullName: Celestial.UIToolkit.Controls.SplitView.RaisePaneOpened()
-  nameWithType: SplitView.RaisePaneOpened()
-- uid: Celestial.UIToolkit.Controls.SplitView.RaisePaneOpened*
-  name: RaisePaneOpened
-  href: api/Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_RaisePaneOpened_
-  commentId: Overload:Celestial.UIToolkit.Controls.SplitView.RaisePaneOpened
-  isSpec: "True"
-  fullName: Celestial.UIToolkit.Controls.SplitView.RaisePaneOpened
-  nameWithType: SplitView.RaisePaneOpened
-- uid: Celestial.UIToolkit.Controls.SplitView.RaisePaneOpening
-  name: RaisePaneOpening()
-  href: api/Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_RaisePaneOpening
-  commentId: M:Celestial.UIToolkit.Controls.SplitView.RaisePaneOpening
-  fullName: Celestial.UIToolkit.Controls.SplitView.RaisePaneOpening()
-  nameWithType: SplitView.RaisePaneOpening()
-- uid: Celestial.UIToolkit.Controls.SplitView.RaisePaneOpening*
-  name: RaisePaneOpening
-  href: api/Celestial.UIToolkit.Controls.SplitView.html#Celestial_UIToolkit_Controls_SplitView_RaisePaneOpening_
-  commentId: Overload:Celestial.UIToolkit.Controls.SplitView.RaisePaneOpening
-  isSpec: "True"
-  fullName: Celestial.UIToolkit.Controls.SplitView.RaisePaneOpening
-  nameWithType: SplitView.RaisePaneOpening
 - uid: Celestial.UIToolkit.Controls.SplitViewDisplayMode
   name: SplitViewDisplayMode
   href: api/Celestial.UIToolkit.Controls.SplitViewDisplayMode.html
@@ -4617,6 +4712,24 @@ references:
   isSpec: "True"
   fullName: Celestial.UIToolkit.Controls.ToggleSwitch.ToggleSwitch
   nameWithType: ToggleSwitch.ToggleSwitch
+- uid: Celestial.UIToolkit.Controls.ToggleSwitch.ActiveVisualState
+  name: ActiveVisualState
+  href: api/Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_ActiveVisualState
+  commentId: F:Celestial.UIToolkit.Controls.ToggleSwitch.ActiveVisualState
+  fullName: Celestial.UIToolkit.Controls.ToggleSwitch.ActiveVisualState
+  nameWithType: ToggleSwitch.ActiveVisualState
+- uid: Celestial.UIToolkit.Controls.ToggleSwitch.ContentDisplayStatesVisualStateGroup
+  name: ContentDisplayStatesVisualStateGroup
+  href: api/Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_ContentDisplayStatesVisualStateGroup
+  commentId: F:Celestial.UIToolkit.Controls.ToggleSwitch.ContentDisplayStatesVisualStateGroup
+  fullName: Celestial.UIToolkit.Controls.ToggleSwitch.ContentDisplayStatesVisualStateGroup
+  nameWithType: ToggleSwitch.ContentDisplayStatesVisualStateGroup
+- uid: Celestial.UIToolkit.Controls.ToggleSwitch.DraggingVisualState
+  name: DraggingVisualState
+  href: api/Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_DraggingVisualState
+  commentId: F:Celestial.UIToolkit.Controls.ToggleSwitch.DraggingVisualState
+  fullName: Celestial.UIToolkit.Controls.ToggleSwitch.DraggingVisualState
+  nameWithType: ToggleSwitch.DraggingVisualState
 - uid: Celestial.UIToolkit.Controls.ToggleSwitch.DragOrientation
   name: DragOrientation
   href: api/Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_DragOrientation
@@ -4852,6 +4965,12 @@ references:
   isSpec: "True"
   fullName: Celestial.UIToolkit.Controls.ToggleSwitch.LogicalChildren
   nameWithType: ToggleSwitch.LogicalChildren
+- uid: Celestial.UIToolkit.Controls.ToggleSwitch.MouseOverActiveVisualState
+  name: MouseOverActiveVisualState
+  href: api/Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_MouseOverActiveVisualState
+  commentId: F:Celestial.UIToolkit.Controls.ToggleSwitch.MouseOverActiveVisualState
+  fullName: Celestial.UIToolkit.Controls.ToggleSwitch.MouseOverActiveVisualState
+  nameWithType: ToggleSwitch.MouseOverActiveVisualState
 - uid: Celestial.UIToolkit.Controls.ToggleSwitch.OffCommand
   name: OffCommand
   href: api/Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OffCommand
@@ -4966,6 +5085,12 @@ references:
   commentId: F:Celestial.UIToolkit.Controls.ToggleSwitch.OffContentTemplateSelectorProperty
   fullName: Celestial.UIToolkit.Controls.ToggleSwitch.OffContentTemplateSelectorProperty
   nameWithType: ToggleSwitch.OffContentTemplateSelectorProperty
+- uid: Celestial.UIToolkit.Controls.ToggleSwitch.OffContentVisualState
+  name: OffContentVisualState
+  href: api/Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OffContentVisualState
+  commentId: F:Celestial.UIToolkit.Controls.ToggleSwitch.OffContentVisualState
+  fullName: Celestial.UIToolkit.Controls.ToggleSwitch.OffContentVisualState
+  nameWithType: ToggleSwitch.OffContentVisualState
 - uid: Celestial.UIToolkit.Controls.ToggleSwitch.OffKnobOffset
   name: OffKnobOffset
   href: api/Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OffKnobOffset
@@ -4985,6 +5110,12 @@ references:
   commentId: F:Celestial.UIToolkit.Controls.ToggleSwitch.OffKnobOffsetProperty
   fullName: Celestial.UIToolkit.Controls.ToggleSwitch.OffKnobOffsetProperty
   nameWithType: ToggleSwitch.OffKnobOffsetProperty
+- uid: Celestial.UIToolkit.Controls.ToggleSwitch.OffVisualState
+  name: OffVisualState
+  href: api/Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OffVisualState
+  commentId: F:Celestial.UIToolkit.Controls.ToggleSwitch.OffVisualState
+  fullName: Celestial.UIToolkit.Controls.ToggleSwitch.OffVisualState
+  nameWithType: ToggleSwitch.OffVisualState
 - uid: Celestial.UIToolkit.Controls.ToggleSwitch.OnApplyTemplate
   name: OnApplyTemplate()
   href: api/Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OnApplyTemplate
@@ -5112,6 +5243,12 @@ references:
   commentId: F:Celestial.UIToolkit.Controls.ToggleSwitch.OnContentTemplateSelectorProperty
   fullName: Celestial.UIToolkit.Controls.ToggleSwitch.OnContentTemplateSelectorProperty
   nameWithType: ToggleSwitch.OnContentTemplateSelectorProperty
+- uid: Celestial.UIToolkit.Controls.ToggleSwitch.OnContentVisualState
+  name: OnContentVisualState
+  href: api/Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OnContentVisualState
+  commentId: F:Celestial.UIToolkit.Controls.ToggleSwitch.OnContentVisualState
+  fullName: Celestial.UIToolkit.Controls.ToggleSwitch.OnContentVisualState
+  nameWithType: ToggleSwitch.OnContentVisualState
 - uid: Celestial.UIToolkit.Controls.ToggleSwitch.OnHeaderChanged(System.Object,System.Object)
   name: OnHeaderChanged(Object, Object)
   href: api/Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OnHeaderChanged_System_Object_System_Object_
@@ -5300,6 +5437,18 @@ references:
   isSpec: "True"
   fullName: Celestial.UIToolkit.Controls.ToggleSwitch.OnToggled
   nameWithType: ToggleSwitch.OnToggled
+- uid: Celestial.UIToolkit.Controls.ToggleSwitch.OnVisualState
+  name: OnVisualState
+  href: api/Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_OnVisualState
+  commentId: F:Celestial.UIToolkit.Controls.ToggleSwitch.OnVisualState
+  fullName: Celestial.UIToolkit.Controls.ToggleSwitch.OnVisualState
+  nameWithType: ToggleSwitch.OnVisualState
+- uid: Celestial.UIToolkit.Controls.ToggleSwitch.PressedVisualState
+  name: PressedVisualState
+  href: api/Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_PressedVisualState
+  commentId: F:Celestial.UIToolkit.Controls.ToggleSwitch.PressedVisualState
+  fullName: Celestial.UIToolkit.Controls.ToggleSwitch.PressedVisualState
+  nameWithType: ToggleSwitch.PressedVisualState
 - uid: Celestial.UIToolkit.Controls.ToggleSwitch.ReplaceOnOffContentWithHeader
   name: ReplaceOnOffContentWithHeader
   href: api/Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_ReplaceOnOffContentWithHeader
@@ -5331,6 +5480,12 @@ references:
   commentId: F:Celestial.UIToolkit.Controls.ToggleSwitch.ToggledEvent
   fullName: Celestial.UIToolkit.Controls.ToggleSwitch.ToggledEvent
   nameWithType: ToggleSwitch.ToggledEvent
+- uid: Celestial.UIToolkit.Controls.ToggleSwitch.ToggledStatesVisualStateGroup
+  name: ToggledStatesVisualStateGroup
+  href: api/Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_ToggledStatesVisualStateGroup
+  commentId: F:Celestial.UIToolkit.Controls.ToggleSwitch.ToggledStatesVisualStateGroup
+  fullName: Celestial.UIToolkit.Controls.ToggleSwitch.ToggledStatesVisualStateGroup
+  nameWithType: ToggleSwitch.ToggledStatesVisualStateGroup
 - uid: Celestial.UIToolkit.Controls.ToggleSwitch.ToString
   name: ToString()
   href: api/Celestial.UIToolkit.Controls.ToggleSwitch.html#Celestial_UIToolkit_Controls_ToggleSwitch_ToString
@@ -6229,51 +6384,6 @@ references:
   isSpec: "True"
   fullName: Celestial.UIToolkit.DesignMode.IsEnabled
   nameWithType: DesignMode.IsEnabled
-- uid: Celestial.UIToolkit.DesignTimeOnlyResourceDictionary
-  name: DesignTimeOnlyResourceDictionary
-  href: api/Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.html
-  commentId: T:Celestial.UIToolkit.DesignTimeOnlyResourceDictionary
-  fullName: Celestial.UIToolkit.DesignTimeOnlyResourceDictionary
-  nameWithType: DesignTimeOnlyResourceDictionary
-- uid: Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.IsLoaded
-  name: IsLoaded
-  href: api/Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.html#Celestial_UIToolkit_DesignTimeOnlyResourceDictionary_IsLoaded
-  commentId: P:Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.IsLoaded
-  fullName: Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.IsLoaded
-  nameWithType: DesignTimeOnlyResourceDictionary.IsLoaded
-- uid: Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.IsLoaded*
-  name: IsLoaded
-  href: api/Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.html#Celestial_UIToolkit_DesignTimeOnlyResourceDictionary_IsLoaded_
-  commentId: Overload:Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.IsLoaded
-  isSpec: "True"
-  fullName: Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.IsLoaded
-  nameWithType: DesignTimeOnlyResourceDictionary.IsLoaded
-- uid: Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.Source
-  name: Source
-  href: api/Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.html#Celestial_UIToolkit_DesignTimeOnlyResourceDictionary_Source
-  commentId: P:Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.Source
-  fullName: Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.Source
-  nameWithType: DesignTimeOnlyResourceDictionary.Source
-- uid: Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.Source*
-  name: Source
-  href: api/Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.html#Celestial_UIToolkit_DesignTimeOnlyResourceDictionary_Source_
-  commentId: Overload:Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.Source
-  isSpec: "True"
-  fullName: Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.Source
-  nameWithType: DesignTimeOnlyResourceDictionary.Source
-- uid: Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.ToString
-  name: ToString()
-  href: api/Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.html#Celestial_UIToolkit_DesignTimeOnlyResourceDictionary_ToString
-  commentId: M:Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.ToString
-  fullName: Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.ToString()
-  nameWithType: DesignTimeOnlyResourceDictionary.ToString()
-- uid: Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.ToString*
-  name: ToString
-  href: api/Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.html#Celestial_UIToolkit_DesignTimeOnlyResourceDictionary_ToString_
-  commentId: Overload:Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.ToString
-  isSpec: "True"
-  fullName: Celestial.UIToolkit.DesignTimeOnlyResourceDictionary.ToString
-  nameWithType: DesignTimeOnlyResourceDictionary.ToString
 - uid: Celestial.UIToolkit.Extensions
   name: Celestial.UIToolkit.Extensions
   href: api/Celestial.UIToolkit.Extensions.html
@@ -8538,32 +8648,32 @@ references:
   isSpec: "True"
   fullName: Celestial.UIToolkit.Media.Animations.IClockController.Stop
   nameWithType: IClockController.Stop
-- uid: Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame`1
-  name: IInterpolateKeyFrame<T>
-  href: api/Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame-1.html
-  commentId: T:Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame`1
-  name.vb: IInterpolateKeyFrame(Of T)
-  fullName: Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame<T>
-  fullName.vb: Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame(Of T)
-  nameWithType: IInterpolateKeyFrame<T>
-  nameWithType.vb: IInterpolateKeyFrame(Of T)
-- uid: Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame`1.InterpolateValue(`0,System.Double)
+- uid: Celestial.UIToolkit.Media.Animations.IInterpolatingKeyFrame`1
+  name: IInterpolatingKeyFrame<T>
+  href: api/Celestial.UIToolkit.Media.Animations.IInterpolatingKeyFrame-1.html
+  commentId: T:Celestial.UIToolkit.Media.Animations.IInterpolatingKeyFrame`1
+  name.vb: IInterpolatingKeyFrame(Of T)
+  fullName: Celestial.UIToolkit.Media.Animations.IInterpolatingKeyFrame<T>
+  fullName.vb: Celestial.UIToolkit.Media.Animations.IInterpolatingKeyFrame(Of T)
+  nameWithType: IInterpolatingKeyFrame<T>
+  nameWithType.vb: IInterpolatingKeyFrame(Of T)
+- uid: Celestial.UIToolkit.Media.Animations.IInterpolatingKeyFrame`1.InterpolateValue(`0,System.Double)
   name: InterpolateValue(T, Double)
-  href: api/Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame-1.html#Celestial_UIToolkit_Media_Animations_IInterpolateKeyFrame_1_InterpolateValue__0_System_Double_
-  commentId: M:Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame`1.InterpolateValue(`0,System.Double)
-  fullName: Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame<T>.InterpolateValue(T, System.Double)
-  fullName.vb: Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame(Of T).InterpolateValue(T, System.Double)
-  nameWithType: IInterpolateKeyFrame<T>.InterpolateValue(T, Double)
-  nameWithType.vb: IInterpolateKeyFrame(Of T).InterpolateValue(T, Double)
-- uid: Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame`1.InterpolateValue*
+  href: api/Celestial.UIToolkit.Media.Animations.IInterpolatingKeyFrame-1.html#Celestial_UIToolkit_Media_Animations_IInterpolatingKeyFrame_1_InterpolateValue__0_System_Double_
+  commentId: M:Celestial.UIToolkit.Media.Animations.IInterpolatingKeyFrame`1.InterpolateValue(`0,System.Double)
+  fullName: Celestial.UIToolkit.Media.Animations.IInterpolatingKeyFrame<T>.InterpolateValue(T, System.Double)
+  fullName.vb: Celestial.UIToolkit.Media.Animations.IInterpolatingKeyFrame(Of T).InterpolateValue(T, System.Double)
+  nameWithType: IInterpolatingKeyFrame<T>.InterpolateValue(T, Double)
+  nameWithType.vb: IInterpolatingKeyFrame(Of T).InterpolateValue(T, Double)
+- uid: Celestial.UIToolkit.Media.Animations.IInterpolatingKeyFrame`1.InterpolateValue*
   name: InterpolateValue
-  href: api/Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame-1.html#Celestial_UIToolkit_Media_Animations_IInterpolateKeyFrame_1_InterpolateValue_
-  commentId: Overload:Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame`1.InterpolateValue
+  href: api/Celestial.UIToolkit.Media.Animations.IInterpolatingKeyFrame-1.html#Celestial_UIToolkit_Media_Animations_IInterpolatingKeyFrame_1_InterpolateValue_
+  commentId: Overload:Celestial.UIToolkit.Media.Animations.IInterpolatingKeyFrame`1.InterpolateValue
   isSpec: "True"
-  fullName: Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame<T>.InterpolateValue
-  fullName.vb: Celestial.UIToolkit.Media.Animations.IInterpolateKeyFrame(Of T).InterpolateValue
-  nameWithType: IInterpolateKeyFrame<T>.InterpolateValue
-  nameWithType.vb: IInterpolateKeyFrame(Of T).InterpolateValue
+  fullName: Celestial.UIToolkit.Media.Animations.IInterpolatingKeyFrame<T>.InterpolateValue
+  fullName.vb: Celestial.UIToolkit.Media.Animations.IInterpolatingKeyFrame(Of T).InterpolateValue
+  nameWithType: IInterpolatingKeyFrame<T>.InterpolateValue
+  nameWithType.vb: IInterpolatingKeyFrame(Of T).InterpolateValue
 - uid: Celestial.UIToolkit.Media.Animations.KeyFrameBase`1
   name: KeyFrameBase<T>
   href: api/Celestial.UIToolkit.Media.Animations.KeyFrameBase-1.html
@@ -8855,44 +8965,6 @@ references:
   fullName.vb: Celestial.UIToolkit.Media.Animations.SplineKeyFrameBase(Of T).KeySplineProperty
   nameWithType: SplineKeyFrameBase<T>.KeySplineProperty
   nameWithType.vb: SplineKeyFrameBase(Of T).KeySplineProperty
-- uid: Celestial.UIToolkit.SharedResourceDictionary
-  name: SharedResourceDictionary
-  href: api/Celestial.UIToolkit.SharedResourceDictionary.html
-  commentId: T:Celestial.UIToolkit.SharedResourceDictionary
-  fullName: Celestial.UIToolkit.SharedResourceDictionary
-  nameWithType: SharedResourceDictionary
-- uid: Celestial.UIToolkit.SharedResourceDictionary.#ctor
-  name: SharedResourceDictionary()
-  href: api/Celestial.UIToolkit.SharedResourceDictionary.html#Celestial_UIToolkit_SharedResourceDictionary__ctor
-  commentId: M:Celestial.UIToolkit.SharedResourceDictionary.#ctor
-  fullName: Celestial.UIToolkit.SharedResourceDictionary.SharedResourceDictionary()
-  nameWithType: SharedResourceDictionary.SharedResourceDictionary()
-- uid: Celestial.UIToolkit.SharedResourceDictionary.#ctor(System.Uri)
-  name: SharedResourceDictionary(Uri)
-  href: api/Celestial.UIToolkit.SharedResourceDictionary.html#Celestial_UIToolkit_SharedResourceDictionary__ctor_System_Uri_
-  commentId: M:Celestial.UIToolkit.SharedResourceDictionary.#ctor(System.Uri)
-  fullName: Celestial.UIToolkit.SharedResourceDictionary.SharedResourceDictionary(System.Uri)
-  nameWithType: SharedResourceDictionary.SharedResourceDictionary(Uri)
-- uid: Celestial.UIToolkit.SharedResourceDictionary.#ctor*
-  name: SharedResourceDictionary
-  href: api/Celestial.UIToolkit.SharedResourceDictionary.html#Celestial_UIToolkit_SharedResourceDictionary__ctor_
-  commentId: Overload:Celestial.UIToolkit.SharedResourceDictionary.#ctor
-  isSpec: "True"
-  fullName: Celestial.UIToolkit.SharedResourceDictionary.SharedResourceDictionary
-  nameWithType: SharedResourceDictionary.SharedResourceDictionary
-- uid: Celestial.UIToolkit.SharedResourceDictionary.Source
-  name: Source
-  href: api/Celestial.UIToolkit.SharedResourceDictionary.html#Celestial_UIToolkit_SharedResourceDictionary_Source
-  commentId: P:Celestial.UIToolkit.SharedResourceDictionary.Source
-  fullName: Celestial.UIToolkit.SharedResourceDictionary.Source
-  nameWithType: SharedResourceDictionary.Source
-- uid: Celestial.UIToolkit.SharedResourceDictionary.Source*
-  name: Source
-  href: api/Celestial.UIToolkit.SharedResourceDictionary.html#Celestial_UIToolkit_SharedResourceDictionary_Source_
-  commentId: Overload:Celestial.UIToolkit.SharedResourceDictionary.Source
-  isSpec: "True"
-  fullName: Celestial.UIToolkit.SharedResourceDictionary.Source
-  nameWithType: SharedResourceDictionary.Source
 - uid: Celestial.UIToolkit.Theming
   name: Celestial.UIToolkit.Theming
   href: api/Celestial.UIToolkit.Theming.html
@@ -10846,6 +10918,24 @@ references:
   commentId: N:Celestial.UIToolkit.Xaml
   fullName: Celestial.UIToolkit.Xaml
   nameWithType: Celestial.UIToolkit.Xaml
+- uid: Celestial.UIToolkit.Xaml.ApplicationTheme
+  name: ApplicationTheme
+  href: api/Celestial.UIToolkit.Xaml.ApplicationTheme.html
+  commentId: T:Celestial.UIToolkit.Xaml.ApplicationTheme
+  fullName: Celestial.UIToolkit.Xaml.ApplicationTheme
+  nameWithType: ApplicationTheme
+- uid: Celestial.UIToolkit.Xaml.ApplicationTheme.Dark
+  name: Dark
+  href: api/Celestial.UIToolkit.Xaml.ApplicationTheme.html#Celestial_UIToolkit_Xaml_ApplicationTheme_Dark
+  commentId: F:Celestial.UIToolkit.Xaml.ApplicationTheme.Dark
+  fullName: Celestial.UIToolkit.Xaml.ApplicationTheme.Dark
+  nameWithType: ApplicationTheme.Dark
+- uid: Celestial.UIToolkit.Xaml.ApplicationTheme.Light
+  name: Light
+  href: api/Celestial.UIToolkit.Xaml.ApplicationTheme.html#Celestial_UIToolkit_Xaml_ApplicationTheme_Light
+  commentId: F:Celestial.UIToolkit.Xaml.ApplicationTheme.Light
+  fullName: Celestial.UIToolkit.Xaml.ApplicationTheme.Light
+  nameWithType: ApplicationTheme.Light
 - uid: Celestial.UIToolkit.Xaml.BindingProxy
   name: BindingProxy
   href: api/Celestial.UIToolkit.Xaml.BindingProxy.html
@@ -10916,6 +11006,51 @@ references:
   isSpec: "True"
   fullName: Celestial.UIToolkit.Xaml.BindingProxy.ToString
   nameWithType: BindingProxy.ToString
+- uid: Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary
+  name: DesignTimeOnlyResourceDictionary
+  href: api/Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.html
+  commentId: T:Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary
+  fullName: Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary
+  nameWithType: DesignTimeOnlyResourceDictionary
+- uid: Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.IsLoaded
+  name: IsLoaded
+  href: api/Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.html#Celestial_UIToolkit_Xaml_DesignTimeOnlyResourceDictionary_IsLoaded
+  commentId: P:Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.IsLoaded
+  fullName: Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.IsLoaded
+  nameWithType: DesignTimeOnlyResourceDictionary.IsLoaded
+- uid: Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.IsLoaded*
+  name: IsLoaded
+  href: api/Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.html#Celestial_UIToolkit_Xaml_DesignTimeOnlyResourceDictionary_IsLoaded_
+  commentId: Overload:Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.IsLoaded
+  isSpec: "True"
+  fullName: Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.IsLoaded
+  nameWithType: DesignTimeOnlyResourceDictionary.IsLoaded
+- uid: Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.Source
+  name: Source
+  href: api/Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.html#Celestial_UIToolkit_Xaml_DesignTimeOnlyResourceDictionary_Source
+  commentId: P:Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.Source
+  fullName: Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.Source
+  nameWithType: DesignTimeOnlyResourceDictionary.Source
+- uid: Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.Source*
+  name: Source
+  href: api/Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.html#Celestial_UIToolkit_Xaml_DesignTimeOnlyResourceDictionary_Source_
+  commentId: Overload:Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.Source
+  isSpec: "True"
+  fullName: Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.Source
+  nameWithType: DesignTimeOnlyResourceDictionary.Source
+- uid: Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.ToString
+  name: ToString()
+  href: api/Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.html#Celestial_UIToolkit_Xaml_DesignTimeOnlyResourceDictionary_ToString
+  commentId: M:Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.ToString
+  fullName: Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.ToString()
+  nameWithType: DesignTimeOnlyResourceDictionary.ToString()
+- uid: Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.ToString*
+  name: ToString
+  href: api/Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.html#Celestial_UIToolkit_Xaml_DesignTimeOnlyResourceDictionary_ToString_
+  commentId: Overload:Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.ToString
+  isSpec: "True"
+  fullName: Celestial.UIToolkit.Xaml.DesignTimeOnlyResourceDictionary.ToString
+  nameWithType: DesignTimeOnlyResourceDictionary.ToString
 - uid: Celestial.UIToolkit.Xaml.EnumBindingSourceExtension
   name: EnumBindingSourceExtension
   href: api/Celestial.UIToolkit.Xaml.EnumBindingSourceExtension.html
@@ -11255,57 +11390,57 @@ references:
   isSpec: "True"
   fullName: Celestial.UIToolkit.Xaml.MarginHelper.SetChildrenMargin
   nameWithType: MarginHelper.SetChildrenMargin
-- uid: Celestial.UIToolkit.Xaml.MultiStyleExtension
-  name: MultiStyleExtension
-  href: api/Celestial.UIToolkit.Xaml.MultiStyleExtension.html
-  commentId: T:Celestial.UIToolkit.Xaml.MultiStyleExtension
-  fullName: Celestial.UIToolkit.Xaml.MultiStyleExtension
-  nameWithType: MultiStyleExtension
-- uid: Celestial.UIToolkit.Xaml.MultiStyleExtension.#ctor
-  name: MultiStyleExtension()
-  href: api/Celestial.UIToolkit.Xaml.MultiStyleExtension.html#Celestial_UIToolkit_Xaml_MultiStyleExtension__ctor
-  commentId: M:Celestial.UIToolkit.Xaml.MultiStyleExtension.#ctor
-  fullName: Celestial.UIToolkit.Xaml.MultiStyleExtension.MultiStyleExtension()
-  nameWithType: MultiStyleExtension.MultiStyleExtension()
-- uid: Celestial.UIToolkit.Xaml.MultiStyleExtension.#ctor(System.String)
-  name: MultiStyleExtension(String)
-  href: api/Celestial.UIToolkit.Xaml.MultiStyleExtension.html#Celestial_UIToolkit_Xaml_MultiStyleExtension__ctor_System_String_
-  commentId: M:Celestial.UIToolkit.Xaml.MultiStyleExtension.#ctor(System.String)
-  fullName: Celestial.UIToolkit.Xaml.MultiStyleExtension.MultiStyleExtension(System.String)
-  nameWithType: MultiStyleExtension.MultiStyleExtension(String)
-- uid: Celestial.UIToolkit.Xaml.MultiStyleExtension.#ctor*
-  name: MultiStyleExtension
-  href: api/Celestial.UIToolkit.Xaml.MultiStyleExtension.html#Celestial_UIToolkit_Xaml_MultiStyleExtension__ctor_
-  commentId: Overload:Celestial.UIToolkit.Xaml.MultiStyleExtension.#ctor
+- uid: Celestial.UIToolkit.Xaml.MergeStylesExtension
+  name: MergeStylesExtension
+  href: api/Celestial.UIToolkit.Xaml.MergeStylesExtension.html
+  commentId: T:Celestial.UIToolkit.Xaml.MergeStylesExtension
+  fullName: Celestial.UIToolkit.Xaml.MergeStylesExtension
+  nameWithType: MergeStylesExtension
+- uid: Celestial.UIToolkit.Xaml.MergeStylesExtension.#ctor
+  name: MergeStylesExtension()
+  href: api/Celestial.UIToolkit.Xaml.MergeStylesExtension.html#Celestial_UIToolkit_Xaml_MergeStylesExtension__ctor
+  commentId: M:Celestial.UIToolkit.Xaml.MergeStylesExtension.#ctor
+  fullName: Celestial.UIToolkit.Xaml.MergeStylesExtension.MergeStylesExtension()
+  nameWithType: MergeStylesExtension.MergeStylesExtension()
+- uid: Celestial.UIToolkit.Xaml.MergeStylesExtension.#ctor(System.String)
+  name: MergeStylesExtension(String)
+  href: api/Celestial.UIToolkit.Xaml.MergeStylesExtension.html#Celestial_UIToolkit_Xaml_MergeStylesExtension__ctor_System_String_
+  commentId: M:Celestial.UIToolkit.Xaml.MergeStylesExtension.#ctor(System.String)
+  fullName: Celestial.UIToolkit.Xaml.MergeStylesExtension.MergeStylesExtension(System.String)
+  nameWithType: MergeStylesExtension.MergeStylesExtension(String)
+- uid: Celestial.UIToolkit.Xaml.MergeStylesExtension.#ctor*
+  name: MergeStylesExtension
+  href: api/Celestial.UIToolkit.Xaml.MergeStylesExtension.html#Celestial_UIToolkit_Xaml_MergeStylesExtension__ctor_
+  commentId: Overload:Celestial.UIToolkit.Xaml.MergeStylesExtension.#ctor
   isSpec: "True"
-  fullName: Celestial.UIToolkit.Xaml.MultiStyleExtension.MultiStyleExtension
-  nameWithType: MultiStyleExtension.MultiStyleExtension
-- uid: Celestial.UIToolkit.Xaml.MultiStyleExtension.ProvideValue(System.IServiceProvider)
+  fullName: Celestial.UIToolkit.Xaml.MergeStylesExtension.MergeStylesExtension
+  nameWithType: MergeStylesExtension.MergeStylesExtension
+- uid: Celestial.UIToolkit.Xaml.MergeStylesExtension.ProvideValue(System.IServiceProvider)
   name: ProvideValue(IServiceProvider)
-  href: api/Celestial.UIToolkit.Xaml.MultiStyleExtension.html#Celestial_UIToolkit_Xaml_MultiStyleExtension_ProvideValue_System_IServiceProvider_
-  commentId: M:Celestial.UIToolkit.Xaml.MultiStyleExtension.ProvideValue(System.IServiceProvider)
-  fullName: Celestial.UIToolkit.Xaml.MultiStyleExtension.ProvideValue(System.IServiceProvider)
-  nameWithType: MultiStyleExtension.ProvideValue(IServiceProvider)
-- uid: Celestial.UIToolkit.Xaml.MultiStyleExtension.ProvideValue*
+  href: api/Celestial.UIToolkit.Xaml.MergeStylesExtension.html#Celestial_UIToolkit_Xaml_MergeStylesExtension_ProvideValue_System_IServiceProvider_
+  commentId: M:Celestial.UIToolkit.Xaml.MergeStylesExtension.ProvideValue(System.IServiceProvider)
+  fullName: Celestial.UIToolkit.Xaml.MergeStylesExtension.ProvideValue(System.IServiceProvider)
+  nameWithType: MergeStylesExtension.ProvideValue(IServiceProvider)
+- uid: Celestial.UIToolkit.Xaml.MergeStylesExtension.ProvideValue*
   name: ProvideValue
-  href: api/Celestial.UIToolkit.Xaml.MultiStyleExtension.html#Celestial_UIToolkit_Xaml_MultiStyleExtension_ProvideValue_
-  commentId: Overload:Celestial.UIToolkit.Xaml.MultiStyleExtension.ProvideValue
+  href: api/Celestial.UIToolkit.Xaml.MergeStylesExtension.html#Celestial_UIToolkit_Xaml_MergeStylesExtension_ProvideValue_
+  commentId: Overload:Celestial.UIToolkit.Xaml.MergeStylesExtension.ProvideValue
   isSpec: "True"
-  fullName: Celestial.UIToolkit.Xaml.MultiStyleExtension.ProvideValue
-  nameWithType: MultiStyleExtension.ProvideValue
-- uid: Celestial.UIToolkit.Xaml.MultiStyleExtension.StyleKeys
+  fullName: Celestial.UIToolkit.Xaml.MergeStylesExtension.ProvideValue
+  nameWithType: MergeStylesExtension.ProvideValue
+- uid: Celestial.UIToolkit.Xaml.MergeStylesExtension.StyleKeys
   name: StyleKeys
-  href: api/Celestial.UIToolkit.Xaml.MultiStyleExtension.html#Celestial_UIToolkit_Xaml_MultiStyleExtension_StyleKeys
-  commentId: P:Celestial.UIToolkit.Xaml.MultiStyleExtension.StyleKeys
-  fullName: Celestial.UIToolkit.Xaml.MultiStyleExtension.StyleKeys
-  nameWithType: MultiStyleExtension.StyleKeys
-- uid: Celestial.UIToolkit.Xaml.MultiStyleExtension.StyleKeys*
+  href: api/Celestial.UIToolkit.Xaml.MergeStylesExtension.html#Celestial_UIToolkit_Xaml_MergeStylesExtension_StyleKeys
+  commentId: P:Celestial.UIToolkit.Xaml.MergeStylesExtension.StyleKeys
+  fullName: Celestial.UIToolkit.Xaml.MergeStylesExtension.StyleKeys
+  nameWithType: MergeStylesExtension.StyleKeys
+- uid: Celestial.UIToolkit.Xaml.MergeStylesExtension.StyleKeys*
   name: StyleKeys
-  href: api/Celestial.UIToolkit.Xaml.MultiStyleExtension.html#Celestial_UIToolkit_Xaml_MultiStyleExtension_StyleKeys_
-  commentId: Overload:Celestial.UIToolkit.Xaml.MultiStyleExtension.StyleKeys
+  href: api/Celestial.UIToolkit.Xaml.MergeStylesExtension.html#Celestial_UIToolkit_Xaml_MergeStylesExtension_StyleKeys_
+  commentId: Overload:Celestial.UIToolkit.Xaml.MergeStylesExtension.StyleKeys
   isSpec: "True"
-  fullName: Celestial.UIToolkit.Xaml.MultiStyleExtension.StyleKeys
-  nameWithType: MultiStyleExtension.StyleKeys
+  fullName: Celestial.UIToolkit.Xaml.MergeStylesExtension.StyleKeys
+  nameWithType: MergeStylesExtension.StyleKeys
 - uid: Celestial.UIToolkit.Xaml.SelfBindingExtension
   name: SelfBindingExtension
   href: api/Celestial.UIToolkit.Xaml.SelfBindingExtension.html
@@ -11331,6 +11466,44 @@ references:
   isSpec: "True"
   fullName: Celestial.UIToolkit.Xaml.SelfBindingExtension.SelfBindingExtension
   nameWithType: SelfBindingExtension.SelfBindingExtension
+- uid: Celestial.UIToolkit.Xaml.SharedResourceDictionary
+  name: SharedResourceDictionary
+  href: api/Celestial.UIToolkit.Xaml.SharedResourceDictionary.html
+  commentId: T:Celestial.UIToolkit.Xaml.SharedResourceDictionary
+  fullName: Celestial.UIToolkit.Xaml.SharedResourceDictionary
+  nameWithType: SharedResourceDictionary
+- uid: Celestial.UIToolkit.Xaml.SharedResourceDictionary.#ctor
+  name: SharedResourceDictionary()
+  href: api/Celestial.UIToolkit.Xaml.SharedResourceDictionary.html#Celestial_UIToolkit_Xaml_SharedResourceDictionary__ctor
+  commentId: M:Celestial.UIToolkit.Xaml.SharedResourceDictionary.#ctor
+  fullName: Celestial.UIToolkit.Xaml.SharedResourceDictionary.SharedResourceDictionary()
+  nameWithType: SharedResourceDictionary.SharedResourceDictionary()
+- uid: Celestial.UIToolkit.Xaml.SharedResourceDictionary.#ctor(System.Uri)
+  name: SharedResourceDictionary(Uri)
+  href: api/Celestial.UIToolkit.Xaml.SharedResourceDictionary.html#Celestial_UIToolkit_Xaml_SharedResourceDictionary__ctor_System_Uri_
+  commentId: M:Celestial.UIToolkit.Xaml.SharedResourceDictionary.#ctor(System.Uri)
+  fullName: Celestial.UIToolkit.Xaml.SharedResourceDictionary.SharedResourceDictionary(System.Uri)
+  nameWithType: SharedResourceDictionary.SharedResourceDictionary(Uri)
+- uid: Celestial.UIToolkit.Xaml.SharedResourceDictionary.#ctor*
+  name: SharedResourceDictionary
+  href: api/Celestial.UIToolkit.Xaml.SharedResourceDictionary.html#Celestial_UIToolkit_Xaml_SharedResourceDictionary__ctor_
+  commentId: Overload:Celestial.UIToolkit.Xaml.SharedResourceDictionary.#ctor
+  isSpec: "True"
+  fullName: Celestial.UIToolkit.Xaml.SharedResourceDictionary.SharedResourceDictionary
+  nameWithType: SharedResourceDictionary.SharedResourceDictionary
+- uid: Celestial.UIToolkit.Xaml.SharedResourceDictionary.Source
+  name: Source
+  href: api/Celestial.UIToolkit.Xaml.SharedResourceDictionary.html#Celestial_UIToolkit_Xaml_SharedResourceDictionary_Source
+  commentId: P:Celestial.UIToolkit.Xaml.SharedResourceDictionary.Source
+  fullName: Celestial.UIToolkit.Xaml.SharedResourceDictionary.Source
+  nameWithType: SharedResourceDictionary.Source
+- uid: Celestial.UIToolkit.Xaml.SharedResourceDictionary.Source*
+  name: Source
+  href: api/Celestial.UIToolkit.Xaml.SharedResourceDictionary.html#Celestial_UIToolkit_Xaml_SharedResourceDictionary_Source_
+  commentId: Overload:Celestial.UIToolkit.Xaml.SharedResourceDictionary.Source
+  isSpec: "True"
+  fullName: Celestial.UIToolkit.Xaml.SharedResourceDictionary.Source
+  nameWithType: SharedResourceDictionary.Source
 - uid: Celestial.UIToolkit.Xaml.TemplatedParentBindingExtension
   name: TemplatedParentBindingExtension
   href: api/Celestial.UIToolkit.Xaml.TemplatedParentBindingExtension.html
@@ -11356,6 +11529,153 @@ references:
   isSpec: "True"
   fullName: Celestial.UIToolkit.Xaml.TemplatedParentBindingExtension.TemplatedParentBindingExtension
   nameWithType: TemplatedParentBindingExtension.TemplatedParentBindingExtension
+- uid: Celestial.UIToolkit.Xaml.ThemeChangedEventArgs
+  name: ThemeChangedEventArgs
+  href: api/Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.html
+  commentId: T:Celestial.UIToolkit.Xaml.ThemeChangedEventArgs
+  fullName: Celestial.UIToolkit.Xaml.ThemeChangedEventArgs
+  nameWithType: ThemeChangedEventArgs
+- uid: Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.#ctor(System.String)
+  name: ThemeChangedEventArgs(String)
+  href: api/Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.html#Celestial_UIToolkit_Xaml_ThemeChangedEventArgs__ctor_System_String_
+  commentId: M:Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.#ctor(System.String)
+  fullName: Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.ThemeChangedEventArgs(System.String)
+  nameWithType: ThemeChangedEventArgs.ThemeChangedEventArgs(String)
+- uid: Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.#ctor*
+  name: ThemeChangedEventArgs
+  href: api/Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.html#Celestial_UIToolkit_Xaml_ThemeChangedEventArgs__ctor_
+  commentId: Overload:Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.#ctor
+  isSpec: "True"
+  fullName: Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.ThemeChangedEventArgs
+  nameWithType: ThemeChangedEventArgs.ThemeChangedEventArgs
+- uid: Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.ThemeName
+  name: ThemeName
+  href: api/Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.html#Celestial_UIToolkit_Xaml_ThemeChangedEventArgs_ThemeName
+  commentId: P:Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.ThemeName
+  fullName: Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.ThemeName
+  nameWithType: ThemeChangedEventArgs.ThemeName
+- uid: Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.ThemeName*
+  name: ThemeName
+  href: api/Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.html#Celestial_UIToolkit_Xaml_ThemeChangedEventArgs_ThemeName_
+  commentId: Overload:Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.ThemeName
+  isSpec: "True"
+  fullName: Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.ThemeName
+  nameWithType: ThemeChangedEventArgs.ThemeName
+- uid: Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.ToString
+  name: ToString()
+  href: api/Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.html#Celestial_UIToolkit_Xaml_ThemeChangedEventArgs_ToString
+  commentId: M:Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.ToString
+  fullName: Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.ToString()
+  nameWithType: ThemeChangedEventArgs.ToString()
+- uid: Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.ToString*
+  name: ToString
+  href: api/Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.html#Celestial_UIToolkit_Xaml_ThemeChangedEventArgs_ToString_
+  commentId: Overload:Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.ToString
+  isSpec: "True"
+  fullName: Celestial.UIToolkit.Xaml.ThemeChangedEventArgs.ToString
+  nameWithType: ThemeChangedEventArgs.ToString
+- uid: Celestial.UIToolkit.Xaml.ThemeManager
+  name: ThemeManager
+  href: api/Celestial.UIToolkit.Xaml.ThemeManager.html
+  commentId: T:Celestial.UIToolkit.Xaml.ThemeManager
+  fullName: Celestial.UIToolkit.Xaml.ThemeManager
+  nameWithType: ThemeManager
+- uid: Celestial.UIToolkit.Xaml.ThemeManager.ChangeTheme(System.String)
+  name: ChangeTheme(String)
+  href: api/Celestial.UIToolkit.Xaml.ThemeManager.html#Celestial_UIToolkit_Xaml_ThemeManager_ChangeTheme_System_String_
+  commentId: M:Celestial.UIToolkit.Xaml.ThemeManager.ChangeTheme(System.String)
+  fullName: Celestial.UIToolkit.Xaml.ThemeManager.ChangeTheme(System.String)
+  nameWithType: ThemeManager.ChangeTheme(String)
+- uid: Celestial.UIToolkit.Xaml.ThemeManager.ChangeTheme*
+  name: ChangeTheme
+  href: api/Celestial.UIToolkit.Xaml.ThemeManager.html#Celestial_UIToolkit_Xaml_ThemeManager_ChangeTheme_
+  commentId: Overload:Celestial.UIToolkit.Xaml.ThemeManager.ChangeTheme
+  isSpec: "True"
+  fullName: Celestial.UIToolkit.Xaml.ThemeManager.ChangeTheme
+  nameWithType: ThemeManager.ChangeTheme
+- uid: Celestial.UIToolkit.Xaml.ThemeManager.Current
+  name: Current
+  href: api/Celestial.UIToolkit.Xaml.ThemeManager.html#Celestial_UIToolkit_Xaml_ThemeManager_Current
+  commentId: P:Celestial.UIToolkit.Xaml.ThemeManager.Current
+  fullName: Celestial.UIToolkit.Xaml.ThemeManager.Current
+  nameWithType: ThemeManager.Current
+- uid: Celestial.UIToolkit.Xaml.ThemeManager.Current*
+  name: Current
+  href: api/Celestial.UIToolkit.Xaml.ThemeManager.html#Celestial_UIToolkit_Xaml_ThemeManager_Current_
+  commentId: Overload:Celestial.UIToolkit.Xaml.ThemeManager.Current
+  isSpec: "True"
+  fullName: Celestial.UIToolkit.Xaml.ThemeManager.Current
+  nameWithType: ThemeManager.Current
+- uid: Celestial.UIToolkit.Xaml.ThemeManager.CurrentTheme
+  name: CurrentTheme
+  href: api/Celestial.UIToolkit.Xaml.ThemeManager.html#Celestial_UIToolkit_Xaml_ThemeManager_CurrentTheme
+  commentId: P:Celestial.UIToolkit.Xaml.ThemeManager.CurrentTheme
+  fullName: Celestial.UIToolkit.Xaml.ThemeManager.CurrentTheme
+  nameWithType: ThemeManager.CurrentTheme
+- uid: Celestial.UIToolkit.Xaml.ThemeManager.CurrentTheme*
+  name: CurrentTheme
+  href: api/Celestial.UIToolkit.Xaml.ThemeManager.html#Celestial_UIToolkit_Xaml_ThemeManager_CurrentTheme_
+  commentId: Overload:Celestial.UIToolkit.Xaml.ThemeManager.CurrentTheme
+  isSpec: "True"
+  fullName: Celestial.UIToolkit.Xaml.ThemeManager.CurrentTheme
+  nameWithType: ThemeManager.CurrentTheme
+- uid: Celestial.UIToolkit.Xaml.ThemeManager.ThemeChanged
+  name: ThemeChanged
+  href: api/Celestial.UIToolkit.Xaml.ThemeManager.html#Celestial_UIToolkit_Xaml_ThemeManager_ThemeChanged
+  commentId: E:Celestial.UIToolkit.Xaml.ThemeManager.ThemeChanged
+  fullName: Celestial.UIToolkit.Xaml.ThemeManager.ThemeChanged
+  nameWithType: ThemeManager.ThemeChanged
+- uid: Celestial.UIToolkit.Xaml.ThemeManagerExtensions
+  name: ThemeManagerExtensions
+  href: api/Celestial.UIToolkit.Xaml.ThemeManagerExtensions.html
+  commentId: T:Celestial.UIToolkit.Xaml.ThemeManagerExtensions
+  fullName: Celestial.UIToolkit.Xaml.ThemeManagerExtensions
+  nameWithType: ThemeManagerExtensions
+- uid: Celestial.UIToolkit.Xaml.ThemeManagerExtensions.ChangeTheme(Celestial.UIToolkit.Xaml.ThemeManager,Celestial.UIToolkit.Xaml.ApplicationTheme)
+  name: ChangeTheme(ThemeManager, ApplicationTheme)
+  href: api/Celestial.UIToolkit.Xaml.ThemeManagerExtensions.html#Celestial_UIToolkit_Xaml_ThemeManagerExtensions_ChangeTheme_Celestial_UIToolkit_Xaml_ThemeManager_Celestial_UIToolkit_Xaml_ApplicationTheme_
+  commentId: M:Celestial.UIToolkit.Xaml.ThemeManagerExtensions.ChangeTheme(Celestial.UIToolkit.Xaml.ThemeManager,Celestial.UIToolkit.Xaml.ApplicationTheme)
+  fullName: Celestial.UIToolkit.Xaml.ThemeManagerExtensions.ChangeTheme(Celestial.UIToolkit.Xaml.ThemeManager, Celestial.UIToolkit.Xaml.ApplicationTheme)
+  nameWithType: ThemeManagerExtensions.ChangeTheme(ThemeManager, ApplicationTheme)
+- uid: Celestial.UIToolkit.Xaml.ThemeManagerExtensions.ChangeTheme*
+  name: ChangeTheme
+  href: api/Celestial.UIToolkit.Xaml.ThemeManagerExtensions.html#Celestial_UIToolkit_Xaml_ThemeManagerExtensions_ChangeTheme_
+  commentId: Overload:Celestial.UIToolkit.Xaml.ThemeManagerExtensions.ChangeTheme
+  isSpec: "True"
+  fullName: Celestial.UIToolkit.Xaml.ThemeManagerExtensions.ChangeTheme
+  nameWithType: ThemeManagerExtensions.ChangeTheme
+- uid: Celestial.UIToolkit.Xaml.ThemeResourceDictionary
+  name: ThemeResourceDictionary
+  href: api/Celestial.UIToolkit.Xaml.ThemeResourceDictionary.html
+  commentId: T:Celestial.UIToolkit.Xaml.ThemeResourceDictionary
+  fullName: Celestial.UIToolkit.Xaml.ThemeResourceDictionary
+  nameWithType: ThemeResourceDictionary
+- uid: Celestial.UIToolkit.Xaml.ThemeResourceDictionary.#ctor
+  name: ThemeResourceDictionary()
+  href: api/Celestial.UIToolkit.Xaml.ThemeResourceDictionary.html#Celestial_UIToolkit_Xaml_ThemeResourceDictionary__ctor
+  commentId: M:Celestial.UIToolkit.Xaml.ThemeResourceDictionary.#ctor
+  fullName: Celestial.UIToolkit.Xaml.ThemeResourceDictionary.ThemeResourceDictionary()
+  nameWithType: ThemeResourceDictionary.ThemeResourceDictionary()
+- uid: Celestial.UIToolkit.Xaml.ThemeResourceDictionary.#ctor*
+  name: ThemeResourceDictionary
+  href: api/Celestial.UIToolkit.Xaml.ThemeResourceDictionary.html#Celestial_UIToolkit_Xaml_ThemeResourceDictionary__ctor_
+  commentId: Overload:Celestial.UIToolkit.Xaml.ThemeResourceDictionary.#ctor
+  isSpec: "True"
+  fullName: Celestial.UIToolkit.Xaml.ThemeResourceDictionary.ThemeResourceDictionary
+  nameWithType: ThemeResourceDictionary.ThemeResourceDictionary
+- uid: Celestial.UIToolkit.Xaml.ThemeResourceDictionary.ThemeDictionaries
+  name: ThemeDictionaries
+  href: api/Celestial.UIToolkit.Xaml.ThemeResourceDictionary.html#Celestial_UIToolkit_Xaml_ThemeResourceDictionary_ThemeDictionaries
+  commentId: P:Celestial.UIToolkit.Xaml.ThemeResourceDictionary.ThemeDictionaries
+  fullName: Celestial.UIToolkit.Xaml.ThemeResourceDictionary.ThemeDictionaries
+  nameWithType: ThemeResourceDictionary.ThemeDictionaries
+- uid: Celestial.UIToolkit.Xaml.ThemeResourceDictionary.ThemeDictionaries*
+  name: ThemeDictionaries
+  href: api/Celestial.UIToolkit.Xaml.ThemeResourceDictionary.html#Celestial_UIToolkit_Xaml_ThemeResourceDictionary_ThemeDictionaries_
+  commentId: Overload:Celestial.UIToolkit.Xaml.ThemeResourceDictionary.ThemeDictionaries
+  isSpec: "True"
+  fullName: Celestial.UIToolkit.Xaml.ThemeResourceDictionary.ThemeDictionaries
+  nameWithType: ThemeResourceDictionary.ThemeDictionaries
 - uid: Celestial.UIToolkit.Xaml.VisualTransitionProvider
   name: VisualTransitionProvider
   href: api/Celestial.UIToolkit.Xaml.VisualTransitionProvider.html
